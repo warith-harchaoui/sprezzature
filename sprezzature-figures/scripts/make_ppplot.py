@@ -28,7 +28,7 @@ labelled directly so the split survives greyscale), and the smooth trend
 arc are all under our control. The signed split uses blue (empirical above
 the line, the Normal under-states the probability) versus orange (below
 the line, the Normal over-states it) — never red-green, so it holds up
-under deuteranopia and in greyscale. It matches the front-* house style:
+under deuteranopia and in greyscale. It matches the sprezzature-* house style:
 Roboto, the Apple-ish palette, rounded corners, ink ``#1D1D1F``,
 secondary ``#6E6E73``, white background, white keylines.
 

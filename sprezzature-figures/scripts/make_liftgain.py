@@ -32,7 +32,7 @@ is a thick solid line with an end-label, the perfect-model envelope is a
 thinner solid line labelled at its kink, and the random baseline is a
 *dashed* diagonal — so the three read apart under greyscale and
 deuteranopia and each is named directly on the plot, not only in a
-legend. It matches the front-* house style: Roboto, the Apple-ish
+legend. It matches the sprezzature-* house style: Roboto, the Apple-ish
 palette, rounded corners, ink ``#1D1D1F``, secondary ``#6E6E73``, white
 background, white keylines.
 

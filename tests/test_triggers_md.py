@@ -80,7 +80,7 @@ def test_committed_file_matches_generator() -> None:
 def test_every_skill_appears_in_the_table(skill: str) -> None:
     """Every shipped skill produces at least one row in the table."""
     body: str = TRIGGERS.read_text(encoding="utf-8")
-    # ``**front-X**`` is the bolded skill name we render in the
+    # ``**sprezzature-X**`` is the bolded skill name we render in the
     # Activates column. Match against that exact form.
     assert f"**{skill}**" in body, (
         f"Skill '{skill}' has no row in TRIGGERS.md — its SKILL.md "

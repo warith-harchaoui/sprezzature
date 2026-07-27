@@ -2,7 +2,7 @@
 skills_manifest
 ===============
 
-Read ``SKILLS.txt`` — the canonical list of front-* skill folder names
+Read ``SKILLS.txt`` — the canonical list of sprezzature-* skill folder names
 shipped from this repo — and expose it to every consumer (release
 script, test fixtures, validators).
 

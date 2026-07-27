@@ -1,5 +1,5 @@
 """
-_argparse — shared argparse parser factory for a front-* skill's scripts.
+_argparse — shared argparse parser factory for a sprezzature-* skill's scripts.
 
 ``make_parser(prog, description, epilog=None)`` returns an
 ``ArgumentParser`` pre-configured the way every script in this skill
@@ -10,7 +10,7 @@ expects:
   optional ``epilog`` are not reflowed.
 - A standard ``-V`` / ``--version`` option.
 
-Duplicated (intentionally) across every front-* skill so each stays
+Duplicated (intentionally) across every sprezzature-* skill so each stays
 self-contained; keep this file in sync with the copies in
 sprezzature-colors/scripts/_argparse.py etc. Bump ``SKILL_VERSION`` in every
 copy at release time (release.sh checks the drift).
@@ -26,7 +26,7 @@ import argparse
 from typing import Optional
 
 
-SKILL_VERSION = "0.33.0"
+SKILL_VERSION = "1.0.0"
 
 
 def make_parser(

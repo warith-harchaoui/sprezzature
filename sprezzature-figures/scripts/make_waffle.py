@@ -10,7 +10,7 @@ and it never asks the eye to judge angles.
 
 This module builds the SVG string by hand (no matplotlib / seaborn /
 plotly, and no Vega here because a fixed 10x10 glyph grid is clearer
-authored directly). It follows the front-* house style pulled from
+authored directly). It follows the sprezzature-* house style pulled from
 :mod:`_style`: the Apple-ish saturated palette, Roboto typography,
 ink ``#1D1D1F`` on a white background, rounded-corner tiles, a
 takeaway title, and a one-line subtitle.

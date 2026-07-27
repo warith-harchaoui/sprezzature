@@ -26,7 +26,7 @@ compatibility: >-
   first run.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-vision — local AI alt text for accessibility
@@ -54,7 +54,7 @@ costs unattractive.
 
 ## Two modes — make and audit
 
-This skill is **make-only** in the front-* duality, by design:
+This skill is **make-only** in the sprezzature-* duality, by design:
 
 | Mode | Tool | Purpose |
 |---|---|---|

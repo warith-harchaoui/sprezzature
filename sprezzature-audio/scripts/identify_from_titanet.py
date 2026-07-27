@@ -89,7 +89,7 @@ import click
 
 #: Where install_diarize.py caches NeMo checkpoints.
 NEMO_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "nemo"
 
 #: Default TitaNet checkpoint.

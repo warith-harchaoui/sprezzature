@@ -9,9 +9,9 @@ description: >-
   semantic HTML + Tailwind utility classes + vanilla ES modules with dark-mode
   peers, focus rings, reduced-motion guards. Use it for "build a UI", "create
   a component", "design a page", "make a form / modal / button / nav",
-  "scaffold a landing", "build a web app", "audit this UI", "dark mode
-  toggle", "responsive layout", "dashboard / data table", "settings page",
-  "empty state / skeleton", "i18n to YAML", "audit i18n". Companion skills:
+  "scaffold a landing", "build a web app", "audit this UI",
+  "dashboard / data table", "settings page", "i18n to YAML", "audit i18n".
+  Companion skills:
   sprezzature-cli-gui (wrap a CLI in a GUI), sprezzature-publish (Markdown → website +
   meta tags + favicons), sprezzature-accessibility (a11y lint), sprezzature-colors
   (contrast audit, CVD), sprezzature-vision (alt text), sprezzature-audio (captions).
@@ -23,7 +23,7 @@ compatibility: >-
   required.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-ui — vanilla JS + Tailwind UI generation
@@ -65,7 +65,7 @@ The companion skills assume the same stack rules below.
 
 ## Two modes — make and audit
 
-This skill ships both halves of the front-* loop:
+This skill ships both halves of the sprezzature-* loop:
 
 | Mode | Tool | Purpose |
 |---|---|---|

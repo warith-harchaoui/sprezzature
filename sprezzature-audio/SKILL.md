@@ -27,7 +27,7 @@ compatibility: >-
   inference after install.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-audio — local AI captions and transcripts
@@ -72,7 +72,7 @@ improve the whisper.cpp integration. Track shape via
 
 ## Two modes — make and audit
 
-This skill is **make-only** in the front-* duality, by design. The
+This skill is **make-only** in the sprezzature-* duality, by design. The
 make side has two tiers: a lightweight **captions** tier and a
 heavier **diarization + speaker ID** tier that layers on top.
 

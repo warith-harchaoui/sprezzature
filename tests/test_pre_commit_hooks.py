@@ -1,7 +1,7 @@
 """
 Validate the repo-root ``.pre-commit-hooks.yaml`` manifest.
 
-The manifest is how external consumers wire the front-* audit gates
+The manifest is how external consumers wire the sprezzature-* audit gates
 into their own ``.pre-commit-config.yaml``. If any entry drifts —
 references a missing script, names a renamed hook, declares a path
 that no longer exists — every downstream user breaks silently.

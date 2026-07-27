@@ -2,7 +2,7 @@
 test_helper_sync — the per-skill shared helpers must not drift.
 
 Each skill is self-contained: the shared helpers are duplicated verbatim into
-every ``front-*/scripts/`` so a skill installs and runs on its own. That
+every ``sprezzature-*/scripts/`` so a skill installs and runs on its own. That
 duplication is only safe if the copies stay in lockstep — this test makes any
 drift a red build.
 
@@ -37,7 +37,7 @@ def test_helper_copies_are_byte_identical(helper: str) -> None:
     the others. The helpers are intentionally skill-neutral, so there is no
     legitimate per-copy difference — not even in a docstring.
     """
-    copies = sorted(REPO_ROOT.glob(f"front-*/scripts/{helper}"))
+    copies = sorted(REPO_ROOT.glob(f"sprezzature-*/scripts/{helper}"))
     assert len(copies) >= 2, f"expected several {helper} copies, found {len(copies)}"
 
     canonical = copies[0].read_bytes()

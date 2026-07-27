@@ -11,7 +11,7 @@ generation (captions, alt text, narration, translation) and image understanding
 (Ralph Eyeball Loop visual critique). It is the single model for all tasks —
 see docs/LLM_CHOICE.md for the rationale and sources.
 
-Scope: every ``front-*/scripts/*.py``. Not a VLM / LLM (allowed, unchecked):
+Scope: every ``sprezzature-*/scripts/*.py``. Not a VLM / LLM (allowed, unchecked):
 whisper.cpp (captions), NeMo Sortformer/TitaNet (diarization), SHAP/DoWhy
 (figures) — those are ASR / diarization / stats models, not the Ollama VLM.
 
@@ -31,7 +31,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 #: Every shipped skill's Python scripts.
 SCRIPTS = sorted(
-    p for p in REPO_ROOT.glob("front-*/scripts/*.py")
+    p for p in REPO_ROOT.glob("sprezzature-*/scripts/*.py")
     if "__pycache__" not in p.parts
 )
 
@@ -128,7 +128,7 @@ def test_vlm_model_is_not_user_selectable(script: Path) -> None:
 
 @pytest.mark.parametrize(
     "skill_md",
-    sorted(REPO_ROOT.glob("front-*/SKILL.md")),
+    sorted(REPO_ROOT.glob("sprezzature-*/SKILL.md")),
     ids=lambda p: p.parent.name,
 )
 def test_skill_description_advertises_no_model_override(skill_md: Path) -> None:

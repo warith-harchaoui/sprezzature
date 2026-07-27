@@ -89,7 +89,7 @@ def test_detect_language_falls_back_when_no_signal() -> None:
 def test_lang_helper_copies_are_identical() -> None:
     """The shared helper is duplicated for self-containment; the copies must
     never drift. This test fails the moment one is edited without the others."""
-    copies = sorted(REPO_ROOT.glob("front-*/scripts/_lang.py"))
+    copies = sorted(REPO_ROOT.glob("sprezzature-*/scripts/_lang.py"))
     assert len(copies) >= 4, f"expected several _lang.py copies, found {len(copies)}"
     canonical = copies[0].read_text(encoding="utf-8")
     drifted = [str(p.relative_to(REPO_ROOT)) for p in copies[1:]

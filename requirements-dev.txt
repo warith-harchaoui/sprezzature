@@ -3,7 +3,7 @@
 # Install:
 #   pip install -r requirements-dev.txt
 #
-# Runtime dependencies live in front/scripts/requirements.txt; install
+# Runtime dependencies live in each sprezzature-*/scripts/requirements-*.txt; install
 # both for a full local environment:
 #   pip install -r requirements-dev.txt -r sprezzature/scripts/requirements.txt
 

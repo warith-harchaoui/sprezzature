@@ -144,7 +144,7 @@ def _remove(path: Path, *, dry_run: bool) -> bool:
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point."""
     parser: argparse.ArgumentParser = make_parser(
-        prog="front-cleanup-local-skills",
+        prog="sprezzature-cleanup-local-skills",
         description=(
             "Audit ~/.claude/skills/ and ~/.opencode/skills/ for "
             "orphan front-* folders left behind by past skill "

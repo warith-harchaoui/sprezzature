@@ -111,7 +111,7 @@ refuter. **Interpret the deltas, not just the point estimate.**
     }
   }
   ```
-- `dag.svg` — the DAG rendered via graphviz in the front-* house
+- `dag.svg` — the DAG rendered via graphviz in the sprezzature-* house
   style (Roboto, curated palette, no chartjunk).
 - `dag.png` — 2× PNG for embedding.
 - `forest_plot.svg` — point estimate + CI + refutation deltas as a

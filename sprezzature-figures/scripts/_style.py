@@ -88,7 +88,7 @@ def _sibling_palette_csv() -> Optional[Path]:
         3. ``~/.claude/skills/sprezzature-colors/references/palette.csv``.
         4. ``~/.opencode/skills/sprezzature-colors/references/palette.csv``.
     """
-    env = os.environ.get("SPREZZATURE_COLORS_PALETTE", "").strip()
+    env = (os.environ.get("SPREZZATURE_COLORS_PALETTE") or os.environ.get("FRONT_COLORS_PALETTE") or "").strip()
     if env:
         p = Path(env).expanduser()
         if p.is_file():
@@ -643,7 +643,7 @@ def diverging_pair(cvd_safe: bool = True) -> tuple:
 # Vega-Lite house config
 # ------------------------------------------------------------------
 def vega_config(dark: bool = False) -> Dict[str, object]:
-    """Emit the front-* house-style Vega-Lite ``config`` block.
+    """Emit the sprezzature-* house-style Vega-Lite ``config`` block.
 
     Parameters
     ----------
@@ -692,7 +692,7 @@ def vega_config(dark: bool = False) -> Dict[str, object]:
 # Matplotlib rcParams
 # ------------------------------------------------------------------
 def matplotlib_rc(dark: bool = False) -> Dict[str, object]:
-    """Return matplotlib ``rcParams`` overrides in the front-* house style.
+    """Return matplotlib ``rcParams`` overrides in the sprezzature-* house style.
 
     Parameters
     ----------

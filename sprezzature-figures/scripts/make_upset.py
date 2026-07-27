@@ -18,7 +18,7 @@ panels:
 This generator builds the SVG string by hand (no matplotlib / seaborn /
 plotly, and no Vega — the three-panel matrix geometry with connector
 lines aligned to bars is clearer authored directly). It follows the
-front-* house style pulled from :mod:`_style`: the Apple-ish saturated
+sprezzature-* house style pulled from :mod:`_style`: the Apple-ish saturated
 palette, Roboto typography, ink ``#1D1D1F`` on a white background,
 rounded-corner bars, a takeaway title, and a one-line subtitle.
 

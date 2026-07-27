@@ -2,7 +2,7 @@
 
 Source: <https://harchaoui.org/warith/colors/>. The machine-readable
 form lives at `sprezzature-colors/references/palette.csv` — that CSV is the
-**single source of truth for hexes** in the front-* ecosystem; this
+**single source of truth for hexes** in the sprezzature-* ecosystem; this
 file mirrors the CSV's `Hexcode` + `LightHex` columns in human-readable
 table form, with the same rows in the same order. To regenerate the
 Tailwind `theme.extend.colors` block from the CSV run:

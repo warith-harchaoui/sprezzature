@@ -23,7 +23,7 @@ compatibility: >-
   required.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-cli-gui — CLI → web GUI
@@ -56,7 +56,7 @@ Honest limitation: this skill **scaffolds** the GUI. You still need to wire exec
 
 ## Two modes — make and audit
 
-This skill is **make-heavy** in the front-* duality: one executable
+This skill is **make-heavy** in the sprezzature-* duality: one executable
 make-side primary, plus a worked scaffold, plus referenced audit
 gates on the emitted HTML.
 

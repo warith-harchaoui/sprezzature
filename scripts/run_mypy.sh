@@ -3,7 +3,7 @@
 # run_mypy.sh — type-check every skill's scripts/ dir (CODING_ALL.md rule 3,
 # type half; the AUDIT counterpart to `ruff check`).
 #
-# Inputs : none (checks front-*/scripts and scripts/ from the repo root).
+# Inputs : none (checks sprezzature-*/scripts and scripts/ from the repo root).
 # Output : mypy diagnostics on stdout; a one-line summary on stderr.
 # Exit   : 0 if every dir type-checks clean, 1 if any dir has errors.
 #
@@ -24,7 +24,7 @@ log() { printf '%s\n' "$*" >&2; }
 
 fail=0
 checked=0
-for dir in front-*/scripts scripts sprezzature-cli/src; do
+for dir in sprezzature-*/scripts scripts sprezzature-cli/src; do
     # An unmatched glob would expand to the literal pattern — skip non-dirs.
     [ -d "$dir" ] || continue
     checked=$((checked + 1))

@@ -10,7 +10,7 @@ shifts from group to group. It is the R ``ggridges`` / matplotlib ``joypy``
 This module builds the SVG string **by hand** (no matplotlib / seaborn /
 plotly, no Vega): it estimates each group's density with a Gaussian kernel
 (numpy only), lays the curves out on a shared axis, and paints them as
-filled paths in the front-* house style — Roboto type, the Apple-system
+filled paths in the sprezzature-* house style — Roboto type, the Apple-system
 palette, ink ``#1D1D1F`` on a white ground, rounded framing. Each ridge
 sits in its **own fully separated lane** (no vertical overlap) and gets its
 **own distinct house-palette hue**, so the stack reads as a smooth colour

@@ -17,7 +17,7 @@ measure bars and instantly sees which lag their target. This generator
 builds the SVG string by hand (no matplotlib / seaborn / plotly, no
 Vega) because the four-mark-per-row packing and the per-row independent
 scales are cleaner to place directly than to coax out of a layered
-grammar. It matches the front-* house style: Roboto, the Apple-ish
+grammar. It matches the sprezzature-* house style: Roboto, the Apple-ish
 palette, rounded corners, ink ``#1D1D1F``, secondary ``#6E6E73``, white
 background.
 

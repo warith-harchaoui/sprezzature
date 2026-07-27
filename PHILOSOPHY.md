@@ -1,7 +1,7 @@
 # Approach — the ideas behind `sprezzature`
 
 This page gathers the design convictions that run through the whole
-`front-*` stack. Each one is something the code actually does; nothing
+`sprezzature-*` stack. Each one is something the code actually does; nothing
 here is aspiration. If you want the *what* (the skills, the install), read
 [`README.md`](README.md). This is the *why*.
 

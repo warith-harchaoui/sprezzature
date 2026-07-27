@@ -21,7 +21,7 @@ and a moving marker sweeps the spine once to draw the eye through time.
 This generator builds the SVG string **by hand** (no matplotlib /
 seaborn / plotly, no Vega): the alternating-callout packing, the
 side-aware label harmony, and the era-band backdrop are cleaner to place
-directly than to coax out of a layered grammar. It matches the front-*
+directly than to coax out of a layered grammar. It matches the sprezzature-*
 house style: Roboto, the Apple-ish palette, rounded corners, ink
 ``#1D1D1F``, secondary ``#6E6E73``, white background.
 

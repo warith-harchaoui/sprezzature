@@ -23,7 +23,7 @@ outward along an Archimedean spiral until its axis-aligned bounding box
 clears every word already placed (plus a small breathing margin), so the
 finished cloud has **zero overlaps**. The result is a denser, calmer
 spiral than the Highcharts / ECharts word clouds it improves on, in the
-front-* house style pulled from :mod:`_style`: the Apple-ish saturated
+sprezzature-* house style pulled from :mod:`_style`: the Apple-ish saturated
 palette used as three semantic groups, Roboto typography, ink
 ``#1D1D1F`` on a white background, a takeaway title, and a one-line
 subtitle.

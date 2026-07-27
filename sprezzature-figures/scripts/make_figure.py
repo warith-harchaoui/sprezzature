@@ -3,7 +3,7 @@
 make_figure
 ===========
 
-Emit a data-science figure in the front-* house style.
+Emit a data-science figure in the sprezzature-* house style.
 
 The script accepts a CSV / JSON / Parquet input and a small spec (which
 columns, which chart kind, which polarity) and emits one of:
@@ -95,7 +95,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = make_parser(
         prog="make_figure",
         description=(
-            "Emit a data-science figure in the front-* house style. Default "
+            "Emit a data-science figure in the sprezzature-* house style. Default "
             "output is a Vega-Lite v5 JSON spec; --emit png/svg switches to "
             "the matplotlib backend."
         ),
@@ -513,7 +513,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     # (title / subtitle / axis column names) — no configured default.
     _lang_hint = " ".join(t for t in (args.title, args.subtitle, args.x, args.y) if t)
     lang = args.lang or detect_language(_lang_hint, fmt="text")
-    dark = bool(args.dark) or os.environ.get("SPREZZATURE_DARK", "") == "1"
+    dark = bool(args.dark) or (os.environ.get("SPREZZATURE_DARK") or os.environ.get("FRONT_DARK") or "") == "1"
 
     rows, dtypes = load_data(args.data)
     if not rows:

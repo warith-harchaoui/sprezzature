@@ -4,7 +4,7 @@ ralph_eyeball_loop
 ==================
 
 The **Ralph Eyeball Loop** — the universal visual-quality technique for the
-``front-*`` repo. Render any visual-from-code artifact to a PNG, critique it
+``sprezzature-*`` repo. Render any visual-from-code artifact to a PNG, critique it
 honestly, edit the source, and loop until satisfied.
 
 The loop applies to every surface that produces a visual from code:
@@ -134,7 +134,7 @@ _RENDER_DIAGRAM: Path = _SCRIPT_DIR / "render_diagram.py"
 _PRIVATE_LOOP_DIR: Path = _REPO_ROOT / ".private" / "ralph-loop"
 
 # ---------------------------------------------------------------------------
-# Ollama — the one authorized VLM for the whole front-* repo
+# Ollama — the one authorized VLM for the whole sprezzature-* repo
 # qwen3-vl:8b is a vision-language model (VLM): handles both text generation
 # (used by other skills) and image understanding (--local critique mode here).
 # ---------------------------------------------------------------------------

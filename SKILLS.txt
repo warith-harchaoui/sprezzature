@@ -1,4 +1,4 @@
-# Canonical list of shipped front-* skills, one folder name per line.
+# Canonical list of shipped sprezzature-* skills, one folder name per line.
 #
 # Single source of truth read by:
 #   - scripts/release.sh

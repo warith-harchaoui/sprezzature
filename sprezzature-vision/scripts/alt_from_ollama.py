@@ -109,12 +109,12 @@ MAX_CHARS: int = 150
 #: Directory where successful generations are cached. Override with the
 #: ``SPREZZATURE_CACHE_DIR`` env var (useful in tests, CI, or for shared caches).
 CACHE_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "alt"
 
 #: When true, the cache is consulted neither for reads nor for writes.
 #: Toggled at runtime by ``--no-cache`` or globally by ``SPREZZATURE_NO_CACHE``.
-NO_CACHE: bool = bool(os.environ.get("SPREZZATURE_NO_CACHE"))
+NO_CACHE: bool = bool((os.environ.get("SPREZZATURE_NO_CACHE") or os.environ.get("FRONT_NO_CACHE")))
 
 
 # ── Cache helpers ────────────────────────────────────────────────────────────

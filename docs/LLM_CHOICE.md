@@ -1,6 +1,6 @@
 # Large language model (LLM) choice — Qwen3-VL 8B (Q4_K_M) via Ollama
 
-> **The whole `front-*` repo uses exactly one model: `qwen3-vl:8b`** (Qwen3-VL
+> **The whole `sprezzature-*` repo uses exactly one model: `qwen3-vl:8b`** (Qwen3-VL
 > 8B, Q4_K_M quantization) served locally through Ollama. One model for text
 > *and* vision. No second model, no cloud application programming interface (API), no MLX. This document records
 > **why**, with sources.

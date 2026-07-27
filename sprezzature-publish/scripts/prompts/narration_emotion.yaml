@@ -3,7 +3,7 @@
 # Used by: sprezzature-publish/scripts/_narrate.py (LLM_SYSTEM_PROMPT), consumed by
 # narrate_post.py as the Ollama "system" message for the emotion classifier.
 #
-# Lives here, not inline in Python, per the front-* i18n rule: LLM prompts —
+# Lives here, not inline in Python, per the sprezzature-* i18n rule: LLM prompts —
 # like GUI strings — belong in a YAML catalog, never hardcoded in code. This is
 # the make-side counterpart to sprezzature-ui/scripts/audit_i18n.py (rule I18N002).
 name: narration_emotion

@@ -1,5 +1,5 @@
 /**
- * Tailwind config for the front-* website — replaces the dev-only Play CDN
+ * Tailwind config for the sprezzature-* website — replaces the dev-only Play CDN
  * (cdn.tailwindcss.com) with a real, self-hosted, content-scanned build.
  * Mirrors the theme that used to live in each page's inline `tailwind.config`.
  * Build: from web/, `npx tailwindcss@3 -i css/tailwind-input.css -o css/app.css --minify`

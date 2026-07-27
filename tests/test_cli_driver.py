@@ -45,13 +45,13 @@ def test_find_skill_resolves_in_repo(monkeypatch: pytest.MonkeyPatch) -> None:
 def test_find_skill_missing_returns_none(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     """A bogus skill name resolves to None (no exception)."""
     monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
-    assert driver._find_skill("front-does-not-exist") is None
+    assert driver._find_skill("sprezzature-does-not-exist") is None
 
 
 def test_run_script_missing_skill_exits_2(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     """Routing to an absent skill returns exit code 2, cleanly."""
     monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
-    rc = driver._run_script("front-nope", "whatever.py", ())
+    rc = driver._run_script("sprezzature-nope", "whatever.py", ())
     assert rc == 2
 
 

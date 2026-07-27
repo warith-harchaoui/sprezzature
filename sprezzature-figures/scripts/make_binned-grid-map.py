@@ -15,7 +15,7 @@ crime-desk or operations analyst reaches for.
 This module builds the SVG string by hand (no matplotlib / seaborn /
 plotly, and no Vega, because a square lattice clipped to an irregular
 city boundary over a river and two parks is clearer authored directly).
-It follows the front-* house style pulled from :mod:`_style`: a
+It follows the sprezzature-* house style pulled from :mod:`_style`: a
 single-hue sequential ramp keyed to the palette's Red (the crime-map
 convention), Roboto typography, ink ``#1D1D1F`` on a white background, a
 rounded title block, a takeaway title, and a one-line subtitle.

@@ -5,7 +5,7 @@ explain_model
 
 Model-explainability dispatcher. Given a fitted model and a dataset,
 picks the right engine and emits summary + local explanations in the
-front-* house style.
+sprezzature-* house style.
 
 Engines
 -------

@@ -5,7 +5,7 @@ _lang
 Shared, stdlib-first helper for **content-based language handling**: extract the
 visible body text from HTML / Markdown / plain content, then detect its language
 with `langdetect`_. One canonical implementation, duplicated (intentionally)
-across every front-* skill so each stays self-contained — **keep every copy
+across every sprezzature-* skill so each stays self-contained — **keep every copy
 byte-identical** (a test, ``tests/test_bodytext.py``, enforces it).
 
 There is **no configured default language** anywhere in the suite: callers pass

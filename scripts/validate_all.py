@@ -9,7 +9,7 @@ invokes this before tagging a release; CI invokes it on every push.
 What this runs
 --------------
 1. Strict YAML frontmatter validation (``validate_skill``) against every
-   shipped skill (the nine ``front-*`` folders). This is the cross-skill
+   shipped skill (the nine ``sprezzature-*`` folders). This is the cross-skill
    foundation: if a SKILL.md has invalid YAML, the runtime silently
    rejects it.
 2. Content-quality gate (``sprezzature-ui/scripts/validate.py``). This adds

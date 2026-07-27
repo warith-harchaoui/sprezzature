@@ -29,11 +29,11 @@ from sprezzature_cli import __version__
 SCRIPTS_SUBDIR = "scripts"
 
 # Search order for finding a skill folder by name. Each element is a base
-# directory that contains `front-<name>/` folders.
+# directory that contains `sprezzature-<name>/` folders.
 def _candidate_bases() -> list[Path]:
-    """Return the ordered base dirs searched for ``front-<name>`` skill folders."""
+    """Return the ordered base dirs searched for ``sprezzature-<name>`` skill folders."""
     bases: list[Path] = []
-    env = os.environ.get("SPREZZATURE_SKILLS_PATH", "")
+    env = (os.environ.get("SPREZZATURE_SKILLS_PATH") or os.environ.get("FRONT_SKILLS_PATH") or "")
     for chunk in env.split(":"):
         chunk = chunk.strip()
         if chunk:
@@ -99,7 +99,7 @@ GROUP_CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
 @click.version_option(__version__, "-V", "--version", prog_name="sprezzature")
 def cli() -> None:
     """
-    sprezzature — unified driver for the front-* skills.
+    sprezzature — unified driver for the sprezzature-* skills.
 
     Each sub-command shells out to the matching script in the matching
     skill folder. Skills are discovered via $SPREZZATURE_SKILLS_PATH, the current

@@ -53,7 +53,7 @@ from _argparse import make_parser  # noqa: E402
 #: Where NeMo caches downloaded checkpoints; the diarize scripts export
 #: the same env var so the two agree on the location.
 NEMO_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "nemo"
 
 

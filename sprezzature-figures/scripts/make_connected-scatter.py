@@ -13,7 +13,7 @@ grouped line chart because the reader follows one thread through the
 This generator builds the SVG by hand (no matplotlib / seaborn / plotly,
 no Vega) so the smooth path, the direction arrowheads riding the line,
 the year labels placed only at inflections, and the emphasised
-start / end markers are all under our control. It matches the front-*
+start / end markers are all under our control. It matches the sprezzature-*
 house style: Roboto, the Apple-ish palette, rounded corners, ink
 ``#1D1D1F``, secondary ``#6E6E73``, white background.
 

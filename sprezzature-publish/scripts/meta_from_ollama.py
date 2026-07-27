@@ -107,11 +107,11 @@ PAGE_TEXT_LIMIT: int = 6000
 #: Directory where successful JSON outputs are cached. Override with the
 #: ``SPREZZATURE_CACHE_DIR`` env var.
 CACHE_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "meta"
 
 #: Cache toggle, mirroring the same flag in :mod:`alt_from_ollama`.
-NO_CACHE: bool = bool(os.environ.get("SPREZZATURE_NO_CACHE"))
+NO_CACHE: bool = bool((os.environ.get("SPREZZATURE_NO_CACHE") or os.environ.get("FRONT_NO_CACHE")))
 
 #: Schema-of-output fragment appended to every prompt. Kept verbatim to give
 #: the model an explicit contract — ``format=json`` on the Ollama call also
