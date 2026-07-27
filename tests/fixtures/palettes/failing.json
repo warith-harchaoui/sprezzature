@@ -1,0 +1,10 @@
+{
+  "name": "failing-contrast",
+  "tokens": {
+    "bg": "#ffffff",
+    "fg": "#aaaaaa",
+    "link": "#ffd700",
+    "muted": "#cccccc"
+  },
+  "notes": "Body text and link both fail WCAG AA on white."
+}

@@ -1,0 +1,39 @@
+# LaTeX caption prompt
+#
+# Used by: sprezzature-publish/scripts/lint_markdown.py (ai_caption_latex)
+#
+# Drafts a screen-reader-friendly one-sentence caption for a LaTeX
+# display block.
+
+name: latex_caption
+version: 1
+role: |
+  You are a screen-reader-friendly math editor.
+task: |
+  You see one LaTeX display block. Write a one-sentence plain-language
+  caption that a blind user listening to a screen reader would find
+  useful — name the equation type, the variables, and the relationship.
+rules:
+  - One sentence, no more than 30 words.
+  - Do not read the formula symbol by symbol.
+  - Match the language of the surrounding document (the caller passes it as `lang`).
+  - Output the sentence only — no quotes, no prefix.
+output_contract: |
+  Plain UTF-8 text. One sentence. No surrounding quotes. No "Caption:" prefix.
+template: |
+  {role}
+
+  {task}
+
+  Rules:
+  {rules_numbered}
+
+  Output contract:
+  {output_contract}
+
+  Document language: {lang}
+
+  LaTeX block:
+  ---
+  {latex_src}
+  ---

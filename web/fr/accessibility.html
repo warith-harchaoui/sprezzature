@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr" data-color-scheme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Accessibilité — Sprezzature</title>
+  <meta name="description"
+    content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind — quatorze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
+  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
+  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/accessibility.html">
+  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Accessibilité — Sprezzature">
+  <meta property="og:description"
+    content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind — quatorze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
+  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts/roboto/fonts.css">
+  <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
+  <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip
+    to content</a>
+  <header
+    class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Primary">
+      <a href="index.html"
+        class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img
+          src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <div class="flex items-center gap-3 text-sm sm:gap-4">
+        <a href="index.html#skills"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><em>Skills</em></a>
+        <a href="figures.html"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Galerie</a>
+        <a href="case-studies.html"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Études de cas</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
+        <a href="../accessibility.html" aria-label="English version" title="English version"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
+        <button id="theme-toggle" type="button" aria-label="Changer de thème"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="mx-auto max-w-4xl px-5 py-14">
+      <p class="font-mono text-sm text-brand-blue">sprezzature-accessibility</p>
+      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Accessibilité</h1>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Lint d'accessibilité HTML (langage de balisage des
+        pages web) statique en pré-commit pour du JavaScript (JS) standard + Tailwind : quatorze règles décidables depuis
+        la source, sans navigateur, sans modèle objet du document (DOM) à l'exécution.</p>
+      <div class="mt-6 flex flex-wrap gap-3 text-sm">
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-accessibility/SKILL.md"
+          class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy">SKILL.md (la spec
+          agent)</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature"
+          class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600">⭐️ sur GitHub</a>
+      </div>
+    </section>
+    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto grid max-w-4xl gap-8 px-5 py-12 sm:grid-cols-2">
+        <div>
+          <h2 class="text-lg font-bold">Produit</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+            <li>JSON (notation d'objets JavaScript) / stdout / codes de sortie pour pré-commit et intégration continue
+              (CI)</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold">Audite</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+            <li>alt manquant, champs sans label, bouton sans texte, div cliquable</li>
+            <li>Fermeture de dialog manquante, attribut lang, ordre des titres</li>
+            <li>État par la couleur seule, garde-fous d'animation réduite et plus : quatorze règles</li>
+            <li>Une barrière rapide et déterministe, pas un remplaçant d'axe-core / Pa11y / Lighthouse</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 class="text-lg font-bold">Dites l'une de ces phrases</h2>
+        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">La <em>skill</em> se déclenche sur une
+          formulation de ce type, sans commande à mémoriser.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">lint a11y</code>
+          <code
+            class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">vérifie l'accessibilité de ce HTML</code>
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">check a11y statique</code>
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">lint compatible WCAG</code>
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">alt manquant</code>
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">champ sans label</code>
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">vérif ARIA / clavier</code>
+          <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">corrige l'accessibilité</code>
+        </div>
+      </div>
+    </section>
+    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 class="text-lg font-bold">Bibliothèque de références</h2>
+        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Les connaissances sur lesquelles la
+          <em>skill</em> s'appuie : à lire directement dans le repo.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-accessibility/references/lint-a11y.md"
+            class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">The
+            fourteen rules</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
+    <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
+      <p><a class="underline hover:text-brand-blue" href="index.html">← Toutes les <em>skills</em></a> · <em>Skills</em>
+        Claude / OpenCode locales par <a class="underline hover:text-brand-blue"
+          href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+    </div>
+  </footer>
+  <script src="../js/theme.js" defer></script>
+
+</body>
+
+</html>

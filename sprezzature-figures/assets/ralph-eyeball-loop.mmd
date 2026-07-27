@@ -1,0 +1,10 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Roboto, system-ui, sans-serif","lineColor":"#8E8E93","fontSize":"20px"},"flowchart":{"nodeSpacing":55,"rankSpacing":70,"padding":16,"curve":"basis"}}}%%
+flowchart LR
+    R("🖼️ <b>Render</b><br/><span style='font-size:15px;color:#3A3A3C'>code becomes an image,<br/>the same way every time</span>"):::render --> L("👁️ <b>Look</b><br/><span style='font-size:15px;color:#3A3A3C'>actually study<br/>the picture</span>"):::look
+    L --> C("🧐 <b>Critique</b><br/><span style='font-size:15px;color:#3A3A3C'>what did<br/>the eye catch?</span>"):::crit
+    C --> E("✏️ <b>Edit the source</b><br/><span style='font-size:15px;color:#3A3A3C'>never the picture</span>"):::edit
+    E -->|"<span style='font-size:15px'>until nothing is left to catch</span>"| R
+    classDef render fill:#EAF3FF,stroke:#007AFF,stroke-width:2.5px,color:#1D1D1F
+    classDef look fill:#E4F8EA,stroke:#28CD41,stroke-width:2.5px,color:#1D1D1F
+    classDef crit fill:#FFF3E0,stroke:#FF9500,stroke-width:2.5px,color:#1D1D1F
+    classDef edit fill:#F4E9FB,stroke:#AF52DE,stroke-width:2.5px,color:#1D1D1F

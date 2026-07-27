@@ -1,0 +1,14 @@
+REMPLACE CE FICHIER par la transcription verbatim (une phrase par ligne)
+de fr-clean-30s.wav une fois qu'une URL source réelle est épinglée dans
+fetch.py.
+
+Convention de test : jiwer reçoit le contenu complet du fichier
+(minuscules, espaces normalisés) comme référence. La ponctuation hors
+mots est tolérée par le normaliseur par défaut de jiwer ; les
+contractions et élisions ("c'est", "j'ai") doivent suivre exactement la
+lecture du speaker.
+
+Exemple (à supprimer avant de committer le vrai texte) :
+
+Le renard brun et rapide saute par-dessus le chien paresseux.
+Elle vend des coquillages au bord de la mer.

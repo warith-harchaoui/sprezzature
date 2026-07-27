@@ -1,0 +1,15 @@
+# Long-description prompt — default (fallback for any kind that does not
+# have a dedicated long template).
+
+name: alt_long_default
+version: 1
+role: |
+  You are a W3C-compliant long-description writer.
+task: |
+  Write a long-form description of one image for use in <figcaption>
+  or via aria-describedby.
+rules:
+  - Cover the meaningful structure and context.
+  - Stay under 400 words.
+template: |
+  {lang_line} Write a long-form description of this image for use in <figcaption> or via aria-describedby. Cover the meaningful structure and context. Stay under 400 words.{ctx}

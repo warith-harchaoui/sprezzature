@@ -1,0 +1,25 @@
+<!--
+  Von Restorff Effect — the one distinct element in a uniform set
+  is remembered. Keep ONE thing loud per screen. The primary CTA
+  takes the brand-blue fill; siblings stay ghost so the eye lands
+  where you want it.
+
+  Two failure modes the auditor catches:
+   - Two primaries on one screen — visual hierarchy collapses.
+   - Primary in red — red is reserved for destructive intent
+     (see anti-patterns.md). Use it only for "Delete"-class actions.
+-->
+<div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+  <button type="button"
+          class="inline-flex min-h-11 items-center justify-center rounded-full bg-brand-blue px-5 py-3 text-[15px] font-semibold text-white hover:opacity-90 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 motion-reduce:active:scale-100">
+    Start free trial
+  </button>
+  <button type="button"
+          class="inline-flex min-h-11 items-center justify-center rounded-full bg-surface-secondary px-5 py-3 text-[15px] font-medium text-label-primary hover:bg-surface-tertiary dark:bg-surface-secondary-dark dark:text-label-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2">
+    See pricing
+  </button>
+  <button type="button"
+          class="inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-[15px] font-medium text-label-secondary hover:text-label-primary dark:text-label-secondary-dark dark:hover:text-label-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2">
+    Talk to sales
+  </button>
+</div>

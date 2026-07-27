@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="940" viewBox="0 0 1040 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="lg-title lg-desc">
+<title id="lg-title">A churn model reaches most churners from a small fraction of the ranked list</title>
+<desc id="lg-desc">Cumulative-gain chart for a churn-prevention campaign (illustrative). The horizontal axis is the share of customers contacted, working down a list ranked by the model’s predicted churn risk; the vertical axis is the share of all churners reached. Three curves: a dashed grey diagonal is the random baseline (contacting X % reaches X % of churners); a thin green line is the perfect model, the ceiling, rising steeply then flattening once every churner is captured; and a thick blue line is the actual model, sitting between the two. The shaded blue band between the model and the diagonal is the value the model adds. A marker shows the operating point: contacting the riskiest 20 % reaches 63 % of churners, 3.16× better than random. Illustrative figures.</desc>
+<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}@media (prefers-contrast: more){
+  .lg-model{stroke:#004CCE;}
+  .lg-perfect{stroke:#006700;}
+}@media (prefers-contrast: more){
+  .lg-marker{fill:#993600;}
+}@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
+  [fill="#F5F5F7"]{fill:#17171A;}.lg-grid{stroke:#2C2C30;}
+}</style>
+<rect width="1040" height="940" fill="#FFFFFF"/>
+<rect x="118" y="200" width="862" height="620" fill="#F5F5F7" rx="10"/>
+<text x="118" y="80" font-size="42" font-weight="700" fill="#1D1D1F">Calling the riskiest 20% reaches 63% of churners</text>
+<text x="118" y="124" font-size="24" fill="#6E6E73">Cumulative-gain curve: churners reached vs share of the model-ranked base contacted</text>
+<text x="118" y="156" font-size="20" fill="#6E6E73">Illustrative data</text>
+<line class="lg-grid" x1="118.0" y1="200.0" x2="118.0" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="118.0" y1="820.0" x2="980.0" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="290.4" y1="200.0" x2="290.4" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="118.0" y1="703.0" x2="980.0" y2="703.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="462.8" y1="200.0" x2="462.8" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="118.0" y1="586.0" x2="980.0" y2="586.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="635.2" y1="200.0" x2="635.2" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="118.0" y1="469.1" x2="980.0" y2="469.1" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="807.6" y1="200.0" x2="807.6" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="118.0" y1="352.1" x2="980.0" y2="352.1" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="980.0" y1="200.0" x2="980.0" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
+<line class="lg-grid" x1="118.0" y1="235.1" x2="980.0" y2="235.1" stroke="#FFFFFF" stroke-width="1.6"/>
+<path d="M 118.0 820.0 L 135.2 762.3 L 152.5 711.7 L 169.7 667.5 L 187.0 624.0 L 204.2 584.5 L 221.4 552.1 L 238.7 524.4 L 255.9 492.0 L 273.2 465.1 L 290.4 450.1 L 307.6 427.9 L 324.9 413.7 L 342.1 399.5 L 359.4 384.5 L 376.6 368.7 L 393.8 356.1 L 411.1 349.7 L 428.3 334.7 L 445.6 330.7 L 462.8 326.0 L 480.0 318.9 L 497.3 307.0 L 514.5 296.7 L 531.8 289.6 L 549.0 284.9 L 566.2 277.0 L 583.5 274.6 L 600.7 268.3 L 618.0 266.7 L 635.2 258.8 L 652.4 256.4 L 669.7 254.9 L 686.9 253.3 L 704.2 252.5 L 721.4 249.3 L 738.6 247.7 L 755.9 246.1 L 773.1 244.6 L 790.4 242.2 L 807.6 240.7 L 824.8 239.8 L 842.1 239.8 L 859.3 239.1 L 876.6 238.3 L 893.8 237.5 L 911.0 235.9 L 928.3 235.9 L 945.5 235.1 L 962.8 235.1 L 980.0 235.1 L 980.0 235.1 L 962.8 246.8 L 945.5 258.5 L 928.3 270.2 L 911.0 281.9 L 893.8 293.6 L 876.6 305.3 L 859.3 317.0 L 842.1 328.7 L 824.8 340.4 L 807.6 352.1 L 790.4 363.8 L 773.1 375.5 L 755.9 387.2 L 738.6 398.9 L 721.4 410.6 L 704.2 422.3 L 686.9 434.0 L 669.7 445.7 L 652.4 457.4 L 635.2 469.1 L 618.0 480.8 L 600.7 492.5 L 583.5 504.2 L 566.2 515.8 L 549.0 527.5 L 531.8 539.2 L 514.5 550.9 L 497.3 562.6 L 480.0 574.3 L 462.8 586.0 L 445.6 597.7 L 428.3 609.4 L 411.1 621.1 L 393.8 632.8 L 376.6 644.5 L 359.4 656.2 L 342.1 667.9 L 324.9 679.6 L 307.6 691.3 L 290.4 703.0 L 273.2 714.7 L 255.9 726.4 L 238.7 738.1 L 221.4 749.8 L 204.2 761.5 L 187.0 773.2 L 169.7 784.9 L 152.5 796.6 L 135.2 808.3 L 118.0 820.0 Z" fill="#007AFF" fill-opacity="0.13"/>
+<line x1="118.0" y1="820.0" x2="980.0" y2="235.1" stroke="#8E8E93" stroke-width="2.4" stroke-dasharray="8 6"/>
+<path class="lg-perfect" d="M 118.0 820.0 L 277.5 235.1 L 980.0 235.1" fill="none" stroke="#28CD41" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 118.0 820.0 L 135.2 762.3 L 152.5 711.7 L 169.7 667.5 L 187.0 624.0 L 204.2 584.5 L 221.4 552.1 L 238.7 524.4 L 255.9 492.0 L 273.2 465.1 L 290.4 450.1 L 307.6 427.9 L 324.9 413.7 L 342.1 399.5 L 359.4 384.5 L 376.6 368.7 L 393.8 356.1 L 411.1 349.7 L 428.3 334.7 L 445.6 330.7 L 462.8 326.0 L 480.0 318.9 L 497.3 307.0 L 514.5 296.7 L 531.8 289.6 L 549.0 284.9 L 566.2 277.0 L 583.5 274.6 L 600.7 268.3 L 618.0 266.7 L 635.2 258.8 L 652.4 256.4 L 669.7 254.9 L 686.9 253.3 L 704.2 252.5 L 721.4 249.3 L 738.6 247.7 L 755.9 246.1 L 773.1 244.6 L 790.4 242.2 L 807.6 240.7 L 824.8 239.8 L 842.1 239.8 L 859.3 239.1 L 876.6 238.3 L 893.8 237.5 L 911.0 235.9 L 928.3 235.9 L 945.5 235.1 L 962.8 235.1 L 980.0 235.1" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="lg-model" d="M 118.0 820.0 L 135.2 762.3 L 152.5 711.7 L 169.7 667.5 L 187.0 624.0 L 204.2 584.5 L 221.4 552.1 L 238.7 524.4 L 255.9 492.0 L 273.2 465.1 L 290.4 450.1 L 307.6 427.9 L 324.9 413.7 L 342.1 399.5 L 359.4 384.5 L 376.6 368.7 L 393.8 356.1 L 411.1 349.7 L 428.3 334.7 L 445.6 330.7 L 462.8 326.0 L 480.0 318.9 L 497.3 307.0 L 514.5 296.7 L 531.8 289.6 L 549.0 284.9 L 566.2 277.0 L 583.5 274.6 L 600.7 268.3 L 618.0 266.7 L 635.2 258.8 L 652.4 256.4 L 669.7 254.9 L 686.9 253.3 L 704.2 252.5 L 721.4 249.3 L 738.6 247.7 L 755.9 246.1 L 773.1 244.6 L 790.4 242.2 L 807.6 240.7 L 824.8 239.8 L 842.1 239.8 L 859.3 239.1 L 876.6 238.3 L 893.8 237.5 L 911.0 235.9 L 928.3 235.9 L 945.5 235.1 L 962.8 235.1 L 980.0 235.1" fill="none" stroke="#007AFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="291.5" y="221.1" font-size="21" font-weight="600" fill="#28CD41">Perfect model</text>
+<text x="744.6" y="428.9" font-size="21" font-weight="600" fill="#8E8E93" transform="rotate(-40 744.6 428.9)">Random baseline</text>
+<text x="972.0" y="217.1" font-size="23" font-weight="700" fill="#007AFF" text-anchor="end">Model</text>
+<line x1="290.4" y1="820.0" x2="290.4" y2="450.1" stroke="#FF9500" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.85"/>
+<line x1="118.0" y1="450.1" x2="290.4" y2="450.1" stroke="#FF9500" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.85"/>
+<g class="pt" tabindex="0" role="img" aria-label="Top 20% contacted → 63% of churners reached (3.16× better than random)">
+<title>Top 20% contacted → 63% of churners reached (3.16× better than random)</title>
+<circle class="halo" cx="290.4" cy="450.1" r="22" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="lg-marker" cx="290.4" cy="450.1" r="11" fill="#FF9500" stroke="#FFFFFF" stroke-width="2.5"/>
+</g>
+<text x="310.4" y="436.1" font-size="22" font-weight="700" fill="#FF9500">Top 20% → 63% of churners</text>
+<text x="310.4" y="462.1" font-size="20" fill="#6E6E73">3.16× better than random</text>
+<line x1="118.0" y1="200.0" x2="118.0" y2="820.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="118.0" y1="820.0" x2="980.0" y2="820.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="118.0" y1="820.0" x2="118.0" y2="827.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="118.0" y="850.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0%</text>
+<line x1="111.0" y1="820.0" x2="118.0" y2="820.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="104.0" y="826.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">0%</text>
+<line x1="290.4" y1="820.0" x2="290.4" y2="827.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="290.4" y="850.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">20%</text>
+<line x1="111.0" y1="703.0" x2="118.0" y2="703.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="104.0" y="709.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">20%</text>
+<line x1="462.8" y1="820.0" x2="462.8" y2="827.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="462.8" y="850.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">40%</text>
+<line x1="111.0" y1="586.0" x2="118.0" y2="586.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="104.0" y="592.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">40%</text>
+<line x1="635.2" y1="820.0" x2="635.2" y2="827.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="635.2" y="850.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">60%</text>
+<line x1="111.0" y1="469.1" x2="118.0" y2="469.1" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="104.0" y="475.1" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">60%</text>
+<line x1="807.6" y1="820.0" x2="807.6" y2="827.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="807.6" y="850.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">80%</text>
+<line x1="111.0" y1="352.1" x2="118.0" y2="352.1" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="104.0" y="358.1" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">80%</text>
+<line x1="980.0" y1="820.0" x2="980.0" y2="827.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="980.0" y="850.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100%</text>
+<line x1="111.0" y1="235.1" x2="118.0" y2="235.1" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="104.0" y="241.1" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100%</text>
+<text x="549.0" y="892.0" font-size="22" fill="#1D1D1F" text-anchor="middle">Share of customers contacted (ranked by model)</text>
+<text x="52.0" y="510.0" font-size="22" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 510.0)">Share of churners reached</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(992,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

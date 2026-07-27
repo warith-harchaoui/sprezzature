@@ -1,0 +1,13 @@
+REPLACE THIS FILE with the verbatim transcript (one sentence per line)
+of en-clean-30s.wav once you have pinned a real source URL in fetch.py.
+
+Test convention: jiwer is fed the file's whole contents (lower-cased,
+whitespace-collapsed) as the reference. Punctuation outside word
+boundaries is tolerated by jiwer's default normaliser, but contractions
+should match the reader's actual delivery (e.g. write "don't" if she
+says it, "do not" if she does not).
+
+Example shape (delete this preamble before committing real text):
+
+The quick brown fox jumps over the lazy dog.
+She sells seashells by the seashore.

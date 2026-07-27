@@ -1,0 +1,54 @@
+.private/
+.DS_Store
+__MACOSX/
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+
+# Local secrets and un-shared helper scripts — never publish these.
+nomoreclaude.sh
+.secrets/
+.pypirc
+
+# Local-only reference material for map craft (source art, fonts, layer
+# decompositions). Never committed — private study material, out of the repo.
+geojug/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+4ml/
+4ml.zip
+4ml-new/
+
+# Audio fixtures for the eval suite — committed: extract_cv_subset.py,
+# fetch.py, MANIFEST.json, STATS.json, *.txt truth files, README.
+# NOT committed: the WAVs themselves (~25 MB per language, rebuildable from
+# the manifest + Common Voice release via extract_cv_subset.py).
+tests/fixtures/audio/*.wav
+tests/fixtures/audio/cv/*/*.wav
+
+# Wikipedia eval fixtures (download via tests/fixtures/images/fetch_wikipedia.py)
+# Committed: fetch_wikipedia.py, wiki/truth.json, README. NOT committed: the
+# image bytes themselves (regenerable from upload.wikimedia.org, hash-pinned).
+tests/fixtures/images/wiki/*.jpg
+tests/fixtures/images/wiki/*.jpeg
+tests/fixtures/images/wiki/*.png
+tests/fixtures/images/wiki/*.svg
+
+.*
+!.github/
+!.gitignore
+!.pre-commit-hooks.yaml
+# python build artifacts
+build/
+*.egg-info/

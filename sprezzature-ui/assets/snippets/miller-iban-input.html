@@ -1,0 +1,35 @@
+<!--
+  Miller's Law — chunk an IBAN / credit-card / long-code field into
+  4-char groups separated by a single space so the human eye can hold
+  the value in working memory. Copy-paste into any sprezzature-ui project.
+
+  The JS strips spaces before submission so the server still receives
+  the raw run. ``inputmode="numeric"`` gives mobile keyboards the
+  number pad without locking out copy-paste of alphanumeric IBANs.
+-->
+<label class="block">
+  <span class="block text-[14px] font-medium text-label-primary dark:text-label-primary-dark">
+    IBAN
+  </span>
+  <input id="iban"
+         name="iban"
+         autocomplete="off"
+         inputmode="numeric"
+         maxlength="34"
+         placeholder="FR76 3000 6000 0112 3456 7890 189"
+         class="mt-1 block w-full min-h-11 rounded-xl border border-separator bg-surface-secondary px-3 py-2 font-mono text-[15px] tracking-widest text-label-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 dark:border-separator-dark dark:bg-surface-secondary-dark dark:text-label-primary-dark">
+  <p id="iban-hint" class="mt-1 text-[13px] text-label-secondary dark:text-label-secondary-dark">
+    Chunked four characters at a time — paste the raw value, we will format it.
+  </p>
+</label>
+<script type="module">
+  const el = document.getElementById('iban');
+  el.addEventListener('input', () => {
+    const raw = el.value.replace(/\s+/g, '').toUpperCase();
+    const groups = raw.match(/.{1,4}/g) || [];
+    el.value = groups.join(' ');
+  });
+  el.form && el.form.addEventListener('submit', () => {
+    el.value = el.value.replace(/\s+/g, '');
+  });
+</script>

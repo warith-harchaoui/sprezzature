@@ -1,0 +1,71 @@
+{
+  "name": "cli-gui-demo",
+  "description": "Worked example for the sprezzature skill's CLI → GUI workflow. Wraps the imgconvert mock CLI in a vanilla-JS + Tailwind + Roboto GUI fronted by a Python SSE proxy.",
+  "demonstrates": {
+    "public/index.html": [
+      "semantic-html",
+      "dark-mode-peers",
+      "focus-rings",
+      "aria-current-on-sidebar",
+      "skip-link",
+      "translucent-sticky-header",
+      "tabular-numerals",
+      "motion-reduce-guards"
+    ],
+    "public/app.js": [
+      "es-modules",
+      "event-delegation",
+      "native-fetch-streaming-sse",
+      "form-data-serialization",
+      "theme-switcher-persisted-localStorage",
+      "no-framework-imports"
+    ],
+    "public/fonts/roboto/": [
+      "self-hosted-typeface",
+      "variable-font-woff2",
+      "ofl-license-bundled"
+    ],
+    "public/fonts/roboto-serif/": [
+      "self-hosted-typeface",
+      "variable-font-woff2",
+      "ofl-license-bundled"
+    ],
+    "public/fonts/roboto-mono/": [
+      "self-hosted-typeface",
+      "variable-font-woff2",
+      "ofl-license-bundled"
+    ],
+    "public/favicon.svg": [
+      "svg-favicon-modern-browsers",
+      "currentColor-not-used",
+      "single-element-no-text"
+    ],
+    "server.py": [
+      "python-stdlib-only",
+      "http-sse-proxy",
+      "thread-per-request",
+      "path-traversal-guard",
+      "no-third-party-deps"
+    ],
+    "cli/imgconvert.py": [
+      "argparse-three-subcommands",
+      "flag-types-cover-mapping-table",
+      "fake-progress-for-streaming-demo",
+      "stub-output-no-pillow-dep"
+    ]
+  },
+  "controls_mapped": {
+    "positional_path": "<input type=text> with placeholder",
+    "int": "<input type=number>",
+    "bounded_int": "<input type=range> with live <output>",
+    "enum_3_options": "<fieldset role=radiogroup> styled as segmented control",
+    "boolean": "<input type=checkbox role=switch> styled as pill"
+  },
+  "launch": "python server.py  →  http://localhost:8787",
+  "stack": {
+    "runtime": "Python 3.9+ stdlib (server, CLI); browser-native ES modules (GUI)",
+    "css": "Tailwind Play CDN (zero build for demo; production swap to Tailwind CLI documented in stack-tailwind.md)",
+    "fonts": "Roboto, Roboto Serif, Roboto Mono (variable + italic-variable each) under SIL Open Font License",
+    "frameworks": "none"
+  }
+}

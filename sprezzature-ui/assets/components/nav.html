@@ -1,0 +1,99 @@
+<!-- Navigation — sticky top bar, sidebar, bottom tab bar. -->
+
+<!-- Sticky translucent top bar -->
+<header class="sticky top-0 z-30 border-b border-separator/40
+               bg-surface-primary/70 backdrop-blur-ultra
+               dark:bg-surface-primary-dark/70">
+  <div class="mx-auto flex w-full max-w-6xl items-center gap-3 px-4 py-3">
+    <a href="/" class="flex items-center gap-2 font-semibold text-label-primary dark:text-label-primary-dark">
+      <span class="grid h-7 w-7 place-items-center rounded-lg bg-brand-blue text-white">F</span>
+      <span>Sprezzature</span>
+    </a>
+    <nav class="ml-auto flex items-center gap-1">
+      <a href="/docs" class="rounded-lg px-3 py-2 text-[15px] text-label-secondary hover:bg-surface-secondary dark:text-label-secondary-dark dark:hover:bg-surface-secondary-dark">Docs</a>
+      <a href="/pricing" class="rounded-lg px-3 py-2 text-[15px] text-label-secondary hover:bg-surface-secondary dark:text-label-secondary-dark dark:hover:bg-surface-secondary-dark">Pricing</a>
+
+      <!--
+        Theme toggle — canonical placement: top-right of the header,
+        right before the primary action. Auto is the default; the
+        segmented control persists user choice via the theme.js helper.
+        Full markup + wiring in assets/components/theme-toggle.html.
+      -->
+      <div role="radiogroup" aria-label="Color scheme"
+           class="ml-1 hidden h-9 items-center gap-0.5 rounded-full
+                  bg-surface-secondary p-0.5 text-[13px] font-medium
+                  dark:bg-surface-secondary-dark sm:inline-flex"
+           data-theme-toggle>
+        <button type="button" role="radio" aria-checked="false" data-theme="light"
+                class="inline-flex h-8 items-center justify-center gap-1 rounded-full px-3 text-label-secondary aria-checked:bg-surface-primary aria-checked:text-label-primary aria-checked:shadow-sm dark:text-label-secondary-dark dark:aria-checked:bg-surface-primary-dark dark:aria-checked:text-label-primary-dark">
+          <span aria-hidden="true">🌞</span><span class="sr-only md:not-sr-only">Light</span>
+        </button>
+        <button type="button" role="radio" aria-checked="false" data-theme="dark"
+                class="inline-flex h-8 items-center justify-center gap-1 rounded-full px-3 text-label-secondary aria-checked:bg-surface-primary aria-checked:text-label-primary aria-checked:shadow-sm dark:text-label-secondary-dark dark:aria-checked:bg-surface-primary-dark dark:aria-checked:text-label-primary-dark">
+          <span aria-hidden="true">🌚</span><span class="sr-only md:not-sr-only">Dark</span>
+        </button>
+        <button type="button" role="radio" aria-checked="true" data-theme="auto"
+                class="inline-flex h-8 items-center justify-center gap-1 rounded-full px-3 text-label-secondary aria-checked:bg-surface-primary aria-checked:text-label-primary aria-checked:shadow-sm dark:text-label-secondary-dark dark:aria-checked:bg-surface-primary-dark dark:aria-checked:text-label-primary-dark">
+          <span aria-hidden="true">🌗</span><span class="sr-only md:not-sr-only">Auto</span>
+        </button>
+      </div>
+      <!-- On <sm screens, fall back to the icon-only cycle button. -->
+      <button type="button" aria-label="Color scheme: Auto. Activate to switch to Light."
+              data-theme-cycle
+              class="ml-1 grid h-11 w-11 place-items-center rounded-full text-[18px] text-label-primary hover:bg-surface-secondary dark:text-label-primary-dark dark:hover:bg-surface-secondary-dark sm:hidden">
+        <span data-theme-glyph aria-hidden="true">🌗</span>
+      </button>
+
+      <a href="/login" class="rounded-full bg-brand-blue px-4 py-2 text-[15px] font-medium text-white hover:opacity-90">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Sidebar -->
+<aside class="hidden w-60 flex-none flex-col gap-1 border-r border-separator/40 bg-surface-secondary p-3 lg:flex dark:bg-surface-secondary-dark">
+  <a href="/" class="flex items-center gap-2 rounded-lg px-3 py-2 font-medium hover:bg-surface-tertiary dark:hover:bg-surface-tertiary-dark">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+    Home
+  </a>
+  <a href="/projects" aria-current="page"
+     class="flex items-center gap-2 rounded-lg bg-surface-tertiary px-3 py-2 font-medium dark:bg-surface-tertiary-dark">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
+    Projects
+  </a>
+  <a href="/settings" class="flex items-center gap-2 rounded-lg px-3 py-2 font-medium hover:bg-surface-tertiary dark:hover:bg-surface-tertiary-dark">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.8L4.2 6a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V2a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>
+    Settings
+  </a>
+</aside>
+
+<!-- Bottom tab bar (mobile) -->
+<nav class="sticky bottom-0 z-30 border-t border-separator/40 bg-surface-primary/70 backdrop-blur-ultra
+            pb-[max(env(safe-area-inset-bottom),8px)] pt-2 lg:hidden
+            dark:bg-surface-primary-dark/70">
+  <ul class="mx-auto grid max-w-md grid-cols-4 gap-1 px-2">
+    <li>
+      <a href="/" class="grid place-items-center gap-1 rounded-lg py-1 text-[11px] text-brand-blue">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/search" class="grid place-items-center gap-1 rounded-lg py-1 text-[11px] text-label-secondary dark:text-label-secondary-dark">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.34-4.34"/></svg>
+        Search
+      </a>
+    </li>
+    <li>
+      <a href="/notifications" class="grid place-items-center gap-1 rounded-lg py-1 text-[11px] text-label-secondary dark:text-label-secondary-dark">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+        Inbox
+      </a>
+    </li>
+    <li>
+      <a href="/me" class="grid place-items-center gap-1 rounded-lg py-1 text-[11px] text-label-secondary dark:text-label-secondary-dark">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>
+        Profile
+      </a>
+    </li>
+  </ul>
+</nav>

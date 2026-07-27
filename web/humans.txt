@@ -1,0 +1,11 @@
+/* TEAM */
+
+Author -- see repository metadata.
+
+/* SITE */
+
+Last update: 2026-07-24
+Language: English
+Doctype: HTML5
+Components: vanilla JavaScript, Tailwind CSS, Roboto / Roboto Serif / Roboto Mono
+

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="820" viewBox="0 0 1120 820" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="mosaic-t mosaic-d">
+<title id="mosaic-t">On phones, wallets have overtaken cards</title>
+<desc id="mosaic-d">Marimekko mosaic: column widths are each device's share of all online checkouts (Mobile widest at 54 percent), and each column stacks payment methods by their within-device share. On Mobile, Wallet is the tallest segment, overtaking Card.</desc>
+<style>.tile{transition:transform .18s ease, filter .18s ease;transform-box:fill-box;transform-origin:center;}.tile:hover,.tile:focus{filter:brightness(1.06);transform:scale(1.015);outline:none;}.tile:focus{stroke:#1D1D1F;stroke-width:2;}@media (prefers-reduced-motion: reduce){.tile{transition:none;}.tile:hover,.tile:focus{transform:none;}}</style>
+<rect width="1120" height="820" fill="#FFFFFF"/>
+<text x="96" y="66" font-size="34" font-weight="700" fill="#1D1D1F">On phones, wallets have overtaken cards</text>
+<text x="96" y="102" font-size="20" fill="#6E6E73">Share of online-store checkouts by device and payment method - illustrative quarter</text>
+<text x="34" y="476" font-size="18" fill="#6E6E73" text-anchor="middle" transform="rotate(-90 34 476)">Share within device</text>
+<text x="78" y="222" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0%</text>
+<line x1="84" y1="216" x2="96" y2="216" stroke="#E5E5EA" stroke-width="1.5"/>
+<text x="78" y="352" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">25%</text>
+<line x1="84" y1="346" x2="96" y2="346" stroke="#E5E5EA" stroke-width="1.5"/>
+<text x="78" y="482" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">50%</text>
+<line x1="84" y1="476" x2="96" y2="476" stroke="#E5E5EA" stroke-width="1.5"/>
+<text x="78" y="612" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">75%</text>
+<line x1="84" y1="606" x2="96" y2="606" stroke="#E5E5EA" stroke-width="1.5"/>
+<text x="78" y="742" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">100%</text>
+<line x1="84" y1="736" x2="96" y2="736" stroke="#E5E5EA" stroke-width="1.5"/>
+<rect class="tile" tabindex="0" x="96" y="216" width="373.68" height="249.6" rx="5" fill="#007AFF" stroke="#FFFFFF" stroke-width="3"><title>Mobile - Wallet: 48% of Mobile orders (Mobile = 54% of all orders)</title></rect>
+<text x="282.84" y="346.8" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">48%</text>
+<rect class="tile" tabindex="0" x="96" y="465.6" width="373.68" height="166.4" rx="5" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="3"><title>Mobile - Card: 32% of Mobile orders (Mobile = 54% of all orders)</title></rect>
+<text x="282.84" y="554.8" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">32%</text>
+<rect class="tile" tabindex="0" x="96" y="632" width="373.68" height="78" rx="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="3"><title>Mobile - Buy-now-pay-later: 15% of Mobile orders (Mobile = 54% of all orders)</title></rect>
+<text x="282.84" y="677" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">15%</text>
+<rect class="tile" tabindex="0" x="96" y="710" width="373.68" height="26" rx="5" fill="#808080" stroke="#FFFFFF" stroke-width="3"><title>Mobile - Bank transfer: 5% of Mobile orders (Mobile = 54% of all orders)</title></rect>
+<rect class="tile" tabindex="0" x="485.68" y="216" width="214.52" height="114.4" rx="5" fill="#007AFF" stroke="#FFFFFF" stroke-width="3"><title>Desktop - Wallet: 22% of Desktop orders (Desktop = 31% of all orders)</title></rect>
+<text x="592.94" y="279.2" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">22%</text>
+<rect class="tile" tabindex="0" x="485.68" y="330.4" width="214.52" height="286" rx="5" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="3"><title>Desktop - Card: 55% of Desktop orders (Desktop = 31% of all orders)</title></rect>
+<text x="592.94" y="479.4" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">55%</text>
+<rect class="tile" tabindex="0" x="485.68" y="616.4" width="214.52" height="72.8" rx="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="3"><title>Desktop - Buy-now-pay-later: 14% of Desktop orders (Desktop = 31% of all orders)</title></rect>
+<text x="592.94" y="658.8" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">14%</text>
+<rect class="tile" tabindex="0" x="485.68" y="689.2" width="214.52" height="46.8" rx="5" fill="#808080" stroke="#FFFFFF" stroke-width="3"><title>Desktop - Bank transfer: 9% of Desktop orders (Desktop = 31% of all orders)</title></rect>
+<text x="592.94" y="718.6" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">9%</text>
+<rect class="tile" tabindex="0" x="716.2" y="216" width="103.8" height="156" rx="5" fill="#007AFF" stroke="#FFFFFF" stroke-width="3"><title>Tablet - Wallet: 30% of Tablet orders (Tablet = 15% of all orders)</title></rect>
+<text x="768.1" y="300" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">30%</text>
+<rect class="tile" tabindex="0" x="716.2" y="372" width="103.8" height="244.4" rx="5" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="3"><title>Tablet - Card: 47% of Tablet orders (Tablet = 15% of all orders)</title></rect>
+<text x="768.1" y="500.2" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">47%</text>
+<rect class="tile" tabindex="0" x="716.2" y="616.4" width="103.8" height="78" rx="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="3"><title>Tablet - Buy-now-pay-later: 15% of Tablet orders (Tablet = 15% of all orders)</title></rect>
+<text x="768.1" y="661.4" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">15%</text>
+<rect class="tile" tabindex="0" x="716.2" y="694.4" width="103.8" height="41.6" rx="5" fill="#808080" stroke="#FFFFFF" stroke-width="3"><title>Tablet - Bank transfer: 8% of Tablet orders (Tablet = 15% of all orders)</title></rect>
+<text x="768.1" y="721.2" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">8%</text>
+<text x="282.84" y="172" font-size="20" font-weight="700" fill="#1D1D1F" text-anchor="middle">Mobile</text>
+<text x="282.84" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">54% of orders</text>
+<text x="592.94" y="172" font-size="20" font-weight="700" fill="#1D1D1F" text-anchor="middle">Desktop</text>
+<text x="592.94" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">31% of orders</text>
+<text x="768.1" y="172" font-size="20" font-weight="700" fill="#1D1D1F" text-anchor="middle">Tablet</text>
+<text x="768.1" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">15% of orders</text>
+<text x="458" y="790" font-size="18" fill="#6E6E73" text-anchor="middle">Column width = share of all orders</text>
+<text x="876" y="208" font-size="18" font-weight="700" fill="#1D1D1F">Payment method</text>
+<rect x="876" y="228" width="22" height="22" rx="5" fill="#007AFF"/>
+<text x="910" y="245" font-size="17" fill="#1D1D1F">Wallet</text>
+<rect x="876" y="270" width="22" height="22" rx="5" fill="#5AC8FA"/>
+<text x="910" y="287" font-size="17" fill="#1D1D1F">Card</text>
+<rect x="876" y="312" width="22" height="22" rx="5" fill="#FF9500"/>
+<text x="910" y="329" font-size="17" fill="#1D1D1F">Buy-now-pay-later</text>
+<rect x="876" y="354" width="22" height="22" rx="5" fill="#808080"/>
+<text x="910" y="371" font-size="17" fill="#1D1D1F">Bank transfer</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(766,320)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

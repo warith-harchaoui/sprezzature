@@ -1,0 +1,31 @@
+/* Roboto — variable + italic variable.
+   Source: https://github.com/googlefonts/roboto-classic
+   License: SIL Open Font License (OFL) — see OFL.txt in this folder.
+   Self-hosted; do NOT load from a third-party CDN. */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./Roboto-Variable.woff2') format('woff2-variations'),
+       url('./Roboto-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./Roboto-Italic-Variable.woff2') format('woff2-variations'),
+       url('./Roboto-Italic-Variable.woff2') format('woff2');
+}
+
+:root {
+  --font-sans:  'Roboto', sans-serif;
+  --font-serif: 'Roboto Serif', serif;
+  --font-mono:  'Roboto Mono', ui-monospace, monospace;
+}
+
+html { font-family: var(--font-sans); }
+code, pre, kbd, samp { font-family: var(--font-mono); }

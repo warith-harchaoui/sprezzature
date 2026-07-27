@@ -1,0 +1,37 @@
+<!--
+  Doherty Threshold — perceived productivity collapses when a UI
+  takes > 400 ms with no visible feedback (Doherty & Thadani, 1982).
+  When a fetch will exceed that, show a skeleton, not a spinner —
+  the skeleton previews layout and stops the user from re-clicking.
+
+  Three skeleton rows here; replicate for longer lists. The
+  ``animate-pulse`` class is gated by ``motion-safe:`` so users with
+  reduced-motion preferences see a static placeholder.
+-->
+<ul role="status"
+    aria-label="Loading projects"
+    aria-busy="true"
+    class="space-y-3">
+  <li class="flex items-center gap-3 rounded-2xl bg-surface-secondary p-4 dark:bg-surface-secondary-dark motion-safe:animate-pulse motion-reduce:opacity-70">
+    <div class="h-10 w-10 flex-none rounded-xl bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+    <div class="flex-1 space-y-2">
+      <div class="h-3 w-3/4 rounded bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+      <div class="h-3 w-1/2 rounded bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+    </div>
+  </li>
+  <li class="flex items-center gap-3 rounded-2xl bg-surface-secondary p-4 dark:bg-surface-secondary-dark motion-safe:animate-pulse motion-reduce:opacity-70">
+    <div class="h-10 w-10 flex-none rounded-xl bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+    <div class="flex-1 space-y-2">
+      <div class="h-3 w-2/3 rounded bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+      <div class="h-3 w-1/3 rounded bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+    </div>
+  </li>
+  <li class="flex items-center gap-3 rounded-2xl bg-surface-secondary p-4 dark:bg-surface-secondary-dark motion-safe:animate-pulse motion-reduce:opacity-70">
+    <div class="h-10 w-10 flex-none rounded-xl bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+    <div class="flex-1 space-y-2">
+      <div class="h-3 w-5/6 rounded bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+      <div class="h-3 w-2/5 rounded bg-surface-tertiary dark:bg-surface-tertiary-dark"></div>
+    </div>
+  </li>
+  <li class="sr-only">Loading…</li>
+</ul>

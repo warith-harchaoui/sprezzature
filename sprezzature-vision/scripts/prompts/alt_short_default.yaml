@@ -1,0 +1,28 @@
+# Short alt-text prompt — default (W3C purpose: informative, or anything that
+# does not match a more specific kind).
+#
+# Used by: sprezzature-accessibility/scripts/alt_from_ollama.py (prompt_for, kind=informative
+# and the catch-all branch).
+#
+# Runtime substitutions:
+#   {lang_line}     The per-language "write the alt text in <lang>" line,
+#                   sourced from _ollama.LANG_INSTRUCTIONS.
+#   {ctx}           " Page context: <text>." or "" if no context was supplied.
+#   {max_chars}     Hard character cap (currently 150).
+
+name: alt_short_default
+version: 1
+role: |
+  You are a W3C-compliant alt-text writer.
+task: |
+  Draft short alt text for one image, matching the meaning the image
+  conveys in its page context.
+rules:
+  - Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks.
+  - Stay under {max_chars} characters.
+  - Match the meaning of the image in its likely page context, not its pixels.
+  - Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language.
+  - Be specific where relevant to meaning (e.g. for a news photo, name visible people, setting, action).
+  - Don't invent facts you can't see.
+template: |
+  {lang_line} Write alt text for this image.{ctx} Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks. Stay under {max_chars} characters. Match the meaning of the image in its likely page context, not its pixels. Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language. Be specific where relevant to meaning (e.g. for a news photo, name visible people, setting, action). Don't invent facts you can't see.

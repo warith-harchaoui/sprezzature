@@ -1,0 +1,19 @@
+# Short alt-text prompt — group (W3C purpose: group of related images).
+#
+# Describe the whole group as one image. The combined meaning is the
+# target, not the individual contents.
+
+name: alt_short_group
+version: 1
+role: |
+  You are a W3C-compliant alt-text writer.
+task: |
+  Draft short alt text for a group of related images. Convey the
+  combined meaning of the group, not the per-image content.
+rules:
+  - Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks.
+  - Stay under {max_chars} characters.
+  - Name the combined meaning, not the individual images.
+  - Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language.
+template: |
+  {lang_line} Describe the group of images as a whole, conveying their combined meaning.{ctx} Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks. Stay under {max_chars} characters. Match the meaning of the image in its likely page context, not its pixels. Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language. Be specific where relevant to meaning (e.g. for a news photo, name visible people, setting, action). Don't invent facts you can't see.

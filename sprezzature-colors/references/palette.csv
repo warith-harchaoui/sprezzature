@@ -1,0 +1,13 @@
+Hexcode,R,G,B,Base,LightHex,Emotion,Concepts,PsychologyPositive,PsychologyNegative
+#FF3B30,255,59,48,Red,#FFD8D6,Anger,"Excitement, Youthful, Bold","Power, Passion, Energy, Fearlessness, Strength, Excitement","Anger, Danger, Warning, Defiance, Aggression, Pain"
+#FF9500,255,149,0,Orange,#FFEACC,Surprise,"Friendly, Cheerful, Confidence","Courage, Confidence, Warmth, Innovation, Friendliness, Energy","Deprivation, Frustration, Frivolity, Immaturity, Ignorance, Sluggishness"
+#FFCC00,255,204,0,Yellow,#FFF5CC,Joy,"Optimism, Clarity, Warmth","Optimism, Warmth, Happiness, Creativity, Intellect, Extraversion","Irrationality, Fear, Caution, Anxiety, Frustration, Cowardice"
+#28CD41,40,205,65,Green,#D4F5D9,Disgust,"Peaceful, Growth, Health","Health, Hope, Freshness, Nature, Growth, Prosperity","Boredom, Stagnation, Envy, Blandness, Enervation, Sickness"
+#79DBDC,121,219,220,Turquoise,#00FFEF,Happiness,"Refreshing, Clear, Calm","Communication, Clarity, Calmness, Inspiration, Self-expression, Healing","Boastfulness, Secrecy, Unreliability, Reticence, Fence-sitting, Aloofness"
+#007AFF,0,122,255,Blue,#CCE4FF,Sadness,"Trust, Dependable, Reliable, Strength","Trust, Loyalty, Dependability, Logic, Serenity, Security","Coldness, Aloofness, Emotionless, Unfriendliness, Uncaring, Unappetizing"
+#AF52DE,175,82,222,Purple,#EFDCF8,Fear,"Creative, Imaginative, Wise","Wisdom, Luxury, Wealth, Spirituality, Imaginative, Sophistication, Introversion","Decadence, Suppression, Inferiority, Extravagance, Moodiness"
+#FF2D55,255,45,85,Pink,#FFD5DD,Love,"Playful, Romantic, Compassionate","Imaginative, Passion, Transformation, Creative, Innovation, Balance","Outrageousness, Nonconformity, Flippancy, Impulsiveness, Eccentricity, Ephemerality"
+#A52A2A,165,42,42,Brown,#EDD4D4,Comfort,"Earthy, Natural, Dependable","Seriousness, Warmth, Earthiness, Reliability, Support, Authenticity","Humorlessness, Heaviness, Unsophisticated, Sadness, Dirtiness, Conservativeness"
+#000000,0,0,0,Black,#CCCCCC,Silence,"Sophisticated, Powerful, Mysterious","Sophistication, Security, Power, Elegance, Authority, Substance","Oppression, Coldness, Menace, Heaviness, Evil, Mourning"
+#808080,128,128,128,Gray,#E6E6E6,Neutral,"Balance, Neutral, Calm","Timelessness, Neutrality, Reliability, Balance, Intelligence, Strength","Unconfident, Dampness, Depression, Hibernation, Lack of energy, Blandness"
+#F8F8F8,248,248,248,White,#FFFFFF,Peace,"Clean, Pure, Simple","Cleanliness, Clarity, Purity, Simplicity, Sophistication, Freshness","Sterility, Coldness, Unfriendliness, Elitism, Isolation, Emptiness"

@@ -1,0 +1,9 @@
+# Dependencies for sprezzature-publish/scripts/md_to_html.py
+#
+# Install:
+#   pip install -r sprezzature-publish/scripts/requirements-md-to-html.txt
+#
+# markdown:  the canonical Python Markdown → HTML library. MIT-licensed.
+# mmdc:      pure-Python Mermaid renderer; same dependency as lint_markdown.py.
+markdown>=3.5
+mmdc>=0.3

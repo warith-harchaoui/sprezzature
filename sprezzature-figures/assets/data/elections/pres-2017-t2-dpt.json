@@ -1,0 +1,644 @@
+[
+ {
+  "code": "01",
+  "nom": "Ain",
+  "Macron": 60.94,
+  "Le Pen": 39.06
+ },
+ {
+  "code": "02",
+  "nom": "Aisne",
+  "Macron": 47.09,
+  "Le Pen": 52.91
+ },
+ {
+  "code": "03",
+  "nom": "Allier",
+  "Macron": 63.9,
+  "Le Pen": 36.1
+ },
+ {
+  "code": "04",
+  "nom": "Alpes-de-Haute-Provence",
+  "Macron": 58.46,
+  "Le Pen": 41.54
+ },
+ {
+  "code": "05",
+  "nom": "Hautes-Alpes",
+  "Macron": 64.12,
+  "Le Pen": 35.88
+ },
+ {
+  "code": "06",
+  "nom": "Alpes-Maritimes",
+  "Macron": 55.35,
+  "Le Pen": 44.65
+ },
+ {
+  "code": "07",
+  "nom": "Ardèche",
+  "Macron": 62.37,
+  "Le Pen": 37.63
+ },
+ {
+  "code": "08",
+  "nom": "Ardennes",
+  "Macron": 50.73,
+  "Le Pen": 49.27
+ },
+ {
+  "code": "09",
+  "nom": "Ariège",
+  "Macron": 63.09,
+  "Le Pen": 36.91
+ },
+ {
+  "code": "10",
+  "nom": "Aube",
+  "Macron": 54.15,
+  "Le Pen": 45.85
+ },
+ {
+  "code": "11",
+  "nom": "Aude",
+  "Macron": 55.33,
+  "Le Pen": 44.67
+ },
+ {
+  "code": "12",
+  "nom": "Aveyron",
+  "Macron": 72.81,
+  "Le Pen": 27.19
+ },
+ {
+  "code": "13",
+  "nom": "Bouches-du-Rhône",
+  "Macron": 57.85,
+  "Le Pen": 42.15
+ },
+ {
+  "code": "14",
+  "nom": "Calvados",
+  "Macron": 67.11,
+  "Le Pen": 32.89
+ },
+ {
+  "code": "15",
+  "nom": "Cantal",
+  "Macron": 69.83,
+  "Le Pen": 30.17
+ },
+ {
+  "code": "16",
+  "nom": "Charente",
+  "Macron": 65.49,
+  "Le Pen": 34.51
+ },
+ {
+  "code": "17",
+  "nom": "Charente-Maritime",
+  "Macron": 64.84,
+  "Le Pen": 35.16
+ },
+ {
+  "code": "18",
+  "nom": "Cher",
+  "Macron": 61.17,
+  "Le Pen": 38.83
+ },
+ {
+  "code": "19",
+  "nom": "Corrèze",
+  "Macron": 71.0,
+  "Le Pen": 29.0
+ },
+ {
+  "code": "2A",
+  "nom": "Corse-du-Sud",
+  "Macron": 50.59,
+  "Le Pen": 49.41
+ },
+ {
+  "code": "2B",
+  "nom": "Haute-Corse",
+  "Macron": 52.28,
+  "Le Pen": 47.72
+ },
+ {
+  "code": "21",
+  "nom": "Côte-d'Or",
+  "Macron": 64.17,
+  "Le Pen": 35.83
+ },
+ {
+  "code": "22",
+  "nom": "Côtes-d'Armor",
+  "Macron": 73.47,
+  "Le Pen": 26.53
+ },
+ {
+  "code": "23",
+  "nom": "Creuse",
+  "Macron": 65.76,
+  "Le Pen": 34.24
+ },
+ {
+  "code": "24",
+  "nom": "Dordogne",
+  "Macron": 64.27,
+  "Le Pen": 35.73
+ },
+ {
+  "code": "25",
+  "nom": "Doubs",
+  "Macron": 63.77,
+  "Le Pen": 36.23
+ },
+ {
+  "code": "26",
+  "nom": "Drôme",
+  "Macron": 62.62,
+  "Le Pen": 37.38
+ },
+ {
+  "code": "27",
+  "nom": "Eure",
+  "Macron": 54.35,
+  "Le Pen": 45.65
+ },
+ {
+  "code": "28",
+  "nom": "Eure-et-Loir",
+  "Macron": 60.27,
+  "Le Pen": 39.73
+ },
+ {
+  "code": "29",
+  "nom": "Finistère",
+  "Macron": 77.33,
+  "Le Pen": 22.67
+ },
+ {
+  "code": "30",
+  "nom": "Gard",
+  "Macron": 54.75,
+  "Le Pen": 45.25
+ },
+ {
+  "code": "31",
+  "nom": "Haute-Garonne",
+  "Macron": 72.38,
+  "Le Pen": 27.62
+ },
+ {
+  "code": "32",
+  "nom": "Gers",
+  "Macron": 66.91,
+  "Le Pen": 33.09
+ },
+ {
+  "code": "33",
+  "nom": "Gironde",
+  "Macron": 70.06,
+  "Le Pen": 29.94
+ },
+ {
+  "code": "34",
+  "nom": "Hérault",
+  "Macron": 59.22,
+  "Le Pen": 40.78
+ },
+ {
+  "code": "35",
+  "nom": "Ille-et-Vilaine",
+  "Macron": 77.67,
+  "Le Pen": 22.33
+ },
+ {
+  "code": "36",
+  "nom": "Indre",
+  "Macron": 60.98,
+  "Le Pen": 39.02
+ },
+ {
+  "code": "37",
+  "nom": "Indre-et-Loire",
+  "Macron": 69.23,
+  "Le Pen": 30.77
+ },
+ {
+  "code": "38",
+  "nom": "Isère",
+  "Macron": 65.81,
+  "Le Pen": 34.19
+ },
+ {
+  "code": "39",
+  "nom": "Jura",
+  "Macron": 61.37,
+  "Le Pen": 38.63
+ },
+ {
+  "code": "40",
+  "nom": "Landes",
+  "Macron": 68.74,
+  "Le Pen": 31.26
+ },
+ {
+  "code": "41",
+  "nom": "Loir-et-Cher",
+  "Macron": 60.47,
+  "Le Pen": 39.53
+ },
+ {
+  "code": "42",
+  "nom": "Loire",
+  "Macron": 63.86,
+  "Le Pen": 36.14
+ },
+ {
+  "code": "43",
+  "nom": "Haute-Loire",
+  "Macron": 63.35,
+  "Le Pen": 36.65
+ },
+ {
+  "code": "44",
+  "nom": "Loire-Atlantique",
+  "Macron": 77.17,
+  "Le Pen": 22.83
+ },
+ {
+  "code": "45",
+  "nom": "Loiret",
+  "Macron": 63.16,
+  "Le Pen": 36.84
+ },
+ {
+  "code": "46",
+  "nom": "Lot",
+  "Macron": 72.18,
+  "Le Pen": 27.82
+ },
+ {
+  "code": "47",
+  "nom": "Lot-et-Garonne",
+  "Macron": 59.47,
+  "Le Pen": 40.53
+ },
+ {
+  "code": "48",
+  "nom": "Lozère",
+  "Macron": 67.03,
+  "Le Pen": 32.97
+ },
+ {
+  "code": "49",
+  "nom": "Maine-et-Loire",
+  "Macron": 72.82,
+  "Le Pen": 27.18
+ },
+ {
+  "code": "50",
+  "nom": "Manche",
+  "Macron": 67.23,
+  "Le Pen": 32.77
+ },
+ {
+  "code": "51",
+  "nom": "Marne",
+  "Macron": 57.01,
+  "Le Pen": 42.99
+ },
+ {
+  "code": "52",
+  "nom": "Haute-Marne",
+  "Macron": 50.48,
+  "Le Pen": 49.52
+ },
+ {
+  "code": "53",
+  "nom": "Mayenne",
+  "Macron": 72.02,
+  "Le Pen": 27.98
+ },
+ {
+  "code": "54",
+  "nom": "Meurthe-et-Moselle",
+  "Macron": 60.66,
+  "Le Pen": 39.34
+ },
+ {
+  "code": "55",
+  "nom": "Meuse",
+  "Macron": 51.62,
+  "Le Pen": 48.38
+ },
+ {
+  "code": "56",
+  "nom": "Morbihan",
+  "Macron": 71.56,
+  "Le Pen": 28.44
+ },
+ {
+  "code": "57",
+  "nom": "Moselle",
+  "Macron": 57.66,
+  "Le Pen": 42.34
+ },
+ {
+  "code": "58",
+  "nom": "Nièvre",
+  "Macron": 59.92,
+  "Le Pen": 40.08
+ },
+ {
+  "code": "59",
+  "nom": "Nord",
+  "Macron": 56.9,
+  "Le Pen": 43.1
+ },
+ {
+  "code": "60",
+  "nom": "Oise",
+  "Macron": 53.28,
+  "Le Pen": 46.72
+ },
+ {
+  "code": "61",
+  "nom": "Orne",
+  "Macron": 61.64,
+  "Le Pen": 38.36
+ },
+ {
+  "code": "62",
+  "nom": "Pas-de-Calais",
+  "Macron": 47.94,
+  "Le Pen": 52.06
+ },
+ {
+  "code": "63",
+  "nom": "Puy-de-Dôme",
+  "Macron": 71.34,
+  "Le Pen": 28.66
+ },
+ {
+  "code": "64",
+  "nom": "Pyrénées-Atlantiques",
+  "Macron": 74.81,
+  "Le Pen": 25.19
+ },
+ {
+  "code": "65",
+  "nom": "Hautes-Pyrénées",
+  "Macron": 68.19,
+  "Le Pen": 31.81
+ },
+ {
+  "code": "66",
+  "nom": "Pyrénées-Orientales",
+  "Macron": 52.84,
+  "Le Pen": 47.16
+ },
+ {
+  "code": "67",
+  "nom": "Bas-Rhin",
+  "Macron": 63.07,
+  "Le Pen": 36.93
+ },
+ {
+  "code": "68",
+  "nom": "Haut-Rhin",
+  "Macron": 57.97,
+  "Le Pen": 42.03
+ },
+ {
+  "code": "69",
+  "nom": "Rhône",
+  "Macron": 73.59,
+  "Le Pen": 26.41
+ },
+ {
+  "code": "70",
+  "nom": "Haute-Saône",
+  "Macron": 51.71,
+  "Le Pen": 48.29
+ },
+ {
+  "code": "71",
+  "nom": "Saône-et-Loire",
+  "Macron": 61.63,
+  "Le Pen": 38.37
+ },
+ {
+  "code": "72",
+  "nom": "Sarthe",
+  "Macron": 63.33,
+  "Le Pen": 36.67
+ },
+ {
+  "code": "73",
+  "nom": "Savoie",
+  "Macron": 64.74,
+  "Le Pen": 35.26
+ },
+ {
+  "code": "74",
+  "nom": "Haute-Savoie",
+  "Macron": 68.66,
+  "Le Pen": 31.34
+ },
+ {
+  "code": "75",
+  "nom": "Paris",
+  "Macron": 89.68,
+  "Le Pen": 10.32
+ },
+ {
+  "code": "76",
+  "nom": "Seine-Maritime",
+  "Macron": 60.42,
+  "Le Pen": 39.58
+ },
+ {
+  "code": "77",
+  "nom": "Seine-et-Marne",
+  "Macron": 63.86,
+  "Le Pen": 36.14
+ },
+ {
+  "code": "78",
+  "nom": "Yvelines",
+  "Macron": 77.15,
+  "Le Pen": 22.85
+ },
+ {
+  "code": "79",
+  "nom": "Deux-Sèvres",
+  "Macron": 71.54,
+  "Le Pen": 28.46
+ },
+ {
+  "code": "80",
+  "nom": "Somme",
+  "Macron": 54.22,
+  "Le Pen": 45.78
+ },
+ {
+  "code": "81",
+  "nom": "Tarn",
+  "Macron": 63.61,
+  "Le Pen": 36.39
+ },
+ {
+  "code": "82",
+  "nom": "Tarn-et-Garonne",
+  "Macron": 57.52,
+  "Le Pen": 42.48
+ },
+ {
+  "code": "83",
+  "nom": "Var",
+  "Macron": 50.85,
+  "Le Pen": 49.15
+ },
+ {
+  "code": "84",
+  "nom": "Vaucluse",
+  "Macron": 53.45,
+  "Le Pen": 46.55
+ },
+ {
+  "code": "85",
+  "nom": "Vendée",
+  "Macron": 69.96,
+  "Le Pen": 30.04
+ },
+ {
+  "code": "86",
+  "nom": "Vienne",
+  "Macron": 68.77,
+  "Le Pen": 31.23
+ },
+ {
+  "code": "87",
+  "nom": "Haute-Vienne",
+  "Macron": 70.95,
+  "Le Pen": 29.05
+ },
+ {
+  "code": "88",
+  "nom": "Vosges",
+  "Macron": 55.26,
+  "Le Pen": 44.74
+ },
+ {
+  "code": "89",
+  "nom": "Yonne",
+  "Macron": 55.04,
+  "Le Pen": 44.96
+ },
+ {
+  "code": "90",
+  "nom": "Territoire de Belfort",
+  "Macron": 58.18,
+  "Le Pen": 41.82
+ },
+ {
+  "code": "91",
+  "nom": "Essonne",
+  "Macron": 72.18,
+  "Le Pen": 27.82
+ },
+ {
+  "code": "92",
+  "nom": "Hauts-de-Seine",
+  "Macron": 85.65,
+  "Le Pen": 14.35
+ },
+ {
+  "code": "93",
+  "nom": "Seine-Saint-Denis",
+  "Macron": 78.82,
+  "Le Pen": 21.18
+ },
+ {
+  "code": "94",
+  "nom": "Val-de-Marne",
+  "Macron": 80.32,
+  "Le Pen": 19.68
+ },
+ {
+  "code": "95",
+  "nom": "Val-d'Oise",
+  "Macron": 72.53,
+  "Le Pen": 27.47
+ },
+ {
+  "code": "ZA",
+  "nom": "Guadeloupe",
+  "Macron": 75.13,
+  "Le Pen": 24.87
+ },
+ {
+  "code": "ZB",
+  "nom": "Martinique",
+  "Macron": 77.55,
+  "Le Pen": 22.45
+ },
+ {
+  "code": "ZC",
+  "nom": "Guyane",
+  "Macron": 64.89,
+  "Le Pen": 35.11
+ },
+ {
+  "code": "ZD",
+  "nom": "La Réunion",
+  "Macron": 60.25,
+  "Le Pen": 39.75
+ },
+ {
+  "code": "ZM",
+  "nom": "Mayotte",
+  "Macron": 57.11,
+  "Le Pen": 42.89
+ },
+ {
+  "code": "ZN",
+  "nom": "Nouvelle-Calédonie",
+  "Macron": 52.57,
+  "Le Pen": 47.43
+ },
+ {
+  "code": "ZP",
+  "nom": "Polynésie française",
+  "Macron": 58.39,
+  "Le Pen": 41.61
+ },
+ {
+  "code": "ZS",
+  "nom": "Saint-Pierre-et-Miquelon",
+  "Macron": 63.29,
+  "Le Pen": 36.71
+ },
+ {
+  "code": "ZW",
+  "nom": "Wallis et Futuna",
+  "Macron": 79.14,
+  "Le Pen": 20.86
+ },
+ {
+  "code": "ZX",
+  "nom": "Saint-Martin/Saint-Barthélemy",
+  "Macron": 65.03,
+  "Le Pen": 34.97
+ },
+ {
+  "code": "ZZ",
+  "nom": "Français établis hors de France",
+  "Macron": 89.31,
+  "Le Pen": 10.69
+ }
+]

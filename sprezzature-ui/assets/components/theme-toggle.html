@@ -1,0 +1,195 @@
+<!--
+  Theme toggle: a 3-state segmented control (Light / Dark / Auto).
+  Canonical placement: top-right of the sticky header, before the
+  primary action ("Sign in" / "Get started"). Falls back to a fixed
+  bottom-right corner anchor on pages with no header; see the second
+  block below.
+
+  Wiring requires the `applyTheme(mode)` helper from
+  references/stack-vanilla-js.md § "Theme switching". Default state is
+  "auto"; the JS at the bottom reads / writes `localStorage["color-scheme"]`
+  through that helper and stays in sync with system changes.
+-->
+
+
+<!-- ── Variant A — in-header segmented control ─────────────────────── -->
+
+<div role="radiogroup" aria-label="Color scheme"
+     class="inline-flex h-9 items-center gap-0.5 rounded-full
+            bg-surface-secondary p-0.5 text-[13px] font-medium
+            dark:bg-surface-secondary-dark"
+     data-theme-toggle>
+  <button type="button" role="radio" aria-checked="false"
+          data-theme="light"
+          class="inline-flex h-8 min-w-[3rem] items-center justify-center gap-1
+                 rounded-full px-3
+                 text-label-secondary dark:text-label-secondary-dark
+                 transition-colors duration-100 ease-out
+                 hover:bg-surface-tertiary dark:hover:bg-surface-tertiary-dark
+                 aria-checked:bg-surface-primary aria-checked:text-label-primary
+                 aria-checked:shadow-sm
+                 dark:aria-checked:bg-surface-primary-dark
+                 dark:aria-checked:text-label-primary-dark
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary
+                 dark:focus-visible:ring-offset-surface-primary-dark">
+    <span aria-hidden="true">🌞</span><span>Light</span>
+  </button>
+  <button type="button" role="radio" aria-checked="false"
+          data-theme="dark"
+          class="inline-flex h-8 min-w-[3rem] items-center justify-center gap-1
+                 rounded-full px-3
+                 text-label-secondary dark:text-label-secondary-dark
+                 transition-colors duration-100 ease-out
+                 hover:bg-surface-tertiary dark:hover:bg-surface-tertiary-dark
+                 aria-checked:bg-surface-primary aria-checked:text-label-primary
+                 aria-checked:shadow-sm
+                 dark:aria-checked:bg-surface-primary-dark
+                 dark:aria-checked:text-label-primary-dark
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary
+                 dark:focus-visible:ring-offset-surface-primary-dark">
+    <span aria-hidden="true">🌚</span><span>Dark</span>
+  </button>
+  <button type="button" role="radio" aria-checked="true"
+          data-theme="auto"
+          class="inline-flex h-8 min-w-[3rem] items-center justify-center gap-1
+                 rounded-full px-3
+                 text-label-secondary dark:text-label-secondary-dark
+                 transition-colors duration-100 ease-out
+                 hover:bg-surface-tertiary dark:hover:bg-surface-tertiary-dark
+                 aria-checked:bg-surface-primary aria-checked:text-label-primary
+                 aria-checked:shadow-sm
+                 dark:aria-checked:bg-surface-primary-dark
+                 dark:aria-checked:text-label-primary-dark
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary
+                 dark:focus-visible:ring-offset-surface-primary-dark">
+    <span aria-hidden="true">🌗</span><span>Auto</span>
+  </button>
+</div>
+
+
+<!-- ── Variant B — icon-only header button (compact, mobile) ────────── -->
+
+<!--
+  Cycles Auto → Light → Dark → Auto. Use on dense headers where the
+  segmented control above does not fit. The visible glyph reflects the
+  current mode; the next mode is announced via aria-label.
+-->
+
+<button type="button" aria-label="Color scheme: Auto. Activate to switch to Light."
+        data-theme-cycle
+        class="grid h-11 w-11 place-items-center rounded-full text-[18px]
+               text-label-primary hover:bg-surface-secondary
+               dark:text-label-primary-dark dark:hover:bg-surface-secondary-dark
+               focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+               focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary
+               dark:focus-visible:ring-offset-surface-primary-dark">
+  <span data-theme-glyph aria-hidden="true">🌗</span>
+</button>
+
+
+<!-- ── Variant C — fixed bottom-right anchor (no header) ────────────── -->
+
+<!--
+  When the page has no sticky chrome (single-card landings, embedded
+  widgets, the cli-gui-demo log viewer), pin Variant A to the bottom
+  right corner. `safe-area-inset` keeps it clear of the mobile home
+  indicator.
+-->
+
+<div class="fixed bottom-[max(env(safe-area-inset-bottom),16px)]
+            right-[max(env(safe-area-inset-right),16px)] z-30">
+  <!-- Drop a Variant A block here. -->
+</div>
+
+
+<!-- ── Wiring (drop once per page, after the theme.js import) ──────── -->
+
+<script type="module">
+  // Theme toggle wiring — vanilla JS, no framework.
+  //
+  // Depends on `applyTheme(mode)` from
+  // `references/stack-vanilla-js.md` § Theme switching, which already
+  // persists the choice to `localStorage["color-scheme"]` and listens
+  // for system colour-scheme changes when the mode is "auto".
+
+  import { applyTheme } from './theme.js';
+
+  /** The three valid modes in cycle order. Auto is the default. */
+  const MODES = /** @type {const} */ (['auto', 'light', 'dark']);
+
+  /** Map mode → glyph used by the icon-only Variant B button. */
+  const GLYPH = { light: '🌞', dark: '🌚', auto: '🌗' };
+
+  /** Read the persisted mode, falling back to auto. */
+  const readMode = () => {
+    const m = localStorage.getItem('color-scheme');
+    return MODES.includes(/** @type {any} */(m)) ? m : 'auto';
+  };
+
+  /**
+   * Reflect the active mode on a Variant A segmented control.
+   * @param {HTMLElement} group  The `[data-theme-toggle]` container.
+   * @param {string} mode        One of `MODES`.
+   */
+  const syncGroup = (group, mode) => {
+    for (const btn of group.querySelectorAll('[role="radio"]')) {
+      btn.setAttribute('aria-checked', String(btn.dataset.theme === mode));
+    }
+  };
+
+  /**
+   * Reflect the active mode on a Variant B icon-only button.
+   * @param {HTMLButtonElement} btn
+   * @param {string} mode
+   */
+  const syncCycle = (btn, mode) => {
+    const next = MODES[(MODES.indexOf(mode) + 1) % MODES.length];
+    btn.setAttribute('aria-label', `Color scheme: ${mode}. Activate to switch to ${next}.`);
+    const glyph = btn.querySelector('[data-theme-glyph]');
+    if (glyph) glyph.textContent = GLYPH[mode];
+  };
+
+  /** Apply + persist + reflect everywhere on the page. */
+  const setMode = (mode) => {
+    applyTheme(mode);  // writes localStorage, updates <html data-color-scheme>
+    for (const group of document.querySelectorAll('[data-theme-toggle]')) {
+      syncGroup(group, mode);
+    }
+    for (const btn of document.querySelectorAll('[data-theme-cycle]')) {
+      syncCycle(btn, mode);
+    }
+  };
+
+  // Variant A — segmented control: click + arrow-key roving focus.
+  for (const group of document.querySelectorAll('[data-theme-toggle]')) {
+    const radios = [...group.querySelectorAll('[role="radio"]')];
+    group.addEventListener('click', (e) => {
+      const btn = e.target.closest('[role="radio"]');
+      if (btn && btn.dataset.theme) setMode(btn.dataset.theme);
+    });
+    group.addEventListener('keydown', (e) => {
+      const i = radios.indexOf(document.activeElement);
+      if (i < 0) return;
+      const delta = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!delta) return;
+      e.preventDefault();
+      const next = radios[(i + delta + radios.length) % radios.length];
+      next.focus();
+      setMode(next.dataset.theme);
+    });
+  }
+
+  // Variant B — icon-only cycle button.
+  for (const btn of document.querySelectorAll('[data-theme-cycle]')) {
+    btn.addEventListener('click', () => {
+      const cur = readMode();
+      setMode(MODES[(MODES.indexOf(cur) + 1) % MODES.length]);
+    });
+  }
+
+  // Initial paint — reflect the persisted mode in every control on the page.
+  setMode(readMode());
+</script>

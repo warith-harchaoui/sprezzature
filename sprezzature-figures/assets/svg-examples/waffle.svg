@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="740" viewBox="0 0 1000 740" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wf-title wf-desc">
+<title id="wf-title">Where a home’s electricity goes, per 100 kilowatt-hours</title>
+<desc id="wf-desc">Waffle chart: a 10 by 10 grid of 100 squares, one square per percent of annual household electricity use. Heating &amp; cooling 34; Water heating 18; Appliances &amp; plug loads 16; Electric vehicle 14; Lighting 9; Cooking 9. Heating and cooling dominate at 34 squares.</desc>
+<style>
+.tile { transition: opacity .18s ease; }
+svg:hover .cat, svg:focus-within .cat { opacity: .28; }
+.cat-heating---cooling:hover .cat-heating---cooling, .cat-heating---cooling:focus .cat-heating---cooling, .cat-heating---cooling:hover, .cat-heating---cooling:focus { opacity: 1; }
+.cat-water-heating:hover .cat-water-heating, .cat-water-heating:focus .cat-water-heating, .cat-water-heating:hover, .cat-water-heating:focus { opacity: 1; }
+.cat-appliances---plug-loads:hover .cat-appliances---plug-loads, .cat-appliances---plug-loads:focus .cat-appliances---plug-loads, .cat-appliances---plug-loads:hover, .cat-appliances---plug-loads:focus { opacity: 1; }
+.cat-electric-vehicle:hover .cat-electric-vehicle, .cat-electric-vehicle:focus .cat-electric-vehicle, .cat-electric-vehicle:hover, .cat-electric-vehicle:focus { opacity: 1; }
+.cat-lighting:hover .cat-lighting, .cat-lighting:focus .cat-lighting, .cat-lighting:hover, .cat-lighting:focus { opacity: 1; }
+.cat-cooking:hover .cat-cooking, .cat-cooking:focus .cat-cooking, .cat-cooking:hover, .cat-cooking:focus { opacity: 1; }
+.legend-row { cursor: pointer; }
+.legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
+@media (prefers-contrast: more){
+  rect.cat-heating---cooling{fill:#B50000;}
+  rect.cat-water-heating{fill:#993600;}
+  rect.cat-appliances---plug-loads{fill:#004CCE;}
+  rect.cat-electric-vehicle{fill:#831FAF;}
+  rect.cat-lighting{fill:#794900;}
+  rect.cat-cooking{fill:#005F61;}
+}
+@media (forced-colors: active){
+  rect.cat-heating---cooling{fill:CanvasText;}
+  rect.cat-water-heating{fill:CanvasText;}
+  rect.cat-appliances---plug-loads{fill:CanvasText;}
+  rect.cat-electric-vehicle{fill:CanvasText;}
+  rect.cat-lighting{fill:CanvasText;}
+  rect.cat-cooking{fill:CanvasText;}
+}
+@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [fill="#E5E5EA"]{fill:#2A2A2C;}
+}
+</style>
+<rect width="1000" height="740" fill="#FFFFFF"/>
+<text x="56.0" y="66" font-size="30" font-weight="700" fill="#1D1D1F">Heating &amp; cooling eats a third of home power</text>
+<text x="56.0" y="102" font-size="18" fill="#6E6E73">Share of annual household electricity use · one square = 1 % · illustrative</text>
+<g class="cat cat-heating---cooling" tabindex="0" role="listitem"><title>Heating &amp; cooling: 34 % (34 squares)</title>
+<rect class="tile cat-heating---cooling" x="56.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<circle class="cat-heating---cooling" cx="79.0" cy="679.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-heating---cooling" x="79.0" y="679.0" text-anchor="middle" dominant-baseline="central" font-size="19" font-weight="700" fill="#1D1D1F">1</text>
+<rect class="tile cat-heating---cooling" x="56.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="56.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="112.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="168.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="224.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="224.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="224.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+<rect class="tile cat-heating---cooling" x="224.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
+</g>
+<g class="cat cat-water-heating" tabindex="0" role="listitem"><title>Water heating: 18 % (18 squares)</title>
+<rect class="tile cat-water-heating" x="224.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<circle class="cat-water-heating" cx="247.0" cy="455.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-water-heating" x="247.0" y="455.0" text-anchor="middle" dominant-baseline="central" font-size="19" font-weight="700" fill="#1D1D1F">2</text>
+<rect class="tile cat-water-heating" x="224.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="224.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="224.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="224.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="224.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="280.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="336.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+<rect class="tile cat-water-heating" x="336.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#FF9500"/>
+</g>
+<g class="cat cat-appliances---plug-loads" tabindex="0" role="listitem"><title>Appliances &amp; plug loads: 16 % (16 squares)</title>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<circle class="cat-appliances---plug-loads" cx="359.0" cy="567.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-appliances---plug-loads" x="359.0" y="567.0" text-anchor="middle" dominant-baseline="central" font-size="19" font-weight="700" fill="#1D1D1F">3</text>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="336.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+<rect class="tile cat-appliances---plug-loads" x="392.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#007AFF"/>
+</g>
+<g class="cat cat-electric-vehicle" tabindex="0" role="listitem"><title>Electric vehicle: 14 % (14 squares)</title>
+<rect class="tile cat-electric-vehicle" x="392.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<circle class="cat-electric-vehicle" cx="415.0" cy="231.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-electric-vehicle" x="415.0" y="231.0" text-anchor="middle" dominant-baseline="central" font-size="19" font-weight="700" fill="#1D1D1F">4</text>
+<rect class="tile cat-electric-vehicle" x="392.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="448.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="504.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+<rect class="tile cat-electric-vehicle" x="504.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#AF52DE"/>
+</g>
+<g class="cat cat-lighting" tabindex="0" role="listitem"><title>Lighting: 9 % (9 squares)</title>
+<rect class="tile cat-lighting" x="504.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<circle class="cat-lighting" cx="527.0" cy="567.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-lighting" x="527.0" y="567.0" text-anchor="middle" dominant-baseline="central" font-size="19" font-weight="700" fill="#1D1D1F">5</text>
+<rect class="tile cat-lighting" x="504.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="504.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="504.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="504.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="504.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="504.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="504.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+<rect class="tile cat-lighting" x="560.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FFCC00"/>
+</g>
+<g class="cat cat-cooking" tabindex="0" role="listitem"><title>Cooking: 9 % (9 squares)</title>
+<rect class="tile cat-cooking" x="560.0" y="600.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<circle class="cat-cooking" cx="583.0" cy="623.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-cooking" x="583.0" y="623.0" text-anchor="middle" dominant-baseline="central" font-size="19" font-weight="700" fill="#1D1D1F">6</text>
+<rect class="tile cat-cooking" x="560.0" y="544.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="488.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="432.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="376.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="320.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="264.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="208.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+<rect class="tile cat-cooking" x="560.0" y="152.0" width="46.0" height="46.0" rx="5" fill="#79DBDC"/>
+</g>
+<g transform="translate(660.0,160.0)">
+<g class="cat cat-heating---cooling legend-row" tabindex="0" role="listitem" transform="translate(0,0.0)"><title>Heating &amp; cooling: 34 %</title>
+<rect class="cat-heating---cooling" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#FF3B30"/>
+<circle class="cat-heating---cooling" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-heating---cooling" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">1</text>
+<text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">1. Heating &amp; cooling</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">34 %</text>
+</g>
+<g class="cat cat-water-heating legend-row" tabindex="0" role="listitem" transform="translate(0,88.0)"><title>Water heating: 18 %</title>
+<rect class="cat-water-heating" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#FF9500"/>
+<circle class="cat-water-heating" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-water-heating" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">2</text>
+<text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">2. Water heating</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">18 %</text>
+</g>
+<g class="cat cat-appliances---plug-loads legend-row" tabindex="0" role="listitem" transform="translate(0,176.0)"><title>Appliances &amp; plug loads: 16 %</title>
+<rect class="cat-appliances---plug-loads" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#007AFF"/>
+<circle class="cat-appliances---plug-loads" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-appliances---plug-loads" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">3</text>
+<text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">3. Appliances &amp; plug loads</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">16 %</text>
+</g>
+<g class="cat cat-electric-vehicle legend-row" tabindex="0" role="listitem" transform="translate(0,264.0)"><title>Electric vehicle: 14 %</title>
+<rect class="cat-electric-vehicle" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#AF52DE"/>
+<circle class="cat-electric-vehicle" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-electric-vehicle" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">4</text>
+<text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">4. Electric vehicle</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">14 %</text>
+</g>
+<g class="cat cat-lighting legend-row" tabindex="0" role="listitem" transform="translate(0,352.0)"><title>Lighting: 9 %</title>
+<rect class="cat-lighting" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#FFCC00"/>
+<circle class="cat-lighting" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-lighting" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">5</text>
+<text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">5. Lighting</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">9 %</text>
+</g>
+<g class="cat cat-cooking legend-row" tabindex="0" role="listitem" transform="translate(0,440.0)"><title>Cooking: 9 %</title>
+<rect class="cat-cooking" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#79DBDC"/>
+<circle class="cat-cooking" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
+<text class="cat-cooking" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">6</text>
+<text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">6. Cooking</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">9 %</text>
+</g>
+</g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(952,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

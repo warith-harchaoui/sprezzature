@@ -1,0 +1,10 @@
+{
+  "name": "good-contrast",
+  "tokens": {
+    "bg": "#ffffff",
+    "fg": "#111111",
+    "link": "#0b3d91",
+    "muted": "#555555"
+  },
+  "notes": "All foreground/background pairs clear WCAG AA at body-text sizes."
+}

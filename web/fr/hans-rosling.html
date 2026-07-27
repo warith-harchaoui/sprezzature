@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="fr" data-color-scheme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hommage à Hans Rosling — Sprezzature</title>
+  <meta name="description"
+    content="Un hommage animé et interactif au graphique à bulles santé-richesse de Hans Rosling — chaque pays, une image par année de 1950 à 2025, dans un seul fichier SVG autonome sans bibliothèque JavaScript. Données réelles, séparations et fusions historiques.">
+  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
+  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
+  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hommage à Hans Rosling — Sprezzature">
+  <meta property="og:description"
+    content="Un hommage animé et interactif au graphique à bulles santé-richesse de Hans Rosling — chaque pays, une image par année de 1950 à 2025, données réelles, séparations et fusions historiques.">
+  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/hans.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://harchaoui.org/warith/sprezzature/hans.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../hans-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../hans-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../hans-apple-touch-icon.png">
+  <link rel="manifest" href="../hans.webmanifest">
+  <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts/roboto/fonts.css">
+  <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
+  <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
+  <link rel="stylesheet" href="../css/app.css">
+  <style>
+    [data-fs-target] {
+      cursor: zoom-in
+    }
+
+    [data-fs-target]:fullscreen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      background: #fff;
+      border: 0;
+      padding: 2vh 3vw;
+      overflow: auto
+    }
+
+    [data-fs-target]:fullscreen object,
+    [data-fs-target]:fullscreen .gm-inline {
+      width: min(100vw, calc(72vh * 1020 / 520));
+      height: auto;
+      aspect-ratio: 1020 / 520
+    }
+
+    [data-fs-target]:fullscreen .gm-inline {
+      cursor: grab
+    }
+
+    [data-fs-target][data-fs-pseudo] {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2vh 3vw;
+      overflow: auto;
+      background: #fff
+    }
+
+    [data-fs-target][data-fs-pseudo] object {
+      width: min(100vw, calc(72vh * 1020 / 520));
+      height: auto;
+      aspect-ratio: 1020 / 520
+    }
+
+    .fs-locked {
+      overflow: hidden
+    }
+
+    [data-fs-target]:fullscreen object,
+    [data-fs-target][data-fs-pseudo] object {
+      min-width: 0
+    }
+
+    [data-fs-target]:fullscreen .gm-scroll,
+    [data-fs-target][data-fs-pseudo] .gm-scroll {
+      overflow: visible
+    }
+  </style>
+</head>
+
+<body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Aller
+    au contenu</a>
+  <header
+    class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Principale">
+      <a href="index.html"
+        class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img
+          src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <div class="flex items-center gap-3 text-sm sm:gap-4">
+        <a href="index.html#skills"
+          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline"><em>Skills</em></a>
+        <a href="figures.html"
+          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Galerie</a>
+        <a href="case-studies.html"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Études de cas</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
+        <a href="../hans-rosling.html" aria-label="English version" title="English version"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
+        <button id="theme-toggle" type="button" aria-label="Changer de thème"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="mx-auto max-w-6xl px-5 py-14">
+      <p class="font-mono text-sm text-brand-blue">sprezzature-figures · Étude de cas</p>
+      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Hommage à Hans Rosling</h1>
+      <div class="mt-6 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
+        <a href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank" rel="noopener"
+          class="block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+          <img src="../hans.png" alt="Portrait de Hans Rosling — voir sa conférence sur YouTube"
+            loading="lazy" class="h-64 w-full object-cover transition hover:opacity-90"></a>
+        <a href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank" rel="noopener"
+          class="block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+          <img src="../hans-rosling-hands.jpg" alt="Hans Rosling expliquant un graphique, les mains levées — voir sa conférence sur YouTube"
+            loading="lazy" class="h-64 w-full object-cover transition hover:opacity-90"></a>
+      </div>
+      <p class="mt-4 max-w-3xl text-lg text-neutral-600 dark:text-neutral-300">Hans Rosling a fait d'un graphique à
+        bulles une histoire que le monde entier pouvait ressentir.</p>
+      <p
+        class="mt-6 rounded-lg bg-brand-bluelight/40 px-3 py-2 text-sm text-neutral-700 dark:bg-brand-navy/20 dark:text-neutral-200 sm:hidden">
+        À voir en mode paysage. Touchez &#8599; pour le plein écran, puis pincez pour zoomer.</p>
+
+      <!-- Graphique 1 -->
+      <section data-gm-block data-fs-target class="mt-16">
+
+        <h2 class="font-serif text-2xl font-bold tracking-tight">Richesse et survie des enfants</h2>
+        <figure data-gm-fig
+          class="group relative mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" data-fs
+            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8599;
+            Plein écran</button>
+          <div class="gm-scroll overflow-x-auto"><object type="image/svg+xml"
+              data="../img/figures/gapminder-income-survival.fr.svg" class="w-full min-w-[600px]"
+              aria-label="Graphique à bulles animé pour chaque pays : chaque bulle est un pays positionné par le PIB par habitant (horizontale, échelle log) et la survie des enfants jusqu'à cinq ans (verticale), dimensionné par la population et coloré par région du monde ; une image par année de 1950 à 2025. À mesure que les pays s'enrichissent, leurs enfants survivent en plus grande proportion, et les bulles montent vers le haut et la droite.">
+              <img src="../img/figures/gapminder-income-survival.fr.svg"
+                alt="Graphique à bulles animé du PIB par habitant selon la survie des enfants pour chaque pays, une image par année de 1950 à 2025, bulles dimensionnées par la population et colorées par région, montant vers le haut et la droite à mesure que la richesse et la survie augmentent ensemble."
+                class="w-full min-w-[600px]">
+            </object></div>
+        </figure>
+        <div data-gm-controls class="mt-4 flex flex-col gap-3 text-sm">
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-gm="toggle" data-pause="&#9208; Pause" data-play="&#9654; Lire"
+              aria-pressed="true"
+              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9208;
+              Pause</button>
+            <button type="button" data-gm="restart" aria-label="Recommencer"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#8635;</button>
+            <button type="button" data-gm="prev" aria-label="Année précédente"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9664;</button>
+            <output data-gm-year
+              class="w-14 text-center font-mono text-base font-bold tabular-nums text-neutral-900 dark:text-neutral-100">1950</output>
+            <button type="button" data-gm="next" aria-label="Année suivante"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9654;</button>
+            <input type="range" data-gm-scrub min="1950" max="2025" value="1950" step="1" aria-label="Année"
+              class="h-2 min-w-[140px] flex-1 accent-brand-blue">
+          </div>
+          <div class="flex flex-wrap items-center gap-2 text-neutral-600 dark:text-neutral-300">
+            <span class="text-neutral-500">Vitesse</span>
+            <button type="button" data-gm-speed="0.5"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">0,5&#215;</button>
+            <button type="button" data-gm-speed="1" aria-pressed="true"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1&#215;</button>
+            <button type="button" data-gm-speed="2"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2&#215;</button>
+            <span class="ml-2 text-neutral-500">Aller à</span>
+            <button type="button" data-gm-year-jump="1950"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1950</button>
+            <button type="button" data-gm-year-jump="1976"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1976
+              Vietnam</button>
+            <button type="button" data-gm-year-jump="1990"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1990
+              Allemagne</button>
+            <button type="button" data-gm-year-jump="1991"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1991
+              URSS</button>
+            <button type="button" data-gm-year-jump="2020"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2020
+              Pandémie</button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="flex items-center gap-2">Suivre un pays
+              <select data-gm-follow
+                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900">
+                <option value="">&#8212;</option>
+              </select>
+            </label>
+            <p data-gm-readout hidden aria-live="polite"
+              class="rounded-lg bg-neutral-100 px-3 py-1 font-mono text-xs text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section data-gm-block data-fs-target class="mt-24 border-t border-neutral-200/70 pt-16 dark:border-neutral-800">
+
+        <h2 class="font-serif text-2xl font-bold tracking-tight">Richesse et santé</h2>
+        <figure data-gm-fig
+          class="group relative mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" data-fs
+            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8599;
+            Plein écran</button>
+          <div class="gm-scroll overflow-x-auto"><object type="image/svg+xml"
+              data="../img/figures/gapminder-animated.fr.svg" class="w-full min-w-[600px]"
+              aria-label="Graphique à bulles animé, un hommage à Hans Rosling, à partir de données réelles pour chaque pays : chaque bulle est un pays positionné par le PIB par habitant (échelle log, horizontale) et l'espérance de vie (verticale), dimensionné par la population et coloré par région du monde ; une image par année de 1950 à 2025, les bulles montent vers le haut et la droite. Les fédérations comme l'URSS apparaissent comme une seule bulle jusqu'à leur dissolution ; les nations divisées comme les deux Allemagnes apparaissent comme deux bulles jusqu'à leur fusion.">
+              <img src="../img/figures/gapminder-animated.fr.svg"
+                alt="Graphique à bulles animé du revenu selon l'espérance de vie pour chaque pays, une image par année de 1950 à 2025, bulles dimensionnées par la population et colorées par région, montant vers le haut et la droite au fil du temps."
+                class="w-full min-w-[600px]">
+            </object></div>
+        </figure>
+        <div data-gm-controls class="mt-4 flex flex-col gap-3 text-sm">
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-gm="toggle" data-pause="&#9208; Pause" data-play="&#9654; Lire"
+              aria-pressed="true"
+              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9208;
+              Pause</button>
+            <button type="button" data-gm="restart" aria-label="Recommencer"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#8635;</button>
+            <button type="button" data-gm="prev" aria-label="Année précédente"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9664;</button>
+            <output data-gm-year
+              class="w-14 text-center font-mono text-base font-bold tabular-nums text-neutral-900 dark:text-neutral-100">1950</output>
+            <button type="button" data-gm="next" aria-label="Année suivante"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9654;</button>
+            <input type="range" data-gm-scrub min="1950" max="2025" value="1950" step="1" aria-label="Année"
+              class="h-2 min-w-[140px] flex-1 accent-brand-blue">
+          </div>
+          <div class="flex flex-wrap items-center gap-2 text-neutral-600 dark:text-neutral-300">
+            <span class="text-neutral-500">Vitesse</span>
+            <button type="button" data-gm-speed="0.5"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">0,5&#215;</button>
+            <button type="button" data-gm-speed="1" aria-pressed="true"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1&#215;</button>
+            <button type="button" data-gm-speed="2"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2&#215;</button>
+            <span class="ml-2 text-neutral-500">Aller à</span>
+            <button type="button" data-gm-year-jump="1950"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1950</button>
+            <button type="button" data-gm-year-jump="1976"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1976
+              Vietnam</button>
+            <button type="button" data-gm-year-jump="1990"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1990
+              Allemagne</button>
+            <button type="button" data-gm-year-jump="1991"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1991
+              URSS</button>
+            <button type="button" data-gm-year-jump="2020"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2020
+              Pandémie</button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="flex items-center gap-2">Suivre un pays
+              <select data-gm-follow
+                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900">
+                <option value="">&#8212;</option>
+              </select>
+            </label>
+            <p data-gm-readout hidden aria-live="polite"
+              class="rounded-lg bg-neutral-100 px-3 py-1 font-mono text-xs text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section data-gm-block data-fs-target class="mt-24 border-t border-neutral-200/70 pt-16 dark:border-neutral-800">
+
+        <h2 class="font-serif text-2xl font-bold tracking-tight">Natalité et espérance de vie</h2>
+        <figure data-gm-fig
+          class="group relative mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" data-fs
+            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8599;
+            Plein écran</button>
+          <div class="gm-scroll overflow-x-auto"><object type="image/svg+xml"
+              data="../img/figures/gapminder-fertility.fr.svg" class="w-full min-w-[600px]"
+              aria-label="Graphique à bulles animé pour chaque pays : chaque bulle est un pays positionné par le nombre d'enfants par femme (horizontale) et l'espérance de vie (verticale), dimensionné par la population et coloré par région du monde ; une image par année de 1950 à 2025. À mesure que la fécondité baisse, les bulles se déplacent vers la gauche et montent, des familles nombreuses et des vies courtes vers les petites familles et les vies longues.">
+              <img src="../img/figures/gapminder-fertility.fr.svg"
+                alt="Graphique à bulles animé du nombre d'enfants par femme selon l'espérance de vie pour chaque pays, une image par année de 1950 à 2025, bulles dimensionnées par la population et colorées par région, passant de nombreux enfants et vies brèves vers peu d'enfants et longues vies."
+                class="w-full min-w-[600px]">
+            </object></div>
+        </figure>
+        <div data-gm-controls class="mt-4 flex flex-col gap-3 text-sm">
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-gm="toggle" data-pause="&#9208; Pause" data-play="&#9654; Lire"
+              aria-pressed="true"
+              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9208;
+              Pause</button>
+            <button type="button" data-gm="restart" aria-label="Recommencer"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#8635;</button>
+            <button type="button" data-gm="prev" aria-label="Année précédente"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9664;</button>
+            <output data-gm-year
+              class="w-14 text-center font-mono text-base font-bold tabular-nums text-neutral-900 dark:text-neutral-100">1950</output>
+            <button type="button" data-gm="next" aria-label="Année suivante"
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9654;</button>
+            <input type="range" data-gm-scrub min="1950" max="2025" value="1950" step="1" aria-label="Année"
+              class="h-2 min-w-[140px] flex-1 accent-brand-blue">
+          </div>
+          <div class="flex flex-wrap items-center gap-2 text-neutral-600 dark:text-neutral-300">
+            <span class="text-neutral-500">Vitesse</span>
+            <button type="button" data-gm-speed="0.5"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">0,5&#215;</button>
+            <button type="button" data-gm-speed="1" aria-pressed="true"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1&#215;</button>
+            <button type="button" data-gm-speed="2"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2&#215;</button>
+            <span class="ml-2 text-neutral-500">Aller à</span>
+            <button type="button" data-gm-year-jump="1950"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1950</button>
+            <button type="button" data-gm-year-jump="1976"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1976
+              Vietnam</button>
+            <button type="button" data-gm-year-jump="1990"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1990
+              Allemagne</button>
+            <button type="button" data-gm-year-jump="1991"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1991
+              URSS</button>
+            <button type="button" data-gm-year-jump="2020"
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2020
+              Pandémie</button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="flex items-center gap-2">Suivre un pays
+              <select data-gm-follow
+                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900">
+                <option value="">&#8212;</option>
+              </select>
+            </label>
+            <p data-gm-readout hidden aria-live="polite"
+              class="rounded-lg bg-neutral-100 px-3 py-1 font-mono text-xs text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+  <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
+    <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
+      <p><a class="underline hover:text-brand-blue" href="index.html">← Toutes les <em>skills</em></a> · Un pipeline
+        d'artefacts visuels pour agents par <a class="underline hover:text-brand-blue"
+          href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+    </div>
+  </footer>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/fullscreen.js" defer></script>
+  <script src="../js/gapminder-player.js" defer></script>
+</body>
+
+</html>

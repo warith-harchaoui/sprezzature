@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr" data-color-scheme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Génération d'UI — Sprezzature</title>
+  <meta name="description" content="UI vanilla JavaScript + Tailwind — composants, pages, formulaires, dialogues, tableaux de bord — pour les développeurs solo qui livrent des outils internes sans designer.">
+  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/ui.html">
+  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/ui.html">
+  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/ui.html">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Génération d'UI — Sprezzature">
+  <meta property="og:description" content="UI vanilla JavaScript + Tailwind — composants, pages, formulaires, dialogues, tableaux de bord — pour les développeurs solo qui livrent des outils internes sans designer.">
+  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/ui.html">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts/roboto/fonts.css">
+  <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
+  <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+  <header class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Primary">
+      <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <div class="flex items-center gap-3 text-sm sm:gap-4">
+        <a href="index.html#skills" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><em>Skills</em></a>
+        <a href="figures.html" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Galerie</a>
+        <a href="case-studies.html" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Études de cas</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
+        <a href="../ui.html" aria-label="English version" title="English version" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
+        <button id="theme-toggle" type="button" aria-label="Changer de thème" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="mx-auto max-w-4xl px-5 py-14">
+      <p class="font-mono text-sm text-brand-blue">sprezzature-ui</p>
+      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Génération d'interface utilisateur (UI)</h1>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">UI vanilla JavaScript (JS) + Tailwind : composants, pages, formulaires, dialogues, tableaux de bord, pour les développeurs solo qui livrent des outils internes sans designer.</p>
+      <div class="mt-6 flex flex-wrap gap-3 text-sm">
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy">SKILL.md (la spec agent)</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600">⭐️ sur GitHub</a>
+      </div>
+    </section>
+    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto grid max-w-4xl gap-8 px-5 py-12 sm:grid-cols-2">
+        <div>
+          <h2 class="text-lg font-bold">Produit</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+          <li>HTML (langage de balisage des pages web) sémantique + Tailwind : formulaires, modales, navigation, tableaux de bord, tables de données, réglages, états vides, squelettes</li>
+          <li>Variantes en mode sombre, anneaux de focus, garde-fous d'animation réduite par défaut</li>
+          <li>La règle des trois Roboto (sans + serif + mono), en respectant toute police que vous nommez</li>
+          <li>i18n extrait dans un seul fichier de configuration YAML partagé entre interface graphique (GUI) et prompts</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold">Audite</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+          <li>Auditer une UI existante selon les conventions de sprezzature-ui et d'ergonomie</li>
+          <li>Auditer la couverture i18n et repérer les chaînes non traduites</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 class="text-lg font-bold">Dites l'une de ces phrases</h2>
+        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">La <em>skill</em> se déclenche sur une formulation de ce type, sans commande à mémoriser.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">construis une UI</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">crée un composant</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">fais un formulaire / une modale / une nav</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">monte une landing</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">tableau de bord / table de données</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">bouton dark mode</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">layout responsive</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">audite cette UI</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">i18n en YAML</code>
+        </div>
+      </div>
+    </section>
+    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 class="text-lg font-bold">Bibliothèque de références</h2>
+        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Les connaissances sur lesquelles la <em>skill</em> s'appuie : à lire directement dans le repo.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/stack-tailwind.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Tailwind stack</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/stack-vanilla-js.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Vanilla JS</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/anti-patterns.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Anti-patterns</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/checklist.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Ship checklist</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/ux-psychology.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">UX psychology</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/ergonomics-criteria.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Ergonomics</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/dashboard-ergonomics.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Dashboards</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/material-design.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Material</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/dataviz-chart-selection.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Chart selection</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/dataviz-color-palettes.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Dataviz palettes</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/dataviz-maps.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Dataviz maps</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/charts-vega.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Charts in Vega</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/color-psychology.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Color psychology</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/examples.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-blue dark:border-neutral-700">Examples</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
+    <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
+      <p><a class="underline hover:text-brand-blue" href="index.html">← Toutes les <em>skills</em></a> · <em>Skills</em> Claude / OpenCode par <a class="underline hover:text-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+    </div>
+  </footer>
+  <script src="../js/theme.js" defer></script>
+
+</body>
+</html>

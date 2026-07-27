@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="__LANG__" data-color-scheme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>__TITLE__</title>
+  <meta name="description" content="__DESC__">
+  <link rel="canonical" href="__CANONICAL__">
+  <link rel="alternate" hreflang="en" href="__ALTEN__">
+  <link rel="alternate" hreflang="fr" href="__ALTFR__">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="__BASE__favicon.ico" sizes="any">
+  <link rel="icon" href="__BASE__favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="__BASE__apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="__BASE__fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="__BASE__fonts/roboto/fonts.css">
+  <link rel="stylesheet" href="__BASE__fonts/roboto-serif/fonts.css">
+  <link rel="stylesheet" href="__BASE__fonts/roboto-mono/fonts.css">
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-theme');}catch(e){}
+    if(!s)s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    document.documentElement.setAttribute('data-color-scheme',s);})();</script>
+  <link rel="stylesheet" href="__BASE__css/app.css">
+  <style>
+    /* Cartes « papier » : les SVG portent un fond blanc, les cartes restent donc
+       claires même en thème sombre (le graphique est une feuille). */
+    .fm-embed svg { display: block; width: 100%; height: auto; }
+    .hit { cursor: default; }
+    /* info-bulle riche qui suit le curseur */
+    #fmtip { position: fixed; z-index: 60; pointer-events: none; max-width: min(320px, 90vw);
+      background: #fff; color: #1f2937; border: 1px solid #e5e7eb; border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(20,30,40,.16); padding: .55rem .75rem; font-size: .9rem;
+      font-family: Roboto, system-ui, sans-serif; }
+    #fmtip[hidden] { display: none; }
+    #fmtip .h { font-weight: 700; margin-bottom: .15rem; }
+    #fmtip .r { color: #6b7280; line-height: 1.45; }
+    /* plein écran natif + repli iOS : la carte remplit l'écran, le SVG se centre */
+    [data-fs-target]:fullscreen { background: #fff; display: flex; flex-direction: column; justify-content: center; padding: 2vh 3vw; }
+    [data-fs-target][data-fs-pseudo] { position: fixed; inset: 0; z-index: 70; background: #fff; display: flex; flex-direction: column; justify-content: center; padding: 2vh 3vw; overflow: auto; }
+    [data-fs-target]:fullscreen .fm-embed, [data-fs-target][data-fs-pseudo] .fm-embed { max-height: 88vh; }
+    [data-fs-target]:fullscreen .fm-embed svg, [data-fs-target][data-fs-pseudo] .fm-embed svg { max-height: 88vh; width: 100%; object-fit: contain; }
+    .fs-locked { overflow: hidden; }
+    /* Sur téléphone, chaque graphique tient dans la largeur (aperçu complet) ;
+       le détail se lit en plein écran via le bouton ⤢. Pas de défilement
+       latéral caché, qui laissait la moitié droite du graphique hors écran. */
+  </style>
+</head>
+<body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">__SKIP__</a>
+  <header class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="__NAVLABEL__">
+      <a href="index.html" class="flex shrink-0 items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img src="__BASE__img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <div class="flex min-w-0 items-center gap-3 text-sm sm:gap-4">
+        <a href="index.html#skills" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">__NAV_SKILLS__</a>
+        <a href="figures.html" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">__NAV_GALLERY__</a>
+        <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">__NAV_CASES__</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">__NAV_GH__</a>
+        __SCENARIO__
+        __LANGFLAG__
+        <button id="theme-toggle" type="button" aria-label="__THEMELABEL__" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="mx-auto max-w-6xl px-5 pt-12 pb-6">
+      <p class="font-mono text-sm text-brand-blue">__EYEBROW__</p>
+      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">__H1__</h1>
+      __KPIS__
+    </section>
+
+    <section class="mx-auto max-w-6xl px-5 pb-16">
+      <p class="mb-6 rounded-lg bg-brand-bluelight/40 px-3 py-2 text-sm text-neutral-700 dark:bg-brand-navy/20 dark:text-neutral-200 sm:hidden">__HINT__</p>
+      <div class="space-y-6">
+        __DASHBOARD__
+      </div>
+      <p class="mt-8 text-sm text-neutral-500 dark:text-neutral-400">__DISCLAIMER__</p>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
+    <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
+      <p>__FOOTER__</p>
+    </div>
+  </footer>
+
+  <div id="fmtip" role="tooltip" data-fs-follow hidden></div>
+  <script src="__BASE__js/theme.js" defer></script>
+  <script src="__BASE__js/fullscreen.js" defer></script>
+  <script src="__BASE__js/financial-markets.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "_note": "This file is rewritten in place by fetch.py on each run. The keys below document the schema; values become real after you pin source URLs in fetch.py and run it locally. WAVs are gitignored; this manifest, the .txt truth files, the README, and fetch.py are committed.",
+  "clips": {
+    "en-clean-30s": {
+      "source_url": "https://archive.org/download/<librivox-item-id>/<file>.mp3",
+      "source_sha256": "",
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "duration_seconds_approx": 30.0,
+      "license": "public-domain (LibriVox)",
+      "ground_truth_txt": "en-clean-30s.txt",
+      "description": "Clean English speech, solo reader, ~30 s; ground truth in en-clean-30s.txt."
+    },
+    "fr-clean-30s": {
+      "source_url": "https://archive.org/download/<librivox-fr-item-id>/<file>.mp3",
+      "source_sha256": "",
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "duration_seconds_approx": 30.0,
+      "license": "public-domain (LibriVox)",
+      "ground_truth_txt": "fr-clean-30s.txt",
+      "description": "Clean French speech, solo reader, ~30 s; ground truth in fr-clean-30s.txt."
+    },
+    "vocab-biasing-clip": {
+      "source_url": "USER_SUPPLIED",
+      "source_sha256": "",
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "duration_seconds_approx": 10.0,
+      "license": "user-supplied",
+      "ground_truth_txt": "vocab-biasing-clip.txt",
+      "description": "~10 s recording of you saying at least one term from tests/fixtures/vocab/glossary.txt."
+    }
+  }
+}

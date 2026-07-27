@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="bg-title bg-desc">
+<title id="bg-title">Night-time incidents concentrate in the downtown core of Riverbend</title>
+<desc id="bg-desc">Square-binned density map of Riverbend (an illustrative city). The city is tiled with a regular grid of 292 square cells, each 400 metres on a side, shaded by the number of reported night-time incidents that fell inside it, from 2,386 incidents in all. The single-hue red ramp runs from pale (few incidents) to deep red (the busiest cell, 66 incidents). Incidents concentrate in the downtown core and around the transit hub and fade toward the city edge; the river channel and two parks stay empty. A north arrow (north is up) and a 2-kilometre scale bar orient the map.</desc>
+<style>
+.cell { transition: transform .16s ease, stroke .16s ease; transform-box: fill-box; transform-origin: center; }
+.cell:hover, .cell:focus { transform: scale(1.35); stroke: #1D1D1F; stroke-width: 1.4; outline: none; }
+.legend-swatch { stroke: #FFFFFF; stroke-width: 0.6; }
+@media (prefers-reduced-motion: reduce) { .cell { transition: none; } .cell:hover, .cell:focus { transform: none; } }
+@media (prefers-contrast: more) { [fill="#6E6E73"]{fill:#1D1D1F;} [stroke="#B9C2CE"]{stroke:#5E6B7A;stroke-width:3.5;} }
+@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
+  [fill="#F5F6F8"]{fill:#161719;}
+}
+</style>
+<rect width="1280" height="900" fill="#FFFFFF"/>
+<text x="64.0" y="70" font-size="34" font-weight="700" fill="#1D1D1F">Riverbend: incidents cluster on the downtown core</text>
+<text x="64.0" y="106" font-size="20" fill="#6E6E73">Night-time incidents (10 PM-4 AM) per 400 m grid cell across Riverbend · illustrative</text>
+<defs><clipPath id="cityclip"><path d="M106.4,263.8 L318.4,202.2 L530.4,229.6 L725.4,195.4 L861.1,277.4 L886.6,455.3 L810.2,564.7 L869.6,701.5 L742.4,811.0 L538.9,783.6 L403.2,831.5 L233.6,797.3 L123.4,660.5 L89.4,469.0 L131.8,359.5Z"/></clipPath></defs>
+<path d="M106.4,263.8 L318.4,202.2 L530.4,229.6 L725.4,195.4 L861.1,277.4 L886.6,455.3 L810.2,564.7 L869.6,701.5 L742.4,811.0 L538.9,783.6 L403.2,831.5 L233.6,797.3 L123.4,660.5 L89.4,469.0 L131.8,359.5Z" fill="#F5F6F8" stroke="#B9C2CE" stroke-width="2.5" stroke-linejoin="round"/>
+<g clip-path="url(#cityclip)">
+<path d="M572.8,277.4 L708.5,263.8 L742.4,373.2 L623.7,414.2 L538.9,359.5Z" fill="#CFE9D4"/>
+<path d="M165.8,544.2 L284.5,564.7 L267.5,660.5 L148.8,646.8Z" fill="#CFE9D4"/>
+<path d="M81.0,373.2 L250.6,441.6 L403.2,482.6 L530.4,564.7 L657.6,619.4 L793.3,728.9 L903.5,797.3" fill="none" stroke="#CBDCF0" stroke-width="33.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="742.4" y="684.4" font-size="15" fill="#7E97BD" font-style="italic" transform="rotate(30 742.4 684.4)" text-anchor="middle" letter-spacing="0.5">River</text>
+<text x="640.6" y="342.4" font-size="15" fill="#5E9C6E" font-style="italic" text-anchor="middle" letter-spacing="0.5">Central Park</text>
+<g role="list" aria-label="square density bins">
+<rect class="cell" x="241.4" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="276.7" y="204.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="312.0" y="204.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="347.4" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="382.7" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="418.0" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="594.7" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="630.0" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="665.4" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="700.7" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="736.0" y="204.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="135.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="170.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="206.0" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="241.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="276.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="312.0" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="347.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="382.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="418.0" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="453.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="488.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="524.0" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="559.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="594.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="630.0" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="665.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="700.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="736.0" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="771.4" y="239.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="806.7" y="239.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="100.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="135.4" y="274.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="170.7" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="206.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="241.4" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="276.7" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFA399" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>18 incidents</title></rect>
+<rect class="cell" x="312.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#FF9B91" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>21 incidents</title></rect>
+<rect class="cell" x="347.4" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFAEA5" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>14 incidents</title></rect>
+<rect class="cell" x="382.7" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="418.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="453.4" y="274.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="488.7" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="524.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="700.7" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="736.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="771.4" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="806.7" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="842.0" y="274.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="135.4" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="170.7" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="206.0" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFABA2" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>15 incidents</title></rect>
+<rect class="cell" x="241.4" y="310.0" width="33.9" height="33.9" rx="2" fill="#FF857B" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>30 incidents</title></rect>
+<rect class="cell" x="276.7" y="310.0" width="33.9" height="33.9" rx="2" fill="#FF756B" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>37 incidents</title></rect>
+<rect class="cell" x="312.0" y="310.0" width="33.9" height="33.9" rx="2" fill="#FF7E74" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>33 incidents</title></rect>
+<rect class="cell" x="347.4" y="310.0" width="33.9" height="33.9" rx="2" fill="#FF7166" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>39 incidents</title></rect>
+<rect class="cell" x="382.7" y="310.0" width="33.9" height="33.9" rx="2" fill="#FF988E" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>22 incidents</title></rect>
+<rect class="cell" x="418.0" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="453.4" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="488.7" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="524.0" y="310.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="736.0" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="771.4" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="806.7" y="310.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="842.0" y="310.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="135.4" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="170.7" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFB4AB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>12 incidents</title></rect>
+<rect class="cell" x="206.0" y="345.4" width="33.9" height="33.9" rx="2" fill="#FF988E" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>22 incidents</title></rect>
+<rect class="cell" x="241.4" y="345.4" width="33.9" height="33.9" rx="2" fill="#FF796F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>35 incidents</title></rect>
+<rect class="cell" x="276.7" y="345.4" width="33.9" height="33.9" rx="2" fill="#FF463B" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>60 incidents</title></rect>
+<rect class="cell" x="312.0" y="345.4" width="33.9" height="33.9" rx="2" fill="#FF5045" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>55 incidents</title></rect>
+<rect class="cell" x="347.4" y="345.4" width="33.9" height="33.9" rx="2" fill="#FF584D" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>51 incidents</title></rect>
+<rect class="cell" x="382.7" y="345.4" width="33.9" height="33.9" rx="2" fill="#FF877D" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>29 incidents</title></rect>
+<rect class="cell" x="418.0" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="453.4" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="488.7" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="524.0" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="736.0" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="771.4" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="806.7" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="842.0" y="345.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="170.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="206.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFAEA5" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>14 incidents</title></rect>
+<rect class="cell" x="241.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF6257" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>46 incidents</title></rect>
+<rect class="cell" x="276.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF5E53" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>48 incidents</title></rect>
+<rect class="cell" x="312.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF4238" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>62 incidents</title></rect>
+<rect class="cell" x="347.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>66 incidents</title></rect>
+<rect class="cell" x="382.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF7368" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>38 incidents</title></rect>
+<rect class="cell" x="418.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFA399" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>18 incidents</title></rect>
+<rect class="cell" x="453.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="488.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="524.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="559.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="665.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="700.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="736.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="771.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="806.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="842.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="100.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="135.4" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="170.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="276.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FF8C82" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>27 incidents</title></rect>
+<rect class="cell" x="312.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FF7C71" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>34 incidents</title></rect>
+<rect class="cell" x="347.4" y="416.0" width="33.9" height="33.9" rx="2" fill="#FF7E74" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>33 incidents</title></rect>
+<rect class="cell" x="382.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FF857B" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>30 incidents</title></rect>
+<rect class="cell" x="418.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FF8A7F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>28 incidents</title></rect>
+<rect class="cell" x="453.4" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFA89F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>16 incidents</title></rect>
+<rect class="cell" x="488.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="524.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="559.4" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFB1A8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>13 incidents</title></rect>
+<rect class="cell" x="594.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="630.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="665.4" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="700.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="736.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="771.4" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="806.7" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="842.0" y="416.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="100.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="135.4" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="170.7" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="206.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="241.4" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFB1A8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>13 incidents</title></rect>
+<rect class="cell" x="276.7" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="418.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFA69C" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>17 incidents</title></rect>
+<rect class="cell" x="453.4" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFB1A8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>13 incidents</title></rect>
+<rect class="cell" x="488.7" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFA399" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>18 incidents</title></rect>
+<rect class="cell" x="524.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFA399" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>18 incidents</title></rect>
+<rect class="cell" x="559.4" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="594.7" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="630.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="665.4" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="700.7" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="736.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="771.4" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="806.7" y="451.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="842.0" y="451.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="100.0" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="135.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="170.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="206.0" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="241.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="276.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="312.0" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="347.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFB1A8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>13 incidents</title></rect>
+<rect class="cell" x="382.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="453.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFABA2" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>15 incidents</title></rect>
+<rect class="cell" x="488.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FF8278" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>31 incidents</title></rect>
+<rect class="cell" x="524.0" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFA89F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>16 incidents</title></rect>
+<rect class="cell" x="559.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFB4AB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>12 incidents</title></rect>
+<rect class="cell" x="594.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFB4AB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>12 incidents</title></rect>
+<rect class="cell" x="630.0" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="665.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="700.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="736.0" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="771.4" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="806.7" y="486.7" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="100.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="135.4" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="170.7" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="206.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="241.4" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="276.7" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="312.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="347.4" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="382.7" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFA89F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>16 incidents</title></rect>
+<rect class="cell" x="418.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFA89F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>16 incidents</title></rect>
+<rect class="cell" x="524.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FF9B91" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>21 incidents</title></rect>
+<rect class="cell" x="559.4" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFAEA5" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>14 incidents</title></rect>
+<rect class="cell" x="594.7" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFA399" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>18 incidents</title></rect>
+<rect class="cell" x="630.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="665.4" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="700.7" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="736.0" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="771.4" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="806.7" y="522.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="100.0" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="135.4" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFAEA5" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>14 incidents</title></rect>
+<rect class="cell" x="276.7" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFAEA5" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>14 incidents</title></rect>
+<rect class="cell" x="312.0" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFB4AB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>12 incidents</title></rect>
+<rect class="cell" x="347.4" y="557.4" width="33.9" height="33.9" rx="2" fill="#FF9B91" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>21 incidents</title></rect>
+<rect class="cell" x="382.7" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFA89F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>16 incidents</title></rect>
+<rect class="cell" x="418.0" y="557.4" width="33.9" height="33.9" rx="2" fill="#FF988E" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>22 incidents</title></rect>
+<rect class="cell" x="453.4" y="557.4" width="33.9" height="33.9" rx="2" fill="#FF9B91" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>21 incidents</title></rect>
+<rect class="cell" x="488.7" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFABA2" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>15 incidents</title></rect>
+<rect class="cell" x="594.7" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="630.0" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFB4AB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>12 incidents</title></rect>
+<rect class="cell" x="665.4" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFA89F" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>16 incidents</title></rect>
+<rect class="cell" x="700.7" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="736.0" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="771.4" y="557.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="100.0" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="135.4" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="276.7" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="312.0" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="347.4" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="382.7" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="418.0" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="453.4" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFB1A8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>13 incidents</title></rect>
+<rect class="cell" x="488.7" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFB1A8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>13 incidents</title></rect>
+<rect class="cell" x="524.0" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="559.4" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="665.4" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="700.7" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="736.0" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="771.4" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="806.7" y="592.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="276.7" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFB4AB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>12 incidents</title></rect>
+<rect class="cell" x="312.0" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="347.4" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="382.7" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="418.0" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="453.4" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="488.7" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="524.0" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="559.4" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFB7AE" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>11 incidents</title></rect>
+<rect class="cell" x="594.7" y="628.0" width="33.9" height="33.9" rx="2" fill="#FF988E" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>22 incidents</title></rect>
+<rect class="cell" x="630.0" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="700.7" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="736.0" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="771.4" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="806.7" y="628.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="135.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="170.7" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="206.0" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="241.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="276.7" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="312.0" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="347.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="382.7" y="663.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="418.0" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="453.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="488.7" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="524.0" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="559.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFBEB4" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>9 incidents</title></rect>
+<rect class="cell" x="594.7" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="630.0" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFABA2" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>15 incidents</title></rect>
+<rect class="cell" x="665.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFABA2" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>15 incidents</title></rect>
+<rect class="cell" x="771.4" y="663.4" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="806.7" y="663.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="842.0" y="663.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="170.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFCCC3" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>5 incidents</title></rect>
+<rect class="cell" x="206.0" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="241.4" y="698.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="276.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="312.0" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="347.4" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="382.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="418.0" y="698.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="453.4" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="488.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="524.0" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="559.4" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="594.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFBBB1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>10 incidents</title></rect>
+<rect class="cell" x="630.0" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFC5BB" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>7 incidents</title></rect>
+<rect class="cell" x="665.4" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="700.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
+<rect class="cell" x="806.7" y="698.7" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="206.0" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="241.4" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="276.7" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="312.0" y="734.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="347.4" y="734.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="382.7" y="734.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="418.0" y="734.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="453.4" y="734.0" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="488.7" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="524.0" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="559.4" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFC9BF" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>6 incidents</title></rect>
+<rect class="cell" x="594.7" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="630.0" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="665.4" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFDAD1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>2 incidents</title></rect>
+<rect class="cell" x="700.7" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="736.0" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="771.4" y="734.0" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="241.4" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="276.7" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="312.0" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="347.4" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="382.7" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="418.0" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="453.4" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="488.7" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="559.4" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="594.7" y="769.4" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="630.0" y="769.4" width="33.9" height="33.9" rx="2" fill="#FFD1C7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>4 incidents</title></rect>
+<rect class="cell" x="665.4" y="769.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="700.7" y="769.4" width="33.9" height="33.9" rx="2" fill="#FFD5CC" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>3 incidents</title></rect>
+<rect class="cell" x="736.0" y="769.4" width="33.9" height="33.9" rx="2" fill="#FFE0D7" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>1 incident</title></rect>
+<rect class="cell" x="347.4" y="804.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+<rect class="cell" x="382.7" y="804.7" width="33.9" height="33.9" rx="2" fill="#ECEEF1" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>no incidents</title></rect>
+</g>
+<g transform="translate(992.0,268.0)">
+<text x="0" y="-24" font-size="20" font-weight="700" fill="#1D1D1F">Incidents per cell</text>
+<rect class="legend-swatch" x="0" y="0.0" width="36.0" height="34.0" fill="#FF3B30"/>
+<rect class="legend-swatch" x="0" y="34.0" width="36.0" height="34.0" fill="#FF4D42"/>
+<rect class="legend-swatch" x="0" y="68.0" width="36.0" height="34.0" fill="#FF6055"/>
+<rect class="legend-swatch" x="0" y="102.0" width="36.0" height="34.0" fill="#FF7369"/>
+<rect class="legend-swatch" x="0" y="136.0" width="36.0" height="34.0" fill="#FF897F"/>
+<rect class="legend-swatch" x="0" y="170.0" width="36.0" height="34.0" fill="#FFA197"/>
+<rect class="legend-swatch" x="0" y="204.0" width="36.0" height="34.0" fill="#FFBCB3"/>
+<rect class="legend-swatch" x="0" y="238.0" width="36.0" height="34.0" fill="#FFE9E0"/>
+<text x="50.0" y="12" font-size="18" fill="#1D1D1F" font-family="Roboto Mono, monospace">66</text>
+<text x="50.0" y="272.0" font-size="18" fill="#6E6E73" font-family="Roboto Mono, monospace" dominant-baseline="ideographic">1</text>
+<rect class="legend-swatch" x="0" y="302.0" width="36.0" height="34.0" fill="#ECEEF1"/>
+<text x="50.0" y="324.4" font-size="17" fill="#6E6E73">no incidents</text>
+<text x="0" y="420.0" font-size="54" font-weight="700" fill="#FF3B30">38%</text>
+<text x="0" y="454.0" font-size="17.5" fill="#6E6E73">of incidents fall in the</text>
+<text x="0" y="476.0" font-size="17.5" fill="#6E6E73">busiest 10% of cells</text>
+</g>
+<g role="img" aria-label="North is up"><circle cx="831.4" cy="246.7" r="32.0" fill="#FFFFFF" fill-opacity="0.72" stroke="#B9C2CE" stroke-width="1.4"/><path d="M831.4,270.7 L838.6,246.7 L824.2,246.7 Z" fill="#FFFFFF" stroke="#6E6E73" stroke-width="1.2" stroke-linejoin="round"/><path d="M831.4,222.7 L838.6,246.7 L824.2,246.7 Z" fill="#1D1D1F" stroke-linejoin="round"/><text x="831.4" y="210.7" text-anchor="middle" font-size="17" font-weight="700" fill="#1D1D1F">N</text></g>
+<g role="img" aria-label="Scale bar: 0 to 2 kilometres"><rect x="615.9" y="795.2" width="200.7" height="54" rx="9" fill="#FFFFFF" fill-opacity="0.78"/><rect x="627.9" y="821.2" width="35.3" height="8.0" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="1"/><rect x="663.3" y="821.2" width="35.3" height="8.0" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="1"/><rect x="698.6" y="821.2" width="35.3" height="8.0" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="1"/><rect x="733.9" y="821.2" width="35.3" height="8.0" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="1"/><rect x="769.3" y="821.2" width="35.3" height="8.0" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="1"/><text x="627.9" y="815.2" text-anchor="middle" font-size="14" fill="#1D1D1F" font-family="Roboto Mono, monospace">0</text><text x="804.6" y="815.2" text-anchor="middle" font-size="14" fill="#1D1D1F" font-family="Roboto Mono, monospace">2 km</text><text x="716.3" y="844.2" text-anchor="middle" font-size="12.5" fill="#6E6E73">each cell = 400 m</text></g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1232,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

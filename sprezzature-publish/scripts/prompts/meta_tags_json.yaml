@@ -1,0 +1,44 @@
+# Meta-tag JSON drafting prompt
+#
+# Used by: sprezzature-publish/scripts/meta_from_ollama.py (build_prompt).
+#
+# Asks a local Ollama model to draft title / description / Open Graph /
+# Twitter / Schema.org-type fields for a single page, returned as a
+# strict JSON object. Dynamic fields (lang_line, brand_block,
+# goal_block, page_block) are assembled in Python and substituted at
+# runtime by `_prompts.render()`.
+
+name: meta_tags_json
+version: 1
+role: |
+  You are a careful SEO editor — concise, factual, brand-aware.
+task: |
+  Draft the meta tags for a single web page (title, description,
+  Open Graph, Twitter card, Schema.org @type) and return them as a
+  JSON object the caller will parse.
+rules:
+  - No "Welcome to", no "Discover", no "Boost", no emojis.
+  - Do not invent facts (numbers, names, claims).
+  - If a value is unknown, return an empty string for it.
+  - Output strict JSON — double-quoted keys and strings, no trailing comma.
+output_contract: |
+  Return a single JSON object, no prose around it, with exactly these keys:
+
+    title              ≤ 60 chars, page-topic first, brand last separated by " — ".
+    description        120–155 chars, one sentence, no marketing buzzwords.
+    og_title           ≤ 60 chars. Usually identical to title (without brand).
+    og_description     ≤ 155 chars. Usually identical to description.
+    og_image_alt       Short description of the hero image content. ≤ 125 chars.
+                       Empty string if no hero image is known.
+    twitter_title      Same content as og_title.
+    twitter_description Same content as og_description.
+    schema_type        One of: WebSite, Article, NewsArticle, BlogPosting,
+                       Product, Person, Recipe, Event, FAQPage,
+                       LocalBusiness, Organization.
+    keywords_hint      Array of 3–8 short keywords for the author's reference.
+                       These are NOT meant to be emitted as <meta name="keywords">.
+template: |
+  {lang_line}
+  {output_contract}
+  {brand_block}{goal_block}{page_block}
+  Write the JSON now.

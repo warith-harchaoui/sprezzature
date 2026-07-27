@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-color-scheme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind</title>
+  <meta name="description"
+    content="Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.">
+  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+
+  <!-- No-flash theme: resolve the stored / system choice before first paint -->
+  <script>(function () {
+      var s; try { s = localStorage.getItem('sprezzature-theme'); } catch (e) { }
+      if (!s) s = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-color-scheme', s);
+    })();</script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sprezzature">
+  <meta property="og:title" content="Sprezzature — nine Claude / OpenCode skills">
+  <meta property="og:description"
+    content="A design system for one frontend stack: UI, CLI→GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Make and audit.">
+  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:image:alt" content="The Sprezzature project logo.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sprezzature — nine Claude / OpenCode skills">
+  <meta name="twitter:description"
+    content="Skills for one frontend stack: UI, CLI→GUI, publishing, a11y, colors, alt text, captions, Laws of UX, and figures.">
+  <meta name="twitter:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+
+  <!-- Favicons (relative paths — the site lives under /warith/sprezzature/) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+
+  <!-- Three-Roboto rule, self-hosted (no font CDN in production) -->
+  <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/roboto/fonts.css">
+  <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
+  <link rel="stylesheet" href="fonts/roboto-mono/fonts.css">
+
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- GEO / structured data for AI overviews and search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", "name": "Sprezzature",
+        "url": "https://harchaoui.org/warith/sprezzature/",
+        "description": "Nine Claude / OpenCode skills for a single frontend stack.",
+        "inLanguage": "en" },
+      { "@type": "SoftwareSourceCode", "name": "Sprezzature",
+        "description": "A design system delivered as nine Claude / OpenCode skills: UI, CLI→GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill makes artifacts and audits them.",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "programmingLanguage": ["Python", "JavaScript", "HTML"],
+        "license": "https://spdx.org/licenses/BSD-3-Clause.html",
+        "author": { "@type": "Person", "name": "Warith Harchaoui",
+          "url": "https://www.linkedin.com/in/warith-harchaoui/" } }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip
+    to content</a>
+
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Primary">
+      <a href="#main"
+        class="flex items-center gap-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+        <img src="img/logo.png" alt="" width="28" height="28" class="rounded">
+        <span class="font-semibold tracking-tight">Sprezzature</span>
+      </a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#skills"
+          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Skills</a>
+        <a href="figures.html"
+          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Gallery</a>
+        <a href="case-studies.html"
+          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Case studies</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature"
+          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
+        <a href="fr/index.html" aria-label="Version française" title="Version française"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
+        <button id="theme-toggle" type="button" aria-label="Switch theme"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div
+        class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand-bluelight/40 to-transparent dark:from-brand-navy/20">
+      </div>
+      <div class="mx-auto max-w-6xl px-5 py-12 text-center sm:py-16">
+        <img src="img/logo.png" alt="Sprezzature logo" width="144" height="144"
+          class="mx-auto mb-4 h-28 w-28 sm:h-36 sm:w-36">
+        <h1 class="font-serif text-4xl font-bold tracking-tight sm:text-6xl">Sprezzature</h1>
+        <p class="mx-auto mt-3 text-lg text-neutral-600 dark:text-neutral-300">in the broadest sense</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="#skills"
+            class="rounded-xl bg-brand-blue px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-brand-bluedark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-blue motion-safe:hover:-translate-y-0.5">Explore
+            the nine skills</a>
+          <a href="figures.html"
+            class="rounded-xl border border-neutral-300 px-5 py-2.5 font-medium hover:border-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700">See
+            the gallery</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature"
+            class="rounded-xl border border-neutral-300 px-5 py-2.5 font-medium hover:border-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700">Give a ⭐️ on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting started -->
+    <section id="getting-started" class="border-y border-neutral-200/70 bg-neutral-50/60 py-16 dark:border-neutral-800 dark:bg-neutral-900/30">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Getting started</h2>
+        <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Sprezzature is a set of skills for
+          <strong>Claude Code</strong> or <strong>OpenCode</strong>. Install the ones you want, then ask in plain
+          language. The skill both <strong>makes</strong> the artifact and <strong>audits</strong> it.</p>
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 class="font-semibold">1 · Install</h3>
+            <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Grab the latest release, copy the skills you
+              want into your runtime.</p>
+            <pre class="mt-3 overflow-x-auto rounded-xl border border-neutral-200 bg-white p-4 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-950"><code>VERSION=0.30.1   # latest tag on the releases page
+curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz | tar xz
+
+mkdir -p ~/.claude/skills          # OpenCode: ~/.opencode/skills
+cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
+          </div>
+          <div>
+            <h3 class="font-semibold">2 · Ask, in plain English</h3>
+            <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Trigger phrases route the request; the skill
+              makes it, then audits it against the rules.</p>
+            <ul class="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-300" role="list">
+              <li>"make this page accessible" &rarr; <strong>sprezzature-accessibility</strong> lints the HTML and reports what to fix.</li>
+              <li>"make a figure of this CSV" &rarr; <strong>sprezzature-figures</strong> draws it, then audits the chart.</li>
+              <li>"wrap this CLI in a GUI" &rarr; <strong>sprezzature-cli-gui</strong> scaffolds a usable interface.</li>
+            </ul>
+            <p class="mt-4 text-sm"><a class="font-medium text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature#getting-started">Full install options (checksums, OpenCode + local Ollama, upgrades) &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mx-auto max-w-6xl px-5 py-16">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The nine skills</h2>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        <!-- cards injected below -->
+      </ul>
+    </section>
+
+    <!-- Gallery teaser (the full gallery lives on figures.html) -->
+    <section id="gallery"
+      class="border-y border-neutral-200/70 bg-neutral-50/60 py-16 dark:border-neutral-800 dark:bg-neutral-900/30">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">A taste of what it renders</h2>
+            <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">
+              A few frames from <code class="font-mono text-sm">sprezzature-figures</code>: our house style and images made with care, on a fitting palette. The full catalog of charts and statistical plots has its own page.
+            </p>
+          </div>
+          <a href="figures.html"
+            class="shrink-0 rounded-xl bg-brand-blue px-5 py-2.5 font-medium text-white hover:bg-brand-bluedark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">See
+            the full gallery →</a>
+        </div>
+        <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <!-- figures injected below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="mx-auto max-w-6xl px-5 py-16">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">What's unusual</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        <article>
+          <h3 class="font-semibold">Make <em>and</em> audit</h3>
+          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Build from scratch or on an existing codebase, then
+            audit the result against the rules.</p>
+        </article>
+        <article>
+          <h3 class="font-semibold">The models can run on your machine</h3>
+          <p class="mt-1 text-neutral-600 dark:text-neutral-300">The text, audio and vision models could run locally if you ask for it; nothing has to leave the
+            machine.</p>
+        </article>
+        <article>
+          <h3 class="font-semibold">Opinionated graphical choices</h3>
+          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Skills cover accessibility, colors, typography,
+            languages, search-engine optimization (SEO), and generative-engine optimization (GEO).</p>
+        </article>
+        <article>
+          <h3 class="font-semibold">Runtime-portable</h3>
+          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Skills serve Claude Code and OpenCode.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights" class="mx-auto max-w-6xl px-5 py-16">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Highlights</h2>
+      <div class="mt-8 grid gap-6 lg:grid-cols-2">
+        <article class="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
+          <h3 class="text-lg font-semibold">👁️ Look at the figure before you ship it</h3>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-300">You can proofread a sentence by reading it back. You
+            can't do that with a chart: whether it's right lives in the pixels, not the code. So the <strong>Ralph
+              Eyeball Loop</strong> takes whatever you made (a Vega chart, a TikZ figure, a Mermaid diagram, a whole web
+            page) and renders it to an image with a deterministic tool, no model involved. Then something actually looks
+            at it: by default the agent itself, the same one that wrote the code, or, fully offline, an optional local
+            vision model. It catches what a code check never will: a label cut off at the edge, a legend that slid off
+            the canvas, two nodes sitting on top of each other, colors that vanish for a colorblind reader. Fix the
+            source, render again, look again. It's a prescribed review loop, not an autonomous critic. Everyone else
+            aims this at web pages. We aim it at charts and diagrams too.</p>
+          <p class="mt-3"><a href="ralph-eyeball-loop.html" class="font-medium text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">How the Ralph Eyeball Loop works →</a></p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
+          <h3 class="text-lg font-semibold">📐 The figure is a real SVG, not a picture</h3>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-300">A figure ships as carefully written scalable vector graphics
+            (SVG). The generators emit the markup directly, each with a matching <code
+              class="font-mono text-sm">viewBox</code>, so the graphic scales to any size without a blurry pixel and the
+            text stays selectable. Vega-Lite is one handy way to <em>describe</em> a chart, but the Vega JavaScript
+            Object Notation (JSON) is not what you ship, and the Portable Network Graphics (PNG) is only an export for
+            places that can't take vector art. The SVG is the deliverable.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- State of the Art (from LANDSCAPE.md) -->
+    <section id="related-work" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-5xl px-5 py-16">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">State of the Art</h2>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md"
+          class="mt-8 block overflow-hidden rounded-xl border border-neutral-200 bg-white transition hover:border-brand-blue dark:border-neutral-800 dark:bg-neutral-950">
+          <img src="img/figures/landscape-positioning.png"
+            alt="Competitive-positioning map of sprezzature against the alternatives: a 2-D scatter with sprezzature anchored top-right as the reference, React diametrically opposite, and the other tools spread between a Maturity–Native horizontal axis and a Lightweight–Restyleable vertical axis."
+            loading="lazy" class="w-full">
+        </a>
+        <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+          The full landscape (15 category matrices) lives in
+          <a class="underline hover:text-brand-blue"
+            href="https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md">LANDSCAPE.md</a>
+          (<a class="underline hover:text-brand-blue"
+            href="https://github.com/warith-harchaoui/sprezzature/blob/main/PAYSAGE.md">français</a>).
+        </p>
+      </div>
+    </section>
+
+    <!-- Acknowledgments (mirrors the README) -->
+    <section id="acknowledgments" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-3xl px-5 py-16">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Acknowledgments</h2>
+        <div class="mt-4 space-y-3 text-neutral-600 dark:text-neutral-300">
+          <p>
+            Special thanks to
+            <a class="text-brand-blue hover:underline" href="https://www.behance.net/dreyadesign/projects">Audrey
+              Dejoux</a>,
+            <a class="text-brand-blue hover:underline" href="https://www.linkedin.com/in/pantanacce/">Laurent
+              Pantanacce</a>,
+            <a class="text-brand-blue hover:underline" href="https://www.linkedin.com/in/auguste-baum/">Auguste
+              Baum</a>,
+            <a class="text-brand-blue hover:underline" href="https://www.linkedin.com/in/julien-boyer-2a76878/">Julien
+              Boyer</a> and
+            <a class="text-brand-blue hover:underline"
+              href="https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gombert-84675b1b/">Jérôme Gombert</a>
+            for fruitful discussions.
+          </p>
+          <p>Color palettes from <a class="text-brand-blue hover:underline"
+              href="https://harchaoui.org/warith/colors/">harchaoui.org/warith/colors</a>.</p>
+          <p>The three Roboto families are bundled under the SIL Open Font License.</p>
+          <p>
+            We also drew on the
+            <a class="text-brand-blue hover:underline"
+              href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface
+              Guidelines</a>,
+            <a class="text-brand-blue hover:underline" href="https://material.io/design">Google Material Design</a> and
+            <a class="text-brand-blue hover:underline" href="https://lawsofux.com/">Laws of UX</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
+    <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
+      <p>By <a class="underline hover:text-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith
+          Harchaoui</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Skill cards → on-site detail pages (each showcases the whole skill).
+    const SKILLS = [
+      ['sprezzature-ui', 'UI generation', 'Vanilla JavaScript (JS) + Tailwind components, pages, forms, dashboards: three-Roboto, dark mode, focus rings by default.', 'ui.html'],
+      ['sprezzature-cli-gui', 'CLI → web GUI', 'Wrap a command-line tool in a single-page GUI; reads argparse / Click / clap / cobra.', 'cli.html'],
+      ['sprezzature-publish', 'Markdown → website', 'Meta tags, favicons, sitemap, llms.txt, feeds, plain-language rewrites, local text-to-speech (TTS) narration.', 'publish.html'],
+      ['sprezzature-accessibility', 'Accessibility lint', 'Fourteen source-decidable accessibility (a11y) rules: a fast, continuous-integration-friendly (CI) pre-commit gate.', 'accessibility.html'],
+      ['sprezzature-colors', 'Color tooling', 'Web Content Accessibility Guidelines (WCAG) contrast, color-vision-deficiency (CVD) simulation, a curated palette, perceptual lighten / darken, Tailwind theme.', 'colors.html'],
+      ['sprezzature-vision', 'Alt text (local artificial intelligence)', 'World Wide Web Consortium (W3C) alt text from a local Ollama vision model: per-image decision tree, any language, cached. Work in progress. Drafts for review.', 'vision.html'],
+      ['sprezzature-audio', 'Captions & diarization', 'WebVTT / SubRip (SRT) captions from local whisper.cpp, plus who-spoke-when and who-is-who. Runs locally. Work in progress.', 'audio.html'],
+      ['sprezzature-ux-laws', 'Laws of user experience (UX)', 'Thirty laws plus an auditor for detectable violations: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
+      ['sprezzature-figures', 'Figures', 'Vega-first charts and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
+    ];
+    const skillsUl = document.querySelector('#skills ul');
+    skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `
+      <li>
+        <a href="${page}" class="group flex h-full flex-col rounded-2xl border border-neutral-200 p-5 transition hover:border-brand-blue hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-800">
+          <h3 class="font-semibold">${title}</h3>
+          <p class="mt-0.5 font-mono text-xs text-brand-blue">${id}</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">${desc}</p>
+          <span class="mt-3 text-sm font-medium text-brand-blue">Learn more <span aria-hidden="true" class="inline-block transition group-hover:translate-x-0.5">→</span></span>
+        </a>
+      </li>`).join('');
+
+    // Six frames for the home teaser — the full set lives on figures.html.
+    // Alt text drafted by sprezzature-vision (local qwen3-vl:8b), verified by hand.
+    const FIGURES = [
+      ['choropleth.png', 'Global exposure index map: higher exposure is concentrated in Europe and North America, using quintile classes.'],
+      ['situation-ukraine.png', 'Areas-of-control map of Ukraine: government control in blue-grey, Russian-occupied areas in pink, and a contested sprezzature hatched in cream, with flashpoint cities in red. Schematic, approximate 2024 positions.'],
+      ['map-flow.png', 'Illustrative connection map: great-circle links show increasing volume flow across the globe.'],
+      ['surface-3d.png', 'Three-dimensional (3D) surface plot showing a maximum value at the apex.'],
+      ['kde2d-contour.png', 'Two-dimensional (2D) kernel density estimate (KDE) showing two distinct density clusters in the data, suggesting a bimodal distribution.'],
+      ['clustermap.png', 'Clustermap heatmap showing value correlations between s0 and various data points g0-g6.'],
+    ];
+    const galleryDiv = document.querySelector('#gallery .grid');
+    galleryDiv.innerHTML = FIGURES.map(([f, alt]) => `
+      <a href="figures.html" class="block overflow-hidden rounded-xl border border-neutral-200 bg-white transition hover:border-brand-blue dark:border-neutral-800 dark:bg-neutral-950">
+        <img src="img/figures/${f}" alt="${alt}" loading="lazy" class="aspect-[4/3] w-full object-cover">
+      </a>`).join('');
+  </script>
+  <script src="js/theme.js" defer></script>
+</body>
+
+</html>

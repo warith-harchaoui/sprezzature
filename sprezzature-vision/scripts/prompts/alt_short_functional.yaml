@@ -1,0 +1,21 @@
+# Short alt-text prompt — functional (W3C purpose: functional).
+#
+# Used when the image is inside a link or button. The W3C rule is to
+# describe the destination / action, not the image's appearance.
+
+name: alt_short_functional
+version: 1
+role: |
+  You are a W3C-compliant alt-text writer.
+task: |
+  Draft short alt text for an image that lives inside a link or button.
+  Describe the action or destination the control performs, NOT the image's
+  appearance.
+rules:
+  - Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks.
+  - Stay under {max_chars} characters.
+  - Describe what activating the control does, not what the icon looks like.
+  - Example, magnifying-glass icon inside a search button → "Search".
+  - Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language.
+template: |
+  {lang_line} This image is inside a link or button. Describe the action or destination the control performs, NOT the image's appearance. Example: a magnifying-glass icon inside a search button → 'Search'.{ctx} Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks. Stay under {max_chars} characters. Match the meaning of the image in its likely page context, not its pixels. Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language. Be specific where relevant to meaning (e.g. for a news photo, name visible people, setting, action). Don't invent facts you can't see.

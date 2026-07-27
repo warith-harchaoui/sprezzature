@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="968" viewBox="0 0 1440 968" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="vw-title vw-desc">
+<title id="vw-title">GDP per capita times population equals total GDP, as column area</title>
+<desc id="vw-desc">A variable-width column chart of the eight largest economies in 2023. Each column height is GDP per capita, each width is population, so the area is total GDP. The United States, a tall narrow column, and China, a short wide one, enclose similar area — 27.4 and 17.8 trillion US dollars — reached two different ways. India is the widest but shortest column. Illustrative figures, World Bank and IMF 2023 estimates.</desc>
+<style>.col{cursor:pointer;transition:filter .12s ease}.col:hover,.col:focus{filter:brightness(1.06)}.col:focus{outline:none}.colframe{fill:none;pointer-events:none}</style>
+<rect width="1440" height="968" fill="#FFFFFF"/>
+<line x1="92" y1="786.0" x2="1380" y2="786.0" stroke="#E8E8ED" stroke-width="1"/>
+<text x="78" y="791.0" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$0k</text>
+<line x1="92" y1="653.5" x2="1380" y2="653.5" stroke="#E8E8ED" stroke-width="1"/>
+<text x="78" y="658.5" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$20k</text>
+<line x1="92" y1="520.9" x2="1380" y2="520.9" stroke="#E8E8ED" stroke-width="1"/>
+<text x="78" y="525.9" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$40k</text>
+<line x1="92" y1="388.4" x2="1380" y2="388.4" stroke="#E8E8ED" stroke-width="1"/>
+<text x="78" y="393.4" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$60k</text>
+<line x1="92" y1="255.8" x2="1380" y2="255.8" stroke="#E8E8ED" stroke-width="1"/>
+<text x="78" y="260.8" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$80k</text>
+<text x="30" y="498.0" font-size="19" fill="#1D1D1F" font-weight="600" text-anchor="middle" transform="rotate(-90 30 498.0)">Height = GDP per capita (US$ thousands)</text>
+<text x="92" y="72" font-size="38" font-weight="700" fill="#1D1D1F">Two ways to build a multi-trillion economy</text>
+<text x="92" y="112" font-size="21" fill="#6E6E73">Column area is total GDP: the United States reaches it with high output per person, China with sheer population &#183; World Bank / IMF 2023</text>
+<rect x="92" y="147" width="6" height="30" rx="3" fill="#1D1D1F"/>
+<text x="110" y="167" font-size="17" fill="#1D1D1F">height = output per person</text>
+<rect x="412" y="159" width="34" height="6" rx="3" fill="#1D1D1F"/>
+<text x="458" y="167" font-size="17" fill="#1D1D1F">width = population</text>
+<rect x="662" y="149" width="26" height="26" rx="5" fill="#1D1D1F" opacity="0.16"/>
+<text x="700" y="167" font-size="17" fill="#1D1D1F">area = total GDP</text>
+<line x1="92" y1="786" x2="1380" y2="786" stroke="#1D1D1F" stroke-width="2"/>
+<line x1="92.0" y1="786" x2="92.0" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="207.6" y1="786" x2="207.6" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="236.5" y1="786" x2="236.5" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="259.6" y1="786" x2="259.6" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="283.1" y1="786" x2="283.1" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="325.9" y1="786" x2="325.9" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="812.6" y1="786" x2="812.6" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="887.1" y1="786" x2="887.1" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<line x1="1380.0" y1="786" x2="1380.0" y2="792" stroke="#6E6E73" stroke-width="1"/>
+<path class="col" d="M92.60,786.0 L92.60,253.56 Q92.60,244.56 101.60,244.56 L197.95,244.56 Q206.95,244.56 206.95,253.56 L206.95,786.0 Z" fill="#007AFF" tabindex="0" role="img" aria-label="United States: $81.7k per capita x 335M people = $27.4T total GDP"><title>United States: $81.7k per capita x 335M people = $27.4T total GDP</title></path>
+<text x="149.8" y="523.3" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">$27.4T</text>
+<text x="149.8" y="547.3" text-anchor="middle" font-size="14" fill="#FFFFFF" opacity="0.85">total GDP</text>
+<path class="col" d="M208.15,786.0 L208.15,445.75 Q208.15,436.75 217.15,436.75 L226.93,436.75 Q235.93,436.75 235.93,445.75 L235.93,786.0 Z" fill="#AF52DE" tabindex="0" role="img" aria-label="Germany: $52.7k per capita x 84M people = $4.4T total GDP"><title>Germany: $52.7k per capita x 84M people = $4.4T total GDP</title></path>
+<path class="col" d="M237.13,786.0 L237.13,470.93 Q237.13,461.93 246.13,461.93 L250.04,461.93 Q259.04,461.93 259.04,470.93 L259.04,786.0 Z" fill="#007AFF" tabindex="0" role="img" aria-label="United Kingdom: $48.9k per capita x 67M people = $3.3T total GDP"><title>United Kingdom: $48.9k per capita x 67M people = $3.3T total GDP</title></path>
+<path class="col" d="M260.24,786.0 L260.24,500.09 Q260.24,491.09 269.24,491.09 L273.50,491.09 Q282.50,491.09 282.50,500.09 L282.50,786.0 Z" fill="#007AFF" tabindex="0" role="img" aria-label="France: $44.5k per capita x 68M people = $3.0T total GDP"><title>France: $44.5k per capita x 68M people = $3.0T total GDP</title></path>
+<path class="col" d="M283.70,786.0 L283.70,570.34 Q283.70,561.34 292.70,561.34 L316.27,561.34 Q325.27,561.34 325.27,570.34 L325.27,786.0 Z" fill="#28CD41" tabindex="0" role="img" aria-label="Japan: $33.9k per capita x 124M people = $4.2T total GDP"><title>Japan: $33.9k per capita x 124M people = $4.2T total GDP</title></path>
+<path class="col" d="M326.47,786.0 L326.47,711.50 Q326.47,702.50 335.47,702.50 L802.98,702.50 Q811.98,702.50 811.98,711.50 L811.98,786.0 Z" fill="#FF3B30" tabindex="0" role="img" aria-label="China: $12.6k per capita x 1.41B people = $17.8T total GDP"><title>China: $12.6k per capita x 1.41B people = $17.8T total GDP</title></path>
+<path class="col" d="M813.18,786.0 L813.18,726.08 Q813.18,717.08 822.18,717.08 L877.48,717.08 Q886.48,717.08 886.48,726.08 L886.48,786.0 Z" fill="#FF9500" tabindex="0" role="img" aria-label="Brazil: $10.4k per capita x 216M people = $2.2T total GDP"><title>Brazil: $10.4k per capita x 216M people = $2.2T total GDP</title></path>
+<path class="col" d="M887.68,786.0 L887.68,777.77 Q887.68,768.77 896.68,768.77 L1370.40,768.77 Q1379.40,768.77 1379.40,777.77 L1379.40,786.0 Z" fill="#FFCC00" tabindex="0" role="img" aria-label="India: $2.6k per capita x 1.43B people = $3.7T total GDP"><title>India: $2.6k per capita x 1.43B people = $3.7T total GDP</title></path>
+<text x="149.8" y="228.6" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$81.7k</text>
+<text x="222.0" y="420.7" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$52.7k</text>
+<path d="M248.1,457.9 L248.1,451.9 L284.0,445.9 L284.0,428.9" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="284.0" y="431.9" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$48.9k</text>
+<path d="M271.4,487.1 L271.4,481.1 L346.0,475.1 L346.0,458.1" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="346.0" y="461.1" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$44.5k</text>
+<path d="M304.5,557.3 L304.5,551.3 L408.0,545.3 L408.0,528.3" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="408.0" y="531.3" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$33.9k</text>
+<text x="569.2" y="686.5" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$12.6k</text>
+<text x="849.8" y="701.1" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$10.4k</text>
+<text x="1133.5" y="752.8" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$2.6k</text>
+<text x="149.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">United States</text>
+<text x="149.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">335M</text>
+<path d="M222.0,795.0 L222.0,801.0 L245.8,806.0 L245.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="245.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Germany</text>
+<text x="245.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">84M</text>
+<text x="245.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#AF52DE">$4.4T</text>
+<path d="M248.1,795.0 L248.1,801.0 L341.8,806.0 L341.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="341.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">United Kingdom</text>
+<text x="341.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">67M</text>
+<text x="341.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#007AFF">$3.3T</text>
+<path d="M271.4,795.0 L271.4,801.0 L437.8,806.0 L437.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="437.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">France</text>
+<text x="437.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">68M</text>
+<text x="437.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#007AFF">$3.0T</text>
+<path d="M304.5,795.0 L304.5,801.0 L533.8,806.0 L533.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="533.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Japan</text>
+<text x="533.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">124M</text>
+<text x="533.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#28CD41">$4.2T</text>
+<path d="M569.2,795.0 L569.2,801.0 L629.8,806.0 L629.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
+<text x="629.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">China</text>
+<text x="629.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">1.41B</text>
+<text x="629.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#FF3B30">$17.8T</text>
+<text x="849.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Brazil</text>
+<text x="849.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">216M</text>
+<text x="849.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#FF9500">$2.2T</text>
+<text x="1133.5" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">India</text>
+<text x="1133.5" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">1.43B</text>
+<text x="1133.5" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#FFCC00">$3.7T</text>
+<text x="736.0" y="936" text-anchor="middle" font-size="19" font-weight="600" fill="#1D1D1F">Width = population &#183; column widths sum to 3.73B people</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1392,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

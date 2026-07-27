@@ -1,0 +1,644 @@
+[
+ {
+  "code": "01",
+  "nom": "Ain",
+  "Hollande": 42.77,
+  "Sarkozy": 57.23
+ },
+ {
+  "code": "02",
+  "nom": "Aisne",
+  "Hollande": 52.4,
+  "Sarkozy": 47.6
+ },
+ {
+  "code": "03",
+  "nom": "Allier",
+  "Hollande": 56.89,
+  "Sarkozy": 43.11
+ },
+ {
+  "code": "04",
+  "nom": "Alpes De Haute Provence",
+  "Hollande": 51.06,
+  "Sarkozy": 48.94
+ },
+ {
+  "code": "05",
+  "nom": "Hautes Alpes",
+  "Hollande": 50.89,
+  "Sarkozy": 49.11
+ },
+ {
+  "code": "06",
+  "nom": "Alpes Maritimes",
+  "Hollande": 35.69,
+  "Sarkozy": 64.31
+ },
+ {
+  "code": "07",
+  "nom": "Ardeche",
+  "Hollande": 53.45,
+  "Sarkozy": 46.55
+ },
+ {
+  "code": "08",
+  "nom": "Ardennes",
+  "Hollande": 51.89,
+  "Sarkozy": 48.11
+ },
+ {
+  "code": "09",
+  "nom": "Ariege",
+  "Hollande": 64.69,
+  "Sarkozy": 35.31
+ },
+ {
+  "code": "10",
+  "nom": "Aube",
+  "Hollande": 42.63,
+  "Sarkozy": 57.37
+ },
+ {
+  "code": "11",
+  "nom": "Aude",
+  "Hollande": 56.25,
+  "Sarkozy": 43.75
+ },
+ {
+  "code": "12",
+  "nom": "Aveyron",
+  "Hollande": 54.42,
+  "Sarkozy": 45.58
+ },
+ {
+  "code": "13",
+  "nom": "Bouches Du Rhone",
+  "Hollande": 47.17,
+  "Sarkozy": 52.83
+ },
+ {
+  "code": "14",
+  "nom": "Calvados",
+  "Hollande": 53.12,
+  "Sarkozy": 46.88
+ },
+ {
+  "code": "15",
+  "nom": "Cantal",
+  "Hollande": 51.8,
+  "Sarkozy": 48.2
+ },
+ {
+  "code": "16",
+  "nom": "Charente",
+  "Hollande": 58.83,
+  "Sarkozy": 41.17
+ },
+ {
+  "code": "17",
+  "nom": "Charente Maritime",
+  "Hollande": 51.57,
+  "Sarkozy": 48.43
+ },
+ {
+  "code": "18",
+  "nom": "Cher",
+  "Hollande": 54.04,
+  "Sarkozy": 45.96
+ },
+ {
+  "code": "19",
+  "nom": "Correze",
+  "Hollande": 64.86,
+  "Sarkozy": 35.14
+ },
+ {
+  "code": "21",
+  "nom": "Cote D'Or",
+  "Hollande": 48.45,
+  "Sarkozy": 51.55
+ },
+ {
+  "code": "22",
+  "nom": "Cotes D'Armor",
+  "Hollande": 59.19,
+  "Sarkozy": 40.81
+ },
+ {
+  "code": "23",
+  "nom": "Creuse",
+  "Hollande": 61.02,
+  "Sarkozy": 38.98
+ },
+ {
+  "code": "24",
+  "nom": "Dordogne",
+  "Hollande": 59.14,
+  "Sarkozy": 40.86
+ },
+ {
+  "code": "25",
+  "nom": "Doubs",
+  "Hollande": 48.09,
+  "Sarkozy": 51.91
+ },
+ {
+  "code": "26",
+  "nom": "Drome",
+  "Hollande": 49.18,
+  "Sarkozy": 50.82
+ },
+ {
+  "code": "27",
+  "nom": "Eure",
+  "Hollande": 47.55,
+  "Sarkozy": 52.45
+ },
+ {
+  "code": "28",
+  "nom": "Eure Et Loir",
+  "Hollande": 46.53,
+  "Sarkozy": 53.47
+ },
+ {
+  "code": "29",
+  "nom": "Finistere",
+  "Hollande": 58.86,
+  "Sarkozy": 41.14
+ },
+ {
+  "code": "2A",
+  "nom": "Corse Sud",
+  "Hollande": 42.4,
+  "Sarkozy": 57.6
+ },
+ {
+  "code": "2B",
+  "nom": "Haute Corse",
+  "Hollande": 45.59,
+  "Sarkozy": 54.41
+ },
+ {
+  "code": "30",
+  "nom": "Gard",
+  "Hollande": 48.8,
+  "Sarkozy": 51.2
+ },
+ {
+  "code": "31",
+  "nom": "Haute Garonne",
+  "Hollande": 58.78,
+  "Sarkozy": 41.22
+ },
+ {
+  "code": "32",
+  "nom": "Gers",
+  "Hollande": 56.64,
+  "Sarkozy": 43.36
+ },
+ {
+  "code": "33",
+  "nom": "Gironde",
+  "Hollande": 56.61,
+  "Sarkozy": 43.39
+ },
+ {
+  "code": "34",
+  "nom": "Herault",
+  "Hollande": 51.31,
+  "Sarkozy": 48.69
+ },
+ {
+  "code": "35",
+  "nom": "Ille Et Vilaine",
+  "Hollande": 55.71,
+  "Sarkozy": 44.29
+ },
+ {
+  "code": "36",
+  "nom": "Indre",
+  "Hollande": 55.66,
+  "Sarkozy": 44.34
+ },
+ {
+  "code": "37",
+  "nom": "Indre Et Loire",
+  "Hollande": 51.23,
+  "Sarkozy": 48.77
+ },
+ {
+  "code": "38",
+  "nom": "Isere",
+  "Hollande": 52.12,
+  "Sarkozy": 47.88
+ },
+ {
+  "code": "39",
+  "nom": "Jura",
+  "Hollande": 49.42,
+  "Sarkozy": 50.58
+ },
+ {
+  "code": "40",
+  "nom": "Landes",
+  "Hollande": 56.99,
+  "Sarkozy": 43.01
+ },
+ {
+  "code": "41",
+  "nom": "Loir Et Cher",
+  "Hollande": 47.57,
+  "Sarkozy": 52.43
+ },
+ {
+  "code": "42",
+  "nom": "Loire",
+  "Hollande": 50.5,
+  "Sarkozy": 49.5
+ },
+ {
+  "code": "43",
+  "nom": "Haute Loire",
+  "Hollande": 51.38,
+  "Sarkozy": 48.62
+ },
+ {
+  "code": "44",
+  "nom": "Loire Atlantique",
+  "Hollande": 56.35,
+  "Sarkozy": 43.65
+ },
+ {
+  "code": "45",
+  "nom": "Loiret",
+  "Hollande": 45.97,
+  "Sarkozy": 54.03
+ },
+ {
+  "code": "46",
+  "nom": "Lot",
+  "Hollande": 61.89,
+  "Sarkozy": 38.11
+ },
+ {
+  "code": "47",
+  "nom": "Lot Et Garonne",
+  "Hollande": 51.35,
+  "Sarkozy": 48.65
+ },
+ {
+  "code": "48",
+  "nom": "Lozere",
+  "Hollande": 49.95,
+  "Sarkozy": 50.05
+ },
+ {
+  "code": "49",
+  "nom": "Maine Et Loire",
+  "Hollande": 48.85,
+  "Sarkozy": 51.15
+ },
+ {
+  "code": "50",
+  "nom": "Manche",
+  "Hollande": 49.9,
+  "Sarkozy": 50.1
+ },
+ {
+  "code": "51",
+  "nom": "Marne",
+  "Hollande": 44.69,
+  "Sarkozy": 55.31
+ },
+ {
+  "code": "52",
+  "nom": "Haute Marne",
+  "Hollande": 45.57,
+  "Sarkozy": 54.43
+ },
+ {
+  "code": "53",
+  "nom": "Mayenne",
+  "Hollande": 46.93,
+  "Sarkozy": 53.07
+ },
+ {
+  "code": "54",
+  "nom": "Meurthe Et Moselle",
+  "Hollande": 53.06,
+  "Sarkozy": 46.94
+ },
+ {
+  "code": "55",
+  "nom": "Meuse",
+  "Hollande": 46.2,
+  "Sarkozy": 53.8
+ },
+ {
+  "code": "56",
+  "nom": "Morbihan",
+  "Hollande": 51.73,
+  "Sarkozy": 48.27
+ },
+ {
+  "code": "57",
+  "nom": "Moselle",
+  "Hollande": 46.5,
+  "Sarkozy": 53.5
+ },
+ {
+  "code": "58",
+  "nom": "Nievre",
+  "Hollande": 58.81,
+  "Sarkozy": 41.19
+ },
+ {
+  "code": "59",
+  "nom": "Nord",
+  "Hollande": 52.88,
+  "Sarkozy": 47.12
+ },
+ {
+  "code": "60",
+  "nom": "Oise",
+  "Hollande": 47.34,
+  "Sarkozy": 52.66
+ },
+ {
+  "code": "61",
+  "nom": "Orne",
+  "Hollande": 47.11,
+  "Sarkozy": 52.89
+ },
+ {
+  "code": "62",
+  "nom": "Pas De Calais",
+  "Hollande": 56.18,
+  "Sarkozy": 43.82
+ },
+ {
+  "code": "63",
+  "nom": "Puy De Dome",
+  "Hollande": 60.47,
+  "Sarkozy": 39.53
+ },
+ {
+  "code": "64",
+  "nom": "Pyrenees Atlantiques",
+  "Hollande": 57.12,
+  "Sarkozy": 42.88
+ },
+ {
+  "code": "65",
+  "nom": "Hautes Pyrenees",
+  "Hollande": 62.47,
+  "Sarkozy": 37.53
+ },
+ {
+  "code": "66",
+  "nom": "Pyrenees Orientales",
+  "Hollande": 50.59,
+  "Sarkozy": 49.41
+ },
+ {
+  "code": "67",
+  "nom": "Bas Rhin",
+  "Hollande": 36.56,
+  "Sarkozy": 63.44
+ },
+ {
+  "code": "68",
+  "nom": "Haut Rhin",
+  "Hollande": 36.67,
+  "Sarkozy": 63.33
+ },
+ {
+  "code": "69",
+  "nom": "Rhone",
+  "Hollande": 47.98,
+  "Sarkozy": 52.02
+ },
+ {
+  "code": "70",
+  "nom": "Haute Saone",
+  "Hollande": 49.64,
+  "Sarkozy": 50.36
+ },
+ {
+  "code": "71",
+  "nom": "Saone Et Loire",
+  "Hollande": 51.86,
+  "Sarkozy": 48.14
+ },
+ {
+  "code": "72",
+  "nom": "Sarthe",
+  "Hollande": 52.67,
+  "Sarkozy": 47.33
+ },
+ {
+  "code": "73",
+  "nom": "Savoie",
+  "Hollande": 47.07,
+  "Sarkozy": 52.93
+ },
+ {
+  "code": "74",
+  "nom": "Haute Savoie",
+  "Hollande": 39.9,
+  "Sarkozy": 60.1
+ },
+ {
+  "code": "75",
+  "nom": "Paris",
+  "Hollande": 55.6,
+  "Sarkozy": 44.4
+ },
+ {
+  "code": "76",
+  "nom": "Seine Maritime",
+  "Hollande": 54.94,
+  "Sarkozy": 45.06
+ },
+ {
+  "code": "77",
+  "nom": "Seine Et Marne",
+  "Hollande": 49.25,
+  "Sarkozy": 50.75
+ },
+ {
+  "code": "78",
+  "nom": "Yvelines",
+  "Hollande": 45.7,
+  "Sarkozy": 54.3
+ },
+ {
+  "code": "79",
+  "nom": "Deux Sevres",
+  "Hollande": 57.31,
+  "Sarkozy": 42.69
+ },
+ {
+  "code": "80",
+  "nom": "Somme",
+  "Hollande": 54.41,
+  "Sarkozy": 45.59
+ },
+ {
+  "code": "81",
+  "nom": "Tarn",
+  "Hollande": 55.55,
+  "Sarkozy": 44.45
+ },
+ {
+  "code": "82",
+  "nom": "Tarn Et Garonne",
+  "Hollande": 51.25,
+  "Sarkozy": 48.75
+ },
+ {
+  "code": "83",
+  "nom": "Var",
+  "Hollande": 37.36,
+  "Sarkozy": 62.64
+ },
+ {
+  "code": "84",
+  "nom": "Vaucluse",
+  "Hollande": 43.57,
+  "Sarkozy": 56.43
+ },
+ {
+  "code": "85",
+  "nom": "Vendee",
+  "Hollande": 44.4,
+  "Sarkozy": 55.6
+ },
+ {
+  "code": "86",
+  "nom": "Vienne",
+  "Hollande": 57.16,
+  "Sarkozy": 42.84
+ },
+ {
+  "code": "87",
+  "nom": "Haute Vienne",
+  "Hollande": 63.99,
+  "Sarkozy": 36.01
+ },
+ {
+  "code": "88",
+  "nom": "Vosges",
+  "Hollande": 49.06,
+  "Sarkozy": 50.94
+ },
+ {
+  "code": "89",
+  "nom": "Yonne",
+  "Hollande": 46.88,
+  "Sarkozy": 53.12
+ },
+ {
+  "code": "90",
+  "nom": "Territoire De Belfort",
+  "Hollande": 50.52,
+  "Sarkozy": 49.48
+ },
+ {
+  "code": "91",
+  "nom": "Essonne",
+  "Hollande": 53.43,
+  "Sarkozy": 46.57
+ },
+ {
+  "code": "92",
+  "nom": "Hauts De Seine",
+  "Hollande": 49.48,
+  "Sarkozy": 50.52
+ },
+ {
+  "code": "93",
+  "nom": "Seine Saint-Denis",
+  "Hollande": 65.32,
+  "Sarkozy": 34.68
+ },
+ {
+  "code": "94",
+  "nom": "Val De Marne",
+  "Hollande": 56.48,
+  "Sarkozy": 43.52
+ },
+ {
+  "code": "95",
+  "nom": "Val D'Oise",
+  "Hollande": 53.91,
+  "Sarkozy": 46.09
+ },
+ {
+  "code": "ZA",
+  "nom": "Guadeloupe",
+  "Hollande": 71.94,
+  "Sarkozy": 28.06
+ },
+ {
+  "code": "ZB",
+  "nom": "Martinique",
+  "Hollande": 68.43,
+  "Sarkozy": 31.57
+ },
+ {
+  "code": "ZC",
+  "nom": "Guyane",
+  "Hollande": 62.05,
+  "Sarkozy": 37.95
+ },
+ {
+  "code": "ZD",
+  "nom": "La Reunion",
+  "Hollande": 71.49,
+  "Sarkozy": 28.51
+ },
+ {
+  "code": "ZM",
+  "nom": "Mayotte",
+  "Hollande": 49.05,
+  "Sarkozy": 50.95
+ },
+ {
+  "code": "ZN",
+  "nom": "Nouvelle Caledonie",
+  "Hollande": 36.97,
+  "Sarkozy": 63.03
+ },
+ {
+  "code": "ZP",
+  "nom": "Polynesie Francaise",
+  "Hollande": 46.94,
+  "Sarkozy": 53.06
+ },
+ {
+  "code": "ZS",
+  "nom": "Saint Pierre Et Miquelon",
+  "Hollande": 65.31,
+  "Sarkozy": 34.69
+ },
+ {
+  "code": "ZW",
+  "nom": "Wallis-Et-Futuna",
+  "Hollande": 56.06,
+  "Sarkozy": 43.94
+ },
+ {
+  "code": "ZX",
+  "nom": "Saint-Martin/Saint-Barthelemy",
+  "Hollande": 40.57,
+  "Sarkozy": 59.43
+ },
+ {
+  "code": "ZZ",
+  "nom": "Francais De L'Etranger",
+  "Hollande": 46.95,
+  "Sarkozy": 53.05
+ }
+]

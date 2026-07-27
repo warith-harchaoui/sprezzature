@@ -1,0 +1,15 @@
+graph [
+  directed 1
+  node [ id "T" label "Treatment" ]
+  node [ id "Y" label "Outcome" ]
+  node [ id "X1" label "Confounder_1" ]
+  node [ id "X2" label "Confounder_2" ]
+  node [ id "X3" label "Confounder_3" ]
+  edge [ source "T" target "Y" ]
+  edge [ source "X1" target "T" ]
+  edge [ source "X1" target "Y" ]
+  edge [ source "X2" target "T" ]
+  edge [ source "X2" target "Y" ]
+  edge [ source "X3" target "T" ]
+  edge [ source "X3" target "Y" ]
+]
