@@ -41,7 +41,7 @@ from __future__ import annotations
 import argparse
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier).
@@ -80,7 +80,7 @@ _BG: str = "#FFFFFF"        # background
 _FOCUS: str = "#0A4DA0"     # focus-ring blue
 
 
-def _dataset(accessibility: str = "universal") -> List[Dict[str, object]]:
+def _dataset(accessibility: str = "universal") -> List[Dict[str, Any]]:
     """Return the communicative fake data for the waffle.
 
     A household-energy budget: of every 100 kilowatt-hours a typical

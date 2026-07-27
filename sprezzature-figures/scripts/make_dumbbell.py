@@ -47,7 +47,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # The house-style palette and the shared XML escaper live in scripts/.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -67,7 +67,7 @@ from _interactive import fullscreen_control  # noqa: E402
 #: role here, and the gap is widest in the highest-paid roles, the
 #: pattern most real pay audits surface. The rows are *unsorted* on
 #: purpose; :func:`build_svg` sorts them by gap so the story is ordered.
-ROLES: List[Dict[str, object]] = [
+ROLES: List[Dict[str, Any]] = [
     {"role": "Sales director",       "women": 58.20, "men": 71.40},
     {"role": "Software engineer",    "women": 52.10, "men": 60.30},
     {"role": "Product manager",      "women": 55.40, "men": 65.90},
@@ -81,7 +81,7 @@ ROLES: List[Dict[str, object]] = [
 ]
 
 
-def company_median(rows: List[Dict[str, object]]) -> float:
+def company_median(rows: List[Dict[str, Any]]) -> float:
     """Return the pooled median hourly pay across both groups.
 
     Used only for the faint reference band, so a reader can see which

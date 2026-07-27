@@ -40,7 +40,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # The house-style palette lives alongside this file, in _style.py.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -57,7 +57,7 @@ from _render import render_cli  # noqa: E402
 # ``pop * gdp_cap / 1000``, is total GDP in trillions of US dollars —
 # the column AREA. Figures are World Bank / IMF 2023 estimates, rounded.
 # ------------------------------------------------------------------
-COUNTRIES: List[Dict[str, object]] = [
+COUNTRIES: List[Dict[str, Any]] = [
     {"name": "United States", "iso": "USA", "pop": 335.0, "gdp_cap": 81.7, "color": "Blue"},
     {"name": "Germany", "iso": "DEU", "pop": 84.0, "gdp_cap": 52.7, "color": "Purple"},
     {"name": "United Kingdom", "iso": "GBR", "pop": 67.0, "gdp_cap": 48.9, "color": "Teal"},
@@ -295,7 +295,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     # Walk the countries once to fix every column's pixel box and its
     # cumulative-width edges. Labelling is a separate pass so narrow
     # columns can borrow horizontal room from their wide neighbours.
-    cols: List[Dict[str, object]] = []
+    cols: List[Dict[str, Any]] = []
     x_cursor = float(m_left)
     for c in COUNTRIES:
         pop = float(c["pop"])

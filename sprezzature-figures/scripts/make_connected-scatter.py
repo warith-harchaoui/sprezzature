@@ -51,7 +51,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # House-style palette + the shared XML escaper live alongside in scripts/.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -71,7 +71,7 @@ from _svg import svg_open, xml_escape  # noqa: E402
 #: the emissions fall steeply after 2005 while income keeps climbing — the
 #: shape that makes "decoupling" visible. ``label`` flags the waypoints
 #: worth naming; ``side`` steers each visible label clear of the path.
-POINTS: List[Dict[str, object]] = [
+POINTS: List[Dict[str, Any]] = [
     {"year": 1990, "gdp": 28.0, "co2": 10.0, "label": True,  "side": "left"},
     {"year": 1995, "gdp": 30.2, "co2": 10.4, "label": False, "side": "left"},
     {"year": 2000, "gdp": 34.6, "co2": 10.5, "label": True,  "side": "top"},

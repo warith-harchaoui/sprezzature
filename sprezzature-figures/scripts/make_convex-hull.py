@@ -465,7 +465,7 @@ def build_svg(seed: int = 11, mode: str = "self-contained", accessibility: str =
     )
 
     # --- segment legend (row below the subtitle) ---
-    ly = 168
+    ly: float = 168
     cursor = 56.0
     for seg in SEGMENTS:
         color = segment_color[seg]

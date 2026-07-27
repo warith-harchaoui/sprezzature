@@ -36,7 +36,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
-from typing import Callable, List, Tuple
+from typing import Callable, List, Tuple, cast
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier). _svg gives the XML escape helper.
@@ -365,7 +365,7 @@ def _rgb_to_hex(rgb: Tuple[float, float, float]) -> str:
     return f"#{r:02X}{g:02X}{b:02X}"
 
 
-def _speed_ramp(accessibility: str = "universal") -> Tuple:
+def _speed_ramp(accessibility: str = "universal") -> Callable[[float], str]:
     """Return a sequential house-blue ramp function ``speed -> hex``.
 
     Light sky-blue for a light breeze, deep navy for gale-force, so the
@@ -395,7 +395,12 @@ def _speed_ramp(accessibility: str = "universal") -> Tuple:
         for (t0, c0), (t1, c1) in zip(anchors, anchors[1:]):
             if t <= t1:
                 f = 0.0 if t1 == t0 else (t - t0) / (t1 - t0)
-                return _rgb_to_hex(tuple(a + f * (b - a) for a, b in zip(c0, c1)))
+                return _rgb_to_hex(
+                    cast(
+                        Tuple[float, float, float],
+                        tuple(a + f * (b - a) for a, b in zip(c0, c1)),
+                    )
+                )
         return _rgb_to_hex(anchors[-1][1])
 
     return ramp

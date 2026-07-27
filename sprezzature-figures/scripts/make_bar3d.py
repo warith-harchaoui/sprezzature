@@ -53,7 +53,7 @@ from _style import os_dark_style  # noqa: E402
 
 import argparse
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # Repo-relative default output — the one SVG artifact this figure ships.
 _DEFAULT_OUT = (
@@ -81,7 +81,7 @@ _HIGH = "#0A4DA0"       # deep blue  — tallest bars
 # --------------------------------------------------------------------------- #
 # Illustrative data                                                            #
 # --------------------------------------------------------------------------- #
-def _sample_grid() -> Dict[str, object]:
+def _sample_grid() -> Dict[str, Any]:
     """Return the illustrative rows x cols x heights table for the 3D bars.
 
     A small, hand-tuned table so the figure tells one clear story: quarterly
@@ -336,7 +336,7 @@ def _bar_faces(
 # Full document                                                                #
 # --------------------------------------------------------------------------- #
 def build_svg(
-    grid: Dict[str, object],
+    grid: Dict[str, Any],
     mode: str = "self-contained",
     accessibility: str = "universal",
 ) -> str:
@@ -376,9 +376,9 @@ def build_svg(
     # CVD/greyscale-safe (see the parameter note above), so levelling it would
     # only de-tune it.
     _ = accessibility
-    rows: List[str] = list(grid["rows"])  # type: ignore[arg-type]
-    cols: List[str] = list(grid["cols"])  # type: ignore[arg-type]
-    z: List[List[float]] = grid["z"]      # type: ignore[assignment]
+    rows: List[str] = list(grid["rows"])
+    cols: List[str] = list(grid["cols"])
+    z: List[List[float]] = grid["z"]
     n_rows, n_cols = len(rows), len(cols)
 
     z_max = max(max(r) for r in z)

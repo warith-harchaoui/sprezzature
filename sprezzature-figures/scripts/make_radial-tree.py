@@ -197,7 +197,7 @@ def _depth_of(node_id: str, parent: Dict[str, Optional[str]]) -> int:
     """Return the distance from ``node_id`` up to the root."""
     depth = 0
     cur: Optional[str] = node_id
-    while parent.get(cur) is not None:
+    while cur is not None and parent.get(cur) is not None:
         cur = parent[cur]
         depth += 1
     return depth
@@ -212,8 +212,8 @@ def _pillar_of(node_id: str, parent: Dict[str, Optional[str]]) -> Optional[str]:
     cur: Optional[str] = node_id
     if cur == "root":
         return None
-    while parent.get(cur) not in (None, "root"):
-        cur = parent[cur]  # type: ignore[assignment]
+    while cur is not None and parent.get(cur) not in (None, "root"):
+        cur = parent[cur]
     return cur
 
 

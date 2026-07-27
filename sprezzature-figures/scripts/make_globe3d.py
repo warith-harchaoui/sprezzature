@@ -274,10 +274,10 @@ def graticule_paths(
         x, y, vis = orthographic(lonv, lat, lon0, lat0, radius)
         parts.extend(_split_ring_to_paths(x, y, vis, cx, cy))
     # Parallels (constant latitude).
-    for lat in range(-60, 90, 30):
-        lon = np.linspace(-180, 180, 180)
-        latv = np.full_like(lon, lat)
-        x, y, vis = orthographic(lon, latv, lon0, lat0, radius)
+    for lat_deg in range(-60, 90, 30):
+        lonp = np.linspace(-180, 180, 180)
+        latv = np.full_like(lonp, lat_deg)
+        x, y, vis = orthographic(lonp, latv, lon0, lat0, radius)
         parts.extend(_split_ring_to_paths(x, y, vis, cx, cy))
     return " ".join(parts)
 

@@ -316,8 +316,8 @@ def build_svg(
         """Map a revenue value to a pixel row (higher value → higher up)."""
         return m_top + (y_hi - v) / (y_hi - y_lo) * plot_h
 
-    plan_pts = [(x_of(m), y_of(float(plan[i]))) for i, m in enumerate(months)]
-    actual_pts = [(x_of(m), y_of(float(actual[i]))) for i, m in enumerate(months)]
+    plan_pts = [(x_of(float(m)), y_of(float(plan[i]))) for i, m in enumerate(months)]
+    actual_pts = [(x_of(float(m)), y_of(float(actual[i]))) for i, m in enumerate(months)]
 
     parts: List[str] = []
     defs: List[str] = []

@@ -225,7 +225,7 @@ def _compute_geometry() -> Tuple[Dict[str, dict], float]:
     plot_right = WIDTH - MARGIN_RIGHT
 
     # Vertical scale: the densest layer (most total volume) must fit.
-    max_layer_vol = 0
+    max_layer_vol = 0.0
     for ids in layers.values():
         total = sum(_node_volume(n) for n in ids)
         pad_total = NODE_PAD * (len(ids) - 1)

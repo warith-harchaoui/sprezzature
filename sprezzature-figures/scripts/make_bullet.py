@@ -38,7 +38,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # The house-style palette lives alongside this file, in _style.py.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -57,7 +57,7 @@ from _render import render_cli  # noqa: E402
 # (latency, churn) — a bullet graph reads either way once the bands are
 # shaded correctly, so we shade poor→good in the beneficial direction.
 # ------------------------------------------------------------------
-KPIS: List[Dict[str, object]] = [
+KPIS: List[Dict[str, Any]] = [
     {
         "name": "New revenue",
         "unit": "$k",
@@ -217,7 +217,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     parts: List[str] = []
 
     # Count how many metrics beat their target for the takeaway line.
-    def _beats(k: Dict[str, object]) -> bool:
+    def _beats(k: Dict[str, Any]) -> bool:
         """Return True when the KPI meets or beats its target."""
         v, t, hi = float(k["value"]), float(k["target"]), bool(k["higher"])
         return v >= t if hi else v <= t

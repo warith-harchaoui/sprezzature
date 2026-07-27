@@ -51,7 +51,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier).
@@ -112,7 +112,7 @@ _BARB_ANGLE: float = 118.0   # tick angle relative to the staff, degrees
 # it — not an official forecast.
 #
 # ``(name, lon, lat, dir_from_deg, speed_kt, label_side)``
-_STATIONS: List[Tuple[str, float, float, float, int, str]] = [
+_STATIONS: List[Tuple[Any, ...]] = [
     # --- Cold, gusty NW gale BEHIND the sprezzature (upper-left / inland) ---
     ("Buffalo",       -78.87, 42.89, 300, 45, "L"),
     ("Rochester",     -77.61, 43.16, 305, 40, "L"),

@@ -55,7 +55,7 @@ import math
 import random
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier).
@@ -334,7 +334,7 @@ def _to_screen(lon: float, lat: float) -> Tuple[float, float]:
 #: subduction zones and collision belts; events are sampled along the
 #: segments and nudged off them so the hexbin surface reads like a real
 #: catalogue rather than a set of drawn lines.
-_BELTS: List[Dict[str, object]] = [
+_BELTS: List[Dict[str, Any]] = [
     # ---- Ring of Fire (the horseshoe carries most of the mass) ----
     {  # Andes — South America west coast
         "w": 0.15, "sigma": 1.6,

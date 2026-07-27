@@ -45,6 +45,7 @@ import csv
 import io
 import urllib.request
 from pathlib import Path
+from typing import Any, cast
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "assets" / "data" / "tribute-hans-rosling-1950-2025.csv"
@@ -114,7 +115,7 @@ EAST_LIFE_GAP = [0.0, 0.0, 0.2, 0.3, 0.5, 1.0, 1.5, 2.0, 2.5]
 # population-weighted mean equal to the Maddison national figure. Split life
 # expectancy is not published, so both halves carry the national value.
 # ``code`` is the unified Maddison entity; halves exist over ``span``.
-DIVIDED = {
+DIVIDED: dict[str, dict[str, Any]] = {
     "Vietnam": {
         "code": "VNM", "region": "Asia", "span": (1954, 1975),
         "bench": [1955, 1960, 1965, 1970, 1975],
@@ -210,6 +211,7 @@ def main() -> None:
 
     # Federation income series (Czechoslovakia / USSR / Yugoslavia), by entity name.
     fed_gdp: dict[str, dict[int, float]] = {}
+    r: Any
     for r in mad_rows:
         if r["entity"] in FED_SUCCESSORS and r.get("gdp_per_capita", ""):
             fed_gdp.setdefault(r["entity"], {})[int(r["year"])] = float(r["gdp_per_capita"])
@@ -242,7 +244,7 @@ def main() -> None:
     # present-border populations; life expectancy = their population-weighted mean.
     # Written only for the years the federation existed (up to dissolution).
     for fed, succs in FED_SUCCESSORS.items():
-        dg = densify(fed_gdp[fed], 1)
+        dg = cast("list[float]", densify(fed_gdp[fed], 1))
         for i, y in enumerate(YEARS):
             if y > DISSOLVE[fed]:
                 break

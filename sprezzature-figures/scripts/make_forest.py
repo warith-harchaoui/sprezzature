@@ -49,7 +49,7 @@ from __future__ import annotations
 
 import math
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # The house-style palette lives in _style.py, one directory up in scripts/.
 import sys
@@ -71,7 +71,7 @@ from _svg import svg_open  # noqa: E402
 #: ``lo`` / ``hi`` are the bounds of its 95% confidence interval. All
 #: values are illustrative but internally consistent (CIs widen as the
 #: sample size shrinks, as real trials do).
-STUDIES: List[Dict[str, object]] = [
+STUDIES: List[Dict[str, Any]] = [
     {"label": "Ashford 2016", "n": 512, "or_": 1.42, "lo": 1.08, "hi": 1.87},
     {"label": "Bhatt 2017", "n": 148, "or_": 1.95, "lo": 0.92, "hi": 4.13},
     {"label": "Costa 2018", "n": 806, "or_": 1.31, "lo": 1.06, "hi": 1.62},
@@ -85,7 +85,7 @@ STUDIES: List[Dict[str, object]] = [
 #: The random-effects pooled summary (DerSimonian-Laird style), quoted
 #: with its own 95% CI. Illustrative but consistent with the studies
 #: above: a modest but clearly-positive overall effect.
-POOLED: Dict[str, object] = {
+POOLED: Dict[str, Any] = {
     "label": "Pooled (random effects)",
     "or_": 1.44,
     "lo": 1.26,
