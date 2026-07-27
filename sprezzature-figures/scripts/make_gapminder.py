@@ -115,7 +115,7 @@ PLAYER_JS = r"""(function(){
 var S=document.documentElement,B=(S.getAttribute("viewBox")||"0 0 1 1").split(/\s+/).map(Number),V=B.slice();
 var t=0,playing=true,speed=1,following=null,last=0,ticks=0;
 var reduce=false;try{reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
-S.pauseAnimations();if(reduce){playing=false;t=DUR-0.01;}S.setCurrentTime(t);
+S.pauseAnimations();S.setCurrentTime(t);
 function P(m){try{if(window.parent&&window.parent!==window)window.parent.postMessage(m,"*");}catch(e){}}
 function yr(){return Y0i+Math.round(t/DUR*(Y1i-Y0i));}
 function setT(n){t=Math.max(0,Math.min(DUR-0.01,n));S.setCurrentTime(t);}

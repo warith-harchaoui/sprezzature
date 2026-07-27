@@ -50,6 +50,11 @@
           followSel.dataset.filled = '1';
         }
         setPlay();
+        // The animation always starts on load, on every device. The SVG pauses
+        // itself on the final frame under prefers-reduced-motion; override that
+        // here so the story plays from the first year. The Pause control stays
+        // available, so motion is never unstoppable.
+        if (!playing) { send({ gm: 'restart' }); playing = true; setPlay(); }
       } else if (m.gm === 'tick') {
         playing = m.playing;
         if (yearOut) yearOut.textContent = m.year;
