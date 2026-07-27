@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "House-style line + area chart — Roboto type, rounded corners 10 px on marks, no top/right spines, no tick marks, colors from harchaoui.org/warith/colors. Polarity is contextual: replace the subtitle / axis tag below to match this dashboard's interpretation.",
+  "title": {
+    "text":     "Weekly active users",
+    "subtitle": "↑ higher is better — engagement metric (decide per dashboard)"
+  },
+  "data": {
+    "values": [
+      {"week": "W1", "value": 1200},
+      {"week": "W2", "value": 1410},
+      {"week": "W3", "value": 1305},
+      {"week": "W4", "value": 1612},
+      {"week": "W5", "value": 1780},
+      {"week": "W6", "value": 1844},
+      {"week": "W7", "value": 1910}
+    ]
+  },
+  "layer": [
+    {
+      "mark": { "type": "area", "color": "#007AFF", "opacity": 0.18, "interpolate": "monotone" },
+      "encoding": { "x": { "field": "week", "type": "ordinal" }, "y": { "field": "value", "type": "quantitative" } }
+    },
+    {
+      "mark": { "type": "line", "color": "#007AFF", "strokeWidth": 2.5, "interpolate": "monotone" },
+      "encoding": { "x": { "field": "week", "type": "ordinal" }, "y": { "field": "value", "type": "quantitative" } }
+    },
+    {
+      "mark": { "type": "point", "color": "#007AFF", "filled": true, "size": 60 },
+      "encoding": {
+        "x": { "field": "week",  "type": "ordinal",     "axis": { "title": null } },
+        "y": { "field": "value", "type": "quantitative",
+               "axis": { "title": "Active users (higher is better)" } },
+        "tooltip": [
+          { "field": "week",  "title": "Week" },
+          { "field": "value", "title": "Active users", "format": "," }
+        ]
+      }
+    }
+  ],
+  "width": "container",
+  "height": 220,
+  "padding": 8,
+  "config": {
+    "background": "transparent",
+    "view": { "stroke": "transparent" },
+    "axis": {
+      "labelFont": "Roboto",
+      "titleFont": "Roboto",
+      "labelFontWeight": 400,
+      "titleFontWeight": 600,
+      "labelColor": "#3C3C43",
+      "titleColor": "#000000",
+      "grid": false,
+      "domainColor": "rgba(60,60,67,0.36)"
+    },
+    "axisX": { "domain": true, "ticks": false, "labelPadding": 6 },
+    "axisY": { "domain": true, "ticks": false, "labelPadding": 6 },
+    "title":  { "font": "Roboto", "fontWeight": 600, "color": "#000000" }
+  }
+}

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="700" viewBox="0 0 1040 700" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="bx-title bx-desc">
+<title id="bx-title">Where each service tier hides its latency tail</title><desc id="bx-desc">Letter-value (boxen) plot of request latency for three service tiers, 24,000 sampled requests each. Nested boxes step outward from the median through the middle 50%, 75%, 87.5% and deeper tails; a tick marks each tier's p99. Free tier has the widest, longest tail; Enterprise the tightest. Free-tier p99 latency (875 ms) runs 3.7× the Enterprise tail (239 ms), yet the median barely moves.</desc>
+  <style>
+    .lv { transition: opacity .12s ease; }
+    .stack:hover .lv { opacity: .6; }
+    .lv:hover { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { .lv { transition: none; } }
+    text { fill: #1D1D1F; }
+    @media (prefers-contrast: more){[fill="#6E6E73"]{fill:#1D1D1F;}[stroke="#E5E5EA"]{stroke:#8A8A8E;stroke-width:2;}}
+    @media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
+  text{fill:#F2F2F7;}[stroke="#E5E5EA"]{stroke:#2C2C2E;}
+}
+  </style>
+  <rect width="1040" height="700" fill="#FFFFFF"/>
+  <text x="120" y="48" font-size="26" font-weight="700" fill="#1D1D1F">Where each service tier hides its latency tail</text>
+  <text x="120" y="77" font-size="17" fill="#6E6E73">Free-tier p99 latency (875 ms) runs 3.7× the Enterprise tail (239 ms), yet the median barely moves</text>
+  <text x="120" y="99" font-size="14" fill="#6E6E73" font-family="Roboto Mono, monospace">Letter-value plot · 24,000 requests per tier · illustrative</text>
+  <g class="yaxis" aria-hidden="true">
+    <line x1="120.0" y1="596.0" x2="1000.0" y2="596.0" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="601.0" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0</text>
+    <line x1="120.0" y1="516.3" x2="1000.0" y2="516.3" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="521.3" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">150</text>
+    <line x1="120.0" y1="436.7" x2="1000.0" y2="436.7" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="441.7" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">300</text>
+    <line x1="120.0" y1="357.0" x2="1000.0" y2="357.0" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="362.0" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">450</text>
+    <line x1="120.0" y1="277.3" x2="1000.0" y2="277.3" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="282.3" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">600</text>
+    <line x1="120.0" y1="197.7" x2="1000.0" y2="197.7" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="202.7" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">750</text>
+    <line x1="120.0" y1="118.0" x2="1000.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
+    <text x="104.0" y="123.0" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">900</text>
+    <text x="34" y="357.0" font-size="16" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 34 357.0)">Request latency (ms)</text>
+  </g>
+  <g role="list">
+  <g class="stack" role="listitem" aria-label="Free tier latency distribution">
+    <line x1="266.7" y1="577.0" x2="266.7" y2="118.0" stroke="#E5E5EA" stroke-width="1.5"/>
+    <rect class="lv" x="221.2" y="118.0" width="90.9" height="459.0" rx="3" fill="#E3EEFD" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 99.6% of requests · 36 ms–1225 ms</title></rect>
+    <rect class="lv" x="214.7" y="118.0" width="103.9" height="456.5" rx="3" fill="#CBE1FC" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 99.2% of requests · 40 ms–1073 ms</title></rect>
+    <rect class="lv" x="208.2" y="118.0" width="116.9" height="452.7" rx="3" fill="#A9CFFA" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 98.4% of requests · 48 ms–918 ms</title></rect>
+    <rect class="lv" x="201.7" y="173.9" width="129.9" height="392.2" rx="3" fill="#7FB7F7" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 96.9% of requests · 56 ms–795 ms</title></rect>
+    <rect class="lv" x="195.2" y="241.2" width="142.9" height="319.3" rx="3" fill="#4E9BF2" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 93.8% of requests · 67 ms–668 ms</title></rect>
+    <rect class="lv" x="188.7" y="305.8" width="155.9" height="246.7" rx="3" fill="#1E7CEA" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 87.5% of requests · 82 ms–546 ms</title></rect>
+    <rect class="lv" x="182.2" y="367.7" width="168.9" height="173.3" rx="3" fill="#0F62C4" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 75.0% of requests · 104 ms–430 ms</title></rect>
+    <rect class="lv" x="175.7" y="425.2" width="181.9" height="96.8" rx="3" fill="#0A4DA0" stroke="#FFFFFF" stroke-width="1.4"><title>Free tier · middle 50.0% of requests · 139 ms–322 ms</title></rect>
+    <line x1="175.7" y1="483.5" x2="357.6" y2="483.5" stroke="#FFFFFF" stroke-width="4.6"/>
+    <line class="median" x1="175.7" y1="483.5" x2="357.6" y2="483.5" stroke="#1D1D1F" stroke-width="1.9"><title>Free tier · median 212 ms</title></line>
+    <line x1="306.1" y1="131.1" x2="323.1" y2="131.1" stroke="#1D1D1F" stroke-width="2.4"/>
+    <line x1="323.1" y1="131.1" x2="370.6" y2="131.1" stroke="#6E6E73" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="376.6" y="135.7" font-size="14.5" text-anchor="start" fill="#1D1D1F" font-family="Roboto Mono, monospace"><tspan fill="#6E6E73">p99</tspan> 875 ms</text>
+    <text x="266.7" y="630.0" font-size="18" fill="#1D1D1F" text-anchor="middle" font-weight="500">Free tier</text>
+  </g>
+  <g class="stack" role="listitem" aria-label="Pro tier latency distribution">
+    <line x1="560.0" y1="574.0" x2="560.0" y2="297.3" stroke="#E5E5EA" stroke-width="1.5"/>
+    <rect class="lv" x="514.5" y="297.3" width="90.9" height="276.7" rx="3" fill="#E3EEFD" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 99.6% of requests · 42 ms–562 ms</title></rect>
+    <rect class="lv" x="508.0" y="325.2" width="103.9" height="246.5" rx="3" fill="#CBE1FC" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 99.2% of requests · 46 ms–510 ms</title></rect>
+    <rect class="lv" x="501.5" y="360.8" width="116.9" height="208.0" rx="3" fill="#A9CFFA" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 98.4% of requests · 51 ms–443 ms</title></rect>
+    <rect class="lv" x="495.0" y="388.4" width="129.9" height="176.8" rx="3" fill="#7FB7F7" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 96.9% of requests · 58 ms–391 ms</title></rect>
+    <rect class="lv" x="488.6" y="413.0" width="142.9" height="148.1" rx="3" fill="#4E9BF2" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 93.8% of requests · 66 ms–344 ms</title></rect>
+    <rect class="lv" x="482.1" y="439.7" width="155.9" height="116.1" rx="3" fill="#1E7CEA" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 87.5% of requests · 76 ms–294 ms</title></rect>
+    <rect class="lv" x="475.6" y="464.2" width="168.9" height="84.0" rx="3" fill="#0F62C4" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 75.0% of requests · 90 ms–248 ms</title></rect>
+    <rect class="lv" x="469.1" y="488.5" width="181.9" height="48.4" rx="3" fill="#0A4DA0" stroke="#FFFFFF" stroke-width="1.4"><title>Pro tier · middle 50.0% of requests · 111 ms–202 ms</title></rect>
+    <line x1="469.1" y1="516.1" x2="650.9" y2="516.1" stroke="#FFFFFF" stroke-width="4.6"/>
+    <line class="median" x1="469.1" y1="516.1" x2="650.9" y2="516.1" stroke="#1D1D1F" stroke-width="1.9"><title>Pro tier · median 150 ms</title></line>
+    <line x1="599.5" y1="370.0" x2="616.5" y2="370.0" stroke="#1D1D1F" stroke-width="2.4"/>
+    <line x1="616.5" y1="370.0" x2="663.9" y2="370.0" stroke="#6E6E73" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="669.9" y="374.6" font-size="14.5" text-anchor="start" fill="#1D1D1F" font-family="Roboto Mono, monospace"><tspan fill="#6E6E73">p99</tspan> 426 ms</text>
+    <text x="560.0" y="630.0" font-size="18" fill="#1D1D1F" text-anchor="middle" font-weight="500">Pro tier</text>
+  </g>
+  <g class="stack" role="listitem" aria-label="Enterprise latency distribution">
+    <line x1="853.3" y1="570.5" x2="853.3" y2="444.9" stroke="#E5E5EA" stroke-width="1.5"/>
+    <rect class="lv" x="807.9" y="444.9" width="90.9" height="125.6" rx="3" fill="#E3EEFD" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 99.6% of requests · 48 ms–284 ms</title></rect>
+    <rect class="lv" x="801.4" y="454.0" width="103.9" height="114.1" rx="3" fill="#CBE1FC" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 99.2% of requests · 52 ms–267 ms</title></rect>
+    <rect class="lv" x="794.9" y="464.6" width="116.9" height="101.1" rx="3" fill="#A9CFFA" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 98.4% of requests · 57 ms–247 ms</title></rect>
+    <rect class="lv" x="788.4" y="475.4" width="129.9" height="87.6" rx="3" fill="#7FB7F7" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 96.9% of requests · 62 ms–227 ms</title></rect>
+    <rect class="lv" x="781.9" y="485.9" width="142.9" height="74.3" rx="3" fill="#4E9BF2" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 93.8% of requests · 67 ms–207 ms</title></rect>
+    <rect class="lv" x="775.4" y="497.2" width="155.9" height="59.5" rx="3" fill="#1E7CEA" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 87.5% of requests · 74 ms–186 ms</title></rect>
+    <rect class="lv" x="768.9" y="508.0" width="168.9" height="43.6" rx="3" fill="#0F62C4" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 75.0% of requests · 83 ms–166 ms</title></rect>
+    <rect class="lv" x="762.4" y="519.5" width="181.9" height="25.5" rx="3" fill="#0A4DA0" stroke="#FFFFFF" stroke-width="1.4"><title>Enterprise · middle 50.0% of requests · 96 ms–144 ms</title></rect>
+    <line x1="762.4" y1="533.6" x2="944.3" y2="533.6" stroke="#FFFFFF" stroke-width="4.6"/>
+    <line class="median" x1="762.4" y1="533.6" x2="944.3" y2="533.6" stroke="#1D1D1F" stroke-width="1.9"><title>Enterprise · median 118 ms</title></line>
+    <line x1="796.9" y1="469.0" x2="813.9" y2="469.0" stroke="#1D1D1F" stroke-width="2.4"/>
+    <line x1="796.9" y1="469.0" x2="749.4" y2="469.0" stroke="#6E6E73" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="743.4" y="473.6" font-size="14.5" text-anchor="end" fill="#1D1D1F" font-family="Roboto Mono, monospace"><tspan fill="#6E6E73">p99</tspan> 239 ms</text>
+    <text x="853.3" y="630.0" font-size="18" fill="#1D1D1F" text-anchor="middle" font-weight="500">Enterprise</text>
+  </g>
+  </g>
+  <g class="legend" transform="translate(120,674)" aria-hidden="true">
+    <rect x="0.0" y="-13" width="17" height="17" rx="3" fill="#0A4DA0"/>
+    <text x="24.0" y="1" font-size="15" fill="#6E6E73">middle 50%</text>
+    <rect x="142.0" y="-13" width="17" height="17" rx="3" fill="#1E7CEA"/>
+    <text x="166.0" y="1" font-size="15" fill="#6E6E73">75%</text>
+    <rect x="218.2" y="-13" width="17" height="17" rx="3" fill="#7FB7F7"/>
+    <text x="242.2" y="1" font-size="15" fill="#6E6E73">87.5%</text>
+    <rect x="313.2" y="-13" width="17" height="17" rx="3" fill="#CBE1FC"/>
+    <text x="337.2" y="1" font-size="15" fill="#6E6E73">deeper tails</text>
+  </g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(992,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

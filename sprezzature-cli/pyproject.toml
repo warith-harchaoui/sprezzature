@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sprezzature-cli"
+version = "0.33.0"
+description = "Unified front driver — one entry point for six front skills (sprezzature-ui, sprezzature-accessibility, sprezzature-audio, sprezzature-vision, sprezzature-colors, sprezzature-publish)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "BSD-3-Clause"
+authors = [{ name = "Warith Harchaoui" }]
+keywords = ["front", "claude", "skill", "cli", "tailwind", "a11y"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "click>=8.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/warith-harchaoui/sprezzature"
+Repository = "https://github.com/warith-harchaoui/sprezzature"
+Changelog = "https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md"
+Issues = "https://github.com/warith-harchaoui/sprezzature/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+front = "sprezzature_cli.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]

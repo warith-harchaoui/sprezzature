@@ -1,0 +1,73 @@
+name: no-claude-trailers
+
+# Belt-and-braces against ``Co-Authored-By: …Claude…`` trailers
+# slipping in from contributor machines that have not installed the
+# global ``prepare-commit-msg`` hook. The hook
+# (``~/.config/git/hooks/prepare-commit-msg``, wired via
+# ``git config --global core.hooksPath``) is the primary,
+# preventive layer; this workflow is the reactive net for code
+# pushed without it.
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  scan-commit-messages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with full history on push, range on PR)
+        uses: actions/checkout@v4
+        with:
+          # On PRs we only need the diff range; on push we need the
+          # commit being pushed and its first-parent ancestors back
+          # to the previous push tip. ``fetch-depth: 0`` is the
+          # cheapest correct fetch depth for both cases.
+          fetch-depth: 0
+
+      - name: Fail on any Claude trailer in new commits
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_REF: ${{ github.sha }}
+        run: |
+          # Determine the commit range to inspect. PRs compare
+          # against the merge base of the target branch; pushes
+          # compare against ``before`` (the previous tip). Either
+          # way we look only at NEW commits — never re-litigate
+          # historical state the project has chosen to live with.
+          if [[ -z "${BASE_REF}" || "${BASE_REF}" == "0000000000000000000000000000000000000000" ]]; then
+              # First push to a new branch, or no previous tip
+              # known. Fall back to the last 50 commits as a
+              # reasonable scan window without re-scanning all
+              # history.
+              range="HEAD~50..HEAD"
+          else
+              range="${BASE_REF}..${HEAD_REF}"
+          fi
+
+          echo "Scanning commit range: ${range}"
+          hits=$(git log "${range}" --grep='Co-Authored-By.*Claude' -i --format='%H %s' || true)
+
+          if [[ -n "${hits}" ]]; then
+              echo ""
+              echo "✗ One or more new commits carry a Co-Authored-By: Claude trailer:"
+              echo "${hits}" | sed 's/^/    /'
+              echo ""
+              echo "Fix: install the global prepare-commit-msg hook so future"
+              echo "commits get the trailer stripped automatically, then rewrite"
+              echo "this branch's offending commits."
+              echo ""
+              echo "    # one-time, per machine:"
+              echo "    mkdir -p ~/.config/git/hooks"
+              echo "    git config --global core.hooksPath ~/.config/git/hooks"
+              echo "    # (drop the prepare-commit-msg hook from"
+              echo "    #  .private/remove-claude.sh into that folder)"
+              echo ""
+              echo "    # rewrite the current branch:"
+              echo "    git rebase -i ${range%..*}    # mark each as ``reword``"
+              exit 1
+          fi
+
+          echo "✓ No Claude trailers in the new commits."

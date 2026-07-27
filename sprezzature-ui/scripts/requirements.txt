@@ -1,0 +1,40 @@
+# Front-skill helper scripts — feature-by-feature requirements.
+#
+# This file has no dependencies of its own. Each feature has its own
+# small requirements file; install only what you need.
+#
+#   No deps (stdlib only)
+#   ─────────────────────
+#     validate.py            — pre-ship quality gate
+#     lint_a11y.py           — static accessibility linter
+#     audit_contrast.py      — WCAG contrast audit
+#     site_indexes.py        — robots / sitemap / llms.txt / Atom / humans
+#     audit_i18n.py          — i18n-in-code audit (JS translation dicts + inline prompts)
+#
+#   PyYAML (pip install PyYAML)
+#     i18n_make.py           — scaffold/compile locales/i18n.yaml + JS loader
+#     validate.py            — (also reads SKILL.md YAML)
+#
+#   pip install -r requirements-favicons.txt
+#     favicons.py            — favicon / PWA icon set generator
+#
+#   pip install -r requirements-cvd.txt
+#     simulate_cvd.py        — color-blindness simulator
+#
+#   pip install -r requirements-alt-text.txt
+#     alt_from_ollama.py     — W3C-compliant alt text via local Ollama
+#
+#   pip install -r requirements-meta-tags.txt
+#     meta_from_ollama.py    — <meta> tag drafter via local Ollama
+#
+#   pip install -r requirements-plain-language.txt
+#     plain_language.py      — copy rewriter via local Ollama
+#
+#   pip install -r requirements-captions.txt
+#     install_captions.py    — installs pywhispercpp + downloads weights
+#     captions_from_whisper.py — captions / transcripts for video and audio
+#
+# Compose with `-r` flags:
+#   pip install -r requirements-favicons.txt -r requirements-alt-text.txt
+#
+# Python 3.9 or newer.

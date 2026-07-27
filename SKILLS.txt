@@ -1,0 +1,28 @@
+# Canonical list of shipped front-* skills, one folder name per line.
+#
+# Single source of truth read by:
+#   - scripts/release.sh
+#   - scripts/validate_all.py
+#   - tests/conftest.py
+#   - tests/test_validate_skill.py
+#   - tests/test_release_packaging.py
+#   - tests/test_two_modes_discipline.py
+#   - tests/test_cli_help.py
+#
+# Lines starting with '#' and blank lines are ignored. Order matters
+# (release.sh packages the bundle in this order; the README install
+# snippets follow the same order).
+#
+# To add or rename a skill: edit this file in one place. Every consumer
+# script reads it via scripts/skills_manifest.py and picks up the change
+# automatically; no other edits required.
+
+sprezzature-ui
+sprezzature-cli-gui
+sprezzature-publish
+sprezzature-accessibility
+sprezzature-colors
+sprezzature-vision
+sprezzature-audio
+sprezzature-ux-laws
+sprezzature-figures

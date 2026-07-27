@@ -1,0 +1,21 @@
+# OpenVoice v2 narration engine — MIT licence on both code and weights.
+#
+# Install:
+#   pip install -r sprezzature-publish/scripts/requirements-narrate-openvoice.txt
+#   python3 sprezzature-publish/scripts/install_narrate.py --engine openvoice
+#
+# Notes:
+# - OpenVoice v2 is published on GitHub (myshell-ai/OpenVoice) and ships
+#   no PyPI wheel of its own; we install directly from the tagged
+#   commit. Pin the SHA in production for reproducibility.
+# - torch + torchaudio are pulled in transitively; the CPU build is
+#   fine for narration use (no GPU required). Install the CUDA / MPS
+#   build separately if you want faster inference.
+# - librosa is OpenVoice's audio I/O — keep it pinned compatibly with
+#   what OpenVoice expects.
+
+openvoice @ git+https://github.com/myshell-ai/OpenVoice.git@main
+torch>=2.0.0
+torchaudio>=2.0.0
+librosa>=0.10.0
+numpy>=1.24.0

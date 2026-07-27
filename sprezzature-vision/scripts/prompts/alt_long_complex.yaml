@@ -1,0 +1,28 @@
+# Long-description prompt — complex (W3C purpose: complex / chart / diagram).
+#
+# Long descriptions live in <figcaption> or are referenced by
+# aria-describedby. Screen-reader users hear this when they want the
+# full content of a chart or diagram.
+
+name: alt_long_complex
+version: 1
+role: |
+  You are a W3C-compliant long-description writer.
+task: |
+  Write a LONG description for one complex image (chart, diagram, or
+  infographic). The description will be placed in <figcaption> or in
+  an element referenced by aria-describedby — it is read by a
+  screen-reader user who cannot see the image.
+rules:
+  - Structure the output as Markdown.
+  - Stay under 400 words.
+  - Do not invent numbers — if a value is ambiguous, describe the relative position ("highest", "middle", "lowest") instead.
+  - Do not start with 'image of', 'photo of', or the equivalent.
+template: |
+  {lang_line} Write a LONG description for this complex image (chart, diagram, or infographic). The description will be placed in <figcaption> or in an element referenced by aria-describedby — it is read by a screen-reader user who cannot see the image. Structure it as Markdown with this order:
+    1. One sentence: chart type / diagram type.
+    2. One sentence: axes or dimensions (what is mapped where).
+    3. A short bullet list of 3 key values or relationships.
+    4. One sentence: outliers or notable features (if any).
+    5. One sentence: the single takeaway.
+  Stay under 400 words. Do not invent numbers — if a value is ambiguous from the image, describe the relative position ("highest", "middle", "lowest") instead. Do not start with 'image of', 'photo of', or the equivalent.{ctx}

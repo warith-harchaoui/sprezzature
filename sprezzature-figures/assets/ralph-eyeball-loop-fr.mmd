@@ -1,0 +1,10 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Roboto, system-ui, sans-serif","lineColor":"#8E8E93","fontSize":"16px"}}}%%
+flowchart LR
+    R["🖼️ Rendre<br/><span style='font-size:12px'>le code devient une image,<br/>toujours de la même façon</span>"]:::render --> L["👁️ Regarder<br/><span style='font-size:12px'>étudier vraiment<br/>l'image</span>"]:::look
+    L --> C["🧐 Critiquer<br/><span style='font-size:12px'>qu'a repéré<br/>l'œil ?</span>"]:::crit
+    C --> E["✏️ Éditer la source<br/><span style='font-size:12px'>jamais l'image</span>"]:::edit
+    E -->|"jusqu'à ce qu'il n'y ait plus rien à repérer"| R
+    classDef render fill:#EAF3FF,stroke:#007AFF,stroke-width:2px,color:#1D1D1F
+    classDef look fill:#E4F8EA,stroke:#28CD41,stroke-width:2px,color:#1D1D1F
+    classDef crit fill:#FFF3E0,stroke:#FF9500,stroke-width:2px,color:#1D1D1F
+    classDef edit fill:#F4E9FB,stroke:#AF52DE,stroke-width:2px,color:#1D1D1F

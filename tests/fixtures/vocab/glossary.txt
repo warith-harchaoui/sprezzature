@@ -1,0 +1,8 @@
+# Project glossary — one term per line. Comments start with #.
+# Used by captions and alt-text vocab biasing.
+pywhispercpp
+VisionCell
+Acme Robotics
+Tailwind
+WebVTT
+Ollama

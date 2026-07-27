@@ -1,0 +1,44 @@
+# Developer dependencies for working on the sprezzature skill.
+#
+# Install:
+#   pip install -r requirements-dev.txt
+#
+# Runtime dependencies live in front/scripts/requirements.txt; install
+# both for a full local environment:
+#   pip install -r requirements-dev.txt -r sprezzature/scripts/requirements.txt
+
+# Fast deterministic test suite under tests/
+pytest>=8.0.0
+
+# Real YAML parser for SKILL.md frontmatter validation.
+# Used by scripts/validate_skill.py + tests/test_validate_skill.py;
+# the regex-only frontmatter check is no longer trusted as the gate.
+PyYAML>=6.0
+
+# Lint / import-hygiene gate (CODING_ALL.md rule 3, lint half), config in
+# ruff.toml. audit: `ruff check .` (wired into CI) — make: `ruff check --fix .`.
+# Pinned to the 0.15 line so the CI gate is reproducible.
+ruff>=0.15,<0.16
+
+# Type gate (CODING_ALL.md rule 3, type half), config in mypy.ini. Run via
+# scripts/run_mypy.sh (per-skill-dir, ignore_missing_imports for heavy backends).
+mypy>=1.8,<2.0
+# Type stubs so the gate is deterministic across environments (yaml + requests
+# are otherwise "installed but unstubbed" → import-untyped noise that varies by
+# what transitive deps happen to ship).
+types-PyYAML
+types-requests
+
+# Optional: LLM-output quality assertions under tests/eval/.
+# These tests need a running Ollama daemon and are marked with
+# ``@pytest.mark.eval`` so they are NOT collected in the default run.
+# Enable with: pytest -m eval
+#
+# Each eval test loads its own optional dependency via
+# ``pytest.importorskip`` so a missing package skips the test cleanly
+# rather than crashing the suite.
+deepeval>=1.0.0
+# textstat — Flesch-Kincaid grade scoring for plain-language eval.
+textstat>=0.7.0
+# jiwer — Word Error Rate for the captions eval.
+jiwer>=3.0.0

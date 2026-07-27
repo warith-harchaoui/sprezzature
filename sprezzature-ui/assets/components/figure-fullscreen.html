@@ -1,0 +1,309 @@
+<!--
+  Figure fullscreen: a responsive figure that stays interactive (hover
+  tooltips) AND can go fullscreen, framework-free. ONE authored SVG runs in
+  two modes that COMPOSE without stepping on each other.
+
+  WHY (measured in Chrome 150, headless Playwright, not guessed). How an SVG
+  is embedded decides what is even possible inside it:
+
+    embedding              responsive  CSS :hover  internal <script>  requestFullscreen
+    <img src=".svg">          yes         NO             NO                 NO      (dead image)
+    <object data=".svg">      yes         yes            yes                yes     (live, self-contained)
+    inline <svg> in HTML      yes         yes            yes                yes     (page JS reaches it)
+
+  So responsiveness + a baseline hover tooltip MUST live inside the SVG (only
+  that survives <object> and a standalone .svg). Fullscreen + a rich cursor
+  tooltip + iPhone/iPad fallback + multi-card chrome are page-level. Hence two layers.
+
+  THE ARRANGEMENT (self-contained by default, external supersedes when present):
+    • Self-contained is the DEFAULT. Every figure ships responsive + a pure-CSS
+      hover tooltip + an internal fullscreen button. Opened directly, served via
+      <object>, or inlined, it just works. Nothing to ship alongside.
+    • External is an OPT-IN enhancement for dashboards: a shared cursor-following
+      HTML tooltip + a fullscreen button in the card chrome + iPhone/iPad fallback.
+    • They compose, they do not duplicate. The boundary is ONE selector:
+      [data-fs-target]. A figure inside such a card is "externally managed" →
+      its internal button + CSS tooltip STAND DOWN (no two buttons, no two
+      tooltips). A figure NOT inside one stays fully self-contained. You author
+      ONE SVG; the context decides the mode.
+
+  Also proven: in fullscreen the browser paints ONLY the top-layer element, so
+  an HTML tooltip on <body> is invisible → the external module re-homes it into
+  the fullscreen element. Both layers honour prefers-reduced-motion and are
+  keyboard-operable.
+
+  HIT-TARGET RULE (easy to get wrong): inside each mark's group put the visible
+  shape FIRST with pointer-events:none, then the transparent .hit on top, then
+  its sibling .tip. That way the .hit receives the hover (the visible shape does
+  not steal it) and `.hit:hover ~ .tip` / data-tip both fire.
+
+  Copy the blocks marked ‹CSS› and ‹JS› into figure-fullscreen.css /
+  figure-fullscreen.js, and the ‹SVG› into chart.svg.
+-->
+
+
+<!-- ‹CSS› external layer — figure-fullscreen.css ─────────────────────────── -->
+<style>
+  .fig-card .fig-embed svg { display: block; width: 100%; height: auto; }
+
+  /* native fullscreen: center + letterbox */
+  .fig-card:fullscreen, .fig-card.is-fs {
+    display: flex; flex-direction: column; justify-content: center; background: #fff; padding: 2vh 3vw;
+  }
+  .fig-card:fullscreen .fig-embed svg, .fig-card.is-fs .fig-embed svg {
+    max-height: 88vh; width: 100%; height: auto; object-fit: contain;
+  }
+
+  /* iPhone/iPad pseudo-fullscreen (no element Fullscreen API): fixed overlay */
+  .fig-card[data-fs-pseudo] { position: fixed; inset: 0; z-index: 9999; margin: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
+  .fs-locked { overflow: hidden; }
+
+  /* COMPOSITION RULE: inside a managed card, silence the SVG's own layer so it
+     never fights the external one. display:none beats the SVG's :hover opacity. */
+  [data-fs-target] .tip { display: none !important; }
+  [data-fs-target] [data-fs-internal] { display: none !important; }
+
+  /* shared cursor-following tooltip */
+  #fig-tip { position: fixed; z-index: 10000; pointer-events: none; max-width: min(320px, 90vw);
+             background: #fff; color: #1D1D1F; border: 1px solid #e6e9ee; border-radius: 12px;
+             box-shadow: 0 6px 24px rgba(20,30,40,.16); padding: .55rem .75rem; font: 14px/1.45 Roboto, system-ui, sans-serif; }
+  #fig-tip[hidden] { display: none; }
+  #fig-tip b { display: block; margin-bottom: .1rem; }
+</style>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     ‹SVG› the authored figure (chart.svg). Written inline twice below only so
+     both modes render on one page; author it ONCE and embed the same file.
+     Each .hit carries a sibling .tip (self-contained tooltip) AND data-tip
+     (payload the external tooltip reads): one SVG, two modes. The internal
+     <script> must be PARSER-inserted to run: author it inline or ship chart.svg;
+     never inject it by cloning a <template> or via innerHTML.
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── DEMO 1 — self-contained (no [data-fs-target]): internal button + CSS tooltip LIVE ── -->
+<figure class="mx-auto max-w-lg">
+  <div class="fig-embed">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid meet"
+         role="img" aria-labelledby="c1-title c1-desc" style="display:block;width:100%;height:auto;background:#fff">
+      <title id="c1-title">Quarterly revenue</title>
+      <desc id="c1-desc">Three bars; hover or focus a bar for its value; a button toggles fullscreen.</desc>
+      <style>
+        .mark { pointer-events: none; }                 /* visible shapes never steal the hover */
+        .hit { cursor: pointer; }
+        .hit:focus-visible { outline: 2px solid #007AFF; outline-offset: 2px; }
+        .tip { opacity: 0; transition: opacity .12s ease; pointer-events: none; }
+        .hit:hover ~ .tip, .hit:focus ~ .tip { opacity: 1; }
+        @media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+        svg:fullscreen { background: #fff; }
+        .fsbtn { cursor: pointer; } .fsbtn rect { fill: #f2f3f5; } .fsbtn:hover rect { fill: #e3e6ea; }
+      </style>
+      <rect class="mark" width="480" height="260" fill="#fff"/>
+      <text class="mark" x="24" y="34" font-family="Roboto, system-ui, sans-serif" font-size="18" font-weight="700" fill="#1D1D1F">Quarterly revenue</text>
+      <!-- group order: visible bar (mark) → .hit (on top) → .tip -->
+      <g transform="translate(40,70)">
+        <rect class="mark" x="30" y="70" width="60" height="80" rx="6" fill="#007AFF" fill-opacity=".85"/>
+        <rect class="hit" x="0" y="0" width="120" height="150" fill="transparent" tabindex="0" data-tip="Q1|Revenue: €32k|Up 4% QoQ"><title>Q1 — €32k</title></rect>
+        <g class="tip"><rect x="4" y="40" width="82" height="24" rx="6" fill="#1D1D1F"/><text x="45" y="57" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="#fff">€32k</text></g>
+      </g>
+      <g transform="translate(180,70)">
+        <rect class="mark" x="30" y="34" width="60" height="116" rx="6" fill="#007AFF" fill-opacity=".85"/>
+        <rect class="hit" x="0" y="0" width="120" height="150" fill="transparent" tabindex="0" data-tip="Q2|Revenue: €41k|Up 28% QoQ"><title>Q2 — €41k</title></rect>
+        <g class="tip"><rect x="4" y="4" width="82" height="24" rx="6" fill="#1D1D1F"/><text x="45" y="21" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="#fff">€41k</text></g>
+      </g>
+      <g transform="translate(320,70)">
+        <rect class="mark" x="30" y="6" width="60" height="144" rx="6" fill="#007AFF"/>
+        <rect class="hit" x="0" y="0" width="120" height="150" fill="transparent" tabindex="0" data-tip="Q3|Revenue: €57k|Up 39% QoQ"><title>Q3 — €57k</title></rect>
+        <g class="tip"><rect x="4" y="-24" width="82" height="24" rx="6" fill="#1D1D1F"/><text x="45" y="-7" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="#fff">€57k</text></g>
+      </g>
+      <g data-fs-internal class="fsbtn" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(430,14)" style="display:none">
+        <rect x="0" y="0" width="34" height="34" rx="8"/>
+        <path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <script><![CDATA[
+        (function () {
+          var me = document.currentScript, svg = me.ownerSVGElement || me.parentNode;
+          if (svg.closest && svg.closest("[data-fs-target]")) return;   // managed by a page module → stand down
+          var btn = svg.querySelector("[data-fs-internal]");
+          var req = svg.requestFullscreen || svg.webkitRequestFullscreen;
+          if (!btn || !req) return;                 // no Fullscreen API (e.g. <img>): stay hidden
+          btn.style.display = "";                    // self-contained mode: reveal the button
+          function toggle() {
+            var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+            if (fsEl === svg) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+            else req.call(svg);
+          }
+          btn.addEventListener("click", toggle);
+          btn.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+        })();
+      ]]></script>
+    </svg>
+  </div>
+  <figcaption class="mt-2 text-center text-[13px] text-label-tertiary dark:text-label-tertiary-dark">
+    Self-contained — internal fullscreen button, pure-CSS hover tooltip. No page JS needed.
+  </figcaption>
+</figure>
+
+
+<!-- ── DEMO 2 — dashboard card ([data-fs-target] + external module): internal STANDS DOWN ── -->
+<figure class="fig-card mx-auto mt-8 max-w-lg rounded-2xl border border-separator bg-surface-primary p-4 dark:border-separator-dark dark:bg-surface-primary-dark"
+        data-fs-target>
+  <figcaption class="mb-2 flex items-center gap-2">
+    <span class="font-semibold text-label-primary dark:text-label-primary-dark">Quarterly revenue</span>
+    <button type="button" data-fs aria-label="Toggle fullscreen"
+            class="ml-auto grid h-8 w-8 place-items-center rounded-lg border border-separator text-label-secondary hover:border-brand-blue hover:text-brand-blue dark:border-separator-dark dark:text-label-secondary-dark">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/>
+      </svg>
+    </button>
+  </figcaption>
+  <div class="fig-embed">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid meet"
+         role="img" aria-labelledby="c2-title c2-desc" style="display:block;width:100%;height:auto;background:#fff">
+      <title id="c2-title">Quarterly revenue</title>
+      <desc id="c2-desc">Three bars; hover a bar for its value.</desc>
+      <style>
+        .mark { pointer-events: none; }
+        .hit { cursor: pointer; } .hit:focus-visible { outline: 2px solid #007AFF; outline-offset: 2px; }
+        .tip { opacity: 0; transition: opacity .12s ease; pointer-events: none; }
+        .hit:hover ~ .tip, .hit:focus ~ .tip { opacity: 1; }
+        @media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+        .fsbtn { cursor: pointer; } .fsbtn rect { fill: #f2f3f5; }
+      </style>
+      <rect class="mark" width="480" height="260" fill="#fff"/>
+      <text class="mark" x="24" y="34" font-family="Roboto, system-ui, sans-serif" font-size="18" font-weight="700" fill="#1D1D1F">Quarterly revenue</text>
+      <g transform="translate(40,70)">
+        <rect class="mark" x="30" y="70" width="60" height="80" rx="6" fill="#007AFF" fill-opacity=".85"/>
+        <rect class="hit" x="0" y="0" width="120" height="150" fill="transparent" tabindex="0" data-tip="Q1|Revenue: €32k|Up 4% QoQ"><title>Q1 — €32k</title></rect>
+        <g class="tip"><rect x="4" y="40" width="82" height="24" rx="6" fill="#1D1D1F"/><text x="45" y="57" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="#fff">€32k</text></g>
+      </g>
+      <g transform="translate(180,70)">
+        <rect class="mark" x="30" y="34" width="60" height="116" rx="6" fill="#007AFF" fill-opacity=".85"/>
+        <rect class="hit" x="0" y="0" width="120" height="150" fill="transparent" tabindex="0" data-tip="Q2|Revenue: €41k|Up 28% QoQ"><title>Q2 — €41k</title></rect>
+        <g class="tip"><rect x="4" y="4" width="82" height="24" rx="6" fill="#1D1D1F"/><text x="45" y="21" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="#fff">€41k</text></g>
+      </g>
+      <g transform="translate(320,70)">
+        <rect class="mark" x="30" y="6" width="60" height="144" rx="6" fill="#007AFF"/>
+        <rect class="hit" x="0" y="0" width="120" height="150" fill="transparent" tabindex="0" data-tip="Q3|Revenue: €57k|Up 39% QoQ"><title>Q3 — €57k</title></rect>
+        <g class="tip"><rect x="4" y="-24" width="82" height="24" rx="6" fill="#1D1D1F"/><text x="45" y="-7" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="#fff">€57k</text></g>
+      </g>
+      <g data-fs-internal class="fsbtn" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(430,14)" style="display:none">
+        <rect x="0" y="0" width="34" height="34" rx="8"/>
+        <path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <script><![CDATA[
+        (function () {
+          var me = document.currentScript, svg = me.ownerSVGElement || me.parentNode;
+          if (svg.closest && svg.closest("[data-fs-target]")) return;   // managed → stand down
+          var btn = svg.querySelector("[data-fs-internal]");
+          var req = svg.requestFullscreen || svg.webkitRequestFullscreen;
+          if (!btn || !req) return;
+          btn.style.display = "";
+          function toggle() {
+            var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+            if (fsEl === svg) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+            else req.call(svg);
+          }
+          btn.addEventListener("click", toggle);
+          btn.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+        })();
+      ]]></script>
+    </svg>
+  </div>
+  <figcaption class="mt-2 text-center text-[13px] text-label-tertiary dark:text-label-tertiary-dark">
+    Same SVG, inside a managed card: internal layer silenced, rich HTML tooltip + card fullscreen instead.
+  </figcaption>
+</figure>
+
+<!-- Shared cursor tooltip; data-fs-follow → re-homed into the fullscreen element. One per page. -->
+<div id="fig-tip" role="tooltip" hidden data-fs-follow></div>
+
+
+<!-- ‹JS› external layer — figure-fullscreen.js ──────────────────────────── -->
+<script type="module">
+  /*
+   * figure-fullscreen.js — page fullscreen for figure cards + a shared cursor
+   * tooltip that survives fullscreen. Framework-free, multi-instance. Enhances
+   * any [data-fs-target] card; figures inside such cards silence their own
+   * internal layer (see the SVG stand-down check + the CSS composition rule).
+   *
+   * Two non-obvious parts, both verified: (1) Safari on iPhone and iPad has no element
+   * Fullscreen API → fixed CSS overlay fallback; (2) fullscreen paints only the
+   * top-layer element → re-home [data-fs-follow] nodes into the active host.
+   */
+  function host() {
+    return document.fullscreenElement || document.webkitFullscreenElement
+        || document.querySelector("[data-fs-pseudo]") || document.body;
+  }
+  const followers = Array.from(document.querySelectorAll("[data-fs-follow]"));
+  function rehome(into) {
+    followers.forEach((n) => { if (!n._home) n._home = n.parentNode; (into || n._home).appendChild(n); });
+  }
+  const targetOf = (btn) => btn.closest("[data-fs-target]") || btn.closest("figure");
+
+  function enter(card) {
+    const req = card.requestFullscreen || card.webkitRequestFullscreen;
+    if (req) { req.call(card); return; }                 // native (fullscreenchange fires)
+    card.setAttribute("data-fs-pseudo", "");             // iPhone/iPad fallback
+    card.classList.add("is-fs");
+    document.documentElement.classList.add("fs-locked");
+    rehome(card);
+    card.dispatchEvent(new CustomEvent("sprezzature:fullscreenchange", { bubbles: true, detail: { on: true, host: card } }));
+  }
+  function exitPseudo(card) {
+    card.removeAttribute("data-fs-pseudo"); card.classList.remove("is-fs");
+    document.documentElement.classList.remove("fs-locked"); rehome(null);
+    card.dispatchEvent(new CustomEvent("sprezzature:fullscreenchange", { bubbles: true, detail: { on: false, host: document.body } }));
+  }
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-fs]"); if (!btn) return;
+    const card = targetOf(btn); if (!card) return;
+    const pseudo = document.querySelector("[data-fs-pseudo]");
+    if (pseudo) { exitPseudo(pseudo); return; }
+    if (document.fullscreenElement || document.webkitFullscreenElement)
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    else enter(card);
+  });
+  function onNativeChange() {
+    const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+    document.querySelectorAll("[data-fs-target]").forEach((c) => c.classList.toggle("is-fs", c === fsEl));
+    rehome(fsEl || null);
+    (fsEl || document).dispatchEvent(new CustomEvent("sprezzature:fullscreenchange", { bubbles: true, detail: { on: !!fsEl, host: fsEl || document.body } }));
+  }
+  document.addEventListener("fullscreenchange", onNativeChange);
+  document.addEventListener("webkitfullscreenchange", onNativeChange);
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const pseudo = document.querySelector("[data-fs-pseudo]"); if (pseudo) exitPseudo(pseudo);
+  });
+
+  /* shared cursor tooltip, driven by .hit[data-tip] */
+  const tip = document.getElementById("fig-tip");
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  function show(hit, x, y) {
+    const raw = hit.getAttribute("data-tip"); if (!raw) return;
+    const lines = raw.split("|");
+    tip.innerHTML = "<b>" + esc(lines[0]) + "</b>" + lines.slice(1).map(esc).join("<br>");
+    const h = host(); if (tip.parentNode !== h) h.appendChild(tip);   // stay inside the fullscreen host
+    tip.hidden = false;
+    const pad = 14, w = tip.offsetWidth, ht = tip.offsetHeight;
+    let left = x + pad, top = y + pad;
+    if (left + w > innerWidth - 8) left = x - w - pad;
+    if (top + ht > innerHeight - 8) top = y - ht - pad;
+    tip.style.left = Math.max(8, left) + "px"; tip.style.top = Math.max(8, top) + "px";
+  }
+  document.addEventListener("pointermove", (e) => {
+    if (e.pointerType === "touch") return;
+    const hit = e.target.closest && e.target.closest(".hit");
+    if (hit) show(hit, e.clientX, e.clientY); else if (!tip.hidden) tip.hidden = true;
+  });
+  document.addEventListener("pointerdown", (e) => {
+    const hit = e.target.closest && e.target.closest(".hit");
+    if (hit) { show(hit, e.clientX, e.clientY); e.preventDefault(); } else tip.hidden = true;
+  });
+  document.addEventListener("focusin", (e) => {
+    const hit = e.target.closest && e.target.closest(".hit"); if (!hit) return;
+    const r = hit.getBoundingClientRect(); show(hit, r.left + r.width / 2, r.top);
+  });
+  document.addEventListener("focusout", () => { tip.hidden = true; });
+</script>

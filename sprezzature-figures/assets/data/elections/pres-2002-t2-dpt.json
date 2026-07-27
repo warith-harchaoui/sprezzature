@@ -1,0 +1,638 @@
+[
+ {
+  "code": "01",
+  "nom": "Ain",
+  "Chirac": 78.78,
+  "Le Pen": 21.22
+ },
+ {
+  "code": "02",
+  "nom": "Aisne",
+  "Chirac": 75.43,
+  "Le Pen": 24.57
+ },
+ {
+  "code": "03",
+  "nom": "Allier",
+  "Chirac": 85.21,
+  "Le Pen": 14.79
+ },
+ {
+  "code": "04",
+  "nom": "Alpes De Haute Provence",
+  "Chirac": 78.83,
+  "Le Pen": 21.17
+ },
+ {
+  "code": "05",
+  "nom": "Hautes Alpes",
+  "Chirac": 82.43,
+  "Le Pen": 17.57
+ },
+ {
+  "code": "06",
+  "nom": "Alpes Maritimes",
+  "Chirac": 71.32,
+  "Le Pen": 28.68
+ },
+ {
+  "code": "07",
+  "nom": "Ardeche",
+  "Chirac": 82.12,
+  "Le Pen": 17.88
+ },
+ {
+  "code": "08",
+  "nom": "Ardennes",
+  "Chirac": 75.92,
+  "Le Pen": 24.08
+ },
+ {
+  "code": "09",
+  "nom": "Ariege",
+  "Chirac": 83.87,
+  "Le Pen": 16.13
+ },
+ {
+  "code": "10",
+  "nom": "Aube",
+  "Chirac": 76.87,
+  "Le Pen": 23.13
+ },
+ {
+  "code": "11",
+  "nom": "Aude",
+  "Chirac": 77.93,
+  "Le Pen": 22.07
+ },
+ {
+  "code": "12",
+  "nom": "Aveyron",
+  "Chirac": 88.14,
+  "Le Pen": 11.86
+ },
+ {
+  "code": "13",
+  "nom": "Bouches Du Rhone",
+  "Chirac": 72.54,
+  "Le Pen": 27.46
+ },
+ {
+  "code": "14",
+  "nom": "Calvados",
+  "Chirac": 83.95,
+  "Le Pen": 16.05
+ },
+ {
+  "code": "15",
+  "nom": "Cantal",
+  "Chirac": 88.52,
+  "Le Pen": 11.48
+ },
+ {
+  "code": "16",
+  "nom": "Charente",
+  "Chirac": 85.19,
+  "Le Pen": 14.81
+ },
+ {
+  "code": "17",
+  "nom": "Charente Maritime",
+  "Chirac": 83.72,
+  "Le Pen": 16.28
+ },
+ {
+  "code": "18",
+  "nom": "Cher",
+  "Chirac": 83.07,
+  "Le Pen": 16.93
+ },
+ {
+  "code": "19",
+  "nom": "Correze",
+  "Chirac": 90.89,
+  "Le Pen": 9.11
+ },
+ {
+  "code": "2A",
+  "nom": "Corse Sud",
+  "Chirac": 77.7,
+  "Le Pen": 22.3
+ },
+ {
+  "code": "2B",
+  "nom": "Haute Corse",
+  "Chirac": 81.57,
+  "Le Pen": 18.43
+ },
+ {
+  "code": "21",
+  "nom": "Cote D'Or",
+  "Chirac": 81.68,
+  "Le Pen": 18.32
+ },
+ {
+  "code": "22",
+  "nom": "Cotes D'Armor",
+  "Chirac": 88.3,
+  "Le Pen": 11.7
+ },
+ {
+  "code": "23",
+  "nom": "Creuse",
+  "Chirac": 88.34,
+  "Le Pen": 11.66
+ },
+ {
+  "code": "24",
+  "nom": "Dordogne",
+  "Chirac": 85.7,
+  "Le Pen": 14.3
+ },
+ {
+  "code": "25",
+  "nom": "Doubs",
+  "Chirac": 81.81,
+  "Le Pen": 18.19
+ },
+ {
+  "code": "26",
+  "nom": "Drome",
+  "Chirac": 79.29,
+  "Le Pen": 20.71
+ },
+ {
+  "code": "27",
+  "nom": "Eure",
+  "Chirac": 78.22,
+  "Le Pen": 21.78
+ },
+ {
+  "code": "28",
+  "nom": "Eure Et Loir",
+  "Chirac": 79.26,
+  "Le Pen": 20.74
+ },
+ {
+  "code": "29",
+  "nom": "Finistere",
+  "Chirac": 89.44,
+  "Le Pen": 10.56
+ },
+ {
+  "code": "30",
+  "nom": "Gard",
+  "Chirac": 73.34,
+  "Le Pen": 26.66
+ },
+ {
+  "code": "31",
+  "nom": "Haute Garonne",
+  "Chirac": 84.1,
+  "Le Pen": 15.9
+ },
+ {
+  "code": "32",
+  "nom": "Gers",
+  "Chirac": 85.2,
+  "Le Pen": 14.8
+ },
+ {
+  "code": "33",
+  "nom": "Gironde",
+  "Chirac": 83.77,
+  "Le Pen": 16.23
+ },
+ {
+  "code": "34",
+  "nom": "Herault",
+  "Chirac": 75.53,
+  "Le Pen": 24.47
+ },
+ {
+  "code": "35",
+  "nom": "Ille Et Vilaine",
+  "Chirac": 89.82,
+  "Le Pen": 10.18
+ },
+ {
+  "code": "36",
+  "nom": "Indre",
+  "Chirac": 83.37,
+  "Le Pen": 16.63
+ },
+ {
+  "code": "37",
+  "nom": "Indre Et Loire",
+  "Chirac": 84.84,
+  "Le Pen": 15.16
+ },
+ {
+  "code": "38",
+  "nom": "Isere",
+  "Chirac": 81.72,
+  "Le Pen": 18.28
+ },
+ {
+  "code": "39",
+  "nom": "Jura",
+  "Chirac": 81.15,
+  "Le Pen": 18.85
+ },
+ {
+  "code": "40",
+  "nom": "Landes",
+  "Chirac": 87.1,
+  "Le Pen": 12.9
+ },
+ {
+  "code": "41",
+  "nom": "Loir Et Cher",
+  "Chirac": 80.79,
+  "Le Pen": 19.21
+ },
+ {
+  "code": "42",
+  "nom": "Loire",
+  "Chirac": 79.42,
+  "Le Pen": 20.58
+ },
+ {
+  "code": "43",
+  "nom": "Haute Loire",
+  "Chirac": 81.81,
+  "Le Pen": 18.19
+ },
+ {
+  "code": "44",
+  "nom": "Loire Atlantique",
+  "Chirac": 88.83,
+  "Le Pen": 11.17
+ },
+ {
+  "code": "45",
+  "nom": "Loiret",
+  "Chirac": 81.25,
+  "Le Pen": 18.75
+ },
+ {
+  "code": "46",
+  "nom": "Lot",
+  "Chirac": 87.91,
+  "Le Pen": 12.09
+ },
+ {
+  "code": "47",
+  "nom": "Lot Et Garonne",
+  "Chirac": 77.94,
+  "Le Pen": 22.06
+ },
+ {
+  "code": "48",
+  "nom": "Lozere",
+  "Chirac": 85.57,
+  "Le Pen": 14.43
+ },
+ {
+  "code": "49",
+  "nom": "Maine Et Loire",
+  "Chirac": 87.93,
+  "Le Pen": 12.07
+ },
+ {
+  "code": "50",
+  "nom": "Manche",
+  "Chirac": 85.31,
+  "Le Pen": 14.69
+ },
+ {
+  "code": "51",
+  "nom": "Marne",
+  "Chirac": 79.83,
+  "Le Pen": 20.17
+ },
+ {
+  "code": "52",
+  "nom": "Haute Marne",
+  "Chirac": 76.17,
+  "Le Pen": 23.83
+ },
+ {
+  "code": "53",
+  "nom": "Mayenne",
+  "Chirac": 88.59,
+  "Le Pen": 11.41
+ },
+ {
+  "code": "54",
+  "nom": "Meurthe Et Moselle",
+  "Chirac": 81.72,
+  "Le Pen": 18.28
+ },
+ {
+  "code": "55",
+  "nom": "Meuse",
+  "Chirac": 78.22,
+  "Le Pen": 21.78
+ },
+ {
+  "code": "56",
+  "nom": "Morbihan",
+  "Chirac": 86.11,
+  "Le Pen": 13.89
+ },
+ {
+  "code": "57",
+  "nom": "Moselle",
+  "Chirac": 78.11,
+  "Le Pen": 21.89
+ },
+ {
+  "code": "58",
+  "nom": "Nievre",
+  "Chirac": 81.76,
+  "Le Pen": 18.24
+ },
+ {
+  "code": "59",
+  "nom": "Nord",
+  "Chirac": 78.28,
+  "Le Pen": 21.72
+ },
+ {
+  "code": "60",
+  "nom": "Oise",
+  "Chirac": 74.93,
+  "Le Pen": 25.07
+ },
+ {
+  "code": "61",
+  "nom": "Orne",
+  "Chirac": 81.3,
+  "Le Pen": 18.7
+ },
+ {
+  "code": "62",
+  "nom": "Pas De Calais",
+  "Chirac": 77.83,
+  "Le Pen": 22.17
+ },
+ {
+  "code": "63",
+  "nom": "Puy De Dome",
+  "Chirac": 87.05,
+  "Le Pen": 12.95
+ },
+ {
+  "code": "64",
+  "nom": "Pyrenees Atlantiques",
+  "Chirac": 87.5,
+  "Le Pen": 12.5
+ },
+ {
+  "code": "65",
+  "nom": "Hautes Pyrenees",
+  "Chirac": 86.55,
+  "Le Pen": 13.45
+ },
+ {
+  "code": "66",
+  "nom": "Pyrenees Orientales",
+  "Chirac": 74.88,
+  "Le Pen": 25.12
+ },
+ {
+  "code": "67",
+  "nom": "Bas Rhin",
+  "Chirac": 79.32,
+  "Le Pen": 20.68
+ },
+ {
+  "code": "68",
+  "nom": "Haut Rhin",
+  "Chirac": 77.65,
+  "Le Pen": 22.35
+ },
+ {
+  "code": "69",
+  "nom": "Rhone",
+  "Chirac": 81.27,
+  "Le Pen": 18.73
+ },
+ {
+  "code": "70",
+  "nom": "Haute Saone",
+  "Chirac": 75.77,
+  "Le Pen": 24.23
+ },
+ {
+  "code": "71",
+  "nom": "Saone Et Loire",
+  "Chirac": 81.9,
+  "Le Pen": 18.1
+ },
+ {
+  "code": "72",
+  "nom": "Sarthe",
+  "Chirac": 84.43,
+  "Le Pen": 15.57
+ },
+ {
+  "code": "73",
+  "nom": "Savoie",
+  "Chirac": 81.26,
+  "Le Pen": 18.74
+ },
+ {
+  "code": "74",
+  "nom": "Haute Savoie",
+  "Chirac": 81.8,
+  "Le Pen": 18.2
+ },
+ {
+  "code": "75",
+  "nom": "Paris",
+  "Chirac": 89.97,
+  "Le Pen": 10.03
+ },
+ {
+  "code": "76",
+  "nom": "Seine Maritime",
+  "Chirac": 82.58,
+  "Le Pen": 17.42
+ },
+ {
+  "code": "77",
+  "nom": "Seine Et Marne",
+  "Chirac": 80.64,
+  "Le Pen": 19.36
+ },
+ {
+  "code": "78",
+  "nom": "Yvelines",
+  "Chirac": 85.59,
+  "Le Pen": 14.41
+ },
+ {
+  "code": "79",
+  "nom": "Deux Sevres",
+  "Chirac": 89.62,
+  "Le Pen": 10.38
+ },
+ {
+  "code": "80",
+  "nom": "Somme",
+  "Chirac": 78.26,
+  "Le Pen": 21.74
+ },
+ {
+  "code": "81",
+  "nom": "Tarn",
+  "Chirac": 82.42,
+  "Le Pen": 17.58
+ },
+ {
+  "code": "82",
+  "nom": "Tarn Et Garonne",
+  "Chirac": 78.42,
+  "Le Pen": 21.58
+ },
+ {
+  "code": "83",
+  "nom": "Var",
+  "Chirac": 71.31,
+  "Le Pen": 28.69
+ },
+ {
+  "code": "84",
+  "nom": "Vaucluse",
+  "Chirac": 70.36,
+  "Le Pen": 29.64
+ },
+ {
+  "code": "85",
+  "nom": "Vendee",
+  "Chirac": 87.81,
+  "Le Pen": 12.19
+ },
+ {
+  "code": "86",
+  "nom": "Vienne",
+  "Chirac": 87.65,
+  "Le Pen": 12.35
+ },
+ {
+  "code": "87",
+  "nom": "Haute Vienne",
+  "Chirac": 88.94,
+  "Le Pen": 11.06
+ },
+ {
+  "code": "88",
+  "nom": "Vosges",
+  "Chirac": 78.81,
+  "Le Pen": 21.19
+ },
+ {
+  "code": "89",
+  "nom": "Yonne",
+  "Chirac": 77.33,
+  "Le Pen": 22.67
+ },
+ {
+  "code": "90",
+  "nom": "Territoire De Belfort",
+  "Chirac": 77.92,
+  "Le Pen": 22.08
+ },
+ {
+  "code": "91",
+  "nom": "Essonne",
+  "Chirac": 84.96,
+  "Le Pen": 15.04
+ },
+ {
+  "code": "92",
+  "nom": "Hauts De Seine",
+  "Chirac": 87.99,
+  "Le Pen": 12.01
+ },
+ {
+  "code": "93",
+  "nom": "Seine Saint-Denis",
+  "Chirac": 82.56,
+  "Le Pen": 17.44
+ },
+ {
+  "code": "94",
+  "nom": "Val De Marne",
+  "Chirac": 86.22,
+  "Le Pen": 13.78
+ },
+ {
+  "code": "95",
+  "nom": "Val D'Oise",
+  "Chirac": 82.74,
+  "Le Pen": 17.26
+ },
+ {
+  "code": "ZA",
+  "nom": "Guadeloupe",
+  "Chirac": 91.28,
+  "Le Pen": 8.72
+ },
+ {
+  "code": "ZB",
+  "nom": "Martinique",
+  "Chirac": 96.15,
+  "Le Pen": 3.85
+ },
+ {
+  "code": "ZC",
+  "nom": "Guyane",
+  "Chirac": 89.09,
+  "Le Pen": 10.91
+ },
+ {
+  "code": "ZD",
+  "nom": "La Reunion",
+  "Chirac": 91.9,
+  "Le Pen": 8.1
+ },
+ {
+  "code": "ZM",
+  "nom": "Mayotte",
+  "Chirac": 88.27,
+  "Le Pen": 11.73
+ },
+ {
+  "code": "ZN",
+  "nom": "Nouvelle Caledonie",
+  "Chirac": 80.42,
+  "Le Pen": 19.58
+ },
+ {
+  "code": "ZP",
+  "nom": "Polynesie Francaise",
+  "Chirac": 87.75,
+  "Le Pen": 12.25
+ },
+ {
+  "code": "ZS",
+  "nom": "Saint Pierre Et Miquelon",
+  "Chirac": 90.03,
+  "Le Pen": 9.97
+ },
+ {
+  "code": "ZW",
+  "nom": "Wallis Et Futuna",
+  "Chirac": 92.15,
+  "Le Pen": 7.85
+ },
+ {
+  "code": "ZZ",
+  "nom": "Francais De L'Etranger",
+  "Chirac": 91.77,
+  "Le Pen": 8.23
+ }
+]

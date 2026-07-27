@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wc-title wc-desc">
+<title id="wc-title">Word cloud of coffee-grinder reviews: buyers love how quietly it grinds, and the one gripe is noise</title>
+<desc id="wc-desc">A spiral-packed word cloud of a year of product reviews for a burr coffee grinder. Each word is sized by how many reviews mentioned it and tagged by theme with both a colour and a sign glyph: a leading plus and green for praise, a leading minus and red for complaints, and no glyph in blue for neutral product words. The biggest words are grind, quiet and consistent; the largest complaint word is noisy.</desc>
+<style>
+.word { transition: opacity .18s ease; }
+svg:has(.legend-row:hover) .word, svg:has(.legend-row:focus) .word { opacity: .12; }
+svg:has(.legend-praise:hover) .grp-praise, svg:has(.legend-praise:focus) .grp-praise { opacity: 1; }
+svg:has(.legend-gripe:hover) .grp-gripe, svg:has(.legend-gripe:focus) .grp-gripe { opacity: 1; }
+svg:has(.legend-neutral:hover) .grp-neutral, svg:has(.legend-neutral:focus) .grp-neutral { opacity: 1; }
+.legend-row { cursor: pointer; }
+.legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { .word { transition: none; } }
+@media (prefers-contrast: more){
+  .grp-praise{fill:#006700;}
+  .grp-gripe{fill:#B50000;}
+  .grp-neutral{fill:#004CCE;}
+}
+@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [stroke="#E5E5EA"]{stroke:#3A3A3C;} [fill="#E5E5EA"]{fill:#3A3A3C;}
+}
+</style>
+<rect width="1240" height="900" fill="#FFFFFF"/>
+<text x="56" y="66" font-size="32" font-weight="700" fill="#1D1D1F">Reviewers love the quiet, consistent grind</text>
+<text x="56" y="98" font-size="18" fill="#6E6E73">2,412 reviews of the Aurora Grind One · words sized by how often they appear, tagged by theme with a sign and a colour · illustrative</text>
+<line x1="56" y1="120" x2="1184" y2="120" stroke="#E5E5EA" stroke-width="1.4"/>
+<g class="grp-praise">
+<text class="word grp-praise" x="185.1" y="589.6" font-size="28.3" font-weight="500" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>compact — what buyers praise (+) · mentioned in 78 reviews (3%)</title>+ compact</text>
+<text class="word grp-praise" x="763.8" y="762.7" font-size="31.3" font-weight="500" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>reliable — what buyers praise (+) · mentioned in 96 reviews (4%)</title>+ reliable</text>
+<text class="word grp-praise" x="321.3" y="257.8" font-size="34.6" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>clean — what buyers praise (+) · mentioned in 118 reviews (5%)</title>+ clean</text>
+<text class="word grp-praise" x="190.1" y="353.5" font-size="36.5" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>love — what buyers praise (+) · mentioned in 132 reviews (5%)</title>+ love</text>
+<text class="word grp-praise" x="511.6" y="203.3" font-size="39.1" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>recommend — what buyers praise (+) · mentioned in 152 reviews (6%)</title>+ recommend</text>
+<text class="word grp-praise" x="154.8" y="411.1" font-size="42.0" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>value — what buyers praise (+) · mentioned in 176 reviews (7%)</title>+ value</text>
+<text class="word grp-praise" x="857.5" y="258.9" font-size="45.8" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>precise — what buyers praise (+) · mentioned in 210 reviews (9%)</title>+ precise</text>
+<text class="word grp-praise" x="949.5" y="624.6" font-size="49.3" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>fast — what buyers praise (+) · mentioned in 244 reviews (10%)</title>+ fast</text>
+<text class="word grp-praise" x="542.0" y="253.4" font-size="53.5" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>sturdy — what buyers praise (+) · mentioned in 288 reviews (12%)</title>+ sturdy</text>
+<text class="word grp-praise" x="765.8" y="319.9" font-size="59.4" font-weight="600" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>easy — what buyers praise (+) · mentioned in 356 reviews (15%)</title>+ easy</text>
+<text class="word grp-praise" x="891.7" y="466.5" font-size="62.3" font-weight="700" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>even — what buyers praise (+) · mentioned in 392 reviews (16%)</title>+ even</text>
+<text class="word grp-praise" x="651.1" y="642.5" font-size="68.0" font-weight="700" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>smooth — what buyers praise (+) · mentioned in 468 reviews (19%)</title>+ smooth</text>
+<text class="word grp-praise" x="545.4" y="392.1" font-size="77.1" font-weight="700" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>consistent — what buyers praise (+) · mentioned in 604 reviews (25%)</title>+ consistent</text>
+<text class="word grp-praise" x="646.3" y="562.6" font-size="89.3" font-weight="700" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>quiet — what buyers praise (+) · mentioned in 812 reviews (34%)</title>+ quiet</text>
+</g>
+<g class="grp-gripe">
+<text class="word grp-gripe" x="334.8" y="219.5" font-size="20.0" font-weight="500" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>pricey — what buyers complain about (−) · mentioned in 38 reviews (2%)</title>− pricey</text>
+<text class="word grp-gripe" x="893.5" y="209.9" font-size="21.9" font-weight="500" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>wobble — what buyers complain about (−) · mentioned in 46 reviews (2%)</title>− wobble</text>
+<text class="word grp-gripe" x="887.8" y="663.5" font-size="24.5" font-weight="500" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>leaks — what buyers complain about (−) · mentioned in 58 reviews (2%)</title>− leaks</text>
+<text class="word grp-gripe" x="725.1" y="201.0" font-size="27.6" font-weight="500" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>flimsy — what buyers complain about (−) · mentioned in 74 reviews (3%)</title>− flimsy</text>
+<text class="word grp-gripe" x="541.2" y="773.0" font-size="31.0" font-weight="500" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>retention — what buyers complain about (−) · mentioned in 94 reviews (4%)</title>− retention</text>
+<text class="word grp-gripe" x="1074.0" y="502.3" font-size="33.7" font-weight="500" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>jams — what buyers complain about (−) · mentioned in 112 reviews (5%)</title>− jams</text>
+<text class="word grp-gripe" x="956.4" y="698.8" font-size="37.3" font-weight="600" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>plastic — what buyers complain about (−) · mentioned in 138 reviews (6%)</title>− plastic</text>
+<text class="word grp-gripe" x="246.5" y="301.5" font-size="41.1" font-weight="600" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>clumps — what buyers complain about (−) · mentioned in 168 reviews (7%)</title>− clumps</text>
+<text class="word grp-gripe" x="544.2" y="719.9" font-size="46.3" font-weight="600" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>mess — what buyers complain about (−) · mentioned in 214 reviews (9%)</title>− mess</text>
+<text class="word grp-gripe" x="362.1" y="641.5" font-size="54.3" font-weight="600" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>static — what buyers complain about (−) · mentioned in 296 reviews (12%)</title>− static</text>
+<text class="word grp-gripe" x="503.9" y="315.9" font-size="65.1" font-weight="700" fill="#FF3B30" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>noisy — what buyers complain about (−) · mentioned in 428 reviews (18%)</title>− noisy</text>
+</g>
+<g class="grp-neutral">
+<text class="word grp-neutral" x="1000.7" y="295.0" font-size="21.0" font-weight="500" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>kitchen — neutral product words · mentioned in 42 reviews (2%)</title>kitchen</text>
+<text class="word grp-neutral" x="173.5" y="633.0" font-size="23.7" font-weight="500" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>morning — neutral product words · mentioned in 54 reviews (2%)</title>morning</text>
+<text class="word grp-neutral" x="309.9" y="685.1" font-size="26.8" font-weight="500" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>filter — neutral product words · mentioned in 70 reviews (3%)</title>filter</text>
+<text class="word grp-neutral" x="937.6" y="333.5" font-size="30.0" font-weight="500" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>size — neutral product words · mentioned in 88 reviews (4%)</title>size</text>
+<text class="word grp-neutral" x="395.7" y="718.6" font-size="33.1" font-weight="500" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>bin — neutral product words · mentioned in 108 reviews (4%)</title>bin</text>
+<text class="word grp-neutral" x="1070.3" y="444.4" font-size="37.8" font-weight="600" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>motor — neutral product words · mentioned in 142 reviews (6%)</title>motor</text>
+<text class="word grp-neutral" x="189.2" y="496.6" font-size="40.6" font-weight="600" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>dial — neutral product words · mentioned in 164 reviews (7%)</title>dial</text>
+<text class="word grp-neutral" x="207.7" y="550.4" font-size="44.5" font-weight="600" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>coffee — neutral product words · mentioned in 198 reviews (8%)</title>coffee</text>
+<text class="word grp-neutral" x="727.5" y="713.9" font-size="48.1" font-weight="600" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>hopper — neutral product words · mentioned in 232 reviews (10%)</title>hopper</text>
+<text class="word grp-neutral" x="986.2" y="376.8" font-size="52.4" font-weight="600" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>setting — neutral product words · mentioned in 276 reviews (11%)</title>setting</text>
+<text class="word grp-neutral" x="966.2" y="548.8" font-size="57.4" font-weight="600" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>espresso — neutral product words · mentioned in 332 reviews (14%)</title>espresso</text>
+<text class="word grp-neutral" x="376.2" y="571.8" font-size="61.7" font-weight="700" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>burr — neutral product words · mentioned in 384 reviews (16%)</title>burr</text>
+<text class="word grp-neutral" x="369.8" y="481.5" font-size="71.1" font-weight="700" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>beans — neutral product words · mentioned in 512 reviews (21%)</title>beans</text>
+<text class="word grp-neutral" x="620.0" y="479.0" font-size="96.0" font-weight="700" fill="#007AFF" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>grind — neutral product words · mentioned in 940 reviews (39%)</title>grind</text>
+</g>
+<line x1="56" y1="812" x2="1184" y2="812" stroke="#E5E5EA" stroke-width="1.4"/>
+<g class="legend-row legend-praise" tabindex="0" role="listitem" transform="translate(56,838)"><title>What buyers praise (+): 4,126 total mentions</title>
+<rect class="grp-praise" x="0" y="-16" width="26" height="26" rx="7" fill="#28CD41"/>
+<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">What buyers praise (+)</text>
+</g>
+<g class="legend-row legend-gripe" tabindex="0" role="listitem" transform="translate(470,838)"><title>What buyers complain about (−): 1,666 total mentions</title>
+<rect class="grp-gripe" x="0" y="-16" width="26" height="26" rx="7" fill="#FF3B30"/>
+<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">What buyers complain about (−)</text>
+</g>
+<g class="legend-row legend-neutral" tabindex="0" role="listitem" transform="translate(884,838)"><title>Neutral product words: 3,542 total mentions</title>
+<rect class="grp-neutral" x="0" y="-16" width="26" height="26" rx="7" fill="#007AFF"/>
+<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Neutral product words</text>
+</g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1192,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

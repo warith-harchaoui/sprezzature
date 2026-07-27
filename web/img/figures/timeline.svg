@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1840" height="1180" viewBox="0 0 1840 1180" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="tl-title tl-desc">
+<title id="tl-title">Seven decades of Mars exploration as an event timeline</title>
+<desc id="tl-desc">A horizontal timeline of 13 Mars-mission milestones from 1965 to a planned 2033, with alternating callouts above and below a central spine. Four coloured era bands group the missions: Flybys and Orbiters, First Landers, the Rover Age, and the planned Sample Return campaign.</desc>
+<style>.mstone{cursor:pointer}.mstone .dot{transition:r .12s ease}.mstone:hover .dot,.mstone:focus .dot{r:11}.mstone:focus{outline:none}.mstone:focus .card,.mstone:hover .card{stroke-width:2.4}@media (prefers-reduced-motion: reduce){.sweep{display:none}}</style>
+<rect width="1840" height="1180" fill="#FFFFFF"/>
+<text x="100" y="74" font-size="40" font-weight="700" fill="#1D1D1F">Sixty years of getting closer to Mars</text>
+<text x="100" y="112" font-size="21" fill="#6E6E73">From a 21-frame flyby to a rover caching rock for the trip home, each mission building on the last &#183; daggered dates are planned</text>
+<rect x="148.6" y="520.0" width="221.8" height="56" rx="12" fill="#D6EAFF"/>
+<rect x="376.3" y="520.0" width="563.4" height="56" rx="12" fill="#D6EAFF"/>
+<rect x="945.8" y="520.0" width="540.7" height="56" rx="12" fill="#DDF7E1"/>
+<rect x="1492.4" y="520.0" width="244.6" height="56" rx="12" fill="#FFEED6"/>
+<line x1="100" y1="588" x2="1740" y2="588" stroke="#D2D2D7" stroke-width="1.4"/>
+<line x1="259.4" y1="588" x2="259.4" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="259.4" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">1970</text>
+<line x1="487.2" y1="588" x2="487.2" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="487.2" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">1980</text>
+<line x1="715.0" y1="588" x2="715.0" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="715.0" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">1990</text>
+<line x1="942.8" y1="588" x2="942.8" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="942.8" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">2000</text>
+<line x1="1170.6" y1="588" x2="1170.6" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="1170.6" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">2010</text>
+<line x1="1398.3" y1="588" x2="1398.3" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="1398.3" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">2020</text>
+<line x1="1626.1" y1="588" x2="1626.1" y2="597" stroke="#D2D2D7" stroke-width="1.4"/>
+<text x="1626.1" y="618" font-size="16" font-family="Roboto Mono, monospace" text-anchor="middle" fill="#6E6E73">2030</text>
+<line x1="100" y1="548" x2="1740" y2="548" stroke="#1D1D1F" stroke-width="3" stroke-linecap="round"/>
+<circle cx="100.0" cy="548" r="4" fill="#1D1D1F"/>
+<circle cx="1740.0" cy="548" r="4" fill="#1D1D1F"/>
+<line x1="145.6" y1="548" x2="145.6" y2="494.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="1965 — Mariner 4: First close-up photos of Mars on a flyby: 21 grainy frames."><title>1965 — Mariner 4: First close-up photos of Mars on a flyby: 21 grainy frames.</title>
+<circle cx="145.6" cy="548" r="12" fill="#8CC3FF"/>
+<circle class="dot" cx="145.6" cy="548" r="7.5" fill="#007AFF"/>
+<rect class="card" x="100.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="100.0" y="354.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
+<text x="123.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1965</text>
+<text x="123.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Mariner 4</text>
+<text x="123.0" y="440.0" font-size="14" fill="#6E6E73">First close-up photos of</text>
+<text x="123.0" y="460.0" font-size="14" fill="#6E6E73">Mars on a flyby: 21 grainy</text>
+<text x="123.0" y="480.0" font-size="14" fill="#6E6E73">frames.</text>
+</g>
+<line x1="282.2" y1="548" x2="282.2" y2="666.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="1971 — Mariner 9: First spacecraft to orbit another planet; mapped 85% of Mars."><title>1971 — Mariner 9: First spacecraft to orbit another planet; mapped 85% of Mars.</title>
+<circle cx="282.2" cy="548" r="12" fill="#8CC3FF"/>
+<circle class="dot" cx="282.2" cy="548" r="7.5" fill="#007AFF"/>
+<rect class="card" x="175.2" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="175.2" y="666.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
+<text x="198.2" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1971</text>
+<text x="198.2" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Mariner 9</text>
+<text x="198.2" y="752.0" font-size="14" fill="#6E6E73">First spacecraft to orbit</text>
+<text x="198.2" y="772.0" font-size="14" fill="#6E6E73">another planet; mapped 85%</text>
+<text x="198.2" y="792.0" font-size="14" fill="#6E6E73">of Mars.</text>
+</g>
+<line x1="396.1" y1="548" x2="396.1" y2="334.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="1976 — Viking 1: First fully successful landing; ran the first soil biology tests."><title>1976 — Viking 1: First fully successful landing; ran the first soil biology tests.</title>
+<circle cx="396.1" cy="548" r="12" fill="#8CC3FF"/>
+<circle class="dot" cx="396.1" cy="548" r="7.5" fill="#007AFF"/>
+<rect class="card" x="289.1" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="289.1" y="194.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
+<text x="312.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1976</text>
+<text x="312.1" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Viking 1</text>
+<text x="312.1" y="280.0" font-size="14" fill="#6E6E73">First fully successful</text>
+<text x="312.1" y="300.0" font-size="14" fill="#6E6E73">landing; ran the first soil</text>
+<text x="312.1" y="320.0" font-size="14" fill="#6E6E73">biology tests.</text>
+</g>
+<line x1="874.4" y1="548" x2="874.4" y2="666.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="1997 — Pathfinder: Airbag landing delivered Sojourner, the first Mars rover."><title>1997 — Pathfinder: Airbag landing delivered Sojourner, the first Mars rover.</title>
+<circle cx="874.4" cy="548" r="12" fill="#8CC3FF"/>
+<circle class="dot" cx="874.4" cy="548" r="7.5" fill="#007AFF"/>
+<rect class="card" x="767.4" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="767.4" y="666.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
+<text x="790.4" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1997</text>
+<text x="790.4" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Pathfinder</text>
+<text x="790.4" y="752.0" font-size="14" fill="#6E6E73">Airbag landing delivered</text>
+<text x="790.4" y="772.0" font-size="14" fill="#6E6E73">Sojourner, the first Mars</text>
+<text x="790.4" y="792.0" font-size="14" fill="#6E6E73">rover.</text>
+</g>
+<line x1="1033.9" y1="548" x2="1033.9" y2="494.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2004 — Spirit &amp; Opportunity: Twin rovers found hard proof that liquid water once flowed."><title>2004 — Spirit &amp; Opportunity: Twin rovers found hard proof that liquid water once flowed.</title>
+<circle cx="1033.9" cy="548" r="12" fill="#9EE8AA"/>
+<circle class="dot" cx="1033.9" cy="548" r="7.5" fill="#28CD41"/>
+<rect class="card" x="926.9" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="926.9" y="354.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
+<text x="949.9" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2004</text>
+<text x="949.9" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Spirit &amp; Opportunity</text>
+<text x="949.9" y="440.0" font-size="14" fill="#6E6E73">Twin rovers found hard proof</text>
+<text x="949.9" y="460.0" font-size="14" fill="#6E6E73">that liquid water once</text>
+<text x="949.9" y="480.0" font-size="14" fill="#6E6E73">flowed.</text>
+</g>
+<line x1="1125.0" y1="548" x2="1125.0" y2="666.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2008 — Phoenix: Touched and confirmed water ice just under the polar soil."><title>2008 — Phoenix: Touched and confirmed water ice just under the polar soil.</title>
+<circle cx="1125.0" cy="548" r="12" fill="#9EE8AA"/>
+<circle class="dot" cx="1125.0" cy="548" r="7.5" fill="#28CD41"/>
+<rect class="card" x="1018.0" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1018.0" y="666.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
+<text x="1041.0" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2008</text>
+<text x="1041.0" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Phoenix</text>
+<text x="1041.0" y="752.0" font-size="14" fill="#6E6E73">Touched and confirmed water</text>
+<text x="1041.0" y="772.0" font-size="14" fill="#6E6E73">ice just under the polar</text>
+<text x="1041.0" y="792.0" font-size="14" fill="#6E6E73">soil.</text>
+</g>
+<line x1="1216.1" y1="548" x2="1216.1" y2="334.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2012 — Curiosity: Sky-crane lander set down a car-sized nuclear lab in Gale crater."><title>2012 — Curiosity: Sky-crane lander set down a car-sized nuclear lab in Gale crater.</title>
+<circle cx="1216.1" cy="548" r="12" fill="#9EE8AA"/>
+<circle class="dot" cx="1216.1" cy="548" r="7.5" fill="#28CD41"/>
+<rect class="card" x="1109.1" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1109.1" y="194.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
+<text x="1132.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2012</text>
+<text x="1132.1" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Curiosity</text>
+<text x="1132.1" y="280.0" font-size="14" fill="#6E6E73">Sky-crane lander set down a</text>
+<text x="1132.1" y="300.0" font-size="14" fill="#6E6E73">car-sized nuclear lab in</text>
+<text x="1132.1" y="320.0" font-size="14" fill="#6E6E73">Gale crater.</text>
+</g>
+<line x1="1352.8" y1="548" x2="1352.8" y2="494.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2018 — InSight: First seismometer on Mars; recorded hundreds of marsquakes."><title>2018 — InSight: First seismometer on Mars; recorded hundreds of marsquakes.</title>
+<circle cx="1352.8" cy="548" r="12" fill="#9EE8AA"/>
+<circle class="dot" cx="1352.8" cy="548" r="7.5" fill="#28CD41"/>
+<rect class="card" x="1245.8" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1245.8" y="354.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
+<text x="1268.8" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2018</text>
+<text x="1268.8" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">InSight</text>
+<text x="1268.8" y="440.0" font-size="14" fill="#6E6E73">First seismometer on Mars;</text>
+<text x="1268.8" y="460.0" font-size="14" fill="#6E6E73">recorded hundreds of</text>
+<text x="1268.8" y="480.0" font-size="14" fill="#6E6E73">marsquakes.</text>
+</g>
+<line x1="1421.1" y1="548" x2="1421.1" y2="666.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2021 — Perseverance: Began caching rock cores; Ingenuity flew the first Mars aircraft."><title>2021 — Perseverance: Began caching rock cores; Ingenuity flew the first Mars aircraft.</title>
+<circle cx="1421.1" cy="548" r="12" fill="#9EE8AA"/>
+<circle class="dot" cx="1421.1" cy="548" r="7.5" fill="#28CD41"/>
+<rect class="card" x="1314.1" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1314.1" y="666.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
+<text x="1337.1" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2021</text>
+<text x="1337.1" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Perseverance</text>
+<text x="1337.1" y="752.0" font-size="14" fill="#6E6E73">Began caching rock cores;</text>
+<text x="1337.1" y="772.0" font-size="14" fill="#6E6E73">Ingenuity flew the first</text>
+<text x="1337.1" y="792.0" font-size="14" fill="#6E6E73">Mars aircraft.</text>
+</g>
+<line x1="1421.1" y1="548" x2="1421.1" y2="826.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2021 — Tianwen-1: China's Zhurong rover landed, a first on its debut Mars attempt."><title>2021 — Tianwen-1: China's Zhurong rover landed, a first on its debut Mars attempt.</title>
+<circle cx="1421.1" cy="548" r="12" fill="#9EE8AA"/>
+<circle class="dot" cx="1421.1" cy="548" r="7.5" fill="#28CD41"/>
+<rect class="card" x="1314.1" y="826.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1314.1" y="826.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
+<text x="1337.1" y="861.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2021</text>
+<text x="1337.1" y="888.0" font-size="18" font-weight="700" fill="#1D1D1F">Tianwen-1</text>
+<text x="1337.1" y="912.0" font-size="14" fill="#6E6E73">China's Zhurong rover</text>
+<text x="1337.1" y="932.0" font-size="14" fill="#6E6E73">landed, a first on its debut</text>
+<text x="1337.1" y="952.0" font-size="14" fill="#6E6E73">Mars attempt.</text>
+</g>
+<line x1="1580.6" y1="548" x2="1580.6" y2="334.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2028 (planned) — Sample Retrieval: Planned lander to gather Perseverance's cached tubes for launch."><title>2028 (planned) — Sample Retrieval: Planned lander to gather Perseverance's cached tubes for launch.</title>
+<circle cx="1580.6" cy="548" r="12" fill="#FFCF8C"/>
+<circle class="dot" cx="1580.6" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
+<rect class="card" x="1473.6" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1473.6" y="194.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
+<text x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1496.6" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Sample Retrieval</text>
+<text x="1496.6" y="280.0" font-size="14" fill="#6E6E73">Planned lander to gather</text>
+<text x="1496.6" y="300.0" font-size="14" fill="#6E6E73">Perseverance's cached tubes</text>
+<text x="1496.6" y="320.0" font-size="14" fill="#6E6E73">for launch.</text>
+</g>
+<line x1="1648.9" y1="548" x2="1648.9" y2="494.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2031 (planned) — Earth Return Orbiter: Planned relay to ferry the sealed samples back toward Earth."><title>2031 (planned) — Earth Return Orbiter: Planned relay to ferry the sealed samples back toward Earth.</title>
+<circle cx="1648.9" cy="548" r="12" fill="#FFCF8C"/>
+<circle class="dot" cx="1648.9" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
+<rect class="card" x="1526.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1526.0" y="354.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
+<text x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1549.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Earth Return Orbiter</text>
+<text x="1549.0" y="440.0" font-size="14" fill="#6E6E73">Planned relay to ferry the</text>
+<text x="1549.0" y="460.0" font-size="14" fill="#6E6E73">sealed samples back toward</text>
+<text x="1549.0" y="480.0" font-size="14" fill="#6E6E73">Earth.</text>
+</g>
+<line x1="1694.4" y1="548" x2="1694.4" y2="986.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+<g class="mstone" tabindex="0" role="img" aria-label="2033 (planned) — Samples on Earth: Target for the first Mars rocks to reach a lab on Earth."><title>2033 (planned) — Samples on Earth: Target for the first Mars rocks to reach a lab on Earth.</title>
+<circle cx="1694.4" cy="548" r="12" fill="#FFCF8C"/>
+<circle class="dot" cx="1694.4" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
+<rect class="card" x="1526.0" y="986.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
+<rect x="1526.0" y="986.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
+<text x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1549.0" y="1048.0" font-size="18" font-weight="700" fill="#1D1D1F">Samples on Earth</text>
+<text x="1549.0" y="1072.0" font-size="14" fill="#6E6E73">Target for the first Mars</text>
+<text x="1549.0" y="1092.0" font-size="14" fill="#6E6E73">rocks to reach a lab on</text>
+<text x="1549.0" y="1112.0" font-size="14" fill="#6E6E73">Earth.</text>
+</g>
+<rect x="164.5" y="555.0" width="189.8" height="24" rx="12" fill="#007AFF"/>
+<text x="259.4" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">FLYBYS &amp; ORBITERS</text>
+<rect x="582.0" y="555.0" width="152.2" height="24" rx="12" fill="#007AFF"/>
+<text x="658.1" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">FIRST LANDERS</text>
+<rect x="1158.8" y="555.0" width="114.6" height="24" rx="12" fill="#28CD41"/>
+<text x="1216.1" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">ROVER AGE</text>
+<rect x="1538.6" y="555.0" width="152.2" height="24" rx="12" fill="#FF9500"/>
+<text x="1614.7" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">SAMPLE RETURN</text>
+<g class="sweep"><circle cx="145.6" cy="548" r="6" fill="#1D1D1F" opacity="0.9"><animate attributeName="cx" from="145.6" to="1694.4" dur="7s" begin="1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.06;0.94;1" dur="7s" begin="1s" fill="freeze"/></circle></g>
+<circle cx="108" cy="1141" r="7" fill="#1D1D1F"/>
+<text x="124" y="1146" font-size="16" fill="#6E6E73">Flown mission</text>
+<circle cx="298" cy="1141" r="7" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="3"/>
+<text x="314" y="1146" font-size="16" fill="#6E6E73">Planned (dagger &#8224;, dashed stem)</text>
+<text x="1740.0" y="1146" font-size="15" text-anchor="end" fill="#D2D2D7">Public mission history &#183; future dates approximate</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1792,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

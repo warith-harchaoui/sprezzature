@@ -1,0 +1,43 @@
+<!--
+  Chunking — group related items under a heading; cap each group at
+  the rule-of-thumb of ≤ 7 items so the user can hold the section
+  shape in working memory. The visual treatment is one ``<section>``
+  per chunk + a heading-led title; the spacing rhythm signals the
+  group boundary without ever using a divider line.
+
+  Pair with ``Law of Common Region`` (border / background) when the
+  list is dense enough that whitespace alone is not enough; here the
+  page-level spacing carries the grouping.
+-->
+<div class="mx-auto max-w-2xl space-y-8">
+  <section aria-labelledby="settings-account">
+    <h2 id="settings-account" class="text-[18px] font-semibold text-label-primary dark:text-label-primary-dark">
+      Account
+    </h2>
+    <ul class="mt-2 divide-y divide-separator dark:divide-separator-dark">
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Email</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">you@example.com</span></li>
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Password</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">Last changed 14 days ago</span></li>
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Two-factor</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">On — app code</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="settings-notifications">
+    <h2 id="settings-notifications" class="text-[18px] font-semibold text-label-primary dark:text-label-primary-dark">
+      Notifications
+    </h2>
+    <ul class="mt-2 divide-y divide-separator dark:divide-separator-dark">
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Email digests</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">Weekly</span></li>
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Push alerts</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">Critical only</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="settings-billing">
+    <h2 id="settings-billing" class="text-[18px] font-semibold text-label-primary dark:text-label-primary-dark">
+      Billing
+    </h2>
+    <ul class="mt-2 divide-y divide-separator dark:divide-separator-dark">
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Plan</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">Team — $29 / month</span></li>
+      <li class="flex items-center justify-between py-3"><span class="text-[15px] text-label-primary dark:text-label-primary-dark">Payment method</span><span class="text-[14px] text-label-secondary dark:text-label-secondary-dark">Visa ending 1234</span></li>
+    </ul>
+  </section>
+</div>

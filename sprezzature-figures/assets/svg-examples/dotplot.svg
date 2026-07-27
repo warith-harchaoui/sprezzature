@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="416" viewBox="0 0 1200 416" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="dp-title dp-desc">
+<title id="dp-title">Support ticket first-response times, one dot per ticket</title>
+<desc id="dp-desc">Wilkinson dot plot of 30 first-response times in hours. Each dot is one ticket, binned every 0.5 h and stacked. 63% of tickets were answered within the 4-hour target (blue); the 11 past it form the long tail (red).</desc>
+<style>.dot{cursor:pointer}.dot:hover,.dot:focus{stroke:#FFFFFF;stroke-width:2.5}.dot:focus{outline:none}@media (prefers-contrast: more){
+  .dot-within{fill:#004CCE;}
+  .dot-tail{fill:#B50000;}
+}
+@media (forced-colors: active){
+  .dot-within{fill:CanvasText;}
+  .dot-tail{fill:CanvasText;}
+}@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
+}</style>
+<rect width="1200" height="416" fill="#FFFFFF"/>
+<text x="96" y="60" font-size="32" font-weight="700" fill="#1D1D1F">Most tickets get a reply within hours</text>
+<text x="96" y="96" font-size="20" fill="#6E6E73">63% of 30 support tickets clear the 4-hour target; a thin red tail drags on · illustrative</text>
+<line x1="518.4" y1="138.0" x2="518.4" y2="308.0" stroke="#6E6E73" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="528.4" y="136.0" font-size="17" fill="#6E6E73">4-hour target</text>
+<line x1="96" y1="308.0" x2="1152" y2="308.0" stroke="#1D1D1F" stroke-width="1.5"/>
+<text x="96.0" y="342.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0</text>
+<text x="307.2" y="342.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">2</text>
+<text x="518.4" y="342.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">4</text>
+<text x="729.6" y="342.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">6</text>
+<text x="940.8" y="342.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">8</text>
+<text x="1152.0" y="342.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">10</text>
+<text x="624.0" y="380.0" font-size="20" fill="#1D1D1F" text-anchor="middle">First-response time (hours, lower is better)</text>
+<circle class="dot dot-within" cx="166.4" cy="295.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 0.5 h"><title>Ticket answered in 0.5 h</title></circle>
+<circle class="dot dot-within" cx="166.4" cy="266.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 0.7 h"><title>Ticket answered in 0.7 h</title></circle>
+<circle class="dot dot-within" cx="166.4" cy="237.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 0.8 h"><title>Ticket answered in 0.8 h</title></circle>
+<circle class="dot dot-within" cx="235.4" cy="295.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 1.1 h"><title>Ticket answered in 1.1 h</title></circle>
+<circle class="dot dot-within" cx="235.4" cy="266.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 1.2 h"><title>Ticket answered in 1.2 h</title></circle>
+<circle class="dot dot-within" cx="235.4" cy="237.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 1.3 h"><title>Ticket answered in 1.3 h</title></circle>
+<circle class="dot dot-within" cx="235.4" cy="208.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 1.4 h"><title>Ticket answered in 1.4 h</title></circle>
+<circle class="dot dot-within" cx="235.4" cy="179.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 1.6 h"><title>Ticket answered in 1.6 h</title></circle>
+<circle class="dot dot-within" cx="341.5" cy="295.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 2.1 h"><title>Ticket answered in 2.1 h</title></circle>
+<circle class="dot dot-within" cx="341.5" cy="266.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 2.2 h"><title>Ticket answered in 2.2 h</title></circle>
+<circle class="dot dot-within" cx="341.5" cy="237.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 2.4 h"><title>Ticket answered in 2.4 h</title></circle>
+<circle class="dot dot-within" cx="341.5" cy="208.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 2.6 h"><title>Ticket answered in 2.6 h</title></circle>
+<circle class="dot dot-within" cx="402.2" cy="295.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 2.7 h"><title>Ticket answered in 2.7 h</title></circle>
+<circle class="dot dot-within" cx="402.2" cy="266.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 2.9 h"><title>Ticket answered in 2.9 h</title></circle>
+<circle class="dot dot-within" cx="402.2" cy="237.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 3.1 h"><title>Ticket answered in 3.1 h</title></circle>
+<circle class="dot dot-within" cx="468.2" cy="295.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 3.3 h"><title>Ticket answered in 3.3 h</title></circle>
+<circle class="dot dot-within" cx="468.2" cy="266.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 3.4 h"><title>Ticket answered in 3.4 h</title></circle>
+<circle class="dot dot-within" cx="468.2" cy="237.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 3.6 h"><title>Ticket answered in 3.6 h</title></circle>
+<circle class="dot dot-within" cx="468.2" cy="208.0" r="13.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 3.8 h"><title>Ticket answered in 3.8 h</title></circle>
+<circle class="dot dot-tail" cx="567.7" cy="295.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 4.2 h"><title>Ticket answered in 4.2 h</title></circle>
+<circle class="dot dot-tail" cx="567.7" cy="266.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 4.5 h"><title>Ticket answered in 4.5 h</title></circle>
+<circle class="dot dot-tail" cx="567.7" cy="237.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 4.7 h"><title>Ticket answered in 4.7 h</title></circle>
+<circle class="dot dot-tail" cx="634.6" cy="295.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 4.9 h"><title>Ticket answered in 4.9 h</title></circle>
+<circle class="dot dot-tail" cx="634.6" cy="266.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 5.3 h"><title>Ticket answered in 5.3 h</title></circle>
+<circle class="dot dot-tail" cx="697.9" cy="295.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 5.6 h"><title>Ticket answered in 5.6 h</title></circle>
+<circle class="dot dot-tail" cx="697.9" cy="266.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 5.8 h"><title>Ticket answered in 5.8 h</title></circle>
+<circle class="dot dot-tail" cx="798.2" cy="295.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 6.4 h"><title>Ticket answered in 6.4 h</title></circle>
+<circle class="dot dot-tail" cx="798.2" cy="266.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 6.9 h"><title>Ticket answered in 6.9 h</title></circle>
+<circle class="dot dot-tail" cx="909.1" cy="295.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 7.7 h"><title>Ticket answered in 7.7 h</title></circle>
+<circle class="dot dot-tail" cx="1067.5" cy="295.0" r="13.0" fill="#FF3B30" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 9.2 h"><title>Ticket answered in 9.2 h</title></circle>
+<circle class="dot-within" cx="860.0" cy="154.0" r="9.0" fill="#007AFF"/>
+<text x="876.0" y="160.0" font-size="18" fill="#1D1D1F">Within target</text>
+<circle class="dot-tail" cx="1034.0" cy="154.0" r="9.0" fill="#FF3B30"/>
+<text x="1050.0" y="160.0" font-size="18" fill="#1D1D1F">Long tail</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1152,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

@@ -1,0 +1,57 @@
+<!--
+  Jakob's Law — users prefer your form to behave the same way as
+  every other form they have ever used. Use native ``<input>``
+  types where they exist; the browser ships the right keyboard,
+  validation, accessibility tree and platform conventions for free.
+  A bespoke ``<div>`` date picker is the antithesis.
+
+  Each row pairs a semantic ``<label for>`` with a native control
+  carrying ``autocomplete`` so password managers, address autofill
+  and browser history all light up.
+-->
+<form class="mx-auto max-w-md space-y-4">
+  <label class="block">
+    <span class="block text-[14px] font-medium text-label-primary dark:text-label-primary-dark">
+      Full name
+    </span>
+    <input type="text"
+           name="name"
+           autocomplete="name"
+           class="mt-1 block w-full min-h-11 rounded-xl border border-separator bg-surface-secondary px-3 py-2 text-[15px] text-label-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 dark:border-separator-dark dark:bg-surface-secondary-dark dark:text-label-primary-dark">
+  </label>
+
+  <label class="block">
+    <span class="block text-[14px] font-medium text-label-primary dark:text-label-primary-dark">
+      Date of birth
+    </span>
+    <input type="date"
+           name="dob"
+           autocomplete="bday"
+           class="mt-1 block w-full min-h-11 rounded-xl border border-separator bg-surface-secondary px-3 py-2 text-[15px] text-label-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 dark:border-separator-dark dark:bg-surface-secondary-dark dark:text-label-primary-dark">
+  </label>
+
+  <label class="block">
+    <span class="block text-[14px] font-medium text-label-primary dark:text-label-primary-dark">
+      Email
+    </span>
+    <input type="email"
+           name="email"
+           autocomplete="email"
+           required
+           class="mt-1 block w-full min-h-11 rounded-xl border border-separator bg-surface-secondary px-3 py-2 text-[15px] text-label-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 dark:border-separator-dark dark:bg-surface-secondary-dark dark:text-label-primary-dark">
+  </label>
+
+  <label class="flex items-start gap-2">
+    <input type="checkbox"
+           name="newsletter"
+           class="mt-1 h-5 w-5 min-h-11 rounded border-separator text-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2">
+    <span class="text-[14px] text-label-primary dark:text-label-primary-dark">
+      Send me product updates. We do not sell email addresses.
+    </span>
+  </label>
+
+  <button type="submit"
+          class="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-brand-blue px-5 py-3 text-[15px] font-semibold text-white hover:opacity-90 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 motion-reduce:active:scale-100">
+    Create account
+  </button>
+</form>

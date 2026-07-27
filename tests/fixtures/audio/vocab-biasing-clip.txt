@@ -1,0 +1,20 @@
+REPLACE THIS FILE with the verbatim transcript of vocab-biasing-clip.wav
+(your own ~10 s recording — see ../audio/README.md for the workflow).
+
+The test asserts that at least one term from
+tests/fixtures/vocab/glossary.txt appears verbatim in the transcript
+when the audio actually contains it. The default glossary terms are:
+
+  - pywhispercpp
+  - VisionCell
+  - Acme Robotics
+  - Tailwind
+  - WebVTT
+  - Ollama
+
+Example reading (record yourself saying it, then drop the WAV next to
+this file as vocab-biasing-clip.wav, then replace this preamble with the
+exact same words):
+
+"I use pywhispercpp to transcribe meetings into WebVTT,
+piping them through Ollama for summarisation."

@@ -1,0 +1,638 @@
+[
+ {
+  "code": "01",
+  "nom": "Ain",
+  "Sarkozy": 60.54,
+  "Royal": 39.46
+ },
+ {
+  "code": "02",
+  "nom": "Aisne",
+  "Sarkozy": 53.36,
+  "Royal": 46.64
+ },
+ {
+  "code": "03",
+  "nom": "Allier",
+  "Sarkozy": 48.8,
+  "Royal": 51.2
+ },
+ {
+  "code": "04",
+  "nom": "Alpes De Haute Provence",
+  "Sarkozy": 53.19,
+  "Royal": 46.81
+ },
+ {
+  "code": "05",
+  "nom": "Hautes Alpes",
+  "Sarkozy": 53.67,
+  "Royal": 46.33
+ },
+ {
+  "code": "06",
+  "nom": "Alpes Maritimes",
+  "Sarkozy": 68.08,
+  "Royal": 31.92
+ },
+ {
+  "code": "07",
+  "nom": "Ardeche",
+  "Sarkozy": 51.62,
+  "Royal": 48.38
+ },
+ {
+  "code": "08",
+  "nom": "Ardennes",
+  "Sarkozy": 53.53,
+  "Royal": 46.47
+ },
+ {
+  "code": "09",
+  "nom": "Ariege",
+  "Sarkozy": 40.44,
+  "Royal": 59.56
+ },
+ {
+  "code": "10",
+  "nom": "Aube",
+  "Sarkozy": 61.7,
+  "Royal": 38.3
+ },
+ {
+  "code": "11",
+  "nom": "Aude",
+  "Sarkozy": 48.08,
+  "Royal": 51.92
+ },
+ {
+  "code": "12",
+  "nom": "Aveyron",
+  "Sarkozy": 50.83,
+  "Royal": 49.17
+ },
+ {
+  "code": "13",
+  "nom": "Bouches Du Rhone",
+  "Sarkozy": 58.03,
+  "Royal": 41.97
+ },
+ {
+  "code": "14",
+  "nom": "Calvados",
+  "Sarkozy": 51.2,
+  "Royal": 48.8
+ },
+ {
+  "code": "15",
+  "nom": "Cantal",
+  "Sarkozy": 55.76,
+  "Royal": 44.24
+ },
+ {
+  "code": "16",
+  "nom": "Charente",
+  "Sarkozy": 47.12,
+  "Royal": 52.88
+ },
+ {
+  "code": "17",
+  "nom": "Charente Maritime",
+  "Sarkozy": 51.93,
+  "Royal": 48.07
+ },
+ {
+  "code": "18",
+  "nom": "Cher",
+  "Sarkozy": 51.39,
+  "Royal": 48.61
+ },
+ {
+  "code": "19",
+  "nom": "Correze",
+  "Sarkozy": 47.01,
+  "Royal": 52.99
+ },
+ {
+  "code": "2A",
+  "nom": "Corse Sud",
+  "Sarkozy": 61.67,
+  "Royal": 38.33
+ },
+ {
+  "code": "2B",
+  "nom": "Haute Corse",
+  "Sarkozy": 58.82,
+  "Royal": 41.18
+ },
+ {
+  "code": "21",
+  "nom": "Cote D'Or",
+  "Sarkozy": 56.13,
+  "Royal": 43.87
+ },
+ {
+  "code": "22",
+  "nom": "Cotes D'Armor",
+  "Sarkozy": 44.47,
+  "Royal": 55.53
+ },
+ {
+  "code": "23",
+  "nom": "Creuse",
+  "Sarkozy": 46.74,
+  "Royal": 53.26
+ },
+ {
+  "code": "24",
+  "nom": "Dordogne",
+  "Sarkozy": 46.62,
+  "Royal": 53.38
+ },
+ {
+  "code": "25",
+  "nom": "Doubs",
+  "Sarkozy": 55.8,
+  "Royal": 44.2
+ },
+ {
+  "code": "26",
+  "nom": "Drome",
+  "Sarkozy": 54.88,
+  "Royal": 45.12
+ },
+ {
+  "code": "27",
+  "nom": "Eure",
+  "Sarkozy": 57.37,
+  "Royal": 42.63
+ },
+ {
+  "code": "28",
+  "nom": "Eure Et Loir",
+  "Sarkozy": 58.16,
+  "Royal": 41.84
+ },
+ {
+  "code": "29",
+  "nom": "Finistere",
+  "Sarkozy": 46.14,
+  "Royal": 53.86
+ },
+ {
+  "code": "30",
+  "nom": "Gard",
+  "Sarkozy": 56.12,
+  "Royal": 43.88
+ },
+ {
+  "code": "31",
+  "nom": "Haute Garonne",
+  "Sarkozy": 45.53,
+  "Royal": 54.47
+ },
+ {
+  "code": "32",
+  "nom": "Gers",
+  "Sarkozy": 47.49,
+  "Royal": 52.51
+ },
+ {
+  "code": "33",
+  "nom": "Gironde",
+  "Sarkozy": 48.28,
+  "Royal": 51.72
+ },
+ {
+  "code": "34",
+  "nom": "Herault",
+  "Sarkozy": 54.02,
+  "Royal": 45.98
+ },
+ {
+  "code": "35",
+  "nom": "Ille Et Vilaine",
+  "Sarkozy": 47.61,
+  "Royal": 52.39
+ },
+ {
+  "code": "36",
+  "nom": "Indre",
+  "Sarkozy": 49.83,
+  "Royal": 50.17
+ },
+ {
+  "code": "37",
+  "nom": "Indre Et Loire",
+  "Sarkozy": 52.7,
+  "Royal": 47.3
+ },
+ {
+  "code": "38",
+  "nom": "Isere",
+  "Sarkozy": 52.12,
+  "Royal": 47.88
+ },
+ {
+  "code": "39",
+  "nom": "Jura",
+  "Sarkozy": 55.02,
+  "Royal": 44.98
+ },
+ {
+  "code": "40",
+  "nom": "Landes",
+  "Sarkozy": 47.18,
+  "Royal": 52.82
+ },
+ {
+  "code": "41",
+  "nom": "Loir Et Cher",
+  "Sarkozy": 55.92,
+  "Royal": 44.08
+ },
+ {
+  "code": "42",
+  "nom": "Loire",
+  "Sarkozy": 54.45,
+  "Royal": 45.55
+ },
+ {
+  "code": "43",
+  "nom": "Haute Loire",
+  "Sarkozy": 54.22,
+  "Royal": 45.78
+ },
+ {
+  "code": "44",
+  "nom": "Loire Atlantique",
+  "Sarkozy": 47.15,
+  "Royal": 52.85
+ },
+ {
+  "code": "45",
+  "nom": "Loiret",
+  "Sarkozy": 58.55,
+  "Royal": 41.45
+ },
+ {
+  "code": "46",
+  "nom": "Lot",
+  "Sarkozy": 43.57,
+  "Royal": 56.43
+ },
+ {
+  "code": "47",
+  "nom": "Lot Et Garonne",
+  "Sarkozy": 53.96,
+  "Royal": 46.04
+ },
+ {
+  "code": "48",
+  "nom": "Lozere",
+  "Sarkozy": 55.75,
+  "Royal": 44.25
+ },
+ {
+  "code": "49",
+  "nom": "Maine Et Loire",
+  "Sarkozy": 54.15,
+  "Royal": 45.85
+ },
+ {
+  "code": "50",
+  "nom": "Manche",
+  "Sarkozy": 56.17,
+  "Royal": 43.83
+ },
+ {
+  "code": "51",
+  "nom": "Marne",
+  "Sarkozy": 59.2,
+  "Royal": 40.8
+ },
+ {
+  "code": "52",
+  "nom": "Haute Marne",
+  "Sarkozy": 59.14,
+  "Royal": 40.86
+ },
+ {
+  "code": "53",
+  "nom": "Mayenne",
+  "Sarkozy": 55.45,
+  "Royal": 44.55
+ },
+ {
+  "code": "54",
+  "nom": "Meurthe Et Moselle",
+  "Sarkozy": 51.12,
+  "Royal": 48.88
+ },
+ {
+  "code": "55",
+  "nom": "Meuse",
+  "Sarkozy": 56.93,
+  "Royal": 43.07
+ },
+ {
+  "code": "56",
+  "nom": "Morbihan",
+  "Sarkozy": 51.12,
+  "Royal": 48.88
+ },
+ {
+  "code": "57",
+  "nom": "Moselle",
+  "Sarkozy": 56.56,
+  "Royal": 43.44
+ },
+ {
+  "code": "58",
+  "nom": "Nievre",
+  "Sarkozy": 47.09,
+  "Royal": 52.91
+ },
+ {
+  "code": "59",
+  "nom": "Nord",
+  "Sarkozy": 51.75,
+  "Royal": 48.25
+ },
+ {
+  "code": "60",
+  "nom": "Oise",
+  "Sarkozy": 58.28,
+  "Royal": 41.72
+ },
+ {
+  "code": "61",
+  "nom": "Orne",
+  "Sarkozy": 57.66,
+  "Royal": 42.34
+ },
+ {
+  "code": "62",
+  "nom": "Pas De Calais",
+  "Sarkozy": 47.96,
+  "Royal": 52.04
+ },
+ {
+  "code": "63",
+  "nom": "Puy De Dome",
+  "Sarkozy": 46.04,
+  "Royal": 53.96
+ },
+ {
+  "code": "64",
+  "nom": "Pyrenees Atlantiques",
+  "Sarkozy": 47.51,
+  "Royal": 52.49
+ },
+ {
+  "code": "65",
+  "nom": "Hautes Pyrenees",
+  "Sarkozy": 42.63,
+  "Royal": 57.37
+ },
+ {
+  "code": "66",
+  "nom": "Pyrenees Orientales",
+  "Sarkozy": 55.7,
+  "Royal": 44.3
+ },
+ {
+  "code": "67",
+  "nom": "Bas Rhin",
+  "Sarkozy": 65.58,
+  "Royal": 34.42
+ },
+ {
+  "code": "68",
+  "nom": "Haut Rhin",
+  "Sarkozy": 65.39,
+  "Royal": 34.61
+ },
+ {
+  "code": "69",
+  "nom": "Rhone",
+  "Sarkozy": 57.09,
+  "Royal": 42.91
+ },
+ {
+  "code": "70",
+  "nom": "Haute Saone",
+  "Sarkozy": 55.8,
+  "Royal": 44.2
+ },
+ {
+  "code": "71",
+  "nom": "Saone Et Loire",
+  "Sarkozy": 52.99,
+  "Royal": 47.01
+ },
+ {
+  "code": "72",
+  "nom": "Sarthe",
+  "Sarkozy": 50.42,
+  "Royal": 49.58
+ },
+ {
+  "code": "73",
+  "nom": "Savoie",
+  "Sarkozy": 57.32,
+  "Royal": 42.68
+ },
+ {
+  "code": "74",
+  "nom": "Haute Savoie",
+  "Sarkozy": 63.04,
+  "Royal": 36.96
+ },
+ {
+  "code": "75",
+  "nom": "Paris",
+  "Sarkozy": 50.19,
+  "Royal": 49.81
+ },
+ {
+  "code": "76",
+  "nom": "Seine Maritime",
+  "Sarkozy": 50.2,
+  "Royal": 49.8
+ },
+ {
+  "code": "77",
+  "nom": "Seine Et Marne",
+  "Sarkozy": 56.25,
+  "Royal": 43.75
+ },
+ {
+  "code": "78",
+  "nom": "Yvelines",
+  "Sarkozy": 58.71,
+  "Royal": 41.29
+ },
+ {
+  "code": "79",
+  "nom": "Deux Sevres",
+  "Sarkozy": 45.21,
+  "Royal": 54.79
+ },
+ {
+  "code": "80",
+  "nom": "Somme",
+  "Sarkozy": 50.46,
+  "Royal": 49.54
+ },
+ {
+  "code": "81",
+  "nom": "Tarn",
+  "Sarkozy": 49.29,
+  "Royal": 50.71
+ },
+ {
+  "code": "82",
+  "nom": "Tarn Et Garonne",
+  "Sarkozy": 53.0,
+  "Royal": 47.0
+ },
+ {
+  "code": "83",
+  "nom": "Var",
+  "Sarkozy": 65.54,
+  "Royal": 34.46
+ },
+ {
+  "code": "84",
+  "nom": "Vaucluse",
+  "Sarkozy": 60.72,
+  "Royal": 39.28
+ },
+ {
+  "code": "85",
+  "nom": "Vendee",
+  "Sarkozy": 57.06,
+  "Royal": 42.94
+ },
+ {
+  "code": "86",
+  "nom": "Vienne",
+  "Sarkozy": 48.59,
+  "Royal": 51.41
+ },
+ {
+  "code": "87",
+  "nom": "Haute Vienne",
+  "Sarkozy": 43.81,
+  "Royal": 56.19
+ },
+ {
+  "code": "88",
+  "nom": "Vosges",
+  "Sarkozy": 54.72,
+  "Royal": 45.28
+ },
+ {
+  "code": "89",
+  "nom": "Yonne",
+  "Sarkozy": 58.69,
+  "Royal": 41.31
+ },
+ {
+  "code": "90",
+  "nom": "Territoire De Belfort",
+  "Sarkozy": 54.84,
+  "Royal": 45.16
+ },
+ {
+  "code": "91",
+  "nom": "Essonne",
+  "Sarkozy": 52.08,
+  "Royal": 47.92
+ },
+ {
+  "code": "92",
+  "nom": "Hauts De Seine",
+  "Sarkozy": 55.65,
+  "Royal": 44.35
+ },
+ {
+  "code": "93",
+  "nom": "Seine Saint-Denis",
+  "Sarkozy": 43.46,
+  "Royal": 56.54
+ },
+ {
+  "code": "94",
+  "nom": "Val De Marne",
+  "Sarkozy": 49.8,
+  "Royal": 50.2
+ },
+ {
+  "code": "95",
+  "nom": "Val D'Oise",
+  "Sarkozy": 52.3,
+  "Royal": 47.7
+ },
+ {
+  "code": "ZA",
+  "nom": "Guadeloupe",
+  "Sarkozy": 49.17,
+  "Royal": 50.83
+ },
+ {
+  "code": "ZB",
+  "nom": "Martinique",
+  "Sarkozy": 39.48,
+  "Royal": 60.52
+ },
+ {
+  "code": "ZC",
+  "nom": "Guyane",
+  "Sarkozy": 53.08,
+  "Royal": 46.92
+ },
+ {
+  "code": "ZD",
+  "nom": "La Reunion",
+  "Sarkozy": 36.43,
+  "Royal": 63.57
+ },
+ {
+  "code": "ZM",
+  "nom": "Mayotte",
+  "Sarkozy": 39.96,
+  "Royal": 60.04
+ },
+ {
+  "code": "ZN",
+  "nom": "Nouvelle Caledonie",
+  "Sarkozy": 62.98,
+  "Royal": 37.02
+ },
+ {
+  "code": "ZP",
+  "nom": "Polynesie Francaise",
+  "Sarkozy": 51.9,
+  "Royal": 48.1
+ },
+ {
+  "code": "ZS",
+  "nom": "Saint Pierre Et Miquelon",
+  "Sarkozy": 39.14,
+  "Royal": 60.86
+ },
+ {
+  "code": "ZW",
+  "nom": "Wallis-Et-Futuna",
+  "Sarkozy": 50.17,
+  "Royal": 49.83
+ },
+ {
+  "code": "ZZ",
+  "nom": "Francais De L'Etranger",
+  "Sarkozy": 53.99,
+  "Royal": 46.01
+ }
+]

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1058" height="700" viewBox="0 0 1058 700" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="up-title up-desc">
+<title id="up-title">How many users each combination of contact channels reaches</title>
+<desc id="up-desc">UpSet plot. Top: a bar chart of intersection sizes, one bar per observed combination of reach channels, sorted largest first. Below each bar, a dot matrix marks which of the four channels (Email, Mobile app, Web app, SMS) that combination includes; dots in a column are joined by a line. Left: a bar chart of each channel's total reach. The largest single pocket is users reachable only by Email (62k).</desc>
+<style>
+.ibar,.dotcol,.conn{transition:opacity .18s ease}
+svg:hover .combo,svg:focus-within .combo{opacity:.3}
+.combo:hover,.combo:focus,.combo:focus-within{opacity:1!important}
+.combo:focus{outline:none}
+.hit{cursor:pointer;fill:transparent}
+.hit:focus{outline:3px solid #0A4DA0;outline-offset:2px}
+@media (prefers-contrast: more){
+  .isize{fill:#004CCE;}
+}
+@media (prefers-contrast: more){
+  .setbar{fill:#831FAF;}
+  .activedot{fill:#831FAF;}
+}
+@media (prefers-contrast: more){
+  .conn{stroke:#831FAF;}
+}
+@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [fill="#D6D6DB"]{fill:#3A3A3C;} [fill="#F5F5F7"]{fill:#1A1A1C;}
+}
+</style>
+<rect width="1058" height="700" fill="#FFFFFF"/>
+<text x="48" y="52" font-size="28" font-weight="700" fill="#1D1D1F">Most reachable users live on a single channel</text>
+<text x="48" y="82" font-size="17" fill="#6E6E73">Monthly-active users (thousands) by exact combination of contact channels · illustrative</text>
+<rect x="358.0" y="440.0" width="656.0" height="52.0" fill="#F5F5F7"/>
+<rect x="358.0" y="544.0" width="656.0" height="52.0" fill="#F5F5F7"/>
+<text x="358.0" y="138.0" font-size="15" fill="#6E6E73">Users reached per combination (k)</text>
+<text x="48" y="424.0" font-size="15" fill="#6E6E73">Set size (k)</text>
+<rect class="setbar" x="58.0" y="451.0" width="150.0" height="30" rx="7" fill="#AF52DE" fill-opacity="0.55"><title>Email: 181k monthly-active users total</title></rect>
+<text x="48.0" y="466.0" font-size="16" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">181</text>
+<text x="228.0" y="466.0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Email</text>
+<rect class="setbar" x="111.0" y="503.0" width="97.0" height="30" rx="7" fill="#AF52DE" fill-opacity="0.55"><title>Mobile app: 117k monthly-active users total</title></rect>
+<text x="101.0" y="518.0" font-size="16" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">117</text>
+<text x="228.0" y="518.0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Mobile app</text>
+<rect class="setbar" x="145.8" y="555.0" width="62.2" height="30" rx="7" fill="#AF52DE" fill-opacity="0.55"><title>Web app: 75k monthly-active users total</title></rect>
+<text x="135.8" y="570.0" font-size="16" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">75</text>
+<text x="228.0" y="570.0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Web app</text>
+<rect class="setbar" x="190.6" y="607.0" width="17.4" height="30" rx="7" fill="#AF52DE" fill-opacity="0.55"><title>SMS: 21k monthly-active users total</title></rect>
+<text x="180.6" y="622.0" font-size="16" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">21</text>
+<text x="228.0" y="622.0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">SMS</text>
+<g class="combo c-email">
+<g class="ibar"><title>Email only: 62k users</title><rect class="isize" x="374.4" y="194.0" width="49.2" height="216.0" rx="6" fill="#007AFF"/></g>
+<text x="399.0" y="182.0" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">62</text>
+<g class="dotcol">
+<circle class="activedot" cx="399.0" cy="466.0" r="13.0" fill="#AF52DE"/>
+<circle cx="399.0" cy="518.0" r="13.0" fill="#D6D6DB"/>
+<circle cx="399.0" cy="570.0" r="13.0" fill="#D6D6DB"/>
+<circle cx="399.0" cy="622.0" r="13.0" fill="#D6D6DB"/>
+</g>
+<rect class="hit" x="358.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Email only: 62k users"><title>Email only: 62k users</title></rect>
+</g>
+<g class="combo c-email-mobile-app">
+<g class="ibar"><title>Email + Mobile app: 48k users</title><rect class="isize" x="456.4" y="242.8" width="49.2" height="167.2" rx="6" fill="#007AFF"/></g>
+<text x="481.0" y="230.8" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">48</text>
+<line class="conn" x1="481.0" y1="466.0" x2="481.0" y2="518.0" stroke="#AF52DE" stroke-width="5" stroke-linecap="round"/>
+<g class="dotcol">
+<circle class="activedot" cx="481.0" cy="466.0" r="13.0" fill="#AF52DE"/>
+<circle class="activedot" cx="481.0" cy="518.0" r="13.0" fill="#AF52DE"/>
+<circle cx="481.0" cy="570.0" r="13.0" fill="#D6D6DB"/>
+<circle cx="481.0" cy="622.0" r="13.0" fill="#D6D6DB"/>
+</g>
+<rect class="hit" x="440.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Email + Mobile app: 48k users"><title>Email + Mobile app: 48k users</title></rect>
+</g>
+<g class="combo c-email-mobile-app-web-app">
+<g class="ibar"><title>Email + Mobile app + Web app: 31k users</title><rect class="isize" x="538.4" y="302.0" width="49.2" height="108.0" rx="6" fill="#007AFF"/></g>
+<text x="563.0" y="290.0" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">31</text>
+<line class="conn" x1="563.0" y1="466.0" x2="563.0" y2="570.0" stroke="#AF52DE" stroke-width="5" stroke-linecap="round"/>
+<g class="dotcol">
+<circle class="activedot" cx="563.0" cy="466.0" r="13.0" fill="#AF52DE"/>
+<circle class="activedot" cx="563.0" cy="518.0" r="13.0" fill="#AF52DE"/>
+<circle class="activedot" cx="563.0" cy="570.0" r="13.0" fill="#AF52DE"/>
+<circle cx="563.0" cy="622.0" r="13.0" fill="#D6D6DB"/>
+</g>
+<rect class="hit" x="522.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Email + Mobile app + Web app: 31k users"><title>Email + Mobile app + Web app: 31k users</title></rect>
+</g>
+<g class="combo c-mobile-app">
+<g class="ibar"><title>Mobile app only: 24k users</title><rect class="isize" x="620.4" y="326.4" width="49.2" height="83.6" rx="6" fill="#007AFF"/></g>
+<text x="645.0" y="314.4" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">24</text>
+<g class="dotcol">
+<circle cx="645.0" cy="466.0" r="13.0" fill="#D6D6DB"/>
+<circle class="activedot" cx="645.0" cy="518.0" r="13.0" fill="#AF52DE"/>
+<circle cx="645.0" cy="570.0" r="13.0" fill="#D6D6DB"/>
+<circle cx="645.0" cy="622.0" r="13.0" fill="#D6D6DB"/>
+</g>
+<rect class="hit" x="604.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Mobile app only: 24k users"><title>Mobile app only: 24k users</title></rect>
+</g>
+<g class="combo c-email-web-app">
+<g class="ibar"><title>Email + Web app: 19k users</title><rect class="isize" x="702.4" y="343.8" width="49.2" height="66.2" rx="6" fill="#007AFF"/></g>
+<text x="727.0" y="331.8" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">19</text>
+<line class="conn" x1="727.0" y1="466.0" x2="727.0" y2="570.0" stroke="#AF52DE" stroke-width="5" stroke-linecap="round"/>
+<g class="dotcol">
+<circle class="activedot" cx="727.0" cy="466.0" r="13.0" fill="#AF52DE"/>
+<circle cx="727.0" cy="518.0" r="13.0" fill="#D6D6DB"/>
+<circle class="activedot" cx="727.0" cy="570.0" r="13.0" fill="#AF52DE"/>
+<circle cx="727.0" cy="622.0" r="13.0" fill="#D6D6DB"/>
+</g>
+<rect class="hit" x="686.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Email + Web app: 19k users"><title>Email + Web app: 19k users</title></rect>
+</g>
+<g class="combo c-email-mobile-app-web-app-sms">
+<g class="ibar"><title>Email + Mobile app + Web app + SMS: 14k users</title><rect class="isize" x="784.4" y="361.2" width="49.2" height="48.8" rx="6" fill="#007AFF"/></g>
+<text x="809.0" y="349.2" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">14</text>
+<line class="conn" x1="809.0" y1="466.0" x2="809.0" y2="622.0" stroke="#AF52DE" stroke-width="5" stroke-linecap="round"/>
+<g class="dotcol">
+<circle class="activedot" cx="809.0" cy="466.0" r="13.0" fill="#AF52DE"/>
+<circle class="activedot" cx="809.0" cy="518.0" r="13.0" fill="#AF52DE"/>
+<circle class="activedot" cx="809.0" cy="570.0" r="13.0" fill="#AF52DE"/>
+<circle class="activedot" cx="809.0" cy="622.0" r="13.0" fill="#AF52DE"/>
+</g>
+<rect class="hit" x="768.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Email + Mobile app + Web app + SMS: 14k users"><title>Email + Mobile app + Web app + SMS: 14k users</title></rect>
+</g>
+<g class="combo c-web-app">
+<g class="ibar"><title>Web app only: 11k users</title><rect class="isize" x="866.4" y="371.7" width="49.2" height="38.3" rx="6" fill="#007AFF"/></g>
+<text x="891.0" y="359.7" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">11</text>
+<g class="dotcol">
+<circle cx="891.0" cy="466.0" r="13.0" fill="#D6D6DB"/>
+<circle cx="891.0" cy="518.0" r="13.0" fill="#D6D6DB"/>
+<circle class="activedot" cx="891.0" cy="570.0" r="13.0" fill="#AF52DE"/>
+<circle cx="891.0" cy="622.0" r="13.0" fill="#D6D6DB"/>
+</g>
+<rect class="hit" x="850.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Web app only: 11k users"><title>Web app only: 11k users</title></rect>
+</g>
+<g class="combo c-email-sms">
+<g class="ibar"><title>Email + SMS: 7k users</title><rect class="isize" x="948.4" y="385.6" width="49.2" height="24.4" rx="6" fill="#007AFF"/></g>
+<text x="973.0" y="373.6" font-size="16" font-family="Roboto Mono, monospace" font-weight="600" fill="#1D1D1F" text-anchor="middle">7</text>
+<line class="conn" x1="973.0" y1="466.0" x2="973.0" y2="622.0" stroke="#AF52DE" stroke-width="5" stroke-linecap="round"/>
+<g class="dotcol">
+<circle class="activedot" cx="973.0" cy="466.0" r="13.0" fill="#AF52DE"/>
+<circle cx="973.0" cy="518.0" r="13.0" fill="#D6D6DB"/>
+<circle cx="973.0" cy="570.0" r="13.0" fill="#D6D6DB"/>
+<circle class="activedot" cx="973.0" cy="622.0" r="13.0" fill="#AF52DE"/>
+</g>
+<rect class="hit" x="932.0" y="140.0" width="82.0" height="508.0" tabindex="0" role="img" aria-label="Email + SMS: 7k users"><title>Email + SMS: 7k users</title></rect>
+</g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1010,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

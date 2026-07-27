@@ -1,0 +1,26 @@
+# ruff.toml — lint gate for the front-* skill scripts (CODING_ALL.md rule 3).
+#
+# This is the AUDIT side of the make/audit paradigm the skills themselves follow:
+#   audit  →  `ruff check .`         (blocking, wired into CI — flags defects)
+#   make   →  `ruff check --fix .`   (repairs the auto-fixable subset in place)
+#            + `ruff format .`        (formatting; not enforced as a gate yet)
+#
+# Implicit re-exports (a script surfacing a helper for its tests, e.g.
+# `relative_luminance` from `_colors`) are declared with the PEP 484 redundant
+# alias form `name as name`, which ruff treats as an explicit re-export — so
+# `--fix` never deletes a live re-export (the trap that made a blanket --fix
+# unsafe before this config existed).
+
+target-version = "py310"
+
+[lint]
+# Ruff's default rule set (pyflakes F + a curated pycodestyle E/W subset).
+extend-select = ["W"]
+
+ignore = [
+    # E741 — "ambiguous variable name l/I/O". Intentional here: `l` is the
+    # OKLab *lightness* channel in sprezzature-colors' colour math (Ottosson's spec
+    # names it `l`), and a conventional line variable elsewhere. Renaming it
+    # would reduce, not improve, readability in the numerical code.
+    "E741",
+]

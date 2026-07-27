@@ -1,0 +1,522 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="940" viewBox="0 0 1280 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ba-title ba-desc">
+<title id="ba-title">Bland-Altman plot comparing a wrist blood-pressure monitor with an arm cuff</title>
+<desc id="ba-desc">A Bland-Altman agreement plot of paired systolic-pressure readings from a wrist monitor and an arm cuff. The horizontal axis is the mean of the two readings; the vertical axis is their difference (wrist minus arm). Each dot is one of 90 patients. A solid blue line marks the mean bias (-7.3 mmHg) and two dashed red lines mark the 95 percent limits of agreement (-15.3 to +0.7 mmHg). The bias sits below zero and the cloud tilts down to the right, so the wrist tends to read low, and more so at higher pressure. Illustrative data.</desc>
+<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}@media (prefers-contrast: more){
+  .ba-bias{stroke:#004CCE;}
+  .ba-loa{stroke:#B50000;}
+  .ba-trend{stroke:#831FAF;}
+  .ba-bias-chip{stroke:#004CCE !important;}.ba-bias-txt{fill:#004CCE !important;}.ba-loa-chip{stroke:#B50000 !important;}.ba-loa-txt{fill:#B50000 !important;}.ba-trend-chip{stroke:#831FAF !important;}.ba-trend-txt{fill:#831FAF !important;}
+}@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
+  [stroke="#EEEEEE"]{stroke:#2A2A2C;}
+}</style>
+<rect width="1280" height="940" fill="#FFFFFF"/>
+<text x="128" y="88" font-size="40" font-weight="700" fill="#1D1D1F">Do the wrist monitor and the arm cuff agree?</text>
+<text x="128" y="134" font-size="23" fill="#6E6E73">Bland-Altman plot. Each dot is one patient: its difference (wrist − arm) against the two methods’ mean.</text>
+<text x="128" y="166" font-size="23" fill="#6E6E73">Solid line = mean bias (-7.3 mmHg). Dashed lines = 95% limits of agreement (-15.3 to +0.7 mmHg).</text>
+<text x="128" y="198" font-size="23" fill="#6E6E73">Bias below zero, cloud tilting down to the right: the wrist reads low, worse at higher pressure · illustrative data</text>
+<rect x="128.0" y="444.8" width="942.0" height="256.0" fill="#007AFF" fill-opacity="0.07"/>
+<line x1="206.5" y1="232.0" x2="206.5" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="402.8" y1="232.0" x2="402.8" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="599.0" y1="232.0" x2="599.0" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="795.2" y1="232.0" x2="795.2" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="991.5" y1="232.0" x2="991.5" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="744.0" x2="1070.0" y2="744.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="648.0" x2="1070.0" y2="648.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="552.0" x2="1070.0" y2="552.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="456.0" x2="1070.0" y2="456.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="360.0" x2="1070.0" y2="360.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="264.0" x2="1070.0" y2="264.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="128.0" y1="808.0" x2="1070.0" y2="808.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="128.0" y1="232.0" x2="128.0" y2="808.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="206.5" y1="808.0" x2="206.5" y2="815.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="206.5" y="842.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100</text>
+<line x1="402.8" y1="808.0" x2="402.8" y2="815.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="402.8" y="842.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">120</text>
+<line x1="599.0" y1="808.0" x2="599.0" y2="815.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="599.0" y="842.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">140</text>
+<line x1="795.2" y1="808.0" x2="795.2" y2="815.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="795.2" y="842.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">160</text>
+<line x1="991.5" y1="808.0" x2="991.5" y2="815.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="991.5" y="842.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">180</text>
+<line x1="121.0" y1="744.0" x2="128.0" y2="744.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="112.0" y="751.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">-18</text>
+<line x1="121.0" y1="648.0" x2="128.0" y2="648.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="112.0" y="655.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">-12</text>
+<line x1="121.0" y1="552.0" x2="128.0" y2="552.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="112.0" y="559.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">-6</text>
+<line x1="121.0" y1="456.0" x2="128.0" y2="456.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="112.0" y="463.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">+0</text>
+<line x1="121.0" y1="360.0" x2="128.0" y2="360.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="112.0" y="367.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">+6</text>
+<line x1="121.0" y1="264.0" x2="128.0" y2="264.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<text x="112.0" y="271.0" font-size="20" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">+12</text>
+<text x="599.0" y="886.0" font-size="23" fill="#1D1D1F" text-anchor="middle">Mean of the two methods — systolic pressure (mmHg)</text>
+<text x="48.0" y="520.0" font-size="23" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 48.0 520.0)">Difference between methods — wrist − arm (mmHg)</text>
+<line x1="128.0" y1="456.0" x2="1070.0" y2="456.0" stroke="#B8B8BD" stroke-width="1.6" stroke-dasharray="2 5"/>
+<text x="134.0" y="478.0" font-size="18" font-style="italic" fill="#9A9AA0">0 = perfect agreement</text>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -5 mmHg">
+<title>Mean 149 mmHg, wrist − arm -5 mmHg</title>
+<circle class="halo" cx="685.4" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="685.4" cy="534.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 171 mmHg, wrist − arm -10 mmHg">
+<title>Mean 171 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="903.2" cy="609.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="903.2" cy="609.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -6 mmHg">
+<title>Mean 162 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="813.9" cy="550.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="813.9" cy="550.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -6 mmHg">
+<title>Mean 112 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="327.2" cy="552.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="327.2" cy="552.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 122 mmHg, wrist − arm -1 mmHg">
+<title>Mean 122 mmHg, wrist − arm -1 mmHg</title>
+<circle class="halo" cx="417.5" cy="472.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="417.5" cy="472.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 169 mmHg, wrist − arm -9 mmHg">
+<title>Mean 169 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="883.6" cy="604.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="883.6" cy="604.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -1 mmHg">
+<title>Mean 95 mmHg, wrist − arm -1 mmHg</title>
+<circle class="halo" cx="158.4" cy="467.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="158.4" cy="467.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
+<title>Mean 162 mmHg, wrist − arm -14 mmHg</title>
+<circle class="halo" cx="813.9" cy="681.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="813.9" cy="681.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 163 mmHg, wrist − arm -7 mmHg">
+<title>Mean 163 mmHg, wrist − arm -7 mmHg</title>
+<circle class="halo" cx="825.7" cy="574.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="825.7" cy="574.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 131 mmHg, wrist − arm -13 mmHg">
+<title>Mean 131 mmHg, wrist − arm -13 mmHg</title>
+<circle class="halo" cx="506.8" cy="665.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="506.8" cy="665.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 116 mmHg, wrist − arm -13 mmHg">
+<title>Mean 116 mmHg, wrist − arm -13 mmHg</title>
+<circle class="halo" cx="359.6" cy="668.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="359.6" cy="668.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -6 mmHg">
+<title>Mean 117 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="372.3" cy="555.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="372.3" cy="555.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 114 mmHg, wrist − arm -8 mmHg">
+<title>Mean 114 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="340.9" cy="590.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="340.9" cy="590.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
+<title>Mean 132 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="523.4" cy="544.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="523.4" cy="544.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm +2 mmHg">
+<title>Mean 142 mmHg, wrist − arm +2 mmHg</title>
+<circle class="halo" cx="614.7" cy="419.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="614.7" cy="419.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -10 mmHg">
+<title>Mean 140 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="596.1" cy="620.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="596.1" cy="620.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -13 mmHg">
+<title>Mean 178 mmHg, wrist − arm -13 mmHg</title>
+<circle class="halo" cx="974.8" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="974.8" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -8 mmHg">
+<title>Mean 162 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="818.8" cy="582.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="818.8" cy="582.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -6 mmHg">
+<title>Mean 148 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="679.5" cy="544.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="679.5" cy="544.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 179 mmHg, wrist − arm -11 mmHg">
+<title>Mean 179 mmHg, wrist − arm -11 mmHg</title>
+<circle class="halo" cx="977.8" cy="628.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="977.8" cy="628.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -5 mmHg">
+<title>Mean 112 mmHg, wrist − arm -5 mmHg</title>
+<circle class="halo" cx="321.3" cy="542.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="321.3" cy="542.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -1 mmHg">
+<title>Mean 109 mmHg, wrist − arm -1 mmHg</title>
+<circle class="halo" cx="291.9" cy="476.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="291.9" cy="476.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -5 mmHg">
+<title>Mean 148 mmHg, wrist − arm -5 mmHg</title>
+<circle class="halo" cx="672.6" cy="540.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="672.6" cy="540.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -8 mmHg">
+<title>Mean 95 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="159.4" cy="576.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="159.4" cy="576.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 96 mmHg, wrist − arm -4 mmHg">
+<title>Mean 96 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="171.2" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="171.2" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 138 mmHg, wrist − arm -7 mmHg">
+<title>Mean 138 mmHg, wrist − arm -7 mmHg</title>
+<circle class="halo" cx="580.4" cy="561.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="580.4" cy="561.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -11 mmHg">
+<title>Mean 132 mmHg, wrist − arm -11 mmHg</title>
+<circle class="halo" cx="517.6" cy="625.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="517.6" cy="625.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 173 mmHg, wrist − arm -9 mmHg">
+<title>Mean 173 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="925.8" cy="593.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="925.8" cy="593.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -11 mmHg">
+<title>Mean 146 mmHg, wrist − arm -11 mmHg</title>
+<circle class="halo" cx="658.9" cy="632.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="658.9" cy="632.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -3 mmHg">
+<title>Mean 140 mmHg, wrist − arm -3 mmHg</title>
+<circle class="halo" cx="598.0" cy="500.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="598.0" cy="500.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -6 mmHg">
+<title>Mean 137 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="567.6" cy="548.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="567.6" cy="548.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
+<title>Mean 115 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="354.7" cy="526.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="354.7" cy="526.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 93 mmHg, wrist − arm -5 mmHg">
+<title>Mean 93 mmHg, wrist − arm -5 mmHg</title>
+<circle class="halo" cx="140.8" cy="542.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="140.8" cy="542.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -5 mmHg">
+<title>Mean 110 mmHg, wrist − arm -5 mmHg</title>
+<circle class="halo" cx="303.6" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="303.6" cy="534.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -16 mmHg">
+<title>Mean 149 mmHg, wrist − arm -16 mmHg</title>
+<circle class="halo" cx="690.3" cy="712.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="690.3" cy="712.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -9 mmHg">
+<title>Mean 109 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="290.9" cy="600.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="290.9" cy="600.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 126 mmHg, wrist − arm -4 mmHg">
+<title>Mean 126 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="463.6" cy="523.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="463.6" cy="523.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 90 mmHg, wrist − arm -12 mmHg">
+<title>Mean 90 mmHg, wrist − arm -12 mmHg</title>
+<circle class="halo" cx="104.4" cy="640.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="104.4" cy="640.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -6 mmHg">
+<title>Mean 167 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="863.0" cy="545.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="863.0" cy="545.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 103 mmHg, wrist − arm -11 mmHg">
+<title>Mean 103 mmHg, wrist − arm -11 mmHg</title>
+<circle class="halo" cx="239.9" cy="633.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="239.9" cy="633.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 118 mmHg, wrist − arm -2 mmHg">
+<title>Mean 118 mmHg, wrist − arm -2 mmHg</title>
+<circle class="halo" cx="384.1" cy="486.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.1" cy="486.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -13 mmHg">
+<title>Mean 168 mmHg, wrist − arm -13 mmHg</title>
+<circle class="halo" cx="872.8" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="872.8" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 139 mmHg, wrist − arm -4 mmHg">
+<title>Mean 139 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="590.2" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="590.2" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -9 mmHg">
+<title>Mean 167 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="863.9" cy="593.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="863.9" cy="593.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -14 mmHg">
+<title>Mean 146 mmHg, wrist − arm -14 mmHg</title>
+<circle class="halo" cx="654.9" cy="676.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="654.9" cy="676.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 160 mmHg, wrist − arm -3 mmHg">
+<title>Mean 160 mmHg, wrist − arm -3 mmHg</title>
+<circle class="halo" cx="796.2" cy="508.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="796.2" cy="508.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 104 mmHg, wrist − arm +2 mmHg">
+<title>Mean 104 mmHg, wrist − arm +2 mmHg</title>
+<circle class="halo" cx="248.7" cy="422.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="248.7" cy="422.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -7 mmHg">
+<title>Mean 140 mmHg, wrist − arm -7 mmHg</title>
+<circle class="halo" cx="600.0" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="600.0" cy="571.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -8 mmHg">
+<title>Mean 137 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="567.6" cy="580.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="567.6" cy="580.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -10 mmHg">
+<title>Mean 168 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="878.7" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="878.7" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 123 mmHg, wrist − arm -10 mmHg">
+<title>Mean 123 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="430.2" cy="608.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="430.2" cy="608.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -3 mmHg">
+<title>Mean 147 mmHg, wrist − arm -3 mmHg</title>
+<circle class="halo" cx="671.6" cy="502.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="671.6" cy="502.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 98 mmHg, wrist − arm -6 mmHg">
+<title>Mean 98 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="182.0" cy="545.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="182.0" cy="545.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 127 mmHg, wrist − arm -6 mmHg">
+<title>Mean 127 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="470.5" cy="552.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="470.5" cy="552.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 120 mmHg, wrist − arm -8 mmHg">
+<title>Mean 120 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="400.8" cy="592.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="400.8" cy="592.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -7 mmHg">
+<title>Mean 105 mmHg, wrist − arm -7 mmHg</title>
+<circle class="halo" cx="257.5" cy="561.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="257.5" cy="561.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
+<title>Mean 162 mmHg, wrist − arm -14 mmHg</title>
+<circle class="halo" cx="810.0" cy="680.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="810.0" cy="680.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -1 mmHg">
+<title>Mean 129 mmHg, wrist − arm -1 mmHg</title>
+<circle class="halo" cx="489.1" cy="467.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="489.1" cy="467.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -11 mmHg">
+<title>Mean 178 mmHg, wrist − arm -11 mmHg</title>
+<circle class="halo" cx="969.9" cy="627.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="969.9" cy="627.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -3 mmHg">
+<title>Mean 146 mmHg, wrist − arm -3 mmHg</title>
+<circle class="halo" cx="661.8" cy="510.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="661.8" cy="510.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -7 mmHg">
+<title>Mean 146 mmHg, wrist − arm -7 mmHg</title>
+<circle class="halo" cx="655.9" cy="572.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="655.9" cy="572.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -10 mmHg">
+<title>Mean 147 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="669.6" cy="622.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="669.6" cy="622.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 151 mmHg, wrist − arm -9 mmHg">
+<title>Mean 151 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="709.9" cy="603.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="709.9" cy="603.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -6 mmHg">
+<title>Mean 105 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="259.5" cy="556.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="259.5" cy="556.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
+<title>Mean 132 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="516.6" cy="553.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="516.6" cy="553.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 113 mmHg, wrist − arm -6 mmHg">
+<title>Mean 113 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="338.0" cy="555.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="338.0" cy="555.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -7 mmHg">
+<title>Mean 128 mmHg, wrist − arm -7 mmHg</title>
+<circle class="halo" cx="478.3" cy="569.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="478.3" cy="569.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 99 mmHg, wrist − arm -9 mmHg">
+<title>Mean 99 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="197.7" cy="603.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="197.7" cy="603.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 176 mmHg, wrist − arm -13 mmHg">
+<title>Mean 176 mmHg, wrist − arm -13 mmHg</title>
+<circle class="halo" cx="947.3" cy="667.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="947.3" cy="667.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm +2 mmHg">
+<title>Mean 115 mmHg, wrist − arm +2 mmHg</title>
+<circle class="halo" cx="357.6" cy="422.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="357.6" cy="422.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 150 mmHg, wrist − arm -10 mmHg">
+<title>Mean 150 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="699.1" cy="624.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="699.1" cy="624.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -9 mmHg">
+<title>Mean 117 mmHg, wrist − arm -9 mmHg</title>
+<circle class="halo" cx="376.3" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="376.3" cy="606.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -8 mmHg">
+<title>Mean 170 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="890.4" cy="582.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="890.4" cy="582.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 154 mmHg, wrist − arm -2 mmHg">
+<title>Mean 154 mmHg, wrist − arm -2 mmHg</title>
+<circle class="halo" cx="731.5" cy="489.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="731.5" cy="489.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 102 mmHg, wrist − arm -10 mmHg">
+<title>Mean 102 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="226.1" cy="612.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="226.1" cy="612.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 166 mmHg, wrist − arm -10 mmHg">
+<title>Mean 166 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="855.1" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="855.1" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 174 mmHg, wrist − arm -12 mmHg">
+<title>Mean 174 mmHg, wrist − arm -12 mmHg</title>
+<circle class="halo" cx="931.6" cy="652.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="931.6" cy="652.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -17 mmHg">
+<title>Mean 168 mmHg, wrist − arm -17 mmHg</title>
+<circle class="halo" cx="874.7" cy="721.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="874.7" cy="721.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 144 mmHg, wrist − arm -4 mmHg">
+<title>Mean 144 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="640.2" cy="523.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="640.2" cy="523.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 106 mmHg, wrist − arm -4 mmHg">
+<title>Mean 106 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="265.4" cy="521.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="265.4" cy="521.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -4 mmHg">
+<title>Mean 110 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="307.6" cy="521.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="307.6" cy="521.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 172 mmHg, wrist − arm -13 mmHg">
+<title>Mean 172 mmHg, wrist − arm -13 mmHg</title>
+<circle class="halo" cx="915.0" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="915.0" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm -5 mmHg">
+<title>Mean 142 mmHg, wrist − arm -5 mmHg</title>
+<circle class="halo" cx="619.6" cy="539.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="619.6" cy="539.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 108 mmHg, wrist − arm -6 mmHg">
+<title>Mean 108 mmHg, wrist − arm -6 mmHg</title>
+<circle class="halo" cx="285.0" cy="560.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="285.0" cy="560.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -10 mmHg">
+<title>Mean 170 mmHg, wrist − arm -10 mmHg</title>
+<circle class="halo" cx="889.4" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="889.4" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -12 mmHg">
+<title>Mean 147 mmHg, wrist − arm -12 mmHg</title>
+<circle class="halo" cx="664.7" cy="649.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="664.7" cy="649.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -12 mmHg">
+<title>Mean 140 mmHg, wrist − arm -12 mmHg</title>
+<circle class="halo" cx="601.9" cy="648.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="601.9" cy="648.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -0 mmHg">
+<title>Mean 129 mmHg, wrist − arm -0 mmHg</title>
+<circle class="halo" cx="488.1" cy="462.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="488.1" cy="462.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -8 mmHg">
+<title>Mean 128 mmHg, wrist − arm -8 mmHg</title>
+<circle class="halo" cx="481.2" cy="584.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="481.2" cy="584.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
+<title>Mean 115 mmHg, wrist − arm -4 mmHg</title>
+<circle class="halo" cx="351.7" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="351.7" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+<line class="ba-trend" x1="128.0" y1="526.7" x2="1070.0" y2="627.9" stroke="#AF52DE" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round" stroke-opacity="0.9"/>
+<line class="ba-loa" x1="128.0" y1="444.8" x2="1070.0" y2="444.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
+<rect class="ba-loa-chip" x="1080.0" y="427.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>
+<text class="ba-loa-txt" x="1092.0" y="450.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">+1.96 SD  +0.7</text>
+<line class="ba-bias" x1="128.0" y1="572.8" x2="1070.0" y2="572.8" stroke="#007AFF" stroke-width="3.6"/>
+<rect class="ba-bias-chip" x="1080.0" y="555.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#007AFF" stroke-width="1.4"/>
+<text class="ba-bias-txt" x="1092.0" y="578.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#007AFF">Bias  -7.3</text>
+<line class="ba-loa" x1="128.0" y1="700.8" x2="1070.0" y2="700.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
+<rect class="ba-loa-chip" x="1080.0" y="683.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>
+<text class="ba-loa-txt" x="1092.0" y="706.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">−1.96 SD  -15.3</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1006,240)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

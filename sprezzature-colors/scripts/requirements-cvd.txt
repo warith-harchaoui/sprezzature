@@ -1,0 +1,8 @@
+# Requirements for simulate_cvd.py
+#
+# Install:
+#   pip install -r scripts/requirements-cvd.txt
+#
+# Used for: image decoding, per-pixel transform, grid mosaic rendering.
+
+Pillow>=10.0.0

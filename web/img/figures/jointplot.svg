@@ -1,0 +1,686 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="940" viewBox="0 0 940 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="jp-title jp-desc">
+<title id="jp-title">A good night's sleep sharpens reaction time</title>
+<desc id="jp-desc">Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail. Illustrative data.</desc>
+<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<rect width="940" height="940" fill="#FFFFFF"/>
+<text x="118" y="70" font-size="34" font-weight="700" fill="#1D1D1F">A good night's sleep sharpens reaction time</text>
+<text x="118" y="108" font-size="19" fill="#6E6E73">Reaction-time test vs. hours slept, 120 volunteers — marginals show each distribution</text>
+<text x="118" y="134" font-size="19" fill="#6E6E73">Illustrative data</text>
+<rect x="119.0" y="332.0" width="43.6" height="36.0" rx="3" fill="#28CD41"/>
+<rect x="164.6" y="344.0" width="43.6" height="24.0" rx="3" fill="#28CD41"/>
+<rect x="210.1" y="320.0" width="43.6" height="48.0" rx="3" fill="#28CD41"/>
+<rect x="255.7" y="302.0" width="43.6" height="66.0" rx="3" fill="#28CD41"/>
+<rect x="301.3" y="314.0" width="43.6" height="54.0" rx="3" fill="#28CD41"/>
+<rect x="346.9" y="254.0" width="43.6" height="114.0" rx="3" fill="#28CD41"/>
+<rect x="392.4" y="254.0" width="43.6" height="114.0" rx="3" fill="#28CD41"/>
+<rect x="438.0" y="278.0" width="43.6" height="90.0" rx="3" fill="#28CD41"/>
+<rect x="483.6" y="314.0" width="43.6" height="54.0" rx="3" fill="#28CD41"/>
+<rect x="529.1" y="320.0" width="43.6" height="48.0" rx="3" fill="#28CD41"/>
+<rect x="574.7" y="338.0" width="43.6" height="30.0" rx="3" fill="#28CD41"/>
+<rect x="620.3" y="338.0" width="43.6" height="30.0" rx="3" fill="#28CD41"/>
+<rect x="665.9" y="368.0" width="43.6" height="0.0" rx="3" fill="#28CD41"/>
+<rect x="711.4" y="356.0" width="43.6" height="12.0" rx="3" fill="#28CD41"/>
+<text x="118.0" y="228.0" font-size="16" fill="#6E6E73">Distribution of hours slept</text>
+<rect x="768.0" y="811.9" width="0.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="778.7" width="6.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="745.6" width="18.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="712.4" width="66.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="679.3" width="120.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="646.1" width="90.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="613.0" width="120.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="579.9" width="102.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="546.7" width="108.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="513.6" width="48.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="480.4" width="12.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="447.3" width="18.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="414.1" width="12.0" height="31.1" rx="3" fill="#AF52DE"/>
+<rect x="768.0" y="381.0" width="0.0" height="31.1" rx="3" fill="#AF52DE"/>
+<text x="902.0" y="612.0" font-size="16" fill="#6E6E73" text-anchor="middle" transform="rotate(90 902.0 612.0)">Distribution of reaction time</text>
+<line x1="118.0" y1="380.0" x2="118.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="234.0" y1="380.0" x2="234.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="350.0" y1="380.0" x2="350.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="466.0" y1="380.0" x2="466.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="582.0" y1="380.0" x2="582.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="698.0" y1="380.0" x2="698.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="825.4" x2="756.0" y2="825.4" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="751.2" x2="756.0" y2="751.2" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="677.0" x2="756.0" y2="677.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="602.7" x2="756.0" y2="602.7" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="528.5" x2="756.0" y2="528.5" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="454.2" x2="756.0" y2="454.2" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="380.0" x2="756.0" y2="380.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="844.0" x2="756.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="118.0" y1="380.0" x2="118.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="118.0" y1="844.0" x2="118.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="118.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">4.0</text>
+<line x1="234.0" y1="844.0" x2="234.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="234.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">5.0</text>
+<line x1="350.0" y1="844.0" x2="350.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="350.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">6.0</text>
+<line x1="466.0" y1="844.0" x2="466.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="466.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">7.0</text>
+<line x1="582.0" y1="844.0" x2="582.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="582.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">8.0</text>
+<line x1="698.0" y1="844.0" x2="698.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="698.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">9.0</text>
+<line x1="112.0" y1="825.4" x2="118.0" y2="825.4" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="831.4" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">180</text>
+<line x1="112.0" y1="751.2" x2="118.0" y2="751.2" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="757.2" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">220</text>
+<line x1="112.0" y1="677.0" x2="118.0" y2="677.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="683.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">260</text>
+<line x1="112.0" y1="602.7" x2="118.0" y2="602.7" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="608.7" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">300</text>
+<line x1="112.0" y1="528.5" x2="118.0" y2="528.5" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="534.5" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">340</text>
+<line x1="112.0" y1="454.2" x2="118.0" y2="454.2" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="460.2" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">380</text>
+<line x1="112.0" y1="380.0" x2="118.0" y2="380.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="386.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">420</text>
+<text x="437.0" y="906.0" font-size="19" fill="#1D1D1F" text-anchor="middle">Sleep the night before (hours)</text>
+<text x="44.0" y="612.0" font-size="19" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 44.0 612.0)">Mean reaction time, ms (lower is better)</text>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 287 ms reaction time">
+<title>6.6 h slept, 287 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="626.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="626.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.0 h slept, 258 ms reaction time">
+<title>7.0 h slept, 258 ms reaction time</title>
+<circle class="halo" cx="466.0" cy="680.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="466.0" cy="680.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
+<title>6.2 h slept, 293 ms reaction time</title>
+<circle class="halo" cx="373.2" cy="615.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="373.2" cy="615.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.4 h slept, 268 ms reaction time">
+<title>5.4 h slept, 268 ms reaction time</title>
+<circle class="halo" cx="280.4" cy="662.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="280.4" cy="662.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.0 h slept, 274 ms reaction time">
+<title>6.0 h slept, 274 ms reaction time</title>
+<circle class="halo" cx="350.0" cy="651.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="350.0" cy="651.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.2 h slept, 334 ms reaction time">
+<title>5.2 h slept, 334 ms reaction time</title>
+<circle class="halo" cx="257.2" cy="539.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="257.2" cy="539.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.7 h slept, 227 ms reaction time">
+<title>6.7 h slept, 227 ms reaction time</title>
+<circle class="halo" cx="431.2" cy="738.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="431.2" cy="738.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.5 h slept, 255 ms reaction time">
+<title>8.5 h slept, 255 ms reaction time</title>
+<circle class="halo" cx="640.0" cy="686.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="640.0" cy="686.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.9 h slept, 259 ms reaction time">
+<title>5.9 h slept, 259 ms reaction time</title>
+<circle class="halo" cx="338.4" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="338.4" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.7 h slept, 329 ms reaction time">
+<title>5.7 h slept, 329 ms reaction time</title>
+<circle class="halo" cx="315.2" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="315.2" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
+<title>7.3 h slept, 244 ms reaction time</title>
+<circle class="halo" cx="500.8" cy="706.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="500.8" cy="706.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.1 h slept, 291 ms reaction time">
+<title>7.1 h slept, 291 ms reaction time</title>
+<circle class="halo" cx="477.6" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="477.6" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.7 h slept, 284 ms reaction time">
+<title>6.7 h slept, 284 ms reaction time</title>
+<circle class="halo" cx="431.2" cy="632.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="431.2" cy="632.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.3 h slept, 282 ms reaction time">
+<title>5.3 h slept, 282 ms reaction time</title>
+<circle class="halo" cx="268.8" cy="636.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="268.8" cy="636.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 319 ms reaction time">
+<title>6.6 h slept, 319 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.6 h slept, 295 ms reaction time">
+<title>7.6 h slept, 295 ms reaction time</title>
+<circle class="halo" cx="535.6" cy="612.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="535.6" cy="612.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.7 h slept, 336 ms reaction time">
+<title>4.7 h slept, 336 ms reaction time</title>
+<circle class="halo" cx="199.2" cy="535.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="199.2" cy="535.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.0 h slept, 296 ms reaction time">
+<title>6.0 h slept, 296 ms reaction time</title>
+<circle class="halo" cx="350.0" cy="610.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="350.0" cy="610.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.0 h slept, 354 ms reaction time">
+<title>4.0 h slept, 354 ms reaction time</title>
+<circle class="halo" cx="118.0" cy="502.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="118.0" cy="502.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.8 h slept, 310 ms reaction time">
+<title>4.8 h slept, 310 ms reaction time</title>
+<circle class="halo" cx="210.8" cy="584.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="210.8" cy="584.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.0 h slept, 386 ms reaction time">
+<title>4.0 h slept, 386 ms reaction time</title>
+<circle class="halo" cx="118.0" cy="443.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="118.0" cy="443.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.3 h slept, 280 ms reaction time">
+<title>6.3 h slept, 280 ms reaction time</title>
+<circle class="halo" cx="384.8" cy="639.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.8" cy="639.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.8 h slept, 334 ms reaction time">
+<title>4.8 h slept, 334 ms reaction time</title>
+<circle class="halo" cx="210.8" cy="539.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="210.8" cy="539.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.0 h slept, 254 ms reaction time">
+<title>7.0 h slept, 254 ms reaction time</title>
+<circle class="halo" cx="466.0" cy="688.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="466.0" cy="688.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.8 h slept, 263 ms reaction time">
+<title>6.8 h slept, 263 ms reaction time</title>
+<circle class="halo" cx="442.8" cy="671.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="442.8" cy="671.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.3 h slept, 259 ms reaction time">
+<title>6.3 h slept, 259 ms reaction time</title>
+<circle class="halo" cx="384.8" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.8" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.0 h slept, 391 ms reaction time">
+<title>4.0 h slept, 391 ms reaction time</title>
+<circle class="halo" cx="118.0" cy="433.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="118.0" cy="433.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.8 h slept, 302 ms reaction time">
+<title>5.8 h slept, 302 ms reaction time</title>
+<circle class="halo" cx="326.8" cy="599.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="326.8" cy="599.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.5 h slept, 312 ms reaction time">
+<title>6.5 h slept, 312 ms reaction time</title>
+<circle class="halo" cx="408.0" cy="580.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="408.0" cy="580.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.8 h slept, 281 ms reaction time">
+<title>6.8 h slept, 281 ms reaction time</title>
+<circle class="halo" cx="442.8" cy="638.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="442.8" cy="638.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.5 h slept, 327 ms reaction time">
+<title>4.5 h slept, 327 ms reaction time</title>
+<circle class="halo" cx="176.0" cy="552.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="176.0" cy="552.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.9 h slept, 295 ms reaction time">
+<title>5.9 h slept, 295 ms reaction time</title>
+<circle class="halo" cx="338.4" cy="612.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="338.4" cy="612.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.2 h slept, 309 ms reaction time">
+<title>5.2 h slept, 309 ms reaction time</title>
+<circle class="halo" cx="257.2" cy="586.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="257.2" cy="586.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.5 h slept, 317 ms reaction time">
+<title>5.5 h slept, 317 ms reaction time</title>
+<circle class="halo" cx="292.0" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="292.0" cy="571.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.1 h slept, 234 ms reaction time">
+<title>8.1 h slept, 234 ms reaction time</title>
+<circle class="halo" cx="593.6" cy="725.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="593.6" cy="725.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.5 h slept, 309 ms reaction time">
+<title>5.5 h slept, 309 ms reaction time</title>
+<circle class="halo" cx="292.0" cy="586.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="292.0" cy="586.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 251 ms reaction time">
+<title>6.6 h slept, 251 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="693.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="693.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.8 h slept, 230 ms reaction time">
+<title>7.8 h slept, 230 ms reaction time</title>
+<circle class="halo" cx="558.8" cy="732.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="558.8" cy="732.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.8 h slept, 351 ms reaction time">
+<title>5.8 h slept, 351 ms reaction time</title>
+<circle class="halo" cx="326.8" cy="508.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="326.8" cy="508.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.4 h slept, 272 ms reaction time">
+<title>6.4 h slept, 272 ms reaction time</title>
+<circle class="halo" cx="396.4" cy="654.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="396.4" cy="654.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.8 h slept, 253 ms reaction time">
+<title>6.8 h slept, 253 ms reaction time</title>
+<circle class="halo" cx="442.8" cy="690.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="442.8" cy="690.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.7 h slept, 291 ms reaction time">
+<title>6.7 h slept, 291 ms reaction time</title>
+<circle class="halo" cx="431.2" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="431.2" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.9 h slept, 370 ms reaction time">
+<title>4.9 h slept, 370 ms reaction time</title>
+<circle class="halo" cx="222.4" cy="472.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="222.4" cy="472.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.7 h slept, 244 ms reaction time">
+<title>6.7 h slept, 244 ms reaction time</title>
+<circle class="halo" cx="431.2" cy="706.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="431.2" cy="706.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.5 h slept, 227 ms reaction time">
+<title>8.5 h slept, 227 ms reaction time</title>
+<circle class="halo" cx="640.0" cy="738.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="640.0" cy="738.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.4 h slept, 329 ms reaction time">
+<title>4.4 h slept, 329 ms reaction time</title>
+<circle class="halo" cx="164.4" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="164.4" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.8 h slept, 206 ms reaction time">
+<title>7.8 h slept, 206 ms reaction time</title>
+<circle class="halo" cx="558.8" cy="777.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="558.8" cy="777.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.8 h slept, 300 ms reaction time">
+<title>6.8 h slept, 300 ms reaction time</title>
+<circle class="halo" cx="442.8" cy="602.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="442.8" cy="602.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.7 h slept, 310 ms reaction time">
+<title>5.7 h slept, 310 ms reaction time</title>
+<circle class="halo" cx="315.2" cy="584.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="315.2" cy="584.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="9.4 h slept, 209 ms reaction time">
+<title>9.4 h slept, 209 ms reaction time</title>
+<circle class="halo" cx="744.4" cy="771.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="744.4" cy="771.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.7 h slept, 236 ms reaction time">
+<title>7.7 h slept, 236 ms reaction time</title>
+<circle class="halo" cx="547.2" cy="721.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="547.2" cy="721.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.9 h slept, 344 ms reaction time">
+<title>4.9 h slept, 344 ms reaction time</title>
+<circle class="halo" cx="222.4" cy="521.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="222.4" cy="521.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.7 h slept, 268 ms reaction time">
+<title>6.7 h slept, 268 ms reaction time</title>
+<circle class="halo" cx="431.2" cy="662.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="431.2" cy="662.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.4 h slept, 259 ms reaction time">
+<title>7.4 h slept, 259 ms reaction time</title>
+<circle class="halo" cx="512.4" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="512.4" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.3 h slept, 264 ms reaction time">
+<title>6.3 h slept, 264 ms reaction time</title>
+<circle class="halo" cx="384.8" cy="669.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.8" cy="669.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.6 h slept, 227 ms reaction time">
+<title>7.6 h slept, 227 ms reaction time</title>
+<circle class="halo" cx="535.6" cy="738.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="535.6" cy="738.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.5 h slept, 323 ms reaction time">
+<title>6.5 h slept, 323 ms reaction time</title>
+<circle class="halo" cx="408.0" cy="560.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="408.0" cy="560.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.5 h slept, 246 ms reaction time">
+<title>7.5 h slept, 246 ms reaction time</title>
+<circle class="halo" cx="524.0" cy="702.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="524.0" cy="702.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.6 h slept, 236 ms reaction time">
+<title>8.6 h slept, 236 ms reaction time</title>
+<circle class="halo" cx="651.6" cy="721.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="651.6" cy="721.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.7 h slept, 311 ms reaction time">
+<title>5.7 h slept, 311 ms reaction time</title>
+<circle class="halo" cx="315.2" cy="582.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="315.2" cy="582.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.9 h slept, 266 ms reaction time">
+<title>6.9 h slept, 266 ms reaction time</title>
+<circle class="halo" cx="454.4" cy="665.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="454.4" cy="665.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.0 h slept, 290 ms reaction time">
+<title>6.0 h slept, 290 ms reaction time</title>
+<circle class="halo" cx="350.0" cy="621.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="350.0" cy="621.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.8 h slept, 297 ms reaction time">
+<title>6.8 h slept, 297 ms reaction time</title>
+<circle class="halo" cx="442.8" cy="608.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="442.8" cy="608.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.9 h slept, 324 ms reaction time">
+<title>4.9 h slept, 324 ms reaction time</title>
+<circle class="halo" cx="222.4" cy="558.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="222.4" cy="558.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.8 h slept, 304 ms reaction time">
+<title>5.8 h slept, 304 ms reaction time</title>
+<circle class="halo" cx="326.8" cy="595.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="326.8" cy="595.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.3 h slept, 293 ms reaction time">
+<title>6.3 h slept, 293 ms reaction time</title>
+<circle class="halo" cx="384.8" cy="615.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.8" cy="615.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.9 h slept, 281 ms reaction time">
+<title>7.9 h slept, 281 ms reaction time</title>
+<circle class="halo" cx="570.4" cy="638.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="570.4" cy="638.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.2 h slept, 258 ms reaction time">
+<title>8.2 h slept, 258 ms reaction time</title>
+<circle class="halo" cx="605.2" cy="680.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="605.2" cy="680.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.7 h slept, 347 ms reaction time">
+<title>4.7 h slept, 347 ms reaction time</title>
+<circle class="halo" cx="199.2" cy="515.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="199.2" cy="515.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.5 h slept, 302 ms reaction time">
+<title>5.5 h slept, 302 ms reaction time</title>
+<circle class="halo" cx="292.0" cy="599.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="292.0" cy="599.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.5 h slept, 224 ms reaction time">
+<title>7.5 h slept, 224 ms reaction time</title>
+<circle class="halo" cx="524.0" cy="743.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="524.0" cy="743.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.0 h slept, 383 ms reaction time">
+<title>4.0 h slept, 383 ms reaction time</title>
+<circle class="halo" cx="118.0" cy="448.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="118.0" cy="448.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.0 h slept, 328 ms reaction time">
+<title>6.0 h slept, 328 ms reaction time</title>
+<circle class="halo" cx="350.0" cy="550.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="350.0" cy="550.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.5 h slept, 285 ms reaction time">
+<title>6.5 h slept, 285 ms reaction time</title>
+<circle class="halo" cx="408.0" cy="630.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="408.0" cy="630.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.4 h slept, 250 ms reaction time">
+<title>8.4 h slept, 250 ms reaction time</title>
+<circle class="halo" cx="628.4" cy="695.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="628.4" cy="695.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.6 h slept, 278 ms reaction time">
+<title>7.6 h slept, 278 ms reaction time</title>
+<circle class="halo" cx="535.6" cy="643.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="535.6" cy="643.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.1 h slept, 320 ms reaction time">
+<title>6.1 h slept, 320 ms reaction time</title>
+<circle class="halo" cx="361.6" cy="565.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="361.6" cy="565.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.1 h slept, 324 ms reaction time">
+<title>6.1 h slept, 324 ms reaction time</title>
+<circle class="halo" cx="361.6" cy="558.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="361.6" cy="558.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.2 h slept, 283 ms reaction time">
+<title>6.2 h slept, 283 ms reaction time</title>
+<circle class="halo" cx="373.2" cy="634.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="373.2" cy="634.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.7 h slept, 265 ms reaction time">
+<title>8.7 h slept, 265 ms reaction time</title>
+<circle class="halo" cx="663.2" cy="667.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="663.2" cy="667.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.0 h slept, 270 ms reaction time">
+<title>6.0 h slept, 270 ms reaction time</title>
+<circle class="halo" cx="350.0" cy="658.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="350.0" cy="658.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.2 h slept, 320 ms reaction time">
+<title>6.2 h slept, 320 ms reaction time</title>
+<circle class="halo" cx="373.2" cy="565.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="373.2" cy="565.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.1 h slept, 284 ms reaction time">
+<title>7.1 h slept, 284 ms reaction time</title>
+<circle class="halo" cx="477.6" cy="632.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="477.6" cy="632.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.4 h slept, 313 ms reaction time">
+<title>6.4 h slept, 313 ms reaction time</title>
+<circle class="halo" cx="396.4" cy="578.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="396.4" cy="578.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.3 h slept, 342 ms reaction time">
+<title>6.3 h slept, 342 ms reaction time</title>
+<circle class="halo" cx="384.8" cy="524.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.8" cy="524.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.0 h slept, 367 ms reaction time">
+<title>5.0 h slept, 367 ms reaction time</title>
+<circle class="halo" cx="234.0" cy="478.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="234.0" cy="478.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 256 ms reaction time">
+<title>6.6 h slept, 256 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="684.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="684.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.0 h slept, 259 ms reaction time">
+<title>6.0 h slept, 259 ms reaction time</title>
+<circle class="halo" cx="350.0" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="350.0" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.2 h slept, 261 ms reaction time">
+<title>8.2 h slept, 261 ms reaction time</title>
+<circle class="halo" cx="605.2" cy="675.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="605.2" cy="675.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.5 h slept, 233 ms reaction time">
+<title>7.5 h slept, 233 ms reaction time</title>
+<circle class="halo" cx="524.0" cy="727.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="524.0" cy="727.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 286 ms reaction time">
+<title>6.6 h slept, 286 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="628.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="628.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.5 h slept, 281 ms reaction time">
+<title>7.5 h slept, 281 ms reaction time</title>
+<circle class="halo" cx="524.0" cy="638.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="524.0" cy="638.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.1 h slept, 256 ms reaction time">
+<title>6.1 h slept, 256 ms reaction time</title>
+<circle class="halo" cx="361.6" cy="684.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="361.6" cy="684.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.1 h slept, 189 ms reaction time">
+<title>8.1 h slept, 189 ms reaction time</title>
+<circle class="halo" cx="593.6" cy="808.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="593.6" cy="808.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 292 ms reaction time">
+<title>6.6 h slept, 292 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="617.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="617.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.4 h slept, 263 ms reaction time">
+<title>7.4 h slept, 263 ms reaction time</title>
+<circle class="halo" cx="512.4" cy="671.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="512.4" cy="671.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.8 h slept, 329 ms reaction time">
+<title>4.8 h slept, 329 ms reaction time</title>
+<circle class="halo" cx="210.8" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="210.8" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.1 h slept, 273 ms reaction time">
+<title>7.1 h slept, 273 ms reaction time</title>
+<circle class="halo" cx="477.6" cy="652.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="477.6" cy="652.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.2 h slept, 329 ms reaction time">
+<title>4.2 h slept, 329 ms reaction time</title>
+<circle class="halo" cx="141.2" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="141.2" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="4.0 h slept, 319 ms reaction time">
+<title>4.0 h slept, 319 ms reaction time</title>
+<circle class="halo" cx="118.0" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="118.0" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
+<title>6.2 h slept, 293 ms reaction time</title>
+<circle class="halo" cx="373.2" cy="615.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="373.2" cy="615.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.3 h slept, 295 ms reaction time">
+<title>5.3 h slept, 295 ms reaction time</title>
+<circle class="halo" cx="268.8" cy="612.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="268.8" cy="612.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.8 h slept, 236 ms reaction time">
+<title>6.8 h slept, 236 ms reaction time</title>
+<circle class="halo" cx="442.8" cy="721.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="442.8" cy="721.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="9.5 h slept, 217 ms reaction time">
+<title>9.5 h slept, 217 ms reaction time</title>
+<circle class="halo" cx="756.0" cy="756.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="756.0" cy="756.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.4 h slept, 316 ms reaction time">
+<title>5.4 h slept, 316 ms reaction time</title>
+<circle class="halo" cx="280.4" cy="573.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="280.4" cy="573.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.7 h slept, 320 ms reaction time">
+<title>5.7 h slept, 320 ms reaction time</title>
+<circle class="halo" cx="315.2" cy="565.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="315.2" cy="565.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.9 h slept, 251 ms reaction time">
+<title>6.9 h slept, 251 ms reaction time</title>
+<circle class="halo" cx="454.4" cy="693.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="454.4" cy="693.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.3 h slept, 249 ms reaction time">
+<title>7.3 h slept, 249 ms reaction time</title>
+<circle class="halo" cx="500.8" cy="697.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="500.8" cy="697.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.4 h slept, 266 ms reaction time">
+<title>6.4 h slept, 266 ms reaction time</title>
+<circle class="halo" cx="396.4" cy="665.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="396.4" cy="665.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.3 h slept, 270 ms reaction time">
+<title>6.3 h slept, 270 ms reaction time</title>
+<circle class="halo" cx="384.8" cy="658.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="384.8" cy="658.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.6 h slept, 263 ms reaction time">
+<title>7.6 h slept, 263 ms reaction time</title>
+<circle class="halo" cx="535.6" cy="671.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="535.6" cy="671.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
+<title>7.3 h slept, 244 ms reaction time</title>
+<circle class="halo" cx="500.8" cy="706.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="500.8" cy="706.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.2 h slept, 335 ms reaction time">
+<title>5.2 h slept, 335 ms reaction time</title>
+<circle class="halo" cx="257.2" cy="537.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="257.2" cy="537.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.5 h slept, 297 ms reaction time">
+<title>6.5 h slept, 297 ms reaction time</title>
+<circle class="halo" cx="408.0" cy="608.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="408.0" cy="608.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.6 h slept, 336 ms reaction time">
+<title>6.6 h slept, 336 ms reaction time</title>
+<circle class="halo" cx="419.6" cy="535.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="419.6" cy="535.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.1 h slept, 290 ms reaction time">
+<title>5.1 h slept, 290 ms reaction time</title>
+<circle class="halo" cx="245.6" cy="621.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="245.6" cy="621.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="7.0 h slept, 298 ms reaction time">
+<title>7.0 h slept, 298 ms reaction time</title>
+<circle class="halo" cx="466.0" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="466.0" cy="606.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="5.4 h slept, 317 ms reaction time">
+<title>5.4 h slept, 317 ms reaction time</title>
+<circle class="halo" cx="280.4" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="280.4" cy="571.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="8.0 h slept, 247 ms reaction time">
+<title>8.0 h slept, 247 ms reaction time</title>
+<circle class="halo" cx="582.0" cy="701.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="582.0" cy="701.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="6.9 h slept, 240 ms reaction time">
+<title>6.9 h slept, 240 ms reaction time</title>
+<circle class="halo" cx="454.4" cy="714.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle cx="454.4" cy="714.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<line x1="118.0" y1="506.3" x2="756.0" y2="783.0" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+<line x1="118.0" y1="506.3" x2="756.0" y2="783.0" stroke="#FF9500" stroke-width="4" stroke-linecap="round"/>
+<text x="296.6" y="569.8" font-size="17" font-weight="700" fill="#FF9500" transform="rotate(23.5 296.6 569.8)">fitted trend</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(892,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

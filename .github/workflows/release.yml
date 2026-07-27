@@ -1,0 +1,65 @@
+name: release
+
+# Builds per-skill tarballs + bundle + SHA256SUMS via scripts/release.sh
+# and publishes a GitHub Release. Triggered by pushing a tag matching
+# `v*.*.*` (e.g. `git tag -a v0.3.0 -m "release v0.3.0" && git push origin v0.3.0`).
+
+# `on` quoted to side-step PyYAML's 1.1 boolean coercion; GitHub accepts either.
+"on":
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write   # required for `gh release create`
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for CHANGELOG)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify tooling
+        run: |
+          # `sha256sum` ships in coreutils on ubuntu-latest. release.sh
+          # accepts either shasum or sha256sum.
+          sha256sum --version | head -n1
+          tar --version | head -n1
+          bash --version | head -n1
+
+      - name: Build release artifacts
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: |
+          # ${GITHUB_REF_NAME} is the tag (e.g. "v0.3.0"); release.sh wants
+          # the bare semver ("0.3.0").
+          VERSION="${GITHUB_REF_NAME#v}"
+          bash scripts/release.sh "$VERSION" dist
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: |
+          # Idempotent publish. If a release already exists for this tag
+          # (e.g. the maintainer ran ``gh release create`` locally after
+          # ``scripts/release.sh`` while the tag-push workflow was still
+          # queueing) skip with success — don't re-upload here. Replacing
+          # already-published assets would invalidate any downloads in
+          # flight and rewrite SHA256SUMS for users who have already
+          # fetched it. The maintainer is responsible for verifying the
+          # locally built artifacts match what they want published.
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "release $GITHUB_REF_NAME already exists — skipping create"
+            exit 0
+          fi
+          # --generate-notes pulls from commits + PRs since the previous
+          # tag; falls back gracefully on first tag. We attach every tarball
+          # plus SHA256SUMS so users can verify offline.
+          gh release create "$GITHUB_REF_NAME" \
+            dist/*.tar.gz dist/SHA256SUMS \
+            --title "Front ${GITHUB_REF_NAME}" \
+            --generate-notes

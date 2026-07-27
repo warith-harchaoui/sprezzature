@@ -1,0 +1,35 @@
+<!--
+  Zeigarnik Effect — people remember unfinished tasks better than
+  completed ones. A surface that gently shows "X of Y done" turns
+  that memory into completion: users come back, finish, and rate
+  the product better. The opposite (forcing a restart on each visit)
+  loses every Zeigarnik benefit at once.
+
+  The dashboard tile pattern here pairs a progress indicator with a
+  clear next action. Honest framing: do NOT lie about progress —
+  the auditor's anti-patterns list will flag faked completion.
+-->
+<a href="/onboarding"
+   class="block min-h-11 rounded-2xl bg-surface-secondary p-4 transition-shadow hover:shadow-md dark:bg-surface-secondary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 motion-reduce:transition-none">
+  <div class="flex items-center gap-3">
+    <div class="grid h-10 w-10 flex-none place-items-center rounded-full bg-brand-blue/15 text-brand-blue" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </svg>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-[16px] font-semibold text-label-primary dark:text-label-primary-dark">
+        Continue setup
+      </h3>
+      <p class="text-[13px] text-label-secondary dark:text-label-secondary-dark">
+        3 of 5 steps complete. Add a payment method to publish.
+      </p>
+    </div>
+    <span class="font-mono text-[14px] font-semibold text-brand-blue" aria-hidden="true">60%</span>
+  </div>
+  <progress max="5"
+            value="3"
+            aria-label="Onboarding progress: 3 of 5 steps complete"
+            class="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-surface-tertiary dark:bg-surface-tertiary-dark [&::-webkit-progress-bar]:bg-surface-tertiary [&::-webkit-progress-value]:bg-brand-blue [&::-moz-progress-bar]:bg-brand-blue">
+  </progress>
+</a>

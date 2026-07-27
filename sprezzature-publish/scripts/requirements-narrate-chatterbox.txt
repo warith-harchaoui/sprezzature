@@ -1,0 +1,19 @@
+# ChatterboxTTS narration engine — MIT licence on both code and weights.
+#
+# Install:
+#   pip install -r sprezzature-publish/scripts/requirements-narrate-chatterbox.txt
+#   python3 sprezzature-publish/scripts/install_narrate.py --engine chatterbox
+#
+# Notes:
+# - ChatterboxTTS is published on PyPI as ``chatterbox-tts``. The
+#   import path is ``chatterbox.tts`` (or ``chatterbox_tts`` on older
+#   releases — the wrapper tries both).
+# - torch + torchaudio are pulled in transitively. CPU is fine for
+#   narration use; install a GPU build separately for faster inference.
+# - First synthesis call downloads ~1 GB of weights into
+#   ~/.cache/huggingface/ via the HuggingFace hub client.
+
+chatterbox-tts>=0.1.0
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy>=1.24.0

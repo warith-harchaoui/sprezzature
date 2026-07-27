@@ -1,0 +1,24 @@
+# Requirements for the diarization tier.
+#
+# Install:
+#   pip install -r scripts/requirements-diarize.txt
+#
+# Used for:
+#   - nemo_toolkit[asr] : NVIDIA NeMo, ships Sortformer + TitaNet.
+#   - numpy             : embedding math, cosine similarity.
+#   - click             : CLI parser (already required by the captions
+#                         tier; kept here so the file installs alone).
+#
+# torch is intentionally NOT pinned — NeMo pulls a sensible default, and
+# CUDA / MPS / CPU builds differ. If you need a specific torch build,
+# install it BEFORE this file.
+
+click>=8.1
+nemo_toolkit[asr]>=1.23.0
+numpy>=1.24
+
+# Audio / video extraction (extract_audio → 16 kHz mono WAV) is shared with
+# the captions tier and delegated to the author's helper packages on PyPI,
+# pinned with a lower bound; ffmpeg remains the last-resort fallback.
+audio-helper>=1.6.0
+video-helper>=1.7.0

@@ -1,0 +1,861 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="rs-title rs-desc">
+<title id="rs-title">The residuals still curve — a straight line under-fits home prices</title>
+<desc id="rs-desc">Residual plot for a straight-line fit of home sale price against floor area. Residuals (actual minus predicted price, thousands of dollars) are scattered on the vertical axis against the model's fitted price on the horizontal axis, with a dashed zero reference line. A red locally-weighted smoother bows into a U — residuals are positive at both ends and negative in the middle — and the spread of points widens toward the right. The curvature and the fanning show the linear model mis-specifies both the mean and the variance. Points above zero (model under-predicts) are blue; points below zero (model over-predicts) are orange. Illustrative data.</desc>
+<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}
+@media (prefers-contrast: more){
+  .rs-over{fill:#004CCE;}
+  .rs-under{fill:#993600;}
+}
+@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
+  [stroke="#EEEEEE"]{stroke:#2C2C2E;}
+}
+</style>
+<rect width="1000" height="780" fill="#FFFFFF"/>
+<text x="118" y="66" font-size="28" font-weight="700" fill="#1D1D1F">The residuals still curve — a straight line under-fits home prices</text>
+<text x="118" y="102" font-size="19" fill="#6E6E73">Residuals of a linear price-vs-size fit; the red smoother bows into a U and fans out on the right</text>
+<text x="118" y="128" font-size="19" fill="#6E6E73">Illustrative data</text>
+<line x1="168.3" y1="176.0" x2="168.3" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="335.9" y1="176.0" x2="335.9" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="503.5" y1="176.0" x2="503.5" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="671.1" y1="176.0" x2="671.1" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="838.7" y1="176.0" x2="838.7" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="662.4" x2="956.0" y2="662.4" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="560.0" x2="956.0" y2="560.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="457.6" x2="956.0" y2="457.6" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="355.2" x2="956.0" y2="355.2" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="252.8" x2="956.0" y2="252.8" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="688.0" x2="956.0" y2="688.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="118.0" y1="176.0" x2="118.0" y2="688.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="168.3" y1="688.0" x2="168.3" y2="694.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="168.3" y="716.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100</text>
+<line x1="335.9" y1="688.0" x2="335.9" y2="694.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="335.9" y="716.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">200</text>
+<line x1="503.5" y1="688.0" x2="503.5" y2="694.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="503.5" y="716.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">300</text>
+<line x1="671.1" y1="688.0" x2="671.1" y2="694.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="671.1" y="716.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">400</text>
+<line x1="838.7" y1="688.0" x2="838.7" y2="694.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="838.7" y="716.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">500</text>
+<line x1="112.0" y1="662.4" x2="118.0" y2="662.4" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="668.4" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">-80</text>
+<line x1="112.0" y1="560.0" x2="118.0" y2="560.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="566.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">-40</text>
+<line x1="112.0" y1="457.6" x2="118.0" y2="457.6" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="463.6" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">0</text>
+<line x1="112.0" y1="355.2" x2="118.0" y2="355.2" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="361.2" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">+40</text>
+<line x1="112.0" y1="252.8" x2="118.0" y2="252.8" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="258.8" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">+80</text>
+<text x="537.0" y="750.0" font-size="19" fill="#1D1D1F" text-anchor="middle">Fitted sale price (thousand $)</text>
+<text x="42.0" y="432.0" font-size="19" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 42.0 432.0)">Residual  =  actual − predicted (thousand $)</text>
+<line x1="118.0" y1="457.6" x2="956.0" y2="457.6" stroke="#8E8E93" stroke-width="1.5" stroke-dasharray="6 4"/>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 142 k$, residual -5 k$">
+<title>Fitted 142 k$, residual -5 k$</title>
+<circle class="halo" cx="238.2" cy="471.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="238.2" cy="471.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 317 k$, residual -8 k$">
+<title>Fitted 317 k$, residual -8 k$</title>
+<circle class="halo" cx="532.6" cy="478.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="532.6" cy="478.3" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 366 k$, residual -2 k$">
+<title>Fitted 366 k$, residual -2 k$</title>
+<circle class="halo" cx="613.9" cy="464.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="613.9" cy="464.0" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 94 k$, residual +32 k$">
+<title>Fitted 94 k$, residual +32 k$</title>
+<circle class="halo" cx="158.9" cy="376.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="158.9" cy="376.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 151 k$, residual +14 k$">
+<title>Fitted 151 k$, residual +14 k$</title>
+<circle class="halo" cx="253.6" cy="421.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="253.6" cy="421.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 521 k$, residual +29 k$">
+<title>Fitted 521 k$, residual +29 k$</title>
+<circle class="halo" cx="873.4" cy="383.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="873.4" cy="383.6" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 114 k$, residual +19 k$">
+<title>Fitted 114 k$, residual +19 k$</title>
+<circle class="halo" cx="192.1" cy="407.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="192.1" cy="407.9" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 142 k$, residual -17 k$">
+<title>Fitted 142 k$, residual -17 k$</title>
+<circle class="halo" cx="239.2" cy="500.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="239.2" cy="500.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 530 k$, residual +20 k$">
+<title>Fitted 530 k$, residual +20 k$</title>
+<circle class="halo" cx="889.5" cy="407.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="889.5" cy="407.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 376 k$, residual -35 k$">
+<title>Fitted 376 k$, residual -35 k$</title>
+<circle class="halo" cx="630.0" cy="546.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="630.0" cy="546.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 256 k$, residual -12 k$">
+<title>Fitted 256 k$, residual -12 k$</title>
+<circle class="halo" cx="429.2" cy="489.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="429.2" cy="489.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 323 k$, residual -30 k$">
+<title>Fitted 323 k$, residual -30 k$</title>
+<circle class="halo" cx="542.4" cy="533.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="542.4" cy="533.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 395 k$, residual +6 k$">
+<title>Fitted 395 k$, residual +6 k$</title>
+<circle class="halo" cx="662.5" cy="441.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="662.5" cy="441.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 211 k$, residual +7 k$">
+<title>Fitted 211 k$, residual +7 k$</title>
+<circle class="halo" cx="354.8" cy="439.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="354.8" cy="439.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 146 k$, residual +12 k$">
+<title>Fitted 146 k$, residual +12 k$</title>
+<circle class="halo" cx="245.7" cy="428.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="245.7" cy="428.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 454 k$, residual +11 k$">
+<title>Fitted 454 k$, residual +11 k$</title>
+<circle class="halo" cx="762.1" cy="430.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="762.1" cy="430.0" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 398 k$, residual -8 k$">
+<title>Fitted 398 k$, residual -8 k$</title>
+<circle class="halo" cx="668.6" cy="478.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="668.6" cy="478.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 324 k$, residual -29 k$">
+<title>Fitted 324 k$, residual -29 k$</title>
+<circle class="halo" cx="543.0" cy="531.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="543.0" cy="531.8" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 468 k$, residual -1 k$">
+<title>Fitted 468 k$, residual -1 k$</title>
+<circle class="halo" cx="784.9" cy="460.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="784.9" cy="460.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 341 k$, residual -30 k$">
+<title>Fitted 341 k$, residual -30 k$</title>
+<circle class="halo" cx="572.2" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="572.2" cy="534.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 546 k$, residual +46 k$">
+<title>Fitted 546 k$, residual +46 k$</title>
+<circle class="halo" cx="915.3" cy="340.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="915.3" cy="340.1" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 178 k$, residual -2 k$">
+<title>Fitted 178 k$, residual -2 k$</title>
+<circle class="halo" cx="298.5" cy="462.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="298.5" cy="462.0" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 343 k$, residual -2 k$">
+<title>Fitted 343 k$, residual -2 k$</title>
+<circle class="halo" cx="575.9" cy="461.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="575.9" cy="461.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 310 k$, residual -50 k$">
+<title>Fitted 310 k$, residual -50 k$</title>
+<circle class="halo" cx="520.2" cy="586.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="520.2" cy="586.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 248 k$, residual +5 k$">
+<title>Fitted 248 k$, residual +5 k$</title>
+<circle class="halo" cx="416.7" cy="445.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="416.7" cy="445.3" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 361 k$, residual -36 k$">
+<title>Fitted 361 k$, residual -36 k$</title>
+<circle class="halo" cx="606.1" cy="550.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="606.1" cy="550.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 192 k$, residual -19 k$">
+<title>Fitted 192 k$, residual -19 k$</title>
+<circle class="halo" cx="323.0" cy="506.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="323.0" cy="506.0" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 461 k$, residual -4 k$">
+<title>Fitted 461 k$, residual -4 k$</title>
+<circle class="halo" cx="773.3" cy="467.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="773.3" cy="467.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 492 k$, residual -7 k$">
+<title>Fitted 492 k$, residual -7 k$</title>
+<circle class="halo" cx="825.1" cy="476.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="825.1" cy="476.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 142 k$, residual +12 k$">
+<title>Fitted 142 k$, residual +12 k$</title>
+<circle class="halo" cx="238.3" cy="425.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="238.3" cy="425.6" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 302 k$, residual -32 k$">
+<title>Fitted 302 k$, residual -32 k$</title>
+<circle class="halo" cx="507.2" cy="538.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="507.2" cy="538.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 212 k$, residual -30 k$">
+<title>Fitted 212 k$, residual -30 k$</title>
+<circle class="halo" cx="356.2" cy="534.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="356.2" cy="534.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 120 k$, residual +2 k$">
+<title>Fitted 120 k$, residual +2 k$</title>
+<circle class="halo" cx="202.1" cy="452.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="202.1" cy="452.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 505 k$, residual +62 k$">
+<title>Fitted 505 k$, residual +62 k$</title>
+<circle class="halo" cx="847.7" cy="300.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="847.7" cy="300.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 285 k$, residual -16 k$">
+<title>Fitted 285 k$, residual -16 k$</title>
+<circle class="halo" cx="477.7" cy="499.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="477.7" cy="499.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 151 k$, residual -14 k$">
+<title>Fitted 151 k$, residual -14 k$</title>
+<circle class="halo" cx="253.4" cy="494.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="253.4" cy="494.0" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 400 k$, residual -10 k$">
+<title>Fitted 400 k$, residual -10 k$</title>
+<circle class="halo" cx="670.9" cy="484.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="670.9" cy="484.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 177 k$, residual -30 k$">
+<title>Fitted 177 k$, residual -30 k$</title>
+<circle class="halo" cx="296.7" cy="533.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="296.7" cy="533.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 508 k$, residual +79 k$">
+<title>Fitted 508 k$, residual +79 k$</title>
+<circle class="halo" cx="852.1" cy="255.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="852.1" cy="255.1" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 184 k$, residual -31 k$">
+<title>Fitted 184 k$, residual -31 k$</title>
+<circle class="halo" cx="308.6" cy="537.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="308.6" cy="537.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 96 k$, residual +30 k$">
+<title>Fitted 96 k$, residual +30 k$</title>
+<circle class="halo" cx="162.4" cy="380.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="162.4" cy="380.8" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 176 k$, residual +8 k$">
+<title>Fitted 176 k$, residual +8 k$</title>
+<circle class="halo" cx="295.5" cy="436.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="295.5" cy="436.6" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 245 k$, residual -45 k$">
+<title>Fitted 245 k$, residual -45 k$</title>
+<circle class="halo" cx="410.8" cy="572.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="410.8" cy="572.3" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 303 k$, residual -10 k$">
+<title>Fitted 303 k$, residual -10 k$</title>
+<circle class="halo" cx="508.5" cy="484.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="508.5" cy="484.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 510 k$, residual +53 k$">
+<title>Fitted 510 k$, residual +53 k$</title>
+<circle class="halo" cx="855.9" cy="322.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="855.9" cy="322.9" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 411 k$, residual +5 k$">
+<title>Fitted 411 k$, residual +5 k$</title>
+<circle class="halo" cx="690.0" cy="444.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="690.0" cy="444.3" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 242 k$, residual -8 k$">
+<title>Fitted 242 k$, residual -8 k$</title>
+<circle class="halo" cx="405.6" cy="478.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="405.6" cy="478.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 89 k$, residual +39 k$">
+<title>Fitted 89 k$, residual +39 k$</title>
+<circle class="halo" cx="149.5" cy="357.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="149.5" cy="357.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 156 k$, residual +6 k$">
+<title>Fitted 156 k$, residual +6 k$</title>
+<circle class="halo" cx="263.0" cy="441.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="263.0" cy="441.7" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 553 k$, residual +47 k$">
+<title>Fitted 553 k$, residual +47 k$</title>
+<circle class="halo" cx="927.7" cy="336.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="927.7" cy="336.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 299 k$, residual -21 k$">
+<title>Fitted 299 k$, residual -21 k$</title>
+<circle class="halo" cx="501.3" cy="510.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="501.3" cy="510.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 408 k$, residual +9 k$">
+<title>Fitted 408 k$, residual +9 k$</title>
+<circle class="halo" cx="685.0" cy="433.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="685.0" cy="433.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 107 k$, residual +6 k$">
+<title>Fitted 107 k$, residual +6 k$</title>
+<circle class="halo" cx="179.5" cy="442.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="179.5" cy="442.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 97 k$, residual +34 k$">
+<title>Fitted 97 k$, residual +34 k$</title>
+<circle class="halo" cx="163.1" cy="370.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="163.1" cy="370.3" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 482 k$, residual -8 k$">
+<title>Fitted 482 k$, residual -8 k$</title>
+<circle class="halo" cx="808.0" cy="479.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="808.0" cy="479.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 359 k$, residual -45 k$">
+<title>Fitted 359 k$, residual -45 k$</title>
+<circle class="halo" cx="603.0" cy="573.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="603.0" cy="573.3" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 227 k$, residual -4 k$">
+<title>Fitted 227 k$, residual -4 k$</title>
+<circle class="halo" cx="381.3" cy="468.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="381.3" cy="468.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 231 k$, residual +23 k$">
+<title>Fitted 231 k$, residual +23 k$</title>
+<circle class="halo" cx="388.2" cy="399.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="388.2" cy="399.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 123 k$, residual +28 k$">
+<title>Fitted 123 k$, residual +28 k$</title>
+<circle class="halo" cx="207.0" cy="385.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="207.0" cy="385.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 163 k$, residual -7 k$">
+<title>Fitted 163 k$, residual -7 k$</title>
+<circle class="halo" cx="273.2" cy="475.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="273.2" cy="475.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 92 k$, residual +34 k$">
+<title>Fitted 92 k$, residual +34 k$</title>
+<circle class="halo" cx="155.5" cy="369.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="155.5" cy="369.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 478 k$, residual -8 k$">
+<title>Fitted 478 k$, residual -8 k$</title>
+<circle class="halo" cx="802.6" cy="477.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="802.6" cy="477.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 302 k$, residual -21 k$">
+<title>Fitted 302 k$, residual -21 k$</title>
+<circle class="halo" cx="506.5" cy="510.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="506.5" cy="510.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 141 k$, residual +9 k$">
+<title>Fitted 141 k$, residual +9 k$</title>
+<circle class="halo" cx="237.2" cy="433.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="237.2" cy="433.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 431 k$, residual -76 k$">
+<title>Fitted 431 k$, residual -76 k$</title>
+<circle class="halo" cx="723.4" cy="652.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="723.4" cy="652.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 174 k$, residual +2 k$">
+<title>Fitted 174 k$, residual +2 k$</title>
+<circle class="halo" cx="291.5" cy="451.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="291.5" cy="451.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 110 k$, residual +3 k$">
+<title>Fitted 110 k$, residual +3 k$</title>
+<circle class="halo" cx="185.2" cy="448.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="185.2" cy="448.9" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 364 k$, residual -34 k$">
+<title>Fitted 364 k$, residual -34 k$</title>
+<circle class="halo" cx="611.4" cy="545.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="611.4" cy="545.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 505 k$, residual -35 k$">
+<title>Fitted 505 k$, residual -35 k$</title>
+<circle class="halo" cx="847.6" cy="546.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="847.6" cy="546.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 94 k$, residual +4 k$">
+<title>Fitted 94 k$, residual +4 k$</title>
+<circle class="halo" cx="157.6" cy="447.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="157.6" cy="447.9" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 462 k$, residual -28 k$">
+<title>Fitted 462 k$, residual -28 k$</title>
+<circle class="halo" cx="775.7" cy="528.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="775.7" cy="528.3" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 171 k$, residual +14 k$">
+<title>Fitted 171 k$, residual +14 k$</title>
+<circle class="halo" cx="287.1" cy="421.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="287.1" cy="421.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 125 k$, residual +39 k$">
+<title>Fitted 125 k$, residual +39 k$</title>
+<circle class="halo" cx="209.8" cy="358.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="209.8" cy="358.8" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 89 k$, residual +26 k$">
+<title>Fitted 89 k$, residual +26 k$</title>
+<circle class="halo" cx="150.3" cy="391.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="150.3" cy="391.6" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 220 k$, residual +12 k$">
+<title>Fitted 220 k$, residual +12 k$</title>
+<circle class="halo" cx="368.7" cy="428.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="368.7" cy="428.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 425 k$, residual -14 k$">
+<title>Fitted 425 k$, residual -14 k$</title>
+<circle class="halo" cx="713.7" cy="493.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="713.7" cy="493.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 314 k$, residual -65 k$">
+<title>Fitted 314 k$, residual -65 k$</title>
+<circle class="halo" cx="527.8" cy="624.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="527.8" cy="624.8" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 485 k$, residual +14 k$">
+<title>Fitted 485 k$, residual +14 k$</title>
+<circle class="halo" cx="813.5" cy="420.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="813.5" cy="420.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 184 k$, residual +5 k$">
+<title>Fitted 184 k$, residual +5 k$</title>
+<circle class="halo" cx="308.6" cy="445.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="308.6" cy="445.3" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 230 k$, residual -21 k$">
+<title>Fitted 230 k$, residual -21 k$</title>
+<circle class="halo" cx="386.5" cy="510.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="386.5" cy="510.8" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 203 k$, residual -2 k$">
+<title>Fitted 203 k$, residual -2 k$</title>
+<circle class="halo" cx="341.1" cy="461.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="341.1" cy="461.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 544 k$, residual +52 k$">
+<title>Fitted 544 k$, residual +52 k$</title>
+<circle class="halo" cx="913.3" cy="324.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="913.3" cy="324.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 527 k$, residual -7 k$">
+<title>Fitted 527 k$, residual -7 k$</title>
+<circle class="halo" cx="883.6" cy="474.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="883.6" cy="474.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 242 k$, residual -45 k$">
+<title>Fitted 242 k$, residual -45 k$</title>
+<circle class="halo" cx="406.8" cy="572.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="406.8" cy="572.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 287 k$, residual -22 k$">
+<title>Fitted 287 k$, residual -22 k$</title>
+<circle class="halo" cx="482.4" cy="515.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="482.4" cy="515.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 230 k$, residual -16 k$">
+<title>Fitted 230 k$, residual -16 k$</title>
+<circle class="halo" cx="385.8" cy="499.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="385.8" cy="499.3" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 435 k$, residual -15 k$">
+<title>Fitted 435 k$, residual -15 k$</title>
+<circle class="halo" cx="729.1" cy="495.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="729.1" cy="495.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 100 k$, residual +36 k$">
+<title>Fitted 100 k$, residual +36 k$</title>
+<circle class="halo" cx="167.9" cy="365.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="167.9" cy="365.7" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 113 k$, residual +43 k$">
+<title>Fitted 113 k$, residual +43 k$</title>
+<circle class="halo" cx="189.7" cy="348.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="189.7" cy="348.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 272 k$, residual -26 k$">
+<title>Fitted 272 k$, residual -26 k$</title>
+<circle class="halo" cx="457.1" cy="523.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="457.1" cy="523.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 197 k$, residual +7 k$">
+<title>Fitted 197 k$, residual +7 k$</title>
+<circle class="halo" cx="330.9" cy="439.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="330.9" cy="439.7" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 481 k$, residual +40 k$">
+<title>Fitted 481 k$, residual +40 k$</title>
+<circle class="halo" cx="807.5" cy="356.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="807.5" cy="356.0" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 432 k$, residual +18 k$">
+<title>Fitted 432 k$, residual +18 k$</title>
+<circle class="halo" cx="725.4" cy="412.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="725.4" cy="412.8" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 340 k$, residual +10 k$">
+<title>Fitted 340 k$, residual +10 k$</title>
+<circle class="halo" cx="569.7" cy="431.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="569.7" cy="431.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 394 k$, residual -23 k$">
+<title>Fitted 394 k$, residual -23 k$</title>
+<circle class="halo" cx="661.5" cy="516.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="661.5" cy="516.0" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 409 k$, residual +13 k$">
+<title>Fitted 409 k$, residual +13 k$</title>
+<circle class="halo" cx="686.0" cy="424.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="686.0" cy="424.8" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 451 k$, residual +64 k$">
+<title>Fitted 451 k$, residual +64 k$</title>
+<circle class="halo" cx="756.6" cy="293.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="756.6" cy="293.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 520 k$, residual +50 k$">
+<title>Fitted 520 k$, residual +50 k$</title>
+<circle class="halo" cx="872.9" cy="329.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="872.9" cy="329.6" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 152 k$, residual -5 k$">
+<title>Fitted 152 k$, residual -5 k$</title>
+<circle class="halo" cx="255.1" cy="471.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="255.1" cy="471.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 378 k$, residual +3 k$">
+<title>Fitted 378 k$, residual +3 k$</title>
+<circle class="halo" cx="633.4" cy="449.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="633.4" cy="449.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 149 k$, residual +26 k$">
+<title>Fitted 149 k$, residual +26 k$</title>
+<circle class="halo" cx="250.2" cy="390.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="250.2" cy="390.0" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 291 k$, residual -9 k$">
+<title>Fitted 291 k$, residual -9 k$</title>
+<circle class="halo" cx="488.1" cy="479.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="488.1" cy="479.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 454 k$, residual -18 k$">
+<title>Fitted 454 k$, residual -18 k$</title>
+<circle class="halo" cx="760.7" cy="502.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="760.7" cy="502.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 505 k$, residual +69 k$">
+<title>Fitted 505 k$, residual +69 k$</title>
+<circle class="halo" cx="846.7" cy="280.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="846.7" cy="280.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 441 k$, residual -42 k$">
+<title>Fitted 441 k$, residual -42 k$</title>
+<circle class="halo" cx="739.1" cy="564.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="739.1" cy="564.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 98 k$, residual +30 k$">
+<title>Fitted 98 k$, residual +30 k$</title>
+<circle class="halo" cx="164.3" cy="381.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="164.3" cy="381.1" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 251 k$, residual -15 k$">
+<title>Fitted 251 k$, residual -15 k$</title>
+<circle class="halo" cx="421.5" cy="496.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="421.5" cy="496.0" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 158 k$, residual -17 k$">
+<title>Fitted 158 k$, residual -17 k$</title>
+<circle class="halo" cx="265.7" cy="501.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="265.7" cy="501.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 554 k$, residual +80 k$">
+<title>Fitted 554 k$, residual +80 k$</title>
+<circle class="halo" cx="929.5" cy="251.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="929.5" cy="251.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 149 k$, residual +11 k$">
+<title>Fitted 149 k$, residual +11 k$</title>
+<circle class="halo" cx="250.4" cy="428.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="250.4" cy="428.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 197 k$, residual -28 k$">
+<title>Fitted 197 k$, residual -28 k$</title>
+<circle class="halo" cx="330.2" cy="529.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="330.2" cy="529.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 250 k$, residual -2 k$">
+<title>Fitted 250 k$, residual -2 k$</title>
+<circle class="halo" cx="419.8" cy="461.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="419.8" cy="461.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 110 k$, residual +12 k$">
+<title>Fitted 110 k$, residual +12 k$</title>
+<circle class="halo" cx="184.5" cy="426.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="184.5" cy="426.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 493 k$, residual -52 k$">
+<title>Fitted 493 k$, residual -52 k$</title>
+<circle class="halo" cx="827.5" cy="591.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="827.5" cy="591.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 382 k$, residual -33 k$">
+<title>Fitted 382 k$, residual -33 k$</title>
+<circle class="halo" cx="641.6" cy="541.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="641.6" cy="541.3" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 156 k$, residual +8 k$">
+<title>Fitted 156 k$, residual +8 k$</title>
+<circle class="halo" cx="263.0" cy="437.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="263.0" cy="437.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 317 k$, residual -2 k$">
+<title>Fitted 317 k$, residual -2 k$</title>
+<circle class="halo" cx="531.8" cy="462.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="531.8" cy="462.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 118 k$, residual +18 k$">
+<title>Fitted 118 k$, residual +18 k$</title>
+<circle class="halo" cx="198.6" cy="411.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="198.6" cy="411.8" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 370 k$, residual -13 k$">
+<title>Fitted 370 k$, residual -13 k$</title>
+<circle class="halo" cx="621.5" cy="491.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="621.5" cy="491.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 191 k$, residual +4 k$">
+<title>Fitted 191 k$, residual +4 k$</title>
+<circle class="halo" cx="320.1" cy="447.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="320.1" cy="447.9" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 99 k$, residual +19 k$">
+<title>Fitted 99 k$, residual +19 k$</title>
+<circle class="halo" cx="166.8" cy="407.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="166.8" cy="407.9" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 135 k$, residual +28 k$">
+<title>Fitted 135 k$, residual +28 k$</title>
+<circle class="halo" cx="227.6" cy="385.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="227.6" cy="385.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 344 k$, residual -13 k$">
+<title>Fitted 344 k$, residual -13 k$</title>
+<circle class="halo" cx="577.2" cy="490.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="577.2" cy="490.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 383 k$, residual -5 k$">
+<title>Fitted 383 k$, residual -5 k$</title>
+<circle class="halo" cx="642.1" cy="469.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="642.1" cy="469.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 235 k$, residual -1 k$">
+<title>Fitted 235 k$, residual -1 k$</title>
+<circle class="halo" cx="394.0" cy="461.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="394.0" cy="461.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 386 k$, residual -43 k$">
+<title>Fitted 386 k$, residual -43 k$</title>
+<circle class="halo" cx="647.3" cy="567.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="647.3" cy="567.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 248 k$, residual -30 k$">
+<title>Fitted 248 k$, residual -30 k$</title>
+<circle class="halo" cx="415.8" cy="533.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="415.8" cy="533.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 143 k$, residual +32 k$">
+<title>Fitted 143 k$, residual +32 k$</title>
+<circle class="halo" cx="239.8" cy="375.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="239.8" cy="375.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 230 k$, residual -5 k$">
+<title>Fitted 230 k$, residual -5 k$</title>
+<circle class="halo" cx="386.5" cy="470.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="386.5" cy="470.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 268 k$, residual -22 k$">
+<title>Fitted 268 k$, residual -22 k$</title>
+<circle class="halo" cx="450.0" cy="515.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="450.0" cy="515.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 513 k$, residual +31 k$">
+<title>Fitted 513 k$, residual +31 k$</title>
+<circle class="halo" cx="861.0" cy="378.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="861.0" cy="378.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 136 k$, residual +2 k$">
+<title>Fitted 136 k$, residual +2 k$</title>
+<circle class="halo" cx="227.9" cy="452.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="227.9" cy="452.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 122 k$, residual +18 k$">
+<title>Fitted 122 k$, residual +18 k$</title>
+<circle class="halo" cx="204.5" cy="410.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="204.5" cy="410.2" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 347 k$, residual -34 k$">
+<title>Fitted 347 k$, residual -34 k$</title>
+<circle class="halo" cx="582.1" cy="545.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="582.1" cy="545.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 537 k$, residual +38 k$">
+<title>Fitted 537 k$, residual +38 k$</title>
+<circle class="halo" cx="901.4" cy="359.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="901.4" cy="359.6" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 511 k$, residual -37 k$">
+<title>Fitted 511 k$, residual -37 k$</title>
+<circle class="halo" cx="856.8" cy="551.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="856.8" cy="551.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 413 k$, residual +31 k$">
+<title>Fitted 413 k$, residual +31 k$</title>
+<circle class="halo" cx="692.4" cy="377.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="692.4" cy="377.7" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 112 k$, residual +10 k$">
+<title>Fitted 112 k$, residual +10 k$</title>
+<circle class="halo" cx="189.1" cy="432.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="189.1" cy="432.0" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 463 k$, residual -48 k$">
+<title>Fitted 463 k$, residual -48 k$</title>
+<circle class="halo" cx="776.7" cy="580.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="776.7" cy="580.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 405 k$, residual -16 k$">
+<title>Fitted 405 k$, residual -16 k$</title>
+<circle class="halo" cx="679.0" cy="499.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="679.0" cy="499.8" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 149 k$, residual 0 k$">
+<title>Fitted 149 k$, residual 0 k$</title>
+<circle class="halo" cx="250.4" cy="458.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="250.4" cy="458.9" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 301 k$, residual -14 k$">
+<title>Fitted 301 k$, residual -14 k$</title>
+<circle class="halo" cx="505.5" cy="493.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="505.5" cy="493.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 104 k$, residual +4 k$">
+<title>Fitted 104 k$, residual +4 k$</title>
+<circle class="halo" cx="175.3" cy="446.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="175.3" cy="446.8" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 461 k$, residual +15 k$">
+<title>Fitted 461 k$, residual +15 k$</title>
+<circle class="halo" cx="773.0" cy="418.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="773.0" cy="418.7" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 421 k$, residual +103 k$">
+<title>Fitted 421 k$, residual +103 k$</title>
+<circle class="halo" cx="706.9" cy="194.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="706.9" cy="194.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 462 k$, residual -38 k$">
+<title>Fitted 462 k$, residual -38 k$</title>
+<circle class="halo" cx="775.2" cy="556.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="775.2" cy="556.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 441 k$, residual +8 k$">
+<title>Fitted 441 k$, residual +8 k$</title>
+<circle class="halo" cx="740.1" cy="437.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="740.1" cy="437.1" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 208 k$, residual -14 k$">
+<title>Fitted 208 k$, residual -14 k$</title>
+<circle class="halo" cx="348.5" cy="494.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="348.5" cy="494.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 455 k$, residual +7 k$">
+<title>Fitted 455 k$, residual +7 k$</title>
+<circle class="halo" cx="763.4" cy="439.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="763.4" cy="439.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 199 k$, residual -41 k$">
+<title>Fitted 199 k$, residual -41 k$</title>
+<circle class="halo" cx="334.0" cy="562.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="334.0" cy="562.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 146 k$, residual -12 k$">
+<title>Fitted 146 k$, residual -12 k$</title>
+<circle class="halo" cx="245.5" cy="489.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="245.5" cy="489.1" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 266 k$, residual -6 k$">
+<title>Fitted 266 k$, residual -6 k$</title>
+<circle class="halo" cx="446.2" cy="472.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="446.2" cy="472.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 317 k$, residual -19 k$">
+<title>Fitted 317 k$, residual -19 k$</title>
+<circle class="halo" cx="531.5" cy="505.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="531.5" cy="505.5" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 216 k$, residual +23 k$">
+<title>Fitted 216 k$, residual +23 k$</title>
+<circle class="halo" cx="363.2" cy="399.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="363.2" cy="399.5" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 368 k$, residual -34 k$">
+<title>Fitted 368 k$, residual -34 k$</title>
+<circle class="halo" cx="617.3" cy="545.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="617.3" cy="545.4" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 366 k$, residual -10 k$">
+<title>Fitted 366 k$, residual -10 k$</title>
+<circle class="halo" cx="614.6" cy="483.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="614.6" cy="483.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 194 k$, residual +49 k$">
+<title>Fitted 194 k$, residual +49 k$</title>
+<circle class="halo" cx="326.7" cy="332.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-over" cx="326.7" cy="332.4" r="7.5" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 376 k$, residual -35 k$">
+<title>Fitted 376 k$, residual -35 k$</title>
+<circle class="halo" cx="630.7" cy="548.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="630.7" cy="548.2" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 250 k$, residual -34 k$">
+<title>Fitted 250 k$, residual -34 k$</title>
+<circle class="halo" cx="419.8" cy="544.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="419.8" cy="544.6" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<g class="pt" tabindex="0" role="img" aria-label="Fitted 429 k$, residual -6 k$">
+<title>Fitted 429 k$, residual -6 k$</title>
+<circle class="halo" cx="719.7" cy="473.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="rs-under" cx="719.7" cy="473.7" r="7.5" fill="#FF9500" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+</g>
+<path d="M 149.5 397.0 L 159.3 401.0 L 169.0 404.9 L 178.8 408.7 L 188.5 412.6 L 198.3 416.4 L 208.0 420.2 L 217.8 424.0 L 227.5 427.8 L 237.3 431.5 L 247.0 435.2 L 256.8 439.0 L 266.5 442.7 L 276.3 446.3 L 286.0 450.0 L 295.8 453.7 L 305.5 457.3 L 315.3 461.0 L 325.0 464.6 L 334.8 468.1 L 344.5 471.6 L 354.3 475.0 L 364.0 478.2 L 373.8 480.9 L 383.5 483.3 L 393.3 485.7 L 403.0 488.0 L 412.8 490.1 L 422.5 492.0 L 432.3 493.9 L 442.0 495.5 L 451.8 497.3 L 461.5 499.0 L 471.3 500.2 L 481.0 500.7 L 490.8 501.1 L 500.5 501.1 L 510.3 500.7 L 520.0 500.8 L 529.8 501.7 L 539.5 501.3 L 549.3 500.3 L 559.0 499.7 L 568.8 498.6 L 578.5 498.0 L 588.3 497.0 L 598.0 496.1 L 607.8 495.0 L 617.5 493.6 L 627.3 492.0 L 637.0 490.1 L 646.8 488.0 L 656.5 485.5 L 666.3 482.6 L 676.0 479.2 L 685.8 475.6 L 695.5 471.8 L 705.3 467.8 L 715.0 463.8 L 724.8 459.7 L 734.5 455.5 L 744.3 451.4 L 754.0 447.2 L 763.8 443.0 L 773.5 438.8 L 783.3 434.5 L 793.0 430.3 L 802.8 426.1 L 812.5 421.8 L 822.3 417.6 L 832.0 413.3 L 841.8 409.0 L 851.5 404.7 L 861.3 400.4 L 871.0 396.1 L 880.8 391.7 L 890.5 387.3 L 900.3 382.8 L 910.0 378.3 L 919.8 373.8 L 929.5 369.3" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 149.5 397.0 L 159.3 401.0 L 169.0 404.9 L 178.8 408.7 L 188.5 412.6 L 198.3 416.4 L 208.0 420.2 L 217.8 424.0 L 227.5 427.8 L 237.3 431.5 L 247.0 435.2 L 256.8 439.0 L 266.5 442.7 L 276.3 446.3 L 286.0 450.0 L 295.8 453.7 L 305.5 457.3 L 315.3 461.0 L 325.0 464.6 L 334.8 468.1 L 344.5 471.6 L 354.3 475.0 L 364.0 478.2 L 373.8 480.9 L 383.5 483.3 L 393.3 485.7 L 403.0 488.0 L 412.8 490.1 L 422.5 492.0 L 432.3 493.9 L 442.0 495.5 L 451.8 497.3 L 461.5 499.0 L 471.3 500.2 L 481.0 500.7 L 490.8 501.1 L 500.5 501.1 L 510.3 500.7 L 520.0 500.8 L 529.8 501.7 L 539.5 501.3 L 549.3 500.3 L 559.0 499.7 L 568.8 498.6 L 578.5 498.0 L 588.3 497.0 L 598.0 496.1 L 607.8 495.0 L 617.5 493.6 L 627.3 492.0 L 637.0 490.1 L 646.8 488.0 L 656.5 485.5 L 666.3 482.6 L 676.0 479.2 L 685.8 475.6 L 695.5 471.8 L 705.3 467.8 L 715.0 463.8 L 724.8 459.7 L 734.5 455.5 L 744.3 451.4 L 754.0 447.2 L 763.8 443.0 L 773.5 438.8 L 783.3 434.5 L 793.0 430.3 L 802.8 426.1 L 812.5 421.8 L 822.3 417.6 L 832.0 413.3 L 841.8 409.0 L 851.5 404.7 L 861.3 400.4 L 871.0 396.1 L 880.8 391.7 L 890.5 387.3 L 900.3 382.8 L 910.0 378.3 L 919.8 373.8 L 929.5 369.3" fill="none" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="rs-over" x="218.6" y="222.1" font-size="18" font-weight="700" fill="#007AFF">Model under-predicts (residual &gt; 0)</text>
+<text class="rs-under" x="218.6" y="636.8" font-size="18" font-weight="700" fill="#FF9500">Model over-predicts (residual &lt; 0)</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(952,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

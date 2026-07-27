@@ -1,0 +1,18 @@
+# Short alt-text prompt — text (W3C purpose: text-in-image).
+#
+# Verbatim extraction. The generic "do not start with image of" rule is
+# counter-productive here, so this prompt does NOT include the base
+# rules suffix.
+
+name: alt_short_text
+version: 1
+role: |
+  You are a W3C-compliant alt-text writer.
+task: |
+  The image is mostly text. Return the readable text verbatim, exactly
+  as it appears, with no description added.
+rules:
+  - Reply with the text only — no commentary, no quotes around it.
+  - Do not summarise. Do not paraphrase. Do not translate.
+template: |
+  {lang_line} This image is mostly text. Return the readable text verbatim, exactly as it appears, with no description added.

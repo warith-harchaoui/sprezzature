@@ -1,0 +1,141 @@
+name: ci
+
+# Runs the deterministic test suite + validator on every push to main and
+# every PR. The eval suite (tests/eval/, opt-in via `pytest -m eval`) needs
+# a running Ollama daemon and is **not** executed here — we only verify
+# collection so a syntax error in an eval test fails CI loudly.
+
+# `on` is quoted because PyYAML's 1.1 mode parses bare `on:` as boolean True;
+# GitHub's own parser handles either form. Quoting keeps `yaml.safe_load`
+# happy for offline tooling.
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Lint / import-hygiene gate — the AUDIT half of the make/audit paradigm the
+  # skills themselves ship (audit: `ruff check`; make: `ruff check --fix`).
+  # Fast and dependency-light (ruff only), so it fails a PR quickly before the
+  # heavier test matrix runs. Config lives in ruff.toml (E741 ignored as the
+  # OKLab lightness `l` is intentional; implicit re-exports use `name as name`).
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install ruff
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+      - name: Ruff lint (audit gate)
+        run: ruff check .
+      - name: Mypy type gate
+        # Rule 3 type half. Per-skill-dir (shared private helper module names
+        # would collide in a single run); ignore_missing_imports skips the heavy
+        # optional backends absent from this light lane. Config in mypy.ini.
+        run: ./scripts/run_mypy.sh
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dev + per-skill requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+          # Per-skill runtime deps so the Ollama-backed scripts import
+          # cleanly during collection (they don't call the daemon — that's
+          # gated by the `eval` marker). The two narration engines are
+          # skipped on purpose: ``narrate_openvoice.py`` and
+          # ``narrate_chatterbox.py`` lazy-import their backend via
+          # ``importlib`` inside functions, so neither is needed for
+          # collection. Installing them pulls torch + torchaudio (~2 GB)
+          # into every matrix job and — for OpenVoice — currently breaks
+          # CI because upstream's pyproject.toml package name was renamed
+          # to ``myshell-openvoice`` while the requirement still pins
+          # ``openvoice``. Smoke-testing the engines belongs in a
+          # dedicated optional job, not on every push.
+          # nullglob: an empty glob expands to nothing, not to the
+          # literal pattern. Without it CI fails noisily when a skill
+          # has no requirements file. The skill folders kept in the
+          # loop are the seven that currently ship Python scripts;
+          # sprezzature-ui and sprezzature-ux-laws are stdlib-only (no entries).
+          shopt -s nullglob
+          for req in sprezzature-accessibility/scripts/requirements-*.txt \
+                     sprezzature-audio/scripts/requirements-*.txt \
+                     sprezzature-colors/scripts/requirements-*.txt \
+                     sprezzature-publish/scripts/requirements-*.txt \
+                     sprezzature-vision/scripts/requirements-*.txt; do
+            case "$(basename "$req")" in
+              requirements-narrate-openvoice.txt|requirements-narrate-chatterbox.txt)
+                echo "skipping optional narration engine: $req"
+                continue
+                ;;
+              requirements-diarize.txt)
+                # Diarization tier pulls nemo_toolkit[asr] (~2 GB, drags
+                # in torch) and no default-lane test imports the diarize
+                # scripts — they are not in test_cli_help.py's SCRIPTS.
+                # Same reasoning as the narration engines above: heavy
+                # optional backend, not needed for collection.
+                echo "skipping optional diarization tier: $req"
+                continue
+                ;;
+              requirements-captions.txt)
+                # Captions tier now routes through vocal-helper (the
+                # author's whisper.cpp over-layer), whose silero-vad dep
+                # drags in torch (~2 GB) — same weight class as the
+                # diarization / narration backends above. captions_from_whisper
+                # defers every heavy import (vocal_helper / audio_helper /
+                # numpy) behind the _pcm_from_wav / _run_whisper_stage seams,
+                # so it imports cleanly for collection and test_captions mocks
+                # those seams. No default-lane test needs the runtime deps.
+                echo "skipping optional captions tier: $req"
+                continue
+                ;;
+            esac
+            pip install -r "$req"
+          done
+          # The driver itself — installs the `sprezzature` console script so
+          # downstream tests can import it.
+          pip install ./sprezzature-cli
+
+      - name: Run deterministic test suite
+        # Includes tests/test_validate_skill.py (real YAML check on every
+        # SKILL.md + negative cases) and tests/test_release_packaging.py
+        # (build the tarballs into a tmp dir, verify SHA256SUMS, extract,
+        # re-validate each skill). Both run with stdlib + PyYAML and
+        # never touch the network — they belong in the default lane.
+        run: python -m pytest -q
+
+      - name: Validate every skill (YAML + content gate)
+        # Strict YAML frontmatter check on every shipped skill
+        # (scripts/validate_skill.py) followed by the sprezzature-ui content
+        # quality gate (forbidden framework imports, trademarks,
+        # marketing voice). A PR that breaks any SKILL.md's YAML fails
+        # here even if pytest somehow does not.
+        run: python scripts/validate_all.py
+
+      - name: Collect eval suite (do not run)
+        # The eval marker is deselected in pytest.ini; `--collect-only` plus
+        # explicit `-m eval` proves the files import even though the suite
+        # itself is opt-in.
+        run: python -m pytest -m eval --collect-only -q

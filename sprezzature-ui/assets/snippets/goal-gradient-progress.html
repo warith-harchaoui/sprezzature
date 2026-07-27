@@ -1,0 +1,26 @@
+<!--
+  Goal-Gradient Effect — completion rate rises as the visible
+  remaining-work approaches zero. Show a progress bar; bias the
+  visible % high at the start (a "we already did step 1 for you"
+  framing) so the user perceives momentum, not a long road.
+
+  ``<progress>`` is semantic, focusable for screen readers, and
+  styles cleanly across browsers. The "Step N of M" label is the
+  named-step disclosure the auditor's Doherty section asks for.
+-->
+<section aria-labelledby="checkout-step-heading"
+         class="mx-auto max-w-xl">
+  <div class="flex items-center justify-between text-[13px] font-medium text-label-secondary dark:text-label-secondary-dark">
+    <span id="checkout-step-heading">Step 2 of 5 — Shipping</span>
+    <span aria-hidden="true">40%</span>
+  </div>
+  <progress id="checkout-progress"
+            max="5"
+            value="2"
+            aria-labelledby="checkout-step-heading"
+            class="mt-2 h-2 w-full overflow-hidden rounded-full bg-surface-secondary dark:bg-surface-secondary-dark [&::-webkit-progress-bar]:bg-surface-secondary [&::-webkit-progress-value]:bg-brand-blue [&::-moz-progress-bar]:bg-brand-blue motion-reduce:[&::-webkit-progress-value]:transition-none">
+  </progress>
+  <p class="mt-2 text-[13px] text-label-secondary dark:text-label-secondary-dark">
+    Almost there — three short steps to go.
+  </p>
+</section>

@@ -1,0 +1,12 @@
+# Explainability tier — SHAP / Shapash / TimeSHAP / LIME.
+# Assumes the dataviz tier is already installed.
+
+shap>=0.44
+shapash>=2.5
+# TimeSHAP is only available on PyPI as `timeshap` — its transitive
+# dependency on `torch` is not pinned here so users can pick CPU / CUDA
+# / MPS builds themselves.
+timeshap>=1.0.4
+lime>=0.2.0
+scikit-learn>=1.3
+joblib>=1.3

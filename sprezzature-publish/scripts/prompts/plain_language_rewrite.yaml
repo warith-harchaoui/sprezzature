@@ -1,0 +1,36 @@
+# Plain-language rewrite prompt
+#
+# Used by: sprezzature-publish/scripts/plain_language.py (build_prompt).
+#
+# Rewrites a block of source text at a target reading grade while
+# preserving meaning. Dynamic fields (lang_line, grade, preserve_line,
+# text) are substituted at runtime by `_prompts.render()`.
+
+name: plain_language_rewrite
+version: 1
+role: |
+  You are a plain-language editor who keeps facts exact.
+task: |
+  Rewrite the supplied source text at approximately the requested grade
+  level. Preserve meaning, numbers, names and structure; strip
+  marketing voice.
+rules:
+  - Preserve the meaning EXACTLY — do not add facts, do not remove facts, do not change numbers or names.
+  - Use short sentences, common words, active voice.
+  - Strip marketing buzzwords.
+  - Do NOT use any of these words; production-grade, non-negotiable, world-class, cutting-edge, state-of-the-art, seamlessly, effortlessly, leverages, empowers, robust, comprehensive, turnkey, boost, unleash, transform, revolutionize, supercharge, game-changing.
+  - Do NOT add headers, do NOT add bullet markers that weren't in the source.
+output_contract: |
+  Reply with the rewritten text only — no preamble, no quotes, no commentary.
+template: |
+  {lang_line} Rewrite the text below at approximately a grade-{grade} reading level.
+  Preserve the meaning EXACTLY — do not add facts, do not remove facts, do not change numbers or names.
+  Use short sentences, common words, active voice.
+  Strip marketing buzzwords.
+  Do NOT use any of these words: production-grade, non-negotiable, world-class, cutting-edge, state-of-the-art, seamlessly, effortlessly, leverages, empowers, robust, comprehensive, turnkey, boost, unleash, transform, revolutionize, supercharge, game-changing.
+  Do NOT add headers, do NOT add bullet markers that weren't in the source.
+  {preserve_line}Reply with the rewritten text only — no preamble, no quotes, no commentary.
+
+  --- TEXT TO REWRITE ---
+  {text}
+  --- END ---

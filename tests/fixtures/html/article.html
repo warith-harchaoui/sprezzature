@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Why deterministic builds matter for accessibility audits</title>
+</head>
+<body>
+<article>
+<h1>Why deterministic builds matter for accessibility audits</h1>
+<p>An accessibility audit is only useful when you can reproduce the page you
+audited. If two builds of the same commit emit different HTML — different
+hashes on CSS bundles, different inlined SVG IDs, different timestamps — the
+audit you signed off on last week may not match the page that shipped today.</p>
+<h2>The failure mode</h2>
+<p>Most teams discover the problem after a regression. A keyboard trap appears
+in production. The audit report says the page passed. The git log says nothing
+relevant changed. The culprit is almost always a non-deterministic build step:
+hashed asset names that depend on file order, locale-dependent date formatting,
+or a JavaScript bundler that re-orders chunks across runs.</p>
+<h2>How to fix it</h2>
+<p>Pin every input. Pin Node, Python, and image tool versions in a lockfile.
+Sort directory listings before they enter the bundler. Set TZ=UTC and
+SOURCE_DATE_EPOCH at the top of every build script. Then re-run the build
+twice and diff the output. Anything that differs is a bug.</p>
+<h2>What this earns you</h2>
+<p>When the build is deterministic, you can attach an audit report to a commit
+and trust it for the lifetime of that commit. You can bisect accessibility
+regressions the same way you bisect functional bugs. And you can ship with
+confidence.</p>
+</article>
+</body>
+</html>

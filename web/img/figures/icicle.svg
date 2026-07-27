@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="860" viewBox="0 0 1300 860" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ice-t ice-d">
+<title id="ice-t">One slow SQL query eats 45% of every checkout</title>
+<desc id="ice-d">Icicle / flame graph of one GET /api/checkout request totalling 480 milliseconds. The root bar spans the full width; each row below splits its parent by time. The highlighted warm tower load_cart to fetch_user_orders to run_sql to wait_on_lock is the critical path: wait_on_lock alone is 176 ms, about 37 percent of the request, and run_sql as a whole is 214 ms, about 45 percent. Off-path calls (authenticate, render_response) are shown in muted grey.</desc>
+<style>.bar{transition:transform .16s ease, filter .16s ease;transform-box:fill-box;transform-origin:center;cursor:pointer;}.bar:hover,.bar:focus{filter:brightness(1.07);transform:scaleY(1.04);outline:none;}.bar:focus{stroke:#1D1D1F;stroke-width:2.5;}@media (prefers-reduced-motion: reduce){.bar{transition:none;}.bar:hover,.bar:focus{transform:none;}}</style>
+<rect width="1300" height="860" fill="#FFFFFF"/>
+<text x="88" y="72" font-size="38" font-weight="700" fill="#1D1D1F">One slow SQL query eats 45% of every checkout</text>
+<text x="88" y="110" font-size="18" fill="#6E6E73">CPU flame graph of one GET /api/checkout request (480 ms) - bar width is time spent; the widest tower is where to optimise first</text>
+<text x="88" y="156" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">Time into request (bar width = milliseconds)</text>
+<line x1="88" y1="204" x2="88" y2="644" stroke="#E5E5EA" stroke-width="1"/>
+<text x="88" y="196" font-size="15" fill="#6E6E73" text-anchor="start" font-family="Roboto Mono, monospace">0 ms</text>
+<text x="88" y="178" font-size="13" fill="#9A9AA0" text-anchor="start" font-family="Roboto Mono, monospace">0%</text>
+<line x1="369" y1="204" x2="369" y2="644" stroke="#E5E5EA" stroke-width="1"/>
+<text x="369" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">120 ms</text>
+<text x="369" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">25%</text>
+<line x1="650" y1="204" x2="650" y2="644" stroke="#E5E5EA" stroke-width="1"/>
+<text x="650" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">240 ms</text>
+<text x="650" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">50%</text>
+<line x1="931" y1="204" x2="931" y2="644" stroke="#E5E5EA" stroke-width="1"/>
+<text x="931" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">360 ms</text>
+<text x="931" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">75%</text>
+<line x1="1212" y1="204" x2="1212" y2="644" stroke="#E5E5EA" stroke-width="1"/>
+<text x="1212" y="196" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">480 ms</text>
+<text x="1212" y="178" font-size="13" fill="#9A9AA0" text-anchor="end" font-family="Roboto Mono, monospace">100%</text>
+<text x="72" y="276" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L0</text>
+<text x="72" y="358" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L1</text>
+<text x="72" y="440" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L2</text>
+<text x="72" y="522" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L3</text>
+<text x="72" y="604" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L4</text>
+<rect class="bar" tabindex="0" x="88" y="234" width="1122" height="74" rx="11" fill="#007AFF" stroke="#FFFFFF" stroke-width="2"><title>GET /api/checkout  -  480 ms  (100% of request, depth 0)</title></rect>
+<text x="650" y="268" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle" pointer-events="none">GET /api/checkout</text>
+<text x="650" y="290" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">480 ms</text>
+<rect class="bar" tabindex="0" x="88" y="316" width="105.72" height="74" rx="11" fill="#AEB4C2" stroke="#FFFFFF" stroke-width="2"><title>authenticate  -  46 ms  (10% of request, depth 1)</title></rect>
+<text x="141.86" y="350" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">authenticate</text>
+<text x="141.86" y="372" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">46 ms</text>
+<rect class="bar" tabindex="0" x="88" y="398" width="63.57" height="74" rx="11" fill="#9BA2B4" stroke="#FFFFFF" stroke-width="2"><title>verify_jwt  -  28 ms  (6% of request, depth 2)</title></rect>
+<text x="120.78" y="440" font-size="15" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">verif…</text>
+<rect class="bar" tabindex="0" x="153.57" y="398" width="30.78" height="74" rx="11" fill="#9BA2B4" stroke="#FFFFFF" stroke-width="2"><title>load_session  -  14 ms  (3% of request, depth 2)</title></rect>
+<rect class="bar" tabindex="0" x="195.72" y="316" width="700.5" height="74" rx="11" fill="#FFB300" stroke="#FFFFFF" stroke-width="2"><title>load_cart  -  300 ms  (62% of request, depth 1)</title></rect>
+<text x="546.97" y="350" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">load_cart</text>
+<text x="546.97" y="372" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">300 ms</text>
+<rect class="bar" tabindex="0" x="195.72" y="398" width="541.27" height="74" rx="11" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"><title>fetch_user_orders  -  232 ms  (48% of request, depth 2)</title></rect>
+<text x="467.35" y="432" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">fetch_user_orders</text>
+<text x="467.35" y="454" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">232 ms</text>
+<rect class="bar" tabindex="0" x="195.72" y="480" width="499.12" height="74" rx="11" fill="#FF7A1A" stroke="#FFFFFF" stroke-width="2"><title>run_sql  -  214 ms  (45% of request, depth 3)</title></rect>
+<text x="446.27" y="514" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">run_sql</text>
+<text x="446.27" y="536" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">214 ms</text>
+<rect class="bar" tabindex="0" x="195.72" y="562" width="410.13" height="74" rx="11" fill="#FF5A2C" stroke="#FFFFFF" stroke-width="2"><title>wait_on_lock  -  176 ms  (37% of request, depth 4)</title></rect>
+<text x="401.78" y="596" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle" pointer-events="none">wait_on_lock</text>
+<text x="401.78" y="618" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">176 ms</text>
+<rect class="bar" tabindex="0" x="607.85" y="562" width="68.25" height="74" rx="11" fill="#737E98" stroke="#FFFFFF" stroke-width="2"><title>deserialize_rows  -  30 ms  (6% of request, depth 4)</title></rect>
+<text x="642.98" y="604" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" pointer-events="none">deseri…</text>
+<rect class="bar" tabindex="0" x="738.98" y="398" width="124.45" height="74" rx="11" fill="#9BA2B4" stroke="#FFFFFF" stroke-width="2"><title>price_items  -  54 ms  (11% of request, depth 2)</title></rect>
+<text x="802.21" y="432" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">price_items</text>
+<text x="802.21" y="454" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">54 ms</text>
+<rect class="bar" tabindex="0" x="738.98" y="480" width="49.52" height="74" rx="11" fill="#8790A6" stroke="#FFFFFF" stroke-width="2"><title>apply_tax  -  22 ms  (5% of request, depth 3)</title></rect>
+<text x="764.74" y="522" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" pointer-events="none">appl…</text>
+<rect class="bar" tabindex="0" x="790.5" y="480" width="44.83" height="74" rx="11" fill="#8790A6" stroke="#FFFFFF" stroke-width="2"><title>apply_coupons  -  20 ms  (4% of request, depth 3)</title></rect>
+<text x="813.92" y="522" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" pointer-events="none">app…</text>
+<rect class="bar" tabindex="0" x="898.22" y="316" width="274.32" height="74" rx="11" fill="#AEB4C2" stroke="#FFFFFF" stroke-width="2"><title>render_response  -  118 ms  (25% of request, depth 1)</title></rect>
+<text x="1036.38" y="350" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">render_response</text>
+<text x="1036.38" y="372" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">118 ms</text>
+<rect class="bar" tabindex="0" x="898.22" y="398" width="161.92" height="74" rx="11" fill="#9BA2B4" stroke="#FFFFFF" stroke-width="2"><title>serialize_json  -  70 ms  (15% of request, depth 2)</title></rect>
+<text x="980.18" y="432" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">serialize_json</text>
+<text x="980.18" y="454" font-size="14" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" opacity="0.85" pointer-events="none">70 ms</text>
+<rect class="bar" tabindex="0" x="1062.13" y="398" width="77.62" height="74" rx="11" fill="#9BA2B4" stroke="#FFFFFF" stroke-width="2"><title>gzip  -  34 ms  (7% of request, depth 2)</title></rect>
+<text x="1101.94" y="440" font-size="15" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">gzip</text>
+<line x1="446.28" y1="554" x2="446.28" y2="668" stroke="#6E6E73" stroke-width="1.5" stroke-dasharray="3 4"/>
+<circle cx="446.28" cy="668" r="3.5" fill="#6E6E73"/>
+<text x="446.28" y="690" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle">run_sql = 214 ms (45%) - a single un-cached query holds a lock</text>
+<text x="88" y="730" font-size="15" font-weight="700" fill="#1D1D1F">Colour</text>
+<rect x="162" y="716" width="24" height="16" rx="4" fill="#007AFF"/>
+<text x="194" y="730" font-size="15" fill="#6E6E73">request root</text>
+<rect x="324" y="716" width="24" height="16" rx="4" fill="#FFCC00"/>
+<rect x="350" y="716" width="24" height="16" rx="4" fill="#FFB300"/>
+<rect x="376" y="716" width="24" height="16" rx="4" fill="#FF9500"/>
+<rect x="402" y="716" width="24" height="16" rx="4" fill="#FF7A1A"/>
+<rect x="428" y="716" width="24" height="16" rx="4" fill="#FF5A2C"/>
+<rect x="454" y="716" width="24" height="16" rx="4" fill="#FF3B30"/>
+<text x="492" y="730" font-size="15" fill="#6E6E73">warm = critical path (deeper is hotter)</text>
+<rect x="800" y="716" width="24" height="16" rx="4" fill="#8790A6"/>
+<text x="832" y="730" font-size="15" fill="#6E6E73">grey = off the hot path</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1252,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

@@ -1,0 +1,22 @@
+# Short alt-text prompt — complex (W3C purpose: complex / chart / diagram).
+#
+# The short alt names the chart type and the single takeaway; the long
+# description (see alt_long_complex.yaml) lives in <figcaption> or
+# aria-describedby.
+
+name: alt_short_complex
+version: 1
+role: |
+  You are a W3C-compliant alt-text writer.
+task: |
+  Draft short alt text for a complex image (chart, diagram,
+  infographic). Name the chart type and the single takeaway in one or
+  two sentences. The full long description belongs in <figcaption> or
+  aria-describedby, not in the alt.
+rules:
+  - Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks.
+  - Stay under {max_chars} characters.
+  - Do NOT try to fit every value into the alt — the long description holds the detail.
+  - Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language.
+template: |
+  {lang_line} This is a complex image (chart, diagram, infographic). Write a SHORT alt that names the chart type and the single takeaway. A separate long description will live in <figcaption> or aria-describedby — do NOT try to fit everything into the alt.{ctx} Reply with the alt text only — no quotes, no prefix, no trailing punctuation tricks. Stay under {max_chars} characters. Match the meaning of the image in its likely page context, not its pixels. Do not start with 'image of', 'picture of', 'photo of', 'illustration of', or the equivalent in your language. Be specific where relevant to meaning (e.g. for a news photo, name visible people, setting, action). Don't invent facts you can't see.

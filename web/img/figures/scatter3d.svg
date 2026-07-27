@@ -1,0 +1,405 @@
+<svg role="img" aria-label="Three grape cultivars fall into three chemistry clouds" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1040 780" preserveAspectRatio="xMidYMid meet" style="max-width:100%;height:auto;touch-action:none" font-family="Roboto, system-ui, sans-serif"><title>Three grape cultivars fall into three chemistry clouds</title><desc>Interactive 3D scatter plot: three well-separated point clouds, one per grape cultivar (Barolo, Grignolino, Barbera), positioned by colour intensity, flavanoid content and proline. Nearer points are larger and more opaque. Drag (mouse, touch or pen) to rotate the view, scroll or pinch to zoom, double-click or double-tap to reset, hover a point for its readings; the figure is shown still at a three-quarter angle when scripting is off.</desc><rect width="1040" height="780" rx="16" fill="#FFFFFF"/><text x="56" y="60" font-size="30" font-weight="700" fill="#1D1D1F">Three grape cultivars fall into three chemistry clouds</text><text x="56" y="92" font-size="18" fill="#6E6E73">Drag to rotate, scroll or pinch to zoom, double-click to reset, hover a point for its readings · illustrative data</text><g class="axes"><line class="axis-arm" data-a="-1.0,1.0,-1.0" data-b="0.9,1.0,-1.0" x1="445.1" y1="613.9" x2="782.2" y2="656.7" stroke="#C7C7CC" stroke-width="2.0" stroke-linecap="round"/><text class="axis-label" data-tip="0.9,1.0,-1.0" data-gap="14.0" x="796.1" y="658.4" font-size="16" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">colour</text><line class="axis-arm" data-a="-1.0,1.0,-1.0" data-b="-1.0,-0.9,-1.0" x1="445.1" y1="613.9" x2="204.8" y2="661.9" stroke="#C7C7CC" stroke-width="2.0" stroke-linecap="round"/><text class="axis-label" data-tip="-1.0,-0.9,-1.0" data-gap="14.0" x="191.1" y="664.6" font-size="16" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">flavanoid</text><line class="axis-arm" data-a="-1.0,1.0,-1.0" data-b="-1.0,1.0,0.9" x1="445.1" y1="613.9" x2="454" y2="117.6" stroke="#C7C7CC" stroke-width="2.0" stroke-linecap="round"/><text class="axis-label" data-tip="-1.0,1.0,0.9" data-gap="14.0" x="454.3" y="103.6" font-size="16" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle" dominant-baseline="middle">proline</text></g><g class="cloud"><circle id="p15" data-i="15" cx="426.2" cy="247.9" r="5.00" fill="#8CC3FF" fill-opacity="0.72" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.14, flavanoid 1.64, proline 1.57</title></circle><circle id="p23" data-i="23" cx="448.7" cy="329.9" r="5.04" fill="#8CC3FF" fill-opacity="0.72" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.29, flavanoid 1.6, proline 1.25</title></circle><circle id="p16" data-i="16" cx="487.8" cy="224.9" r="5.06" fill="#8BC3FF" fill-opacity="0.72" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.32, flavanoid 1.82, proline 1.66</title></circle><circle id="p11" data-i="11" cx="458.5" cy="286.1" r="5.10" fill="#8BC2FF" fill-opacity="0.72" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.29, flavanoid 1.67, proline 1.43</title></circle><circle id="p10" data-i="10" cx="396.5" cy="303.7" r="5.53" fill="#83BEFF" fill-opacity="0.74" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.14, flavanoid 1.42, proline 1.4</title></circle><circle id="p6" data-i="6" cx="363.9" cy="336.4" r="5.55" fill="#83BEFF" fill-opacity="0.74" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.07, flavanoid 1.29, proline 1.27</title></circle><circle id="p2" data-i="2" cx="497" cy="286.6" r="5.57" fill="#82BEFF" fill-opacity="0.74" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.46, flavanoid 1.71, proline 1.48</title></circle><circle id="p12" data-i="12" cx="482.8" cy="295" r="5.76" fill="#7FBCFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.44, flavanoid 1.64, proline 1.46</title></circle><circle id="p17" data-i="17" cx="422.6" cy="254" r="5.82" fill="#7EBCFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.21, flavanoid 1.51, proline 1.64</title></circle><circle id="p19" data-i="19" cx="520.4" cy="300.4" r="5.84" fill="#7DBBFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.58, flavanoid 1.73, proline 1.45</title></circle><circle id="p3" data-i="3" cx="452.9" cy="263.6" r="5.88" fill="#7DBBFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.33, flavanoid 1.58, proline 1.6</title></circle><circle id="p1" data-i="1" cx="421.3" cy="313.8" r="5.92" fill="#7CBBFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.27, flavanoid 1.43, proline 1.4</title></circle><circle id="p18" data-i="18" cx="472.6" cy="280.2" r="5.92" fill="#7CBBFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.41, flavanoid 1.61, proline 1.54</title></circle><circle id="p22" data-i="22" cx="521.4" cy="327.7" r="5.99" fill="#7BBAFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.63, flavanoid 1.68, proline 1.35</title></circle><circle id="p8" data-i="8" cx="464.4" cy="371.3" r="6.01" fill="#7BBAFF" fill-opacity="0.76" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.48, flavanoid 1.47, proline 1.17</title></circle><circle id="p14" data-i="14" cx="422.5" cy="231" r="6.02" fill="#7ABAFF" fill-opacity="0.76" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.2, flavanoid 1.51, proline 1.75</title></circle><circle id="p21" data-i="21" cx="408.5" cy="287.4" r="6.02" fill="#7ABAFF" fill-opacity="0.76" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.21, flavanoid 1.41, proline 1.52</title></circle><circle id="p9" data-i="9" cx="443.8" cy="280.6" r="6.19" fill="#77B8FF" fill-opacity="0.76" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.34, flavanoid 1.49, proline 1.57</title></circle><circle id="p0" data-i="0" cx="470.5" cy="295.2" r="6.22" fill="#77B8FF" fill-opacity="0.76" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.45, flavanoid 1.55, proline 1.51</title></circle><circle id="p13" data-i="13" cx="462.5" cy="286.5" r="6.35" fill="#74B7FF" fill-opacity="0.77" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.43, flavanoid 1.52, proline 1.56</title></circle><circle id="p24" data-i="24" cx="446.2" cy="250.1" r="6.58" fill="#71B5FF" fill-opacity="0.78" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.36, flavanoid 1.48, proline 1.74</title></circle><circle id="p69" data-i="69" cx="609.3" cy="592.7" r="6.90" fill="#D19BEC" fill-opacity="0.79" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.31, flavanoid 1.51, proline 0.29</title></circle><circle id="p20" data-i="20" cx="460.8" cy="298" r="6.92" fill="#6BB2FF" fill-opacity="0.79" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.49, flavanoid 1.43, proline 1.57</title></circle><circle id="p66" data-i="66" cx="662.9" cy="601.8" r="6.97" fill="#D09AEC" fill-opacity="0.79" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.52, flavanoid 1.65, proline 0.25</title></circle><circle id="p25" data-i="25" cx="480" cy="317.2" r="7.01" fill="#69B1FF" fill-opacity="0.79" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.59, flavanoid 1.45, proline 1.49</title></circle><circle id="p4" data-i="4" cx="447.6" cy="307.6" r="7.10" fill="#67B0FF" fill-opacity="0.79" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.47, flavanoid 1.35, proline 1.55</title></circle><circle id="p7" data-i="7" cx="429.2" cy="298.9" r="7.17" fill="#66AFFF" fill-opacity="0.80" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.4, flavanoid 1.3, proline 1.59</title></circle><circle id="p71" data-i="71" cx="579.5" cy="558.6" r="7.40" fill="#CE95EB" fill-opacity="0.80" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.24, flavanoid 1.4, proline 0.46</title></circle><circle id="p74" data-i="74" cx="598.7" cy="562.7" r="7.43" fill="#CE94EB" fill-opacity="0.81" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.32, flavanoid 1.45, proline 0.44</title></circle><circle id="p70" data-i="70" cx="651" cy="620.5" r="7.61" fill="#CD92EA" fill-opacity="0.81" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.6, flavanoid 1.52, proline 0.19</title></circle><circle id="p5" data-i="5" cx="458.5" cy="333.2" r="7.61" fill="#5EABFF" fill-opacity="0.81" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barolo — colour 0.59, flavanoid 1.28, proline 1.48</title></circle><circle id="p73" data-i="73" cx="582.5" cy="597.7" r="7.75" fill="#CC90EA" fill-opacity="0.82" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.34, flavanoid 1.32, proline 0.29</title></circle><circle id="p77" data-i="77" cx="613.7" cy="555.1" r="8.13" fill="#CA8CE9" fill-opacity="0.83" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.47, flavanoid 1.42, proline 0.5</title></circle><circle id="p59" data-i="59" cx="618.7" cy="568.8" r="8.22" fill="#C98BE9" fill-opacity="0.83" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.51, flavanoid 1.41, proline 0.44</title></circle><circle id="p68" data-i="68" cx="711.9" cy="607.5" r="8.29" fill="#C98AE9" fill-opacity="0.83" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.92, flavanoid 1.65, proline 0.27</title></circle><circle id="p72" data-i="72" cx="618.4" cy="598" r="8.31" fill="#C98AE9" fill-opacity="0.84" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.56, flavanoid 1.36, proline 0.31</title></circle><circle id="p56" data-i="56" cx="624.2" cy="595.2" r="8.44" fill="#C888E8" fill-opacity="0.84" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.6, flavanoid 1.36, proline 0.33</title></circle><circle id="p42" data-i="42" cx="379.2" cy="557" r="8.60" fill="#FFB54D" fill-opacity="0.85" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.63, flavanoid 0.6, proline 0.52</title></circle><circle id="p61" data-i="61" cx="609.8" cy="570.8" r="8.68" fill="#C785E8" fill-opacity="0.85" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.55, flavanoid 1.32, proline 0.45</title></circle><circle id="p65" data-i="65" cx="661.8" cy="541.6" r="8.78" fill="#C684E8" fill-opacity="0.85" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.73, flavanoid 1.52, proline 0.6</title></circle><circle id="p76" data-i="76" cx="572.2" cy="567" r="8.91" fill="#C583E7" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.43, flavanoid 1.17, proline 0.48</title></circle><circle id="p62" data-i="62" cx="666.6" cy="561.1" r="8.96" fill="#C582E7" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.8, flavanoid 1.49, proline 0.51</title></circle><circle id="p60" data-i="60" cx="595.2" cy="553.8" r="9.05" fill="#C581E7" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.53, flavanoid 1.25, proline 0.55</title></circle><circle id="p52" data-i="52" cx="563.9" cy="520.1" r="9.07" fill="#C581E7" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.37, flavanoid 1.19, proline 0.71</title></circle><circle id="p67" data-i="67" cx="653" cy="545.9" r="9.07" fill="#C581E7" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.75, flavanoid 1.45, proline 0.59</title></circle><circle id="p53" data-i="53" cx="574.8" cy="565.2" r="9.26" fill="#C47EE6" fill-opacity="0.87" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.49, flavanoid 1.14, proline 0.5</title></circle><circle id="p57" data-i="57" cx="615.3" cy="581.6" r="9.34" fill="#C37EE6" fill-opacity="0.87" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.68, flavanoid 1.24, proline 0.43</title></circle><circle id="p58" data-i="58" cx="559.3" cy="534.2" r="9.43" fill="#C37CE6" fill-opacity="0.88" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.41, flavanoid 1.11, proline 0.66</title></circle><circle id="p75" data-i="75" cx="602.1" cy="599.5" r="9.51" fill="#C27CE6" fill-opacity="0.88" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.67, flavanoid 1.15, proline 0.34</title></circle><circle id="p64" data-i="64" cx="636.7" cy="560.7" r="9.51" fill="#C27BE6" fill-opacity="0.88" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.76, flavanoid 1.32, proline 0.54</title></circle><circle id="p32" data-i="32" cx="399.8" cy="562.7" r="9.55" fill="#FFAE3C" fill-opacity="0.88" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.82, flavanoid 0.51, proline 0.53</title></circle><circle id="p34" data-i="34" cx="488" cy="525.2" r="9.61" fill="#FFAE3B" fill-opacity="0.88" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.14, flavanoid 0.85, proline 0.72</title></circle><circle id="p63" data-i="63" cx="567.6" cy="549.6" r="9.74" fill="#C179E5" fill-opacity="0.89" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.5, flavanoid 1.07, proline 0.6</title></circle><circle id="p33" data-i="33" cx="363" cy="530" r="9.79" fill="#FFAC38" fill-opacity="0.89" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.65, flavanoid 0.4, proline 0.7</title></circle><circle id="p55" data-i="55" cx="556.1" cy="558.1" r="9.93" fill="#C076E5" fill-opacity="0.89" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.49, flavanoid 1.0, proline 0.57</title></circle><circle id="p26" data-i="26" cx="459.4" cy="511.3" r="9.98" fill="#FFAB35" fill-opacity="0.89" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.04, flavanoid 0.72, proline 0.81</title></circle><circle id="p39" data-i="39" cx="429" cy="486.5" r="10.17" fill="#FFAA32" fill-opacity="0.90" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.91, flavanoid 0.62, proline 0.94</title></circle><circle id="p29" data-i="29" cx="446.6" cy="470.8" r="10.51" fill="#FFA72C" fill-opacity="0.91" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.0, flavanoid 0.66, proline 1.04</title></circle><circle id="p54" data-i="54" cx="609.6" cy="592.2" r="10.53" fill="#BD6FE4" fill-opacity="0.91" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Barbera — colour 1.84, flavanoid 1.06, proline 0.42</title></circle><circle id="p49" data-i="49" cx="451.4" cy="499" r="10.60" fill="#FFA62A" fill-opacity="0.92" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.07, flavanoid 0.62, proline 0.9</title></circle><circle id="p47" data-i="47" cx="418.6" cy="534.1" r="10.70" fill="#FFA628" fill-opacity="0.92" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.98, flavanoid 0.44, proline 0.73</title></circle><circle id="p30" data-i="30" cx="449.4" cy="515.5" r="10.75" fill="#FFA527" fill-opacity="0.92" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.09, flavanoid 0.57, proline 0.83</title></circle><circle id="p27" data-i="27" cx="434.6" cy="507.4" r="10.86" fill="#FFA526" fill-opacity="0.93" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.03, flavanoid 0.51, proline 0.87</title></circle><circle id="p50" data-i="50" cx="408.8" cy="526" r="10.88" fill="#FFA425" fill-opacity="0.93" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.95, flavanoid 0.39, proline 0.78</title></circle><circle id="p41" data-i="41" cx="352.9" cy="487.4" r="10.88" fill="#FFA425" fill-opacity="0.93" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.66, flavanoid 0.25, proline 0.98</title></circle><circle id="p35" data-i="35" cx="422.2" cy="483" r="10.98" fill="#FFA423" fill-opacity="0.93" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.96, flavanoid 0.49, proline 1.01</title></circle><circle id="p51" data-i="51" cx="430.5" cy="521.2" r="11.50" fill="#FFA01A" fill-opacity="0.95" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.1, flavanoid 0.38, proline 0.83</title></circle><circle id="p36" data-i="36" cx="428.9" cy="482.1" r="11.66" fill="#FF9F18" fill-opacity="0.95" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.06, flavanoid 0.41, proline 1.05</title></circle><circle id="p40" data-i="40" cx="429.2" cy="516.5" r="11.78" fill="#FF9E15" fill-opacity="0.96" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.12, flavanoid 0.34, proline 0.87</title></circle><circle id="p28" data-i="28" cx="411.1" cy="514.1" r="11.98" fill="#FF9C12" fill-opacity="0.96" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.06, flavanoid 0.25, proline 0.9</title></circle><circle id="p38" data-i="38" cx="419.6" cy="505.5" r="12.21" fill="#FF9B0E" fill-opacity="0.97" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.11, flavanoid 0.26, proline 0.96</title></circle><circle id="p48" data-i="48" cx="396.7" cy="467.1" r="12.30" fill="#FF9A0C" fill-opacity="0.98" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 0.96, flavanoid 0.22, proline 1.18</title></circle><circle id="p45" data-i="45" cx="479" cy="527.5" r="12.31" fill="#FF9A0C" fill-opacity="0.98" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.42, flavanoid 0.44, proline 0.84</title></circle><circle id="p31" data-i="31" cx="469.2" cy="494" r="12.33" fill="#FF9A0C" fill-opacity="0.98" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.33, flavanoid 0.45, proline 1.03</title></circle><circle id="p46" data-i="46" cx="416" cy="474" r="12.35" fill="#FF9A0B" fill-opacity="0.98" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.06, flavanoid 0.27, proline 1.14</title></circle><circle id="p37" data-i="37" cx="434.2" cy="520.7" r="12.40" fill="#FF990A" fill-opacity="0.98" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.21, flavanoid 0.26, proline 0.88</title></circle><circle id="p43" data-i="43" cx="445.2" cy="491" r="12.78" fill="#FF9704" fill-opacity="0.99" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.27, flavanoid 0.3, proline 1.07</title></circle><circle id="p44" data-i="44" cx="415.2" cy="475.2" r="13.00" fill="#FF9500" fill-opacity="1.00" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.3"><title>Grignolino — colour 1.13, flavanoid 0.17, proline 1.17</title></circle></g><circle cx="838" cy="140" r="8" fill="#007AFF"/><text x="854" y="145" font-size="17" fill="#1D1D1F">Barolo</text><circle cx="838" cy="172" r="8" fill="#FF9500"/><text x="854" y="177" font-size="17" fill="#1D1D1F">Grignolino</text><circle cx="838" cy="204" r="8" fill="#AF52DE"/><text x="854" y="209" font-size="17" fill="#1D1D1F">Barbera</text><text x="56" y="760" font-size="15" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73">nearer points draw larger and darker</text><g id="hint" opacity="0.92" pointer-events="none" style="transition:opacity .45s ease"><rect x="431.6" y="734" width="584.4" height="30" rx="15" fill="#1D1D1F" fill-opacity="0.82"/><text x="723.8" y="754" font-size="15" font-family="Roboto, system-ui, sans-serif" fill="#FFFFFF" text-anchor="middle">Drag to rotate · scroll or pinch to zoom · double-click to reset</text></g><script type="text/javascript"><![CDATA[
+var CFG = {"pts":[{"x":-0.5498,"y":0.5478,"z":0.5089,"label":"Barolo","color":"#007AFF","vcolour":0.45,"vflav":1.55,"vprol":1.51},{"x":-0.7281,"y":0.4273,"z":0.4013,"label":"Barolo","color":"#007AFF","vcolour":0.27,"vflav":1.43,"vprol":1.4},{"x":-0.538,"y":0.7144,"z":0.4762,"label":"Barolo","color":"#007AFF","vcolour":0.46,"vflav":1.71,"vprol":1.48},{"x":-0.6741,"y":0.5784,"z":0.6035,"label":"Barolo","color":"#007AFF","vcolour":0.33,"vflav":1.58,"vprol":1.6},{"x":-0.5289,"y":0.3511,"z":0.5456,"label":"Barolo","color":"#007AFF","vcolour":0.47,"vflav":1.35,"vprol":1.55},{"x":-0.4109,"y":0.2849,"z":0.4814,"label":"Barolo","color":"#007AFF","vcolour":0.59,"vflav":1.28,"vprol":1.48},{"x":-0.9302,"y":0.2937,"z":0.2737,"label":"Barolo","color":"#007AFF","vcolour":0.07,"vflav":1.29,"vprol":1.27},{"x":-0.597,"y":0.2972,"z":0.5907,"label":"Barolo","color":"#007AFF","vcolour":0.4,"vflav":1.3,"vprol":1.59},{"x":-0.5186,"y":0.4701,"z":0.1725,"label":"Barolo","color":"#007AFF","vcolour":0.48,"vflav":1.47,"vprol":1.17},{"x":-0.6577,"y":0.4922,"z":0.567,"label":"Barolo","color":"#007AFF","vcolour":0.34,"vflav":1.49,"vprol":1.57},{"x":-0.856,"y":0.4236,"z":0.4032,"label":"Barolo","color":"#007AFF","vcolour":0.14,"vflav":1.42,"vprol":1.4},{"x":-0.7118,"y":0.6697,"z":0.4289,"label":"Barolo","color":"#007AFF","vcolour":0.29,"vflav":1.67,"vprol":1.43},{"x":-0.5565,"y":0.6415,"z":0.4625,"label":"Barolo","color":"#007AFF","vcolour":0.44,"vflav":1.64,"vprol":1.46},{"x":-0.5723,"y":0.5177,"z":0.5596,"label":"Barolo","color":"#007AFF","vcolour":0.43,"vflav":1.52,"vprol":1.56},{"x":-0.795,"y":0.5122,"z":0.7538,"label":"Barolo","color":"#007AFF","vcolour":0.2,"vflav":1.51,"vprol":1.75},{"x":-0.8594,"y":0.6375,"z":0.5679,"label":"Barolo","color":"#007AFF","vcolour":0.14,"vflav":1.64,"vprol":1.57},{"x":-0.6783,"y":0.8201,"z":0.6643,"label":"Barolo","color":"#007AFF","vcolour":0.32,"vflav":1.82,"vprol":1.66},{"x":-0.7899,"y":0.5119,"z":0.6365,"label":"Barolo","color":"#007AFF","vcolour":0.21,"vflav":1.51,"vprol":1.64},{"x":-0.5878,"y":0.6093,"z":0.54,"label":"Barolo","color":"#007AFF","vcolour":0.41,"vflav":1.61,"vprol":1.54},{"x":-0.4166,"y":0.7302,"z":0.4487,"label":"Barolo","color":"#007AFF","vcolour":0.58,"vflav":1.73,"vprol":1.45},{"x":-0.5094,"y":0.4259,"z":0.5691,"label":"Barolo","color":"#007AFF","vcolour":0.49,"vflav":1.43,"vprol":1.57},{"x":-0.7874,"y":0.4073,"z":0.5206,"label":"Barolo","color":"#007AFF","vcolour":0.21,"vflav":1.41,"vprol":1.52},{"x":-0.3702,"y":0.6832,"z":0.3515,"label":"Barolo","color":"#007AFF","vcolour":0.63,"vflav":1.68,"vprol":1.35},{"x":-0.7089,"y":0.6035,"z":0.2511,"label":"Barolo","color":"#007AFF","vcolour":0.29,"vflav":1.6,"vprol":1.25},{"x":-0.6426,"y":0.4844,"z":0.7386,"label":"Barolo","color":"#007AFF","vcolour":0.36,"vflav":1.48,"vprol":1.74},{"x":-0.4121,"y":0.4476,"z":0.4947,"label":"Barolo","color":"#007AFF","vcolour":0.59,"vflav":1.45,"vprol":1.49},{"x":0.045,"y":-0.2758,"z":-0.1942,"label":"Grignolino","color":"#FF9500","vcolour":1.04,"vflav":0.72,"vprol":0.81},{"x":0.0332,"y":-0.4865,"z":-0.1266,"label":"Grignolino","color":"#FF9500","vcolour":1.03,"vflav":0.51,"vprol":0.87},{"x":0.0566,"y":-0.7505,"z":-0.1025,"label":"Grignolino","color":"#FF9500","vcolour":1.06,"vflav":0.25,"vprol":0.9},{"x":0.0024,"y":-0.3401,"z":0.0437,"label":"Grignolino","color":"#FF9500","vcolour":1.0,"vflav":0.66,"vprol":1.04},{"x":0.0947,"y":-0.4297,"z":-0.1748,"label":"Grignolino","color":"#FF9500","vcolour":1.09,"vflav":0.57,"vprol":0.83},{"x":0.3315,"y":-0.551,"z":0.0283,"label":"Grignolino","color":"#FF9500","vcolour":1.33,"vflav":0.45,"vprol":1.03},{"x":-0.184,"y":-0.4876,"z":-0.4714,"label":"Grignolino","color":"#FF9500","vcolour":0.82,"vflav":0.51,"vprol":0.53},{"x":-0.3478,"y":-0.6048,"z":-0.298,"label":"Grignolino","color":"#FF9500","vcolour":0.65,"vflav":0.4,"vprol":0.7},{"x":0.1361,"y":-0.1459,"z":-0.283,"label":"Grignolino","color":"#FF9500","vcolour":1.14,"vflav":0.85,"vprol":0.72},{"x":-0.0373,"y":-0.513,"z":0.0085,"label":"Grignolino","color":"#FF9500","vcolour":0.96,"vflav":0.49,"vprol":1.01},{"x":0.0612,"y":-0.5871,"z":0.0545,"label":"Grignolino","color":"#FF9500","vcolour":1.06,"vflav":0.41,"vprol":1.05},{"x":0.2144,"y":-0.7361,"z":-0.1174,"label":"Grignolino","color":"#FF9500","vcolour":1.21,"vflav":0.26,"vprol":0.88},{"x":0.1078,"y":-0.7398,"z":-0.0428,"label":"Grignolino","color":"#FF9500","vcolour":1.11,"vflav":0.26,"vprol":0.96},{"x":-0.0888,"y":-0.375,"z":-0.0576,"label":"Grignolino","color":"#FF9500","vcolour":0.91,"vflav":0.62,"vprol":0.94},{"x":0.1196,"y":-0.6564,"z":-0.1261,"label":"Grignolino","color":"#FF9500","vcolour":1.12,"vflav":0.34,"vprol":0.87},{"x":-0.3395,"y":-0.7537,"z":-0.0202,"label":"Grignolino","color":"#FF9500","vcolour":0.66,"vflav":0.25,"vprol":0.98},{"x":-0.3683,"y":-0.3976,"z":-0.4841,"label":"Grignolino","color":"#FF9500","vcolour":0.63,"vflav":0.6,"vprol":0.52},{"x":0.2665,"y":-0.7022,"z":0.0714,"label":"Grignolino","color":"#FF9500","vcolour":1.27,"vflav":0.3,"vprol":1.07},{"x":0.1288,"y":-0.8266,"z":0.1748,"label":"Grignolino","color":"#FF9500","vcolour":1.13,"vflav":0.17,"vprol":1.17},{"x":0.4172,"y":-0.5618,"z":-0.1603,"label":"Grignolino","color":"#FF9500","vcolour":1.42,"vflav":0.44,"vprol":0.84},{"x":0.0648,"y":-0.7255,"z":0.1417,"label":"Grignolino","color":"#FF9500","vcolour":1.06,"vflav":0.27,"vprol":1.14},{"x":-0.0194,"y":-0.5592,"z":-0.2745,"label":"Grignolino","color":"#FF9500","vcolour":0.98,"vflav":0.44,"vprol":0.73},{"x":-0.0377,"y":-0.78,"z":0.1766,"label":"Grignolino","color":"#FF9500","vcolour":0.96,"vflav":0.22,"vprol":1.18},{"x":0.0661,"y":-0.3761,"z":-0.0971,"label":"Grignolino","color":"#FF9500","vcolour":1.07,"vflav":0.62,"vprol":0.9},{"x":-0.0528,"y":-0.6088,"z":-0.2233,"label":"Grignolino","color":"#FF9500","vcolour":0.95,"vflav":0.39,"vprol":0.78},{"x":0.1018,"y":-0.6175,"z":-0.166,"label":"Grignolino","color":"#FF9500","vcolour":1.1,"vflav":0.38,"vprol":0.83},{"x":0.3656,"y":0.1886,"z":-0.2854,"label":"Barbera","color":"#AF52DE","vcolour":1.37,"vflav":1.19,"vprol":0.71},{"x":0.4859,"y":0.1392,"z":-0.496,"label":"Barbera","color":"#AF52DE","vcolour":1.49,"vflav":1.14,"vprol":0.5},{"x":0.8392,"y":0.0592,"z":-0.5834,"label":"Barbera","color":"#AF52DE","vcolour":1.84,"vflav":1.06,"vprol":0.42},{"x":0.4926,"y":-0.0022,"z":-0.4324,"label":"Barbera","color":"#AF52DE","vcolour":1.49,"vflav":1.0,"vprol":0.57},{"x":0.596,"y":0.3643,"z":-0.6704,"label":"Barbera","color":"#AF52DE","vcolour":1.6,"vflav":1.36,"vprol":0.33},{"x":0.6773,"y":0.2421,"z":-0.5729,"label":"Barbera","color":"#AF52DE","vcolour":1.68,"vflav":1.24,"vprol":0.43},{"x":0.4116,"y":0.1068,"z":-0.3363,"label":"Barbera","color":"#AF52DE","vcolour":1.41,"vflav":1.11,"vprol":0.66},{"x":0.5138,"y":0.4083,"z":-0.5554,"label":"Barbera","color":"#AF52DE","vcolour":1.51,"vflav":1.41,"vprol":0.44},{"x":0.525,"y":0.2484,"z":-0.4492,"label":"Barbera","color":"#AF52DE","vcolour":1.53,"vflav":1.25,"vprol":0.55},{"x":0.5487,"y":0.3197,"z":-0.5464,"label":"Barbera","color":"#AF52DE","vcolour":1.55,"vflav":1.32,"vprol":0.45},{"x":0.8,"y":0.4861,"z":-0.4888,"label":"Barbera","color":"#AF52DE","vcolour":1.8,"vflav":1.49,"vprol":0.51},{"x":0.5042,"y":0.0736,"z":-0.3981,"label":"Barbera","color":"#AF52DE","vcolour":1.5,"vflav":1.07,"vprol":0.6},{"x":0.7643,"y":0.3219,"z":-0.4633,"label":"Barbera","color":"#AF52DE","vcolour":1.76,"vflav":1.32,"vprol":0.54},{"x":0.7328,"y":0.5162,"z":-0.4026,"label":"Barbera","color":"#AF52DE","vcolour":1.73,"vflav":1.52,"vprol":0.6},{"x":0.5225,"y":0.653,"z":-0.7495,"label":"Barbera","color":"#AF52DE","vcolour":1.52,"vflav":1.65,"vprol":0.25},{"x":0.7465,"y":0.4488,"z":-0.4102,"label":"Barbera","color":"#AF52DE","vcolour":1.75,"vflav":1.45,"vprol":0.59},{"x":0.9194,"y":0.6469,"z":-0.7332,"label":"Barbera","color":"#AF52DE","vcolour":1.92,"vflav":1.65,"vprol":0.27},{"x":0.3129,"y":0.5134,"z":-0.7124,"label":"Barbera","color":"#AF52DE","vcolour":1.31,"vflav":1.51,"vprol":0.29},{"x":0.5979,"y":0.5179,"z":-0.813,"label":"Barbera","color":"#AF52DE","vcolour":1.6,"vflav":1.52,"vprol":0.19},{"x":0.2413,"y":0.4019,"z":-0.5429,"label":"Barbera","color":"#AF52DE","vcolour":1.24,"vflav":1.4,"vprol":0.46},{"x":0.5582,"y":0.3577,"z":-0.6877,"label":"Barbera","color":"#AF52DE","vcolour":1.56,"vflav":1.36,"vprol":0.31},{"x":0.3427,"y":0.3167,"z":-0.7055,"label":"Barbera","color":"#AF52DE","vcolour":1.34,"vflav":1.32,"vprol":0.29},{"x":0.3206,"y":0.4511,"z":-0.5598,"label":"Barbera","color":"#AF52DE","vcolour":1.32,"vflav":1.45,"vprol":0.44},{"x":0.6691,"y":0.1521,"z":-0.6553,"label":"Barbera","color":"#AF52DE","vcolour":1.67,"vflav":1.15,"vprol":0.34},{"x":0.4302,"y":0.1727,"z":-0.5187,"label":"Barbera","color":"#AF52DE","vcolour":1.43,"vflav":1.17,"vprol":0.48},{"x":0.4669,"y":0.4212,"z":-0.4956,"label":"Barbera","color":"#AF52DE","vcolour":1.47,"vflav":1.42,"vprol":0.5}],"elev0":20.0,"azim0":-40.0,"cx":486.0,"cy":462.0,"cx0":486.0,"cy0":462.0,"plotW":1040,"plotH":600,"vbW":1040,"vbH":780,"span":1.55,"dist":4.0,"colors":{"Barolo":"#007AFF","Grignolino":"#FF9500","Barbera":"#AF52DE"}};
+var svg = document.currentScript && document.currentScript.ownerSVGElement;
+if (!svg) { svg = document.querySelector('svg'); }
+var NS = 'http://www.w3.org/2000/svg';
+
+// --- state -------------------------------------------------------------
+var azim = CFG.azim0, elev = CFG.elev0, zoom = 1.0;
+var pts = CFG.pts;
+var N = pts.length;
+
+// --- projection: an exact mirror of the Python _rotate / _project ------
+function project() {
+  var az = azim * Math.PI / 180, el = elev * Math.PI / 180;
+  var ca = Math.cos(az), sa = Math.sin(az);
+  var ce = Math.cos(el), se = Math.sin(el);
+  var scale = Math.min(CFG.plotW, CFG.plotH) / (2 * CFG.span) * zoom;
+  var out = new Array(N);
+  for (var i = 0; i < N; i++) {
+    var p = pts[i];
+    // azimuth about z
+    var x1 = ca * p.x - sa * p.y;
+    var y1 = sa * p.x + ca * p.y;
+    var z1 = p.z;
+    // elevation about x
+    var x2 = x1;
+    var y2 = ce * y1 - se * z1;
+    var z2 = se * y1 + ce * z1;
+    var persp = CFG.dist / (CFG.dist - y2);
+    var px = CFG.cx + (x2 * persp) * scale;
+    var py = CFG.cy - (z2 * persp) * scale;
+    out[i] = { px: px, py: py, depth: -y2, i: i };
+  }
+  return out;
+}
+
+// project a single arbitrary model point (for the axis gizmo)
+function projectOne(mx, my, mz) {
+  var az = azim * Math.PI / 180, el = elev * Math.PI / 180;
+  var ca = Math.cos(az), sa = Math.sin(az);
+  var ce = Math.cos(el), se = Math.sin(el);
+  var scale = Math.min(CFG.plotW, CFG.plotH) / (2 * CFG.span) * zoom;
+  var x1 = ca * mx - sa * my, y1 = sa * mx + ca * my, z1 = mz;
+  var y2 = ce * y1 - se * z1, z2 = se * y1 + ce * z1, x2 = x1;
+  var persp = CFG.dist / (CFG.dist - y2);
+  return { px: CFG.cx + (x2 * persp) * scale, py: CFG.cy - (z2 * persp) * scale };
+}
+
+// --- render: update every circle's cx/cy/r/fill + painter order --------
+function fmt(v) { return (Math.round(v * 10) / 10); }
+function hexBlend(base, t) {  // white -> the point's own base color, factor t
+  t = Math.max(0, Math.min(1, t));
+  var r = parseInt(base.substr(1, 2), 16),
+      g = parseInt(base.substr(3, 2), 16),
+      b = parseInt(base.substr(5, 2), 16);
+  r = Math.round(255 + (r - 255) * t);
+  g = Math.round(255 + (g - 255) * t);
+  b = Math.round(255 + (b - 255) * t);
+  function h(n) { var s = n.toString(16); return s.length < 2 ? '0' + s : s; }
+  return '#' + h(r) + h(g) + h(b);
+}
+
+var cloud = svg.querySelector('g.cloud');
+
+function render() {
+  var proj = project();
+  var dlo = Infinity, dhi = -Infinity;
+  for (var i = 0; i < N; i++) {
+    if (proj[i].depth < dlo) dlo = proj[i].depth;
+    if (proj[i].depth > dhi) dhi = proj[i].depth;
+  }
+  var span = (dhi - dlo) || 1;
+  // far -> near so the painter order is correct after re-ordering the DOM
+  proj.sort(function (a, b) { return a.depth - b.depth; });
+  for (var k = 0; k < N; k++) {
+    var pr = proj[k];
+    var el = document.getElementById('p' + pr.i);
+    if (!el) continue;
+    var t = (pr.depth - dlo) / span;
+    el.setAttribute('cx', fmt(pr.px));
+    el.setAttribute('cy', fmt(pr.py));
+    el.setAttribute('r', (5.0 + 8.0 * t).toFixed(2));
+    el.setAttribute('fill', hexBlend(pts[pr.i].color, 0.45 + 0.55 * t));
+    el.setAttribute('fill-opacity', (0.72 + 0.28 * t).toFixed(2));
+    cloud.appendChild(el);  // re-append near points last (drawn on top)
+  }
+  renderAxes();
+}
+
+function renderAxes() {
+  var arms = svg.querySelectorAll('line.axis-arm');
+  for (var i = 0; i < arms.length; i++) {
+    var a = arms[i].getAttribute('data-a').split(',').map(Number);
+    var b = arms[i].getAttribute('data-b').split(',').map(Number);
+    var pa = projectOne(a[0], a[1], a[2]);
+    var pb = projectOne(b[0], b[1], b[2]);
+    arms[i].setAttribute('x1', fmt(pa.px)); arms[i].setAttribute('y1', fmt(pa.py));
+    arms[i].setAttribute('x2', fmt(pb.px)); arms[i].setAttribute('y2', fmt(pb.py));
+  }
+  var labels = svg.querySelectorAll('text.axis-label');
+  // shared corner is the first arm's data-a
+  var corner = arms.length ? arms[0].getAttribute('data-a').split(',').map(Number)
+                           : [0, 0, 0];
+  var pc = projectOne(corner[0], corner[1], corner[2]);
+  for (var j = 0; j < labels.length; j++) {
+    var tip = labels[j].getAttribute('data-tip').split(',').map(Number);
+    var gap = parseFloat(labels[j].getAttribute('data-gap')) || 14;
+    var pt = projectOne(tip[0], tip[1], tip[2]);
+    var dx = pt.px - pc.px, dy = pt.py - pc.py;
+    var norm = Math.sqrt(dx * dx + dy * dy) || 1;
+    labels[j].setAttribute('x', fmt(pt.px + gap * dx / norm));
+    labels[j].setAttribute('y', fmt(pt.py + gap * dy / norm));
+    labels[j].setAttribute('text-anchor',
+      dx > norm * 0.30 ? 'start' : (dx < -norm * 0.30 ? 'end' : 'middle'));
+  }
+}
+
+// --- tooltip -----------------------------------------------------------
+var tip = null;
+function ensureTip() {
+  if (tip) return tip;
+  tip = document.createElementNS(NS, 'g');
+  tip.setAttribute('class', 'tooltip');
+  tip.setAttribute('pointer-events', 'none');
+  tip.style.display = 'none';
+  var rect = document.createElementNS(NS, 'rect');
+  rect.setAttribute('rx', '8'); rect.setAttribute('ry', '8');
+  rect.setAttribute('fill', '#1D1D1F'); rect.setAttribute('fill-opacity', '0.95');
+  var t1 = document.createElementNS(NS, 'text');
+  t1.setAttribute('x', '12'); t1.setAttribute('y', '22');
+  t1.setAttribute('fill', '#FFFFFF'); t1.setAttribute('font-size', '16');
+  t1.setAttribute('font-weight', '700');
+  t1.setAttribute('font-family', 'Roboto, system-ui, sans-serif');
+  var t2 = document.createElementNS(NS, 'text');
+  t2.setAttribute('x', '12'); t2.setAttribute('y', '44');
+  t2.setAttribute('fill', '#F5F5F7'); t2.setAttribute('font-size', '14');
+  t2.setAttribute('font-family', 'Roboto Mono, ui-monospace, monospace');
+  tip.appendChild(rect); tip.appendChild(t1); tip.appendChild(t2);
+  svg.appendChild(tip);
+  tip._rect = rect; tip._t1 = t1; tip._t2 = t2;
+  return tip;
+}
+function showTip(rec, px, py) {
+  var g = ensureTip();
+  g._t1.textContent = rec.label;
+  g._t2.textContent = 'colour ' + rec.vcolour + '  flav ' + rec.vflav +
+                      '  proline ' + rec.vprol;
+  var w = Math.max(
+    g._t1.getComputedTextLength ? g._t1.getComputedTextLength() : 120,
+    g._t2.getComputedTextLength ? g._t2.getComputedTextLength() : 200) + 24;
+  g._rect.setAttribute('width', w);
+  g._rect.setAttribute('height', 56);
+  // keep the box on-canvas
+  var ox = px + 16, oy = py - 66;
+  if (ox + w > CFG.plotW) ox = px - w - 16;
+  if (oy < 0) oy = py + 16;
+  g.setAttribute('transform', 'translate(' + fmt(ox) + ',' + fmt(oy) + ')');
+  g.style.display = '';
+  svg.appendChild(g);  // keep tooltip on top
+}
+function hideTip() { if (tip) tip.style.display = 'none'; }
+
+// hover on any circle
+svg.addEventListener('mouseover', function (e) {
+  var el = e.target;
+  if (el && el.tagName === 'circle' && el.id && el.id.charAt(0) === 'p') {
+    var i = parseInt(el.getAttribute('data-i'), 10);
+    showTip(pts[i], parseFloat(el.getAttribute('cx')), parseFloat(el.getAttribute('cy')));
+  }
+});
+svg.addEventListener('mouseout', function (e) {
+  var el = e.target;
+  if (el && el.tagName === 'circle' && el.id && el.id.charAt(0) === 'p') hideTip();
+});
+
+// --- shared interaction constants --------------------------------------
+var ROT_SENS = 0.30;   // degrees of rotation per CSS pixel dragged
+var ELEV_MIN = -89, ELEV_MAX = 89;
+var ZOOM_MIN = 0.4, ZOOM_MAX = 4.0;
+var hintEl = svg.querySelector('#hint');
+var hintGone = false;
+
+// Fade the discoverability pill out the first time the user touches the
+// figure — it has done its job once they engage.
+function dismissHint() {
+  if (hintGone || !hintEl) return;
+  hintGone = true;
+  hintEl.style.opacity = '0';
+}
+
+function clampElev(v) { return v < ELEV_MIN ? ELEV_MIN : (v > ELEV_MAX ? ELEV_MAX : v); }
+function clampZoom(v) { return v < ZOOM_MIN ? ZOOM_MIN : (v > ZOOM_MAX ? ZOOM_MAX : v); }
+
+// rAF-coalesced render so a burst of pointermove/wheel events paints once
+// per frame — keeps the drag buttery even under heavy event rates.
+var frameQueued = false;
+function scheduleRender() {
+  if (frameQueued) return;
+  frameQueued = true;
+  (window.requestAnimationFrame || function (f) { return setTimeout(f, 16); })(
+    function () { frameQueued = false; render(); });
+}
+
+// Convert a client-space (x, y) into the SVG's viewBox coordinate space,
+// reading the LIVE client rect so the math is correct at any rendered size
+// (responsive) and under any preserveAspectRatio letterboxing.
+function toViewBox(clientX, clientY) {
+  var rect = svg.getBoundingClientRect();
+  // xMidYMid meet: uniform scale = min over the two axes, centred.
+  var sx = rect.width ? CFG.vbW / rect.width : 1;
+  var sy = rect.height ? CFG.vbH / rect.height : 1;
+  var s = Math.max(sx, sy);
+  var drawnW = CFG.vbW / s, drawnH = CFG.vbH / s;
+  var offX = (rect.width - drawnW) / 2, offY = (rect.height - drawnH) / 2;
+  return {
+    x: (clientX - rect.left - offX) * s,
+    y: (clientY - rect.top - offY) * s
+  };
+}
+
+// Zoom about a viewBox anchor point so the model under the cursor / pinch
+// midpoint stays put: shift the projection centre by the residual.
+function zoomAbout(newZoom, ax, ay) {
+  newZoom = clampZoom(newZoom);
+  if (newZoom === zoom) return;
+  var k = newZoom / zoom;
+  // cx/cy live in viewBox space; nudge them so `ax,ay` is a fixed point.
+  CFG.cx = ax - (ax - CFG.cx) * k;
+  CFG.cy = ay - (ay - CFG.cy) * k;
+  zoom = newZoom;
+}
+
+// --- pointer state -----------------------------------------------------
+// Track every active pointer by id so one finger rotates and two pinch.
+var active = {};          // id -> {x, y} in viewBox space
+var activeIds = [];       // insertion-ordered ids
+var pinchPrev = 0;        // previous two-finger distance (viewBox px)
+// Per-gesture tap bookkeeping — so a genuine still tap can be told apart
+// from a drag or a pinch (whose two release events must NOT read as a
+// double-tap and snap the view back to default).
+var gestureMoved = false;     // any pointer moved appreciably this gesture
+var gestureMulti = false;     // a second finger touched down this gesture
+var downClientX = 0, downClientY = 0, downTime = 0;
+
+function activePoints() {
+  return activeIds.map(function (id) { return active[id]; });
+}
+
+function onPointerDown(e) {
+  var vp = toViewBox(e.clientX, e.clientY);
+  if (!active.hasOwnProperty(e.pointerId)) activeIds.push(e.pointerId);
+  active[e.pointerId] = vp;
+  if (activeIds.length === 1) {           // first finger of a fresh gesture
+    gestureMoved = false; gestureMulti = false;
+    downClientX = e.clientX; downClientY = e.clientY; downTime = Date.now();
+  } else {
+    gestureMulti = true;                  // pinch — never a tap
+  }
+  if (svg.setPointerCapture) {
+    try { svg.setPointerCapture(e.pointerId); } catch (err) {}
+  }
+  if (activeIds.length === 2) {
+    var p = activePoints();
+    pinchPrev = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+  }
+  dismissHint();
+  hideTip();
+  if (e.cancelable) e.preventDefault();
+}
+
+function onPointerMove(e) {
+  if (!active.hasOwnProperty(e.pointerId)) return;  // not a captured drag
+  var vp = toViewBox(e.clientX, e.clientY);
+  var prev = active[e.pointerId];
+  // client -> viewBox scale for the rotation sensitivity (degrees/CSS px):
+  // one viewBox px equals (rect.width / vbW) CSS px, so undo that here.
+  var rect = svg.getBoundingClientRect();
+  var vbPerCss = rect.width ? CFG.vbW / rect.width : 1;
+
+  if (activeIds.length >= 2) {
+    // --- two-finger pinch: zoom by the ratio of finger distances -------
+    active[e.pointerId] = vp;
+    var p = activePoints();
+    var dist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+    if (pinchPrev > 0 && dist > 0) {
+      var mx = (p[0].x + p[1].x) / 2, my = (p[0].y + p[1].y) / 2;
+      zoomAbout(zoom * (dist / pinchPrev), mx, my);
+    }
+    pinchPrev = dist;
+    scheduleRender();
+  } else {
+    // --- one pointer: rotate ------------------------------------------
+    // Delta in viewBox px -> CSS px (divide by vbPerCss) -> degrees.
+    var dxCss = (vp.x - prev.x) / vbPerCss;
+    var dyCss = (vp.y - prev.y) / vbPerCss;
+    if (Math.abs(dxCss) + Math.abs(dyCss) > 0.01) gestureMoved = true;
+    azim += dxCss * ROT_SENS;
+    elev = clampElev(elev - dyCss * ROT_SENS);
+    active[e.pointerId] = vp;
+    scheduleRender();
+  }
+  if (e.cancelable) e.preventDefault();
+}
+
+function endPointer(e) {
+  if (active.hasOwnProperty(e.pointerId)) {
+    delete active[e.pointerId];
+    var idx = activeIds.indexOf(e.pointerId);
+    if (idx >= 0) activeIds.splice(idx, 1);
+  }
+  if (svg.releasePointerCapture) {
+    try { svg.releasePointerCapture(e.pointerId); } catch (err) {}
+  }
+  // reset the pinch baseline when dropping below two fingers
+  if (activeIds.length === 2) {
+    var p = activePoints();
+    pinchPrev = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+  } else {
+    pinchPrev = 0;
+  }
+}
+
+var hasPointer = ('PointerEvent' in window) && svg.setPointerCapture;
+if (hasPointer) {
+  svg.addEventListener('pointerdown', onPointerDown);
+  svg.addEventListener('pointermove', onPointerMove);
+  svg.addEventListener('pointerup', endPointer);
+  svg.addEventListener('pointercancel', endPointer);
+  svg.addEventListener('pointerleave', function (e) {
+    // only end if we are not capturing (capture keeps the id alive)
+    if (!(svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId))) {
+      endPointer(e);
+    }
+  });
+} else {
+  // --- graceful fallback: mouse-only drag (no Pointer Events) ----------
+  var mDown = false, mx0 = 0, my0 = 0;
+  svg.addEventListener('mousedown', function (e) {
+    mDown = true;
+    var vp = toViewBox(e.clientX, e.clientY);
+    mx0 = vp.x; my0 = vp.y; dismissHint(); hideTip();
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!mDown) return;
+    var vp = toViewBox(e.clientX, e.clientY);
+    var rect = svg.getBoundingClientRect();
+    var vbPerCss = rect.width ? CFG.vbW / rect.width : 1;
+    azim += ((vp.x - mx0) / vbPerCss) * ROT_SENS;
+    elev = clampElev(elev - ((vp.y - my0) / vbPerCss) * ROT_SENS);
+    mx0 = vp.x; my0 = vp.y;
+    scheduleRender();
+    if (e.cancelable) e.preventDefault();
+  });
+  window.addEventListener('mouseup', function () { mDown = false; });
+}
+
+// --- wheel / trackpad scroll to zoom -----------------------------------
+// Normalise deltaY across deltaMode (0=pixel, 1=line, 2=page) and OS, then
+// zoom toward the pointer. {passive:false} + preventDefault means the PAGE
+// never scrolls while the figure is being zoomed.
+svg.addEventListener('wheel', function (e) {
+  var dy = e.deltaY;
+  if (e.deltaMode === 1) dy *= 16;        // lines -> approx CSS px
+  else if (e.deltaMode === 2) dy *= 400;  // pages -> approx CSS px
+  var factor = Math.exp(-dy * 0.0015);
+  var anchor = toViewBox(e.clientX, e.clientY);
+  zoomAbout(zoom * factor, anchor.x, anchor.y);
+  dismissHint();
+  hideTip();
+  scheduleRender();
+  if (e.cancelable) e.preventDefault();
+}, { passive: false });
+
+// --- reset to the default view (double-click / double-tap) -------------
+function resetView() {
+  azim = CFG.azim0; elev = CFG.elev0; zoom = 1.0;
+  CFG.cx = CFG.cx0; CFG.cy = CFG.cy0;
+  hideTip();
+  render();
+}
+svg.addEventListener('dblclick', function (e) {
+  resetView();
+  if (e.cancelable) e.preventDefault();
+});
+// double-tap detector for touch/pen (dblclick is unreliable on mobile).
+// A "tap" is only counted when the WHOLE gesture was a single, still,
+// short press with no second finger — so lifting a pinch or ending a
+// rotate never masquerades as a tap and snaps the view back.
+var lastTap = 0;
+svg.addEventListener('pointerup', function (e) {
+  if (e.pointerType === 'mouse') return;   // mouse uses dblclick
+  if (activeIds.length > 0) return;        // other fingers still down
+  var dx = e.clientX - downClientX, dy = e.clientY - downClientY;
+  var isTap = !gestureMoved && !gestureMulti &&
+              (Math.abs(dx) + Math.abs(dy) < 10) &&
+              (Date.now() - downTime < 400);
+  if (!isTap) { lastTap = 0; return; }
+  var now = Date.now();
+  if (now - lastTap < 320) { resetView(); lastTap = 0; }
+  else lastTap = now;
+});
+
+// first frame — matches the server-rendered still
+render();
+]]></script><g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(992,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script></svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"
+     font-family="Roboto, system-ui, sans-serif" role="group"
+     aria-labelledby="ib-title ib-desc">
+  <title id="ib-title">Cups poured from the office machine last week</title>
+  <desc id="ib-desc">Interactive bar chart. Hover or focus a bar to highlight it and read its value; the others dim. Espresso leads with 84, then Latte 63, Cappuccino 41, Americano 29, and almost nobody drinks Decaf at 4.</desc>
+  <style>
+    .bar { fill: #007AFF; transition: opacity .15s ease; cursor: pointer; }
+    /* Hovering or focusing any bar dims the rest, so the eye lands on one. */
+    svg:hover .bar, svg:focus-within .bar { opacity: .35; }
+    .bar:hover, .bar:focus { opacity: 1; }
+    .bar:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
+    .lbl { fill: #1D1D1F; font-size: 12px; }
+    .val { fill: #FFFFFF; font-size: 12px; font-weight: 700; }
+    @media (prefers-reduced-motion: reduce) { .bar { transition: none; } }
+    @media (prefers-color-scheme: dark) {
+      svg { background: #0B0B0C; }
+      .bar { fill: #0A84FF; }
+      .bar:focus { outline-color: #6FB7FF; }
+      .lbl { fill: #F2F2F7; }
+      [fill="#1D1D1F"] { fill: #F2F2F7; }
+      [fill="#6E6E73"] { fill: #9C9CA3; }
+    }
+    @media (prefers-contrast: more) {
+      .bar { fill: #0057C7; }
+      .lbl { fill: #000000; }
+      [fill="#1D1D1F"] { fill: #000000; }
+      [fill="#6E6E73"] { fill: #3A3A3C; }
+    }
+    @media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      .bar { fill: #4DA3FF; }
+      .lbl { fill: #FFFFFF; }
+      [fill="#1D1D1F"] { fill: #FFFFFF; }
+      [fill="#6E6E73"] { fill: #C7C7CC; }
+    }
+    @media (forced-colors: active) {
+      svg { background: Canvas; }
+      .bar { fill: Highlight; forced-color-adjust: none; }
+      svg:hover .bar, svg:focus-within .bar { opacity: 1; }
+      .bar:hover, .bar:focus { fill: Highlight; }
+      .bar:focus { outline: 3px solid CanvasText; }
+      .val { fill: HighlightText; }
+      .lbl { fill: CanvasText; }
+      [fill="#1D1D1F"] { fill: CanvasText; }
+      [fill="#6E6E73"] { fill: CanvasText; }
+    }
+  </style>
+  <text x="12" y="22" font-size="15" font-weight="700" fill="#1D1D1F">Nobody drinks the decaf</text>
+  <text x="12" y="38" font-size="11" fill="#6E6E73">Cups poured from the office machine last week · illustrative</text>
+  <g transform="translate(90,52)">
+    <!-- rows: label, bar (width ∝ value, scale 2.4px/unit), value text -->
+    <g>
+      <text class="lbl" x="-8" y="14" text-anchor="end">Espresso</text>
+      <rect class="bar" tabindex="0" x="0" y="2" width="202" height="20" rx="4"><title>Espresso: 84 cups</title></rect>
+      <text class="val" x="194" y="16" text-anchor="end">84</text>
+    </g>
+    <g transform="translate(0,28)">
+      <text class="lbl" x="-8" y="14" text-anchor="end">Latte</text>
+      <rect class="bar" tabindex="0" x="0" y="2" width="151" height="20" rx="4"><title>Latte: 63 cups</title></rect>
+      <text class="val" x="143" y="16" text-anchor="end">63</text>
+    </g>
+    <g transform="translate(0,56)">
+      <text class="lbl" x="-8" y="14" text-anchor="end">Cappuccino</text>
+      <rect class="bar" tabindex="0" x="0" y="2" width="98" height="20" rx="4"><title>Cappuccino: 41 cups</title></rect>
+      <text class="val" x="90" y="16" text-anchor="end">41</text>
+    </g>
+    <g transform="translate(0,84)">
+      <text class="lbl" x="-8" y="14" text-anchor="end">Americano</text>
+      <rect class="bar" tabindex="0" x="0" y="2" width="70" height="20" rx="4"><title>Americano: 29 cups</title></rect>
+      <text class="val" x="62" y="16" text-anchor="end">29</text>
+    </g>
+    <g transform="translate(0,112)">
+      <text class="lbl" x="-8" y="14" text-anchor="end">Decaf</text>
+      <rect class="bar" tabindex="0" x="0" y="2" width="10" height="20" rx="4"><title>Decaf: 4 cups</title></rect>
+      <text x="16" y="16" text-anchor="start" fill="#6E6E73" font-size="12" font-weight="700">4</text>
+    </g>
+  </g>
+</svg>

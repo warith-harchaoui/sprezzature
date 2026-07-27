@@ -1,0 +1,11 @@
+# Optional dependencies for sprezzature-publish/scripts/lint_markdown.py
+#
+# Install with:
+#   pip install -r sprezzature-publish/scripts/requirements-lint-md.txt
+#
+# mmdc: pure-Python Mermaid renderer (PhantomJS embedded, no Node / npm / Chromium).
+# requests: HTTP client used to talk to the local Ollama daemon for AI-assisted
+#           suggestions. Already pulled in by alt-text / meta dependencies, but
+#           listed here so this script is self-installable.
+mmdc>=0.3
+requests>=2.31

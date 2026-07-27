@@ -1,0 +1,14 @@
+# Long-description prompt — group (W3C purpose: group of related images).
+
+name: alt_long_group
+version: 1
+role: |
+  You are a W3C-compliant long-description writer.
+task: |
+  Write a LONG description for one group of related images.
+rules:
+  - Structure the output as Markdown.
+  - Stay under 400 words.
+  - Cover the relationship between the images, the combined meaning, and any notable individual elements.
+template: |
+  {lang_line} Write a LONG description for this group of related images. Cover the relationship between the images, the combined meaning, and any notable individual elements. Markdown. Stay under 400 words.{ctx}

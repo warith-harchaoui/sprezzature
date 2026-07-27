@@ -1,0 +1,35 @@
+<!--
+  Peak-End Rule — invest design budget in the last frame a user
+  sees. A polished success state earns disproportionate weight in
+  the user's memory of the whole flow (Kahneman et al., 1993). The
+  middle of a flow can stay plain; the end cannot.
+
+  Keep it tasteful — one celebratory glyph, one clear next action,
+  no confetti spam. The reduced-motion guard kills the entrance
+  animation for users with vestibular sensitivity.
+-->
+<section role="status"
+         aria-live="polite"
+         class="mx-auto max-w-md rounded-2xl bg-surface-secondary p-6 text-center dark:bg-surface-secondary-dark motion-safe:animate-in motion-safe:fade-in motion-reduce:opacity-100">
+  <div class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-brand-green/15 text-brand-green" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  </div>
+  <h2 class="mt-3 text-[20px] font-semibold text-label-primary dark:text-label-primary-dark">
+    All set — your project is live.
+  </h2>
+  <p class="mt-1 text-[15px] text-label-secondary dark:text-label-secondary-dark">
+    We sent a confirmation to your inbox. The first deploy may take a minute.
+  </p>
+  <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">
+    <a href="/dashboard"
+       class="inline-flex min-h-11 items-center justify-center rounded-full bg-brand-blue px-5 py-3 text-[15px] font-semibold text-white hover:opacity-90 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 motion-reduce:active:scale-100">
+      Open dashboard
+    </a>
+    <a href="/docs/getting-started"
+       class="inline-flex min-h-11 items-center justify-center rounded-full bg-surface-tertiary px-5 py-3 text-[15px] font-medium text-label-primary hover:bg-surface-quaternary dark:bg-surface-tertiary-dark dark:text-label-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2">
+      Read the guide
+    </a>
+  </div>
+</section>

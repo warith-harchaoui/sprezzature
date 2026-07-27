@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-color-scheme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Maps — Sprezzature</title>
+  <meta name="description" content="Publication-grade cartography from sprezzature-figures: Equal-Earth thematic maps, layered situation maps, carefully authored SVG map techniques, and real French election data.">
+  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/maps.html">
+  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/maps.html">
+  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maps — Sprezzature">
+  <meta property="og:description" content="Publication-grade cartography from sprezzature-figures: Equal-Earth thematic maps, layered situation maps, carefully authored SVG map techniques, and real French election data.">
+  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/maps.html">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/figures/situation-ukraine.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/roboto/fonts.css">
+  <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
+  <link rel="stylesheet" href="fonts/roboto-mono/fonts.css">
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-theme');}catch(e){}
+    if(!s)s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    document.documentElement.setAttribute('data-color-scheme',s);})();</script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+  <header class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Primary">
+      <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img src="img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <div class="flex items-center gap-3 text-sm sm:gap-4">
+        <a href="index.html#skills" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Skills</a>
+        <a href="figures.html" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Gallery</a>
+        <a href="case-studies.html" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Case studies</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
+        <a href="fr/maps.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
+        <button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="mx-auto max-w-6xl px-5 pt-14 pb-4">
+      <p class="font-mono text-sm text-brand-blue">sprezzature · case studies</p>
+      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Maps</h1>
+      <p class="mt-4 max-w-3xl text-lg text-neutral-600 dark:text-neutral-300">Good-quality cartography, reproducible on data of your choice.</p>
+      <p class="mt-4 text-sm"><a class="text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="case-studies.html">← All case studies</a></p>
+    </section>
+    <section id="thematic-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Thematic maps</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Publication-grade cartography from a vendored, offline Natural Earth basemap: Equal-Earth projection, classed color, direct annotation, hairline borders.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Choropleth" data-src="img/figures/choropleth.png" data-alt="World choropleth of an illustrative exposure index in quintile classes; countries with no data are grey, including Antarctica.">
+            <img src="img/figures/choropleth.png" alt="World choropleth of an illustrative exposure index in quintile classes; countries with no data are grey, including Antarctica." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Choropleth</span> <span class="text-neutral-500 dark:text-neutral-400">: Equal-Earth projection, quintile classes, headline + source.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Bivariate choropleth" data-src="img/figures/map-bivariate.png" data-alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia.">
+            <img src="img/figures/map-bivariate.png" alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Bivariate choropleth</span> <span class="text-neutral-500 dark:text-neutral-400">: Two variables blended on a 3×3 color key.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Proportional-symbol map" data-src="img/figures/map-bubble.png" data-alt="Proportional-symbol world map: synthetic per-city values drawn as area-true blue bubbles, larger bubbles meaning larger values.">
+            <img src="img/figures/map-bubble.png" alt="Proportional-symbol world map: synthetic per-city values drawn as area-true blue bubbles, larger bubbles meaning larger values." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Proportional-symbol map</span> <span class="text-neutral-500 dark:text-neutral-400">: Area-true √-scaled bubbles on a world basemap.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Connection / flow map" data-src="img/figures/map-flow.png" data-alt="Illustrative connection map: Great-circle links show increasing volume flow across the globe.">
+            <img src="img/figures/map-flow.png" alt="Illustrative connection map: Great-circle links show increasing volume flow across the globe." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Connection / flow map</span> <span class="text-neutral-500 dark:text-neutral-400">: Great-circle arcs weighted by volume.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Pie-glyph map" data-src="img/figures/map-pie.png" data-alt="Pie-glyph world map: a small multi-slice pie showing category shares placed at each world region.">
+            <img src="img/figures/map-pie.png" alt="Pie-glyph world map: a small multi-slice pie showing category shares placed at each world region." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Pie-glyph map</span> <span class="text-neutral-500 dark:text-neutral-400">: A small pie chart placed at each region.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Bar-glyph map" data-src="img/figures/map-bars.png" data-alt="Bar-glyph world map: a small multi-bar chart placed at each world region.">
+            <img src="img/figures/map-bars.png" alt="Bar-glyph world map: a small multi-bar chart placed at each world region." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Bar-glyph map</span> <span class="text-neutral-500 dark:text-neutral-400">: Mini bar charts placed at each region.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Tile-grid cartogram" data-src="img/figures/map-tilegrid.png" data-alt="Tile-grid cartogram: one equal-size rounded tile per country in a rough geographic layout, each shaded by its exposure quintile.">
+            <img src="img/figures/map-tilegrid.png" alt="Tile-grid cartogram: one equal-size rounded tile per country in a rough geographic layout, each shaded by its exposure quintile." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Tile-grid cartogram</span> <span class="text-neutral-500 dark:text-neutral-400">: One equal tile per country, geographic layout.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Diverging + annotated" data-src="img/figures/map-diverging.png" data-alt="World map showing net change in synthetic demo data by country; Russia and United States gained significantly, while China lost.">
+            <img src="img/figures/map-diverging.png" alt="World map showing net change in synthetic demo data by country; Russia and United States gained significantly, while China lost." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Diverging + annotated</span> <span class="text-neutral-500 dark:text-neutral-400">: Signed change, no-data gray, key countries labeled.</span></figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Small multiples" data-src="img/figures/map-small-multiples.png" data-alt="Small-multiples world map: one panel per year from 2021 to 2024, the same quintile breaks throughout, with more countries shaded darker over time.">
+            <img src="img/figures/map-small-multiples.png" alt="Small-multiples world map: one panel per year from 2021 to 2024, the same quintile breaks throughout, with more countries shaded darker over time." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Small multiples</span> <span class="text-neutral-500 dark:text-neutral-400">: One panel per year, class breaks frozen.</span></figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section id="situation-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Situation maps</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">An areas-of-control plate for any region, built as a layered Scalable Vector Graphics (SVG) the way a geopolitics desk would: bathymetry contours off the coast, classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, dual-unit scale bars, and a floating legend. One configuration file projects any country (auto-centred Lambert conformal conic). The same layers redraw for any conflict; below is Ukraine. Schematic, from open sources, not intelligence.</p>
+        <figure class="mt-6 mx-auto max-w-3xl overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Ukraine areas of control" data-src="img/figures/situation-ukraine.png" data-alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested sprezzature hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions.">
+            <img src="img/figures/situation-ukraine.png" alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested sprezzature hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions." loading="lazy" class="w-full">
+          </button>
+          <figcaption class="p-3"><span class="font-medium">Ukraine</span> <span class="text-neutral-500 dark:text-neutral-400">: government / occupied / contested along an approximate 2024 contact line. Schematic, not operational intelligence.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="real-data" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Real data: the last five French presidential runoffs</h2>
+        <p class="mt-2 max-w-4xl text-neutral-600 dark:text-neutral-300">The same carefully authored SVG map engine, on <strong>real</strong> data from the French Ministère de l'Intérieur: the winner's second-round vote share <em>by département</em> across the last five presidential elections, on one frozen blue scale so the panels compare. 2002 (the republican sprezzature against the far right) is near-uniform; 2012 (the closest) is the palest; 2017 and 2022 show the lighter départements where Marine Le Pen ran strongest.</p>
+        <figure class="mt-8 w-screen max-w-none ml-[calc(50%-50vw)] bg-white px-4 dark:bg-transparent sm:px-8">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: French presidential runoffs 2002–2022" data-src="img/figures/fr-presidentielles-small-multiples.png" data-alt="Five small-multiple maps of metropolitan France, one per presidential runoff from 2002 to 2022, each département shaded on a shared blue scale by the winner's share of votes cast: 2002 (Chirac) almost uniformly dark blue, 2007 and 2012 pale and mixed, 2017 and 2022 (Macron) medium blue with lighter areas.">
+            <img src="img/figures/fr-presidentielles-small-multiples.png" alt="Five small-multiple maps of metropolitan France, one per presidential runoff from 2002 to 2022, each département shaded on a shared blue scale by the winner's share of votes cast: 2002 (Chirac) almost uniformly dark blue, 2007 and 2012 pale and mixed, 2017 and 2022 (Macron) medium blue with lighter areas." loading="lazy" class="w-full">
+          </button>
+        </figure>
+        <div class="mt-6 overflow-x-auto">
+          <table class="w-full text-sm">
+            <caption class="sr-only">Real data: the last five French presidential runoffs</caption>
+            <thead><tr class="text-left text-neutral-500 dark:text-neutral-400">
+              <th class="py-1.5 pr-4 font-semibold" scope="col">Year</th>
+              <th class="py-1.5 pr-4 font-semibold" scope="col">Winner</th>
+              <th class="py-1.5 pr-4 font-semibold" scope="col">%</th>
+              <th class="py-1.5 pr-4 font-semibold" scope="col">Runner-up</th>
+              <th class="py-1.5 font-semibold" scope="col">%</th>
+            </tr></thead>
+            <tbody>
+<tr class="border-t border-neutral-200 dark:border-neutral-800"><td class="py-1.5 pr-4 font-medium">2002</td><td class="py-1.5 pr-4">Jacques Chirac</td><td class="py-1.5 pr-4 tabular-nums">82.21</td><td class="py-1.5 pr-4">Jean-Marie Le Pen</td><td class="py-1.5 tabular-nums">17.79</td></tr>
+<tr class="border-t border-neutral-200 dark:border-neutral-800"><td class="py-1.5 pr-4 font-medium">2007</td><td class="py-1.5 pr-4">Nicolas Sarkozy</td><td class="py-1.5 pr-4 tabular-nums">53.06</td><td class="py-1.5 pr-4">Ségolène Royal</td><td class="py-1.5 tabular-nums">46.94</td></tr>
+<tr class="border-t border-neutral-200 dark:border-neutral-800"><td class="py-1.5 pr-4 font-medium">2012</td><td class="py-1.5 pr-4">François Hollande</td><td class="py-1.5 pr-4 tabular-nums">51.64</td><td class="py-1.5 pr-4">Nicolas Sarkozy</td><td class="py-1.5 tabular-nums">48.36</td></tr>
+<tr class="border-t border-neutral-200 dark:border-neutral-800"><td class="py-1.5 pr-4 font-medium">2017</td><td class="py-1.5 pr-4">Emmanuel Macron</td><td class="py-1.5 pr-4 tabular-nums">66.10</td><td class="py-1.5 pr-4">Marine Le Pen</td><td class="py-1.5 tabular-nums">33.90</td></tr>
+<tr class="border-t border-neutral-200 dark:border-neutral-800"><td class="py-1.5 pr-4 font-medium">2022</td><td class="py-1.5 pr-4">Emmanuel Macron</td><td class="py-1.5 pr-4 tabular-nums">58.55</td><td class="py-1.5 pr-4">Marine Le Pen</td><td class="py-1.5 tabular-nums">41.45</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">Source: Ministère de l'Intérieur (2nd-round results by département).</p>
+      </div>
+    </section>
+    <section id="map-techniques" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Map techniques (carefully authored SVG)</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">When a projection or a glyph falls outside a chart grammar, the same loop drives a carefully drawn Scalable Vector Graphics (SVG) map instead.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Dot-density map" data-src="img/figures/dotdensity.svg" data-alt="Dot-density map of France: one dot per 25,000 residents inside real department polygons, tinted by region.">
+              <img src="img/figures/dotdensity.svg" alt="Dot-density map of France: one dot per 25,000 residents inside real department polygons, tinted by region." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Dot-density map</span> <span class="text-neutral-500 dark:text-neutral-400">: One dot per N people inside real regions.</span></figcaption>
+          </figure>
+                  <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Hexbin map" data-src="img/figures/hexmap.svg" data-alt="Hexbin map: a metro tiled with hexagons shaded by the count of morning bike-share trips starting inside each.">
+              <img src="img/figures/hexmap.svg" alt="Hexbin map: a metro tiled with hexagons shaded by the count of morning bike-share trips starting inside each." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Hexbin map</span> <span class="text-neutral-500 dark:text-neutral-400">: Hexagonal binning of point density over a map.</span></figcaption>
+          </figure>
+                  <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Spike map" data-src="img/figures/spike-map.svg" data-alt="Spike map with vertical spikes rising from geographic locations, spike height encoding a value, over a faint basemap.">
+              <img src="img/figures/spike-map.svg" alt="Spike map with vertical spikes rising from geographic locations, spike height encoding a value, over a faint basemap." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Spike map</span> <span class="text-neutral-500 dark:text-neutral-400">: Vertical spikes at locations, height by value.</span></figcaption>
+          </figure>
+                  <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Hexbin map" data-src="img/figures/hexbin-map.svg" data-alt="World hexbin map of earthquakes, hexagons coloured by earthquake count, the densest bins tracing the Pacific Ring of Fire.">
+              <img src="img/figures/hexbin-map.svg" alt="World hexbin map of earthquakes, hexagons coloured by earthquake count, the densest bins tracing the Pacific Ring of Fire." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Hexbin map</span> <span class="text-neutral-500 dark:text-neutral-400">: Earthquakes binned into hexagons by count, tracing the Ring of Fire.</span></figcaption>
+          </figure>
+                  <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Binned grid map" data-src="img/figures/binned-grid-map.svg" data-alt="Binned grid map, square cells aggregating points over geography and coloured by count, a raster-like density surface over a basemap.">
+              <img src="img/figures/binned-grid-map.svg" alt="Binned grid map, square cells aggregating points over geography and coloured by count, a raster-like density surface over a basemap." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Binned grid map</span> <span class="text-neutral-500 dark:text-neutral-400">: Square-bin aggregation over geography, cells coloured by count.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <dialog id="lightbox" aria-label="Image viewer" class="m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 backdrop:bg-black/80">
+      <div class="flex min-h-full items-center justify-center p-4">
+        <button type="button" data-lb-close autofocus aria-label="Close image viewer" class="fixed right-4 top-4 z-10 rounded-full bg-white/10 px-3 py-1 text-2xl leading-none text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">&times;</button>
+        <figure class="max-w-5xl">
+          <img data-lb-img alt="" class="mx-auto max-h-[85vh] w-auto max-w-full rounded-lg bg-white">
+          <figcaption data-lb-cap class="mt-3 text-center text-sm text-white/80"></figcaption>
+        </figure>
+      </div>
+    </dialog>
+  </main>
+  <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
+    <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
+      <p><a class="underline hover:text-brand-blue" href="index.html">← All skills</a> · Claude / OpenCode skills by <a class="underline hover:text-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+    </div>
+  </footer>
+  <script src="js/theme.js" defer></script>
+  <script src="js/lightbox.js" defer></script>
+</body>
+</html>

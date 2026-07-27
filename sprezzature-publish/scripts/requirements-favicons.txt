@@ -1,0 +1,8 @@
+# Requirements for favicons.py
+#
+# Install:
+#   pip install -r scripts/requirements-favicons.txt
+#
+# Used for: image decoding, multi-resolution ICO, PNG re-encoding.
+
+Pillow>=10.0.0
