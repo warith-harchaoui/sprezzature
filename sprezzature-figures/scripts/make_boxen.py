@@ -37,7 +37,7 @@ from __future__ import annotations
 
 import math
 import random
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 import _style
 from _render import render_cli  # noqa: E402
@@ -495,7 +495,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
 
     # Three service tiers. Free is the noisiest (largest sigma → longest
     # tail); Enterprise is tightest. n is large — the boxen's raison d'être.
-    tiers = [
+    tiers: List[Dict[str, Any]] = [
         {"label": "Free tier", "median": 210.0, "sigma": 0.62, "seed": 11, "n": 24000},
         {"label": "Pro tier", "median": 150.0, "sigma": 0.44, "seed": 23, "n": 24000},
         {"label": "Enterprise", "median": 118.0, "sigma": 0.30, "seed": 37, "n": 24000},

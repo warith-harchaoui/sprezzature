@@ -47,7 +47,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier).
@@ -299,7 +299,7 @@ def _in_field(cx: float, cy: float, hw: float, hh: float) -> bool:
 # ------------------------------------------------------------------
 # Archimedean-spiral placement
 # ------------------------------------------------------------------
-def _place_words() -> List[Dict[str, object]]:
+def _place_words() -> List[Dict[str, Any]]:
     """Pack every word with collision-free Archimedean-spiral placement.
 
     The algorithm is the classic offline word-cloud packer, kept
@@ -351,7 +351,7 @@ def _place_words() -> List[Dict[str, object]]:
     theta_max = 60.0 * math.pi   # plenty of turns for ~40 words
 
     placed_boxes: List[Tuple[float, float, float, float]] = []
-    placed: List[Dict[str, object]] = []
+    placed: List[Dict[str, Any]] = []
 
     for word, count, group in ordered:
         size = _size_for(count, lo, hi)

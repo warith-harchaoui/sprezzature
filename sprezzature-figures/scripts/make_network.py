@@ -564,7 +564,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
         f'<text x="{lx}" y="{ly - 30}" font-size="17" font-weight="600" '
         f'fill="{SUBINK}">Owning team</text>'
     )
-    cursor = lx
+    cursor: float = lx
     for team, color in TEAM_COLOR.items():
         parts.append(
             f'<circle cx="{cursor + 9:.1f}" cy="{ly - 6:.1f}" r="9" fill="{color}"/>'

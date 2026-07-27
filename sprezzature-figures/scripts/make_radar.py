@@ -45,7 +45,7 @@ from __future__ import annotations
 import argparse
 import math
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # Reuse the shared, output-identical SVG primitives.
 import sys
@@ -166,7 +166,7 @@ def _polar_to_xy(cx: float, cy: float, r: float, theta_deg: float) -> Tuple[floa
 # SVG assembly                                                                 #
 # --------------------------------------------------------------------------- #
 def build_svg(
-    data: Dict[str, object],
+    data: Dict[str, Any],
     mode: str = "self-contained",
     accessibility: str = "universal",
 ) -> str:
@@ -197,7 +197,7 @@ def build_svg(
         A complete, self-contained SVG document.
     """
     axes: List[str] = list(data["axes"])           # type: ignore[arg-type]
-    series: List[Dict[str, object]] = list(data["series"])  # type: ignore[arg-type]
+    series: List[Dict[str, Any]] = list(data["series"])
     n = len(axes)
 
     # Level the fixed categorical series hues to the requested accessibility

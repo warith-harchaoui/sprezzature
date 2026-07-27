@@ -515,7 +515,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
 
     # -- outcome legend ----------------------------------------------------- #
     legend_y = height - pad_bottom + 76
-    lx = margin
+    lx: float = margin
     parts.append(
         f'<text x="{lx}" y="{legend_y - 30:.1f}" '
         'font-family="Roboto Mono, monospace" font-size="15" '

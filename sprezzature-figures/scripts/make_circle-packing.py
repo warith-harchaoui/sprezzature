@@ -63,7 +63,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -196,7 +196,7 @@ PKG_LABEL_NUDGE: Dict[str, Tuple[float, float]] = {
 # then is scaled+translated into its own frame.
 
 
-def _hierarchy() -> Dict[str, object]:
+def _hierarchy() -> Dict[str, Any]:
     """Build the nested package → module tree from :data:`MODULES`.
 
     Returns
@@ -207,7 +207,7 @@ def _hierarchy() -> Dict[str, object]:
         structural fields are set here; geometry is filled by the pack
         solver.
     """
-    packages: Dict[str, Dict[str, object]] = {}
+    packages: Dict[str, Dict[str, Any]] = {}
     for path, loc in MODULES:
         pkg, _, fname = path.partition("/")
         node = packages.setdefault(
@@ -456,7 +456,7 @@ def _pack_siblings(radii: List[float]) -> List[Tuple[float, float, float]]:
         return []
 
     # Node objects mirror d3's circular doubly-linked list nodes.
-    nodes: List[Dict[str, object]] = [
+    nodes: List[Dict[str, Any]] = [
         {"r": radii[i], "x": 0.0, "y": 0.0, "idx": i, "next": None, "prev": None}
         for i in range(n)
     ]
@@ -523,19 +523,19 @@ def _pack_siblings(radii: List[float]) -> List[Tuple[float, float, float]]:
     return _finalise(nodes, radii)
 
 
-def _link(left: Dict[str, object], right: Dict[str, object]) -> None:
+def _link(left: Dict[str, Any], right: Dict[str, Any]) -> None:
     """Wire ``left.next = right`` and ``right.prev = left`` in the sprezzature chain."""
     left["next"] = right
     right["prev"] = left
 
 
-def _as_c(node: Dict[str, object]) -> Tuple[float, float, float]:
+def _as_c(node: Dict[str, Any]) -> Tuple[float, float, float]:
     """View a front-chain node as an ``(x, y, r)`` circle tuple."""
     return (float(node["x"]), float(node["y"]), float(node["r"]))
 
 
 def _finalise(
-    nodes: List[Dict[str, object]], radii: List[float]
+    nodes: List[Dict[str, Any]], radii: List[float]
 ) -> List[Tuple[float, float, float]]:
     """Centre the packed cluster on its enclosing circle, return in input order."""
     circles = [_as_c(nd) for nd in nodes]
@@ -548,7 +548,7 @@ def _finalise(
 
 
 # ----- recursive pack -----
-def _pack_node(node: Dict[str, object], padding: float) -> float:
+def _pack_node(node: Dict[str, Any], padding: float) -> float:
     """Pack ``node``'s children in local coords; return the node's radius.
 
     Bottom-up: a leaf's radius is ``sqrt(value)`` (so area ∝ value); an
@@ -590,7 +590,7 @@ def _pack_node(node: Dict[str, object], padding: float) -> float:
     return node["r"]  # type: ignore[return-value]
 
 
-def _layout() -> Dict[str, object]:
+def _layout() -> Dict[str, Any]:
     """Solve the full packing and place the root at the canvas centre.
 
     Returns
@@ -607,7 +607,7 @@ def _layout() -> Dict[str, object]:
     # Scale so the root's radius maps to PACK_R, then place absolutely.
     scale = PACK_R / float(root["r"])  # type: ignore[arg-type]
 
-    def place(node: Dict[str, object], ox: float, oy: float) -> None:
+    def place(node: Dict[str, Any], ox: float, oy: float) -> None:
         node["r"] = float(node["r"]) * scale  # type: ignore[arg-type]
         node["x"] = ox
         node["y"] = oy
@@ -775,7 +775,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
             "tests": pal.get("Brown", "#A2845E"),
         }
 
-        def _recolor(node: Dict[str, object]) -> None:
+        def _recolor(node: Dict[str, Any]) -> None:
             pkg = str(node.get("package", ""))
             if pkg in package_color:
                 node["color"] = package_color[pkg]
@@ -870,7 +870,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     parts.append('<g id="packing">')
     parts.append('<g id="packs">')
 
-    hero_geom: Optional[Dict[str, object]] = None
+    hero_geom: Optional[Dict[str, Any]] = None
 
     for pkg in root["children"]:  # type: ignore[index]
         pkg_color = str(pkg["color"])
@@ -959,7 +959,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     return "".join(parts)
 
 
-def _emit_package_labels(parts: List[str], root: Dict[str, object]) -> None:
+def _emit_package_labels(parts: List[str], root: Dict[str, Any]) -> None:
     """Emit a package name pill just outside each package circle.
 
     The pill sits on the circle's outward radial (pointing away from the
@@ -1008,7 +1008,7 @@ def _emit_package_labels(parts: List[str], root: Dict[str, object]) -> None:
     parts.append("</g>")
 
 
-def _emit_hero_callout(parts: List[str], hero: Dict[str, object]) -> None:
+def _emit_hero_callout(parts: List[str], hero: Dict[str, Any]) -> None:
     """Draw a call-out from the biggest module to a captioned pill.
 
     The pill sits in the free space at the upper-left of the packing so it
@@ -1055,7 +1055,7 @@ def _emit_hero_callout(parts: List[str], hero: Dict[str, object]) -> None:
     parts.append("</g>")
 
 
-def _emit_legend(parts: List[str], root: Dict[str, object]) -> None:
+def _emit_legend(parts: List[str], root: Dict[str, Any]) -> None:
     """Emit the package legend as a swatch column, bottom-left.
 
     Each row: a hue swatch, the package name, and its share of the total

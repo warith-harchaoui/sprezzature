@@ -610,7 +610,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
         f'fill="{secondary}">Point size = predictions in bin:</text>'
     )
     legend_counts = [200, 500, c_max]
-    lx = leg_x + 320
+    lx: float = leg_x + 320
     for cnt in legend_counts:
         rr = radius(int(cnt))
         parts.append(

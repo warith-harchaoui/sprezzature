@@ -61,7 +61,7 @@ import math
 import random
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -161,7 +161,7 @@ _WORDS: Dict[str, List[str]] = {
 # --------------------------------------------------------------------------- #
 # Layout — spread centroids + Gaussian jitter with a little border overlap     #
 # --------------------------------------------------------------------------- #
-def _build_points(seed: int) -> List[Dict[str, object]]:
+def _build_points(seed: int) -> List[Dict[str, Any]]:
     """Place every word at a 2D position and return per-point records.
 
     Each family is a Gaussian blob around a centroid arranged on a ring, so
@@ -215,7 +215,7 @@ def _build_points(seed: int) -> List[Dict[str, object]]:
                 return v
         return max(-cap * sd, min(cap * sd, v))
 
-    records: List[Dict[str, object]] = []
+    records: List[Dict[str, Any]] = []
     for ci, (name, _key) in enumerate(_CLUSTERS):
         cxm, cym = centroids[ci]
         for word in _WORDS[name]:
@@ -232,7 +232,7 @@ def _build_points(seed: int) -> List[Dict[str, object]]:
     return records
 
 
-def _nearest_neighbours(records: List[Dict[str, object]], k: int) -> List[List[int]]:
+def _nearest_neighbours(records: List[Dict[str, Any]], k: int) -> List[List[int]]:
     """Precompute each point's ``k`` nearest neighbours by 2D distance.
 
     This is the projector relation the interaction reveals: for word ``i``
@@ -272,7 +272,7 @@ def _nearest_neighbours(records: List[Dict[str, object]], k: int) -> List[List[i
 # --------------------------------------------------------------------------- #
 # Representative always-on labels                                             #
 # --------------------------------------------------------------------------- #
-def _representative_labels(records: List[Dict[str, object]], per_cluster: int) -> List[int]:
+def _representative_labels(records: List[Dict[str, Any]], per_cluster: int) -> List[int]:
     """Pick a few words per cluster to carry always-on labels in the still.
 
     The still must not be anonymous, so each cluster shows a handful of
@@ -363,7 +363,7 @@ def _fmt(v: float) -> str:
 
 
 def _project_positions(
-    records: List[Dict[str, object]],
+    records: List[Dict[str, Any]],
     *,
     plot_x: float,
     plot_y: float,
@@ -417,7 +417,7 @@ def _project_positions(
 # The embedded interactive controller (vanilla JS, no dependency)             #
 # --------------------------------------------------------------------------- #
 def _script_svg(
-    records: List[Dict[str, object]],
+    records: List[Dict[str, Any]],
     neighbours: List[List[int]],
     positions: List[Tuple[float, float]],
     colors: List[str],

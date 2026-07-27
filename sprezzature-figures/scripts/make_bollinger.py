@@ -46,7 +46,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import Dict, List, Sequence, Tuple
+from typing import Any, Dict, List, Sequence, Tuple
 
 import numpy as np
 
@@ -545,7 +545,7 @@ def build_svg(
     # the lower band. A single downward sweep pushes any label that sits closer
     # than ``gap`` px below its predecessor, so the whole stack stays legible
     # and none collide even when the close ends hard against the upper band.
-    rows = [
+    rows: List[Dict[str, Any]] = [
         {"name": "Upper band", "y": upper_pts[-1][1], "ax": upper_pts[-1][0],
          "colour": _BAND_EDGE_C, "val": float(upper[-1]), "bold": False, "cls": "bo-edge"},
         {"name": "Close", "y": price_pts[-1][1], "ax": price_pts[-1][0],

@@ -45,7 +45,7 @@ from _interactive import fullscreen_control  # noqa: E402
 
 import argparse
 from pathlib import Path
-from typing import Callable, Dict, List, Sequence, Tuple
+from typing import Callable, Dict, List, Sequence, Tuple, cast
 
 import numpy as np
 
@@ -488,7 +488,7 @@ def build_svg(
         # Positive bands, pale → deep, all stacked on the same baseline.
         for b in range(_N_BANDS):
             d = _band_area_path(
-                hours, pos_vals, x_of=x_of, row_top=row_top, row_h=row_h,
+                cast(Sequence[float], hours), pos_vals, x_of=x_of, row_top=row_top, row_h=row_h,
                 band_lo=b * band_size, band_hi=(b + 1) * band_size, v_max=scale,
             )
             if d:
@@ -499,7 +499,7 @@ def build_svg(
         # Negative bands (folded up as a mirror in red).
         for b in range(_N_BANDS):
             d = _band_area_path(
-                hours, neg_vals, x_of=x_of, row_top=row_top, row_h=row_h,
+                cast(Sequence[float], hours), neg_vals, x_of=x_of, row_top=row_top, row_h=row_h,
                 band_lo=b * band_size, band_hi=(b + 1) * band_size, v_max=scale,
             )
             if d:
@@ -576,7 +576,7 @@ def build_svg(
         f'fill="{_SECONDARY}">below mean</text>'
     )
     # Red bands, deep → pale, reading toward the baseline.
-    cx = lx + 108
+    cx: float = lx + 108
     swy = ly - sh + 2
     for b in reversed(range(_N_BANDS)):
         legend.append(

@@ -50,7 +50,7 @@ import math
 import random
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # House-style tokens + shared SVG primitives live alongside in scripts/.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -67,7 +67,7 @@ from _svg import svg_open, xml_escape  # noqa: E402
 # ------------------------------------------------------------------
 #: The four measured cell properties, in grid order. Each entry is
 #: (field key, short axis label, unit, rounding decimals for tooltips).
-VARIABLES: List[Dict[str, object]] = [
+VARIABLES: List[Dict[str, Any]] = [
     {"field": "density", "label": "Energy density", "unit": "Wh/kg", "round": 0},
     {"field": "charge", "label": "Fast-charge time", "unit": "min", "round": 0},
     {"field": "resistance", "label": "Internal resistance", "unit": "mΩ", "round": 1},
@@ -95,7 +95,7 @@ CHEMISTRIES: Dict[str, Dict[str, float]] = {
 N_PER_GROUP = 26
 
 
-def make_rows() -> List[Dict[str, object]]:
+def make_rows() -> List[Dict[str, Any]]:
     """Sample a reproducible fleet of cells around each chemistry centroid.
 
     Returns
@@ -105,10 +105,10 @@ def make_rows() -> List[Dict[str, object]]:
         ``chemistry`` label. A fixed seed makes the figure deterministic.
     """
     rng = random.Random(20260725)
-    rows: List[Dict[str, object]] = []
+    rows: List[Dict[str, Any]] = []
     for chem, c in CHEMISTRIES.items():
         for _ in range(N_PER_GROUP):
-            row: Dict[str, object] = {"chemistry": chem}
+            row: Dict[str, Any] = {"chemistry": chem}
             for var in VARIABLES:
                 key = str(var["field"])
                 centre = float(c[key])
@@ -332,7 +332,7 @@ def build_svg(mode: str = "self-contained") -> str:
     # Each variable gets ONE padded window + tick set, reused by every cell in
     # its column (as x) and its row (as y). This shared scaling is the SPLOM
     # convention that makes a point's position comparable along a whole strip.
-    scales: Dict[str, Dict[str, object]] = {}
+    scales: Dict[str, Dict[str, Any]] = {}
     for var in variables:
         key = str(var["field"])
         vals = [float(r[key]) for r in rows]

@@ -39,7 +39,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier).
@@ -81,7 +81,7 @@ _FOCUS: str = "#0A4DA0"     # focus-ring blue
 _GRID_STEP: int = 5
 
 
-def _dataset(accessibility: str = "universal") -> List[Dict[str, object]]:
+def _dataset(accessibility: str = "universal") -> List[Dict[str, Any]]:
     """Return the communicative fake data for the ternary plot.
 
     Field topsoil samples plotted by their mineral texture: the

@@ -51,7 +51,7 @@ import math
 import random
 import sys
 from pathlib import Path
-from typing import Dict, List, Sequence, Tuple
+from typing import Any, Dict, List, Sequence, Tuple
 
 # The house-style palette lives in _style (stdlib-only, safe to import
 # without the dataviz tier).
@@ -218,7 +218,7 @@ def _dataset() -> Tuple[Dict[str, int], Dict[str, str], List[Tuple[str, str]]]:
 Ring = List[Tuple[float, float]]
 
 
-def _load_departments() -> List[Dict[str, object]]:
+def _load_departments() -> List[Dict[str, Any]]:
     """Load the vendored metropolitan-France department polygons.
 
     Returns
@@ -239,7 +239,7 @@ def _load_departments() -> List[Dict[str, object]]:
     )
     fc = json.loads(geo_path.read_text(encoding="utf-8"))
 
-    out: List[Dict[str, object]] = []
+    out: List[Dict[str, Any]] = []
     for feat in fc["features"]:
         code = str(feat["properties"]["code"])
         geom = feat["geometry"]
@@ -284,7 +284,7 @@ def _project(lon: float, lat: float, lat0: float) -> Tuple[float, float]:
 
 
 def _fit(
-    depts: List[Dict[str, object]], lat0: float
+    depts: List[Dict[str, Any]], lat0: float
 ) -> Tuple[float, float, float, float, float]:
     """Compute the projection-to-viewport affine fit for all departments.
 

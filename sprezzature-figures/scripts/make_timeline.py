@@ -45,7 +45,7 @@ from __future__ import annotations
 import sys
 import textwrap
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # The house-style palette lives alongside this file, in _style.py.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -69,7 +69,7 @@ def _era_slug(name: str) -> str:
 # history, chosen so the timeline reads as a genuine chronology rather
 # than "Event A / Event B / Event C".
 # ------------------------------------------------------------------
-MILESTONES: List[Dict[str, object]] = [
+MILESTONES: List[Dict[str, Any]] = [
     {
         "year": 1965,
         "name": "Mariner 4",
@@ -157,7 +157,7 @@ MILESTONES: List[Dict[str, object]] = [
 # Colours are pulled from the house palette so the phases read as a cool
 # progression (deep blue past → warm future) without a red/green trap.
 # ------------------------------------------------------------------
-ERAS: List[Dict[str, object]] = [
+ERAS: List[Dict[str, Any]] = [
     {"name": "Flybys & Orbiters", "start": 1965, "end": 1975, "color": "Blue"},
     {"name": "First Landers", "start": 1975, "end": 2000, "color": "Teal"},
     {"name": "Rover Age", "start": 2000, "end": 2024, "color": "Green"},
@@ -469,11 +469,11 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     stem_base_below = 118
 
     # Pre-compute per-milestone geometry (x, card height, wrapped blurb).
-    geom: List[Dict[str, object]] = []
+    geom: List[Dict[str, Any]] = []
     for m in MILESTONES:
         year = int(m["year"])  # type: ignore[arg-type]
         lines = _wrap(str(m["blurb"]), 28)
-        card_h = card_pad * 2 + 26 + 24 + len(lines) * line_h
+        card_h: float = card_pad * 2 + 26 + 24 + len(lines) * line_h
         geom.append({"mx": sx(year), "lines": lines, "card_h": card_h})
 
     # Balanced greedy side + level assignment. Process milestones in
@@ -521,9 +521,9 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
         year = int(m["year"])  # type: ignore[arg-type]
         name = str(m["name"])
         blurb = str(m["blurb"])
-        era = str(m["era"])
-        slug = _era_slug(era)
-        color = era_hexes.get(era, "#007AFF")
+        era_name = str(m["era"])
+        slug = _era_slug(era_name)
+        color = era_hexes.get(era_name, "#007AFF")
         planned = year >= 2025
 
         mx = float(geom[i]["mx"])  # type: ignore[arg-type]

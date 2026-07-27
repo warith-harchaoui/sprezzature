@@ -228,7 +228,7 @@ def _seats_per_row(radii: List[float]) -> List[int]:
     return counts
 
 
-def _seat_lattice() -> List[Tuple[float, float, float]]:
+def _seat_lattice() -> List[Tuple[float, float, float, float]]:
     """Build every seat as ``(angle, radius, x, y)`` in sweep order.
 
     Seats are generated row by row; within a row they run from the left
@@ -399,9 +399,9 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
         ".seat:hover,.seat:focus{opacity:1}",
     ]
     for idx, (_name, lab, _seats, _hue) in enumerate(parties):
-        pid = f"{idx}-{lab.lower()}"
-        css.append(f"#floor:has(.p-{pid}:hover) .p-{pid}{{opacity:1}}")
-        css.append(f"#floor:has(.p-{pid}:focus) .p-{pid}{{opacity:1}}")
+        party_cls = f"{idx}-{lab.lower()}"
+        css.append(f"#floor:has(.p-{party_cls}:hover) .p-{party_cls}{{opacity:1}}")
+        css.append(f"#floor:has(.p-{party_cls}:focus) .p-{party_cls}{{opacity:1}}")
     css.append(".seat:focus{outline:none}")
     # OS-adaptive overrides (additive; the default render is byte-identical
     # because every rule below lives inside a media query). Under

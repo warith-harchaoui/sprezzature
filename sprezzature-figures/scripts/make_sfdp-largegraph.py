@@ -576,7 +576,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     ly = HEIGHT - 26
     lx = 52
     parts.append('<g class="legend">')
-    cursor = lx
+    cursor: float = lx
     for c, (label, _key) in enumerate(COMMUNITIES):
         count = SIZES[c]
         seg = f"{label} ({count})"

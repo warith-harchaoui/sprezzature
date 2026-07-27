@@ -47,7 +47,7 @@ import argparse
 import math
 import random
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 import _style
 from _style import forced_color_patterns, os_adaptive_style, os_dark_style
@@ -97,7 +97,7 @@ CLASSES: List[Dict[str, str]] = [
 ]
 
 
-def _class_profiles() -> List[Dict[str, object]]:
+def _class_profiles() -> List[Dict[str, Any]]:
     """Return each variety's mean feature vector and spread.
 
     The means are hand-set so the three clouds pull toward *different*

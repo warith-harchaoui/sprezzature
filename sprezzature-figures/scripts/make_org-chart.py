@@ -208,7 +208,7 @@ def _depth_of(node_id: str, parent: Dict[str, Optional[str]]) -> int:
     """Return the distance from ``node_id`` up to the chief executive."""
     depth = 0
     cur: Optional[str] = node_id
-    while parent.get(cur) is not None:
+    while cur is not None and parent.get(cur) is not None:
         cur = parent[cur]
         depth += 1
     return depth
@@ -223,8 +223,8 @@ def _division_of(node_id: str, parent: Dict[str, Optional[str]]) -> Optional[str
     cur: Optional[str] = node_id
     if cur == "ceo":
         return None
-    while parent.get(cur) not in (None, "ceo"):
-        cur = parent[cur]  # type: ignore[assignment]
+    while cur is not None and parent.get(cur) not in (None, "ceo"):
+        cur = parent[cur]
     return cur
 
 
@@ -339,7 +339,7 @@ def _compute_geometry(accessibility: str = "universal") -> Dict[str, dict]:
     # card's own width plus a fixed gap, so nothing ever overlaps.
     leaves = [n for n, _r, _h, _p in NODES if n not in kids]
     plot_left = MARGIN_LEFT
-    cursor = plot_left
+    cursor: float = plot_left
     leaf_cx: Dict[str, float] = {}
     for i, leaf in enumerate(leaves):
         w = width[leaf]
@@ -371,6 +371,7 @@ def _compute_geometry(accessibility: str = "universal") -> Dict[str, dict]:
     plot_top = MARGIN_TOP
     plot_bottom = HEIGHT - MARGIN_BOTTOM
     max_depth = max(depth.values())
+    row_y: Dict[int, float]
     if max_depth == 0:
         row_y = {0: plot_top}
     else:

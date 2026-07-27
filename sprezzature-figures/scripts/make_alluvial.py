@@ -375,6 +375,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     # Each caption is centred over the label side of its column: the first
     # axis labels leftward, so its caption end-aligns to the block's left
     # edge; the others label rightward, so start-align to the right edge.
+    cx: float
     for i, (axis_title, _) in enumerate(AXES):
         if i == 0:
             # Left-align at the outer margin — the caption is wider than the
@@ -499,7 +500,7 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
 
     # -- outcome legend ----------------------------------------------------- #
     legend_y = height - pad_bottom + 60
-    lx = margin
+    lx: float = margin
     parts.append(
         f'<text x="{lx}" y="{legend_y - 30:.1f}" '
         'font-family="Roboto Mono, monospace" font-size="15" '

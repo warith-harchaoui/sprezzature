@@ -23,7 +23,7 @@ from __future__ import annotations
 import argparse
 import math
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 from _interactive import fullscreen_control
 from _style import load_palette, os_adaptive_style, os_dark_style
@@ -34,7 +34,7 @@ from _svg import point_on_circle, xml_escape
 # is whole seconds so ``mm:ss`` and ``%`` stay mutually consistent; the
 # four values sum to 2400 s = 40:00 with clean integer percentages.
 # ------------------------------------------------------------------
-SPEAKERS: List[Dict[str, object]] = [
+SPEAKERS: List[Dict[str, Any]] = [
     {"name": "Alice Nguyen", "seconds": 984},   # 16:24 · 41 %
     {"name": "Marc Dubois", "seconds": 648},     # 10:48 · 27 %
     {"name": "Sofia Rossi", "seconds": 432},     # 07:12 · 18 %

@@ -356,15 +356,15 @@ def build_svg(mode: str = "self-contained", accessibility: str = "universal") ->
     # ---- polar grid: concentric rings + radial tick labels ----
     n_rings = int(round(axis_max / ring_step))
     parts.append('<g>')
-    for k in range(1, n_rings + 1):
-        r = k * ring_step * scale
+    for ring_i in range(1, n_rings + 1):
+        r = ring_i * ring_step * scale
         parts.append(
             f'<circle cx="{_CX}" cy="{_CY}" r="{r:.2f}" fill="none" '
             f'stroke="{_GRID}" stroke-width="1.3"/>'
         )
         # Ring value label, dropped just above each ring on the 12-o'clock
         # spoke, in a small white pill so it never fights a petal edge.
-        val = int(round(k * ring_step))
+        val = int(round(ring_i * ring_step))
         ry = _CY - r
         label = f"{val}"
         pill_w = 8.0 + 8.4 * len(label)
