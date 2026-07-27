@@ -1,4 +1,4 @@
-# Front-skill helper scripts — feature-by-feature requirements.
+# Sprezzature-skill helper scripts — feature-by-feature requirements.
 #
 # This file has no dependencies of its own. Each feature has its own
 # small requirements file; install only what you need.

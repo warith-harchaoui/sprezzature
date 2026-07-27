@@ -61,5 +61,5 @@ jobs:
           # plus SHA256SUMS so users can verify offline.
           gh release create "$GITHUB_REF_NAME" \
             dist/*.tar.gz dist/SHA256SUMS \
-            --title "Front ${GITHUB_REF_NAME}" \
+            --title "Sprezzature ${GITHUB_REF_NAME}" \
             --generate-notes
