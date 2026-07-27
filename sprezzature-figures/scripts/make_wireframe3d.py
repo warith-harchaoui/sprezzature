@@ -11,7 +11,7 @@ equivalent, so a hand-built SVG is the natural home for it here.
 This module builds the SVG string **by hand** (no matplotlib / seaborn /
 plotly, no Vega): it samples the surface on a regular grid, rotates the
 lattice in 3D, projects it with a simple perspective camera, sorts the mesh
-segments back-to-front (painter's algorithm) and paints them in the front-*
+segments back-to-front (painter's algorithm) and paints them in the sprezzature-*
 house style — Roboto type, the Apple-system palette, ink ``#1D1D1F`` on a
 white ground, rounded framing. Depth is reinforced twice over: nearer mesh
 lines are drawn darker and thicker on a house blue→teal ramp, and the whole

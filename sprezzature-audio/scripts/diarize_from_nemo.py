@@ -93,16 +93,16 @@ import click
 
 #: Cache directory shared with the rest of the skill.
 CACHE_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "diarize"
 
 #: Where install_diarize.py caches NeMo checkpoints.
 NEMO_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "nemo"
 
 #: Cache toggle, mirroring the captions helper.
-NO_CACHE: bool = bool(os.environ.get("SPREZZATURE_NO_CACHE"))
+NO_CACHE: bool = bool((os.environ.get("SPREZZATURE_NO_CACHE") or os.environ.get("FRONT_NO_CACHE")))
 
 #: Default Hugging Face id for the Sortformer diarization model.
 DEFAULT_MODEL: str = "nvidia/diar_sortformer_4spk-v1"

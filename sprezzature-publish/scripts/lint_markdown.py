@@ -622,7 +622,7 @@ def main() -> int:
 
     targets = gather_targets(args.target)
     if not targets:
-        print(f"front-lint-md: no Markdown files under {args.target}", file=sys.stderr)
+        print(f"sprezzature-lint-md: no Markdown files under {args.target}", file=sys.stderr)
         return 2
 
     all_findings: list[Finding] = []

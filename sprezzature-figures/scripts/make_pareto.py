@@ -28,7 +28,7 @@ hue**: the bars are a solid fill split blue↔grey (survives greyscale
 and deuteranopia), while the cumulative curve is a distinct dashed-free
 orange *line* carrying round markers and a direct "cumulative %" label,
 so bar and line never rely on colour alone to be told apart. It matches
-the front-* house style: Roboto, the Apple-ish palette, rounded corners,
+the sprezzature-* house style: Roboto, the Apple-ish palette, rounded corners,
 ink ``#1D1D1F``, secondary ``#6E6E73``, white background, white
 keylines.
 

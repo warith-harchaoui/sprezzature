@@ -1,5 +1,5 @@
 """
-Enforce the front-* repo's make / audit discipline.
+Enforce the sprezzature-* repo's make / audit discipline.
 
 Every shipped skill is supposed to declare where it sits on the
 make-side / audit-side duality in its ``SKILL.md`` — see the

@@ -1,6 +1,6 @@
 # Gallery
 
-Sites and tools shipped with the `front-*` skill suite. Each entry is
+Sites and tools shipped with the `sprezzature-*` skill suite. Each entry is
 a real, public surface, not a mock or a screenshot of the demo
 component library. Light and dark variants are captured headlessly so
 the dark-mode peer rule is visibly enforced.

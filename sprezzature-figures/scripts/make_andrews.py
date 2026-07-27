@@ -18,7 +18,7 @@ class smears across the band. This is the R ``andrews`` / pandas
 This module builds the SVG string **by hand** (no matplotlib / seaborn /
 plotly, no Vega): it standardises the features, evaluates each row's
 Fourier curve on a fine ``t`` grid (numpy only), and paints the curves as
-translucent coloured strokes in the front-* house style — Roboto type, the
+translucent coloured strokes in the sprezzature-* house style — Roboto type, the
 Apple-system palette, ink ``#1D1D1F`` on a white ground, rounded framing.
 Per-class median curves are over-drawn in full opacity so the reader sees
 each class's *signature* on top of its cloud, and a per-class ``<title>``

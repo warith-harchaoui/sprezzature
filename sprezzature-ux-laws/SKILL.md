@@ -22,7 +22,7 @@ compatibility: >-
   access required. Reference is plain Markdown with no exec deps.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
   source: https://lawsofux.com/
 ---
 
@@ -51,7 +51,7 @@ observation in real user sessions.
 
 ## Two modes — make and audit
 
-The `front-*` repo is a toolkit for **making** UI and **auditing**
+The `sprezzature-*` repo is a toolkit for **making** UI and **auditing**
 the result. This skill ships both halves of that loop for the Laws
 of UX specifically:
 

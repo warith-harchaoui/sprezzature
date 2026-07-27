@@ -87,17 +87,17 @@ from _lang import detect_text_language  # noqa: E402
 
 #: Cache directory shared with the rest of the skill's helpers.
 CACHE_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "captions"
 
 #: Where install_captions.py pre-downloads GGML weights. The model loader
 #: reads from this directory, falling back to ``pywhispercpp``'s own download.
 WHISPER_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "whisper"
 
 #: Cache toggle, mirroring the other helpers.
-NO_CACHE: bool = bool(os.environ.get("SPREZZATURE_NO_CACHE"))
+NO_CACHE: bool = bool((os.environ.get("SPREZZATURE_NO_CACHE") or os.environ.get("FRONT_NO_CACHE")))
 
 #: Default model alias if the user does not pass ``--model``.
 DEFAULT_MODEL: str = "large-v3-turbo"
@@ -483,7 +483,7 @@ def _resolve_model_arg(model: str) -> str:
     str
         Either an absolute filesystem path or the bare alias.
     """
-    if override := os.environ.get("SPREZZATURE_WHISPER_MODEL"):
+    if override := (os.environ.get("SPREZZATURE_WHISPER_MODEL") or os.environ.get("FRONT_WHISPER_MODEL")):
         return override
     cached: Path = WHISPER_DIR / f"ggml-{model}.bin"
     if cached.is_file():

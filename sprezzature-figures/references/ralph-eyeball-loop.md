@@ -9,7 +9,7 @@ diagram node that collides with its neighbor, a chart that is technically
 correct and completely unreadable.
 
 The Ralph Eyeball Loop is the answer. It is a **universal quality technique
-for the whole `front-*` repo**: not a data-viz tool, not a figure-only
+for the whole `sprezzature-*` repo**: not a data-viz tool, not a figure-only
 concern. Its domain is every surface where a visual is produced from code:
 
 | Surface | Source format | Renderer |
@@ -85,7 +85,7 @@ looking*:
 
 **Note on the one-model rule:** `qwen3-vl:8b` (Qwen3-VL 8B, Q4_K_M) is a
 **vision-language model (VLM)**: it accepts images *and* generates text. It is
-the single authorized model for the whole `front-*` repo: the same model backs
+the single authorized model for the whole `sprezzature-*` repo: the same model backs
 every skill's text generation (alt text, captions, narration) and this loop's
 visual critique. There is no exception to carve out and no second model to
 justify. `test_single_llm.py` enforces that `ralph_eyeball_loop.py`, like every

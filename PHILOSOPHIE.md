@@ -1,7 +1,7 @@
 # Approche — les idées derrière `sprezzature`
 
 Cette page rassemble les convictions de conception qui traversent toute la
-suite `front-*`. Chacune correspond à ce que le code fait vraiment ; rien
+suite `sprezzature-*`. Chacune correspond à ce que le code fait vraiment ; rien
 ici n'est un vœu pieux. Pour le *quoi* (les *skills*, l'installation), voyez
 [`LISEZMOI.md`](LISEZMOI.md). Ceci est le *pourquoi*.
 

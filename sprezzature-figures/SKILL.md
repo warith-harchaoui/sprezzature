@@ -1,7 +1,7 @@
 ---
 name: sprezzature-figures
 description: >-
-  Figures, diagrams, and the Ralph Eyeball Loop for the front-* stack. Prefer
+  Figures, diagrams, and the Ralph Eyeball Loop for the sprezzature-* stack. Prefer
   Vega-Lite over matplotlib; spec carries its own data, natively interactive.
   House-styled Vega (or SVG fallback) covers hexbin, KDE-2D, beeswarm,
   clustermap, quiver, 3D, choropleth, GPS/bubble/pie/bar + areas-of-control
@@ -27,7 +27,7 @@ compatibility: >-
   network needed once installed.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-figures — data-viz, explainability, and causality figures
@@ -38,7 +38,7 @@ Solo developers, data scientists, and small teams who:
 
 - Ship **figures** (charts in a docs site, feature-importance plots in
   a model report, DAGs in a causal analysis) and want them to look
-  consistent with the rest of the `front-*` stack (Roboto, curated
+  consistent with the rest of the `sprezzature-*` stack (Roboto, curated
   palette, dark-mode peer, `role="img"`, alt text stub).
 - Want **model explainability** without picking a library the hard way.
   SHAP for tree models, **Shapash** for a full HTML report a business
@@ -63,7 +63,7 @@ the effect is only as good as the DAG you supplied.
 
 ## Two modes — make and audit
 
-The `front-*` repo is a toolkit for **making** artifacts and
+The `sprezzature-*` repo is a toolkit for **making** artifacts and
 **auditing** them. This skill ships both halves of that loop for
 data-science figures:
 
@@ -73,7 +73,7 @@ data-science figures:
 | **Make** — explain a fitted model | `scripts/explain_model.py` | Dispatches to SHAP / Shapash / TimeSHAP / LIME by model type (tree / linear / sequence / black-box). Writes summary + dependence + waterfall plots; drops a Shapash HTML report when `--report shapash`. |
 | **Make** — estimate a causal effect + draw the DAG | `scripts/causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG with graphviz + writes the effect table to JSON. |
 | **Make** — an areas-of-control situation map | `scripts/make_situation_map.py` | One YAML config to a layered areas-of-control plate (SVG + PNG) for any region: auto-centred Lambert conformal conic projection, real national outline from the vendored Natural Earth basemap, real international frontiers with neighbour-country labels, named rivers in water-blue italics, classed pastel fills with white boundary casing, bathymetry contours, letter-spaced labels, flashpoint markers, dual-unit scale bars, floating legend, plus per-layer exports. `scripts/build_situation_examples.py` rebuilds the tracked situation-map example (Ukraine). |
-| **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `scripts/ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, Vega spec, TikZ figure, Mermaid diagram, SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `front-*` repo; data viz is one application, not the scope. |
+| **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `scripts/ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, Vega spec, TikZ figure, Mermaid diagram, SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
 | **Render** — diagram source → image (diagram surfaces only) | `scripts/render_diagram.py` | Rasterises a Vega-Lite spec (via `vl-convert`, faithful to what ships in the browser), a TikZ figure, or a Mermaid diagram to PNG/SVG/PDF. Palette-themed from `sprezzature-colors`; background white / transparent / dark selectable. Called internally by `ralph_eyeball_loop.py`; use directly when you want the PNG without the assessment file. |
 | **Audit** — gate before ship | `scripts/audit_figure.py` | Static parser flags data-viz anti-patterns in a Vega-Lite JSON spec, a matplotlib-emitted SVG, or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present unless `--strict`. |
 | **Install** — one-shot setup of the tiered stack | `scripts/install_figures.py` | pip-installs the dataviz / explainability / causality tiers as requested. Idempotent; safe to re-run. Detects the active env manager (pip / uv / poetry / conda) and defers to it. |
@@ -124,7 +124,7 @@ any of the tiers.
 
 ## House style — figures that match `sprezzature-ui`
 
-Every figure `make_figure.py` emits inherits the front-* design tokens:
+Every figure `make_figure.py` emits inherits the sprezzature-* design tokens:
 
 1. **Colors** from `sprezzature-colors/references/palette.csv`: no rainbows,
    no library defaults. Sequential → `viridis`; diverging → `RdBu_r`;
@@ -278,7 +278,7 @@ python sprezzature-accessibility/scripts/lint_a11y.py public/report.html
 |---|---|---|
 | `scripts/make_figure.py` | `pip install -r scripts/requirements-dataviz.txt` | CSV / JSON / Parquet + spec → Vega-Lite JSON (default), matplotlib PNG/SVG, or seaborn PNG. House style enforced; polarity tag auto-attached; alt-text stub written. |
 | `scripts/explain_model.py` | `pip install -r scripts/requirements-explain.txt` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
-| `scripts/causal_estimate.py` | `pip install -r scripts/requirements-causal.txt` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in front-* house style; writes `effect.json`. |
+| `scripts/causal_estimate.py` | `pip install -r scripts/requirements-causal.txt` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
 | `scripts/audit_figure.py` | stdlib + PyYAML | Static auditor for Vega-Lite JSON / matplotlib SVG / HTML `<figure>` blocks. Deterministic; no model, no network. |
 | `scripts/install_figures.py` | subprocess to project env manager | Idempotent installer for the three tiers (dataviz / explain / causal). Detects pip / uv / poetry / conda. |
 | `scripts/_argparse.py`, `scripts/_click.py`, `scripts/_lang.py`, `scripts/_vocab.py` | (internal helpers) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |

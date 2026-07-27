@@ -42,7 +42,7 @@ want, then ask in plain English. The skill both **makes** the artifact and **aud
 
 ```bash
 # 1. Grab the latest release (set VERSION to the latest tag on the releases page)
-VERSION=0.33.0
+VERSION=1.0.0
 curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz | tar xz
 
 # 2. Copy the skills you want into your runtime
@@ -74,7 +74,7 @@ For the *why* behind the stack (the design convictions that run through
 every skill) see [`PHILOSOPHY.md`](PHILOSOPHY.md) (français :
 [`PHILOSOPHIE.md`](PHILOSOPHIE.md)).
 
-A deployable, multi-page static site, built with the `front-*` skills themselves
+A deployable, multi-page static site, built with the `sprezzature-*` skills themselves
 (sprezzature-ui house style, sprezzature-publish meta / favicons / sitemap / llms.txt,
 sprezzature-colors palette, sprezzature-accessibility clean, a working 🌞/🌛 toggle), lives
 in [`web/`](web/) and publishes to <https://harchaoui.org/warith/sprezzature/>. It has
@@ -118,7 +118,7 @@ these traits set it apart:
 
 ## Two modes — make and audit
 
-Every front-* skill belongs to one or both halves of a single loop:
+Every sprezzature-* skill belongs to one or both halves of a single loop:
 **make** the artifact, **audit** the artifact. The matrix tells you
 when to load each skill and what is still on the roadmap.
 
@@ -245,7 +245,7 @@ below show one path; the second runtime is a one-line substitution.
 ### 1. Download a tagged release (checksum-verified)
 
 ```bash
-VERSION=0.33.0
+VERSION=1.0.0
 curl -L -o sprezzature-skills.tar.gz \
     https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz
 curl -L -o SHA256SUMS \
@@ -318,7 +318,7 @@ python3 scripts/cleanup_local_skills.py --apply
 ```
 
 It checks both `~/.claude/skills/` and `~/.opencode/skills/` against
-the canonical `SKILLS.txt` manifest and flags any `front-*` folder
+the canonical `SKILLS.txt` manifest and flags any `sprezzature-*` folder
 that no longer ships from this repo. Read [`SKILLS.txt`](SKILLS.txt)
 for the canonical list.
 
@@ -366,13 +366,13 @@ behaviour as Claude Code with two real differences:
   without watching a meter.
 
 The trade-off is model quality. A 7-13 B local model is below
-Claude / GPT-4 (the generative pre-trained transformer) on hard reasoning; the front-* skills compensate
+Claude / GPT-4 (the generative pre-trained transformer) on hard reasoning; the sprezzature-* skills compensate
 because they front-load the *opinion* (stack rules, audit checks,
 trigger phrases); the model mostly has to follow a script, not
 invent it. For UI work, alt text, captions, contrast audits,
 Laws-of-UX checks, the local path is genuinely usable today.
 
-The fit with this repo is direct: **three front-* skills already
+The fit with this repo is direct: **three sprezzature-* skills already
 talk to a local Ollama daemon** for their AI surfaces: `sprezzature-vision`
 (alt text, `qwen3-vl:8b`), `sprezzature-publish/meta_from_ollama.py` (page
 meta), `sprezzature-publish/plain_language.py` (copy rewrite). When you
@@ -387,7 +387,7 @@ ollama pull qwen3-vl:8b  # the one model — agent loop AND every skill script
 ```
 
 One model handles the whole stack: it drives the OpenCode agent
-loop AND backs every front-* Ollama-backed script
+loop AND backs every sprezzature-* Ollama-backed script
 (`alt_from_ollama`, `meta_from_ollama`, `plain_language`,
 `narrate_post`). Same daemon, same tag, same answer for "which
 model is in play": `qwen3-vl:8b`.
@@ -429,7 +429,7 @@ Then start OpenCode against the local provider:
 opencode run "build me a primary CTA button" \
     -m local-ollama/qwen3-vl:8b
 
-# → ~/.opencode/skills/front-* load automatically per their frontmatter.
+# → ~/.opencode/skills/sprezzature-* load automatically per their frontmatter.
 # → The sprezzature-vision / sprezzature-publish Ollama-backed scripts hit the
 #   same daemon for their per-script work.
 # → Cost: 0 tokens; nothing leaves the machine.
@@ -511,7 +511,7 @@ the per-script CLIs invoked directly (e.g.
 ## Pre-commit hooks
 
 The repo ships a `.pre-commit-hooks.yaml` manifest, so any project
-can wire the front-* audit gates into [pre-commit](https://pre-commit.com/)
+can wire the sprezzature-* audit gates into [pre-commit](https://pre-commit.com/)
 with a single `repo:` block: no manual script paths, no install
 beyond `pre-commit install`.
 
@@ -519,7 +519,7 @@ beyond `pre-commit install`.
 # .pre-commit-config.yaml — add the repo as one entry
 repos:
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v0.33.0          # pin a tag — bump with renovate / dependabot
+    rev: v1.0.0          # pin a tag — bump with renovate / dependabot
     hooks:
       - id: sprezzature-accessibility-lint
       - id: sprezzature-ux-laws-audit

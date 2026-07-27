@@ -154,7 +154,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   </main>
 
   <script type="module">
-    const KEY='front-md-color-scheme', MODES=['auto','light','dark'];
+    const KEY='sprezzature-md-color-scheme', MODES=['auto','light','dark'];
     const root=document.documentElement, btn=document.getElementById('theme-toggle'),
           lbl=document.getElementById('theme-toggle-label');
     const mql=window.matchMedia('(prefers-color-scheme: dark)');
@@ -361,7 +361,7 @@ def main() -> int:
 
     inputs = gather_inputs(args.target)
     if not inputs:
-        print(f"front-md-to-html: no Markdown files under {args.target}", file=sys.stderr)
+        print(f"sprezzature-md-to-html: no Markdown files under {args.target}", file=sys.stderr)
         return 2
 
     # Mirror the input tree into the output so two sources with the same

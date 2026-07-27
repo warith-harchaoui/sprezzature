@@ -21,7 +21,7 @@ This generator builds the SVG string by hand — no matplotlib / seaborn /
 plotly, no Vega — because a variwide axis is a **non-uniform** x-axis
 (tick positions are the cumulative widths, not evenly spaced categories),
 which a categorical grammar cannot express directly. It matches the
-front-* house style: Roboto, the Apple-ish palette, rounded top corners,
+sprezzature-* house style: Roboto, the Apple-ish palette, rounded top corners,
 ink ``#1D1D1F``, secondary ``#6E6E73``, white background.
 
 The figure is **static**: it is a snapshot ranking, so every column is

@@ -3,7 +3,7 @@ test_version_consistency — the release version is single-valued across the rep
 
 The version is hand-maintained in three kinds of place:
 
-* the ``metadata.version`` field of every ``front-*/SKILL.md`` (9 skills),
+* the ``metadata.version`` field of every ``sprezzature-*/SKILL.md`` (9 skills),
 * the ``SKILL_VERSION`` literal in each skill's ``scripts/_argparse.py`` and
   ``scripts/_click.py`` copies,
 * ``sprezzature-cli/pyproject.toml``'s ``project.version``.
@@ -44,13 +44,13 @@ def _collect() -> dict[str, str]:
     """Map every version source (relative path) to the version string it declares."""
     sources: dict[str, str] = {}
 
-    for skill_md in sorted(REPO_ROOT.glob("front-*/SKILL.md")):
+    for skill_md in sorted(REPO_ROOT.glob("sprezzature-*/SKILL.md")):
         m = _METADATA_VERSION_RE.search(skill_md.read_text(encoding="utf-8"))
         assert m, f"{skill_md.relative_to(REPO_ROOT)} has no metadata.version"
         sources[str(skill_md.relative_to(REPO_ROOT))] = m.group(1)
 
-    for helper in sorted(REPO_ROOT.glob("front-*/scripts/_argparse.py")) + \
-            sorted(REPO_ROOT.glob("front-*/scripts/_click.py")):
+    for helper in sorted(REPO_ROOT.glob("sprezzature-*/scripts/_argparse.py")) + \
+            sorted(REPO_ROOT.glob("sprezzature-*/scripts/_click.py")):
         m = _SKILL_VERSION_RE.search(helper.read_text(encoding="utf-8"))
         if m:  # not every helper defines it; check the ones that do
             sources[str(helper.relative_to(REPO_ROOT))] = m.group(1)

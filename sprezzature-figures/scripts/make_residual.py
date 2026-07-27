@@ -19,7 +19,7 @@ which is the whole point of the plot.
 This generator builds the SVG by hand (no matplotlib / seaborn / plotly, no
 Vega) so the residual scatter, the dashed zero rule, the locally-weighted
 (LOESS) smoother, and the sign-coloured points are all under our control. It
-matches the front-* house style: Roboto, the Apple-ish palette, rounded
+matches the sprezzature-* house style: Roboto, the Apple-ish palette, rounded
 corners, ink ``#1D1D1F``, secondary ``#6E6E73``, white background, white
 keylines (never black rings). Points are coloured by the *sign* of the
 residual — Blue above the zero rule (model under-predicts), Orange below it

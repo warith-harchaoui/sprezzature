@@ -16,7 +16,7 @@ sampled on a grid and each streamline is integrated with a classical
 fourth-order Runge-Kutta scheme, both upstream and downstream from a
 seed point, then drawn as one smooth polyline. No matplotlib / seaborn
 / plotly, and no Vega (streamline integration is not a native mark).
-The figure follows the front-* house style from :mod:`_style`: a
+The figure follows the sprezzature-* house style from :mod:`_style`: a
 sequential house-blue speed ramp, Roboto typography, ink ``#1D1D1F`` on
 white, rounded joins, a takeaway title and a one-line subtitle. Arrow
 glyphs sit at a fixed arc-length cadence along each line so direction

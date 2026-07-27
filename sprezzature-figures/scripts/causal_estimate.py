@@ -35,7 +35,7 @@ Writes to ``<out>/``:
 
 * ``effect.json`` — point estimate, CI, refutation deltas.
 * ``dag.svg`` / ``dag.png`` — DAG rendered via graphviz in the
-  front-* house style.
+  sprezzature-* house style.
 * ``forest_plot.svg`` — compact forest plot of the effect + refuters.
 
 Usage
@@ -294,7 +294,7 @@ def _refuter_verdict(name: str, original: float, new: float) -> str:
 # DAG rendering
 # ------------------------------------------------------------------
 def render_dag(dag_string: str, out_dir: Path, dark: bool) -> None:
-    """Render the DAG via graphviz in the front-* house style."""
+    """Render the DAG via graphviz in the sprezzature-* house style."""
     try:
         import graphviz  # type: ignore
     except ImportError:

@@ -90,11 +90,11 @@ MAX_LENGTH_FACTOR: float = 1.1
 
 #: Cache directory for the rewriter. Override with ``SPREZZATURE_CACHE_DIR``.
 CACHE_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "plain"
 
 #: Cache toggle, mirroring the other Ollama helpers.
-NO_CACHE: bool = bool(os.environ.get("SPREZZATURE_NO_CACHE"))
+NO_CACHE: bool = bool((os.environ.get("SPREZZATURE_NO_CACHE") or os.environ.get("FRONT_NO_CACHE")))
 
 
 # ── Cache helpers ────────────────────────────────────────────────────────────

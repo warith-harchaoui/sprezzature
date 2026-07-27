@@ -14,7 +14,7 @@ the petal, the stronger those winds tend to be.
 This module builds the SVG string by hand — no matplotlib / seaborn /
 plotly, and no Vega, because true polar wedges (annular sectors keyed
 to compass bearings) are not a native Vega-Lite mark and are far
-clearer authored directly. It follows the front-* house style: a
+clearer authored directly. It follows the sprezzature-* house style: a
 perceptually ordered single-hue speed ramp (colour-blind- and
 greyscale-safe), Roboto typography, ink ``#1D1D1F`` on a white
 background, rounded stroke joins, a takeaway title, and a one-line

@@ -22,7 +22,7 @@ compatibility: >-
   No network or model required at any point.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-colors — color audit, curation, and perceptual transforms
@@ -60,7 +60,7 @@ your brand. Loop a designer in for the final call.
 | "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py` | `python scripts/simulate_cvd.py <image> [--grid]` — renders protanopia / deuteranopia / tritanopia |
 | "what's the hex for Red" / "give me an emotion color" / "Apple palette" | `_colors.py` accessors | `from _colors import name_to_hex, emotion_to_hex, concept_search, psychology_for, apple_palette` |
 | "lighten this color" / "darken" / "tint" / "shade" | `_colors.lighten` / `_colors.darken` | OKLCH L-axis shift; hue and chroma preserved (unlike a naïve RGB offset). |
-| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `python scripts/palette_to_tailwind.py [--emit theme\|config] [--with-dark] [--include-neutrals] [--out tailwind.config.js]` — emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every front-* consumer. |
+| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `python scripts/palette_to_tailwind.py [--emit theme\|config] [--with-dark] [--include-neutrals] [--out tailwind.config.js]` — emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
 
 ## The unified palette
 
@@ -120,7 +120,7 @@ emitter, two audit-side gates, all backed by the same CSV.
 | **Make** — emit Tailwind config from the curated palette | `scripts/palette_to_tailwind.py` | Render `references/palette.csv` as a `theme.extend.colors` block (default) or a complete `tailwind.config.js`. |
 | **Audit** — gate before ship | `scripts/audit_contrast.py`, `scripts/simulate_cvd.py` | WCAG ratio audit with **suggest-only** OKLCH-neighbour fix; CVD simulation (protanopia / deuteranopia / tritanopia). |
 
-**Note on `--fix` semantics.** Other front-* auditors (`audit_laws_of_ux --fix`, `lint_a11y --fix`, `lint_markdown --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA, chunking digits. `audit_contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
+**Note on `--fix` semantics.** Other sprezzature-* auditors (`audit_laws_of_ux --fix`, `lint_a11y --fix`, `lint_markdown --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA, chunking digits. `audit_contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
 
 The two halves agree on the source of truth; see the next section.
 
@@ -154,7 +154,7 @@ emitter is just unused).
 ## Single source of truth — make ↔ audit loop
 
 `references/palette.csv` is the **one canonical place** brand hexes
-live in the front-* ecosystem when the curated default is in play.
+live in the sprezzature-* ecosystem when the curated default is in play.
 Both halves of the loop read it:
 
 - **Audit:** `audit_contrast.py` walks every (label × surface) pair

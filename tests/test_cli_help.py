@@ -88,6 +88,6 @@ def test_help_flag_announces_prog(script: Path) -> None:
     assert proc.returncode == 0, (
         f"{script} exited {proc.returncode}\nstdout:\n{proc.stdout}\nstderr:\n{proc.stderr}"
     )
-    # `front-<skill>-<action>` — what `make_parser(prog=…)` sets.
-    assert "front-" in proc.stdout
+    # `sprezzature-<skill>-<action>` — what `make_parser(prog=…)` sets.
+    assert "sprezzature-" in proc.stdout
     assert "[-h]" in proc.stdout or "[--help]" in proc.stdout

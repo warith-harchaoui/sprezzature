@@ -18,7 +18,7 @@ This module builds the SVG string **by hand** (no matplotlib / seaborn /
 plotly, no Vega): it lays out the angular spokes, draws concentric grid rings
 with a rounded radial scale, and paints one outlined polygon per subject. The
 figure is deliberately **static** — the shape *is* the insight, and a still
-renders it in full. Everything is in the front-* house style: Roboto type, the
+renders it in full. Everything is in the sprezzature-* house style: Roboto type, the
 Apple-system palette, ink ``#1D1D1F`` on a white ground, rounded framing, and
 native ``<title>`` hover tooltips (no JavaScript).
 

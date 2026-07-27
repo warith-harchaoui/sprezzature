@@ -12,7 +12,7 @@ together?" and "how is each one spread?" at the same time.
 This generator builds the SVG by hand (no matplotlib / seaborn / plotly, no
 Vega) so the central scatter, the two marginal histograms, the fitted trend
 line, and the shared numeric windows that glue the marginals to the scatter
-edges are all under our control. It matches the front-* house style: Roboto,
+edges are all under our control. It matches the sprezzature-* house style: Roboto,
 the Apple-ish palette, rounded corners, ink ``#1D1D1F``, secondary
 ``#6E6E73``, white background, white keylines (never black rings).
 

@@ -12,7 +12,7 @@ observations) where a histogram's bars would hide the sample size.
 
 This generator builds the SVG string by hand (no matplotlib / seaborn
 / plotly, no Vega) so the binning and stacking geometry is fully under
-our control, and matches the front-* house style: Roboto, the
+our control, and matches the sprezzature-* house style: Roboto, the
 Apple-ish palette, rounded corners, ink ``#1D1D1F``, secondary
 ``#6E6E73``, white background. The figure is a **static** poster-size
 panel: a Wilkinson dot plot already shows the whole distribution in a

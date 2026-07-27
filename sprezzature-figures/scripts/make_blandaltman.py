@@ -18,7 +18,7 @@ plotly, no Vega — so the shaded limits-of-agreement band, the bias and
 limit rules with their right-hand value chips, the difference scatter,
 and the proportional-bias trend line are all under our control and can
 carry the house interactivity (per-point tooltips, a fullscreen button)
-that a rasterised Vega spec cannot. It matches the front-* house style:
+that a rasterised Vega spec cannot. It matches the sprezzature-* house style:
 Roboto, the Apple-ish palette, rounded corners, ink ``#1D1D1F``,
 secondary ``#6E6E73``, white background, bright white keylines (never
 dark rings).

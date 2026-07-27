@@ -102,7 +102,7 @@ def test_background_rejects_garbage() -> None:
 # TikZ palette theming
 # ------------------------------------------------------------------
 def test_tikz_preamble_defines_palette_colors() -> None:
-    """The preamble defines front-prefixed colors from the palette."""
+    """The preamble defines sprezzature-prefixed colors from the palette."""
     preamble = rd.tikz_color_preamble(dark=False)
     assert "\\definecolor{sprezzatureBlue}{HTML}{007AFF}" in preamble
     assert "\\definecolor{sprezzatureFg}" in preamble

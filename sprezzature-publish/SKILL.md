@@ -6,12 +6,12 @@ description: >-
   favicon / app-icon / PWA-icon set from one logo, robots.txt + sitemap.xml +
   llms.txt + llms-full.txt + Atom / RSS + humans.txt, plain-language rewrites, and MP3
   narration via local OSS TTS. Trigger phrases: "markdown to website", "meta
-  tags", "OG card", "SEO", "AI Overview", "GEO", "favicons", "app icons", "PWA
-  icons", "robots.txt", "sitemap", "llms.txt", "llms-full.txt", "Atom feed", "RSS", "plain
-  language", "rewrite at grade N", "simplify this copy", "narrate this post",
-  "podcast my blog", "text to speech", "readability / grade level",
-  "schema.org JSON-LD", "humans.txt", "lint markdown", "broken links", "site
-  index", "OpenVoice / Chatterbox TTS". Applies Google's SEO + GEO (AI
+  tags", "OG card", "SEO", "AI Overview", "GEO", "favicons", "app icons",
+  "robots.txt", "sitemap", "llms.txt", "llms-full.txt", "Atom feed", "RSS",
+  "plain language", "rewrite at grade N", "simplify this copy",
+  "narrate this post", "podcast my blog", "text to speech",
+  "schema.org JSON-LD", "humans.txt", "lint markdown",
+  "OpenVoice / Chatterbox TTS". Applies Google's SEO + GEO (AI
   Optimization) foundations to the emitted artifacts. For solo developers and
   small teams shipping a site without an SSG. Output follows the sprezzature-ui
   stack rules; install sprezzature-ui alongside for the full design tokens.
@@ -25,7 +25,7 @@ compatibility: >-
   torch + torchaudio; installed only when explicitly opted into.
 metadata:
   author: Warith Harchaoui
-  version: 0.33.0
+  version: 1.0.0
 ---
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language

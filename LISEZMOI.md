@@ -55,7 +55,7 @@ l'artefact et l'**audite**.
 
 ```bash
 # 1. Récupérez la dernière release (mettez VERSION au dernier tag de la page des releases)
-VERSION=0.33.0
+VERSION=1.0.0
 curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz | tar xz
 
 # 2. Copiez les skills voulus dans votre environnement
@@ -88,7 +88,7 @@ Pour le *pourquoi* de la suite, les convictions de conception qui
 traversent chaque *skill*, voyez [`PHILOSOPHIE.md`](PHILOSOPHIE.md)
 (English : [`PHILOSOPHY.md`](PHILOSOPHY.md)).
 
-Un site statique déployable, multi-pages, construit avec les *skills* `front-*`
+Un site statique déployable, multi-pages, construit avec les *skills* `sprezzature-*`
 eux-mêmes (house style sprezzature-ui, meta / favicons / sitemap / llms.txt de
 sprezzature-publish, palette sprezzature-colors, sprezzature-accessibility clean, un vrai toggle
 🌞/🌛), se trouve dans [`web/`](web/) et se publie sur
@@ -135,7 +135,7 @@ conçu autrement et ces traits le distinguent :
 
 ## Deux modes — make et audit
 
-Chaque *skill* front-* appartient à l'une (ou aux deux) moitiés d'une
+Chaque *skill* sprezzature-* appartient à l'une (ou aux deux) moitiés d'une
 seule boucle : **make** (produire l'artefact) et **audit** (le
 vérifier). Le tableau indique quand charger chaque *skill* et ce qui
 reste en feuille de route.
@@ -327,7 +327,7 @@ substitution d'une ligne.
 ### 1. Téléchargez une release taguée (somme de contrôle vérifiée)
 
 ```bash
-VERSION=0.33.0
+VERSION=1.0.0
 curl -L -o sprezzature-skills.tar.gz \
     https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz
 curl -L -o SHA256SUMS \
@@ -404,7 +404,7 @@ python3 scripts/cleanup_local_skills.py --apply
 
 L'outil vérifie `~/.claude/skills/` et `~/.opencode/skills/` contre
 le manifeste canonique [`SKILLS.txt`](SKILLS.txt) et signale tout
-dossier `front-*` qui n'est plus livré par ce dépôt.
+dossier `sprezzature-*` qui n'est plus livré par ce dépôt.
 
 ### Mise à jour
 
@@ -455,14 +455,14 @@ concrètes :
 
 Le compromis est la qualité du modèle. Un modèle local de 7-13 B
 est en-dessous de Claude / GPT-4 sur le raisonnement difficile ;
-les *skills* front-* compensent parce qu'ils chargent l'*opinion* en
+les *skills* sprezzature-* compensent parce qu'ils chargent l'*opinion* en
 amont (règles de pile, audits, phrases déclencheuses) : le modèle
 n'a plus qu'à suivre un script, pas à l'inventer. Pour le travail
 UI, le texte alternatif, les sous-titres, les audits de contraste, les
 vérifications Laws of UX, la voie locale est aujourd'hui réellement
 utilisable.
 
-L'ajustement avec ce dépôt est direct : **trois *skills* front-*
+L'ajustement avec ce dépôt est direct : **trois *skills* sprezzature-*
 parlent déjà à un daemon Ollama local** pour leurs surfaces IA :
 `sprezzature-vision` (texte alternatif, `qwen3-vl:8b`),
 `sprezzature-publish/meta_from_ollama.py` (meta de page),
@@ -478,7 +478,7 @@ ollama pull qwen3-vl:8b  # le seul modèle — boucle d'agent ET tous les script
 ```
 
 Un seul modèle pour toute la pile : il pilote la boucle d'agent
-OpenCode ET sert tous les scripts front-* basés Ollama
+OpenCode ET sert tous les scripts sprezzature-* basés Ollama
 (`alt_from_ollama`, `meta_from_ollama`, `plain_language`,
 `narrate_post`). Même daemon, même tag, même réponse à « quel
 modèle tourne ? » : `qwen3-vl:8b`.
@@ -521,7 +521,7 @@ Puis lancez OpenCode sur le provider local :
 opencode run "construis-moi un bouton CTA principal" \
     -m local-ollama/qwen3-vl:8b
 
-# → ~/.opencode/skills/front-* se chargent automatiquement.
+# → ~/.opencode/skills/sprezzature-* se chargent automatiquement.
 # → Les scripts sprezzature-vision / sprezzature-publish basés Ollama
 #   tapent dans le même daemon pour leurs traitements.
 # → Coût : 0 token ; rien ne quitte la machine.
@@ -608,7 +608,7 @@ CLI par-script lancés directement (par exemple
 ## Hooks pre-commit
 
 Le dépôt fournit un manifeste `.pre-commit-hooks.yaml` à la racine,
-donc n'importe quel projet peut câbler les portes d'audit front-*
+donc n'importe quel projet peut câbler les portes d'audit sprezzature-*
 dans [pre-commit](https://pre-commit.com/) avec un seul bloc `repo:`,
 sans chemins de scripts en dur, sans installation au-delà de
 `pre-commit install`.
@@ -617,7 +617,7 @@ sans chemins de scripts en dur, sans installation au-delà de
 # .pre-commit-config.yaml — ajouter le dépôt en une entrée
 repos:
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v0.33.0          # fixer une tag — bumper via renovate / dependabot
+    rev: v1.0.0          # fixer une tag — bumper via renovate / dependabot
     hooks:
       - id: sprezzature-accessibility-lint
       - id: sprezzature-ux-laws-audit

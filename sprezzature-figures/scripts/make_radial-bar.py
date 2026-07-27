@@ -13,7 +13,7 @@ sides of the dial the way a reader already pictures a day.
 This module builds the SVG string by hand — no matplotlib / seaborn /
 plotly, and no Vega, because true annular bars (rounded wedges keyed to
 a clock) are not a native Vega-Lite mark and read far cleaner authored
-directly. It follows the front-* house style pulled from :mod:`_style`:
+directly. It follows the sprezzature-* house style pulled from :mod:`_style`:
 the Apple-ish saturated palette (a calm blue for the quiet hours, a warm
 orange flagging the two rush peaks), Roboto typography, ink ``#1D1D1F``
 on a white background, rounded bar caps, a takeaway title, and a

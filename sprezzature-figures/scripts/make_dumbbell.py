@@ -14,7 +14,7 @@ here the distance is the message.
 This generator builds the SVG string by hand (no matplotlib / seaborn /
 plotly, no Vega) so the sorting-by-gap, the endpoint value labels, and
 the side-aware label harmony are fully under our control, and matches the
-front-* house style: Roboto, the Apple-ish palette, rounded corners, ink
+sprezzature-* house style: Roboto, the Apple-ish palette, rounded corners, ink
 ``#1D1D1F``, secondary ``#6E6E73``, white background.
 
 The fake scenario is a **gender pay gap by role** at a mid-size company:

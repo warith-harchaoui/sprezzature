@@ -32,7 +32,7 @@ This generator builds the SVG by hand (no matplotlib / seaborn / plotly,
 no Vega) so the two curves are separated by more than hue: each carries a
 dash pattern and a distinct end marker, plus an inline direct label with
 its AP. That keeps them apart under deuteranopia and in greyscale. The
-figure matches the front-* house style: Roboto, the Apple-ish palette,
+figure matches the sprezzature-* house style: Roboto, the Apple-ish palette,
 rounded corners, ink ``#1D1D1F``, secondary ``#6E6E73``, white
 background, white keylines.
 

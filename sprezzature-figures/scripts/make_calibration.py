@@ -26,7 +26,7 @@ the per-bin gap stems, the reliability points sized by bin count, the
 confidence histogram below, and the in-plot annotations are all under
 our control and can carry the house interactivity (per-mark tooltips, a
 fullscreen button) that a rasterised Vega spec cannot. It matches the
-front-* house style: Roboto, the Apple-ish palette, rounded corners, ink
+sprezzature-* house style: Roboto, the Apple-ish palette, rounded corners, ink
 ``#1D1D1F``, secondary ``#6E6E73``, white background, bright white
 keylines (never dark rings). Illustrative data.
 

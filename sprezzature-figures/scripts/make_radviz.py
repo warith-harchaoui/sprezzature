@@ -33,7 +33,7 @@ shape of a real seed-sorting problem, where a grain elevator wants to
 know whether cheap calliper measurements separate the varieties before
 training anything.
 
-Style follows the front-* house tokens (Roboto, Apple-system palette,
+Style follows the sprezzature-* house tokens (Roboto, Apple-system palette,
 ink ``#1D1D1F`` on white, rounded corners) from ``_style.py``.
 
 Author

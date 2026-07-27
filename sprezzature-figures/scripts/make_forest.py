@@ -15,7 +15,7 @@ the whole analysis exists to produce.
 
 The generator builds the SVG string by hand (no matplotlib / seaborn /
 plotly, no Vega) so the log-scale geometry, the weight-scaled boxes,
-and the diamond are fully under our control, and matches the front-*
+and the diamond are fully under our control, and matches the sprezzature-*
 house style: Roboto, the Apple-ish palette, rounded corners, ink
 ``#1D1D1F``, secondary ``#6E6E73``, white background. Rows draw in with
 a staggered pure-SMIL animation (whiskers extend, boxes fade up), and

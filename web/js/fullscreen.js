@@ -1,5 +1,5 @@
 /*
- * fullscreen.js — the shared front figure-fullscreen module (convention copy).
+ * fullscreen.js — the shared sprezzature figure-fullscreen module (convention copy).
  *
  * Canonical source: sprezzature-ui/assets/components/figure-fullscreen.html (‹JS›).
  * Keep this file in sync with it. Framework-free, multi-instance.
@@ -45,14 +45,14 @@
     card.classList.add("is-fs");
     document.documentElement.classList.add("fs-locked");
     rehome(card);
-    card.dispatchEvent(new CustomEvent("front:fullscreenchange", { bubbles: true, detail: { on: true, host: card } }));
+    card.dispatchEvent(new CustomEvent("sprezzature:fullscreenchange", { bubbles: true, detail: { on: true, host: card } }));
   }
   function exitPseudo(card) {
     card.removeAttribute("data-fs-pseudo");
     card.classList.remove("is-fs");
     document.documentElement.classList.remove("fs-locked");
     rehome(null);
-    card.dispatchEvent(new CustomEvent("front:fullscreenchange", { bubbles: true, detail: { on: false, host: document.body } }));
+    card.dispatchEvent(new CustomEvent("sprezzature:fullscreenchange", { bubbles: true, detail: { on: false, host: document.body } }));
   }
 
   document.addEventListener("click", function (e) {
@@ -70,7 +70,7 @@
     var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
     document.querySelectorAll("[data-fs-target]").forEach(function (c) { c.classList.toggle("is-fs", c === fsEl); });
     rehome(fsEl || null);
-    (fsEl || document).dispatchEvent(new CustomEvent("front:fullscreenchange", { bubbles: true, detail: { on: !!fsEl, host: fsEl || document.body } }));
+    (fsEl || document).dispatchEvent(new CustomEvent("sprezzature:fullscreenchange", { bubbles: true, detail: { on: !!fsEl, host: fsEl || document.body } }));
   }
   document.addEventListener("fullscreenchange", onNativeChange);
   document.addEventListener("webkitfullscreenchange", onNativeChange);

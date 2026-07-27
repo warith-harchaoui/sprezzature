@@ -1,6 +1,6 @@
 # EXAMPLES
 
-A runnable cookbook for the `front-*` skill suite: one section per skill,
+A runnable cookbook for the `sprezzature-*` skill suite: one section per skill,
 each with a copy-paste command and the output you should expect. Commands are
 written to run from the **repository root** and use the checked-in fixtures
 under `tests/fixtures/`, so every deterministic recipe here runs with no setup

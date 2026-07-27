@@ -15,7 +15,7 @@ rug makes the story legible at a glance: a dense band of fast requests
 plus a thin, unmistakable spray of slow tail requests that a mean or a
 single density peak would paper over.
 
-Design follows the front-* house style (see ``_style.py``): Roboto,
+Design follows the sprezzature-* house style (see ``_style.py``): Roboto,
 the Apple-system palette, ink ``#1D1D1F`` on a white background,
 secondary ``#6E6E73`` for supporting text, rounded corners. The output
 is a single self-contained SVG — the only artifact this skill ships.

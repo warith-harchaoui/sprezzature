@@ -59,6 +59,41 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-07-27 — Renamed `front` → `sprezzature`
+
+The `front` project is frozen; `sprezzature` is its canonical successor. This is
+a major bump because the on-disk skill folders change name (`front-*` →
+`sprezzature-*`), so users re-copy them into `~/.claude/skills/` (or
+`~/.opencode/skills/`).
+
+### Changed
+
+- **Renamed the whole suite `front-*` → `sprezzature-*`**, the Python package
+  `front_cli` → `sprezzature_cli`, and the cli-gui package `front_cli_gui` →
+  `sprezzature_cli_gui`. Brand tokens, identifiers, URLs
+  (`warith-harchaoui/sprezzature`, `harchaoui.org/warith/sprezzature`), CLI
+  program names, the shared JavaScript fullscreen event
+  (`sprezzature:fullscreenchange`), and the Markdown-viewer `localStorage` key
+  are all on the new name.
+- **CLI entry point** is now `sprezzature`. The old `front` command stays as a
+  deprecated alias (to be removed in a later major).
+- **Environment variables** are `SPREZZATURE_*`. The old `FRONT_*` names are
+  still read as a deprecated fallback, so a `front` user's existing environment
+  keeps working through the migration.
+
+### Preserved
+
+- English and technical uses of "front" are untouched: weather fronts (windbarb),
+  the `front-chain` circle-packing algorithm, the situation-map front line, YAML
+  front matter, `front-end`, and the painter's-algorithm `back-to-front` /
+  `front-to-back` terms.
+
+### Compatibility
+
+- `front` stays live and frozen as the migration window; adopter repos move
+  `front-*` → `sprezzature-*` when they are ready. Old documentation URLs under
+  `harchaoui.org/warith/front/` 301-redirect to the `sprezzature` path.
+
 ## [0.33.0] — 2026-07-27 — OS-adaptive, everywhere
 
 ### Added

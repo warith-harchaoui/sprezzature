@@ -13,7 +13,7 @@ plotly, no Vega): it synthesises a short, communicative audio clip with numpy �
 a rising musical glissando riding over a steady bass drone, with three
 percussive taps — computes a genuine Hann-windowed STFT (numpy ``rfft`` only),
 maps power in dB onto a perceptually-uniform *viridis-like* ramp, and paints the
-time-frequency grid as a mosaic of ``<rect>`` cells in the front-* house style:
+time-frequency grid as a mosaic of ``<rect>`` cells in the sprezzature-* house style:
 Roboto type, ink ``#1D1D1F`` on white, rounded framing, a labelled colour
 legend. The figure is a **static** poster-size raster — a spectrogram is a
 time-frequency image whose x-axis already *is* time, so it gains nothing from

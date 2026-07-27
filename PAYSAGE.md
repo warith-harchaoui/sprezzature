@@ -1,6 +1,6 @@
 # Paysage — alternatives à `sprezzature`
 
-`sprezzature` est **une** réponse assumée à une vaste question : *comment un grand modèle de langage (LLM) devrait-il produire du code frontend ?* Ce fichier cartographie les alternatives dans chacune des catégories touchées par les *skills* `front-*`, sous forme de **matrices** : les lignes sont des outils, les colonnes des caractéristiques qui comptent vraiment. Servez-vous-en pour choisir en connaissance de cause.
+`sprezzature` est **une** réponse assumée à une vaste question : *comment un grand modèle de langage (LLM) devrait-il produire du code frontend ?* Ce fichier cartographie les alternatives dans chacune des catégories touchées par les *skills* `sprezzature-*`, sous forme de **matrices** : les lignes sont des outils, les colonnes des caractéristiques qui comptent vraiment. Servez-vous-en pour choisir en connaissance de cause.
 
 ## Note sur le biais
 
@@ -8,7 +8,7 @@ Ce fichier est écrit par l'auteur de `sprezzature`. La colonne « Compatible s
 
 ## Où `sprezzature` est réellement le meilleur choix
 
-Trois catégories concrètes où les *skills* `front-*`, ensemble, font quelque chose qu'aucun autre outil listé ne fait sous forme de *skill* :
+Trois catégories concrètes où les *skills* `sprezzature-*`, ensemble, font quelque chose qu'aucun autre outil listé ne fait sous forme de *skill* :
 
 1. **Maquettes d'interface en ligne de commande (CLI) → interface graphique (GUI) depuis `tool --help`.** `sprezzature-cli-gui` échafaude une GUI vanilla-JS + Tailwind depuis le parseur d'arguments d'un CLI Python / Node / Go, en *skill*, sans environnement d'exécution de framework. Aucun autre outil listé ne fait cela comme *skill* Claude / OpenCode : Gradio / Streamlit / Gooey produisent une interface utilisateur (UI) à l'exécution difficile à restyler et ne sont pas des *skills*.
 2. **Barrières d'accessibilité (a11y) avant expédition, en intégration continue (CI), sans navigateur sans interface graphique.** `sprezzature-accessibility/scripts/lint_a11y.py` est un lint Python d'un seul fichier, stdlib uniquement, qui tourne en millisecondes dans n'importe quel conteneur CI minimal. axe-core / Pa11y / Lighthouse sont la bonne réponse pour les audits à l'exécution (et vous devriez faire les deux), mais aucun ne tourne sans navigateur et c'est un coût réel dans un hook de pré-commit.
@@ -42,52 +42,56 @@ mieux). Les notes sont celles de l'auteur, volontairement honnêtes : `sprezzat
 **maturité** d'écosystème contre la légèreté, la restylabilité, l'accessibilité et une
 livraison **en *skill***.
 
-| Projet | Local-first | Léger | Personnalisable | Accessibilité | Maturité | Intégré |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **sprezzature** (les *skills*) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
-| [React](https://react.dev) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Vue](https://vuejs.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Svelte](https://svelte.dev) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [HTMX](https://htmx.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ |
-| [Alpine.js](https://alpinejs.dev) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ |
-| [Tailwind CSS](https://tailwindcss.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
-| [Pico CSS](https://picocss.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ |
-| [shadcn/ui](https://ui.shadcn.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Radix UI](https://www.radix-ui.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Vega-Lite](https://vega.github.io/vega-lite/) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
-| [D3.js](https://d3js.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Plotly.js](https://plotly.com/javascript/) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Gradio](https://gradio.app) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Streamlit](https://streamlit.io) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Tauri](https://tauri.app) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ |
-| [Hugo](https://gohugo.io) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Astro](https://astro.build) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [axe-core](https://github.com/dequelabs/axe-core) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Pa11y](https://pa11y.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Claude vision](https://docs.claude.com/en/docs/build-with-claude/vision) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
-| [LLaVA / MiniCPM-V](https://huggingface.co/docs/transformers/model_doc/llava) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ |
-| [whisper.cpp](https://github.com/ggml-org/whisper.cpp) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
-| [Deepgram](https://deepgram.com) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ |
+| Projet | Local-first | Léger | Personnalisable | Accessibilité | Maturité | Intégré | Interactif | Libre | Facilité | Écosystème |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **sprezzature** (les *skills*) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
+| [React](https://react.dev) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [Vue](https://vuejs.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Svelte](https://svelte.dev) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [HTMX](https://htmx.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Alpine.js](https://alpinejs.dev) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Tailwind CSS](https://tailwindcss.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [Pico CSS](https://picocss.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
+| [shadcn/ui](https://ui.shadcn.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Radix UI](https://www.radix-ui.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Vega-Lite](https://vega.github.io/vega-lite/) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [D3.js](https://d3js.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [Plotly.js](https://plotly.com/javascript/) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Gradio](https://gradio.app) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Streamlit](https://streamlit.io) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Tauri](https://tauri.app) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Hugo](https://gohugo.io) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Astro](https://astro.build) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [axe-core](https://github.com/dequelabs/axe-core) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [Pa11y](https://pa11y.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Claude vision](https://docs.claude.com/en/docs/build-with-claude/vision) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [LLaVA / MiniCPM-V](https://huggingface.co/docs/transformers/model_doc/llava) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ |
+| [whisper.cpp](https://github.com/ggml-org/whisper.cpp) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Deepgram](https://deepgram.com) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Looker](https://cloud.google.com/looker) | ⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [ThoughtSpot](https://www.thoughtspot.com) | ⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [Highcharts](https://www.highcharts.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+| [TensorFlow Embedding Projector](https://projector.tensorflow.org) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ |
 
-**Sur la localité :** `sprezzature` fonctionne **local d'abord (local-first)** (⭐️⭐️⭐️⭐️⭐️ ci-dessus), mais presque tous les
-outils listés qui tournent sur votre machine le sont aussi ; seules les intelligences artificielles (IA) hébergées (Claude
-vision, Deepgram) ne le sont pas. Cette colonne étant quasi constante, elle ferait un axe
-*trompeur* : la carte ci-dessous est donc construite sur les cinq critères **discriminants**,
-et Local-first reste dans la table comme contexte.
+**Sur la localité :** `sprezzature` fonctionne **local d'abord (local-first)**, comme la plupart des
+outils qui tournent sur votre machine — mais plus tous : les plateformes de *business intelligence* (BI)
+hébergées (Looker, ThoughtSpot) et les intelligences artificielles (IA) en ligne (Claude vision, Deepgram)
+ne le sont pas. Avec ces nouveaux venus, la colonne **discrimine désormais** et entre pleinement dans la carte.
 
-Passée en entiers à [standpoint](https://github.com/warith-harchaoui/standingpoint) (avec
-`sprezzature` en ligne de référence), les critères sont projetés sur une **carte de positionnement** 2-D :
+Passés en entiers à [standpoint](https://github.com/warith-harchaoui/standingpoint) (avec `sprezzature`
+en ligne de référence), les dix critères se projettent sur une **carte de positionnement** 2-D :
 
-![Carte de positionnement concurrentiel de sprezzature face aux alternatives : un nuage 2-D avec sprezzature ancré en haut à droite comme référence, React à l'opposé, un axe horizontal Maturité–Intégré et un axe vertical Léger–Personnalisable.](sprezzature-figures/assets/figures-gallery/landscape-positioning-fr.png)
+![Carte de positionnement concurrentiel de sprezzature face aux alternatives : un nuage 2-D avec sprezzature ancré en haut à droite comme référence, Looker à l'opposé exact, un axe horizontal Stabilité–Simplicité et un axe vertical Flexibilité–Interactivité.](sprezzature-figures/assets/figures-gallery/landscape-positioning-fr.png)
 
-L'axe horizontal oppose **Maturité** (gauche) et **Intégré** (en *skill*, intégré, à droite) ; l'axe
-vertical oppose **Léger** (bas) et **Personnalisable** (haut) : ensemble ~65 % de ce qui distingue ces
-approches. `sprezzature` ancre le coin haut-droite ; **React** est à l'opposé (mature, mais lourd en
-framework et pas intégré en *skill*) ; **Tailwind CSS** va le plus loin vers « Personnalisable » et
-**Pico CSS** le plus loin vers « Intégré ». Les notes vivent dans un fichier de valeurs séparées par des virgules (CSV) **exclu du dépôt Git**
-(`.private/landscape/landscape-fr.csv`) ; on régénère la carte avec
-`standpoint .private/landscape/landscape-fr.csv -r sprezzature -o out`.
+L'axe horizontal oppose **Stabilité** (à gauche : maturité et écosystème installés) et **Simplicité**
+(à droite : prise en main immédiate) ; l'axe vertical oppose **Flexibilité** (en haut : restylable et
+léger) et **Interactivité** (en bas : exploration interactive pour l'utilisateur final) : ensemble ~55 %
+de ce qui distingue ces approches. `sprezzature` ancre le coin haut-droite ; **Looker** est à l'opposé
+exact (plateforme BI hébergée, lourde et propriétaire) ; **Tailwind CSS** va le plus loin vers
+« Flexibilité » et **Pico CSS** le plus loin vers « Simplicité ». Les notes vivent dans un fichier de
+valeurs séparées par des virgules (CSV) **exclu du dépôt Git** (`.private/landscape/landscape-fr.csv`) ;
+on régénère la carte avec `standpoint .private/landscape/landscape-fr.csv -r sprezzature -o out --model qwen3-vl:8b`.
 
 Les matrices par catégorie ci-dessous conservent les colonnes qui n'ont de sens qu'au sein d'une seule catégorie.
 
@@ -153,7 +157,7 @@ Quel genre de travail faites-vous ? Trouvez la ligne et la recommandation honn�
 | [Panda CSS](https://panda-css.com) | CSS-in-JS sans exécution | ✓ | recettes / patrons | variables de design typées | de première classe | ✗ | Fort dans les apps TypeScript (TS). |
 | [vanilla-extract](https://vanilla-extract.style) | CSS-in-JS sans exécution | ✓ | feuilles de style typées | variables de design typées | de première classe | ✗ | Ami du TS uniquement. |
 
-**Choisir Tailwind** quand l'équipe peut lancer un build CLI d'une ligne (ou fait déjà tourner Vite). **Choisir Pico** quand le site est surtout de la prose et que vous voulez zéro classe dans le markup. **Choisir Panda / vanilla-extract** quand vous êtes dans un monorepo TypeScript avec des variables de design typées ailleurs. **Éviter le BEM fait main** en 2026 sauf si le reste du code y vit déjà.
+**Choisir Tailwind** quand l'équipe peut lancer un build CLI d'une ligne (ou fait déjà tourner Vite). **Choisir Pico** quand le site est surtout de la prose et que vous voulez zéro classe dans le markup. **Choisir Panda / vanilla-extract** quand vous êtes dans un monorepo TypeScript avec des variables de design typées ailleurs. **Éviter le BEM bricolé** en 2026 sauf si le reste du code y vit déjà.
 
 ---
 
@@ -176,7 +180,7 @@ Quel genre de travail faites-vous ? Trouvez la ligne et la recommandation honn�
 | [Primer](https://primer.style) | React / CSS / Rails | npm/gem | forte | GitHub | gratuit | ✗ | Dans GitHub. |
 | [Polaris](https://polaris.shopify.com) | React | npm | forte | Shopify | gratuit | ✗ | Dans Shopify. |
 | [Lightning](https://www.lightningdesignsystem.com) | Lightning Web Components (LWC) / React | npm | forte | Salesforce | gratuit | ✗ | Dans Salesforce. |
-| [Shoelace / Web Awesome](https://shoelace.style) | Web Components | npm | forte | neutre | gratuit | ~ | Agnostique au framework ; le plus proche si vous voulez `<sl-button>` plutôt que du fait main. |
+| [Shoelace / Web Awesome](https://shoelace.style) | Web Components | npm | forte | neutre | gratuit | ~ | Agnostique au framework ; le plus proche si vous voulez `<sl-button>` plutôt que du bricolage. |
 
 **Choisir shadcn/ui** si l'équipe a choisi React et veut la même philosophie que `sprezzature` (composants copier-coller, sans verrou d'exécution). **Choisir Radix / Headless UI** quand vous voulez seulement le comportement et habillerez tout vous-même. **Choisir Mantine / Chakra / MUI** quand la vitesse jusqu'au premier écran compte plus que la différenciation visuelle. **Rester dans les design systems des grandes boîtes** (Carbon, Fluent, Primer, Polaris, Lightning) seulement si vous livrez à l'intérieur de la surface produit de cette entreprise.
 
@@ -427,7 +431,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 | [OpenCode](https://opencode.ai) | Environnement d'exécution alternatif pour le même format de *skill* | ✓ | Nommé dans le chemin d'installation de `README.md`. |
 | Prompting manuel (sans *skill*) | Ce que vous écrivez | ~ | Marche pour les one-shots, dérive au fil des sessions. |
 
-**Choisir les *skills* `front-*`** quand vous voulez une sortie frontend reproductible, des barrières ergonomiques et du contenu d'accessibilité ancrés dans les habitudes de l'agent. **Choisir les commandes intégrées de Claude Code** (`/init`, `/review`, `/security-review`) pour les workflows de code généralistes : elles se composent avec `front-*` plutôt que de le concurrencer. **Choisir OpenCode** quand vous voulez le même format de *skill* sous un environnement d'exécution agnostique au modèle. **Se passer de *skills*** pour les prompts ponctuels (one-shot) où le coût d'installer un dossier de *skill* dépasse la frappe économisée.
+**Choisir les *skills* `sprezzature-*`** quand vous voulez une sortie frontend reproductible, des barrières ergonomiques et du contenu d'accessibilité ancrés dans les habitudes de l'agent. **Choisir les commandes intégrées de Claude Code** (`/init`, `/review`, `/security-review`) pour les workflows de code généralistes : elles se composent avec `sprezzature-*` plutôt que de le concurrencer. **Choisir OpenCode** quand vous voulez le même format de *skill* sous un environnement d'exécution agnostique au modèle. **Se passer de *skills*** pour les prompts ponctuels (one-shot) où le coût d'installer un dossier de *skill* dépasse la frappe économisée.
 
 ---
 

@@ -25,7 +25,7 @@ three service tiers, the exact distribution where a boxen plot earns its
 keep — latency is right-skewed with a long tail, and "the p99 tail is
 what pages you at 3 a.m.", not the median.
 
-Style follows the front-* house tokens (Roboto, Apple-system palette,
+Style follows the sprezzature-* house tokens (Roboto, Apple-system palette,
 ink ``#1D1D1F`` on white, rounded corners) from ``_style.py``.
 
 Author

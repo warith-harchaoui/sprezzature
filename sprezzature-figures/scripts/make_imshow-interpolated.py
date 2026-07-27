@@ -13,7 +13,7 @@ no Vega): it synthesises a small, communicative measurement grid with numpy — 
 soil-moisture survey over a research field, with a wet hollow, a drier ridge, and
 a damp irrigation seam — then performs the bilinear up-sampling *itself* in numpy
 (no SVG blur filter) and paints the smooth result as a dense mosaic of tiny crisp
-``<rect>`` cells in the front-* house style: Roboto type, ink ``#1D1D1F`` on
+``<rect>`` cells in the sprezzature-* house style: Roboto type, ink ``#1D1D1F`` on
 white, rounded framing, x/y axes with ticks, and a labelled colour legend.
 
 The colour ramp is the house Apple-blue sequential ramp

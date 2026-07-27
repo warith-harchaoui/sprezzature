@@ -1,4 +1,4 @@
-# Pre-commit hooks manifest for the front-* skills.
+# Pre-commit hooks manifest for the sprezzature-* skills.
 #
 # Consumers add the repo to their own ``.pre-commit-config.yaml``:
 #
@@ -74,7 +74,7 @@
   args: [sprezzature-ui, sprezzature-cli-gui, sprezzature-publish, sprezzature-accessibility, sprezzature-colors, sprezzature-vision, sprezzature-audio, sprezzature-ux-laws, sprezzature-figures]
 
 - id: sprezzature-triggers-sync
-  name: front — TRIGGERS.md sync check
+  name: sprezzature — TRIGGERS.md sync check
   description: >-
     Enforce that the committed TRIGGERS.md equals the projection of
     every SKILL.md description through ``scripts/build_triggers.py``.

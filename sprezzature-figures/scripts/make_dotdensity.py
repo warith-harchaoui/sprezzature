@@ -22,7 +22,7 @@ the Ardennes to the Pyrenees stays almost empty.
 The module builds the SVG string by hand — no matplotlib / seaborn /
 plotly, and no Vega (a scatter of tens of thousands of jittered points
 clipped to real polygons is authored far more directly and compactly
-as raw SVG). It follows the front-* house style pulled from
+as raw SVG). It follows the sprezzature-* house style pulled from
 :mod:`_style`: the Apple-ish saturated palette, Roboto typography,
 ink ``#1D1D1F`` on secondary ``#6E6E73`` on a white background,
 rounded-corner legend chips, a takeaway title, and a one-line

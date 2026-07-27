@@ -32,7 +32,7 @@ The module builds the SVG string by hand — no matplotlib / seaborn /
 plotly, and no Vega (angled staffs with tallied pennants and barbs, a
 curved sprezzature glyph with triangle teeth, and side-aware station labels
 are authored far more directly and compactly as raw SVG). It follows the
-front-* house style from :mod:`_style`: the Apple-ish palette, Roboto
+sprezzature-* house style from :mod:`_style`: the Apple-ish palette, Roboto
 typography, ink ``#1D1D1F`` on secondary ``#6E6E73`` on a white
 background, a rounded-corner legend, a takeaway title and a one-line
 subtitle. Each station carries a native ``<title>`` for a

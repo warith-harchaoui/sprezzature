@@ -12,7 +12,7 @@ modification.
 
 This is the make-side primary of the ``sprezzature-cli-gui`` skill — the
 counterpart to ``audit_laws_of_ux.py`` / ``palette_to_tailwind.py``
-elsewhere in the front-* ecosystem. It is **not** a runtime: the
+elsewhere in the sprezzature-* ecosystem. It is **not** a runtime: the
 emitted page builds the command string locally and shows it for the
 user to copy / paste / submit through the host adapter of their
 choice (FastAPI SSE, Tauri ``invoke()``, Express, plain shell).

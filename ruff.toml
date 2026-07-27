@@ -1,4 +1,4 @@
-# ruff.toml — lint gate for the front-* skill scripts (CODING_ALL.md rule 3).
+# ruff.toml — lint gate for the sprezzature-* skill scripts (CODING_ALL.md rule 3).
 #
 # This is the AUDIT side of the make/audit paradigm the skills themselves follow:
 #   audit  →  `ruff check .`         (blocking, wired into CI — flags defects)

@@ -16,7 +16,7 @@ radial grid rings and the hour spokes of a clock face, and paints a filled
 radial area with its outline and data dots. The figure is deliberately
 **static** — the shape of the day is the insight, and a still renders it in
 full at a glance; a spinning "radar sweep" would only distract from the twin
-commuter peaks the reader is here to see. Everything is in the front-* house
+commuter peaks the reader is here to see. Everything is in the sprezzature-* house
 style: Roboto type, the Apple-system palette, ink ``#1D1D1F`` on a white
 ground, rounded framing, native ``<title>`` hover tooltips (no JavaScript).
 

@@ -12,7 +12,7 @@ battlefield but from preventable disease in filthy hospitals, and the
 sheer size of the disease petals won the argument that a table never
 could.
 
-This module rebuilds that argument in the front-* house style. Twelve
+This module rebuilds that argument in the sprezzature-* house style. Twelve
 monthly wedges are stacked by cause of death — preventable disease,
 wounds, and everything else — so each petal's total radius is the
 month's death rate and its coloured bands show what the men were dying

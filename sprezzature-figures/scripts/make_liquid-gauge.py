@@ -21,7 +21,7 @@ percentages so "63 %" is legible as a level, not just a number.
 
 Pure-Python, hand-built SVG string — no Vega, no matplotlib — because a
 clipped wavy liquid surface is not a native Vega-Lite mark and has to be
-placed exactly. It follows the front-* house style pulled from
+placed exactly. It follows the sprezzature-* house style pulled from
 :mod:`_style`: the Apple-ish saturated palette (a calm blue liquid), a
 Roboto readout, ink ``#1D1D1F`` on a white background, a takeaway title,
 and a one-line subtitle that states the point.

@@ -460,7 +460,7 @@ def apply_pronunciation(
 #: per segment; the orchestrator validates and clamps the result before
 #: it reaches the engine. Loaded from prompts/narration_emotion.yaml, NOT
 #: inlined — LLM prompts, like GUI strings, live in a YAML catalog per the
-#: front-* i18n rule (see sprezzature-ui/scripts/audit_i18n.py, rule I18N002).
+#: sprezzature-* i18n rule (see sprezzature-ui/scripts/audit_i18n.py, rule I18N002).
 import sys as _sys  # noqa: E402
 
 _sys.path.insert(0, str(Path(__file__).resolve().parent))

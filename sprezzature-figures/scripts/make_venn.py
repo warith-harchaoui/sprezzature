@@ -12,7 +12,7 @@ count so the diagram works as a table you can see.
 This module builds the SVG string by hand (no matplotlib / seaborn /
 plotly, and no Vega here because Vega-Lite has no set-overlap mark — a
 Venn is placed geometry, clearest authored directly). It follows the
-front-* house style pulled from :mod:`_style`: the Apple-ish saturated
+sprezzature-* house style pulled from :mod:`_style`: the Apple-ish saturated
 palette, Roboto typography, ink ``#1D1D1F`` on a white background,
 rounded set labels, a takeaway title, and a one-line subtitle.
 

@@ -61,7 +61,7 @@ from pathlib import Path
 #: ``SPREZZATURE_CACHE_DIR``; the trailing ``whisper`` subfolder is fixed so
 #: every helper agrees on the lookup path.
 WHISPER_DIR: Path = Path(
-    os.environ.get("SPREZZATURE_CACHE_DIR", Path.home() / ".cache" / "sprezzature-skill")
+    (os.environ.get("SPREZZATURE_CACHE_DIR") or os.environ.get("FRONT_CACHE_DIR") or Path.home() / ".cache" / "sprezzature-skill")
 ) / "whisper"
 
 #: Aliases that pywhispercpp understands directly via the model registry.

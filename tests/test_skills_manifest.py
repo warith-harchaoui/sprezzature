@@ -1,5 +1,5 @@
 """
-Tests for ``SKILLS.txt`` — the canonical manifest of shipped front-*
+Tests for ``SKILLS.txt`` — the canonical manifest of shipped sprezzature-*
 skill folders.
 
 The manifest at repo root is the single source of truth read by
@@ -12,7 +12,7 @@ fixtures (``tests/conftest.py``,
 These tests guard against three failure modes:
 
 1. The manifest names a folder that does not exist on disk.
-2. A `front-*` folder ships on disk but is missing from the manifest.
+2. A `sprezzature-*` folder ships on disk but is missing from the manifest.
 3. The manifest's order and content do not parse cleanly through
    :mod:`skills_manifest` (blank lines / comments matter).
 
@@ -58,7 +58,7 @@ def test_each_manifest_entry_has_a_folder(skill: str) -> None:
 
 def test_no_orphan_skill_folders_on_disk() -> None:
     """
-    Every ``front-*`` folder on disk must be declared in the manifest.
+    Every ``sprezzature-*`` folder on disk must be declared in the manifest.
 
     Catches the failure mode where someone adds a folder but forgets
     to declare it in ``SKILLS.txt``, leaving it out of the release
@@ -67,13 +67,13 @@ def test_no_orphan_skill_folders_on_disk() -> None:
     on_disk: set[str] = {
         p.name
         for p in REPO_ROOT.iterdir()
-        if p.is_dir() and p.name.startswith("front-")
+        if p.is_dir() and p.name.startswith("sprezzature-")
         and (p / "SKILL.md").is_file()
     }
     declared: set[str] = set(SHIPPED_SKILLS)
     orphans: set[str] = on_disk - declared
     assert not orphans, (
-        f"front-* folder(s) on disk but absent from SKILLS.txt: {sorted(orphans)}. "
+        f"sprezzature-* folder(s) on disk but absent from SKILLS.txt: {sorted(orphans)}. "
         f"Either add the folder to SKILLS.txt or remove its SKILL.md."
     )
 

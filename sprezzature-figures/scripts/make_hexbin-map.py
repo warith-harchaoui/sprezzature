@@ -21,7 +21,7 @@ interiors stay almost empty.
 The module builds the SVG string by hand — no matplotlib / seaborn / plotly,
 and no Vega (a hexagonal lattice clipped to a projected coastline, with a
 count legend and place labels, is authored far more directly as raw SVG). It
-follows the front-* house style pulled from :mod:`_style`: a single-hue
+follows the sprezzature-* house style pulled from :mod:`_style`: a single-hue
 sequential ramp keyed to the palette's Red, Roboto typography, ink
 ``#1D1D1F`` on secondary ``#6E6E73`` on a white background, rounded-corner
 legend, a takeaway title, and a one-line subtitle.
