@@ -35,6 +35,9 @@ template: |
   Rules:
   {rules_numbered}
 
+  Writing standards (proposed labels are human-readable prose):
+  {writing_rules}
+
   Output contract:
   {output_contract}
 

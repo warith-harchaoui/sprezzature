@@ -40,5 +40,9 @@ output_contract: |
 template: |
   {lang_line}
   {output_contract}
+
+  WRITING STANDARDS — apply to every human-readable value (title, description, alt):
+  {writing_rules}
+
   {brand_block}{goal_block}{page_block}
   Write the JSON now.

@@ -1,0 +1,42 @@
+# Shared writing-standards block
+#
+# The distilled, language-neutral core of the project writing charter
+# (scripts/charters/<lang>.md). `_prompts.load_prompt()` reads this file once
+# and exposes its `rules_text` to every prompt template as `{writing_rules}`,
+# so any prompt that authors human-readable text carries the charter with it.
+# See ../../references/writing-standards.md for the policy and the per-language
+# charters that hold the full rules and the native ChatGPT-tell lists.
+#
+# Kept as a single `|` block on purpose: both PyYAML and the zero-dep
+# `_yaml_lite` fallback parse block scalars identically, whereas a `-` list
+# whose items contain colons would parse as mappings under PyYAML.
+
+name: writing_rules
+version: 1
+rules_text: |
+  1. Reconstructible before pretty. Write so a non-specialist could rebuild the
+     point and explain it in turn. If you cannot say it plainly, do not hide the
+     gap behind a learned word.
+  2. Gloss on first use. Every technical term and acronym gets a plain-language
+     gloss first, then the real term, then the abbreviation, for example
+     "reinforcement learning with humans in the loop (RLHF)". Keep the true term
+     of art; never swap it for a paraphrase that loses precision.
+  3. Intuition before formula, one concrete example per idea where space allows.
+  4. Invent nothing. Add no fact the source does not support. Distinguish what is
+     observed, measured, extrapolated, or speculative, and never state an
+     empirical claim without its degree of certainty. Do not attribute will or
+     agency to a system as if it were a fact.
+  5. No punctuation dashes. No em dash and no en dash used as an aside; rewrite
+     with commas, colons, semicolons, parentheses, or short sentences. Hyphens in
+     compound words stay.
+  6. No machine tells. Drop hollow openers ("In today's world", "It is important
+     to note that"), bolted-on transitions with no real link ("Moreover",
+     "Furthermore", "Additionally"), restatement tics ("In other words"), empty
+     intensifiers ("truly", "deeply", "crucial", "vital"), reflexive see-saw ("not
+     only X but also Y"), hollow closers ("In conclusion", "All in all"), and
+     inflated abstractions ("the landscape of", "delve into", "a game-changer").
+  7. No marketing voice, no emoji, no rule-of-three padding. A sober, human
+     register that reads like an author, not a template.
+  8. Match the document's language and its native punctuation and idiom. Write as
+     a literate native speaker of that language would, not as a translation.
+  9. Short sentences over marathon ones. Vary the rhythm; hunt repeated words.

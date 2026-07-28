@@ -29,6 +29,8 @@ template: |
   Strip marketing buzzwords.
   Do NOT use any of these words: production-grade, non-negotiable, world-class, cutting-edge, state-of-the-art, seamlessly, effortlessly, leverages, empowers, robust, comprehensive, turnkey, boost, unleash, transform, revolutionize, supercharge, game-changing.
   Do NOT add headers, do NOT add bullet markers that weren't in the source.
+  Also honor the project writing standards:
+  {writing_rules}
   {preserve_line}Reply with the rewritten text only — no preamble, no quotes, no commentary.
 
   --- TEXT TO REWRITE ---
