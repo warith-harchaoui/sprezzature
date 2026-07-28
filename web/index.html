@@ -9,6 +9,8 @@
   <meta name="description"
     content="Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.">
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/">
+  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/">
+  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
@@ -56,17 +58,54 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebSite", "name": "Sprezzature",
+      {
+        "@type": "WebSite",
+        "name": "Sprezzature",
         "url": "https://harchaoui.org/warith/sprezzature/",
-        "description": "Nine Claude / OpenCode skills for a single frontend stack.",
-        "inLanguage": "en" },
-      { "@type": "SoftwareSourceCode", "name": "Sprezzature",
-        "description": "A design system delivered as nine Claude / OpenCode skills: UI, CLI→GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill makes artifacts and audits them.",
+        "description": "Nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures.",
+        "inLanguage": "en",
+        "author": { "@type": "Person", "name": "Warith Harchaoui",
+          "url": "https://www.linkedin.com/in/warith-harchaoui/" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Sprezzature",
+        "description": "A design system as nine Claude / OpenCode skills. Each skill both makes artifacts and audits them against explicit rules: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, figures.",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "programmingLanguage": ["Python", "JavaScript", "HTML"],
         "license": "https://spdx.org/licenses/BSD-3-Clause.html",
         "author": { "@type": "Person", "name": "Warith Harchaoui",
-          "url": "https://www.linkedin.com/in/warith-harchaoui/" } }
+          "url": "https://www.linkedin.com/in/warith-harchaoui/" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Sprezzature?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sprezzature is a set of nine skills for Claude Code and OpenCode. Each skill covers one part of a frontend stack (UI generation, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures) and both makes the artifact and audits it against explicit rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a Sprezzature skill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Download the latest release tarball from the GitHub releases page, unpack it, and copy the skill folders you need into ~/.claude/skills (for Claude Code) or ~/.opencode/skills (for OpenCode). No build step is required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the models run locally without a cloud API?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The text, audio, and vision models used by Sprezzature can run locally via Ollama. Nothing has to leave the machine when local inference is configured."
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
