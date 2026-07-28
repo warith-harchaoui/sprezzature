@@ -81,15 +81,42 @@ def _yaml_lite(text: str) -> dict[str, Any]:
     return data
 
 
+# Cache of the shared writing-standards block, keyed by the directory it was
+# found in. Loaded lazily so the zero-dep path never touches it unless a prompt
+# actually references ``{writing_rules}``.
+_WRITING_RULES_CACHE: dict[Path, str] = {}
+
+
+def writing_rules_block(prompts_dir: Path | None = None) -> str:
+    """Return the shared writing-standards text from ``writing_rules.yaml``.
+
+    This is the distilled, language-neutral core of the project writing charter
+    (``scripts/charters/<lang>.md``). Every prompt that authors human-readable
+    text embeds it via the ``{writing_rules}`` field, so the charter travels
+    with the prompt. Returns an empty string if the file is absent, which keeps
+    a prompt that references the field from crashing when the block is missing.
+    """
+    base_dir = prompts_dir if prompts_dir is not None else PROMPTS_DIR
+    if base_dir not in _WRITING_RULES_CACHE:
+        path = base_dir / "writing_rules.yaml"
+        try:
+            data = _load_yaml(path.read_text(encoding="utf-8"))
+            _WRITING_RULES_CACHE[base_dir] = (data.get("rules_text") or "").rstrip()
+        except FileNotFoundError:
+            _WRITING_RULES_CACHE[base_dir] = ""
+    return _WRITING_RULES_CACHE[base_dir]
+
+
 def load_prompt(name: str, prompts_dir: Path | None = None) -> dict[str, Any]:
     """
     Load a prompt YAML by name (without extension) and return the dict.
 
     The returned dict contains the original keys plus ``rules_numbered``
-    (rules pre-formatted as ``1. …\\n2. …``) for direct use in the
-    ``template`` string. ``prompts_dir`` overrides the default lookup
-    directory — pass it when this helper is imported by scripts that
-    live outside this skill so each script finds its own YAML files.
+    (rules pre-formatted as ``1. …\\n2. …``) and ``writing_rules`` (the shared
+    writing-standards block) for direct use in the ``template`` string.
+    ``prompts_dir`` overrides the default lookup directory — pass it when this
+    helper is imported by scripts that live outside this skill so each script
+    finds its own YAML files.
     """
     base_dir = prompts_dir if prompts_dir is not None else PROMPTS_DIR
     path = base_dir / f"{name}.yaml"
@@ -99,6 +126,9 @@ def load_prompt(name: str, prompts_dir: Path | None = None) -> dict[str, Any]:
         data["rules_numbered"] = "\n".join(f"{i+1}. {r}" for i, r in enumerate(rules))
     else:
         data["rules_numbered"] = ""
+    # Expose the shared writing-standards block unless the prompt overrides it.
+    # ``setdefault`` lets a prompt YAML ship its own ``writing_rules`` if needed.
+    data.setdefault("writing_rules", writing_rules_block(base_dir))
     return data
 
 
