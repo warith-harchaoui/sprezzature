@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/audio.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/audio.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/audio.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/audio.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,41 @@
     if(!s)s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
     document.documentElement.setAttribute('data-color-scheme',s);})();</script>
   <link rel="stylesheet" href="css/app.css">
+  <!-- GEO / structured data for AI overviews and search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Audio — captions — Sprezzature",
+        "description": "Local-AI captions, speaker diarization and speaker identification for video and audio. WebVTT and SRT from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via speaker embeddings.",
+        "url": "https://harchaoui.org/warith/sprezzature/audio.html",
+        "inLanguage": "en",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-audio",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Generates WebVTT and SRT captions from video or audio using a local whisper.cpp. Speaker diarization via NeMo Sortformer identifies who speaks when; speaker identification via TitaNet embeddings names each speaker.",
+        "url": "https://harchaoui.org/warith/sprezzature/audio.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to generate captions with sprezzature-audio",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Install sprezzature-audio and pull whisper.cpp locally. No cloud API key is required."},
+          {"@type": "HowToStep", "position": 2, "text": "Ask the agent: 'transcribe this video' or 'generate WebVTT captions'. Pass the audio or video file path."},
+          {"@type": "HowToStep", "position": 3, "text": "Optionally ask for speaker diarization: 'who spoke when in this recording'. NeMo Sortformer segments by speaker."},
+          {"@type": "HowToStep", "position": 4, "text": "Receive the .vtt or .srt file with timestamped, speaker-labelled lines ready to embed."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>

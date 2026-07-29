@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/colors.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/colors.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/colors.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/colors.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,42 @@
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
   <link rel="stylesheet" href="../css/app.css">
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Couleurs — Sprezzature",
+        "description": "Outillage couleur pour vanilla-JS et Tailwind : contraste WCAG avec corrections OKLCH, simulation de déficiences de vision des couleurs, palette curatée et émetteur de config Tailwind.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/colors.html",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-colors",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Vérifie les ratios de contraste WCAG, propose des corrections OKLCH voisines pour les paires qui échouent, simule la vision des couleurs pour huit types de daltonisme, et émet un bloc de config Tailwind pour la palette validée.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/colors.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment auditer et corriger les couleurs avec sprezzature-colors",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Demandez à l'agent : « vérifier le contraste » ou « audit WCAG de cette palette ». Fournissez des codes hex ou des noms Tailwind."},
+          {"@type": "HowToStep", "position": 2, "text": "Le skill calcule les ratios de contraste et signale les paires sous le seuil WCAG AA (4,5:1 pour le texte normal)."},
+          {"@type": "HowToStep", "position": 3, "text": "Pour chaque paire en échec, le skill propose une correction OKLCH voisine qui passe le contraste en conservant la teinte."},
+          {"@type": "HowToStep", "position": 4, "text": "Demandez une simulation : « montre-moi cette palette sous deutéranopie ». Examinez la mosaïque et confirmez la lisibilité."},
+          {"@type": "HowToStep", "position": 5, "text": "Exportez la palette validée sous forme de bloc de config Tailwind prêt à coller dans tailwind.config.js."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">

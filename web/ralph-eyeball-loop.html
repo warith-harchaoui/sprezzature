@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/ralph-eyeball-loop.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,35 @@
     if(!s)s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
     document.documentElement.setAttribute('data-color-scheme',s);})();</script>
   <link rel="stylesheet" href="css/app.css">
+  <!-- GEO / structured data for AI overviews and search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "The Ralph Eyeball Loop — Sprezzature",
+        "description": "The Ralph Eyeball Loop renders any visual artifact, inspects it with a vision model, edits the source to fix what the eye catches, and repeats until a verdict says ship.",
+        "url": "https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html",
+        "inLanguage": "en",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "Article",
+        "headline": "The Ralph Eyeball Loop: produce, look, fix, repeat",
+        "description": "A visual quality loop used throughout Sprezzature. Renders the artifact to PNG, inspects it with a vision-language model or Claude, applies fixes to the source (not the PNG), and repeats until the verdict passes. Applies to charts, HTML pages, Mermaid diagrams, and TikZ figures.",
+        "url": "https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html",
+        "inLanguage": "en",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"},
+        "about": {
+          "@type": "SoftwareSourceCode",
+          "name": "Sprezzature",
+          "codeRepository": "https://github.com/warith-harchaoui/sprezzature"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>

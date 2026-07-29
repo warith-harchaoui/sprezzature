@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/vision.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/vision.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/vision.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/vision.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -24,6 +25,41 @@
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
   <link rel="stylesheet" href="../css/app.css">
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Vision — texte alternatif — Sprezzature",
+        "description": "Rédaction d'alt-text conforme W3C via un modèle de vision Ollama local. Arbre de décision par image, sortie dans toute langue détectée, cache disque déterministe.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/vision.html",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-vision",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Rédige des textes alternatifs conformes W3C pour les images via un modèle de vision Ollama local (qwen3-vl:8b). Suit un arbre de décision par image (décorative, informative, fonctionnelle, complexe). Sortie dans toute langue détectée. Cache disque déterministe.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/vision.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment générer des textes alternatifs avec sprezzature-vision",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Demandez : « génère des textes alternatifs pour ces images » ou « écris les alt-text en français ». Fournissez des chemins d'images ou un répertoire."},
+          {"@type": "HowToStep", "position": 2, "text": "Le skill classe chaque image via un arbre de décision : les images décoratives reçoivent un alt vide ; les images informatives reçoivent une description ; les images fonctionnelles reçoivent l'étiquette de l'action."},
+          {"@type": "HowToStep", "position": 3, "text": "Le modèle Ollama local (qwen3-vl:8b) génère le texte de description. Les résultats sont mis en cache sur le disque, donc une nouvelle exécution est instantanée pour les images inchangées."},
+          {"@type": "HowToStep", "position": 4, "text": "Examinez le JSON de sortie. Modifiez les descriptions à affiner, puis injectez les attributs alt dans votre HTML."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
