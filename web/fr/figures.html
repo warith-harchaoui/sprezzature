@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/figures.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/figures.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/figures.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/figures.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,41 @@
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
   <link rel="stylesheet" href="../css/app.css">
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Figures — Sprezzature",
+        "description": "Catalogue rendu de graphiques et tracés statistiques depuis sprezzature-figures : Vega-Lite et SVG, tous sur données fictives avec une palette curatée.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/figures.html",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-figures",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Génère des visualisations de données de qualité publication : graphiques interactifs Vega-Lite, tracés statistiques SVG, et diagrammes d'explicabilité SHAP. Chaque type de graphique est livré sous forme de générateur make_*.py sur une palette sûre pour le daltonisme.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/figures.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment générer un graphique avec sprezzature-figures",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Demandez à l'agent : « fais un graphique en barres de ces données » ou « représente ces données en beeswarm ». Fournissez vos données ou un chemin CSV."},
+          {"@type": "HowToStep", "position": 2, "text": "Le skill sélectionne une spec Vega-Lite ou un générateur SVG, applique la palette maison, et produit un PNG via la Ralph Eyeball Loop."},
+          {"@type": "HowToStep", "position": 3, "text": "Examinez le PNG. Demandez des ajustements : étiquettes d'axe, surcharges de couleur, taille de police. La boucle re-génère et ré-inspecte."},
+          {"@type": "HowToStep", "position": 4, "text": "Exportez la spec Vega-Lite JSON finale ou le fichier SVG, prêt à intégrer dans une page ou un document."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">

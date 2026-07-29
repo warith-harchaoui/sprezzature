@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/publish.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/publish.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/publish.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/publish.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,42 @@
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
   <link rel="stylesheet" href="../css/app.css">
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Publication — Sprezzature",
+        "description": "Transforme un dossier de fichiers Markdown en site statique : balises méta par page, jeu complet de favicons, robots, sitemap, llms.txt, réécritures en langage accessible et narration localisée.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/publish.html",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-publish",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Convertit un dossier Markdown en site statique. Génère les balises méta SEO et Open Graph par page, un jeu complet de favicons depuis un logo, robots.txt, sitemap.xml, llms.txt, llms-full.txt, et des réécritures optionnelles en langage accessible et narration.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/publish.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment publier un site statique avec sprezzature-publish",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Demandez : « construis mon site depuis ce dossier Markdown ». Pointez le skill sur votre répertoire de contenu."},
+          {"@type": "HowToStep", "position": 2, "text": "Le skill convertit chaque fichier .md en HTML et injecte les URL canoniques, les balises Open Graph et les données structurées Schema.org JSON-LD."},
+          {"@type": "HowToStep", "position": 3, "text": "Fournissez une image de logo. Le skill génère le jeu complet de favicons : 16, 32, 48 px, ICO, Apple touch icon, manifeste PWA."},
+          {"@type": "HowToStep", "position": 4, "text": "Le skill génère robots.txt, sitemap.xml, llms.txt et llms-full.txt pour que les moteurs de recherche et les robots IA puissent indexer le site."},
+          {"@type": "HowToStep", "position": 5, "text": "Demandez optionnellement des réécritures en langage accessible ou de la narration audio. Le skill applique la charte d'écriture via un modèle local."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">

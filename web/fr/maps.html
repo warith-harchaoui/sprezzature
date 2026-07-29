@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/maps.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/maps.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -23,6 +24,41 @@
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
   <link rel="stylesheet" href="../css/app.css">
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Cartes — Sprezzature",
+        "description": "Cartographie de qualité publication : cartes thématiques Equal-Earth, cartes de situation en couches, techniques SVG soignées, et données réelles d'élections françaises.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/maps.html",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-figures (cartes)",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Génère des figures cartographiques de qualité publication : cartes choroplèthes Equal-Earth, cartes de situation en couches avec lignes de front et zones de contrôle, cartes à bulles et superpositions de traces GPS. Tout est rendu en SVG lisible sous daltonisme.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/maps.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment créer une carte de situation ou thématique avec sprezzature-figures",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Demandez à l'agent : « fais une carte choroplèthe de ces données » ou « dessine une carte de situation avec ces lignes de front ». Fournissez un CSV ou un GeoJSON."},
+          {"@type": "HowToStep", "position": 2, "text": "Le skill sélectionne une projection Equal-Earth ou Mercator, applique la palette divergente sûre pour le daltonisme, et rend la couche de base."},
+          {"@type": "HowToStep", "position": 3, "text": "Pour les cartes de situation, fournissez les polygones de zones de contrôle et les géométries de lignes de front. Le skill les superpose avec l'opacité et l'épaisseur de trait appropriées."},
+          {"@type": "HowToStep", "position": 4, "text": "Exportez le SVG final, dimensionné pour le web ou l'impression, avec une légende et une barre d'échelle."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Aller au contenu</a>

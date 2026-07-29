@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/accessibility.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/accessibility.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,41 @@
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-mono/fonts.css">
   <link rel="stylesheet" href="../css/app.css">
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Accessibilité — Sprezzature",
+        "description": "Linter statique d'accessibilité HTML avant commit pour les sorties vanilla-JS et Tailwind : quatorze règles décidables depuis la source, sans navigateur ni DOM.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/accessibility.html",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-accessibility",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Linter HTML statique pour l'accessibilité des sorties vanilla-JS et Tailwind. Vérifie quatorze règles depuis la source seule : alt manquant, champs sans étiquette, ordre des titres, attribut lang, état couleur-uniquement, gardes prefers-reduced-motion.",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/accessibility.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment auditer l'accessibilité HTML avec sprezzature-accessibility",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Installez sprezzature-accessibility en décompressant son archive dans ~/.claude/skills ou ~/.opencode/skills."},
+          {"@type": "HowToStep", "position": 2, "text": "Demandez à l'agent : « linter a11y » ou « vérifie l'accessibilité de ce HTML ». Le skill lit la source sans navigateur ni DOM."},
+          {"@type": "HowToStep", "position": 3, "text": "Consultez le rapport JSON : chaque constat indique la règle, l'élément fautif et la correction. Le code de sortie est non nul en cas d'échec, ce qui bloque l'intégration continue."},
+          {"@type": "HowToStep", "position": 4, "text": "Corrigez les éléments signalés dans la source, puis relancez pour confirmer que les quatorze règles passent."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">

@@ -11,6 +11,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/index.html">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
@@ -44,6 +45,60 @@
   <link rel="stylesheet" href="../css/app.css">
 
 
+  <!-- GEO / données structurées pour les aperçus IA et la recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Sprezzature",
+        "url": "https://harchaoui.org/warith/sprezzature/fr/",
+        "description": "Neuf skills Claude / OpenCode pour une pile frontend unique : UI, CLI vers GUI, publication, accessibilité, couleurs, texte alternatif, sous-titres, Lois de l'UX, et figures de science des données.",
+        "inLanguage": "fr",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Sprezzature",
+        "description": "Un système de design livré sous forme de neuf skills Claude / OpenCode. Chaque skill fabrique des artefacts et les audite contre des règles explicites : UI, CLI vers GUI, publication, accessibilité, couleurs, texte alternatif, sous-titres, Lois de l'UX, figures.",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "programmingLanguage": ["Python", "JavaScript", "HTML"],
+        "license": "https://spdx.org/licenses/BSD-3-Clause.html",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que Sprezzature ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sprezzature est un ensemble de neuf skills pour Claude Code et OpenCode. Chaque skill couvre une partie d'une pile frontend (génération d'UI, CLI vers GUI, publication, accessibilité, couleurs, texte alternatif, sous-titres, Lois de l'UX, figures de science des données) et fabrique l'artefact tout en l'auditant contre des règles explicites."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment installer un skill Sprezzature ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Téléchargez la dernière archive depuis la page de releases GitHub, décompressez-la, et copiez les dossiers de skills souhaités dans ~/.claude/skills (pour Claude Code) ou ~/.opencode/skills (pour OpenCode). Aucune étape de compilation n'est requise."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les skills Sprezzature fonctionnent-ils hors ligne ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La plupart des scripts sont déterministes et fonctionnent sans connexion réseau. Les étapes nécessitant un modèle (génération de texte alternatif, sous-titres, réécriture en langage simple) utilisent Ollama en local avec qwen3-vl:8b. Aucun appel à l'API Anthropic ni au cloud n'est requis pour ces étapes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">

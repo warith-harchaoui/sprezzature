@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/ux-laws.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/ux-laws.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/ux-laws.html">
+  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/ux-laws.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
@@ -27,6 +28,41 @@
     if(!s)s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
     document.documentElement.setAttribute('data-color-scheme',s);})();</script>
   <link rel="stylesheet" href="css/app.css">
+  <!-- GEO / structured data for AI overviews and search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Laws of UX — Sprezzature",
+        "description": "Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JS and Tailwind — when making new UI and when auditing existing HTML. Reference covers 30 laws.",
+        "url": "https://harchaoui.org/warith/sprezzature/ux-laws.html",
+        "inLanguage": "en",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "sprezzature-ux-laws",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Applies the 30 Laws of UX (Jon Yablonski) to vanilla-JS and Tailwind interfaces. Audits existing HTML mechanically against 8 decidable laws, and applies the remaining 22 by judgment with concrete Tailwind edit recommendations.",
+        "url": "https://harchaoui.org/warith/sprezzature/ux-laws.html",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to audit a UI against Laws of UX with sprezzature-ux-laws",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Ask: 'audit this page for UX laws' or 'apply Fitts Law to this layout'. Supply the HTML file."},
+          {"@type": "HowToStep", "position": 2, "text": "The skill runs eight mechanical checks decidable from HTML source: target size, proximity grouping, label clarity, motion guards, and others."},
+          {"@type": "HowToStep", "position": 3, "text": "For the remaining 22 laws requiring visual judgment, the skill uses a screenshot and applies each law with a concrete Tailwind fix recommendation."},
+          {"@type": "HowToStep", "position": 4, "text": "Receive a ranked list of findings with the law name, the element, and the suggested edit. Apply the fixes and re-audit."}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
