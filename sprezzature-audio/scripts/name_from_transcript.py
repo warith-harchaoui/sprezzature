@@ -103,6 +103,7 @@ from caption_diarize import (  # noqa: E402
 )
 
 import click
+from sprezzature_local.llm import chat as _llm_chat
 
 
 # ── Configuration ──────────────────────────────────────────────────────────
@@ -385,19 +386,15 @@ def _llm_pass(
         "stream": False,
         "options": {"temperature": 0.0, "num_ctx": 8192},
     }
-    req = urllib.request.Request(
-        url.rstrip("/") + "/api/generate",
-        data=json.dumps(body).encode("utf-8"),
-        headers={"Content-Type": "application/json"},
-    )
     try:
-        with urllib.request.urlopen(req, timeout=120) as fh:
-            payload = json.loads(fh.read().decode("utf-8"))
+        raw = str(_llm_chat(
+            json.dumps(user_payload, ensure_ascii=False),
+            system=system,
+            model=model,
+        )).strip()
     except Exception as exc:  # noqa: BLE001
         print(f"[warn] Ollama call failed: {exc}", file=sys.stderr)
         return {}
-
-    raw = payload.get("response", "").strip()
     try:
         mapping = json.loads(raw)
     except json.JSONDecodeError:

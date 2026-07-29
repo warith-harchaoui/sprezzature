@@ -68,6 +68,7 @@ from _lang import detect_text_language, extract_body_text, language_name  # noqa
 from caption_diarize import parse_caption_cues  # noqa: E402
 
 import click  # noqa: E402
+from sprezzature_local.llm import chat as _llm_chat  # noqa: E402
 
 
 # ── Module-level configuration ────────────────────────────────────────────────
@@ -375,18 +376,14 @@ def make_ollama_translator(
             "stream": False,
             "options": {"temperature": 0.0, "num_ctx": 8192},
         }
-        req = urllib.request.Request(
-            url.rstrip("/") + "/api/generate",
-            data=json.dumps(body).encode("utf-8"),
-            headers={"Content-Type": "application/json"},
-        )
         try:
-            with urllib.request.urlopen(req, timeout=180) as fh:
-                reply = json.loads(fh.read().decode("utf-8"))
+            raw: str = str(_llm_chat(
+                json.dumps(payload, ensure_ascii=False),
+                system=system,
+                model=model,
+            )).strip()
         except Exception as exc:  # noqa: BLE001
             raise TranslationError(f"Ollama call failed: {exc}") from exc
-
-        raw: str = str(reply.get("response", "")).strip()
         try:
             mapping = json.loads(raw)
         except json.JSONDecodeError as exc:
