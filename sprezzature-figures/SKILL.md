@@ -12,12 +12,9 @@ description: >-
   agent (Claude reads the PNG) or --local (qwen3-vl:8b via Ollama, fully offline).
   Trigger phrases: "make a figure", "chart this", "matplotlib", "seaborn",
   "plotly", "heatmap", "treemap", "candlestick", "choropleth", "GPS map",
-  "situation map", "areas of control", "sankey", "render this diagram",
-  "mermaid diagram", "no ascii art", "ralph eyeball loop",
-  "screenshot the page", "SHAP plot", "DAG", "audit this figure",
-  "bell curve", "normal distribution", "column range", "confidence interval
-  chart", "funnel chart", "conversion funnel", "sunburst chart",
-  "waterfall chart", "bridge chart", "P&L bridge".
+  "situation map", "sankey", "mermaid diagram", "no ascii art",
+  "ralph eyeball loop", "SHAP plot", "DAG", "audit this figure",
+  "bell curve", "funnel chart", "sunburst", "waterfall chart", "P&L bridge".
   Output: Vega JSON / SVG / PNG / PDF.
 license: BSD-3-Clause
 compatibility: >-
