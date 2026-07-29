@@ -31,6 +31,29 @@ The skills:
 The companion skills inherit the sprezzature-ui stack rules. Install only the
 ones you need.
 
+## Three-layer architecture
+
+As of 2026-07-29, sprezzature is organised in three layers with distinct release cycles.
+
+**Layer 1 — pip-installable tool packages.** Each skill's Python scripts live in a standalone repo. Install only the tools you need:
+
+| `pip install …` | What it does |
+|---|---|
+| `sprezzature-figures` | 84 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
+| `sprezzature-colors` | WCAG contrast auditing, CVD simulation, Tailwind palette export |
+| `sprezzature-accessibility` | Static a11y lint (14 rules, stdlib only) |
+| `sprezzature-cli-gui` | CLI argument parser to single-page GUI emitter |
+| `sprezzature-ux-laws` | Laws-of-UX audit (Hick, Fitts, Miller, Jakob, Tesler, …) |
+| `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation |
+| `sprezzature-local` | Pluggable LLM backend (Ollama / OpenAI-compatible / LangChain) |
+| `best-engine-ai-helper` | Hardware detection, model selection, VLM/LLM gates |
+
+All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
+
+**Layer 2 — the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
+
+**Layer 3 — the local runtime.** [`sprezzature-local`](https://github.com/warith-harchaoui/sprezzature-local) is a separate repo. It wires any OpenAI-compatible backend to the skill scripts via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`.
+
 > **What prompt activates what?** See [`TRIGGERS.md`](TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
 > trigger phrase against the skill it invokes.

@@ -59,6 +59,30 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-07-29 — Three-layer architecture, standalone repos, writing charters
+
+### Added
+
+- **Three-layer architecture.** The monorepo now splits into three explicit layers: (1) pip-installable tool packages (`sprezzature-*`), (2) the agentic layer (this repo: `SKILL.md` + `references/` + `web/`), and (3) the local runtime (`sprezzature-local`, separate repo). Each layer has its own release cycle.
+- **Standalone tool repos on GitHub** under `warith-harchaoui/`:
+  - `sprezzature-figures` (84 chart types, SHAP, DoWhy, Ralph Eyeball Loop)
+  - `sprezzature-local` (pluggable LLM backend: Ollama / OpenAI-compatible / LangChain)
+  - `best-engine-ai-helper` (hardware detection, model selection, VLM/LLM gates)
+  - `sprezzature-colors` (WCAG contrast auditing, CVD simulation, Tailwind palette export)
+  - `sprezzature-accessibility` (14-rule static a11y lint, stdlib only)
+  - `sprezzature-cli-gui` (CLI to single-page GUI emitter)
+  - `sprezzature-ux-laws` (Laws-of-UX audit)
+  - `sprezzature-audio` (speech-to-text, diarization, speaker identification, caption translation)
+- **6 new chart types** in `sprezzature-figures`: bell curve, column range, funnel, sunburst, treemap, waterfall. Inspired by the Highcharts chart catalogue; implemented with the Vega/Matplotlib pipeline and generalisable to any dataset.
+- **Schema.org JSON-LD + hreflang** on all 32 web pages (16 EN + 16 FR): FAQPage, HowTo, SoftwareApplication blocks, x-default hreflang links on FR pages.
+- **Writing charters** in 6 languages (EN, FR, ES, DE, IT, PT) injected into all auto-generation prompts via `writing_rules_block()` in `_prompts.py`.
+- **`sprezzature-local`**: pluggable LLM backend for all 7 Ollama-backed scripts. Env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`.
+- **`best-engine-ai-helper`**: hardware detection (Apple Silicon M1–M4, NVIDIA, AMD), model catalog with benchmark scores, `select()` and `rank()` for VLM/LLM model selection, Ralph loop, pull/validate gates.
+
+### Changed
+
+- Each skill tool package extracted from the monorepo into a standalone pip-installable repo. The monorepo retains `SKILL.md`, `references/`, and `web/`.
+
 ## [1.0.0] — 2026-07-27 — Renamed `front` → `sprezzature`
 
 The `front` project is frozen; `sprezzature` is its canonical successor. This is

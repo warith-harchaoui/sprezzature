@@ -2,6 +2,28 @@
 
 `sprezzature` is one opinionated answer to a wide question: *how should a large language model (LLM) produce frontend code?* This file maps the alternatives in every category the `sprezzature-*` skills touch as **matrices**: rows are tools, columns are characteristics you actually care about. Use it to choose with eyes open.
 
+## Agentic frameworks — where sprezzature fits
+
+The `sprezzature` monorepo is partly an agentic framework: it defines skills that Claude / OpenCode execute. Here is how it compares to the general-purpose agentic frameworks:
+
+| Framework | Multimodal | Local-first | Pip-installable tools | Skill-native | Web publishing | A11y / figures built-in |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **sprezzature** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| [LangChain](https://python.langchain.com) | ~ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [LlamaIndex](https://www.llamaindex.ai) | ~ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [Haystack](https://haystack.deepset.ai) | ✗ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [AutoGen](https://microsoft.github.io/autogen/) | ~ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [CrewAI](https://www.crewai.com) | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ |
+
+Key differences:
+
+- LangChain / LlamaIndex are general-purpose retrieval + chain frameworks. They do not ship built-in domain skills for accessibility, charts, or publishing.
+- Haystack focuses on NLP pipelines. No multimodal output, no frontend tooling.
+- AutoGen / CrewAI handle multi-agent orchestration well, but the agents must be authored from scratch. No built-in chart audit, no a11y lint, no CVD simulation.
+- `sprezzature` is narrow on purpose: nine skills, one frontend stack (vanilla JS + Tailwind), local-first execution via `sprezzature-local`. Use LangChain when your problem is retrieval at scale; use `sprezzature` when the problem is frontend quality at the human-document level.
+
+`sprezzature-local` (the Layer 3 runtime) uses a LangChain-compatible backend as one option (`SPREZZATURE_LLM_BACKEND=langchain`), so the two are complementary rather than exclusive.
+
 ## A note on bias
 
 This file is written by the author of `sprezzature`. The "Skill alignment" column is **not a quality score**; it flags whether each alternative fits inside `sprezzature`'s emitted output (vanilla JavaScript (JS), Tailwind, no framework runtime). Most alternatives marked ✗ are excellent at what they do; the mark just means "different design choice, not a drop-in companion." Read the Notes column and the "Pick X when…" paragraph after each table for the honest one-liner. If you came here looking for "is `sprezzature` better?" the answer is **almost never in absolute terms; only better for a few specific shapes of project**, named below.

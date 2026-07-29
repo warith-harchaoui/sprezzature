@@ -2,6 +2,28 @@
 
 `sprezzature` est **une** réponse assumée à une vaste question : *comment un grand modèle de langage (LLM) devrait-il produire du code frontend ?* Ce fichier cartographie les alternatives dans chacune des catégories touchées par les *skills* `sprezzature-*`, sous forme de **matrices** : les lignes sont des outils, les colonnes des caractéristiques qui comptent vraiment. Servez-vous-en pour choisir en connaissance de cause.
 
+## Frameworks agentiques — où se situe sprezzature
+
+Le monorepo `sprezzature` est en partie un framework agentique : il définit des *skills* que Claude / OpenCode exécutent. Voici comment il se compare aux frameworks agentiques généralistes :
+
+| Framework | Multimodal | Local d'abord | Outils pip | *Skill*-natif | Publication web | A11y / figures intégrés |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **sprezzature** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| [LangChain](https://python.langchain.com) | ~ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [LlamaIndex](https://www.llamaindex.ai) | ~ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [Haystack](https://haystack.deepset.ai) | ✗ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [AutoGen](https://microsoft.github.io/autogen/) | ~ | ~ | ✓ | ✗ | ✗ | ✗ |
+| [CrewAI](https://www.crewai.com) | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ |
+
+Différences clés :
+
+- LangChain / LlamaIndex sont des frameworks de chaînes et de récupération généralistes. Ils ne livrent pas de *skills* de domaine intégrés pour l'accessibilité, les graphiques ou la publication.
+- Haystack se concentre sur les pipelines de traitement du langage naturel (NLP). Pas de sortie multimodale, pas d'outillage frontend.
+- AutoGen / CrewAI gèrent bien l'orchestration multi-agents, mais les agents doivent être écrits de zéro. Pas d'audit de graphiques, pas de lint a11y, pas de simulation de daltonisme.
+- `sprezzature` est délibérément étroit : neuf *skills*, une seule pile frontend (JS pur + Tailwind), exécution locale via `sprezzature-local`. Choisissez LangChain quand votre problème est la récupération à grande échelle ; choisissez `sprezzature` quand le problème est la qualité frontend au niveau du document humain.
+
+`sprezzature-local` (le runtime de la couche 3) propose LangChain comme backend optionnel (`SPREZZATURE_LLM_BACKEND=langchain`), ce qui rend les deux complémentaires.
+
 ## Note sur le biais
 
 Ce fichier est écrit par l'auteur de `sprezzature`. La colonne « Compatible sprezzature » n'est **pas un score de qualité** : elle signale si chaque alternative s'insère dans la sortie émise par `sprezzature` (vanilla JS, Tailwind, sans environnement d'exécution de framework). La plupart des alternatives marquées ✗ sont excellentes dans ce qu'elles font ; le repère signifie seulement « choix de conception différent, pas un compagnon prêt à l'emploi ». Lisez la colonne Notes et le paragraphe « Choisir X quand… » après chaque table pour la phrase honnête. Si vous êtes venu chercher « est-ce que `sprezzature` est meilleur ? », la réponse est **presque jamais dans l'absolu, meilleur seulement pour quelques formes de projet bien précises**, nommées ci-dessous.
