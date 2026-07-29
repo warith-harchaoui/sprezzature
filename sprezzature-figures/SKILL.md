@@ -14,8 +14,11 @@ description: >-
   "plotly", "heatmap", "treemap", "candlestick", "choropleth", "GPS map",
   "situation map", "areas of control", "sankey", "render this diagram",
   "mermaid diagram", "no ascii art", "ralph eyeball loop",
-  "screenshot the page", "SHAP plot", "DAG", "audit this
-  figure". Output: Vega JSON / SVG / PNG / PDF.
+  "screenshot the page", "SHAP plot", "DAG", "audit this figure",
+  "bell curve", "normal distribution", "column range", "confidence interval
+  chart", "funnel chart", "conversion funnel", "sunburst chart",
+  "waterfall chart", "bridge chart", "P&L bridge".
+  Output: Vega JSON / SVG / PNG / PDF.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+; the static
