@@ -42,6 +42,29 @@ Les neuf *skills* :
 Les *skills* compagnons héritent des règles de pile de `sprezzature-ui`.
 N'installez que ceux dont vous avez besoin.
 
+## Architecture à trois couches
+
+Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de release distincts.
+
+**Couche 1 — packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant. Installez uniquement ce dont vous avez besoin :
+
+| `pip install …` | Ce que ça fait |
+|---|---|
+| `sprezzature-figures` | 84 types de graphiques, SHAP, estimations causales, la Ralph Eyeball Loop |
+| `sprezzature-colors` | Audit de contraste WCAG, simulation de daltonisme (CVD), export palette Tailwind |
+| `sprezzature-accessibility` | Lint a11y statique (14 règles, stdlib uniquement) |
+| `sprezzature-cli-gui` | Parseur d'arguments CLI vers interface graphique une page |
+| `sprezzature-ux-laws` | Audit des Laws of UX (Hick, Fitts, Miller, Jakob, Tesler, …) |
+| `sprezzature-audio` | Parole vers texte, diarisation, identification du locuteur, traduction de sous-titres |
+| `sprezzature-local` | Backend LLM connectable (Ollama / compatible OpenAI / LangChain) |
+| `best-engine-ai-helper` | Détection du matériel, sélection du modèle, portes VLM/LLM |
+
+Tous les repos sont sur [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
+
+**Couche 2 — la couche agentique (ce repo).** Les fichiers `SKILL.md`, `references/` et `web/` restent dans le monorepo `sprezzature`. Ils définissent les contrats entre l'agent Claude / OpenCode et les packages outils.
+
+**Couche 3 — le runtime local.** [`sprezzature-local`](https://github.com/warith-harchaoui/sprezzature-local) est un repo séparé. Il connecte n'importe quel backend compatible OpenAI aux scripts via des variables d'environnement : `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends : `ollama` (défaut), `openai`, `langchain`.
+
 > **Quelle phrase déclenche quel *skill* ?** Voir
 > [`TRIGGERS.md`](TRIGGERS.md), généré depuis chaque `SKILL.md`,
 > liste toutes les phrases garanties par leur description avec le
