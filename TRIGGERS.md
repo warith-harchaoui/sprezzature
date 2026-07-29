@@ -131,25 +131,17 @@ The trigger phrases below are what each skill's frontmatter description claims w
 | `choropleth` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `GPS map` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `situation map` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `areas of control` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `sankey` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `render this diagram` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `mermaid diagram` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `no ascii art` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `ralph eyeball loop` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `screenshot the page` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `SHAP plot` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `DAG` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `audit this figure` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `bell curve` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `normal distribution` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `column range` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `confidence interval chart` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `funnel chart` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `conversion funnel` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `sunburst chart` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
+| `sunburst` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `waterfall chart` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `bridge chart` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 | `P&L bridge` | **sprezzature-figures** — Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
 
 ## How discovery works
