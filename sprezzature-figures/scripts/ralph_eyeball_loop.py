@@ -122,6 +122,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+from sprezzature_local.llm import chat as _llm_chat
+
 # ---------------------------------------------------------------------------
 # Paths — resolved at import time so the script works from any cwd
 # ---------------------------------------------------------------------------
@@ -636,34 +638,12 @@ def _ollama_critique(png_path: Path, kind: str) -> str:
     SystemExit
         When Ollama is unreachable or the model is not pulled.
     """
-    image_b64 = base64.b64encode(png_path.read_bytes()).decode()
     prompt = _build_critique_prompt(kind)
-    payload = json.dumps({
-        "model": _VISION_MODEL,
-        "prompt": prompt,
-        "images": [image_b64],
-        "stream": False,
-    }).encode()
-
-    req = urllib.request.Request(
-        _OLLAMA_URL,
-        data=payload,
-        headers={"Content-Type": "application/json"},
-    )
     print(f"ralph_eyeball_loop: calling {_VISION_MODEL} for visual critique "
           "(first call loads the model, ~30 s cold) …", file=sys.stderr)
     try:
-        with urllib.request.urlopen(req, timeout=_OLLAMA_TIMEOUT) as resp:
-            data = json.loads(resp.read())
-            return data.get("response", "").strip()
-    except TimeoutError:
-        raise SystemExit(
-            f"ralph_eyeball_loop: {_VISION_MODEL} did not respond within "
-            f"{_OLLAMA_TIMEOUT} s. A large full-page screenshot on a cold model "
-            "can be slow; warm it first with a tiny request, then re-run:\n"
-            f"  ollama run {_VISION_MODEL} 'ok'"
-        )
-    except urllib.error.URLError as exc:
+        return str(_llm_chat(prompt, images=[png_path.read_bytes()], model=_VISION_MODEL)).strip()
+    except Exception as exc:
         raise SystemExit(
             f"ralph_eyeball_loop: Ollama is not reachable at {_OLLAMA_URL}.\n"
             "  Start it with:  ollama serve\n"

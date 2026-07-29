@@ -68,6 +68,7 @@ from typing import Optional
 
 import click
 import requests
+from sprezzature_local.llm import chat as _llm_chat
 
 # Shared Ollama helpers live in _ollama.py inside this skill folder so
 # the script does not need a cross-skill import after the 0.2.0 split.
@@ -290,8 +291,7 @@ def rewrite(
     }
 
     try:
-        resp = requests.post(f"{OLLAMA_URL}/api/generate", json=payload, timeout=180)
-        resp.raise_for_status()
+        out: str = str(_llm_chat(prompt, model=model)).strip()
     except requests.exceptions.ConnectionError:
         sys.stderr.write(
             f"Cannot reach Ollama at {OLLAMA_URL}. "
@@ -302,9 +302,6 @@ def rewrite(
         sys.stderr.write(f"Ollama responded with HTTP error: {e}\n")
         sys.exit(2)
 
-    body: dict = resp.json()
-    out: str = (body.get("response") or "").strip()
-
     # Length sanity check — if the model overshot, re-ask once with a tighter
     # instruction. We do not loop; one retry is the right balance between
     # correctness and predictable latency.
@@ -313,11 +310,8 @@ def rewrite(
             f"\nThe previous rewrite was too long. "
             f"Keep it to AT MOST {int(len(text) * MAX_LENGTH_FACTOR)} characters.\n"
         )
-        payload["prompt"] = tighter
         try:
-            resp = requests.post(f"{OLLAMA_URL}/api/generate", json=payload, timeout=180)
-            resp.raise_for_status()
-            out = (resp.json().get("response") or "").strip()
+            out = str(_llm_chat(tighter, model=model)).strip()
         except requests.exceptions.RequestException:
             # If the retry fails, keep the over-long rewrite — it is still
             # better than the original marketing copy in most cases.

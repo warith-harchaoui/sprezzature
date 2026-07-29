@@ -81,6 +81,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+from sprezzature_local.llm import chat as _llm_chat
+
 # Local helpers — pure-Python, no heavy ML deps.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _narrate import (  # noqa: E402
@@ -162,21 +164,7 @@ def _llm_classify_segment(
         "Reply with the JSON object only."
     )
     try:
-        resp = requests.post(
-            f"{OLLAMA_URL}/api/generate",
-            json={
-                "model": model,
-                "system": LLM_SYSTEM_PROMPT,
-                "prompt": user_prompt,
-                "stream": False,
-                "format": "json",
-            },
-            timeout=timeout_s,
-        )
-        if resp.status_code != 200:
-            return {}
-        body: Any = resp.json()
-        text: str = body.get("response", "").strip()
+        text: str = str(_llm_chat(user_prompt, system=LLM_SYSTEM_PROMPT, model=model)).strip()
         return json.loads(text) if text else {}
     except Exception:
         # ConnectionError, Timeout, JSONDecodeError — fail soft.

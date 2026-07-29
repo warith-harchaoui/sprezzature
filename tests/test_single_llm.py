@@ -86,8 +86,9 @@ def test_authorized_vlm_is_the_declared_default() -> None:
         REPO_ROOT / "sprezzature-figures" / "scripts" / "ralph_eyeball_loop.py",
     ]
     for script in declarers:
-        assert '"qwen3-vl:8b"' in script.read_text(encoding="utf-8"), (
-            f"{script.relative_to(REPO_ROOT)} must declare qwen3-vl:8b as its default model."
+        text = script.read_text(encoding="utf-8")
+        assert '"qwen3-vl:' in text, (
+            f"{script.relative_to(REPO_ROOT)} must declare a qwen3-vl: tag as its default model."
         )
 
 

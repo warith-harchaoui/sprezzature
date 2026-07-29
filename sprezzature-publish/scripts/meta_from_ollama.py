@@ -84,6 +84,7 @@ from typing import Optional
 
 import click
 import requests
+from sprezzature_local.llm import chat as _llm_chat
 
 # Shared Ollama helpers live in _ollama.py inside this skill folder so
 # the script does not need a cross-skill import after the 0.2.0 split.
@@ -471,8 +472,7 @@ def _cli(
     }
 
     try:
-        resp = requests.post(f"{OLLAMA_URL}/api/generate", json=payload, timeout=180)
-        resp.raise_for_status()
+        raw: str = str(_llm_chat(prompt, model=resolved_model))
     except requests.exceptions.ConnectionError:
         click.echo(
             f"Cannot reach Ollama at {OLLAMA_URL}. "
@@ -480,9 +480,6 @@ def _cli(
             err=True,
         )
         return 2
-
-    body: dict = resp.json()
-    raw: str = body.get("response", "")
     try:
         parsed = extract_json(raw)
     except Exception as e:

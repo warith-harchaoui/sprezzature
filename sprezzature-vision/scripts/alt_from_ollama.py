@@ -77,6 +77,7 @@ import click
 # ``requests`` is the one hard third-party dependency; declared as a runtime
 # requirement in ``sprezzature/scripts/requirements.txt``.
 import requests
+from sprezzature_local.llm import chat as _llm_chat
 
 # Vocabulary + language helpers — shared with the other Ollama-backed scripts.
 sys.path.insert(0, str(Path(__file__).parent))
@@ -595,8 +596,7 @@ def describe_long(
     }
 
     try:
-        resp = requests.post(f"{OLLAMA_URL}/api/generate", json=payload, timeout=180)
-        resp.raise_for_status()
+        text: str = str(_llm_chat(payload["prompt"], images=[data], model=model)).strip()
     except requests.exceptions.ConnectionError:
         sys.stderr.write(
             f"Cannot reach Ollama at {OLLAMA_URL}.\n"
@@ -608,8 +608,6 @@ def describe_long(
         sys.stderr.write(f"Ollama responded with HTTP error: {e}\n")
         sys.exit(2)
 
-    body: dict = resp.json()
-    text: str = (body.get("response") or "").strip()
     # Long descriptions are NOT post-processed by ``post_process`` — that
     # would strip Markdown bullets and clip mid-list. They are still cached.
     _cache_set(key, text)
@@ -741,8 +739,7 @@ def describe(
     }
 
     try:
-        resp = requests.post(f"{OLLAMA_URL}/api/generate", json=payload, timeout=120)
-        resp.raise_for_status()
+        text = post_process(str(_llm_chat(payload["prompt"], images=[data], model=model)), lang)
     except requests.exceptions.ConnectionError:
         sys.stderr.write(
             f"Cannot reach Ollama at {OLLAMA_URL}.\n"
@@ -753,9 +750,6 @@ def describe(
     except requests.exceptions.HTTPError as e:
         sys.stderr.write(f"Ollama responded with HTTP error: {e}\n")
         sys.exit(2)
-
-    body: dict = resp.json()
-    text = post_process(body.get("response", ""), lang)
     _cache_set(key, text)
     return text
 
