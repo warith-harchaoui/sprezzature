@@ -16,33 +16,6 @@
 # they declare it via ``additional_dependencies`` so pre-commit
 # installs into its own isolated env.
 
-- id: sprezzature-accessibility-lint
-  name: sprezzature-accessibility — static HTML a11y lint
-  description: >-
-    14 stdlib-only static a11y rules over HTML files. Exits non-zero on
-    any finding; pre-commit gate, NOT a replacement for axe-core /
-    Pa11y / Lighthouse. Use --fix in your hook args for the five safe
-    auto-repairs (lang, redundant aria, tabindex, motion-reduce, etc.).
-  entry: python sprezzature-accessibility/scripts/lint_a11y.py
-  language: python
-  language_version: python3
-  files: '\.html?$'
-  types: [file]
-
-- id: sprezzature-ux-laws-audit
-  name: sprezzature-ux-laws — Laws-of-UX static audit
-  description: >-
-    Static audit of emitted HTML against the canonical Laws of UX
-    (Hick, Miller, Fitts, Jakob, Tesler, Aesthetic-Usability,
-    Selective-Attention, Choice-Overload). Add --fix in your hook
-    args for the four mechanical fixers. Hick + Jakob are errors;
-    everything else is a warning unless --strict is set.
-  entry: python sprezzature-ux-laws/scripts/audit_laws_of_ux.py
-  language: python
-  language_version: python3
-  files: '\.html?$'
-  types: [file]
-
 - id: sprezzature-publish-lint-markdown
   name: sprezzature-publish — Markdown lint (heading order, code-fence languages, local links, LaTeX, Mermaid)
   description: >-
@@ -88,35 +61,6 @@
   files: '(SKILL\.md|TRIGGERS\.md|scripts/build_triggers\.py)$'
   additional_dependencies:
     - PyYAML>=6
-
-- id: sprezzature-colors-contrast
-  name: sprezzature-colors — WCAG contrast audit
-  description: >-
-    Walk every (label × surface) pair in a JSON palette and flag
-    WCAG-AA contrast failures. Suggests OKLCH-neighbour fixes when
-    --fix is passed. Needs Pillow for the image-pair shortcut; the
-    palette-shape gate itself is stdlib only.
-  entry: python sprezzature-colors/scripts/audit_contrast.py
-  language: python
-  language_version: python3
-  files: '\.(json|css|scss)$'
-  types: [file]
-  additional_dependencies:
-    - Pillow>=10
-
-- id: sprezzature-figures-audit
-  name: sprezzature-figures — data-viz static audit
-  description: >-
-    Static auditor for Vega-Lite v5 JSON, matplotlib SVG and HTML
-    ``<figure>`` blocks. Flags detectable data-viz sins
-    (missing-axis-title, dual-y-axis, truncated-baseline, pie-3d,
-    rainbow-palette, cvd-unsafe, missing-polarity, chartjunk,
-    role-img-missing). Stdlib only.
-  entry: python sprezzature-figures/scripts/audit_figure.py
-  language: python
-  language_version: python3
-  files: '\.(json|svg|html|htm)$'
-  types: [file]
 
 - id: sprezzature-ui-i18n-audit
   name: sprezzature-ui — i18n-in-code audit (GUI strings + prompts must live in locales/i18n.yaml)

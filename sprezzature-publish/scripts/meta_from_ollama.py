@@ -459,18 +459,6 @@ def _cli(
 
     prompt = build_prompt(goal, page_text, site_name, resolved_lang)
 
-    payload: dict = {
-        "model": resolved_model,
-        "prompt": prompt,
-        "stream": False,
-        # ``format=json`` enables Ollama's JSON-mode constraint decoding.
-        "format": "json",
-        # Low temperature keeps the output stable across runs. ``num_predict``
-        # bounds the model's output token count; the JSON object fits well
-        # under 600 tokens.
-        "options": {"temperature": 0.2, "num_predict": 600},
-    }
-
     try:
         raw: str = str(_llm_chat(prompt, model=resolved_model))
     except requests.exceptions.ConnectionError:

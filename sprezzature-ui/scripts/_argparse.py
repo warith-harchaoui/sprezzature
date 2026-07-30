@@ -26,7 +26,7 @@ import argparse
 from typing import Optional
 
 
-SKILL_VERSION = "1.0.0"
+SKILL_VERSION = "1.0.1"
 
 
 def make_parser(

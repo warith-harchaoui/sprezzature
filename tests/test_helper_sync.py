@@ -38,7 +38,11 @@ def test_helper_copies_are_byte_identical(helper: str) -> None:
     legitimate per-copy difference — not even in a docstring.
     """
     copies = sorted(REPO_ROOT.glob(f"sprezzature-*/scripts/{helper}"))
-    assert len(copies) >= 2, f"expected several {helper} copies, found {len(copies)}"
+    if len(copies) < 2:
+        pytest.skip(
+            f"{helper}: {len(copies)} copy left in the monorepo; the other copies "
+            f"now live in the standalone skill repos, so there is nothing to cross-check."
+        )
 
     canonical = copies[0].read_bytes()
     drifted = [

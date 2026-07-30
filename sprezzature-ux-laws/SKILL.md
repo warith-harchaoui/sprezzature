@@ -22,9 +22,11 @@ compatibility: >-
   access required. Reference is plain Markdown with no exec deps.
 metadata:
   author: Warith Harchaoui
-  version: 1.0.0
+  version: 1.0.1
   source: https://lawsofux.com/
 ---
+
+> The deterministic tools below now ship as the standalone package [`sprezzature-ux-laws`](https://github.com/warith-harchaoui/sprezzature-ux-laws) (`pip install`), invoked as `sprezzature-ux-laws …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 # sprezzature-ux-laws — make and audit by the Laws of UX
 
@@ -58,8 +60,8 @@ of UX specifically:
 | Mode | Tool | When to load |
 |---|---|---|
 | **Make** — pick the right law for a screen | `references/laws-of-ux.md` | At generation time. The reference is structured for in-conversation lookup: trigger → action → Tailwind hook. Load it once per design surface; pick ONE law to apply, not five. |
-| **Make** — auto-fix mechanically-fixable violations | `scripts/audit_laws_of_ux.py --fix` | Closes the audit↔make loop: every violation that can be repaired by a one-line text edit is fixed in place (Fitts adds `min-h-11`; Aesthetic-Usability adds `focus-visible:ring-2`; Miller chunks long digit runs with NBSP; Jakob rewrites `<div>` / `<span>` to `<button>`). Iterates until convergence; idempotent. |
-| **Audit** — fail the build on detectable violations | `scripts/audit_laws_of_ux.py` | Pre-commit, pre-merge, CI. Static parser, no browser, no network. Findings come as `error` or `warning`; exit non-zero only when an `error` is found unless `--strict` is set. |
+| **Make** — auto-fix mechanically-fixable violations | `audit_laws_of_ux.py --fix` | Closes the audit↔make loop: every violation that can be repaired by a one-line text edit is fixed in place (Fitts adds `min-h-11`; Aesthetic-Usability adds `focus-visible:ring-2`; Miller chunks long digit runs with NBSP; Jakob rewrites `<div>` / `<span>` to `<button>`). Iterates until convergence; idempotent. |
+| **Audit** — fail the build on detectable violations | `audit_laws_of_ux.py` | Pre-commit, pre-merge, CI. Static parser, no browser, no network. Findings come as `error` or `warning`; exit non-zero only when an `error` is found unless `--strict` is set. |
 
 ## Decision tree
 
@@ -177,7 +179,7 @@ warnings pass and only fail on real errors (Hick, Jakob).
 
 ## Scripts
 
-- `scripts/audit_laws_of_ux.py` — Python 3.10+ stdlib-only static
+- `audit_laws_of_ux.py` — Python 3.10+ stdlib-only static
   auditor. Run `--help` for the full flag list (`--json`, `--strict`,
   `--only LAW1,LAW2`, `--ignore LAW1,LAW2`).
 

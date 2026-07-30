@@ -279,17 +279,6 @@ def rewrite(
         return cached
 
     prompt = build_prompt(text, target_grade, lang, preserve)
-    # ``num_predict`` grows with input length so the output has room to land
-    # cleanly; we still cap to avoid runaway generation on very long inputs.
-    num_predict: int = max(120, int(len(text) * 1.3))
-    payload: dict = {
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        # Low temperature keeps the rewrite faithful and reproducible.
-        "options": {"temperature": 0.2, "num_predict": num_predict},
-    }
-
     try:
         out: str = str(_llm_chat(prompt, model=model)).strip()
     except requests.exceptions.ConnectionError:
