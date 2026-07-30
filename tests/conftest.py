@@ -24,6 +24,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 # FIRST so ``skills_manifest`` resolves before per-skill imports run.
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
+# The local runtime lives at ``sprezzature-local/`` (also shipped as its own
+# pip package). The surviving skill scripts import ``sprezzature_local.llm``;
+# expose it on the path so the tests resolve it without a separate install.
+sys.path.insert(0, str(REPO_ROOT / "sprezzature-local"))
+
 # Per-skill script directories — one folder per skill since the 0.2.0
 # split. Sourced from the canonical ``SKILLS.txt`` manifest at repo
 # root so adding skill #9 is a one-line edit there. sprezzature-cli-gui has
