@@ -62,6 +62,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
+          # The surviving skill scripts import ``sprezzature_local.llm`` at
+          # module load; install the local runtime (kept at ./sprezzature-local,
+          # also shipped as its own package) so both in-process imports and the
+          # subprocess ``--help`` smoke tests resolve it, as in production.
+          pip install -e ./sprezzature-local
           # Per-skill runtime deps so the Ollama-backed scripts import
           # cleanly during collection (they don't call the daemon — that's
           # gated by the `eval` marker). The two narration engines are
@@ -77,13 +82,12 @@ jobs:
           # nullglob: an empty glob expands to nothing, not to the
           # literal pattern. Without it CI fails noisily when a skill
           # has no requirements file. The skill folders kept in the
-          # loop are the seven that currently ship Python scripts;
-          # sprezzature-ui and sprezzature-ux-laws are stdlib-only (no entries).
+          # loop are the two skills that still ship model-backed Python
+          # scripts in the monorepo; the deterministic tools (figures,
+          # colors, accessibility, cli-gui, ux-laws, audio) moved to their
+          # own pip packages, and sprezzature-ui is stdlib-only.
           shopt -s nullglob
-          for req in sprezzature-accessibility/scripts/requirements-*.txt \
-                     sprezzature-audio/scripts/requirements-*.txt \
-                     sprezzature-colors/scripts/requirements-*.txt \
-                     sprezzature-publish/scripts/requirements-*.txt \
+          for req in sprezzature-publish/scripts/requirements-*.txt \
                      sprezzature-vision/scripts/requirements-*.txt; do
             case "$(basename "$req")" in
               requirements-narrate-openvoice.txt|requirements-narrate-chatterbox.txt)
