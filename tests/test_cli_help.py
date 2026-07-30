@@ -21,17 +21,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 SCRIPTS = [
-    # sprezzature-accessibility
-    REPO_ROOT / "sprezzature-accessibility"    / "scripts" / "lint_a11y.py",
-    # sprezzature-audio
-    REPO_ROOT / "sprezzature-audio"           / "scripts" / "install_captions.py",
-    REPO_ROOT / "sprezzature-audio"           / "scripts" / "captions_from_whisper.py",
-    REPO_ROOT / "sprezzature-audio"           / "scripts" / "name_from_transcript.py",
-    REPO_ROOT / "sprezzature-audio"           / "scripts" / "translate_captions.py",
-    # sprezzature-colors
-    REPO_ROOT / "sprezzature-colors"  / "scripts" / "audit_contrast.py",
-    REPO_ROOT / "sprezzature-colors"  / "scripts" / "simulate_cvd.py",
-    REPO_ROOT / "sprezzature-colors"  / "scripts" / "palette_to_tailwind.py",
     # sprezzature-publish
     REPO_ROOT / "sprezzature-publish" / "scripts" / "favicons.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "meta_from_ollama.py",
@@ -39,14 +28,8 @@ SCRIPTS = [
     REPO_ROOT / "sprezzature-publish" / "scripts" / "plain_language.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "lint_markdown.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "md_to_html.py",
-    # sprezzature-figures
-    REPO_ROOT / "sprezzature-figures" / "scripts" / "render_diagram.py",
     # sprezzature-vision
     REPO_ROOT / "sprezzature-vision"  / "scripts" / "alt_from_ollama.py",
-    # sprezzature-cli-gui
-    REPO_ROOT / "sprezzature-cli-gui" / "scripts" / "cli_to_gui.py",
-    # sprezzature-ux-laws
-    REPO_ROOT / "sprezzature-ux-laws" / "scripts" / "audit_laws_of_ux.py",
     # sprezzature-ui
     REPO_ROOT / "sprezzature-ui"      / "scripts" / "audit_i18n.py",
     REPO_ROOT / "sprezzature-ui"      / "scripts" / "i18n_make.py",

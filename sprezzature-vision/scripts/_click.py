@@ -29,7 +29,7 @@ from typing import Any, Callable, Optional, Sequence
 import click
 
 
-SKILL_VERSION = "1.0.0"
+SKILL_VERSION = "1.0.1"
 
 
 #: Context settings shared by every sprezzature Click command. ``-h`` joins

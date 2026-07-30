@@ -23,8 +23,10 @@ compatibility: >-
   required.
 metadata:
   author: Warith Harchaoui
-  version: 1.0.0
+  version: 1.0.1
 ---
+
+> The deterministic tools below now ship as the standalone package [`sprezzature-cli-gui`](https://github.com/warith-harchaoui/sprezzature-cli-gui) (`pip install`), invoked as `sprezzature-cli-gui …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 # sprezzature-cli-gui — CLI → web GUI
 
@@ -62,7 +64,7 @@ gates on the emitted HTML.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — CLI → HTML (three adapters) | `scripts/cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command`), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
+| **Make** — CLI → HTML (three adapters) | `cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command`), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
 | **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
 | **Audit** — gate the emitted HTML | Pair with `sprezzature-accessibility/scripts/lint_a11y.py` and `sprezzature-ux-laws/scripts/audit_laws_of_ux.py` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
 

@@ -18,6 +18,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 import _lang  # noqa: E402  (path set by conftest)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -90,7 +92,11 @@ def test_lang_helper_copies_are_identical() -> None:
     """The shared helper is duplicated for self-containment; the copies must
     never drift. This test fails the moment one is edited without the others."""
     copies = sorted(REPO_ROOT.glob("sprezzature-*/scripts/_lang.py"))
-    assert len(copies) >= 4, f"expected several _lang.py copies, found {len(copies)}"
+    if len(copies) < 2:
+        pytest.skip(
+            f"_lang.py: {len(copies)} copy left in the monorepo; the other copies "
+            f"now live in the standalone skill repos, so there is nothing to cross-check."
+        )
     canonical = copies[0].read_text(encoding="utf-8")
     drifted = [str(p.relative_to(REPO_ROOT)) for p in copies[1:]
                if p.read_text(encoding="utf-8") != canonical]
