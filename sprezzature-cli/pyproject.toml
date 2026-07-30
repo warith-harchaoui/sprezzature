@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sprezzature-cli"
-version = "1.0.0"
+version = "1.0.1"
 description = "Unified sprezzature driver: one entry point for the sprezzature skills (sprezzature-ui, sprezzature-accessibility, sprezzature-audio, sprezzature-vision, sprezzature-colors, sprezzature-publish)."
 readme = "README.md"
 requires-python = ">=3.10"

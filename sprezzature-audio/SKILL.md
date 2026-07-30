@@ -19,7 +19,7 @@ license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+ stdlib +
   ``vocal-helper`` + ``audio-helper`` / ``video-helper`` (see
-  ``scripts/requirements-captions.txt``); ``ffmpeg`` on PATH for non-WAV
+  ``requirements-captions.txt``); ``ffmpeg`` on PATH for non-WAV
   inputs. ``install_captions.py`` installs vocal-helper + a GGML model.
   Diarization (``requirements-diarize.txt``) adds ``nemo_toolkit[asr]``
   (pulls torch) + Sortformer/TitaNet via ``install_diarize.py``.
@@ -27,8 +27,10 @@ compatibility: >-
   inference after install.
 metadata:
   author: Warith Harchaoui
-  version: 1.0.0
+  version: 1.0.1
 ---
+
+> The deterministic tools below now ship as the standalone package [`sprezzature-audio`](https://github.com/warith-harchaoui/sprezzature-audio) (`pip install`), invoked as `sprezzature-audio …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 # sprezzature-audio — local AI captions and transcripts
 
@@ -78,12 +80,12 @@ heavier **diarization + speaker ID** tier that layers on top.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — draft captions / transcripts | `scripts/captions_from_whisper.py` + `scripts/install_captions.py` | WebVTT / SRT / plain-text captions via local whisper.cpp, with project-vocab biasing. |
-| **Make** — speaker diarization ("who spoke when") | `scripts/diarize_from_nemo.py` + `scripts/install_diarize.py` | NeMo Sortformer end-to-end diarizer → RTTM + turn JSON. Up to 4 concurrent speakers with the default checkpoint. |
-| **Make** — speaker identification via **reference clips** | `scripts/identify_from_titanet.py` | NeMo TitaNet 192-D speaker embeddings + cosine matching against a directory of known WAVs (filename stem = display name). |
-| **Make** — speaker identification via the **transcript itself** | `scripts/name_from_transcript.py` | Rule pass over self-introductions ("I'm Alice") + turn-initial / turn-final vocatives ("Hey Mary, ..."). Optional `--ollama` refinement via a local Ollama daemon, the same daemon `alt_from_ollama.py` uses. |
-| **Make** — merge captions + diarization | `scripts/caption_diarize.py` | Emits speaker-labelled VTT (`<v Name>` cues), SRT (`Name: text` prefix), or plain text with paragraph breaks per speaker turn. |
-| **Make** — translate captions → second track | `scripts/translate_captions.py` | Translates an existing `.vtt`/`.srt` into the **surrounding-text language** via the local Ollama model (`qwen3-vl:8b`) and prints a two-`<track>` snippet (native `captions` + translated `subtitles`). Captions-only, no audio. |
+| **Make** — draft captions / transcripts | `captions_from_whisper.py` + `install_captions.py` | WebVTT / SRT / plain-text captions via local whisper.cpp, with project-vocab biasing. |
+| **Make** — speaker diarization ("who spoke when") | `diarize_from_nemo.py` + `install_diarize.py` | NeMo Sortformer end-to-end diarizer → RTTM + turn JSON. Up to 4 concurrent speakers with the default checkpoint. |
+| **Make** — speaker identification via **reference clips** | `identify_from_titanet.py` | NeMo TitaNet 192-D speaker embeddings + cosine matching against a directory of known WAVs (filename stem = display name). |
+| **Make** — speaker identification via the **transcript itself** | `name_from_transcript.py` | Rule pass over self-introductions ("I'm Alice") + turn-initial / turn-final vocatives ("Hey Mary, ..."). Optional `--ollama` refinement via a local Ollama daemon, the same daemon `alt_from_ollama.py` uses. |
+| **Make** — merge captions + diarization | `caption_diarize.py` | Emits speaker-labelled VTT (`<v Name>` cues), SRT (`Name: text` prefix), or plain text with paragraph breaks per speaker turn. |
+| **Make** — translate captions → second track | `translate_captions.py` | Translates an existing `.vtt`/`.srt` into the **surrounding-text language** via the local Ollama model (`qwen3-vl:8b`) and prints a two-`<track>` snippet (native `captions` + translated `subtitles`). Captions-only, no audio. |
 | **Audit** — gate the presence of `<track>` | _(see `sprezzature-accessibility/scripts/lint_a11y.py`)_ | Static lint catches `<video>` / `<audio>` without a `<track kind="captions">` child. |
 
 Pair with `sprezzature-accessibility` to close the loop: this skill drafts
@@ -93,14 +95,14 @@ the file; the a11y lint verifies a `<track>` element references it.
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `scripts/captions_from_whisper.py` | WebVTT / SRT / plain-text captions from a local whisper.cpp build; project-vocab biasing via ``--prompt`` / ``--vocab`` / ``--vocab-from`` / ``--auto-project``; language auto-detection with explicit override; cache on the audio hash | not real-time (hosted services like Deepgram / AssemblyAI are better for live captions); model-quality drafts: proper nouns, similar-sounding words and quiet passages need a review pass. |
-| `scripts/install_captions.py` | Installs ``vocal-helper`` (the whisper.cpp over-layer, pulling ``pywhispercpp``) into the active Python env and pre-downloads a GGML model so the captioner runs offline. Idempotent, safe to re-run. | does not install ``ffmpeg`` for you; does not auto-update an already-installed model; does not pin GPU / Metal acceleration. |
-| `scripts/diarize_from_nemo.py` | End-to-end speaker diarization via NVIDIA NeMo **Sortformer**: RTTM + a JSON turn list, cached on the extracted-audio hash. Up to 4 concurrent speakers with the default checkpoint (`nvidia/diar_sortformer_4spk-v1`); the streaming variant handles more. CUDA / MPS auto-selected. | not real-time (Sortformer's streaming variant helps but this script assumes static input); struggles with heavy overlap (multiple speakers talking simultaneously); see WhisperX + pyannote for word-level attribution. |
-| `scripts/identify_from_titanet.py` | Speaker identification against reference clips using **TitaNet-Large** 192-D embeddings + cosine matching. Emits a `speakers.json` mapping the anonymous ids to display names. | requires a directory of clean reference clips (one WAV per known speaker); cross-lingual retrieval needs a higher threshold; not designed for open-set identification with dozens of candidates. |
-| `scripts/name_from_transcript.py` | Guesses names from the transcript itself: a rule pass over self-introductions ("I'm Alice", "je m'appelle Bob") and vocatives ("Hey Mary, ...", "Thanks, Sam"). Optional `--ollama` refinement uses the same local daemon as `alt_from_ollama.py`. | conversations without introductions or direct address get no name evidence; falls back to anonymous ids. LLM pass is optional (rule-only mode is stdlib). |
-| `scripts/caption_diarize.py` | Merger: attributes every Whisper caption cue to the diarization turn with the largest overlap. Emits WebVTT with `<v Name>` cues, SRT with `Name: text` prefix, or paragraph-broken plain text. | boundaries around overlap remain approximate; the merger picks *one* speaker per cue by construction. |
-| `scripts/translate_captions.py` | Second-track translation of an existing `.vtt`/`.srt` into the surrounding-text language via local Ollama (`qwen3-vl:8b`); batches several cues per call for cross-cue context and re-attaches translations to the original timestamps 1:1; emits `<stem>.<lang>.vtt` + a two-`<track>` snippet. Decoupled from the caption backend (captions in → captions out, no audio). | machine translation from an 8B model, a **draft**, verify before shipping; skips when the surrounding language already equals the audio language; needs a reachable Ollama daemon. |
-| `scripts/install_diarize.py` | Installs `nemo_toolkit[asr]` and pre-downloads both Sortformer + TitaNet checkpoints. Idempotent. | does not install torch with your specific CUDA / ROCm build (install torch first if you need a specific one); does not install `ffmpeg`. |
+| `captions_from_whisper.py` | WebVTT / SRT / plain-text captions from a local whisper.cpp build; project-vocab biasing via ``--prompt`` / ``--vocab`` / ``--vocab-from`` / ``--auto-project``; language auto-detection with explicit override; cache on the audio hash | not real-time (hosted services like Deepgram / AssemblyAI are better for live captions); model-quality drafts: proper nouns, similar-sounding words and quiet passages need a review pass. |
+| `install_captions.py` | Installs ``vocal-helper`` (the whisper.cpp over-layer, pulling ``pywhispercpp``) into the active Python env and pre-downloads a GGML model so the captioner runs offline. Idempotent, safe to re-run. | does not install ``ffmpeg`` for you; does not auto-update an already-installed model; does not pin GPU / Metal acceleration. |
+| `diarize_from_nemo.py` | End-to-end speaker diarization via NVIDIA NeMo **Sortformer**: RTTM + a JSON turn list, cached on the extracted-audio hash. Up to 4 concurrent speakers with the default checkpoint (`nvidia/diar_sortformer_4spk-v1`); the streaming variant handles more. CUDA / MPS auto-selected. | not real-time (Sortformer's streaming variant helps but this script assumes static input); struggles with heavy overlap (multiple speakers talking simultaneously); see WhisperX + pyannote for word-level attribution. |
+| `identify_from_titanet.py` | Speaker identification against reference clips using **TitaNet-Large** 192-D embeddings + cosine matching. Emits a `speakers.json` mapping the anonymous ids to display names. | requires a directory of clean reference clips (one WAV per known speaker); cross-lingual retrieval needs a higher threshold; not designed for open-set identification with dozens of candidates. |
+| `name_from_transcript.py` | Guesses names from the transcript itself: a rule pass over self-introductions ("I'm Alice", "je m'appelle Bob") and vocatives ("Hey Mary, ...", "Thanks, Sam"). Optional `--ollama` refinement uses the same local daemon as `alt_from_ollama.py`. | conversations without introductions or direct address get no name evidence; falls back to anonymous ids. LLM pass is optional (rule-only mode is stdlib). |
+| `caption_diarize.py` | Merger: attributes every Whisper caption cue to the diarization turn with the largest overlap. Emits WebVTT with `<v Name>` cues, SRT with `Name: text` prefix, or paragraph-broken plain text. | boundaries around overlap remain approximate; the merger picks *one* speaker per cue by construction. |
+| `translate_captions.py` | Second-track translation of an existing `.vtt`/`.srt` into the surrounding-text language via local Ollama (`qwen3-vl:8b`); batches several cues per call for cross-cue context and re-attaches translations to the original timestamps 1:1; emits `<stem>.<lang>.vtt` + a two-`<track>` snippet. Decoupled from the caption backend (captions in → captions out, no audio). | machine translation from an 8B model, a **draft**, verify before shipping; skips when the surrounding language already equals the audio language; needs a reachable Ollama daemon. |
+| `install_diarize.py` | Installs `nemo_toolkit[asr]` and pre-downloads both Sortformer + TitaNet checkpoints. Idempotent. | does not install torch with your specific CUDA / ROCm build (install torch first if you need a specific one); does not install `ffmpeg`. |
 
 ## Decision tree
 
@@ -174,7 +176,7 @@ python sprezzature-audio/scripts/captions_from_whisper.py --auto-project <media>
 
 Always emit ``<track kind="captions" srclang="…" default>`` on the
 element. For a **second, translated track**, run
-``scripts/translate_captions.py`` on the produced ``.vtt``: it writes a
+``translate_captions.py`` on the produced ``.vtt``: it writes a
 ``<track kind="subtitles" srclang="…">`` in the surrounding-text language
 (via local ``qwen3-vl:8b``) and prints the two-track snippet. Add
 ``<track kind="descriptions">`` for audio descriptions,
@@ -207,15 +209,15 @@ element. For a **second, translated track**, run
 
 | Script | Install | Purpose |
 |---|---|---|
-| ``scripts/captions_from_whisper.py`` *(WiP)* | ``pip install -r scripts/requirements-captions.txt`` + ``ffmpeg`` on PATH | WebVTT / SRT / plain-text captions via local whisper.cpp. Per-language WER baselines + vocab-biasing reference clip still being collected. |
-| ``scripts/install_captions.py`` | subprocess (uses the active Python's ``pip``) | Installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML caption model. |
-| ``scripts/diarize_from_nemo.py`` | ``pip install -r scripts/requirements-diarize.txt`` + Python 3.10+ | Speaker diarization via NVIDIA NeMo **Sortformer** (``nvidia/diar_sortformer_4spk-v1``). Emits RTTM + turn JSON; caches on the extracted-audio hash. |
-| ``scripts/identify_from_titanet.py`` | ``pip install -r scripts/requirements-diarize.txt`` | Speaker identification via NeMo **TitaNet-Large** embeddings; cosine matching against a directory of reference clips (one WAV per known speaker). Writes ``speakers.json``. |
-| ``scripts/name_from_transcript.py`` | stdlib + ``click`` (rule pass); optional local Ollama for the ``--ollama`` refinement | Guesses speaker names from the diarized transcript itself: regex for self-introductions + vocatives, optional LLM refinement via the same daemon ``alt_from_ollama.py`` uses. |
-| ``scripts/caption_diarize.py`` | stdlib + ``click`` | Merges captions + diarization + speakers.json → speaker-labelled WebVTT (``<v Name>`` cues), SRT, or plain text. |
-| ``scripts/translate_captions.py`` | stdlib + ``click`` + ``langdetect`` (from ``requirements-captions.txt``); a local Ollama daemon (``qwen3-vl:8b``) at runtime | Translates an existing ``.vtt``/``.srt`` into the surrounding-text language and emits a two-``<track>`` snippet (native ``captions`` + translated ``subtitles``). No audio dependency; decoupled from the caption backend. |
-| ``scripts/install_diarize.py`` | subprocess (uses the active Python's ``pip``) | Installs ``nemo_toolkit[asr]`` and pre-downloads Sortformer + TitaNet checkpoints so the diarization scripts run offline. |
-| ``scripts/_argparse.py``, ``scripts/_click.py``, ``scripts/_lang.py``, ``scripts/_vocab.py`` | (internal helpers) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
+| ``captions_from_whisper.py`` *(WiP)* | ``pip install -r scripts/requirements-captions.txt`` + ``ffmpeg`` on PATH | WebVTT / SRT / plain-text captions via local whisper.cpp. Per-language WER baselines + vocab-biasing reference clip still being collected. |
+| ``install_captions.py`` | subprocess (uses the active Python's ``pip``) | Installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML caption model. |
+| ``diarize_from_nemo.py`` | ``pip install -r scripts/requirements-diarize.txt`` + Python 3.10+ | Speaker diarization via NVIDIA NeMo **Sortformer** (``nvidia/diar_sortformer_4spk-v1``). Emits RTTM + turn JSON; caches on the extracted-audio hash. |
+| ``identify_from_titanet.py`` | ``pip install -r scripts/requirements-diarize.txt`` | Speaker identification via NeMo **TitaNet-Large** embeddings; cosine matching against a directory of reference clips (one WAV per known speaker). Writes ``speakers.json``. |
+| ``name_from_transcript.py`` | stdlib + ``click`` (rule pass); optional local Ollama for the ``--ollama`` refinement | Guesses speaker names from the diarized transcript itself: regex for self-introductions + vocatives, optional LLM refinement via the same daemon ``alt_from_ollama.py`` uses. |
+| ``caption_diarize.py`` | stdlib + ``click`` | Merges captions + diarization + speakers.json → speaker-labelled WebVTT (``<v Name>`` cues), SRT, or plain text. |
+| ``translate_captions.py`` | stdlib + ``click`` + ``langdetect`` (from ``requirements-captions.txt``); a local Ollama daemon (``qwen3-vl:8b``) at runtime | Translates an existing ``.vtt``/``.srt`` into the surrounding-text language and emits a two-``<track>`` snippet (native ``captions`` + translated ``subtitles``). No audio dependency; decoupled from the caption backend. |
+| ``install_diarize.py`` | subprocess (uses the active Python's ``pip``) | Installs ``nemo_toolkit[asr]`` and pre-downloads Sortformer + TitaNet checkpoints so the diarization scripts run offline. |
+| ``_argparse.py``, ``_click.py``, ``_lang.py``, ``_vocab.py`` | (internal helpers) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
 
 ## Companion skills
 

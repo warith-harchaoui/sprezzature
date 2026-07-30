@@ -80,10 +80,7 @@ def test_authorized_vlm_is_the_declared_default() -> None:
         REPO_ROOT / "sprezzature-vision" / "scripts" / "alt_from_ollama.py",
         REPO_ROOT / "sprezzature-vision" / "scripts" / "install_alt_ai.py",
         REPO_ROOT / "sprezzature-publish" / "scripts" / "_ollama.py",
-        REPO_ROOT / "sprezzature-audio" / "scripts" / "name_from_transcript.py",
-        REPO_ROOT / "sprezzature-audio" / "scripts" / "translate_captions.py",
         REPO_ROOT / "sprezzature-publish" / "scripts" / "narrate_post.py",
-        REPO_ROOT / "sprezzature-figures" / "scripts" / "ralph_eyeball_loop.py",
     ]
     for script in declarers:
         text = script.read_text(encoding="utf-8")
@@ -99,8 +96,6 @@ def test_authorized_vlm_is_the_declared_default() -> None:
 LLM_SCRIPTS = [
     REPO_ROOT / "sprezzature-vision" / "scripts" / "alt_from_ollama.py",
     REPO_ROOT / "sprezzature-vision" / "scripts" / "install_alt_ai.py",
-    REPO_ROOT / "sprezzature-audio" / "scripts" / "name_from_transcript.py",
-    REPO_ROOT / "sprezzature-audio" / "scripts" / "translate_captions.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "plain_language.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "meta_from_ollama.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "narrate_post.py",

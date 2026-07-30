@@ -21,8 +21,10 @@ compatibility: >-
   Python 3.10+ stdlib only: no third-party deps, no browser, no network.
 metadata:
   author: Warith Harchaoui
-  version: 1.0.0
+  version: 1.0.1
 ---
+
+> The deterministic tools below now ship as the standalone package [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility) (`pip install`), invoked as `sprezzature-accessibility …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 # sprezzature-accessibility — static HTML a11y lint
 
@@ -54,8 +56,8 @@ repair:
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — repair the mechanically-fixable rules | `scripts/lint_a11y.py --fix` | Adds `lang="en"` to `<html>`, strips redundant `role="presentation"` / `aria-hidden="true"` from decorative `<img alt="">`, demotes `tabindex="N>0"` to `tabindex="0"`, strips `aria-hidden` from interactive elements, appends `motion-reduce:transform-none` to animated elements. Idempotent. Use `--dry-run` to preview. |
-| **Audit** — gate before ship | `scripts/lint_a11y.py` | 14 static rules over HTML (missing alt, unlabelled inputs, button-without-text, `div onclick`, missing dialog close, lang attr, bad heading order, color-only state, motion-reduce guards). Stdlib only, no browser. |
+| **Make** — repair the mechanically-fixable rules | `lint_a11y.py --fix` | Adds `lang="en"` to `<html>`, strips redundant `role="presentation"` / `aria-hidden="true"` from decorative `<img alt="">`, demotes `tabindex="N>0"` to `tabindex="0"`, strips `aria-hidden` from interactive elements, appends `motion-reduce:transform-none` to animated elements. Idempotent. Use `--dry-run` to preview. |
+| **Audit** — gate before ship | `lint_a11y.py` | 14 static rules over HTML (missing alt, unlabelled inputs, button-without-text, `div onclick`, missing dialog close, lang attr, bad heading order, color-only state, motion-reduce guards). Stdlib only, no browser. |
 
 The unfixable rules (empty button, missing label, missing heading,
 color-only state, missing dialog close) are *passed through* by the
@@ -148,8 +150,8 @@ shipping.
 
 | Script | Install | Purpose |
 |---|---|---|
-| ``scripts/lint_a11y.py`` | stdlib only | 14-rule static a11y lint. Exit 1 on any finding. **Not** a substitute for runtime audit. |
-| ``scripts/_argparse.py`` | (internal helper) | Argparse parser factory shared across the skill family (duplicated per-skill for autonomy). |
+| ``lint_a11y.py`` | stdlib only | 14-rule static a11y lint. Exit 1 on any finding. **Not** a substitute for runtime audit. |
+| ``_argparse.py`` | (internal helper) | Argparse parser factory shared across the skill family (duplicated per-skill for autonomy). |
 
 ## Companion skills
 
