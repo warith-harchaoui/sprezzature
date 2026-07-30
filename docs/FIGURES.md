@@ -278,6 +278,28 @@ also carries a
 over the default figures for review; it simulates, it does not replace. Model
 and sources: `sprezzature-colors/references/accessibility-levels.md`.
 
+
+## Coverage sweep — the complete generator set
+
+The remaining generators, each rendered from fake data in the house style so
+the catalog matches every `make_*.py` one-to-one.
+
+| | |
+|---|---|
+| ![andrews](../sprezzature-figures/assets/figures-gallery/andrews.png) **Andrews curves** — High-dimensional data as sinusoidal curves, one per observation · `svg-examples/andrews.svg` | ![arcdiagram](../sprezzature-figures/assets/figures-gallery/arcdiagram.png) **Arc diagram** — Network connections curved above a linear node axis · `svg-examples/arcdiagram.svg` |
+| ![bar3d](../sprezzature-figures/assets/figures-gallery/bar3d.png) **Bar 3D** — Three-axis bar chart for two categorical dimensions and one metric · `svg-examples/bar3d.svg` | ![bellcurve](../sprezzature-figures/assets/figures-gallery/bellcurve.png) **Bell curve** — Normal distribution with a configurable mean and standard deviation · `svg-examples/bellcurve.svg` |
+| ![blandaltman](../sprezzature-figures/assets/figures-gallery/blandaltman.png) **Bland-Altman** — Agreement between two measurement methods, with limits of agreement · `svg-examples/blandaltman.svg` | ![boxen](../sprezzature-figures/assets/figures-gallery/boxen.png) **Boxen plot** — Nested quantile boxes for large samples where a box plot loses detail · `svg-examples/boxen.svg` |
+| ![columnrange](../sprezzature-figures/assets/figures-gallery/columnrange.png) **Column range** — High-low intervals per category (temperature ranges, confidence intervals) · `make_columnrange.py` | ![dendrogram](../sprezzature-figures/assets/figures-gallery/dendrogram.png) **Dendrogram** — Hierarchical clustering tree showing merge order and distances · `svg-examples/dendrogram.svg` |
+| ![dotdensity](../sprezzature-figures/assets/figures-gallery/dotdensity.png) **Dot density** — One dot per unit of a quantity, placed within a geographic region · `svg-examples/dotdensity.svg` | ![dotplot](../sprezzature-figures/assets/figures-gallery/dotplot.png) **Dot plot** — One dot per observation, stacked into bins (Wilkinson dot plot) · `svg-examples/dotplot.svg` |
+| ![hexmap](../sprezzature-figures/assets/figures-gallery/hexmap.png) **Hex map** — Cartogram where each geographic unit becomes a uniform hexagon · `svg-examples/hexmap.svg` | ![imshow-interpolated](../sprezzature-figures/assets/figures-gallery/imshow-interpolated.png) **Interpolated heatmap** — A matrix rendered with smooth bilinear interpolation (imshow) · `svg-examples/imshow-interpolated.svg` |
+| ![jointplot](../sprezzature-figures/assets/figures-gallery/jointplot.png) **Joint plot** — Scatter of two variables with marginal histograms or densities · `svg-examples/jointplot.svg` | ![mosaic](../sprezzature-figures/assets/figures-gallery/mosaic.png) **Mosaic plot** — Two categoricals as a grid of rectangles sized by joint frequency · `svg-examples/mosaic.svg` |
+| ![pairplot](../sprezzature-figures/assets/figures-gallery/pairplot.png) **Pair plot** — All pairwise scatter plots for a multivariate dataset · `svg-examples/pairplot.svg` | ![ppplot](../sprezzature-figures/assets/figures-gallery/ppplot.png) **P-P plot** — Probability-probability plot comparing two distributions · `svg-examples/ppplot.svg` |
+| ![radviz](../sprezzature-figures/assets/figures-gallery/radviz.png) **RadViz** — Multivariate point placed by attraction to anchors on a unit circle · `svg-examples/radviz.svg` | ![residual](../sprezzature-figures/assets/figures-gallery/residual.png) **Residual plot** — Regression residuals vs. fitted values, for diagnostics · `svg-examples/residual.svg` |
+| ![ridgeline](../sprezzature-figures/assets/figures-gallery/ridgeline.png) **Ridgeline** — Stacked, overlapping densities, one per group, shifted vertically · `svg-examples/ridgeline.svg` | ![rug](../sprezzature-figures/assets/figures-gallery/rug.png) **Rug plot** — Marginal tick marks for raw values beneath a density estimate · `svg-examples/rug.svg` |
+| ![scatter3d](../sprezzature-figures/assets/figures-gallery/scatter3d.png) **Scatter 3D** — Three-variable scatter rendered as a projected 3D cloud · `svg-examples/scatter3d.svg` | ![speaking_time](../sprezzature-figures/assets/figures-gallery/speaking_time.png) **Speaking time** — A bar per speaker showing who spoke when in a recording · `svg-examples/speaking_time.svg` |
+| ![spectrogram](../sprezzature-figures/assets/figures-gallery/spectrogram.png) **Spectrogram** — Time-frequency energy map of an audio signal · `svg-examples/spectrogram.svg` | ![ternary](../sprezzature-figures/assets/figures-gallery/ternary.png) **Ternary** — Three-component compositions inside an equilateral triangle · `svg-examples/ternary.svg` |
+| ![windrose](../sprezzature-figures/assets/figures-gallery/windrose.png) **Wind rose** — Wind direction frequency and speed on a polar histogram · `svg-examples/windrose.svg` | ![wireframe3d](../sprezzature-figures/assets/figures-gallery/wireframe3d.png) **Wireframe 3D** — A mathematical surface as a projected mesh of grid lines · `svg-examples/wireframe3d.svg` |
+
 ## What still isn't ours
 
 Honestly out of reach (see `../.private/vega-failures/FAILURES.md`):
