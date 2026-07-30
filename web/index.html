@@ -405,12 +405,12 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
     // Six frames for the home teaser — the full set lives on figures.html.
     // Alt text drafted by sprezzature-vision (local qwen3-vl:8b), verified by hand.
     const FIGURES = [
-      ['choropleth.png', 'Global exposure index map: higher exposure is concentrated in Europe and North America, using quintile classes.'],
+      ['choropleth.svg', 'Global exposure index map: higher exposure is concentrated in Europe and North America, using quintile classes.'],
       ['situation-ukraine.png', 'Areas-of-control map of Ukraine: government control in blue-grey, Russian-occupied areas in pink, and a contested sprezzature hatched in cream, with flashpoint cities in red. Schematic, approximate 2024 positions.'],
-      ['map-flow.png', 'Illustrative connection map: great-circle links show increasing volume flow across the globe.'],
+      ['map-flow.svg', 'Illustrative connection map: great-circle links show increasing volume flow across the globe.'],
       ['surface-3d.png', 'Three-dimensional (3D) surface plot showing a maximum value at the apex.'],
       ['kde2d-contour.png', 'Two-dimensional (2D) kernel density estimate (KDE) showing two distinct density clusters in the data, suggesting a bimodal distribution.'],
-      ['clustermap.png', 'Clustermap heatmap showing value correlations between s0 and various data points g0-g6.'],
+      ['clustermap.svg', 'Clustermap heatmap showing value correlations between s0 and various data points g0-g6.'],
     ];
     const galleryDiv = document.querySelector('#gallery .grid');
     galleryDiv.innerHTML = FIGURES.map(([f, alt]) => `

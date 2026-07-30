@@ -1,6 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="sp-title sp-desc">
 <title id="sp-title">Surface wind field over the coast: a westerly airflow wraps into an offshore low</title>
 <desc id="sp-desc">Streamplot of a synthetic surface-wind field. Curved lines are streamlines everywhere tangent to the wind; arrowheads mark the flow direction and each line's colour runs from pale blue for a light breeze to deep navy for the fastest wind. A steady westerly sweeps in from the left, and a cyclonic low-pressure centre spins the flow counter-clockwise into a tight spiral offshore.</desc>
+<style>
+@media (prefers-contrast: more){ [fill="#6E6E73"]{fill:#1D1D1F;} [stroke="#E5E5EA"]{stroke:#6E6E73;stroke-width:2.2;} }
+@media (prefers-color-scheme: dark){
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [fill="#E5E5EA"]{fill:#3A3A3C;} [stroke="#E5E5EA"]{stroke:#3A3A3C;}
+}
+</style>
 <rect width="1200" height="860" fill="#FFFFFF"/>
 <text x="96" y="66" font-size="32" font-weight="700" fill="#1D1D1F">The storm pulls the whole airflow into its spin</text>
 <text x="96" y="100" font-size="18" fill="#6E6E73">Surface winds over the coast · streamlines follow the flow, darker means faster · illustrative field</text>
