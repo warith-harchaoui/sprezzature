@@ -27,6 +27,12 @@ checked=0
 for dir in sprezzature-*/scripts scripts sprezzature-cli/src; do
     # An unmatched glob would expand to the literal pattern — skip non-dirs.
     [ -d "$dir" ] || continue
+    # A skill whose deterministic tools moved to a standalone package leaves an
+    # empty scripts/ (only caches). mypy would report "no .py[i] files" and fail;
+    # there is nothing to type-check, so skip it.
+    case "$(find "$dir" -maxdepth 1 -name '*.py' -print -quit)" in
+        "") continue ;;
+    esac
     checked=$((checked + 1))
     # Keep going after a failing dir so the report covers every skill in one run.
     if ! python -m mypy "$dir"; then
