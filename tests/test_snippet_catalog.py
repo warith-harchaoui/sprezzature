@@ -67,6 +67,10 @@ def test_catalog_is_non_empty() -> None:
     )
 
 
+@pytest.mark.skipif(
+    not AUDIT_LAWS.is_file(),
+    reason="auditor moved to its standalone repo; run it there or with the pip package",
+)
 @pytest.mark.parametrize("snippet", _snippets(), ids=lambda p: p.name)
 def test_snippet_passes_laws_of_ux_audit(snippet: Path) -> None:
     """Every snippet must produce zero Laws-of-UX findings."""
@@ -80,6 +84,10 @@ def test_snippet_passes_laws_of_ux_audit(snippet: Path) -> None:
     )
 
 
+@pytest.mark.skipif(
+    not LINT_A11Y.is_file(),
+    reason="auditor moved to its standalone repo; run it there or with the pip package",
+)
 @pytest.mark.parametrize("snippet", _snippets(), ids=lambda p: p.name)
 def test_snippet_passes_accessibility_lint(snippet: Path) -> None:
     """Every snippet must produce zero accessibility findings."""

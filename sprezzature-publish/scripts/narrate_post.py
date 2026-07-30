@@ -149,11 +149,6 @@ def _llm_classify_segment(
     dict
         Parsed JSON object on success, ``{}`` on any failure.
     """
-    try:
-        import requests  # local import — keeps the orchestrator import-light
-    except ImportError:
-        return {}
-
     # Concise prompt — engine wrappers consume the structured JSON.
     user_prompt: str = (
         f"Previous segment: {prev_text!r}\n"

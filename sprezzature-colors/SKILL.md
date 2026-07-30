@@ -22,8 +22,10 @@ compatibility: >-
   No network or model required at any point.
 metadata:
   author: Warith Harchaoui
-  version: 1.0.0
+  version: 1.0.1
 ---
+
+> The deterministic tools below now ship as the standalone package [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors) (`pip install`), invoked as `sprezzature-colors …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 # sprezzature-colors — color audit, curation, and perceptual transforms
 
@@ -48,9 +50,9 @@ your brand. Loop a designer in for the final call.
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `scripts/audit_contrast.py` | WCAG ratio violations on (label × surface) pairs; suggests nearest OKLCH-neighbour fix | does not verify brand identity or tonal hierarchy. The fix is a hint, not a final decision. |
-| `scripts/simulate_cvd.py` | how a surface looks to a protanope / deuteranope / tritanope (Machado et al. 2009 matrices). Catches red/green pairing before ship. | does not test motion sensitivity, low-vision blur, or contrast sensitivity beyond color. |
-| `scripts/_colors.py` | shared primitives: sRGB ↔ linear, hex parsing, WCAG luminance / contrast, OKLab / OKLCH (Björn Ottosson), CVD matrices, perceptual `lighten` / `darken`, palette accessors | not a full-blown color library — no CMYK, no Lab D50, no gamut mapping beyond the OKLCH L axis search. |
+| `audit_contrast.py` | WCAG ratio violations on (label × surface) pairs; suggests nearest OKLCH-neighbour fix | does not verify brand identity or tonal hierarchy. The fix is a hint, not a final decision. |
+| `simulate_cvd.py` | how a surface looks to a protanope / deuteranope / tritanope (Machado et al. 2009 matrices). Catches red/green pairing before ship. | does not test motion sensitivity, low-vision blur, or contrast sensitivity beyond color. |
+| `_colors.py` | shared primitives: sRGB ↔ linear, hex parsing, WCAG luminance / contrast, OKLab / OKLCH (Björn Ottosson), CVD matrices, perceptual `lighten` / `darken`, palette accessors | not a full-blown color library — no CMYK, no Lab D50, no gamut mapping beyond the OKLCH L axis search. |
 
 ## Decision tree
 
@@ -117,8 +119,8 @@ emitter, two audit-side gates, all backed by the same CSV.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — emit Tailwind config from the curated palette | `scripts/palette_to_tailwind.py` | Render `references/palette.csv` as a `theme.extend.colors` block (default) or a complete `tailwind.config.js`. |
-| **Audit** — gate before ship | `scripts/audit_contrast.py`, `scripts/simulate_cvd.py` | WCAG ratio audit with **suggest-only** OKLCH-neighbour fix; CVD simulation (protanopia / deuteranopia / tritanopia). |
+| **Make** — emit Tailwind config from the curated palette | `palette_to_tailwind.py` | Render `references/palette.csv` as a `theme.extend.colors` block (default) or a complete `tailwind.config.js`. |
+| **Audit** — gate before ship | `audit_contrast.py`, `simulate_cvd.py` | WCAG ratio audit with **suggest-only** OKLCH-neighbour fix; CVD simulation (protanopia / deuteranopia / tritanopia). |
 
 **Note on `--fix` semantics.** Other sprezzature-* auditors (`audit_laws_of_ux --fix`, `lint_a11y --fix`, `lint_markdown --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA, chunking digits. `audit_contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
 
@@ -205,10 +207,10 @@ Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `scripts/audit_contrast.py` | stdlib only | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
-| `scripts/simulate_cvd.py` | `pip install -r scripts/requirements-cvd.txt` (Pillow) | Protanopia / deuteranopia / tritanopia rendering (Machado matrices). |
-| `scripts/_colors.py` | stdlib only | Shared color primitives — sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
-| `scripts/palette_to_tailwind.py` | stdlib only | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `audit_contrast.py` — closes the CSV → emitted-config loop so brand tokens cannot drift. |
+| `audit_contrast.py` | stdlib only | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
+| `simulate_cvd.py` | `pip install -r scripts/requirements-cvd.txt` (Pillow) | Protanopia / deuteranopia / tritanopia rendering (Machado matrices). |
+| `_colors.py` | stdlib only | Shared color primitives — sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
+| `palette_to_tailwind.py` | stdlib only | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `audit_contrast.py` — closes the CSV → emitted-config loop so brand tokens cannot drift. |
 
 ## Companion skills
 
