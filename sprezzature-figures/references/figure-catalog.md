@@ -381,7 +381,6 @@ Auto-derived from `assets/`. Render any with `python scripts/render_diagram.py a
 - `gapminder-income-survival.fr.svg`
 - `gapminder-income-survival.svg`
 - `gauge.svg`
-- `globe3d.svg`
 - `hexbin-map.svg`
 - `hexmap.svg`
 - `horizon.svg`
