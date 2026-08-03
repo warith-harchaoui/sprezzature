@@ -299,6 +299,7 @@ the catalog matches every `make_*.py` one-to-one.
 | ![scatter3d](../sprezzature-figures/assets/figures-gallery/scatter3d.png) **Scatter 3D** — Three-variable scatter rendered as a projected 3D cloud · `svg-examples/scatter3d.svg` | ![speaking_time](../sprezzature-figures/assets/figures-gallery/speaking_time.png) **Speaking time** — A bar per speaker showing who spoke when in a recording · `svg-examples/speaking_time.svg` |
 | ![spectrogram](../sprezzature-figures/assets/figures-gallery/spectrogram.png) **Spectrogram** — Time-frequency energy map of an audio signal · `svg-examples/spectrogram.svg` | ![ternary](../sprezzature-figures/assets/figures-gallery/ternary.png) **Ternary** — Three-component compositions inside an equilateral triangle · `svg-examples/ternary.svg` |
 | ![windrose](../sprezzature-figures/assets/figures-gallery/windrose.png) **Wind rose** — Wind direction frequency and speed on a polar histogram · `svg-examples/windrose.svg` | ![wireframe3d](../sprezzature-figures/assets/figures-gallery/wireframe3d.png) **Wireframe 3D** — A mathematical surface as a projected mesh of grid lines · `svg-examples/wireframe3d.svg` |
+| ![interruption-matrix](../sprezzature-figures/assets/figures-gallery/interruption-matrix.png) **Interruption matrix** — Directed "who cuts whom" heatmap: who interrupts whom in a conversation, tinted by the interrupter, with row/column totals and a crosshair hover · `svg-examples/interruption-matrix.svg` | |
 
 ## What still isn't ours
 
