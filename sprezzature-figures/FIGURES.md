@@ -36,7 +36,7 @@ python sprezzature-figures/scripts/ralph_eyeball_loop.py output.png --local
 
 ## Chart catalogue
 
-92 chart generators, one per row. The script name encodes the chart type:
+91 chart generators, one per row. The script name encodes the chart type:
 strip the `make_` prefix and replace hyphens and underscores with spaces.
 
 | Chart | Script | When to use |
@@ -74,7 +74,6 @@ strip the `make_` prefix and replace hyphens and underscores with spaces.
 | Gapminder | make_gapminder.py | Animated bubble chart of health vs. wealth by country and year |
 | Gapminder variants | make_gapminder_variants.py | Animated bubble chart variants for the Hans Rosling world-health demo |
 | Gauge | make_gauge.py | Single KPI on a semicircular dial with colour-coded zones |
-| Globe 3D | make_globe3d.py | Data points plotted on a rotatable 3D globe projection |
 | Heatmap | make_heatmap.py | Row × column matrix with cell colour encoding a numeric value |
 | Hex map | make_hexmap.py | Cartogram where each geographic unit becomes a uniform hexagon |
 | Hexbin map | make_hexbin-map.py | Geographic point density aggregated into hexagonal bins on a map |

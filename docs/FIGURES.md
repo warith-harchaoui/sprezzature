@@ -82,7 +82,6 @@ pure-Python generator (`scripts/make_<id>.py`) rasterised for this catalog.
 | ![calibration](../sprezzature-figures/assets/figures-gallery/calibration.png) **Calibration / reliability** — predicted vs observed frequency over a confidence histogram · `svg-examples/calibration.svg` | ![UpSet](../sprezzature-figures/assets/figures-gallery/upset.png) **UpSet plot** — set-intersection bars over a membership matrix, scaling past a Venn · `svg-examples/upset.svg` |
 | ![Venn](../sprezzature-figures/assets/figures-gallery/venn.png) **Venn / Euler** — overlapping sets, each region sized and counted · `svg-examples/venn.svg` | ![force-directed graph](../sprezzature-figures/assets/figures-gallery/sfdp-largegraph.png) **Force-directed graph** — a 318-node co-authorship network in six spatially-separated communities · `svg-examples/sfdp-largegraph.svg` |
 | ![edge bundling](../sprezzature-figures/assets/figures-gallery/edge-bundling.png) **Hierarchical edge bundling** — relations bundled into smooth cables on a radial hierarchy · `svg-examples/edge-bundling.svg` | ![radial tree](../sprezzature-figures/assets/figures-gallery/radial-tree.png) **Radial tree** — a hierarchy drawn outward onto concentric rings · `svg-examples/radial-tree.svg` |
-| ![rotating globe](../sprezzature-figures/assets/figures-gallery/globe3d.png) **Rotating globe** — orthographic Earth, animated in pure SMIL, spinning through a full day · `svg-examples/globe3d.svg` | |
 
 ## Charts from the library sweep — Highcharts / ECharts / Observable Plot
 
