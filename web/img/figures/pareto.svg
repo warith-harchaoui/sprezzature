@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="920" viewBox="0 0 1280 920" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="pa-title pa-desc">
 <title id="pa-title">A few support-ticket reasons drive most of the weekly backlog</title>
-<desc id="pa-desc">Pareto chart of one week of customer-support tickets (1,205 total, illustrative). Bars show each reason’s share of tickets, sorted tallest-first against the left percentage axis; the 4 tallest are tinted blue as the “vital few” and the remaining 5 fade to grey as the “trivial many”. An orange line traces the cumulative share against the right percentage axis, climbing to 100 %. The dashed 80 % Pareto line marks the 80/20 threshold: the cumulative curve first clears it at reason 4, so 4 reasons account for 82 % of tickets (991 of 1,205). Illustrative figures.</desc>
-<style>.bar{cursor:pointer}.bar rect{transition:opacity .12s}.bar:hover rect,.bar:focus rect{opacity:.82}.bar:focus{outline:none}.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<desc id="pa-desc">Pareto chart of one week of customer-support tickets (1,205 total). Bars show each reason’s share of tickets, sorted tallest-first against the left percentage axis; the 4 tallest are tinted blue as the “vital few” and the remaining 5 fade to grey as the “trivial many”. An orange line traces the cumulative share against the right percentage axis, climbing to 100 %. The dashed 80 % Pareto line marks the 80/20 threshold: the cumulative curve first clears it at reason 4, so 4 reasons account for 82 % of tickets (991 of 1,205)</desc>
+<style>.bar{cursor:pointer}.bar rect{transition:opacity.12s}.bar:hover rect,.bar:focus rect{opacity:.82}.bar:focus{outline:none}.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="1280" height="920" fill="#FFFFFF"/>
 <rect x="150" y="210" width="1034" height="480" fill="#F5F5F7" rx="10"/>
 <text x="150" y="80" font-size="42" font-weight="700" fill="#1D1D1F">4 of 9 reasons drive four in five tickets</text>
 <text x="150" y="124" font-size="24" fill="#6E6E73">Ticket reasons sorted by volume; the cumulative share climbs to the 80% line</text>
-<text x="150" y="156" font-size="20" fill="#6E6E73">One week of support tickets (1,205 total) · illustrative data</text>
+<text x="150" y="156" font-size="20" fill="#6E6E73">One week of support tickets (1,205 total)</text>
 <line x1="150.0" y1="690.0" x2="1184.0" y2="690.0" stroke="#FFFFFF" stroke-width="1.6"/>
 <line x1="150.0" y1="599.4" x2="1184.0" y2="599.4" stroke="#FFFFFF" stroke-width="1.6"/>
 <line x1="150.0" y1="508.9" x2="1184.0" y2="508.9" stroke="#FFFFFF" stroke-width="1.6"/>

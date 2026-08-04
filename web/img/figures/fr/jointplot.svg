@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1134" height="940" viewBox="0 0 1134 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="jp-title jp-desc"><rect width="1134" height="940" fill="#FFFFFF"/><g transform="translate(97,0)">
 <title id="jp-title">Une bonne nuit de sommeil aiguise les réflexes</title>
-<desc id="jp-desc">Graphique joint d'une étude du sommeil : un nuage central du temps de réaction moyen (vertical, millisecondes, plus c’est bas, mieux c’est) selon les heures de sommeil la nuit précédente (horizontal) pour 120 volontaires, avec une droite de tendance ajustée orientée vers le bas · plus de sommeil, réponses plus rapides. Un histogramme vert le long du rail supérieur montre que les heures de sommeil sont à peu près symétriques ; un histogramme violet le long du rail droit montre que le temps de réaction a une longue traîne lente vers le haut. Données illustratives.</desc>
-<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<desc id="jp-desc">Graphique joint d'une étude du sommeil : un nuage central du temps de réaction moyen (vertical, millisecondes, plus c’est bas, mieux c’est) selon les heures de sommeil la nuit précédente (horizontal) pour 120 volontaires, avec une droite de tendance ajustée orientée vers le bas · plus de sommeil, réponses plus rapides. Un histogramme vert le long du rail supérieur montre que les heures de sommeil sont à peu près symétriques ; un histogramme violet le long du rail droit montre que le temps de réaction a une longue traîne lente vers le haut</desc>
+<style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="940" height="940" fill="#FFFFFF"/>
 <text x="118" y="70" font-size="34" font-weight="700" fill="#1D1D1F">Une bonne nuit de sommeil aiguise les réflexes</text>
 <text x="118" y="108" font-size="19" fill="#6E6E73">Temps de réaction selon les heures de sommeil, 120 volontaires · marges = distributions</text>
-<text x="118" y="134" font-size="19" fill="#6E6E73">Données illustratives</text>
+<text x="118" y="134" font-size="19" fill="#6E6E73"></text>
 <rect x="119.0" y="332.0" width="43.6" height="36.0" rx="3" fill="#28CD41"/>
 <rect x="164.6" y="344.0" width="43.6" height="24.0" rx="3" fill="#28CD41"/>
 <rect x="210.1" y="320.0" width="43.6" height="48.0" rx="3" fill="#28CD41"/>

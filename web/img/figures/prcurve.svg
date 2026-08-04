@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1140" viewBox="0 0 1180 1140" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="pr-title pr-desc">
 <title id="pr-title">Gradient boosting flags fraud far more precisely than the logistic baseline</title>
-<desc id="pr-desc">Precision-recall curves for two fraud-detection classifiers on an imbalanced problem (fraud prevalence 3%). The horizontal axis is recall (share of fraud caught); the vertical axis is precision (share of flagged transactions that are fraud); both run from 0 to 1. The strong gradient-boosted model (solid blue, circle marker, average precision 0.93) sits well above the weaker logistic baseline (dashed orange, square marker, average precision 0.20) across the whole recall range. A dashed grey no-skill baseline runs flat at precision equal to the 3% prevalence; the vertical gap above it is the signal each model has learned. Faint iso-F1 contours arc through the plot, and each model is marked at its shipped maximum-F1 operating point. Illustrative data.</desc>
-<style>.op{cursor:pointer}.op .halo{opacity:0}.op:hover .halo,.op:focus .halo{opacity:1}.op:focus{outline:none}.curve{cursor:pointer}</style>
+<desc id="pr-desc">Precision-recall curves for two fraud-detection classifiers on an imbalanced problem (fraud prevalence 3%). The horizontal axis is recall (share of fraud caught); the vertical axis is precision (share of flagged transactions that are fraud); both run from 0 to 1. The strong gradient-boosted model (solid blue, circle marker, average precision 0.93) sits well above the weaker logistic baseline (dashed orange, square marker, average precision 0.20) across the whole recall range. A dashed grey no-skill baseline runs flat at precision equal to the 3% prevalence; the vertical gap above it is the signal each model has learned. Faint iso-F1 contours arc through the plot, and each model is marked at its shipped maximum-F1 operating point</desc>
+<style>.op{cursor:pointer}.op.halo{opacity:0}.op:hover.halo,.op:focus.halo{opacity:1}.op:focus{outline:none}.curve{cursor:pointer}</style>
 <rect width="1180" height="1140" fill="#FFFFFF"/>
 <text x="168" y="96" font-size="44" font-weight="700" fill="#1D1D1F">Gradient boosting flags fraud far more precisely</text>
-<text x="168" y="148" font-size="25" fill="#6E6E73">Precision vs recall as the threshold varies — AP 0.93 vs 0.20 · illustrative</text>
+<text x="168" y="148" font-size="25" fill="#6E6E73">Precision vs recall as the threshold varies — AP 0.93 vs 0.20</text>
 <line x1="168.0" y1="250.0" x2="168.0" y2="990.0" stroke="#ECECEC" stroke-width="1.4"/>
 <line x1="168.0" y1="990.0" x2="1084.0" y2="990.0" stroke="#ECECEC" stroke-width="1.4"/>
 <line x1="397.0" y1="250.0" x2="397.0" y2="990.0" stroke="#ECECEC" stroke-width="1.4"/>
@@ -72,9 +72,9 @@
 </g>
 <line x1="442.8" y1="679.2" x2="500.8" y2="679.2" stroke="#007AFF" stroke-width="6" stroke-linecap="round"/>
 <circle cx="500.8" cy="679.2" r="9" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/>
-<text x="526.8" y="687.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Gradient-boosted</tspan>  ·  AP 0.93</text>
+<text x="526.8" y="687.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Gradient-boosted</tspan>· AP 0.93</text>
 <line x1="442.8" y1="725.2" x2="500.8" y2="725.2" stroke="#FF9500" stroke-width="6" stroke-dasharray="10 7" stroke-linecap="round"/>
 <rect x="492.8" y="717.2" width="16.0" height="16.0" rx="2.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2.5"/>
-<text x="526.8" y="733.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Logistic baseline</tspan>  ·  AP 0.20</text>
+<text x="526.8" y="733.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Logistic baseline</tspan>· AP 0.20</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1132,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

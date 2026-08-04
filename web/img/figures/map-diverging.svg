@@ -1,28 +1,26 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" width="640" height="416" viewBox="0 0 640 416" font-family="Roboto, system-ui, sans-serif"><style>
-@media (prefers-color-scheme: dark){
-  [fill="white"]{fill:#0B0B0C}
-  [fill="#e3e3e8"]{fill:#2A2A2E}
-  [fill="#1D1D1F"]{fill:#F2F2F7}
-  [fill="#6E6E73"]{fill:#9C9CA3}
-  [stroke="#ccc"]{stroke:#5A5A5E}
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="640" height="416" viewBox="0 0 640 416" font-family="Roboto, system-ui, sans-serif"><style>@media (prefers-color-scheme: dark){
+ [fill="white"]{fill:#0B0B0C}
+ [fill="#e3e3e8"]{fill:#2A2A2E}
+ [fill="#1D1D1F"]{fill:#F2F2F7}
+ [fill="#6E6E73"]{fill:#9C9CA3}
+ [stroke="#ccc"]{stroke:#5A5A5E}
 }
 @media (prefers-contrast: more){
-  [fill="#1D1D1F"]{fill:#000000}
-  [fill="#6E6E73"]{fill:#3A3A3C}
-  [stroke="#ccc"]{stroke:#6E6E73;stroke-width:0.6}
+ [fill="#1D1D1F"]{fill:#000000}
+ [fill="#6E6E73"]{fill:#3A3A3C}
+ [stroke="#ccc"]{stroke:#6E6E73;stroke-width:0.6}
 }
 @media (prefers-color-scheme: dark) and (prefers-contrast: more){
-  [fill="#1D1D1F"]{fill:#FFFFFF}
-  [fill="#6E6E73"]{fill:#C7C7CC}
-  [stroke="#ccc"]{stroke:#9C9CA3}
+ [fill="#1D1D1F"]{fill:#FFFFFF}
+ [fill="#6E6E73"]{fill:#C7C7CC}
+ [stroke="#ccc"]{stroke:#9C9CA3}
 }
 @media (forced-colors: active){
-  [fill="white"]{fill:Canvas}
-  [fill="#e3e3e8"]{fill:Canvas;stroke:CanvasText;stroke-width:0.5}
-  [stroke="#ccc"]{stroke:CanvasText}
-  text{fill:CanvasText}
-}
-</style>
+ [fill="white"]{fill:Canvas}
+ [fill="#e3e3e8"]{fill:Canvas;stroke:CanvasText;stroke-width:0.5}
+ [stroke="#ccc"]{stroke:CanvasText}
+ text{fill:CanvasText}
+}</style>
 <title>Diverging choropleth</title><desc>World choropleth of net change on a red-white-blue diverging scale centered at zero, with no-data countries in gray and four countries directly annotated.</desc>
 <rect width="640" height="416" fill="white"/>
 <text x="16" y="24" font-size="16" font-weight="700" fill="#1D1D1F">Who gained, who lost</text>

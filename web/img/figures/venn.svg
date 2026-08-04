@@ -1,21 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="940" viewBox="0 0 1080 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="vn-title vn-desc">
 <title id="vn-title">Overlapping skills among data professionals</title>
 <desc id="vn-desc">Three-set Venn diagram of skills held by 1,000 surveyed data professionals. Python total 619; SQL total 539; Cloud total 456. The central region — fluent in all three — is the largest at 214, and Python plus SQL together add another 188.</desc>
-<style>
-.lobe { transition: opacity .18s ease; }
-.setlabel { transition: opacity .18s ease; }
-svg:hover .lobe, svg:focus-within .lobe { opacity: .30; }
-svg:hover .setlabel, svg:focus-within .setlabel { opacity: .35; }
-.grp-A:hover .lobe-A, .grp-A:focus .lobe-A, .grp-A:hover .setlabel-A, .grp-A:focus .setlabel-A { opacity: 1; }
-.grp-B:hover .lobe-B, .grp-B:focus .lobe-B, .grp-B:hover .setlabel-B, .grp-B:focus .setlabel-B { opacity: 1; }
-.grp-C:hover .lobe-C, .grp-C:focus .lobe-C, .grp-C:hover .setlabel-C, .grp-C:focus .setlabel-C { opacity: 1; }
+<style>.lobe { transition: opacity.18s ease; }
+.setlabel { transition: opacity.18s ease; }
+svg:hover.lobe, svg:focus-within.lobe { opacity:.30; }
+svg:hover.setlabel, svg:focus-within.setlabel { opacity:.35; }
+.grp-A:hover.lobe-A,.grp-A:focus.lobe-A,.grp-A:hover.setlabel-A,.grp-A:focus.setlabel-A { opacity: 1; }
+.grp-B:hover.lobe-B,.grp-B:focus.lobe-B,.grp-B:hover.setlabel-B,.grp-B:focus.setlabel-B { opacity: 1; }
+.grp-C:hover.lobe-C,.grp-C:focus.lobe-C,.grp-C:hover.setlabel-C,.grp-C:focus.setlabel-C { opacity: 1; }
 .grp { cursor: pointer; }
 .grp:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 12px; }
-@media (prefers-reduced-motion: reduce) { .lobe, .setlabel { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.lobe,.setlabel { transition: none; } }</style>
 <rect width="1080" height="940" fill="#FFFFFF"/>
 <text x="52" y="66" font-size="31" font-weight="700" fill="#1D1D1F">Most data pros speak Python, SQL and Cloud at once</text>
-<text x="52" y="102" font-size="19" fill="#6E6E73">Skills held by 1,000 surveyed data professionals · counts are people per region · illustrative</text>
+<text x="52" y="102" font-size="19" fill="#6E6E73">Skills held by 1,000 surveyed data professionals · counts are people per region</text>
 <g style="mix-blend-mode:multiply">
 <circle class="lobe lobe-A" cx="540.0" cy="400.0" r="205.0" fill="#007AFF" fill-opacity="0.40"/>
 <circle class="lobe lobe-B" cx="429.6" cy="594.4" r="205.0" fill="#28CD41" fill-opacity="0.40"/>

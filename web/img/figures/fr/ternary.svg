@@ -1,19 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="820" viewBox="0 0 1040 820" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="tn-title tn-desc">
 <title id="tn-title">La texture du sol en diagramme ternaire de sable, limon et argile</title>
 <desc id="tn-desc">Diagramme ternaire : un triangle équilatéral dont les coins sont 100 % argile (haut), 100 % sable (bas-gauche) et 100 % limon (bas-droite). Chaque point est un échantillon de terre arable, positionné par ses pourcentages de sable / limon / argile, dont la somme fait toujours 100. Les échantillons se regroupent en trois classes de texture : Limon sableux, Limon fin, Argile. Le limon sableux se place vers le coin du sable, le limon fin vers le coin du limon, et l'argile près du haut.</desc>
-<style>
-.dot { transition: opacity .18s ease; }
-svg:hover .cls, svg:focus-within .cls { opacity: .16; }
-.cls-sandy-loam:hover .cls-sandy-loam, .cls-sandy-loam:focus .cls-sandy-loam, .cls-sandy-loam:hover, .cls-sandy-loam:focus { opacity: 1; }
-.cls-silt-loam:hover .cls-silt-loam, .cls-silt-loam:focus .cls-silt-loam, .cls-silt-loam:hover, .cls-silt-loam:focus { opacity: 1; }
-.cls-clay:hover .cls-clay, .cls-clay:focus .cls-clay, .cls-clay:hover, .cls-clay:focus { opacity: 1; }
+<style>.dot { transition: opacity.18s ease; }
+svg:hover.cls, svg:focus-within.cls { opacity:.16; }
+.cls-sandy-loam:hover.cls-sandy-loam,.cls-sandy-loam:focus.cls-sandy-loam,.cls-sandy-loam:hover,.cls-sandy-loam:focus { opacity: 1; }
+.cls-silt-loam:hover.cls-silt-loam,.cls-silt-loam:focus.cls-silt-loam,.cls-silt-loam:hover,.cls-silt-loam:focus { opacity: 1; }
+.cls-clay:hover.cls-clay,.cls-clay:focus.cls-clay,.cls-clay:hover,.cls-clay:focus { opacity: 1; }
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { .dot { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.dot { transition: none; } }</style>
 <rect width="1040" height="820" fill="#FFFFFF"/>
 <text x="56" y="60" font-size="29" font-weight="700" fill="#1D1D1F">Trois textures de sol, trois coins du triangle</text>
-<text x="56" y="94" font-size="18" fill="#6E6E73">Échantillons de terre arable par mélange de calibres · sable + limon + argile = 100 % · illustratif</text>
+<text x="56" y="94" font-size="18" fill="#6E6E73">Échantillons de terre arable par mélange de calibres · sable + limon + argile = 100 % ·</text>
 <polygon points="185.0,704.9 805.0,704.9 495.0,168.0" fill="#FCFCFD" stroke="none"/>
 <line x1="247.0" y1="597.5" x2="743.0" y2="597.5" stroke="#D8D8DD" stroke-width="1.4"/>
 <line x1="681.0" y1="704.9" x2="433.0" y2="275.4" stroke="#D8D8DD" stroke-width="1.4"/>

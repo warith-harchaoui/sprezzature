@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1000" viewBox="0 0 1120 1000" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="rb-title rb-desc">
 <title id="rb-title">Bike-share trips by hour of day: two commute peaks around 8am and 6pm</title>
 <desc id="rb-desc">Radial bar chart of an average weekday's bike-share departures, one bar per clock hour arranged around a 24-hour dial from midnight at the top. Bar length is the number of trips. The city is quietest before dawn, spikes at 08:00 as people ride to work, dips at midday, then climbs to its busiest hour at 18:00 as it rides home.</desc>
-<style>
-.bar { transition: opacity .18s ease, transform .18s ease; transform-box: fill-box; transform-origin: center; }
-svg:hover .bar, svg:focus-within .bar { opacity: .28; }
-svg .bar:hover, svg .bar:focus { opacity: 1; }
+<style>.bar { transition: opacity.18s ease, transform.18s ease; transform-box: fill-box; transform-origin: center; }
+svg:hover.bar, svg:focus-within.bar { opacity:.28; }
+svg.bar:hover, svg.bar:focus { opacity: 1; }
 .bar:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { .bar { transition: none; } .grow { animation: none !important; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.bar { transition: none; }.grow { animation: none !important; } }</style>
 <rect width="1120" height="1000" fill="#FFFFFF"/>
 <text x="60" y="72" font-size="34" font-weight="700" fill="#1D1D1F">A city with two rush hours</text>
-<text x="60" y="106" font-size="18" fill="#6E6E73">Vélomarée bike-share · trips by hour on an average weekday · 19 940 daily rides · illustrative</text>
+<text x="60" y="106" font-size="18" fill="#6E6E73">Vélomarée bike-share · trips by hour on an average weekday · 19 940 daily rides</text>
 <g>
 <circle cx="560.0" cy="548.0" r="168.00" fill="none" stroke="#E8E8ED" stroke-width="1.4"/>
 <circle cx="560.0" cy="548.0" r="214.40" fill="none" stroke="#E8E8ED" stroke-width="1.4"/>

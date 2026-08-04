@@ -1,10 +1,9 @@
 <svg role="img" aria-label="FY-2024 Operating Income Bridge" viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg" font-family="Roboto, system-ui, sans-serif" style="background:#FFFFFF;max-width:100%;height:auto">
-<style>
-@media (prefers-color-scheme: dark){
-  [fill="#FFFFFF"]{fill:#0B0B0C;}
-  [fill="#1D1D1F"]{fill:#F2F2F7;}
-  [fill="#6E6E73"]{fill:#9C9CA3;}
-  [style*="multiply"]{mix-blend-mode:screen;}
+<style>@media (prefers-color-scheme: dark){
+ [fill="#FFFFFF"]{fill:#0B0B0C;}
+ [fill="#1D1D1F"]{fill:#F2F2F7;}
+ [fill="#6E6E73"]{fill:#9C9CA3;}
+ [style*="multiply"]{mix-blend-mode:screen;}
 }</style>
 <desc>Millions d'EUR, Ex. 2023 → Ex. 2024</desc>
 <rect width="1100" height="640" fill="#FFFFFF"/>

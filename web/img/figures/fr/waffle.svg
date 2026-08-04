@@ -1,22 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="740" viewBox="0 0 1000 740" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wf-title wf-desc">
 <title id="wf-title">Où va l'électricité d'un foyer, pour 100 kilowattheures</title>
 <desc id="wf-desc">Diagramme gaufre : une grille de 10 sur 10, soit 100 carrés, un carré par pour cent de la consommation électrique annuelle du foyer. Chauffage et climatisation 34 ; chauffe-eau 18 ; appareils et prises 16 ; véhicule électrique 14 ; éclairage 9 ; cuisson 9. Le chauffage et la climatisation dominent avec 34 carrés.</desc>
-<style>
-.tile { transition: opacity .18s ease; }
-svg:hover .cat, svg:focus-within .cat { opacity: .28; }
-.cat-heating---cooling:hover .cat-heating---cooling, .cat-heating---cooling:focus .cat-heating---cooling, .cat-heating---cooling:hover, .cat-heating---cooling:focus { opacity: 1; }
-.cat-water-heating:hover .cat-water-heating, .cat-water-heating:focus .cat-water-heating, .cat-water-heating:hover, .cat-water-heating:focus { opacity: 1; }
-.cat-appliances---plug-loads:hover .cat-appliances---plug-loads, .cat-appliances---plug-loads:focus .cat-appliances---plug-loads, .cat-appliances---plug-loads:hover, .cat-appliances---plug-loads:focus { opacity: 1; }
-.cat-electric-vehicle:hover .cat-electric-vehicle, .cat-electric-vehicle:focus .cat-electric-vehicle, .cat-electric-vehicle:hover, .cat-electric-vehicle:focus { opacity: 1; }
-.cat-lighting:hover .cat-lighting, .cat-lighting:focus .cat-lighting, .cat-lighting:hover, .cat-lighting:focus { opacity: 1; }
-.cat-cooking:hover .cat-cooking, .cat-cooking:focus .cat-cooking, .cat-cooking:hover, .cat-cooking:focus { opacity: 1; }
+<style>.tile { transition: opacity.18s ease; }
+svg:hover.cat, svg:focus-within.cat { opacity:.28; }
+.cat-heating---cooling:hover.cat-heating---cooling,.cat-heating---cooling:focus.cat-heating---cooling,.cat-heating---cooling:hover,.cat-heating---cooling:focus { opacity: 1; }
+.cat-water-heating:hover.cat-water-heating,.cat-water-heating:focus.cat-water-heating,.cat-water-heating:hover,.cat-water-heating:focus { opacity: 1; }
+.cat-appliances---plug-loads:hover.cat-appliances---plug-loads,.cat-appliances---plug-loads:focus.cat-appliances---plug-loads,.cat-appliances---plug-loads:hover,.cat-appliances---plug-loads:focus { opacity: 1; }
+.cat-electric-vehicle:hover.cat-electric-vehicle,.cat-electric-vehicle:focus.cat-electric-vehicle,.cat-electric-vehicle:hover,.cat-electric-vehicle:focus { opacity: 1; }
+.cat-lighting:hover.cat-lighting,.cat-lighting:focus.cat-lighting,.cat-lighting:hover,.cat-lighting:focus { opacity: 1; }
+.cat-cooking:hover.cat-cooking,.cat-cooking:focus.cat-cooking,.cat-cooking:hover,.cat-cooking:focus { opacity: 1; }
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.tile { transition: none; } }</style>
 <rect width="1000" height="740" fill="#FFFFFF"/>
 <text x="56.0" y="66" font-size="30" font-weight="700" fill="#1D1D1F">Chauffage et climatisation : un tiers de l'électricité</text>
-<text x="56.0" y="102" font-size="18" fill="#6E6E73">Part de la consommation électrique annuelle du foyer · un carré = 1 % · illustratif</text>
+<text x="56.0" y="102" font-size="18" fill="#6E6E73">Part de la consommation électrique annuelle du foyer · un carré = 1 % ·</text>
 <g class="cat cat-heating---cooling" tabindex="0" role="listitem"><title>Heating &amp; cooling : 34 % (34 carrés)</title>
 <rect class="tile cat-heating---cooling" x="56.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
 <circle class="cat-heating---cooling" cx="79.0" cy="679.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>

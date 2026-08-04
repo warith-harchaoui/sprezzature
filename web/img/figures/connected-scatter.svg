@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1000" viewBox="0 0 1280 1000" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="cs-title cs-desc">
 <title id="cs-title">The United Kingdom grew its economy while cutting carbon per person nearly in half</title>
-<desc id="cs-desc">Connected scatter tracing carbon-dioxide emissions per person (vertical, tonnes) against economic output per person (horizontal, thousands of US dollars) for the United Kingdom, one point every five years from 1990 to 2022. The path first moves right as income rises, then turns sharply left and downward: output per person climbed about 66% while emissions per person fell about 53%, from 10.0 to 4.7 tonnes. The left-turning hook shows growth and carbon decoupling. Illustrative figures.</desc>
-<style>.wp{cursor:pointer}.wp .halo{opacity:0}.wp:hover .halo,.wp:focus .halo{opacity:1}.wp:focus{outline:none}</style>
+<desc id="cs-desc">Connected scatter tracing carbon-dioxide emissions per person (vertical, tonnes) against economic output per person (horizontal, thousands of US dollars) for the United Kingdom, one point every five years from 1990 to 2022. The path first moves right as income rises, then turns sharply left and downward: output per person climbed about 66% while emissions per person fell about 53%, from 10.0 to 4.7 tonnes. The left-turning hook shows growth and carbon decoupling</desc>
+<style>.wp{cursor:pointer}.wp.halo{opacity:0}.wp:hover.halo,.wp:focus.halo{opacity:1}.wp:focus{outline:none}</style>
 <rect width="1280" height="1000" fill="#FFFFFF"/>
 <text x="120" y="92" font-size="42" font-weight="700" fill="#1D1D1F">Growth went one way, carbon the other</text>
-<text x="120" y="140" font-size="24" fill="#6E6E73">United Kingdom, 1990–2022: output per person up ~66% while carbon per person fell ~53% · illustrative</text>
+<text x="120" y="140" font-size="24" fill="#6E6E73">United Kingdom, 1990–2022: output per person up ~66% while carbon per person fell ~53%</text>
 <circle cx="131.0" cy="182.0" r="11.0" fill="#FF3B30"/>
 <text x="154.0" y="189.0" font-size="22" fill="#1D1D1F">Start 1990</text>
 <circle cx="341.0" cy="182.0" r="11.0" fill="#007AFF"/>

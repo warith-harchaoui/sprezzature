@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="900" viewBox="0 0 1180 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="rose-title rose-desc">
 <title id="rose-title">Nightingale rose: preventable disease, not battle, killed most soldiers in the Crimean War</title>
 <desc id="rose-desc">Coxcomb (polar-area) chart of army mortality in the Crimean War, April 1854 to March 1855. Twelve equal-angle wedges, one per month, sweep clockwise from the top; each wedge's radius is that month's annual death rate per 1,000 men, stacked and coloured by cause. The pale-blue preventable-disease band dwarfs the red wounds band in every month and balloons to its peak in Jan 1855, then shrinks through the spring after sanitary reform.</desc>
-<style>
-.wedge { transition: opacity .18s ease; }
-svg:hover .cause, svg:focus-within .cause { opacity: .16; }
-svg:has(.cause-disease:hover) .cause-disease, svg:has(.cause-disease:focus) .cause-disease { opacity: 1; }
-svg:has(.cause-wounds:hover) .cause-wounds, svg:has(.cause-wounds:focus) .cause-wounds { opacity: 1; }
-svg:has(.cause-other:hover) .cause-other, svg:has(.cause-other:focus) .cause-other { opacity: 1; }
+<style>.wedge { transition: opacity.18s ease; }
+svg:hover.cause, svg:focus-within.cause { opacity:.16; }
+svg:has(.cause-disease:hover).cause-disease, svg:has(.cause-disease:focus).cause-disease { opacity: 1; }
+svg:has(.cause-wounds:hover).cause-wounds, svg:has(.cause-wounds:focus).cause-wounds { opacity: 1; }
+svg:has(.cause-other:hover).cause-other, svg:has(.cause-other:focus).cause-other { opacity: 1; }
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; }
 .wedge:focus { outline: none; }
 .wedge:focus { stroke: #0A4DA0; stroke-width: 2.4; }
-@media (prefers-reduced-motion: reduce) { .wedge { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.wedge { transition: none; } }</style>
 <rect width="1180" height="900" fill="#FFFFFF"/>
 <text x="56" y="66" font-size="33" font-weight="700" fill="#1D1D1F">Most of the dead never saw a battlefield</text>
 <text x="56" y="100" font-size="18" fill="#6E6E73">Florence Nightingale&#8217;s coxcomb &#183; British Army mortality in the East &#183; annual deaths per 1,000 men, by cause &#183; Apr 1854&#8211;Mar 1855</text>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1840" height="1180" viewBox="0 0 1840 1180" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="tl-title tl-desc">
 <title id="tl-title">Seven decades of Mars exploration as an event timeline</title>
 <desc id="tl-desc">A horizontal timeline of 13 Mars-mission milestones from 1965 to a planned 2033, with alternating callouts above and below a central spine. Four coloured era bands group the missions: Flybys and Orbiters, First Landers, the Rover Age, and the planned Sample Return campaign.</desc>
-<style>.mstone{cursor:pointer}.mstone .dot{transition:r .12s ease}.mstone:hover .dot,.mstone:focus .dot{r:11}.mstone:focus{outline:none}.mstone:focus .card,.mstone:hover .card{stroke-width:2.4}@media (prefers-reduced-motion: reduce){.sweep{display:none}}</style>
+<style>.mstone{cursor:pointer}.mstone.dot{transition:r.12s ease}.mstone:hover.dot,.mstone:focus.dot{r:11}.mstone:focus{outline:none}.mstone:focus.card,.mstone:hover.card{stroke-width:2.4}@media (prefers-reduced-motion: reduce){.sweep{display:none}}</style>
 <rect width="1840" height="1180" fill="#FFFFFF"/>
 <text x="100" y="74" font-size="40" font-weight="700" fill="#1D1D1F">Sixty years of getting closer to Mars</text>
 <text x="100" y="112" font-size="21" fill="#6E6E73">From a 21-frame flyby to a rover caching rock for the trip home, each mission building on the last &#183; daggered dates are planned</text>
@@ -153,7 +153,7 @@
 <circle class="dot" cx="1580.6" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1473.6" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
 <rect x="1473.6" y="194.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73">&#8224; planned</tspan></text>
 <text x="1496.6" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Sample Retrieval</text>
 <text x="1496.6" y="280.0" font-size="14" fill="#6E6E73">Planned lander to gather</text>
 <text x="1496.6" y="300.0" font-size="14" fill="#6E6E73">Perseverance's cached tubes</text>
@@ -165,7 +165,7 @@
 <circle class="dot" cx="1648.9" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1526.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
 <rect x="1526.0" y="354.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73">&#8224; planned</tspan></text>
 <text x="1549.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Earth Return Orbiter</text>
 <text x="1549.0" y="440.0" font-size="14" fill="#6E6E73">Planned relay to ferry the</text>
 <text x="1549.0" y="460.0" font-size="14" fill="#6E6E73">sealed samples back toward</text>
@@ -177,7 +177,7 @@
 <circle class="dot" cx="1694.4" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1526.0" y="986.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
 <rect x="1526.0" y="986.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73">&#8224; planned</tspan></text>
 <text x="1549.0" y="1048.0" font-size="18" font-weight="700" fill="#1D1D1F">Samples on Earth</text>
 <text x="1549.0" y="1072.0" font-size="14" fill="#6E6E73">Target for the first Mars</text>
 <text x="1549.0" y="1092.0" font-size="14" fill="#6E6E73">rocks to reach a lab on</text>

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="1450" viewBox="0 0 980 1450" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="cal-title cal-desc">
 <title id="cal-title">The churn model is overconfident: its high-risk calls miss the diagonal</title>
-<desc id="cal-desc">Reliability diagram (calibration curve) for an overconfident customer-churn classifier. The horizontal axis is the model’s predicted probability of churn; the vertical axis is the observed churn rate in each bin. A dashed 45-degree line marks perfect calibration, ringed by a faint grey tolerance band. The reliability curve sags below the diagonal at the confident end, so the model’s high-probability calls happen less often than it claims (overconfident, labelled in red on the right); Expected Calibration Error 10%. At the timid end it floats above the diagonal, so it under-states churn (underconfident, labelled in blue on the left). Each point is sized by how many predictions fell in the bin, and a histogram below shows where the model spends its predictions. Illustrative data.</desc>
-<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}.bar{cursor:pointer}</style>
+<desc id="cal-desc">Reliability diagram (calibration curve) for an overconfident customer-churn classifier. The horizontal axis is the model’s predicted probability of churn; the vertical axis is the observed churn rate in each bin. A dashed 45-degree line marks perfect calibration, ringed by a faint grey tolerance band. The reliability curve sags below the diagonal at the confident end, so the model’s high-probability calls happen less often than it claims (overconfident, labelled in red on the right); Expected Calibration Error 10%. At the timid end it floats above the diagonal, so it under-states churn (underconfident, labelled in blue on the left). Each point is sized by how many predictions fell in the bin, and a histogram below shows where the model spends its predictions</desc>
+<style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}.bar{cursor:pointer}</style>
 <rect width="980" height="1450" fill="#FFFFFF"/>
 <text x="128" y="82" font-size="36" font-weight="700" fill="#1D1D1F">The churn model is overconfident:</text>
 <text x="128" y="126" font-size="36" font-weight="700" fill="#1D1D1F">its high-risk calls miss the diagonal</text>
 <text x="128" y="166" font-size="22" fill="#6E6E73">Reliability diagram: confident “90%” churn calls happen far less</text>
-<text x="128" y="194" font-size="22" fill="#6E6E73">Expected Calibration Error 10% · illustrative data</text>
+<text x="128" y="194" font-size="22" fill="#6E6E73">Expected Calibration Error 10%</text>
 <polygon points="128.0,982.2 924.0,226.0 924.0,265.8 128.0,1022.0" fill="#8E8E93" fill-opacity="0.12"/>
 <line x1="128.0" y1="226.0" x2="128.0" y2="1022.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="128.0" y1="1022.0" x2="924.0" y2="1022.0" stroke="#EEEEEE" stroke-width="1.4"/>

@@ -1,22 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="840" viewBox="0 0 1080 840" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wr-title wr-desc">
 <title id="wr-title">Wind rose for Cap Gris-Nez: prevailing winds blow from the west-south-west</title>
 <desc id="wr-desc">Polar histogram of a year of hourly wind observations. Sixteen compass sectors each carry a petal whose length is the percent of hours the wind blew from that bearing, stacked and coloured by speed band from under 5 knots to 28 knots or more. The longest petals point WSW and west, where the strongest winds also concentrate.</desc>
-<style>
-.wedge { transition: opacity .18s ease; }
-svg:hover .band, svg:focus-within .band { opacity: .18; }
-svg:has(.band-5-kt:hover) .band-5-kt, svg:has(.band-5-kt:focus) .band-5-kt { opacity: 1; }
-svg:has(.band-5-10-kt:hover) .band-5-10-kt, svg:has(.band-5-10-kt:focus) .band-5-10-kt { opacity: 1; }
-svg:has(.band-10-16-kt:hover) .band-10-16-kt, svg:has(.band-10-16-kt:focus) .band-10-16-kt { opacity: 1; }
-svg:has(.band-16-22-kt:hover) .band-16-22-kt, svg:has(.band-16-22-kt:focus) .band-16-22-kt { opacity: 1; }
-svg:has(.band-22-28-kt:hover) .band-22-28-kt, svg:has(.band-22-28-kt:focus) .band-22-28-kt { opacity: 1; }
-svg:has(.band-28-kt:hover) .band-28-kt, svg:has(.band-28-kt:focus) .band-28-kt { opacity: 1; }
+<style>.wedge { transition: opacity.18s ease; }
+svg:hover.band, svg:focus-within.band { opacity:.18; }
+svg:has(.band-5-kt:hover).band-5-kt, svg:has(.band-5-kt:focus).band-5-kt { opacity: 1; }
+svg:has(.band-5-10-kt:hover).band-5-10-kt, svg:has(.band-5-10-kt:focus).band-5-10-kt { opacity: 1; }
+svg:has(.band-10-16-kt:hover).band-10-16-kt, svg:has(.band-10-16-kt:focus).band-10-16-kt { opacity: 1; }
+svg:has(.band-16-22-kt:hover).band-16-22-kt, svg:has(.band-16-22-kt:focus).band-16-22-kt { opacity: 1; }
+svg:has(.band-22-28-kt:hover).band-22-28-kt, svg:has(.band-22-28-kt:focus).band-22-28-kt { opacity: 1; }
+svg:has(.band-28-kt:hover).band-28-kt, svg:has(.band-28-kt:focus).band-28-kt { opacity: 1; }
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { .wedge { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.wedge { transition: none; } }</style>
 <rect width="1080" height="840" fill="#FFFFFF"/>
 <text x="48" y="62" font-size="30" font-weight="700" fill="#1D1D1F">The wind here comes off the Atlantic</text>
-<text x="48" y="94" font-size="17" fill="#6E6E73">Cap Gris-Nez · frequency of wind by direction and speed · 8,760 hourly readings · illustrative</text>
+<text x="48" y="94" font-size="17" fill="#6E6E73">Cap Gris-Nez · frequency of wind by direction and speed · 8,760 hourly readings</text>
 <g>
 <circle cx="420.0" cy="460.0" r="62.00" fill="none" stroke="#E5E5EA" stroke-width="1.4"/>
 <text x="413.0" y="416.0" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">4%</text>
@@ -196,6 +194,6 @@ svg:has(.band-28-kt:hover) .band-28-kt, svg:has(.band-28-kt:focus) .band-28-kt {
 </g>
 </g>
 <text x="840" y="626" font-size="15" fill="#6E6E73">Petal length = % of hours</text>
-<text x="840" y="648" font-size="15" fill="#6E6E73">wind blew <tspan font-style="italic">from</tspan> that way.</text>
+<text x="840" y="648" font-size="15" fill="#6E6E73">wind blew<tspan font-style="italic">from</tspan>that way.</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1032,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

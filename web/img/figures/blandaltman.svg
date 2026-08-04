@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="940" viewBox="0 0 1280 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ba-title ba-desc">
 <title id="ba-title">Bland-Altman plot comparing a wrist blood-pressure monitor with an arm cuff</title>
-<desc id="ba-desc">A Bland-Altman agreement plot of paired systolic-pressure readings from a wrist monitor and an arm cuff. The horizontal axis is the mean of the two readings; the vertical axis is their difference (wrist minus arm). Each dot is one of 90 patients. A solid blue line marks the mean bias (-7.3 mmHg) and two dashed red lines mark the 95 percent limits of agreement (-15.3 to +0.7 mmHg). The bias sits below zero and the cloud tilts down to the right, so the wrist tends to read low, and more so at higher pressure. Illustrative data.</desc>
-<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<desc id="ba-desc">A Bland-Altman agreement plot of paired systolic-pressure readings from a wrist monitor and an arm cuff. The horizontal axis is the mean of the two readings; the vertical axis is their difference (wrist minus arm). Each dot is one of 90 patients. A solid blue line marks the mean bias (-7.3 mmHg) and two dashed red lines mark the 95 percent limits of agreement (-15.3 to +0.7 mmHg). The bias sits below zero and the cloud tilts down to the right, so the wrist tends to read low, and more so at higher pressure</desc>
+<style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="1280" height="940" fill="#FFFFFF"/>
 <text x="128" y="88" font-size="40" font-weight="700" fill="#1D1D1F">Do the wrist monitor and the arm cuff agree?</text>
 <text x="128" y="134" font-size="23" fill="#6E6E73">Bland-Altman plot. Each dot is one patient: its difference (wrist − arm) against the two methods’ mean.</text>
 <text x="128" y="166" font-size="23" fill="#6E6E73">Solid line = mean bias (-7.3 mmHg). Dashed lines = 95% limits of agreement (-15.3 to +0.7 mmHg).</text>
-<text x="128" y="198" font-size="23" fill="#6E6E73">Bias below zero, cloud tilting down to the right: the wrist reads low, worse at higher pressure · illustrative data</text>
+<text x="128" y="198" font-size="23" fill="#6E6E73">Bias below zero, cloud tilting down to the right: the wrist reads low, worse at higher pressure</text>
 <rect x="128.0" y="444.8" width="942.0" height="256.0" fill="#007AFF" fill-opacity="0.07"/>
 <line x1="206.5" y1="232.0" x2="206.5" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="402.8" y1="232.0" x2="402.8" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
@@ -500,12 +500,12 @@
 <line x1="128.0" y1="526.7" x2="1070.0" y2="627.9" stroke="#AF52DE" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round" stroke-opacity="0.9"/>
 <line x1="128.0" y1="444.8" x2="1070.0" y2="444.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
 <rect x="1080.0" y="427.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>
-<text x="1092.0" y="450.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">+1.96 SD  +0.7</text>
+<text x="1092.0" y="450.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">+1.96 SD +0.7</text>
 <line x1="128.0" y1="572.8" x2="1070.0" y2="572.8" stroke="#007AFF" stroke-width="3.6"/>
 <rect x="1080.0" y="555.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#007AFF" stroke-width="1.4"/>
-<text x="1092.0" y="578.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#007AFF">Bias  -7.3</text>
+<text x="1092.0" y="578.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#007AFF">Bias -7.3</text>
 <line x1="128.0" y1="700.8" x2="1070.0" y2="700.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
 <rect x="1080.0" y="683.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>
-<text x="1092.0" y="706.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">−1.96 SD  -15.3</text>
+<text x="1092.0" y="706.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">−1.96 SD -15.3</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1006,240)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="968" viewBox="0 0 1440 968" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="vw-title vw-desc">
 <title id="vw-title">GDP per capita times population equals total GDP, as column area</title>
-<desc id="vw-desc">A variable-width column chart of the eight largest economies in 2023. Each column height is GDP per capita, each width is population, so the area is total GDP. The United States, a tall narrow column, and China, a short wide one, enclose similar area — 27.4 and 17.8 trillion US dollars — reached two different ways. India is the widest but shortest column. Illustrative figures, World Bank and IMF 2023 estimates.</desc>
-<style>.col{cursor:pointer;transition:filter .12s ease}.col:hover,.col:focus{filter:brightness(1.06)}.col:focus{outline:none}.colframe{fill:none;pointer-events:none}</style>
+<desc id="vw-desc">A variable-width column chart of the eight largest economies in 2023. Each column height is GDP per capita, each width is population, so the area is total GDP. The United States, a tall narrow column, and China, a short wide one, enclose similar area — 27.4 and 17.8 trillion US dollars — reached two different ways. India is the widest but shortest column</desc>
+<style>.col{cursor:pointer;transition:filter.12s ease}.col:hover,.col:focus{filter:brightness(1.06)}.col:focus{outline:none}.colframe{fill:none;pointer-events:none}</style>
 <rect width="1440" height="968" fill="#FFFFFF"/>
 <line x1="92" y1="786.0" x2="1380" y2="786.0" stroke="#E8E8ED" stroke-width="1"/>
 <text x="78" y="791.0" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$0k</text>

@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1187" height="780" viewBox="0 0 1187 780" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="rs-title rs-desc"><rect width="1187" height="780" fill="#FFFFFF"/><g transform="translate(94,0)">
 <title id="rs-title">Les résidus se courbent encore · une droite sous-ajuste les prix de l'immobilier</title>
-<desc id="rs-desc">Diagramme des résidus d'un ajustement linéaire du prix de vente des logements selon la surface. Les résidus (prix réel moins prédit, en milliers de dollars) sont dispersés sur l'axe vertical face au prix ajusté du modèle sur l'axe horizontal, avec une ligne de référence pointillée à zéro. Un lisseur rouge à pondération locale se courbe en U, les résidus sont positifs aux deux extrémités et négatifs au milieu, et la dispersion des points s'élargit vers la droite. La courbure et l'évasement montrent que le modèle linéaire spécifie mal la moyenne et la variance. Les points au-dessus de zéro (le modèle sous-estime) sont bleus ; ceux en dessous (le modèle surestime) sont orange. Données illustratives.</desc>
-<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<desc id="rs-desc">Diagramme des résidus d'un ajustement linéaire du prix de vente des logements selon la surface. Les résidus (prix réel moins prédit, en milliers de dollars) sont dispersés sur l'axe vertical face au prix ajusté du modèle sur l'axe horizontal, avec une ligne de référence pointillée à zéro. Un lisseur rouge à pondération locale se courbe en U, les résidus sont positifs aux deux extrémités et négatifs au milieu, et la dispersion des points s'élargit vers la droite. La courbure et l'évasement montrent que le modèle linéaire spécifie mal la moyenne et la variance. Les points au-dessus de zéro (le modèle sous-estime) sont bleus ; ceux en dessous (le modèle surestime) sont orange</desc>
+<style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="1000" height="780" fill="#FFFFFF"/>
 <text x="118" y="66" font-size="28" font-weight="700" fill="#1D1D1F">Les résidus se courbent encore · une droite sous-ajuste les prix de l'immobilier</text>
 <text x="118" y="102" font-size="19" fill="#6E6E73">Résidus d'un ajustement linéaire prix-surface ; le lisseur rouge se courbe en U et s'évase à droite</text>
-<text x="118" y="128" font-size="19" fill="#6E6E73">Données illustratives</text>
+<text x="118" y="128" font-size="19" fill="#6E6E73"></text>
 <line x1="168.3" y1="176.0" x2="168.3" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="335.9" y1="176.0" x2="335.9" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="503.5" y1="176.0" x2="503.5" y2="688.0" stroke="#EEEEEE" stroke-width="1.4"/>

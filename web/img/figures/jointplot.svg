@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="940" height="940" viewBox="0 0 940 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="jp-title jp-desc">
 <title id="jp-title">A good night's sleep sharpens reaction time</title>
-<desc id="jp-desc">Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail. Illustrative data.</desc>
-<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<desc id="jp-desc">Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail</desc>
+<style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="940" height="940" fill="#FFFFFF"/>
 <text x="118" y="70" font-size="34" font-weight="700" fill="#1D1D1F">A good night's sleep sharpens reaction time</text>
 <text x="118" y="108" font-size="19" fill="#6E6E73">Reaction-time test vs. hours slept, 120 volunteers — marginals show each distribution</text>
-<text x="118" y="134" font-size="19" fill="#6E6E73">Illustrative data</text>
+<text x="118" y="134" font-size="19" fill="#6E6E73"></text>
 <rect x="119.0" y="332.0" width="43.6" height="36.0" rx="3" fill="#28CD41"/>
 <rect x="164.6" y="344.0" width="43.6" height="24.0" rx="3" fill="#28CD41"/>
 <rect x="210.1" y="320.0" width="43.6" height="48.0" rx="3" fill="#28CD41"/>

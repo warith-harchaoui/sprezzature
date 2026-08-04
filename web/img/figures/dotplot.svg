@@ -2,21 +2,21 @@
 <title id="dp-title">Support ticket first-response times, one dot per ticket</title>
 <desc id="dp-desc">Wilkinson dot plot of 68 first-response times in hours. Each dot is one ticket, binned every 0.4 h and stacked. 93% of tickets were answered within the 4-hour target (blue); the 5 past it form the long tail (red).</desc>
 <style>.dot{cursor:pointer}.dot:hover,.dot:focus{stroke:#FFFFFF;stroke-width:2.5}.dot:focus{outline:none}@media (prefers-contrast: more){
-  .dot-within{fill:#004CCE;}
-  .dot-tail{fill:#B50000;}
+.dot-within{fill:#004CCE;}
+.dot-tail{fill:#B50000;}
 }
 @media (forced-colors: active){
-  .dot-within{fill:CanvasText;}
-  .dot-tail{fill:CanvasText;}
+.dot-within{fill:CanvasText;}
+.dot-tail{fill:CanvasText;}
 }@media (prefers-color-scheme: dark){
-  [fill="#FFFFFF"]{fill:#0B0B0C;}
-  [fill="#1D1D1F"]{fill:#F2F2F7;}
-  [fill="#6E6E73"]{fill:#9C9CA3;}
-  [style*="multiply"]{mix-blend-mode:screen;}
+ [fill="#FFFFFF"]{fill:#0B0B0C;}
+ [fill="#1D1D1F"]{fill:#F2F2F7;}
+ [fill="#6E6E73"]{fill:#9C9CA3;}
+ [style*="multiply"]{mix-blend-mode:screen;}
 }</style>
 <rect width="1200" height="587" fill="#FFFFFF"/>
 <text x="96" y="60" font-size="32" font-weight="700" fill="#1D1D1F">Most tickets get a reply within hours</text>
-<text x="96" y="96" font-size="20" fill="#6E6E73">93% of 68 support tickets clear the 4-hour target; a thin red tail drags on · illustrative</text>
+<text x="96" y="96" font-size="20" fill="#6E6E73">93% of 68 support tickets clear the 4-hour target; a thin red tail drags on</text>
 <line x1="565.3" y1="138.0" x2="565.3" y2="479.0" stroke="#6E6E73" stroke-width="1.5" stroke-dasharray="6 6"/>
 <text x="575.3" y="136.0" font-size="17" fill="#6E6E73">4-hour target</text>
 <line x1="96" y1="479.0" x2="1152" y2="479.0" stroke="#1D1D1F" stroke-width="1.5"/>

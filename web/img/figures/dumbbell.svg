@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1066" viewBox="0 0 1280 1066" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="db-title db-desc">
 <title id="db-title">Gender pay gap by role: men out-earn women in every job family</title>
-<desc id="db-desc">Dumbbell plot of median hourly pay for women (purple) and men (teal) across 10 roles, sorted by the size of the gap. Each row joins the two medians with a segment whose length is the gap. Men earn more in every role; the gap averages 11% and is widest for Sales director at $13 per hour. Illustrative data.</desc>
-<style>.row{cursor:pointer}.row .seg{stroke:#6E6E73;stroke-width:5;stroke-linecap:round}.row:hover .rowbg,.row:focus .rowbg{fill:#F0F0F2}.row:hover .seg,.row:focus .seg{stroke:#1D1D1F}.row:hover .dot,.row:focus .dot{stroke:#1D1D1F;stroke-width:2}.row:focus{outline:none}</style>
+<desc id="db-desc">Dumbbell plot of median hourly pay for women (purple) and men (teal) across 10 roles, sorted by the size of the gap. Each row joins the two medians with a segment whose length is the gap. Men earn more in every role; the gap averages 11% and is widest for Sales director at $13 per hour</desc>
+<style>.row{cursor:pointer}.row.seg{stroke:#6E6E73;stroke-width:5;stroke-linecap:round}.row:hover.rowbg,.row:focus.rowbg{fill:#F0F0F2}.row:hover.seg,.row:focus.seg{stroke:#1D1D1F}.row:hover.dot,.row:focus.dot{stroke:#1D1D1F;stroke-width:2}.row:focus{outline:none}</style>
 <rect width="1280" height="1066" fill="#FFFFFF"/>
 <text x="70" y="86" font-size="40" font-weight="700" fill="#1D1D1F">Men out-earn women in every role</text>
-<text x="70" y="132" font-size="23" fill="#6E6E73">Median hourly pay, women vs men · the gap averages 11% and widens with seniority · illustrative</text>
+<text x="70" y="132" font-size="23" fill="#6E6E73">Median hourly pay, women vs men · the gap averages 11% and widens with seniority</text>
 <circle cx="81.0" cy="170.0" r="11.0" fill="#AF52DE"/>
 <text x="104.0" y="177.0" font-size="22" fill="#1D1D1F">Women</text>
 <circle cx="231.0" cy="170.0" r="11.0" fill="#5AC8FA"/>
