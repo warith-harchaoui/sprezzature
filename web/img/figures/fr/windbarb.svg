@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1480" height="980" viewBox="0 0 1480 980" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wb-title wb-desc">
 <title id="wb-title">A cold front sweeps the Northeast coast — wind barbs pivot 180° and freshen to a gale behind it</title>
-<desc id="wb-desc">Synoptic surface wind-barb station plot over the US Northeast seaboard and adjacent western Atlantic. Each station is a wind barb whose staff points from the wind and whose ticks tally speed in knots: a filled pennant is 50 knots, a full barb 10 knots, a half barb 5 knots. Ahead of the blue cold front a warm southwesterly flow (orange) streams up the coast at 20 to 40 knots; behind it a cold northwesterly gale (blue) reaches 45 to 50 knots, the staffs having pivoted roughly 180 degrees across the front.</desc>
+<desc id="wb-desc">Carte synoptique de barbules de vent par station sur le littoral nord-est des États-Unis et l'Atlantique ouest adjacent. Chaque station est une barbule dont la hampe pointe d'où vient le vent et dont les traits comptent la vitesse en nœuds : un fanion plein vaut 50 nœuds, une barbule pleine 10 nœuds, une demi-barbule 5 nœuds. En avant du front froid bleu, un flux chaud de sud-ouest (orange) remonte la côte à 20 à 40 nœuds ; derrière, un coup de vent froid de nord-ouest (bleu) atteint 45 à 50 nœuds, les hampes ayant pivoté d'environ 180 degrés de part et d'autre du front.</desc>
 <style>
 .stn { transition: transform .16s ease; transform-box: fill-box; transform-origin: center; }
 .stn:hover, .stn:focus { transform: scale(1.16); }
@@ -8,8 +8,8 @@
 @media (prefers-reduced-motion: reduce) { .stn { transition: none; } }
 </style>
 <rect width="1480" height="980" fill="#FFFFFF"/>
-<text x="38.0" y="70" font-size="39" font-weight="700" fill="#1D1D1F">A cold front swings the wind hard around the coast</text>
-<text x="38.0" y="110" font-size="21" fill="#6E6E73">Surface analysis · warm southwesterly ahead of the front, a cold northwesterly gale filling in behind — barb ticks tally knots</text>
+<text x="38.0" y="70" font-size="39" font-weight="700" fill="#1D1D1F">Un front froid fait pivoter brutalement le vent autour de la côte</text>
+<text x="38.0" y="110" font-size="21" fill="#6E6E73">Analyse de surface · flux chaud de sud-ouest en avant du front, coup de vent froid de nord-ouest s'installant derrière · les barbules comptent les nœuds</text>
 <rect x="34.0" y="176.0" width="1052.0" height="748.0" rx="14" fill="#F2F7FB"/>
 <g stroke="#E9EEF3" stroke-width="1" fill="none">
 <path d="M222.3,874.3 L897.7,874.3"/>
@@ -69,14 +69,14 @@
 <text x="777.6" y="781.6" font-size="19" font-weight="700" fill="#FF9500" text-anchor="end">WARM · SW flow</text>
 <text x="777.6" y="803.6" font-size="14" fill="#6E6E73" text-anchor="end">pre-frontal, 20–40 kt</text>
 <rect x="1106.0" y="176.0" width="340.0" height="628" rx="16" fill="#FBFBFD" stroke="#E6E6EB" stroke-width="1"/>
-<text x="1126.0" y="208.0" font-size="20" font-weight="700" fill="#1D1D1F">How to read a wind barb</text>
-<text x="1126.0" y="232.0" font-size="14" fill="#6E6E73">Staff points from the wind; ticks tally the speed.</text>
+<text x="1126.0" y="208.0" font-size="20" font-weight="700" fill="#1D1D1F">Comment lire une barbule de vent</text>
+<text x="1126.0" y="232.0" font-size="14" fill="#6E6E73">La hampe pointe d'où vient le vent ; les barbules comptent la vitesse.</text>
 <line x1="1172.0" y1="284.0" x2="1126.0" y2="284.0" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><line x1="1132.6" y1="284.0" x2="1137.8" y2="274.3" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><circle cx="1172.0" cy="284.0" r="2.8" fill="#1D1D1F"/>
 <text x="1236.0" y="274.0" font-size="17" font-weight="700" fill="#1D1D1F">5 kt</text>
 <text x="1236.0" y="294.0" font-size="13.5" fill="#6E6E73">one half barb</text>
 <line x1="1172.0" y1="362.0" x2="1126.0" y2="362.0" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><line x1="1126.0" y1="362.0" x2="1135.4" y2="344.3" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><line x1="1132.6" y1="362.0" x2="1142.0" y2="344.3" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><line x1="1139.2" y1="362.0" x2="1144.4" y2="352.3" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><circle cx="1172.0" cy="362.0" r="2.8" fill="#1D1D1F"/>
 <text x="1236.0" y="352.0" font-size="17" font-weight="700" fill="#1D1D1F">25 kt</text>
-<text x="1236.0" y="372.0" font-size="13.5" fill="#6E6E73">two full + one half</text>
+<text x="1236.0" y="372.0" font-size="13.5" fill="#6E6E73">deux pleines + une demie</text>
 <line x1="1172.0" y1="440.0" x2="1126.0" y2="440.0" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><path d="M1126.0,440.0 L1135.4,422.3 L1148.0,440.0 Z" fill="#1D1D1F"/><line x1="1152.6" y1="440.0" x2="1162.0" y2="422.3" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><line x1="1159.2" y1="440.0" x2="1164.4" y2="430.3" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"/><circle cx="1172.0" cy="440.0" r="2.8" fill="#1D1D1F"/>
 <text x="1236.0" y="430.0" font-size="17" font-weight="700" fill="#1D1D1F">65 kt</text>
 <text x="1236.0" y="450.0" font-size="13.5" fill="#6E6E73">pennant + full + half</text>
@@ -84,7 +84,7 @@
 <text x="1126.0" y="516.0" font-size="16" font-weight="700" fill="#1D1D1F">Airmass</text>
 <line x1="1172.0" y1="548.0" x2="1126.0" y2="548.0" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round"/><line x1="1126.0" y1="548.0" x2="1135.4" y2="530.3" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round"/><line x1="1132.6" y1="548.0" x2="1142.0" y2="530.3" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round"/><line x1="1139.2" y1="548.0" x2="1144.4" y2="538.3" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round"/><circle cx="1172.0" cy="548.0" r="2.8" fill="#FF9500"/>
 <text x="1234.0" y="539.0" font-size="15" font-weight="600" fill="#1D1D1F">Warm sector</text>
-<text x="1234.0" y="557.0" font-size="12.5" fill="#6E6E73">southwesterly, ahead of front</text>
+<text x="1234.0" y="557.0" font-size="12.5" fill="#6E6E73">de sud-ouest, en avant du front</text>
 <line x1="1172.0" y1="604.0" x2="1126.0" y2="604.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/><line x1="1126.0" y1="604.0" x2="1135.4" y2="586.3" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/><line x1="1132.6" y1="604.0" x2="1142.0" y2="586.3" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/><line x1="1139.2" y1="604.0" x2="1144.4" y2="594.3" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/><circle cx="1172.0" cy="604.0" r="2.8" fill="#007AFF"/>
 <text x="1234.0" y="595.0" font-size="15" font-weight="600" fill="#1D1D1F">Cold sector</text>
 <text x="1234.0" y="613.0" font-size="12.5" fill="#6E6E73">northwesterly, behind front</text>
@@ -92,7 +92,7 @@
 <line x1="1132.0" y1="688.0" x2="1222.0" y2="688.0" stroke="#007AFF" stroke-width="3.4" stroke-linecap="round"/>
 <path d="M1151.0,688.0 L1158.0,674.0 L1165.0,688.0 Z" fill="#007AFF"/>
 <path d="M1187.0,688.0 L1194.0,674.0 L1201.0,688.0 Z" fill="#007AFF"/>
-<text x="1238.0" y="693.0" font-size="13.5" fill="#6E6E73">teeth point the way it moves</text>
-<text x="38.0" y="958" font-size="14" fill="#6E6E73">Staff points from the wind · pennant = 50 kt, full barb = 10 kt, half barb = 5 kt · illustrative surface analysis, US Northeast seaboard</text>
+<text x="1238.0" y="693.0" font-size="13.5" fill="#6E6E73">les dents pointent le sens du déplacement</text>
+<text x="38.0" y="958" font-size="14" fill="#6E6E73">La hampe pointe d'où vient le vent · fanion = 50 kt, barbule pleine = 10 kt, demi-barbule = 5 kt · analyse de surface illustrative, littoral nord-est des États-Unis</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1432,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

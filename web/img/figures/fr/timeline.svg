@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1840" height="1180" viewBox="0 0 1840 1180" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="tl-title tl-desc">
 <title id="tl-title">Seven decades of Mars exploration as an event timeline</title>
-<desc id="tl-desc">A horizontal timeline of 13 Mars-mission milestones from 1965 to a planned 2033, with alternating callouts above and below a central spine. Four coloured era bands group the missions: Flybys and Orbiters, First Landers, the Rover Age, and the planned Sample Return campaign.</desc>
+<desc id="tl-desc">Une chronologie horizontale de 13 jalons de missions martiennes, de 1965 à un 2033 prévu, avec des annotations alternées au-dessus et au-dessous d'une colonne centrale. Quatre bandes d'ère colorées regroupent les missions : Survols et orbiteurs, Premiers atterrisseurs, l'Âge des rovers, et la campagne prévue de retour d'échantillons.</desc>
 <style>.mstone{cursor:pointer}.mstone .dot{transition:r .12s ease}.mstone:hover .dot,.mstone:focus .dot{r:11}.mstone:focus{outline:none}.mstone:focus .card,.mstone:hover .card{stroke-width:2.4}@media (prefers-reduced-motion: reduce){.sweep{display:none}}</style>
 <rect width="1840" height="1180" fill="#FFFFFF"/>
-<text x="100" y="74" font-size="40" font-weight="700" fill="#1D1D1F">Sixty years of getting closer to Mars</text>
-<text x="100" y="112" font-size="21" fill="#6E6E73">From a 21-frame flyby to a rover caching rock for the trip home, each mission building on the last &#183; daggered dates are planned</text>
+<text x="100" y="74" font-size="40" font-weight="700" fill="#1D1D1F">Soixante ans à se rapprocher de Mars</text>
+<text x="100" y="112" font-size="21" fill="#6E6E73">D'un survol de 21 images à un rover mettant de côté des roches pour le retour, chaque mission bâtissant sur la précédente · les dates marquées d'une dague sont prévues</text>
 <rect x="148.6" y="520.0" width="221.8" height="56" rx="12" fill="#D6EAFF"/>
 <rect x="376.3" y="520.0" width="563.4" height="56" rx="12" fill="#D6EAFF"/>
 <rect x="945.8" y="520.0" width="540.7" height="56" rx="12" fill="#DDF7E1"/>
@@ -35,8 +35,8 @@
 <rect x="100.0" y="354.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
 <text x="123.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1965</text>
 <text x="123.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Mariner 4</text>
-<text x="123.0" y="440.0" font-size="14" fill="#6E6E73">First close-up photos of</text>
-<text x="123.0" y="460.0" font-size="14" fill="#6E6E73">Mars on a flyby: 21 grainy</text>
+<text x="123.0" y="440.0" font-size="14" fill="#6E6E73">Premières photos rapprochées d'</text>
+<text x="123.0" y="460.0" font-size="14" fill="#6E6E73">Mars lors d'un survol : 21</text>
 <text x="123.0" y="480.0" font-size="14" fill="#6E6E73">frames.</text>
 </g>
 <line x1="282.2" y1="548" x2="282.2" y2="666.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
@@ -47,7 +47,7 @@
 <rect x="175.2" y="666.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
 <text x="198.2" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1971</text>
 <text x="198.2" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Mariner 9</text>
-<text x="198.2" y="752.0" font-size="14" fill="#6E6E73">First spacecraft to orbit</text>
+<text x="198.2" y="752.0" font-size="14" fill="#6E6E73">Premier engin à orbiter</text>
 <text x="198.2" y="772.0" font-size="14" fill="#6E6E73">another planet; mapped 85%</text>
 <text x="198.2" y="792.0" font-size="14" fill="#6E6E73">of Mars.</text>
 </g>
@@ -60,7 +60,7 @@
 <text x="312.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1976</text>
 <text x="312.1" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Viking 1</text>
 <text x="312.1" y="280.0" font-size="14" fill="#6E6E73">First fully successful</text>
-<text x="312.1" y="300.0" font-size="14" fill="#6E6E73">landing; ran the first soil</text>
+<text x="312.1" y="300.0" font-size="14" fill="#6E6E73">; a mené les premiers essais de sol</text>
 <text x="312.1" y="320.0" font-size="14" fill="#6E6E73">biology tests.</text>
 </g>
 <line x1="874.4" y1="548" x2="874.4" y2="666.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
@@ -72,7 +72,7 @@
 <text x="790.4" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1997</text>
 <text x="790.4" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Pathfinder</text>
 <text x="790.4" y="752.0" font-size="14" fill="#6E6E73">Airbag landing delivered</text>
-<text x="790.4" y="772.0" font-size="14" fill="#6E6E73">Sojourner, the first Mars</text>
+<text x="790.4" y="772.0" font-size="14" fill="#6E6E73">Sojourner, le premier</text>
 <text x="790.4" y="792.0" font-size="14" fill="#6E6E73">rover.</text>
 </g>
 <line x1="1033.9" y1="548" x2="1033.9" y2="494.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
@@ -84,7 +84,7 @@
 <text x="949.9" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2004</text>
 <text x="949.9" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Spirit &amp; Opportunity</text>
 <text x="949.9" y="440.0" font-size="14" fill="#6E6E73">Twin rovers found hard proof</text>
-<text x="949.9" y="460.0" font-size="14" fill="#6E6E73">that liquid water once</text>
+<text x="949.9" y="460.0" font-size="14" fill="#6E6E73">que l'eau liquide a jadis</text>
 <text x="949.9" y="480.0" font-size="14" fill="#6E6E73">flowed.</text>
 </g>
 <line x1="1125.0" y1="548" x2="1125.0" y2="666.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
@@ -95,8 +95,8 @@
 <rect x="1018.0" y="666.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
 <text x="1041.0" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2008</text>
 <text x="1041.0" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Phoenix</text>
-<text x="1041.0" y="752.0" font-size="14" fill="#6E6E73">Touched and confirmed water</text>
-<text x="1041.0" y="772.0" font-size="14" fill="#6E6E73">ice just under the polar</text>
+<text x="1041.0" y="752.0" font-size="14" fill="#6E6E73">A touché et confirmé la présence d'eau</text>
+<text x="1041.0" y="772.0" font-size="14" fill="#6E6E73">glace juste sous le sol</text>
 <text x="1041.0" y="792.0" font-size="14" fill="#6E6E73">soil.</text>
 </g>
 <line x1="1216.1" y1="548" x2="1216.1" y2="334.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
@@ -107,8 +107,8 @@
 <rect x="1109.1" y="194.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
 <text x="1132.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2012</text>
 <text x="1132.1" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Curiosity</text>
-<text x="1132.1" y="280.0" font-size="14" fill="#6E6E73">Sky-crane lander set down a</text>
-<text x="1132.1" y="300.0" font-size="14" fill="#6E6E73">car-sized nuclear lab in</text>
+<text x="1132.1" y="280.0" font-size="14" fill="#6E6E73">Un atterrisseur à grue aérienne a posé un</text>
+<text x="1132.1" y="300.0" font-size="14" fill="#6E6E73">labo nucléaire de la taille d'une voiture dans</text>
 <text x="1132.1" y="320.0" font-size="14" fill="#6E6E73">Gale crater.</text>
 </g>
 <line x1="1352.8" y1="548" x2="1352.8" y2="494.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
@@ -119,8 +119,8 @@
 <rect x="1245.8" y="354.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
 <text x="1268.8" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2018</text>
 <text x="1268.8" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">InSight</text>
-<text x="1268.8" y="440.0" font-size="14" fill="#6E6E73">First seismometer on Mars;</text>
-<text x="1268.8" y="460.0" font-size="14" fill="#6E6E73">recorded hundreds of</text>
+<text x="1268.8" y="440.0" font-size="14" fill="#6E6E73">Premier sismomètre sur Mars ;</text>
+<text x="1268.8" y="460.0" font-size="14" fill="#6E6E73">a enregistré des centaines de</text>
 <text x="1268.8" y="480.0" font-size="14" fill="#6E6E73">marsquakes.</text>
 </g>
 <line x1="1421.1" y1="548" x2="1421.1" y2="666.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
@@ -132,7 +132,7 @@
 <text x="1337.1" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2021</text>
 <text x="1337.1" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Perseverance</text>
 <text x="1337.1" y="752.0" font-size="14" fill="#6E6E73">Began caching rock cores;</text>
-<text x="1337.1" y="772.0" font-size="14" fill="#6E6E73">Ingenuity flew the first</text>
+<text x="1337.1" y="772.0" font-size="14" fill="#6E6E73">Ingenuity a réalisé le premier</text>
 <text x="1337.1" y="792.0" font-size="14" fill="#6E6E73">Mars aircraft.</text>
 </g>
 <line x1="1421.1" y1="548" x2="1421.1" y2="826.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
@@ -144,7 +144,7 @@
 <text x="1337.1" y="861.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2021</text>
 <text x="1337.1" y="888.0" font-size="18" font-weight="700" fill="#1D1D1F">Tianwen-1</text>
 <text x="1337.1" y="912.0" font-size="14" fill="#6E6E73">China's Zhurong rover</text>
-<text x="1337.1" y="932.0" font-size="14" fill="#6E6E73">landed, a first on its debut</text>
+<text x="1337.1" y="932.0" font-size="14" fill="#6E6E73">a atterri, une première dès ses débuts</text>
 <text x="1337.1" y="952.0" font-size="14" fill="#6E6E73">Mars attempt.</text>
 </g>
 <line x1="1580.6" y1="548" x2="1580.6" y2="334.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
@@ -153,9 +153,9 @@
 <circle class="dot" cx="1580.6" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1473.6" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
 <rect x="1473.6" y="194.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73">† planned</tspan></text>
 <text x="1496.6" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Sample Retrieval</text>
-<text x="1496.6" y="280.0" font-size="14" fill="#6E6E73">Planned lander to gather</text>
+<text x="1496.6" y="280.0" font-size="14" fill="#6E6E73">Atterrisseur prévu pour rassembler</text>
 <text x="1496.6" y="300.0" font-size="14" fill="#6E6E73">Perseverance's cached tubes</text>
 <text x="1496.6" y="320.0" font-size="14" fill="#6E6E73">for launch.</text>
 </g>
@@ -165,9 +165,9 @@
 <circle class="dot" cx="1648.9" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1526.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
 <rect x="1526.0" y="354.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
+<text x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73">† planned</tspan></text>
 <text x="1549.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Earth Return Orbiter</text>
-<text x="1549.0" y="440.0" font-size="14" fill="#6E6E73">Planned relay to ferry the</text>
+<text x="1549.0" y="440.0" font-size="14" fill="#6E6E73">Relais prévu pour convoyer les</text>
 <text x="1549.0" y="460.0" font-size="14" fill="#6E6E73">sealed samples back toward</text>
 <text x="1549.0" y="480.0" font-size="14" fill="#6E6E73">Earth.</text>
 </g>
@@ -177,10 +177,10 @@
 <circle class="dot" cx="1694.4" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1526.0" y="986.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
 <rect x="1526.0" y="986.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> &#8224; planned</tspan></text>
-<text x="1549.0" y="1048.0" font-size="18" font-weight="700" fill="#1D1D1F">Samples on Earth</text>
-<text x="1549.0" y="1072.0" font-size="14" fill="#6E6E73">Target for the first Mars</text>
-<text x="1549.0" y="1092.0" font-size="14" fill="#6E6E73">rocks to reach a lab on</text>
+<text x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73">† planned</tspan></text>
+<text x="1549.0" y="1048.0" font-size="18" font-weight="700" fill="#1D1D1F">Échantillons sur Terre</text>
+<text x="1549.0" y="1072.0" font-size="14" fill="#6E6E73">Cible du premier</text>
+<text x="1549.0" y="1092.0" font-size="14" fill="#6E6E73">roches pour atteindre un labo sur</text>
 <text x="1549.0" y="1112.0" font-size="14" fill="#6E6E73">Earth.</text>
 </g>
 <rect x="164.5" y="555.0" width="189.8" height="24" rx="12" fill="#007AFF"/>
@@ -195,7 +195,7 @@
 <circle cx="108" cy="1141" r="7" fill="#1D1D1F"/>
 <text x="124" y="1146" font-size="16" fill="#6E6E73">Flown mission</text>
 <circle cx="298" cy="1141" r="7" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="3"/>
-<text x="314" y="1146" font-size="16" fill="#6E6E73">Planned (dagger &#8224;, dashed stem)</text>
-<text x="1740.0" y="1146" font-size="15" text-anchor="end" fill="#D2D2D7">Public mission history &#183; future dates approximate</text>
+<text x="314" y="1146" font-size="16" fill="#6E6E73">Planned (dagger †, dashed stem)</text>
+<text x="1740.0" y="1146" font-size="15" text-anchor="end" fill="#D2D2D7">Public mission history · future dates approximate</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1792,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
