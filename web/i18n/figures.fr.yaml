@@ -22,6 +22,7 @@ $k: k$
 (mΩ): (mΩ)
 +1σ (81.5): +1σ (81,5)
 /wk: /sem
+0 ms: 0 ms
 0.3 M residents: 0.3 M habitants
 00h: 00h
 03h: 03h
@@ -34,9 +35,14 @@ $k: k$
 10% in 2024: 10 % en 2024
 10.9 M residents: 10.9 M habitants
 1017 predictions near 4%: 1017 prédictions autour de 4 %
+107 people: 107 personnes
+11 people: 11 personnes
 11.0 M residents: 11.0 M habitants
+118 ms: 118 ms
+12 people: 12 personnes
 12% in 2022: 12 % en 2022
 12% in 2024: 12 % en 2024
+120 ms: 120 ms
 12h: 12h
 13% in 2022: 13 % en 2022
 13% in 2024: 13 % en 2024
@@ -44,7 +50,11 @@ $k: k$
 14% in 2024: 14 % en 2024
 15h: 15h
 16.5 M residents: 16.5 M habitants
+17 people: 17 personnes
+176 ms: 176 ms
+18 people: 18 personnes
 18h: 18h
+19 people: 19 personnes
 '1990: 28.0k US dollars per person, 10.0 tonnes CO2 per person': '1990 : 28,0k dollars US par habitant, 10,0 tonnes de CO2 par habitant'
 '1995: 30.2k US dollars per person, 10.4 tonnes CO2 per person': '1995 : 30,2k dollars US par habitant, 10,4 tonnes de CO2 par habitant'
 1k: 1k
@@ -57,28 +67,40 @@ $k: k$
 '2015: 42.1k US dollars per person, 6.5 tonnes CO2 per person': '2015 : 42,1k dollars US par habitant, 6,5 tonnes de CO2 par habitant'
 '2019: 45.3k US dollars per person, 5.4 tonnes CO2 per person': '2019 : 45,3k dollars US par habitant, 5,4 tonnes de CO2 par habitant'
 '2022: 46.6k US dollars per person, 4.7 tonnes CO2 per person': '2022 : 46,6k dollars US par habitant, 4,7 tonnes de CO2 par habitant'
+212 people total: 212 personnes au total
+212 people.: 212 personnes.
+214 ms: 214 ms
 218 predictions near 95%: 218 prédictions autour de 95 %
 21h: 21h
+22 people: 22 personnes
 23.9 M residents: 23.9 M habitants
+232 ms: 232 ms
+24 people: 24 personnes
+240 ms: 240 ms
 245 predictions near 75%: 245 prédictions autour de 75 %
 25% in 2022: 25 % en 2022
 25% in 2024: 25 % en 2024
 251 predictions near 85%: 251 prédictions autour de 85 %
+26 people: 26 personnes
 263 predictions near 65%: 263 prédictions autour de 65 %
+28 people: 28 personnes
 2k: 2k
 3 lines: 3 gammes
 3 nodes: 3 nœuds
 3.16× better than random: 3,16× mieux que le hasard
 3.1k: 3.1k
 3.5k: 3.5k
+300 ms: 300 ms
 305 predictions near 55%: 305 prédictions autour de 55 %
 318 researchers, 779 co-authorships — illustrative data: 318 chercheurs, 779 cosignatures · données illustratives
 33% in 2022: 33 % en 2022
 33% in 2024: 33 % en 2024
 334 predictions near 45%: 334 prédictions autour de 45 %
+34 people: 34 personnes
 34% in 2022: 34 % en 2022
 34% in 2024: 34 % en 2024
 356 predictions near 35%: 356 prédictions autour de 35 %
+360 ms: 360 ms
 ? '3D bar chart: a 4x4 grid of solid bars, one per team per quarter, height and blue depth of colour both encoding quarterly cloud spend. The Data team''s bars form a rising ridge along the back that towers over the flat Docs plain at the front.'
 : 'Diagramme en barres 3D : une grille 4×4 de barres pleines, une par équipe et par trimestre, la hauteur et l''intensité du bleu encodant toutes deux la dépense cloud trimestrielle. Les barres de l''équipe Data forment une crête montante au fond qui domine la plaine plate de Docs au premier plan.'
 ? '3D wireframe surface: a mesh of projected grid lines over a radially-symmetric ripple, one central peak ringed by decaying concentric waves. Nearer lines are darker blue and thicker; the lattice turns slowly so the solid shape reads on a flat page.'
@@ -88,21 +110,29 @@ $k: k$
 4 reasons → 82% of tickets: 4 raisons → 82 % des tickets
 447 predictions near 25%: 447 prédictions autour de 25 %
 456 people: 456 personnes
+46 ms: 46 ms
+480 ms: 480 ms
 4k: 4k
 5 pts below normal: 5 pts sous la normale
 5.1k: 5.1k
 539 people: 539 personnes
+54 ms: 54 ms
 564 predictions near 15%: 564 prédictions autour de 15 %
+6 people: 6 personnes
 6% in 2022: 6 % en 2022
 6% in 2024: 6 % en 2024
+61 people: 61 personnes
 619 people: 619 personnes
 68% median: médiane 68 %
 6k: 6k
 7 nodes: 7 nœuds
+70 ms: 70 ms
 73 vs 41: 73 vs 41
 757 departures/h: 757 départs/h
+8 people: 8 personnes
 8.2k: 8.2k
 80% Pareto line: Ligne de Pareto à 80 %
+9 people: 9 personnes
 90% of requests finish under 438 ms: 90 % des requêtes aboutissent sous 438 ms
 90-DAY OUTCOME: RÉSULTAT À 90 JOURS
 904 departures/h: 904 départs/h
@@ -148,6 +178,7 @@ Amsterdam: Amsterdam
 : 'Un diagramme alluvial suivant 1 000 nouvelles inscriptions sur trois axes : canal d''acquisition, offre choisie et résultat à 90 jours. La largeur du ruban est proportionnelle au nombre d''utilisateurs sur ce chemin ; le brin Recommandation vers Conservé est le plus large, et les utilisateurs en essai gratuit partent bien plus que les payants. Survolez un ruban pour mettre en évidence un chemin.'
 ? 'Andrews curves: every penguin''s standardised bill length, bill depth, flipper length and body mass are encoded as a Fourier curve over t from minus pi to pi, coloured by species. Adélie in blue, Chinstrap in orange and Gentoo in green each form a distinct band, with the bold median curve of each species drawn on top.'
 : 'Courbes d''Andrews : la longueur du bec, l''épaisseur du bec, la longueur de la nageoire et la masse corporelle standardisées de chaque manchot sont encodées en une courbe de Fourier sur t de moins pi à pi, colorée par espèce. Les Adélie en bleu, les manchots à jugulaire en orange et les Papou en vert forment chacun une bande distincte, avec la courbe médiane de chaque espèce tracée en gras par-dessus.'
+Applications: Applications
 Apr: Avr.
 ? 'Arc diagram of co-authorship in a research lab. Eleven researchers sit on one horizontal line, ordered so the Vision group clusters on the left and the Language group on the right. Each co-authored pairing is an arc rising above the line, its thickness proportional to the number of joint papers. Both groups collaborate densely inside themselves, drawing short low arcs. Only Nadia, in the centre, co-authors with people in both groups: her two long arcs sweeping across the diagram are the single bridge linking the two communities.'
 : 'Diagramme en arcs des cosignatures dans un laboratoire de recherche. Onze chercheurs sont alignés sur une ligne horizontale, ordonnés pour que le groupe Vision se regroupe à gauche et le groupe Langage à droite. Chaque paire ayant cosigné est un arc s''élevant au-dessus de la ligne, d''une épaisseur proportionnelle au nombre d''articles communs. Les deux groupes collaborent densément en interne, dessinant de courts arcs bas. Seule Nadia, au centre, cosigne avec des personnes des deux groupes : ses deux longs arcs qui traversent le diagramme sont l''unique pont reliant les deux communautés.'
@@ -205,6 +236,8 @@ C++: C++
 CHANNEL: CANAL
 CLUSTERS: GRAPPES
 CORE: CŒUR
+? CPU flame graph of one GET /api/checkout request (480 ms) - bar width is time spent; the widest tower is where to optimise first
+: Flame graph CPU d'une requête GET /api/checkout (480 ms) · la largeur de la barre est le temps passé ; la tour la plus large est où optimiser en premier
 Cable: Câble
 Calling the riskiest 20% reaches 63% of churners: Contacter les 20 % les plus à risque touche 63 % des partants
 Canadian: Canadian
@@ -224,6 +257,7 @@ Checkout: Checkout
 Checkout time (s): Temps de paiement (s)
 Checkout time by test variant: Temps de paiement par variante
 Chen: Chen
+Chief Executive: Directeur général
 China -46: Chine −46
 Chinstrap: À jugulaire
 Chinstrap — 26 birds; bold line is the species median curve: À jugulaire · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
@@ -248,6 +282,7 @@ Cloud SQL: Cloud SQL
 'Cloud: 456 of 814 (56%)': 'Cloud : 456 sur 814 (56 %)'
 Clustering: Partitionnement
 Co-authorship across a lab this year — nodes ordered by group; illustrative data: Cosignatures dans un laboratoire cette année · nœuds ordonnés par groupe ; données illustratives
+Colour: Couleur
 Commute mode: Mode de déplacement
 Compactness: Compacité
 Compute: Calcul
@@ -287,12 +322,15 @@ Cumulative state changes: Changements d'état cumulés
 : 'Courbe de gain cumulé pour une campagne de prévention de l''attrition (illustrative). L''axe horizontal est la part des clients contactés, en descendant une liste classée par le risque d''attrition prédit ; l''axe vertical est la part de tous les partants touchés. Trois courbes : une diagonale grise pointillée est la référence aléatoire (contacter X % touche X % des partants) ; une fine ligne verte est le modèle parfait, le plafond, qui monte vite puis s''aplatit une fois tous les partants capturés ; et une épaisse ligne bleue est le modèle réel, entre les deux. La bande bleue ombrée entre le modèle et la diagonale est la valeur ajoutée par le modèle. Un repère montre le point de fonctionnement : contacter les 20 % les plus à risque touche 63 % des partants, 3,16× mieux que le hasard. Données illustratives.'
 'Cumulative-gain curve: churners reached vs share of the model-ranked base contacted': 'Courbe de gain cumulé : partants touchés selon la part de la base classée par le modèle contactée'
 Cups poured: Tasses servies
+Customer Success: Réussite client
 Cycling to work, per 100 commuters, across five cities: Aller au travail à vélo, pour 100 actifs, dans cinq villes
 Cyclists per 100 commuters on a typical weekday · one figure = 5 people · illustrative: Cyclistes pour 100 actifs un jour de semaine type · une figure = 5 personnes · illustratif
+DIVISIONS: DIVISIONS
 Daily activity: Activité quotidienne
 Daily price (open, high, low, close): Cours quotidien (ouverture, haut, bas, clôture)
 Dance / Electronic: Dance / Électronique
 Data: Data
+Data & ML: Données & ML
 Data & scientific: Données & scientifique
 Data Platform API: API plateforme de données
 Day: Jour
@@ -301,6 +339,7 @@ Decaf: Déca
 Deep learning: Apprentissage profond
 Density: Densité
 Design: Conception
+Design & Research: Design & Recherche
 Desktop: Ordinateur
 Devi 2019: Devi 2019
 'Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null': 'Devi 2019 : RC 0,88 (IC 95 % 0,41-1,89), poids 0 % · franchit la valeur nulle'
@@ -324,8 +363,10 @@ Dots randomly placed within each department, not at real addresses · illustrati
 Down: Sous-exprimé
 Downgraded: Rétrogradé
 ENGAGEMENT: ENGAGEMENT
+EXECUTIVE: DIRECTION
 ? Each arc = a co-authored paper · arc thickness ∝ joint papers · node order tells the story · hover or focus an arc to isolate one collaboration
 : Chaque arc = un article cosigné · épaisseur de l'arc ∝ articles communs · l'ordre des nœuds raconte l'histoire · survolez ou ciblez un arc pour isoler une collaboration
+Each box shows role and headcount · division cards total their teams · hover or focus a division to isolate it: Chaque case indique le rôle et l'effectif · les cartes de division totalisent leurs équipes · survolez ou ciblez une division pour l'isoler
 ? Each curve turns one bird's four body measurements into an Andrews series; bold lines are the species medians. Illustrative data.
 : Chaque courbe transforme les quatre mesures corporelles d'un oiseau en une série d'Andrews ; les lignes en gras sont les médianes par espèce. Données illustratives.
 Each region counts people once · hover or tab to a set to bring it forward: Chaque région compte les personnes une fois · survolez ou tabulez un ensemble pour le mettre au premier plan
@@ -373,6 +414,7 @@ Feature requests: Demandes de fonctionnalités
 Feb: Févr.
 Female: Femmes
 File & object stores: Stockage fichiers & objets
+Finance: Finance
 ? Five key performance indicators drawn as bullet graphs. Each row has three shaded qualitative bands (poor, satisfactory, good), a dark measure bar for the value reached, and an orange tick for the target. 2 of 5 metrics met or beat their target this quarter; trial signups and p95 latency fell short.
 : Cinq indicateurs clés dessinés en graphiques à puce. Chaque ligne comporte trois plages qualitatives ombrées (faible, correct, bon), une barre de mesure foncée pour la valeur atteinte et un repère orange pour la cible. 2 des 5 indicateurs ont atteint ou dépassé leur cible ce trimestre ; les inscriptions à l'essai et la latence p95 sont restées en deçà.
 Floor area (m²): Surface (m²)
@@ -403,6 +445,7 @@ Fulfilment: Logistique
 GDF5: GDF5
 GDF5 — chr20:25,600,000 · p = 10.0×10⁻¹⁹: GDF5 · chr20:25 600 000 · p = 10,0×10⁻¹⁹
 GDP per capita (k$): PIB par habitant (k$)
+GET /api/checkout: GET /api/checkout
 Gaussian processes: Processus gaussiens
 ? 'Genome-wide association study of adult height: dozens of loci across many chromosomes clear significance, so the signal is spread wide'
 : 'Étude d''association pangénomique de la taille adulte : des dizaines de loci sur de nombreux chromosomes franchissent le seuil de significativité, le signal est donc largement réparti'
@@ -458,6 +501,9 @@ Hover or focus any node to trace its branch back to the centre: Survolez ou cibl
 Hover or focus any topic to trace its path back to the root: Survolez ou ciblez un sujet pour retracer son chemin jusqu'à la racine
 How many users each combination of contact channels reaches: Combien d'utilisateurs chaque combinaison de canaux de contact atteint
 INTENT: INTENTION
+IT & Security: IT & Sécurité
+? 'Icicle / flame graph of one GET /api/checkout request totalling 480 milliseconds. The root bar spans the full width; each row below splits its parent by time. The highlighted warm tower load_cart to fetch_user_orders to run_sql to wait_on_lock is the critical path: wait_on_lock alone is 176 ms, about 37 percent of the request, and run_sql as a whole is 214 ms, about 45 percent. Off-path calls (authenticate, render_response) are shown in muted grey.'
+: 'Graphique en stalactites / flame graph d''une requête GET /api/checkout totalisant 480 millisecondes. La barre racine occupe toute la largeur ; chaque ligne en dessous divise son parent par le temps. La tour chaude en surbrillance load_cart vers fetch_user_orders vers run_sql vers wait_on_lock est le chemin critique : wait_on_lock à lui seul fait 176 ms, environ 37 pour cent de la requête, et run_sql dans son ensemble fait 214 ms, environ 45 pour cent. Les appels hors chemin (authenticate, render_response) sont en gris atténué.'
 Illustrative 3D surface: Surface 3D illustrative
 Illustrative cohort of 1,000 sign-ups · ribbon width = number of users on that path: Cohorte illustrative de 1 000 inscriptions · largeur du ruban = nombre d'utilisateurs sur ce chemin
 Illustrative connection map: Carte de liaisons illustrative
@@ -488,6 +534,11 @@ Kernel length: Longueur du grain
 Kernel width: Largeur du grain
 Kotlin: Kotlin
 L: D
+L0: L0
+L1: L1
+L2: L2
+L3: L3
+L4: L4
 LFP (iron phosphate): LFP (lithium-fer-phosphate)
 Language: Langage
 Language (58): Langage (58)
@@ -524,6 +575,7 @@ Manhattan plot of a genome-wide association study for adult height: Diagramme de
 ? Manhattan plot. The horizontal axis lays chromosomes 1 to 22 end to end; the vertical axis is the strength of each genetic variant's association with adult height, shown as minus log base ten of the p-value, so smaller p-values rise higher. Points alternate between two shades of blue by chromosome. A dashed red line marks the genome-wide significance threshold at p = 5e-8. Dozens of peaks on many different chromosomes rise above the line, the signature of a highly polygenic trait; the tallest, labelled with nearby genes, include ZBTB38 on chromosome 3, HMGA1 on chromosome 6, and HMGA2 on chromosome 12.
 : Diagramme de Manhattan. L'axe horizontal aligne les chromosomes 1 à 22 bout à bout ; l'axe vertical est la force de l'association de chaque variant génétique avec la taille adulte, exprimée en moins log en base dix de la p-valeur, si bien que les p-valeurs plus petites montent plus haut. Les points alternent entre deux nuances de bleu selon le chromosome. Une ligne rouge pointillée marque le seuil de significativité pangénomique à p = 5e-8. Des dizaines de pics sur de nombreux chromosomes dépassent la ligne, signature d'un caractère fortement polygénique ; les plus hauts, étiquetés par les gènes voisins, incluent ZBTB38 sur le chromosome 3, HMGA1 sur le chromosome 6 et HMGA2 sur le chromosome 12.
 Mar: Mars
+Marketing: Marketing
 May: Mai
 Mean daily low to mean daily high, degrees Celsius, 30-year climate normal: De la moyenne des minima à la moyenne des maxima quotidiens, en degrés Celsius, normale climatique sur 30 ans
 Mean reaction time (ms): Temps de réaction moyen (ms)
@@ -584,8 +636,10 @@ Oct: Oct.
 Odds ratio for reaching BP target (log scale, higher is better): Rapport de cotes pour atteindre la cible tensionnelle (échelle log, plus haut est meilleur)
 Off-peak hour: Heure creuse
 Okafor: Okafor
+One division carries nearly half the company: Une division porte près de la moitié de l'entreprise
 One dot = 25,000 residents · people ring the coasts and pack the Paris basin, leaving the rural diagonal bare: Un point = 25 000 habitants · la population cerne les côtes et se masse dans le bassin parisien, laissant la diagonale rurale vide
 One researcher holds two research groups together: Une chercheuse tient ensemble deux groupes de recherche
+One slow SQL query eats 45% of every checkout: Une requête SQL lente dévore 45 % de chaque paiement
 One week of site visitors, from channel to outcome — illustrative data: Une semaine de visiteurs du site, du canal au résultat · données illustratives
 One week of support tickets (1,205 total) · illustrative data: Une semaine de tickets de support (1 205 au total) · données illustratives
 Ops: Exploitation
@@ -615,6 +669,7 @@ Paper goods — Household staples: Papeterie — Produits de base
 : 'Diagramme de Pareto d''une semaine de tickets de support client (1 205 au total, illustratif). Les barres montrent la part de tickets de chaque motif, triées de la plus haute à la plus basse contre l''axe des pourcentages de gauche ; les 4 plus hautes sont en bleu comme les « quelques essentiels » et les 5 restantes s''estompent en gris comme les « nombreux secondaires ». Une ligne orange trace la part cumulée contre l''axe des pourcentages de droite, montant à 100 %. La ligne de Pareto pointillée à 80 % marque le seuil 80/20 : la courbe cumulée le franchit d''abord au motif 4, donc 4 motifs représentent 82 % des tickets (991 sur 1 205). Données illustratives.'
 Park: Park
 Payments: Paiements
+People Ops: Gestion RH
 Per-region mini bars, Equal-Earth basemap.: Mini-barres par région, fond Equal Earth.
 Per-region pies, Equal-Earth basemap.: Camemberts par région, fond Equal Earth.
 Perfect calibration: Calibration parfaite
@@ -624,7 +679,7 @@ Pet food — Household staples: Aliments pour animaux — Produits de base
 ? 'Pictorial ISOTYPE chart: each row repeats a person icon, one figure per five cyclists out of every hundred commuters; the last figure in a row is clipped to show the remainder. Copenhagen 62; Amsterdam 48; Tokyo 27; Berlin 18; Los Angeles 4 per 100. Copenhagen leads with 62; Los Angeles trails at 4.'
 : 'Graphique pictural ISOTYPE : chaque ligne répète une icône de personne, une figure pour cinq cyclistes sur cent actifs ; la dernière figure d''une ligne est rognée pour montrer le reste. Copenhague 62 ; Amsterdam 48 ; Tokyo 27 ; Berlin 18 ; Los Angeles 4 pour 100. Copenhague est en tête avec 62 ; Los Angeles ferme la marche à 4.'
 Plan: Plan
-Platform: Platform
+Platform: Plateforme
 Platform reviewed: Relectures par Platform
 Platform reviews everyone's code and is rarely reviewed back: La plateforme relit le code de tout le monde et est rarement relue en retour
 'Point size = predictions in bin:': 'Taille du point = prédictions dans la classe :'
@@ -659,6 +714,7 @@ Price: Prix
 Private-label lines clustered by co-purchase similarity · illustrative data: Gammes de marque distributeur regroupées par similarité d'achat conjoint · données illustratives
 Pro tier: Niveau Pro
 Probability density: Densité de probabilité
+Product & Engineering is 50% of headcount, the classic shape of a product-led software company. Illustrative org of: Produit & Ingénierie représente 50 % de l'effectif, la forme classique d'une entreprise logicielle guidée par le produit. Organigramme illustratif de
 Profiles: Profils
 Project schedule: Planning du projet
 Python: Python
@@ -826,7 +882,9 @@ Sync fails across devices: Échecs de synchro entre appareils
 Systems: Systèmes
 Systems (54): Systèmes (54)
 TASK: TÂCHE
+TEAMS: ÉQUIPES
 TWO PEAKS: DEUX PICS
+Talent: Recrutement
 Team: Équipe
 Telemonitoring helps patients hit their BP target: La télésurveillance aide les patients à atteindre leur cible tensionnelle
 Temperature (°C): Température (°C)
@@ -862,10 +920,13 @@ Ticket reasons sorted by volume; the cumulative share climbs to the 80% line: Mo
 Tier 1: Niveau 1
 Tier 2: Niveau 2
 Time (seconds): Temps (secondes)
+Time into request (bar width = milliseconds): Temps dans la requête (largeur de barre = millisecondes)
 Tokyo: Tokyo
 'Tokyo: 27 cyclists per 100 commuters': 'Tokyo : 27 cyclistes pour 100 actifs'
 Top 20% contacted → 63% of churners reached (3.16× better than random): Top 20 % contactés → 63 % des partants touchés (3,16× mieux que le hasard)
 Top 20% → 63% of churners: Top 20 % → 63 % des partants
+? 'Top-down organization chart of a software company of about 212 people. The chief executive sits over four vice-presidents: Product & Engineering, Revenue, Operations, and People. Each division card is tinted its own colour and prints its total headcount; team cards below print their own size. Product & Engineering, with four teams, is the largest division at 50% of the company.'
+: 'Organigramme descendant d''une entreprise logicielle d''environ 212 personnes. Le directeur général chapeaute quatre vice-présidents : Produit & Ingénierie, Revenu, Opérations et Personnel. Chaque carte de division a sa propre teinte et affiche son effectif total ; les cartes d''équipe en dessous affichent leur taille. Produit & Ingénierie, avec quatre équipes, est la plus grande division à 50 % de l''entreprise.'
 Topsoil samples by grain-size mix · sand + silt + clay = 100 % · illustrative: Échantillons de terre arable par mélange de calibres · sable + limon + argile = 100 % · illustratif
 Transform: Transformation
 Transformers: Transformeurs
@@ -893,6 +954,10 @@ Up: Sur-exprimé
 : 'Diagramme UpSet. En haut : un diagramme en barres des tailles d''intersections, une barre par combinaison observée de canaux, triées de la plus grande à la plus petite. Sous chaque barre, une matrice de points indique lesquels des quatre canaux (e-mail, appli mobile, appli web, SMS) la combinaison inclut ; les points d''une colonne sont reliés par une ligne. À gauche : un diagramme en barres de la portée totale de chaque canal. La plus grande poche est celle des utilisateurs joignables uniquement par e-mail (62k).'
 Users: Utilisateurs
 Users reached per combination (k): Utilisateurs atteints par combinaison (k)
+VP Operations: VP Opérations
+VP People: VP Personnel
+VP Product & Eng.: VP Produit & Ing.
+VP Revenue: VP Revenu
 Validation rules: Règles de validation
 Value: Valeur
 Variable A →: Variable A →
@@ -940,6 +1005,9 @@ ZBTB38 — chr3:108,900,000 · p = 10.0×10⁻³³: ZBTB38 · chr3:108 900 000 �
 above mean (deeper = bigger swing): au-dessus de la moyenne (plus foncé = variation plus forte)
 analytics: analytique
 app-07 · 12:40 UTC · 1-minute average · illustrative reading: app-07 · 12:40 UTC · moyenne sur 1 minute · relevé illustratif
+appl…: appl…
+app…: app…
+authenticate: authenticate
 bass drone: bourdon de basse
 batch: lot
 below mean: sous la moyenne
@@ -960,16 +1028,21 @@ db-05: db-05
 db-06: db-06
 'db-06: peaks +10 pts above / -7 pts below its 17% daily mean, biggest swing at 16:00': 'db-06 : pics de +10 pts au-dessus / -7 pts en dessous de sa moyenne quotidienne de 17 %, plus forte variation à 16:00'
 deeper tails: traînes plus profondes
+deseri…: deseri…
 f(t) — Andrews series value: f(t) · valeur de la série d'Andrews
 farther: plus loin
 favours telemonitoring →: en faveur de la télésurveillance →
+fetch_user_orders: fetch_user_orders
 genome-wide significance · p = 5×10⁻⁸: significativité pangénomique · p = 5×10⁻⁸
 given vs received: données vs reçues
+grey = off the hot path: gris = hors du chemin critique
 growth without the carbon: la croissance sans le carbone
+gzip: gzip
 her 2 arcs are the sole cross-group links: ses 2 arcs sont les seuls liens entre groupes
 'here the path pivots down:': 'ici la trajectoire bascule vers le bas :'
 higher spend (top-cap number = $ thousands): dépense plus élevée (nombre au sommet = milliers de $)
 its high-risk calls miss the diagonal: ses prédictions à haut risque ratent la diagonale
+load_cart: load_cart
 low-pressure centre: centre dépressionnaire
 lower: plus faible
 map.: carte.
@@ -989,13 +1062,19 @@ p99: p99
 pair, so one cell measurement tells the families apart. The diagonal shows each distribution. Illustrative.: paire, si bien qu'une seule mesure suffit à distinguer les familles. La diagonale montre chaque distribution. Illustratif.
 per 100: pour 100
 percussive tap: frappe percussive
+price_items: price_items
 primary: primaire
+render_response: render_response
 replica: réplique
 reporting: reporting
+request root: racine de la requête
 rising tone: son montant
+run_sql: run_sql
+run_sql = 214 ms (45%) - a single un-cached query holds a lock: run_sql = 214 ms (45 %) · une seule requête non mise en cache tient un verrou
 says less churn: annonce moins d'attrition
 says more churn: annonce plus d'attrition
 seasonal normal: normale saisonnière
+serialize_json: serialize_json
 standby: secours
 suggestive · p = 1×10⁻⁵: suggestif · p = 1×10⁻⁵
 t (Fourier phase, −π to π): t (phase de Fourier, −π à π)
@@ -1003,6 +1082,9 @@ target: cible
 than happens: qu'il n'en survient
 to home · 2 380 trips: vers la maison · 2 380 trajets
 to work · 2 240 trips: vers le travail · 2 240 trajets
+verif…: verif…
+wait_on_lock: wait_on_lock
+warm = critical path (deeper is hotter): chaud = chemin critique (plus profond = plus chaud)
 x1 = bill length: x1 = longueur du bec
 x2 = bill depth: x2 = épaisseur du bec
 x3 = flipper length: x3 = longueur de la nageoire
