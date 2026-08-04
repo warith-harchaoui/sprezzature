@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1300" height="860" viewBox="0 0 1300 860" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ice-t ice-d">
-<title id="ice-t">One slow SQL query eats 45% of every checkout</title>
-<desc id="ice-d">Icicle / flame graph of one GET /api/checkout request totalling 480 milliseconds. The root bar spans the full width; each row below splits its parent by time. The highlighted warm tower load_cart to fetch_user_orders to run_sql to wait_on_lock is the critical path: wait_on_lock alone is 176 ms, about 37 percent of the request, and run_sql as a whole is 214 ms, about 45 percent. Off-path calls (authenticate, render_response) are shown in muted grey.</desc>
+<title id="ice-t">Une requête SQL lente dévore 45 % de chaque paiement</title>
+<desc id="ice-d">Graphique en stalactites / flame graph d'une requête GET /api/checkout totalisant 480 millisecondes. La barre racine occupe toute la largeur ; chaque ligne en dessous divise son parent par le temps. La tour chaude en surbrillance load_cart vers fetch_user_orders vers run_sql vers wait_on_lock est le chemin critique : wait_on_lock à lui seul fait 176 ms, environ 37 pour cent de la requête, et run_sql dans son ensemble fait 214 ms, environ 45 pour cent. Les appels hors chemin (authenticate, render_response) sont en gris atténué.</desc>
 <style>.bar{transition:transform .16s ease, filter .16s ease;transform-box:fill-box;transform-origin:center;cursor:pointer;}.bar:hover,.bar:focus{filter:brightness(1.07);transform:scaleY(1.04);outline:none;}.bar:focus{stroke:#1D1D1F;stroke-width:2.5;}@media (prefers-reduced-motion: reduce){.bar{transition:none;}.bar:hover,.bar:focus{transform:none;}}</style>
 <rect width="1300" height="860" fill="#FFFFFF"/>
-<text x="88" y="72" font-size="38" font-weight="700" fill="#1D1D1F">One slow SQL query eats 45% of every checkout</text>
-<text x="88" y="110" font-size="18" fill="#6E6E73">CPU flame graph of one GET /api/checkout request (480 ms) - bar width is time spent; the widest tower is where to optimise first</text>
-<text x="88" y="156" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">Time into request (bar width = milliseconds)</text>
+<text x="88" y="72" font-size="38" font-weight="700" fill="#1D1D1F">Une requête SQL lente dévore 45 % de chaque paiement</text>
+<text x="88" y="110" font-size="18" fill="#6E6E73">Flame graph CPU d'une requête GET /api/checkout (480 ms) · la largeur de la barre est le temps passé ; la tour la plus large est où optimiser en premier</text>
+<text x="88" y="156" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">Temps dans la requête (largeur de barre = millisecondes)</text>
 <line x1="88" y1="204" x2="88" y2="644" stroke="#E5E5EA" stroke-width="1"/>
 <text x="88" y="196" font-size="15" fill="#6E6E73" text-anchor="start" font-family="Roboto Mono, monospace">0 ms</text>
 <text x="88" y="178" font-size="13" fill="#9A9AA0" text-anchor="start" font-family="Roboto Mono, monospace">0%</text>
@@ -66,18 +66,18 @@
 <text x="1101.94" y="440" font-size="15" font-weight="600" fill="#1D1D1F" text-anchor="middle" pointer-events="none">gzip</text>
 <line x1="446.28" y1="554" x2="446.28" y2="668" stroke="#6E6E73" stroke-width="1.5" stroke-dasharray="3 4"/>
 <circle cx="446.28" cy="668" r="3.5" fill="#6E6E73"/>
-<text x="446.28" y="690" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle">run_sql = 214 ms (45%) - a single un-cached query holds a lock</text>
-<text x="88" y="730" font-size="15" font-weight="700" fill="#1D1D1F">Colour</text>
+<text x="446.28" y="690" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle">run_sql = 214 ms (45 %) · une seule requête non mise en cache tient un verrou</text>
+<text x="88" y="730" font-size="15" font-weight="700" fill="#1D1D1F">Couleur</text>
 <rect x="162" y="716" width="24" height="16" rx="4" fill="#007AFF"/>
-<text x="194" y="730" font-size="15" fill="#6E6E73">request root</text>
+<text x="194" y="730" font-size="15" fill="#6E6E73">racine de la requête</text>
 <rect x="324" y="716" width="24" height="16" rx="4" fill="#FFCC00"/>
 <rect x="350" y="716" width="24" height="16" rx="4" fill="#FFB300"/>
 <rect x="376" y="716" width="24" height="16" rx="4" fill="#FF9500"/>
 <rect x="402" y="716" width="24" height="16" rx="4" fill="#FF7A1A"/>
 <rect x="428" y="716" width="24" height="16" rx="4" fill="#FF5A2C"/>
 <rect x="454" y="716" width="24" height="16" rx="4" fill="#FF3B30"/>
-<text x="492" y="730" font-size="15" fill="#6E6E73">warm = critical path (deeper is hotter)</text>
+<text x="492" y="730" font-size="15" fill="#6E6E73">chaud = chemin critique (plus profond = plus chaud)</text>
 <rect x="800" y="716" width="24" height="16" rx="4" fill="#8790A6"/>
-<text x="832" y="730" font-size="15" fill="#6E6E73">grey = off the hot path</text>
+<text x="832" y="730" font-size="15" fill="#6E6E73">gris = hors du chemin critique</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1252,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
