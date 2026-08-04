@@ -40,6 +40,16 @@ from sprezzature_figures.fonts import DEFAULT_SVG_FACES, svg_font_defs  # noqa: 
 TR: dict[str, str] = yaml.safe_load(YAML.read_text(encoding="utf-8")) or {}
 SPECS = {re.sub(r"\.(vl|vg)$", "", Path(p).stem): p for p in glob.glob(str(FIGREPO / "assets/vega-examples/*.json"))}
 SKIP = re.compile(r"^[\d\s.,%:+\-–—−/()·°×→←]*$")  # pure punctuation / numbers
+# SVG path data (a mark.shape, a precomputed hex tile, ...) is geometry, not
+# prose: it starts with a move command and every letter in it is a path command.
+# It must never be treated as human text — a stray "translation" that turned its
+# decimal points into French commas once silently emptied the hexbin figure.
+_PATH_CMDS = set("MmLlHhVvCcSsQqTtAaZz")
+
+
+def is_path_data(s: str) -> bool:
+    s = s.strip()
+    return bool(s) and s[0] in "Mm" and all(ch in _PATH_CMDS for ch in s if ch.isalpha())
 # Bare single-word keys (the word-cloud review terms) collide with Vega structural
 # values like the "filter" transform type or a "from"/"size" field, so they are
 # applied only to hero SVGs, never to re-rendered Vega specs.
@@ -49,12 +59,16 @@ SPEC_UNSAFE = frozenset(
     "beans bin burr coffee dial espresso grind hopper kitchen morning motor setting filter "
     "size from".split()
 )
-TR_SPEC: dict[str, str] = {k: v for k, v in TR.items() if k not in SPEC_UNSAFE}
+# Path-data keys must never drive a substitution even if one is still lingering
+# in the map, so geometry can't be corrupted from a stale entry.
+TR_SPEC: dict[str, str] = {
+    k: v for k, v in TR.items() if k not in SPEC_UNSAFE and not is_path_data(k)
+}
 missing: set[str] = set()
 
 
 def is_human(s: str) -> bool:
-    return bool(s.strip()) and not SKIP.match(s)
+    return bool(s.strip()) and not SKIP.match(s) and not is_path_data(s)
 
 
 def embed(svg: str) -> str:
