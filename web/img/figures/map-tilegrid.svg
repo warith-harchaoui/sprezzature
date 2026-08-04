@@ -1,19 +1,17 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" width="724" height="667" viewBox="0 0 724 667" font-family="Roboto, system-ui, sans-serif"><style>
-@media (prefers-color-scheme: dark) {
-  rect[fill="white"] { fill: #15181C; }
-  text[fill="#1D1D1F"] { fill: #F5F5F7; }
-  text[fill="#6E6E73"] { fill: #A1A1A6; }
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="724" height="667" viewBox="0 0 724 667" font-family="Roboto, system-ui, sans-serif"><style>@media (prefers-color-scheme: dark) {
+ rect[fill="white"] { fill: #15181C; }
+ text[fill="#1D1D1F"] { fill: #F5F5F7; }
+ text[fill="#6E6E73"] { fill: #A1A1A6; }
 }
 @media (prefers-contrast: more) {
-  g rect { stroke: #0B1220; stroke-width: 1; }
-  text[fill="#6E6E73"] { fill: #3A3A3E; }
+ g rect { stroke: #0B1220; stroke-width: 1; }
+ text[fill="#6E6E73"] { fill: #3A3A3E; }
 }
 @media (forced-colors: active) {
-  rect[fill="white"] { fill: Canvas; }
-  g rect { stroke: CanvasText; stroke-width: 1; }
-  text { fill: CanvasText; }
-}
-</style>
+ rect[fill="white"] { fill: Canvas; }
+ g rect { stroke: CanvasText; stroke-width: 1; }
+ text { fill: CanvasText; }
+}</style>
 <title>Tile-grid cartogram</title><desc>World tile-grid cartogram: each country an equal square in a rough geographic layout, shaded by quintile class on the house blue ramp.</desc>
 <rect width="724" height="667" fill="white"/>
 <text x="20" y="34" font-size="16" font-weight="700" fill="#1D1D1F">Every country, equal weight</text>

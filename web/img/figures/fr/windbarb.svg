@@ -1,12 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1646" height="980" viewBox="0 0 1646 980" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wb-title wb-desc"><rect width="1646" height="980" fill="#FFFFFF"/><g transform="translate(83,0)">
 <title id="wb-title">Un front froid balaie la côte nord-est · les barbules pivotent de 180° et forcissent en coup de vent derrière lui</title>
 <desc id="wb-desc">Carte synoptique de barbules de vent par station sur le littoral nord-est des États-Unis et l'Atlantique ouest adjacent. Chaque station est une barbule dont la hampe pointe d'où vient le vent et dont les traits comptent la vitesse en nœuds : un fanion plein vaut 50 nœuds, une barbule pleine 10 nœuds, une demi-barbule 5 nœuds. En avant du front froid bleu, un flux chaud de sud-ouest (orange) remonte la côte à 20 à 40 nœuds ; derrière, un coup de vent froid de nord-ouest (bleu) atteint 45 à 50 nœuds, les hampes ayant pivoté d'environ 180 degrés de part et d'autre du front.</desc>
-<style>
-.stn { transition: transform .16s ease; transform-box: fill-box; transform-origin: center; }
-.stn:hover, .stn:focus { transform: scale(1.16); }
+<style>.stn { transition: transform.16s ease; transform-box: fill-box; transform-origin: center; }
+.stn:hover,.stn:focus { transform: scale(1.16); }
 .stn:focus { outline: none; }
-@media (prefers-reduced-motion: reduce) { .stn { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.stn { transition: none; } }</style>
 <rect width="1480" height="980" fill="#FFFFFF"/>
 <text x="38.0" y="70" font-size="39" font-weight="700" fill="#1D1D1F">Un front froid fait pivoter brutalement le vent autour de la côte</text>
 <text x="38.0" y="110" font-size="21" fill="#6E6E73">Analyse de surface · flux chaud de sud-ouest en avant du front, coup de vent froid de nord-ouest s'installant derrière · les barbules comptent les nœuds</text>
@@ -93,6 +91,6 @@
 <path d="M1151.0,688.0 L1158.0,674.0 L1165.0,688.0 Z" fill="#007AFF"/>
 <path d="M1187.0,688.0 L1194.0,674.0 L1201.0,688.0 Z" fill="#007AFF"/>
 <text x="1238.0" y="693.0" font-size="13.5" fill="#6E6E73">les dents pointent le sens du déplacement</text>
-<text x="38.0" y="958" font-size="14" fill="#6E6E73">La hampe pointe d'où vient le vent · fanion = 50 kt, barbule pleine = 10 kt, demi-barbule = 5 kt · analyse de surface illustrative, littoral nord-est des États-Unis</text>
+<text x="38.0" y="958" font-size="14" fill="#6E6E73">La hampe pointe d'où vient le vent · fanion = 50 kt, barbule pleine = 10 kt, demi-barbule = 5 kt · analyse de surface, littoral nord-est des États-Unis</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1432,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </g></svg>

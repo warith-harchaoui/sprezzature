@@ -1,21 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="940" viewBox="0 0 1080 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="vn-title vn-desc">
 <title id="vn-title">Compétences croisées des professionnels de la donnée</title>
 <desc id="vn-desc">Diagramme de Venn à trois ensembles des compétences de 1 000 professionnels de la donnée interrogés. Python 619 au total ; SQL 539 ; Cloud 456. La région centrale, à l'aise dans les trois, est la plus grande avec 214, et Python et SQL réunis en ajoutent 188.</desc>
-<style>
-.lobe { transition: opacity .18s ease; }
-.setlabel { transition: opacity .18s ease; }
-svg:hover .lobe, svg:focus-within .lobe { opacity: .30; }
-svg:hover .setlabel, svg:focus-within .setlabel { opacity: .35; }
-.grp-A:hover .lobe-A, .grp-A:focus .lobe-A, .grp-A:hover .setlabel-A, .grp-A:focus .setlabel-A { opacity: 1; }
-.grp-B:hover .lobe-B, .grp-B:focus .lobe-B, .grp-B:hover .setlabel-B, .grp-B:focus .setlabel-B { opacity: 1; }
-.grp-C:hover .lobe-C, .grp-C:focus .lobe-C, .grp-C:hover .setlabel-C, .grp-C:focus .setlabel-C { opacity: 1; }
+<style>.lobe { transition: opacity.18s ease; }
+.setlabel { transition: opacity.18s ease; }
+svg:hover.lobe, svg:focus-within.lobe { opacity:.30; }
+svg:hover.setlabel, svg:focus-within.setlabel { opacity:.35; }
+.grp-A:hover.lobe-A,.grp-A:focus.lobe-A,.grp-A:hover.setlabel-A,.grp-A:focus.setlabel-A { opacity: 1; }
+.grp-B:hover.lobe-B,.grp-B:focus.lobe-B,.grp-B:hover.setlabel-B,.grp-B:focus.setlabel-B { opacity: 1; }
+.grp-C:hover.lobe-C,.grp-C:focus.lobe-C,.grp-C:hover.setlabel-C,.grp-C:focus.setlabel-C { opacity: 1; }
 .grp { cursor: pointer; }
 .grp:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 12px; }
-@media (prefers-reduced-motion: reduce) { .lobe, .setlabel { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.lobe,.setlabel { transition: none; } }</style>
 <rect width="1080" height="940" fill="#FFFFFF"/>
 <text x="52" y="66" font-size="31" font-weight="700" fill="#1D1D1F">La plupart des data pros parlent Python, SQL et Cloud à la fois</text>
-<text x="52" y="102" font-size="19" fill="#6E6E73">Compétences de 1 000 professionnels de la donnée interrogés · effectifs par région · illustratif</text>
+<text x="52" y="102" font-size="19" fill="#6E6E73">Compétences de 1 000 professionnels de la donnée interrogés · effectifs par région ·</text>
 <g style="mix-blend-mode:multiply">
 <circle class="lobe lobe-A" cx="540.0" cy="400.0" r="205.0" fill="#007AFF" fill-opacity="0.40"/>
 <circle class="lobe lobe-B" cx="429.6" cy="594.4" r="205.0" fill="#28CD41" fill-opacity="0.40"/>

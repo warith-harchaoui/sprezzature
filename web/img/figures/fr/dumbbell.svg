@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1066" viewBox="0 0 1280 1066" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="db-title db-desc">
 <title id="db-title">Écart salarial par poste : les hommes gagnent plus que les femmes dans toutes les familles de métiers</title>
-<desc id="db-desc">Diagramme en haltères du salaire horaire médian des femmes (violet) et des hommes (bleu) sur 10 postes, triés par la taille de l'écart. Chaque ligne joint les deux médianes par un segment dont la longueur est l'écart. Les hommes gagnent plus dans tous les postes ; l'écart moyen est de 11 % et le plus large pour Directrice commerciale, à 13 $ de l'heure. Données illustratives.</desc>
-<style>.row{cursor:pointer}.row .seg{stroke:#6E6E73;stroke-width:5;stroke-linecap:round}.row:hover .rowbg,.row:focus .rowbg{fill:#F0F0F2}.row:hover .seg,.row:focus .seg{stroke:#1D1D1F}.row:hover .dot,.row:focus .dot{stroke:#1D1D1F;stroke-width:2}.row:focus{outline:none}</style>
+<desc id="db-desc">Diagramme en haltères du salaire horaire médian des femmes (violet) et des hommes (bleu) sur 10 postes, triés par la taille de l'écart. Chaque ligne joint les deux médianes par un segment dont la longueur est l'écart. Les hommes gagnent plus dans tous les postes ; l'écart moyen est de 11 % et le plus large pour Directrice commerciale, à 13 $ de l'heure</desc>
+<style>.row{cursor:pointer}.row.seg{stroke:#6E6E73;stroke-width:5;stroke-linecap:round}.row:hover.rowbg,.row:focus.rowbg{fill:#F0F0F2}.row:hover.seg,.row:focus.seg{stroke:#1D1D1F}.row:hover.dot,.row:focus.dot{stroke:#1D1D1F;stroke-width:2}.row:focus{outline:none}</style>
 <rect width="1280" height="1066" fill="#FFFFFF"/>
 <text x="70" y="86" font-size="40" font-weight="700" fill="#1D1D1F">Les hommes gagnent plus que les femmes dans tous les postes</text>
-<text x="70" y="132" font-size="23" fill="#6E6E73">Salaire horaire médian, femmes vs hommes · l'écart moyen est de 11 % et se creuse avec l'ancienneté · illustratif</text>
+<text x="70" y="132" font-size="23" fill="#6E6E73">Salaire horaire médian, femmes vs hommes · l'écart moyen est de 11 % et se creuse avec l'ancienneté ·</text>
 <circle cx="81.0" cy="170.0" r="11.0" fill="#AF52DE"/>
 <text x="104.0" y="177.0" font-size="22" fill="#1D1D1F">Femmes</text>
 <circle cx="231.0" cy="170.0" r="11.0" fill="#5AC8FA"/>

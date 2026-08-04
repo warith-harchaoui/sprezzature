@@ -1,12 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1480" height="980" viewBox="0 0 1480 980" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wb-title wb-desc">
 <title id="wb-title">A cold front sweeps the Northeast coast — wind barbs pivot 180° and freshen to a gale behind it</title>
 <desc id="wb-desc">Synoptic surface wind-barb station plot over the US Northeast seaboard and adjacent western Atlantic. Each station is a wind barb whose staff points from the wind and whose ticks tally speed in knots: a filled pennant is 50 knots, a full barb 10 knots, a half barb 5 knots. Ahead of the blue cold front a warm southwesterly flow (orange) streams up the coast at 20 to 40 knots; behind it a cold northwesterly gale (blue) reaches 45 to 50 knots, the staffs having pivoted roughly 180 degrees across the front.</desc>
-<style>
-.stn { transition: transform .16s ease; transform-box: fill-box; transform-origin: center; }
-.stn:hover, .stn:focus { transform: scale(1.16); }
+<style>.stn { transition: transform.16s ease; transform-box: fill-box; transform-origin: center; }
+.stn:hover,.stn:focus { transform: scale(1.16); }
 .stn:focus { outline: none; }
-@media (prefers-reduced-motion: reduce) { .stn { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.stn { transition: none; } }</style>
 <rect width="1480" height="980" fill="#FFFFFF"/>
 <text x="38.0" y="70" font-size="39" font-weight="700" fill="#1D1D1F">A cold front swings the wind hard around the coast</text>
 <text x="38.0" y="110" font-size="21" fill="#6E6E73">Surface analysis · warm southwesterly ahead of the front, a cold northwesterly gale filling in behind — barb ticks tally knots</text>
@@ -93,6 +91,6 @@
 <path d="M1151.0,688.0 L1158.0,674.0 L1165.0,688.0 Z" fill="#007AFF"/>
 <path d="M1187.0,688.0 L1194.0,674.0 L1201.0,688.0 Z" fill="#007AFF"/>
 <text x="1238.0" y="693.0" font-size="13.5" fill="#6E6E73">teeth point the way it moves</text>
-<text x="38.0" y="958" font-size="14" fill="#6E6E73">Staff points from the wind · pennant = 50 kt, full barb = 10 kt, half barb = 5 kt · illustrative surface analysis, US Northeast seaboard</text>
+<text x="38.0" y="958" font-size="14" fill="#6E6E73">Staff points from the wind · pennant = 50 kt, full barb = 10 kt, half barb = 5 kt</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1432,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

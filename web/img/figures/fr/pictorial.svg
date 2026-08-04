@@ -8,28 +8,26 @@
 <clipPath id="clip-berlin"><rect x="436.0" y="570.0" width="44.0" height="76.0"/></clipPath>
 <clipPath id="clip-los-angeles"><rect x="280.0" y="688.0" width="52.0" height="76.0"/></clipPath>
 </defs>
-<style>
-.row { transition: transform .18s ease; }
-.icons { transition: opacity .18s ease; }
-svg:hover .icons, svg:focus-within .icons { opacity: .30; }
-.row-copenhagen:hover .icons, .row-copenhagen:focus .icons { opacity: 1; }
-.row-copenhagen:hover, .row-copenhagen:focus { transform: translateY(-4px); }
-.row-amsterdam:hover .icons, .row-amsterdam:focus .icons { opacity: 1; }
-.row-amsterdam:hover, .row-amsterdam:focus { transform: translateY(-4px); }
-.row-tokyo:hover .icons, .row-tokyo:focus .icons { opacity: 1; }
-.row-tokyo:hover, .row-tokyo:focus { transform: translateY(-4px); }
-.row-berlin:hover .icons, .row-berlin:focus .icons { opacity: 1; }
-.row-berlin:hover, .row-berlin:focus { transform: translateY(-4px); }
-.row-los-angeles:hover .icons, .row-los-angeles:focus .icons { opacity: 1; }
-.row-los-angeles:hover, .row-los-angeles:focus { transform: translateY(-4px); }
+<style>.row { transition: transform.18s ease; }
+.icons { transition: opacity.18s ease; }
+svg:hover.icons, svg:focus-within.icons { opacity:.30; }
+.row-copenhagen:hover.icons,.row-copenhagen:focus.icons { opacity: 1; }
+.row-copenhagen:hover,.row-copenhagen:focus { transform: translateY(-4px); }
+.row-amsterdam:hover.icons,.row-amsterdam:focus.icons { opacity: 1; }
+.row-amsterdam:hover,.row-amsterdam:focus { transform: translateY(-4px); }
+.row-tokyo:hover.icons,.row-tokyo:focus.icons { opacity: 1; }
+.row-tokyo:hover,.row-tokyo:focus { transform: translateY(-4px); }
+.row-berlin:hover.icons,.row-berlin:focus.icons { opacity: 1; }
+.row-berlin:hover,.row-berlin:focus { transform: translateY(-4px); }
+.row-los-angeles:hover.icons,.row-los-angeles:focus.icons { opacity: 1; }
+.row-los-angeles:hover,.row-los-angeles:focus { transform: translateY(-4px); }
 .row { cursor: pointer; }
 .row:focus { outline: none; }
-.row:focus .rowlabel { fill: #0A4DA0; }
-@media (prefers-reduced-motion: reduce) { .row, .icons { transition: none; } .reveal { animation: none !important; }}
-</style>
+.row:focus.rowlabel { fill: #0A4DA0; }
+@media (prefers-reduced-motion: reduce) {.row,.icons { transition: none; }.reveal { animation: none !important; }}</style>
 <rect width="1240" height="900" fill="#FFFFFF"/>
 <text x="56" y="76" font-size="34" font-weight="700" fill="#1D1D1F">Copenhague pédale ; Los Angeles conduit</text>
-<text x="56" y="116" font-size="19" fill="#6E6E73">Cyclistes pour 100 actifs un jour de semaine type · une figure = 5 personnes · illustratif</text>
+<text x="56" y="116" font-size="19" fill="#6E6E73">Cyclistes pour 100 actifs un jour de semaine type · une figure = 5 personnes ·</text>
 <g class="row row-copenhagen" tabindex="0" role="listitem"><title>Copenhague : 62 cyclistes pour 100 actifs</title>
 <text class="rowlabel" x="260" y="254.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Copenhague</text>
 <g>

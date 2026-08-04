@@ -1,19 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2232" height="900" viewBox="0 0 2232 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wc-title wc-desc"><rect width="2232" height="900" fill="#FFFFFF"/><g transform="translate(496,0)">
 <title id="wc-title">Nuage de mots d'avis sur un moulin à café : les acheteurs adorent sa mouture silencieuse, et le seul reproche est le bruit</title>
 <desc id="wc-desc">Un nuage de mots en spirale d'une année d'avis produit sur un moulin à café à meules. Chaque mot est dimensionné par le nombre d'avis qui le mentionnent et étiqueté par thème avec une couleur et un signe : un plus en tête et du vert pour l'éloge, un moins en tête et du rouge pour la plainte, et aucun signe en bleu pour les mots produit neutres. Les plus gros mots sont mouture, silencieux et régulier ; le plus gros mot de plainte est bruyant.</desc>
-<style>
-.word { transition: opacity .18s ease; }
-svg:has(.legend-row:hover) .word, svg:has(.legend-row:focus) .word { opacity: .12; }
-svg:has(.legend-praise:hover) .grp-praise, svg:has(.legend-praise:focus) .grp-praise { opacity: 1; }
-svg:has(.legend-gripe:hover) .grp-gripe, svg:has(.legend-gripe:focus) .grp-gripe { opacity: 1; }
-svg:has(.legend-neutral:hover) .grp-neutral, svg:has(.legend-neutral:focus) .grp-neutral { opacity: 1; }
+<style>.word { transition: opacity.18s ease; }
+svg:has(.legend-row:hover).word, svg:has(.legend-row:focus).word { opacity:.12; }
+svg:has(.legend-praise:hover).grp-praise, svg:has(.legend-praise:focus).grp-praise { opacity: 1; }
+svg:has(.legend-gripe:hover).grp-gripe, svg:has(.legend-gripe:focus).grp-gripe { opacity: 1; }
+svg:has(.legend-neutral:hover).grp-neutral, svg:has(.legend-neutral:focus).grp-neutral { opacity: 1; }
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 8px; }
-@media (prefers-reduced-motion: reduce) { .word { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.word { transition: none; } }</style>
 <rect width="1240" height="900" fill="#FFFFFF"/>
 <text x="56" y="66" font-size="32" font-weight="700" fill="#1D1D1F">Les avis adorent la mouture silencieuse et régulière</text>
-<text x="56" y="98" font-size="18" fill="#6E6E73">2 412 avis sur l'Aurora Grind One · mots dimensionnés par leur fréquence, étiquetés par thème avec un signe et une couleur · illustratif</text>
+<text x="56" y="98" font-size="18" fill="#6E6E73">2 412 avis sur l'Aurora Grind One · mots dimensionnés par leur fréquence, étiquetés par thème avec un signe et une couleur ·</text>
 <line x1="56" y1="120" x2="1184" y2="120" stroke="#E5E5EA" stroke-width="1.4"/>
 <g class="grp-praise">
 <text class="word grp-praise" x="185.1" y="589.6" font-size="28.3" font-weight="500" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>compact — ce que les acheteurs saluent (+) · mentionné dans 78 avis (3 %)</title>+ compact</text>

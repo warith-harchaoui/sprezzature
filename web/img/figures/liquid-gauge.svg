@@ -4,7 +4,7 @@
 <defs><clipPath id="lg-disc"><circle cx="550.0" cy="600.0" r="340.0"/></clipPath></defs>
 <rect width="1100" height="1040" fill="#FFFFFF"/>
 <text x="60" y="78" font-size="36" font-weight="700" fill="#1D1D1F">A reservoir running a little low</text>
-<text x="60" y="114" font-size="19" fill="#6E6E73">Serre-Ponçon lake · usable capacity on 1 July · 10-year median 68 % · illustrative reading</text>
+<text x="60" y="114" font-size="19" fill="#6E6E73">Serre-Ponçon lake · usable capacity on 1 July · 10-year median 68 %</text>
 <circle cx="550.0" cy="600.0" r="340.0" fill="#EEF1F6"/>
 <g clip-path="url(#lg-disc)">
 <rect x="-249.0" y="511.6" width="1598.0" height="468.4" fill="#005FC6"/>

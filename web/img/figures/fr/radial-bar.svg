@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1000" viewBox="0 0 1120 1000" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="rb-title rb-desc">
 <title id="rb-title">Trajets de vélos en libre-service par heure : deux pics de pendulaires vers 8 h et 18 h</title>
 <desc id="rb-desc">Diagramme en barres radial des départs de vélos en libre-service un jour de semaine type, une barre par heure disposée autour d'un cadran de 24 heures depuis minuit en haut. La longueur de la barre est le nombre de trajets. La ville est la plus calme avant l'aube, culmine à 08:00 quand on part travailler, retombe à midi, puis grimpe jusqu'à son heure la plus chargée à 18:00 au retour.</desc>
-<style>
-.bar { transition: opacity .18s ease, transform .18s ease; transform-box: fill-box; transform-origin: center; }
-svg:hover .bar, svg:focus-within .bar { opacity: .28; }
-svg .bar:hover, svg .bar:focus { opacity: 1; }
+<style>.bar { transition: opacity.18s ease, transform.18s ease; transform-box: fill-box; transform-origin: center; }
+svg:hover.bar, svg:focus-within.bar { opacity:.28; }
+svg.bar:hover, svg.bar:focus { opacity: 1; }
 .bar:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { .bar { transition: none; } .grow { animation: none !important; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.bar { transition: none; }.grow { animation: none !important; } }</style>
 <rect width="1120" height="1000" fill="#FFFFFF"/>
 <text x="60" y="72" font-size="34" font-weight="700" fill="#1D1D1F">Une ville à deux heures de pointe</text>
-<text x="60" y="106" font-size="18" fill="#6E6E73">Vélos en libre-service Vélomarée · trajets par heure un jour de semaine type · 19 940 trajets quotidiens · illustratif</text>
+<text x="60" y="106" font-size="18" fill="#6E6E73">Vélos en libre-service Vélomarée · trajets par heure un jour de semaine type · 19 940 trajets quotidiens ·</text>
 <g>
 <circle cx="560.0" cy="548.0" r="168.00" fill="none" stroke="#E8E8ED" stroke-width="1.4"/>
 <circle cx="560.0" cy="548.0" r="214.40" fill="none" stroke="#E8E8ED" stroke-width="1.4"/>

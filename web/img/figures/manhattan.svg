@@ -1,13 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="780" viewBox="0 0 1500 780" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="mh-title mh-desc">
 <title id="mh-title">Manhattan plot of a genome-wide association study for adult height</title>
 <desc id="mh-desc">Manhattan plot. The horizontal axis lays chromosomes 1 to 22 end to end; the vertical axis is the strength of each genetic variant's association with adult height, shown as minus log base ten of the p-value, so smaller p-values rise higher. Points alternate between two shades of blue by chromosome. A dashed red line marks the genome-wide significance threshold at p = 5e-8. Dozens of peaks on many different chromosomes rise above the line, the signature of a highly polygenic trait; the tallest, labelled with nearby genes, include ZBTB38 on chromosome 3, HMGA1 on chromosome 6, and HMGA2 on chromosome 12.</desc>
-<style>
-.peak { transition: r .15s ease; }
-.peak:hover circle, .peak:focus circle { r: 7; }
+<style>.peak { transition: r.15s ease; }
+.peak:hover circle,.peak:focus circle { r: 7; }
 .peak:focus { outline: none; }
 .peak:focus circle { stroke: #1D1D1F; stroke-width: 1.4; }
-@media (prefers-reduced-motion: reduce) { .peak { transition: none; } }
-</style>
+@media (prefers-reduced-motion: reduce) {.peak { transition: none; } }</style>
 <rect width="1500" height="780" fill="#FFFFFF"/>
 <text x="96.0" y="62" font-size="32" font-weight="700" fill="#1D1D1F">Height is written across the whole genome</text>
 <text x="96.0" y="96" font-size="18" fill="#6E6E73">Genome-wide association study of adult height: dozens of loci across many chromosomes clear significance, so the signal is spread wide</text>
@@ -27,7 +25,7 @@
 <line x1="96.0" y1="211.2" x2="1456.0" y2="211.2" stroke="#E5E5EA" stroke-width="1"/>
 <text x="82.0" y="216.2" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">30</text>
 </g>
-<text x="34" y="410.0" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 34 410.0)">−log₁₀(p)  association strength</text>
+<text x="34" y="410.0" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 34 410.0)">−log₁₀(p) association strength</text>
 <g fill="#007AFF" fill-opacity="0.8">
 <circle cx="174.4" cy="588.2" r="2.4"/>
 <circle cx="148.1" cy="669.2" r="2.4"/>
@@ -8169,6 +8167,6 @@
 <text x="1444.5" y="698.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">22</text>
 </g>
 <text x="776.0" y="732.0" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle">Chromosome</text>
-<text x="96.0" y="758.0" font-size="14" fill="#6E6E73">Illustrative data · one point per genetic variant · alternating tints separate chromosomes · hover a labelled peak for its position and p-value</text>
+<text x="96.0" y="758.0" font-size="14" fill="#6E6E73">· one point per genetic variant · alternating tints separate chromosomes · hover a labelled peak for its position and p-value</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1452,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1475" height="940" viewBox="0 0 1475 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="lg-title lg-desc"><rect width="1475" height="940" fill="#FFFFFF"/><g transform="translate(218,0)">
 <title id="lg-title">Un modèle d'attrition touche la plupart des partants à partir d'une petite fraction de la liste classée</title>
-<desc id="lg-desc">Courbe de gain cumulé pour une campagne de prévention de l'attrition (illustrative). L'axe horizontal est la part des clients contactés, en descendant une liste classée par le risque d'attrition prédit ; l'axe vertical est la part de tous les partants touchés. Trois courbes : une diagonale grise pointillée est la référence aléatoire (contacter X % touche X % des partants) ; une fine ligne verte est le modèle parfait, le plafond, qui monte vite puis s'aplatit une fois tous les partants capturés ; et une épaisse ligne bleue est le modèle réel, entre les deux. La bande bleue ombrée entre le modèle et la diagonale est la valeur ajoutée par le modèle. Un repère montre le point de fonctionnement : contacter les 20 % les plus à risque touche 63 % des partants, 3,16× mieux que le hasard. Données illustratives.</desc>
-<style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
+<desc id="lg-desc">Courbe de gain cumulé pour une campagne de prévention de l'attrition. L'axe horizontal est la part des clients contactés, en descendant une liste classée par le risque d'attrition prédit ; l'axe vertical est la part de tous les partants touchés. Trois courbes : une diagonale grise pointillée est la référence aléatoire (contacter X % touche X % des partants) ; une fine ligne verte est le modèle parfait, le plafond, qui monte vite puis s'aplatit une fois tous les partants capturés ; et une épaisse ligne bleue est le modèle réel, entre les deux. La bande bleue ombrée entre le modèle et la diagonale est la valeur ajoutée par le modèle. Un repère montre le point de fonctionnement : contacter les 20 % les plus à risque touche 63 % des partants, 3,16× mieux que le hasard</desc>
+<style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="1040" height="940" fill="#FFFFFF"/>
 <rect x="118" y="200" width="862" height="620" fill="#F5F5F7" rx="10"/>
 <text x="118" y="80" font-size="42" font-weight="700" fill="#1D1D1F">Contacter les 20 % les plus à risque touche 63 % des partants</text>
 <text x="118" y="124" font-size="24" fill="#6E6E73">Courbe de gain cumulé : partants touchés selon la part de la base classée par le modèle contactée</text>
-<text x="118" y="156" font-size="20" fill="#6E6E73">Données illustratives</text>
+<text x="118" y="156" font-size="20" fill="#6E6E73"></text>
 <line x1="118.0" y1="200.0" x2="118.0" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
 <line x1="118.0" y1="820.0" x2="980.0" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
 <line x1="290.4" y1="200.0" x2="290.4" y2="820.0" stroke="#FFFFFF" stroke-width="1.6"/>
