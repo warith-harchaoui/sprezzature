@@ -14,8 +14,8 @@ svg:has(.cause-other:hover) .cause-other, svg:has(.cause-other:focus) .cause-oth
 @media (prefers-reduced-motion: reduce) { .wedge { transition: none; } }
 </style>
 <rect width="1180" height="900" fill="#FFFFFF"/>
-<text x="56" y="66" font-size="33" font-weight="700" fill="#1D1D1F">Most of the dead never saw a battlefield</text>
-<text x="56" y="100" font-size="18" fill="#6E6E73">Florence Nightingale&#8217;s coxcomb &#183; British Army mortality in the East &#183; annual deaths per 1,000 men, by cause &#183; Apr 1854&#8211;Mar 1855</text>
+<text x="56" y="66" font-size="33" font-weight="700" fill="#1D1D1F">La plupart des morts n'ont jamais vu de champ de bataille</text>
+<text x="56" y="100" font-size="18" fill="#6E6E73">Diagramme polaire de Florence Nightingale · mortalité de l'armée britannique en Orient · décès annuels pour 1 000 hommes, par cause · avr. 1854-mars 1855</text>
 <g>
 <circle cx="470.0" cy="500.0" r="83.75" fill="none" stroke="#E5E5EA" stroke-width="1.3"/>
 <rect x="457.6" y="405.2" width="24.8" height="20" rx="6" fill="#FFFFFF" fill-opacity="0.82"/>
@@ -97,30 +97,30 @@ svg:has(.cause-other:hover) .cause-other, svg:has(.cause-other:focus) .cause-oth
 <circle cx="470.0" cy="500.0" r="3.4" fill="#1D1D1F"/>
 <line x1="305.5" y1="455.9" x2="68.0" y2="776.0" stroke="#1D1D1F" stroke-width="1.4" stroke-opacity="0.5"/>
 <circle cx="305.5" cy="455.9" r="4" fill="#1D1D1F"/>
-<text x="60.0" y="806.0" font-size="18" font-weight="700" fill="#1D1D1F">January 1855 was the deadliest month</text>
-<text x="60.0" y="829.0" font-size="15" fill="#6E6E73">144 of every 1,000 men were lost to disease alone, against 9 to wounds</text>
-<text x="880" y="216" font-size="18" font-weight="700" fill="#1D1D1F">Cause of death</text>
+<text x="60.0" y="806.0" font-size="18" font-weight="700" fill="#1D1D1F">Janvier 1855 fut le mois le plus meurtrier</text>
+<text x="60.0" y="829.0" font-size="15" fill="#6E6E73">144 hommes sur 1 000 sont morts de maladie seule, contre 9 de blessures</text>
+<text x="880" y="216" font-size="18" font-weight="700" fill="#1D1D1F">Cause du décès</text>
 <g transform="translate(880.0,250.0)">
 <g class="cause cause-disease legend-row" tabindex="0" role="listitem" transform="translate(0,0.0)"><title>Preventable disease: 83% of the year&#8217;s deaths</title>
 <rect class="cause-disease" x="0" y="0" width="30" height="30" rx="8" fill="#5AC8FA"/>
-<text x="44" y="14" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Preventable disease</text>
-<text x="44" y="36" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" dominant-baseline="middle">83% of all deaths</text>
+<text x="44" y="14" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Maladie évitable</text>
+<text x="44" y="36" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" dominant-baseline="middle">83 % de tous les décès</text>
 </g>
 <g class="cause cause-wounds legend-row" tabindex="0" role="listitem" transform="translate(0,60.0)"><title>Wounds in battle: 5% of the year&#8217;s deaths</title>
 <rect class="cause-wounds" x="0" y="0" width="30" height="30" rx="8" fill="#FF3B30"/>
-<text x="44" y="14" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Wounds in battle</text>
-<text x="44" y="36" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" dominant-baseline="middle">5% of all deaths</text>
+<text x="44" y="14" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Blessures au combat</text>
+<text x="44" y="36" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" dominant-baseline="middle">5 % de tous les décès</text>
 </g>
 <g class="cause cause-other legend-row" tabindex="0" role="listitem" transform="translate(0,120.0)"><title>All other causes: 12% of the year&#8217;s deaths</title>
 <rect class="cause-other" x="0" y="0" width="30" height="30" rx="8" fill="#C7C7CC"/>
-<text x="44" y="14" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">All other causes</text>
-<text x="44" y="36" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" dominant-baseline="middle">12% of all deaths</text>
+<text x="44" y="14" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Toutes autres causes</text>
+<text x="44" y="36" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" dominant-baseline="middle">12 % de tous les décès</text>
 </g>
 </g>
-<text x="880" y="438" font-size="16" font-weight="700" fill="#1D1D1F">How to read it</text>
-<text x="880" y="468" font-size="15" fill="#6E6E73">Every wedge is the same width, one month.</text>
-<text x="880" y="490" font-size="15" fill="#6E6E73">The radius is that month’s death rate;</text>
-<text x="880" y="512" font-size="15" fill="#6E6E73">colour splits it by cause. Bigger petal,</text>
-<text x="880" y="534" font-size="15" fill="#6E6E73">deadlier month. Hover a colour to isolate it.</text>
+<text x="880" y="438" font-size="16" font-weight="700" fill="#1D1D1F">Comment le lire</text>
+<text x="880" y="468" font-size="15" fill="#6E6E73">Chaque secteur a la même largeur, un mois.</text>
+<text x="880" y="490" font-size="15" fill="#6E6E73">Le rayon est le taux de mortalité de ce mois ;</text>
+<text x="880" y="512" font-size="15" fill="#6E6E73">la couleur le répartit par cause. Plus grand pétale,</text>
+<text x="880" y="534" font-size="15" fill="#6E6E73">mois plus meurtrier. Survolez une couleur pour l'isoler.</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1132,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

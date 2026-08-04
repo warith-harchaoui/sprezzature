@@ -45,8 +45,8 @@ svg:has(.phase-interculture:hover) .phase-interculture, svg:has(.phase-intercult
 </style>
 <defs><pattern id="cycle-fcp-0" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,8L8,0" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="cycle-fcp-1" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,0L8,8" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="cycle-fcp-2" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,4L8,4" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="cycle-fcp-3" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M4,0L4,8" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="cycle-fcp-4" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="Canvas"/><circle cx="5" cy="5" r="1.8" fill="CanvasText"/></pattern><pattern id="cycle-fcp-5" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,4L8,4M4,0L4,8" stroke="CanvasText" stroke-width="1.4"/></pattern><pattern id="cycle-fcp-6" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,8L8,0" stroke="CanvasText" stroke-width="1.6"/></pattern></defs>
 <rect width="1180" height="900" fill="#FFFFFF"/>
-<text x="56" y="66" font-size="33" font-weight="700" fill="#1D1D1F">A field is never idle: the winter-wheat year</text>
-<text x="56" y="100" font-size="18" fill="#6E6E73">Share of the crop year each growth stage occupies &#183; sown in October, harvested the next July</text>
+<text x="56" y="66" font-size="33" font-weight="700" fill="#1D1D1F">Un champ n'est jamais au repos : l'année du blé d'hiver</text>
+<text x="56" y="100" font-size="18" fill="#6E6E73">Part de l'année culturale occupée par chaque stade de croissance · semé en octobre, récolté en juillet suivant</text>
 <g>
 <g class="phase phase-semis"><path class="arc phase-semis" tabindex="0" role="listitem" d="M 563.14 196.02 A 300.00 300.00 0 0 1 707.27 234.64 L 652.29 332.21 A 188.00 188.00 0 0 0 561.97 308.01 Z" fill="#FF9500" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"><title>Sowing &#183; October &#183; 1 month (8% of the year)</title></path>
 </g>
@@ -78,17 +78,17 @@ svg:has(.phase-interculture:hover) .phase-interculture, svg:has(.phase-intercult
 <circle cx="560.0" cy="496.0" r="142.0" fill="none" stroke="#E5E5EA" stroke-width="1.4"/>
 <text x="560.0" y="480.0" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle" letter-spacing="2">ONE FIELD</text>
 <text x="560.0" y="510.0" font-size="30" font-weight="700" fill="#1D1D1F" text-anchor="middle">Winter wheat</text>
-<text x="560.0" y="538.0" font-size="16" fill="#6E6E73" text-anchor="middle">12 months, one turn</text>
+<text x="560.0" y="538.0" font-size="16" fill="#6E6E73" text-anchor="middle">12 mois, un tour</text>
 <line x1="810.8" y1="620.5" x2="714.0" y2="760.0" stroke="#1D1D1F" stroke-width="1.4" stroke-opacity="0.45"/>
 <circle cx="810.8" cy="620.5" r="4" fill="#1D1D1F"/>
-<text x="706.0" y="790.0" font-size="18" font-weight="700" fill="#1D1D1F">Winter does most of the waiting</text>
-<text x="706.0" y="813.0" font-size="15" fill="#6E6E73">Tillering alone fills 4 of the 12 months &#8212; 33% of the</text>
-<text x="706.0" y="832.0" font-size="15" fill="#6E6E73">year &#8212; before the crop races through spring</text>
-<text x="852" y="150" font-size="16" font-weight="700" fill="#1D1D1F">How to read it</text>
-<text x="852" y="180" font-size="15" fill="#6E6E73">The ring is one full year; follow it</text>
-<text x="852" y="202" font-size="15" fill="#6E6E73">clockwise from the top. Each arc’s</text>
-<text x="852" y="224" font-size="15" fill="#6E6E73">length is that stage’s share of the</text>
-<text x="852" y="246" font-size="15" fill="#6E6E73">year. Hover a stage to isolate it.</text>
-<text x="852" y="276" font-size="13" fill="#6E6E73">Form after the M&#233;mo visuel d&#8217;agronomie (Dunod, 2024)</text>
+<text x="706.0" y="790.0" font-size="18" font-weight="700" fill="#1D1D1F">L'hiver fait l'essentiel de l'attente</text>
+<text x="706.0" y="813.0" font-size="15" fill="#6E6E73">Le tallage à lui seul occupe 4 des 12 mois · 33 % de l'</text>
+<text x="706.0" y="832.0" font-size="15" fill="#6E6E73">année · avant que la culture ne file au printemps</text>
+<text x="852" y="150" font-size="16" font-weight="700" fill="#1D1D1F">Comment le lire</text>
+<text x="852" y="180" font-size="15" fill="#6E6E73">L'anneau est une année entière ; suivez-le</text>
+<text x="852" y="202" font-size="15" fill="#6E6E73">dans le sens horaire depuis le haut. La longueur</text>
+<text x="852" y="224" font-size="15" fill="#6E6E73">de chaque arc est la part de ce stade dans l'</text>
+<text x="852" y="246" font-size="15" fill="#6E6E73">année. Survolez un stade pour l'isoler.</text>
+<text x="852" y="276" font-size="13" fill="#6E6E73">D'après le Mémo visuel d'agronomie (Dunod, 2024)</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1132,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

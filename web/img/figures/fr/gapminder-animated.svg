@@ -120,7 +120,7 @@
 <line x1="100" y1="69.2" x2="710" y2="69.2" stroke="#EFEFF4" stroke-width="1"/>
 <text x="92" y="73.2" text-anchor="end" font-size="12" fill="#6E6E73">90</text>
 <text x="405" y="496" text-anchor="middle" font-size="13" fill="#1D1D1F">GDP per capita ($, log scale) &#8594;</text>
-<text x="20" y="254" font-size="13" fill="#1D1D1F" transform="rotate(-90 20 254)" text-anchor="middle">Life expectancy (years) &#8594;</text>
+<text x="20" y="254" font-size="13" fill="#1D1D1F" transform="rotate(-90 20 254)" text-anchor="middle">Life expectancy (years) →</text>
 <text x="20" y="24" font-size="15" font-weight="700" fill="#1D1D1F"><a href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank"><tspan fill="#007AFF" text-decoration="underline">Tribute to Hans Rosling</tspan></a> &#8212; Health and Wealth of Nations &#8212; 1950&#8211;2025</text>
 <text x="20" y="40" font-size="11" fill="#6E6E73">Each bubble is a country with size for population and color for region</text>
 <a href="../../data/tribute-hans-rosling-1950-2025.csv" target="_blank"><text x="20" y="512" text-anchor="start" font-size="10" fill="#007AFF" text-decoration="underline">Tribute to Hans Rosling Data</text></a>
