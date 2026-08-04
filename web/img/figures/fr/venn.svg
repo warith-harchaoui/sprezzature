@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="940" viewBox="0 0 1080 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="vn-title vn-desc">
+<title id="vn-title">Compétences croisées des professionnels de la donnée</title>
+<desc id="vn-desc">Diagramme de Venn à trois ensembles des compétences de 1 000 professionnels de la donnée interrogés. Python 619 au total ; SQL 539 ; Cloud 456. La région centrale, à l'aise dans les trois, est la plus grande avec 214, et Python et SQL réunis en ajoutent 188.</desc>
+<style>
+.lobe { transition: opacity .18s ease; }
+.setlabel { transition: opacity .18s ease; }
+svg:hover .lobe, svg:focus-within .lobe { opacity: .30; }
+svg:hover .setlabel, svg:focus-within .setlabel { opacity: .35; }
+.grp-A:hover .lobe-A, .grp-A:focus .lobe-A, .grp-A:hover .setlabel-A, .grp-A:focus .setlabel-A { opacity: 1; }
+.grp-B:hover .lobe-B, .grp-B:focus .lobe-B, .grp-B:hover .setlabel-B, .grp-B:focus .setlabel-B { opacity: 1; }
+.grp-C:hover .lobe-C, .grp-C:focus .lobe-C, .grp-C:hover .setlabel-C, .grp-C:focus .setlabel-C { opacity: 1; }
+.grp { cursor: pointer; }
+.grp:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) { .lobe, .setlabel { transition: none; } }
+</style>
+<rect width="1080" height="940" fill="#FFFFFF"/>
+<text x="52" y="66" font-size="31" font-weight="700" fill="#1D1D1F">La plupart des data pros parlent Python, SQL et Cloud à la fois</text>
+<text x="52" y="102" font-size="19" fill="#6E6E73">Compétences de 1 000 professionnels de la donnée interrogés · effectifs par région · illustratif</text>
+<g style="mix-blend-mode:multiply">
+<circle class="lobe lobe-A" cx="540.0" cy="400.0" r="205.0" fill="#007AFF" fill-opacity="0.40"/>
+<circle class="lobe lobe-B" cx="429.6" cy="594.4" r="205.0" fill="#28CD41" fill-opacity="0.40"/>
+<circle class="lobe lobe-C" cx="650.4" cy="594.4" r="205.0" fill="#FF9500" fill-opacity="0.40"/>
+</g>
+<circle class="lobe lobe-A" cx="540.0" cy="400.0" r="205.0" fill="none" stroke="#007AFF" stroke-width="4" stroke-opacity="0.9"/>
+<circle class="lobe lobe-B" cx="429.6" cy="594.4" r="205.0" fill="none" stroke="#28CD41" stroke-width="4" stroke-opacity="0.9"/>
+<circle class="lobe lobe-C" cx="650.4" cy="594.4" r="205.0" fill="none" stroke="#FF9500" stroke-width="4" stroke-opacity="0.9"/>
+<text x="540.0" y="292.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">96</text>
+<text x="346.0" y="692.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">74</text>
+<text x="734.0" y="692.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">58</text>
+<text x="408.0" y="478.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">188</text>
+<text x="672.0" y="478.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">121</text>
+<text x="540.0" y="714.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">63</text>
+<rect x="495.0" y="507.0" width="90.0" height="46.0" rx="23.0" fill="#FFFFFF" fill-opacity="0.86"/>
+<text x="540.0" y="530.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">214</text>
+<g class="grp grp-A" tabindex="0" role="listitem"><title>Python : 619 sur 814 (76 %)</title>
+<circle class="lobe-A" cx="540.0" cy="400.0" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<text class="setlabel setlabel-A" x="540.0" y="151.0" font-size="25" font-weight="700" fill="#007AFF" text-anchor="middle">Python</text>
+<text class="setlabel setlabel-A" x="540.0" y="178.0" font-size="18" fill="#6E6E73" text-anchor="middle">619 personnes</text>
+</g>
+<g class="grp grp-B" tabindex="0" role="listitem"><title>SQL : 539 sur 814 (66 %)</title>
+<circle class="lobe-B" cx="429.6" cy="594.4" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<text class="setlabel setlabel-B" x="242.6" y="845.4" font-size="25" font-weight="700" fill="#28CD41" text-anchor="middle">SQL</text>
+<text class="setlabel setlabel-B" x="242.6" y="872.4" font-size="18" fill="#6E6E73" text-anchor="middle">539 personnes</text>
+</g>
+<g class="grp grp-C" tabindex="0" role="listitem"><title>Cloud : 456 sur 814 (56 %)</title>
+<circle class="lobe-C" cx="650.4" cy="594.4" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<text class="setlabel setlabel-C" x="837.4" y="845.4" font-size="25" font-weight="700" fill="#FF9500" text-anchor="middle">Cloud</text>
+<text class="setlabel setlabel-C" x="837.4" y="872.4" font-size="18" fill="#6E6E73" text-anchor="middle">456 personnes</text>
+</g>
+<text x="52" y="910" font-size="17" fill="#6E6E73">Chaque région compte les personnes une fois · survolez ou tabulez un ensemble pour le mettre au premier plan</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1032,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

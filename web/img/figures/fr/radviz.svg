@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="940" viewBox="0 0 1160 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="rv-title rv-desc">
+<title id="rv-title">Seven calliper measurements already separate the wheat varieties</title><desc id="rv-desc">RadViz projection of 180 synthetic wheat kernels from three varieties (Kama, Rosa, Canadian), each described by 7 geometric measurements. The measurements are anchors equally spaced on a circle; every kernel sits at the value-weighted average of the anchors it scores high on, as if pulled by springs. The three coloured clouds pull apart toward different rim sectors, so the raw measurements carry the variety signal a classifier would use. Rosa pulls to size, Kama to Compactness, Canadian to Asymmetry — the raw features already carry the signal.</desc>
+  <style>
+    .pt { transition: r .12s ease; }
+    .pt:hover { r: 9; fill-opacity: 1; }
+    .anchor { transition: r .12s ease; }
+    .anchor:hover { r: 10; }
+    text { fill: #1D1D1F; }
+  </style>
+  <rect width="1160" height="940" fill="#FFFFFF"/>
+  <text x="60" y="58" font-size="30" font-weight="700" fill="#1D1D1F">Seven measurements separate the wheat varieties</text>
+  <text x="60" y="92" font-size="19" fill="#6E6E73">Rosa pulls to size, Kama to Compactness, Canadian to Asymmetry — the raw features already carry the signal</text>
+  <text x="60" y="118" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">RadViz spring layout · 180 kernels · 7 anchors · illustrative</text>
+  <g transform="translate(0,0)">
+  <g class="frame" aria-hidden="true">
+    <circle cx="580.0" cy="540.0" r="330.0" fill="none" stroke="#E5E5EA" stroke-width="2"/>
+    <circle cx="580.0" cy="540.0" r="165.0" fill="none" stroke="#E5E5EA" stroke-width="1.5" stroke-dasharray="3 6"/>
+    <line x1="580.0" y1="540.0" x2="580.0" y2="210.0" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="580.0" y="182.0" font-size="19" fill="#1D1D1F" text-anchor="middle" font-weight="500">Surface</text>
+    <circle class="anchor" cx="580.0" cy="210.0" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Area. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <line x1="580.0" y1="540.0" x2="838.0" y2="334.2" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="858.3" y="316.0" font-size="19" fill="#1D1D1F" text-anchor="start" font-weight="500">Perimeter</text>
+    <circle class="anchor" cx="838.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Perimeter. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <line x1="580.0" y1="540.0" x2="901.7" y2="613.4" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="927.1" y="625.2" font-size="19" fill="#1D1D1F" text-anchor="start" font-weight="500">Kernel length</text>
+    <circle class="anchor" cx="901.7" cy="613.4" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Kernel length. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <line x1="580.0" y1="540.0" x2="723.2" y2="837.3" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="734.5" y="866.7" font-size="19" fill="#1D1D1F" text-anchor="start" font-weight="500">Kernel width</text>
+    <circle class="anchor" cx="723.2" cy="837.3" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Kernel width. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <line x1="580.0" y1="540.0" x2="436.8" y2="837.3" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="425.5" y="866.7" font-size="19" fill="#1D1D1F" text-anchor="end" font-weight="500">Compactness</text>
+    <circle class="anchor" cx="436.8" cy="837.3" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Compactness. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <line x1="580.0" y1="540.0" x2="258.3" y2="613.4" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="232.9" y="625.2" font-size="19" fill="#1D1D1F" text-anchor="end" font-weight="500">Asymmetry</text>
+    <circle class="anchor" cx="258.3" cy="613.4" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Asymmetry. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <line x1="580.0" y1="540.0" x2="322.0" y2="334.2" stroke="#E5E5EA" stroke-width="1.5"/>
+    <text x="301.7" y="316.0" font-size="19" fill="#1D1D1F" text-anchor="end" font-weight="500">Groove length</text>
+    <circle class="anchor" cx="322.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Groove length. Kernels rich in this measurement are pulled toward it.</title></circle>
+  </g>
+  <g class="points" role="list">
+    <g role="listitem" aria-label="Rosa kernels" fill="#FF9500">
+      <circle class="pt" cx="627.4" cy="504.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="638.6" cy="509.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="625.1" cy="494.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="621.4" cy="511.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="626.7" cy="502.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="622.9" cy="517.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="637.2" cy="512.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="616.0" cy="514.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="632.8" cy="508.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="643.7" cy="514.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="629.1" cy="498.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="617.6" cy="514.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="630.9" cy="530.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="619.7" cy="511.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="626.8" cy="523.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="621.1" cy="521.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="623.2" cy="522.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="626.1" cy="534.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="624.0" cy="516.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="630.9" cy="503.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="634.6" cy="499.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="615.2" cy="518.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="635.4" cy="497.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="643.5" cy="534.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="633.9" cy="506.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="628.7" cy="525.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="630.0" cy="523.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="651.1" cy="526.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="602.3" cy="511.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="617.5" cy="524.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="623.9" cy="513.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="617.5" cy="526.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="644.4" cy="534.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="625.5" cy="518.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="622.7" cy="530.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="620.6" cy="510.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="617.9" cy="526.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="633.3" cy="513.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="649.2" cy="519.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="643.3" cy="504.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="633.0" cy="508.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="611.7" cy="519.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="642.8" cy="514.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="617.3" cy="503.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="636.7" cy="528.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="643.5" cy="515.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="605.2" cy="522.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="632.8" cy="534.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="625.6" cy="535.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="614.1" cy="511.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="628.5" cy="546.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="623.7" cy="521.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="628.5" cy="515.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="626.4" cy="521.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="626.3" cy="526.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="646.4" cy="534.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="626.9" cy="504.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="618.0" cy="516.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="616.8" cy="516.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+      <circle class="pt" cx="625.2" cy="513.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
+    </g>
+    <g role="listitem" aria-label="Kama kernels" fill="#007AFF">
+      <circle class="pt" cx="581.1" cy="593.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="572.7" cy="599.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="581.9" cy="602.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="586.5" cy="644.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="590.8" cy="574.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="597.4" cy="611.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="541.9" cy="611.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="557.2" cy="589.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="552.9" cy="609.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="605.0" cy="628.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="573.8" cy="618.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="581.6" cy="600.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="578.7" cy="595.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="550.2" cy="612.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="565.4" cy="572.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="576.4" cy="596.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="548.8" cy="605.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="561.1" cy="590.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="583.6" cy="592.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="551.0" cy="607.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="562.2" cy="620.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="577.0" cy="568.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="543.6" cy="598.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="562.5" cy="596.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="542.1" cy="594.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="550.5" cy="596.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="588.9" cy="608.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="564.7" cy="597.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="560.9" cy="621.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="593.1" cy="597.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="551.1" cy="588.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="569.6" cy="625.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="569.1" cy="611.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="559.1" cy="599.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="539.8" cy="632.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="581.1" cy="605.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="557.1" cy="597.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="578.8" cy="620.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="594.3" cy="610.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="568.1" cy="587.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="591.2" cy="609.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="560.6" cy="585.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="576.4" cy="608.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="567.8" cy="634.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="612.9" cy="576.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="603.9" cy="608.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="561.0" cy="602.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="565.2" cy="613.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="554.2" cy="603.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="564.5" cy="613.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="542.8" cy="575.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="560.5" cy="611.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="539.5" cy="582.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="560.0" cy="614.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="571.8" cy="600.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="560.8" cy="606.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="582.3" cy="619.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="573.5" cy="580.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="555.7" cy="603.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+      <circle class="pt" cx="556.1" cy="605.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
+    </g>
+    <g role="listitem" aria-label="Canadian kernels" fill="#34C759">
+      <circle class="pt" cx="401.2" cy="491.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="412.6" cy="520.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="398.9" cy="534.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="411.0" cy="511.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="379.1" cy="523.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="414.7" cy="524.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="411.2" cy="538.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="395.5" cy="523.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="412.9" cy="555.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="400.9" cy="519.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="394.9" cy="508.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="396.7" cy="490.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="422.5" cy="500.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="378.5" cy="542.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="419.7" cy="541.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="384.8" cy="539.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="403.5" cy="535.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="416.5" cy="541.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="378.0" cy="533.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="421.8" cy="544.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="380.2" cy="527.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="426.8" cy="523.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="380.6" cy="522.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="377.1" cy="478.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="418.7" cy="538.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="407.3" cy="532.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="406.0" cy="537.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="422.3" cy="490.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="419.5" cy="537.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="446.2" cy="522.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="407.7" cy="526.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="388.3" cy="471.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="430.4" cy="538.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="410.4" cy="532.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="435.3" cy="534.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="428.5" cy="538.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="399.6" cy="558.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="395.4" cy="524.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="405.2" cy="538.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="426.5" cy="544.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="403.7" cy="562.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="426.6" cy="526.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="406.6" cy="531.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="378.4" cy="541.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="428.9" cy="528.4" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="373.0" cy="517.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="435.6" cy="483.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="368.7" cy="522.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="441.8" cy="526.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="426.5" cy="537.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="396.5" cy="532.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="439.5" cy="538.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="421.8" cy="496.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="412.0" cy="517.1" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="411.9" cy="526.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="420.1" cy="528.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="409.5" cy="529.7" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="402.5" cy="500.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="406.4" cy="546.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+      <circle class="pt" cx="407.3" cy="500.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Canadian kernel</title></circle>
+    </g>
+  </g>
+  <g class="clslabels" aria-hidden="true">
+    <text x="687.3" y="489.0" font-size="24" font-weight="700" fill="#FF9500" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Rosa</text>
+    <text x="556.8" y="668.1" font-size="24" font-weight="700" fill="#007AFF" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Kama</text>
+    <text x="342.3" y="520.1" font-size="24" font-weight="700" fill="#34C759" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Canadian</text>
+  </g>
+  </g>
+  <g class="legend" transform="translate(60.0,898)" aria-hidden="true">
+    <circle cx="8.0" cy="-6" r="8" fill="#FF9500"/>
+    <text x="26.0" y="0" font-size="18" fill="#6E6E73">Rosa</text>
+    <circle cx="114.0" cy="-6" r="8" fill="#007AFF"/>
+    <text x="132.0" y="0" font-size="18" fill="#6E6E73">Kama</text>
+    <circle cx="220.0" cy="-6" r="8" fill="#34C759"/>
+    <text x="238.0" y="0" font-size="18" fill="#6E6E73">Canadian</text>
+  </g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1112,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>
