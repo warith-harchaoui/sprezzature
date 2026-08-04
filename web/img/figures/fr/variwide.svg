@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="968" viewBox="0 0 1440 968" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="vw-title vw-desc">
 <title id="vw-title">GDP per capita times population equals total GDP, as column area</title>
-<desc id="vw-desc">A variable-width column chart of the eight largest economies in 2023. Each column height is GDP per capita, each width is population, so the area is total GDP. The United States, a tall narrow column, and China, a short wide one, enclose similar area — 27.4 and 17.8 trillion US dollars — reached two different ways. India is the widest but shortest column. Illustrative figures, World Bank and IMF 2023 estimates.</desc>
+<desc id="vw-desc">Diagramme en colonnes de largeur variable des huit plus grandes économies en 2023. La hauteur de chaque colonne est le PIB par habitant, sa largeur la population, donc l'aire est le PIB total. Les États-Unis, colonne haute et étroite, et la Chine, courte et large, enferment une aire semblable, 27,4 et 17,8 mille milliards de dollars, atteinte de deux façons différentes. L'Inde est la colonne la plus large mais la plus basse. Données illustratives, estimations Banque mondiale et FMI 2023.</desc>
 <style>.col{cursor:pointer;transition:filter .12s ease}.col:hover,.col:focus{filter:brightness(1.06)}.col:focus{outline:none}.colframe{fill:none;pointer-events:none}</style>
 <rect width="1440" height="968" fill="#FFFFFF"/>
 <line x1="92" y1="786.0" x2="1380" y2="786.0" stroke="#E8E8ED" stroke-width="1"/>
@@ -13,15 +13,15 @@
 <text x="78" y="393.4" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$60k</text>
 <line x1="92" y1="255.8" x2="1380" y2="255.8" stroke="#E8E8ED" stroke-width="1"/>
 <text x="78" y="260.8" text-anchor="end" font-size="17" font-family="Roboto Mono, monospace" fill="#6E6E73">$80k</text>
-<text x="30" y="498.0" font-size="19" fill="#1D1D1F" font-weight="600" text-anchor="middle" transform="rotate(-90 30 498.0)">Height = GDP per capita (US$ thousands)</text>
-<text x="92" y="72" font-size="38" font-weight="700" fill="#1D1D1F">Two ways to build a multi-trillion economy</text>
-<text x="92" y="112" font-size="21" fill="#6E6E73">Column area is total GDP: the United States reaches it with high output per person, China with sheer population &#183; World Bank / IMF 2023</text>
+<text x="30" y="498.0" font-size="19" fill="#1D1D1F" font-weight="600" text-anchor="middle" transform="rotate(-90 30 498.0)">Hauteur = PIB par habitant (milliers d'USD)</text>
+<text x="92" y="72" font-size="38" font-weight="700" fill="#1D1D1F">Deux façons de bâtir une économie de plusieurs milliers de milliards</text>
+<text x="92" y="112" font-size="21" fill="#6E6E73">L'aire de la colonne est le PIB total : les États-Unis l'atteignent par une forte production par habitant, la Chine par le nombre · Banque mondiale / FMI 2023</text>
 <rect x="92" y="147" width="6" height="30" rx="3" fill="#1D1D1F"/>
-<text x="110" y="167" font-size="17" fill="#1D1D1F">height = output per person</text>
+<text x="110" y="167" font-size="17" fill="#1D1D1F">hauteur = production par habitant</text>
 <rect x="412" y="159" width="34" height="6" rx="3" fill="#1D1D1F"/>
-<text x="458" y="167" font-size="17" fill="#1D1D1F">width = population</text>
+<text x="458" y="167" font-size="17" fill="#1D1D1F">largeur = population</text>
 <rect x="662" y="149" width="26" height="26" rx="5" fill="#1D1D1F" opacity="0.16"/>
-<text x="700" y="167" font-size="17" fill="#1D1D1F">area = total GDP</text>
+<text x="700" y="167" font-size="17" fill="#1D1D1F">aire = PIB total</text>
 <line x1="92" y1="786" x2="1380" y2="786" stroke="#1D1D1F" stroke-width="2"/>
 <line x1="92.0" y1="786" x2="92.0" y2="792" stroke="#6E6E73" stroke-width="1"/>
 <line x1="207.6" y1="786" x2="207.6" y2="792" stroke="#6E6E73" stroke-width="1"/>
@@ -34,7 +34,7 @@
 <line x1="1380.0" y1="786" x2="1380.0" y2="792" stroke="#6E6E73" stroke-width="1"/>
 <path class="col" d="M92.60,786.0 L92.60,253.56 Q92.60,244.56 101.60,244.56 L197.95,244.56 Q206.95,244.56 206.95,253.56 L206.95,786.0 Z" fill="#007AFF" tabindex="0" role="img" aria-label="United States: $81.7k per capita x 335M people = $27.4T total GDP"><title>United States: $81.7k per capita x 335M people = $27.4T total GDP</title></path>
 <text x="149.8" y="523.3" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">$27.4T</text>
-<text x="149.8" y="547.3" text-anchor="middle" font-size="14" fill="#FFFFFF" opacity="0.85">total GDP</text>
+<text x="149.8" y="547.3" text-anchor="middle" font-size="14" fill="#FFFFFF" opacity="0.85">PIB total</text>
 <path class="col" d="M208.15,786.0 L208.15,445.75 Q208.15,436.75 217.15,436.75 L226.93,436.75 Q235.93,436.75 235.93,445.75 L235.93,786.0 Z" fill="#AF52DE" tabindex="0" role="img" aria-label="Germany: $52.7k per capita x 84M people = $4.4T total GDP"><title>Germany: $52.7k per capita x 84M people = $4.4T total GDP</title></path>
 <path class="col" d="M237.13,786.0 L237.13,470.93 Q237.13,461.93 246.13,461.93 L250.04,461.93 Q259.04,461.93 259.04,470.93 L259.04,786.0 Z" fill="#007AFF" tabindex="0" role="img" aria-label="United Kingdom: $48.9k per capita x 67M people = $3.3T total GDP"><title>United Kingdom: $48.9k per capita x 67M people = $3.3T total GDP</title></path>
 <path class="col" d="M260.24,786.0 L260.24,500.09 Q260.24,491.09 269.24,491.09 L273.50,491.09 Q282.50,491.09 282.50,500.09 L282.50,786.0 Z" fill="#007AFF" tabindex="0" role="img" aria-label="France: $44.5k per capita x 68M people = $3.0T total GDP"><title>France: $44.5k per capita x 68M people = $3.0T total GDP</title></path>
@@ -53,14 +53,14 @@
 <text x="569.2" y="686.5" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$12.6k</text>
 <text x="849.8" y="701.1" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$10.4k</text>
 <text x="1133.5" y="752.8" text-anchor="middle" font-size="20" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">$2.6k</text>
-<text x="149.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">United States</text>
+<text x="149.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">États-Unis</text>
 <text x="149.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">335M</text>
 <path d="M222.0,795.0 L222.0,801.0 L245.8,806.0 L245.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
-<text x="245.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Germany</text>
+<text x="245.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Allemagne</text>
 <text x="245.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">84M</text>
 <text x="245.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#AF52DE">$4.4T</text>
 <path d="M248.1,795.0 L248.1,801.0 L341.8,806.0 L341.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
-<text x="341.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">United Kingdom</text>
+<text x="341.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Royaume-Uni</text>
 <text x="341.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">67M</text>
 <text x="341.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#007AFF">$3.3T</text>
 <path d="M271.4,795.0 L271.4,801.0 L437.8,806.0 L437.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
@@ -68,19 +68,19 @@
 <text x="437.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">68M</text>
 <text x="437.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#007AFF">$3.0T</text>
 <path d="M304.5,795.0 L304.5,801.0 L533.8,806.0 L533.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
-<text x="533.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Japan</text>
+<text x="533.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Japon</text>
 <text x="533.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">124M</text>
 <text x="533.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#28CD41">$4.2T</text>
 <path d="M569.2,795.0 L569.2,801.0 L629.8,806.0 L629.8,804.0" fill="none" stroke="#C7C7CC" stroke-width="1.2"/>
-<text x="629.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">China</text>
+<text x="629.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Chine</text>
 <text x="629.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">1.41B</text>
 <text x="629.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#FF3B30">$17.8T</text>
-<text x="849.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Brazil</text>
+<text x="849.8" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Brésil</text>
 <text x="849.8" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">216M</text>
 <text x="849.8" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#FF9500">$2.2T</text>
-<text x="1133.5" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">India</text>
+<text x="1133.5" y="816.0" text-anchor="middle" font-size="18" font-weight="600" fill="#1D1D1F">Inde</text>
 <text x="1133.5" y="838.0" text-anchor="middle" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73">1.43B</text>
 <text x="1133.5" y="860.0" text-anchor="middle" font-size="15" font-weight="700" fill="#FFCC00">$3.7T</text>
-<text x="736.0" y="936" text-anchor="middle" font-size="19" font-weight="600" fill="#1D1D1F">Width = population &#183; column widths sum to 3.73B people</text>
+<text x="736.0" y="936" text-anchor="middle" font-size="19" font-weight="600" fill="#1D1D1F">Largeur = population · la somme des largeurs fait 3,73 Md de personnes</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1392,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
