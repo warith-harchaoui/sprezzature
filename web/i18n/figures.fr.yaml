@@ -1,0 +1,188 @@
+# Figure gallery i18n: English source -> French. Drives tools/localize_figures.py.
+# Charter: guillemets, accents, insécables before % : ; ? !, no em-dash (use ·), decimal comma.
+90% of requests finish under 438 ms: 90 % des requêtes aboutissent sous 438 ms
+A clear positive trend: Une tendance nettement positive
+A good night's sleep sharpens reaction time: Une bonne nuit de sommeil aiguise les réflexes
+Activated: Activation
+Activity peaks Friday mid-afternoon: L'activité culmine le vendredi après-midi
+Actual: Réel
+Advertising: Publicité
+Africa: Afrique
+Area: Surface
+Arm: Bras
+Asia: Asie
+Asking price (k€): Prix affiché (k€)
+Asking price against floor area: Prix affiché selon la surface
+Beta: Bêta
+Bigger homes cost more: Les grands logements coûtent plus cher
+Bike: Vélo
+Build API: Développer l'API
+Build UI: Développer l'IHM
+Cable: Câble
+Car: Voiture
+Cars by class across four metrics: Voitures par classe sur quatre mesures
+Cat: Chat
+Change: Variation
+Checkout time (s): Temps de paiement (s)
+Checkout time by test variant: Temps de paiement par variante
+Class: Classe
+Commute mode: Mode de déplacement
+Compute: Calcul
+Compute drives the cloud bill: Le calcul pèse le plus sur la facture cloud
+Confusion matrix: Matrice de confusion
+Control: Témoin
+Conversion funnel: Entonnoir de conversion
+Cost (k$): Coût (k$)
+Count: Effectif
+Cumulative distribution of request latency: Distribution cumulée de la latence
+Cumulative share: Part cumulée
+Cumulative state changes: Changements d'état cumulés
+Cups poured: Tasses servies
+Daily activity: Activité quotidienne
+Daily price (open, high, low, close): Cours quotidien (ouverture, haut, bas, clôture)
+Data: Données
+Day: Jour
+Decaf: Déca
+Density: Densité
+Design: Conception
+Desktop: Ordinateur
+Differential expression: Expression différentielle
+Discovery: Cadrage
+Distribution of session duration: Distribution de la durée des sessions
+Distribution shape by group: Forme de la distribution par groupe
+Dog: Chien
+Down: Sous-exprimé
+East: Est
+End: Fin
+Eng: Ingénierie
+Engineering: Ingénierie
+Enterprise: Grands comptes
+Estimated density: Densité estimée
+Events: Événements
+False positive rate: Taux de faux positifs
+Feature correlation: Corrélation des variables
+Female: Femmes
+Floor area (m²): Surface (m²)
+Fox: Renard
+Fri: Ven
+Friday: Vendredi
+GDP per capita (k$): PIB par habitant (k$)
+Group: Groupe
+Group B has the widest spread: Le groupe B est le plus dispersé
+Headcount by division: Effectifs par division
+Headcount by division (sunburst): Effectifs par division (rayonnant)
+Height: Hauteur
+High: Élevée
+Hour: Heure
+Hour of day: Heure de la journée
+Hours to first response: Heures avant la première réponse
+Illustrative 3D surface: Surface 3D illustrative
+Illustrative data: Données illustratives
+Item: Élément
+Kaplan-Meier survival: Survie de Kaplan-Meier
+Latency (ms): Latence (ms)
+Launch: Lancement
+Licensing: Licences
+Life expectancy: Espérance de vie
+Linear fit with 95% confidence band: Ajustement linéaire, bande de confiance à 95 %
+Low: Faible
+Magnitude: Norme
+Male: Hommes
+Mean reaction time (ms): Temps de réaction moyen (ms)
+Mean with 95% interval: Moyenne avec intervalle à 95 %
+Mobile use peaks in the evening: Le mobile culmine en soirée
+Mon: Lun
+Monday: Lundi
+Month: Mois
+Monthly cost by service: Coût mensuel par service
+Months: Mois
+Most sessions end within a minute: La plupart des sessions durent moins d'une minute
+Most support tickets close in 2 to 4 hours: La plupart des tickets se ferment en 2 à 4 heures
+Network: Réseau
+New: Nouveau
+Nobody drinks the decaf: Personne ne boit le déca
+Normal Q-Q plot: Diagramme quantile-quantile normal
+North: Nord
+Ops: Exploitation
+Platform: Plateforme
+Population by age and sex: Population par âge et par sexe
+Predicted: Prédit
+Price: Cours
+Project schedule: Planning du projet
+Q1: T1
+Q2: T2
+Q3: T3
+Q4: T4
+QA: Recette
+ROC curve — AUC 0.86: Courbe ROC · AUC 0,86
+Referral: Référence
+Region: Région
+Remote: Télétravail
+Renewal: Renouvellement
+Renewals now lead the revenue mix: Les renouvellements dominent désormais le revenu
+Renewed: Renouvellement
+Research: Recherche
+Response: Réponse
+Response by dose: Réponse selon la dose
+Revenue: Revenu
+Revenue bridge: Passerelle de revenu
+Revenue share by type, each quarter: Part du revenu par type, par trimestre
+Revenue type: Type de revenu
+SMB: PME
+Sales: Ventes
+Sales by region and quarter: Ventes par région et par trimestre
+Sample quantiles: Quantiles de l'échantillon
+Sat: Sam
+Saturday: Samedi
+Score by group: Score par groupe
+Score change 2023 → 2024: Évolution du score 2023 → 2024
+Search: Recherche
+Search and direct bring most traffic: La recherche et le direct dominent le trafic
+Service time (minutes): Temps de service (minutes)
+Session duration (s): Durée de session (s)
+Sessions by weekday and hour: Sessions par jour et par heure
+Sessions per hour by platform: Sessions par heure et par plateforme
+Sex: Sexe
+Share (%): Part (%)
+Share of revenue: Part du revenu
+Share of visits by source · illustrative data: Part des visites par source · données illustratives
+Signed up: Inscription
+Significance: Significativité
+Sleep the night before (hours): Sommeil la veille (heures)
+Social: Réseaux sociaux
+South: Sud
+Start: Début
+Step: Palier
+Storage: Stockage
+Subscribed: Abonnement
+Subscriptions: Abonnements
+Suburb: Périphérie
+Sun: Dim
+Sunday: Dimanche
+Survival: Survie
+Team: Équipe
+The model is unsure between samples: Le modèle hésite entre les échantillons
+Theoretical quantiles: Quantiles théoriques
+Thu: Jeu
+Thursday: Jeudi
+Tier 1: Niveau 1
+Tier 2: Niveau 2
+Transit: Transports
+Treatment: Traitement
+True positive rate: Taux de vrais positifs
+Tue: Mar
+Tuesday: Mardi
+Two in five still commute by car: Deux personnes sur cinq vont au travail en voiture
+Units: Unités
+Up: Sur-exprimé
+Users: Utilisateurs
+Value: Valeur
+Variant A: Variante A
+Variant B: Variante B
+Variant B is the least consistent: La variante B est la moins régulière
+Visited: Visite
+Walk: Marche
+Wealth, longevity, and population: Richesse, longévité et population
+Wed: Mer
+Wednesday: Mercredi
+Week: Semaine
