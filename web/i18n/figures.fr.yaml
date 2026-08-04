@@ -1796,7 +1796,7 @@ Each cell = the area closer to that pharmacy than to any other · hover or focus
 : Chaque courbe transforme les quatre mesures corporelles d'un oiseau en une série d'Andrews ; les lignes en gras sont les médianes par espèce. Données illustratives.
 Each region counts people once · hover or tab to a set to bring it forward: Chaque région compte les personnes une fois · survolez ou tabulez un ensemble pour le mettre au premier plan
 Each shaded region is the convex hull of one segment · hover or focus a dot to isolate its segment: Chaque zone ombrée est l'enveloppe convexe d'un segment · survolez ou ciblez un point pour isoler son segment
-'Each spoke: 0 at the centre to 100 at the rim (higher is better)': 'Chaque axe : 0 au centre, 100 au bord (plus haut est meilleur)'
+'Each spoke: 0 at the centre to 100 at the rim (higher is better)': 'Chaque axe : 0 au centre, 100 au bord (plus c’est haut, mieux c’est)'
 Earth Return Orbiter: Earth Return Orbiter
 Earth.: Earth.
 Earthquakes per hexagon: Séismes par hexagone
@@ -3462,7 +3462,7 @@ Oct: Oct.
 'Oct: actual $0.63M vs plan $0.67M — $34k behind plan': 'Oct. : réel 0,63 M$ vs plan 0,67 M$ — 34k en dessous du plan'
 October: Octobre
 'October: median 17 °C (middle-half 14–20 °C)': 'Octobre : médiane 17 °C (moitié centrale 14-20 °C)'
-Odds ratio for reaching BP target (log scale, higher is better): Rapport de cotes pour atteindre la cible tensionnelle (échelle log, plus haut est meilleur)
+Odds ratio for reaching BP target (log scale, higher is better): Rapport de cotes pour atteindre la cible tensionnelle (échelle log, plus c’est haut, mieux c’est)
 Off-peak hour: Heure creuse
 Okafor: Okafor
 'Okafor & Chen: 2 joint papers': 'Okafor & Chen : 2 articles communs'
@@ -5868,7 +5868,7 @@ zebra — Animals: zebra — Animaux
 'Most tickets get a reply within hours': 'La plupart des tickets ont une réponse en quelques heures'
 '93% of 68 support tickets clear the 4-hour target; a thin red tail drags on · illustrative': '93 % des 68 tickets de support passent sous l''objectif de 4 heures ; une fine traîne rouge s''étire · illustratif'
 '4-hour target': 'objectif 4 h'
-'First-response time (hours, lower is better)': 'Délai de première réponse (heures, plus bas = mieux)'
+'First-response time (hours, lower is better)': 'Délai de première réponse (heures, plus c’est bas, mieux c’est)'
 'Within target': 'Dans l''objectif'
 'Long tail': 'Traîne longue'
 'Wilkinson dot plot of 68 first-response times in hours. Each dot is one ticket, binned every 0.4 h and stacked. 93% of tickets were answered within the 4-hour target (blue); the 5 past it form the long tail (red).': 'Diagramme à points de Wilkinson de 68 délais de première réponse en heures. Chaque point est un ticket, regroupé tous les 0,4 h et empilé. 93 % des tickets ont reçu une réponse sous l''objectif de 4 heures (bleu) ; les 5 au-delà forment la traîne longue (rouge).'
@@ -5919,10 +5919,10 @@ zebra — Animals: zebra — Animaux
 'Waffle chart: a 10 by 10 grid of 100 squares, one square per percent of annual household electricity use. Heating & cooling 34; Water heating 18; Appliances & plug loads 16; Electric vehicle 14; Lighting 9; Cooking 9. Heating and cooling dominate at 34 squares.': 'Diagramme gaufre : une grille de 10 sur 10, soit 100 carrés, un carré par pour cent de la consommation électrique annuelle du foyer. Chauffage et climatisation 34 ; chauffe-eau 18 ; appareils et prises 16 ; véhicule électrique 14 ; éclairage 9 ; cuisson 9. Le chauffage et la climatisation dominent avec 34 carrés.'
 'Distribution of hours slept': 'Distribution des heures de sommeil'
 'Distribution of reaction time': 'Distribution du temps de réaction'
-'Mean reaction time, ms (lower is better)': 'Temps de réaction moyen, ms (plus bas = mieux)'
+'Mean reaction time, ms (lower is better)': 'Temps de réaction moyen, ms (plus c’est bas, mieux c’est)'
 'Reaction-time test vs. hours slept, 120 volunteers — marginals show each distribution': 'Test de temps de réaction selon les heures de sommeil, 120 volontaires · les marges montrent chaque distribution'
 'fitted trend': 'tendance ajustée'
-'Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail. Illustrative data.': 'Graphique joint d''une étude du sommeil : un nuage central du temps de réaction moyen (vertical, millisecondes, plus bas = mieux) selon les heures de sommeil la nuit précédente (horizontal) pour 120 volontaires, avec une droite de tendance ajustée orientée vers le bas · plus de sommeil, réponses plus rapides. Un histogramme vert le long du rail supérieur montre que les heures de sommeil sont à peu près symétriques ; un histogramme violet le long du rail droit montre que le temps de réaction a une longue traîne lente vers le haut. Données illustratives.'
+'Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail. Illustrative data.': 'Graphique joint d''une étude du sommeil : un nuage central du temps de réaction moyen (vertical, millisecondes, plus c’est bas, mieux c’est) selon les heures de sommeil la nuit précédente (horizontal) pour 120 volontaires, avec une droite de tendance ajustée orientée vers le bas · plus de sommeil, réponses plus rapides. Un histogramme vert le long du rail supérieur montre que les heures de sommeil sont à peu près symétriques ; un histogramme violet le long du rail droit montre que le temps de réaction a une longue traîne lente vers le haut. Données illustratives.'
 'Daily-high temperature by month, one colour-coded lane each — Illustrative data': 'Température maximale quotidienne par mois, une bande colorée chacune · données illustratives'
 'Daily-high temperature (°C)': 'Température maximale quotidienne (°C)'
 'Ridgeline plot: one Gaussian kernel-density curve per month, each in its own fully separated lane and its own house-palette hue (blue through teal, green, yellow, orange, red to purple). Each curve''s peak shifts right through summer and left in winter, so the whole distribution — not just the mean — moves with the season.': 'Diagramme en crêtes : une courbe de densité à noyau gaussien par mois, chacune dans sa propre bande entièrement séparée et sa propre teinte de la palette maison (du bleu au sarcelle, vert, jaune, orange, rouge puis violet). Le sommet de chaque courbe se décale vers la droite en été et vers la gauche en hiver, si bien que toute la distribution · pas seulement la moyenne · évolue avec la saison.'

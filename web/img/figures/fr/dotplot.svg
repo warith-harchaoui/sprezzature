@@ -30,7 +30,7 @@
 <text x="917.3" y="513.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">7</text>
 <text x="1034.7" y="513.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">8</text>
 <text x="1152.0" y="513.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">9</text>
-<text x="624.0" y="551.0" font-size="20" fill="#1D1D1F" text-anchor="middle">Délai de première réponse (heures, plus bas = mieux)</text>
+<text x="624.0" y="551.0" font-size="20" fill="#1D1D1F" text-anchor="middle">Délai de première réponse (heures, plus c’est bas, mieux c’est)</text>
 <circle class="dot dot-within" cx="215.7" cy="468.0" r="11.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 0.8 h"><title>Ticket répondu en 0,8 h</title></circle>
 <circle class="dot dot-within" cx="215.7" cy="443.5" r="11.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 0.9 h"><title>Ticket répondu en 0,9 h</title></circle>
 <circle class="dot dot-within" cx="215.7" cy="419.0" r="11.0" fill="#007AFF" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" tabindex="0" role="img" aria-label="Ticket answered in 1.0 h"><title>Ticket répondu en 1,0 h</title></circle>
