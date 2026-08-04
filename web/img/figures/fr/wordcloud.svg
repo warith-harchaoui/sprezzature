@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wc-title wc-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="2232" height="900" viewBox="0 0 2232 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wc-title wc-desc"><rect width="2232" height="900" fill="#FFFFFF"/><g transform="translate(496,0)">
 <title id="wc-title">Nuage de mots d'avis sur un moulin à café : les acheteurs adorent sa mouture silencieuse, et le seul reproche est le bruit</title>
 <desc id="wc-desc">Un nuage de mots en spirale d'une année d'avis produit sur un moulin à café à meules. Chaque mot est dimensionné par le nombre d'avis qui le mentionnent et étiqueté par thème avec une couleur et un signe : un plus en tête et du vert pour l'éloge, un moins en tête et du rouge pour la plainte, et aucun signe en bleu pour les mots produit neutres. Les plus gros mots sont mouture, silencieux et régulier ; le plus gros mot de plainte est bruyant.</desc>
 <style>
@@ -74,4 +74,4 @@ svg:has(.legend-neutral:hover) .grp-neutral, svg:has(.legend-neutral:focus) .grp
 <text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Mots produit neutres</text>
 </g>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1192,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
-</svg>
+</g></svg>

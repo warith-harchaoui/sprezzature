@@ -34,8 +34,74 @@ FR = GALLERY / "fr"
 YAML = WEB / "i18n" / "figures.fr.yaml"
 
 sys.path.insert(0, str(FIGREPO))
+sys.path.insert(0, str(FIGREPO / "scripts"))
 import vl_convert as vlc  # noqa: E402
 from sprezzature_figures.fonts import DEFAULT_SVG_FACES, svg_font_defs  # noqa: E402
+from _textfit import text_width  # noqa: E402
+
+
+def _fit_canvas(svg: str) -> str:
+    """Widen the canvas so localised (usually longer) text is not clipped.
+
+    French runs longer than English, so a string dropped into an
+    English-sized SVG can overrun the right edge. Rather than redraw each
+    figure, measure every ``<text>`` node's horizontal extent and, if the
+    widest reaches past the viewBox, grow the canvas symmetrically (pad both
+    sides) and shift the whole drawing right by the pad, so centred figures
+    stay centred and nothing is cut off. Language-independent: it reacts to the
+    actual rendered width of whatever string is present.
+    """
+    m = re.match(r"<svg\b([^>]*)>", svg)
+    if not m:
+        return svg
+    head = m.group(1)
+    vb = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', head)
+    if not vb:
+        return svg
+    vw, vh = float(vb.group(1)), float(vb.group(2))
+
+    max_right = 0.0
+    for tm in re.finditer(r"<text\b([^>]*)>(.*?)</text>", svg, re.S):
+        attrs, inner = tm.group(1), tm.group(2)
+        xa = re.search(r'\bx="(-?[\d.]+)"', attrs)
+        if not xa:
+            continue
+        x = float(xa.group(1))
+        fs_a = re.search(r'font-size="([\d.]+)', attrs)
+        fs = float(fs_a.group(1)) if fs_a else 16.0
+        anchor_a = re.search(r'text-anchor="(\w+)"', attrs)
+        anchor = anchor_a.group(1) if anchor_a else "start"
+        # Prefer per-tspan positions when present; else the whole visible text.
+        tspans = re.findall(r'<tspan\b([^>]*)>([^<]*)</tspan>', inner)
+        pieces = []
+        if tspans:
+            for ta, txt in tspans:
+                txa = re.search(r'\bx="(-?[\d.]+)"', ta)
+                tfs = re.search(r'font-size="([\d.]+)', ta)
+                pieces.append((float(txa.group(1)) if txa else x,
+                               float(tfs.group(1)) if tfs else fs, txt, anchor))
+        else:
+            visible = re.sub(r"<[^>]+>", "", inner)
+            pieces.append((x, fs, visible, anchor))
+        for px, pfs, txt, anc in pieces:
+            w = text_width(txt.strip(), pfs)
+            right = px + w if anc == "start" else (px + w / 2 if anc == "middle" else px)
+            max_right = max(max_right, right)
+
+    pad = max_right + 22.0 - vw  # keep a comfortable right margin, not a hairline
+    if pad <= 2.0:
+        return svg
+    pad = min(pad, 0.4 * vw)  # never balloon the canvas
+    new_vw = vw + 2 * pad
+    body = svg[m.end():svg.rindex("</svg>")]
+    new_head = re.sub(r'viewBox="0 0 [\d.]+ ([\d.]+)"', f'viewBox="0 0 {new_vw:.0f} \\1"', head)
+    new_head = re.sub(r'\bwidth="[\d.]+"', f'width="{new_vw:.0f}"', new_head, count=1)
+    return (
+        f"<svg{new_head}>"
+        f'<rect width="{new_vw:.0f}" height="{vh:.0f}" fill="#FFFFFF"/>'
+        f'<g transform="translate({pad:.0f},0)">{body}</g>'
+        "</svg>"
+    )
 
 TR: dict[str, str] = yaml.safe_load(YAML.read_text(encoding="utf-8")) or {}
 SPECS = {re.sub(r"\.(vl|vg)$", "", Path(p).stem): p for p in glob.glob(str(FIGREPO / "assets/vega-examples/*.json"))}
@@ -176,6 +242,7 @@ def localize_hero(name: str) -> None:
 
     t = TOOLTIP_RE.sub(tip, t)
     t = TEXT_BLOCK.sub(block_sub, t)
+    t = _fit_canvas(t)  # grow the canvas if the localised text now overruns it
     (FR / f"{name}.svg").write_text(t, encoding="utf-8")
 
 
@@ -195,20 +262,19 @@ def main() -> int:
         if ext is None:
             continue
         try:
-            # Route by what the EN gallery file actually IS, not merely by
-            # whether a Vega spec happens to exist. Several kinds ship a
-            # hand-authored ("hero") SVG in the gallery while a parallel Vega
-            # spec also lives under assets/vega-examples; those must localise
-            # from the hero the reader sees, not re-render the stale spec — else
-            # EN and FR would show different figures. A Vega render (or a raster
-            # figure with no gallery SVG) still goes through the spec.
-            en_is_vega = ext == "svg" and 'class="marks"' in (
-                (GALLERY / f"{name}.svg").read_text(encoding="utf-8", errors="ignore")[:600]
-            )
-            if name in SPECS and (ext != "svg" or en_is_vega):
-                localize_vega(name, SPECS[name], ext)
-            elif ext == "svg":
+            # Always localise the exact gallery SVG the reader sees, by
+            # translating its visible text nodes in place. Re-rendering from a
+            # parallel Vega spec was a source of silent EN/FR drift: when the
+            # gallery SVG had moved on (e.g. the treemap became "IT Cloud
+            # Spending" and the sunburst "Global R&D Investment") but its old
+            # spec had not, FR showed a different figure than EN. Text
+            # substitution works on hero and Vega-rendered SVGs alike, so FR is
+            # guaranteed to be the same figure as EN. Only a PNG gallery asset
+            # (no text nodes to translate) falls back to rendering from its spec.
+            if ext == "svg":
                 localize_hero(name)
+            elif name in SPECS:
+                localize_vega(name, SPECS[name], ext)
             else:
                 continue  # raster hero with no spec: can't localise text
             done += 1
