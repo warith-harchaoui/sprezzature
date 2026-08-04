@@ -120,6 +120,17 @@ def localize_hero(name: str) -> None:
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
         if key in TR:
             return m.group(1) + html.escape(TR[key], quote=False) + m.group(4)
+        # Compositional fallback: a "Label — Category" tooltip whose whole text
+        # is not mapped but whose em-dash suffix is a known key (e.g. a seat
+        # tooltip "Emma Martin — Green League" over the party map). Translate
+        # just the suffix and keep the proper-name prefix verbatim, so a roster
+        # of hundreds of per-item tooltips localises from one category entry
+        # and the prefix is not flagged as a gap.
+        if " — " in key:
+            prefix, _, suffix = key.rpartition(" — ")
+            if suffix in TR:
+                new = f"{prefix} — {TR[suffix]}"
+                return m.group(1) + html.escape(new, quote=False) + m.group(4)
         if is_human(key):
             (missing_hover if tag == "title" else missing).add(key)
         return m.group(0)

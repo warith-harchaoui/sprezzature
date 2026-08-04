@@ -27,7 +27,7 @@
   <script>(function(){var s;try{s=localStorage.getItem('sprezzature-theme');}catch(e){}
     if(!s)s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
     document.documentElement.setAttribute('data-color-scheme',s);})();</script>
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/app.css?v=8bcd5883cf">
   <!-- GEO / structured data for AI overviews and search -->
   <script type="application/ld+json">
   {
@@ -692,6 +692,12 @@
             <figcaption class="p-3"><span class="font-medium">Edge bundling</span> <span class="text-neutral-500 dark:text-neutral-400">: Relations bundled along a radial hierarchy.</span></figcaption>
           </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Elbow detection" data-src="img/figures/elbow.svg" data-alt="Line chart of k-means inertia against the number of clusters, dropping steeply then flattening; the Kneedle method marks the elbow at k = 4, with an inset showing the normalised difference curve whose peak locates it.">
+              <img src="img/figures/elbow.svg" alt="Line chart of k-means inertia against the number of clusters, dropping steeply then flattening; the Kneedle method marks the elbow at k = 4, with an inset showing the normalised difference curve whose peak locates it." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Elbow detection</span> <span class="text-neutral-500 dark:text-neutral-400">: Kneedle finds the elbow of a diminishing-returns curve (choosing k).</span></figcaption>
+          </figure>
+        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Chord diagram" data-src="img/figures/chord.svg" data-alt="Circular chord diagram of code reviews traded between five teams; arc size is total activity, ribbon width the reviews between a pair.">
               <img src="img/figures/chord.svg" alt="Circular chord diagram of code reviews traded between five teams; arc size is total activity, ribbon width the reviews between a pair." loading="lazy" class="w-full">
             </button>
@@ -1002,9 +1008,9 @@
       <p><a class="underline hover:text-brand-blue" href="index.html">← All skills</a> · Claude / OpenCode skills by <a class="underline hover:text-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
     </div>
   </footer>
-  <script src="js/theme.js" defer></script>
-  <script src="js/lightbox.js" defer></script>
-  <script src="js/fullscreen.js" defer></script>
-  <script src="js/voir-pour.js" defer></script>
+  <script src="js/theme.js?v=8bcd5883cf" defer></script>
+  <script src="js/lightbox.js?v=8bcd5883cf" defer></script>
+  <script src="js/fullscreen.js?v=8bcd5883cf" defer></script>
+  <script src="js/voir-pour.js?v=8bcd5883cf" defer></script>
 </body>
 </html>
