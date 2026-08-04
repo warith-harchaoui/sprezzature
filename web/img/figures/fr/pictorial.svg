@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="pc-title pc-desc">
+<title id="pc-title">Aller au travail à vélo, pour 100 actifs, dans cinq villes</title>
+<desc id="pc-desc">Graphique pictural ISOTYPE : chaque ligne répète une icône de personne, une figure pour cinq cyclistes sur cent actifs ; la dernière figure d'une ligne est rognée pour montrer le reste. Copenhague 62 ; Amsterdam 48 ; Tokyo 27 ; Berlin 18 ; Los Angeles 4 pour 100. Copenhague est en tête avec 62 ; Los Angeles ferme la marche à 4.</desc>
+<defs>
+<clipPath id="clip-copenhagen"><rect x="904.0" y="216.0" width="36.0" height="76.0"/></clipPath>
+<clipPath id="clip-amsterdam"><rect x="748.0" y="334.0" width="44.0" height="76.0"/></clipPath>
+<clipPath id="clip-tokyo"><rect x="540.0" y="452.0" width="36.0" height="76.0"/></clipPath>
+<clipPath id="clip-berlin"><rect x="436.0" y="570.0" width="44.0" height="76.0"/></clipPath>
+<clipPath id="clip-los-angeles"><rect x="280.0" y="688.0" width="52.0" height="76.0"/></clipPath>
+</defs>
+<style>
+.row { transition: transform .18s ease; }
+.icons { transition: opacity .18s ease; }
+svg:hover .icons, svg:focus-within .icons { opacity: .30; }
+.row-copenhagen:hover .icons, .row-copenhagen:focus .icons { opacity: 1; }
+.row-copenhagen:hover, .row-copenhagen:focus { transform: translateY(-4px); }
+.row-amsterdam:hover .icons, .row-amsterdam:focus .icons { opacity: 1; }
+.row-amsterdam:hover, .row-amsterdam:focus { transform: translateY(-4px); }
+.row-tokyo:hover .icons, .row-tokyo:focus .icons { opacity: 1; }
+.row-tokyo:hover, .row-tokyo:focus { transform: translateY(-4px); }
+.row-berlin:hover .icons, .row-berlin:focus .icons { opacity: 1; }
+.row-berlin:hover, .row-berlin:focus { transform: translateY(-4px); }
+.row-los-angeles:hover .icons, .row-los-angeles:focus .icons { opacity: 1; }
+.row-los-angeles:hover, .row-los-angeles:focus { transform: translateY(-4px); }
+.row { cursor: pointer; }
+.row:focus { outline: none; }
+.row:focus .rowlabel { fill: #0A4DA0; }
+@media (prefers-reduced-motion: reduce) { .row, .icons { transition: none; } .reveal { animation: none !important; }}
+</style>
+<rect width="1240" height="900" fill="#FFFFFF"/>
+<text x="56" y="76" font-size="34" font-weight="700" fill="#1D1D1F">Copenhague pédale ; Los Angeles conduit</text>
+<text x="56" y="116" font-size="19" fill="#6E6E73">Cyclistes pour 100 actifs un jour de semaine type · une figure = 5 personnes · illustratif</text>
+<g class="row row-copenhagen" tabindex="0" role="listitem"><title>Copenhague : 62 cyclistes pour 100 actifs</title>
+<text class="rowlabel" x="260" y="254.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Copenhague</text>
+<g>
+<g><circle cx="320.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 241.1 Q 303.2 245.2 303.2 249.3 L 310.4 259.4 L 309.6 288.0 L 314.4 288.0 L 318.8 264.9 L 321.2 264.9 L 325.6 288.0 L 330.4 288.0 L 329.6 259.4 L 336.8 249.3 Q 336.8 245.2 329.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="372.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 362.4 241.1 Q 355.2 245.2 355.2 249.3 L 362.4 259.4 L 361.6 288.0 L 366.4 288.0 L 370.8 264.9 L 373.2 264.9 L 377.6 288.0 L 382.4 288.0 L 381.6 259.4 L 388.8 249.3 Q 388.8 245.2 381.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="424.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 414.4 241.1 Q 407.2 245.2 407.2 249.3 L 414.4 259.4 L 413.6 288.0 L 418.4 288.0 L 422.8 264.9 L 425.2 264.9 L 429.6 288.0 L 434.4 288.0 L 433.6 259.4 L 440.8 249.3 Q 440.8 245.2 433.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="476.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 466.4 241.1 Q 459.2 245.2 459.2 249.3 L 466.4 259.4 L 465.6 288.0 L 470.4 288.0 L 474.8 264.9 L 477.2 264.9 L 481.6 288.0 L 486.4 288.0 L 485.6 259.4 L 492.8 249.3 Q 492.8 245.2 485.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="528.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 518.4 241.1 Q 511.2 245.2 511.2 249.3 L 518.4 259.4 L 517.6 288.0 L 522.4 288.0 L 526.8 264.9 L 529.2 264.9 L 533.6 288.0 L 538.4 288.0 L 537.6 259.4 L 544.8 249.3 Q 544.8 245.2 537.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="580.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 570.4 241.1 Q 563.2 245.2 563.2 249.3 L 570.4 259.4 L 569.6 288.0 L 574.4 288.0 L 578.8 264.9 L 581.2 264.9 L 585.6 288.0 L 590.4 288.0 L 589.6 259.4 L 596.8 249.3 Q 596.8 245.2 589.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="632.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 622.4 241.1 Q 615.2 245.2 615.2 249.3 L 622.4 259.4 L 621.6 288.0 L 626.4 288.0 L 630.8 264.9 L 633.2 264.9 L 637.6 288.0 L 642.4 288.0 L 641.6 259.4 L 648.8 249.3 Q 648.8 245.2 641.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="684.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 674.4 241.1 Q 667.2 245.2 667.2 249.3 L 674.4 259.4 L 673.6 288.0 L 678.4 288.0 L 682.8 264.9 L 685.2 264.9 L 689.6 288.0 L 694.4 288.0 L 693.6 259.4 L 700.8 249.3 Q 700.8 245.2 693.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="736.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 726.4 241.1 Q 719.2 245.2 719.2 249.3 L 726.4 259.4 L 725.6 288.0 L 730.4 288.0 L 734.8 264.9 L 737.2 264.9 L 741.6 288.0 L 746.4 288.0 L 745.6 259.4 L 752.8 249.3 Q 752.8 245.2 745.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="788.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 778.4 241.1 Q 771.2 245.2 771.2 249.3 L 778.4 259.4 L 777.6 288.0 L 782.4 288.0 L 786.8 264.9 L 789.2 264.9 L 793.6 288.0 L 798.4 288.0 L 797.6 259.4 L 804.8 249.3 Q 804.8 245.2 797.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="840.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 830.4 241.1 Q 823.2 245.2 823.2 249.3 L 830.4 259.4 L 829.6 288.0 L 834.4 288.0 L 838.8 264.9 L 841.2 264.9 L 845.6 288.0 L 850.4 288.0 L 849.6 259.4 L 856.8 249.3 Q 856.8 245.2 849.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="892.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 882.4 241.1 Q 875.2 245.2 875.2 249.3 L 882.4 259.4 L 881.6 288.0 L 886.4 288.0 L 890.8 264.9 L 893.2 264.9 L 897.6 288.0 L 902.4 288.0 L 901.6 259.4 L 908.8 249.3 Q 908.8 245.2 901.6 241.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="944.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 934.4 241.1 Q 927.2 245.2 927.2 249.3 L 934.4 259.4 L 933.6 288.0 L 938.4 288.0 L 942.8 264.9 L 945.2 264.9 L 949.6 288.0 L 954.4 288.0 L 953.6 259.4 L 960.8 249.3 Q 960.8 245.2 953.6 241.1 Z" fill="#E3E3E8"/></g>
+</g>
+<g class="icons" clip-path="url(#reveal-copenhagen)">
+<defs>
+<clipPath id="reveal-copenhagen"><rect class="reveal" x="276.0" y="214.0" height="80.0" width="658.8"><animate attributeName="width" from="474.3" to="658.8" dur="0.7s" begin="0.00s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 0.61 0.36 1"/></rect></clipPath>
+</defs>
+<g><circle cx="320.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 310.4 241.1 Q 303.2 245.2 303.2 249.3 L 310.4 259.4 L 309.6 288.0 L 314.4 288.0 L 318.8 264.9 L 321.2 264.9 L 325.6 288.0 L 330.4 288.0 L 329.6 259.4 L 336.8 249.3 Q 336.8 245.2 329.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="372.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 362.4 241.1 Q 355.2 245.2 355.2 249.3 L 362.4 259.4 L 361.6 288.0 L 366.4 288.0 L 370.8 264.9 L 373.2 264.9 L 377.6 288.0 L 382.4 288.0 L 381.6 259.4 L 388.8 249.3 Q 388.8 245.2 381.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="424.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 414.4 241.1 Q 407.2 245.2 407.2 249.3 L 414.4 259.4 L 413.6 288.0 L 418.4 288.0 L 422.8 264.9 L 425.2 264.9 L 429.6 288.0 L 434.4 288.0 L 433.6 259.4 L 440.8 249.3 Q 440.8 245.2 433.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="476.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 466.4 241.1 Q 459.2 245.2 459.2 249.3 L 466.4 259.4 L 465.6 288.0 L 470.4 288.0 L 474.8 264.9 L 477.2 264.9 L 481.6 288.0 L 486.4 288.0 L 485.6 259.4 L 492.8 249.3 Q 492.8 245.2 485.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="528.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 518.4 241.1 Q 511.2 245.2 511.2 249.3 L 518.4 259.4 L 517.6 288.0 L 522.4 288.0 L 526.8 264.9 L 529.2 264.9 L 533.6 288.0 L 538.4 288.0 L 537.6 259.4 L 544.8 249.3 Q 544.8 245.2 537.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="580.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 570.4 241.1 Q 563.2 245.2 563.2 249.3 L 570.4 259.4 L 569.6 288.0 L 574.4 288.0 L 578.8 264.9 L 581.2 264.9 L 585.6 288.0 L 590.4 288.0 L 589.6 259.4 L 596.8 249.3 Q 596.8 245.2 589.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="632.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 622.4 241.1 Q 615.2 245.2 615.2 249.3 L 622.4 259.4 L 621.6 288.0 L 626.4 288.0 L 630.8 264.9 L 633.2 264.9 L 637.6 288.0 L 642.4 288.0 L 641.6 259.4 L 648.8 249.3 Q 648.8 245.2 641.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="684.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 674.4 241.1 Q 667.2 245.2 667.2 249.3 L 674.4 259.4 L 673.6 288.0 L 678.4 288.0 L 682.8 264.9 L 685.2 264.9 L 689.6 288.0 L 694.4 288.0 L 693.6 259.4 L 700.8 249.3 Q 700.8 245.2 693.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="736.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 726.4 241.1 Q 719.2 245.2 719.2 249.3 L 726.4 259.4 L 725.6 288.0 L 730.4 288.0 L 734.8 264.9 L 737.2 264.9 L 741.6 288.0 L 746.4 288.0 L 745.6 259.4 L 752.8 249.3 Q 752.8 245.2 745.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="788.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 778.4 241.1 Q 771.2 245.2 771.2 249.3 L 778.4 259.4 L 777.6 288.0 L 782.4 288.0 L 786.8 264.9 L 789.2 264.9 L 793.6 288.0 L 798.4 288.0 L 797.6 259.4 L 804.8 249.3 Q 804.8 245.2 797.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="840.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 830.4 241.1 Q 823.2 245.2 823.2 249.3 L 830.4 259.4 L 829.6 288.0 L 834.4 288.0 L 838.8 264.9 L 841.2 264.9 L 845.6 288.0 L 850.4 288.0 L 849.6 259.4 L 856.8 249.3 Q 856.8 245.2 849.6 241.1 Z" fill="#28CD41"/></g>
+<g><circle cx="892.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 882.4 241.1 Q 875.2 245.2 875.2 249.3 L 882.4 259.4 L 881.6 288.0 L 886.4 288.0 L 890.8 264.9 L 893.2 264.9 L 897.6 288.0 L 902.4 288.0 L 901.6 259.4 L 908.8 249.3 Q 908.8 245.2 901.6 241.1 Z" fill="#28CD41"/></g>
+<g clip-path="url(#clip-copenhagen)"><circle cx="944.0" cy="231.8" r="10.4" fill="#28CD41"/><path d="M 934.4 241.1 Q 927.2 245.2 927.2 249.3 L 934.4 259.4 L 933.6 288.0 L 938.4 288.0 L 942.8 264.9 L 945.2 264.9 L 949.6 288.0 L 954.4 288.0 L 953.6 259.4 L 960.8 249.3 Q 960.8 245.2 953.6 241.1 Z" fill="#28CD41"/></g>
+</g>
+<text x="1000" y="254.0" font-size="26" font-weight="700" fill="#28CD41" dominant-baseline="middle">62</text>
+<text x="1000" y="278.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">pour 100</text>
+</g>
+<g class="row row-amsterdam" tabindex="0" role="listitem"><title>Amsterdam : 48 cyclistes pour 100 actifs</title>
+<text class="rowlabel" x="260" y="372.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Amsterdam</text>
+<g>
+<g><circle cx="320.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 359.1 Q 303.2 363.2 303.2 367.3 L 310.4 377.4 L 309.6 406.0 L 314.4 406.0 L 318.8 382.9 L 321.2 382.9 L 325.6 406.0 L 330.4 406.0 L 329.6 377.4 L 336.8 367.3 Q 336.8 363.2 329.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="372.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 362.4 359.1 Q 355.2 363.2 355.2 367.3 L 362.4 377.4 L 361.6 406.0 L 366.4 406.0 L 370.8 382.9 L 373.2 382.9 L 377.6 406.0 L 382.4 406.0 L 381.6 377.4 L 388.8 367.3 Q 388.8 363.2 381.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="424.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 414.4 359.1 Q 407.2 363.2 407.2 367.3 L 414.4 377.4 L 413.6 406.0 L 418.4 406.0 L 422.8 382.9 L 425.2 382.9 L 429.6 406.0 L 434.4 406.0 L 433.6 377.4 L 440.8 367.3 Q 440.8 363.2 433.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="476.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 466.4 359.1 Q 459.2 363.2 459.2 367.3 L 466.4 377.4 L 465.6 406.0 L 470.4 406.0 L 474.8 382.9 L 477.2 382.9 L 481.6 406.0 L 486.4 406.0 L 485.6 377.4 L 492.8 367.3 Q 492.8 363.2 485.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="528.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 518.4 359.1 Q 511.2 363.2 511.2 367.3 L 518.4 377.4 L 517.6 406.0 L 522.4 406.0 L 526.8 382.9 L 529.2 382.9 L 533.6 406.0 L 538.4 406.0 L 537.6 377.4 L 544.8 367.3 Q 544.8 363.2 537.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="580.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 570.4 359.1 Q 563.2 363.2 563.2 367.3 L 570.4 377.4 L 569.6 406.0 L 574.4 406.0 L 578.8 382.9 L 581.2 382.9 L 585.6 406.0 L 590.4 406.0 L 589.6 377.4 L 596.8 367.3 Q 596.8 363.2 589.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="632.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 622.4 359.1 Q 615.2 363.2 615.2 367.3 L 622.4 377.4 L 621.6 406.0 L 626.4 406.0 L 630.8 382.9 L 633.2 382.9 L 637.6 406.0 L 642.4 406.0 L 641.6 377.4 L 648.8 367.3 Q 648.8 363.2 641.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="684.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 674.4 359.1 Q 667.2 363.2 667.2 367.3 L 674.4 377.4 L 673.6 406.0 L 678.4 406.0 L 682.8 382.9 L 685.2 382.9 L 689.6 406.0 L 694.4 406.0 L 693.6 377.4 L 700.8 367.3 Q 700.8 363.2 693.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="736.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 726.4 359.1 Q 719.2 363.2 719.2 367.3 L 726.4 377.4 L 725.6 406.0 L 730.4 406.0 L 734.8 382.9 L 737.2 382.9 L 741.6 406.0 L 746.4 406.0 L 745.6 377.4 L 752.8 367.3 Q 752.8 363.2 745.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="788.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 778.4 359.1 Q 771.2 363.2 771.2 367.3 L 778.4 377.4 L 777.6 406.0 L 782.4 406.0 L 786.8 382.9 L 789.2 382.9 L 793.6 406.0 L 798.4 406.0 L 797.6 377.4 L 804.8 367.3 Q 804.8 363.2 797.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="840.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 830.4 359.1 Q 823.2 363.2 823.2 367.3 L 830.4 377.4 L 829.6 406.0 L 834.4 406.0 L 838.8 382.9 L 841.2 382.9 L 845.6 406.0 L 850.4 406.0 L 849.6 377.4 L 856.8 367.3 Q 856.8 363.2 849.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="892.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 882.4 359.1 Q 875.2 363.2 875.2 367.3 L 882.4 377.4 L 881.6 406.0 L 886.4 406.0 L 890.8 382.9 L 893.2 382.9 L 897.6 406.0 L 902.4 406.0 L 901.6 377.4 L 908.8 367.3 Q 908.8 363.2 901.6 359.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="944.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 934.4 359.1 Q 927.2 363.2 927.2 367.3 L 934.4 377.4 L 933.6 406.0 L 938.4 406.0 L 942.8 382.9 L 945.2 382.9 L 949.6 406.0 L 954.4 406.0 L 953.6 377.4 L 960.8 367.3 Q 960.8 363.2 953.6 359.1 Z" fill="#E3E3E8"/></g>
+</g>
+<g class="icons" clip-path="url(#reveal-amsterdam)">
+<defs>
+<clipPath id="reveal-amsterdam"><rect class="reveal" x="276.0" y="332.0" height="80.0" width="513.2"><animate attributeName="width" from="369.5" to="513.2" dur="0.7s" begin="0.10s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 0.61 0.36 1"/></rect></clipPath>
+</defs>
+<g><circle cx="320.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 310.4 359.1 Q 303.2 363.2 303.2 367.3 L 310.4 377.4 L 309.6 406.0 L 314.4 406.0 L 318.8 382.9 L 321.2 382.9 L 325.6 406.0 L 330.4 406.0 L 329.6 377.4 L 336.8 367.3 Q 336.8 363.2 329.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="372.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 362.4 359.1 Q 355.2 363.2 355.2 367.3 L 362.4 377.4 L 361.6 406.0 L 366.4 406.0 L 370.8 382.9 L 373.2 382.9 L 377.6 406.0 L 382.4 406.0 L 381.6 377.4 L 388.8 367.3 Q 388.8 363.2 381.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="424.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 414.4 359.1 Q 407.2 363.2 407.2 367.3 L 414.4 377.4 L 413.6 406.0 L 418.4 406.0 L 422.8 382.9 L 425.2 382.9 L 429.6 406.0 L 434.4 406.0 L 433.6 377.4 L 440.8 367.3 Q 440.8 363.2 433.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="476.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 466.4 359.1 Q 459.2 363.2 459.2 367.3 L 466.4 377.4 L 465.6 406.0 L 470.4 406.0 L 474.8 382.9 L 477.2 382.9 L 481.6 406.0 L 486.4 406.0 L 485.6 377.4 L 492.8 367.3 Q 492.8 363.2 485.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="528.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 518.4 359.1 Q 511.2 363.2 511.2 367.3 L 518.4 377.4 L 517.6 406.0 L 522.4 406.0 L 526.8 382.9 L 529.2 382.9 L 533.6 406.0 L 538.4 406.0 L 537.6 377.4 L 544.8 367.3 Q 544.8 363.2 537.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="580.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 570.4 359.1 Q 563.2 363.2 563.2 367.3 L 570.4 377.4 L 569.6 406.0 L 574.4 406.0 L 578.8 382.9 L 581.2 382.9 L 585.6 406.0 L 590.4 406.0 L 589.6 377.4 L 596.8 367.3 Q 596.8 363.2 589.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="632.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 622.4 359.1 Q 615.2 363.2 615.2 367.3 L 622.4 377.4 L 621.6 406.0 L 626.4 406.0 L 630.8 382.9 L 633.2 382.9 L 637.6 406.0 L 642.4 406.0 L 641.6 377.4 L 648.8 367.3 Q 648.8 363.2 641.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="684.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 674.4 359.1 Q 667.2 363.2 667.2 367.3 L 674.4 377.4 L 673.6 406.0 L 678.4 406.0 L 682.8 382.9 L 685.2 382.9 L 689.6 406.0 L 694.4 406.0 L 693.6 377.4 L 700.8 367.3 Q 700.8 363.2 693.6 359.1 Z" fill="#79DBDC"/></g>
+<g><circle cx="736.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 726.4 359.1 Q 719.2 363.2 719.2 367.3 L 726.4 377.4 L 725.6 406.0 L 730.4 406.0 L 734.8 382.9 L 737.2 382.9 L 741.6 406.0 L 746.4 406.0 L 745.6 377.4 L 752.8 367.3 Q 752.8 363.2 745.6 359.1 Z" fill="#79DBDC"/></g>
+<g clip-path="url(#clip-amsterdam)"><circle cx="788.0" cy="349.8" r="10.4" fill="#79DBDC"/><path d="M 778.4 359.1 Q 771.2 363.2 771.2 367.3 L 778.4 377.4 L 777.6 406.0 L 782.4 406.0 L 786.8 382.9 L 789.2 382.9 L 793.6 406.0 L 798.4 406.0 L 797.6 377.4 L 804.8 367.3 Q 804.8 363.2 797.6 359.1 Z" fill="#79DBDC"/></g>
+</g>
+<text x="1000" y="372.0" font-size="26" font-weight="700" fill="#79DBDC" dominant-baseline="middle">48</text>
+<text x="1000" y="396.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">pour 100</text>
+</g>
+<g class="row row-tokyo" tabindex="0" role="listitem"><title>Tokyo : 27 cyclistes pour 100 actifs</title>
+<text class="rowlabel" x="260" y="490.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Tokyo</text>
+<g>
+<g><circle cx="320.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 477.1 Q 303.2 481.2 303.2 485.3 L 310.4 495.4 L 309.6 524.0 L 314.4 524.0 L 318.8 500.9 L 321.2 500.9 L 325.6 524.0 L 330.4 524.0 L 329.6 495.4 L 336.8 485.3 Q 336.8 481.2 329.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="372.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 362.4 477.1 Q 355.2 481.2 355.2 485.3 L 362.4 495.4 L 361.6 524.0 L 366.4 524.0 L 370.8 500.9 L 373.2 500.9 L 377.6 524.0 L 382.4 524.0 L 381.6 495.4 L 388.8 485.3 Q 388.8 481.2 381.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="424.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 414.4 477.1 Q 407.2 481.2 407.2 485.3 L 414.4 495.4 L 413.6 524.0 L 418.4 524.0 L 422.8 500.9 L 425.2 500.9 L 429.6 524.0 L 434.4 524.0 L 433.6 495.4 L 440.8 485.3 Q 440.8 481.2 433.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="476.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 466.4 477.1 Q 459.2 481.2 459.2 485.3 L 466.4 495.4 L 465.6 524.0 L 470.4 524.0 L 474.8 500.9 L 477.2 500.9 L 481.6 524.0 L 486.4 524.0 L 485.6 495.4 L 492.8 485.3 Q 492.8 481.2 485.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="528.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 518.4 477.1 Q 511.2 481.2 511.2 485.3 L 518.4 495.4 L 517.6 524.0 L 522.4 524.0 L 526.8 500.9 L 529.2 500.9 L 533.6 524.0 L 538.4 524.0 L 537.6 495.4 L 544.8 485.3 Q 544.8 481.2 537.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="580.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 570.4 477.1 Q 563.2 481.2 563.2 485.3 L 570.4 495.4 L 569.6 524.0 L 574.4 524.0 L 578.8 500.9 L 581.2 500.9 L 585.6 524.0 L 590.4 524.0 L 589.6 495.4 L 596.8 485.3 Q 596.8 481.2 589.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="632.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 622.4 477.1 Q 615.2 481.2 615.2 485.3 L 622.4 495.4 L 621.6 524.0 L 626.4 524.0 L 630.8 500.9 L 633.2 500.9 L 637.6 524.0 L 642.4 524.0 L 641.6 495.4 L 648.8 485.3 Q 648.8 481.2 641.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="684.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 674.4 477.1 Q 667.2 481.2 667.2 485.3 L 674.4 495.4 L 673.6 524.0 L 678.4 524.0 L 682.8 500.9 L 685.2 500.9 L 689.6 524.0 L 694.4 524.0 L 693.6 495.4 L 700.8 485.3 Q 700.8 481.2 693.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="736.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 726.4 477.1 Q 719.2 481.2 719.2 485.3 L 726.4 495.4 L 725.6 524.0 L 730.4 524.0 L 734.8 500.9 L 737.2 500.9 L 741.6 524.0 L 746.4 524.0 L 745.6 495.4 L 752.8 485.3 Q 752.8 481.2 745.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="788.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 778.4 477.1 Q 771.2 481.2 771.2 485.3 L 778.4 495.4 L 777.6 524.0 L 782.4 524.0 L 786.8 500.9 L 789.2 500.9 L 793.6 524.0 L 798.4 524.0 L 797.6 495.4 L 804.8 485.3 Q 804.8 481.2 797.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="840.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 830.4 477.1 Q 823.2 481.2 823.2 485.3 L 830.4 495.4 L 829.6 524.0 L 834.4 524.0 L 838.8 500.9 L 841.2 500.9 L 845.6 524.0 L 850.4 524.0 L 849.6 495.4 L 856.8 485.3 Q 856.8 481.2 849.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="892.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 882.4 477.1 Q 875.2 481.2 875.2 485.3 L 882.4 495.4 L 881.6 524.0 L 886.4 524.0 L 890.8 500.9 L 893.2 500.9 L 897.6 524.0 L 902.4 524.0 L 901.6 495.4 L 908.8 485.3 Q 908.8 481.2 901.6 477.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="944.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 934.4 477.1 Q 927.2 481.2 927.2 485.3 L 934.4 495.4 L 933.6 524.0 L 938.4 524.0 L 942.8 500.9 L 945.2 500.9 L 949.6 524.0 L 954.4 524.0 L 953.6 495.4 L 960.8 485.3 Q 960.8 481.2 953.6 477.1 Z" fill="#E3E3E8"/></g>
+</g>
+<g class="icons" clip-path="url(#reveal-tokyo)">
+<defs>
+<clipPath id="reveal-tokyo"><rect class="reveal" x="276.0" y="450.0" height="80.0" width="294.8"><animate attributeName="width" from="212.3" to="294.8" dur="0.7s" begin="0.20s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 0.61 0.36 1"/></rect></clipPath>
+</defs>
+<g><circle cx="320.0" cy="467.8" r="10.4" fill="#007AFF"/><path d="M 310.4 477.1 Q 303.2 481.2 303.2 485.3 L 310.4 495.4 L 309.6 524.0 L 314.4 524.0 L 318.8 500.9 L 321.2 500.9 L 325.6 524.0 L 330.4 524.0 L 329.6 495.4 L 336.8 485.3 Q 336.8 481.2 329.6 477.1 Z" fill="#007AFF"/></g>
+<g><circle cx="372.0" cy="467.8" r="10.4" fill="#007AFF"/><path d="M 362.4 477.1 Q 355.2 481.2 355.2 485.3 L 362.4 495.4 L 361.6 524.0 L 366.4 524.0 L 370.8 500.9 L 373.2 500.9 L 377.6 524.0 L 382.4 524.0 L 381.6 495.4 L 388.8 485.3 Q 388.8 481.2 381.6 477.1 Z" fill="#007AFF"/></g>
+<g><circle cx="424.0" cy="467.8" r="10.4" fill="#007AFF"/><path d="M 414.4 477.1 Q 407.2 481.2 407.2 485.3 L 414.4 495.4 L 413.6 524.0 L 418.4 524.0 L 422.8 500.9 L 425.2 500.9 L 429.6 524.0 L 434.4 524.0 L 433.6 495.4 L 440.8 485.3 Q 440.8 481.2 433.6 477.1 Z" fill="#007AFF"/></g>
+<g><circle cx="476.0" cy="467.8" r="10.4" fill="#007AFF"/><path d="M 466.4 477.1 Q 459.2 481.2 459.2 485.3 L 466.4 495.4 L 465.6 524.0 L 470.4 524.0 L 474.8 500.9 L 477.2 500.9 L 481.6 524.0 L 486.4 524.0 L 485.6 495.4 L 492.8 485.3 Q 492.8 481.2 485.6 477.1 Z" fill="#007AFF"/></g>
+<g><circle cx="528.0" cy="467.8" r="10.4" fill="#007AFF"/><path d="M 518.4 477.1 Q 511.2 481.2 511.2 485.3 L 518.4 495.4 L 517.6 524.0 L 522.4 524.0 L 526.8 500.9 L 529.2 500.9 L 533.6 524.0 L 538.4 524.0 L 537.6 495.4 L 544.8 485.3 Q 544.8 481.2 537.6 477.1 Z" fill="#007AFF"/></g>
+<g clip-path="url(#clip-tokyo)"><circle cx="580.0" cy="467.8" r="10.4" fill="#007AFF"/><path d="M 570.4 477.1 Q 563.2 481.2 563.2 485.3 L 570.4 495.4 L 569.6 524.0 L 574.4 524.0 L 578.8 500.9 L 581.2 500.9 L 585.6 524.0 L 590.4 524.0 L 589.6 495.4 L 596.8 485.3 Q 596.8 481.2 589.6 477.1 Z" fill="#007AFF"/></g>
+</g>
+<text x="1000" y="490.0" font-size="26" font-weight="700" fill="#007AFF" dominant-baseline="middle">27</text>
+<text x="1000" y="514.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">pour 100</text>
+</g>
+<g class="row row-berlin" tabindex="0" role="listitem"><title>Berlin : 18 cyclistes pour 100 actifs</title>
+<text class="rowlabel" x="260" y="608.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Berlin</text>
+<g>
+<g><circle cx="320.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 595.1 Q 303.2 599.2 303.2 603.3 L 310.4 613.4 L 309.6 642.0 L 314.4 642.0 L 318.8 618.9 L 321.2 618.9 L 325.6 642.0 L 330.4 642.0 L 329.6 613.4 L 336.8 603.3 Q 336.8 599.2 329.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="372.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 362.4 595.1 Q 355.2 599.2 355.2 603.3 L 362.4 613.4 L 361.6 642.0 L 366.4 642.0 L 370.8 618.9 L 373.2 618.9 L 377.6 642.0 L 382.4 642.0 L 381.6 613.4 L 388.8 603.3 Q 388.8 599.2 381.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="424.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 414.4 595.1 Q 407.2 599.2 407.2 603.3 L 414.4 613.4 L 413.6 642.0 L 418.4 642.0 L 422.8 618.9 L 425.2 618.9 L 429.6 642.0 L 434.4 642.0 L 433.6 613.4 L 440.8 603.3 Q 440.8 599.2 433.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="476.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 466.4 595.1 Q 459.2 599.2 459.2 603.3 L 466.4 613.4 L 465.6 642.0 L 470.4 642.0 L 474.8 618.9 L 477.2 618.9 L 481.6 642.0 L 486.4 642.0 L 485.6 613.4 L 492.8 603.3 Q 492.8 599.2 485.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="528.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 518.4 595.1 Q 511.2 599.2 511.2 603.3 L 518.4 613.4 L 517.6 642.0 L 522.4 642.0 L 526.8 618.9 L 529.2 618.9 L 533.6 642.0 L 538.4 642.0 L 537.6 613.4 L 544.8 603.3 Q 544.8 599.2 537.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="580.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 570.4 595.1 Q 563.2 599.2 563.2 603.3 L 570.4 613.4 L 569.6 642.0 L 574.4 642.0 L 578.8 618.9 L 581.2 618.9 L 585.6 642.0 L 590.4 642.0 L 589.6 613.4 L 596.8 603.3 Q 596.8 599.2 589.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="632.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 622.4 595.1 Q 615.2 599.2 615.2 603.3 L 622.4 613.4 L 621.6 642.0 L 626.4 642.0 L 630.8 618.9 L 633.2 618.9 L 637.6 642.0 L 642.4 642.0 L 641.6 613.4 L 648.8 603.3 Q 648.8 599.2 641.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="684.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 674.4 595.1 Q 667.2 599.2 667.2 603.3 L 674.4 613.4 L 673.6 642.0 L 678.4 642.0 L 682.8 618.9 L 685.2 618.9 L 689.6 642.0 L 694.4 642.0 L 693.6 613.4 L 700.8 603.3 Q 700.8 599.2 693.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="736.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 726.4 595.1 Q 719.2 599.2 719.2 603.3 L 726.4 613.4 L 725.6 642.0 L 730.4 642.0 L 734.8 618.9 L 737.2 618.9 L 741.6 642.0 L 746.4 642.0 L 745.6 613.4 L 752.8 603.3 Q 752.8 599.2 745.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="788.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 778.4 595.1 Q 771.2 599.2 771.2 603.3 L 778.4 613.4 L 777.6 642.0 L 782.4 642.0 L 786.8 618.9 L 789.2 618.9 L 793.6 642.0 L 798.4 642.0 L 797.6 613.4 L 804.8 603.3 Q 804.8 599.2 797.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="840.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 830.4 595.1 Q 823.2 599.2 823.2 603.3 L 830.4 613.4 L 829.6 642.0 L 834.4 642.0 L 838.8 618.9 L 841.2 618.9 L 845.6 642.0 L 850.4 642.0 L 849.6 613.4 L 856.8 603.3 Q 856.8 599.2 849.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="892.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 882.4 595.1 Q 875.2 599.2 875.2 603.3 L 882.4 613.4 L 881.6 642.0 L 886.4 642.0 L 890.8 618.9 L 893.2 618.9 L 897.6 642.0 L 902.4 642.0 L 901.6 613.4 L 908.8 603.3 Q 908.8 599.2 901.6 595.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="944.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 934.4 595.1 Q 927.2 599.2 927.2 603.3 L 934.4 613.4 L 933.6 642.0 L 938.4 642.0 L 942.8 618.9 L 945.2 618.9 L 949.6 642.0 L 954.4 642.0 L 953.6 613.4 L 960.8 603.3 Q 960.8 599.2 953.6 595.1 Z" fill="#E3E3E8"/></g>
+</g>
+<g class="icons" clip-path="url(#reveal-berlin)">
+<defs>
+<clipPath id="reveal-berlin"><rect class="reveal" x="276.0" y="568.0" height="80.0" width="201.2"><animate attributeName="width" from="144.9" to="201.2" dur="0.7s" begin="0.30s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 0.61 0.36 1"/></rect></clipPath>
+</defs>
+<g><circle cx="320.0" cy="585.8" r="10.4" fill="#FF9500"/><path d="M 310.4 595.1 Q 303.2 599.2 303.2 603.3 L 310.4 613.4 L 309.6 642.0 L 314.4 642.0 L 318.8 618.9 L 321.2 618.9 L 325.6 642.0 L 330.4 642.0 L 329.6 613.4 L 336.8 603.3 Q 336.8 599.2 329.6 595.1 Z" fill="#FF9500"/></g>
+<g><circle cx="372.0" cy="585.8" r="10.4" fill="#FF9500"/><path d="M 362.4 595.1 Q 355.2 599.2 355.2 603.3 L 362.4 613.4 L 361.6 642.0 L 366.4 642.0 L 370.8 618.9 L 373.2 618.9 L 377.6 642.0 L 382.4 642.0 L 381.6 613.4 L 388.8 603.3 Q 388.8 599.2 381.6 595.1 Z" fill="#FF9500"/></g>
+<g><circle cx="424.0" cy="585.8" r="10.4" fill="#FF9500"/><path d="M 414.4 595.1 Q 407.2 599.2 407.2 603.3 L 414.4 613.4 L 413.6 642.0 L 418.4 642.0 L 422.8 618.9 L 425.2 618.9 L 429.6 642.0 L 434.4 642.0 L 433.6 613.4 L 440.8 603.3 Q 440.8 599.2 433.6 595.1 Z" fill="#FF9500"/></g>
+<g clip-path="url(#clip-berlin)"><circle cx="476.0" cy="585.8" r="10.4" fill="#FF9500"/><path d="M 466.4 595.1 Q 459.2 599.2 459.2 603.3 L 466.4 613.4 L 465.6 642.0 L 470.4 642.0 L 474.8 618.9 L 477.2 618.9 L 481.6 642.0 L 486.4 642.0 L 485.6 613.4 L 492.8 603.3 Q 492.8 599.2 485.6 595.1 Z" fill="#FF9500"/></g>
+</g>
+<text x="1000" y="608.0" font-size="26" font-weight="700" fill="#FF9500" dominant-baseline="middle">18</text>
+<text x="1000" y="632.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">pour 100</text>
+</g>
+<g class="row row-los-angeles" tabindex="0" role="listitem"><title>Los Angeles : 4 cyclistes pour 100 actifs</title>
+<text class="rowlabel" x="260" y="726.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Los Angeles</text>
+<g>
+<g><circle cx="320.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 713.1 Q 303.2 717.2 303.2 721.3 L 310.4 731.4 L 309.6 760.0 L 314.4 760.0 L 318.8 736.9 L 321.2 736.9 L 325.6 760.0 L 330.4 760.0 L 329.6 731.4 L 336.8 721.3 Q 336.8 717.2 329.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="372.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 362.4 713.1 Q 355.2 717.2 355.2 721.3 L 362.4 731.4 L 361.6 760.0 L 366.4 760.0 L 370.8 736.9 L 373.2 736.9 L 377.6 760.0 L 382.4 760.0 L 381.6 731.4 L 388.8 721.3 Q 388.8 717.2 381.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="424.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 414.4 713.1 Q 407.2 717.2 407.2 721.3 L 414.4 731.4 L 413.6 760.0 L 418.4 760.0 L 422.8 736.9 L 425.2 736.9 L 429.6 760.0 L 434.4 760.0 L 433.6 731.4 L 440.8 721.3 Q 440.8 717.2 433.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="476.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 466.4 713.1 Q 459.2 717.2 459.2 721.3 L 466.4 731.4 L 465.6 760.0 L 470.4 760.0 L 474.8 736.9 L 477.2 736.9 L 481.6 760.0 L 486.4 760.0 L 485.6 731.4 L 492.8 721.3 Q 492.8 717.2 485.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="528.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 518.4 713.1 Q 511.2 717.2 511.2 721.3 L 518.4 731.4 L 517.6 760.0 L 522.4 760.0 L 526.8 736.9 L 529.2 736.9 L 533.6 760.0 L 538.4 760.0 L 537.6 731.4 L 544.8 721.3 Q 544.8 717.2 537.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="580.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 570.4 713.1 Q 563.2 717.2 563.2 721.3 L 570.4 731.4 L 569.6 760.0 L 574.4 760.0 L 578.8 736.9 L 581.2 736.9 L 585.6 760.0 L 590.4 760.0 L 589.6 731.4 L 596.8 721.3 Q 596.8 717.2 589.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="632.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 622.4 713.1 Q 615.2 717.2 615.2 721.3 L 622.4 731.4 L 621.6 760.0 L 626.4 760.0 L 630.8 736.9 L 633.2 736.9 L 637.6 760.0 L 642.4 760.0 L 641.6 731.4 L 648.8 721.3 Q 648.8 717.2 641.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="684.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 674.4 713.1 Q 667.2 717.2 667.2 721.3 L 674.4 731.4 L 673.6 760.0 L 678.4 760.0 L 682.8 736.9 L 685.2 736.9 L 689.6 760.0 L 694.4 760.0 L 693.6 731.4 L 700.8 721.3 Q 700.8 717.2 693.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="736.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 726.4 713.1 Q 719.2 717.2 719.2 721.3 L 726.4 731.4 L 725.6 760.0 L 730.4 760.0 L 734.8 736.9 L 737.2 736.9 L 741.6 760.0 L 746.4 760.0 L 745.6 731.4 L 752.8 721.3 Q 752.8 717.2 745.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="788.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 778.4 713.1 Q 771.2 717.2 771.2 721.3 L 778.4 731.4 L 777.6 760.0 L 782.4 760.0 L 786.8 736.9 L 789.2 736.9 L 793.6 760.0 L 798.4 760.0 L 797.6 731.4 L 804.8 721.3 Q 804.8 717.2 797.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="840.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 830.4 713.1 Q 823.2 717.2 823.2 721.3 L 830.4 731.4 L 829.6 760.0 L 834.4 760.0 L 838.8 736.9 L 841.2 736.9 L 845.6 760.0 L 850.4 760.0 L 849.6 731.4 L 856.8 721.3 Q 856.8 717.2 849.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="892.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 882.4 713.1 Q 875.2 717.2 875.2 721.3 L 882.4 731.4 L 881.6 760.0 L 886.4 760.0 L 890.8 736.9 L 893.2 736.9 L 897.6 760.0 L 902.4 760.0 L 901.6 731.4 L 908.8 721.3 Q 908.8 717.2 901.6 713.1 Z" fill="#E3E3E8"/></g>
+<g><circle cx="944.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 934.4 713.1 Q 927.2 717.2 927.2 721.3 L 934.4 731.4 L 933.6 760.0 L 938.4 760.0 L 942.8 736.9 L 945.2 736.9 L 949.6 760.0 L 954.4 760.0 L 953.6 731.4 L 960.8 721.3 Q 960.8 717.2 953.6 713.1 Z" fill="#E3E3E8"/></g>
+</g>
+<g class="icons" clip-path="url(#reveal-los-angeles)">
+<defs>
+<clipPath id="reveal-los-angeles"><rect class="reveal" x="276.0" y="686.0" height="80.0" width="55.6"><animate attributeName="width" from="40.0" to="55.6" dur="0.7s" begin="0.40s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 0.61 0.36 1"/></rect></clipPath>
+</defs>
+<g clip-path="url(#clip-los-angeles)"><circle cx="320.0" cy="703.8" r="10.4" fill="#FF3B30"/><path d="M 310.4 713.1 Q 303.2 717.2 303.2 721.3 L 310.4 731.4 L 309.6 760.0 L 314.4 760.0 L 318.8 736.9 L 321.2 736.9 L 325.6 760.0 L 330.4 760.0 L 329.6 731.4 L 336.8 721.3 Q 336.8 717.2 329.6 713.1 Z" fill="#FF3B30"/></g>
+</g>
+<text x="1000" y="726.0" font-size="26" font-weight="700" fill="#FF3B30" dominant-baseline="middle">4</text>
+<text x="1000" y="750.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">pour 100</text>
+</g>
+<g transform="translate(56,836)">
+<circle cx="20.0" cy="11.8" r="10.4" fill="#6E6E73"/>
+<path d="M 10.4 21.1 Q 3.2 25.2 3.2 29.3 L 10.4 39.4 L 9.6 68.0 L 14.4 68.0 L 18.8 44.9 L 21.2 44.9 L 25.6 68.0 L 30.4 68.0 L 29.6 39.4 L 36.8 29.3 Q 36.8 25.2 29.6 21.1 Z" fill="#6E6E73"/>
+<text x="50" y="29" font-size="18" fill="#1D1D1F" dominant-baseline="middle">= 5 personnes pour 100 actifs</text>
+<text x="50" y="55" font-size="15" fill="#6E6E73" dominant-baseline="middle">Une figure partielle marque le reste · lignes triées du plus grand au plus petit</text>
+</g>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1192,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>

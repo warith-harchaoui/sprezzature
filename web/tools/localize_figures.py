@@ -39,7 +39,7 @@ from sprezzature_figures.fonts import DEFAULT_SVG_FACES, svg_font_defs  # noqa: 
 
 TR: dict[str, str] = yaml.safe_load(YAML.read_text(encoding="utf-8")) or {}
 SPECS = {re.sub(r"\.(vl|vg)$", "", Path(p).stem): p for p in glob.glob(str(FIGREPO / "assets/vega-examples/*.json"))}
-SKIP = re.compile(r"^[\d\s.,%:+\-–—/()·°×]*$")  # pure punctuation / numbers
+SKIP = re.compile(r"^[\d\s.,%:+\-–—−/()·°×→←]*$")  # pure punctuation / numbers
 missing: set[str] = set()
 
 

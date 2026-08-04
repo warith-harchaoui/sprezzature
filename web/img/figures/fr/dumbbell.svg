@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1066" viewBox="0 0 1280 1066" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="db-title db-desc">
+<title id="db-title">Gender pay gap by role: men out-earn women in every job family</title>
+<desc id="db-desc">Dumbbell plot of median hourly pay for women (purple) and men (teal) across 10 roles, sorted by the size of the gap. Each row joins the two medians with a segment whose length is the gap. Men earn more in every role; the gap averages 11% and is widest for Sales director at $13 per hour. Illustrative data.</desc>
+<style>.row{cursor:pointer}.row .seg{stroke:#6E6E73;stroke-width:5;stroke-linecap:round}.row:hover .rowbg,.row:focus .rowbg{fill:#F0F0F2}.row:hover .seg,.row:focus .seg{stroke:#1D1D1F}.row:hover .dot,.row:focus .dot{stroke:#1D1D1F;stroke-width:2}.row:focus{outline:none}</style>
+<rect width="1280" height="1066" fill="#FFFFFF"/>
+<text x="70" y="86" font-size="40" font-weight="700" fill="#1D1D1F">Men out-earn women in every role</text>
+<text x="70" y="132" font-size="23" fill="#6E6E73">Median hourly pay, women vs men · the gap averages 11% and widens with seniority · illustrative</text>
+<circle cx="81.0" cy="170.0" r="11.0" fill="#AF52DE"/>
+<text x="104.0" y="177.0" font-size="22" fill="#1D1D1F">Women</text>
+<circle cx="231.0" cy="170.0" r="11.0" fill="#5AC8FA"/>
+<text x="254.0" y="177.0" font-size="22" fill="#1D1D1F">Men</text>
+<rect x="739.8" y="202.0" width="18.0" height="752.0" rx="6" fill="#F5F5F7"/>
+<line x1="748.8" y1="202.0" x2="748.8" y2="954.0" stroke="#6E6E73" stroke-width="1.4" stroke-dasharray="4 7"/>
+<text x="748.8" y="192.0" font-size="17" fill="#6E6E73" text-anchor="middle">Company median $47</text>
+<line x1="466.9" y1="204.0" x2="466.9" y2="952.0" stroke="#F5F5F7" stroke-width="1.4"/>
+<line x1="628.5" y1="204.0" x2="628.5" y2="952.0" stroke="#F5F5F7" stroke-width="1.4"/>
+<line x1="790.0" y1="204.0" x2="790.0" y2="952.0" stroke="#F5F5F7" stroke-width="1.4"/>
+<line x1="951.5" y1="204.0" x2="951.5" y2="952.0" stroke="#F5F5F7" stroke-width="1.4"/>
+<line x1="1113.1" y1="204.0" x2="1113.1" y2="952.0" stroke="#F5F5F7" stroke-width="1.4"/>
+<g class="row" tabindex="0" role="img" aria-label="Sales director: women $58.20/h vs men $71.40/h — gap $13.20 (18%)">
+<title>Sales director: women $58.20/h vs men $71.40/h — gap $13.20 (18%)</title>
+<rect class="rowbg" x="56.0" y="212.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="253.0" font-size="23" fill="#1D1D1F" text-anchor="end">Sales director</text>
+<line class="seg" x1="922.5" y1="245.0" x2="1135.7" y2="245.0"/>
+<circle class="dot" cx="922.5" cy="245.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="1135.7" cy="245.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="895.5" y="252.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$58</text>
+<text x="1162.7" y="252.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$71</text>
+<g transform="translate(996.6,202.7)"><rect x="0" y="0" width="64.9" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="32.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$13</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Product manager: women $55.40/h vs men $65.90/h — gap $10.50 (16%)">
+<title>Product manager: women $55.40/h vs men $65.90/h — gap $10.50 (16%)</title>
+<rect class="rowbg" x="56.0" y="286.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="327.0" font-size="23" fill="#1D1D1F" text-anchor="end">Product manager</text>
+<line class="seg" x1="877.2" y1="319.0" x2="1046.8" y2="319.0"/>
+<circle class="dot" cx="877.2" cy="319.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="1046.8" cy="319.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="850.2" y="326.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$55</text>
+<text x="1073.8" y="326.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$66</text>
+<g transform="translate(929.6,276.7)"><rect x="0" y="0" width="64.9" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="32.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$11</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Software engineer: women $52.10/h vs men $60.30/h — gap $8.20 (14%)">
+<title>Software engineer: women $52.10/h vs men $60.30/h — gap $8.20 (14%)</title>
+<rect class="rowbg" x="56.0" y="360.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="401.0" font-size="23" fill="#1D1D1F" text-anchor="end">Software engineer</text>
+<line class="seg" x1="823.9" y1="393.0" x2="956.4" y2="393.0"/>
+<circle class="dot" cx="823.9" cy="393.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="956.4" cy="393.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="796.9" y="400.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$52</text>
+<text x="983.4" y="400.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$60</text>
+<g transform="translate(862.6,350.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$8</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Financial analyst: women $41.30/h vs men $47.80/h — gap $6.50 (14%)">
+<title>Financial analyst: women $41.30/h vs men $47.80/h — gap $6.50 (14%)</title>
+<rect class="rowbg" x="56.0" y="434.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="475.0" font-size="23" fill="#1D1D1F" text-anchor="end">Financial analyst</text>
+<line class="seg" x1="649.5" y1="467.0" x2="754.5" y2="467.0"/>
+<circle class="dot" cx="649.5" cy="467.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="754.5" cy="467.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="622.5" y="474.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$41</text>
+<text x="781.5" y="474.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$48</text>
+<g transform="translate(674.4,424.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$6</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Data scientist: women $51.80/h vs men $58.20/h — gap $6.40 (11%)">
+<title>Data scientist: women $51.80/h vs men $58.20/h — gap $6.40 (11%)</title>
+<rect class="rowbg" x="56.0" y="508.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="549.0" font-size="23" fill="#1D1D1F" text-anchor="end">Data scientist</text>
+<line class="seg" x1="819.1" y1="541.0" x2="922.5" y2="541.0"/>
+<circle class="dot" cx="819.1" cy="541.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="922.5" cy="541.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="792.1" y="548.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$52</text>
+<text x="949.5" y="548.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$58</text>
+<g transform="translate(843.2,498.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$6</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Marketing lead: women $44.60/h vs men $50.10/h — gap $5.50 (11%)">
+<title>Marketing lead: women $44.60/h vs men $50.10/h — gap $5.50 (11%)</title>
+<rect class="rowbg" x="56.0" y="582.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="623.0" font-size="23" fill="#1D1D1F" text-anchor="end">Marketing lead</text>
+<line class="seg" x1="702.8" y1="615.0" x2="791.6" y2="615.0"/>
+<circle class="dot" cx="702.8" cy="615.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="791.6" cy="615.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="675.8" y="622.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$45</text>
+<text x="818.6" y="622.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$50</text>
+<g transform="translate(719.7,572.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$6</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Customer success: women $33.70/h vs men $37.10/h — gap $3.40 (9%)">
+<title>Customer success: women $33.70/h vs men $37.10/h — gap $3.40 (9%)</title>
+<rect class="rowbg" x="56.0" y="656.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="697.0" font-size="23" fill="#1D1D1F" text-anchor="end">Customer success</text>
+<line class="seg" x1="526.7" y1="689.0" x2="581.6" y2="689.0"/>
+<circle class="dot" cx="526.7" cy="689.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="581.6" cy="689.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="499.7" y="696.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$34</text>
+<text x="608.6" y="696.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$37</text>
+<g transform="translate(526.6,646.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$3</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="UX designer: women $43.90/h vs men $47.20/h — gap $3.30 (7%)">
+<title>UX designer: women $43.90/h vs men $47.20/h — gap $3.30 (7%)</title>
+<rect class="rowbg" x="56.0" y="730.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="771.0" font-size="23" fill="#1D1D1F" text-anchor="end">UX designer</text>
+<line class="seg" x1="691.5" y1="763.0" x2="744.8" y2="763.0"/>
+<circle class="dot" cx="691.5" cy="763.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="744.8" cy="763.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="664.5" y="770.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$44</text>
+<text x="771.8" y="770.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$47</text>
+<g transform="translate(690.6,720.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$3</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Recruiter: women $34.20/h vs men $36.40/h — gap $2.20 (6%)">
+<title>Recruiter: women $34.20/h vs men $36.40/h — gap $2.20 (6%)</title>
+<rect class="rowbg" x="56.0" y="804.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="845.0" font-size="23" fill="#1D1D1F" text-anchor="end">Recruiter</text>
+<line class="seg" x1="534.8" y1="837.0" x2="570.3" y2="837.0"/>
+<circle class="dot" cx="534.8" cy="837.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="570.3" cy="837.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="507.8" y="844.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$34</text>
+<text x="597.3" y="844.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$36</text>
+<g transform="translate(525,794.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$2</text></g>
+</g>
+<g class="row" tabindex="0" role="img" aria-label="Support specialist: women $28.90/h vs men $30.50/h — gap $1.60 (5%)">
+<title>Support specialist: women $28.90/h vs men $30.50/h — gap $1.60 (5%)</title>
+<rect class="rowbg" x="56.0" y="878.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
+<text x="344.0" y="919.0" font-size="23" fill="#1D1D1F" text-anchor="end">Support specialist</text>
+<line class="seg" x1="449.2" y1="911.0" x2="475.0" y2="911.0"/>
+<circle class="dot" cx="449.2" cy="911.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot" cx="475.0" cy="911.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text x="422.2" y="918.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$29</text>
+<text x="502.0" y="918.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$30</text>
+<g transform="translate(434.5,868.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$2</text></g>
+</g>
+<line x1="370.0" y1="970.0" x2="1210.0" y2="970.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<line x1="466.9" y1="970.0" x2="466.9" y2="976.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="466.9" y="1000.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">$30</text>
+<line x1="628.5" y1="970.0" x2="628.5" y2="976.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="628.5" y="1000.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">$40</text>
+<line x1="790.0" y1="970.0" x2="790.0" y2="976.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="790.0" y="1000.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">$50</text>
+<line x1="951.5" y1="970.0" x2="951.5" y2="976.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="951.5" y="1000.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">$60</text>
+<line x1="1113.1" y1="970.0" x2="1113.1" y2="976.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="1113.1" y="1000.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">$70</text>
+<text x="790.0" y="1032.0" font-size="21" fill="#1D1D1F" text-anchor="middle">Median hourly pay (US dollars)</text>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1232,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+</svg>
