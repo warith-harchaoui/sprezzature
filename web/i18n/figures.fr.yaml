@@ -11,18 +11,24 @@ $k: k$
 (mΩ): (mΩ)
 +1σ (81.5): +1σ (81,5)
 /wk: /sem
+0.3 M residents: 0.3 M habitants
+1 line: 1 gamme
 10% in 2022: 10 % en 2022
 10% in 2024: 10 % en 2024
+10.9 M residents: 10.9 M habitants
 1017 predictions near 4%: 1017 prédictions autour de 4 %
+11.0 M residents: 11.0 M habitants
 12% in 2022: 12 % en 2022
 12% in 2024: 12 % en 2024
 13% in 2022: 13 % en 2022
 13% in 2024: 13 % en 2024
 14% in 2022: 14 % en 2022
 14% in 2024: 14 % en 2024
+16.5 M residents: 16.5 M habitants
 '1990: 28.0k US dollars per person, 10.0 tonnes CO2 per person': '1990 : 28,0k dollars US par habitant, 10,0 tonnes de CO2 par habitant'
 '1995: 30.2k US dollars per person, 10.4 tonnes CO2 per person': '1995 : 30,2k dollars US par habitant, 10,4 tonnes de CO2 par habitant'
 1k: 1k
+2.6 M residents: 2.6 M habitants
 '2000: 34.6k US dollars per person, 10.5 tonnes CO2 per person': '2000 : 34,6k dollars US par habitant, 10,5 tonnes de CO2 par habitant'
 '2005: 38.4k US dollars per person, 10.0 tonnes CO2 per person': '2005 : 38,4k dollars US par habitant, 10,0 tonnes de CO2 par habitant'
 '2010: 39.0k US dollars per person, 8.4 tonnes CO2 per person': '2010 : 39,0k dollars US par habitant, 8,4 tonnes de CO2 par habitant'
@@ -30,12 +36,14 @@ $k: k$
 '2019: 45.3k US dollars per person, 5.4 tonnes CO2 per person': '2019 : 45,3k dollars US par habitant, 5,4 tonnes de CO2 par habitant'
 '2022: 46.6k US dollars per person, 4.7 tonnes CO2 per person': '2022 : 46,6k dollars US par habitant, 4,7 tonnes de CO2 par habitant'
 218 predictions near 95%: 218 prédictions autour de 95 %
+23.9 M residents: 23.9 M habitants
 245 predictions near 75%: 245 prédictions autour de 75 %
 25% in 2022: 25 % en 2022
 25% in 2024: 25 % en 2024
 251 predictions near 85%: 251 prédictions autour de 85 %
 263 predictions near 65%: 263 prédictions autour de 65 %
 2k: 2k
+3 lines: 3 gammes
 3.16× better than random: 3,16× mieux que le hasard
 305 predictions near 55%: 305 prédictions autour de 55 %
 33% in 2022: 33 % en 2022
@@ -44,6 +52,8 @@ $k: k$
 34% in 2022: 34 % en 2022
 34% in 2024: 34 % en 2024
 356 predictions near 35%: 356 prédictions autour de 35 %
+? '3D bar chart: a 4x4 grid of solid bars, one per team per quarter, height and blue depth of colour both encoding quarterly cloud spend. The Data team''s bars form a rising ridge along the back that towers over the flat Docs plain at the front.'
+: 'Diagramme en barres 3D : une grille 4×4 de barres pleines, une par équipe et par trimestre, la hauteur et l''intensité du bleu encodant toutes deux la dépense cloud trimestrielle. Les barres de l''équipe Data forment une crête montante au fond qui domine la plaine plate de Docs au premier plan.'
 ? '3D wireframe surface: a mesh of projected grid lines over a radially-symmetric ripple, one central peak ringed by decaying concentric waves. Nearer lines are darker blue and thicker; the lattice turns slowly so the solid shape reads on a flat page.'
 : 'Surface fil de fer 3D : un maillage de lignes projetées sur une ondulation à symétrie radiale, un pic central entouré de vagues concentriques qui s''amortissent. Les lignes proches sont d''un bleu plus foncé et plus épaisses ; le treillis tourne lentement pour que le volume se lise sur une page plane.'
 3k: 3k
@@ -65,6 +75,7 @@ A churn model reaches most churners from a small fraction of the ranked list: Un
 : Jauge circulaire à remplissage en forme de citerne. Un liquide bleu ondulé remplit la cuve à 63 pour cent de sa hauteur, avec un pourcentage en gras au centre. Une ligne pointillée marque la médiane saisonnière décennale de 68 pour cent, juste au-dessus du niveau actuel.
 A clear positive trend: Une tendance nettement positive
 A good night's sleep sharpens reaction time: Une bonne nuit de sommeil aiguise les réflexes
+A machine-learning syllabus, branch by branch: Un programme d'apprentissage automatique, branche par branche
 A part-figure marks the remainder · rows sorted high to low: Une figure partielle marque le reste · lignes triées du plus grand au plus petit
 A reservoir running a little low: Un réservoir un peu bas
 A rising tone climbs the frequency axis over three seconds: Un son montant grimpe l'axe des fréquences en trois secondes
@@ -74,6 +85,7 @@ A rising tone climbs the frequency axis over three seconds: Un son montant grimp
 A single ripple ripples out, then fades to stillness: Une seule ondulation se propage, puis s'éteint
 ACAN: ACAN
 ACAN — chr15:47,940,000 · p = 10.0×10⁻²¹: ACAN · chr15:47 940 000 · p = 10,0×10⁻²¹
+API Gateway: Passerelle API
 Activated: Activation
 Activation rate: Taux d'activation
 'Activation rate: 47 % — 104% of target (45 %)': 'Taux d''activation : 47 % · 104 % de la cible (45 %)'
@@ -99,6 +111,7 @@ Asia: Asie
 Asking price (k€): Prix affiché (k€)
 Asking price against floor area: Prix affiché selon la surface
 Athens: Athènes
+Atlantic West: Ouest atlantique
 Aug: Août
 Aurora: Aurora
 'Aurora — Auto-scaling: 88/100': 'Aurora · Mise à l''échelle auto : 88/100'
@@ -107,7 +120,10 @@ Aurora: Aurora
 'Aurora — Global reach: 58/100': 'Aurora · Portée mondiale : 58/100'
 'Aurora — Price: 52/100': 'Aurora · Prix : 52/100'
 'Aurora — Query speed: 92/100': 'Aurora · Vitesse des requêtes : 92/100'
+Auth: Auth
+Auth is a hidden single point of failure: Auth est un point de défaillance unique caché
 Auto-scaling: Mise à l'échelle auto
+Average linkage · hover or focus a cluster to isolate its branches · taller merge = less alike: Lien moyen · survolez ou ciblez une grappe pour isoler ses branches · fusion plus haute = moins semblables
 'Bands:': 'Plages :'
 Berlin: Berlin
 'Berlin: 18 cyclists per 100 commuters': 'Berlin : 18 cyclistes pour 100 actifs'
@@ -117,29 +133,38 @@ Bhatt 2017: Bhatt 2017
 Bigger homes cost more: Les grands logements coûtent plus cher
 Bike: Vélo
 Bivariate choropleth: Choroplèthe bivariée
+Breakfast cereal — Fresh & health: Céréales du petit-déjeuner — Frais & santé
 Build API: Développer l'API
 Build UI: Développer l'IHM
 Busy: Chargé
 Busy · of 100% capacity: Chargé · sur 100 % de capacité
+CLUSTERS: GRAPPES
 Cable: Câble
 Calling the riskiest 20% reaches 63% of churners: Contacter les 20 % les plus à risque touche 63 % des partants
 Car: Voiture
 Carbon per person (tonnes) ↑ dirtier: Carbone par habitant (tonnes) ↑ plus polluant
 Cars by class across four metrics: Voitures par classe sur quatre mesures
+Cart: Panier
 Cat: Chat
+Catalog: Catalogue
 Cell chemistry: Chimie de la cellule
+Central rural belt: Ceinture rurale centrale
 Change: Variation
 Channel: Canal
+Checkout: Checkout
 Checkout time (s): Temps de paiement (s)
 Checkout time by test variant: Temps de paiement par variante
 China -46: Chine −46
 Chinstrap: À jugulaire
 Chinstrap — 26 birds; bold line is the species median curve: À jugulaire · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
+Chocolate & sweets — Treats: Chocolat & confiseries — Gourmandises
 ? 'Chord diagram of code reviews exchanged between five engineering teams during one sprint. Each team owns an arc sized by its total review activity; each ribbon links two teams with a width proportional to the pull requests they reviewed for each other. The Platform team''s inbound reviews dwarf its outbound ones: it reviews nearly everyone''s code but few teams review Platform''s.'
 : 'Diagramme en accords des relectures de code échangées entre cinq équipes d''ingénierie sur un sprint. Chaque équipe possède un arc dimensionné par son activité totale de relecture ; chaque ruban relie deux équipes avec une largeur proportionnelle aux pull requests qu''elles se sont relues. Les relectures entrantes de l''équipe Platform écrasent ses relectures sortantes : elle relit le code de presque tout le monde mais peu d''équipes relisent celui de Platform.'
 Chromosome: Chromosome
 City: Ville
 Class: Classe
+Classification: Classification
+Cleaning supplies — Household staples: Produits d'entretien — Produits de base
 Cloud: Cloud
 Cloud SQL: Cloud SQL
 'Cloud SQL — Auto-scaling: 66/100': 'Cloud SQL · Mise à l''échelle auto : 66/100'
@@ -149,6 +174,7 @@ Cloud SQL: Cloud SQL
 'Cloud SQL — Price: 68/100': 'Cloud SQL · Prix : 68/100'
 'Cloud SQL — Query speed: 74/100': 'Cloud SQL · Vitesse des requêtes : 74/100'
 'Cloud: 456 of 814 (56%)': 'Cloud : 456 sur 814 (56 %)'
+Clustering: Partitionnement
 Commute mode: Mode de déplacement
 Compute: Calcul
 Compute drives the cloud bill: Le calcul pèse le plus sur la facture cloud
@@ -158,9 +184,11 @@ Confusion matrix: Matrice de confusion
 Connection map: Carte de liaisons
 Control: Témoin
 Conversion funnel: Entonnoir de conversion
+Convolutional nets: Réseaux convolutifs
 Copenhagen: Copenhague
 Copenhagen bikes; Los Angeles drives: Copenhague pédale ; Los Angeles conduit
 'Copenhagen: 62 cyclists per 100 commuters': 'Copenhague : 62 cyclistes pour 100 actifs'
+Corsica: Corse
 Cosmos: Cosmos
 'Cosmos — Auto-scaling: 78/100': 'Cosmos · Mise à l''échelle auto : 78/100'
 'Cosmos — Ease of use: 58/100': 'Cosmos · Facilité d''usage : 58/100'
@@ -173,6 +201,7 @@ Costa 2018: Costa 2018
 'Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant': 'Costa 2018 : RC 1,31 (IC 95 % 1,06-1,62), poids 30 % · significatif'
 Count: Effectif
 Country: Country
+Crisps & snacks — Treats: Chips & snacks — Gourmandises
 Critical: Critique
 Cross-team pull-request reviews over one sprint (illustrative data): Relectures de pull requests entre équipes sur un sprint (données illustratives)
 Cumulative distribution of request latency: Distribution cumulée de la latence
@@ -191,12 +220,14 @@ Data: Data
 Day: Jour
 Dec: Déc.
 Decaf: Déca
+Deep learning: Apprentissage profond
 Density: Densité
 Design: Conception
 Desktop: Ordinateur
 Devi 2019: Devi 2019
 'Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null': 'Devi 2019 : RC 0,88 (IC 95 % 0,41-1,89), poids 0 % · franchit la valeur nulle'
 Differential expression: Expression différentielle
+Dimensionality reduction: Réduction de dimension
 Direct: Direct
 Discovery: Cadrage
 Distance east (km): Distance vers l'est (km)
@@ -205,7 +236,11 @@ Distribution of Student Exam Scores: Distribution des notes d'examen
 Distribution of session duration: Distribution de la durée des sessions
 Distribution shape by group: Forme de la distribution par groupe
 Diverging choropleth: Choroplèthe divergente
+Docs: Docs
 Dog: Chien
+? Dot-density map of metropolitan France. Each dot is 25,000 residents, scattered at random inside the department they live in and coloured by macro-region. Dots crowd around Paris and along the Atlantic and Mediterranean coasts; the rural diagonal from the Ardennes to the Pyrenees stays nearly empty. About 65 million residents in total.
+: Carte par points de la France métropolitaine. Chaque point représente 25 000 habitants, dispersés au hasard dans leur département et colorés par macro-région. Les points se pressent autour de Paris et le long des côtes atlantique et méditerranéenne ; la diagonale rurale des Ardennes aux Pyrénées reste presque vide. Environ 65 millions d'habitants au total.
+Dots randomly placed within each department, not at real addresses · illustrative figures · equal-area projection: Points placés au hasard dans chaque département, pas à des adresses réelles · données illustratives · projection à aires égales
 Down: Sous-exprimé
 ? Each curve turns one bird's four body measurements into an Andrews series; bold lines are the species medians. Illustrative data.
 : Chaque courbe transforme les quatre mesures corporelles d'un oiseau en une série d'Andrews ; les lignes en gras sont les médianes par espèce. Données illustratives.
@@ -238,6 +273,8 @@ F1 0.2: F1 0,2
 F1 0.4: F1 0,4
 F1 0.6: F1 0,6
 F1 0.8: F1 0,8
+FAMILY: FAMILLE
+FIELD: DOMAINE
 False positive rate: Taux de faux positifs
 Fast-charge time: Temps de charge rapide
 Fast-charge time (min): Temps de charge rapide (min)
@@ -247,6 +284,8 @@ Female: Femmes
 ? Five key performance indicators drawn as bullet graphs. Each row has three shaded qualitative bands (poor, satisfactory, good), a dark measure bar for the value reached, and an orange tick for the target. 2 of 5 metrics met or beat their target this quarter; trial signups and p95 latency fell short.
 : Cinq indicateurs clés dessinés en graphiques à puce. Chaque ligne comporte trois plages qualitatives ombrées (faible, correct, bon), une barre de mesure foncée pour la valeur atteinte et un repère orange pour la cible. 2 des 5 indicateurs ont atteint ou dépassé leur cible ce trimestre ; les inscriptions à l'essai et la latence p95 sont restées en deçà.
 Floor area (m²): Surface (m²)
+? 'Force-directed node-link diagram of a microservice call graph. Each node is a service, coloured by owning team and sized by how many other services call it. Edges join services that call each other. The Auth service is the largest node: nearly every checkout, order and profile path calls it, so a stall in Auth cascades across the whole store. Hover or focus any service to highlight only the services it talks to.'
+: 'Diagramme nœuds-liens à forces d''un graphe d''appels de microservices. Chaque nœud est un service, coloré par équipe propriétaire et dimensionné par le nombre d''autres services qui l''appellent. Les arêtes relient les services qui s''appellent. Le service Auth est le plus gros nœud : presque tous les parcours de paiement, de commande et de profil l''appellent, donc un blocage d''Auth se propage à toute la boutique. Survolez ou ciblez un service pour ne mettre en évidence que les services auxquels il parle.'
 'Forest plot: home blood-pressure telemonitoring raises the odds of reaching target': 'Forest plot : la télésurveillance de la pression artérielle à domicile augmente les chances d''atteindre la cible'
 Four small world choropleths, one per year, sharing frozen class breaks so panels are comparable.: Quatre petites cartes choroplèthes mondiales, une par année, partageant des seuils de classes figés pour rester comparables.
 Four years, one scale: Quatre années, une seule échelle
@@ -255,11 +294,16 @@ Fournier 2021: Fournier 2021
 'Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null': 'Fournier 2021 : RC 1,12 (IC 95 % 0,71-1,77), poids 2 % · franchit la valeur nulle'
 Fox: Renard
 Frequency (Hz): Fréquence (Hz)
+Fresh & health: Frais & santé
+Fresh produce — Fresh & health: Produits frais — Frais & santé
 Fri: Ven
 Friday: Vendredi
+Frozen ready-meals — Unclustered: Plats préparés surgelés — Non regroupé
+Fulfilment: Logistique
 GDF5: GDF5
 GDF5 — chr20:25,600,000 · p = 10.0×10⁻¹⁹: GDF5 · chr20:25 600 000 · p = 10,0×10⁻¹⁹
 GDP per capita (k$): PIB par habitant (k$)
+Gaussian processes: Processus gaussiens
 ? 'Genome-wide association study of adult height: dozens of loci across many chromosomes clear significance, so the signal is spread wide'
 : 'Étude d''association pangénomique de la taille adulte : des dizaines de loci sur de nombreux chromosomes franchissent le seuil de significativité, le signal est donc largement réparti'
 Gentoo: Papou
@@ -269,6 +313,7 @@ Good: Bon
 Gradient boosting flags fraud far more precisely: Le gradient boosting signale la fraude bien plus précisément
 Gradient boosting flags fraud far more precisely than the logistic baseline: Le gradient boosting signale la fraude bien plus précisément que la régression logistique de référence
 Gradient-boosted: Gradient boosting
+Gradient-boosted trees: Arbres à gradient boosté
 'Gradient-boosted — shipped (max-F1) operating point: recall 86%, precision 89%, F1 0.88': 'Gradient boosting · point de fonctionnement retenu (F1 max) : rappel 86 %, précision 89 %, F1 0,88'
 'Gradient-boosted: average precision 0.93': 'Gradient boosting : précision moyenne 0,93'
 Grant 2022: Grant 2022
@@ -293,7 +338,6 @@ Height: Hauteur
 Height is written across the whole genome: La taille est inscrite dans tout le génome
 High: Élevée
 Hip-Hop / R&B: Hip-Hop / R&B
-Hip-Hop / R&amp;B: Hip-Hop / R&amp;B
 Hip-Hop overtakes Rock as streaming reshapes the charts: Le hip-hop dépasse le rock à mesure que le streaming redessine les classements
 ? 'Horizon chart: one banded, folded area row per database node. Blue bands rise above each node''s daily-mean CPU, red bands fall below; deeper, taller colour means a bigger swing. db-01 shows a deep blue spike overnight from a batch job.'
 : 'Graphique d''horizon : une bande d''aire pliée par nœud de base de données. Les bandes bleues s''élèvent au-dessus de la moyenne quotidienne du CPU de chaque nœud, les bandes rouges passent en dessous ; une couleur plus foncée et plus haute signifie une variation plus forte. db-01 montre un pic bleu foncé pendant la nuit dû à un traitement par lot.'
@@ -303,6 +347,8 @@ Hour of day: Heure de la journée
 Hourly CPU utilisation vs. each node&#8217;s own daily mean, one horizon row per node: Utilisation CPU horaire face à la moyenne quotidienne de chaque nœud, une bande d'horizon par nœud
 Hourly CPU utilisation vs. each node’s own daily mean, one horizon row per node: Utilisation CPU horaire face à la moyenne quotidienne de chaque nœud, une bande d'horizon par nœud
 Hours to first response: Heures avant la première réponse
+Household staples: Produits de base
+Hover or focus any topic to trace its path back to the root: Survolez ou ciblez un sujet pour retracer son chemin jusqu'à la racine
 How many users each combination of contact channels reaches: Combien d'utilisateurs chaque combinaison de canaux de contact atteint
 Illustrative 3D surface: Surface 3D illustrative
 Illustrative connection map: Carte de liaisons illustrative
@@ -314,6 +360,7 @@ Illustrative data, 2000–2024: Données illustratives, 2000-2024
 Index — same class breaks across all panels: Indice · mêmes seuils de classes sur tous les panneaux
 Internal resistance: Résistance interne
 Internal resistance (mΩ): Résistance interne (mΩ)
+Inventory: Stock
 Item: Élément
 Jan: Janv.
 Jul: Juil.
@@ -326,14 +373,19 @@ Latin: Latino
 Launch: Lancement
 Licensing: Licences
 Life expectancy: Espérance de vie
+Linear & ridge: Linéaire & ridge
 Linear fit with 95% confidence band: Ajustement linéaire, bande de confiance à 95 %
 Lisbon: Lisbonne
 Logistic baseline: Régression logistique
 'Logistic baseline — shipped (max-F1) operating point: recall 36%, precision 21%, F1 0.27': 'Régression logistique · point de fonctionnement retenu (F1 max) : rappel 36 %, précision 21 %, F1 0,27'
 'Logistic baseline: average precision 0.20': 'Régression logistique : précision moyenne 0,20'
+Logistic regression: Régression logistique
 Los Angeles: Los Angeles
 'Los Angeles: 4 cyclists per 100 commuters': 'Los Angeles : 4 cyclistes pour 100 actifs'
 Low: Faible
+METHOD: MÉTHODE
+Machine learning: Apprentissage automatique
+Macro-region: Macro-région
 Madrid: Madrid
 Magnitude: Norme
 Male: Hommes
@@ -345,9 +397,12 @@ May: Mai
 Mean daily low to mean daily high, degrees Celsius, 30-year climate normal: De la moyenne des minima à la moyenne des maxima quotidiens, en degrés Celsius, normale climatique sur 30 ans
 Mean reaction time (ms): Temps de réaction moyen (ms)
 Mean with 95% interval: Moyenne avec intervalle à 95 %
+Mediterranean South: Sud méditerranéen
+Merge dissimilarity: Dissimilarité de fusion
 ? Meta-analysis forest plot of 8 randomised trials. Each row shows a trial’s odds ratio for reaching the blood-pressure target as a box (area ∝ study weight) with a 95% confidence-interval whisker, on a logarithmic axis with a null rule at 1.0. The pooled random-effects diamond is centred at 1.44 (95% CI 1.26 to 1.64), clearly to the right of the null, so the programme increases the odds of reaching target overall.
 : Forest plot de méta-analyse de 8 essais randomisés. Chaque ligne montre le rapport de cotes d'un essai pour atteindre la cible tensionnelle sous forme de boîte (aire ∝ poids de l'étude) avec une moustache d'intervalle de confiance à 95 %, sur un axe logarithmique avec une ligne nulle à 1,0. Le losange groupé en effets aléatoires est centré sur 1,44 (IC 95 % 1,26 à 1,64), nettement à droite de la valeur nulle, donc le programme augmente globalement les chances d'atteindre la cible.
 Mobile: Mobile
+Mobile BFF: BFF mobile
 Mobile app: Appli mobile
 'Mobile app only: 24k users': 'Appli mobile seule : 24k utilisateurs'
 'Mobile app: 117k monthly-active users total': 'Appli mobile : 117k utilisateurs actifs mensuels au total'
@@ -376,35 +431,43 @@ New revenue: Nouveau revenu
 No database wins on every front: Aucune base de données ne gagne sur tous les fronts
 No-skill baseline (prevalence 3%): Référence sans compétence (prévalence 3 %)
 Nobody drinks the decaf: Personne ne boit le déca
+Node size ∝ how many services call it · hover or focus a service to trace its calls: Taille du nœud ∝ nombre de services qui l'appellent · survolez ou ciblez un service pour retracer ses appels
 Normal Q-Q plot: Diagramme quantile-quantile normal
 Normal distribution fitted to 1,840 exam results; shaded area = one standard deviation around the mean: Loi normale ajustée sur 1 840 résultats d'examen ; zone grisée = un écart-type autour de la moyenne
 North: Nord
+Notifications: Notifications
 Nov: Nov.
 Now 2022: Aujourd'hui 2022
 OR (95% CI): RC (IC 95 %)
 Observed churn rate: Taux d'attrition observé
 Oct: Oct.
 Odds ratio for reaching BP target (log scale, higher is better): Rapport de cotes pour atteindre la cible tensionnelle (échelle log, plus haut est meilleur)
+One dot = 25,000 residents · people ring the coasts and pack the Paris basin, leaving the rural diagonal bare: Un point = 25 000 habitants · la population cerne les côtes et se masse dans le bassin parisien, laissant la diagonale rurale vide
 Ops: Exploitation
+Orders: Commandes
 Organic search: Recherche organique
 'Overconfident:': 'Trop confiant :'
 Overlapping skills among data professionals: Compétences croisées des professionnels de la donnée
+Owning team: Équipe propriétaire
 PLAG1: PLAG1
 PLAG1 — chr8:88,450,000 · p = 10.0×10⁻²⁵: PLAG1 · chr8:88 450 000 · p = 10,0×10⁻²⁵
 Paid search: Recherche payante
 Pair plot of four battery-cell properties by chemistry: Graphique en paires de quatre propriétés de cellules, par chimie
 Pair plot of four measured properties across a fleet of lithium-ion cells. The chemistries separate on every: Graphique en paires de quatre propriétés mesurées sur un parc de cellules lithium-ion. Les chimies se séparent sur chaque
-Payments: Payments
+Paper goods — Household staples: Papeterie — Produits de base
+Payments: Paiements
 Per-region mini bars, Equal-Earth basemap.: Mini-barres par région, fond Equal Earth.
 Per-region pies, Equal-Earth basemap.: Camemberts par région, fond Equal Earth.
 Perfect calibration: Calibration parfaite
 Perfect model: Modèle parfait
+Pet food — Household staples: Aliments pour animaux — Produits de base
 ? 'Pictorial ISOTYPE chart: each row repeats a person icon, one figure per five cyclists out of every hundred commuters; the last figure in a row is clipped to show the remainder. Copenhagen 62; Amsterdam 48; Tokyo 27; Berlin 18; Los Angeles 4 per 100. Copenhagen leads with 62; Los Angeles trails at 4.'
 : 'Graphique pictural ISOTYPE : chaque ligne répète une icône de personne, une figure pour cinq cyclistes sur cent actifs ; la dernière figure d''une ligne est rognée pour montrer le reste. Copenhague 62 ; Amsterdam 48 ; Tokyo 27 ; Berlin 18 ; Los Angeles 4 pour 100. Copenhague est en tête avec 62 ; Los Angeles ferme la marche à 4.'
 Platform: Platform
 Platform reviewed: Relectures par Platform
 Platform reviews everyone's code and is rarely reviewed back: La plateforme relit le code de tout le monde et est rarement relue en retour
 'Point size = predictions in bin:': 'Taille du point = prédictions dans la classe :'
+Policy gradients: Gradients de politique
 Pooled (random effects): Groupé (effets aléatoires)
 Pooled odds ratio 1.44 (95% CI 1.26–1.64) across 8 randomised trials · I² = 34% · illustrative data: Rapport de cotes groupé 1,44 (IC 95 % 1,26-1,64) sur 8 essais randomisés · I² = 34 % · données illustratives
 Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%: RC groupé en effets aléatoires 1,44 (IC 95 % 1,26-1,64), I² = 34 %
@@ -430,7 +493,9 @@ Predicted 95%, observed 82% (gap -12%, over-states); 218 predictions: Prédit 95
 Predicted probability of churn: Probabilité d'attrition prédite
 Predictions: Prédictions
 Price: Prix
+Private-label lines clustered by co-purchase similarity · illustrative data: Gammes de marque distributeur regroupées par similarité d'achat conjoint · données illustratives
 Probability density: Densité de probabilité
+Profiles: Profils
 Project schedule: Planning du projet
 Python: Python
 'Python: 619 of 814 (76%)': 'Python : 619 sur 814 (76 %)'
@@ -440,6 +505,7 @@ Q3: T3
 Q3 growth scorecard as five bullet graphs: Tableau de bord de croissance du T3 en cinq graphiques à puce
 Q4: T4
 QA: Recette
+Quarterly infrastructure spend by team (thousands of USD) — Illustrative data: Dépenses d'infrastructure trimestrielles par équipe (milliers d'USD) · données illustratives
 Query speed: Vitesse des requêtes
 ROC curve — AUC 0.86: Courbe ROC · AUC 0,86
 ? 'Radar chart comparing three managed cloud databases — Aurora, Cloud SQL and Cosmos — across six criteria arranged as spokes: query speed, auto-scaling, ecosystem, ease of use, global reach and price, each scored 0 to 100 where the outer ring is best. Aurora forms a tall profile on query speed and auto-scaling; Cloud SQL peaks on ecosystem and ease of use; Cosmos reaches furthest on global reach and price. The three profiles cross, so no single database dominates.'
@@ -450,8 +516,12 @@ Random baseline: Référence aléatoire
 Rated cycle life: Durée de vie nominale
 Rated cycle life (cycles): Durée de vie nominale (cycles)
 Recall — share of fraud caught → better: Rappel · part des fraudes détectées → meilleur
+? 'Rectangular dendrogram from average-linkage hierarchical clustering of ten grocery product lines. The vertical axis is the merge dissimilarity (0 = identical basket behaviour, 1 = uncorrelated). Cutting the tree at 0.46 yields three clusters: fresh and health, household staples, and treats. Frozen ready-meals stays unclustered, joining only at the root. Each cluster is set apart by its branch grouping, not by colour alone, so it reads in greyscale and for colour-blind viewers.'
+: 'Dendrogramme rectangulaire d''un regroupement hiérarchique à lien moyen de dix gammes de produits d''épicerie. L''axe vertical est la dissimilarité de fusion (0 = comportement de panier identique, 1 = sans corrélation). Couper l''arbre à 0,46 donne trois grappes : frais et santé, produits de base et gourmandises. Les plats préparés surgelés restent non regroupés, ne rejoignant qu''à la racine. Chaque grappe se distingue par son groupement de branches, pas par la couleur seule, pour se lire en niveaux de gris et par les personnes daltoniennes.'
 Referral: Référence
 Region: Région
+Regression: Régression
+Reinforcement: Par renforcement
 ? Reliability diagram (calibration curve) for an overconfident customer-churn classifier. The horizontal axis is the model’s predicted probability of churn; the vertical axis is the observed churn rate in each bin. A dashed 45-degree line marks perfect calibration, ringed by a faint grey tolerance band. The reliability curve sags below the diagonal at the confident end, so the model’s high-probability calls happen less often than it claims (overconfident, labelled in red on the right); Expected Calibration Error 10%. At the timid end it floats above the diagonal, so it under-states churn (underconfident, labelled in blue on the left). Each point is sized by how many predictions fell in the bin, and a histogram below shows where the model spends its predictions. Illustrative data.
 : Diagramme de fiabilité (courbe de calibration) pour un classifieur d'attrition client trop confiant. L'axe horizontal est la probabilité d'attrition prédite ; l'axe vertical est le taux d'attrition observé dans chaque classe. Une ligne pointillée à 45 degrés marque la calibration parfaite, entourée d'une fine bande de tolérance grise. La courbe s'affaisse sous la diagonale du côté confiant, donc les prédictions à forte probabilité se réalisent moins souvent qu'annoncé (trop confiant, en rouge à droite) ; erreur de calibration attendue 10 %. Du côté timide, elle flotte au-dessus de la diagonale, donc le modèle sous-estime l'attrition (pas assez confiant, en bleu à gauche). Chaque point est dimensionné selon le nombre de prédictions dans la classe, et un histogramme en dessous montre où le modèle place ses prédictions. Données illustratives.
 'Reliability diagram: confident “90%” churn calls happen far less': 'Diagramme de fiabilité : les prédictions d''attrition assurées à « 90 % » se réalisent bien moins'
@@ -469,6 +539,7 @@ Revenue share by type, each quarter: Part du revenu par type, par trimestre
 Revenue type: Type de revenu
 Revenue, activation and churn beat plan; trial signups and API latency still trail the goal &#183; illustrative: Revenu, activation et attrition dépassent le plan ; les essais et la latence API restent en deçà de l'objectif · illustratif
 Revenue, activation and churn beat plan; trial signups and API latency still trail the goal · illustrative: Revenu, activation et attrition dépassent le plan ; les essais et la latence API restent en deçà de l'objectif · illustratif
+Rhône–Alps East: Rhône-Alpes Est
 Rock: Rock
 Russia +31: Russie +31
 SMB: PME
@@ -490,6 +561,7 @@ Sep: Sept.
 Series: Série
 Serre-Ponçon lake · usable capacity on 1 July · 10-year median 68 % · illustrative reading: Lac de Serre-Ponçon · capacité utile au 1er juillet · médiane décennale 68 % · relevé illustratif
 Service time (minutes): Temps de service (minutes)
+Service-to-service calls in an online-store backend — illustrative data: Appels entre services dans le backend d'une boutique en ligne · données illustratives
 Services: Services
 Session duration (s): Durée de session (s)
 Sessions by weekday and hour: Sessions par jour et par heure
@@ -502,6 +574,7 @@ Share of customers contacted (ranked by model): Part des clients contactés (cla
 Share of recorded-music streaming by genre, band thickness = share of listening that year: Part du streaming de musique enregistrée par genre, épaisseur de la bande = part d'écoute cette année-là
 Share of revenue: Part du revenu
 Share of visits by source · illustrative data: Part des visites par source · données illustratives
+Shipping: Expédition
 Short-time Fourier transform of a synthesised clip — brighter = louder · Illustrative data: Transformée de Fourier à court terme d'un extrait synthétisé · plus clair = plus fort · données illustratives
 Signed up: Inscription
 Significance: Significativité
@@ -510,6 +583,7 @@ Skills held by 1,000 surveyed data professionals · counts are people per region
 Sleep the night before (hours): Sommeil la veille (heures)
 Small multiples: Petits multiples
 Social: Réseaux sociaux
+Soft drinks — Treats: Sodas — Gourmandises
 Software: Logiciels
 South: Sud
 Species: Espèce
@@ -520,8 +594,9 @@ Start 1990: Début 1990
 Step: Palier
 Stockholm: Stockholm
 Storage: Stockage
-? 'Streamgraph on a wiggle baseline: recorded-music streaming share by genre, 2000 to 2024. Each ribbon''s thickness is its share of listening that year. The Hip-Hop / R&amp;B ribbon swells to become the widest band while the Rock ribbon thins, as the format shifts from the compact disc to on-demand streaming. Illustrative data.'
-: 'Streamgraph sur une ligne de base ondulée : part du streaming de musique enregistrée par genre, de 2000 à 2024. L''épaisseur de chaque ruban est sa part d''écoute cette année-là. Le ruban Hip-Hop / R&amp;B enfle pour devenir la bande la plus large tandis que le ruban Rock s''amincit, à mesure que le format passe du disque compact au streaming à la demande. Données illustratives.'
+Storefront: Storefront
+? 'Streamgraph on a wiggle baseline: recorded-music streaming share by genre, 2000 to 2024. Each ribbon''s thickness is its share of listening that year. The Hip-Hop / R&B ribbon swells to become the widest band while the Rock ribbon thins, as the format shifts from the compact disc to on-demand streaming. Illustrative data.'
+: 'Streamgraph sur une ligne de base ondulée : part du streaming de musique enregistrée par genre, de 2000 à 2024. L''épaisseur de chaque ruban est sa part d''écoute cette année-là. Le ruban Hip-Hop / R&B enfle pour devenir la bande la plus large tandis que le ruban Rock s''amincit, à mesure que le format passe du disque compact au streaming à la demande. Données illustratives.'
 ? Streamplot of a synthetic surface-wind field. Curved lines are streamlines everywhere tangent to the wind; arrowheads mark the flow direction and each line's colour runs from pale blue for a light breeze to deep navy for the fastest wind. A steady westerly sweeps in from the left, and a cyclonic low-pressure centre spins the flow counter-clockwise into a tight spiral offshore.
 : Tracé de lignes de courant d'un champ de vent de surface synthétique. Les courbes sont des lignes de courant partout tangentes au vent ; les pointes de flèche indiquent le sens du flux et la couleur de chaque ligne va du bleu pâle pour une brise légère au bleu marine profond pour le vent le plus fort. Un flux d'ouest régulier arrive par la gauche, et un centre dépressionnaire cyclonique enroule le flux dans le sens antihoraire en une spirale serrée au large.
 Subscribed: Abonnement
@@ -529,12 +604,18 @@ Subscriptions: Abonnements
 Suburb: Périphérie
 Sun: Dim
 Sunday: Dimanche
+Supervised: Supervisé
+Supervised learning carries the deepest branch, reaching all the way down to named algorithms.: L'apprentissage supervisé porte la branche la plus profonde, descendant jusqu'aux algorithmes nommés.
+Support-vector machines: Machines à vecteurs de support
 'Surface wind field over the coast: a westerly airflow wraps into an offshore low': 'Champ de vent de surface sur la côte : un flux d''ouest s''enroule dans une dépression au large'
 Surface winds over the coast · streamlines follow the flow, darker means faster · illustrative field: Vents de surface sur la côte · les lignes de courant suivent le flux, plus foncé signifie plus rapide · champ illustratif
 Survival: Survie
+TASK: TÂCHE
 Team: Équipe
 Telemonitoring helps patients hit their BP target: La télésurveillance aide les patients à atteindre leur cible tensionnelle
 Temperature (°C): Température (°C)
+That is where the course spends most weeks. Illustrative outline.: C'est là que le cours passe le plus de semaines. Plan illustratif.
+The Data team's cloud bill is running away from everyone else: La facture cloud de l'équipe Data s'envole loin devant les autres
 The United Kingdom grew its economy while cutting carbon per person nearly in half: Le Royaume-Uni a fait croître son économie tout en réduisant de près de moitié le carbone par habitant
 'The churn model is overconfident:': 'Le modèle d''attrition est trop confiant :'
 'The churn model is overconfident: its high-risk calls miss the diagonal': 'Le modèle d''attrition est trop confiant : ses prédictions à haut risque ratent la diagonale'
@@ -544,12 +625,15 @@ The waterline is the fill level; the dashed line is the 10-year seasonal median.
 Theoretical quantiles: Quantiles théoriques
 Three battery chemistries, three clean clusters: Trois chimies de batterie, trois grappes nettes
 Three managed cloud databases scored 0–100 across six buyer criteria · illustrative data: Trois bases de données cloud managées notées de 0 à 100 sur six critères d'achat · données illustratives
+Three natural shelves emerge from how households shop: Trois rayons naturels émergent de la façon dont les ménages font leurs courses
 Three of five targets cleared in Q3: Trois cibles sur cinq atteintes au T3
 Three penguin species trace three Fourier signatures: Trois espèces de manchots tracent trois signatures de Fourier
 ? Three-set Venn diagram of skills held by 1,000 surveyed data professionals. Python total 619; SQL total 539; Cloud total 456. The central region — fluent in all three — is the largest at 214, and Python plus SQL together add another 188.
 : Diagramme de Venn à trois ensembles des compétences de 1 000 professionnels de la donnée interrogés. Python 619 au total ; SQL 539 ; Cloud 456. La région centrale, à l'aise dans les trois, est la plus grande avec 214, et Python et SQL réunis en ajoutent 188.
 Thu: Jeu
 Thursday: Jeudi
+? 'Tidy node-link tree of a machine-learning course taxonomy. The root, Machine learning, splits into four families: Supervised, Unsupervised, Deep learning, and Reinforcement. Supervised is the deepest and widest branch, reaching individual algorithms such as gradient-boosted trees and Gaussian processes. Each family is tinted its own color.'
+: 'Arbre nœuds-liens soigné de la taxonomie d''un cours d''apprentissage automatique. La racine, Apprentissage automatique, se divise en quatre familles : Supervisé, Non supervisé, Apprentissage profond et Par renforcement. Le Supervisé est la branche la plus profonde et la plus large, atteignant des algorithmes précis comme les arbres à gradient boosté et les processus gaussiens. Chaque famille a sa propre teinte.'
 Tier 1: Niveau 1
 Tier 2: Niveau 2
 Time (seconds): Temps (secondes)
@@ -557,8 +641,10 @@ Tokyo: Tokyo
 'Tokyo: 27 cyclists per 100 commuters': 'Tokyo : 27 cyclistes pour 100 actifs'
 Top 20% contacted → 63% of churners reached (3.16× better than random): Top 20 % contactés → 63 % des partants touchés (3,16× mieux que le hasard)
 Top 20% → 63% of churners: Top 20 % → 63 % des partants
+Transformers: Transformeurs
 Transit: Transports
 Treatment: Traitement
+Treats: Gourmandises
 Trial: Essai
 Trial signups: Inscriptions à l'essai
 'Trial signups: 1180 /wk — 84% of target (1400 /wk)': 'Inscriptions à l''essai : 1180 /sem · 84 % de la cible (1400 /sem)'
@@ -568,10 +654,12 @@ Tuesday: Mardi
 Two in five still commute by car: Deux personnes sur cinq vont au travail en voiture
 Two-variable choropleth with a 3x3 color key, Equal-Earth basemap.: Choroplèthe à deux variables avec une légende de couleurs 3×3, fond Equal Earth.
 Two-variable key: Légende à deux variables
+Unclustered: Non regroupé
 'Underconfident:': 'Pas assez confiant :'
 'United Kingdom, 1990–2022: output per person up ~66% while carbon per person fell ~53% · illustrative': 'Royaume-Uni, 1990-2022 : production par habitant en hausse d''environ 66 % tandis que le carbone par habitant a chuté d''environ 53 % · illustratif'
 United States +2: États-Unis +2
 Units: Unités
+Unsupervised: Non supervisé
 Up: Sur-exprimé
 ? 'UpSet plot. Top: a bar chart of intersection sizes, one bar per observed combination of reach channels, sorted largest first. Below each bar, a dot matrix marks which of the four channels (Email, Mobile app, Web app, SMS) that combination includes; dots in a column are joined by a line. Left: a bar chart of each channel''s total reach. The largest single pocket is users reachable only by Email (62k).'
 : 'Diagramme UpSet. En haut : un diagramme en barres des tailles d''intersections, une barre par combinaison observée de canaux, triées de la plus grande à la plus petite. Sous chaque barre, une matrice de points indique lesquels des quatre canaux (e-mail, appli mobile, appli web, SMS) la combinaison inclut ; les points d''une colonne sont reliés par une ligne. À gauche : un diagramme en barres de la portée totale de chaque canal. La plus grande poche est celle des utilisateurs joignables uniquement par e-mail (62k).'
@@ -588,6 +676,8 @@ Visits (thousands): Visites (milliers)
 Walk: Marche
 Wave height across a still pond, one second after a single drop: Hauteur des vagues sur un étang calme, une seconde après une goutte unique
 Wealth, longevity, and population: Richesse, longévité et population
+Web: Web
+Web App: Appli web
 Web app: Appli web
 'Web app only: 11k users': 'Appli web seule : 11k utilisateurs'
 'Web app: 75k monthly-active users total': 'Appli web : 75k utilisateurs actifs mensuels au total'
@@ -595,6 +685,8 @@ Web-server CPU load is running hot at the traffic peak: La charge CPU du serveur
 Wed: Mer
 Wednesday: Mercredi
 Week: Semaine
+Where the French actually live: Où vivent vraiment les Français
+Where the French actually live — one dot per 25,000 residents: Où vivent vraiment les Français · un point pour 25 000 habitants
 Who gained, who lost: Qui gagne, qui perd
 Wind speed (km/h): Vitesse du vent (km/h)
 World bar-glyph map: Carte du monde à barres
@@ -603,6 +695,7 @@ World bubble map: Carte du monde à bulles
 : Choroplèthe mondiale de la variation nette sur une échelle divergente rouge-blanc-bleu centrée sur zéro, les pays sans donnée en gris et quatre pays annotés directement.
 World pie-glyph map: Carte du monde à camemberts
 Year: Année
+Yoghurt & dairy — Fresh & health: Yaourts & produits laitiers — Frais & santé
 ZBTB38: ZBTB38
 ZBTB38 — chr3:108,900,000 · p = 10.0×10⁻³³: ZBTB38 · chr3:108 900 000 · p = 10,0×10⁻³³
 above mean (deeper = bigger swing): au-dessus de la moyenne (plus foncé = variation plus forte)
@@ -611,6 +704,7 @@ app-07 · 12:40 UTC · 1-minute average · illustrative reading: app-07 · 12:40
 bass drone: bourdon de basse
 batch: lot
 below mean: sous la moyenne
+cut @ 0.46 → 3 clusters: coupe à 0,46 → 3 grappes
 dB: dB
 db-01: db-01
 db-01's nightly batch is the fleet's biggest CPU swing: Le lot nocturne de db-01 est la plus forte variation CPU du parc
@@ -632,8 +726,10 @@ genome-wide significance · p = 5×10⁻⁸: significativité pangénomique · p
 given vs received: données vs reçues
 growth without the carbon: la croissance sans le carbone
 'here the path pivots down:': 'ici la trajectoire bascule vers le bas :'
+higher spend (top-cap number = $ thousands): dépense plus élevée (nombre au sommet = milliers de $)
 its high-risk calls miss the diagonal: ses prédictions à haut risque ratent la diagonale
 low-pressure centre: centre dépressionnaire
+lower: plus faible
 measure: mesure
 measured in $k: mesuré en k$
 measured in %: mesuré en %
@@ -664,6 +760,7 @@ x1 = bill length: x1 = longueur du bec
 x2 = bill depth: x2 = épaisseur du bec
 x3 = flipper length: x3 = longueur de la nageoire
 x4 = body mass: x4 = masse corporelle
+Île-de-France & North: Île-de-France & Nord
 μ = 72.4: μ = 72,4
 π: π
 π/2: π/2

@@ -43,15 +43,15 @@ svg:has(.cause-other:hover) .cause-other, svg:has(.cause-other:focus) .cause-oth
 <line x1="470.0" y1="500.0" x2="135.00" y2="500.00" stroke="#E5E5EA" stroke-width="1.1"/>
 <line x1="470.0" y1="500.0" x2="179.88" y2="332.50" stroke="#E5E5EA" stroke-width="1.1"/>
 <line x1="470.0" y1="500.0" x2="302.50" y2="209.88" stroke="#E5E5EA" stroke-width="1.1"/>
-<text x="563.4" y="151.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Apr</text>
-<text x="725.3" y="244.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">May</text>
-<text x="818.7" y="406.6" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Jun</text>
-<text x="818.7" y="593.4" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Jul</text>
-<text x="725.3" y="755.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Aug</text>
-<text x="563.4" y="848.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Sep</text>
-<text x="376.6" y="848.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Oct</text>
-<text x="214.7" y="755.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Nov</text>
-<text x="121.3" y="593.4" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Dec</text>
+<text x="563.4" y="151.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Avr.</text>
+<text x="725.3" y="244.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Mai</text>
+<text x="818.7" y="406.6" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Juin</text>
+<text x="818.7" y="593.4" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Juil.</text>
+<text x="725.3" y="755.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Août</text>
+<text x="563.4" y="848.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="start" dominant-baseline="middle">Sept.</text>
+<text x="376.6" y="848.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Oct.</text>
+<text x="214.7" y="755.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Nov.</text>
+<text x="121.3" y="593.4" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Déc.</text>
 <text x="121.3" y="406.6" font-size="16" font-weight="700" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Jan '55</text>
 <text x="214.7" y="244.7" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Feb '55</text>
 <text x="376.6" y="151.3" font-size="16" font-weight="500" fill="#6E6E73" text-anchor="end" dominant-baseline="middle">Mar '55</text>
