@@ -11,7 +11,15 @@ $k: k$
 (mΩ): (mΩ)
 +1σ (81.5): +1σ (81,5)
 /wk: /sem
+10% in 2022: 10 % en 2022
+10% in 2024: 10 % en 2024
 1017 predictions near 4%: 1017 prédictions autour de 4 %
+12% in 2022: 12 % en 2022
+12% in 2024: 12 % en 2024
+13% in 2022: 13 % en 2022
+13% in 2024: 13 % en 2024
+14% in 2022: 14 % en 2022
+14% in 2024: 14 % en 2024
 '1990: 28.0k US dollars per person, 10.0 tonnes CO2 per person': '1990 : 28,0k dollars US par habitant, 10,0 tonnes de CO2 par habitant'
 '1995: 30.2k US dollars per person, 10.4 tonnes CO2 per person': '1995 : 30,2k dollars US par habitant, 10,4 tonnes de CO2 par habitant'
 1k: 1k
@@ -23,11 +31,18 @@ $k: k$
 '2022: 46.6k US dollars per person, 4.7 tonnes CO2 per person': '2022 : 46,6k dollars US par habitant, 4,7 tonnes de CO2 par habitant'
 218 predictions near 95%: 218 prédictions autour de 95 %
 245 predictions near 75%: 245 prédictions autour de 75 %
+25% in 2022: 25 % en 2022
+25% in 2024: 25 % en 2024
 251 predictions near 85%: 251 prédictions autour de 85 %
 263 predictions near 65%: 263 prédictions autour de 65 %
 2k: 2k
+3.16× better than random: 3,16× mieux que le hasard
 305 predictions near 55%: 305 prédictions autour de 55 %
+33% in 2022: 33 % en 2022
+33% in 2024: 33 % en 2024
 334 predictions near 45%: 334 prédictions autour de 45 %
+34% in 2022: 34 % en 2022
+34% in 2024: 34 % en 2024
 356 predictions near 35%: 356 prédictions autour de 35 %
 ? '3D wireframe surface: a mesh of projected grid lines over a radially-symmetric ripple, one central peak ringed by decaying concentric waves. Nearer lines are darker blue and thicker; the lattice turns slowly so the solid shape reads on a flat page.'
 : 'Surface fil de fer 3D : un maillage de lignes projetées sur une ondulation à symétrie radiale, un pic central entouré de vagues concentriques qui s''amortissent. Les lignes proches sont d''un bleu plus foncé et plus épaisses ; le treillis tourne lentement pour que le volume se lise sur une page plane.'
@@ -38,10 +53,14 @@ $k: k$
 5 pts below normal: 5 pts sous la normale
 539 people: 539 personnes
 564 predictions near 15%: 564 prédictions autour de 15 %
+6% in 2022: 6 % en 2022
+6% in 2024: 6 % en 2024
 619 people: 619 personnes
 68% median: médiane 68 %
+73 vs 41: 73 vs 41
 90% of requests finish under 438 ms: 90 % des requêtes aboutissent sous 438 ms
 = 5 people per 100 commuters: = 5 personnes pour 100 actifs
+A churn model reaches most churners from a small fraction of the ranked list: Un modèle d'attrition touche la plupart des partants à partir d'une petite fraction de la liste classée
 ? A circular liquid-fill gauge shaped like a water tank. Wavy blue liquid fills the vessel to 63 percent of its height, with a bold percentage readout at the centre. A dashed line marks the ten-year seasonal median of 68 percent, which sits just above the current level.
 : Jauge circulaire à remplissage en forme de citerne. Un liquide bleu ondulé remplit la cuve à 63 pour cent de sa hauteur, avec un pourcentage en gras au centre. Une ligne pointillée marque la médiane saisonnière décennale de 68 pour cent, juste au-dessus du niveau actuel.
 A clear positive trend: Une tendance nettement positive
@@ -69,6 +88,7 @@ Amsterdam: Amsterdam
 ? 'Andrews curves: every penguin''s standardised bill length, bill depth, flipper length and body mass are encoded as a Fourier curve over t from minus pi to pi, coloured by species. Adélie in blue, Chinstrap in orange and Gentoo in green each form a distinct band, with the bold median curve of each species drawn on top.'
 : 'Courbes d''Andrews : la longueur du bec, l''épaisseur du bec, la longueur de la nageoire et la masse corporelle standardisées de chaque manchot sont encodées en une courbe de Fourier sur t de moins pi à pi, colorée par espèce. Les Adélie en bleu, les manchots à jugulaire en orange et les Papou en vert forment chacun une bande distincte, avec la courbe médiane de chaque espèce tracée en gras par-dessus.'
 Apr: Avr.
+Arc size ∝ a team's total reviews · ribbon width ∝ reviews exchanged · hover or focus a chord to trace it: Taille de l'arc ∝ total des relectures d'une équipe · largeur du ruban ∝ relectures échangées · survolez ou ciblez un accord pour le suivre
 Area: Surface
 Area-true proportional-symbol map, Equal-Earth basemap.: Carte en symboles proportionnels à l'aire exacte, fond Equal Earth.
 Arm: Bras
@@ -102,6 +122,7 @@ Build UI: Développer l'IHM
 Busy: Chargé
 Busy · of 100% capacity: Chargé · sur 100 % de capacité
 Cable: Câble
+Calling the riskiest 20% reaches 63% of churners: Contacter les 20 % les plus à risque touche 63 % des partants
 Car: Voiture
 Carbon per person (tonnes) ↑ dirtier: Carbone par habitant (tonnes) ↑ plus polluant
 Cars by class across four metrics: Voitures par classe sur quatre mesures
@@ -114,6 +135,8 @@ Checkout time by test variant: Temps de paiement par variante
 China -46: Chine −46
 Chinstrap: À jugulaire
 Chinstrap — 26 birds; bold line is the species median curve: À jugulaire · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
+? 'Chord diagram of code reviews exchanged between five engineering teams during one sprint. Each team owns an arc sized by its total review activity; each ribbon links two teams with a width proportional to the pull requests they reviewed for each other. The Platform team''s inbound reviews dwarf its outbound ones: it reviews nearly everyone''s code but few teams review Platform''s.'
+: 'Diagramme en accords des relectures de code échangées entre cinq équipes d''ingénierie sur un sprint. Chaque équipe possède un arc dimensionné par son activité totale de relecture ; chaque ruban relie deux équipes avec une largeur proportionnelle aux pull requests qu''elles se sont relues. Les relectures entrantes de l''équipe Platform écrasent ses relectures sortantes : elle relit le code de presque tout le monde mais peu d''équipes relisent celui de Platform.'
 Chromosome: Chromosome
 City: Ville
 Class: Classe
@@ -149,16 +172,22 @@ Cost (k$): Coût (k$)
 Costa 2018: Costa 2018
 'Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant': 'Costa 2018 : RC 1,31 (IC 95 % 1,06-1,62), poids 30 % · significatif'
 Count: Effectif
+Country: Country
 Critical: Critique
+Cross-team pull-request reviews over one sprint (illustrative data): Relectures de pull requests entre équipes sur un sprint (données illustratives)
 Cumulative distribution of request latency: Distribution cumulée de la latence
 Cumulative share: Part cumulée
 Cumulative state changes: Changements d'état cumulés
+? 'Cumulative-gain chart for a churn-prevention campaign (illustrative). The horizontal axis is the share of customers contacted, working down a list ranked by the model’s predicted churn risk; the vertical axis is the share of all churners reached. Three curves: a dashed grey diagonal is the random baseline (contacting X % reaches X % of churners); a thin green line is the perfect model, the ceiling, rising steeply then flattening once every churner is captured; and a thick blue line is the actual model, sitting between the two. The shaded blue band between the model and the diagonal is the value the model adds. A marker shows the operating point: contacting the riskiest 20 % reaches 63 % of churners, 3.16× better than random. Illustrative figures.'
+: 'Courbe de gain cumulé pour une campagne de prévention de l''attrition (illustrative). L''axe horizontal est la part des clients contactés, en descendant une liste classée par le risque d''attrition prédit ; l''axe vertical est la part de tous les partants touchés. Trois courbes : une diagonale grise pointillée est la référence aléatoire (contacter X % touche X % des partants) ; une fine ligne verte est le modèle parfait, le plafond, qui monte vite puis s''aplatit une fois tous les partants capturés ; et une épaisse ligne bleue est le modèle réel, entre les deux. La bande bleue ombrée entre le modèle et la diagonale est la valeur ajoutée par le modèle. Un repère montre le point de fonctionnement : contacter les 20 % les plus à risque touche 63 % des partants, 3,16× mieux que le hasard. Données illustratives.'
+'Cumulative-gain curve: churners reached vs share of the model-ranked base contacted': 'Courbe de gain cumulé : partants touchés selon la part de la base classée par le modèle contactée'
 Cups poured: Tasses servies
 Cycling to work, per 100 commuters, across five cities: Aller au travail à vélo, pour 100 actifs, dans cinq villes
 Cyclists per 100 commuters on a typical weekday · one figure = 5 people · illustrative: Cyclistes pour 100 actifs un jour de semaine type · une figure = 5 personnes · illustratif
 Daily activity: Activité quotidienne
 Daily price (open, high, low, close): Cours quotidien (ouverture, haut, bas, clôture)
-Data: Données
+Dance / Electronic: Dance / Électronique
+Data: Data
 Day: Jour
 Dec: Déc.
 Decaf: Déca
@@ -205,6 +234,10 @@ Eriksson 2020: Eriksson 2020
 Estimated density: Densité estimée
 Events: Événements
 Expected Calibration Error 10% · illustrative data: Erreur de calibration attendue 10 % · données illustratives
+F1 0.2: F1 0,2
+F1 0.4: F1 0,4
+F1 0.6: F1 0,6
+F1 0.8: F1 0,8
 False positive rate: Taux de faux positifs
 Fast-charge time: Temps de charge rapide
 Fast-charge time (min): Temps de charge rapide (min)
@@ -233,12 +266,18 @@ Gentoo: Papou
 Gentoo — 26 birds; bold line is the species median curve: Papou · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
 Global reach: Portée mondiale
 Good: Bon
+Gradient boosting flags fraud far more precisely: Le gradient boosting signale la fraude bien plus précisément
+Gradient boosting flags fraud far more precisely than the logistic baseline: Le gradient boosting signale la fraude bien plus précisément que la régression logistique de référence
+Gradient-boosted: Gradient boosting
+'Gradient-boosted — shipped (max-F1) operating point: recall 86%, precision 89%, F1 0.88': 'Gradient boosting · point de fonctionnement retenu (F1 max) : rappel 86 %, précision 89 %, F1 0,88'
+'Gradient-boosted: average precision 0.93': 'Gradient boosting : précision moyenne 0,93'
 Grant 2022: Grant 2022
 'Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant': 'Grant 2022 : RC 1,74 (IC 95 % 1,14-2,66), poids 4 % · significatif'
 Great-circle flow map on an Equal-Earth basemap, line width by volume; synthetic illustrative data.: Carte de flux en orthodromies sur fond Equal Earth, épaisseur selon le volume ; données synthétiques illustratives.
 Great-circle links, width by volume · synthetic O-D data (illustrative only): Liaisons orthodromiques, épaisseur selon le volume · données origine-destination synthétiques (illustratives)
 Group: Groupe
 Group B has the widest spread: Le groupe B est le plus dispersé
+Growth: Growth
 Growth went one way, carbon the other: La croissance d'un côté, le carbone de l'autre
 HMGA1: HMGA1
 HMGA1 — chr6:58,140,000 · p = 10.0×10⁻²⁸: HMGA1 · chr6:58 140 000 · p = 10,0×10⁻²⁸
@@ -253,6 +292,9 @@ Healthy: Sain
 Height: Hauteur
 Height is written across the whole genome: La taille est inscrite dans tout le génome
 High: Élevée
+Hip-Hop / R&B: Hip-Hop / R&B
+Hip-Hop / R&amp;B: Hip-Hop / R&amp;B
+Hip-Hop overtakes Rock as streaming reshapes the charts: Le hip-hop dépasse le rock à mesure que le streaming redessine les classements
 ? 'Horizon chart: one banded, folded area row per database node. Blue bands rise above each node''s daily-mean CPU, red bands fall below; deeper, taller colour means a bigger swing. db-01 shows a deep blue spike overnight from a batch job.'
 : 'Graphique d''horizon : une bande d''aire pliée par nœud de base de données. Les bandes bleues s''élèvent au-dessus de la moyenne quotidienne du CPU de chaque nœud, les bandes rouges passent en dessous ; une couleur plus foncée et plus haute signifie une variation plus forte. db-01 montre un pic bleu foncé pendant la nuit dû à un traitement par lot.'
 Hot: Chaud
@@ -267,6 +309,8 @@ Illustrative connection map: Carte de liaisons illustrative
 Illustrative data: Données illustratives
 ? Illustrative data · one point per genetic variant · alternating tints separate chromosomes · hover a labelled peak for its position and p-value
 : Données illustratives · un point par variant génétique · des teintes alternées séparent les chromosomes · survolez un pic étiqueté pour sa position et sa p-valeur
+Illustrative data, 2000&#8211;2024: Données illustratives, 2000-2024
+Illustrative data, 2000–2024: Données illustratives, 2000-2024
 Index — same class breaks across all panels: Indice · mêmes seuils de classes sur tous les panneaux
 Internal resistance: Résistance interne
 Internal resistance (mΩ): Résistance interne (mΩ)
@@ -278,11 +322,15 @@ Kaplan-Meier survival: Survie de Kaplan-Meier
 L: D
 LFP (iron phosphate): LFP (lithium-fer-phosphate)
 Latency (ms): Latence (ms)
+Latin: Latino
 Launch: Lancement
 Licensing: Licences
 Life expectancy: Espérance de vie
 Linear fit with 95% confidence band: Ajustement linéaire, bande de confiance à 95 %
 Lisbon: Lisbonne
+Logistic baseline: Régression logistique
+'Logistic baseline — shipped (max-F1) operating point: recall 36%, precision 21%, F1 0.27': 'Régression logistique · point de fonctionnement retenu (F1 max) : rappel 36 %, précision 21 %, F1 0,27'
+'Logistic baseline: average precision 0.20': 'Régression logistique : précision moyenne 0,20'
 Los Angeles: Los Angeles
 'Los Angeles: 4 cyclists per 100 commuters': 'Los Angeles : 4 cyclistes pour 100 actifs'
 Low: Faible
@@ -299,10 +347,12 @@ Mean reaction time (ms): Temps de réaction moyen (ms)
 Mean with 95% interval: Moyenne avec intervalle à 95 %
 ? Meta-analysis forest plot of 8 randomised trials. Each row shows a trial’s odds ratio for reaching the blood-pressure target as a box (area ∝ study weight) with a 95% confidence-interval whisker, on a logarithmic axis with a null rule at 1.0. The pooled random-effects diamond is centred at 1.44 (95% CI 1.26 to 1.64), clearly to the right of the null, so the programme increases the odds of reaching target overall.
 : Forest plot de méta-analyse de 8 essais randomisés. Chaque ligne montre le rapport de cotes d'un essai pour atteindre la cible tensionnelle sous forme de boîte (aire ∝ poids de l'étude) avec une moustache d'intervalle de confiance à 95 %, sur un axe logarithmique avec une ligne nulle à 1,0. Le losange groupé en effets aléatoires est centré sur 1,44 (IC 95 % 1,26 à 1,64), nettement à droite de la valeur nulle, donc le programme augmente globalement les chances d'atteindre la cible.
+Mobile: Mobile
 Mobile app: Appli mobile
 'Mobile app only: 24k users': 'Appli mobile seule : 24k utilisateurs'
 'Mobile app: 117k monthly-active users total': 'Appli mobile : 117k utilisateurs actifs mensuels au total'
 Mobile use peaks in the evening: Le mobile culmine en soirée
+Model: Modèle
 Mon: Lun
 Monday: Lundi
 Month: Mois
@@ -324,6 +374,7 @@ New: Nouveau
 New revenue: Nouveau revenu
 'New revenue: 268 $k — 107% of target (250 $k)': 'Nouveau revenu : 268 k$ · 107 % de la cible (250 k$)'
 No database wins on every front: Aucune base de données ne gagne sur tous les fronts
+No-skill baseline (prevalence 3%): Référence sans compétence (prévalence 3 %)
 Nobody drinks the decaf: Personne ne boit le déca
 Normal Q-Q plot: Diagramme quantile-quantile normal
 Normal distribution fitted to 1,840 exam results; shaded area = one standard deviation around the mean: Loi normale ajustée sur 1 840 résultats d'examen ; zone grisée = un écart-type autour de la moyenne
@@ -343,19 +394,28 @@ PLAG1 — chr8:88,450,000 · p = 10.0×10⁻²⁵: PLAG1 · chr8:88 450 000 · p
 Paid search: Recherche payante
 Pair plot of four battery-cell properties by chemistry: Graphique en paires de quatre propriétés de cellules, par chimie
 Pair plot of four measured properties across a fleet of lithium-ion cells. The chemistries separate on every: Graphique en paires de quatre propriétés mesurées sur un parc de cellules lithium-ion. Les chimies se séparent sur chaque
+Payments: Payments
 Per-region mini bars, Equal-Earth basemap.: Mini-barres par région, fond Equal Earth.
 Per-region pies, Equal-Earth basemap.: Camemberts par région, fond Equal Earth.
 Perfect calibration: Calibration parfaite
+Perfect model: Modèle parfait
 ? 'Pictorial ISOTYPE chart: each row repeats a person icon, one figure per five cyclists out of every hundred commuters; the last figure in a row is clipped to show the remainder. Copenhagen 62; Amsterdam 48; Tokyo 27; Berlin 18; Los Angeles 4 per 100. Copenhagen leads with 62; Los Angeles trails at 4.'
 : 'Graphique pictural ISOTYPE : chaque ligne répète une icône de personne, une figure pour cinq cyclistes sur cent actifs ; la dernière figure d''une ligne est rognée pour montrer le reste. Copenhague 62 ; Amsterdam 48 ; Tokyo 27 ; Berlin 18 ; Los Angeles 4 pour 100. Copenhague est en tête avec 62 ; Los Angeles ferme la marche à 4.'
-Platform: Plateforme
+Platform: Platform
+Platform reviewed: Relectures par Platform
+Platform reviews everyone's code and is rarely reviewed back: La plateforme relit le code de tout le monde et est rarement relue en retour
 'Point size = predictions in bin:': 'Taille du point = prédictions dans la classe :'
 Pooled (random effects): Groupé (effets aléatoires)
 Pooled odds ratio 1.44 (95% CI 1.26–1.64) across 8 randomised trials · I² = 34% · illustrative data: Rapport de cotes groupé 1,44 (IC 95 % 1,26-1,64) sur 8 essais randomisés · I² = 34 % · données illustratives
 Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%: RC groupé en effets aléatoires 1,44 (IC 95 % 1,26-1,64), I² = 34 %
 Poor: Faible
+Pop: Pop
 Population by age and sex: Population par âge et par sexe
 Power: Puissance
+Precision vs recall as the threshold varies — AP 0.93 vs 0.20 · illustrative: Précision selon le rappel à mesure que le seuil varie · AP 0,93 vs 0,20 · illustratif
+Precision — share of flags that are fraud → better: Précision · part des signalements qui sont des fraudes → meilleur
+? Precision-recall curves for two fraud-detection classifiers on an imbalanced problem (fraud prevalence 3%). The horizontal axis is recall (share of fraud caught); the vertical axis is precision (share of flagged transactions that are fraud); both run from 0 to 1. The strong gradient-boosted model (solid blue, circle marker, average precision 0.93) sits well above the weaker logistic baseline (dashed orange, square marker, average precision 0.20) across the whole recall range. A dashed grey no-skill baseline runs flat at precision equal to the 3% prevalence; the vertical gap above it is the signal each model has learned. Faint iso-F1 contours arc through the plot, and each model is marked at its shipped maximum-F1 operating point. Illustrative data.
+: Courbes précision-rappel de deux classifieurs de détection de fraude sur un problème déséquilibré (prévalence de fraude 3 %). L'axe horizontal est le rappel (part des fraudes détectées) ; l'axe vertical est la précision (part des transactions signalées qui sont des fraudes) ; les deux vont de 0 à 1. Le modèle de gradient boosting fort (bleu plein, marqueur rond, précision moyenne 0,93) se situe bien au-dessus de la régression logistique plus faible (orange pointillé, marqueur carré, précision moyenne 0,20) sur toute la plage de rappel. Une référence sans compétence grise pointillée est plate à une précision égale à la prévalence de 3 % ; l'écart vertical au-dessus est le signal appris par chaque modèle. De faibles courbes iso-F1 traversent le graphique, et chaque modèle est repéré à son point de fonctionnement F1 maximal retenu. Données illustratives.
 Predicted: Prédit
 Predicted 15%, observed 29% (gap +14%, under-states); 564 predictions: Prédit 15 %, observé 29 % (écart +14 %, sous-estime) ; 564 prédictions
 Predicted 25%, observed 35% (gap +10%, under-states); 447 predictions: Prédit 25 %, observé 35 % (écart +10 %, sous-estime) ; 447 prédictions
@@ -386,8 +446,10 @@ ROC curve — AUC 0.86: Courbe ROC · AUC 0,86
 : 'Graphique radar comparant trois bases de données cloud managées, Aurora, Cloud SQL et Cosmos, sur six critères disposés en rayons : vitesse des requêtes, mise à l''échelle automatique, écosystème, facilité d''usage, portée mondiale et prix, chacun noté de 0 à 100 où l''anneau extérieur est le meilleur. Aurora dessine un profil élevé sur la vitesse des requêtes et la mise à l''échelle ; Cloud SQL culmine sur l''écosystème et la facilité d''usage ; Cosmos va le plus loin sur la portée mondiale et le prix. Les trois profils se croisent, aucune base ne domine.'
 ? 'Radial gauge of web-server CPU load, scaled 0 to 100 percent of capacity across four named zones: Healthy, Busy, Hot, Critical. The needle points to 72 percent, inside the Busy zone.'
 : 'Jauge radiale de la charge CPU d''un serveur web, graduée de 0 à 100 pour cent de la capacité sur quatre zones nommées : Sain, Chargé, Chaud, Critique. L''aiguille indique 72 pour cent, dans la zone Chargé.'
+Random baseline: Référence aléatoire
 Rated cycle life: Durée de vie nominale
 Rated cycle life (cycles): Durée de vie nominale (cycles)
+Recall — share of fraud caught → better: Rappel · part des fraudes détectées → meilleur
 Referral: Référence
 Region: Région
 ? Reliability diagram (calibration curve) for an overconfident customer-churn classifier. The horizontal axis is the model’s predicted probability of churn; the vertical axis is the observed churn rate in each bin. A dashed 45-degree line marks perfect calibration, ringed by a faint grey tolerance band. The reliability curve sags below the diagonal at the confident end, so the model’s high-probability calls happen less often than it claims (overconfident, labelled in red on the right); Expected Calibration Error 10%. At the timid end it floats above the diagonal, so it under-states churn (underconfident, labelled in blue on the left). Each point is sized by how many predictions fell in the bin, and a histogram below shows where the model spends its predictions. Illustrative data.
@@ -407,6 +469,7 @@ Revenue share by type, each quarter: Part du revenu par type, par trimestre
 Revenue type: Type de revenu
 Revenue, activation and churn beat plan; trial signups and API latency still trail the goal &#183; illustrative: Revenu, activation et attrition dépassent le plan ; les essais et la latence API restent en deçà de l'objectif · illustratif
 Revenue, activation and churn beat plan; trial signups and API latency still trail the goal · illustrative: Revenu, activation et attrition dépassent le plan ; les essais et la latence API restent en deçà de l'objectif · illustratif
+Rock: Rock
 Russia +31: Russie +31
 SMB: PME
 SMS: SMS
@@ -434,6 +497,9 @@ Sessions per hour by platform: Sessions par heure et par plateforme
 Set size (k): Taille de l'ensemble (k)
 Sex: Sexe
 Share (%): Part (%)
+Share of churners reached: Part des partants touchés
+Share of customers contacted (ranked by model): Part des clients contactés (classés par le modèle)
+Share of recorded-music streaming by genre, band thickness = share of listening that year: Part du streaming de musique enregistrée par genre, épaisseur de la bande = part d'écoute cette année-là
 Share of revenue: Part du revenu
 Share of visits by source · illustrative data: Part des visites par source · données illustratives
 Short-time Fourier transform of a synthesised clip — brighter = louder · Illustrative data: Transformée de Fourier à court terme d'un extrait synthétisé · plus clair = plus fort · données illustratives
@@ -454,6 +520,8 @@ Start 1990: Début 1990
 Step: Palier
 Stockholm: Stockholm
 Storage: Stockage
+? 'Streamgraph on a wiggle baseline: recorded-music streaming share by genre, 2000 to 2024. Each ribbon''s thickness is its share of listening that year. The Hip-Hop / R&amp;B ribbon swells to become the widest band while the Rock ribbon thins, as the format shifts from the compact disc to on-demand streaming. Illustrative data.'
+: 'Streamgraph sur une ligne de base ondulée : part du streaming de musique enregistrée par genre, de 2000 à 2024. L''épaisseur de chaque ruban est sa part d''écoute cette année-là. Le ruban Hip-Hop / R&amp;B enfle pour devenir la bande la plus large tandis que le ruban Rock s''amincit, à mesure que le format passe du disque compact au streaming à la demande. Données illustratives.'
 ? Streamplot of a synthetic surface-wind field. Curved lines are streamlines everywhere tangent to the wind; arrowheads mark the flow direction and each line's colour runs from pale blue for a light breeze to deep navy for the fastest wind. A steady westerly sweeps in from the left, and a cyclonic low-pressure centre spins the flow counter-clockwise into a tight spiral offshore.
 : Tracé de lignes de courant d'un champ de vent de surface synthétique. Les courbes sont des lignes de courant partout tangentes au vent ; les pointes de flèche indiquent le sens du flux et la couleur de chaque ligne va du bleu pâle pour une brise légère au bleu marine profond pour le vent le plus fort. Un flux d'ouest régulier arrive par la gauche, et un centre dépressionnaire cyclonique enroule le flux dans le sens antihoraire en une spirale serrée au large.
 Subscribed: Abonnement
@@ -487,6 +555,8 @@ Tier 2: Niveau 2
 Time (seconds): Temps (secondes)
 Tokyo: Tokyo
 'Tokyo: 27 cyclists per 100 commuters': 'Tokyo : 27 cyclistes pour 100 actifs'
+Top 20% contacted → 63% of churners reached (3.16× better than random): Top 20 % contactés → 63 % des partants touchés (3,16× mieux que le hasard)
+Top 20% → 63% of churners: Top 20 % → 63 % des partants
 Transit: Transports
 Treatment: Traitement
 Trial: Essai
@@ -532,6 +602,7 @@ World bubble map: Carte du monde à bulles
 ? World choropleth of net change on a red-white-blue diverging scale centered at zero, with no-data countries in gray and four countries directly annotated.
 : Choroplèthe mondiale de la variation nette sur une échelle divergente rouge-blanc-bleu centrée sur zéro, les pays sans donnée en gris et quatre pays annotés directement.
 World pie-glyph map: Carte du monde à camemberts
+Year: Année
 ZBTB38: ZBTB38
 ZBTB38 — chr3:108,900,000 · p = 10.0×10⁻³³: ZBTB38 · chr3:108 900 000 · p = 10,0×10⁻³³
 above mean (deeper = bigger swing): au-dessus de la moyenne (plus foncé = variation plus forte)
@@ -558,6 +629,7 @@ f(t) — Andrews series value: f(t) · valeur de la série d'Andrews
 farther: plus loin
 favours telemonitoring →: en faveur de la télésurveillance →
 genome-wide significance · p = 5×10⁻⁸: significativité pangénomique · p = 5×10⁻⁸
+given vs received: données vs reçues
 growth without the carbon: la croissance sans le carbone
 'here the path pivots down:': 'ici la trajectoire bascule vers le bas :'
 its high-risk calls miss the diagonal: ses prédictions à haut risque ratent la diagonale

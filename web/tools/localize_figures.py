@@ -91,18 +91,20 @@ def localize_vega(name: str, spec_path: str, ext: str) -> None:
         (FR / f"{name}.svg").write_text(embed(svg), encoding="utf-8")
 
 
-TEXT_RE = re.compile(r"(<(?:text|tspan|title|desc)\b[^>]*>)([^<]+)(</(?:text|tspan|title|desc)>)")
+TEXT_RE = re.compile(r"(<(text|tspan|title|desc)\b[^>]*>)([^<]+)(</(?:text|tspan|title|desc)>)")
+missing_hover: set[str] = set()  # untranslated strings that live only in <title> tooltips
 
 
 def localize_hero(name: str) -> None:
     t = (GALLERY / f"{name}.svg").read_text(encoding="utf-8")
 
     def repl(m: re.Match) -> str:
-        key = re.sub(r"\s+", " ", html.unescape(m.group(2))).strip()
+        tag, raw = m.group(2), m.group(3)
+        key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
         if key in TR:
-            return m.group(1) + html.escape(TR[key], quote=False) + m.group(3)
+            return m.group(1) + html.escape(TR[key], quote=False) + m.group(4)
         if is_human(key):
-            missing.add(key)
+            (missing_hover if tag == "title" else missing).add(key)
         return m.group(0)
 
     (FR / f"{name}.svg").write_text(TEXT_RE.sub(repl, t), encoding="utf-8")
@@ -135,9 +137,11 @@ def main() -> int:
             print(f"  FAIL {name}: {exc}")
     print(f"localised {done} figures -> {FR}")
     if missing:
-        print(f"\n{len(missing)} strings still UNTRANSLATED (add to {YAML.name}):")
+        print(f"\n{len(missing)} VISIBLE strings still UNTRANSLATED (add to {YAML.name}):")
         for s in sorted(missing):
             print(f"  {s!r}")
+    if missing_hover:
+        print(f"\n{len(missing_hover)} hover-tooltip strings still untranslated (lower priority).")
     return 0
 
 
