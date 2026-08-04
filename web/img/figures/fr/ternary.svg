@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="820" viewBox="0 0 1040 820" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="tn-title tn-desc">
 <title id="tn-title">Soil texture as a ternary of sand, silt and clay</title>
-<desc id="tn-desc">Ternary plot: an equilateral triangle whose corners are 100 % clay (top), 100 % sand (bottom-left) and 100 % silt (bottom-right). Each dot is one topsoil sample, positioned by its sand / silt / clay percentages, which always sum to 100. Samples cluster into three texture classes: Sandy loam, Silt loam, Clay. Sandy loam sits toward the sand corner, silt loam toward the silt corner, and clay near the top.</desc>
+<desc id="tn-desc">Diagramme ternaire : un triangle équilatéral dont les coins sont 100 % argile (haut), 100 % sable (bas-gauche) et 100 % limon (bas-droite). Chaque point est un échantillon de terre arable, positionné par ses pourcentages de sable / limon / argile, dont la somme fait toujours 100. Les échantillons se regroupent en trois classes de texture : Limon sableux, Limon fin, Argile. Le limon sableux se place vers le coin du sable, le limon fin vers le coin du limon, et l'argile près du haut.</desc>
 <style>
 .dot { transition: opacity .18s ease; }
 svg:hover .cls, svg:focus-within .cls { opacity: .16; }
@@ -12,8 +12,8 @@ svg:hover .cls, svg:focus-within .cls { opacity: .16; }
 @media (prefers-reduced-motion: reduce) { .dot { transition: none; } }
 </style>
 <rect width="1040" height="820" fill="#FFFFFF"/>
-<text x="56" y="60" font-size="29" font-weight="700" fill="#1D1D1F">Three soil textures, three corners of the triangle</text>
-<text x="56" y="94" font-size="18" fill="#6E6E73">Topsoil samples by grain-size mix · sand + silt + clay = 100 % · illustrative</text>
+<text x="56" y="60" font-size="29" font-weight="700" fill="#1D1D1F">Trois textures de sol, trois coins du triangle</text>
+<text x="56" y="94" font-size="18" fill="#6E6E73">Échantillons de terre arable par mélange de calibres · sable + limon + argile = 100 % · illustratif</text>
 <polygon points="185.0,704.9 805.0,704.9 495.0,168.0" fill="#FCFCFD" stroke="none"/>
 <line x1="247.0" y1="597.5" x2="743.0" y2="597.5" stroke="#D8D8DD" stroke-width="1.4"/>
 <line x1="681.0" y1="704.9" x2="433.0" y2="275.4" stroke="#D8D8DD" stroke-width="1.4"/>
@@ -28,9 +28,9 @@ svg:hover .cls, svg:focus-within .cls { opacity: .16; }
 <line x1="309.0" y1="704.9" x2="247.0" y2="597.5" stroke="#D8D8DD" stroke-width="1.4"/>
 <line x1="681.0" y1="704.9" x2="743.0" y2="597.5" stroke="#D8D8DD" stroke-width="1.4"/>
 <polygon points="185.0,704.9 805.0,704.9 495.0,168.0" fill="none" stroke="#1D1D1F" stroke-width="2.4" stroke-linejoin="round"/>
-<text x="495.0" y="142.0" font-size="23" font-weight="700" fill="#1D1D1F" text-anchor="middle">Clay</text>
-<text x="175.0" y="752.9" font-size="23" font-weight="700" fill="#1D1D1F" text-anchor="start">Sand</text>
-<text x="815.0" y="752.9" font-size="23" font-weight="700" fill="#1D1D1F" text-anchor="end">Silt</text>
+<text x="495.0" y="142.0" font-size="23" font-weight="700" fill="#1D1D1F" text-anchor="middle">Argile</text>
+<text x="175.0" y="752.9" font-size="23" font-weight="700" fill="#1D1D1F" text-anchor="start">Sable</text>
+<text x="815.0" y="752.9" font-size="23" font-weight="700" fill="#1D1D1F" text-anchor="end">Limon</text>
 <text x="681.0" y="730.9" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">20</text>
 <text x="231.0" y="602.5" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">20</text>
 <text x="759.0" y="602.5" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="start">80</text>
@@ -80,20 +80,20 @@ svg:hover .cls, svg:focus-within .cls { opacity: .16; }
 <circle class="dot cls-clay" cx="507.4" cy="425.7" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 22 %, silt 26 %, clay 52 %</title></circle>
 </g>
 <g transform="translate(812.0,200.0)">
-<text x="0" y="-16" font-size="16" font-weight="700" fill="#6E6E73">Texture class</text>
+<text x="0" y="-16" font-size="16" font-weight="700" fill="#6E6E73">Classe de texture</text>
 <g class="cls cls-sandy-loam legend-row" tabindex="0" role="listitem" transform="translate(0,0.0)"><title>Sandy loam: 10 samples</title>
 <circle class="cls-sandy-loam" cx="11" cy="11" r="11" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"/>
-<text x="34" y="17" font-size="19" font-weight="600" fill="#1D1D1F">Sandy loam</text>
+<text x="34" y="17" font-size="19" font-weight="600" fill="#1D1D1F">Limon sableux</text>
 </g>
 <g class="cls cls-silt-loam legend-row" tabindex="0" role="listitem" transform="translate(0,44.0)"><title>Silt loam: 10 samples</title>
 <circle class="cls-silt-loam" cx="11" cy="11" r="11" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"/>
-<text x="34" y="17" font-size="19" font-weight="600" fill="#1D1D1F">Silt loam</text>
+<text x="34" y="17" font-size="19" font-weight="600" fill="#1D1D1F">Limon fin</text>
 </g>
 <g class="cls cls-clay legend-row" tabindex="0" role="listitem" transform="translate(0,88.0)"><title>Clay: 10 samples</title>
 <circle class="cls-clay" cx="11" cy="11" r="11" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"/>
-<text x="34" y="17" font-size="19" font-weight="600" fill="#1D1D1F">Clay</text>
+<text x="34" y="17" font-size="19" font-weight="600" fill="#1D1D1F">Argile</text>
 </g>
 </g>
-<text x="56" y="794.0" font-size="15" fill="#6E6E73">Read each corner as 100 % of that grain size; a dot near an edge means the opposite corner is near 0 %.</text>
+<text x="56" y="794.0" font-size="15" fill="#6E6E73">Lisez chaque coin comme 100 % de ce calibre ; un point près d'un côté signifie que le coin opposé est proche de 0 %.</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(992,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

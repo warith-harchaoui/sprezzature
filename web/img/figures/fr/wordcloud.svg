@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="wc-title wc-desc">
 <title id="wc-title">Word cloud of coffee-grinder reviews: buyers love how quietly it grinds, and the one gripe is noise</title>
-<desc id="wc-desc">A spiral-packed word cloud of a year of product reviews for a burr coffee grinder. Each word is sized by how many reviews mentioned it and tagged by theme with both a colour and a sign glyph: a leading plus and green for praise, a leading minus and red for complaints, and no glyph in blue for neutral product words. The biggest words are grind, quiet and consistent; the largest complaint word is noisy.</desc>
+<desc id="wc-desc">Un nuage de mots en spirale d'une année d'avis produit sur un moulin à café à meules. Chaque mot est dimensionné par le nombre d'avis qui le mentionnent et étiqueté par thème avec une couleur et un signe : un plus en tête et du vert pour l'éloge, un moins en tête et du rouge pour la plainte, et aucun signe en bleu pour les mots produit neutres. Les plus gros mots sont mouture, silencieux et régulier ; le plus gros mot de plainte est bruyant.</desc>
 <style>
 .word { transition: opacity .18s ease; }
 svg:has(.legend-row:hover) .word, svg:has(.legend-row:focus) .word { opacity: .12; }
@@ -12,8 +12,8 @@ svg:has(.legend-neutral:hover) .grp-neutral, svg:has(.legend-neutral:focus) .grp
 @media (prefers-reduced-motion: reduce) { .word { transition: none; } }
 </style>
 <rect width="1240" height="900" fill="#FFFFFF"/>
-<text x="56" y="66" font-size="32" font-weight="700" fill="#1D1D1F">Reviewers love the quiet, consistent grind</text>
-<text x="56" y="98" font-size="18" fill="#6E6E73">2,412 reviews of the Aurora Grind One · words sized by how often they appear, tagged by theme with a sign and a colour · illustrative</text>
+<text x="56" y="66" font-size="32" font-weight="700" fill="#1D1D1F">Les avis adorent la mouture silencieuse et régulière</text>
+<text x="56" y="98" font-size="18" fill="#6E6E73">2 412 avis sur l'Aurora Grind One · mots dimensionnés par leur fréquence, étiquetés par thème avec un signe et une couleur · illustratif</text>
 <line x1="56" y1="120" x2="1184" y2="120" stroke="#E5E5EA" stroke-width="1.4"/>
 <g class="grp-praise">
 <text class="word grp-praise" x="185.1" y="589.6" font-size="28.3" font-weight="500" fill="#28CD41" text-anchor="middle" dominant-baseline="central" tabindex="0" role="listitem"><title>compact — what buyers praise (+) · mentioned in 78 reviews (3%)</title>+ compact</text>
@@ -63,15 +63,15 @@ svg:has(.legend-neutral:hover) .grp-neutral, svg:has(.legend-neutral:focus) .grp
 <line x1="56" y1="812" x2="1184" y2="812" stroke="#E5E5EA" stroke-width="1.4"/>
 <g class="legend-row legend-praise" tabindex="0" role="listitem" transform="translate(56,838)"><title>What buyers praise (+): 4,126 total mentions</title>
 <rect class="grp-praise" x="0" y="-16" width="26" height="26" rx="7" fill="#28CD41"/>
-<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">What buyers praise (+)</text>
+<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Ce que les acheteurs saluent (+)</text>
 </g>
 <g class="legend-row legend-gripe" tabindex="0" role="listitem" transform="translate(470,838)"><title>What buyers complain about (−): 1,666 total mentions</title>
 <rect class="grp-gripe" x="0" y="-16" width="26" height="26" rx="7" fill="#FF3B30"/>
-<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">What buyers complain about (−)</text>
+<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Ce dont les acheteurs se plaignent (−)</text>
 </g>
 <g class="legend-row legend-neutral" tabindex="0" role="listitem" transform="translate(884,838)"><title>Neutral product words: 3,542 total mentions</title>
 <rect class="grp-neutral" x="0" y="-16" width="26" height="26" rx="7" fill="#007AFF"/>
-<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Neutral product words</text>
+<text x="38" y="0" font-size="19" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Mots produit neutres</text>
 </g>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1192,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
