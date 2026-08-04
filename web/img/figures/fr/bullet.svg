@@ -1,80 +1,80 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1240" height="814" viewBox="0 0 1240 814" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="bl-title bl-desc">
-<title id="bl-title">Q3 growth scorecard as five bullet graphs</title>
-<desc id="bl-desc">Five key performance indicators drawn as bullet graphs. Each row has three shaded qualitative bands (poor, satisfactory, good), a dark measure bar for the value reached, and an orange tick for the target. 2 of 5 metrics met or beat their target this quarter; trial signups and p95 latency fell short.</desc>
+<title id="bl-title">Tableau de bord de croissance du T3 en cinq graphiques à puce</title>
+<desc id="bl-desc">Cinq indicateurs clés dessinés en graphiques à puce. Chaque ligne comporte trois plages qualitatives ombrées (faible, correct, bon), une barre de mesure foncée pour la valeur atteinte et un repère orange pour la cible. 2 des 5 indicateurs ont atteint ou dépassé leur cible ce trimestre ; les inscriptions à l'essai et la latence p95 sont restées en deçà.</desc>
 <style>.bar{cursor:pointer}.bar:hover,.bar:focus{stroke:#1D1D1F;stroke-width:2}.bar:focus{outline:none}</style>
 <rect width="1240" height="814" fill="#FFFFFF"/>
-<text x="60" y="66" font-size="34" font-weight="700" fill="#1D1D1F">Three of five targets cleared in Q3</text>
-<text x="60" y="104" font-size="20" fill="#6E6E73">Revenue, activation and churn beat plan; trial signups and API latency still trail the goal &#183; illustrative</text>
+<text x="60" y="66" font-size="34" font-weight="700" fill="#1D1D1F">Trois cibles sur cinq atteintes au T3</text>
+<text x="60" y="104" font-size="20" fill="#6E6E73">Revenu, activation et attrition dépassent le plan ; les essais et la latence API restent en deçà de l'objectif · illustratif</text>
 <rect x="734" y="139" width="30" height="13" rx="3" fill="#0A2540"/>
-<text x="774" y="151" font-size="17" fill="#1D1D1F">measure</text>
+<text x="774" y="151" font-size="17" fill="#1D1D1F">mesure</text>
 <rect x="892" y="132" width="5" height="27" rx="2.5" fill="#FF9500"/>
-<text x="908" y="151" font-size="17" fill="#1D1D1F">target</text>
+<text x="908" y="151" font-size="17" fill="#1D1D1F">cible</text>
 <clipPath id="track-clip-0"><rect x="296.0" y="168.0" width="674.0" height="62" rx="9"/></clipPath>
 <g clip-path="url(#track-clip-0)">
 <rect x="296.0" y="168.0" width="315.94" height="62" fill="#DCEAFB"/>
 <rect x="611.9" y="168.0" width="147.44" height="62" fill="#B2D3F5"/>
 <rect x="759.4" y="168.0" width="210.62" height="62" fill="#7EB8F0"/>
 </g>
-<rect class="bar" x="296.0" y="188.0" width="564.48" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="New revenue: 268 $k — 107% of target (250 $k)"><title>New revenue: 268 $k — 107% of target (250 $k)</title></rect>
+<rect class="bar" x="296.0" y="188.0" width="564.48" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="New revenue: 268 $k — 107% of target (250 $k)"><title>Nouveau revenu : 268 k$ · 107 % de la cible (250 k$)</title></rect>
 <rect x="820.1" y="174.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
-<text x="60" y="195.0" font-size="23" font-weight="600" fill="#1D1D1F">New revenue</text>
-<text x="60" y="221.0" font-size="16" fill="#6E6E73">measured in $k</text>
-<text x="992.0" y="195.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">268<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> $k</tspan></text>
-<text x="992.0" y="221.0" font-size="16" font-weight="600" fill="#28CD41">✓ 107% on target</text>
+<text x="60" y="195.0" font-size="23" font-weight="600" fill="#1D1D1F">Nouveau revenu</text>
+<text x="60" y="221.0" font-size="16" fill="#6E6E73">mesuré en k$</text>
+<text x="992.0" y="195.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">268<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73">k$</tspan></text>
+<text x="992.0" y="221.0" font-size="16" font-weight="600" fill="#28CD41">✓ 107 % de la cible</text>
 <clipPath id="track-clip-1"><rect x="296.0" y="286.0" width="674.0" height="62" rx="9"/></clipPath>
 <g clip-path="url(#track-clip-1)">
 <rect x="296.0" y="286.0" width="337.00" height="62" fill="#DCEAFB"/>
 <rect x="633.0" y="286.0" width="168.50" height="62" fill="#B2D3F5"/>
 <rect x="801.5" y="286.0" width="168.50" height="62" fill="#7EB8F0"/>
 </g>
-<rect class="bar" x="296.0" y="306.0" width="441.84" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Trial signups: 1180 /wk — 84% of target (1400 /wk)"><title>Trial signups: 1180 /wk — 84% of target (1400 /wk)</title></rect>
+<rect class="bar" x="296.0" y="306.0" width="441.84" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Trial signups: 1180 /wk — 84% of target (1400 /wk)"><title>Inscriptions à l'essai : 1180 /sem · 84 % de la cible (1400 /sem)</title></rect>
 <rect x="817.7" y="292.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
-<text x="60" y="313.0" font-size="23" font-weight="600" fill="#1D1D1F">Trial signups</text>
-<text x="60" y="339.0" font-size="16" fill="#6E6E73">measured in /wk</text>
-<text x="992.0" y="313.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">1180<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> /wk</tspan></text>
-<text x="992.0" y="339.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 84% below target</text>
+<text x="60" y="313.0" font-size="23" font-weight="600" fill="#1D1D1F">Inscriptions à l'essai</text>
+<text x="60" y="339.0" font-size="16" fill="#6E6E73">mesuré en /sem</text>
+<text x="992.0" y="313.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">1180<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73">/sem</tspan></text>
+<text x="992.0" y="339.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 84 % sous la cible</text>
 <clipPath id="track-clip-2"><rect x="296.0" y="404.0" width="674.0" height="62" rx="9"/></clipPath>
 <g clip-path="url(#track-clip-2)">
 <rect x="296.0" y="404.0" width="288.86" height="62" fill="#DCEAFB"/>
 <rect x="584.9" y="404.0" width="115.54" height="62" fill="#B2D3F5"/>
 <rect x="700.4" y="404.0" width="269.60" height="62" fill="#7EB8F0"/>
 </g>
-<rect class="bar" x="296.0" y="424.0" width="452.54" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Activation rate: 47 % — 104% of target (45 %)"><title>Activation rate: 47 % — 104% of target (45 %)</title></rect>
+<rect class="bar" x="296.0" y="424.0" width="452.54" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Activation rate: 47 % — 104% of target (45 %)"><title>Taux d'activation : 47 % · 104 % de la cible (45 %)</title></rect>
 <rect x="726.8" y="410.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
-<text x="60" y="431.0" font-size="23" font-weight="600" fill="#1D1D1F">Activation rate</text>
-<text x="60" y="457.0" font-size="16" fill="#6E6E73">measured in %</text>
+<text x="60" y="431.0" font-size="23" font-weight="600" fill="#1D1D1F">Taux d'activation</text>
+<text x="60" y="457.0" font-size="16" fill="#6E6E73">mesuré en %</text>
 <text x="992.0" y="431.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">47<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> %</tspan></text>
-<text x="992.0" y="457.0" font-size="16" font-weight="600" fill="#28CD41">✓ 104% on target</text>
+<text x="992.0" y="457.0" font-size="16" font-weight="600" fill="#28CD41">✓ 104 % de la cible</text>
 <clipPath id="track-clip-3"><rect x="296.0" y="522.0" width="674.0" height="62" rx="9"/></clipPath>
 <g clip-path="url(#track-clip-3)">
 <rect x="296.0" y="522.0" width="269.60" height="62" fill="#7EB8F0"/>
 <rect x="565.6" y="522.0" width="179.73" height="62" fill="#B2D3F5"/>
 <rect x="745.3" y="522.0" width="224.67" height="62" fill="#DCEAFB"/>
 </g>
-<rect class="bar" x="296.0" y="542.0" width="296.56" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="p95 API latency: 132 ms — 110% of target (120 ms)"><title>p95 API latency: 132 ms — 110% of target (120 ms)</title></rect>
+<rect class="bar" x="296.0" y="542.0" width="296.56" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="p95 API latency: 132 ms — 110% of target (120 ms)"><title>Latence API p95 : 132 ms · 110 % de la cible (120 ms)</title></rect>
 <rect x="563.1" y="528.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
-<text x="60" y="549.0" font-size="23" font-weight="600" fill="#1D1D1F">p95 API latency</text>
-<text x="60" y="575.0" font-size="16" fill="#6E6E73">measured in ms</text>
-<text x="992.0" y="549.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">132<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> ms</tspan></text>
-<text x="992.0" y="575.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 110% over target</text>
+<text x="60" y="549.0" font-size="23" font-weight="600" fill="#1D1D1F">Latence API p95</text>
+<text x="60" y="575.0" font-size="16" fill="#6E6E73">mesuré en ms</text>
+<text x="992.0" y="549.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">132<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73">ms</tspan></text>
+<text x="992.0" y="575.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 110 % au-delà de la cible</text>
 <clipPath id="track-clip-4"><rect x="296.0" y="640.0" width="674.0" height="62" rx="9"/></clipPath>
 <g clip-path="url(#track-clip-4)">
 <rect x="296.0" y="640.0" width="280.83" height="62" fill="#7EB8F0"/>
 <rect x="576.8" y="640.0" width="168.50" height="62" fill="#B2D3F5"/>
 <rect x="745.3" y="640.0" width="224.67" height="62" fill="#DCEAFB"/>
 </g>
-<rect class="bar" x="296.0" y="660.0" width="269.60" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Monthly churn: 2.4 % — 120% of target (2 %)"><title>Monthly churn: 2.4 % — 120% of target (2 %)</title></rect>
+<rect class="bar" x="296.0" y="660.0" width="269.60" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Monthly churn: 2.4 % — 120% of target (2 %)"><title>Attrition mensuelle : 2,4 % · 120 % de la cible (2 %)</title></rect>
 <rect x="518.2" y="646.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
-<text x="60" y="667.0" font-size="23" font-weight="600" fill="#1D1D1F">Monthly churn</text>
-<text x="60" y="693.0" font-size="16" fill="#6E6E73">measured in %</text>
+<text x="60" y="667.0" font-size="23" font-weight="600" fill="#1D1D1F">Attrition mensuelle</text>
+<text x="60" y="693.0" font-size="16" fill="#6E6E73">mesuré en %</text>
 <text x="992.0" y="667.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">2.4<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> %</tspan></text>
-<text x="992.0" y="693.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 120% over target</text>
-<text x="60" y="792.0" font-size="16" fill="#6E6E73">Bands:</text>
+<text x="992.0" y="693.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 120 % au-delà de la cible</text>
+<text x="60" y="792.0" font-size="16" fill="#6E6E73">Plages :</text>
 <rect x="296.0" y="776.0" width="26" height="16" rx="4" fill="#DCEAFB"/>
-<text x="331.0" y="789.0" font-size="16" fill="#6E6E73">Poor</text>
+<text x="331.0" y="789.0" font-size="16" fill="#6E6E73">Faible</text>
 <rect x="486.0" y="776.0" width="26" height="16" rx="4" fill="#B2D3F5"/>
-<text x="521.0" y="789.0" font-size="16" fill="#6E6E73">Satisfactory</text>
+<text x="521.0" y="789.0" font-size="16" fill="#6E6E73">Correct</text>
 <rect x="676.0" y="776.0" width="26" height="16" rx="4" fill="#7EB8F0"/>
-<text x="711.0" y="789.0" font-size="16" fill="#6E6E73">Good</text>
+<text x="711.0" y="789.0" font-size="16" fill="#6E6E73">Bon</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1192,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
