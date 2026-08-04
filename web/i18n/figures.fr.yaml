@@ -378,6 +378,8 @@ Amsterdam: Amsterdam
 ? An alluvial diagram following 1,000 new sign-ups across three axes — acquisition channel, plan chosen, and 90-day outcome. Ribbon width is proportional to the number of users on that path; the Referral-to-Retained strand is the widest, and free-trial users churn far more than paying ones. Hover a ribbon to highlight one path.
 : 'Un diagramme alluvial suivant 1 000 nouvelles inscriptions sur trois axes : canal d''acquisition, offre choisie et résultat à 90 jours. La largeur du ruban est proportionnelle au nombre d''utilisateurs sur ce chemin ; le brin Recommandation vers Conservé est le plus large, et les utilisateurs en essai gratuit partent bien plus que les payants. Survolez un ruban pour mettre en évidence un chemin.'
 An embedding of 200 words projected to 2D · point at a word to light up its 6 nearest neighbours · illustrative data: Un plongement de 200 mots projeté en 2D · pointez un mot pour éclairer ses 6 plus proches voisins · données illustratives
+? 'An interpolated heatmap (imshow, bilinear): a coarse soil-moisture survey grid displayed as one smooth continuous image, east-west by north-south. A deep-blue basin near the low-left is the moisture-holding hollow, the pale far corner is a free-draining ridge, and a faint blue horizontal band is a damp irrigation drip line. Colour runs pale sky (driest) to deep navy (wettest).'
+: 'Carte de chaleur interpolée (imshow, bilinéaire) : une grille grossière de relevé d''humidité du sol affichée en une seule image lisse et continue, d''est en ouest par nord-sud. Un bassin bleu foncé près du bas-gauche est le creux qui retient l''humidité, le coin pâle au loin est une crête à drainage libre, et une faible bande horizontale bleue est une ligne de goutte-à-goutte humide. La couleur va du bleu ciel pâle (le plus sec) au bleu marine profond (le plus humide).'
 Andes: Andes
 Andrej Karpathy: Andrej Karpathy
 ? 'Andrews curves: every penguin''s standardised bill length, bill depth, flipper length and body mass are encoded as a Fourier curve over t from minus pi to pi, coloured by species. Adélie in blue, Chinstrap in orange and Gentoo in green each form a distinct band, with the bold median curve of each species drawn on top.'
@@ -462,6 +464,7 @@ Bigger homes cost more: Les grands logements coûtent plus cher
 Bike: Vélo
 Bike-share demand clusters on the downtown core: La demande de vélos en libre-service se concentre sur le centre-ville
 Bike-share departures by hour of an average weekday — Illustrative data: Départs de vélos en libre-service par heure un jour de semaine type · données illustratives
+Bilinearly interpolated survey grid (imshow) · deeper blue = wetter soil · illustrative data: Grille de relevé interpolée bilinéairement (imshow) · bleu plus foncé = sol plus humide · données illustratives
 Billing: Billing
 Billing & invoice errors: Erreurs de facturation
 Bio-AI: Bio-IA
@@ -685,7 +688,9 @@ Dimensionality reduction: Réduction de dimension
 Direct: Direct
 Discovery: Cadrage
 Distance east (km): Distance vers l'est (km)
+Distance east (m): Distance vers l'est (m)
 Distance north (km): Distance vers le nord (km)
+Distance north (m): Distance vers le nord (m)
 Distribution of Student Exam Scores: Distribution des notes d'examen
 Distribution of session duration: Distribution de la durée des sessions
 Distribution shape by group: Forme de la distribution par groupe
@@ -2013,6 +2018,7 @@ Model over-predicts (residual < 0): Le modèle surestime (résidu < 0)
 Model under-predicts (residual > 0): Le modèle sous-estime (résidu > 0)
 Models: Models
 Module dependencies in a web app, bundled by subsystem (illustrative data): Dépendances de modules dans une appli web, groupées par sous-système (données illustratives)
+Moisture: Humidité
 Moldova: Moldova
 Mon: Lun
 Monday: Lundi
@@ -2456,6 +2462,7 @@ Sofia Rossi: Sofia Rossi
 Soft drinks — Treats: Sodas — Gourmandises
 Software: Logiciels
 Software engineer: Ingénieure logiciel
+Soil moisture pools in the field's low hollow: L'humidité du sol s'accumule dans le creux bas du champ
 Sojourner, the first Mars: Sojourner, le premier
 Solid line = mean bias (-7.3 mmHg). Dashed lines = 95% limits of agreement (-15.3 to +0.7 mmHg).: Ligne pleine = biais moyen (-7,3 mmHg). Lignes pointillées = limites d'accord à 95 % (-15,3 à +0,7 mmHg).
 Solomon Is.: Solomon Is.
@@ -2866,6 +2873,8 @@ deseri…: deseri…
 disp: disp
 donkey: donkey
 drink: drink
+drip-line seam: ligne de goutte-à-goutte
+dry ridge: crête sèche
 duration: duration
 eSwatini: eSwatini
 each cell = 400 m: chaque cellule = 400 m
@@ -3196,6 +3205,7 @@ warm = critical path (deeper is hotter): chaud = chemin critique (plus profond =
 webhooks: webhooks
 week: week
 weight: weight
+wet hollow: creux humide
 white: white
 width: width
 width / 2: width / 2
