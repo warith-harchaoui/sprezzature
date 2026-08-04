@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="1450" viewBox="0 0 980 1450" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="cal-title cal-desc">
-<title id="cal-title">The churn model is overconfident: its high-risk calls miss the diagonal</title>
-<desc id="cal-desc">Reliability diagram (calibration curve) for an overconfident customer-churn classifier. The horizontal axis is the model’s predicted probability of churn; the vertical axis is the observed churn rate in each bin. A dashed 45-degree line marks perfect calibration, ringed by a faint grey tolerance band. The reliability curve sags below the diagonal at the confident end, so the model’s high-probability calls happen less often than it claims (overconfident, labelled in red on the right); Expected Calibration Error 10%. At the timid end it floats above the diagonal, so it under-states churn (underconfident, labelled in blue on the left). Each point is sized by how many predictions fell in the bin, and a histogram below shows where the model spends its predictions. Illustrative data.</desc>
+<title id="cal-title">Le modèle d'attrition est trop confiant : ses prédictions à haut risque ratent la diagonale</title>
+<desc id="cal-desc">Diagramme de fiabilité (courbe de calibration) pour un classifieur d'attrition client trop confiant. L'axe horizontal est la probabilité d'attrition prédite ; l'axe vertical est le taux d'attrition observé dans chaque classe. Une ligne pointillée à 45 degrés marque la calibration parfaite, entourée d'une fine bande de tolérance grise. La courbe s'affaisse sous la diagonale du côté confiant, donc les prédictions à forte probabilité se réalisent moins souvent qu'annoncé (trop confiant, en rouge à droite) ; erreur de calibration attendue 10 %. Du côté timide, elle flotte au-dessus de la diagonale, donc le modèle sous-estime l'attrition (pas assez confiant, en bleu à gauche). Chaque point est dimensionné selon le nombre de prédictions dans la classe, et un histogramme en dessous montre où le modèle place ses prédictions. Données illustratives.</desc>
 <style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}.bar{cursor:pointer}</style>
 <rect width="980" height="1450" fill="#FFFFFF"/>
-<text x="128" y="82" font-size="36" font-weight="700" fill="#1D1D1F">The churn model is overconfident:</text>
-<text x="128" y="126" font-size="36" font-weight="700" fill="#1D1D1F">its high-risk calls miss the diagonal</text>
-<text x="128" y="166" font-size="22" fill="#6E6E73">Reliability diagram: confident “90%” churn calls happen far less</text>
-<text x="128" y="194" font-size="22" fill="#6E6E73">Expected Calibration Error 10% · illustrative data</text>
+<text x="128" y="82" font-size="36" font-weight="700" fill="#1D1D1F">Le modèle d'attrition est trop confiant :</text>
+<text x="128" y="126" font-size="36" font-weight="700" fill="#1D1D1F">ses prédictions à haut risque ratent la diagonale</text>
+<text x="128" y="166" font-size="22" fill="#6E6E73">Diagramme de fiabilité : les prédictions d'attrition assurées à « 90 % » se réalisent bien moins</text>
+<text x="128" y="194" font-size="22" fill="#6E6E73">Erreur de calibration attendue 10 % · données illustratives</text>
 <polygon points="128.0,982.2 924.0,226.0 924.0,265.8 128.0,1022.0" fill="#8E8E93" fill-opacity="0.12"/>
 <line x1="128.0" y1="226.0" x2="128.0" y2="1022.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="128.0" y1="1022.0" x2="924.0" y2="1022.0" stroke="#EEEEEE" stroke-width="1.4"/>
@@ -19,7 +19,7 @@
 <line x1="924.0" y1="226.0" x2="924.0" y2="1022.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="128.0" y1="226.0" x2="924.0" y2="226.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="128.0" y1="1022.0" x2="924.0" y2="226.0" stroke="#8E8E93" stroke-width="1.6" stroke-dasharray="6 4"/>
-<text x="398.6" y="739.4" font-size="20" fill="#6E6E73" text-anchor="middle" transform="rotate(-45 398.6 739.4)">Perfect calibration</text>
+<text x="398.6" y="739.4" font-size="20" fill="#6E6E73" text-anchor="middle" transform="rotate(-45 398.6 739.4)">Calibration parfaite</text>
 <line x1="128.0" y1="1022.0" x2="924.0" y2="1022.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="128.0" y1="226.0" x2="128.0" y2="1022.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="128.0" y1="1022.0" x2="128.0" y2="1029.0" stroke="#1D1D1F" stroke-width="1.6"/>
@@ -42,7 +42,7 @@
 <text x="924.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100%</text>
 <line x1="121.0" y1="226.0" x2="128.0" y2="226.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="112.0" y="233.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100%</text>
-<text x="52.0" y="624.0" font-size="22" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 624.0)">Observed churn rate</text>
+<text x="52.0" y="624.0" font-size="22" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 624.0)">Taux d'attrition observé</text>
 <line x1="163.3" y1="907.0" x2="163.3" y2="986.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
 <line x1="247.2" y1="787.7" x2="247.2" y2="902.8" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
 <line x1="326.3" y1="745.9" x2="326.3" y2="823.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
@@ -55,99 +55,99 @@
 <line x1="881.1" y1="368.4" x2="881.1" y2="268.9" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
 <path d="M 163.3 907.0 L 247.2 787.7 L 326.3 745.9 L 405.1 711.2 L 483.3 659.7 L 566.9 588.7 L 646.4 616.4 L 724.9 560.6 L 804.6 467.0 L 881.1 368.4" fill="none" stroke="#AF52DE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 4%, observed 14% (gap +10%, under-states); 1017 predictions">
-<title>Predicted 4%, observed 14% (gap +10%, under-states); 1017 predictions</title>
+<title>Prédit 4 %, observé 14 % (écart +10 %, sous-estime) ; 1017 prédictions</title>
 <circle class="halo" cx="163.3" cy="907.0" r="34.0" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="163.3" cy="907.0" r="26.0" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 15%, observed 29% (gap +14%, under-states); 564 predictions">
-<title>Predicted 15%, observed 29% (gap +14%, under-states); 564 predictions</title>
+<title>Prédit 15 %, observé 29 % (écart +14 %, sous-estime) ; 564 prédictions</title>
 <circle class="halo" cx="247.2" cy="787.7" r="29.7" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="247.2" cy="787.7" r="21.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 25%, observed 35% (gap +10%, under-states); 447 predictions">
-<title>Predicted 25%, observed 35% (gap +10%, under-states); 447 predictions</title>
+<title>Prédit 25 %, observé 35 % (écart +10 %, sous-estime) ; 447 prédictions</title>
 <circle class="halo" cx="326.3" cy="745.9" r="28.3" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="326.3" cy="745.9" r="20.3" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 35%, observed 39% (gap +4%, under-states); 356 predictions">
-<title>Predicted 35%, observed 39% (gap +4%, under-states); 356 predictions</title>
+<title>Prédit 35 %, observé 39 % (écart +4 %, sous-estime) ; 356 prédictions</title>
 <circle class="halo" cx="405.1" cy="711.2" r="27.1" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="405.1" cy="711.2" r="19.1" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 45%, observed 46% (gap +1%, under-states); 334 predictions">
-<title>Predicted 45%, observed 46% (gap +1%, under-states); 334 predictions</title>
+<title>Prédit 45 %, observé 46 % (écart +1 %, sous-estime) ; 334 prédictions</title>
 <circle class="halo" cx="483.3" cy="659.7" r="26.7" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="483.3" cy="659.7" r="18.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 55%, observed 54% (gap -1%, over-states); 305 predictions">
-<title>Predicted 55%, observed 54% (gap -1%, over-states); 305 predictions</title>
+<title>Prédit 55 %, observé 54 % (écart -1 %, surestime) ; 305 prédictions</title>
 <circle class="halo" cx="566.9" cy="588.7" r="26.3" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="566.9" cy="588.7" r="18.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 65%, observed 51% (gap -14%, over-states); 263 predictions">
-<title>Predicted 65%, observed 51% (gap -14%, over-states); 263 predictions</title>
+<title>Prédit 65 %, observé 51 % (écart -14 %, surestime) ; 263 prédictions</title>
 <circle class="halo" cx="646.4" cy="616.4" r="25.6" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="646.4" cy="616.4" r="17.6" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 75%, observed 58% (gap -17%, over-states); 245 predictions">
-<title>Predicted 75%, observed 58% (gap -17%, over-states); 245 predictions</title>
+<title>Prédit 75 %, observé 58 % (écart -17 %, surestime) ; 245 prédictions</title>
 <circle class="halo" cx="724.9" cy="560.6" r="25.3" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="724.9" cy="560.6" r="17.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 85%, observed 70% (gap -15%, over-states); 251 predictions">
-<title>Predicted 85%, observed 70% (gap -15%, over-states); 251 predictions</title>
+<title>Prédit 85 %, observé 70 % (écart -15 %, surestime) ; 251 prédictions</title>
 <circle class="halo" cx="804.6" cy="467.0" r="25.4" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="804.6" cy="467.0" r="17.4" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 95%, observed 82% (gap -12%, over-states); 218 predictions">
-<title>Predicted 95%, observed 82% (gap -12%, over-states); 218 predictions</title>
+<title>Prédit 95 %, observé 82 % (écart -12 %, surestime) ; 218 prédictions</title>
 <circle class="halo" cx="881.1" cy="368.4" r="24.9" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="881.1" cy="368.4" r="16.9" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<text x="764.8" y="624.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">Overconfident:</text>
-<text x="764.8" y="648.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">says more churn</text>
-<text x="764.8" y="672.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">than happens</text>
-<text x="263.3" y="608.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">Underconfident:</text>
-<text x="263.3" y="632.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">says less churn</text>
-<text x="263.3" y="656.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">than happens</text>
+<text x="764.8" y="624.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">Trop confiant :</text>
+<text x="764.8" y="648.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">annonce plus d'attrition</text>
+<text x="764.8" y="672.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">qu'il n'en survient</text>
+<text x="263.3" y="608.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">Pas assez confiant :</text>
+<text x="263.3" y="632.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">annonce moins d'attrition</text>
+<text x="263.3" y="656.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">qu'il n'en survient</text>
 <g class="bar" tabindex="0" role="img" aria-label="1017 predictions near 4%">
-<title>1017 predictions near 4%</title>
+<title>1017 prédictions autour de 4 %</title>
 <rect x="130.6" y="1154.0" width="65.3" height="176.0" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="564 predictions near 15%">
-<title>564 predictions near 15%</title>
+<title>564 prédictions autour de 15 %</title>
 <rect x="214.5" y="1232.4" width="65.3" height="97.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="447 predictions near 25%">
-<title>447 predictions near 25%</title>
+<title>447 prédictions autour de 25 %</title>
 <rect x="293.6" y="1252.6" width="65.3" height="77.4" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="356 predictions near 35%">
-<title>356 predictions near 35%</title>
+<title>356 prédictions autour de 35 %</title>
 <rect x="372.5" y="1268.4" width="65.3" height="61.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="334 predictions near 45%">
-<title>334 predictions near 45%</title>
+<title>334 prédictions autour de 45 %</title>
 <rect x="450.6" y="1272.2" width="65.3" height="57.8" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="305 predictions near 55%">
-<title>305 predictions near 55%</title>
+<title>305 prédictions autour de 55 %</title>
 <rect x="534.3" y="1277.2" width="65.3" height="52.8" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="263 predictions near 65%">
-<title>263 predictions near 65%</title>
+<title>263 prédictions autour de 65 %</title>
 <rect x="613.8" y="1284.5" width="65.3" height="45.5" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="245 predictions near 75%">
-<title>245 predictions near 75%</title>
+<title>245 prédictions autour de 75 %</title>
 <rect x="692.3" y="1287.6" width="65.3" height="42.4" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="251 predictions near 85%">
-<title>251 predictions near 85%</title>
+<title>251 prédictions autour de 85 %</title>
 <rect x="772.0" y="1286.6" width="65.3" height="43.4" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="218 predictions near 95%">
-<title>218 predictions near 95%</title>
+<title>218 prédictions autour de 95 %</title>
 <rect x="848.5" y="1292.3" width="65.3" height="37.7" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
 <line x1="128.0" y1="1330.0" x2="924.0" y2="1330.0" stroke="#1D1D1F" stroke-width="1.6"/>
@@ -168,9 +168,9 @@
 <text x="725.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">75%</text>
 <line x1="924.0" y1="1330.0" x2="924.0" y2="1337.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="924.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100%</text>
-<text x="526.0" y="1404.0" font-size="22" fill="#1D1D1F" text-anchor="middle">Predicted probability of churn</text>
-<text x="52.0" y="1242.0" font-size="20" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 1242.0)">Predictions</text>
-<text x="128.0" y="1088.0" font-size="18" fill="#6E6E73">Point size = predictions in bin:</text>
+<text x="526.0" y="1404.0" font-size="22" fill="#1D1D1F" text-anchor="middle">Probabilité d'attrition prédite</text>
+<text x="52.0" y="1242.0" font-size="20" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 1242.0)">Prédictions</text>
+<text x="128.0" y="1088.0" font-size="18" fill="#6E6E73">Taille du point = prédictions dans la classe :</text>
 <circle cx="474.0" cy="1082.0" r="16.5" fill="#8E8E93" fill-opacity="0.35" stroke="#8E8E93" stroke-width="1.2"/>
 <text x="474.0" y="1130.0" font-size="16" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">200</text>
 <circle cx="604.0" cy="1082.0" r="20.9" fill="#8E8E93" fill-opacity="0.35" stroke="#8E8E93" stroke-width="1.2"/>

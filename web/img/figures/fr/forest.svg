@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="506" viewBox="0 0 720 506" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="fp-title fp-desc">
-<title id="fp-title">Forest plot: home blood-pressure telemonitoring raises the odds of reaching target</title>
-<desc id="fp-desc">Meta-analysis forest plot of 8 randomised trials. Each row shows a trial’s odds ratio for reaching the blood-pressure target as a box (area ∝ study weight) with a 95% confidence-interval whisker, on a logarithmic axis with a null rule at 1.0. The pooled random-effects diamond is centred at 1.44 (95% CI 1.26 to 1.64), clearly to the right of the null, so the programme increases the odds of reaching target overall.</desc>
+<title id="fp-title">Forest plot : la télésurveillance de la pression artérielle à domicile augmente les chances d'atteindre la cible</title>
+<desc id="fp-desc">Forest plot de méta-analyse de 8 essais randomisés. Chaque ligne montre le rapport de cotes d'un essai pour atteindre la cible tensionnelle sous forme de boîte (aire ∝ poids de l'étude) avec une moustache d'intervalle de confiance à 95 %, sur un axe logarithmique avec une ligne nulle à 1,0. Le losange groupé en effets aléatoires est centré sur 1,44 (IC 95 % 1,26 à 1,64), nettement à droite de la valeur nulle, donc le programme augmente globalement les chances d'atteindre la cible.</desc>
 <style>.row{cursor:pointer}.row .whisker,.row .cap{stroke:#6E6E73;stroke-width:1.6}.row:hover .whisker,.row:focus .whisker,.row:hover .cap,.row:focus .cap{stroke:#6E6E73;stroke-width:2.4}.row:hover .box,.row:focus .box,.row:hover .diamond,.row:focus .diamond,.row:hover .dot,.row:focus .dot{stroke:#FFFFFF;stroke-width:2.4}.row:focus{outline:none}.row:hover .rowbg,.row:focus .rowbg{fill:#F5F5F7}@media (prefers-reduced-motion:reduce){.grow{animation:none}[data-anim]{opacity:1 !important}}</style>
 <rect width="720" height="506" fill="#FFFFFF"/>
-<text x="24" y="36" font-size="18" font-weight="700" fill="#1D1D1F">Telemonitoring helps patients hit their BP target</text>
-<text x="24" y="58" font-size="12.5" fill="#6E6E73">Pooled odds ratio 1.44 (95% CI 1.26–1.64) across 8 randomised trials · I² = 34% · illustrative data</text>
-<text x="24" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">Trial</text>
-<text x="546" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">OR (95% CI)</text>
+<text x="24" y="36" font-size="18" font-weight="700" fill="#1D1D1F">La télésurveillance aide les patients à atteindre leur cible tensionnelle</text>
+<text x="24" y="58" font-size="12.5" fill="#6E6E73">Rapport de cotes groupé 1,44 (IC 95 % 1,26-1,64) sur 8 essais randomisés · I² = 34 % · données illustratives</text>
+<text x="24" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">Essai</text>
+<text x="546" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">RC (IC 95 %)</text>
 <line x1="325.4" y1="98.0" x2="325.4" y2="422.0" stroke="#6E6E73" stroke-width="1.4"/>
 <g class="row" tabindex="0" role="img" aria-label="Ashford 2016: OR 1.42 (95% CI 1.08–1.87), weight 12% — significant">
-<title>Ashford 2016: OR 1.42 (95% CI 1.08–1.87), weight 12% — significant</title>
+<title>Ashford 2016 : RC 1,42 (IC 95 % 1,08-1,87), poids 12 % · significatif</title>
 <rect class="rowbg" x="18.0" y="116.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="137.0" font-size="13" fill="#1D1D1F">Ashford 2016</text>
 <line class="whisker" x1="335.1" y1="133.0" x2="404.2" y2="133.0"/>
@@ -19,7 +19,7 @@
 <text x="546" y="137.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.42 (1.08–1.87)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null">
-<title>Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null</title>
+<title>Bhatt 2017 : RC 1,95 (IC 95 % 0,92-4,13), poids 1 % · franchit la valeur nulle</title>
 <rect class="rowbg" x="18.0" y="150.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="171.0" font-size="13" fill="#1D1D1F">Bhatt 2017</text>
 <line class="whisker" x1="314.9" y1="167.0" x2="503.9" y2="167.0"/>
@@ -29,7 +29,7 @@
 <text x="546" y="171.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.95 (0.92–4.13)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant">
-<title>Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant</title>
+<title>Costa 2018 : RC 1,31 (IC 95 % 1,06-1,62), poids 30 % · significatif</title>
 <rect class="rowbg" x="18.0" y="184.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="205.0" font-size="13" fill="#1D1D1F">Costa 2018</text>
 <line class="whisker" x1="332.7" y1="201.0" x2="386.1" y2="201.0"/>
@@ -39,7 +39,7 @@
 <text x="546" y="205.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.31 (1.06–1.62)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null">
-<title>Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null</title>
+<title>Devi 2019 : RC 0,88 (IC 95 % 0,41-1,89), poids 0 % · franchit la valeur nulle</title>
 <rect class="rowbg" x="18.0" y="218.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="239.0" font-size="13" fill="#1D1D1F">Devi 2019</text>
 <line class="whisker" x1="213.1" y1="235.0" x2="405.5" y2="235.0"/>
@@ -49,7 +49,7 @@
 <text x="546" y="239.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">0.88 (0.41–1.89)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant">
-<title>Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant</title>
+<title>Eriksson 2020 : RC 1,58 (IC 95 % 1,29-1,93), poids 49 % · significatif</title>
 <rect class="rowbg" x="18.0" y="252.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="273.0" font-size="13" fill="#1D1D1F">Eriksson 2020</text>
 <line class="whisker" x1="357.4" y1="269.0" x2="408.1" y2="269.0"/>
@@ -59,7 +59,7 @@
 <text x="546" y="273.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.58 (1.29–1.93)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null">
-<title>Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null</title>
+<title>Fournier 2021 : RC 1,12 (IC 95 % 0,71-1,77), poids 2 % · franchit la valeur nulle</title>
 <rect class="rowbg" x="18.0" y="286.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="307.0" font-size="13" fill="#1D1D1F">Fournier 2021</text>
 <line class="whisker" x1="282.2" y1="303.0" x2="397.3" y2="303.0"/>
@@ -69,7 +69,7 @@
 <text x="546" y="307.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.12 (0.71–1.77)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant">
-<title>Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant</title>
+<title>Grant 2022 : RC 1,74 (IC 95 % 1,14-2,66), poids 4 % · significatif</title>
 <rect class="rowbg" x="18.0" y="320.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="341.0" font-size="13" fill="#1D1D1F">Grant 2022</text>
 <line class="whisker" x1="341.9" y1="337.0" x2="448.5" y2="337.0"/>
@@ -79,7 +79,7 @@
 <text x="546" y="341.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.74 (1.14–2.66)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null">
-<title>Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null</title>
+<title>Haddad 2023 : RC 1,29 (IC 95 % 0,78-2,13), poids 2 % · franchit la valeur nulle</title>
 <rect class="rowbg" x="18.0" y="354.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="375.0" font-size="13" fill="#1D1D1F">Haddad 2023</text>
 <line class="whisker" x1="294.1" y1="371.0" x2="420.6" y2="371.0"/>
@@ -89,9 +89,9 @@
 <text x="546" y="375.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.29 (0.78–2.13)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%">
-<title>Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%</title>
+<title>RC groupé en effets aléatoires 1,44 (IC 95 % 1,26-1,64), I² = 34 %</title>
 <rect class="rowbg" x="18.0" y="402.0" width="684.0" height="34.0" rx="7" fill="none"/>
-<text x="24" y="423.0" font-size="13" font-weight="700" fill="#1D1D1F">Pooled (random effects)</text>
+<text x="24" y="423.0" font-size="13" font-weight="700" fill="#1D1D1F">Groupé (effets aléatoires)</text>
 <polygon class="diamond" points="354.5,419.0 371.3,410.0 387.6,419.0 371.3,428.0" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="423.0" font-size="12" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.44 (1.26–1.64)</text>
 </g>
@@ -104,8 +104,8 @@
 <text x="412.6" y="449.0" font-size="11" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">2</text>
 <line x1="499.9" y1="430.0" x2="499.9" y2="435.0" stroke="#1D1D1F" stroke-width="1"/>
 <text x="499.9" y="449.0" font-size="11" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">4</text>
-<text x="369.0" y="468.0" font-size="12" fill="#1D1D1F" text-anchor="middle">Odds ratio for reaching BP target (log scale, higher is better)</text>
-<text x="317.4" y="92.0" font-size="10.5" fill="#6E6E73" text-anchor="end">← favours usual care</text>
-<text x="333.4" y="92.0" font-size="10.5" fill="#6E6E73">favours telemonitoring →</text>
+<text x="369.0" y="468.0" font-size="12" fill="#1D1D1F" text-anchor="middle">Rapport de cotes pour atteindre la cible tensionnelle (échelle log, plus haut est meilleur)</text>
+<text x="317.4" y="92.0" font-size="10.5" fill="#6E6E73" text-anchor="end">← en faveur des soins habituels</text>
+<text x="333.4" y="92.0" font-size="10.5" fill="#6E6E73">en faveur de la télésurveillance →</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(672,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
