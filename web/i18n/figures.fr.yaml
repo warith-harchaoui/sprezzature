@@ -5830,10 +5830,10 @@ zebra — Animals: zebra — Animaux
 
 # --- elbow (Kneedle) figure + parliament member-tooltip footnote ---
 'Elbow detection: where adding clusters stops paying off': 'Détection du coude : quand ajouter des grappes ne rapporte plus'
-'k-means inertia falls steeply, then flattens; the Kneedle method flags the elbow at k = 4': 'l''inertie du k-means chute fortement, puis se stabilise ; la méthode Kneedle repère le coude à k = 4'
+'k-means inertia falls steeply, then flattens; the Kneedle method flags the elbow at k = 4': 'l''inertie du k-means chute fortement, puis se stabilise ; la méthode du coude repère le coude à k = 4'
 'Inertia (within-cluster sum of squares)': 'Inertie (somme des carrés intra-grappe)'
-'Kneedle signal': 'Signal Kneedle'
-'Line chart of k-means inertia (within-cluster sum of squares) against the number of clusters k, from 1 to 10. The curve drops sharply then flattens. The Kneedle algorithm normalises the axes and takes the peak of the difference curve to locate the elbow at k = 4, where inertia is 210. An inset shows that difference curve, whose peak marks the elbow.': 'Graphique en courbe de l''inertie du k-means (somme des carrés intra-grappe) en fonction du nombre de grappes k, de 1 à 10. La courbe chute fortement puis se stabilise. L''algorithme Kneedle normalise les axes et prend le sommet de la courbe de différence pour localiser le coude à k = 4, où l''inertie vaut 210. Un encart montre cette courbe de différence, dont le sommet marque le coude.'
+'Kneedle signal': 'Signal du coude'
+'Line chart of k-means inertia (within-cluster sum of squares) against the number of clusters k, from 1 to 10. The curve drops sharply then flattens. The Kneedle algorithm normalises the axes and takes the peak of the difference curve to locate the elbow at k = 4, where inertia is 210. An inset shows that difference curve, whose peak marks the elbow.': 'Graphique en courbe de l''inertie du k-means (somme des carrés intra-grappe) en fonction du nombre de grappes k, de 1 à 10. La courbe chute fortement puis se stabilise. L''algorithme du coude normalise les axes et prend le sommet de la courbe de différence pour localiser le coude à k = 4, où l''inertie vaut 210. Un encart montre cette courbe de différence, dont le sommet marque le coude.'
 'Number of clusters (k)': 'Nombre de grappes (k)'
 'diminishing returns': 'rendements décroissants'
 'k = 4': 'k = 4'
