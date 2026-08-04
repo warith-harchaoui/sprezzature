@@ -22,13 +22,19 @@ A part-figure marks the remainder · rows sorted high to low: Une figure partiel
 A reservoir running a little low: Un réservoir un peu bas
 A rising tone climbs the frequency axis over three seconds: Un son montant grimpe l'axe des fréquences en trois secondes
 A single ripple ripples out, then fades to stillness: Une seule ondulation se propage, puis s'éteint
+ACAN: ACAN
+ACAN — chr15:47,940,000 · p = 10.0×10⁻²¹: ACAN · chr15:47 940 000 · p = 10,0×10⁻²¹
 Activated: Activation
 Activity peaks Friday mid-afternoon: L'activité culmine le vendredi après-midi
 Actual: Réel
 Advertising: Publicité
+Adélie: Adélie
+Adélie — 26 birds; bold line is the species median curve: Adélie · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
 Africa: Afrique
 Amsterdam: Amsterdam
 'Amsterdam: 48 cyclists per 100 commuters': 'Amsterdam : 48 cyclistes pour 100 actifs'
+? 'Andrews curves: every penguin''s standardised bill length, bill depth, flipper length and body mass are encoded as a Fourier curve over t from minus pi to pi, coloured by species. Adélie in blue, Chinstrap in orange and Gentoo in green each form a distinct band, with the bold median curve of each species drawn on top.'
+: 'Courbes d''Andrews : la longueur du bec, l''épaisseur du bec, la longueur de la nageoire et la masse corporelle standardisées de chaque manchot sont encodées en une courbe de Fourier sur t de moins pi à pi, colorée par espèce. Les Adélie en bleu, les manchots à jugulaire en orange et les Papou en vert forment chacun une bande distincte, avec la courbe médiane de chaque espèce tracée en gras par-dessus.'
 Apr: Avr.
 Area: Surface
 Area-true proportional-symbol map, Equal-Earth basemap.: Carte en symboles proportionnels à l'aire exacte, fond Equal Earth.
@@ -37,6 +43,7 @@ Asia: Asie
 Asking price (k€): Prix affiché (k€)
 Asking price against floor area: Prix affiché selon la surface
 Athens: Athènes
+Aug: Août
 Berlin: Berlin
 'Berlin: 18 cyclists per 100 commuters': 'Berlin : 18 cyclistes pour 100 actifs'
 Beta: Bêta
@@ -52,9 +59,13 @@ Car: Voiture
 Cars by class across four metrics: Voitures par classe sur quatre mesures
 Cat: Chat
 Change: Variation
+Channel: Canal
 Checkout time (s): Temps de paiement (s)
 Checkout time by test variant: Temps de paiement par variante
 China -46: Chine −46
+Chinstrap: À jugulaire
+Chinstrap — 26 birds; bold line is the species median curve: À jugulaire · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
+Chromosome: Chromosome
 City: Ville
 Class: Classe
 Cloud: Cloud
@@ -82,11 +93,13 @@ Daily activity: Activité quotidienne
 Daily price (open, high, low, close): Cours quotidien (ouverture, haut, bas, clôture)
 Data: Données
 Day: Jour
+Dec: Déc.
 Decaf: Déca
 Density: Densité
 Design: Conception
 Desktop: Ordinateur
 Differential expression: Expression différentielle
+Direct: Direct
 Discovery: Cadrage
 Distance east (km): Distance vers l'est (km)
 Distance north (km): Distance vers le nord (km)
@@ -96,6 +109,8 @@ Distribution shape by group: Forme de la distribution par groupe
 Diverging choropleth: Choroplèthe divergente
 Dog: Chien
 Down: Sous-exprimé
+? Each curve turns one bird's four body measurements into an Andrews series; bold lines are the species medians. Illustrative data.
+: Chaque courbe transforme les quatre mesures corporelles d'un oiseau en une série d'Andrews ; les lignes en gras sont les médianes par espèce. Données illustratives.
 Each region counts people once · hover or tab to a set to bring it forward: Chaque région compte les personnes une fois · survolez ou tabulez un ensemble pour le mettre au premier plan
 East: Est
 End: Fin
@@ -106,23 +121,37 @@ Estimated density: Densité estimée
 Events: Événements
 False positive rate: Taux de faux positifs
 Feature correlation: Corrélation des variables
+Feb: Févr.
 Female: Femmes
 Floor area (m²): Surface (m²)
 Four small world choropleths, one per year, sharing frozen class breaks so panels are comparable.: Quatre petites cartes choroplèthes mondiales, une par année, partageant des seuils de classes figés pour rester comparables.
 Four years, one scale: Quatre années, une seule échelle
+'Fourier term order:': 'Ordre des termes de Fourier :'
 Fox: Renard
 Frequency (Hz): Fréquence (Hz)
 Fri: Ven
 Friday: Vendredi
+GDF5: GDF5
+GDF5 — chr20:25,600,000 · p = 10.0×10⁻¹⁹: GDF5 · chr20:25 600 000 · p = 10,0×10⁻¹⁹
 GDP per capita (k$): PIB par habitant (k$)
+? 'Genome-wide association study of adult height: dozens of loci across many chromosomes clear significance, so the signal is spread wide'
+: 'Étude d''association pangénomique de la taille adulte : des dizaines de loci sur de nombreux chromosomes franchissent le seuil de significativité, le signal est donc largement réparti'
+Gentoo: Papou
+Gentoo — 26 birds; bold line is the species median curve: Papou · 26 oiseaux ; la ligne en gras est la courbe médiane de l'espèce
 Great-circle flow map on an Equal-Earth basemap, line width by volume; synthetic illustrative data.: Carte de flux en orthodromies sur fond Equal Earth, épaisseur selon le volume ; données synthétiques illustratives.
 Great-circle links, width by volume · synthetic O-D data (illustrative only): Liaisons orthodromiques, épaisseur selon le volume · données origine-destination synthétiques (illustratives)
 Group: Groupe
 Group B has the widest spread: Le groupe B est le plus dispersé
+HMGA1: HMGA1
+HMGA1 — chr6:58,140,000 · p = 10.0×10⁻²⁸: HMGA1 · chr6:58 140 000 · p = 10,0×10⁻²⁸
+HMGA2: HMGA2
+HMGA2 — chr12:37,240,000 · p = 10.0×10⁻²³: HMGA2 · chr12:37 240 000 · p = 10,0×10⁻²³
+Hardware: Matériel
 Headcount by division: Effectifs par division
 Headcount by division (sunburst): Effectifs par division (rayonnant)
 Healthy: Sain
 Height: Hauteur
+Height is written across the whole genome: La taille est inscrite dans tout le génome
 High: Élevée
 Hot: Chaud
 Hour: Heure
@@ -131,10 +160,13 @@ Hours to first response: Heures avant la première réponse
 Illustrative 3D surface: Surface 3D illustrative
 Illustrative connection map: Carte de liaisons illustrative
 Illustrative data: Données illustratives
+? Illustrative data · one point per genetic variant · alternating tints separate chromosomes · hover a labelled peak for its position and p-value
+: Données illustratives · un point par variant génétique · des teintes alternées séparent les chromosomes · survolez un pic étiqueté pour sa position et sa p-valeur
 Index — same class breaks across all panels: Indice · mêmes seuils de classes sur tous les panneaux
 Item: Élément
 Jan: Janv.
 Jul: Juil.
+Jun: Juin
 Kaplan-Meier survival: Survie de Kaplan-Meier
 L: D
 Latency (ms): Latence (ms)
@@ -149,6 +181,11 @@ Low: Faible
 Madrid: Madrid
 Magnitude: Norme
 Male: Hommes
+Manhattan plot of a genome-wide association study for adult height: Diagramme de Manhattan d'une étude d'association pangénomique de la taille adulte
+? Manhattan plot. The horizontal axis lays chromosomes 1 to 22 end to end; the vertical axis is the strength of each genetic variant's association with adult height, shown as minus log base ten of the p-value, so smaller p-values rise higher. Points alternate between two shades of blue by chromosome. A dashed red line marks the genome-wide significance threshold at p = 5e-8. Dozens of peaks on many different chromosomes rise above the line, the signature of a highly polygenic trait; the tallest, labelled with nearby genes, include ZBTB38 on chromosome 3, HMGA1 on chromosome 6, and HMGA2 on chromosome 12.
+: Diagramme de Manhattan. L'axe horizontal aligne les chromosomes 1 à 22 bout à bout ; l'axe vertical est la force de l'association de chaque variant génétique avec la taille adulte, exprimée en moins log en base dix de la p-valeur, si bien que les p-valeurs plus petites montent plus haut. Les points alternent entre deux nuances de bleu selon le chromosome. Une ligne rouge pointillée marque le seuil de significativité pangénomique à p = 5e-8. Des dizaines de pics sur de nombreux chromosomes dépassent la ligne, signature d'un caractère fortement polygénique ; les plus hauts, étiquetés par les gènes voisins, incluent ZBTB38 sur le chromosome 3, HMGA1 sur le chromosome 6 et HMGA2 sur le chromosome 12.
+Mar: Mars
+May: Mai
 Mean daily low to mean daily high, degrees Celsius, 30-year climate normal: De la moyenne des minima à la moyenne des maxima quotidiens, en degrés Celsius, normale climatique sur 30 ans
 Mean reaction time (ms): Temps de réaction moyen (ms)
 Mean with 95% interval: Moyenne avec intervalle à 95 %
@@ -170,9 +207,14 @@ Nobody drinks the decaf: Personne ne boit le déca
 Normal Q-Q plot: Diagramme quantile-quantile normal
 Normal distribution fitted to 1,840 exam results; shaded area = one standard deviation around the mean: Loi normale ajustée sur 1 840 résultats d'examen ; zone grisée = un écart-type autour de la moyenne
 North: Nord
+Nov: Nov.
 Oct: Oct.
 Ops: Exploitation
+Organic search: Recherche organique
 Overlapping skills among data professionals: Compétences croisées des professionnels de la donnée
+PLAG1: PLAG1
+PLAG1 — chr8:88,450,000 · p = 10.0×10⁻²⁵: PLAG1 · chr8:88 450 000 · p = 10,0×10⁻²⁵
+Paid search: Recherche payante
 Per-region mini bars, Equal-Earth basemap.: Mini-barres par région, fond Equal Earth.
 Per-region pies, Equal-Earth basemap.: Camemberts par région, fond Equal Earth.
 ? 'Pictorial ISOTYPE chart: each row repeats a person icon, one figure per five cyclists out of every hundred commuters; the last figure in a row is clipped to show the remainder. Copenhagen 62; Amsterdam 48; Tokyo 27; Berlin 18; Los Angeles 4 per 100. Copenhagen leads with 62; Los Angeles trails at 4.'
@@ -221,8 +263,11 @@ Score by group: Score par groupe
 Score change 2023 → 2024: Évolution du score 2023 → 2024
 Search: Recherche
 Search and direct bring most traffic: La recherche et le direct dominent le trafic
+Sep: Sept.
+Series: Série
 Serre-Ponçon lake · usable capacity on 1 July · 10-year median 68 % · illustrative reading: Lac de Serre-Ponçon · capacité utile au 1er juillet · médiane décennale 68 % · relevé illustratif
 Service time (minutes): Temps de service (minutes)
+Services: Services
 Session duration (s): Durée de session (s)
 Sessions by weekday and hour: Sessions par jour et par heure
 Sessions per hour by platform: Sessions par heure et par plateforme
@@ -237,7 +282,9 @@ Skills held by 1,000 surveyed data professionals · counts are people per region
 Sleep the night before (hours): Sommeil la veille (heures)
 Small multiples: Petits multiples
 Social: Réseaux sociaux
+Software: Logiciels
 South: Sud
+Species: Espèce
 ? 'Spectrogram: a time-by-frequency heatmap of a short-time Fourier transform. A bright diagonal sweeps from low to high frequency (a rising tone), a solid band at the base is a steady bass drone, and three vertical streaks are percussive taps. Colour runs dark purple (quiet) to yellow (loud).'
 : 'Spectrogramme : une carte de chaleur temps-fréquence d''une transformée de Fourier à court terme. Une diagonale claire balaie du grave à l''aigu (un son montant), une bande pleine à la base est un bourdon de basse continu, et trois traits verticaux sont des frappes percussives. La couleur va du violet foncé (faible) au jaune (fort).'
 Start: Début
@@ -260,6 +307,7 @@ The model is unsure between samples: Le modèle hésite entre les échantillons
 The storm pulls the whole airflow into its spin: La tempête entraîne tout le flux dans sa rotation
 The waterline is the fill level; the dashed line is the 10-year seasonal median.: La ligne d'eau est le niveau de remplissage ; la ligne pointillée est la médiane saisonnière sur dix ans.
 Theoretical quantiles: Quantiles théoriques
+Three penguin species trace three Fourier signatures: Trois espèces de manchots tracent trois signatures de Fourier
 ? Three-set Venn diagram of skills held by 1,000 surveyed data professionals. Python total 619; SQL total 539; Cloud total 456. The central region — fluent in all three — is the largest at 214, and Python plus SQL together add another 188.
 : Diagramme de Venn à trois ensembles des compétences de 1 000 professionnels de la donnée interrogés. Python 619 au total ; SQL 539 ; Cloud 456. La région centrale, à l'aise dans les trois, est la plus grande avec 214, et Python et SQL réunis en ajoutent 188.
 Thu: Jeu
@@ -288,6 +336,7 @@ Variant A: Variante A
 Variant B: Variante B
 Variant B is the least consistent: La variante B est la moins régulière
 Visited: Visite
+Visits (thousands): Visites (milliers)
 Walk: Marche
 Wave height across a still pond, one second after a single drop: Hauteur des vagues sur un étang calme, une seconde après une goutte unique
 Wealth, longevity, and population: Richesse, longévité et population
@@ -302,10 +351,14 @@ World bubble map: Carte du monde à bulles
 ? World choropleth of net change on a red-white-blue diverging scale centered at zero, with no-data countries in gray and four countries directly annotated.
 : Choroplèthe mondiale de la variation nette sur une échelle divergente rouge-blanc-bleu centrée sur zéro, les pays sans donnée en gris et quatre pays annotés directement.
 World pie-glyph map: Carte du monde à camemberts
+ZBTB38: ZBTB38
+ZBTB38 — chr3:108,900,000 · p = 10.0×10⁻³³: ZBTB38 · chr3:108 900 000 · p = 10,0×10⁻³³
 app-07 · 12:40 UTC · 1-minute average · illustrative reading: app-07 · 12:40 UTC · moyenne sur 1 minute · relevé illustratif
 bass drone: bourdon de basse
 dB: dB
+f(t) — Andrews series value: f(t) · valeur de la série d'Andrews
 farther: plus loin
+genome-wide significance · p = 5×10⁻⁸: significativité pangénomique · p = 5×10⁻⁸
 low-pressure centre: centre dépressionnaire
 n/a: n.d.
 nearer: plus près
@@ -314,5 +367,16 @@ per 100: pour 100
 percussive tap: frappe percussive
 rising tone: son montant
 seasonal normal: normale saisonnière
+suggestive · p = 1×10⁻⁵: suggestif · p = 1×10⁻⁵
+t (Fourier phase, −π to π): t (phase de Fourier, −π à π)
+x1 = bill length: x1 = longueur du bec
+x2 = bill depth: x2 = épaisseur du bec
+x3 = flipper length: x3 = longueur de la nageoire
+x4 = body mass: x4 = masse corporelle
 μ = 72.4: μ = 72,4
+π: π
+π/2: π/2
 −1σ (63.3): −1σ (63,3)
+−log₁₀(p) association strength: −log₁₀(p) force de l'association
+−π: −π
+−π/2: −π/2

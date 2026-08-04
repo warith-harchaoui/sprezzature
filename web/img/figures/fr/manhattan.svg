@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="780" viewBox="0 0 1500 780" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="mh-title mh-desc">
-<title id="mh-title">Manhattan plot of a genome-wide association study for adult height</title>
-<desc id="mh-desc">Manhattan plot. The horizontal axis lays chromosomes 1 to 22 end to end; the vertical axis is the strength of each genetic variant's association with adult height, shown as minus log base ten of the p-value, so smaller p-values rise higher. Points alternate between two shades of blue by chromosome. A dashed red line marks the genome-wide significance threshold at p = 5e-8. Dozens of peaks on many different chromosomes rise above the line, the signature of a highly polygenic trait; the tallest, labelled with nearby genes, include ZBTB38 on chromosome 3, HMGA1 on chromosome 6, and HMGA2 on chromosome 12.</desc>
+<title id="mh-title">Diagramme de Manhattan d'une étude d'association pangénomique de la taille adulte</title>
+<desc id="mh-desc">Diagramme de Manhattan. L'axe horizontal aligne les chromosomes 1 à 22 bout à bout ; l'axe vertical est la force de l'association de chaque variant génétique avec la taille adulte, exprimée en moins log en base dix de la p-valeur, si bien que les p-valeurs plus petites montent plus haut. Les points alternent entre deux nuances de bleu selon le chromosome. Une ligne rouge pointillée marque le seuil de significativité pangénomique à p = 5e-8. Des dizaines de pics sur de nombreux chromosomes dépassent la ligne, signature d'un caractère fortement polygénique ; les plus hauts, étiquetés par les gènes voisins, incluent ZBTB38 sur le chromosome 3, HMGA1 sur le chromosome 6 et HMGA2 sur le chromosome 12.</desc>
 <style>
 .peak { transition: r .15s ease; }
 .peak:hover circle, .peak:focus circle { r: 7; }
@@ -9,8 +9,8 @@
 @media (prefers-reduced-motion: reduce) { .peak { transition: none; } }
 </style>
 <rect width="1500" height="780" fill="#FFFFFF"/>
-<text x="96.0" y="62" font-size="32" font-weight="700" fill="#1D1D1F">Height is written across the whole genome</text>
-<text x="96.0" y="96" font-size="18" fill="#6E6E73">Genome-wide association study of adult height: dozens of loci across many chromosomes clear significance, so the signal is spread wide</text>
+<text x="96.0" y="62" font-size="32" font-weight="700" fill="#1D1D1F">La taille est inscrite dans tout le génome</text>
+<text x="96.0" y="96" font-size="18" fill="#6E6E73">Étude d'association pangénomique de la taille adulte : des dizaines de loci sur de nombreux chromosomes franchissent le seuil de significativité, le signal est donc largement réparti</text>
 <g>
 <line x1="96.0" y1="670.0" x2="1456.0" y2="670.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="82.0" y="675.0" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">0</text>
@@ -27,7 +27,7 @@
 <line x1="96.0" y1="211.2" x2="1456.0" y2="211.2" stroke="#E5E5EA" stroke-width="1"/>
 <text x="82.0" y="216.2" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">30</text>
 </g>
-<text x="34" y="410.0" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 34 410.0)">−log₁₀(p)  association strength</text>
+<text x="34" y="410.0" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 34 410.0)">−log₁₀(p) force de l'association</text>
 <g fill="#007AFF" fill-opacity="0.8">
 <circle cx="174.4" cy="588.2" r="2.4"/>
 <circle cx="148.1" cy="669.2" r="2.4"/>
@@ -8110,37 +8110,37 @@
 </g>
 <line x1="96.0" y1="593.5" x2="1456.0" y2="593.5" stroke="#6E6E73" stroke-width="1.4" stroke-dasharray="2 5"/>
 <rect x="1265.2" y="570.5" width="190.8" height="21" rx="5" fill="#FFFFFF" fill-opacity="0.86"/>
-<text x="1448.0" y="585.5" font-size="14" fill="#6E6E73" text-anchor="end">suggestive · p = 1×10⁻⁵</text>
+<text x="1448.0" y="585.5" font-size="14" fill="#6E6E73" text-anchor="end">suggestif · p = 1×10⁻⁵</text>
 <line x1="96.0" y1="558.3" x2="1456.0" y2="558.3" stroke="#FF3B30" stroke-width="1.8" stroke-dasharray="6 5"/>
 <rect x="1140.3" y="535.3" width="315.7" height="21" rx="5" fill="#FFFFFF" fill-opacity="0.86"/>
-<text x="1448.0" y="550.3" font-size="14" font-weight="600" fill="#FF3B30" text-anchor="end">genome-wide significance · p = 5×10⁻⁸</text>
+<text x="1448.0" y="550.3" font-size="14" font-weight="600" fill="#FF3B30" text-anchor="end">significativité pangénomique · p = 5×10⁻⁸</text>
 <g class="peak" tabindex="0" role="img" aria-label="ZBTB38 on chromosome 3, p = 10.0×10⁻³³">
-<title>ZBTB38 — chr3:108,900,000 · p = 10.0×10⁻³³</title>
+<title>ZBTB38 · chr3:108 900 000 · p = 10,0×10⁻³³</title>
 <circle cx="372.8" cy="180.6" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="372.8" y="167.6" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">ZBTB38</text>
 </g>
 <g class="peak" tabindex="0" role="img" aria-label="HMGA1 on chromosome 6, p = 10.0×10⁻²⁸">
-<title>HMGA1 — chr6:58,140,000 · p = 10.0×10⁻²⁸</title>
+<title>HMGA1 · chr6:58 140 000 · p = 10,0×10⁻²⁸</title>
 <circle cx="616.2" cy="257.1" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="616.2" y="244.1" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">HMGA1</text>
 </g>
 <g class="peak" tabindex="0" role="img" aria-label="PLAG1 on chromosome 8, p = 10.0×10⁻²⁵">
-<title>PLAG1 — chr8:88,450,000 · p = 10.0×10⁻²⁵</title>
+<title>PLAG1 · chr8:88 450 000 · p = 10,0×10⁻²⁵</title>
 <circle cx="784.9" cy="302.9" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="784.9" y="289.9" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">PLAG1</text>
 </g>
 <g class="peak" tabindex="0" role="img" aria-label="HMGA2 on chromosome 12, p = 10.0×10⁻²³">
-<title>HMGA2 — chr12:37,240,000 · p = 10.0×10⁻²³</title>
+<title>HMGA2 · chr12:37 240 000 · p = 10,0×10⁻²³</title>
 <circle cx="1023.0" cy="333.5" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="1023.0" y="320.5" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">HMGA2</text>
 </g>
 <g class="peak" tabindex="0" role="img" aria-label="ACAN on chromosome 15, p = 10.0×10⁻²¹">
-<title>ACAN — chr15:47,940,000 · p = 10.0×10⁻²¹</title>
+<title>ACAN · chr15:47 940 000 · p = 10,0×10⁻²¹</title>
 <circle cx="1196.6" cy="364.1" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="1196.6" y="351.1" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">ACAN</text>
 </g>
 <g class="peak" tabindex="0" role="img" aria-label="GDF5 on chromosome 20, p = 10.0×10⁻¹⁹">
-<title>GDF5 — chr20:25,600,000 · p = 10.0×10⁻¹⁹</title>
+<title>GDF5 · chr20:25 600 000 · p = 10,0×10⁻¹⁹</title>
 <circle cx="1388.4" cy="394.7" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="1388.4" y="381.7" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">GDF5</text>
 </g>
@@ -8169,6 +8169,6 @@
 <text x="1444.5" y="698.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">22</text>
 </g>
 <text x="776.0" y="732.0" font-size="17" font-weight="600" fill="#1D1D1F" text-anchor="middle">Chromosome</text>
-<text x="96.0" y="758.0" font-size="14" fill="#6E6E73">Illustrative data · one point per genetic variant · alternating tints separate chromosomes · hover a labelled peak for its position and p-value</text>
+<text x="96.0" y="758.0" font-size="14" fill="#6E6E73">Données illustratives · un point par variant génétique · des teintes alternées séparent les chromosomes · survolez un pic étiqueté pour sa position et sa p-valeur</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1452,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
