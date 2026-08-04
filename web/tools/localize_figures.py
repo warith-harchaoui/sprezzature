@@ -181,7 +181,17 @@ def main() -> int:
         if ext is None:
             continue
         try:
-            if name in SPECS:
+            # Route by what the EN gallery file actually IS, not merely by
+            # whether a Vega spec happens to exist. Several kinds ship a
+            # hand-authored ("hero") SVG in the gallery while a parallel Vega
+            # spec also lives under assets/vega-examples; those must localise
+            # from the hero the reader sees, not re-render the stale spec — else
+            # EN and FR would show different figures. A Vega render (or a raster
+            # figure with no gallery SVG) still goes through the spec.
+            en_is_vega = ext == "svg" and 'class="marks"' in (
+                (GALLERY / f"{name}.svg").read_text(encoding="utf-8", errors="ignore")[:600]
+            )
+            if name in SPECS and (ext != "svg" or en_is_vega):
                 localize_vega(name, SPECS[name], ext)
             elif ext == "svg":
                 localize_hero(name)
