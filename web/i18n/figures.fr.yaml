@@ -6671,3 +6671,27 @@ zebra — Animals: zebra — Animaux
 ✗ 110% over target: ✗ 110 % au-delà de la cible
 ✗ 120% over target: ✗ 120 % au-delà de la cible
 ✗ 84% below target: ✗ 84 % sous la cible
+
+# --- elbow (Kneedle) figure + parliament member-tooltip footnote ---
+'Elbow detection: where adding clusters stops paying off': 'Détection du coude : quand ajouter des grappes ne rapporte plus'
+'k-means inertia falls steeply, then flattens; the Kneedle method flags the elbow at k = 4': 'l''inertie du k-means chute fortement, puis se stabilise ; la méthode Kneedle repère le coude à k = 4'
+'Inertia (within-cluster sum of squares)': 'Inertie (somme des carrés intra-grappe)'
+'Kneedle signal': 'Signal Kneedle'
+'Line chart of k-means inertia (within-cluster sum of squares) against the number of clusters k, from 1 to 10. The curve drops sharply then flattens. The Kneedle algorithm normalises the axes and takes the peak of the difference curve to locate the elbow at k = 4, where inertia is 210. An inset shows that difference curve, whose peak marks the elbow.': 'Graphique en courbe de l''inertie du k-means (somme des carrés intra-grappe) en fonction du nombre de grappes k, de 1 à 10. La courbe chute fortement puis se stabilise. L''algorithme Kneedle normalise les axes et prend le sommet de la courbe de différence pour localiser le coude à k = 4, où l''inertie vaut 210. Un encart montre cette courbe de différence, dont le sommet marque le coude.'
+'Number of clusters (k)': 'Nombre de grappes (k)'
+'diminishing returns': 'rendements décroissants'
+'k = 4': 'k = 4'
+'normalised difference · peak = elbow': 'différence normalisée · sommet = coude'
+'steep gains': 'gains marqués'
+'Elbow · k = 4': 'Coude · k = 4'
+'One dot = one seat · dashed line marks the 145-seat majority · Social Democrats need 9 more seats or a coalition partner · hover a seat for its member; the party block lifts with it': 'Un point = un siège · la ligne pointillée marque la majorité de 145 sièges · les Sociaux-démocrates ont besoin de 9 sièges de plus ou d''un partenaire de coalition · survolez un siège pour voir son élu ; le bloc du parti se soulève avec lui'
+'k = 1: inertia 1,000': 'k = 1 : inertie 1 000'
+'k = 2: inertia 560': 'k = 2 : inertie 560'
+'k = 3: inertia 330': 'k = 3 : inertie 330'
+'k = 4: inertia 210': 'k = 4 : inertie 210'
+'k = 5: inertia 165': 'k = 5 : inertie 165'
+'k = 6: inertia 138': 'k = 6 : inertie 138'
+'k = 7: inertia 120': 'k = 7 : inertie 120'
+'k = 8: inertia 108': 'k = 8 : inertie 108'
+'k = 9: inertia 100': 'k = 9 : inertie 100'
+'k = 10: inertia 95': 'k = 10 : inertie 95'
