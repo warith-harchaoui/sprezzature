@@ -16,86 +16,86 @@
 <line x1="150.0" y1="327.7" x2="1184.0" y2="327.7" stroke="#6E6E73" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/>
 <text x="1178.0" y="317.7" font-size="20" fill="#6E6E73" text-anchor="end">Ligne de Pareto à 80 %</text>
 <g class="bar" tabindex="0" role="img" aria-label="Login &amp; password resets: 412 tickets (34.2% of the week, cumulative 34.2%)">
-<title>Login &amp; password resets: 412 tickets (34.2% of the week, cumulative 34.2%)</title>
+<title>Connexion &amp; mots de passe : 412 tickets (34,2 % de la semaine, cumulé 34,2 %)</title>
 <rect x="171.8" y="535.2" width="71.2" height="154.8" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Billing &amp; invoice errors: 296 tickets (24.6% of the week, cumulative 58.8%)">
-<title>Billing &amp; invoice errors: 296 tickets (24.6% of the week, cumulative 58.8%)</title>
+<title>Erreurs de facturation : 296 tickets (24,6 % de la semaine, cumulé 58,8 %)</title>
 <rect x="286.7" y="578.8" width="71.2" height="111.2" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Sync fails across devices: 187 tickets (15.5% of the week, cumulative 74.3%)">
-<title>Sync fails across devices: 187 tickets (15.5% of the week, cumulative 74.3%)</title>
+<title>Échecs de synchro entre appareils : 187 tickets (15,5 % de la semaine, cumulé 74,3 %)</title>
 <rect x="401.6" y="619.7" width="71.2" height="70.3" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Slow / timing-out pages: 96 tickets (8.0% of the week, cumulative 82.2%)">
-<title>Slow / timing-out pages: 96 tickets (8.0% of the week, cumulative 82.2%)</title>
+<title>Pages lentes / expirées : 96 tickets (8,0 % de la semaine, cumulé 82,2 %)</title>
 <rect x="516.5" y="653.9" width="71.2" height="36.1" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Export to PDF broken: 74 tickets (6.1% of the week, cumulative 88.4%)">
-<title>Export to PDF broken: 74 tickets (6.1% of the week, cumulative 88.4%)</title>
+<title>Export PDF cassé : 74 tickets (6,1 % de la semaine, cumulé 88,4 %)</title>
 <rect x="631.4" y="662.2" width="71.2" height="27.8" rx="4" fill="#C7CAD1" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Notifications not arriving: 51 tickets (4.2% of the week, cumulative 92.6%)">
-<title>Notifications not arriving: 51 tickets (4.2% of the week, cumulative 92.6%)</title>
+<title>Notifications non reçues : 51 tickets (4,2 % de la semaine, cumulé 92,6 %)</title>
 <rect x="746.3" y="670.8" width="71.2" height="19.2" rx="4" fill="#C7CAD1" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Mobile app crashes: 38 tickets (3.1% of the week, cumulative 95.8%)">
-<title>Mobile app crashes: 38 tickets (3.1% of the week, cumulative 95.8%)</title>
+<title>Plantages de l'appli mobile : 38 tickets (3,1 % de la semaine, cumulé 95,8 %)</title>
 <rect x="861.2" y="675.7" width="71.2" height="14.3" rx="4" fill="#C7CAD1" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Feature requests: 29 tickets (2.4% of the week, cumulative 98.2%)">
-<title>Feature requests: 29 tickets (2.4% of the week, cumulative 98.2%)</title>
+<title>Demandes de fonctionnalités : 29 tickets (2,4 % de la semaine, cumulé 98,2 %)</title>
 <rect x="976.1" y="679.1" width="71.2" height="10.9" rx="4" fill="#C7CAD1" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="Everything else: 22 tickets (1.8% of the week, cumulative 100.0%)">
-<title>Everything else: 22 tickets (1.8% of the week, cumulative 100.0%)</title>
+<title>Tout le reste : 22 tickets (1,8 % de la semaine, cumulé 100,0 %)</title>
 <rect x="1090.9" y="681.7" width="71.2" height="8.3" rx="4" fill="#C7CAD1" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <path d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FF9500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="225.4" y="565.2" font-size="21" font-weight="600" fill="#FF9500">% cumulé</text>
 <g class="pt" tabindex="0" role="img" aria-label="Login &amp; password resets: cumulative 34.2% of tickets">
-<title>Login &amp; password resets: cumulative 34.2% of tickets</title>
+<title>Connexion &amp; mots de passe : cumulé 34,2 % des tickets</title>
 <circle class="halo" cx="207.4" cy="535.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="207.4" cy="535.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Billing &amp; invoice errors: cumulative 58.8% of tickets">
-<title>Billing &amp; invoice errors: cumulative 58.8% of tickets</title>
+<title>Erreurs de facturation : cumulé 58,8 % des tickets</title>
 <circle class="halo" cx="322.3" cy="423.9" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="322.3" cy="423.9" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Sync fails across devices: cumulative 74.3% of tickets">
-<title>Sync fails across devices: cumulative 74.3% of tickets</title>
+<title>Échecs de synchro entre appareils : cumulé 74,3 % des tickets</title>
 <circle class="halo" cx="437.2" cy="353.7" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="437.2" cy="353.7" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Slow / timing-out pages: cumulative 82.2% of tickets">
-<title>Slow / timing-out pages: cumulative 82.2% of tickets</title>
+<title>Pages lentes / expirées : cumulé 82,2 % des tickets</title>
 <circle class="halo" cx="552.1" cy="317.6" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="552.1" cy="317.6" r="10.0" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Export to PDF broken: cumulative 88.4% of tickets">
-<title>Export to PDF broken: cumulative 88.4% of tickets</title>
+<title>Export PDF cassé : cumulé 88,4 % des tickets</title>
 <circle class="halo" cx="667.0" cy="289.8" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="667.0" cy="289.8" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Notifications not arriving: cumulative 92.6% of tickets">
-<title>Notifications not arriving: cumulative 92.6% of tickets</title>
+<title>Notifications non reçues : cumulé 92,6 % des tickets</title>
 <circle class="halo" cx="781.9" cy="270.6" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="781.9" cy="270.6" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mobile app crashes: cumulative 95.8% of tickets">
-<title>Mobile app crashes: cumulative 95.8% of tickets</title>
+<title>Plantages de l'appli mobile : cumulé 95,8 % des tickets</title>
 <circle class="halo" cx="896.8" cy="256.3" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="896.8" cy="256.3" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Feature requests: cumulative 98.2% of tickets">
-<title>Feature requests: cumulative 98.2% of tickets</title>
+<title>Demandes de fonctionnalités : cumulé 98,2 % des tickets</title>
 <circle class="halo" cx="1011.7" cy="245.5" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="1011.7" cy="245.5" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Everything else: cumulative 100.0% of tickets">
-<title>Everything else: cumulative 100.0% of tickets</title>
+<title>Tout le reste : cumulé 100,0 % des tickets</title>
 <circle class="halo" cx="1126.6" cy="237.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="1126.6" cy="237.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>

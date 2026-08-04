@@ -40,6 +40,16 @@ from sprezzature_figures.fonts import DEFAULT_SVG_FACES, svg_font_defs  # noqa: 
 TR: dict[str, str] = yaml.safe_load(YAML.read_text(encoding="utf-8")) or {}
 SPECS = {re.sub(r"\.(vl|vg)$", "", Path(p).stem): p for p in glob.glob(str(FIGREPO / "assets/vega-examples/*.json"))}
 SKIP = re.compile(r"^[\d\s.,%:+\-–—−/()·°×→←]*$")  # pure punctuation / numbers
+# Bare single-word keys (the word-cloud review terms) collide with Vega structural
+# values like the "filter" transform type or a "from"/"size" field, so they are
+# applied only to hero SVGs, never to re-rendered Vega specs.
+SPEC_UNSAFE = frozenset(
+    "clean compact consistent easy even fast love precise quiet recommend reliable smooth "
+    "sturdy value clumps flimsy jams leaks mess noisy plastic pricey retention static wobble "
+    "beans bin burr coffee dial espresso grind hopper kitchen morning motor setting filter "
+    "size from".split()
+)
+TR_SPEC: dict[str, str] = {k: v for k, v in TR.items() if k not in SPEC_UNSAFE}
 missing: set[str] = set()
 
 
@@ -60,9 +70,9 @@ def tr_walk(o):
     if isinstance(o, list):
         return [tr_walk(v) for v in o]
     if isinstance(o, str):
-        if is_human(o) and o not in TR:
+        if is_human(o) and o not in TR_SPEC and o not in SPEC_UNSAFE:
             missing.add(o)
-        return TR.get(o, o)
+        return TR_SPEC.get(o, o)
     return o
 
 
@@ -91,14 +101,21 @@ def localize_vega(name: str, spec_path: str, ext: str) -> None:
         (FR / f"{name}.svg").write_text(embed(svg), encoding="utf-8")
 
 
-TEXT_RE = re.compile(r"(<(text|tspan|title|desc)\b[^>]*>)([^<]+)(</(?:text|tspan|title|desc)>)")
+# <title>/<desc> nodes carry tooltips + alt text; translated as whole-node contents.
+TOOLTIP_RE = re.compile(r"(<(title|desc)\b[^>]*>)([^<]+)(</(?:title|desc)>)")
+# A <text> element may mix bare text with <tspan> children; every maximal run of
+# text between a ">" and the next "<" is a separately-rendered visible fragment, so
+# captions split across <tspan> (bold names, emphasised words) still fully localise.
+TEXT_BLOCK = re.compile(r"<text\b[^>]*>.*?</text>", re.S)
+NESTED_TAG = re.compile(r"<(?:title|desc)\b[^>]*>.*?</(?:title|desc)>", re.S)
+RUN = re.compile(r"(>)([^<>]+)(<)")
 missing_hover: set[str] = set()  # untranslated strings that live only in <title> tooltips
 
 
 def localize_hero(name: str) -> None:
     t = (GALLERY / f"{name}.svg").read_text(encoding="utf-8")
 
-    def repl(m: re.Match) -> str:
+    def tip(m: re.Match) -> str:
         tag, raw = m.group(2), m.group(3)
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
         if key in TR:
@@ -107,7 +124,34 @@ def localize_hero(name: str) -> None:
             (missing_hover if tag == "title" else missing).add(key)
         return m.group(0)
 
-    (FR / f"{name}.svg").write_text(TEXT_RE.sub(repl, t), encoding="utf-8")
+    def run(m: re.Match) -> str:
+        raw = m.group(2)
+        key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
+        if key in TR:
+            lead = raw[: len(raw) - len(raw.lstrip())]
+            trail = raw[len(raw.rstrip()):]
+            return m.group(1) + lead + html.escape(TR[key], quote=False) + trail + m.group(3)
+        if is_human(key):
+            missing.add(key)
+        return m.group(0)
+
+    def block_sub(b: re.Match) -> str:
+        # <title>/<desc> nested inside a <text> were already localised by tip();
+        # mask them so the RUN pass doesn't re-scan (and mis-flag) their contents.
+        block = b.group(0)
+        stash: list[str] = []
+
+        def mask(m: re.Match) -> str:
+            stash.append(m.group(0))
+            return f"<\x00{len(stash) - 1}\x00>"
+
+        block = NESTED_TAG.sub(mask, block)
+        block = RUN.sub(run, block)
+        return re.sub(r"<\x00(\d+)\x00>", lambda m: stash[int(m.group(1))], block)
+
+    t = TOOLTIP_RE.sub(tip, t)
+    t = TEXT_BLOCK.sub(block_sub, t)
+    (FR / f"{name}.svg").write_text(t, encoding="utf-8")
 
 
 def main() -> int:

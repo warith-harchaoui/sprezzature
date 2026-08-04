@@ -72,9 +72,9 @@
 </g>
 <line x1="442.8" y1="679.2" x2="500.8" y2="679.2" stroke="#007AFF" stroke-width="6" stroke-linecap="round"/>
 <circle cx="500.8" cy="679.2" r="9" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/>
-<text x="526.8" y="687.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Gradient boosting</tspan>  ·  AP 0.93</text>
+<text x="526.8" y="687.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Gradient boosting</tspan>  · AP 0,93</text>
 <line x1="442.8" y1="725.2" x2="500.8" y2="725.2" stroke="#FF9500" stroke-width="6" stroke-dasharray="10 7" stroke-linecap="round"/>
 <rect x="492.8" y="717.2" width="16.0" height="16.0" rx="2.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2.5"/>
-<text x="526.8" y="733.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Régression logistique</tspan>  ·  AP 0.20</text>
+<text x="526.8" y="733.2" font-size="23" fill="#1D1D1F"><tspan font-weight="600">Régression logistique</tspan>  · AP 0,20</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1132,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

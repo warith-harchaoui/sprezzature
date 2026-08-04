@@ -14,7 +14,7 @@
   text { fill: CanvasText; }
 }
 </style>
-<title>Tile-grid cartogram</title><desc>Cartogramme mondial en grille de tuiles : chaque pays est un carré égal dans une disposition géographique approximative, coloré par classe de quintile sur le dégradé bleu maison.</desc>
+<title>Cartogramme en grille de tuiles</title><desc>Cartogramme mondial en grille de tuiles : chaque pays est un carré égal dans une disposition géographique approximative, coloré par classe de quintile sur le dégradé bleu maison.</desc>
 <rect width="724" height="667" fill="white"/>
 <text x="20" y="34" font-size="16" font-weight="700" fill="#1D1D1F">Chaque pays, poids égal</text>
 <text x="20" y="52" font-size="11" fill="#6E6E73">Tile-grid cartogram · quintile classes · synthetic demo data</text>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="940" viewBox="0 0 1280 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ba-title ba-desc">
-<title id="ba-title">Bland-Altman plot comparing a wrist blood-pressure monitor with an arm cuff</title>
+<title id="ba-title">Diagramme de Bland-Altman comparant un tensiomètre au poignet et un brassard au bras</title>
 <desc id="ba-desc">Diagramme d'accord de Bland-Altman de mesures appariées de pression systolique par un tensiomètre au poignet et un brassard au bras. L'axe horizontal est la moyenne des deux mesures ; l'axe vertical est leur différence (poignet moins bras). Chaque point est l'un des 90 patients. Une ligne bleue pleine marque le biais moyen (-7,3 mmHg) et deux lignes rouges pointillées marquent les limites d'accord à 95 pour cent (-15,3 à +0,7 mmHg). Le biais est sous zéro et le nuage penche vers le bas à droite, donc le poignet a tendance à sous-estimer, davantage à haute pression. Données illustratives.</desc>
 <style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="1280" height="940" fill="#FFFFFF"/>
@@ -48,452 +48,452 @@
 <line x1="128.0" y1="456.0" x2="1070.0" y2="456.0" stroke="#B8B8BD" stroke-width="1.6" stroke-dasharray="2 5"/>
 <text x="134.0" y="478.0" font-size="18" font-style="italic" fill="#9A9AA0">0 = accord parfait</text>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -5 mmHg">
-<title>Mean 149 mmHg, wrist − arm -5 mmHg</title>
+<title>Moyenne 149 mmHg, poignet − bras -5 mmHg</title>
 <circle class="halo" cx="685.4" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="685.4" cy="534.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 171 mmHg, wrist − arm -10 mmHg">
-<title>Mean 171 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 171 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="903.2" cy="609.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="903.2" cy="609.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -6 mmHg">
-<title>Mean 162 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 162 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="813.9" cy="550.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="813.9" cy="550.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -6 mmHg">
-<title>Mean 112 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 112 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="327.2" cy="552.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="327.2" cy="552.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 122 mmHg, wrist − arm -1 mmHg">
-<title>Mean 122 mmHg, wrist − arm -1 mmHg</title>
+<title>Moyenne 122 mmHg, poignet − bras -1 mmHg</title>
 <circle class="halo" cx="417.5" cy="472.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="417.5" cy="472.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 169 mmHg, wrist − arm -9 mmHg">
-<title>Mean 169 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 169 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="883.6" cy="604.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="883.6" cy="604.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -1 mmHg">
-<title>Mean 95 mmHg, wrist − arm -1 mmHg</title>
+<title>Moyenne 95 mmHg, poignet − bras -1 mmHg</title>
 <circle class="halo" cx="158.4" cy="467.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="158.4" cy="467.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
-<title>Mean 162 mmHg, wrist − arm -14 mmHg</title>
+<title>Moyenne 162 mmHg, poignet − bras -14 mmHg</title>
 <circle class="halo" cx="813.9" cy="681.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="813.9" cy="681.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 163 mmHg, wrist − arm -7 mmHg">
-<title>Mean 163 mmHg, wrist − arm -7 mmHg</title>
+<title>Moyenne 163 mmHg, poignet − bras -7 mmHg</title>
 <circle class="halo" cx="825.7" cy="574.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="825.7" cy="574.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 131 mmHg, wrist − arm -13 mmHg">
-<title>Mean 131 mmHg, wrist − arm -13 mmHg</title>
+<title>Moyenne 131 mmHg, poignet − bras -13 mmHg</title>
 <circle class="halo" cx="506.8" cy="665.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="506.8" cy="665.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 116 mmHg, wrist − arm -13 mmHg">
-<title>Mean 116 mmHg, wrist − arm -13 mmHg</title>
+<title>Moyenne 116 mmHg, poignet − bras -13 mmHg</title>
 <circle class="halo" cx="359.6" cy="668.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="359.6" cy="668.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -6 mmHg">
-<title>Mean 117 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 117 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="372.3" cy="555.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="372.3" cy="555.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 114 mmHg, wrist − arm -8 mmHg">
-<title>Mean 114 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 114 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="340.9" cy="590.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="340.9" cy="590.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
-<title>Mean 132 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 132 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="523.4" cy="544.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="523.4" cy="544.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm +2 mmHg">
-<title>Mean 142 mmHg, wrist − arm +2 mmHg</title>
+<title>Moyenne 142 mmHg, poignet − bras +2 mmHg</title>
 <circle class="halo" cx="614.7" cy="419.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="614.7" cy="419.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -10 mmHg">
-<title>Mean 140 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 140 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="596.1" cy="620.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="596.1" cy="620.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -13 mmHg">
-<title>Mean 178 mmHg, wrist − arm -13 mmHg</title>
+<title>Moyenne 178 mmHg, poignet − bras -13 mmHg</title>
 <circle class="halo" cx="974.8" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="974.8" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -8 mmHg">
-<title>Mean 162 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 162 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="818.8" cy="582.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="818.8" cy="582.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -6 mmHg">
-<title>Mean 148 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 148 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="679.5" cy="544.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="679.5" cy="544.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 179 mmHg, wrist − arm -11 mmHg">
-<title>Mean 179 mmHg, wrist − arm -11 mmHg</title>
+<title>Moyenne 179 mmHg, poignet − bras -11 mmHg</title>
 <circle class="halo" cx="977.8" cy="628.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="977.8" cy="628.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -5 mmHg">
-<title>Mean 112 mmHg, wrist − arm -5 mmHg</title>
+<title>Moyenne 112 mmHg, poignet − bras -5 mmHg</title>
 <circle class="halo" cx="321.3" cy="542.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="321.3" cy="542.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -1 mmHg">
-<title>Mean 109 mmHg, wrist − arm -1 mmHg</title>
+<title>Moyenne 109 mmHg, poignet − bras -1 mmHg</title>
 <circle class="halo" cx="291.9" cy="476.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="291.9" cy="476.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -5 mmHg">
-<title>Mean 148 mmHg, wrist − arm -5 mmHg</title>
+<title>Moyenne 148 mmHg, poignet − bras -5 mmHg</title>
 <circle class="halo" cx="672.6" cy="540.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="672.6" cy="540.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -8 mmHg">
-<title>Mean 95 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 95 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="159.4" cy="576.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="159.4" cy="576.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 96 mmHg, wrist − arm -4 mmHg">
-<title>Mean 96 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 96 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="171.2" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="171.2" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 138 mmHg, wrist − arm -7 mmHg">
-<title>Mean 138 mmHg, wrist − arm -7 mmHg</title>
+<title>Moyenne 138 mmHg, poignet − bras -7 mmHg</title>
 <circle class="halo" cx="580.4" cy="561.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="580.4" cy="561.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -11 mmHg">
-<title>Mean 132 mmHg, wrist − arm -11 mmHg</title>
+<title>Moyenne 132 mmHg, poignet − bras -11 mmHg</title>
 <circle class="halo" cx="517.6" cy="625.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="517.6" cy="625.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 173 mmHg, wrist − arm -9 mmHg">
-<title>Mean 173 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 173 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="925.8" cy="593.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="925.8" cy="593.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -11 mmHg">
-<title>Mean 146 mmHg, wrist − arm -11 mmHg</title>
+<title>Moyenne 146 mmHg, poignet − bras -11 mmHg</title>
 <circle class="halo" cx="658.9" cy="632.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="658.9" cy="632.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -3 mmHg">
-<title>Mean 140 mmHg, wrist − arm -3 mmHg</title>
+<title>Moyenne 140 mmHg, poignet − bras -3 mmHg</title>
 <circle class="halo" cx="598.0" cy="500.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="598.0" cy="500.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -6 mmHg">
-<title>Mean 137 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 137 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="567.6" cy="548.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="567.6" cy="548.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
-<title>Mean 115 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 115 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="354.7" cy="526.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="354.7" cy="526.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 93 mmHg, wrist − arm -5 mmHg">
-<title>Mean 93 mmHg, wrist − arm -5 mmHg</title>
+<title>Moyenne 93 mmHg, poignet − bras -5 mmHg</title>
 <circle class="halo" cx="140.8" cy="542.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="140.8" cy="542.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -5 mmHg">
-<title>Mean 110 mmHg, wrist − arm -5 mmHg</title>
+<title>Moyenne 110 mmHg, poignet − bras -5 mmHg</title>
 <circle class="halo" cx="303.6" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="303.6" cy="534.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -16 mmHg">
-<title>Mean 149 mmHg, wrist − arm -16 mmHg</title>
+<title>Moyenne 149 mmHg, poignet − bras -16 mmHg</title>
 <circle class="halo" cx="690.3" cy="712.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="690.3" cy="712.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -9 mmHg">
-<title>Mean 109 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 109 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="290.9" cy="600.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="290.9" cy="600.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 126 mmHg, wrist − arm -4 mmHg">
-<title>Mean 126 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 126 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="463.6" cy="523.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="463.6" cy="523.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 90 mmHg, wrist − arm -12 mmHg">
-<title>Mean 90 mmHg, wrist − arm -12 mmHg</title>
+<title>Moyenne 90 mmHg, poignet − bras -12 mmHg</title>
 <circle class="halo" cx="104.4" cy="640.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="104.4" cy="640.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -6 mmHg">
-<title>Mean 167 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 167 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="863.0" cy="545.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="863.0" cy="545.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 103 mmHg, wrist − arm -11 mmHg">
-<title>Mean 103 mmHg, wrist − arm -11 mmHg</title>
+<title>Moyenne 103 mmHg, poignet − bras -11 mmHg</title>
 <circle class="halo" cx="239.9" cy="633.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="239.9" cy="633.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 118 mmHg, wrist − arm -2 mmHg">
-<title>Mean 118 mmHg, wrist − arm -2 mmHg</title>
+<title>Moyenne 118 mmHg, poignet − bras -2 mmHg</title>
 <circle class="halo" cx="384.1" cy="486.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="384.1" cy="486.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -13 mmHg">
-<title>Mean 168 mmHg, wrist − arm -13 mmHg</title>
+<title>Moyenne 168 mmHg, poignet − bras -13 mmHg</title>
 <circle class="halo" cx="872.8" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="872.8" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 139 mmHg, wrist − arm -4 mmHg">
-<title>Mean 139 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 139 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="590.2" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="590.2" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -9 mmHg">
-<title>Mean 167 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 167 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="863.9" cy="593.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="863.9" cy="593.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -14 mmHg">
-<title>Mean 146 mmHg, wrist − arm -14 mmHg</title>
+<title>Moyenne 146 mmHg, poignet − bras -14 mmHg</title>
 <circle class="halo" cx="654.9" cy="676.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="654.9" cy="676.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 160 mmHg, wrist − arm -3 mmHg">
-<title>Mean 160 mmHg, wrist − arm -3 mmHg</title>
+<title>Moyenne 160 mmHg, poignet − bras -3 mmHg</title>
 <circle class="halo" cx="796.2" cy="508.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="796.2" cy="508.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 104 mmHg, wrist − arm +2 mmHg">
-<title>Mean 104 mmHg, wrist − arm +2 mmHg</title>
+<title>Moyenne 104 mmHg, poignet − bras +2 mmHg</title>
 <circle class="halo" cx="248.7" cy="422.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="248.7" cy="422.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -7 mmHg">
-<title>Mean 140 mmHg, wrist − arm -7 mmHg</title>
+<title>Moyenne 140 mmHg, poignet − bras -7 mmHg</title>
 <circle class="halo" cx="600.0" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="600.0" cy="571.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -8 mmHg">
-<title>Mean 137 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 137 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="567.6" cy="580.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="567.6" cy="580.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -10 mmHg">
-<title>Mean 168 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 168 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="878.7" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="878.7" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 123 mmHg, wrist − arm -10 mmHg">
-<title>Mean 123 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 123 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="430.2" cy="608.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="430.2" cy="608.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -3 mmHg">
-<title>Mean 147 mmHg, wrist − arm -3 mmHg</title>
+<title>Moyenne 147 mmHg, poignet − bras -3 mmHg</title>
 <circle class="halo" cx="671.6" cy="502.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="671.6" cy="502.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 98 mmHg, wrist − arm -6 mmHg">
-<title>Mean 98 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 98 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="182.0" cy="545.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="182.0" cy="545.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 127 mmHg, wrist − arm -6 mmHg">
-<title>Mean 127 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 127 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="470.5" cy="552.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="470.5" cy="552.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 120 mmHg, wrist − arm -8 mmHg">
-<title>Mean 120 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 120 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="400.8" cy="592.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="400.8" cy="592.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -7 mmHg">
-<title>Mean 105 mmHg, wrist − arm -7 mmHg</title>
+<title>Moyenne 105 mmHg, poignet − bras -7 mmHg</title>
 <circle class="halo" cx="257.5" cy="561.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="257.5" cy="561.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
-<title>Mean 162 mmHg, wrist − arm -14 mmHg</title>
+<title>Moyenne 162 mmHg, poignet − bras -14 mmHg</title>
 <circle class="halo" cx="810.0" cy="680.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="810.0" cy="680.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -1 mmHg">
-<title>Mean 129 mmHg, wrist − arm -1 mmHg</title>
+<title>Moyenne 129 mmHg, poignet − bras -1 mmHg</title>
 <circle class="halo" cx="489.1" cy="467.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="489.1" cy="467.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -11 mmHg">
-<title>Mean 178 mmHg, wrist − arm -11 mmHg</title>
+<title>Moyenne 178 mmHg, poignet − bras -11 mmHg</title>
 <circle class="halo" cx="969.9" cy="627.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="969.9" cy="627.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -3 mmHg">
-<title>Mean 146 mmHg, wrist − arm -3 mmHg</title>
+<title>Moyenne 146 mmHg, poignet − bras -3 mmHg</title>
 <circle class="halo" cx="661.8" cy="510.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="661.8" cy="510.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -7 mmHg">
-<title>Mean 146 mmHg, wrist − arm -7 mmHg</title>
+<title>Moyenne 146 mmHg, poignet − bras -7 mmHg</title>
 <circle class="halo" cx="655.9" cy="572.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="655.9" cy="572.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -10 mmHg">
-<title>Mean 147 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 147 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="669.6" cy="622.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="669.6" cy="622.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 151 mmHg, wrist − arm -9 mmHg">
-<title>Mean 151 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 151 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="709.9" cy="603.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="709.9" cy="603.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -6 mmHg">
-<title>Mean 105 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 105 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="259.5" cy="556.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="259.5" cy="556.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
-<title>Mean 132 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 132 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="516.6" cy="553.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="516.6" cy="553.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 113 mmHg, wrist − arm -6 mmHg">
-<title>Mean 113 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 113 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="338.0" cy="555.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="338.0" cy="555.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -7 mmHg">
-<title>Mean 128 mmHg, wrist − arm -7 mmHg</title>
+<title>Moyenne 128 mmHg, poignet − bras -7 mmHg</title>
 <circle class="halo" cx="478.3" cy="569.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="478.3" cy="569.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 99 mmHg, wrist − arm -9 mmHg">
-<title>Mean 99 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 99 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="197.7" cy="603.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="197.7" cy="603.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 176 mmHg, wrist − arm -13 mmHg">
-<title>Mean 176 mmHg, wrist − arm -13 mmHg</title>
+<title>Moyenne 176 mmHg, poignet − bras -13 mmHg</title>
 <circle class="halo" cx="947.3" cy="667.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="947.3" cy="667.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm +2 mmHg">
-<title>Mean 115 mmHg, wrist − arm +2 mmHg</title>
+<title>Moyenne 115 mmHg, poignet − bras +2 mmHg</title>
 <circle class="halo" cx="357.6" cy="422.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="357.6" cy="422.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 150 mmHg, wrist − arm -10 mmHg">
-<title>Mean 150 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 150 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="699.1" cy="624.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="699.1" cy="624.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -9 mmHg">
-<title>Mean 117 mmHg, wrist − arm -9 mmHg</title>
+<title>Moyenne 117 mmHg, poignet − bras -9 mmHg</title>
 <circle class="halo" cx="376.3" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="376.3" cy="606.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -8 mmHg">
-<title>Mean 170 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 170 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="890.4" cy="582.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="890.4" cy="582.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 154 mmHg, wrist − arm -2 mmHg">
-<title>Mean 154 mmHg, wrist − arm -2 mmHg</title>
+<title>Moyenne 154 mmHg, poignet − bras -2 mmHg</title>
 <circle class="halo" cx="731.5" cy="489.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="731.5" cy="489.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 102 mmHg, wrist − arm -10 mmHg">
-<title>Mean 102 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 102 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="226.1" cy="612.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="226.1" cy="612.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 166 mmHg, wrist − arm -10 mmHg">
-<title>Mean 166 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 166 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="855.1" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="855.1" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 174 mmHg, wrist − arm -12 mmHg">
-<title>Mean 174 mmHg, wrist − arm -12 mmHg</title>
+<title>Moyenne 174 mmHg, poignet − bras -12 mmHg</title>
 <circle class="halo" cx="931.6" cy="652.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="931.6" cy="652.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -17 mmHg">
-<title>Mean 168 mmHg, wrist − arm -17 mmHg</title>
+<title>Moyenne 168 mmHg, poignet − bras -17 mmHg</title>
 <circle class="halo" cx="874.7" cy="721.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="874.7" cy="721.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 144 mmHg, wrist − arm -4 mmHg">
-<title>Mean 144 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 144 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="640.2" cy="523.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="640.2" cy="523.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 106 mmHg, wrist − arm -4 mmHg">
-<title>Mean 106 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 106 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="265.4" cy="521.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="265.4" cy="521.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -4 mmHg">
-<title>Mean 110 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 110 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="307.6" cy="521.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="307.6" cy="521.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 172 mmHg, wrist − arm -13 mmHg">
-<title>Mean 172 mmHg, wrist − arm -13 mmHg</title>
+<title>Moyenne 172 mmHg, poignet − bras -13 mmHg</title>
 <circle class="halo" cx="915.0" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="915.0" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm -5 mmHg">
-<title>Mean 142 mmHg, wrist − arm -5 mmHg</title>
+<title>Moyenne 142 mmHg, poignet − bras -5 mmHg</title>
 <circle class="halo" cx="619.6" cy="539.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="619.6" cy="539.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 108 mmHg, wrist − arm -6 mmHg">
-<title>Mean 108 mmHg, wrist − arm -6 mmHg</title>
+<title>Moyenne 108 mmHg, poignet − bras -6 mmHg</title>
 <circle class="halo" cx="285.0" cy="560.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="285.0" cy="560.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -10 mmHg">
-<title>Mean 170 mmHg, wrist − arm -10 mmHg</title>
+<title>Moyenne 170 mmHg, poignet − bras -10 mmHg</title>
 <circle class="halo" cx="889.4" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="889.4" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -12 mmHg">
-<title>Mean 147 mmHg, wrist − arm -12 mmHg</title>
+<title>Moyenne 147 mmHg, poignet − bras -12 mmHg</title>
 <circle class="halo" cx="664.7" cy="649.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="664.7" cy="649.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -12 mmHg">
-<title>Mean 140 mmHg, wrist − arm -12 mmHg</title>
+<title>Moyenne 140 mmHg, poignet − bras -12 mmHg</title>
 <circle class="halo" cx="601.9" cy="648.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="601.9" cy="648.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -0 mmHg">
-<title>Mean 129 mmHg, wrist − arm -0 mmHg</title>
+<title>Moyenne 129 mmHg, poignet − bras -0 mmHg</title>
 <circle class="halo" cx="488.1" cy="462.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="488.1" cy="462.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -8 mmHg">
-<title>Mean 128 mmHg, wrist − arm -8 mmHg</title>
+<title>Moyenne 128 mmHg, poignet − bras -8 mmHg</title>
 <circle class="halo" cx="481.2" cy="584.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="481.2" cy="584.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
-<title>Mean 115 mmHg, wrist − arm -4 mmHg</title>
+<title>Moyenne 115 mmHg, poignet − bras -4 mmHg</title>
 <circle class="halo" cx="351.7" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="351.7" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>

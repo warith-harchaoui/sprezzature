@@ -17,25 +17,25 @@
     <circle cx="580.0" cy="540.0" r="165.0" fill="none" stroke="#E5E5EA" stroke-width="1.5" stroke-dasharray="3 6"/>
     <line x1="580.0" y1="540.0" x2="580.0" y2="210.0" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="580.0" y="182.0" font-size="19" fill="#1D1D1F" text-anchor="middle" font-weight="500">Aire</text>
-    <circle class="anchor" cx="580.0" cy="210.0" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Area. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="580.0" cy="210.0" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Aire. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
     <line x1="580.0" y1="540.0" x2="838.0" y2="334.2" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="858.3" y="316.0" font-size="19" fill="#1D1D1F" text-anchor="start" font-weight="500">Périmètre</text>
-    <circle class="anchor" cx="838.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Perimeter. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="838.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Périmètre. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
     <line x1="580.0" y1="540.0" x2="901.7" y2="613.4" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="927.1" y="625.2" font-size="19" fill="#1D1D1F" text-anchor="start" font-weight="500">Longueur du grain</text>
-    <circle class="anchor" cx="901.7" cy="613.4" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Kernel length. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="901.7" cy="613.4" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Longueur du grain. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
     <line x1="580.0" y1="540.0" x2="723.2" y2="837.3" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="734.5" y="866.7" font-size="19" fill="#1D1D1F" text-anchor="start" font-weight="500">Largeur du grain</text>
-    <circle class="anchor" cx="723.2" cy="837.3" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Kernel width. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="723.2" cy="837.3" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Largeur du grain. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
     <line x1="580.0" y1="540.0" x2="436.8" y2="837.3" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="425.5" y="866.7" font-size="19" fill="#1D1D1F" text-anchor="end" font-weight="500">Compacité</text>
-    <circle class="anchor" cx="436.8" cy="837.3" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Compactness. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="436.8" cy="837.3" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Compacité. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
     <line x1="580.0" y1="540.0" x2="258.3" y2="613.4" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="232.9" y="625.2" font-size="19" fill="#1D1D1F" text-anchor="end" font-weight="500">Asymétrie</text>
-    <circle class="anchor" cx="258.3" cy="613.4" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Asymmetry. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="258.3" cy="613.4" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Asymétrie. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
     <line x1="580.0" y1="540.0" x2="322.0" y2="334.2" stroke="#E5E5EA" stroke-width="1.5"/>
     <text x="301.7" y="316.0" font-size="19" fill="#1D1D1F" text-anchor="end" font-weight="500">Longueur du sillon</text>
-    <circle class="anchor" cx="322.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Groove length. Kernels rich in this measurement are pulled toward it.</title></circle>
+    <circle class="anchor" cx="322.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Ancre : Longueur du sillon. Les grains riches dans cette mesure sont attirés vers elle.</title></circle>
   </g>
   <g class="points" role="list">
     <g role="listitem" aria-label="Rosa kernels" fill="#FF9500">
