@@ -5967,3 +5967,26 @@ zebra — Animals: zebra — Animaux
 length is its share of the whole year.: de chaque arc est sa part de l’année.
 Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 12 mois,
 33% of the year, before spring races in.: 33 % de l’année, avant la ruée du printemps.
+# --- treemap + sunburst FR (drift-fix completeness) ---
+'Annual spend in thousands of EUR; area proportional to budget': 'Dépense annuelle en milliers d’euros ; aire proportionnelle au budget'
+'Domain': 'Domaine'
+'Data & AI': 'Données et IA'
+'Security': 'Sécurité'
+'Networking': 'Réseau'
+'Compliance': 'Conformité'
+'Compute (EC2/GCE)': 'Calcul (EC2/GCE)'
+'Storage (S3/GCS)': 'Stockage (S3/GCS)'
+'Managed DB': 'BD managée'
+'Container registry': 'Registre de conteneurs'
+'Data warehouse': 'Entrepôt de données'
+'ML training': 'Entraînement ML'
+'BI tooling': 'Outils BI'
+'CRM platform': 'Plateforme CRM'
+'Dev toolchain': 'Chaîne dev'
+'ERP system': 'Système ERP'
+'CDN / egress': 'CDN / sortie'
+'Audit tooling': 'Outils d’audit'
+'Global R&D Investment by Region and Country — 2023': 'Investissement mondial en R&D par région et pays — 2023'
+'Total expenditure in billions of USD; arc length proportional to investment': 'Dépense totale en milliards de dollars ; longueur d’arc proportionnelle à l’investissement'
+'Asia Pacific': 'Asie-Pacifique'
+'Middle East & Africa': 'Moyen-Orient et Afrique'
