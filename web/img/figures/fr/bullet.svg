@@ -4,7 +4,7 @@
 <style>.bar{cursor:pointer}.bar:hover,.bar:focus{stroke:#1D1D1F;stroke-width:2}.bar:focus{outline:none}</style>
 <rect width="1240" height="814" fill="#FFFFFF"/>
 <text x="60" y="66" font-size="34" font-weight="700" fill="#1D1D1F">Trois cibles sur cinq atteintes au T3</text>
-<text x="60" y="104" font-size="20" fill="#6E6E73">Revenue, activation and churn beat plan; trial signups and API latency still trail the goal</text>
+<text x="60" y="104" font-size="20" fill="#6E6E73">Revenu, activation et attrition dépassent le plan ; les essais et la latence API restent sous l’objectif</text>
 <rect x="734" y="139" width="30" height="13" rx="3" fill="#0A2540"/>
 <text x="774" y="151" font-size="17" fill="#1D1D1F">mesure</text>
 <rect x="892" y="132" width="5" height="27" rx="2.5" fill="#FF9500"/>

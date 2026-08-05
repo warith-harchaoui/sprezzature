@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1000" viewBox="0 0 1280 1000" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="cs-title cs-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1865" height="1000" viewBox="0 0 1865 1000" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="cs-title cs-desc"><rect width="1865" height="1000" fill="#FFFFFF"/><g transform="translate(292,0)">
 <title id="cs-title">Le Royaume-Uni a fait croître son économie tout en réduisant de près de moitié le carbone par habitant</title>
-<desc id="cs-desc">Connected scatter tracing carbon-dioxide emissions per person (vertical, tonnes) against economic output per person (horizontal, thousands of US dollars) for the United Kingdom, one point every five years from 1990 to 2022. The path first moves right as income rises, then turns sharply left and downward: output per person climbed about 66% while emissions per person fell about 53%, from 10.0 to 4.7 tonnes. The left-turning hook shows growth and carbon decoupling</desc>
+<desc id="cs-desc">Nuage connecté traçant les émissions de dioxyde de carbone par personne (vertical, tonnes) selon la production économique par personne (horizontal, milliers de dollars) pour le Royaume-Uni, un point tous les cinq ans de 1990 à 2022. Le tracé va d’abord vers la droite à mesure que le revenu augmente, puis tourne nettement à gauche et vers le bas : la production par personne a grimpé d’environ 66 % tandis que les émissions par personne ont chuté d’environ 53 %, de 10,0 à 4,7 tonnes. Le crochet vers la gauche montre le découplage entre croissance et carbone</desc>
 <style>.wp{cursor:pointer}.wp.halo{opacity:0}.wp:hover.halo,.wp:focus.halo{opacity:1}.wp:focus{outline:none}</style>
 <rect width="1280" height="1000" fill="#FFFFFF"/>
 <text x="120" y="92" font-size="42" font-weight="700" fill="#1D1D1F">La croissance d'un côté, le carbone de l'autre</text>
-<text x="120" y="140" font-size="24" fill="#6E6E73">United Kingdom, 1990–2022: output per person up ~66% while carbon per person fell ~53%</text>
+<text x="120" y="140" font-size="24" fill="#6E6E73">Royaume-Uni, 1990–2022 : production par personne en hausse d’environ 66 % tandis que le carbone par personne a chuté d’environ 53 %</text>
 <circle cx="131.0" cy="182.0" r="11.0" fill="#FF3B30"/>
 <text x="154.0" y="189.0" font-size="22" fill="#1D1D1F">Début 1990</text>
 <circle cx="341.0" cy="182.0" r="11.0" fill="#007AFF"/>
@@ -98,4 +98,4 @@
 <text x="853.4" y="596.2" font-size="21" font-weight="600" fill="#6E6E73">la croissance sans le carbone</text>
 <line x1="843.4" y1="552.2" x2="745.4" y2="532.2" stroke="#6E6E73" stroke-width="1.4" stroke-dasharray="3 5"/>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1232,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
-</svg>
+</g></svg>
