@@ -8,7 +8,7 @@
  <rect width="1160" height="940" fill="#FFFFFF"/>
  <text x="60" y="58" font-size="30" font-weight="700" fill="#1D1D1F">Sept mesures séparent les variétés de blé</text>
  <text x="60" y="92" font-size="19" fill="#6E6E73">Rosa tire vers la taille, Kama vers la compacité, Canadian vers l'asymétrie ; les variables brutes portent déjà le signal</text>
- <text x="60" y="118" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">Disposition à ressorts RadViz · 180 grains · 7 ancres ·</text>
+ <text x="60" y="118" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">Disposition à ressorts RadViz · 180 grains · 7 ancres</text>
  <g transform="translate(0,0)">
  <g class="frame" aria-hidden="true">
  <circle cx="580.0" cy="540.0" r="330.0" fill="none" stroke="#E5E5EA" stroke-width="2"/>

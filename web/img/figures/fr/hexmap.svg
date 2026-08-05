@@ -15,7 +15,7 @@
 }</style>
 <rect width="1280" height="900" fill="#FFFFFF"/>
 <text x="64.0" y="70" font-size="34" font-weight="700" fill="#1D1D1F">La demande de vélos en libre-service se concentre sur le centre-ville</text>
-<text x="64.0" y="106" font-size="20" fill="#6E6E73">Trajets du matin (7-10 h) par cellule hexagonale sur la zone de service métropolitaine · un hexagone ≈ 400 m ·</text>
+<text x="64.0" y="106" font-size="20" fill="#6E6E73">Trajets du matin (7-10 h) par cellule hexagonale du réseau · un hexagone ≈ 400 m</text>
 <rect x="64.0" y="168.0" width="848.0" height="684.0" rx="22" fill="#DCE7F4"/>
 <path d="M114.9,236.4 L352.3,195.4 L572.8,222.7 L759.4,209.0 L869.6,291.1 L886.6,441.6 L793.3,523.7 L827.2,646.8 L725.4,756.2 L572.8,715.2 L505.0,797.3 L369.3,824.6 L250.6,783.6 L148.8,674.2 L97.9,523.7 L140.3,373.2Z" fill="#FBFCFE" stroke="#9FB4CE" stroke-width="2" stroke-linejoin="round"/>
 <g role="list" aria-label="hexagonal density bins">

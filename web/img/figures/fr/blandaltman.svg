@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1562" height="940" viewBox="0 0 1562 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ba-title ba-desc"><rect width="1562" height="940" fill="#FFFFFF"/><g transform="translate(141,0)">
+<svg xmlns="http://www.w3.org/2000/svg" width="1529" height="940" viewBox="0 0 1529 940" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="ba-title ba-desc"><rect width="1529" height="940" fill="#FFFFFF"/><g transform="translate(124,0)">
 <title id="ba-title">Diagramme de Bland-Altman comparant un tensiomètre au poignet et un brassard au bras</title>
-<desc id="ba-desc">Diagramme d'accord de Bland-Altman de mesures appariées de pression systolique par un tensiomètre au poignet et un brassard au bras. L'axe horizontal est la moyenne des deux mesures ; l'axe vertical est leur différence (poignet moins bras). Chaque point est l'un des 90 patients. Une ligne bleue pleine marque le biais moyen (-7,3 mmHg) et deux lignes rouges pointillées marquent les limites d'accord à 95 pour cent (-15,3 à +0,7 mmHg). Le biais est sous zéro et le nuage penche vers le bas à droite, donc le poignet a tendance à sous-estimer, davantage à haute pression</desc>
+<desc id="ba-desc">A Bland-Altman agreement plot of paired systolic-pressure readings from a wrist monitor and an arm cuff. The horizontal axis is the mean of the two readings; the vertical axis is their difference (wrist minus arm). Each dot is one of 90 patients. A solid blue line marks the mean bias (-7.3 mmHg) and two dashed red lines mark the 95 percent limits of agreement (-15.3 to +0.7 mmHg). The bias sits below zero and the cloud tilts down to the right, so the wrist tends to read low, and more so at higher pressure</desc>
 <style>.pt{cursor:pointer}.pt.halo{opacity:0}.pt:hover.halo,.pt:focus.halo{opacity:1}.pt:focus{outline:none}</style>
 <rect width="1280" height="940" fill="#FFFFFF"/>
 <text x="128" y="88" font-size="40" font-weight="700" fill="#1D1D1F">Le tensiomètre au poignet et le brassard au bras s'accordent-ils ?</text>
 <text x="128" y="134" font-size="23" fill="#6E6E73">Diagramme de Bland-Altman. Chaque point est un patient : sa différence (poignet − bras) face à la moyenne des deux méthodes.</text>
 <text x="128" y="166" font-size="23" fill="#6E6E73">Ligne pleine = biais moyen (-7,3 mmHg). Lignes pointillées = limites d'accord à 95 % (-15,3 à +0,7 mmHg).</text>
-<text x="128" y="198" font-size="23" fill="#6E6E73">Biais sous zéro, nuage penchant vers le bas à droite : le poignet sous-estime, davantage à haute pression</text>
+<text x="128" y="198" font-size="23" fill="#6E6E73">Biais sous zéro, nuage penchant vers le bas à droite : le poignet sous-estime, davantage à pression élevée</text>
 <rect x="128.0" y="444.8" width="942.0" height="256.0" fill="#007AFF" fill-opacity="0.07"/>
 <line x1="206.5" y1="232.0" x2="206.5" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="402.8" y1="232.0" x2="402.8" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>

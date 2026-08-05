@@ -11,7 +11,7 @@ svg:hover.cls, svg:focus-within.cls { opacity:.16; }
 @media (prefers-reduced-motion: reduce) {.dot { transition: none; } }</style>
 <rect width="1040" height="820" fill="#FFFFFF"/>
 <text x="56" y="60" font-size="29" font-weight="700" fill="#1D1D1F">Trois textures de sol, trois coins du triangle</text>
-<text x="56" y="94" font-size="18" fill="#6E6E73">Échantillons de terre arable par mélange de calibres · sable + limon + argile = 100 % ·</text>
+<text x="56" y="94" font-size="18" fill="#6E6E73">Topsoil samples by grain-size mix · sand + silt + clay = 100 %</text>
 <polygon points="185.0,704.9 805.0,704.9 495.0,168.0" fill="#FCFCFD" stroke="none"/>
 <line x1="247.0" y1="597.5" x2="743.0" y2="597.5" stroke="#D8D8DD" stroke-width="1.4"/>
 <line x1="681.0" y1="704.9" x2="433.0" y2="275.4" stroke="#D8D8DD" stroke-width="1.4"/>

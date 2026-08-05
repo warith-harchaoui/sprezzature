@@ -4,7 +4,7 @@
 <style>.row{cursor:pointer}.row.whisker,.row.cap{stroke:#6E6E73;stroke-width:1.6}.row:hover.whisker,.row:focus.whisker,.row:hover.cap,.row:focus.cap{stroke:#6E6E73;stroke-width:2.4}.row:hover.box,.row:focus.box,.row:hover.diamond,.row:focus.diamond,.row:hover.dot,.row:focus.dot{stroke:#FFFFFF;stroke-width:2.4}.row:focus{outline:none}.row:hover.rowbg,.row:focus.rowbg{fill:#F5F5F7}@media (prefers-reduced-motion:reduce){.grow{animation:none}[data-anim]{opacity:1 !important}}</style>
 <rect width="720" height="506" fill="#FFFFFF"/>
 <text x="24" y="36" font-size="18" font-weight="700" fill="#1D1D1F">La télésurveillance aide les patients à atteindre leur cible tensionnelle</text>
-<text x="24" y="58" font-size="12.5" fill="#6E6E73">Rapport de cotes groupé 1,44 (IC 95 % 1,26-1,64) sur 8 essais randomisés · I² = 34 %</text>
+<text x="24" y="58" font-size="12.5" fill="#6E6E73">Pooled odds ratio 1.44 (95% CI 1.26–1.64) across 8 randomised trials · I² = 34%</text>
 <text x="24" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">Essai</text>
 <text x="546" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">RC (IC 95 %)</text>
 <line x1="325.4" y1="98.0" x2="325.4" y2="422.0" stroke="#6E6E73" stroke-width="1.4"/>

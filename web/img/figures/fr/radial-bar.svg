@@ -8,7 +8,7 @@ svg.bar:hover, svg.bar:focus { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {.bar { transition: none; }.grow { animation: none !important; } }</style>
 <rect width="1120" height="1000" fill="#FFFFFF"/>
 <text x="60" y="72" font-size="34" font-weight="700" fill="#1D1D1F">Une ville à deux heures de pointe</text>
-<text x="60" y="106" font-size="18" fill="#6E6E73">Vélos en libre-service Vélomarée · trajets par heure un jour de semaine type · 19 940 trajets quotidiens ·</text>
+<text x="60" y="106" font-size="18" fill="#6E6E73">Vélomarée bike-share · trips by hour on an average weekday · 19 940 daily rides</text>
 <g>
 <circle cx="560.0" cy="548.0" r="168.00" fill="none" stroke="#E8E8ED" stroke-width="1.4"/>
 <circle cx="560.0" cy="548.0" r="214.40" fill="none" stroke="#E8E8ED" stroke-width="1.4"/>
