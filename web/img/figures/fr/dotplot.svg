@@ -16,7 +16,7 @@
 }</style>
 <rect width="1200" height="587" fill="#FFFFFF"/>
 <text x="96" y="60" font-size="32" font-weight="700" fill="#1D1D1F">La plupart des tickets ont une réponse en quelques heures</text>
-<text x="96" y="96" font-size="20" fill="#6E6E73">93 % des 68 tickets de support passent sous l'objectif de 4 heures ; une fine traîne rouge s'étire ·</text>
+<text x="96" y="96" font-size="20" fill="#6E6E73">93 % des 68 tickets passent sous la cible de 4 h ; une fine traîne rouge s’étire</text>
 <line x1="565.3" y1="138.0" x2="565.3" y2="479.0" stroke="#6E6E73" stroke-width="1.5" stroke-dasharray="6 6"/>
 <text x="575.3" y="136.0" font-size="17" fill="#6E6E73">objectif 4 h</text>
 <line x1="96" y1="479.0" x2="1152" y2="479.0" stroke="#1D1D1F" stroke-width="1.5"/>

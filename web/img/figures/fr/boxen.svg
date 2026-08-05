@@ -8,7 +8,7 @@
  <rect width="1040" height="700" fill="#FFFFFF"/>
  <text x="120" y="48" font-size="26" font-weight="700" fill="#1D1D1F">Où chaque niveau de service cache sa traîne de latence</text>
  <text x="120" y="77" font-size="17" fill="#6E6E73">La latence p99 du niveau gratuit (875 ms) vaut 3,7× la traîne Enterprise (239 ms), pourtant la médiane bouge à peine</text>
- <text x="120" y="99" font-size="14" fill="#6E6E73" font-family="Roboto Mono, monospace">Diagramme en valeurs de lettres · 24 000 requêtes par niveau ·</text>
+ <text x="120" y="99" font-size="14" fill="#6E6E73" font-family="Roboto Mono, monospace">Diagramme en lettres-valeurs · 24 000 requêtes par palier</text>
  <g class="yaxis" aria-hidden="true">
  <line x1="120.0" y1="596.0" x2="1000.0" y2="596.0" stroke="#E5E5EA" stroke-width="1"/>
  <text x="104.0" y="601.0" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0</text>

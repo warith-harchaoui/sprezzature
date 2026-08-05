@@ -4,7 +4,7 @@
 <style>.tile{transition:transform.18s ease, filter.18s ease;transform-box:fill-box;transform-origin:center;}.tile:hover,.tile:focus{filter:brightness(1.06);transform:scale(1.015);outline:none;}.tile:focus{stroke:#1D1D1F;stroke-width:2;}@media (prefers-reduced-motion: reduce){.tile{transition:none;}.tile:hover,.tile:focus{transform:none;}}</style>
 <rect width="1120" height="820" fill="#FFFFFF"/>
 <text x="96" y="66" font-size="34" font-weight="700" fill="#1D1D1F">Sur mobile, les portefeuilles ont dépassé les cartes</text>
-<text x="96" y="102" font-size="20" fill="#6E6E73">Part des paiements en boutique en ligne par appareil et moyen de paiement · trimestre</text>
+<text x="96" y="102" font-size="20" fill="#6E6E73">Share of online-store checkouts by device and payment method - quarter</text>
 <text x="34" y="476" font-size="18" fill="#6E6E73" text-anchor="middle" transform="rotate(-90 34 476)">Part au sein de l'appareil</text>
 <text x="78" y="222" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0%</text>
 <line x1="84" y1="216" x2="96" y2="216" stroke="#E5E5EA" stroke-width="1.5"/>

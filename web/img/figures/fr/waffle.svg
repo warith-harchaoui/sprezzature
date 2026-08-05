@@ -14,7 +14,7 @@ svg:hover.cat, svg:focus-within.cat { opacity:.28; }
 @media (prefers-reduced-motion: reduce) {.tile { transition: none; } }</style>
 <rect width="1000" height="740" fill="#FFFFFF"/>
 <text x="56.0" y="66" font-size="30" font-weight="700" fill="#1D1D1F">Chauffage et climatisation : un tiers de l'électricité</text>
-<text x="56.0" y="102" font-size="18" fill="#6E6E73">Part de la consommation électrique annuelle du foyer · un carré = 1 % ·</text>
+<text x="56.0" y="102" font-size="18" fill="#6E6E73">Share of annual household electricity use · one square = 1 %</text>
 <g class="cat cat-heating---cooling" tabindex="0" role="listitem"><title>Heating &amp; cooling : 34 % (34 carrés)</title>
 <rect class="tile cat-heating---cooling" x="56.0" y="656.0" width="46.0" height="46.0" rx="5" fill="#FF3B30"/>
 <circle class="cat-heating---cooling" cx="79.0" cy="679.0" r="14" fill="#FFFFFF" fill-opacity="0.92"/>

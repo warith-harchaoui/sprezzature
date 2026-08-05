@@ -9,7 +9,7 @@ svg:hover.combo,svg:focus-within.combo{opacity:.3}
 .hit:focus{outline:3px solid #0A4DA0;outline-offset:2px}</style>
 <rect width="1058" height="700" fill="#FFFFFF"/>
 <text x="48" y="52" font-size="28" font-weight="700" fill="#1D1D1F">La plupart des utilisateurs joignables tiennent sur un seul canal</text>
-<text x="48" y="82" font-size="17" fill="#6E6E73">Utilisateurs actifs mensuels (milliers) par combinaison exacte de canaux de contact ·</text>
+<text x="48" y="82" font-size="17" fill="#6E6E73">Utilisateurs actifs mensuels (milliers) par combinaison exacte de canaux</text>
 <rect x="358.0" y="440.0" width="656.0" height="52.0" fill="#F5F5F7"/>
 <rect x="358.0" y="544.0" width="656.0" height="52.0" fill="#F5F5F7"/>
 <text x="358.0" y="138.0" font-size="15" fill="#6E6E73">Utilisateurs atteints par combinaison (k)</text>
