@@ -3,23 +3,23 @@
 <rect width="900" height="600" fill="#FFFFFF"/>
 <text x="450" y="52" font-size="26" font-weight="600" fill="#1D1D1F" text-anchor="middle" letter-spacing="-0.3">Product-Led Growth Funnel — Q3 2024</text>
 <text x="450" y="80" font-size="14" fill="#6E6E73" text-anchor="middle">Count of users reaching each conversion stage</text>
-<polygon points="160.0,120.0 740.0,120.0 493.5,180.0 406.5,180.0" fill="#007AFF" opacity="0.88"><title>Website visits: 124,800</title></polygon>
+<path d="M160.0,120.0 L740.0,120.0 C740.0,150.0 493.5,150.0 493.5,180.0 L406.5,180.0 C406.5,150.0 160.0,150.0 160.0,120.0 Z" fill="#007AFF" opacity="0.88"><title>Website visits: 124,800</title></path>
 <text x="150.0" y="155.0" font-size="13" fill="#1D1D1F" text-anchor="end">Website visits</text>
 <text x="750.0" y="155.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">124,800</text>
-<polygon points="406.5,180.0 493.5,180.0 471.8,240.0 428.2,240.0" fill="#AF52DE" opacity="0.88"><title>Trial sign-ups: 18,720 (15.0% conversion)</title></polygon>
+<path d="M406.5,180.0 L493.5,180.0 C493.5,210.0 471.8,210.0 471.8,240.0 L428.2,240.0 C428.2,210.0 406.5,210.0 406.5,180.0 Z" fill="#AF52DE" opacity="0.88"><title>Trial sign-ups: 18,720 (15.0% conversion)</title></path>
 <text x="396.5" y="215.0" font-size="13" fill="#1D1D1F" text-anchor="end">Trial sign-ups</text>
-<text x="503.5" y="215.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">18,720 (15.0%)</text>
-<polygon points="428.2,240.0 471.8,240.0 459.8,300.0 440.2,300.0" fill="#FF9500" opacity="0.88"><title>Activated users: 9,360 (50.0% conversion)</title></polygon>
+<text x="503.5" y="215.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">18,720  (15.0%)</text>
+<path d="M428.2,240.0 L471.8,240.0 C471.8,270.0 459.8,270.0 459.8,300.0 L440.2,300.0 C440.2,270.0 428.2,270.0 428.2,240.0 Z" fill="#FF9500" opacity="0.88"><title>Activated users: 9,360 (50.0% conversion)</title></path>
 <text x="418.2" y="275.0" font-size="13" fill="#1D1D1F" text-anchor="end">Activated users</text>
-<text x="481.8" y="275.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">9,360 (50.0%)</text>
-<polygon points="440.2,300.0 459.8,300.0 453.9,360.0 446.1,360.0" fill="#28CD41" opacity="0.88"><title>Feature adoption: 4,212 (45.0% conversion)</title></polygon>
+<text x="481.8" y="275.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">9,360  (50.0%)</text>
+<path d="M440.2,300.0 L459.8,300.0 C459.8,330.0 453.9,330.0 453.9,360.0 L446.1,360.0 C446.1,330.0 440.2,330.0 440.2,300.0 Z" fill="#28CD41" opacity="0.88"><title>Feature adoption: 4,212 (45.0% conversion)</title></path>
 <text x="430.2" y="335.0" font-size="13" fill="#1D1D1F" text-anchor="end">Feature adoption</text>
-<text x="469.8" y="335.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">4,212 (45.0%)</text>
-<polygon points="446.1,360.0 453.9,360.0 452.0,420.0 448.0,420.0" fill="#FF3B30" opacity="0.88"><title>Upgrade intent: 1,684 (40.0% conversion)</title></polygon>
+<text x="469.8" y="335.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">4,212  (45.0%)</text>
+<path d="M446.1,360.0 L453.9,360.0 C453.9,390.0 452.0,390.0 452.0,420.0 L448.0,420.0 C448.0,390.0 446.1,390.0 446.1,360.0 Z" fill="#FF3B30" opacity="0.88"><title>Upgrade intent: 1,684 (40.0% conversion)</title></path>
 <text x="436.1" y="395.0" font-size="13" fill="#1D1D1F" text-anchor="end">Upgrade intent</text>
-<text x="463.9" y="395.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">1,684 (40.0%)</text>
-<polygon points="448.0,420.0 452.0,420.0 480.0,480.0 420.0,480.0" fill="#79DBDC" opacity="0.88"><title>Paying customers: 842 (50.0% conversion)</title></polygon>
+<text x="463.9" y="395.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">1,684  (40.0%)</text>
+<path d="M448.0,420.0 L452.0,420.0 C452.0,450.0 480.0,450.0 480.0,480.0 L420.0,480.0 C420.0,450.0 448.0,450.0 448.0,420.0 Z" fill="#79DBDC" opacity="0.88"><title>Paying customers: 842 (50.0% conversion)</title></path>
 <text x="438.0" y="455.0" font-size="13" fill="#1D1D1F" text-anchor="end">Paying customers</text>
-<text x="462.0" y="455.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">842 (50.0%)</text>
+<text x="462.0" y="455.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">842  (50.0%)</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(852,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
