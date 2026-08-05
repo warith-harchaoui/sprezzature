@@ -21,7 +21,7 @@
 <defs><pattern id="mos-fcp-0" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,8L8,0" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="mos-fcp-1" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,0L8,8" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="mos-fcp-2" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M0,4L8,4" stroke="CanvasText" stroke-width="1.6"/></pattern><pattern id="mos-fcp-3" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="Canvas"/><path d="M4,0L4,8" stroke="CanvasText" stroke-width="1.6"/></pattern></defs>
 <rect width="1120" height="820" fill="#FFFFFF"/>
 <text x="96" y="66" font-size="34" font-weight="700" fill="#1D1D1F">Sur mobile, les portefeuilles ont dépassé les cartes</text>
-<text x="96" y="102" font-size="20" fill="#6E6E73">Share of online-store checkouts by device and payment method</text>
+<text x="96" y="102" font-size="20" fill="#6E6E73">Part des paiements en ligne par appareil et moyen de paiement</text>
 <text x="34" y="476" font-size="18" fill="#6E6E73" text-anchor="middle" transform="rotate(-90 34 476)">Part au sein de l'appareil</text>
 <text x="78" y="222" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0%</text>
 <line x1="84" y1="216" x2="96" y2="216" stroke="#E5E5EA" stroke-width="1.5"/>

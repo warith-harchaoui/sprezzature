@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1066" viewBox="0 0 1280 1066" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="db-title db-desc">
 <title id="db-title">Écart salarial par poste : les hommes gagnent plus que les femmes dans toutes les familles de métiers</title>
-<desc id="db-desc">Dumbbell plot of median hourly pay for women (purple) and men (teal) across 10 roles, sorted by the size of the gap. Each row joins the two medians with a segment whose length is the gap. Men earn more in every role; the gap averages 11% and is widest for Sales director at $13 per hour</desc>
+<desc id="db-desc">Graphique haltère du salaire horaire médian des femmes (violet) et des hommes (turquoise) sur 10 postes, triés par la taille de l’écart. Chaque ligne joint les deux médianes par un segment dont la longueur est l’écart. Les hommes gagnent plus dans chaque poste ; l’écart moyen est de 11 % et est le plus large pour Directeur commercial, à 13 $ de l’heure</desc>
 <style>.row{cursor:pointer}.row.seg{stroke:#6E6E73;stroke-width:5;stroke-linecap:round}.row:hover.rowbg,.row:focus.rowbg{fill:#F0F0F2}.row:hover.seg,.row:focus.seg{stroke:#1D1D1F}.row:hover.dot,.row:focus.dot{stroke:#1D1D1F;stroke-width:2}.row:focus{outline:none}</style>
 <rect width="1280" height="1066" fill="#FFFFFF"/>
 <text x="70" y="86" font-size="40" font-weight="700" fill="#1D1D1F">Les hommes gagnent plus que les femmes dans tous les postes</text>
