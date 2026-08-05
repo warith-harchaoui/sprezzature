@@ -13,7 +13,7 @@ svg:hover.setlabel, svg:focus-within.setlabel { opacity:.35; }
 @media (prefers-reduced-motion: reduce) {.lobe,.setlabel { transition: none; } }</style>
 <rect width="1080" height="940" fill="#FFFFFF"/>
 <text x="52" y="66" font-size="31" font-weight="700" fill="#1D1D1F">La plupart des data pros parlent Python, SQL et Cloud à la fois</text>
-<text x="52" y="102" font-size="19" fill="#6E6E73">Skills held by 1,000 surveyed data professionals · counts are people per region</text>
+<text x="52" y="102" font-size="19" fill="#6E6E73">Compétences de 1 000 professionnels de la donnée interrogés · effectifs par région</text>
 <g style="mix-blend-mode:multiply">
 <circle class="lobe lobe-A" cx="540.0" cy="400.0" r="205.0" fill="#007AFF" fill-opacity="0.40"/>
 <circle class="lobe lobe-B" cx="429.6" cy="594.4" r="205.0" fill="#28CD41" fill-opacity="0.40"/>
