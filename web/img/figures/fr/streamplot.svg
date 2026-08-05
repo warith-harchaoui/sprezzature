@@ -10,7 +10,7 @@
 }</style>
 <rect width="1200" height="860" fill="#FFFFFF"/>
 <text x="96" y="66" font-size="32" font-weight="700" fill="#1D1D1F">La tempête entraîne tout le flux dans sa rotation</text>
-<text x="96" y="100" font-size="18" fill="#6E6E73">Surface winds over the coast · streamlines follow the flow, darker means faster</text>
+<text x="96" y="100" font-size="18" fill="#6E6E73">Vents de surface sur la côte · les lignes de courant suivent le flux, plus foncé = plus rapide</text>
 <rect x="96.0" y="150.0" width="1008.0" height="642.0" fill="none" stroke="#E5E5EA" stroke-width="1.4"/>
 <line x1="96.0" y1="792.0" x2="96.0" y2="799.0" stroke="#E5E5EA" stroke-width="1.4"/>
 <text x="96.0" y="818.0" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">0</text>
