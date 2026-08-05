@@ -6080,3 +6080,12 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Actual vs predicted class over 162 test images · diagonal = correct': 'Classe réelle vs prédite sur 162 images de test · diagonale = correct'
 'A 3-class confusion matrix: the classifier is right on the diagonal and confuses Dog with Fox most': 'Matrice de confusion à 3 classes : le classifieur a raison sur la diagonale et confond surtout Chien et Renard'
 'Confusion matrix of a 3-class classifier over 162 test images. Rows are the actual class (Cat, Dog, Fox), columns the predicted class; each cell is shaded on a blue ramp by its count, darkest on the correct diagonal, with the count printed. The heavy diagonal (52, 44, 39) shows most predictions are correct; the largest error is 7 foxes predicted as dogs.': 'Matrice de confusion d’un classifieur à 3 classes sur 162 images de test. Les lignes sont la classe réelle (Chat, Chien, Renard), les colonnes la classe prédite ; chaque cellule est teintée sur un dégradé bleu selon son effectif, plus foncée sur la diagonale correcte, l’effectif étant imprimé. La forte diagonale (52, 44, 39) montre que la plupart des prédictions sont correctes ; la plus grande erreur est 7 renards prédits comme chiens.'
+# --- parcoords FR ---
+'Three classes traced over four measures · each line is one car': 'Trois classes tracées sur quatre mesures · chaque ligne est une voiture'
+'Compact': 'Compacte'
+'Midsize': 'Intermédiaire'
+'hp (ch)': 'puissance (ch)'
+'weight (lb)': 'poids (lb)'
+'accel (0-100 km/h, s)': 'accél. (0-100 km/h, s)'
+'Car classes separate cleanly across four metrics: compacts light and economical, SUVs heavy and powerful': 'Les classes de voitures se séparent nettement sur quatre mesures : compactes légères et sobres, SUV lourds et puissants'
+'Parallel-coordinates plot of three car classes (compact, midsize, SUV) across four metrics — fuel economy (mpg), power (hp), weight (lb) and 0-100 km/h time (s). Each car is a polyline crossing all four vertical axes; the three classes fall into three separated bands.': 'Graphique en coordonnées parallèles de trois classes de voitures (compacte, intermédiaire, SUV) sur quatre mesures — consommation (mpg), puissance (ch), poids (lb) et temps 0-100 km/h (s). Chaque voiture est une ligne brisée traversant les quatre axes verticaux ; les trois classes forment trois bandes séparées.'
