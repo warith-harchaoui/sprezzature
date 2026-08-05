@@ -1,12 +1,15 @@
 // Upgrade animated figure cards from a flat <img> to a live <object> when they
-// scroll into view, so their SVG animation plays inline. An <img>-embedded SVG
-// is a frozen picture; an <object type="image/svg+xml"> is a real document.
+// scroll into view, so their SVG's hover tooltips and animation work inline.
+// An <img>-embedded SVG is a frozen picture; an <object type="image/svg+xml">
+// is a real document.
 //
-// The card object is made pointer-events:none so a click passes THROUGH to the
-// enclosing .zoom button and opens the fullscreen lightbox (click-to-fullscreen
-// must keep working) — animation needs no pointer events, so it still plays.
-// FULL interactivity (CSS :hover/:focus isolation, tooltips) then works at large
-// size in the lightbox, whose object is fully live. Static figures stay <img>.
+// The card object is pointer-events:auto so native :hover/:focus isolation and
+// <title> tooltips fire right on the card (an <object> is an isolated document,
+// so a click inside it can never bubble out to the page's .zoom button click
+// handler). Click-to-fullscreen instead runs through a postMessage bridge: the
+// SVG's own injected script (scripts/_interactive.py, sprezzature-figures repo)
+// posts {szFig:1,type:'open-fullscreen'} on a background click, and
+// lightbox.js listens for it and opens the dialog. Static figures stay <img>.
 //
 // Only figures whose SVG carries interactivity/animation are tagged (data-live),
 // and the swap is lazy (IntersectionObserver) so the page never holds 100+ live
@@ -23,7 +26,7 @@
     obj.className = img.className;                 // keep w-full etc.
     obj.style.width = '100%';
     obj.style.display = 'block';
-    obj.style.pointerEvents = 'none';             // let the click reach .zoom (fullscreen)
+    obj.style.pointerEvents = 'auto';             // hover/<title> tooltips fire; click uses the postMessage bridge
     obj.data = src;
     img.replaceWith(obj);
   }

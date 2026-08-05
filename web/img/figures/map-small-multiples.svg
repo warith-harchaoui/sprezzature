@@ -1,18 +1,20 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" width="650" height="468" viewBox="0 0 650 468" font-family="Roboto, system-ui, sans-serif"><style>@media (prefers-color-scheme: dark) {
- rect[fill="white"] { fill: #15181C; }
- path[stroke="white"] { stroke: #2A2F36; }
- text[fill="#1D1D1F"] { fill: #F5F5F7; }
- text[fill="#6E6E73"] { fill: #A1A1A6; }
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="650" height="468" viewBox="0 0 650 468" font-family="Roboto, system-ui, sans-serif"><style>
+@media (prefers-color-scheme: dark) {
+  rect[fill="white"] { fill: #15181C; }
+  path[stroke="white"] { stroke: #2A2F36; }
+  text[fill="#1D1D1F"] { fill: #F5F5F7; }
+  text[fill="#6E6E73"] { fill: #A1A1A6; }
 }
 @media (prefers-contrast: more) {
- path[stroke="white"] { stroke-width: 0.4; }
- text[fill="#6E6E73"] { fill: #3A3A3E; }
+  path[stroke="white"] { stroke-width: 0.4; }
+  text[fill="#6E6E73"] { fill: #3A3A3E; }
 }
 @media (forced-colors: active) {
- rect[fill="white"] { fill: Canvas; }
- path[stroke="white"] { stroke: CanvasText; stroke-width: 0.3; }
- text { fill: CanvasText; }
-}</style>
+  rect[fill="white"] { fill: Canvas; }
+  path[stroke="white"] { stroke: CanvasText; stroke-width: 0.3; }
+  text { fill: CanvasText; }
+}
+</style>
 <title>Small multiples</title><desc>Four small world choropleths, one per year, sharing frozen class breaks so panels are comparable.</desc>
 <rect width="650" height="468" fill="white"/>
 <text x="8" y="22" font-size="15" font-weight="700" fill="#1D1D1F">Four years, one scale</text>
