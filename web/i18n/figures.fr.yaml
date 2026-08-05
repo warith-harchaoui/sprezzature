@@ -6094,6 +6094,16 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Static isometric projection · colour maps to height': 'Projection isométrique statique · la couleur indique la hauteur'
 'A 3-D surface with a single central peak, shaded by height': 'Une surface 3D à un seul pic central, teintée selon la hauteur'
 'A smooth surface with one central peak, sampled on a regular grid and drawn as a static isometric 3-D projection: depth-sorted mesh quads shaded on a blue ramp by height, from about -1 at the edges to 3 at the peak, with a height legend.': 'Une surface lisse à un seul pic central, échantillonnée sur une grille régulière et dessinée en projection 3D isométrique statique : mailles triées par profondeur et teintées sur un dégradé bleu selon la hauteur, d’environ -1 aux bords à 3 au sommet, avec une légende de hauteur.'
+# --- heatmap / histogram hand-authored-SVG migration FR ---
+'Activity': 'Activité'
+'Activity by Day and Hour': 'Activité par jour et par heure'
+'Synthetic weekly usage pattern': 'Motif d''usage hebdomadaire synthétique'
+'A 7 by 24 grid heatmap. Cell colour runs a pale-to-navy blue ramp from 0 to 67. The busiest cell is Fri at 19, 67.': 'Une grille de densité 7 par 24. La couleur des cellules suit un dégradé bleu du pâle au marine, de 0 à 67. La cellule la plus active est vendredi à 19h, avec 67.'
+'Exam Score Distribution': 'Distribution des notes d''examen'
+'Exam score': 'Note d''examen'
+'Synthetic sample, 300 students': 'Échantillon synthétique, 300 étudiants'
+'Number of students': 'Nombre d''étudiants'
+'Histogram of 300 observations across 19 bins from 52 to 90. The tallest bin is 70-72 with 36 observations, 12% of the sample.': 'Histogramme de 300 observations réparties en 19 classes de 52 à 90. La classe la plus élevée est 70-72, avec 36 observations, soit 12 % de l''échantillon.'
 # --- orphan-fix map FR ---
 'of incidents fall': 'des incidents tombent'
 'in the busiest 10% of cells': 'dans les 10 % de cellules les plus chargées'
