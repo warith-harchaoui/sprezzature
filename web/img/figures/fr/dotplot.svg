@@ -2,17 +2,17 @@
 <title id="dp-title">Temps de première réponse aux tickets de support, un point par ticket</title>
 <desc id="dp-desc">Diagramme à points de Wilkinson de 68 délais de première réponse en heures. Chaque point est un ticket, regroupé tous les 0,4 h et empilé. 93 % des tickets ont reçu une réponse sous l'objectif de 4 heures (bleu) ; les 5 au-delà forment la traîne longue (rouge).</desc>
 <style>.dot{cursor:pointer}.dot:hover,.dot:focus{stroke:#FFFFFF;stroke-width:2.5}.dot:focus{outline:none}@media (prefers-contrast: more){
-.dot-within{fill:#004CCE;}
-.dot-tail{fill:#B50000;}
+  .dot-within{fill:#004CCE;}
+  .dot-tail{fill:#B50000;}
 }
 @media (forced-colors: active){
-.dot-within{fill:CanvasText;}
-.dot-tail{fill:CanvasText;}
+  .dot-within{fill:CanvasText;}
+  .dot-tail{fill:CanvasText;}
 }@media (prefers-color-scheme: dark){
- [fill="#FFFFFF"]{fill:#0B0B0C;}
- [fill="#1D1D1F"]{fill:#F2F2F7;}
- [fill="#6E6E73"]{fill:#9C9CA3;}
- [style*="multiply"]{mix-blend-mode:screen;}
+  [fill="#FFFFFF"]{fill:#0B0B0C;}
+  [fill="#1D1D1F"]{fill:#F2F2F7;}
+  [fill="#6E6E73"]{fill:#9C9CA3;}
+  [style*="multiply"]{mix-blend-mode:screen;}
 }</style>
 <rect width="1200" height="587" fill="#FFFFFF"/>
 <text x="96" y="60" font-size="32" font-weight="700" fill="#1D1D1F">La plupart des tickets ont une réponse en quelques heures</text>
@@ -103,5 +103,5 @@
 <text x="876.0" y="160.0" font-size="18" fill="#1D1D1F">Dans l'objectif</text>
 <circle class="dot-tail" cx="1034.0" cy="154.0" r="9.0" fill="#FF3B30"/>
 <text x="1050.0" y="160.0" font-size="18" fill="#1D1D1F">Traîne longue</text>
-<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1152,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
+<g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1152,14)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(btn&&req){btn.style.display='';var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});}var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&window.parent!==window&&!fe.hasAttribute('data-lb-obj')){svg.addEventListener('click',function(e){if(btn&&btn.contains&&btn.contains(e.target))return;window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});}})();]]></script>
 </svg>

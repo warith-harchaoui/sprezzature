@@ -54,4 +54,23 @@
     if (e.target.closest('[data-lb-close]')) { close(); return; }          // ✕ button
     if (dlg.contains(e.target) && !e.target.closest('figure')) close();    // click outside the figure
   });
+
+  // Live <object> cards are pointer-events:auto (so native hover/<title>
+  // tooltips work), which means a click inside one never bubbles to the
+  // document click handler above — it's an isolated document. The card's own
+  // injected script (scripts/_interactive.py, sprezzature-figures repo) posts
+  // this message instead; find which <object> sent it via its contentWindow
+  // and open the lightbox with the same data-src/data-alt the .zoom wrapper
+  // would have supplied.
+  window.addEventListener('message', function (e) {
+    if (!e.data || e.data.szFig !== 1 || e.data.type !== 'open-fullscreen') return;
+    var objs = document.querySelectorAll('object');
+    for (var i = 0; i < objs.length; i++) {
+      if (objs[i].contentWindow === e.source) {
+        var z = objs[i].closest('.zoom');
+        if (z) open(z.getAttribute('data-src'), z.getAttribute('data-alt'));
+        return;
+      }
+    }
+  });
 })();
