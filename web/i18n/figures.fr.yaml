@@ -6094,3 +6094,8 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Static isometric projection · colour maps to height': 'Projection isométrique statique · la couleur indique la hauteur'
 'A 3-D surface with a single central peak, shaded by height': 'Une surface 3D à un seul pic central, teintée selon la hauteur'
 'A smooth surface with one central peak, sampled on a regular grid and drawn as a static isometric 3-D projection: depth-sorted mesh quads shaded on a blue ramp by height, from about -1 at the edges to 3 at the peak, with a height legend.': 'Une surface lisse à un seul pic central, échantillonnée sur une grille régulière et dessinée en projection 3D isométrique statique : mailles triées par profondeur et teintées sur un dégradé bleu selon la hauteur, d’environ -1 aux bords à 3 au sommet, avec une légende de hauteur.'
+# --- orphan-fix map FR ---
+'of incidents fall': 'des incidents tombent'
+'in the busiest 10% of cells': 'dans les 10 % de cellules les plus chargées'
+'of trips start': 'des trajets partent'
+'in the busiest 10% of hexes': 'dans les 10 % d’hexagones les plus chargés'
