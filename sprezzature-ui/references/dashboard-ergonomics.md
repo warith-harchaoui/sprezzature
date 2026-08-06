@@ -2,7 +2,7 @@
 
 Translated and adapted from Synolia, *Data Visualisation : construire un tableau de bord percutant* — <https://www.synolia.com/blog/business-intelligence/data-visualisation-de-limportance-de-lergonomie-tableau-de-bord-percutant/>.
 
-Use this file when the user asks for a dashboard, a BI tile, a KPI summary, or any data-visualization-heavy surface. Read alongside `charts-vega.md` (house style for Vega-Lite specs) and `ergonomics-criteria.md` (Boucher's eight criteria).
+Use this file when the user asks for a dashboard, a BI tile, a KPI summary, or any data-visualization-heavy surface. Read alongside `charts-svg.md` (house style for hand-authored SVG charts) and `ergonomics-criteria.md` (Boucher's eight criteria).
 
 ## What a dashboard is for
 
@@ -74,11 +74,11 @@ Once a dashboard is in users' hands, new questions surface. Self-service BI lets
 
 ## House rules (for emit)
 
-When the skill emits a dashboard, apply these defaults — they sit on top of `charts-vega.md`.
+When the skill emits a dashboard, apply these defaults — they sit on top of `charts-svg.md`.
 
 1. **One question per tile.** A tile that tries to answer two questions answers neither well.
 2. **Title as a question or assertion**, not a label. "Where do sales come from?" beats "Sales".
-3. **Polarity stated on every measurable tile — when it's well-defined for *this* dashboard.** The same metric can be "higher is better" in one product and "lower is better" in another (time-in-app on a social app vs. a productivity tool; bug count on a young vs. mature codebase). Decide the polarity for the audience of this dashboard, then surface it as a tag (*↑ higher is better*, *↓ lower is better*, or *target = N ± k*) in the tile subtitle or chip next to the value. Skip the tag for neutral axes and ambiguous metrics. Never carry polarity by color alone; pair color with a word or glyph. Detail in `charts-vega.md` → "Polarity — higher or lower is better".
+3. **Polarity stated on every measurable tile — when it's well-defined for *this* dashboard.** The same metric can be "higher is better" in one product and "lower is better" in another (time-in-app on a social app vs. a productivity tool; bug count on a young vs. mature codebase). Decide the polarity for the audience of this dashboard, then surface it as a tag (*↑ higher is better*, *↓ lower is better*, or *target = N ± k*) in the tile subtitle or chip next to the value. Skip the tag for neutral axes and ambiguous metrics. Never carry polarity by color alone; pair color with a word or glyph. Detail in `charts-svg.md` → "Polarity — higher or lower is better".
 4. **Reading order top-to-bottom, left-to-right** matches the story: overview tile at top-left, drill-downs flowing toward the bottom-right. Reverse for RTL layouts.
 5. **Same metric, same color across tiles.** If "active users" is `brand-blue` in tile 1, it's `brand-blue` in tile 4.
 6. **No more than two color hues per tile**, plus neutrals. Color carries a dimension; if there's no dimension to carry, drop the color.
@@ -140,4 +140,4 @@ Hero tile spans both columns; supporting tiles pair up below.
 - [ ] Filters at the top; chips show active state; one-tap reset.
 - [ ] Empty state per tile.
 - [ ] Layout reflows from single-column mobile to grid desktop without losing the story order.
-- [ ] Vega-Lite specs use the house config in `charts-vega.md`.
+- [ ] Charts use the house tokens in `charts-svg.md`.

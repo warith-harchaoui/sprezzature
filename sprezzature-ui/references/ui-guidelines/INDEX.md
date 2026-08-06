@@ -83,4 +83,4 @@ Curated, platform-native UI guidance for vanilla JavaScript + Tailwind CSS outpu
 
 ## Charts
 
-Vega-Lite spec conventions (Roboto, 10 px rounded corners, palette from `color-psychology.md`, no top/right spines, no tick marks): see `references/charts-vega.md` (one level up, not under `ui-guidelines/`).
+Hand-authored inline SVG conventions (no Vega, Roboto, 10 px rounded corners, palette from `color-psychology.md`, no top/right spines, no tick marks): see `references/charts-svg.md` (one level up, not under `ui-guidelines/`).

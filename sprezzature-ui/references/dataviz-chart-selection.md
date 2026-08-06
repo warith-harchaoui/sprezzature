@@ -1,6 +1,6 @@
 # Choosing the Right Chart
 
-A decision guide for picking the right chart shape. Read alongside `charts-vega.md` (house style for the chart you pick) and `dashboard-ergonomics.md` (how it sits in a tile).
+A decision guide for picking the right chart shape. Read alongside `charts-svg.md` (house style for the chart you pick) and `dashboard-ergonomics.md` (how it sits in a tile).
 
 ## Two questions first
 
@@ -75,7 +75,7 @@ Every chart belongs to one of four families. Identify the family before picking 
 6. **Axes start at zero for bars** (truncated bars lie). For lines, truncation is acceptable when the message is the shape of change.
 7. **Annotate the message** — a single highlighted point or short label beats forcing the user to find it.
 8. **Title = the conclusion.** "Revenue grew 18 % in Q3" beats "Revenue by quarter".
-9. **State the polarity — when the context makes it well-defined.** "Higher is better" / "lower is better" is a *contextual* choice, not an intrinsic property of the metric: time-in-app is great for a social product and bad for a productivity tool; bug-count-up is good for a young QA effort and bad for a mature codebase. Decide it for *this* chart, *this* audience, *this* question, then put the tag in the axis title (`"Latency (ms — lower is better)"`) or the subtitle. Reading a chart shouldn't require domain instinct — a stranger glancing at it should know in 3 seconds whether the trend is good news or bad. Skip the tag for neutral axes (time, category, geography) and for metrics whose polarity is genuinely ambiguous; those want a target band, not an arrow. See `charts-vega.md` → "Polarity — higher or lower is better".
+9. **State the polarity — when the context makes it well-defined.** "Higher is better" / "lower is better" is a *contextual* choice, not an intrinsic property of the metric: time-in-app is great for a social product and bad for a productivity tool; bug-count-up is good for a young QA effort and bad for a mature codebase. Decide it for *this* chart, *this* audience, *this* question, then put the tag in the axis title (`"Latency (ms — lower is better)"`) or the subtitle. Reading a chart shouldn't require domain instinct — a stranger glancing at it should know in 3 seconds whether the trend is good news or bad. Skip the tag for neutral axes (time, category, geography) and for metrics whose polarity is genuinely ambiguous; those want a target band, not an arrow. See `charts-svg.md` → "Polarity — higher or lower is better".
 
 ## Variables count and axis design
 
@@ -116,4 +116,4 @@ These two shapes solve maybe 70 % of real dataviz needs. The fancier shapes earn
 - [ ] No 3D.
 - [ ] Title states the conclusion, not the dimensions.
 - [ ] Polarity decided for the chart's context and stated on the axis (`higher is better` / `lower is better` / `target = N ± k`), unless the axis is neutral or the polarity is genuinely ambiguous.
-- [ ] Vega-Lite spec built per `charts-vega.md`.
+- [ ] Hand-authored SVG built per `charts-svg.md`.

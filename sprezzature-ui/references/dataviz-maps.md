@@ -86,7 +86,7 @@ For ratios and rate indicators, cap the number of classes so each zone is distin
 ## Web implementation hooks
 
 - Prefer SVG basemaps for vector territories (regions, countries) — they scale, they accept Tailwind / CSS classes, they're accessible.
-- For interactive map UIs at scale, use Vega-Lite's `geoshape` or a dedicated library (MapLibre GL, Leaflet). Keep the house chart style — same Roboto type, same brand palette, same 10 px rounded corners on chrome — see `charts-vega.md`.
+- For interactive map UIs at scale, hand-author the projection as inline SVG paths (no Vega) or reach for a dedicated library (MapLibre GL, Leaflet). Keep the house chart style — same Roboto type, same brand palette, same 10 px rounded corners on chrome — see `charts-svg.md`.
 - Provide a textual alternative below the map: a sentence stating the takeaway, plus a table of the top / bottom regions. Screen readers can't read a map.
 - Make hover / focus an interaction parity: every clickable region must also be keyboard-reachable with arrow keys, and the active region must expose name + value via an accessible name.
 

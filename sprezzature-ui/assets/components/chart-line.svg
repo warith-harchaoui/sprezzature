@@ -1,0 +1,69 @@
+<!--
+House-style line + area chart — Roboto type, no top/right spines, no tick marks,
+colors from harchaoui.org/warith/colors. Polarity is contextual: replace the
+subtitle / axis tag below to match this dashboard's interpretation. Inline SVG
+(no chart library) — see references/charts-svg.md.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-labelledby="chart-line-title chart-line-desc" class="w-full h-auto chart">
+  <title id="chart-line-title">Weekly active users</title>
+  <desc id="chart-line-desc">Line and area chart of weekly active users over seven weeks, trending up from 1200 to 1910. Higher is better — engagement metric, decide per dashboard.</desc>
+  <text x="0" y="20" font-family="Roboto, system-ui, sans-serif" font-size="16" font-weight="600" fill="#000000">Weekly active users</text>
+  <text x="0" y="38" font-family="Roboto, system-ui, sans-serif" font-size="12" fill="#3C3C43">↑ higher is better — engagement metric (decide per dashboard)</text>
+
+  <!-- baselines only: no top/right spine, no tick marks, no gridlines -->
+  <line x1="40" y1="220" x2="580" y2="220" stroke="rgba(60,60,67,0.36)" stroke-width="1"/>
+  <line x1="40" y1="56" x2="40" y2="220" stroke="rgba(60,60,67,0.36)" stroke-width="1"/>
+  <text x="36" y="224" text-anchor="end" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">1000</text>
+  <text x="36" y="76" text-anchor="end" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">2000</text>
+
+  <!-- area: single linear fill, the one gradient exception in the house rules -->
+  <path d="M40,220 L40,187.2 L130,152.76 L220,169.98 L310,119.6 L400,92.08 L490,81.6 L580,70.76 L580,220 Z"
+        fill="#007AFF" opacity="0.18"/>
+  <path d="M40,187.2 L130,152.76 L220,169.98 L310,119.6 L400,92.08 L490,81.6 L580,70.76"
+        fill="none" stroke="#007AFF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- one <g> per week: point + native tooltip + hover lift -->
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 1: 1,200 active users">
+    <circle cx="40" cy="187.2" r="4.4" fill="#007AFF"/>
+    <title>Week 1: 1,200 active users</title>
+  </g>
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 2: 1,410 active users">
+    <circle cx="130" cy="152.76" r="4.4" fill="#007AFF"/>
+    <title>Week 2: 1,410 active users</title>
+  </g>
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 3: 1,305 active users">
+    <circle cx="220" cy="169.98" r="4.4" fill="#007AFF"/>
+    <title>Week 3: 1,305 active users</title>
+  </g>
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 4: 1,612 active users">
+    <circle cx="310" cy="119.6" r="4.4" fill="#007AFF"/>
+    <title>Week 4: 1,612 active users</title>
+  </g>
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 5: 1,780 active users">
+    <circle cx="400" cy="92.08" r="4.4" fill="#007AFF"/>
+    <title>Week 5: 1,780 active users</title>
+  </g>
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 6: 1,844 active users">
+    <circle cx="490" cy="81.6" r="4.4" fill="#007AFF"/>
+    <title>Week 6: 1,844 active users</title>
+  </g>
+  <g class="chart-point" tabindex="0" role="img" aria-label="Week 7: 1,910 active users">
+    <circle cx="580" cy="70.76" r="4.4" fill="#007AFF"/>
+    <title>Week 7: 1,910 active users</title>
+  </g>
+
+  <text x="40" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W1</text>
+  <text x="130" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W2</text>
+  <text x="220" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W3</text>
+  <text x="310" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W4</text>
+  <text x="400" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W5</text>
+  <text x="490" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W6</text>
+  <text x="580" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">W7</text>
+
+  <text x="580" y="250" text-anchor="end" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Active users (higher is better)</text>
+
+  <style>
+    .chart-point { cursor: pointer; }
+    .chart-point:hover circle, .chart-point:focus circle { r: 6.5; outline: none; }
+  </style>
+</svg>
