@@ -1,6 +1,6 @@
 # Dataviz Color Palettes (Accessible)
 
-Accessible color choices for data visualization. Read alongside `color-psychology.md` (the curated brand palette), `charts-vega.md` (Vega-Lite house style), and `ui-guidelines/foundations/accessibility.md`.
+Accessible color choices for data visualization. Read alongside `color-psychology.md` (the curated brand palette), `charts-svg.md` (hand-authored SVG house style), and `ui-guidelines/foundations/accessibility.md`.
 
 Color in a data visualization carries a dimension. It is not decoration. Picking colors badly makes the chart unreadable for color-blind users, illegible at small sizes, or actively misleading.
 
@@ -35,7 +35,7 @@ You can't pick colors well until you know which of these three you're building.
 ### Categorical
 
 - Max 8 categories. More than that, the eye stops distinguishing reliably — collapse small categories into "Other" or use a different chart.
-- Use the brand categorical sequence from `charts-vega.md`:
+- Use the brand categorical sequence from `charts-svg.md`:
   `["#007AFF", "#28CD41", "#FF9500", "#AF52DE", "#FF2D55", "#FFCC00", "#79DBDC", "#FF3B30"]`
 - Avoid simultaneous red + green; they read as the same color to red-green color-blind users (about 8 % of men).
 
@@ -106,7 +106,7 @@ extend: {
 },
 ```
 
-The Vega-Lite specs in `charts-vega.md` already reference these hues via the categorical range. Re-use the tokens in any custom SVG output so charts and KPIs stay in sync.
+The house tokens in `charts-svg.md` already reference these hues via the categorical range. Re-use the tokens in any chart or KPI output so they stay in sync.
 
 ## Checklist
 

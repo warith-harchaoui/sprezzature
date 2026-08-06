@@ -1,0 +1,66 @@
+<!--
+House-style bar chart — Roboto type, rounded corners 10 px, no top/right spines,
+no tick marks, colors from harchaoui.org/warith/colors. Polarity is contextual:
+replace the subtitle / axis tag below to match this dashboard's interpretation.
+Inline SVG (no chart library), fixed light-mode colors below for a working
+standalone template; swap the fills for `currentColor` + Tailwind
+`text-{token} dark:text-{token}` (or the CSS custom-property tokens) to make a
+generated chart dark-mode aware — see references/charts-svg.md.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-labelledby="chart-bar-title chart-bar-desc" class="w-full h-auto chart">
+  <title id="chart-bar-title">Active users per day</title>
+  <desc id="chart-bar-desc">Bar chart of active users per day, Monday through Sunday. Higher is better — engagement metric, decide per dashboard.</desc>
+  <text x="0" y="20" font-family="Roboto, system-ui, sans-serif" font-size="16" font-weight="600" fill="#000000">Active users per day</text>
+  <text x="0" y="38" font-family="Roboto, system-ui, sans-serif" font-size="12" fill="#3C3C43">↑ higher is better — engagement metric (decide per dashboard)</text>
+
+  <!-- baselines only: no top/right spine, no tick marks -->
+  <line x1="40" y1="220" x2="580" y2="220" stroke="rgba(60,60,67,0.36)" stroke-width="1"/>
+  <line x1="40" y1="56" x2="40" y2="220" stroke="rgba(60,60,67,0.36)" stroke-width="1"/>
+  <text x="36" y="224" text-anchor="end" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">0</text>
+  <text x="36" y="76" text-anchor="end" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">200</text>
+
+  <!-- one <g> per day: rounded bar + native tooltip + hover lift (see .chart-bar:hover below) -->
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Monday: 120 active users">
+    <rect x="51.6" y="130.5" width="54" height="89.5" rx="10" ry="10" fill="#007AFF"/>
+    <title>Monday: 120 active users</title>
+  </g>
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Tuesday: 184 active users">
+    <rect x="128.7" y="82.8" width="54" height="137.2" rx="10" ry="10" fill="#007AFF"/>
+    <title>Tuesday: 184 active users</title>
+  </g>
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Wednesday: 152 active users">
+    <rect x="205.9" y="106.7" width="54" height="113.3" rx="10" ry="10" fill="#007AFF"/>
+    <title>Wednesday: 152 active users</title>
+  </g>
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Thursday: 201 active users">
+    <rect x="283.0" y="70.2" width="54" height="149.8" rx="10" ry="10" fill="#007AFF"/>
+    <title>Thursday: 201 active users</title>
+  </g>
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Friday: 178 active users">
+    <rect x="360.1" y="87.3" width="54" height="132.7" rx="10" ry="10" fill="#007AFF"/>
+    <title>Friday: 178 active users</title>
+  </g>
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Saturday: 93 active users">
+    <rect x="437.3" y="150.7" width="54" height="69.3" rx="10" ry="10" fill="#007AFF"/>
+    <title>Saturday: 93 active users</title>
+  </g>
+  <g class="chart-bar" tabindex="0" role="img" aria-label="Sunday: 76 active users">
+    <rect x="514.4" y="163.3" width="54" height="56.7" rx="10" ry="10" fill="#007AFF"/>
+    <title>Sunday: 76 active users</title>
+  </g>
+
+  <text x="78.6" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Mon</text>
+  <text x="155.7" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Tue</text>
+  <text x="232.9" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Wed</text>
+  <text x="310.0" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Thu</text>
+  <text x="387.1" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Fri</text>
+  <text x="464.3" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Sat</text>
+  <text x="541.4" y="236" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Sun</text>
+
+  <text x="580" y="250" text-anchor="end" font-family="Roboto, system-ui, sans-serif" font-size="11" fill="#3C3C43">Active users (higher is better)</text>
+
+  <style>
+    .chart-bar { cursor: pointer; }
+    .chart-bar:hover rect, .chart-bar:focus rect { filter: brightness(1.12); outline: none; }
+  </style>
+</svg>

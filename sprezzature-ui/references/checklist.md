@@ -103,7 +103,7 @@ findings (enforced by `tests/test_dogfood_audits.py`).
 
 ## Charts & dashboards
 
-- [ ] Vega-Lite spec (not hand-written SVG), house `config` from `charts-vega.md`.
+- [ ] Hand-authored inline SVG (no Vega, no chart library), house tokens from `charts-svg.md`.
 - [ ] Title states the conclusion or the question, not the dimensions.
 - [ ] **Polarity decided for the chart's context and stated** on every quantitative axis / KPI whose "good direction" is well-defined for this audience (*↑ higher is better*, *↓ lower is better*, or *target = N ± k*), in the axis title, subtitle, or tile chip. Skipped for neutral axes (time, category, region) and ambiguous metrics. Never carried by color alone.
 - [ ] `role="img"` + `aria-label` restates the polarity in words for screen readers.

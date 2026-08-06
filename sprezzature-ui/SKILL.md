@@ -147,7 +147,7 @@ The "zero build, drop into Nginx / S3 / Pages" pitch only holds for the prototyp
 | "search" | `ui-guidelines/patterns/searching.md` | `<input type="search">` with debounced JS, results live region |
 | "onboarding" | `ui-guidelines/patterns/onboarding.md` | One idea per screen, ≤ 8-word headline, skippable |
 | "theme switch" | `ui-guidelines/foundations/dark-mode.md` | `data-color-scheme` attribute + persisted choice |
-| "chart" / "graph" / "dashboard tile" | `charts-vega.md` + `dataviz-chart-selection.md` + `dataviz-color-palettes.md` | Vega-Lite v5 JSON spec, Roboto, 10 px rounded corners, palette from `color-psychology.md`, no top/right spines. State polarity when well-defined (*↑ higher is better* / *↓ lower is better* / *target = N ± k*). |
+| "chart" / "graph" / "dashboard tile" | `charts-svg.md` + `dataviz-chart-selection.md` + `dataviz-color-palettes.md` | Hand-authored inline SVG (no Vega, no chart library), Roboto, 10 px rounded corners, palette from `color-psychology.md`, no top/right spines. State polarity when well-defined (*↑ higher is better* / *↓ lower is better* / *target = N ± k*). |
 | "dashboard" / "BI" / "KPI summary" | `dashboard-ergonomics.md` (+ chart references above) | One question per tile, title as a question, polarity tag on every measurable tile, sticky filters, 12-column grid, skeleton tiles while loading. |
 | "map" / "choropleth" | `dataviz-maps.md` | Title states the message, ≤ 7 classes, locator inset, accessible text alternative below the map |
 | "audit" / "ergonomic review" / "UX review" | `ergonomics-criteria.md` | Walk the 8 criteria: guidance, workload, explicit control, adaptability, error management, consistency, label significance, compatibility. **Respect the existing typeface stack**: do not propose a three-Roboto swap unless the user explicitly asks about typography. |
@@ -193,7 +193,7 @@ Load these only when needed.
 - `references/checklist.md` — Pre-ship quality gate.
 
 **Dataviz**
-- `references/charts-vega.md` — Vega-Lite house style.
+- `references/charts-svg.md` — hand-authored inline SVG house style (no Vega).
 - `references/dataviz-chart-selection.md` — Picking the right chart shape.
 - `references/dataviz-color-palettes.md` — Sequential / divergent / categorical.
 - `references/dataviz-maps.md` — Choropleth and map ergonomics.
@@ -211,7 +211,7 @@ Load these only when needed.
 
 - `assets/starter-page.html` — single-file bootstrap (Tailwind Play CDN, prototype-grade; swap to Tailwind CLI / Vite before shipping a real production site).
 - `assets/components/button.html`, `card.html`, `modal.html`, `form-field.html`, `nav.html` — component-shape primaries (one file per generic UI surface).
-- `assets/components/chart-bar.json`, `chart-line.json` — Vega-Lite specs.
+- `assets/components/chart-bar.svg`, `chart-line.svg` — hand-authored SVG charts (no Vega).
 - `assets/snippets/` — **law-keyed** snippet catalog (one file per mechanically-implementable Law of UX: Miller / Peak-End / Goal-Gradient / Doherty / Von Restorff / Jakob / Chunking / Zeigarnik). See `assets/snippets/INDEX.md` for the law ↔ snippet ↔ trigger-phrase mapping. Every snippet passes both `sprezzature-ux-laws` and `sprezzature-accessibility` auditors with zero findings; they are the make-side counterpart to `sprezzature-ux-laws/scripts/audit_laws_of_ux.py --fix`.
 - `assets/fonts/roboto/` — Roboto WOFF2 + OFL + `fonts.css` (sans). The `fonts.css` declares the `@font-face` blocks and also exposes the `--font-sans / --font-serif / --font-mono` custom properties and the base `html { font-family: var(--font-sans) }` / `code, pre, kbd, samp { font-family: var(--font-mono) }` wiring.
 - `assets/fonts/roboto-serif/` — Roboto Serif WOFF2 + OFL + `fonts.css` (serif).
