@@ -7,7 +7,7 @@
 <rect x="40.0" y="108" width="16" height="16" rx="3" fill="#007AFF"/>
 <text x="62.0" y="121" font-size="14" fill="#1D1D1F">Compacte</text>
 <rect x="165.5" y="108" width="16" height="16" rx="3" fill="#FF9500"/>
-<text x="187.5" y="121" font-size="14" fill="#1D1D1F">Intermédiaire</text>
+<text x="187.5" y="121" font-size="14" fill="#1D1D1F">Interméd.</text>
 <rect x="291.0" y="108" width="16" height="16" rx="3" fill="#28CD41"/>
 <text x="313.0" y="121" font-size="14" fill="#1D1D1F">SUV</text>
 <line x1="96.0" y1="214.0" x2="96.0" y2="628.0" stroke="#E5E5EA" stroke-width="1.5"/>
