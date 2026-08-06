@@ -1,0 +1,581 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1224" height="960" viewBox="0 0 1224 960" role="img" aria-labelledby="sp-title sp-desc" font-family="Roboto, -apple-system, Helvetica, Arial, sans-serif"><title id="sp-title">Outil frontends dans le quadrant</title><desc id="sp-desc">A 2D positioning map of 29 outil frontends, Solidité to Dynamisme on the horizontal axis, Vivacité to Ingéniosité on the vertical axis.</desc><style>.sp-dot{cursor:pointer}.sp-dot:hover circle,.sp-dot:focus circle{stroke-width:2.4}.sp-dot:hover,.sp-dot:focus{filter:brightness(1.08);outline:none}</style><line x1="24.0" y1="491.0" x2="1200.0" y2="491.0" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><line x1="612.0" y1="938.9" x2="612.0" y2="43.1" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><text data-pole="right" x="1164.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="end">Dynamisme</text><text data-pole="left" x="60.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="start">Solidité</text><text data-pole="top" x="612.0" y="66.1" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Ingéniosité</text><text data-pole="bottom" x="612.0" y="928.2" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Vivacité</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: sprezzature
+Local-first: 5
+Léger: 5
+Personnalisable: 5
+Accessibilité: 5
+Maturité: 2
+Intégré: 5
+Interactif: 4
+Libre: 5
+Facilité: 4
+Écosystème: 2"><circle cx="912.0" cy="262.5" r="6.72" fill="#FF3B30" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: sprezzature
+Local-first: 5
+Léger: 5
+Personnalisable: 5
+Accessibilité: 5
+Maturité: 2
+Intégré: 5
+Interactif: 4
+Libre: 5
+Facilité: 4
+Écosystème: 2</title></g><text x="912.0" y="227.7" font-size="13" fill="#1C1C1E" text-anchor="middle">sprezzature</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: React
+Local-first: 5
+Léger: 1
+Personnalisable: 3
+Accessibilité: 2
+Maturité: 5
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 2
+Écosystème: 5"><circle cx="393.9" cy="558.8" r="6.72" fill="#D47366" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: React
+Local-first: 5
+Léger: 1
+Personnalisable: 3
+Accessibilité: 2
+Maturité: 5
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 2
+Écosystème: 5</title></g><text x="393.9" y="524.0" font-size="13" fill="#1C1C1E" text-anchor="middle">React</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Vue
+Local-first: 5
+Léger: 2
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 5
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 3
+Écosystème: 4"><circle cx="505.1" cy="508.5" r="6.72" fill="#C5646E" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Vue
+Local-first: 5
+Léger: 2
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 5
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 3
+Écosystème: 4</title></g><text x="479.8" y="513.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Vue</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Svelte
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 4
+Écosystème: 3"><circle cx="712.5" cy="465.6" r="6.72" fill="#6AB169" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Svelte
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 4
+Écosystème: 3</title></g><text x="712.5" y="447.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Svelte</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: HTMX
+Local-first: 5
+Léger: 4
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 3
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 4
+Écosystème: 3"><circle cx="750.9" cy="379.7" r="6.72" fill="#00A096" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: HTMX
+Local-first: 5
+Léger: 4
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 3
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 4
+Écosystème: 3</title></g><text x="780.0" y="384.2" font-size="13" fill="#1C1C1E" text-anchor="middle">HTMX</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Alpine.js
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 3
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 4
+Écosystème: 3"><circle cx="782.2" cy="450.6" r="6.72" fill="#90B961" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Alpine.js
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 3
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 4
+Écosystème: 3</title></g><text x="782.2" y="415.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Alpine.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Tailwind CSS
+Local-first: 5
+Léger: 4
+Personnalisable: 5
+Accessibilité: 4
+Maturité: 5
+Intégré: 2
+Interactif: 1
+Libre: 5
+Facilité: 4
+Écosystème: 5"><circle cx="467.2" cy="262.5" r="6.72" fill="#AF52DE" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Tailwind CSS
+Local-first: 5
+Léger: 4
+Personnalisable: 5
+Accessibilité: 4
+Maturité: 5
+Intégré: 2
+Interactif: 1
+Libre: 5
+Facilité: 4
+Écosystème: 5</title></g><text x="526.5" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Tailwind CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Pico CSS
+Local-first: 5
+Léger: 5
+Personnalisable: 2
+Accessibilité: 4
+Maturité: 3
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 5
+Écosystème: 2"><circle cx="912.0" cy="404.9" r="6.72" fill="#007AFF" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Pico CSS
+Local-first: 5
+Léger: 5
+Personnalisable: 2
+Accessibilité: 4
+Maturité: 3
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 5
+Écosystème: 2</title></g><text x="912.0" y="370.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Pico CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: shadcn/ui
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 3
+Écosystème: 4"><circle cx="558.7" cy="410.7" r="6.72" fill="#BC99EE" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: shadcn/ui
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 3
+Écosystème: 4</title></g><text x="459.9" y="375.9" font-size="13" fill="#1C1C1E" text-anchor="middle">shadcn/ui</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Radix UI
+Local-first: 5
+Léger: 3
+Personnalisable: 3
+Accessibilité: 5
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 3
+Écosystème: 4"><circle cx="567.0" cy="413.1" r="6.72" fill="#9C92E9" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Radix UI
+Local-first: 5
+Léger: 3
+Personnalisable: 3
+Accessibilité: 5
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 5
+Facilité: 3
+Écosystème: 4</title></g><text x="567.0" y="473.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Radix UI</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Vega-Lite
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 4
+Intégré: 2
+Interactif: 4
+Libre: 5
+Facilité: 4
+Écosystème: 4"><circle cx="612.4" cy="387.5" r="6.72" fill="#3FB5E7" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Vega-Lite
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 4
+Intégré: 2
+Interactif: 4
+Libre: 5
+Facilité: 4
+Écosystème: 4</title></g><text x="612.4" y="448.3" font-size="13" fill="#1C1C1E" text-anchor="middle">Vega-Lite</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: D3.js
+Local-first: 5
+Léger: 4
+Personnalisable: 5
+Accessibilité: 3
+Maturité: 5
+Intégré: 1
+Interactif: 5
+Libre: 5
+Facilité: 1
+Écosystème: 5"><circle cx="347.1" cy="382.2" r="6.72" fill="#B66DAE" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: D3.js
+Local-first: 5
+Léger: 4
+Personnalisable: 5
+Accessibilité: 3
+Maturité: 5
+Intégré: 1
+Interactif: 5
+Libre: 5
+Facilité: 1
+Écosystème: 5</title></g><text x="347.1" y="347.4" font-size="13" fill="#1C1C1E" text-anchor="middle">D3.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Plotly.js
+Local-first: 5
+Léger: 1
+Personnalisable: 2
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 5
+Libre: 4
+Facilité: 3
+Écosystème: 4"><circle cx="561.4" cy="604.5" r="6.72" fill="#E0A14C" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Plotly.js
+Local-first: 5
+Léger: 1
+Personnalisable: 2
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 5
+Libre: 4
+Facilité: 3
+Écosystème: 4</title></g><text x="561.4" y="569.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Plotly.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Gradio
+Local-first: 4
+Léger: 2
+Personnalisable: 1
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 4
+Facilité: 5
+Écosystème: 3"><circle cx="727.9" cy="628.8" r="6.72" fill="#AC9C31" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Gradio
+Local-first: 4
+Léger: 2
+Personnalisable: 1
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 4
+Facilité: 5
+Écosystème: 3</title></g><text x="727.9" y="672.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Gradio</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Streamlit
+Local-first: 4
+Léger: 2
+Personnalisable: 1
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 4
+Facilité: 5
+Écosystème: 4"><circle cx="659.9" cy="617.8" r="6.72" fill="#D4AC49" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Streamlit
+Local-first: 4
+Léger: 2
+Personnalisable: 1
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 4
+Libre: 4
+Facilité: 5
+Écosystème: 4</title></g><text x="659.9" y="583.0" font-size="13" fill="#1C1C1E" text-anchor="middle">Streamlit</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Tauri
+Local-first: 5
+Léger: 4
+Personnalisable: 4
+Accessibilité: 3
+Maturité: 3
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 3
+Écosystème: 3"><circle cx="722.3" cy="413.0" r="6.72" fill="#17AE8E" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Tauri
+Local-first: 5
+Léger: 4
+Personnalisable: 4
+Accessibilité: 3
+Maturité: 3
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 3
+Écosystème: 3</title></g><text x="653.7" y="417.5" font-size="13" fill="#1C1C1E" text-anchor="middle">Tauri</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Hugo
+Local-first: 5
+Léger: 4
+Personnalisable: 4
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 2
+Libre: 5
+Facilité: 3
+Écosystème: 4"><circle cx="583.5" cy="384.8" r="6.72" fill="#6090DC" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Hugo
+Local-first: 5
+Léger: 4
+Personnalisable: 4
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 2
+Libre: 5
+Facilité: 3
+Écosystème: 4</title></g><text x="554.4" y="366.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Hugo</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Astro
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 3
+Écosystème: 4"><circle cx="558.1" cy="394.6" r="6.72" fill="#7F91E5" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Astro
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 3
+Libre: 5
+Facilité: 3
+Écosystème: 4</title></g><text x="558.1" y="342.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Astro</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: MkDocs Material
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 2
+Libre: 4
+Facilité: 4
+Écosystème: 4"><circle cx="612.2" cy="402.3" r="6.72" fill="#77CAFF" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: MkDocs Material
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 2
+Libre: 4
+Facilité: 4
+Écosystème: 4</title></g><text x="903.1" y="333.7" font-size="13" fill="#1C1C1E" text-anchor="middle">MkDocs Material</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: axe-core
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 5
+Maturité: 5
+Intégré: 1
+Interactif: 1
+Libre: 4
+Facilité: 3
+Écosystème: 5"><circle cx="421.9" cy="338.9" r="6.72" fill="#C188D6" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: axe-core
+Local-first: 5
+Léger: 4
+Personnalisable: 3
+Accessibilité: 5
+Maturité: 5
+Intégré: 1
+Interactif: 1
+Libre: 4
+Facilité: 3
+Écosystème: 5</title></g><text x="466.1" y="343.4" font-size="13" fill="#1C1C1E" text-anchor="middle">axe-core</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Pa11y
+Local-first: 5
+Léger: 3
+Personnalisable: 3
+Accessibilité: 5
+Maturité: 4
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 3
+Écosystème: 3"><circle cx="633.3" cy="375.9" r="6.72" fill="#00A3AD" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Pa11y
+Local-first: 5
+Léger: 3
+Personnalisable: 3
+Accessibilité: 5
+Maturité: 4
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 3
+Écosystème: 3</title></g><text x="633.3" y="341.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Pa11y</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Claude vision
+Local-first: 1
+Léger: 3
+Personnalisable: 3
+Accessibilité: 4
+Maturité: 5
+Intégré: 2
+Interactif: 2
+Libre: 1
+Facilité: 3
+Écosystème: 5"><circle cx="312.0" cy="510.2" r="6.72" fill="#FF9CBB" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Claude vision
+Local-first: 1
+Léger: 3
+Personnalisable: 3
+Accessibilité: 4
+Maturité: 5
+Intégré: 2
+Interactif: 2
+Libre: 1
+Facilité: 3
+Écosystème: 5</title></g><text x="312.0" y="475.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Claude vision</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: LLaVA / MiniCPM-V
+Local-first: 5
+Léger: 2
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 3
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 2
+Écosystème: 3"><circle cx="671.8" cy="472.6" r="6.72" fill="#6ED59E" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: LLaVA / MiniCPM-V
+Local-first: 5
+Léger: 2
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 3
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 2
+Écosystème: 3</title></g><text x="671.8" y="516.5" font-size="13" fill="#1C1C1E" text-anchor="middle">LLaVA / MiniCPM-V</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: whisper.cpp
+Local-first: 5
+Léger: 5
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 3
+Écosystème: 4"><circle cx="617.3" cy="377.4" r="6.72" fill="#3ACAEA" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: whisper.cpp
+Local-first: 5
+Léger: 5
+Personnalisable: 3
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 1
+Libre: 5
+Facilité: 3
+Écosystème: 4</title></g><text x="731.2" y="342.6" font-size="13" fill="#1C1C1E" text-anchor="middle">whisper.cpp</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Deepgram
+Local-first: 1
+Léger: 3
+Personnalisable: 3
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 2
+Libre: 1
+Facilité: 3
+Écosystème: 4"><circle cx="436.5" cy="546.5" r="6.72" fill="#E58962" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Deepgram
+Local-first: 1
+Léger: 3
+Personnalisable: 3
+Accessibilité: 4
+Maturité: 4
+Intégré: 1
+Interactif: 2
+Libre: 1
+Facilité: 3
+Écosystème: 4</title></g><text x="480.7" y="551.0" font-size="13" fill="#1C1C1E" text-anchor="middle">Deepgram</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Looker
+Local-first: 1
+Léger: 1
+Personnalisable: 2
+Accessibilité: 3
+Maturité: 5
+Intégré: 1
+Interactif: 5
+Libre: 1
+Facilité: 2
+Écosystème: 4"><circle cx="330.1" cy="719.5" r="6.72" fill="#A52A2A" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Looker
+Local-first: 1
+Léger: 1
+Personnalisable: 2
+Accessibilité: 3
+Maturité: 5
+Intégré: 1
+Interactif: 5
+Libre: 1
+Facilité: 2
+Écosystème: 4</title></g><text x="330.1" y="684.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Looker</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: ThoughtSpot
+Local-first: 2
+Léger: 1
+Personnalisable: 2
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 5
+Libre: 1
+Facilité: 3
+Écosystème: 4"><circle cx="455.8" cy="702.9" r="6.72" fill="#F5A465" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: ThoughtSpot
+Local-first: 2
+Léger: 1
+Personnalisable: 2
+Accessibilité: 3
+Maturité: 4
+Intégré: 1
+Interactif: 5
+Libre: 1
+Facilité: 3
+Écosystème: 4</title></g><text x="455.8" y="668.1" font-size="13" fill="#1C1C1E" text-anchor="middle">ThoughtSpot</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Highcharts
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 5
+Maturité: 5
+Intégré: 1
+Interactif: 5
+Libre: 2
+Facilité: 4
+Écosystème: 4"><circle cx="458.4" cy="434.6" r="6.72" fill="#ED93C6" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: Highcharts
+Local-first: 5
+Léger: 3
+Personnalisable: 4
+Accessibilité: 5
+Maturité: 5
+Intégré: 1
+Interactif: 5
+Libre: 2
+Facilité: 4
+Écosystème: 4</title></g><text x="458.4" y="399.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Highcharts</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: TensorFlow Projector
+Local-first: 4
+Léger: 3
+Personnalisable: 1
+Accessibilité: 2
+Maturité: 3
+Intégré: 1
+Interactif: 5
+Libre: 5
+Facilité: 3
+Écosystème: 2"><circle cx="832.3" cy="647.1" r="6.72" fill="#C1CE6B" stroke="white" stroke-width="1" opacity="0.95"/><title>Outil frontends: TensorFlow Projector
+Local-first: 4
+Léger: 3
+Personnalisable: 1
+Accessibilité: 2
+Maturité: 3
+Intégré: 1
+Interactif: 5
+Libre: 5
+Facilité: 3
+Écosystème: 2</title></g><text x="832.3" y="612.3" font-size="13" fill="#1C1C1E" text-anchor="middle">TensorFlow Projector</text><text x="612.0" y="26" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">Outil frontends dans le quadrant</text></svg>
