@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1224" height="960" viewBox="0 0 1224 960" role="img" aria-labelledby="sp-title sp-desc" font-family="Roboto, -apple-system, Helvetica, Arial, sans-serif"><title id="sp-title">Outil frontends dans le quadrant</title><desc id="sp-desc">A 2D positioning map of 29 outil frontends, Solidité to Dynamisme on the horizontal axis, Vivacité to Ingéniosité on the vertical axis.</desc><style>.sp-dot{cursor:pointer}.sp-dot:hover circle,.sp-dot:focus circle{stroke-width:2.4}.sp-dot:hover,.sp-dot:focus{filter:brightness(1.08);outline:none}</style><line x1="167.4" y1="491.0" x2="1044.4" y2="491.0" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><line x1="612.0" y1="880.4" x2="612.0" y2="101.6" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><text data-pole="right" x="1164.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="end">Dynamisme</text><text data-pole="left" x="60.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="start">Solidité</text><text data-pole="top" x="612.0" y="66.1" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Ingéniosité</text><text data-pole="bottom" x="612.0" y="928.2" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Vivacité</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: sprezzature
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1384" height="960" viewBox="0 0 1384 960" role="img" aria-labelledby="sp-title sp-desc" font-family="Roboto, -apple-system, Helvetica, Arial, sans-serif"><title id="sp-title">Outil frontends dans le quadrant</title><desc id="sp-desc">A 2D positioning map of 29 outil frontends, Solidité to Dynamisme on the horizontal axis, Vivacité to Ingéniosité on the vertical axis.</desc><style>.sp-dot{cursor:pointer}.sp-dot:hover circle,.sp-dot:focus circle{stroke-width:2.4}.sp-dot:hover,.sp-dot:focus{filter:brightness(1.08);outline:none}</style><line x1="167.4" y1="491.0" x2="1044.4" y2="491.0" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><line x1="612.0" y1="880.4" x2="612.0" y2="101.6" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><text data-pole="right" x="1164.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="end">Dynamisme</text><text data-pole="left" x="60.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="start">Solidité</text><text data-pole="top" x="612.0" y="66.1" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Ingéniosité</text><text data-pole="bottom" x="612.0" y="928.2" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Vivacité</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: sprezzature
 Local-first: 5
 Léger: 5
 Personnalisable: 5
@@ -18,7 +18,7 @@ Intégré: 5
 Interactif: 4
 Libre: 5
 Facilité: 4
-Écosystème: 2</title></g><text x="962.5" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="middle">sprezzature</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: React
+Écosystème: 2</title></g><text x="924.5" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="start">sprezzature</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: React
 Local-first: 5
 Léger: 1
 Personnalisable: 3
@@ -38,7 +38,7 @@ Intégré: 1
 Interactif: 4
 Libre: 5
 Facilité: 2
-Écosystème: 5</title></g><text x="369.8" y="539.2" font-size="13" fill="#1C1C1E" text-anchor="middle">React</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Vue
+Écosystème: 5</title></g><text x="381.4" y="563.4" font-size="13" fill="#1C1C1E" text-anchor="end">React</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Vue
 Local-first: 5
 Léger: 2
 Personnalisable: 3
@@ -58,7 +58,7 @@ Intégré: 1
 Interactif: 4
 Libre: 5
 Facilité: 3
-Écosystème: 4</title></g><text x="505.1" y="495.6" font-size="13" fill="#1C1C1E" text-anchor="middle">Vue</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Svelte
+Écosystème: 4</title></g><text x="517.6" y="513.1" font-size="13" fill="#1C1C1E" text-anchor="start">Vue</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Svelte
 Local-first: 5
 Léger: 4
 Personnalisable: 3
@@ -78,7 +78,7 @@ Intégré: 1
 Interactif: 4
 Libre: 5
 Facilité: 4
-Écosystème: 3</title></g><text x="712.5" y="487.6" font-size="13" fill="#1C1C1E" text-anchor="middle">Svelte</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: HTMX
+Écosystème: 3</title></g><text x="725.0" y="470.1" font-size="13" fill="#1C1C1E" text-anchor="start">Svelte</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: HTMX
 Local-first: 5
 Léger: 4
 Personnalisable: 4
@@ -98,7 +98,7 @@ Intégré: 1
 Interactif: 3
 Libre: 5
 Facilité: 4
-Écosystème: 3</title></g><text x="789.3" y="384.2" font-size="13" fill="#1C1C1E" text-anchor="middle">HTMX</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Alpine.js
+Écosystème: 3</title></g><text x="763.4" y="384.2" font-size="13" fill="#1C1C1E" text-anchor="start">HTMX</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Alpine.js
 Local-first: 5
 Léger: 4
 Personnalisable: 3
@@ -118,7 +118,7 @@ Intégré: 1
 Interactif: 3
 Libre: 5
 Facilité: 4
-Écosystème: 3</title></g><text x="806.9" y="479.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Alpine.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Tailwind CSS
+Écosystème: 3</title></g><text x="794.7" y="455.2" font-size="13" fill="#1C1C1E" text-anchor="start">Alpine.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Tailwind CSS
 Local-first: 5
 Léger: 4
 Personnalisable: 5
@@ -138,7 +138,7 @@ Intégré: 2
 Interactif: 1
 Libre: 5
 Facilité: 4
-Écosystème: 5</title></g><text x="413.0" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Tailwind CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Pico CSS
+Écosystème: 5</title></g><text x="479.7" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="start">Tailwind CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Pico CSS
 Local-first: 5
 Léger: 5
 Personnalisable: 2
@@ -158,7 +158,7 @@ Intégré: 1
 Interactif: 1
 Libre: 5
 Facilité: 5
-Écosystème: 2</title></g><text x="887.4" y="384.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Pico CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: shadcn/ui
+Écosystème: 2</title></g><text x="924.5" y="409.4" font-size="13" fill="#1C1C1E" text-anchor="start">Pico CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: shadcn/ui
 Local-first: 5
 Léger: 3
 Personnalisable: 4
@@ -178,7 +178,7 @@ Intégré: 1
 Interactif: 4
 Libre: 5
 Facilité: 3
-Écosystème: 4</title></g><text x="534.0" y="439.9" font-size="13" fill="#1C1C1E" text-anchor="middle">shadcn/ui</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Radix UI
+Écosystème: 4</title></g><text x="586.8" y="460.2" font-size="13" fill="#1C1C1E" text-anchor="start">shadcn/ui</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Radix UI
 Local-first: 5
 Léger: 3
 Personnalisable: 3
@@ -198,7 +198,7 @@ Intégré: 1
 Interactif: 4
 Libre: 5
 Facilité: 3
-Écosystème: 4</title></g><text x="513.6" y="417.6" font-size="13" fill="#1C1C1E" text-anchor="middle">Radix UI</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Vega-Lite
+Écosystème: 4</title></g><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Vega-Lite
 Local-first: 5
 Léger: 3
 Personnalisable: 4
@@ -218,7 +218,7 @@ Intégré: 2
 Interactif: 4
 Libre: 5
 Facilité: 4
-Écosystème: 4</title></g><text x="647.2" y="426.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Vega-Lite</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: D3.js
+Écosystème: 4</title></g><text x="640.5" y="437.0" font-size="13" fill="#1C1C1E" text-anchor="start">Vega-Lite</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: D3.js
 Local-first: 5
 Léger: 4
 Personnalisable: 5
@@ -238,7 +238,7 @@ Intégré: 1
 Interactif: 5
 Libre: 5
 Facilité: 1
-Écosystème: 5</title></g><text x="371.3" y="362.6" font-size="13" fill="#1C1C1E" text-anchor="middle">D3.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Plotly.js
+Écosystème: 5</title></g><text x="359.6" y="386.8" font-size="13" fill="#1C1C1E" text-anchor="start">D3.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Plotly.js
 Local-first: 5
 Léger: 1
 Personnalisable: 2
@@ -258,7 +258,7 @@ Intégré: 1
 Interactif: 5
 Libre: 4
 Facilité: 3
-Écosystème: 4</title></g><text x="536.8" y="584.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Plotly.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Gradio
+Écosystème: 4</title></g><text x="548.9" y="609.0" font-size="13" fill="#1C1C1E" text-anchor="end">Plotly.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Gradio
 Local-first: 4
 Léger: 2
 Personnalisable: 1
@@ -278,7 +278,7 @@ Intégré: 1
 Interactif: 4
 Libre: 4
 Facilité: 5
-Écosystème: 3</title></g><text x="752.2" y="608.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Gradio</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Streamlit
+Écosystème: 3</title></g><text x="740.4" y="633.3" font-size="13" fill="#1C1C1E" text-anchor="start">Gradio</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Streamlit
 Local-first: 4
 Léger: 2
 Personnalisable: 1
@@ -298,7 +298,7 @@ Intégré: 1
 Interactif: 4
 Libre: 4
 Facilité: 5
-Écosystème: 4</title></g><text x="616.9" y="622.3" font-size="13" fill="#1C1C1E" text-anchor="middle">Streamlit</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Tauri
+Écosystème: 4</title></g><text x="647.4" y="622.3" font-size="13" fill="#1C1C1E" text-anchor="end">Streamlit</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Tauri
 Local-first: 5
 Léger: 4
 Personnalisable: 4
@@ -318,7 +318,7 @@ Intégré: 1
 Interactif: 3
 Libre: 5
 Facilité: 3
-Écosystème: 3</title></g><text x="746.5" y="441.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Tauri</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Hugo
+Écosystème: 3</title></g><text x="734.8" y="417.5" font-size="13" fill="#1C1C1E" text-anchor="start">Tauri</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Hugo
 Local-first: 5
 Léger: 4
 Personnalisable: 4
@@ -338,7 +338,7 @@ Intégré: 1
 Interactif: 2
 Libre: 5
 Facilité: 3
-Écosystème: 4</title></g><text x="530.8" y="389.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Hugo</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Astro
+Écosystème: 4</title></g><text x="571.0" y="376.9" font-size="13" fill="#1C1C1E" text-anchor="end">Hugo</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Astro
 Local-first: 5
 Léger: 3
 Personnalisable: 4
@@ -358,7 +358,7 @@ Intégré: 1
 Interactif: 3
 Libre: 5
 Facilité: 3
-Écosystème: 4</title></g><text x="523.8" y="364.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Astro</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: MkDocs Material
+Écosystème: 4</title></g><text x="545.6" y="399.2" font-size="13" fill="#1C1C1E" text-anchor="end">Astro</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: MkDocs Material
 Local-first: 5
 Léger: 4
 Personnalisable: 3
@@ -378,7 +378,7 @@ Intégré: 1
 Interactif: 2
 Libre: 4
 Facilité: 4
-Écosystème: 4</title></g><text x="657.3" y="451.9" font-size="13" fill="#1C1C1E" text-anchor="middle">MkDocs Material</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: axe-core
+Écosystème: 4</title></g><text x="576.3" y="459.7" font-size="13" fill="#1C1C1E" text-anchor="end">MkDocs Material</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: axe-core
 Local-first: 5
 Léger: 4
 Personnalisable: 3
@@ -398,7 +398,7 @@ Intégré: 1
 Interactif: 1
 Libre: 4
 Facilité: 3
-Écosystème: 5</title></g><text x="461.1" y="343.4" font-size="13" fill="#1C1C1E" text-anchor="middle">axe-core</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Pa11y
+Écosystème: 5</title></g><text x="434.4" y="343.4" font-size="13" fill="#1C1C1E" text-anchor="start">axe-core</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Pa11y
 Local-first: 5
 Léger: 3
 Personnalisable: 3
@@ -418,7 +418,7 @@ Intégré: 1
 Interactif: 1
 Libre: 5
 Facilité: 3
-Écosystème: 3</title></g><text x="661.1" y="380.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Pa11y</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Claude vision
+Écosystème: 3</title></g><text x="645.8" y="380.4" font-size="13" fill="#1C1C1E" text-anchor="start">Pa11y</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Claude vision
 Local-first: 1
 Léger: 3
 Personnalisable: 3
@@ -438,7 +438,7 @@ Intégré: 2
 Interactif: 2
 Libre: 1
 Facilité: 3
-Écosystème: 5</title></g><text x="312.0" y="497.3" font-size="13" fill="#1C1C1E" text-anchor="middle">Claude vision</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: LLaVA / MiniCPM-V
+Écosystème: 5</title></g><text x="324.5" y="514.7" font-size="13" fill="#1C1C1E" text-anchor="start">Claude vision</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: LLaVA / MiniCPM-V
 Local-first: 5
 Léger: 2
 Personnalisable: 3
@@ -458,7 +458,7 @@ Intégré: 1
 Interactif: 1
 Libre: 5
 Facilité: 2
-Écosystème: 3</title></g><text x="671.8" y="508.9" font-size="13" fill="#1C1C1E" text-anchor="middle">LLaVA / MiniCPM-V</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: whisper.cpp
+Écosystème: 3</title></g><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: whisper.cpp
 Local-first: 5
 Léger: 5
 Personnalisable: 3
@@ -478,7 +478,7 @@ Intégré: 1
 Interactif: 1
 Libre: 5
 Facilité: 3
-Écosystème: 4</title></g><text x="592.6" y="357.2" font-size="13" fill="#1C1C1E" text-anchor="middle">whisper.cpp</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Deepgram
+Écosystème: 4</title></g><text x="629.8" y="411.4" font-size="13" fill="#1C1C1E" text-anchor="start">whisper.cpp</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Deepgram
 Local-first: 1
 Léger: 3
 Personnalisable: 3
@@ -498,7 +498,7 @@ Intégré: 1
 Interactif: 2
 Libre: 1
 Facilité: 3
-Écosystème: 4</title></g><text x="475.7" y="551.0" font-size="13" fill="#1C1C1E" text-anchor="middle">Deepgram</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Looker
+Écosystème: 4</title></g><text x="449.0" y="551.0" font-size="13" fill="#1C1C1E" text-anchor="start">Deepgram</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Looker
 Local-first: 1
 Léger: 1
 Personnalisable: 2
@@ -518,7 +518,7 @@ Intégré: 1
 Interactif: 5
 Libre: 1
 Facilité: 2
-Écosystème: 4</title></g><text x="354.5" y="748.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Looker</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: ThoughtSpot
+Écosystème: 4</title></g><text x="342.6" y="724.0" font-size="13" fill="#1C1C1E" text-anchor="start">Looker</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: ThoughtSpot
 Local-first: 2
 Léger: 1
 Personnalisable: 2
@@ -538,7 +538,7 @@ Intégré: 1
 Interactif: 5
 Libre: 1
 Facilité: 3
-Écosystème: 4</title></g><text x="455.8" y="690.0" font-size="13" fill="#1C1C1E" text-anchor="middle">ThoughtSpot</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Highcharts
+Écosystème: 4</title></g><text x="468.3" y="707.5" font-size="13" fill="#1C1C1E" text-anchor="start">ThoughtSpot</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: Highcharts
 Local-first: 5
 Léger: 3
 Personnalisable: 4
@@ -558,7 +558,7 @@ Intégré: 1
 Interactif: 5
 Libre: 2
 Facilité: 4
-Écosystème: 4</title></g><text x="483.1" y="463.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Highcharts</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: TensorFlow Projector
+Écosystème: 4</title></g><text x="470.9" y="439.2" font-size="13" fill="#1C1C1E" text-anchor="start">Highcharts</text><g class="sp-dot" tabindex="0" role="img" aria-label="Outil frontends: TensorFlow Projector
 Local-first: 4
 Léger: 3
 Personnalisable: 1
@@ -578,4 +578,4 @@ Intégré: 1
 Interactif: 5
 Libre: 5
 Facilité: 3
-Écosystème: 2</title></g><text x="832.3" y="669.1" font-size="13" fill="#1C1C1E" text-anchor="middle">TensorFlow Projector</text><text x="612.0" y="26" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">Outil frontends dans le quadrant</text></svg>
+Écosystème: 2</title></g><text x="844.8" y="651.6" font-size="13" fill="#1C1C1E" text-anchor="start">TensorFlow Projector</text><text x="1236.0" y="42.0" font-size="10" font-weight="700" fill="#1C1C1E">Outil frontends</text><circle cx="1242.0" cy="58.5" r="6" fill="#FF3B30" opacity="0.95"/><text x="1254.0" y="62.0" font-size="10" fill="#1C1C1E">sprezzature</text><circle cx="1242.0" cy="77.5" r="6" fill="#00A096" opacity="0.95"/><text x="1254.0" y="81.0" font-size="10" fill="#1C1C1E">HTMX</text><circle cx="1242.0" cy="96.5" r="6" fill="#00A3AD" opacity="0.95"/><text x="1254.0" y="100.0" font-size="10" fill="#1C1C1E">Pa11y</text><circle cx="1242.0" cy="115.5" r="6" fill="#3ACAEA" opacity="0.95"/><text x="1254.0" y="119.0" font-size="10" fill="#1C1C1E">whisper.cpp</text><circle cx="1242.0" cy="134.5" r="6" fill="#AF52DE" opacity="0.95"/><text x="1254.0" y="138.0" font-size="10" fill="#1C1C1E">Tailwind CSS</text><circle cx="1242.0" cy="153.5" r="6" fill="#C188D6" opacity="0.95"/><text x="1254.0" y="157.0" font-size="10" fill="#1C1C1E">axe-core</text><circle cx="1242.0" cy="172.5" r="6" fill="#007AFF" opacity="0.95"/><text x="1254.0" y="176.0" font-size="10" fill="#1C1C1E">Pico CSS</text><circle cx="1242.0" cy="191.5" r="6" fill="#3FB5E7" opacity="0.95"/><text x="1254.0" y="195.0" font-size="10" fill="#1C1C1E">Vega-Lite</text><circle cx="1242.0" cy="210.5" r="6" fill="#77CAFF" opacity="0.95"/><text x="1254.0" y="214.0" font-size="10" fill="#1C1C1E">MkDocs Material</text><circle cx="1242.0" cy="229.5" r="6" fill="#6090DC" opacity="0.95"/><text x="1254.0" y="233.0" font-size="10" fill="#1C1C1E">Hugo</text><circle cx="1242.0" cy="248.5" r="6" fill="#7F91E5" opacity="0.95"/><text x="1254.0" y="252.0" font-size="10" fill="#1C1C1E">Astro</text><circle cx="1242.0" cy="267.5" r="6" fill="#B66DAE" opacity="0.95"/><text x="1254.0" y="271.0" font-size="10" fill="#1C1C1E">D3.js</text><circle cx="1242.0" cy="286.5" r="6" fill="#90B961" opacity="0.95"/><text x="1254.0" y="290.0" font-size="10" fill="#1C1C1E">Alpine.js</text><circle cx="1242.0" cy="305.5" r="6" fill="#17AE8E" opacity="0.95"/><text x="1254.0" y="309.0" font-size="10" fill="#1C1C1E">Tauri</text><circle cx="1242.0" cy="324.5" r="6" fill="#6AB169" opacity="0.95"/><text x="1254.0" y="328.0" font-size="10" fill="#1C1C1E">Svelte</text><circle cx="1242.0" cy="343.5" r="6" fill="#9C92E9" opacity="0.95"/><text x="1254.0" y="347.0" font-size="10" fill="#1C1C1E">Radix UI</text><circle cx="1242.0" cy="362.5" r="6" fill="#BC99EE" opacity="0.95"/><text x="1254.0" y="366.0" font-size="10" fill="#1C1C1E">shadcn/ui</text><circle cx="1242.0" cy="381.5" r="6" fill="#ED93C6" opacity="0.95"/><text x="1254.0" y="385.0" font-size="10" fill="#1C1C1E">Highcharts</text><circle cx="1242.0" cy="400.5" r="6" fill="#6ED59E" opacity="0.95"/><text x="1254.0" y="404.0" font-size="10" fill="#1C1C1E">LLaVA / MiniCPM-V</text><circle cx="1242.0" cy="419.5" r="6" fill="#E0A14C" opacity="0.95"/><text x="1254.0" y="423.0" font-size="10" fill="#1C1C1E">Plotly.js</text><circle cx="1242.0" cy="438.5" r="6" fill="#C5646E" opacity="0.95"/><text x="1254.0" y="442.0" font-size="10" fill="#1C1C1E">Vue</text><circle cx="1242.0" cy="457.5" r="6" fill="#E58962" opacity="0.95"/><text x="1254.0" y="461.0" font-size="10" fill="#1C1C1E">Deepgram</text><circle cx="1242.0" cy="476.5" r="6" fill="#D47366" opacity="0.95"/><text x="1254.0" y="480.0" font-size="10" fill="#1C1C1E">React</text><circle cx="1242.0" cy="495.5" r="6" fill="#FF9CBB" opacity="0.95"/><text x="1254.0" y="499.0" font-size="10" fill="#1C1C1E">Claude vision</text><circle cx="1242.0" cy="514.5" r="6" fill="#C1CE6B" opacity="0.95"/><text x="1254.0" y="518.0" font-size="10" fill="#1C1C1E">TensorFlow Projector</text><circle cx="1242.0" cy="533.5" r="6" fill="#AC9C31" opacity="0.95"/><text x="1254.0" y="537.0" font-size="10" fill="#1C1C1E">Gradio</text><circle cx="1242.0" cy="552.5" r="6" fill="#D4AC49" opacity="0.95"/><text x="1254.0" y="556.0" font-size="10" fill="#1C1C1E">Streamlit</text><circle cx="1242.0" cy="571.5" r="6" fill="#F5A465" opacity="0.95"/><text x="1254.0" y="575.0" font-size="10" fill="#1C1C1E">ThoughtSpot</text><circle cx="1242.0" cy="590.5" r="6" fill="#A52A2A" opacity="0.95"/><text x="1254.0" y="594.0" font-size="10" fill="#1C1C1E">Looker</text><text x="612.0" y="26" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">Outil frontends dans le quadrant</text></svg>
