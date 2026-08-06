@@ -56,14 +56,13 @@ Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de rele
 | `sprezzature-cli-gui` | Parseur d'arguments CLI vers interface graphique une page |
 | `sprezzature-ux-laws` | Audit des Laws of UX (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Parole vers texte, diarisation, identification du locuteur, traduction de sous-titres |
-| `sprezzature-local` | Backend LLM connectable (Ollama / compatible OpenAI / LangChain) |
-| `best-engine-ai-helper` | Détection du matériel, sélection du modèle, portes VLM/LLM |
+| `best-engine-ai-helper` | Détection du matériel, sélection/téléchargement du modèle, backend LLM/VLM connectable, portes Ralph |
 
 Tous les repos sont sur [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
 **Couche 2 — la couche agentique (ce repo).** Les fichiers `SKILL.md`, `references/` et `web/` restent dans le monorepo `sprezzature`. Ils définissent les contrats entre l'agent Claude / OpenCode et les packages outils.
 
-**Couche 3 — le runtime local.** [`sprezzature-local`](https://github.com/warith-harchaoui/sprezzature-local) est un repo séparé. Il connecte n'importe quel backend compatible OpenAI aux scripts via des variables d'environnement : `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends : `ollama` (défaut), `openai`, `langchain`.
+**Couche 3 — le runtime local.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) est un repo séparé. Chaque appel LLM/VLM d'un script de skill passe par `best_engine_ai_helper.llm.chat`, qui connecte n'importe quel backend compatible OpenAI via des variables d'environnement : `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends : `ollama` (défaut), `openai`, `langchain`. (Anciennement `sprezzature-local`, archivé le 2026-08-06 — il faisait doublon avec ce package.)
 
 > **Quelle phrase déclenche quel *skill* ?** Voir
 > [`TRIGGERS.md`](TRIGGERS.md), généré depuis chaque `SKILL.md`,

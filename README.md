@@ -45,14 +45,13 @@ As of 2026-07-29, sprezzature is organised in three layers with distinct release
 | `sprezzature-cli-gui` | CLI argument parser to single-page GUI emitter |
 | `sprezzature-ux-laws` | Laws-of-UX audit (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation |
-| `sprezzature-local` | Pluggable LLM backend (Ollama / OpenAI-compatible / LangChain) |
-| `best-engine-ai-helper` | Hardware detection, model selection, VLM/LLM gates |
+| `best-engine-ai-helper` | Hardware detection, model selection/pull, pluggable LLM/VLM backend, Ralph gates |
 
 All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
 **Layer 2 — the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
 
-**Layer 3 — the local runtime.** [`sprezzature-local`](https://github.com/warith-harchaoui/sprezzature-local) is a separate repo. It wires any OpenAI-compatible backend to the skill scripts via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`.
+**Layer 3 — the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`. (Formerly `sprezzature-local`, archived 2026-08-06 — it duplicated this package.)
 
 > **What prompt activates what?** See [`TRIGGERS.md`](TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
