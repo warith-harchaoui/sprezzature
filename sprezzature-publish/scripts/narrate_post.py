@@ -81,7 +81,12 @@ import time
 from pathlib import Path
 from typing import Any
 
-from sprezzature_local.llm import chat as _llm_chat
+# Every LLM/VLM call across sprezzature-* routes through this one function —
+# no script imports an Ollama/OpenAI/LangChain client directly. It resolves
+# the backend and model tag from the SPREZZATURE_LLM_* environment variables
+# (SPREZZATURE_LLM_BACKEND defaults to "ollama"); the `model` argument passed
+# at each call site below is a per-call override on top of that.
+from best_engine_ai_helper.llm import chat as _llm_chat
 
 # Local helpers — pure-Python, no heavy ML deps.
 sys.path.insert(0, str(Path(__file__).resolve().parent))

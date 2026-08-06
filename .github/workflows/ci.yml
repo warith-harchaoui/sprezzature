@@ -62,11 +62,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-          # The surviving skill scripts import ``sprezzature_local.llm`` at
-          # module load; install the local runtime (kept at ./sprezzature-local,
-          # also shipped as its own package) so both in-process imports and the
-          # subprocess ``--help`` smoke tests resolve it, as in production.
-          pip install -e ./sprezzature-local
+          # requirements-dev.txt already covers best-engine-ai-helper, which
+          # every surviving skill script imports (best_engine_ai_helper.llm)
+          # at module load, for both in-process imports and the subprocess
+          # ``--help`` smoke tests, as in production.
           # Per-skill runtime deps so the Ollama-backed scripts import
           # cleanly during collection (they don't call the daemon — that's
           # gated by the `eval` marker). The two narration engines are

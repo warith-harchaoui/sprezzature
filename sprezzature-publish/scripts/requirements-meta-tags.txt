@@ -4,13 +4,17 @@
 #   pip install -r scripts/requirements-meta-tags.txt
 #
 # Used for:
-#   - click      : CLI parser; replaces argparse here so the user-facing
-#                  --help is consistent with the rest of the Click-backed
-#                  sprezzature scripts.
-#   - requests   : Ollama HTTP API (POST /api/generate).
-#   - langdetect : detect language from extracted page text so the
-#                  generated <meta> tags match the page language.
+#   - click                : CLI parser; replaces argparse here so the
+#                            user-facing --help is consistent with the rest
+#                            of the Click-backed sprezzature scripts.
+#   - requests             : fetching a live URL to summarise (not the LLM
+#                            call itself -- that's best-engine-ai-helper's job).
+#   - langdetect           : detect language from extracted page text so the
+#                            generated <meta> tags match the page language.
+#   - best-engine-ai-helper: routes the actual LLM call (Ollama by default;
+#                            see SPREZZATURE_LLM_* env vars).
 
 click>=8.1
 requests>=2.31.0
 langdetect>=1.0.9
+best-engine-ai-helper>=0.4.0

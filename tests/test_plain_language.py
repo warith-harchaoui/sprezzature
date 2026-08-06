@@ -85,7 +85,7 @@ class TestBuildPrompt:
 class TestRewrite:
     def test_empty_input_short_circuits(self, fresh_cache):
         # No model call, no transformation, no cache lookup.
-        with patch.object(pl.requests, "post") as mock_post:
+        with patch("requests.post") as mock_post:
             assert pl.rewrite("") == ""
             assert pl.rewrite("   \n  ") == "   \n  "
         mock_post.assert_not_called()
@@ -94,10 +94,10 @@ class TestRewrite:
         mock_resp = MagicMock()
         mock_resp.json.return_value = {"response": "Get more done."}
         mock_resp.raise_for_status = MagicMock()
-        with patch.object(pl.requests, "post", return_value=mock_resp) as mock_post:
+        with patch("requests.post", return_value=mock_resp) as mock_post:
             first = pl.rewrite("Boost your productivity", lang="en", model="m")
         # Second call hits the cache; no extra model invocation.
-        with patch.object(pl.requests, "post") as mock_post2:
+        with patch("requests.post") as mock_post2:
             second = pl.rewrite("Boost your productivity", lang="en", model="m")
         assert first == "Get more done."
         assert second == first
@@ -118,8 +118,8 @@ class TestRewrite:
         second_resp.json.return_value = {"response": short_reply}
         second_resp.raise_for_status = MagicMock()
 
-        with patch.object(pl.requests, "post",
-                          side_effect=[first_resp, second_resp]) as mock_post:
+        with patch("requests.post",
+                    side_effect=[first_resp, second_resp]) as mock_post:
             out = pl.rewrite(source, lang="en", model="m")
         # The retry's response wins.
         assert out == short_reply
@@ -127,8 +127,8 @@ class TestRewrite:
 
     def test_connection_error_exits_two(self, fresh_cache):
         import requests as real_requests
-        with patch.object(pl.requests, "post",
-                          side_effect=real_requests.exceptions.ConnectionError()):
+        with patch("requests.post",
+                    side_effect=real_requests.exceptions.ConnectionError()):
             with pytest.raises(SystemExit) as excinfo:
                 pl.rewrite("text", lang="en", model="m")
         assert excinfo.value.code == 2
@@ -157,7 +157,7 @@ class TestMain:
         monkeypatch.setattr(sys, "argv", [
             "plain", "--input", str(src), "--lang", "en", "--no-cache",
         ])
-        with patch.object(pl.requests, "post", return_value=mock_resp):
+        with patch("requests.post", return_value=mock_resp):
             rc = pl.main()
         assert rc == 0
         out = capsys.readouterr().out
@@ -181,7 +181,7 @@ class TestMain:
             seen.append(preserve)
             return original(text, grade, lang, preserve)
         monkeypatch.setattr(pl, "build_prompt", spy)
-        with patch.object(pl.requests, "post", return_value=mock_resp):
+        with patch("requests.post", return_value=mock_resp):
             rc = pl.main()
         assert rc == 0
         # Whitespace-trimmed, comma-split, in order.

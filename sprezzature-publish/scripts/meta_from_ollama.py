@@ -55,7 +55,7 @@ Central guidance. See ``sprezzature/references/meta-tags.md``.
 
 Notes
 -----
-* Requires Python 3.10+, ``requests``. No Pillow dependency.
+* Requires Python 3.10+, ``best-engine-ai-helper``. No Pillow dependency.
 * Default model and endpoint are inherited from :mod:`alt_from_ollama`
   (``OLLAMA_URL``, ``OLLAMA_MODEL`` — the one model is qwen3-vl:8b).
 * On-disk cache lives under ``~/.cache/sprezzature-skill/meta/`` by default.
@@ -83,8 +83,13 @@ from pathlib import Path
 from typing import Optional
 
 import click
-import requests
-from sprezzature_local.llm import chat as _llm_chat
+
+# Every LLM/VLM call across sprezzature-* routes through this one function —
+# no script imports an Ollama/OpenAI/LangChain client directly. It resolves
+# the backend and model tag from the SPREZZATURE_LLM_* environment variables
+# (SPREZZATURE_LLM_BACKEND defaults to "ollama"); the `model` argument passed
+# at each call site below is a per-call override on top of that.
+from best_engine_ai_helper.llm import chat as _llm_chat
 
 # Shared Ollama helpers live in _ollama.py inside this skill folder so
 # the script does not need a cross-skill import after the 0.2.0 split.
@@ -461,7 +466,9 @@ def _cli(
 
     try:
         raw: str = str(_llm_chat(prompt, model=resolved_model))
-    except requests.exceptions.ConnectionError:
+    except RuntimeError:
+        # best_engine_ai_helper.llm.chat wraps connection/HTTP failures into
+        # RuntimeError (not requests.exceptions.*) regardless of backend.
         click.echo(
             f"Cannot reach Ollama at {OLLAMA_URL}. "
             f"Run `python sprezzature-accessibility/scripts/install_alt_ai.py` or `ollama serve`.",
