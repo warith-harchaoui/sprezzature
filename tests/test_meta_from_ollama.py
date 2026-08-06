@@ -182,7 +182,7 @@ class TestMain:
             "--canonical", "https://example.com/demo",
         ])
 
-        with patch.object(meta.requests, "post", return_value=mock_resp):
+        with patch("requests.post", return_value=mock_resp):
             rc = meta.main()
         assert rc == 0
 
@@ -204,7 +204,7 @@ class TestMain:
         # Reply with no braces → extract_json raises → main returns 1.
         mock_resp = _mock_ollama_response("the model forgot to return JSON")
         monkeypatch.setattr(sys, "argv", ["meta", str(html_path), "--lang", "en"])
-        with patch.object(meta.requests, "post", return_value=mock_resp):
+        with patch("requests.post", return_value=mock_resp):
             rc = meta.main()
         assert rc == 1
 
@@ -213,7 +213,7 @@ class TestMain:
         html_path = tmp_path / "page.html"
         html_path.write_text("<p>Body.</p>", encoding="utf-8")
         monkeypatch.setattr(sys, "argv", ["meta", str(html_path), "--lang", "en"])
-        with patch.object(meta.requests, "post",
-                          side_effect=real_requests.exceptions.ConnectionError()):
+        with patch("requests.post",
+                    side_effect=real_requests.exceptions.ConnectionError()):
             rc = meta.main()
         assert rc == 2

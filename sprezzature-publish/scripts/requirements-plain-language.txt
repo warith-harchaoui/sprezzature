@@ -4,13 +4,14 @@
 #   pip install -r scripts/requirements-plain-language.txt
 #
 # Used for:
-#   - click      : CLI parser; replaces argparse here so the user-facing
-#                  --help is consistent with the rest of the Click-backed
-#                  sprezzature scripts.
-#   - requests   : Ollama HTTP API (POST /api/generate).
-#   - langdetect : detect language from the input text so the rewrite
-#                  stays in the same language without --lang.
+#   - click                : CLI parser; replaces argparse here so the
+#                            user-facing --help is consistent with the rest
+#                            of the Click-backed sprezzature scripts.
+#   - langdetect           : detect language from the input text so the
+#                            rewrite stays in the same language without --lang.
+#   - best-engine-ai-helper: routes the actual LLM call (Ollama by default;
+#                            see SPREZZATURE_LLM_* env vars).
 
 click>=8.1
-requests>=2.31.0
 langdetect>=1.0.9
+best-engine-ai-helper>=0.4.0

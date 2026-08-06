@@ -74,10 +74,12 @@ from typing import Optional
 
 import click
 
-# ``requests`` is the one hard third-party dependency; declared as a runtime
-# requirement in ``sprezzature/scripts/requirements.txt``.
-import requests
-from sprezzature_local.llm import chat as _llm_chat
+# Every LLM/VLM call across sprezzature-* routes through this one function —
+# no script imports an Ollama/OpenAI/LangChain client directly. It resolves
+# the backend and model tag from the SPREZZATURE_LLM_* environment variables
+# (SPREZZATURE_LLM_BACKEND defaults to "ollama"); the `model` argument passed
+# at each call site below is a per-call override on top of that.
+from best_engine_ai_helper.llm import chat as _llm_chat
 
 # Vocabulary + language helpers — shared with the other Ollama-backed scripts.
 sys.path.insert(0, str(Path(__file__).parent))
@@ -597,15 +599,15 @@ def describe_long(
 
     try:
         text: str = str(_llm_chat(payload["prompt"], images=[data], model=model)).strip()
-    except requests.exceptions.ConnectionError:
+    except RuntimeError as e:
+        # best_engine_ai_helper.llm.chat wraps both connection failures and
+        # HTTP error responses into RuntimeError (not requests.exceptions.*)
+        # regardless of backend, so both cases are one except clause now.
         sys.stderr.write(
-            f"Cannot reach Ollama at {OLLAMA_URL}.\n"
+            f"Cannot reach Ollama at {OLLAMA_URL}, or it returned an error: {e}\n"
             f"Start the daemon (`ollama serve`) or run:\n"
             f"    python scripts/install_alt_ai.py\n"
         )
-        sys.exit(2)
-    except requests.exceptions.HTTPError as e:
-        sys.stderr.write(f"Ollama responded with HTTP error: {e}\n")
         sys.exit(2)
 
     # Long descriptions are NOT post-processed by ``post_process`` — that
@@ -740,15 +742,15 @@ def describe(
 
     try:
         text = post_process(str(_llm_chat(payload["prompt"], images=[data], model=model)), lang)
-    except requests.exceptions.ConnectionError:
+    except RuntimeError as e:
+        # best_engine_ai_helper.llm.chat wraps both connection failures and
+        # HTTP error responses into RuntimeError (not requests.exceptions.*)
+        # regardless of backend, so both cases are one except clause now.
         sys.stderr.write(
-            f"Cannot reach Ollama at {OLLAMA_URL}.\n"
+            f"Cannot reach Ollama at {OLLAMA_URL}, or it returned an error: {e}\n"
             f"Start the daemon (`ollama serve`) or run:\n"
             f"    python scripts/install_alt_ai.py\n"
         )
-        sys.exit(2)
-    except requests.exceptions.HTTPError as e:
-        sys.stderr.write(f"Ollama responded with HTTP error: {e}\n")
         sys.exit(2)
     _cache_set(key, text)
     return text

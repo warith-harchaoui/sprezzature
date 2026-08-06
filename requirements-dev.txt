@@ -10,6 +10,11 @@
 # Fast deterministic test suite under tests/
 pytest>=8.0.0
 
+# Every LLM/VLM call across the surviving Ollama-backed skill scripts routes
+# through best_engine_ai_helper.llm.chat (SPREZZATURE_LLM_* env vars pick the
+# backend/model). Needed so the test suite can import those scripts.
+best-engine-ai-helper>=0.4.0
+
 # Real YAML parser for SKILL.md frontmatter validation.
 # Used by scripts/validate_skill.py + tests/test_validate_skill.py;
 # the regex-only frontmatter check is no longer trusted as the gate.
