@@ -61,40 +61,40 @@ svg:hover .cls, svg:focus-within .cls { opacity: .16; }
 <text x="417.0" y="280.4" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">80</text>
 <text x="573.0" y="280.4" font-size="15" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="start">20</text>
 <g class="cls cls-sandy-loam">
-<circle class="dot cls-sandy-loam" cx="358.6" cy="662.0" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 68 %, limon 24 %, argile 8 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="309.0" cy="640.5" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 74 %, limon 14 %, argile 12 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="389.6" cy="662.0" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 63 %, limon 29 %, argile 8 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="321.4" cy="629.8" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 71 %, limon 15 %, argile 14 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="389.6" cy="629.8" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 60 %, limon 26 %, argile 14 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="309.0" cy="672.7" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 77 %, limon 17 %, argile 6 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="352.4" cy="629.8" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 66 %, limon 20 %, argile 14 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="420.6" cy="662.0" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 58 %, limon 34 %, argile 8 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="340.0" cy="672.7" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 72 %, limon 22 %, argile 6 %</title></circle>
-<circle class="dot cls-sandy-loam" cx="352.4" cy="608.3" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon sableux — sable 64 %, limon 18 %, argile 18 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="358.6" cy="662.0" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 68.0 %, silt 24.0 %, clay 8.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="309.0" cy="640.5" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 74.0 %, silt 14.0 %, clay 12.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="389.6" cy="662.0" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 63.0 %, silt 29.0 %, clay 8.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="321.4" cy="629.8" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 71.0 %, silt 15.0 %, clay 14.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="389.6" cy="629.8" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 60.0 %, silt 26.0 %, clay 14.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="309.0" cy="672.7" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 77.0 %, silt 17.0 %, clay 6.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="352.4" cy="629.8" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 66.0 %, silt 20.0 %, clay 14.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="420.6" cy="662.0" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 58.0 %, silt 34.0 %, clay 8.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="340.0" cy="672.7" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 72.0 %, silt 22.0 %, clay 6.0 %</title></circle>
+<circle class="dot cls-sandy-loam" cx="352.4" cy="608.3" r="9.5" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Sandy loam — sand 64.0 %, silt 18.0 %, clay 18.0 %</title></circle>
 </g>
 <g class="cls cls-silt-loam">
-<circle class="dot cls-silt-loam" cx="631.4" cy="640.5" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 22 %, limon 66 %, argile 12 %</title></circle>
-<circle class="dot cls-silt-loam" cx="656.2" cy="619.0" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 16 %, limon 68 %, argile 16 %</title></circle>
-<circle class="dot cls-silt-loam" cx="588.0" cy="629.8" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 28 %, limon 58 %, argile 14 %</title></circle>
-<circle class="dot cls-silt-loam" cx="631.4" cy="608.3" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 19 %, limon 63 %, argile 18 %</title></circle>
-<circle class="dot cls-silt-loam" cx="677.9" cy="624.4" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 13 %, limon 72 %, argile 15 %</title></circle>
-<circle class="dot cls-silt-loam" cx="619.0" cy="651.2" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 25 %, limon 65 %, argile 10 %</title></circle>
-<circle class="dot cls-silt-loam" cx="569.4" cy="629.8" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 31 %, limon 55 %, argile 14 %</title></circle>
-<circle class="dot cls-silt-loam" cx="631.4" cy="586.8" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 17 %, limon 61 %, argile 22 %</title></circle>
-<circle class="dot cls-silt-loam" cx="640.7" cy="667.4" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 23 %, limon 70 %, argile 7 %</title></circle>
-<circle class="dot cls-silt-loam" cx="656.2" cy="597.5" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Limon fin — sable 14 %, limon 66 %, argile 20 %</title></circle>
+<circle class="dot cls-silt-loam" cx="631.4" cy="640.5" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 22.0 %, silt 66.0 %, clay 12.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="656.2" cy="619.0" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 16.0 %, silt 68.0 %, clay 16.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="588.0" cy="629.8" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 28.0 %, silt 58.0 %, clay 14.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="631.4" cy="608.3" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 19.0 %, silt 63.0 %, clay 18.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="677.9" cy="624.4" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 13.0 %, silt 72.0 %, clay 15.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="619.0" cy="651.2" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 25.0 %, silt 65.0 %, clay 10.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="569.4" cy="629.8" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 31.0 %, silt 55.0 %, clay 14.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="631.4" cy="586.8" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 17.0 %, silt 61.0 %, clay 22.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="640.7" cy="667.4" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 23.0 %, silt 70.0 %, clay 7.0 %</title></circle>
+<circle class="dot cls-silt-loam" cx="656.2" cy="597.5" r="9.5" fill="#007AFF" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Silt loam — sand 14.0 %, silt 66.0 %, clay 20.0 %</title></circle>
 </g>
 <g class="cls cls-clay">
-<circle class="dot cls-clay" cx="501.2" cy="393.5" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 20 %, limon 22 %, argile 58 %</title></circle>
-<circle class="dot cls-clay" cx="526.0" cy="372.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 14 %, limon 24 %, argile 62 %</title></circle>
-<circle class="dot cls-clay" cx="464.0" cy="393.5" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 26 %, limon 16 %, argile 58 %</title></circle>
-<circle class="dot cls-clay" cx="519.8" cy="339.8" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 12 %, limon 20 %, argile 68 %</title></circle>
-<circle class="dot cls-clay" cx="464.0" cy="372.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 24 %, limon 14 %, argile 62 %</title></circle>
-<circle class="dot cls-clay" cx="526.0" cy="415.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 18 %, limon 28 %, argile 54 %</title></circle>
-<circle class="dot cls-clay" cx="544.6" cy="361.3" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 10 %, limon 26 %, argile 64 %</title></circle>
-<circle class="dot cls-clay" cx="464.0" cy="415.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 28 %, limon 18 %, argile 54 %</title></circle>
-<circle class="dot cls-clay" cx="501.2" cy="350.6" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 16 %, limon 18 %, argile 66 %</title></circle>
-<circle class="dot cls-clay" cx="507.4" cy="425.7" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Argile — sable 22 %, limon 26 %, argile 52 %</title></circle>
+<circle class="dot cls-clay" cx="501.2" cy="393.5" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 20.0 %, silt 22.0 %, clay 58.0 %</title></circle>
+<circle class="dot cls-clay" cx="526.0" cy="372.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 14.0 %, silt 24.0 %, clay 62.0 %</title></circle>
+<circle class="dot cls-clay" cx="464.0" cy="393.5" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 26.0 %, silt 16.0 %, clay 58.0 %</title></circle>
+<circle class="dot cls-clay" cx="519.8" cy="339.8" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 12.0 %, silt 20.0 %, clay 68.0 %</title></circle>
+<circle class="dot cls-clay" cx="464.0" cy="372.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 24.0 %, silt 14.0 %, clay 62.0 %</title></circle>
+<circle class="dot cls-clay" cx="526.0" cy="415.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 18.0 %, silt 28.0 %, clay 54.0 %</title></circle>
+<circle class="dot cls-clay" cx="544.6" cy="361.3" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 10.0 %, silt 26.0 %, clay 64.0 %</title></circle>
+<circle class="dot cls-clay" cx="464.0" cy="415.0" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 28.0 %, silt 18.0 %, clay 54.0 %</title></circle>
+<circle class="dot cls-clay" cx="501.2" cy="350.6" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 16.0 %, silt 18.0 %, clay 66.0 %</title></circle>
+<circle class="dot cls-clay" cx="507.4" cy="425.7" r="9.5" fill="#AF52DE" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.8"><title>Clay — sand 22.0 %, silt 26.0 %, clay 52.0 %</title></circle>
 </g>
 <g transform="translate(812.0,200.0)">
 <text x="0" y="-16" font-size="16" font-weight="700" fill="#6E6E73">Classe de texture</text>
