@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1224" height="960" viewBox="0 0 1224 960" role="img" aria-labelledby="sp-title sp-desc" font-family="Roboto, -apple-system, Helvetica, Arial, sans-serif"><title id="sp-title">Frontend tools in the Quadrant</title><desc id="sp-desc">A 2D positioning map of 29 frontend tools, Robust to Nimble on the horizontal axis, Dynamic to Adaptable on the vertical axis.</desc><style>.sp-dot{cursor:pointer}.sp-dot:hover circle,.sp-dot:focus circle{stroke-width:2.4}.sp-dot:hover,.sp-dot:focus{filter:brightness(1.08);outline:none}</style><line x1="24.0" y1="491.0" x2="1200.0" y2="491.0" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><line x1="612.0" y1="938.9" x2="612.0" y2="43.1" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><text data-pole="right" x="1164.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="end">Nimble</text><text data-pole="left" x="60.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="start">Robust</text><text data-pole="top" x="612.0" y="66.1" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Adaptable</text><text data-pole="bottom" x="612.0" y="928.2" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Dynamic</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: sprezzature
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1224" height="960" viewBox="0 0 1224 960" role="img" aria-labelledby="sp-title sp-desc" font-family="Roboto, -apple-system, Helvetica, Arial, sans-serif"><title id="sp-title">Frontend tools in the Quadrant</title><desc id="sp-desc">A 2D positioning map of 29 frontend tools, Robust to Nimble on the horizontal axis, Dynamic to Adaptable on the vertical axis.</desc><style>.sp-dot{cursor:pointer}.sp-dot:hover circle,.sp-dot:focus circle{stroke-width:2.4}.sp-dot:hover,.sp-dot:focus{filter:brightness(1.08);outline:none}</style><line x1="143.1" y1="491.0" x2="1080.9" y2="491.0" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><line x1="612.0" y1="880.4" x2="612.0" y2="101.6" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><text data-pole="right" x="1164.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="end">Nimble</text><text data-pole="left" x="60.0" y="498.4" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="start">Robust</text><text data-pole="top" x="612.0" y="66.1" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Adaptable</text><text data-pole="bottom" x="612.0" y="928.2" font-size="21" font-style="italic" fill="#6E6E73" text-anchor="middle">Dynamic</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: sprezzature
 Local-first: 5
 Lightweight: 5
 Restyleable: 5
@@ -18,7 +18,7 @@ Skill-native: 5
 Interactive: 4
 Free/Open: 5
 Ease: 4
-Ecosystem: 2</title></g><text x="912.0" y="227.7" font-size="13" fill="#1C1C1E" text-anchor="middle">sprezzature</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: React
+Ecosystem: 2</title></g><text x="962.5" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="middle">sprezzature</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: React
 Local-first: 5
 Lightweight: 1
 Restyleable: 3
@@ -38,7 +38,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 5
 Ease: 2
-Ecosystem: 5</title></g><text x="393.9" y="524.0" font-size="13" fill="#1C1C1E" text-anchor="middle">React</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Vue
+Ecosystem: 5</title></g><text x="369.8" y="539.2" font-size="13" fill="#1C1C1E" text-anchor="middle">React</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Vue
 Local-first: 5
 Lightweight: 2
 Restyleable: 3
@@ -58,7 +58,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 5
 Ease: 3
-Ecosystem: 4</title></g><text x="479.8" y="513.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Vue</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Svelte
+Ecosystem: 4</title></g><text x="505.1" y="495.6" font-size="13" fill="#1C1C1E" text-anchor="middle">Vue</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Svelte
 Local-first: 5
 Lightweight: 4
 Restyleable: 3
@@ -78,7 +78,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 5
 Ease: 4
-Ecosystem: 3</title></g><text x="712.5" y="447.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Svelte</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: HTMX
+Ecosystem: 3</title></g><text x="712.5" y="487.6" font-size="13" fill="#1C1C1E" text-anchor="middle">Svelte</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: HTMX
 Local-first: 5
 Lightweight: 4
 Restyleable: 4
@@ -98,7 +98,7 @@ Skill-native: 1
 Interactive: 3
 Free/Open: 5
 Ease: 4
-Ecosystem: 3</title></g><text x="780.0" y="384.2" font-size="13" fill="#1C1C1E" text-anchor="middle">HTMX</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Alpine.js
+Ecosystem: 3</title></g><text x="789.3" y="384.2" font-size="13" fill="#1C1C1E" text-anchor="middle">HTMX</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Alpine.js
 Local-first: 5
 Lightweight: 4
 Restyleable: 3
@@ -118,7 +118,7 @@ Skill-native: 1
 Interactive: 3
 Free/Open: 5
 Ease: 4
-Ecosystem: 3</title></g><text x="782.2" y="415.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Alpine.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Tailwind CSS
+Ecosystem: 3</title></g><text x="806.9" y="479.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Alpine.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Tailwind CSS
 Local-first: 5
 Lightweight: 4
 Restyleable: 5
@@ -138,7 +138,7 @@ Skill-native: 2
 Interactive: 1
 Free/Open: 5
 Ease: 4
-Ecosystem: 5</title></g><text x="526.5" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Tailwind CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Pico CSS
+Ecosystem: 5</title></g><text x="413.0" y="267.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Tailwind CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Pico CSS
 Local-first: 5
 Lightweight: 5
 Restyleable: 2
@@ -158,7 +158,7 @@ Skill-native: 1
 Interactive: 1
 Free/Open: 5
 Ease: 5
-Ecosystem: 2</title></g><text x="912.0" y="370.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Pico CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: shadcn/ui
+Ecosystem: 2</title></g><text x="887.4" y="384.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Pico CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: shadcn/ui
 Local-first: 5
 Lightweight: 3
 Restyleable: 4
@@ -178,7 +178,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 5
 Ease: 3
-Ecosystem: 4</title></g><text x="459.9" y="375.9" font-size="13" fill="#1C1C1E" text-anchor="middle">shadcn/ui</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Radix UI
+Ecosystem: 4</title></g><text x="534.0" y="439.9" font-size="13" fill="#1C1C1E" text-anchor="middle">shadcn/ui</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Radix UI
 Local-first: 5
 Lightweight: 3
 Restyleable: 3
@@ -198,7 +198,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 5
 Ease: 3
-Ecosystem: 4</title></g><text x="567.0" y="473.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Radix UI</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Vega-Lite
+Ecosystem: 4</title></g><text x="513.6" y="417.6" font-size="13" fill="#1C1C1E" text-anchor="middle">Radix UI</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Vega-Lite
 Local-first: 5
 Lightweight: 3
 Restyleable: 4
@@ -218,7 +218,7 @@ Skill-native: 2
 Interactive: 4
 Free/Open: 5
 Ease: 4
-Ecosystem: 4</title></g><text x="612.4" y="448.3" font-size="13" fill="#1C1C1E" text-anchor="middle">Vega-Lite</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: D3.js
+Ecosystem: 4</title></g><text x="647.2" y="426.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Vega-Lite</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: D3.js
 Local-first: 5
 Lightweight: 4
 Restyleable: 5
@@ -238,7 +238,7 @@ Skill-native: 1
 Interactive: 5
 Free/Open: 5
 Ease: 1
-Ecosystem: 5</title></g><text x="347.1" y="347.4" font-size="13" fill="#1C1C1E" text-anchor="middle">D3.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Plotly.js
+Ecosystem: 5</title></g><text x="371.3" y="362.6" font-size="13" fill="#1C1C1E" text-anchor="middle">D3.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Plotly.js
 Local-first: 5
 Lightweight: 1
 Restyleable: 2
@@ -258,7 +258,7 @@ Skill-native: 1
 Interactive: 5
 Free/Open: 4
 Ease: 3
-Ecosystem: 4</title></g><text x="561.4" y="569.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Plotly.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Gradio
+Ecosystem: 4</title></g><text x="536.8" y="584.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Plotly.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Gradio
 Local-first: 4
 Lightweight: 2
 Restyleable: 1
@@ -278,7 +278,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 4
 Ease: 5
-Ecosystem: 3</title></g><text x="727.9" y="672.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Gradio</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Streamlit
+Ecosystem: 3</title></g><text x="752.2" y="608.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Gradio</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Streamlit
 Local-first: 4
 Lightweight: 2
 Restyleable: 1
@@ -298,7 +298,7 @@ Skill-native: 1
 Interactive: 4
 Free/Open: 4
 Ease: 5
-Ecosystem: 4</title></g><text x="659.9" y="583.0" font-size="13" fill="#1C1C1E" text-anchor="middle">Streamlit</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Tauri
+Ecosystem: 4</title></g><text x="616.9" y="622.3" font-size="13" fill="#1C1C1E" text-anchor="middle">Streamlit</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Tauri
 Local-first: 5
 Lightweight: 4
 Restyleable: 4
@@ -318,7 +318,7 @@ Skill-native: 1
 Interactive: 3
 Free/Open: 5
 Ease: 3
-Ecosystem: 3</title></g><text x="653.7" y="417.5" font-size="13" fill="#1C1C1E" text-anchor="middle">Tauri</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Hugo
+Ecosystem: 3</title></g><text x="746.5" y="441.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Tauri</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Hugo
 Local-first: 5
 Lightweight: 4
 Restyleable: 4
@@ -338,7 +338,7 @@ Skill-native: 1
 Interactive: 2
 Free/Open: 5
 Ease: 3
-Ecosystem: 4</title></g><text x="554.4" y="366.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Hugo</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Astro
+Ecosystem: 4</title></g><text x="530.8" y="389.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Hugo</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Astro
 Local-first: 5
 Lightweight: 3
 Restyleable: 4
@@ -358,7 +358,7 @@ Skill-native: 1
 Interactive: 3
 Free/Open: 5
 Ease: 3
-Ecosystem: 4</title></g><text x="558.1" y="342.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Astro</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: MkDocs Material
+Ecosystem: 4</title></g><text x="523.8" y="364.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Astro</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: MkDocs Material
 Local-first: 5
 Lightweight: 4
 Restyleable: 3
@@ -378,7 +378,7 @@ Skill-native: 1
 Interactive: 2
 Free/Open: 4
 Ease: 4
-Ecosystem: 4</title></g><text x="903.1" y="333.7" font-size="13" fill="#1C1C1E" text-anchor="middle">MkDocs Material</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: axe-core
+Ecosystem: 4</title></g><text x="657.3" y="451.9" font-size="13" fill="#1C1C1E" text-anchor="middle">MkDocs Material</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: axe-core
 Local-first: 5
 Lightweight: 4
 Restyleable: 3
@@ -398,7 +398,7 @@ Skill-native: 1
 Interactive: 1
 Free/Open: 4
 Ease: 3
-Ecosystem: 5</title></g><text x="466.1" y="343.4" font-size="13" fill="#1C1C1E" text-anchor="middle">axe-core</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Pa11y
+Ecosystem: 5</title></g><text x="461.1" y="343.4" font-size="13" fill="#1C1C1E" text-anchor="middle">axe-core</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Pa11y
 Local-first: 5
 Lightweight: 3
 Restyleable: 3
@@ -418,7 +418,7 @@ Skill-native: 1
 Interactive: 1
 Free/Open: 5
 Ease: 3
-Ecosystem: 3</title></g><text x="633.3" y="341.1" font-size="13" fill="#1C1C1E" text-anchor="middle">Pa11y</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Claude vision
+Ecosystem: 3</title></g><text x="661.1" y="380.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Pa11y</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Claude vision
 Local-first: 1
 Lightweight: 3
 Restyleable: 3
@@ -438,7 +438,7 @@ Skill-native: 2
 Interactive: 2
 Free/Open: 1
 Ease: 3
-Ecosystem: 5</title></g><text x="312.0" y="475.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Claude vision</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: LLaVA / MiniCPM-V
+Ecosystem: 5</title></g><text x="312.0" y="497.3" font-size="13" fill="#1C1C1E" text-anchor="middle">Claude vision</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: LLaVA / MiniCPM-V
 Local-first: 5
 Lightweight: 2
 Restyleable: 3
@@ -458,7 +458,7 @@ Skill-native: 1
 Interactive: 1
 Free/Open: 5
 Ease: 2
-Ecosystem: 3</title></g><text x="671.8" y="516.5" font-size="13" fill="#1C1C1E" text-anchor="middle">LLaVA / MiniCPM-V</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: whisper.cpp
+Ecosystem: 3</title></g><text x="671.8" y="508.9" font-size="13" fill="#1C1C1E" text-anchor="middle">LLaVA / MiniCPM-V</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: whisper.cpp
 Local-first: 5
 Lightweight: 5
 Restyleable: 3
@@ -478,7 +478,7 @@ Skill-native: 1
 Interactive: 1
 Free/Open: 5
 Ease: 3
-Ecosystem: 4</title></g><text x="731.2" y="342.6" font-size="13" fill="#1C1C1E" text-anchor="middle">whisper.cpp</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Deepgram
+Ecosystem: 4</title></g><text x="592.6" y="357.2" font-size="13" fill="#1C1C1E" text-anchor="middle">whisper.cpp</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Deepgram
 Local-first: 1
 Lightweight: 3
 Restyleable: 3
@@ -498,7 +498,7 @@ Skill-native: 1
 Interactive: 2
 Free/Open: 1
 Ease: 3
-Ecosystem: 4</title></g><text x="480.7" y="551.0" font-size="13" fill="#1C1C1E" text-anchor="middle">Deepgram</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Looker
+Ecosystem: 4</title></g><text x="475.7" y="551.0" font-size="13" fill="#1C1C1E" text-anchor="middle">Deepgram</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Looker
 Local-first: 1
 Lightweight: 1
 Restyleable: 2
@@ -518,7 +518,7 @@ Skill-native: 1
 Interactive: 5
 Free/Open: 1
 Ease: 2
-Ecosystem: 4</title></g><text x="330.1" y="684.7" font-size="13" fill="#1C1C1E" text-anchor="middle">Looker</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: ThoughtSpot
+Ecosystem: 4</title></g><text x="354.5" y="748.4" font-size="13" fill="#1C1C1E" text-anchor="middle">Looker</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: ThoughtSpot
 Local-first: 2
 Lightweight: 1
 Restyleable: 2
@@ -538,7 +538,7 @@ Skill-native: 1
 Interactive: 5
 Free/Open: 1
 Ease: 3
-Ecosystem: 4</title></g><text x="455.8" y="668.1" font-size="13" fill="#1C1C1E" text-anchor="middle">ThoughtSpot</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Highcharts
+Ecosystem: 4</title></g><text x="455.8" y="690.0" font-size="13" fill="#1C1C1E" text-anchor="middle">ThoughtSpot</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: Highcharts
 Local-first: 5
 Lightweight: 3
 Restyleable: 4
@@ -558,7 +558,7 @@ Skill-native: 1
 Interactive: 5
 Free/Open: 2
 Ease: 4
-Ecosystem: 4</title></g><text x="458.4" y="399.8" font-size="13" fill="#1C1C1E" text-anchor="middle">Highcharts</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: TensorFlow Projector
+Ecosystem: 4</title></g><text x="483.1" y="463.9" font-size="13" fill="#1C1C1E" text-anchor="middle">Highcharts</text><g class="sp-dot" tabindex="0" role="img" aria-label="Frontend tools: TensorFlow Projector
 Local-first: 4
 Lightweight: 3
 Restyleable: 1
@@ -578,4 +578,4 @@ Skill-native: 1
 Interactive: 5
 Free/Open: 5
 Ease: 3
-Ecosystem: 2</title></g><text x="832.3" y="612.3" font-size="13" fill="#1C1C1E" text-anchor="middle">TensorFlow Projector</text><text x="612.0" y="26" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">Frontend tools in the Quadrant</text></svg>
+Ecosystem: 2</title></g><text x="832.3" y="669.1" font-size="13" fill="#1C1C1E" text-anchor="middle">TensorFlow Projector</text><text x="612.0" y="26" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">Frontend tools in the Quadrant</text></svg>
