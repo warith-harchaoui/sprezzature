@@ -51,7 +51,7 @@ All repos live under [github.com/warith-harchaoui/](https://github.com/warith-ha
 
 **Layer 2 — the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
 
-**Layer 3 — the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`. (Formerly `sprezzature-local`, archived 2026-08-06 — it duplicated this package.)
+**Layer 3 — the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`. (Formerly `sprezzature-local`, archived 2026-08-06: it duplicated this package.)
 
 > **What prompt activates what?** See [`TRIGGERS.md`](TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
