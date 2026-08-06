@@ -257,7 +257,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         </article>
         <article>
           <h3 class="font-semibold">Portable entre environnements d'exécution</h3>
-          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Les <em>skills</em> servent Claude Code et OpenCode.
+          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Les <em>skills</em> servent Claude Code et OpenCode ou entièrement en local et gratuitement.
           </p>
         </article>
       </div>
@@ -271,7 +271,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           <h3 class="text-lg font-semibold">👁️ Regardez la figure avant de la livrer</h3>
           <p class="mt-2 text-neutral-600 dark:text-neutral-300">Un texte, on le relit. Une figure, non : ce qui cloche
             est dans les pixels, pas dans le code. La <strong>Ralph Eyeball Loop</strong> prend donc ce que vous avez
-            fait (un graphique Vega, une figure TikZ, un diagramme Mermaid, une page entière) et en fait une image avec
+            fait (une figure SVG, une figure TikZ, un diagramme Mermaid, une page entière) et en fait une image avec
             un outil déterministe, sans aucun modèle. Ensuite, quelqu'un la regarde pour de vrai : par défaut l'agent
             lui-même, celui qui a écrit le code ou bien, entièrement hors ligne, un modèle de vision local optionnel.
             Il
@@ -288,8 +288,8 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           <p class="mt-2 text-neutral-600 dark:text-neutral-300">Une figure se livre en <em>scalable vector graphics</em>
             (SVG, graphiques vectoriels) écrit avec soin. Les générateurs produisent le balisage directement, chacun avec
             son <code class="font-mono text-sm">viewBox</code>, si bien que le graphique s'adapte à toute taille sans un
-            pixel flou et que le texte reste sélectionnable. Vega-Lite est un moyen commode de <em>décrire</em> un
-            graphique, mais son <em>JavaScript Object Notation</em> (JSON) n'est pas ce qu'on livre, et le <em>Portable
+            pixel flou et que le texte reste sélectionnable. Le générateur écrit le SVG directement : il n'y a donc pas de
+            spec de description séparée à exporter et le <em>Portable
               Network Graphics</em> (PNG) n'est qu'un export pour les endroits qui ne prennent pas le vectoriel. Le
             livrable, c'est le SVG.</p>
         </article>
@@ -370,7 +370,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-vision', 'Texte alternatif (intelligence artificielle locale)', 'Texte alternatif conforme au World Wide Web Consortium (W3C) depuis un modèle de vision Ollama local: arbre de décision par image, toute langue, mis en cache. En cours. Des brouillons à relire.', 'vision.html'],
       ['sprezzature-audio', 'Sous-titres & diarisation', 'Sous-titres WebVTT / SubRip (SRT) depuis whisper.cpp local, avec en prime qui parle et quand. Fonctionne en local. En cours de développement.', 'audio.html'],
       ['sprezzature-ux-laws', "Lois de l'expérience utilisateur (UX)", 'Trente lois plus un auditeur des violations détectables: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
-      ['sprezzature-figures', 'Figures', 'Graphiques Vega-first et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
+      ['sprezzature-figures', 'Figures', '126 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `

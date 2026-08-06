@@ -284,7 +284,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         </article>
         <article>
           <h3 class="font-semibold">Runtime-portable</h3>
-          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Skills serve Claude Code and OpenCode.</p>
+          <p class="mt-1 text-neutral-600 dark:text-neutral-300">Skills serve Claude Code and OpenCode or completely locally and free.</p>
         </article>
       </div>
     </section>
@@ -297,7 +297,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           <h3 class="text-lg font-semibold">👁️ Look at the figure before you ship it</h3>
           <p class="mt-2 text-neutral-600 dark:text-neutral-300">You can proofread a sentence by reading it back. You
             can't do that with a chart: whether it's right lives in the pixels, not the code. So the <strong>Ralph
-              Eyeball Loop</strong> takes whatever you made (a Vega chart, a TikZ figure, a Mermaid diagram, a whole web
+              Eyeball Loop</strong> takes whatever you made (an SVG figure, a TikZ figure, a Mermaid diagram, a whole web
             page) and renders it to an image with a deterministic tool, no model involved. Then something actually looks
             at it: by default the agent itself, the same one that wrote the code, or, fully offline, an optional local
             vision model. It catches what a code check never will: a label cut off at the edge, a legend that slid off
@@ -311,8 +311,8 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           <p class="mt-2 text-neutral-600 dark:text-neutral-300">A figure ships as carefully written scalable vector graphics
             (SVG). The generators emit the markup directly, each with a matching <code
               class="font-mono text-sm">viewBox</code>, so the graphic scales to any size without a blurry pixel and the
-            text stays selectable. Vega-Lite is one handy way to <em>describe</em> a chart, but the Vega JavaScript
-            Object Notation (JSON) is not what you ship, and the Portable Network Graphics (PNG) is only an export for
+            text stays selectable. The generator writes SVG directly, so there is no separate chart-description spec to
+            export, and the Portable Network Graphics (PNG) is only an export for
             places that can't take vector art. The SVG is the deliverable.</p>
         </article>
       </div>
@@ -391,7 +391,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-vision', 'Alt text (local artificial intelligence)', 'World Wide Web Consortium (W3C) alt text from a local Ollama vision model: per-image decision tree, any language, cached. Work in progress. Drafts for review.', 'vision.html'],
       ['sprezzature-audio', 'Captions & diarization', 'WebVTT / SubRip (SRT) captions from local whisper.cpp, plus who-spoke-when and who-is-who. Runs locally. Work in progress.', 'audio.html'],
       ['sprezzature-ux-laws', 'Laws of user experience (UX)', 'Thirty laws plus an auditor for detectable violations: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
-      ['sprezzature-figures', 'Figures', 'Vega-first charts and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
+      ['sprezzature-figures', 'Figures', '126 hand-authored SVG chart types and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `
