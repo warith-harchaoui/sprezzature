@@ -22,7 +22,7 @@
 <text x="24" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">Trial</text>
 <text x="546" y="92" font-size="11.5" font-weight="700" fill="#6E6E73">OR (95% CI)</text>
 <line x1="325.4" y1="98.0" x2="325.4" y2="422.0" stroke="#6E6E73" stroke-width="1.4"/>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Ashford 2016: OR 1.42 (95% CI 1.08–1.87), weight 12% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:0ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Ashford 2016: OR 1.42 (95% CI 1.08–1.87), weight 12% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:0ms">
 <title>Ashford 2016: OR 1.42 (95% CI 1.08–1.87), weight 12% — significant</title>
 <rect class="rowbg" x="18.0" y="116.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="137.0" font-size="13" fill="#1D1D1F">Ashford 2016</text>
@@ -32,7 +32,7 @@
 <rect class="box box-sig" x="361.9" y="125.4" width="15.2" height="15.2" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="137.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.42 (1.08–1.87)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:70ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:70ms">
 <title>Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null</title>
 <rect class="rowbg" x="18.0" y="150.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="171.0" font-size="13" fill="#1D1D1F">Bhatt 2017</text>
@@ -42,7 +42,7 @@
 <rect class="box box-cross" x="403.4" y="161.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="171.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.95 (0.92–4.13)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:140ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:140ms">
 <title>Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant</title>
 <rect class="rowbg" x="18.0" y="184.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="205.0" font-size="13" fill="#1D1D1F">Costa 2018</text>
@@ -52,7 +52,7 @@
 <rect class="box box-sig" x="347.6" y="189.2" width="23.6" height="23.6" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="205.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.31 (1.06–1.62)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:210ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:210ms">
 <title>Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null</title>
 <rect class="rowbg" x="18.0" y="218.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="239.0" font-size="13" fill="#1D1D1F">Devi 2019</text>
@@ -62,7 +62,7 @@
 <rect class="box box-cross" x="303.3" y="229.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="239.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">0.88 (0.41–1.89)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:280ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:280ms">
 <title>Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant</title>
 <rect class="rowbg" x="18.0" y="252.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="273.0" font-size="13" fill="#1D1D1F">Eriksson 2020</text>
@@ -72,7 +72,7 @@
 <rect class="box box-sig" x="368.0" y="254.0" width="30.0" height="30.0" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="273.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.58 (1.29–1.93)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:350ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:350ms">
 <title>Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null</title>
 <rect class="rowbg" x="18.0" y="286.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="307.0" font-size="13" fill="#1D1D1F">Fournier 2021</text>
@@ -82,7 +82,7 @@
 <rect class="box box-cross" x="333.6" y="297.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="307.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.12 (0.71–1.77)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:420ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:420ms">
 <title>Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant</title>
 <rect class="rowbg" x="18.0" y="320.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="341.0" font-size="13" fill="#1D1D1F">Grant 2022</text>
@@ -92,7 +92,7 @@
 <rect class="box box-sig" x="389.1" y="331.0" width="12.0" height="12.0" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="341.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.74 (1.14–2.66)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:490ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:490ms">
 <title>Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null</title>
 <rect class="rowbg" x="18.0" y="354.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="375.0" font-size="13" fill="#1D1D1F">Haddad 2023</text>
@@ -102,7 +102,7 @@
 <rect class="box box-cross" x="351.4" y="365.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="375.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.29 (0.78–2.13)</text>
 </g>
-<g class="row" data-anim tabindex="0" role="img" aria-label="Pooled random-effects OR 1.46 (95% CI 1.44–1.49), inverse-variance weighted" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:560ms">
+<g class="row" data-anim="1" tabindex="0" role="img" aria-label="Pooled random-effects OR 1.46 (95% CI 1.44–1.49), inverse-variance weighted" style="opacity:0;animation:fp-in .5s ease forwards;animation-delay:560ms">
 <title>Pooled random-effects OR 1.46 (95% CI 1.44–1.49), inverse-variance weighted</title>
 <rect class="rowbg" x="18.0" y="402.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="423.0" font-size="13" font-weight="700" fill="#1D1D1F">Pooled (random effects)</text>
