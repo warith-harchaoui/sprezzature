@@ -5,12 +5,12 @@
 .dept { transition: fill-opacity .18s ease; }
 .dots { transition: opacity .18s ease; }
 svg:hover .rg, svg:focus-within .rg { opacity: .12; }
-.rg-île-de-france---north:hover, .rg-île-de-france---north:focus, .rg-île-de-france---north:hover .rg-île-de-france---north, .rg-île-de-france---north:focus .rg-île-de-france---north { opacity: 1; }
-.rg-atlantic-west:hover, .rg-atlantic-west:focus, .rg-atlantic-west:hover .rg-atlantic-west, .rg-atlantic-west:focus .rg-atlantic-west { opacity: 1; }
-.rg-mediterranean-south:hover, .rg-mediterranean-south:focus, .rg-mediterranean-south:hover .rg-mediterranean-south, .rg-mediterranean-south:focus .rg-mediterranean-south { opacity: 1; }
-.rg-rhône-alps-east:hover, .rg-rhône-alps-east:focus, .rg-rhône-alps-east:hover .rg-rhône-alps-east, .rg-rhône-alps-east:focus .rg-rhône-alps-east { opacity: 1; }
-.rg-central-rural-belt:hover, .rg-central-rural-belt:focus, .rg-central-rural-belt:hover .rg-central-rural-belt, .rg-central-rural-belt:focus .rg-central-rural-belt { opacity: 1; }
-.rg-corsica:hover, .rg-corsica:focus, .rg-corsica:hover .rg-corsica, .rg-corsica:focus .rg-corsica { opacity: 1; }
+svg:hover .rg-île-de-france---north:hover, svg:focus-within .rg-île-de-france---north:focus { opacity: 1; }
+svg:hover .rg-atlantic-west:hover, svg:focus-within .rg-atlantic-west:focus { opacity: 1; }
+svg:hover .rg-mediterranean-south:hover, svg:focus-within .rg-mediterranean-south:focus { opacity: 1; }
+svg:hover .rg-rhône-alps-east:hover, svg:focus-within .rg-rhône-alps-east:focus { opacity: 1; }
+svg:hover .rg-central-rural-belt:hover, svg:focus-within .rg-central-rural-belt:focus { opacity: 1; }
+svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .dept, .dots { transition: none; } }
@@ -2806,6 +2806,6 @@ svg:hover .rg, svg:focus-within .rg { opacity: .12; }
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">0.3 M habitants</text>
 </g>
 </g>
-<text x="40.0" y="980" font-size="14" fill="#6E6E73">Dots randomly placed within each department, not at real addressesequal-area projection</text>
+<text x="40.0" y="980" font-size="14" fill="#6E6E73">Points placés au hasard dans chaque département, pas à de vraies adresses · projection à aires égales</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
