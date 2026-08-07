@@ -3,7 +3,7 @@
 [🇫🇷](LISEZMOI.md) · [🇬🇧](README.md)
 
 <p align="center"><a href="https://harchaoui.org/warith/sprezzature/">
-  <img src="https://harchaoui.org/warith/sprezzature/img/logo.png" alt="Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind frontends" width="240"></a>
+  <img src="https://harchaoui.org/warith/sprezzature/img/logo.png" alt="Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
 </p>
 
 [🌍 Documentation](https://harchaoui.org/warith/sprezzature/)
@@ -26,7 +26,7 @@ The skills:
 | **sprezzature-vision** | You draft World Wide Web Consortium (W3C)-compliant alt text from images locally (no SaaS). | "alt text", "alt text for this image", "describe this image", "draft alt", "image description", "img has no alt". |
 | **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally (no SaaS). | "captions", "transcribe video", "transcribe audio", "WebVTT", "SRT", "subtitle file", "VTT", "caption track". |
 | **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Doherty, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
-| **sprezzature-figures** | You emit data-science figures (**Vega-Lite first**, hand-authored Scalable Vector Graphics (SVG) when the grammar can't reach, matplotlib only as a last resort), model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)), causal-effect estimates (DoWhy / EconML), TikZ / Mermaid diagrams, thematic maps, or areas-of-control situation maps for any region, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "prefer vega", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "choropleth", "world map", "situation map", "areas of control", "DoWhy", "DAG", "audit this figure". |
+| **sprezzature-figures** | You emit data-science figures (126 hand-authored Scalable Vector Graphics (SVG) chart types, zero Vega, matplotlib only for model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME))), causal-effect estimates (DoWhy / EconML), TikZ / Mermaid diagrams, thematic maps, or areas-of-control situation maps for any region, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "choropleth", "world map", "situation map", "areas of control", "DoWhy", "DAG", "audit this figure". |
 
 The companion skills inherit the sprezzature-ui stack rules. Install only the
 ones you need.
@@ -39,7 +39,7 @@ As of 2026-07-29, sprezzature is organised in three layers with distinct release
 
 | `pip install …` | What it does |
 |---|---|
-| `sprezzature-figures` | 84 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
+| `sprezzature-figures` | 126 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
 | `sprezzature-colors` | WCAG contrast auditing, CVD simulation, Tailwind palette export |
 | `sprezzature-accessibility` | Static a11y lint (14 rules, stdlib only) |
 | `sprezzature-cli-gui` | CLI argument parser to single-page GUI emitter |
@@ -154,7 +154,7 @@ when to load each skill and what is still on the roadmap.
 | **sprezzature-vision** | `alt_from_ollama.py` (W3C alt text via local Ollama) | _(presence of `alt=` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-audio** | `captions_from_whisper.py` (WebVTT / SRT via local whisper.cpp) | _(presence of `<track>` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-ux-laws** | `references/laws-of-ux.md` (30-law Markdown playbook) | `audit_laws_of_ux.py` (Hick / Miller / Fitts / Jakob / Tesler / …) |
-| **sprezzature-figures** | `make_figure.py` (CSV → Vega / matplotlib), `explain_model.py` (SHAP / Shapash / TimeSHAP / LIME dispatcher), `causal_estimate.py` (DoWhy loop + EconML backends + directed acyclic graph (DAG) render), `make_situation_map.py` (YAML config → layered areas-of-control plate for any region, SVG + PNG), `render_diagram.py` (auto-routed Vega / TikZ / Mermaid / SVG → Portable Network Graphics (PNG) / SVG / Portable Document Format (PDF) for the Ralph Eyeball Loop; rendered catalog in `docs/FIGURES.md`), `ralph_eyeball_loop.py` (render → look → refine any visual from code, agent mode or `--local` offline vision), `install_figures.py` (tier installer). Every generator takes an `--accessibility` level (`universal` default is byte-for-byte identical) | `audit_figure.py` (missing-axis-title, dual-y-axis, truncated-baseline, pie-3d, rainbow-palette, cvd-unsafe, missing-polarity, chartjunk, role-img-missing) |
+| **sprezzature-figures** | `make_figure.py` (CSV → hand-authored SVG, 126 chart types), `explain_model.py` (SHAP / Shapash / TimeSHAP / LIME dispatcher), `causal_estimate.py` (DoWhy loop + EconML backends + directed acyclic graph (DAG) render), `make_situation_map.py` (YAML config → layered areas-of-control plate for any region, SVG + PNG), `render_diagram.py` (auto-routed Vega / TikZ / Mermaid / SVG → Portable Network Graphics (PNG) / SVG / Portable Document Format (PDF) for the Ralph Eyeball Loop; rendered catalog in `docs/FIGURES.md`), `ralph_eyeball_loop.py` (render → look → refine any visual from code, agent mode or `--local` offline vision), `install_figures.py` (tier installer). Every generator takes an `--accessibility` level (`universal` default is byte-for-byte identical) | `audit_figure.py` (missing-axis-title, dual-y-axis, truncated-baseline, pie-3d, rainbow-palette, cvd-unsafe, missing-polarity, chartjunk, role-img-missing) |
 
 The matrix is honest about gaps. Empty cells mark genuine roadmap
 items, not omissions; see `.private/todo.md` (gitignored) for the
