@@ -200,7 +200,7 @@ _SCEN_LABEL = {"favorable": ("Cas favorable", "Favourable case"),
                "adverse": ("Cas défavorable", "Adverse case")}
 
 # Où sont publiées les pages : dans le site ``web/`` (EN à la racine, FR sous fr/).
-_WEB = _HERE.parent / "web"
+_WEB = _HERE.parent.parent / "web"
 
 # Métadonnées bilingues des dix panneaux : (clé, générateur, titre, sous-titre).
 # fr d'abord, en ensuite. Les titres des SVG eux-mêmes passent par translate().
