@@ -45,12 +45,14 @@
         "name": "Paquets autonomes sprezzature",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "sprezzature-figures", "url": "https://github.com/warith-harchaoui/sprezzature-figures"},
-          {"@type": "ListItem", "position": 2, "name": "sprezzature-colors", "url": "https://github.com/warith-harchaoui/sprezzature-colors"},
-          {"@type": "ListItem", "position": 3, "name": "sprezzature-accessibility", "url": "https://github.com/warith-harchaoui/sprezzature-accessibility"},
-          {"@type": "ListItem", "position": 4, "name": "sprezzature-cli-gui", "url": "https://github.com/warith-harchaoui/sprezzature-cli-gui"},
-          {"@type": "ListItem", "position": 5, "name": "sprezzature-ux-laws", "url": "https://github.com/warith-harchaoui/sprezzature-ux-laws"},
-          {"@type": "ListItem", "position": 6, "name": "sprezzature-audio", "url": "https://github.com/warith-harchaoui/sprezzature-audio"},
-          {"@type": "ListItem", "position": 7, "name": "best-engine-ai-helper", "url": "https://github.com/warith-harchaoui/best-engine-ai-helper"}
+          {"@type": "ListItem", "position": 2, "name": "sprezzature-maps", "url": "https://github.com/warith-harchaoui/sprezzature-maps"},
+          {"@type": "ListItem", "position": 3, "name": "sprezzature-colors", "url": "https://github.com/warith-harchaoui/sprezzature-colors"},
+          {"@type": "ListItem", "position": 4, "name": "sprezzature-accessibility", "url": "https://github.com/warith-harchaoui/sprezzature-accessibility"},
+          {"@type": "ListItem", "position": 5, "name": "sprezzature-cli-gui", "url": "https://github.com/warith-harchaoui/sprezzature-cli-gui"},
+          {"@type": "ListItem", "position": 6, "name": "sprezzature-ux-laws", "url": "https://github.com/warith-harchaoui/sprezzature-ux-laws"},
+          {"@type": "ListItem", "position": 7, "name": "sprezzature-audio", "url": "https://github.com/warith-harchaoui/sprezzature-audio"},
+          {"@type": "ListItem", "position": 8, "name": "best-engine-ai-helper", "url": "https://github.com/warith-harchaoui/best-engine-ai-helper"},
+          {"@type": "ListItem", "position": 9, "name": "sprezzature-local", "url": "https://github.com/warith-harchaoui/sprezzature-local"}
         ]
       }
     ]
@@ -89,6 +91,14 @@
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">126 types de graphiques en SVG écrit à la main, sans Vega, plus la boucle Ralph Eyeball, l’explicabilité et les graphes causaux.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-figures</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-figures" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-blue">sprezzature-maps</p>
+          <h3 class="mt-1 font-semibold">Cartes</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Cartographie SVG écrite à la main, séparée de sprezzature-figures : une choroplèthe Equal Earth à rampe OKLCH, et des cartes de situation en conique conforme de Lambert, toutes deux avec un relief chaud/froid à partir d'une élévation réelle.</p>
+          <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-maps</code></pre>
+          <a href="https://github.com/warith-harchaoui/sprezzature-maps" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
@@ -142,6 +152,14 @@
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Détecte la machine, choisit un modèle dans un catalogue et valide un LLM / VLM local avant que les skills s’appuient dessus. Chaque appel LLM/VLM d’un skill passe par son abstraction <code>chat</code> : un backend connectable (Ollama, compatible OpenAI, LangChain), la boucle Ralph et le pipeline d’écriture.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/best-engine-ai-helper</code></pre>
           <a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-blue">sprezzature-local</p>
+          <h3 class="mt-1 font-semibold">Runtime hors-ligne</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Le runtime hors-ligne que les skills appellent : le backend de chat connectable de <code>llm.py</code>, la boucle Ralph Eyeball, et le pipeline d'écriture. Lit les variables d'environnement <code>SPREZZATURE_LLM_*</code> ; chaque autre paquet le prend en dépendance optionnelle, jamais obligatoire.</p>
+          <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-local</code></pre>
+          <a href="https://github.com/warith-harchaoui/sprezzature-local" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
         </div>
 
       </div>

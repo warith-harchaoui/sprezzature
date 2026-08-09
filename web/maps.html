@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Maps — Sprezzature</title>
-  <meta name="description" content="Publication-grade cartography from sprezzature-figures: Equal-Earth thematic maps, layered situation maps, carefully authored SVG map techniques, and real French election data.">
+  <meta name="description" content="Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph/cartogram thematic maps and real French election data.">
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/maps.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/maps.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
@@ -13,9 +13,9 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Maps — Sprezzature">
-  <meta property="og:description" content="Publication-grade cartography from sprezzature-figures: Equal-Earth thematic maps, layered situation maps, carefully authored SVG map techniques, and real French election data.">
+  <meta property="og:description" content="Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph/cartogram thematic maps and real French election data.">
   <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/maps.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/figures/situation-ukraine.png">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/maps/choropleth-large.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
@@ -35,27 +35,27 @@
       {
         "@type": "WebPage",
         "name": "Maps — Sprezzature",
-        "description": "Publication-grade cartography: Equal-Earth thematic maps, layered situation maps, carefully authored SVG map techniques, and real French election data.",
+        "description": "Equal Earth choropleth maps and layered Lambert Conformal Conic situation maps, hand-authored SVG with warm/cool duotone relief, plus thematic glyph maps and real French election data.",
         "url": "https://harchaoui.org/warith/sprezzature/maps.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
       {
         "@type": "SoftwareApplication",
-        "name": "sprezzature-figures (maps)",
+        "name": "sprezzature-maps",
         "applicationCategory": "DeveloperApplication",
-        "description": "Generates publication-grade cartographic figures: Equal-Earth choropleth maps, layered situation maps with front lines and area-of-control fills, bubble maps, and GPS track overlays. All rendered as CVD-safe SVG.",
+        "description": "Hand-authored SVG world maps: choropleth (Equal Earth projection, OKLCH sequential/diverging ramp, Natural Earth 50m borders) and situation maps (auto-centred Lambert Conformal Conic, any region, Natural Earth 10m/50m borders by zoom). Both composite a warm/cool duotone hillshade relief layer. No Vega, no matplotlib.",
         "url": "https://harchaoui.org/warith/sprezzature/maps.html",
-        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature-maps",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
       {
         "@type": "HowTo",
-        "name": "How to make a situation map or thematic map with sprezzature-figures",
+        "name": "How to make a choropleth or situation map with sprezzature-maps",
         "step": [
-          {"@type": "HowToStep", "position": 1, "text": "Ask the agent: 'make a choropleth map of this data' or 'draw a situation map with these front lines'. Provide a CSV or GeoJSON."},
-          {"@type": "HowToStep", "position": 2, "text": "The skill selects an Equal-Earth or Mercator projection, applies the CVD-safe diverging palette, and renders the base layer."},
-          {"@type": "HowToStep", "position": 3, "text": "For situation maps, supply area-of-control polygons and front-line geometries. The skill layers them with appropriate fill opacity and line weight."},
+          {"@type": "HowToStep", "position": 1, "text": "Ask the agent: 'make a choropleth map of this data' or 'draw a situation map of this region'. Provide a CSV or a bounding box."},
+          {"@type": "HowToStep", "position": 2, "text": "The skill picks an Equal Earth projection for the world choropleth, or an auto-centred Lambert Conformal Conic for the region, and applies the CVD-safe OKLCH palette."},
+          {"@type": "HowToStep", "position": 3, "text": "Relief comes from real GMTED2010 elevation, texture-shaded and retinted warm/cool, reprojected pixel-by-pixel into the map's own projection."},
           {"@type": "HowToStep", "position": 4, "text": "Export the final SVG, sized for web or print, with a legend and scale bar."}
         ]
       }
@@ -86,17 +86,38 @@
       <p class="mt-4 max-w-3xl text-lg text-neutral-600 dark:text-neutral-300">Good-quality cartography, reproducible on data of your choice.</p>
       <p class="mt-4 text-sm"><a class="text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="case-studies.html">← All case studies</a></p>
     </section>
+    <section id="choropleth" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Choropleth</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written closed-form <strong>Equal Earth</strong> projection — restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer — real GMTED2010 elevation, not a flat hillshade — sits under the fills.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Sequential choropleth" data-src="img/maps/choropleth-sequential.svg" data-alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills.">
+              <img src="img/maps/choropleth-sequential.png" alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Sequential ramp</span> <span class="text-neutral-500 dark:text-neutral-400">: pale-to-navy blue, magnitude reads by lightness alone.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Diverging choropleth" data-src="img/maps/choropleth-diverging.svg" data-alt="World choropleth map of an illustrative growth rate, terracotta for negative values through a neutral grey zero to navy blue for positive values, ramp auto-detected from the data's sign.">
+              <img src="img/maps/choropleth-diverging.png" alt="World choropleth map of an illustrative growth rate, terracotta for negative values through a neutral grey zero to navy blue for positive values, ramp auto-detected from the data's sign." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Diverging ramp</span> <span class="text-neutral-500 dark:text-neutral-400">: auto-detected from the data's sign, terracotta ↔ navy through a real neutral zero.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950 sm:col-span-2 lg:col-span-1">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Choropleth at large size" data-src="img/maps/choropleth-large.svg" data-alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp.">
+              <img src="img/maps/choropleth-large.png" alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">At scale</span> <span class="text-neutral-500 dark:text-neutral-400">: the relief layer — Andes, Rockies, Alps, Himalaya — reads clearly once rendered larger.</span></figcaption>
+          </figure>
+        </div>
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">From <a class="underline hover:text-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>, the cartography package split out of sprezzature-figures.</p>
+      </div>
+    </section>
     <section id="thematic-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Thematic maps</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Publication-grade cartography from a vendored, offline Natural Earth basemap: Equal-Earth projection, classed color, direct annotation, hairline borders.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Further glyph and cartogram techniques from sprezzature-figures, layered over the same offline Natural Earth basemap.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Choropleth" data-src="img/figures/choropleth.svg" data-alt="World choropleth of an illustrative exposure index in quintile classes; countries with no data are grey, including Antarctica.">
-            <img src="img/figures/choropleth.svg" alt="World choropleth of an illustrative exposure index in quintile classes; countries with no data are grey, including Antarctica." loading="lazy" class="w-full">
-          </button>
-          <figcaption class="p-3"><span class="font-medium">Choropleth</span> <span class="text-neutral-500 dark:text-neutral-400">: Equal-Earth projection, quintile classes, headline + source.</span></figcaption>
-        </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
           <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Bivariate choropleth" data-src="img/figures/map-bivariate.svg" data-alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia.">
             <img src="img/figures/map-bivariate.svg" alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia." loading="lazy" class="w-full">
@@ -151,13 +172,67 @@
     <section id="situation-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Situation maps</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">An areas-of-control plate for any region, built as a layered Scalable Vector Graphics (SVG) the way a geopolitics desk would: bathymetry contours off the coast, classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, dual-unit scale bars, and a floating legend. One configuration file projects any country (auto-centred Lambert conformal conic). The same layers redraw for any conflict; below is Ukraine. Schematic, from open sources, not intelligence.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">A layered reference plate for <em>any</em> region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred <strong>Lambert Conformal Conic</strong> projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed-in the region is — a whole continent doesn't need 10m detail invisible at that scale; a single country does. The same relief technique as the choropleth above — real elevation, texture-shaded, warm/cool duotone — carries every plate.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Western Europe situation map" data-src="img/maps/situation-western-europe.svg" data-alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar.">
+              <img src="img/maps/situation-western-europe.png" alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Western Europe</span> <span class="text-neutral-500 dark:text-neutral-400">: the built-in reference demo — 50m borders, the Alps in full relief texture.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Iberia situation map" data-src="img/maps/situation-iberia.svg" data-alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined.">
+              <img src="img/maps/situation-iberia.png" alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Iberia</span> <span class="text-neutral-500 dark:text-neutral-400">: Spain + Portugal — the clearest single example of the texture-shading relief technique.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Himalaya situation map" data-src="img/maps/situation-himalaya.svg" data-alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines.">
+              <img src="img/maps/situation-himalaya.png" alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Himalaya</span> <span class="text-neutral-500 dark:text-neutral-400">: an all-land plate — no sea to contrast against, relief carries the whole plate.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Switzerland situation map" data-src="img/maps/situation-switzerland.svg" data-alt="Situation map zoomed to Switzerland alone, crisp 10-metre-resolution Natural Earth borders against neighbouring France, Germany, Austria and Italy, Alpine relief throughout.">
+              <img src="img/maps/situation-switzerland.png" alt="Situation map zoomed to Switzerland alone, crisp 10-metre-resolution Natural Earth borders against neighbouring France, Germany, Austria and Italy, Alpine relief throughout." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Switzerland, zoomed</span> <span class="text-neutral-500 dark:text-neutral-400">: a small enough bbox switches to the 10m border tier automatically.</span></figcaption>
+          </figure>
+        </div>
+
+        <h3 class="mt-12 text-lg font-semibold">Applied: areas of control</h3>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">The same reference plate becomes a geopolitics-desk product once thematic layers go on top: classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, and a floating legend. Below is Ukraine. Schematic, from open sources, not intelligence.</p>
         <figure class="mt-6 mx-auto max-w-3xl overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
           <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Ukraine areas of control" data-src="img/figures/situation-ukraine.png" data-alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested sprezzature hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions.">
             <img src="img/figures/situation-ukraine.png" alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested sprezzature hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Ukraine</span> <span class="text-neutral-500 dark:text-neutral-400">: government / occupied / contested along an approximate 2024 contact line. Schematic, not operational intelligence.</span></figcaption>
         </figure>
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">Reference plates from <a class="underline hover:text-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>; the areas-of-control layer stays in sprezzature-figures.</p>
+      </div>
+    </section>
+    <section id="how-its-built" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">How the choropleth and situation maps are built</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Every map above is a hand-authored SVG document — no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.</p>
+        <dl class="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <dt class="font-semibold">Equal Earth, not equirectangular</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">A closed-form polynomial projection (Šavrič, Patterson &amp; Jenny, 2018) — equal-area, so a choropleth's colored surface isn't quietly lying about country size.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">OKLCH color, not RGB lerp</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Ramps interpolate in a perceptually-uniform space (Björn Ottosson's OKLab), verified colour-vision-deficiency-safe by actually simulating protanopia/deuteranopia/tritanopia on the rendered output.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Natural Earth, 50m and 10m</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Public-domain vector borders, vendored offline. Situation maps pick the tier automatically from how zoomed-in the requested region is.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Real elevation, not a flat hillshade</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010 — a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
+          </div>
+        </dl>
       </div>
     </section>
     <section id="real-data" class="border-t border-neutral-200/70 dark:border-neutral-800">
