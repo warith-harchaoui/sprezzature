@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cartes — Sprezzature</title>
-  <meta name="description" content="Cartographie de qualité publication depuis sprezzature-figures : cartes thématiques Equal-Earth, cartes de situation en couches, techniques cartographiques en SVG, et données réelles d'élections.">
+  <meta name="description" content="Cartographie de qualité publication : une choroplèthe Equal Earth à rampe OKLCH, des cartes de situation en conique conforme de Lambert avec relief réel, plus des cartes thématiques à glyphes et des données réelles d'élections.">
   <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
   <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/maps.html">
   <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
@@ -13,9 +13,9 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Cartes — Sprezzature">
-  <meta property="og:description" content="Cartographie de qualité publication depuis sprezzature-figures : cartes thématiques Equal-Earth, cartes de situation en couches, techniques cartographiques en SVG, et données réelles d'élections.">
+  <meta property="og:description" content="Cartographie de qualité publication : une choroplèthe Equal Earth à rampe OKLCH, des cartes de situation en conique conforme de Lambert avec relief réel, plus des cartes thématiques à glyphes et des données réelles d'élections.">
   <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/maps.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/figures/situation-ukraine.png">
+  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/maps/choropleth-large.png">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
@@ -32,27 +32,27 @@
       {
         "@type": "WebPage",
         "name": "Cartes — Sprezzature",
-        "description": "Cartographie de qualité publication : cartes thématiques Equal-Earth, cartes de situation en couches, techniques SVG soignées, et données réelles d'élections françaises.",
+        "description": "Choroplèthe Equal Earth et cartes de situation en conique conforme de Lambert, en SVG écrit à la main avec un relief chaud/froid, plus des cartes thématiques à glyphes et des données réelles d'élections françaises.",
         "url": "https://harchaoui.org/warith/sprezzature/fr/maps.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
       {
         "@type": "SoftwareApplication",
-        "name": "sprezzature-figures (cartes)",
+        "name": "sprezzature-maps",
         "applicationCategory": "DeveloperApplication",
-        "description": "Génère des figures cartographiques de qualité publication : cartes choroplèthes Equal-Earth, cartes de situation en couches avec lignes de front et zones de contrôle, cartes à bulles et superpositions de traces GPS. Tout est rendu en SVG lisible sous daltonisme.",
+        "description": "Cartes SVG écrites à la main : choroplèthe (projection Equal Earth, rampe OKLCH séquentielle/divergente, frontières Natural Earth 50m) et cartes de situation (conique conforme de Lambert auto-centrée, n'importe quelle région, frontières Natural Earth 10m/50m selon le zoom). Les deux composent une couche de relief chaud/froid. Pas de Vega, pas de matplotlib.",
         "url": "https://harchaoui.org/warith/sprezzature/fr/maps.html",
-        "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
+        "codeRepository": "https://github.com/warith-harchaoui/sprezzature-maps",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
       {
         "@type": "HowTo",
-        "name": "Comment créer une carte de situation ou thématique avec sprezzature-figures",
+        "name": "Comment créer une carte choroplèthe ou de situation avec sprezzature-maps",
         "step": [
-          {"@type": "HowToStep", "position": 1, "text": "Demandez à l'agent : « fais une carte choroplèthe de ces données » ou « dessine une carte de situation avec ces lignes de front ». Fournissez un CSV ou un GeoJSON."},
-          {"@type": "HowToStep", "position": 2, "text": "Le skill sélectionne une projection Equal-Earth ou Mercator, applique la palette divergente sûre pour le daltonisme, et rend la couche de base."},
-          {"@type": "HowToStep", "position": 3, "text": "Pour les cartes de situation, fournissez les polygones de zones de contrôle et les géométries de lignes de front. Le skill les superpose avec l'opacité et l'épaisseur de trait appropriées."},
+          {"@type": "HowToStep", "position": 1, "text": "Demandez à l'agent : « fais une carte choroplèthe de ces données » ou « dessine une carte de situation de cette région ». Fournissez un CSV ou une emprise géographique."},
+          {"@type": "HowToStep", "position": 2, "text": "Le skill choisit une projection Equal Earth pour la choroplèthe mondiale, ou une conique conforme de Lambert auto-centrée pour la région, et applique la palette OKLCH sûre pour le daltonisme."},
+          {"@type": "HowToStep", "position": 3, "text": "Le relief vient d'une véritable élévation GMTED2010, texturée puis retintée chaud/froid, reprojetée pixel par pixel dans la projection propre à chaque carte."},
           {"@type": "HowToStep", "position": 4, "text": "Exportez le SVG final, dimensionné pour le web ou l'impression, avec une légende et une barre d'échelle."}
         ]
       }
@@ -84,27 +84,38 @@
       <p class="mt-4 max-w-3xl text-lg text-neutral-600 dark:text-neutral-300">Cartographie de bonne qualité et reproductible sur données de votre choix.</p>
       <p class="mt-4 text-sm"><a class="text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="case-studies.html">← Toutes les études de cas</a></p>
     </section>
+    <section id="choropleth" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Choroplèthe</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Une valeur par pays sur une projection <strong>Equal Earth</strong> écrite à la main sous forme close — restitue la propriété équivalente en surface qu'une simple équirectangulaire fait perdre discrètement (le Groenland n'y paraît pas quatorze fois sa taille réelle). La couleur vient d'une rampe <strong>interpolée en OKLCH</strong>, pas d'un lerp RVB canal par canal naïf, vérifiée sûre pour le daltonisme en simulant réellement le rendu plutôt qu'en l'affirmant. Une rampe divergente s'active automatiquement quand les données ont un zéro significatif. Une couche de relief chaud/froid — une véritable élévation GMTED2010, pas un estompage plat — se glisse sous les aplats.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : choroplèthe séquentielle" data-src="../img/maps/choropleth-sequential.svg" data-alt="Choroplèthe mondiale, un indice d'exposition synthétique teinté sur une rampe bleue pâle-à-marine interpolée en OKLCH, projection Equal Earth, relief chaud/froid sous les aplats.">
+              <img src="../img/maps/choropleth-sequential.png" alt="Choroplèthe mondiale, un indice d'exposition synthétique teinté sur une rampe bleue pâle-à-marine interpolée en OKLCH, projection Equal Earth, relief chaud/froid sous les aplats." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Rampe séquentielle</span> <span class="text-neutral-500 dark:text-neutral-400">: bleu pâle à marine, la magnitude se lit à la seule clarté.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : choroplèthe divergente" data-src="../img/maps/choropleth-diverging.svg" data-alt="Choroplèthe mondiale d'un taux de croissance illustratif, terracotta pour les valeurs négatives jusqu'à un gris neutre zéro puis bleu marine pour les valeurs positives, rampe détectée automatiquement selon le signe des données.">
+              <img src="../img/maps/choropleth-diverging.png" alt="Choroplèthe mondiale d'un taux de croissance illustratif, terracotta pour les valeurs négatives jusqu'à un gris neutre zéro puis bleu marine pour les valeurs positives, rampe détectée automatiquement selon le signe des données." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Rampe divergente</span> <span class="text-neutral-500 dark:text-neutral-400">: détectée automatiquement selon le signe des données, terracotta ↔ marine via un vrai zéro neutre.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950 sm:col-span-2 lg:col-span-1">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : choroplèthe en grand format" data-src="../img/maps/choropleth-large.svg" data-alt="La même choroplèthe rendue en 1600 par 900 pixels, les chaînes de montagnes (Andes, Rocheuses, Alpes, Himalaya, rift est-africain) bien visibles à travers le relief sous la rampe de données.">
+              <img src="../img/maps/choropleth-large.png" alt="La même choroplèthe rendue en 1600 par 900 pixels, les chaînes de montagnes (Andes, Rocheuses, Alpes, Himalaya, rift est-africain) bien visibles à travers le relief sous la rampe de données." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">À grande échelle</span> <span class="text-neutral-500 dark:text-neutral-400">: la couche de relief — Andes, Rocheuses, Alpes, Himalaya — se lit clairement une fois rendue plus grande.</span></figcaption>
+          </figure>
+        </div>
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">Depuis <a class="underline hover:text-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>, le paquet cartographique séparé de sprezzature-figures.</p>
+      </div>
+    </section>
     <section id="thematic-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Cartes thématiques</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Cartographie de niveau publication depuis un
-          fond Natural Earth embarqué, hors-ligne : projection Equal-Earth, couleur en classes, annotation directe,
-          frontières en filet.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">D'autres techniques de glyphes et de cartogrammes de sprezzature-figures, superposées au même fond Natural Earth hors-ligne.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <figure
-            class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button"
-              class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
-              aria-label="Agrandir: Choroplèthe" data-src="../img/figures/choropleth.svg"
-              data-alt="Carte choroplèthe d'un indice d'exposition illustratif en classes quintiles ; les pays sans données sont en gris, y compris l'Antarctique.">
-              <img src="../img/figures/choropleth.svg"
-                alt="Carte choroplèthe d'un indice d'exposition illustratif en classes quintiles ; les pays sans données sont en gris, y compris l'Antarctique."
-                loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Choroplèthe</span> <span
-                class="text-neutral-500 dark:text-neutral-400">: Projection Equal-Earth, classes quintiles, titre +
-                source.</span></figcaption>
-          </figure>
           <figure
             class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button"
@@ -223,27 +234,67 @@
     <section id="situation-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Cartes de situation</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Une carte des zones de contrôle, pour n'importe
-          quelle région, construite comme un SVG (image vectorielle) en couches, à la manière d'un desk géopolitique :
-          courbes bathymétriques au large, aplats pastel classés cernés de blanc, toponymes espacés, marqueurs de points
-          chauds, échelles doubles (km et miles) et une légende flottante. Un seul fichier de configuration projette
-          n'importe quel pays (conique conforme de Lambert auto-centrée). Les mêmes couches se redessinent pour
-          n'importe quel conflit ; ci-dessous, l'Ukraine. Schématique, à partir de sources ouvertes, pas du
-          renseignement.</p>
-        <figure
-          class="mt-6 mx-auto max-w-3xl overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button"
-            class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
-            aria-label="Agrandir : Ukraine, zones de contrôle" data-src="../img/figures/situation-ukraine.png"
-            data-alt="Carte des zones de contrôle en Ukraine : contrôle du gouvernement ukrainien en gris-bleu, zones occupées par la Russie en rose et un sprezzature contesté hachuré en crème, avec les villes de points chauds en rouge. Schématique, positions approximatives de 2024.">
-            <img src="../img/figures/situation-ukraine.png"
-              alt="Carte des zones de contrôle en Ukraine : contrôle du gouvernement ukrainien en gris-bleu, zones occupées par la Russie en rose et un sprezzature contesté hachuré en crème, avec les villes de points chauds en rouge. Schématique, positions approximatives de 2024."
-              loading="lazy" class="w-full">
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Une carte de référence en couches pour <em>n'importe quelle</em> région : littoral, frontières internationales, toponymes, halo bathymétrique, échelle double (km et miles) et flèche du nord, sur une projection <strong>conique conforme de Lambert</strong> auto-centrée (conforme, donc les formes et les angles restent justes à l'échelle d'une ville ou d'une province). Les frontières basculent automatiquement entre les niveaux 50m et 10m de Natural Earth selon le zoom de la région demandée — tout un continent n'a pas besoin d'un détail à 10m invisible à cette échelle ; un seul pays, si. La même technique de relief que la choroplèthe ci-dessus — élévation réelle, texturée, duotone chaud/froid — porte chaque planche.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : carte de situation Europe de l'Ouest" data-src="../img/maps/situation-western-europe.svg" data-alt="Carte de situation de l'Europe de l'Ouest : vrais littoraux et frontières, toponymes, halo bathymétrique en mer, texture de relief dendritique de vallées à travers les Alpes et les montagnes scandinaves, échelle double.">
+              <img src="../img/maps/situation-western-europe.png" alt="Carte de situation de l'Europe de l'Ouest : vrais littoraux et frontières, toponymes, halo bathymétrique en mer, texture de relief dendritique de vallées à travers les Alpes et les montagnes scandinaves, échelle double." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Europe de l'Ouest</span> <span class="text-neutral-500 dark:text-neutral-400">: la démo de référence intégrée — frontières 50m, les Alpes en pleine texture de relief.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : carte de situation Ibérie" data-src="../img/maps/situation-iberia.svg" data-alt="Carte de situation de l'Espagne et du Portugal : dense réseau dendritique de vallées en bleu-vert froid contre des hauts plateaux crème chauds, les Pyrénées, la cordillère Cantabrique et la Sierra Nevada clairement définies.">
+              <img src="../img/maps/situation-iberia.png" alt="Carte de situation de l'Espagne et du Portugal : dense réseau dendritique de vallées en bleu-vert froid contre des hauts plateaux crème chauds, les Pyrénées, la cordillère Cantabrique et la Sierra Nevada clairement définies." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Ibérie</span> <span class="text-neutral-500 dark:text-neutral-400">: Espagne + Portugal — l'exemple le plus clair de la technique de relief par texture.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : carte de situation Himalaya" data-src="../img/maps/situation-himalaya.svg" data-alt="Carte de situation centrée sur l'Himalaya : Népal, Bhoutan, et les frontières Inde/Chine, une planche tout en terres sans océan, la chaîne de montagnes tracée par des vallées à dominante froide contre des crêtes à dominante chaude.">
+              <img src="../img/maps/situation-himalaya.png" alt="Carte de situation centrée sur l'Himalaya : Népal, Bhoutan, et les frontières Inde/Chine, une planche tout en terres sans océan, la chaîne de montagnes tracée par des vallées à dominante froide contre des crêtes à dominante chaude." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Himalaya</span> <span class="text-neutral-500 dark:text-neutral-400">: une planche tout en terres — pas de mer pour contraster, le relief porte toute la planche.</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : carte de situation Suisse" data-src="../img/maps/situation-switzerland.svg" data-alt="Carte de situation zoomée sur la Suisse seule, frontières Natural Earth nettes à 10 mètres de résolution face à la France, l'Allemagne, l'Autriche et l'Italie voisines, relief alpin partout.">
+              <img src="../img/maps/situation-switzerland.png" alt="Carte de situation zoomée sur la Suisse seule, frontières Natural Earth nettes à 10 mètres de résolution face à la France, l'Allemagne, l'Autriche et l'Italie voisines, relief alpin partout." loading="lazy" class="w-full">
+            </button>
+            <figcaption class="p-3"><span class="font-medium">Suisse, zoomée</span> <span class="text-neutral-500 dark:text-neutral-400">: une emprise assez petite bascule automatiquement au niveau de frontières 10m.</span></figcaption>
+          </figure>
+        </div>
+
+        <h3 class="mt-12 text-lg font-semibold">Appliqué : zones de contrôle</h3>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">La même planche de référence devient un produit de desk géopolitique une fois des couches thématiques ajoutées par-dessus : aplats pastel classés cernés de blanc, toponymes espacés, marqueurs de points chauds, et une légende flottante. Ci-dessous, l'Ukraine. Schématique, à partir de sources ouvertes, pas du renseignement.</p>
+        <figure class="mt-6 mx-auto max-w-3xl overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir : Ukraine, zones de contrôle" data-src="../img/figures/situation-ukraine.png" data-alt="Carte des zones de contrôle en Ukraine : contrôle du gouvernement ukrainien en gris-bleu, zones occupées par la Russie en rose et un sprezzature contesté hachuré en crème, avec les villes de points chauds en rouge. Schématique, positions approximatives de 2024.">
+            <img src="../img/figures/situation-ukraine.png" alt="Carte des zones de contrôle en Ukraine : contrôle du gouvernement ukrainien en gris-bleu, zones occupées par la Russie en rose et un sprezzature contesté hachuré en crème, avec les villes de points chauds en rouge. Schématique, positions approximatives de 2024." loading="lazy" class="w-full">
           </button>
-          <figcaption class="p-3"><span class="font-medium">Ukraine</span> <span
-              class="text-neutral-500 dark:text-neutral-400">: gouvernement / occupé / contesté le long d'une ligne de
-              contact approximative de 2024. Schématique, pas du renseignement opérationnel.</span></figcaption>
+          <figcaption class="p-3"><span class="font-medium">Ukraine</span> <span class="text-neutral-500 dark:text-neutral-400">: gouvernement / occupé / contesté le long d'une ligne de contact approximative de 2024. Schématique, pas du renseignement opérationnel.</span></figcaption>
         </figure>
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">Planches de référence depuis <a class="underline hover:text-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a> ; la couche de zones de contrôle reste dans sprezzature-figures.</p>
+      </div>
+    </section>
+    <section id="how-its-built" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-5 py-12">
+        <h2 class="text-2xl font-bold tracking-tight">Comment la choroplèthe et les cartes de situation sont construites</h2>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Chaque carte ci-dessus est un document SVG écrit à la main — pas de grammaire de graphiques, pas de navigateur headless, pas de tuiles externes récupérées au rendu. Tout ce qui est géographique est un fichier Natural Earth embarqué, hors-ligne.</p>
+        <dl class="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <dt class="font-semibold">Equal Earth, pas équirectangulaire</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Une projection polynomiale sous forme close (Šavrič, Patterson &amp; Jenny, 2018) — équivalente en surface, pour que la surface colorée d'une choroplèthe ne mente pas discrètement sur la taille des pays.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Couleur OKLCH, pas un lerp RVB</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Les rampes s'interpolent dans un espace perceptuellement uniforme (l'OKLab de Björn Ottosson), vérifiées sûres pour le daltonisme en simulant réellement la protanopie, la deutéranopie et la tritanopie sur le rendu final.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Natural Earth, 50m et 10m</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Des frontières vectorielles du domaine public, embarquées hors-ligne. Les cartes de situation choisissent le niveau automatiquement selon le zoom de la région demandée.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Élévation réelle, pas un estompage plat</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Les cartes de situation calculent leur relief à partir d'une véritable élévation GMTED2010 : un estompage directionnel mélangé à un <em>texture shading</em> (Brown, 2010 — un laplacien d'ordre fractionnaire appliqué dans le domaine fréquentiel), qui fait ressortir crêtes et réseaux de drainage à toutes les échelles à la fois, puis reteinté chaud pour les hauteurs / froid pour les ombres au lieu d'un gris plat. Reprojeté pixel par pixel dans la projection propre à chaque carte (une inverse analytique exacte pour la conique conforme de Lambert ; Newton-Raphson pour l'Equal Earth de la choroplèthe mondiale, qui n'a pas d'inverse sous forme close).</dd>
+          </div>
+        </dl>
       </div>
     </section>
     <section id="real-data" class="border-t border-neutral-200/70 dark:border-neutral-800">
