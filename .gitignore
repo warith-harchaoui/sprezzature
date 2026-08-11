@@ -7,6 +7,10 @@ dist/
 .env.*
 !.env.example
 
+# sftp-helper deploy credentials — real values never committed, only the template.
+sftp/settings.yaml
+!sftp/settings.yaml.example
+
 # Local secrets and un-shared helper scripts — never publish these.
 nomoreclaude.sh
 .secrets/
