@@ -1,0 +1,89 @@
+# sftp/settings.yaml.example
+# -------------------------
+# Credentials template for deploying web/ to sprezzature.ai via sftp-helper
+# (https://github.com/warith-harchaoui/sftp-helper).
+#
+# Copy this file to `sftp/settings.yaml` and replace every dummy value:
+#     cp sftp/settings.yaml.example sftp/settings.yaml
+#
+# `sftp/settings.yaml` is gitignored (this *.example template is the ONLY
+# tracked variant), so you cannot accidentally commit real secrets.
+#
+# sftp-helper discovers credentials in this order (via os_helper.get_config):
+#   1. an explicit --config path (file or directory containing a config)
+#   2. environment variables (SFTP_HOST, SFTP_LOGIN, ...)
+#   3. a .env file
+#
+# Backend: sftp-helper drives the system OpenSSH `sftp` client, so it
+# authenticates exactly like your own `sftp`/`scp` commands (SSH agent,
+# ~/.ssh/config, key files, hardware tokens all work).
+#
+# This project's local source of truth for the deploy is the `web/`
+# directory (34 static HTML pages EN+FR, css/, js/, img/, fonts/) — nothing
+# else in the repo is meant to be published.
+
+# ============================ REQUIRED ============================
+# Only three fields are mandatory: host, login, and the public HTTPS base.
+
+# REQUIRED — hostname of the SFTP server that serves sprezzature.ai.
+# Where to find it: your hosting provider's control panel / the FTP client
+# (e.g. FileZilla) "Host" field, without any scheme. Looks like a domain:
+# `sftp.example.com` (may be the same as `sprezzature.ai`, or a provider
+# subdomain — check your host's docs).
+sftp_host: "sftp.example.com"
+
+# REQUIRED — SSH/SFTP username for that host.
+sftp_login: "your-login"
+
+# REQUIRED — public HTTPS base URL that maps to sftp_destination_path.
+# For this project that is the live site itself.
+sftp_https: "https://sprezzature.ai"
+
+# ============================ AUTHENTICATION (optional) ============================
+# Pick ONE. For SSH-key auth you do NOT need a password. The recommended
+# setup is key-based: no secret ever lives in this file.
+#
+# ---- No SSH key yet? Generate one (the ssh-keygen command is identical on
+#      every OS; it writes the private key to ~/.ssh/id_ed25519 and the public
+#      key to ~/.ssh/id_ed25519.pub) ----
+#
+#   ssh-keygen -t ed25519 -C "you@example.com"
+#
+# Then load the PRIVATE key into your SSH agent so the public key can sign:
+#   macOS   : ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+#   Ubuntu  : eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
+#   Windows : Start-Service ssh-agent; ssh-add $HOME\.ssh\id_ed25519   (PowerShell)
+#
+# Finally install the PUBLIC key on the server (its ~/.ssh/authorized_keys):
+#   macOS / Ubuntu : ssh-copy-id -i ~/.ssh/id_ed25519.pub your-login@sftp.example.com
+#   Windows        : type $HOME\.ssh\id_ed25519.pub | ssh your-login@sftp.example.com "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+# OPTIONAL — path to your SSH *public* key. This is how you authenticate
+# WITHOUT a password. Point it at your PUBLIC key, e.g. `~/.ssh/id_ed25519.pub`:
+# OpenSSH delegates the signature to your SSH agent / a hardware token, so no
+# private-key material is ever named in — let alone copied into — this file.
+# Leave empty to let OpenSSH use the SSH agent and your default ~/.ssh keys.
+sftp_key: "~/.ssh/id_ed25519.pub"
+
+# OPTIONAL — SFTP password (fallback for servers that do not accept keys).
+# Leave EMPTY ("") to authenticate with your key / SSH agent (recommended).
+# If set, it requires the `sshpass` helper to be installed, since OpenSSH
+# never reads a password from the command line.
+sftp_passwd: ""
+
+# ============================ OPTIONAL ============================
+
+# OPTIONAL — remote base directory the site is served from (default: the
+# server root "/"). Absolute path on the server under which `web/`'s
+# contents should land, e.g. `/var/www/sprezzature.ai/htdocs` or
+# `/home/your-login/public_html`. On a chrooted SFTP account whose root
+# already IS the document root, leave this empty.
+sftp_destination_path: ""
+
+# OPTIONAL — SSH port (default: 22).
+sftp_port: "22"
+
+# OPTIONAL — extra known_hosts file to trust, in addition to
+# ~/.ssh/known_hosts. Strict host-key verification is always on; there is
+# no flag to disable it. Leave empty to rely on the system known_hosts.
+sftp_known_hosts: ""
