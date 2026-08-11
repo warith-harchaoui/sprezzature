@@ -114,7 +114,7 @@ Un site statique déployable, multi-pages, construit avec les *skills* `sprezzat
 eux-mêmes (house style sprezzature-ui, meta / favicons / sitemap / llms.txt de
 sprezzature-publish, palette sprezzature-colors, sprezzature-accessibility clean, un vrai toggle
 🌞/🌛), se trouve dans [`web/`](web/) et se publie sur
-<https://harchaoui.org/warith/sprezzature/>. Il a une page de détail par *skill* (make /
+<https://sprezzature.ai/>. Il a une page de détail par *skill* (make /
 audit / triggers / bibliothèque de références) et une **galerie de figures**
 dédiée qui rend tout le catalogue `sprezzature-figures`. La galerie porte un
 **visualiseur « Voir pour… »** qui applique une simulation vivante de la vision

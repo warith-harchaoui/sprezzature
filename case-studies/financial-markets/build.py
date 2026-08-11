@@ -265,7 +265,7 @@ _CHROME = {
     },
 }
 
-_SITE = "https://harchaoui.org/warith/sprezzature"
+_SITE = "https://sprezzature.ai"
 
 
 def _filename(scenario: str) -> str:
@@ -343,14 +343,27 @@ def _card(num: int, title: str, sub: str, svg: str, fs_label: str) -> str:
 
 
 def _dashboard(g: D.Portfolio, st: Dict[str, float], lang: str) -> str:
-    """Assemble les dix cartes (panneau SVG traduit + en-tête bilingue)."""
+    """Assemble les dix cartes, deux fois (🏫 academic / 🏭 corporate).
+
+    Chaque passe appelle :func:`market_style.set_theme` puis rend les dix
+    panneaux avec les tokens de couleur du thème courant. Les deux jeux de
+    cartes sont écrits dans la page ; ``[data-color-mode]`` (même attribut que
+    le reste du site, ``web/js/color-mode.js``) bascule instantanément entre
+    les deux via CSS (``template.html``), sans re-fetch ni re-render côté
+    client.
+    """
     i = 1 if lang == "en" else 0
     fs_label = _CHROME[lang]["fs"]
-    cards = []
-    for num, (_, fn, title, sub) in enumerate(_PANELS, start=1):
-        svg = fn(g, st) if fn is P.risk else fn(g)
-        cards.append(_card(num, title[i], sub[i], translate(svg), fs_label))
-    return "\n        ".join(cards)
+    blocks = []
+    for theme, cls in (("academic", "fm-theme-academic"), ("corporate", "fm-theme-corporate")):
+        S.set_theme(theme)
+        cards = []
+        for num, (_, fn, title, sub) in enumerate(_PANELS, start=1):
+            svg = fn(g, st) if fn is P.risk else fn(g)
+            cards.append(_card(num, title[i], sub[i], translate(svg), fs_label))
+        blocks.append(f'<div class="{cls} space-y-6">' + "\n        ".join(cards) + "</div>")
+    S.set_theme("corporate")  # remis à la valeur par défaut du module pour tout appelant ultérieur
+    return "\n        ".join(blocks)
 
 
 def _scenario_select(scenario: str, lang: str) -> str:

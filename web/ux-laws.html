@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-color-scheme="light" data-color-mode="academic">
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Laws of UX — Sprezzature</title>
   <meta name="description" content="Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JS + Tailwind — both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger / action / ">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/ux-laws.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/ux-laws.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/ux-laws.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/ux-laws.html">
+  <link rel="canonical" href="https://sprezzature.ai/ux-laws.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/ux-laws.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/ux-laws.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/ux-laws.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Laws of UX — Sprezzature">
   <meta property="og:description" content="Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JS + Tailwind — both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger / action / ">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/ux-laws.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:url" content="https://sprezzature.ai/ux-laws.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -37,7 +39,7 @@
         "@type": "WebPage",
         "name": "Laws of UX — Sprezzature",
         "description": "Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JS and Tailwind — when making new UI and when auditing existing HTML. Reference covers 30 laws.",
-        "url": "https://harchaoui.org/warith/sprezzature/ux-laws.html",
+        "url": "https://sprezzature.ai/ux-laws.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -46,7 +48,7 @@
         "name": "sprezzature-ux-laws",
         "applicationCategory": "DeveloperApplication",
         "description": "Applies the 30 Laws of UX (Jon Yablonski) to vanilla-JS and Tailwind interfaces. Audits existing HTML mechanically against 8 decidable laws, and applies the remaining 22 by judgment with concrete Tailwind edit recommendations.",
-        "url": "https://harchaoui.org/warith/sprezzature/ux-laws.html",
+        "url": "https://sprezzature.ai/ux-laws.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -77,6 +79,7 @@
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
         <a href="fr/ux-laws.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -139,6 +142,7 @@
     </div>
   </footer>
   <script src="js/theme.js" defer></script>
+  <script src="js/color-mode.js" defer></script>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ detail; nothing is duplicated here.
 
 - **What it is & what activates it:** [`sprezzature-figures/SKILL.md`](../sprezzature-figures/SKILL.md)
   (the agent-facing spec: purpose, trigger phrases, the full generator surface).
-- **See it rendered:** the [figures gallery](https://harchaoui.org/warith/sprezzature/figures.html)
+- **See it rendered:** the [figures gallery](https://sprezzature.ai/figures.html)
   on the website renders every chart type from fake data on the house palette;
   the exhaustive written catalog (one entry per generator, what it covers, and
   why) lives in the package's own

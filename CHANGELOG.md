@@ -410,7 +410,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   no duplication. `SKILL.md` stays the agent-facing spec; `docs/` is for humans.
   `FIGURES.md` moved here from `sprezzature-figures/`.
 - **`web/` — a deployable static site**, built with the `front-*` skills
-  themselves and publishing to <https://harchaoui.org/warith/sprezzature/>: sprezzature-ui
+  themselves and publishing to <https://sprezzature.ai/>: sprezzature-ui
   house style (Tailwind + self-hosted three-Roboto + Apple palette + dark mode),
   full SEO (canonical, Open Graph, Twitter, Schema.org JSON-LD), GEO (`llms.txt`),
   favicons / webmanifest + `robots.txt` / `sitemap.xml` / `humans.txt`, and a

@@ -1,24 +1,26 @@
 <!doctype html>
-<html lang="fr" data-color-scheme="light">
+<html lang="fr" data-color-scheme="light" data-color-mode="academic">
 
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Accessibilité — Sprezzature</title>
   <meta name="description"
     content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind — quatorze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/accessibility.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/accessibility.html">
+  <link rel="canonical" href="https://sprezzature.ai/fr/accessibility.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/accessibility.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/accessibility.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/accessibility.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Accessibilité — Sprezzature">
   <meta property="og:description"
     content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind — quatorze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/accessibility.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:url" content="https://sprezzature.ai/fr/accessibility.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -37,7 +39,7 @@
         "@type": "WebPage",
         "name": "Accessibilité — Sprezzature",
         "description": "Linter statique d'accessibilité HTML avant commit pour les sorties vanilla-JS et Tailwind : quatorze règles décidables depuis la source, sans navigateur ni DOM.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/accessibility.html",
+        "url": "https://sprezzature.ai/fr/accessibility.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -46,7 +48,7 @@
         "name": "sprezzature-accessibility",
         "applicationCategory": "DeveloperApplication",
         "description": "Linter HTML statique pour l'accessibilité des sorties vanilla-JS et Tailwind. Vérifie quatorze règles depuis la source seule : alt manquant, champs sans étiquette, ordre des titres, attribut lang, état couleur-uniquement, gardes prefers-reduced-motion.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/accessibility.html",
+        "url": "https://sprezzature.ai/fr/accessibility.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -90,6 +92,7 @@
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer de thème"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -167,6 +170,7 @@
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>
+  <script src="../js/color-mode.js" defer></script>
 
 </body>
 

@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="fr" data-color-scheme="light">
+<html lang="fr" data-color-scheme="light" data-color-mode="academic">
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Vision — texte alternatif — Sprezzature</title>
   <meta name="description" content="Rédaction d'alt-text conforme W3C via un modèle de vision Ollama local — arbre de décision par image, sortie dans toute langue détectée, cache disque déterministe. Le seul modèle est qwen3-vl:8b.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/vision.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/vision.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/vision.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/vision.html">
+  <link rel="canonical" href="https://sprezzature.ai/fr/vision.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/vision.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/vision.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/vision.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Vision — texte alternatif — Sprezzature">
   <meta property="og:description" content="Rédaction d'alt-text conforme W3C via un modèle de vision Ollama local — arbre de décision par image, sortie dans toute langue détectée, cache disque déterministe. Le seul modèle est qwen3-vl:8b.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/vision.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:url" content="https://sprezzature.ai/fr/vision.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -34,7 +36,7 @@
         "@type": "WebPage",
         "name": "Vision — texte alternatif — Sprezzature",
         "description": "Rédaction d'alt-text conforme W3C via un modèle de vision Ollama local. Arbre de décision par image, sortie dans toute langue détectée, cache disque déterministe.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/vision.html",
+        "url": "https://sprezzature.ai/fr/vision.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -43,7 +45,7 @@
         "name": "sprezzature-vision",
         "applicationCategory": "DeveloperApplication",
         "description": "Rédige des textes alternatifs conformes W3C pour les images via un modèle de vision Ollama local (qwen3-vl:8b). Suit un arbre de décision par image (décorative, informative, fonctionnelle, complexe). Sortie dans toute langue détectée. Cache disque déterministe.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/vision.html",
+        "url": "https://sprezzature.ai/fr/vision.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -75,6 +77,7 @@
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
         <a href="../vision.html" aria-label="English version" title="English version" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer de thème" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -141,6 +144,7 @@
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>
+  <script src="../js/color-mode.js" defer></script>
 
 </body>
 </html>

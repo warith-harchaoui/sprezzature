@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="fr" data-color-scheme="light">
+<html lang="fr" data-color-scheme="light" data-color-mode="academic">
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Études de cas — Sprezzature</title>
   <meta name="description" content="Trois exemples avancés avec la Ralph Eyeball Loop : un hommage à l'animation de Hans Rosling, des cartes de situation de qualité presse, et un tableau de bord de marchés financiers, tous interactifs.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/case-studies.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/case-studies.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/case-studies.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/case-studies.html">
+  <link rel="canonical" href="https://sprezzature.ai/fr/case-studies.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/case-studies.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/case-studies.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/case-studies.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Études de cas — Sprezzature">
   <meta property="og:description" content="Un hommage à Hans Rosling, des cartes de situation de qualité publication, et un tableau de bord de marchés financiers — tous interactifs, tous affinés en regardant.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/case-studies.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/financial-markets.png">
+  <meta property="og:url" content="https://sprezzature.ai/fr/case-studies.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/financial-markets.png">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
@@ -33,7 +35,7 @@
         "@type": "WebPage",
         "name": "Études de cas — Sprezzature",
         "description": "Trois exemples avancés avec la Ralph Eyeball Loop : un hommage animé à Hans Rosling, des cartes de situation de qualité presse, et un tableau de bord de marchés financiers interactif.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/case-studies.html",
+        "url": "https://sprezzature.ai/fr/case-studies.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -41,7 +43,7 @@
         "@type": "Article",
         "headline": "Études de cas : hommage à Hans Rosling, cartes de situation, marchés financiers",
         "description": "Trois réalisations avancées avec la suite de skills Sprezzature et la Ralph Eyeball Loop : un graphique à bulles animé, des cartes de situation SVG en couches, et un tableau de bord de portefeuille systématique.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/case-studies.html",
+        "url": "https://sprezzature.ai/fr/case-studies.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"},
         "about": {
@@ -68,6 +70,7 @@
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
         <a href="../case-studies.html" aria-label="English version" title="English version" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer de thème" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -126,5 +129,6 @@
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>
+  <script src="../js/color-mode.js" defer></script>
 </body>
 </html>

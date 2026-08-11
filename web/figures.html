@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-color-scheme="light" data-color-mode="academic">
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Figures — Sprezzature</title>
-  <meta name="description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 126 hand-authored SVG chart types, all from fake data on a curated palette.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/figures.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/figures.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/figures.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/figures.html">
+  <meta name="description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 124 hand-authored SVG chart types, all from fake data on a curated palette.">
+  <link rel="canonical" href="https://sprezzature.ai/figures.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/figures.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/figures.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/figures.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Figures — Sprezzature">
-  <meta property="og:description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 126 hand-authored SVG chart types, all from fake data on a curated palette.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/figures.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/figures/bar.svg">
+  <meta property="og:description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 124 hand-authored SVG chart types, all from fake data on a curated palette.">
+  <meta property="og:url" content="https://sprezzature.ai/figures.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/figures/bar.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -36,8 +38,8 @@
       {
         "@type": "WebPage",
         "name": "Figures — Sprezzature",
-        "description": "A rendered catalog of charts and statistical plots from sprezzature-figures: 126 hand-authored SVG chart types, all from fake data on a curated palette.",
-        "url": "https://harchaoui.org/warith/sprezzature/figures.html",
+        "description": "A rendered catalog of charts and statistical plots from sprezzature-figures: 124 hand-authored SVG chart types, all from fake data on a curated palette.",
+        "url": "https://sprezzature.ai/figures.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -46,7 +48,7 @@
         "name": "sprezzature-figures",
         "applicationCategory": "DeveloperApplication",
         "description": "Generates publication-grade data visualisations: hand-authored SVG statistical plots and SHAP explainability diagrams, no Vega. Each chart type ships as a make_*.py generator on a curated CVD-safe palette.",
-        "url": "https://harchaoui.org/warith/sprezzature/figures.html",
+        "url": "https://sprezzature.ai/figures.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -77,6 +79,7 @@
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
         <a href="fr/figures.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -135,7 +138,7 @@
         <label class="relative block">
           <span class="sr-only">Search figures</span>
           <svg width="16" height="16" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M14 14l4 4" stroke-linecap="round"></path></svg>
-          <input id="fig-search" type="search" placeholder="Search 126 figures — name, use, or keyword…" autocomplete="off" spellcheck="false" class="w-full rounded-lg border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100">
+          <input id="fig-search" type="search" placeholder="Search 124 figures — name, use, or keyword…" autocomplete="off" spellcheck="false" class="w-full rounded-lg border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100">
         </label>
         <p id="fig-count" class="mt-1 h-4 text-xs text-neutral-500 dark:text-neutral-400" aria-live="polite"></p>
       </div>
@@ -320,18 +323,6 @@
               <img src="img/figures/difference-chart.png" alt="Difference chart with two time series and the gap between them shaded in two colours, one hue where the first is above and another where it is below." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Difference chart</span> <span class="text-neutral-500 dark:text-neutral-400">: Two series with the gap shaded bicolour.</span></figcaption>
-          </figure>
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Gapminder" data-src="img/figures/gapminder.svg" data-alt="Animated bubble chart in homage to Hans Rosling, one frame per year from 1950 to 2025: each bubble is a country, horizontal is GDP per capita, vertical is life expectancy, area is population, colour is world region.">
-              <img src="img/figures/gapminder.png" alt="Animated bubble chart in homage to Hans Rosling, one frame per year from 1950 to 2025: each bubble is a country, horizontal is GDP per capita, vertical is life expectancy, area is population, colour is world region." loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Gapminder</span> <span class="text-neutral-500 dark:text-neutral-400">: Animated bubbles, income vs life expectancy over decades.</span></figcaption>
-          </figure>
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Gapminder variants" data-src="img/figures/gapminder_variants.svg" data-alt="Animated bubble chart, one frame per year from 1950 to 2025: horizontal is fertility rate, vertical is life expectancy, area is population, colour is world region; the cloud sweeps up and to the left as families shrink and lives lengthen.">
-              <img src="img/figures/gapminder_variants.png" alt="Animated bubble chart, one frame per year from 1950 to 2025: horizontal is fertility rate, vertical is life expectancy, area is population, colour is world region; the cloud sweeps up and to the left as families shrink and lives lengthen." loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Gapminder variants</span> <span class="text-neutral-500 dark:text-neutral-400">: Fertility and life expectancy, animated over decades.</span></figcaption>
           </figure>
         </div>
       </div>
@@ -1028,6 +1019,7 @@
     </div>
   </footer>
   <script src="js/theme.js?v=8bcd5883cf" defer></script>
+  <script src="js/color-mode.js" defer></script>
   <script src="js/lightbox.js?v=8bcd5883cf" defer></script>
   <script src="js/fullscreen.js?v=8bcd5883cf" defer></script>
   <script src="js/voir-pour.js?v=8bcd5883cf" defer></script>

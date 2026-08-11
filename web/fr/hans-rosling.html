@@ -1,26 +1,28 @@
 <!doctype html>
-<html lang="fr" data-color-scheme="light">
+<html lang="fr" data-color-scheme="light" data-color-mode="academic">
 
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Hommage à Hans Rosling — Sprezzature</title>
   <meta name="description"
     content="Un hommage animé et interactif au graphique à bulles santé-richesse de Hans Rosling — chaque pays, une image par année de 1950 à 2025, dans un seul fichier SVG autonome sans bibliothèque JavaScript. Données réelles, séparations et fusions historiques.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
+  <link rel="canonical" href="https://sprezzature.ai/fr/hans-rosling.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/hans-rosling.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/hans-rosling.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/hans-rosling.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Hommage à Hans Rosling — Sprezzature">
   <meta property="og:description"
     content="Un hommage animé et interactif au graphique à bulles santé-richesse de Hans Rosling — chaque pays, une image par année de 1950 à 2025, données réelles, séparations et fusions historiques.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/hans.png">
+  <meta property="og:url" content="https://sprezzature.ai/fr/hans-rosling.html">
+  <meta property="og:image" content="https://sprezzature.ai/hans.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://harchaoui.org/warith/sprezzature/hans.png">
+  <meta name="twitter:image" content="https://sprezzature.ai/hans.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../hans-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../hans-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../hans-apple-touch-icon.png">
@@ -171,7 +173,7 @@
         "@type": "WebPage",
         "name": "Hommage à Hans Rosling — Sprezzature",
         "description": "Un hommage animé et interactif au graphique santé-richesse à bulles de Hans Rosling. Tous les pays de 1950 à 2025, une image par année, dans un SVG autonome sans bibliothèque JavaScript.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html",
+        "url": "https://sprezzature.ai/fr/hans-rosling.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -179,7 +181,7 @@
         "@type": "Article",
         "headline": "Hommage à Hans Rosling — graphique animé santé et richesse 1950 à 2025",
         "description": "Un SVG animé autonome couvrant tous les pays de 1950 à 2025, avec données réelles, scissions et fusions historiques de pays, et une commande lecture/pause entièrement accessible. Construit avec sprezzature-figures.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html",
+        "url": "https://sprezzature.ai/fr/hans-rosling.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"},
         "about": {
@@ -218,6 +220,7 @@
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer de thème"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -465,6 +468,7 @@
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>
+  <script src="../js/color-mode.js" defer></script>
   <script src="../js/fullscreen.js" defer></script>
   <script src="../js/gapminder-player.js" defer></script>
 </body>

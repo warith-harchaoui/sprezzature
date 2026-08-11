@@ -1,24 +1,26 @@
 <!doctype html>
-<html lang="fr" data-color-scheme="light">
+<html lang="fr" data-color-scheme="light" data-color-mode="academic">
 
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>La Ralph Eyeball Loop — Sprezzature</title>
   <meta name="description"
     content="On ne relit pas un graphique en lisant son code. La Ralph Eyeball Loop rend l'image, la regarde, corrige ce que l'œil repère, puis recommence. Comment Sprezzature fabrique des figures, des diagrammes et des pages qui tiennent la route.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/ralph-eyeball-loop.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/ralph-eyeball-loop.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/ralph-eyeball-loop.html">
+  <link rel="canonical" href="https://sprezzature.ai/fr/ralph-eyeball-loop.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/ralph-eyeball-loop.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/ralph-eyeball-loop.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/ralph-eyeball-loop.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="La Ralph Eyeball Loop — Sprezzature">
   <meta property="og:description"
     content="On ne relit pas un graphique en lisant son code. Rendez l'image, regardez-la, corrigez ce que l'œil repère, puis recommencez.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/ralph-eyeball-loop.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:url" content="https://sprezzature.ai/fr/ralph-eyeball-loop.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -37,7 +39,7 @@
         "@type": "WebPage",
         "name": "La Ralph Eyeball Loop — Sprezzature",
         "description": "La Ralph Eyeball Loop rend tout artefact visuel, l'inspecte avec un modèle de vision, modifie la source pour corriger ce que l'oeil repère, et répète jusqu'à obtenir un verdict d'approbation.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/ralph-eyeball-loop.html",
+        "url": "https://sprezzature.ai/fr/ralph-eyeball-loop.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -45,7 +47,7 @@
         "@type": "Article",
         "headline": "La Ralph Eyeball Loop : produire, regarder, corriger, recommencer",
         "description": "Une boucle de contrôle qualité visuelle utilisée dans tout Sprezzature. Rend l'artefact en PNG, l'inspecte avec un modèle de vision ou Claude, applique les corrections à la source (jamais au PNG), et recommence jusqu'à ce que le verdict soit favorable.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/ralph-eyeball-loop.html",
+        "url": "https://sprezzature.ai/fr/ralph-eyeball-loop.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"},
         "about": {
@@ -84,6 +86,7 @@
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer de thème"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -221,6 +224,7 @@
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>
+  <script src="../js/color-mode.js" defer></script>
   <script src="../js/lightbox.js" defer></script>
 </body>
 
