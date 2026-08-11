@@ -6,9 +6,13 @@ figures.html gallery asset.
 web/img/figures/*.{svg,png} are the corporate-theme (default Apple palette)
 assets, hand-tuned over many Ralph Eyeball Loop passes — never touched here.
 This script renders the academic-theme (Okabe-Ito) sibling of each one into
-web/img/figures/academic/, by re-invoking each figure's own
-sprezzature-figures/scripts/make_<kind>.py with --theme academic. The two
-gallery-only formats (PNG thumbnail, SVG for the lightbox) are both written.
+web/img/figures/academic/, by loading each figure's own
+sprezzature-figures/scripts/make_<kind>.py as a module and calling its
+make_<kind>(out=..., theme="academic") function directly (not the script's
+own CLI: several generators' bespoke argparse blocks don't expose --theme
+or --out consistently — the underlying library function always does, so
+that's the stable surface to drive). The two gallery-only formats (PNG
+thumbnail, SVG for the lightbox) are both written.
 
 Every corporate gallery PNG is rasterised to a fixed 900px width regardless
 of the figure's native viewBox (confirmed by inspecting the existing
@@ -58,27 +62,53 @@ def _viewbox_width(svg_path: Path) -> float | None:
 
 
 def discover_kinds() -> list[str]:
-    """Gallery figure kinds that have a matching make_<kind>.py script."""
+    """Gallery figure kinds referenced by figures.html with a matching make_<kind>.py.
+
+    img/figures/ also holds orphaned assets (e.g. gapminder.svg, left over
+    after those cards were dropped from the gallery) and case-study-only
+    assets (maps, gapminder-animated, ...) that belong to other pages. Both
+    are excluded by requiring an actual `img/figures/<kind>.` reference in
+    figures.html, not just a file's presence on disk.
+    """
+    figures_html = (WEB / "figures.html").read_text(encoding="utf-8")
     kinds = []
     for svg in sorted(GALLERY.glob("*.svg")):
         kind = svg.stem
         script = SCRIPTS / f"make_{kind}.py"
-        if script.is_file():
+        if script.is_file() and f"img/figures/{kind}." in figures_html:
             kinds.append(kind)
     return kinds
 
 
-def render_one(kind: str, dry_run: bool) -> tuple[bool, str]:
+_CALL_TEMPLATE = """
+import importlib.util, sys
+spec = importlib.util.spec_from_file_location("_gen", {script!r})
+mod = importlib.util.module_from_spec(spec)
+sys.path.insert(0, {scripts_dir!r})
+spec.loader.exec_module(mod)
+fn = getattr(mod, {fn_name!r})
+fn(out={out!r}, theme="academic")
+"""
+
+
+def _call_make(kind: str, fn_name: str, out: Path, env: dict) -> subprocess.CompletedProcess:
     script = SCRIPTS / f"make_{kind}.py"
+    code = _CALL_TEMPLATE.format(
+        script=str(script), scripts_dir=str(SCRIPTS), fn_name=fn_name, out=str(out),
+    )
+    return subprocess.run([PY, "-c", code], cwd=SCRIPTS, capture_output=True, text=True, env=env)
+
+
+def render_one(kind: str, dry_run: bool) -> tuple[bool, str]:
     out_svg = OUT_DIR / f"{kind}.svg"
     out_png = OUT_DIR / f"{kind}.png"
+    fn_name = "make_" + kind.replace("-", "_")
     env = dict(os.environ)
 
     if dry_run:
         return True, f"would render {kind}"
 
-    cmd_svg = [PY, str(script), "--theme", "academic", "--out", str(out_svg)]
-    r1 = subprocess.run(cmd_svg, cwd=SCRIPTS, capture_output=True, text=True)
+    r1 = _call_make(kind, fn_name, out_svg, env)
     if r1.returncode != 0:
         return False, f"{kind}: SVG failed: {r1.stderr.strip()[-400:]}"
 
@@ -86,8 +116,7 @@ def render_one(kind: str, dry_run: bool) -> tuple[bool, str]:
     if not width:
         return False, f"{kind}: could not read viewBox width from {out_svg.name}"
     env["SPREZZATURE_RENDER_SCALE"] = str(THUMB_TARGET_WIDTH / width)
-    cmd_png = [PY, str(script), "--theme", "academic", "--out", str(out_png)]
-    r2 = subprocess.run(cmd_png, cwd=SCRIPTS, capture_output=True, text=True, env=env)
+    r2 = _call_make(kind, fn_name, out_png, env)
     if r2.returncode != 0:
         return False, f"{kind}: PNG failed: {r2.stderr.strip()[-400:]}"
 
