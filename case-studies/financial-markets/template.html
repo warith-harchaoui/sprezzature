@@ -10,8 +10,17 @@
   <link rel="canonical" href="__CANONICAL__">
   <link rel="alternate" hreflang="en" href="__ALTEN__">
   <link rel="alternate" hreflang="fr" href="__ALTFR__">
+  <link rel="alternate" hreflang="x-default" href="__ALTEN__">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sprezzature">
+  <meta property="og:title" content="__TITLE__">
+  <meta property="og:description" content="__DESC__">
+  <meta property="og:url" content="__CANONICAL__">
+  <meta property="og:image" content="https://sprezzature.ai/img/financial-markets.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="__BASE__favicon.ico" sizes="any">
   <link rel="icon" href="__BASE__favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="__BASE__apple-touch-icon.png" sizes="180x180">
@@ -53,6 +62,33 @@
     [data-color-mode="corporate"] .fm-theme-corporate { display: block; }
     [data-color-mode="corporate"] .fm-theme-academic { display: none; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "__TITLE__",
+        "description": "__DESC__",
+        "url": "__CANONICAL__",
+        "inLanguage": "__LANG__",
+        "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+      },
+      {
+        "@type": "Dataset",
+        "name": "__TITLE__",
+        "description": "__DESC__",
+        "url": "__CANONICAL__",
+        "creator": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"},
+        "about": {
+          "@type": "SoftwareSourceCode",
+          "name": "Sprezzature",
+          "codeRepository": "https://github.com/warith-harchaoui/sprezzature"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">__SKIP__</a>
