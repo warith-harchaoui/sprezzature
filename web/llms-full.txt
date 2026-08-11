@@ -1,0 +1,1539 @@
+# Sprezzature — full-text corpus
+
+> Concatenated plain text of every English page, for single-request ingestion by an LLM/agent. French pages are translations of the same content (see llms.txt) and are not duplicated here.
+
+---
+
+# Accessibility — Sprezzature
+
+Source: https://sprezzature.ai/accessibility.html
+
+sprezzature-accessibility
+
+# Accessibility
+
+Pre-commit static HyperText Markup Language (HTML) accessibility lint for vanilla-JavaScript (JS) + Tailwind output: fourteen rules decidable from source, no browser, no runtime Document Object Model (DOM).
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+JavaScript Object Notation (JSON) / stdout / exit codes for pre-commit and continuous integration (CI)
+
+## Audits
+
+Missing alt, unlabelled inputs, button-without-text, clickable div
+
+Missing dialog close, lang attribute, heading order
+
+Color-only state, motion-reduce guards, and more: fourteen rules
+
+A fast, deterministic gate, not a replacement for axe-core / Pa11y / Lighthouse
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+a11y lint
+check this HTML for accessibility
+static a11y check
+WCAG-friendly lint
+missing alt
+unlabelled input
+ARIA / keyboard check
+fix accessibility
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+The fourteen rules
+
+---
+
+# Audio — captions — Sprezzature
+
+Source: https://sprezzature.ai/audio.html
+
+sprezzature-audio
+
+# Audio — captions
+
+Local artificial intelligence (AI) captions, speaker diarization and speaker identification for video / audio. WebVTT / SubRip subtitle format (SRT) from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a transcript pass. The audio never leaves the machine.
+
+Work in progress: the caption backend is still settling and accuracy baselines are being collected, so captions are drafts to review.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+World Wide Web Consortium (W3C) WebVTT / SRT / plain-text captions from a local whisper.cpp build
+
+"Who spoke when" via NVIDIA NeMo Sortformer diarization
+
+"Who is who" via TitaNet embeddings or a transcript-mined pass
+
+Speaker-labelled WebVTT caption format (VTT) with named voice cues; bilingual EN/FR default
+
+## Audits
+
+Project-vocab biasing on the caption path
+
+Translated subtitles
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+captions
+transcribe video / audio
+WebVTT
+SRT
+diarization
+who spoke when
+identify speakers
+translate captions
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+Captions with AI
+Diarization
+
+---
+
+# Case studies — Sprezzature
+
+Source: https://sprezzature.ai/case-studies.html
+
+sprezzature · case studies
+
+# Case studies
+
+Three advanced examples, empowered by our Ralph Eyeball Loop .
+
+Animation
+
+## Tribute to Hans Rosling
+
+The famous income-versus-lifespan bubble
+chart, animated across the decades, with a play button and hover, the way he showed the world getting
+better.
+
+Open the tribute →
+
+Cartography
+
+## Situation & thematic maps
+
+Publication-grade Equal-Earth maps: layered
+situation maps with borders, named rivers and labels, and choropleths on a curated, colour-blind-safe
+palette.
+
+See the maps →
+
+Dashboard
+
+## Financial markets
+
+A systematic portfolio that resizes itself,
+told in ten interactive SVG panels. Hover for a trader's figures, colour-blind-safe throughout, with a
+favourable and an adverse draw.
+
+Open the dashboard →
+
+---
+
+# CLI → GUI — Sprezzature
+
+Source: https://sprezzature.ai/cli.html
+
+sprezzature-cli-gui
+
+# command-line interface (CLI) → graphical user interface (GUI)
+
+Wrap an existing command-line tool in a single-page vanilla-JavaScript (JS) + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+One index.html + app.js + Tailwind config wrapping your CLI
+
+Sub-commands and flags mapped to forms, segmented controls, file inputs
+
+A streaming log panel for long-running runs
+
+Reads argparse, click/Typer, clap, commander, cobra
+
+## Audits
+
+Follows the sprezzature-ui stack rules: install sprezzature-ui alongside for the full design tokens
+
+Hardening guidance for shipping the wrapper safely
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+wrap this CLI in a GUI
+argparse to GUI
+click to web UI
+GUI for my Python script
+Typer / clap / cobra to GUI
+frontend for a CLI
+streaming log panel
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+Hardening
+
+---
+
+# Colors — Sprezzature
+
+Source: https://sprezzature.ai/colors.html
+
+sprezzature-colors
+
+# Colors
+
+Color tooling, make and audit: Web Content Accessibility Guidelines (WCAG) contrast with fixes in the perceptual OKLCH color space (Lightness, Chroma, Hue of the OKLab model), colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter. Deterministic: no model, no network.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+A curated palette comma-separated values (CSV) file with semantic projections
+
+A Tailwind theme.extend.colors config from the canonical palette
+
+Perceptual lighten / darken on the OKLCH L axis
+
+## Audits
+
+WCAG contrast audit with OKLCH-neighbour fix suggestions
+
+Protanopia / deuteranopia / tritanopia simulation on screenshots
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+contrast audit
+is my palette accessible
+colorblind preview
+deuteranope / CVD
+lighten this color
+OKLCH
+brand colors
+palette to tailwind
+color-blind safe
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+Contrast audit
+CVD simulation
+The palette CSV
+
+---
+
+# Figures — Sprezzature
+
+Source: https://sprezzature.ai/figures.html
+
+sprezzature-figures
+
+# Figures
+
+## How to get a figure
+
+Ask our tool:
+
+"make a figure"
+
+"chart this"
+
+"treemap"
+
+"candlestick"
+
+"heatmap"
+
+"sankey"
+
+"SHAP plot"
+
+"render this diagram"
+
+FIGURES.md catalog
+Give a ⭐️ on GitHub
+
+See it for
+
+normal vision
+a reader with deuteranopia
+a reader with protanopia
+a reader with tritanopia
+no colour (grayscale)
+
+Simulates the default figure through a reader's eyes (normal vision for zoom).
+
+Search figures
+
+## Comparison & ranking
+
+Rank and contrast categories — bars, lollipops, dumbbells and their kin.
+
+Bar chart : Ranked categories, one house color each.
+
+Grouped bar : Categories split by a second variable.
+
+Lollipop : A lighter bar chart for ranked values.
+
+Dumbbell chart : Two points per row joined by a segment showing change.
+
+Slope chart : Before and after, two points.
+
+Bullet graph : Measure bar, target tick and qualitative bands.
+
+Pareto chart : Sorted bars, a cumulative line and an 80% mark for the vital few.
+
+Radar / spider : Many criteria on radial axes.
+
+Variable-width columns : Height, width and area each carry a variable.
+
+Column range : High-low intervals per category; temperature ranges, confidence intervals.
+
+Population pyramid : Age and sex, back to back.
+
+Parliament hemicycle : One dot per seat, coloured by party, with a majority line.
+
+Waterfall : A running total, step by step.
+
+## Time series & trends
+
+How a value moves over an ordered axis — lines, areas and event timelines.
+
+Line chart : A value over an ordered axis, one line per series.
+
+Multi-line : Two series over time with points.
+
+Area chart : How a whole made of categories evolves over time.
+
+Stacked area : Composition of series over time.
+
+Step / stairs : A value that changes at discrete points.
+
+Horizon chart : Banded, folded area for dense time series.
+
+Streamgraph : Stacked areas on a wiggle baseline over time.
+
+Candlestick (open-high-low-close) : Open-high-low-close price bars.
+
+Bollinger bands : A price series with a 20-day average and ±2σ bands, a squeeze then a breakout.
+
+Connected scatter : A trajectory through points ordered by time, with year labels and end markers.
+
+Calendar heatmap : A value per day across weeks.
+
+Timeline : Dated milestones on a spine with alternating callouts.
+
+Gantt : A schedule, start to end.
+
+Spectrogram : Time x frequency x power heatmap of a clip.
+
+Difference chart : Two series with the gap shaded bicolour.
+
+## Distributions
+
+The shape, spread and skew of one variable — histograms, boxes, densities.
+
+Histogram : A single distribution, binned.
+
+Box plot : Spread, quartiles and outliers per group.
+
+Violin plot : KDE density per group, mirrored.
+
+Density (KDE) : A smoothed distribution curve.
+
+Rug + density : Raw values as ticks beneath a density curve.
+
+Ridgeline / joyplot : Stacked, overlapping densities, one per group.
+
+Beeswarm : Force-packed points, no overlap.
+
+Strip plot : Every point, jittered by group.
+
+Wilkinson dot plot : One dot per observation, binned and stacked.
+
+Letter-value (boxen) : Nested quantile boxes for large samples.
+
+ECDF : empirical cumulative distribution function (ECDF), stepped.
+
+Error bars : A mean with its uncertainty interval.
+
+Bell curve : Normal distribution with configurable mean and standard deviation.
+
+Q-Q plot : Is this sample normal?
+
+P-P plot : Empirical vs theoretical CDF probabilities.
+
+Beeswarm : One dot per observation, nudged apart so width reads as density.
+
+## Correlation & multivariate
+
+Relationships between two or more measures — scatters, pair matrices, projections.
+
+Scatter : Two variables, colored by group.
+
+Bubble : Four variables at once.
+
+Hexbin density : Many points binned into hexagons.
+
+2D-KDE contour : bivariate kernel density estimate (KDE) as filled level sets.
+
+Joint plot : Scatter with marginal histograms.
+
+Pair plot / SPLOM : A scatterplot matrix of several variables.
+
+Parallel coordinates : Many variables on shared axes.
+
+Andrews curves : Each row a Fourier-series curve, coloured by class.
+
+RadViz : Points spring-embedded inside a ring of features.
+
+Regression + confidence-interval (CI) band : A fitted line with a 95% confidence band.
+
+Residual plot : Residuals vs fitted, with a zero rule.
+
+Gaussian process : Posterior mean, 95% band and sampled functions.
+
+Convex hull : A grouped scatter with a hull around each cluster.
+
+Ternary plot : Three parts summing to 100% on a triangle.
+
+2-D density contours : Isocontour rings over a raw bivariate scatter.
+
+## Matrices & heatmaps
+
+Values on a grid, colour-encoded — heatmaps, clustermaps, confusion and correlation.
+
+Annotated heatmap : A value matrix with per-cell labels.
+
+Clustermap : Heatmap reordered by hierarchical clustering.
+
+Interpolated heatmap : A smoothly interpolated value field (imshow).
+
+Correlation matrix : Which variables move together.
+
+Confusion matrix : Where a classifier is right and wrong.
+
+Interruption matrix : Who cuts whom, at a glance (hover the crosshair).
+
+## Part-to-whole & composition
+
+Slices and nested parts of a whole — donuts, treemaps, waffles, flows into stages.
+
+Donut : A compact part-to-whole.
+
+100% stacked bar : Parts of a whole across quarters.
+
+Waffle chart : A proportion as a grid of squares.
+
+Pictorial unit chart : An ISOTYPE icon array where one icon encodes a fixed count.
+
+Mosaic / marimekko : Column width and segment height each encode a share.
+
+Treemap : Hierarchical parts, area by size.
+
+Sunburst : Hierarchy as nested rings.
+
+Icicle : Rectangular partition of a hierarchy.
+
+Circle packing : Nested circles for a sized hierarchy.
+
+Nightingale rose : Polar-area wedges, radius by value.
+
+Cycle wheel : Directed ring of proportional arcs for a recurring process.
+
+Funnel : Stage-to-stage drop-off.
+
+## Hierarchies, networks & flows
+
+Nodes, edges and movement — trees, graphs, chords, Sankeys.
+
+Node-link network : Force-directed graph, hover to highlight.
+
+Arc diagram : Nodes on a line, links as arcs above.
+
+Dendrogram : Hierarchical clustering with a merge-height axis.
+
+Tree diagram : A tidy node-link hierarchy.
+
+Org chart : Top-down boxes for role and headcount, coloured by division.
+
+Radial tree : A hierarchy laid out on concentric rings.
+
+Force-directed graph : A 318-author co-authorship network in six communities.
+
+Edge bundling : Relations bundled along a radial hierarchy.
+
+Elbow detection : Kneedle finds the elbow of a diminishing-returns curve (choosing k).
+
+Chord diagram : Ribbons between categories; arc size is the total.
+
+Dependency wheel : Directed circular flows, arcs sized by throughput, ribbons by origin.
+
+Sankey diagram : Flows between stages, width proportional to volume.
+
+Alluvial / parallel sets : Category membership flowing across axes.
+
+Parallel sets : Categorical ribbons across class, sex, age and survival, width by count.
+
+Packed bubbles : Circles sized by value, packed and coloured by group.
+
+## Maps & spatial
+
+Values in geographic or directional space — thematic maps, spike maps, wind and vector fields.
+
+Binned grid map : Values counted into square grid cells over a place.
+
+Hexbin tile map : Values binned into a hex tessellation of a place.
+
+Geographic hexbin : Point events binned into hexagons on a world map.
+
+Spike map : Vertical spikes sized by value at map points.
+
+Dot-density map : One dot per N people, showing where a population lives.
+
+Quiver : A vector field of arrows by direction and magnitude.
+
+Streamplot : Integrated streamlines with arrowhead markers.
+
+Wind-barb station plot : Staffs point from the wind, pennant 50kt, barb 10kt, half 5kt, across a cold front.
+
+Wind rose : Stacked polar bars of frequency by direction.
+
+Polar plot : A line or scatter on an angular axis.
+
+## Model evaluation & science
+
+Diagnostics and scientific plots — ROC, calibration, survival, forest, volcano.
+
+ROC curve : Classifier trade-off, with AUC.
+
+Precision-recall curve : Precision against recall, with the average precision.
+
+Calibration curve : Predicted probability against observed frequency.
+
+Cumulative gain : Model vs baseline vs perfect targeting.
+
+Manhattan plot : −log10 p-values across the genome, peaks above the significance line.
+
+Volcano : Effect size versus significance.
+
+Kaplan–Meier : Survival over time, per arm.
+
+Forest plot : Per-study effect sizes and a pooled estimate.
+
+Bland-Altman : Agreement: difference vs mean of two methods.
+
+## Gauges, 3-D, sets & the rest
+
+KPI gauges, projected 3-D, set intersections, and one-of-a-kind figures.
+
+Venn / Euler : Overlapping sets, each region sized by its count.
+
+UpSet plot : Set intersections as bars over a matrix, Venn beyond three sets.
+
+Voronoi tessellation : Catchment cells coloured by group, with seed points.
+
+Embedding projector : 2D word-embedding map; hover a word for its nearest neighbours.
+
+Word cloud : Words sized by frequency, coloured by theme.
+
+Speaking time : Who spoke, and for how long (donut).
+
+Radial gauge : A needle over coloured zones with a big readout.
+
+Liquid gauge : A disc filled with wavy liquid to a percentage, a reservoir at 63%.
+
+Radial bar : Bars wrapped around a polar axis.
+
+3D surface : A static 3-D surface via offline projection.
+
+3D wireframe : A projected surface mesh, slowly rotating.
+
+3D scatter : Projected 3D points with a slow turntable.
+
+3D bar : Depth-shaded bars on a grid; use sparingly.
+
+No figure matches — try another term.
+
+×
+
+---
+
+# Financial markets — Adverse case — Sprezzature
+
+Source: https://sprezzature.ai/financial-markets-adverse.html
+
+sprezzature · financial markets
+
+# Case study: financial markets
+
+Net return
+-26%
+net of fees
+
+vs buy & hold
+-27 pts
+benchmark +2%
+
+Sharpe ratio
+-0.61
+net, annualised
+
+Max drawdown
+-40%
+below the peak
+
+Winning sessions
+38%
+cumulative cost 1.9%
+
+On a phone, each chart fits the width. Tap ⤢ on any panel for fullscreen, then pinch to zoom into the detail.
+
+1 Net wealth compared ⤢ Base 100 index · us (auto Kₜ), buy & hold and fixed K
+Net wealth compared, base 100 40 60 80 100 120 140 160 index (base 100) us index 74 Buy & hold index 102 K = 1 index 72 K = 3 index 52 K = 5 index 70 2024 2025 2026
+
+2 Automatic size Kₜ ⤢ Number of holdings over time
+Automatic portfolio size, number of holdings Kt 0 5 10 15 20 holdings average 11 holdings 2024 2025 2026
+
+3 The 100 stocks ⤢ Prices indexed to 100 · logarithmic scale
+The 100 stocks, indexed to 100, log scale 50 100 200 400 index (base 100) the 100 stocks median of the 100 3 eventual winners 2024 2025 2026
+
+4 Daily net P&L ⤢ Net return (%) per session · blue up, red down
+Daily net P&L, return per session -1.8% +0.0% +1.8% up down 20-day avg 2024 2025 2026
+
+5 Per-rebalance and cumulative cost ⤢ Dual axis · basis points and percent
+Per-rebalance cost in basis points and cumulative cost in percent 0 5 10 15 0.0% 2.0% 4.0% per rebalance (bps) cumulative (%) 2024 2025 2026
+
+6 Return distribution ⤢ Density of daily net return (%), by year
+Distribution of daily net returns, by year 2024 2025 2026 -2% -1% +0% +1% +2% daily net return (%)
+
+7 Monthly returns ⤢ Blue positive, red negative (%)
+Monthly returns, blue positive red negative J F M A M J J A S O N D 2024 +0 +0 +0 +0 +0 +5 +3 +10 +2 -6 -3 +4 2025 -9 -9 +3 -8 -9 +4 -1 +11 -8 +2 +1 +2 2026 -5 -6 -4 +1 +6 -5 -6
+
+8 Turnover at rebalances ⤢ Dual axis · share of the book traded (%)
+Turnover at rebalances and its moving average 0% 50% 100% 150% 40% 60% 80% 100% 120% turnover (%) average (%) 22 rebalances, first to last
+
+9 Drawdown ⤢ Distance (%) below the running peak (drawdown)
+Drawdown, distance below the running peak -60% -40% -20% 0% distance (%) drawdown max drawdown -40% 2024 2025 2026
+
+10 Risk-adjusted performance ⤢ Sharpe ratio and total return vs benchmark
+Risk-adjusted performance, Sharpe ratio and total return 0 1.5 3 -0.61 Sharpe ratio (Rp − Rf) / σ · risk-free rate assumed nil · annualised Total net return vs benchmark -26% buy & hold +2%
+
+1 Net wealth compared ⤢ Base 100 index · us (auto Kₜ), buy & hold and fixed K
+Net wealth compared, base 100 40 60 80 100 120 140 160 index (base 100) us index 74 Buy & hold index 102 K = 1 index 72 K = 3 index 52 K = 5 index 70 2024 2025 2026
+
+2 Automatic size Kₜ ⤢ Number of holdings over time
+Automatic portfolio size, number of holdings Kt 0 5 10 15 20 holdings average 11 holdings 2024 2025 2026
+
+3 The 100 stocks ⤢ Prices indexed to 100 · logarithmic scale
+The 100 stocks, indexed to 100, log scale 50 100 200 400 index (base 100) the 100 stocks median of the 100 3 eventual winners 2024 2025 2026
+
+4 Daily net P&L ⤢ Net return (%) per session · blue up, red down
+Daily net P&L, return per session -1.8% +0.0% +1.8% up down 20-day avg 2024 2025 2026
+
+5 Per-rebalance and cumulative cost ⤢ Dual axis · basis points and percent
+Per-rebalance cost in basis points and cumulative cost in percent 0 5 10 15 0.0% 2.0% 4.0% per rebalance (bps) cumulative (%) 2024 2025 2026
+
+6 Return distribution ⤢ Density of daily net return (%), by year
+Distribution of daily net returns, by year 2024 2025 2026 -2% -1% +0% +1% +2% daily net return (%)
+
+7 Monthly returns ⤢ Blue positive, red negative (%)
+Monthly returns, blue positive red negative J F M A M J J A S O N D 2024 +0 +0 +0 +0 +0 +5 +3 +10 +2 -6 -3 +4 2025 -9 -9 +3 -8 -9 +4 -1 +11 -8 +2 +1 +2 2026 -5 -6 -4 +1 +6 -5 -6
+
+8 Turnover at rebalances ⤢ Dual axis · share of the book traded (%)
+Turnover at rebalances and its moving average 0% 50% 100% 150% 40% 60% 80% 100% 120% turnover (%) average (%) 22 rebalances, first to last
+
+9 Drawdown ⤢ Distance (%) below the running peak (drawdown)
+Drawdown, distance below the running peak -60% -40% -20% 0% distance (%) drawdown max drawdown -40% 2024 2025 2026
+
+10 Risk-adjusted performance ⤢ Sharpe ratio and total return vs benchmark
+Risk-adjusted performance, Sharpe ratio and total return 0 1.5 3 -0.61 Sharpe ratio (Rp − Rf) / σ · risk-free rate assumed nil · annualised Total net return vs benchmark -26% buy & hold +2%
+
+Illustrative data, no real value, no investment advice.
+
+---
+
+# Financial markets — Favourable case — Sprezzature
+
+Source: https://sprezzature.ai/financial-markets.html
+
+sprezzature · financial markets
+
+# Case study: financial markets
+
+Net return
++123%
+net of fees
+
+vs buy & hold
++87 pts
+benchmark +35%
+
+Sharpe ratio
+2.05
+net, annualised
+
+Max drawdown
+-10%
+below the peak
+
+Winning sessions
+48%
+cumulative cost 1.8%
+
+On a phone, each chart fits the width. Tap ⤢ on any panel for fullscreen, then pinch to zoom into the detail.
+
+1 Net wealth compared ⤢ Base 100 index · us (auto Kₜ), buy & hold and fixed K
+Net wealth compared, base 100 50 100 150 200 250 300 index (base 100) us index 223 Buy & hold index 135 K = 1 index 267 K = 3 index 240 K = 5 index 261 2024 2025 2026
+
+2 Automatic size Kₜ ⤢ Number of holdings over time
+Automatic portfolio size, number of holdings Kt 0 5 10 15 20 holdings average 10 holdings 2024 2025 2026
+
+3 The 100 stocks ⤢ Prices indexed to 100 · logarithmic scale
+The 100 stocks, indexed to 100, log scale 50 100 200 400 800 index (base 100) the 100 stocks median of the 100 3 eventual winners 2024 2025 2026
+
+4 Daily net P&L ⤢ Net return (%) per session · blue up, red down
+Daily net P&L, return per session -1.6% +0.0% +1.6% up down 20-day avg 2024 2025 2026
+
+5 Per-rebalance and cumulative cost ⤢ Dual axis · basis points and percent
+Per-rebalance cost in basis points and cumulative cost in percent 0 5 10 15 20 0.0% 2.0% 4.0% per rebalance (bps) cumulative (%) 2024 2025 2026
+
+6 Return distribution ⤢ Density of daily net return (%), by year
+Distribution of daily net returns, by year 2024 2025 2026 -2% -1% +0% +1% +2% daily net return (%)
+
+7 Monthly returns ⤢ Blue positive, red negative (%)
+Monthly returns, blue positive red negative J F M A M J J A S O N D 2024 +0 +0 +0 +0 +0 +4 +2 +1 -4 +6 +11 -4 2025 +1 +1 +8 +2 +0 +17 +13 -0 -2 +4 +5 -1 2026 +6 -0 +4 +4 -1 +4 +4
+
+8 Turnover at rebalances ⤢ Dual axis · share of the book traded (%)
+Turnover at rebalances and its moving average 0% 50% 100% 150% 40% 60% 80% 100% 120% turnover (%) average (%) 22 rebalances, first to last
+
+9 Drawdown ⤢ Distance (%) below the running peak (drawdown)
+Drawdown, distance below the running peak -15% -10% -5% 0% distance (%) drawdown max drawdown -10% 2024 2025 2026
+
+10 Risk-adjusted performance ⤢ Sharpe ratio and total return vs benchmark
+Risk-adjusted performance, Sharpe ratio and total return 0 1.5 3 2.05 Sharpe ratio (Rp − Rf) / σ · risk-free rate assumed nil · annualised Total net return vs benchmark +123% buy & hold +35%
+
+1 Net wealth compared ⤢ Base 100 index · us (auto Kₜ), buy & hold and fixed K
+Net wealth compared, base 100 50 100 150 200 250 300 index (base 100) us index 223 Buy & hold index 135 K = 1 index 267 K = 3 index 240 K = 5 index 261 2024 2025 2026
+
+2 Automatic size Kₜ ⤢ Number of holdings over time
+Automatic portfolio size, number of holdings Kt 0 5 10 15 20 holdings average 10 holdings 2024 2025 2026
+
+3 The 100 stocks ⤢ Prices indexed to 100 · logarithmic scale
+The 100 stocks, indexed to 100, log scale 50 100 200 400 800 index (base 100) the 100 stocks median of the 100 3 eventual winners 2024 2025 2026
+
+4 Daily net P&L ⤢ Net return (%) per session · blue up, red down
+Daily net P&L, return per session -1.6% +0.0% +1.6% up down 20-day avg 2024 2025 2026
+
+5 Per-rebalance and cumulative cost ⤢ Dual axis · basis points and percent
+Per-rebalance cost in basis points and cumulative cost in percent 0 5 10 15 20 0.0% 2.0% 4.0% per rebalance (bps) cumulative (%) 2024 2025 2026
+
+6 Return distribution ⤢ Density of daily net return (%), by year
+Distribution of daily net returns, by year 2024 2025 2026 -2% -1% +0% +1% +2% daily net return (%)
+
+7 Monthly returns ⤢ Blue positive, red negative (%)
+Monthly returns, blue positive red negative J F M A M J J A S O N D 2024 +0 +0 +0 +0 +0 +4 +2 +1 -4 +6 +11 -4 2025 +1 +1 +8 +2 +0 +17 +13 -0 -2 +4 +5 -1 2026 +6 -0 +4 +4 -1 +4 +4
+
+8 Turnover at rebalances ⤢ Dual axis · share of the book traded (%)
+Turnover at rebalances and its moving average 0% 50% 100% 150% 40% 60% 80% 100% 120% turnover (%) average (%) 22 rebalances, first to last
+
+9 Drawdown ⤢ Distance (%) below the running peak (drawdown)
+Drawdown, distance below the running peak -15% -10% -5% 0% distance (%) drawdown max drawdown -10% 2024 2025 2026
+
+10 Risk-adjusted performance ⤢ Sharpe ratio and total return vs benchmark
+Risk-adjusted performance, Sharpe ratio and total return 0 1.5 3 2.05 Sharpe ratio (Rp − Rf) / σ · risk-free rate assumed nil · annualised Total net return vs benchmark +123% buy & hold +35%
+
+Illustrative data, no real value, no investment advice.
+
+---
+
+# Tribute to Hans Rosling — Sprezzature
+
+Source: https://sprezzature.ai/hans-rosling.html
+
+sprezzature-figures · Case Study
+
+# Tribute to Hans Rosling
+
+Hans Rosling turned a bubble chart into a
+story the whole world could feel.
+
+Best seen in landscape. Tap ↗ for fullscreen, then pinch to zoom.
+
+## Wealth & Child Survival
+
+↗
+Fullscreen
+
+⏸
+Pause
+↻
+◀
+1950
+▶
+
+Speed
+0.5×
+1×
+2×
+Jump to
+1950
+1976
+Vietnam
+1990
+Germany
+1991
+USSR
+2020
+Pandemic
+
+Follow a country
+
+—
+
+## Wealth & Health
+
+↗
+Fullscreen
+
+⏸
+Pause
+↻
+◀
+1950
+▶
+
+Speed
+0.5×
+1×
+2×
+Jump to
+1950
+1976
+Vietnam
+1990
+Germany
+1991
+USSR
+2020
+Pandemic
+
+Follow a country
+
+—
+
+## Fertility and Life Expectancy
+
+↗
+Fullscreen
+
+⏸
+Pause
+↻
+◀
+1950
+▶
+
+Speed
+0.5×
+1×
+2×
+Jump to
+1950
+1976
+Vietnam
+1990
+Germany
+1991
+USSR
+2020
+Pandemic
+
+Follow a country
+
+—
+
+---
+
+# Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind
+
+Source: https://sprezzature.ai/
+
+# Sprezzature
+
+in the broadest sense
+
+Explore
+the nine skills
+See
+the gallery
+Give a ⭐️ on GitHub
+
+## Getting started
+
+Sprezzature is a set of skills for
+Claude Code or OpenCode . Install the ones you want, then ask in plain
+language. The skill both makes the artifact and audits it.
+
+*]:min-w-0">
+
+### 1 · Install
+
+Grab the latest release, copy the skills you
+want into your runtime.
+
+VERSION=1.0.0 # latest tag on the releases page
+curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz | tar xz
+
+mkdir -p ~/.claude/skills # OpenCode: ~/.opencode/skills
+cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/
+Just want one tool, no agent? Each deterministic tool also ships as a standalone pip package. See Packages .
+
+### 2 · Ask, in plain English
+
+Trigger phrases route the request; the skill
+makes it, then audits it against the rules.
+
+"make this page accessible" → sprezzature-accessibility lints the HTML and reports what to fix.
+
+"make a figure of this CSV" → sprezzature-figures draws it, then audits the chart.
+
+"wrap this CLI in a GUI" → sprezzature-cli-gui scaffolds a usable interface.
+
+Full install options (checksums, OpenCode + local Ollama, upgrades) →
+
+## The tool ecosystem
+
+Each skill's scripts also ship as a standalone pip-installable package. Use them in your own pipelines, without the agent layer.
+
+sprezzature-figures — 126 chart types
+
+sprezzature-colors — WCAG + CVD + Tailwind
+
+sprezzature-audio — speech-to-text, diarization
+
+sprezzature-accessibility — a11y lint
+
+sprezzature-cli-gui — CLI to GUI
+
+sprezzature-ux-laws — Laws of UX audit
+
+best-engine-ai-helper — hardware + model select, pluggable LLM backend
+
+## The nine skills
+
+## A taste of what it renders
+
+A few frames from sprezzature-figures : our house style and images made with care, on a fitting palette. The full catalog of charts and statistical plots has its own page.
+
+See
+the full gallery →
+
+## What's unusual
+
+### Make and audit
+
+Build from scratch or on an existing codebase, then
+audit the result against the rules.
+
+### The models can run on your machine
+
+The text, audio and vision models could run locally if you ask for it; nothing has to leave the
+machine.
+
+### Opinionated graphical choices
+
+Skills cover accessibility, colors, typography,
+languages, search-engine optimization (SEO), and generative-engine optimization (GEO).
+
+### Runtime-portable
+
+Skills serve Claude Code and OpenCode or completely locally and free.
+
+## Highlights
+
+### 👁️ Look at the figure before you ship it
+
+You can proofread a sentence by reading it back. You
+can't do that with a chart: whether it's right lives in the pixels, not the code. So the Ralph
+Eyeball Loop takes whatever you made (an SVG figure, a TikZ figure, a Mermaid diagram, a whole web
+page) and renders it to an image with a deterministic tool, no model involved. Then something actually looks
+at it: by default the agent itself, the same one that wrote the code, or, fully offline, an optional local
+vision model. It catches what a code check never will: a label cut off at the edge, a legend that slid off
+the canvas, two nodes sitting on top of each other, colors that vanish for a colorblind reader. Fix the
+source, render again, look again. It's a prescribed review loop, not an autonomous critic. Everyone else
+aims this at web pages. We aim it at charts and diagrams too.
+
+How the Ralph Eyeball Loop works →
+
+### 📐 The figure is a real SVG, not a picture
+
+A figure ships as carefully written scalable vector graphics
+(SVG). The generators emit the markup directly, each with a matching viewBox , so the graphic scales to any size without a blurry pixel and the
+text stays selectable. The generator writes SVG directly, so there is no separate chart-description spec to
+export, and the Portable Network Graphics (PNG) is only an export for
+places that can't take vector art. The SVG is the deliverable.
+
+## State of the Art
+
+The full landscape (15 category matrices) lives in
+LANDSCAPE.md
+( français ).
+
+## Acknowledgments
+
+Special thanks to
+Audrey
+Dejoux ,
+Laurent
+Pantanacce ,
+Auguste
+Baum ,
+Julien
+Boyer and
+Jérôme Gombert
+for fruitful discussions.
+
+Color palettes from harchaoui.org/warith/colors .
+
+The three Roboto families are bundled under the SIL Open Font License.
+
+We also drew on the
+Human Interface
+Guidelines ,
+Google Material Design and
+Laws of UX .
+
+---
+
+# Maps — Sprezzature
+
+Source: https://sprezzature.ai/maps.html
+
+sprezzature · case studies
+
+# Maps
+
+Good-quality cartography, reproducible on data of your choice.
+
+← All case studies
+
+## Choropleth
+
+One value per country on a hand-written closed-form Equal Earth projection — restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an OKLCH-interpolated ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer — real GMTED2010 elevation, not a flat hillshade — sits under the fills.
+
+Sequential ramp : pale-to-navy blue, magnitude reads by lightness alone.
+
+Diverging ramp : auto-detected from the data's sign, terracotta ↔ navy through a real neutral zero.
+
+At scale : the relief layer — Andes, Rockies, Alps, Himalaya — reads clearly once rendered larger.
+
+From sprezzature-maps , the cartography package split out of sprezzature-figures.
+
+## Thematic maps
+
+Further glyph and cartogram techniques from sprezzature-figures, layered over the same offline Natural Earth basemap.
+
+Bivariate choropleth : Two variables blended on a 3×3 color key.
+
+Proportional-symbol map : Area-true √-scaled bubbles on a world basemap.
+
+Connection / flow map : Great-circle arcs weighted by volume.
+
+Pie-glyph map : A small pie chart placed at each region.
+
+Bar-glyph map : Mini bar charts placed at each region.
+
+Tile-grid cartogram : One equal tile per country, geographic layout.
+
+Diverging + annotated : Signed change, no-data gray, key countries labeled.
+
+Small multiples : One panel per year, class breaks frozen.
+
+## Situation maps
+
+A layered reference plate for any region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred Lambert Conformal Conic projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed-in the region is — a whole continent doesn't need 10m detail invisible at that scale; a single country does. The same relief technique as the choropleth above — real elevation, texture-shaded, warm/cool duotone — carries every plate.
+
+Western Europe : the built-in reference demo — 50m borders, the Alps in full relief texture.
+
+Iberia : Spain + Portugal — the clearest single example of the texture-shading relief technique.
+
+Himalaya : an all-land plate — no sea to contrast against, relief carries the whole plate.
+
+Switzerland, zoomed : a small enough bbox switches to the 10m border tier automatically.
+
+### Applied: areas of control
+
+The same reference plate becomes a geopolitics-desk product once thematic layers go on top: classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, and a floating legend. Below is Ukraine. Schematic, from open sources, not intelligence.
+
+Ukraine : government / occupied / contested along an approximate 2024 contact line. Schematic, not operational intelligence.
+
+Reference plates from sprezzature-maps ; the areas-of-control layer stays in sprezzature-figures.
+
+## How the choropleth and situation maps are built
+
+Every map above is a hand-authored SVG document — no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.
+
+Equal Earth, not equirectangular
+A closed-form polynomial projection (Šavrič, Patterson & Jenny, 2018) — equal-area, so a choropleth's colored surface isn't quietly lying about country size.
+
+OKLCH color, not RGB lerp
+Ramps interpolate in a perceptually-uniform space (Björn Ottosson's OKLab), verified colour-vision-deficiency-safe by actually simulating protanopia/deuteranopia/tritanopia on the rendered output.
+
+Natural Earth, 50m and 10m
+Public-domain vector borders, vendored offline. Situation maps pick the tier automatically from how zoomed-in the requested region is.
+
+Real elevation, not a flat hillshade
+Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with texture shading (Brown, 2010 — a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).
+
+## Real data: the last five French presidential runoffs
+
+The same carefully authored SVG map engine, on real data from the French Ministère de l'Intérieur: the winner's second-round vote share by département across the last five presidential elections, on one frozen blue scale so the panels compare. 2002 (the republican sprezzature against the far right) is near-uniform; 2012 (the closest) is the palest; 2017 and 2022 show the lighter départements where Marine Le Pen ran strongest.
+
+Real data: the last five French presidential runoffs
+
+Year
+Winner
+%
+Runner-up
+%
+
+2002 Jacques Chirac 82.21 Jean-Marie Le Pen 17.79
+
+2007 Nicolas Sarkozy 53.06 Ségolène Royal 46.94
+
+2012 François Hollande 51.64 Nicolas Sarkozy 48.36
+
+2017 Emmanuel Macron 66.10 Marine Le Pen 33.90
+
+2022 Emmanuel Macron 58.55 Marine Le Pen 41.45
+
+Source: Ministère de l'Intérieur (2nd-round results by département).
+
+## Map techniques (carefully authored SVG)
+
+When a projection or a glyph falls outside a chart grammar, the same loop drives a carefully drawn Scalable Vector Graphics (SVG) map instead.
+
+Dot-density map : One dot per N people inside real regions.
+
+Hexbin map : Hexagonal binning of point density over a map.
+
+Spike map : Vertical spikes at locations, height by value.
+
+Hexbin map : Earthquakes binned into hexagons by count, tracing the Ring of Fire.
+
+Binned grid map : Square-bin aggregation over geography, cells coloured by count.
+
+×
+
+---
+
+# Packages — Sprezzature
+
+Source: https://sprezzature.ai/packages.html
+
+standalone packages
+
+# Packages
+
+Sprezzature has three layers. The skills (the SKILL.md files an agent reads) stay in the main repository. The deterministic tools each graduate into their own pip-installable package, so you can use one without cloning the whole stack. A local runtime lets the tools run offline against a local model.
+
+Each package is BSD-3-Clause, local-first, and independently versioned. They are not on PyPI yet, so install straight from GitHub.
+
+## Deterministic tools
+
+sprezzature-figures
+
+### Figures
+
+126 hand-authored SVG chart types, no Vega, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-figures
+Repository →
+
+sprezzature-maps
+
+### Maps
+
+Hand-authored SVG cartography split out of sprezzature-figures: an Equal Earth choropleth with an OKLCH ramp, and layered Lambert Conformal Conic situation maps, both with a real-elevation warm/cool relief.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-maps
+Repository →
+
+sprezzature-colors
+
+### Colors
+
+WCAG contrast auditing with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and Tailwind export.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-colors
+Repository →
+
+sprezzature-accessibility
+
+### Accessibility
+
+A static HTML accessibility linter: source-decidable WCAG/WAI rules, no browser, no runtime DOM. A fast pre-commit gate.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-accessibility
+Repository →
+
+sprezzature-cli-gui
+
+### CLI → web GUI
+
+Auto-generate a single-file HTML GUI from any Python CLI: it introspects argparse, Click, or Typer, with no build step.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-cli-gui
+Repository →
+
+sprezzature-ux-laws
+
+### Laws of UX
+
+A static Laws-of-UX auditor for HTML: Hick, Miller, Fitts, Jakob, Tesler and more, decidable from source.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-ux-laws
+Repository →
+
+sprezzature-audio
+
+### Audio
+
+Local captions (whisper.cpp), speaker diarization and who-is-who, narration and translation. ML backends are optional extras.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-audio
+Repository →
+
+## Runtime & engine
+
+best-engine-ai-helper
+
+### Engine picker & local runtime
+
+Detect the machine, pick a model from a catalog, and validate a local LLM / VLM before the skills lean on it. Every skill's LLM/VLM call routes through its chat abstraction: a pluggable backend (Ollama, OpenAI-compatible, LangChain), the Ralph loop, and the writing pipeline.
+
+pip install git+https://github.com/warith-harchaoui/best-engine-ai-helper
+Repository →
+
+sprezzature-local
+
+### Offline runtime
+
+The offline runtime the skills call into: llm.py 's pluggable chat backend, the Ralph Eyeball Loop, and the writing pipeline. Reads SPREZZATURE_LLM_* env vars; every other package takes it as an optional dependency, never a hard one.
+
+pip install git+https://github.com/warith-harchaoui/sprezzature-local
+Repository →
+
+Looking for the agent skills instead? The SKILL.md layer ships together as the skills bundle on the Getting started section.
+
+---
+
+# Publishing — Sprezzature
+
+Source: https://sprezzature.ai/publish.html
+
+sprezzature-publish
+
+# Publishing
+
+Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / progressive web app (PWA)-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local text-to-speech (TTS) narration.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+Per-page Open Graph + Twitter Card + Schema.org JSON for Linking Data (JSON-LD)
+
+A full favicon / app-icon / PWA-icon set from one logo, plus a webmanifest
+
+robots.txt, sitemap.xml, llms.txt, Atom / Really Simple Syndication (RSS), humans.txt
+
+Plain-language rewrites and audio (MP3) narration via local open-source (OSS) TTS
+
+## Audits
+
+Lint Markdown and catch broken links before publishing
+
+Readability / grade-level checks on the copy
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+markdown to website
+meta tags
+OG card
+SEO
+GEO
+favicons
+robots.txt
+sitemap
+llms.txt
+Atom feed
+plain language
+narrate this post
+lint markdown
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+SEO essentials
+Meta tags
+Site indexes
+Plain language
+Narration
+i18n
+Lint Markdown
+
+---
+
+# The Ralph Eyeball Loop — Sprezzature
+
+Source: https://sprezzature.ai/ralph-eyeball-loop.html
+
+👁️ the idea
+
+# The Ralph Eyeball Loop
+
+You can proofread a sentence by reading it back. You can't do that with a chart. So look at the chart, fix what your eye caught, and look again.
+
+Render, look, critique, edit, then round again. Click to enlarge.
+
+In Sprezzature , an AI agent runs this loop itself, refusing to trust a figure it hasn't looked at.
+
+## Whether it's right lives in the pixels
+
+Code that draws a chart can be correct and the chart still be wrong. A label slides off the edge. A legend lands on top of the data. Two points sit exactly on each other. A red-and-green palette turns into one muddy colour for a reader who can't tell them apart. None of that shows up when you read the source. It only shows up when you see the result.
+
+Text is easy this way: you read it back and the mistake is right there. A picture is not. The only honest test of a picture is to look at it.
+
+## The loop, in four steps
+
+1 Render. Turn whatever you made (a chart, a diagram, a map, a whole web page) into a plain image with a deterministic tool. No model, no guessing. The same input gives the same picture every time.
+
+2 Look. Actually study the image. Is the point you're making the first thing the eye finds? Is anything cut off, cramped, or on top of something else?
+
+3 Fix the source. Change the spec, never the picture. The picture is only ever the evidence.
+
+4 Do it again. Render, look, fix, until there is nothing left to catch. Then ship.
+
+## Make, audit, then look
+
+Three moves sit under everything in Sprezzature . You make the thing from code, so it reproduces exactly and carries its own data. You audit it with a static pass over the source that catches what the markup can already tell you: a rainbow scale, a blur filter, a missing title. Then you look , because whether it is actually right lives in the pixels.
+
+Make proves it runs. Audit proves the source is clean. The Eyeball Loop proves the result reads. Each move catches what the other two let through, and together they turn "the file exported" into "the figure holds up." That is where the power is: a short, honest circuit you run until nothing is left to catch.
+
+The loop reaches into accessibility too. Right after the render, a colour-vision simulator redraws the image the way a colour-blind reader sees it, and in plain grayscale. If a series or a plus-or-minus sign disappears once the colour is gone, that is a bug you fix before shipping, not a footnote.
+
+## Eyes you don't have
+
+This is the part worth dwelling on. A person with normal colour vision cannot see their own chart the way a colour-blind reader does, and no amount of care changes that, because the information is not in their eye. The simulator renders those other viewpoints, and the loop lets you look at them, so accessibility stops being a checklist you take on trust and becomes something you can see and correct. A review a person cannot physically perform turns into an ordinary step.
+
+Grayscale is the sharpest single test. Total colour blindness is rare, but a figure that reads with no colour at all reads under every milder deficiency too. If the story survives grey, it survives everyone.
+
+The palette also carries an accessibility level. The default is universal, already safe for colour vision, and high-contrast, monochrome, and per-deficiency variants are there on demand. One figure becomes a short ladder of renders, and the loop climbs it: render each level, simulate, look. You confirm the default reads for everyone, and that each stronger level does what it promises, with the same eyes in the same loop.
+
+## Who does the looking?
+
+By default, the agent that wrote the code does the looking, now checking its own output instead of trusting it. A small vision model can do the looking too if you ask for it.
+
+Either way, the step that turns code into a picture is plain and deterministic. It holds no opinions. It's a prescribed review loop, not a black box that grades your work. You stay in charge; the loop just makes sure someone actually looked.
+
+## Why we built the whole thing around it
+
+Plenty of tools will screenshot a web page and check it. We point the same discipline at the harder stuff: charts, statistical plots, diagrams, and maps. These are the things people usually ship without ever looking, because the code ran and the file saved.
+
+That habit is the difference between a figure that merely exports and one that actually reads. It is how every figure in the gallery reached print quality: we looked at the result and refused to ship until it held up.
+
+See the gallery
+
+×
+
+---
+
+# UI generation — Sprezzature
+
+Source: https://sprezzature.ai/ui.html
+
+sprezzature-ui
+
+# user interface (UI) generation
+
+Vanilla JavaScript (JS) + Tailwind UI: components, pages, forms, dialogs, dashboards, for solo devs shipping internal tools without a designer.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+Semantic HyperText Markup Language (HTML) + Tailwind: forms, modals, nav, dashboards, data tables, settings, empty states, skeletons
+
+Dark-mode peers, focus rings, reduced-motion guards on by default
+
+The three-Roboto type rule (sans + serif + mono), honoring any font you name
+
+i18n extracted to a single YAML configuration format shared by graphical user interface (GUI) and prompts
+
+## Audits
+
+Audit existing UI against the stack + ergonomics rules
+
+Audit i18n coverage and surface untranslated strings
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+build a UI
+create a component
+make a form / modal / nav
+scaffold a landing
+dashboard / data table
+dark mode toggle
+responsive layout
+audit this UI
+i18n to YAML
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+Tailwind stack
+Vanilla JS
+Anti-patterns
+Ship checklist
+UX psychology
+Ergonomics
+Dashboards
+Material
+Chart selection
+Dataviz palettes
+Dataviz maps
+Charts in Vega
+Color psychology
+Examples
+
+---
+
+# Laws of UX — Sprezzature
+
+Source: https://sprezzature.ai/ux-laws.html
+
+sprezzature-ux-laws
+
+# Laws of user experience (UX)
+
+Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JavaScript (JS) + Tailwind: both when making new user interface (UI) and when auditing existing HyperText Markup Language (HTML). Reference covers 30 laws with trigger / action / Tailwind hook.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+Design a screen with Hick / Fitts / Miller / Peak-End in mind
+
+Each law paired with a concrete Tailwind hook
+
+## Audits
+
+Static auditor flags the mechanically-detectable subset: Hick, Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Doherty, Choice Overload
+
+Severity + JavaScript Object Notation (JSON) output for pre-commit / continuous integration (CI)
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+audit for Laws of UX
+design this screen using Hick / Fitts
+is my nav too Hick-heavy
+too many choices
+cognitive load
+Doherty threshold
+reduce clutter
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+The 30 laws
+
+---
+
+# Vision — alt text — Sprezzature
+
+Source: https://sprezzature.ai/vision.html
+
+sprezzature-vision
+
+# Vision — alt text
+
+World Wide Web Consortium (W3C)-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b. Nothing leaves the machine.
+
+Work in progress: every output is a draft requiring human review, not finished alt text.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+Alt-text drafts for informative / decorative / functional / text / complex / group images
+
+Output in any detected language, native phrasing for common ones
+
+Surrounding-text and project-vocabulary biasing
+
+A deterministic on-disk cache: same image never hits the model twice
+
+## Audits
+
+Flags images with no alt
+
+Drafts are starting points; verify before committing
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+alt text
+describe this image
+draft alt
+image description
+img has no alt
+decorative image
+figure / chart description
+batch alt text
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+Alt-text with AI

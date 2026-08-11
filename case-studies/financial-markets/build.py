@@ -402,9 +402,22 @@ def _page(g: D.Portfolio, st: Dict[str, float], lang: str, scenario: str) -> str
     canonical = f"{_SITE}/{'fr/' if lang == 'fr' else ''}{_filename(scenario)}"
     alt_en = f"{_SITE}/{_filename(scenario)}"
     alt_fr = f"{_SITE}/fr/{_filename(scenario)}"
+    # Le favorable/défavorable ne se distingue autrement que par le menu
+    # déroulant en JS : title/description identiques entre les deux pages
+    # seraient un contenu dupliqué classique aux yeux des moteurs. On
+    # personnalise donc les deux avec le libellé du scénario + le rendement
+    # net réellement obtenu (calculé plus haut dans main(), déjà présent
+    # dans st), ce qui les rend uniques ET plus informatifs (SEO + GEO).
+    scen_label = _SCEN_LABEL[scenario][1 if lang == "en" else 0]
+    rn_pct = S.fr_pct(st["total_return"] * 100.0, 0, True)
+    title = f"{c['title'].replace(' — Sprezzature', '')} — {scen_label} — Sprezzature"
+    if lang == "fr":
+        desc = f"{c['desc']} Ce {scen_label.lower()} affiche {rn_pct} de rendement net."
+    else:
+        desc = f"{c['desc']} This {scen_label.lower()} shows {rn_pct} net return."
     repl = {
         "__LANG__": lang, "__BASE__": base,
-        "__TITLE__": c["title"], "__DESC__": c["desc"],
+        "__TITLE__": title, "__DESC__": desc,
         "__CANONICAL__": canonical, "__ALTEN__": alt_en, "__ALTFR__": alt_fr,
         "__SKIP__": c["skip"], "__NAVLABEL__": c["navlabel"],
         "__NAV_SKILLS__": c["skills"], "__NAV_GALLERY__": c["gallery"],
