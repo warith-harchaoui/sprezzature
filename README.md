@@ -2,11 +2,11 @@
 
 [🇫🇷](LISEZMOI.md) · [🇬🇧](README.md)
 
-<p align="center"><a href="https://harchaoui.org/warith/sprezzature/">
-  <img src="https://harchaoui.org/warith/sprezzature/img/logo.png" alt="Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
+<p align="center"><a href="https://sprezzature.ai/">
+  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
 </p>
 
-[🌍 Documentation](https://harchaoui.org/warith/sprezzature/)
+[🌍 Documentation](https://sprezzature.ai/)
 
 [💻 Examples](EXAMPLES.md)
 
@@ -99,7 +99,7 @@ every skill) see [`PHILOSOPHY.md`](PHILOSOPHY.md) (français :
 A deployable, multi-page static site, built with the `sprezzature-*` skills themselves
 (sprezzature-ui house style, sprezzature-publish meta / favicons / sitemap / llms.txt,
 sprezzature-colors palette, sprezzature-accessibility clean, a working 🌞/🌛 toggle), lives
-in [`web/`](web/) and publishes to <https://harchaoui.org/warith/sprezzature/>. It has
+in [`web/`](web/) and publishes to <https://sprezzature.ai/>. It has
 a detail page per skill (make / audit / triggers / reference library) plus a
 dedicated **figures gallery** rendering the whole `sprezzature-figures` catalog. The
 gallery carries a **"See it for…" colour-vision viewer** that applies a live

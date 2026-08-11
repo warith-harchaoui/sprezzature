@@ -1,24 +1,26 @@
 <!doctype html>
-<html lang="fr" data-color-scheme="light">
+<html lang="fr" data-color-scheme="light" data-color-mode="academic">
 
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Figures — Sprezzature</title>
   <meta name="description"
     content="Un catalogue rendu de graphiques et tracés statistiques issus de sprezzature-figures: 126 types de graphiques en SVG écrit à la main, à partir de données fictives sur une palette soignée.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/fr/figures.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/figures.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/figures.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/figures.html">
+  <link rel="canonical" href="https://sprezzature.ai/fr/figures.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/figures.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/figures.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/figures.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Figures — Sprezzature">
   <meta property="og:description"
     content="Un catalogue rendu de graphiques et tracés statistiques issus de sprezzature-figures: 126 types de graphiques en SVG écrit à la main, à partir de données fictives sur une palette soignée.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/fr/figures.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/figures/choropleth.svg">
+  <meta property="og:url" content="https://sprezzature.ai/fr/figures.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/figures/choropleth.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -37,7 +39,7 @@
         "@type": "WebPage",
         "name": "Figures — Sprezzature",
         "description": "Catalogue rendu de graphiques et tracés statistiques depuis sprezzature-figures : 126 types de graphiques en SVG écrit à la main, tous sur données fictives avec une palette curatée.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/figures.html",
+        "url": "https://sprezzature.ai/fr/figures.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -46,7 +48,7 @@
         "name": "sprezzature-figures",
         "applicationCategory": "DeveloperApplication",
         "description": "Génère des visualisations de données de qualité publication : tracés statistiques en SVG écrit à la main et diagrammes d'explicabilité SHAP, sans Vega. Chaque type de graphique est livré sous forme de générateur make_*.py sur une palette sûre pour le daltonisme.",
-        "url": "https://harchaoui.org/warith/sprezzature/fr/figures.html",
+        "url": "https://sprezzature.ai/fr/figures.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -90,6 +92,8 @@
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer de thème"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -460,18 +464,6 @@
               <img src="../img/figures/fr/difference-chart.png" alt="Graphique de différence avec deux séries temporelles et l’écart entre elles coloré en deux teintes, une teinte là où la première passe au-dessus et une autre là où elle passe en dessous." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Graphique de différence</span> <span class="text-neutral-500 dark:text-neutral-400">: Deux séries avec l’écart coloré en deux teintes.</span></figcaption>
-          </figure>
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir: Gapminder" data-src="../img/figures/fr/gapminder.svg" data-alt="Bulles animées en hommage à Hans Rosling, une image par année de 1950 à 2025 : chaque bulle est un pays, l'horizontale est le PIB par habitant, la verticale l'espérance de vie, l'aire la population, la couleur la région du monde.">
-              <img src="../img/figures/fr/gapminder.png" alt="Bulles animées en hommage à Hans Rosling, une image par année de 1950 à 2025 : chaque bulle est un pays, l'horizontale est le PIB par habitant, la verticale l'espérance de vie, l'aire la population, la couleur la région du monde." loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Gapminder</span> <span class="text-neutral-500 dark:text-neutral-400">: Bulles animées, revenu contre espérance de vie sur les décennies.</span></figcaption>
-          </figure>
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Agrandir: Variantes Gapminder" data-src="../img/figures/fr/gapminder_variants.svg" data-alt="Bulles animées, une image par année de 1950 à 2025 : l'horizontale est l'indice de fécondité, la verticale l'espérance de vie, l'aire la population, la couleur la région du monde ; le nuage file vers le haut et la gauche à mesure que les familles rétrécissent et les vies s'allongent.">
-              <img src="../img/figures/fr/gapminder_variants.png" alt="Bulles animées, une image par année de 1950 à 2025 : l'horizontale est l'indice de fécondité, la verticale l'espérance de vie, l'aire la population, la couleur la région du monde ; le nuage file vers le haut et la gauche à mesure que les familles rétrécissent et les vies s'allongent." loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Variantes Gapminder</span> <span class="text-neutral-500 dark:text-neutral-400">: Fécondité et espérance de vie, animées sur les décennies.</span></figcaption>
           </figure>
         </div>
       </div>
@@ -1481,6 +1473,7 @@
     </div>
   </footer>
   <script src="../js/theme.js?v=8bcd5883cf" defer></script>
+  <script src="../js/color-mode.js" defer></script>
   <script src="../js/lightbox.js?v=8bcd5883cf" defer></script>
   <script src="../js/fullscreen.js?v=8bcd5883cf" defer></script>
   <script src="../js/voir-pour.js?v=8bcd5883cf" defer></script>

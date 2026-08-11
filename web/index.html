@@ -1,17 +1,19 @@
 <!doctype html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-color-scheme="light" data-color-mode="academic">
 
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind</title>
   <meta name="description"
     content="Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/">
+  <link rel="canonical" href="https://sprezzature.ai/">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
@@ -29,8 +31,8 @@
   <meta property="og:title" content="Sprezzature — nine Claude / OpenCode skills">
   <meta property="og:description"
     content="A design system for one frontend stack: UI, CLI→GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Make and audit.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:url" content="https://sprezzature.ai/">
+  <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="The Sprezzature project logo.">
 
   <!-- Twitter -->
@@ -38,7 +40,7 @@
   <meta name="twitter:title" content="Sprezzature — nine Claude / OpenCode skills">
   <meta name="twitter:description"
     content="Skills for one frontend stack: UI, CLI→GUI, publishing, a11y, colors, alt text, captions, Laws of UX, and figures.">
-  <meta name="twitter:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta name="twitter:image" content="https://sprezzature.ai/img/logo.png">
 
   <!-- Favicons (relative paths — the site lives under /warith/sprezzature/) -->
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -62,7 +64,7 @@
       {
         "@type": "WebSite",
         "name": "Sprezzature",
-        "url": "https://harchaoui.org/warith/sprezzature/",
+        "url": "https://sprezzature.ai/",
         "description": "Nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures.",
         "inLanguage": "en",
         "author": { "@type": "Person", "name": "Warith Harchaoui",
@@ -157,6 +159,7 @@
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -421,6 +424,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       </a>`).join('');
   </script>
   <script src="js/theme.js" defer></script>
+  <script src="js/color-mode.js" defer></script>
 </body>
 
 </html>

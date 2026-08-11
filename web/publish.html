@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-color-scheme="light" data-color-mode="academic">
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Publishing — Sprezzature</title>
   <meta name="description" content="Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and loc">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/publish.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/publish.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/publish.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/publish.html">
+  <link rel="canonical" href="https://sprezzature.ai/publish.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/publish.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/publish.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/publish.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Publishing — Sprezzature">
   <meta property="og:description" content="Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and loc">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/publish.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/logo.png">
+  <meta property="og:url" content="https://sprezzature.ai/publish.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -37,7 +39,7 @@
         "@type": "WebPage",
         "name": "Publishing — Sprezzature",
         "description": "Turn a folder of Markdown into a static site: per-page meta tags, favicons, robots, sitemap, llms.txt, plain-language rewrites, and localised narration.",
-        "url": "https://harchaoui.org/warith/sprezzature/publish.html",
+        "url": "https://sprezzature.ai/publish.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -46,7 +48,7 @@
         "name": "sprezzature-publish",
         "applicationCategory": "DeveloperApplication",
         "description": "Converts a Markdown folder into a static site. Generates per-page SEO and Open Graph meta tags, a full favicon set from one logo, robots.txt, sitemap.xml, llms.txt, llms-full.txt, and optional plain-language rewrites and narration.",
-        "url": "https://harchaoui.org/warith/sprezzature/publish.html",
+        "url": "https://sprezzature.ai/publish.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -78,6 +80,7 @@
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
         <a href="fr/publish.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -154,6 +157,7 @@
     </div>
   </footer>
   <script src="js/theme.js" defer></script>
+  <script src="js/color-mode.js" defer></script>
 
 </body>
 </html>

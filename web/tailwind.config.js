@@ -17,11 +17,15 @@ module.exports = {
         mono: ['Roboto Mono', 'ui-monospace', 'monospace'],
       },
       colors: {
+        // rgb(var(--x) / <alpha-value>) so opacity modifiers (bg-brand-navy/20)
+        // keep working while the underlying RGB triplet swaps with
+        // [data-color-mode] (see css/tailwind-input.css) between the
+        // academic (Okabe-Ito) and corporate (Apple) palettes.
         brand: {
-          blue: '#007AFF',
-          bluedark: '#0A84FF',
-          bluelight: '#CCE4FF',
-          navy: '#0A4DA0',
+          blue: 'rgb(var(--brand-blue-rgb) / <alpha-value>)',
+          bluedark: 'rgb(var(--brand-bluedark-rgb) / <alpha-value>)',
+          bluelight: 'rgb(var(--brand-bluelight-rgb) / <alpha-value>)',
+          navy: 'rgb(var(--brand-navy-rgb) / <alpha-value>)',
         },
       },
     },

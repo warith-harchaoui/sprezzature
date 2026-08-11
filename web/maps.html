@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-color-scheme="light" data-color-mode="academic">
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Maps — Sprezzature</title>
   <meta name="description" content="Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph/cartogram thematic maps and real French election data.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/maps.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/maps.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/maps.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/maps.html">
+  <link rel="canonical" href="https://sprezzature.ai/maps.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/maps.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/maps.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/maps.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Maps — Sprezzature">
   <meta property="og:description" content="Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph/cartogram thematic maps and real French election data.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/maps.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/img/maps/choropleth-large.png">
+  <meta property="og:url" content="https://sprezzature.ai/maps.html">
+  <meta property="og:image" content="https://sprezzature.ai/img/maps/choropleth-large.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
@@ -36,7 +38,7 @@
         "@type": "WebPage",
         "name": "Maps — Sprezzature",
         "description": "Equal Earth choropleth maps and layered Lambert Conformal Conic situation maps, hand-authored SVG with warm/cool duotone relief, plus thematic glyph maps and real French election data.",
-        "url": "https://harchaoui.org/warith/sprezzature/maps.html",
+        "url": "https://sprezzature.ai/maps.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -45,7 +47,7 @@
         "name": "sprezzature-maps",
         "applicationCategory": "DeveloperApplication",
         "description": "Hand-authored SVG world maps: choropleth (Equal Earth projection, OKLCH sequential/diverging ramp, Natural Earth 50m borders) and situation maps (auto-centred Lambert Conformal Conic, any region, Natural Earth 10m/50m borders by zoom). Both composite a warm/cool duotone hillshade relief layer. No Vega, no matplotlib.",
-        "url": "https://harchaoui.org/warith/sprezzature/maps.html",
+        "url": "https://sprezzature.ai/maps.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature-maps",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -76,6 +78,7 @@
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
         <a href="fr/maps.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -320,6 +323,7 @@
     </div>
   </footer>
   <script src="js/theme.js" defer></script>
+  <script src="js/color-mode.js" defer></script>
   <script src="js/lightbox.js" defer></script>
 </body>
 </html>

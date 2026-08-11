@@ -1,26 +1,28 @@
 <!doctype html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-color-scheme="light" data-color-mode="academic">
 
 <head>
+  <script>(function(){var s;try{s=localStorage.getItem('sprezzature-color-mode');}catch(e){}
+    document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tribute to Hans Rosling — Sprezzature</title>
   <meta name="description"
     content="An animated, interactive tribute to Hans Rosling's health-and-wealth bubble chart — every country, one frame per year 1950 to 2025, in a single self-contained SVG with no JavaScript library. Real data, historical splits and merges.">
-  <link rel="canonical" href="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
-  <link rel="alternate" hreflang="en" href="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
-  <link rel="alternate" hreflang="fr" href="https://harchaoui.org/warith/sprezzature/fr/hans-rosling.html">
-  <link rel="alternate" hreflang="x-default" href="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
+  <link rel="canonical" href="https://sprezzature.ai/hans-rosling.html">
+  <link rel="alternate" hreflang="en" href="https://sprezzature.ai/hans-rosling.html">
+  <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/hans-rosling.html">
+  <link rel="alternate" hreflang="x-default" href="https://sprezzature.ai/hans-rosling.html">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Tribute to Hans Rosling — Sprezzature">
   <meta property="og:description"
     content="An animated, interactive tribute to Hans Rosling's health-and-wealth bubble chart — every country, one frame per year 1950 to 2025, real data, historical splits and merges.">
-  <meta property="og:url" content="https://harchaoui.org/warith/sprezzature/hans-rosling.html">
-  <meta property="og:image" content="https://harchaoui.org/warith/sprezzature/hans.png">
+  <meta property="og:url" content="https://sprezzature.ai/hans-rosling.html">
+  <meta property="og:image" content="https://sprezzature.ai/hans.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://harchaoui.org/warith/sprezzature/hans.png">
+  <meta name="twitter:image" content="https://sprezzature.ai/hans.png">
   <link rel="icon" type="image/png" sizes="32x32" href="hans-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="hans-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="hans-apple-touch-icon.png">
@@ -176,7 +178,7 @@
         "@type": "WebPage",
         "name": "Tribute to Hans Rosling — Sprezzature",
         "description": "An animated, interactive tribute to Hans Rosling's health-and-wealth bubble chart. Every country from 1950 to 2025, one frame per year, in a single self-contained SVG with no JavaScript library.",
-        "url": "https://harchaoui.org/warith/sprezzature/hans-rosling.html",
+        "url": "https://sprezzature.ai/hans-rosling.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
@@ -184,7 +186,7 @@
         "@type": "Article",
         "headline": "Tribute to Hans Rosling — animated health and wealth bubble chart 1950 to 2025",
         "description": "A self-contained animated SVG bubble chart covering every country from 1950 to 2025, with real data, historical country splits and merges, and a fully accessible play/pause control. Built with sprezzature-figures.",
-        "url": "https://harchaoui.org/warith/sprezzature/hans-rosling.html",
+        "url": "https://sprezzature.ai/hans-rosling.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"},
         "about": {
@@ -223,6 +225,7 @@
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
+        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
       </div>
     </nav>
   </header>
@@ -470,6 +473,7 @@
     </div>
   </footer>
   <script src="js/theme.js" defer></script>
+  <script src="js/color-mode.js" defer></script>
   <script src="js/fullscreen.js" defer></script>
   <script src="js/gapminder-player.js" defer></script>
 </body>

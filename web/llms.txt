@@ -4,5 +4,5 @@
 
 ## Pages
 
-- [Head](https://harchaoui.org/warith/sprezzature/head.html)
-- [Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind](https://harchaoui.org/warith/sprezzature/): Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.
+- [Head](https://sprezzature.ai/head.html)
+- [Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.

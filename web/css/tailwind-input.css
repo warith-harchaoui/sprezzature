@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /*
+   * brand-* RGB triplets for the 🏫/🏭 color-mode toggle (js/color-mode.js).
+   * Academic is the default (no attribute, or [data-color-mode="academic"]):
+   * Okabe & Ito (2002) Blue, the colour-vision-deficiency-safe scientific
+   * standard also used by sprezzature-figures/sprezzature-colors. Corporate
+   * opts in to the Apple-system palette used by the rest of the sprezzature-*
+   * brand. bluedark/bluelight/navy are OKLCH/HSL-derived from each theme's
+   * base blue, mirroring the same lightness deltas as the corporate set
+   * (see sprezzature-colors/references/palette.csv for the source hexes).
+   */
+  :root,
+  [data-color-mode="academic"] {
+    --brand-blue-rgb: 0 114 178;       /* #0072B2 Okabe-Ito Blue */
+    --brand-bluedark-rgb: 0 120 188;   /* #0078BC hover/dark variant */
+    --brand-bluelight-rgb: 127 209 255; /* #7FD1FF light wash (used at low opacity) */
+    --brand-navy-rgb: 0 60 93;         /* #003C5D deep ink accent */
+  }
+  [data-color-mode="corporate"] {
+    --brand-blue-rgb: 0 122 255;       /* #007AFF Apple System Blue */
+    --brand-bluedark-rgb: 10 132 255;  /* #0A84FF */
+    --brand-bluelight-rgb: 204 228 255; /* #CCE4FF */
+    --brand-navy-rgb: 10 77 160;       /* #0A4DA0 */
+  }
+}
