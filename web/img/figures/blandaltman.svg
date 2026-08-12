@@ -12,7 +12,7 @@
   [fill="#6E6E73"]{fill:#9C9CA3;}
   [style*="multiply"]{mix-blend-mode:screen;}
   [stroke="#EEEEEE"]{stroke:#2A2A2C;}
-}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}.hit:hover~.tip,.hit:focus~.tip{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}</style>
+}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}.hit:hover+.tip,.hit:focus+.tip{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}</style>
 <rect width="1280" height="940" fill="#FFFFFF"/>
 <text x="128" y="88" font-size="40" font-weight="700" fill="#1D1D1F">Do the wrist monitor and the arm cuff agree?</text>
 <text x="128" y="134" font-size="23" fill="#6E6E73">Bland-Altman plot. Each dot is one patient: its difference (wrist − arm) against the two methods’ mean.</text>

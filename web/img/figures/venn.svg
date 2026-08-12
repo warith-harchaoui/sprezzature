@@ -11,7 +11,9 @@ svg:hover .setlabel, svg:focus-within .setlabel { opacity: .35; }
 .grp-C:hover .lobe-C, .grp-C:focus .lobe-C, .grp-C:hover .setlabel-C, .grp-C:focus .setlabel-C { opacity: 1; }
 .grp { cursor: pointer; }
 .grp:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 12px; }
-@media (prefers-reduced-motion: reduce) { .lobe, .setlabel { transition: none; } }
+.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}
+.hit:hover+.tip,.hit:focus+.tip{opacity:1}
+@media (prefers-reduced-motion: reduce) { .lobe, .setlabel { transition: none; } .tip{transition:none} }
 @media (prefers-contrast: more){
   .setlabel-A{fill:#004CCE;}
   .setlabel-B{fill:#006700;}
@@ -48,26 +50,36 @@ svg:hover .setlabel, svg:focus-within .setlabel { opacity: .35; }
 <circle class="lobe lobe-A" cx="540.0" cy="400.0" r="205.0" fill="none" stroke="#007AFF" stroke-width="4" stroke-opacity="0.9"/>
 <circle class="lobe lobe-B" cx="429.6" cy="594.4" r="205.0" fill="none" stroke="#28CD41" stroke-width="4" stroke-opacity="0.9"/>
 <circle class="lobe lobe-C" cx="650.4" cy="594.4" r="205.0" fill="none" stroke="#FF9500" stroke-width="4" stroke-opacity="0.9"/>
-<text x="540.0" y="292.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">96</text>
-<text x="346.0" y="692.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">74</text>
-<text x="734.0" y="692.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">58</text>
-<text x="408.0" y="478.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">188</text>
-<text x="672.0" y="478.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">121</text>
-<text x="540.0" y="714.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">63</text>
+<text class="hit" tabindex="0" x="540.0" y="292.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="Python: 96 people (12% of 814)">96</text>
+<g class="tip"><rect x="496" y="258" width="88" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="505" y="279.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Python</text><text x="505" y="295.5" font-size="12.5" font-weight="400" fill="#6E6E73">96 people</text><text x="505" y="311.5" font-size="12.5" font-weight="400" fill="#6E6E73">12% of 814</text></g>
+<text class="hit" tabindex="0" x="346.0" y="692.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="SQL: 74 people (9% of 814)">74</text>
+<g class="tip"><rect x="305.5" y="658" width="81" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="314.5" y="679.5" font-size="12.5" font-weight="700" fill="#1D1D1F">SQL</text><text x="314.5" y="695.5" font-size="12.5" font-weight="400" fill="#6E6E73">74 people</text><text x="314.5" y="711.5" font-size="12.5" font-weight="400" fill="#6E6E73">9% of 814</text></g>
+<text class="hit" tabindex="0" x="734.0" y="692.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="Cloud: 58 people (7% of 814)">58</text>
+<g class="tip"><rect x="693.5" y="658" width="81" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="702.5" y="679.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Cloud</text><text x="702.5" y="695.5" font-size="12.5" font-weight="400" fill="#6E6E73">58 people</text><text x="702.5" y="711.5" font-size="12.5" font-weight="400" fill="#6E6E73">7% of 814</text></g>
+<text class="hit" tabindex="0" x="408.0" y="478.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="Python + SQL: 188 people (23% of 814)">188</text>
+<g class="tip"><rect x="357" y="444" width="102" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="366" y="465.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Python + SQL</text><text x="366" y="481.5" font-size="12.5" font-weight="400" fill="#6E6E73">188 people</text><text x="366" y="497.5" font-size="12.5" font-weight="400" fill="#6E6E73">23% of 814</text></g>
+<text class="hit" tabindex="0" x="672.0" y="478.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="Python + Cloud: 121 people (15% of 814)">121</text>
+<g class="tip"><rect x="614" y="444" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="623" y="465.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Python + Cloud</text><text x="623" y="481.5" font-size="12.5" font-weight="400" fill="#6E6E73">121 people</text><text x="623" y="497.5" font-size="12.5" font-weight="400" fill="#6E6E73">15% of 814</text></g>
+<text class="hit" tabindex="0" x="540.0" y="714.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="SQL + Cloud: 63 people (8% of 814)">63</text>
+<g class="tip"><rect x="492.5" y="680" width="95" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="501.5" y="701.5" font-size="12.5" font-weight="700" fill="#1D1D1F">SQL + Cloud</text><text x="501.5" y="717.5" font-size="12.5" font-weight="400" fill="#6E6E73">63 people</text><text x="501.5" y="733.5" font-size="12.5" font-weight="400" fill="#6E6E73">8% of 814</text></g>
 <rect x="495.0" y="507.0" width="90.0" height="46.0" rx="23.0" fill="#FFFFFF" fill-opacity="0.86"/>
-<text x="540.0" y="530.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle">214</text>
-<g class="grp grp-A" tabindex="0" role="listitem"><title>Python: 619 of 814 (76%)</title>
-<circle class="lobe-A" cx="540.0" cy="400.0" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<text class="hit" tabindex="0" x="540.0" y="530.0" font-size="28" font-weight="700" fill="#1D1D1F" text-anchor="middle" dominant-baseline="middle" role="img" aria-label="Python + SQL + Cloud: 214 people (26% of 814)">214</text>
+<g class="tip"><rect x="461" y="496" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="470" y="517.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Python + SQL + Cloud</text><text x="470" y="533.5" font-size="12.5" font-weight="400" fill="#6E6E73">214 people</text><text x="470" y="549.5" font-size="12.5" font-weight="400" fill="#6E6E73">26% of 814</text></g>
+<g class="grp grp-A" tabindex="0" role="listitem" aria-label="Python: 619 of 814 (76%)">
+<circle class="lobe-A hit" cx="540.0" cy="400.0" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<g class="tip"><rect x="471.5" y="117" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="480.5" y="138.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Python</text><text x="480.5" y="154.5" font-size="12.5" font-weight="400" fill="#6E6E73">619 of 814 people</text><text x="480.5" y="170.5" font-size="12.5" font-weight="400" fill="#6E6E73">76% of total</text></g>
 <text class="setlabel setlabel-A" x="540.0" y="151.0" font-size="25" font-weight="700" fill="#007AFF" text-anchor="middle">Python</text>
 <text class="setlabel setlabel-A" x="540.0" y="178.0" font-size="18" fill="#6E6E73" text-anchor="middle">619 people</text>
 </g>
-<g class="grp grp-B" tabindex="0" role="listitem"><title>SQL: 539 of 814 (66%)</title>
-<circle class="lobe-B" cx="429.6" cy="594.4" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<g class="grp grp-B" tabindex="0" role="listitem" aria-label="SQL: 539 of 814 (66%)">
+<circle class="lobe-B hit" cx="429.6" cy="594.4" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<g class="tip"><rect x="174.1" y="811.4" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="183.1" y="832.9" font-size="12.5" font-weight="700" fill="#1D1D1F">SQL</text><text x="183.1" y="848.9" font-size="12.5" font-weight="400" fill="#6E6E73">539 of 814 people</text><text x="183.1" y="864.9" font-size="12.5" font-weight="400" fill="#6E6E73">66% of total</text></g>
 <text class="setlabel setlabel-B" x="242.6" y="845.4" font-size="25" font-weight="700" fill="#28CD41" text-anchor="middle">SQL</text>
 <text class="setlabel setlabel-B" x="242.6" y="872.4" font-size="18" fill="#6E6E73" text-anchor="middle">539 people</text>
 </g>
-<g class="grp grp-C" tabindex="0" role="listitem"><title>Cloud: 456 of 814 (56%)</title>
-<circle class="lobe-C" cx="650.4" cy="594.4" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<g class="grp grp-C" tabindex="0" role="listitem" aria-label="Cloud: 456 of 814 (56%)">
+<circle class="lobe-C hit" cx="650.4" cy="594.4" r="205.0" fill="transparent" stroke="transparent" stroke-width="22"/>
+<g class="tip"><rect x="768.9" y="811.4" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="777.9" y="832.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Cloud</text><text x="777.9" y="848.9" font-size="12.5" font-weight="400" fill="#6E6E73">456 of 814 people</text><text x="777.9" y="864.9" font-size="12.5" font-weight="400" fill="#6E6E73">56% of total</text></g>
 <text class="setlabel setlabel-C" x="837.4" y="845.4" font-size="25" font-weight="700" fill="#FF9500" text-anchor="middle">Cloud</text>
 <text class="setlabel setlabel-C" x="837.4" y="872.4" font-size="18" fill="#6E6E73" text-anchor="middle">456 people</text>
 </g>

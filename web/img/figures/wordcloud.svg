@@ -10,7 +10,7 @@ svg:has(.legend-neutral:hover) .grp-neutral, svg:has(.legend-neutral:focus) .grp
 .legend-row { cursor: pointer; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 3px; border-radius: 8px; }
 .tip{opacity:0;pointer-events:none;transition:opacity .12s ease}
-.hit:hover~.tip,.hit:focus~.tip{opacity:1}
+.hit:hover+.tip,.hit:focus+.tip{opacity:1}
 @media (prefers-reduced-motion: reduce) { .word { transition: none; } .tip{transition:none} }
 @media (prefers-contrast: more){
   .grp-praise{fill:#006700;}
