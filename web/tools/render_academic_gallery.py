@@ -45,6 +45,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import os_helper as osh
+
 WEB = Path(__file__).resolve().parent.parent
 GALLERY = WEB / "img" / "figures"
 OUT_DIR = GALLERY / "academic"
@@ -124,6 +126,7 @@ def render_one(kind: str, dry_run: bool) -> tuple[bool, str]:
 
 
 def main() -> int:
+    osh.init_logging()
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--only", nargs="*", default=None, help="Render only these kinds.")
@@ -134,21 +137,22 @@ def main() -> int:
     if args.only:
         kinds = [k for k in kinds if k in set(args.only)]
 
-    print(f"{len(kinds)} figure kinds to render (theme=academic)")
+    osh.info(f"{len(kinds)} figure kinds to render (theme=academic)")
     failures: list[str] = []
     for i, kind in enumerate(kinds, 1):
         ok, msg = render_one(kind, args.dry_run)
-        status = "ok" if ok else "FAIL"
-        print(f"[{i}/{len(kinds)}] {status} {msg}")
-        if not ok:
+        if ok:
+            osh.info(f"[{i}/{len(kinds)}] ok {msg}")
+        else:
+            osh.warning(f"[{i}/{len(kinds)}] FAIL {msg}")
             failures.append(msg)
 
     if failures:
-        print(f"\n{len(failures)} failure(s):")
+        osh.error(f"{len(failures)} failure(s):")
         for f in failures:
-            print(f" - {f}")
+            osh.error(f" - {f}")
         return 1
-    print(f"\nWrote {len(kinds)} academic SVG+PNG pairs to {OUT_DIR}")
+    osh.info(f"Wrote {len(kinds)} academic SVG+PNG pairs to {OUT_DIR}")
     return 0
 
 
