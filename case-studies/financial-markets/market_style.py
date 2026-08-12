@@ -43,6 +43,7 @@ from _svg import (  # noqa: E402
     catmull_rom_beziers,
     fmt_compact,
     point_on_circle,
+    tooltip_bubble,
     xml_escape,
 )
 
@@ -393,7 +394,10 @@ def tip_group(x: float, y: float, lines: List[str], *, anchor: str = "middle", w
     """Construit une info-bulle ``.tip`` (fond blanc arrondi + lignes de texte).
 
     À placer **après** l'élément ``.hit`` correspondant (frères adjacents) pour
-    que le sélecteur ``.hit:hover~.tip`` la révèle.
+    que le sélecteur ``.hit:hover~.tip`` la révèle. Délègue à la fonction
+    partagée ``_svg.tooltip_bubble`` (retour au vrai césurage de mots au lieu
+    de lignes figées, et bordure ``GRID`` maison conservée) ; signature et
+    rendu visuel inchangés pour tout appelant existant.
 
     Parameters
     ----------
@@ -404,38 +408,16 @@ def tip_group(x: float, y: float, lines: List[str], *, anchor: str = "middle", w
     anchor : str
         Ancrage horizontal du bloc (``start``/``middle``/``end``).
     w : float
-        Largeur imposée ; sinon estimée d'après la ligne la plus longue.
+        Non utilisé (largeur désormais toujours dérivée du texte, avec
+        césurage) ; conservé pour compatibilité de signature.
 
     Returns
     -------
     str
         Le groupe SVG de l'info-bulle.
     """
-    pad = 9.0
-    lh = 16.0
-    fw = w or (max(len(s) for s in lines) * 7.0 + 2 * pad)
-    fh = lh * len(lines) + 2 * pad - 4
-    if anchor == "middle":
-        bx = x - fw / 2
-    elif anchor == "end":
-        bx = x - fw
-    else:
-        bx = x
-    by = y
-    parts = [
-        '<g class="tip">',
-        f'<rect x="{f1(bx)}" y="{f1(by)}" width="{f1(fw)}" height="{f1(fh)}" rx="9" '
-        f'fill="#FFFFFF" stroke="{GRID}" stroke-width="1.2"/>',
-    ]
-    for i, s in enumerate(lines):
-        weight = "700" if i == 0 else "400"
-        col = INK if i == 0 else SECONDARY
-        parts.append(
-            f'<text x="{f1(bx + pad)}" y="{f1(by + pad + 12 + i * lh)}" '
-            f'font-size="12.5" font-weight="{weight}" fill="{col}">{xml_escape(s)}</text>'
-        )
-    parts.append("</g>")
-    return "".join(parts)
+    _ = w
+    return tooltip_bubble(x, y, lines, anchor=anchor, border=GRID, ink=INK, secondary=SECONDARY)
 
 
 # On réexpose quelques primitives pour que les panneaux importent d'un seul point.

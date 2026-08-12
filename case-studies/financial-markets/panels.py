@@ -174,8 +174,14 @@ def _date_str(g: Portfolio, i: int) -> str:
     return f"{S.month(d.month - 1)} {d.year}"
 
 
-def _hit_columns(box: S.Box, g: Portfolio, tipfn: Callable[[int], List[str]], stride: int = 16) -> str:
-    """Colonnes transparentes de survol : chacune porte un ``data-tip`` riche."""
+def _hit_columns(box: S.Box, g: Portfolio, tipfn: Callable[[int], List[str]], stride: int = 4) -> str:
+    """Colonnes transparentes de survol : chacune porte un ``data-tip`` riche.
+
+    ``stride=4`` (≈ une colonne par semaine de bourse) plutôt que 16 (≈ une
+    par mois) : beaucoup plus de points de survol pour une lecture fine,
+    tout en restant largement sous ce qu'un navigateur peine à gérer (~170
+    rects transparents pour deux ans de données quotidiennes).
+    """
     n = len(g.days)
     x = _xmap(box, n)
     cw = box.w / (n / stride)
@@ -698,11 +704,19 @@ def risk(g: Portfolio, stats: dict) -> str:
 
     # Zones de la jauge : rouge (faible) → ambre (moyen) → bleu (fort). On évite
     # le rouge→vert du feu tricolore, illisible sous daltonisme ; rouge↔bleu tient.
+    # Chaque zone porte son propre survol (ce que ce niveau de Sharpe signifie),
+    # pas seulement la jauge entière : trois bulles au lieu d'une.
+    zone_labels = {
+        (0, 1): ("Zone faible (Sharpe < 1)", "Rendement excédentaire à peine supérieur au risque pris"),
+        (1, 2): ("Zone correcte (1 ≤ Sharpe < 2)", "Rendement excédentaire raisonnable pour le risque pris"),
+        (2, 3): ("Zone excellente (Sharpe ≥ 2)", "Rendement excédentaire élevé par unité de risque"),
+    }
     for a0, a1, col in ((0, 1, S.RED), (1, 2, S.AMBER), (2, 3, S.BLUE)):
         p0, p1 = gpt(a0, gr), gpt(a1, gr)
-        out.append(f'<path d="M{S.f1(p0[0])},{S.f1(p0[1])} A{S.f1(gr)},{S.f1(gr)} 0 0 1 '
+        head, sub = zone_labels[(a0, a1)]
+        out.append(f'<path class="hit" d="M{S.f1(p0[0])},{S.f1(p0[1])} A{S.f1(gr)},{S.f1(gr)} 0 0 1 '
                    f'{S.f1(p1[0])},{S.f1(p1[1])}" fill="none" stroke="{col}" stroke-width="18" '
-                   f'stroke-linecap="round" stroke-opacity=".9"/>')
+                   f'stroke-linecap="round" stroke-opacity=".9" data-tip="{_tip([head, sub])}"/>')
     tip = gpt(max(0.0, min(sharpe, smax)), gr - 8)  # aiguille bornée (Sharpe négatif possible)
     out.append(f'<line x1="{S.f1(gcx)}" y1="{S.f1(gcy)}" x2="{S.f1(tip[0])}" y2="{S.f1(tip[1])}" '
                f'stroke="{S.DEEPBLUE}" stroke-width="4" stroke-linecap="round"/>')
