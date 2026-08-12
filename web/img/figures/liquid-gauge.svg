@@ -7,7 +7,7 @@
   [fill="#6E6E73"]{fill:#9C9CA3;}
   [style*="multiply"]{mix-blend-mode:screen;}
   [fill="#EEF1F6"]{fill:#1B1D22;}[stroke="#D6DAE2"]{stroke:#4A4E58;}[stroke="#C2C7D0"]{stroke:#5A5F69;}.lg-chiptxt{fill:#1D1D1F;}
-}</style>
+}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}.hit:hover+.tip,.hit:focus+.tip{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}</style>
 <defs><clipPath id="lg-disc"><circle cx="550.0" cy="600.0" r="340.0"/></clipPath></defs>
 <rect width="1100" height="1040" fill="#FFFFFF"/>
 <text x="60" y="78" font-size="36" font-weight="700" fill="#1D1D1F">A reservoir running a little low</text>
@@ -20,6 +20,8 @@
 <line x1="210.0" y1="477.6" x2="890.0" y2="477.6" stroke="#1D1D1F" stroke-width="2" stroke-dasharray="9 7" stroke-opacity="0.55"/>
 </g>
 <circle cx="550.0" cy="600.0" r="340.0" fill="none" stroke="#D6DAE2" stroke-width="6"/>
+<circle class="hit" tabindex="0" cx="550.0" cy="600.0" r="340.0" fill="transparent" role="img" aria-label="Reservoir level — 63% of usable capacity"><title>Reservoir level — 63% of usable capacity; Seasonal median: 68%; 5 pts below normal</title></circle>
+<g class="tip"><rect x="401" y="244" width="298" height="62.5" rx="9" fill="#FFFFFF" stroke="#D6DAE2" stroke-width="1.2"/><text x="410" y="265.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Reservoir level — 63% of usable capacity</text><text x="410" y="281.5" font-size="12.5" font-weight="400" fill="#6E6E73">Seasonal median: 68%</text><text x="410" y="297.5" font-size="12.5" font-weight="400" fill="#6E6E73">5 pts below normal</text></g>
 <line x1="898.0" y1="940.0" x2="912.0" y2="940.0" stroke="#C2C7D0" stroke-width="2.4" stroke-linecap="round"/>
 <text x="920.0" y="946.0" font-size="18" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="start">0%</text>
 <line x1="898.0" y1="770.0" x2="912.0" y2="770.0" stroke="#C2C7D0" stroke-width="2.4" stroke-linecap="round"/>
