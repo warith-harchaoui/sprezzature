@@ -5,18 +5,18 @@
 <rect width="620" height="420" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="22" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Mean with 95% Interval</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Point estimate per group, capped bar spans the confidence interval</text>
-<line x1="64.0" y1="360.0" x2="590.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="364.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">28</text>
-<line x1="64.0" y1="311.6" x2="590.0" y2="311.6" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="315.6" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">39</text>
-<line x1="64.0" y1="263.2" x2="590.0" y2="263.2" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="267.2" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">50</text>
-<line x1="64.0" y1="214.8" x2="590.0" y2="214.8" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="218.8" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">61</text>
-<line x1="64.0" y1="166.4" x2="590.0" y2="166.4" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="170.4" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">72</text>
-<line x1="64.0" y1="118.0" x2="590.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="122.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">83</text>
+<line x1="64.0" y1="349.4" x2="590.0" y2="349.4" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="353.4" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">30</text>
+<line x1="64.0" y1="306.1" x2="590.0" y2="306.1" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="310.1" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">40</text>
+<line x1="64.0" y1="262.8" x2="590.0" y2="262.8" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="266.8" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">50</text>
+<line x1="64.0" y1="219.5" x2="590.0" y2="219.5" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="223.5" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">60</text>
+<line x1="64.0" y1="176.2" x2="590.0" y2="176.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="180.2" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">70</text>
+<line x1="64.0" y1="132.9" x2="590.0" y2="132.9" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="136.9" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">80</text>
 <text x="18" y="239.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 239.0)">Value</text>
 <g class="errbar hit" tabindex="0">
 <title>A: mean 40 (95% CI 34-46)</title>

@@ -63,7 +63,7 @@
 <g class="tip"><rect x="1002.1" y="667.7" width="249" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1011.1" y="689.2" font-size="12.5" font-weight="700" fill="#1D1D1F">Everything else</text><text x="1011.1" y="705.2" font-size="12.5" font-weight="400" fill="#6E6E73">22 tickets</text><text x="1011.1" y="721.2" font-size="12.5" font-weight="400" fill="#6E6E73">1.8% of total · cumulative 100.0%</text></g>
 <path d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 <path class="pa-line" d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FF9500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="225.4" y="565.2" font-size="21" font-weight="600" fill="#FF9500">cumulative %</text>
+<text x="225.4" y="521.2" font-size="21" font-weight="600" fill="#FF9500">cumulative %</text>
 <g class="pt hit" tabindex="0" role="img" aria-label="Login &amp; password resets: cumulative 34.2% of total">
 <circle class="halo" cx="207.4" cy="535.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="207.4" cy="535.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>

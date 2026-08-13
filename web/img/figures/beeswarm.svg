@@ -12,20 +12,18 @@
 <circle cx="228.0" cy="100.0" r="6" fill="#28CD41"/>
 <text x="242.0" y="104.0" font-size="12" fill="#1D1D1F">Group C</text>
 <line x1="60.0" y1="334.0" x2="715.0" y2="334.0" stroke="#1D1D1F" stroke-width="1.2"/>
-<line x1="60.0" y1="150.0" x2="60.0" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="60.0" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">14</text>
-<line x1="169.2" y1="150.0" x2="169.2" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="169.2" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">25</text>
-<line x1="278.3" y1="150.0" x2="278.3" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="278.3" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">35</text>
-<line x1="387.5" y1="150.0" x2="387.5" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="387.5" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">45</text>
-<line x1="496.7" y1="150.0" x2="496.7" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="496.7" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">55</text>
-<line x1="605.8" y1="150.0" x2="605.8" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="605.8" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">65</text>
-<line x1="715.0" y1="150.0" x2="715.0" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="715.0" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">75</text>
+<line x1="120.0" y1="150.0" x2="120.0" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="120.0" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">20</text>
+<line x1="228.5" y1="150.0" x2="228.5" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="228.5" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">30</text>
+<line x1="337.0" y1="150.0" x2="337.0" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="337.0" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">40</text>
+<line x1="445.5" y1="150.0" x2="445.5" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="445.5" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">50</text>
+<line x1="554.0" y1="150.0" x2="554.0" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="554.0" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">60</text>
+<line x1="662.6" y1="150.0" x2="662.6" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="662.6" y="354.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">70</text>
 <text x="387.5" y="376.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Value</text>
 <circle class="dot hit" tabindex="0" cx="95.1" cy="225.0" r="5" fill="#A52A2A" stroke="#FFFFFF" stroke-width="1"><title>Group A: 17.7</title></circle>
 <g class="tip"><rect x="9.1" y="214" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="18.1" y="235.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Group A</text><text x="18.1" y="251.5" font-size="12.5" font-weight="400" fill="#6E6E73">value 17.7</text><text x="18.1" y="267.5" font-size="12.5" font-weight="400" fill="#6E6E73">1th percentile overall</text></g>

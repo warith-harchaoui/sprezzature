@@ -6,13 +6,13 @@
 .hex:hover, .hex:focus { transform: scale(1.16); stroke: #1D1D1F; stroke-width: 1.4; outline: none; }
 .legend-swatch { stroke: #FFFFFF; stroke-width: 0.5; }
 @media (prefers-reduced-motion: reduce) { .hex { transition: none; } .hex:hover, .hex:focus { transform: none; } }
-@media (prefers-contrast: more){.hex{stroke:#8E8E93;stroke-width:1;}.legend-swatch{stroke:#6E6E73;stroke-width:1;}[fill="#6E6E73"]{fill:#3A3A3C;}[fill="#E9ECF1"]{fill:#C7CCD4;}}
+@media (prefers-contrast: more){.hex{stroke:#8E8E93;stroke-width:1;}.legend-swatch{stroke:#6E6E73;stroke-width:1;}[fill="#6E6E73"]{fill:#3A3A3C;}[fill="#DDDDE2"]{fill:#C7CCD4;}}
 @media (prefers-color-scheme: dark){
   [fill="#FFFFFF"]{fill:#0B0B0C;}
   [fill="#1D1D1F"]{fill:#F2F2F7;}
   [fill="#6E6E73"]{fill:#9C9CA3;}
   [style*="multiply"]{mix-blend-mode:screen;}
-  [fill="#DCE7F4"]{fill:#0E1626;} [fill="#FBFCFE"]{fill:#141618;} [fill="#E9ECF1"]{fill:#26262A;} .hex:hover, .hex:focus{stroke:#F2F2F7;}
+  [fill="#DCE7F4"]{fill:#0E1626;} [fill="#FBFCFE"]{fill:#141618;} [fill="#DDDDE2"]{fill:#26262A;} .hex:hover, .hex:focus{stroke:#F2F2F7;}
 }
 .tip{opacity:0;pointer-events:none;transition:opacity .12s ease}
 .hit:hover+.tip,.hit:focus+.tip{opacity:1}
@@ -24,11 +24,11 @@
 <rect x="64.0" y="168.0" width="848.0" height="684.0" rx="22" fill="#DCE7F4"/>
 <path d="M114.9,236.4 L352.3,195.4 L572.8,222.7 L759.4,209.0 L869.6,291.1 L886.6,441.6 L793.3,523.7 L827.2,646.8 L725.4,756.2 L572.8,715.2 L505.0,797.3 L369.3,824.6 L250.6,783.6 L148.8,674.2 L97.9,523.7 L140.3,373.2Z" fill="#FBFCFE" stroke="#9FB4CE" stroke-width="2" stroke-linejoin="round"/>
 <g role="list" aria-label="hexagonal density bins">
-<path class="hex hit" d="M349.79,168.45 L375.38,183.22 L375.38,212.78 L349.79,227.55 L324.20,212.78 L324.20,183.22Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M349.79,168.45 L375.38,183.22 L375.38,212.78 L349.79,227.55 L324.20,212.78 L324.20,183.22Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="312.8" y="162" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="321.8" y="183.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
-<path class="hex hit" d="M167.92,213.45 L193.51,228.22 L193.51,257.77 L167.92,272.55 L142.33,257.77 L142.33,228.22Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M167.92,213.45 L193.51,228.22 L193.51,257.77 L167.92,272.55 L142.33,257.77 L142.33,228.22Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="130.9" y="207" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="139.9" y="228.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
-<path class="hex hit" d="M219.88,213.45 L245.48,228.22 L245.48,257.77 L219.88,272.55 L194.29,257.77 L194.29,228.22Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M219.88,213.45 L245.48,228.22 L245.48,257.77 L219.88,272.55 L194.29,257.77 L194.29,228.22Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="182.9" y="207" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="191.9" y="228.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M271.85,213.45 L297.44,228.22 L297.44,257.77 L271.85,272.55 L246.26,257.77 L246.26,228.22Z" fill="#E2ECFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>1 trip</title></path>
 <g class="tip"><rect x="203.3" y="207" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="212.3" y="228.5" font-size="12.5" font-weight="700" fill="#1D1D1F">1 trip</text><text x="212.3" y="244.5" font-size="12.5" font-weight="400" fill="#6E6E73">1% of busiest hex</text></g>
@@ -52,9 +52,9 @@
 <g class="tip"><rect x="671" y="207" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="680" y="228.5" font-size="12.5" font-weight="700" fill="#1D1D1F">10 trips</text><text x="680" y="244.5" font-size="12.5" font-weight="400" fill="#6E6E73">9% of busiest hex</text></g>
 <path class="hex hit" d="M791.46,213.45 L817.05,228.22 L817.05,257.77 L791.46,272.55 L765.87,257.77 L765.87,228.22Z" fill="#E2ECFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>1 trip</title></path>
 <g class="tip"><rect x="723" y="207" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="732" y="228.5" font-size="12.5" font-weight="700" fill="#1D1D1F">1 trip</text><text x="732" y="244.5" font-size="12.5" font-weight="400" fill="#6E6E73">1% of busiest hex</text></g>
-<path class="hex hit" d="M141.94,258.45 L167.53,273.23 L167.53,302.77 L141.94,317.55 L116.35,302.77 L116.35,273.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M141.94,258.45 L167.53,273.23 L167.53,302.77 L141.94,317.55 L116.35,302.77 L116.35,273.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="104.9" y="252" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="113.9" y="273.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
-<path class="hex hit" d="M193.90,258.45 L219.49,273.23 L219.49,302.77 L193.90,317.55 L168.31,302.77 L168.31,273.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M193.90,258.45 L219.49,273.23 L219.49,302.77 L193.90,317.55 L168.31,302.77 L168.31,273.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="156.9" y="252" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="165.9" y="273.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M245.87,258.45 L271.46,273.23 L271.46,302.77 L245.87,317.55 L220.27,302.77 L220.27,273.23Z" fill="#D9E8FA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>3 trips</title></path>
 <g class="tip"><rect x="177.4" y="252" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="186.4" y="273.5" font-size="12.5" font-weight="700" fill="#1D1D1F">3 trips</text><text x="186.4" y="289.5" font-size="12.5" font-weight="400" fill="#6E6E73">3% of busiest hex</text></g>
@@ -106,9 +106,9 @@
 <g class="tip"><rect x="667.5" y="297" width="144" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="676.5" y="318.5" font-size="12.5" font-weight="700" fill="#1D1D1F">12 trips</text><text x="676.5" y="334.5" font-size="12.5" font-weight="400" fill="#6E6E73">10% of busiest hex</text></g>
 <path class="hex hit" d="M791.46,303.45 L817.05,318.23 L817.05,347.77 L791.46,362.55 L765.87,347.77 L765.87,318.23Z" fill="#BFDAFB" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>11 trips</title></path>
 <g class="tip"><rect x="723" y="297" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="732" y="318.5" font-size="12.5" font-weight="700" fill="#1D1D1F">11 trips</text><text x="732" y="334.5" font-size="12.5" font-weight="400" fill="#6E6E73">9% of busiest hex</text></g>
-<path class="hex hit" d="M843.42,303.45 L869.01,318.23 L869.01,347.77 L843.42,362.55 L817.83,347.77 L817.83,318.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M843.42,303.45 L869.01,318.23 L869.01,347.77 L843.42,362.55 L817.83,347.77 L817.83,318.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="806.4" y="297" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="815.4" y="318.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
-<path class="hex hit" d="M141.94,348.45 L167.53,363.23 L167.53,392.77 L141.94,407.55 L116.35,392.77 L116.35,363.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M141.94,348.45 L167.53,363.23 L167.53,392.77 L141.94,407.55 L116.35,392.77 L116.35,363.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="104.9" y="342" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="113.9" y="363.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M193.90,348.45 L219.49,363.23 L219.49,392.77 L193.90,407.55 L168.31,392.77 L168.31,363.23Z" fill="#E2ECFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>1 trip</title></path>
 <g class="tip"><rect x="125.4" y="342" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="134.4" y="363.5" font-size="12.5" font-weight="700" fill="#1D1D1F">1 trip</text><text x="134.4" y="379.5" font-size="12.5" font-weight="400" fill="#6E6E73">1% of busiest hex</text></g>
@@ -162,7 +162,7 @@
 <g class="tip"><rect x="615.5" y="387" width="144" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="624.5" y="408.5" font-size="12.5" font-weight="700" fill="#1D1D1F">28 trips</text><text x="624.5" y="424.5" font-size="12.5" font-weight="400" fill="#6E6E73">24% of busiest hex</text></g>
 <path class="hex hit" d="M739.50,393.45 L765.09,408.23 L765.09,437.77 L739.50,452.55 L713.91,437.77 L713.91,408.23Z" fill="#C5DDFB" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>9 trips</title></path>
 <g class="tip"><rect x="671" y="387" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="680" y="408.5" font-size="12.5" font-weight="700" fill="#1D1D1F">9 trips</text><text x="680" y="424.5" font-size="12.5" font-weight="400" fill="#6E6E73">8% of busiest hex</text></g>
-<path class="hex hit" d="M791.46,393.45 L817.05,408.23 L817.05,437.77 L791.46,452.55 L765.87,437.77 L765.87,408.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M791.46,393.45 L817.05,408.23 L817.05,437.77 L791.46,452.55 L765.87,437.77 L765.87,408.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="754.5" y="387" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="763.5" y="408.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M843.42,393.45 L869.01,408.23 L869.01,437.77 L843.42,452.55 L817.83,437.77 L817.83,408.23Z" fill="#DDEAFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>2 trips</title></path>
 <g class="tip"><rect x="774.9" y="387" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="783.9" y="408.5" font-size="12.5" font-weight="700" fill="#1D1D1F">2 trips</text><text x="783.9" y="424.5" font-size="12.5" font-weight="400" fill="#6E6E73">2% of busiest hex</text></g>
@@ -272,7 +272,7 @@
 <g class="tip"><rect x="619" y="567" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="628" y="588.5" font-size="12.5" font-weight="700" fill="#1D1D1F">9 trips</text><text x="628" y="604.5" font-size="12.5" font-weight="400" fill="#6E6E73">8% of busiest hex</text></g>
 <path class="hex hit" d="M739.50,573.45 L765.09,588.23 L765.09,617.77 L739.50,632.55 L713.91,617.77 L713.91,588.23Z" fill="#D2E4FB" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>5 trips</title></path>
 <g class="tip"><rect x="671" y="567" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="680" y="588.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5 trips</text><text x="680" y="604.5" font-size="12.5" font-weight="400" fill="#6E6E73">4% of busiest hex</text></g>
-<path class="hex hit" d="M791.46,573.45 L817.05,588.23 L817.05,617.77 L791.46,632.55 L765.87,617.77 L765.87,588.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M791.46,573.45 L817.05,588.23 L817.05,617.77 L791.46,632.55 L765.87,617.77 L765.87,588.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="754.5" y="567" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="763.5" y="588.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M141.94,618.45 L167.53,633.23 L167.53,662.77 L141.94,677.55 L116.35,662.77 L116.35,633.23Z" fill="#DDEAFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>2 trips</title></path>
 <g class="tip"><rect x="73.4" y="612" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="82.4" y="633.5" font-size="12.5" font-weight="700" fill="#1D1D1F">2 trips</text><text x="82.4" y="649.5" font-size="12.5" font-weight="400" fill="#6E6E73">2% of busiest hex</text></g>
@@ -298,9 +298,9 @@
 <g class="tip"><rect x="593.1" y="612" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="602.1" y="633.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6 trips</text><text x="602.1" y="649.5" font-size="12.5" font-weight="400" fill="#6E6E73">5% of busiest hex</text></g>
 <path class="hex hit" d="M713.52,618.45 L739.11,633.23 L739.11,662.77 L713.52,677.55 L687.93,662.77 L687.93,633.23Z" fill="#CBE0FB" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>7 trips</title></path>
 <g class="tip"><rect x="645" y="612" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="654" y="633.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7 trips</text><text x="654" y="649.5" font-size="12.5" font-weight="400" fill="#6E6E73">6% of busiest hex</text></g>
-<path class="hex hit" d="M765.48,618.45 L791.07,633.23 L791.07,662.77 L765.48,677.55 L739.89,662.77 L739.89,633.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M765.48,618.45 L791.07,633.23 L791.07,662.77 L765.48,677.55 L739.89,662.77 L739.89,633.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="728.5" y="612" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="737.5" y="633.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
-<path class="hex hit" d="M817.44,618.45 L843.03,633.23 L843.03,662.77 L817.44,677.55 L791.85,662.77 L791.85,633.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M817.44,618.45 L843.03,633.23 L843.03,662.77 L817.44,677.55 L791.85,662.77 L791.85,633.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="780.4" y="612" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="789.4" y="633.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M167.92,663.45 L193.51,678.23 L193.51,707.77 L167.92,722.55 L142.33,707.77 L142.33,678.23Z" fill="#D5E6FA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>4 trips</title></path>
 <g class="tip"><rect x="99.4" y="657" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="108.4" y="678.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4 trips</text><text x="108.4" y="694.5" font-size="12.5" font-weight="400" fill="#6E6E73">3% of busiest hex</text></g>
@@ -338,19 +338,19 @@
 <g class="tip"><rect x="385.2" y="702" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="394.2" y="723.5" font-size="12.5" font-weight="700" fill="#1D1D1F">2 trips</text><text x="394.2" y="739.5" font-size="12.5" font-weight="400" fill="#6E6E73">2% of busiest hex</text></g>
 <path class="hex hit" d="M505.67,708.45 L531.26,723.23 L531.26,752.77 L505.67,767.55 L480.08,752.77 L480.08,723.23Z" fill="#DDEAFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>2 trips</title></path>
 <g class="tip"><rect x="437.2" y="702" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="446.2" y="723.5" font-size="12.5" font-weight="700" fill="#1D1D1F">2 trips</text><text x="446.2" y="739.5" font-size="12.5" font-weight="400" fill="#6E6E73">2% of busiest hex</text></g>
-<path class="hex hit" d="M661.56,708.45 L687.15,723.23 L687.15,752.77 L661.56,767.55 L635.97,752.77 L635.97,723.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M661.56,708.45 L687.15,723.23 L687.15,752.77 L661.56,767.55 L635.97,752.77 L635.97,723.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="624.6" y="702" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="633.6" y="723.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M713.52,708.45 L739.11,723.23 L739.11,752.77 L713.52,767.55 L687.93,752.77 L687.93,723.23Z" fill="#E2ECFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>1 trip</title></path>
 <g class="tip"><rect x="645" y="702" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="654" y="723.5" font-size="12.5" font-weight="700" fill="#1D1D1F">1 trip</text><text x="654" y="739.5" font-size="12.5" font-weight="400" fill="#6E6E73">1% of busiest hex</text></g>
 <path class="hex hit" d="M271.85,753.45 L297.44,768.23 L297.44,797.77 L271.85,812.55 L246.26,797.77 L246.26,768.23Z" fill="#E2ECFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>1 trip</title></path>
 <g class="tip"><rect x="203.3" y="747" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="212.3" y="768.5" font-size="12.5" font-weight="700" fill="#1D1D1F">1 trip</text><text x="212.3" y="784.5" font-size="12.5" font-weight="400" fill="#6E6E73">1% of busiest hex</text></g>
-<path class="hex hit" d="M323.81,753.45 L349.40,768.23 L349.40,797.77 L323.81,812.55 L298.22,797.77 L298.22,768.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M323.81,753.45 L349.40,768.23 L349.40,797.77 L323.81,812.55 L298.22,797.77 L298.22,768.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="286.8" y="747" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="295.8" y="768.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 <path class="hex hit" d="M375.77,753.45 L401.36,768.23 L401.36,797.77 L375.77,812.55 L350.18,797.77 L350.18,768.23Z" fill="#E2ECFA" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>1 trip</title></path>
 <g class="tip"><rect x="307.3" y="747" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="316.3" y="768.5" font-size="12.5" font-weight="700" fill="#1D1D1F">1 trip</text><text x="316.3" y="784.5" font-size="12.5" font-weight="400" fill="#6E6E73">1% of busiest hex</text></g>
-<path class="hex hit" d="M427.73,753.45 L453.32,768.23 L453.32,797.77 L427.73,812.55 L402.14,797.77 L402.14,768.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M427.73,753.45 L453.32,768.23 L453.32,797.77 L427.73,812.55 L402.14,797.77 L402.14,768.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="390.7" y="747" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="399.7" y="768.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
-<path class="hex hit" d="M479.69,753.45 L505.28,768.23 L505.28,797.77 L479.69,812.55 L454.10,797.77 L454.10,768.23Z" fill="#E9ECF1" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
+<path class="hex hit" d="M479.69,753.45 L505.28,768.23 L505.28,797.77 L479.69,812.55 L454.10,797.77 L454.10,768.23Z" fill="#DDDDE2" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>no trips</title></path>
 <g class="tip"><rect x="442.7" y="747" width="74" height="30.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="451.7" y="768.5" font-size="12.5" font-weight="700" fill="#1D1D1F">no trips</text></g>
 </g>
 <g transform="translate(992.0,268.0)">
@@ -365,7 +365,7 @@
 <rect class="legend-swatch" x="0" y="238.0" width="36.0" height="34.0" fill="#EAF0FA"/>
 <text x="50.0" y="12" font-size="18" fill="#1D1D1F" font-family="Roboto Mono, monospace">116</text>
 <text x="50.0" y="272.0" font-size="18" fill="#6E6E73" font-family="Roboto Mono, monospace" dominant-baseline="ideographic">1</text>
-<rect class="legend-swatch" x="0" y="302.0" width="36.0" height="34.0" fill="#E9ECF1"/>
+<rect class="legend-swatch" x="0" y="302.0" width="36.0" height="34.0" fill="#DDDDE2"/>
 <text x="50.0" y="324.4" font-size="17" fill="#6E6E73">no trips</text>
 <text x="0" y="420.0" font-size="54" font-weight="700" fill="#007AFF">39%</text>
 <text x="0" y="454.0" font-size="17.5" fill="#6E6E73">of trips start</text>

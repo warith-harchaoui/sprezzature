@@ -27,80 +27,79 @@
 <rect width="940" height="940" fill="#FFFFFF"/>
 <text x="118" y="70" font-size="34" font-weight="700" fill="#1D1D1F">A good night's sleep sharpens reaction time</text>
 <text x="118" y="108" font-size="19" fill="#6E6E73">Reaction-time test vs. hours slept, 120 volunteers — marginals show each distribution</text>
-<text x="118" y="134" font-size="19" fill="#6E6E73"></text>
-<rect class="jp-topbar hit" tabindex="0" x="119.0" y="332.0" width="43.6" height="36.0" rx="3" fill="#28CD41"><title>4.0-4.4 h slept: 6 volunteers</title></rect>
-<g class="tip"><rect x="78.3" y="286" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="87.3" y="307.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0-4.4 h slept</text><text x="87.3" y="323.5" font-size="12.5" font-weight="400" fill="#6E6E73">6 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="164.6" y="344.0" width="43.6" height="24.0" rx="3" fill="#28CD41"><title>4.4-4.8 h slept: 4 volunteers</title></rect>
-<g class="tip"><rect x="123.9" y="298" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="132.9" y="319.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.4-4.8 h slept</text><text x="132.9" y="335.5" font-size="12.5" font-weight="400" fill="#6E6E73">4 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="210.1" y="320.0" width="43.6" height="48.0" rx="3" fill="#28CD41"><title>4.8-5.2 h slept: 8 volunteers</title></rect>
-<g class="tip"><rect x="169.4" y="274" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="178.4" y="295.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8-5.2 h slept</text><text x="178.4" y="311.5" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="255.7" y="302.0" width="43.6" height="66.0" rx="3" fill="#28CD41"><title>5.2-5.6 h slept: 11 volunteers</title></rect>
-<g class="tip"><rect x="215" y="256" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="224" y="277.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2-5.6 h slept</text><text x="224" y="293.5" font-size="12.5" font-weight="400" fill="#6E6E73">11 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="301.3" y="314.0" width="43.6" height="54.0" rx="3" fill="#28CD41"><title>5.6-6.0 h slept: 9 volunteers</title></rect>
-<g class="tip"><rect x="260.6" y="268" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="269.6" y="289.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.6-6.0 h slept</text><text x="269.6" y="305.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="346.9" y="254.0" width="43.6" height="114.0" rx="3" fill="#28CD41"><title>6.0-6.4 h slept: 19 volunteers</title></rect>
-<g class="tip"><rect x="306.1" y="208" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="315.1" y="229.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0-6.4 h slept</text><text x="315.1" y="245.5" font-size="12.5" font-weight="400" fill="#6E6E73">19 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="392.4" y="254.0" width="43.6" height="114.0" rx="3" fill="#28CD41"><title>6.4-6.8 h slept: 19 volunteers</title></rect>
-<g class="tip"><rect x="351.7" y="208" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="360.7" y="229.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4-6.8 h slept</text><text x="360.7" y="245.5" font-size="12.5" font-weight="400" fill="#6E6E73">19 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="438.0" y="278.0" width="43.6" height="90.0" rx="3" fill="#28CD41"><title>6.8-7.1 h slept: 15 volunteers</title></rect>
-<g class="tip"><rect x="397.3" y="232" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="406.3" y="253.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8-7.1 h slept</text><text x="406.3" y="269.5" font-size="12.5" font-weight="400" fill="#6E6E73">15 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="483.6" y="314.0" width="43.6" height="54.0" rx="3" fill="#28CD41"><title>7.1-7.5 h slept: 9 volunteers</title></rect>
-<g class="tip"><rect x="442.9" y="268" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="451.9" y="289.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1-7.5 h slept</text><text x="451.9" y="305.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="529.1" y="320.0" width="43.6" height="48.0" rx="3" fill="#28CD41"><title>7.5-7.9 h slept: 8 volunteers</title></rect>
-<g class="tip"><rect x="488.4" y="274" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="497.4" y="295.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5-7.9 h slept</text><text x="497.4" y="311.5" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="574.7" y="338.0" width="43.6" height="30.0" rx="3" fill="#28CD41"><title>7.9-8.3 h slept: 5 volunteers</title></rect>
-<g class="tip"><rect x="534" y="292" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="543" y="313.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.9-8.3 h slept</text><text x="543" y="329.5" font-size="12.5" font-weight="400" fill="#6E6E73">5 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="620.3" y="338.0" width="43.6" height="30.0" rx="3" fill="#28CD41"><title>8.3-8.7 h slept: 5 volunteers</title></rect>
-<g class="tip"><rect x="579.6" y="292" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="588.6" y="313.5" font-size="12.5" font-weight="700" fill="#1D1D1F">8.3-8.7 h slept</text><text x="588.6" y="329.5" font-size="12.5" font-weight="400" fill="#6E6E73">5 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="665.9" y="368.0" width="43.6" height="0.0" rx="3" fill="#28CD41"><title>8.7-9.1 h slept: 0 volunteers</title></rect>
-<g class="tip"><rect x="625.1" y="322" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="634.1" y="343.5" font-size="12.5" font-weight="700" fill="#1D1D1F">8.7-9.1 h slept</text><text x="634.1" y="359.5" font-size="12.5" font-weight="400" fill="#6E6E73">0 volunteers</text></g>
-<rect class="jp-topbar hit" tabindex="0" x="711.4" y="356.0" width="43.6" height="12.0" rx="3" fill="#28CD41"><title>9.1-9.5 h slept: 2 volunteers</title></rect>
-<g class="tip"><rect x="670.7" y="310" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="679.7" y="331.5" font-size="12.5" font-weight="700" fill="#1D1D1F">9.1-9.5 h slept</text><text x="679.7" y="347.5" font-size="12.5" font-weight="400" fill="#6E6E73">2 volunteers</text></g>
-<text x="118.0" y="228.0" font-size="16" fill="#6E6E73">Distribution of hours slept</text>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="811.9" width="0.0" height="31.1" rx="3" fill="#AF52DE"><title>170-188 ms reaction time: 0 volunteers</title></rect>
-<g class="tip"><rect x="750" y="802.4" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="823.9" font-size="12.5" font-weight="700" fill="#1D1D1F">170-188 ms reaction time</text><text x="759" y="839.9" font-size="12.5" font-weight="400" fill="#6E6E73">0 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="778.7" width="6.0" height="31.1" rx="3" fill="#AF52DE"><title>188-206 ms reaction time: 1 volunteers</title></rect>
-<g class="tip"><rect x="750" y="769.3" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="790.8" font-size="12.5" font-weight="700" fill="#1D1D1F">188-206 ms reaction time</text><text x="759" y="806.8" font-size="12.5" font-weight="400" fill="#6E6E73">1 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="745.6" width="18.0" height="31.1" rx="3" fill="#AF52DE"><title>206-224 ms reaction time: 3 volunteers</title></rect>
-<g class="tip"><rect x="750" y="736.1" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="757.6" font-size="12.5" font-weight="700" fill="#1D1D1F">206-224 ms reaction time</text><text x="759" y="773.6" font-size="12.5" font-weight="400" fill="#6E6E73">3 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="712.4" width="66.0" height="31.1" rx="3" fill="#AF52DE"><title>224-241 ms reaction time: 11 volunteers</title></rect>
-<g class="tip"><rect x="750" y="703" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="724.5" font-size="12.5" font-weight="700" fill="#1D1D1F">224-241 ms reaction time</text><text x="759" y="740.5" font-size="12.5" font-weight="400" fill="#6E6E73">11 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="679.3" width="120.0" height="31.1" rx="3" fill="#AF52DE"><title>241-259 ms reaction time: 20 volunteers</title></rect>
-<g class="tip"><rect x="750" y="669.9" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="691.4" font-size="12.5" font-weight="700" fill="#1D1D1F">241-259 ms reaction time</text><text x="759" y="707.4" font-size="12.5" font-weight="400" fill="#6E6E73">20 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="646.1" width="90.0" height="31.1" rx="3" fill="#AF52DE"><title>259-277 ms reaction time: 15 volunteers</title></rect>
-<g class="tip"><rect x="750" y="636.7" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="658.2" font-size="12.5" font-weight="700" fill="#1D1D1F">259-277 ms reaction time</text><text x="759" y="674.2" font-size="12.5" font-weight="400" fill="#6E6E73">15 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="613.0" width="120.0" height="31.1" rx="3" fill="#AF52DE"><title>277-295 ms reaction time: 20 volunteers</title></rect>
-<g class="tip"><rect x="750" y="603.6" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="625.1" font-size="12.5" font-weight="700" fill="#1D1D1F">277-295 ms reaction time</text><text x="759" y="641.1" font-size="12.5" font-weight="400" fill="#6E6E73">20 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="579.9" width="102.0" height="31.1" rx="3" fill="#AF52DE"><title>295-313 ms reaction time: 17 volunteers</title></rect>
-<g class="tip"><rect x="750" y="570.4" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="591.9" font-size="12.5" font-weight="700" fill="#1D1D1F">295-313 ms reaction time</text><text x="759" y="607.9" font-size="12.5" font-weight="400" fill="#6E6E73">17 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="546.7" width="108.0" height="31.1" rx="3" fill="#AF52DE"><title>313-331 ms reaction time: 18 volunteers</title></rect>
-<g class="tip"><rect x="750" y="537.3" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="558.8" font-size="12.5" font-weight="700" fill="#1D1D1F">313-331 ms reaction time</text><text x="759" y="574.8" font-size="12.5" font-weight="400" fill="#6E6E73">18 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="513.6" width="48.0" height="31.1" rx="3" fill="#AF52DE"><title>331-349 ms reaction time: 8 volunteers</title></rect>
-<g class="tip"><rect x="750" y="504.1" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="525.6" font-size="12.5" font-weight="700" fill="#1D1D1F">331-349 ms reaction time</text><text x="759" y="541.6" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="480.4" width="12.0" height="31.1" rx="3" fill="#AF52DE"><title>349-366 ms reaction time: 2 volunteers</title></rect>
-<g class="tip"><rect x="750" y="471" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="492.5" font-size="12.5" font-weight="700" fill="#1D1D1F">349-366 ms reaction time</text><text x="759" y="508.5" font-size="12.5" font-weight="400" fill="#6E6E73">2 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="447.3" width="18.0" height="31.1" rx="3" fill="#AF52DE"><title>366-384 ms reaction time: 3 volunteers</title></rect>
-<g class="tip"><rect x="750" y="437.9" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="459.4" font-size="12.5" font-weight="700" fill="#1D1D1F">366-384 ms reaction time</text><text x="759" y="475.4" font-size="12.5" font-weight="400" fill="#6E6E73">3 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="414.1" width="12.0" height="31.1" rx="3" fill="#AF52DE"><title>384-402 ms reaction time: 2 volunteers</title></rect>
-<g class="tip"><rect x="750" y="404.7" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="426.2" font-size="12.5" font-weight="700" fill="#1D1D1F">384-402 ms reaction time</text><text x="759" y="442.2" font-size="12.5" font-weight="400" fill="#6E6E73">2 volunteers</text></g>
-<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="381.0" width="0.0" height="31.1" rx="3" fill="#AF52DE"><title>402-420 ms reaction time: 0 volunteers</title></rect>
-<g class="tip"><rect x="750" y="371.6" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="393.1" font-size="12.5" font-weight="700" fill="#1D1D1F">402-420 ms reaction time</text><text x="759" y="409.1" font-size="12.5" font-weight="400" fill="#6E6E73">0 volunteers</text></g>
-<text x="902.0" y="612.0" font-size="16" fill="#6E6E73" text-anchor="middle" transform="rotate(90 902.0 612.0)">Distribution of reaction time</text>
-<line x1="118.0" y1="380.0" x2="118.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="234.0" y1="380.0" x2="234.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="350.0" y1="380.0" x2="350.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="466.0" y1="380.0" x2="466.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="582.0" y1="380.0" x2="582.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="698.0" y1="380.0" x2="698.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="825.4" x2="756.0" y2="825.4" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="751.2" x2="756.0" y2="751.2" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="677.0" x2="756.0" y2="677.0" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="602.7" x2="756.0" y2="602.7" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="528.5" x2="756.0" y2="528.5" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="454.2" x2="756.0" y2="454.2" stroke="#EEEEEE" stroke-width="1.4"/>
-<line x1="118.0" y1="380.0" x2="756.0" y2="380.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<rect class="jp-topbar hit" tabindex="0" x="119.0" y="256.0" width="43.6" height="36.0" rx="3" fill="#28CD41"><title>4.0-4.4 h slept: 6 volunteers</title></rect>
+<g class="tip"><rect x="78.3" y="210" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="87.3" y="231.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0-4.4 h slept</text><text x="87.3" y="247.5" font-size="12.5" font-weight="400" fill="#6E6E73">6 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="164.6" y="268.0" width="43.6" height="24.0" rx="3" fill="#28CD41"><title>4.4-4.8 h slept: 4 volunteers</title></rect>
+<g class="tip"><rect x="123.9" y="222" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="132.9" y="243.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.4-4.8 h slept</text><text x="132.9" y="259.5" font-size="12.5" font-weight="400" fill="#6E6E73">4 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="210.1" y="244.0" width="43.6" height="48.0" rx="3" fill="#28CD41"><title>4.8-5.2 h slept: 8 volunteers</title></rect>
+<g class="tip"><rect x="169.4" y="198" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="178.4" y="219.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8-5.2 h slept</text><text x="178.4" y="235.5" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="255.7" y="226.0" width="43.6" height="66.0" rx="3" fill="#28CD41"><title>5.2-5.6 h slept: 11 volunteers</title></rect>
+<g class="tip"><rect x="215" y="180" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="224" y="201.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2-5.6 h slept</text><text x="224" y="217.5" font-size="12.5" font-weight="400" fill="#6E6E73">11 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="301.3" y="238.0" width="43.6" height="54.0" rx="3" fill="#28CD41"><title>5.6-6.0 h slept: 9 volunteers</title></rect>
+<g class="tip"><rect x="260.6" y="192" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="269.6" y="213.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.6-6.0 h slept</text><text x="269.6" y="229.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="346.9" y="178.0" width="43.6" height="114.0" rx="3" fill="#28CD41"><title>6.0-6.4 h slept: 19 volunteers</title></rect>
+<g class="tip"><rect x="306.1" y="132" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="315.1" y="153.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0-6.4 h slept</text><text x="315.1" y="169.5" font-size="12.5" font-weight="400" fill="#6E6E73">19 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="392.4" y="178.0" width="43.6" height="114.0" rx="3" fill="#28CD41"><title>6.4-6.8 h slept: 19 volunteers</title></rect>
+<g class="tip"><rect x="351.7" y="132" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="360.7" y="153.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4-6.8 h slept</text><text x="360.7" y="169.5" font-size="12.5" font-weight="400" fill="#6E6E73">19 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="438.0" y="202.0" width="43.6" height="90.0" rx="3" fill="#28CD41"><title>6.8-7.1 h slept: 15 volunteers</title></rect>
+<g class="tip"><rect x="397.3" y="156" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="406.3" y="177.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8-7.1 h slept</text><text x="406.3" y="193.5" font-size="12.5" font-weight="400" fill="#6E6E73">15 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="483.6" y="238.0" width="43.6" height="54.0" rx="3" fill="#28CD41"><title>7.1-7.5 h slept: 9 volunteers</title></rect>
+<g class="tip"><rect x="442.9" y="192" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="451.9" y="213.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1-7.5 h slept</text><text x="451.9" y="229.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="529.1" y="244.0" width="43.6" height="48.0" rx="3" fill="#28CD41"><title>7.5-7.9 h slept: 8 volunteers</title></rect>
+<g class="tip"><rect x="488.4" y="198" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="497.4" y="219.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5-7.9 h slept</text><text x="497.4" y="235.5" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="574.7" y="262.0" width="43.6" height="30.0" rx="3" fill="#28CD41"><title>7.9-8.3 h slept: 5 volunteers</title></rect>
+<g class="tip"><rect x="534" y="216" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="543" y="237.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.9-8.3 h slept</text><text x="543" y="253.5" font-size="12.5" font-weight="400" fill="#6E6E73">5 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="620.3" y="262.0" width="43.6" height="30.0" rx="3" fill="#28CD41"><title>8.3-8.7 h slept: 5 volunteers</title></rect>
+<g class="tip"><rect x="579.6" y="216" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="588.6" y="237.5" font-size="12.5" font-weight="700" fill="#1D1D1F">8.3-8.7 h slept</text><text x="588.6" y="253.5" font-size="12.5" font-weight="400" fill="#6E6E73">5 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="665.9" y="292.0" width="43.6" height="0.0" rx="3" fill="#28CD41"><title>8.7-9.1 h slept: 0 volunteers</title></rect>
+<g class="tip"><rect x="625.1" y="246" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="634.1" y="267.5" font-size="12.5" font-weight="700" fill="#1D1D1F">8.7-9.1 h slept</text><text x="634.1" y="283.5" font-size="12.5" font-weight="400" fill="#6E6E73">0 volunteers</text></g>
+<rect class="jp-topbar hit" tabindex="0" x="711.4" y="280.0" width="43.6" height="12.0" rx="3" fill="#28CD41"><title>9.1-9.5 h slept: 2 volunteers</title></rect>
+<g class="tip"><rect x="670.7" y="234" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="679.7" y="255.5" font-size="12.5" font-weight="700" fill="#1D1D1F">9.1-9.5 h slept</text><text x="679.7" y="271.5" font-size="12.5" font-weight="400" fill="#6E6E73">2 volunteers</text></g>
+<text x="118.0" y="152.0" font-size="16" fill="#6E6E73">Distribution of hours slept</text>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="806.4" width="0.0" height="36.6" rx="3" fill="#AF52DE"><title>170-188 ms reaction time: 0 volunteers</title></rect>
+<g class="tip"><rect x="750" y="799.7" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="821.2" font-size="12.5" font-weight="700" fill="#1D1D1F">170-188 ms reaction time</text><text x="759" y="837.2" font-size="12.5" font-weight="400" fill="#6E6E73">0 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="767.9" width="6.0" height="36.6" rx="3" fill="#AF52DE"><title>188-206 ms reaction time: 1 volunteers</title></rect>
+<g class="tip"><rect x="750" y="761.1" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="782.6" font-size="12.5" font-weight="700" fill="#1D1D1F">188-206 ms reaction time</text><text x="759" y="798.6" font-size="12.5" font-weight="400" fill="#6E6E73">1 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="729.3" width="18.0" height="36.6" rx="3" fill="#AF52DE"><title>206-224 ms reaction time: 3 volunteers</title></rect>
+<g class="tip"><rect x="750" y="722.6" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="744.1" font-size="12.5" font-weight="700" fill="#1D1D1F">206-224 ms reaction time</text><text x="759" y="760.1" font-size="12.5" font-weight="400" fill="#6E6E73">3 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="690.7" width="66.0" height="36.6" rx="3" fill="#AF52DE"><title>224-241 ms reaction time: 11 volunteers</title></rect>
+<g class="tip"><rect x="750" y="684" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="705.5" font-size="12.5" font-weight="700" fill="#1D1D1F">224-241 ms reaction time</text><text x="759" y="721.5" font-size="12.5" font-weight="400" fill="#6E6E73">11 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="652.1" width="120.0" height="36.6" rx="3" fill="#AF52DE"><title>241-259 ms reaction time: 20 volunteers</title></rect>
+<g class="tip"><rect x="750" y="645.4" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="666.9" font-size="12.5" font-weight="700" fill="#1D1D1F">241-259 ms reaction time</text><text x="759" y="682.9" font-size="12.5" font-weight="400" fill="#6E6E73">20 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="613.6" width="90.0" height="36.6" rx="3" fill="#AF52DE"><title>259-277 ms reaction time: 15 volunteers</title></rect>
+<g class="tip"><rect x="750" y="606.9" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="628.4" font-size="12.5" font-weight="700" fill="#1D1D1F">259-277 ms reaction time</text><text x="759" y="644.4" font-size="12.5" font-weight="400" fill="#6E6E73">15 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="575.0" width="120.0" height="36.6" rx="3" fill="#AF52DE"><title>277-295 ms reaction time: 20 volunteers</title></rect>
+<g class="tip"><rect x="750" y="568.3" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="589.8" font-size="12.5" font-weight="700" fill="#1D1D1F">277-295 ms reaction time</text><text x="759" y="605.8" font-size="12.5" font-weight="400" fill="#6E6E73">20 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="536.4" width="102.0" height="36.6" rx="3" fill="#AF52DE"><title>295-313 ms reaction time: 17 volunteers</title></rect>
+<g class="tip"><rect x="750" y="529.7" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="551.2" font-size="12.5" font-weight="700" fill="#1D1D1F">295-313 ms reaction time</text><text x="759" y="567.2" font-size="12.5" font-weight="400" fill="#6E6E73">17 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="497.9" width="108.0" height="36.6" rx="3" fill="#AF52DE"><title>313-331 ms reaction time: 18 volunteers</title></rect>
+<g class="tip"><rect x="750" y="491.1" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="512.6" font-size="12.5" font-weight="700" fill="#1D1D1F">313-331 ms reaction time</text><text x="759" y="528.6" font-size="12.5" font-weight="400" fill="#6E6E73">18 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="459.3" width="48.0" height="36.6" rx="3" fill="#AF52DE"><title>331-349 ms reaction time: 8 volunteers</title></rect>
+<g class="tip"><rect x="750" y="452.6" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="474.1" font-size="12.5" font-weight="700" fill="#1D1D1F">331-349 ms reaction time</text><text x="759" y="490.1" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="420.7" width="12.0" height="36.6" rx="3" fill="#AF52DE"><title>349-366 ms reaction time: 2 volunteers</title></rect>
+<g class="tip"><rect x="750" y="414" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="435.5" font-size="12.5" font-weight="700" fill="#1D1D1F">349-366 ms reaction time</text><text x="759" y="451.5" font-size="12.5" font-weight="400" fill="#6E6E73">2 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="382.1" width="18.0" height="36.6" rx="3" fill="#AF52DE"><title>366-384 ms reaction time: 3 volunteers</title></rect>
+<g class="tip"><rect x="750" y="375.4" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="396.9" font-size="12.5" font-weight="700" fill="#1D1D1F">366-384 ms reaction time</text><text x="759" y="412.9" font-size="12.5" font-weight="400" fill="#6E6E73">3 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="343.6" width="12.0" height="36.6" rx="3" fill="#AF52DE"><title>384-402 ms reaction time: 2 volunteers</title></rect>
+<g class="tip"><rect x="750" y="336.9" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="358.4" font-size="12.5" font-weight="700" fill="#1D1D1F">384-402 ms reaction time</text><text x="759" y="374.4" font-size="12.5" font-weight="400" fill="#6E6E73">2 volunteers</text></g>
+<rect class="jp-rightbar hit" tabindex="0" x="768.0" y="305.0" width="0.0" height="36.6" rx="3" fill="#AF52DE"><title>402-420 ms reaction time: 0 volunteers</title></rect>
+<g class="tip"><rect x="750" y="298.3" width="186" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="759" y="319.8" font-size="12.5" font-weight="700" fill="#1D1D1F">402-420 ms reaction time</text><text x="759" y="335.8" font-size="12.5" font-weight="400" fill="#6E6E73">0 volunteers</text></g>
+<text x="902.0" y="574.0" font-size="16" fill="#6E6E73" text-anchor="middle" transform="rotate(90 902.0 574.0)">Distribution of reaction time</text>
+<line x1="118.0" y1="304.0" x2="118.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="234.0" y1="304.0" x2="234.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="350.0" y1="304.0" x2="350.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="466.0" y1="304.0" x2="466.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="582.0" y1="304.0" x2="582.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="698.0" y1="304.0" x2="698.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="822.4" x2="756.0" y2="822.4" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="736.0" x2="756.0" y2="736.0" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="649.6" x2="756.0" y2="649.6" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="563.2" x2="756.0" y2="563.2" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="476.8" x2="756.0" y2="476.8" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="390.4" x2="756.0" y2="390.4" stroke="#EEEEEE" stroke-width="1.4"/>
+<line x1="118.0" y1="304.0" x2="756.0" y2="304.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="118.0" y1="844.0" x2="756.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<line x1="118.0" y1="380.0" x2="118.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
+<line x1="118.0" y1="304.0" x2="118.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="118.0" y1="844.0" x2="118.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="118.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">4.0</text>
 <line x1="234.0" y1="844.0" x2="234.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
@@ -113,744 +112,744 @@
 <text x="582.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">8.0</text>
 <line x1="698.0" y1="844.0" x2="698.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="698.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">9.0</text>
-<line x1="112.0" y1="825.4" x2="118.0" y2="825.4" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="831.4" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">180</text>
-<line x1="112.0" y1="751.2" x2="118.0" y2="751.2" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="757.2" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">220</text>
-<line x1="112.0" y1="677.0" x2="118.0" y2="677.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="683.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">260</text>
-<line x1="112.0" y1="602.7" x2="118.0" y2="602.7" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="608.7" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">300</text>
-<line x1="112.0" y1="528.5" x2="118.0" y2="528.5" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="534.5" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">340</text>
-<line x1="112.0" y1="454.2" x2="118.0" y2="454.2" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="460.2" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">380</text>
-<line x1="112.0" y1="380.0" x2="118.0" y2="380.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="104.0" y="386.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">420</text>
+<line x1="112.0" y1="822.4" x2="118.0" y2="822.4" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="828.4" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">180</text>
+<line x1="112.0" y1="736.0" x2="118.0" y2="736.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="742.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">220</text>
+<line x1="112.0" y1="649.6" x2="118.0" y2="649.6" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="655.6" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">260</text>
+<line x1="112.0" y1="563.2" x2="118.0" y2="563.2" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="569.2" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">300</text>
+<line x1="112.0" y1="476.8" x2="118.0" y2="476.8" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="482.8" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">340</text>
+<line x1="112.0" y1="390.4" x2="118.0" y2="390.4" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="396.4" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">380</text>
+<line x1="112.0" y1="304.0" x2="118.0" y2="304.0" stroke="#1D1D1F" stroke-width="1.4"/>
+<text x="104.0" y="310.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">420</text>
 <text x="437.0" y="906.0" font-size="19" fill="#1D1D1F" text-anchor="middle">Sleep the night before (hours)</text>
-<text x="44.0" y="612.0" font-size="19" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 44.0 612.0)">Mean reaction time, ms (lower is better)</text>
+<text x="44.0" y="574.0" font-size="19" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 44.0 574.0)">Mean reaction time, ms (lower is better)</text>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 287 ms reaction time">
 <title>6.6 h slept, 287 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="626.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="626.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="591.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="591.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="586.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="608.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="624.3" font-size="12.5" font-weight="400" fill="#6E6E73">287 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="551.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="572.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="588.8" font-size="12.5" font-weight="400" fill="#6E6E73">287 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 258 ms reaction time">
 <title>7.0 h slept, 258 ms reaction time</title>
-<circle class="halo" cx="466.0" cy="680.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="466.0" cy="680.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="466.0" cy="653.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="466.0" cy="653.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="387" y="640.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="396" y="662.2" font-size="12.5" font-weight="700" fill="#1D1D1F">7.0 h slept</text><text x="396" y="678.2" font-size="12.5" font-weight="400" fill="#6E6E73">258 ms reaction time</text></g>
+<g class="tip"><rect x="387" y="613.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="396" y="635.4" font-size="12.5" font-weight="700" fill="#1D1D1F">7.0 h slept</text><text x="396" y="651.4" font-size="12.5" font-weight="400" fill="#6E6E73">258 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
 <title>6.2 h slept, 293 ms reaction time</title>
-<circle class="halo" cx="373.2" cy="615.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="615.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="373.2" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="294.2" y="575.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="597.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="613.2" font-size="12.5" font-weight="400" fill="#6E6E73">293 ms reaction time</text></g>
+<g class="tip"><rect x="294.2" y="538.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="559.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="575.8" font-size="12.5" font-weight="400" fill="#6E6E73">293 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 268 ms reaction time">
 <title>5.4 h slept, 268 ms reaction time</title>
-<circle class="halo" cx="280.4" cy="662.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="280.4" cy="662.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="280.4" cy="632.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="280.4" cy="632.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="201.4" y="622.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="210.4" y="643.6" font-size="12.5" font-weight="700" fill="#1D1D1F">5.4 h slept</text><text x="210.4" y="659.6" font-size="12.5" font-weight="400" fill="#6E6E73">268 ms reaction time</text></g>
+<g class="tip"><rect x="201.4" y="592.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="210.4" y="613.8" font-size="12.5" font-weight="700" fill="#1D1D1F">5.4 h slept</text><text x="210.4" y="629.8" font-size="12.5" font-weight="400" fill="#6E6E73">268 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 274 ms reaction time">
 <title>6.0 h slept, 274 ms reaction time</title>
-<circle class="halo" cx="350.0" cy="651.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="651.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="350.0" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="350.0" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="271" y="611" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="632.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="648.5" font-size="12.5" font-weight="400" fill="#6E6E73">274 ms reaction time</text></g>
+<g class="tip"><rect x="271" y="579.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="600.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="616.9" font-size="12.5" font-weight="400" fill="#6E6E73">274 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 334 ms reaction time">
 <title>5.2 h slept, 334 ms reaction time</title>
-<circle class="halo" cx="257.2" cy="539.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="257.2" cy="539.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="257.2" cy="489.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="257.2" cy="489.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="178.2" y="499.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="187.2" y="521.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2 h slept</text><text x="187.2" y="537.1" font-size="12.5" font-weight="400" fill="#6E6E73">334 ms reaction time</text></g>
+<g class="tip"><rect x="178.2" y="449.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="187.2" y="471.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2 h slept</text><text x="187.2" y="487.3" font-size="12.5" font-weight="400" fill="#6E6E73">334 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 227 ms reaction time">
 <title>6.7 h slept, 227 ms reaction time</title>
-<circle class="halo" cx="431.2" cy="738.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="738.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="431.2" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="431.2" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="352.2" y="698.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="719.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="735.7" font-size="12.5" font-weight="400" fill="#6E6E73">227 ms reaction time</text></g>
+<g class="tip"><rect x="352.2" y="680.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="702.4" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="718.4" font-size="12.5" font-weight="400" fill="#6E6E73">227 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.5 h slept, 255 ms reaction time">
 <title>8.5 h slept, 255 ms reaction time</title>
-<circle class="halo" cx="640.0" cy="686.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="640.0" cy="686.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="640.0" cy="660.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="640.0" cy="660.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="561" y="646.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="570" y="667.7" font-size="12.5" font-weight="700" fill="#1D1D1F">8.5 h slept</text><text x="570" y="683.7" font-size="12.5" font-weight="400" fill="#6E6E73">255 ms reaction time</text></g>
+<g class="tip"><rect x="561" y="620.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="570" y="641.9" font-size="12.5" font-weight="700" fill="#1D1D1F">8.5 h slept</text><text x="570" y="657.9" font-size="12.5" font-weight="400" fill="#6E6E73">255 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.9 h slept, 259 ms reaction time">
 <title>5.9 h slept, 259 ms reaction time</title>
-<circle class="halo" cx="338.4" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="338.4" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="338.4" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="338.4" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="259.4" y="638.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="268.4" y="660.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.9 h slept</text><text x="268.4" y="676.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
+<g class="tip"><rect x="259.4" y="611.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="268.4" y="633.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.9 h slept</text><text x="268.4" y="649.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 329 ms reaction time">
 <title>5.7 h slept, 329 ms reaction time</title>
-<circle class="halo" cx="315.2" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="315.2" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="315.2" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="236.2" y="508.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="530.4" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="546.4" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
+<g class="tip"><rect x="236.2" y="460.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="482.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="498.1" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
 <title>7.3 h slept, 244 ms reaction time</title>
-<circle class="halo" cx="500.8" cy="706.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="500.8" cy="706.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="500.8" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="421.8" y="666.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="430.8" y="688.2" font-size="12.5" font-weight="700" fill="#1D1D1F">7.3 h slept</text><text x="430.8" y="704.2" font-size="12.5" font-weight="400" fill="#6E6E73">244 ms reaction time</text></g>
+<g class="tip"><rect x="421.8" y="644.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="430.8" y="665.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.3 h slept</text><text x="430.8" y="681.7" font-size="12.5" font-weight="400" fill="#6E6E73">244 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 291 ms reaction time">
 <title>7.1 h slept, 291 ms reaction time</title>
-<circle class="halo" cx="477.6" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="477.6" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="477.6" cy="582.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="477.6" cy="582.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="398.6" y="579.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="407.6" y="600.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1 h slept</text><text x="407.6" y="616.9" font-size="12.5" font-weight="400" fill="#6E6E73">291 ms reaction time</text></g>
+<g class="tip"><rect x="398.6" y="542.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="407.6" y="564.1" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1 h slept</text><text x="407.6" y="580.1" font-size="12.5" font-weight="400" fill="#6E6E73">291 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 284 ms reaction time">
 <title>6.7 h slept, 284 ms reaction time</title>
-<circle class="halo" cx="431.2" cy="632.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="632.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="431.2" cy="597.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="431.2" cy="597.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="352.2" y="592.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="613.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="629.9" font-size="12.5" font-weight="400" fill="#6E6E73">284 ms reaction time</text></g>
+<g class="tip"><rect x="352.2" y="557.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="579.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="595.3" font-size="12.5" font-weight="400" fill="#6E6E73">284 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.3 h slept, 282 ms reaction time">
 <title>5.3 h slept, 282 ms reaction time</title>
-<circle class="halo" cx="268.8" cy="636.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="268.8" cy="636.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="268.8" cy="602.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="268.8" cy="602.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="189.8" y="596.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="198.8" y="617.6" font-size="12.5" font-weight="700" fill="#1D1D1F">5.3 h slept</text><text x="198.8" y="633.6" font-size="12.5" font-weight="400" fill="#6E6E73">282 ms reaction time</text></g>
+<g class="tip"><rect x="189.8" y="562.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="198.8" y="583.6" font-size="12.5" font-weight="700" fill="#1D1D1F">5.3 h slept</text><text x="198.8" y="599.6" font-size="12.5" font-weight="400" fill="#6E6E73">282 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 319 ms reaction time">
 <title>6.6 h slept, 319 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="522.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="522.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="527.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="549" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="565" font-size="12.5" font-weight="400" fill="#6E6E73">319 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="482.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="503.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="519.7" font-size="12.5" font-weight="400" fill="#6E6E73">319 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 295 ms reaction time">
 <title>7.6 h slept, 295 ms reaction time</title>
-<circle class="halo" cx="535.6" cy="612.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="612.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="535.6" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="535.6" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="456.6" y="572" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="593.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="609.5" font-size="12.5" font-weight="400" fill="#6E6E73">295 ms reaction time</text></g>
+<g class="tip"><rect x="456.6" y="534" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">295 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.7 h slept, 336 ms reaction time">
 <title>4.7 h slept, 336 ms reaction time</title>
-<circle class="halo" cx="199.2" cy="535.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="199.2" cy="535.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="199.2" cy="485.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="199.2" cy="485.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="120.2" y="495.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="129.2" y="517.4" font-size="12.5" font-weight="700" fill="#1D1D1F">4.7 h slept</text><text x="129.2" y="533.4" font-size="12.5" font-weight="400" fill="#6E6E73">336 ms reaction time</text></g>
+<g class="tip"><rect x="120.2" y="445.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="129.2" y="466.9" font-size="12.5" font-weight="700" fill="#1D1D1F">4.7 h slept</text><text x="129.2" y="482.9" font-size="12.5" font-weight="400" fill="#6E6E73">336 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 296 ms reaction time">
 <title>6.0 h slept, 296 ms reaction time</title>
-<circle class="halo" cx="350.0" cy="610.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="610.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="350.0" cy="571.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="350.0" cy="571.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="271" y="570.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="591.6" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="607.6" font-size="12.5" font-weight="400" fill="#6E6E73">296 ms reaction time</text></g>
+<g class="tip"><rect x="271" y="531.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="553.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="569.3" font-size="12.5" font-weight="400" fill="#6E6E73">296 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 354 ms reaction time">
 <title>4.0 h slept, 354 ms reaction time</title>
-<circle class="halo" cx="118.0" cy="502.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="502.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="118.0" cy="446.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="118.0" cy="446.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="39" y="462.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="484" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="500" font-size="12.5" font-weight="400" fill="#6E6E73">354 ms reaction time</text></g>
+<g class="tip"><rect x="39" y="406.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="428.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="444.1" font-size="12.5" font-weight="400" fill="#6E6E73">354 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 310 ms reaction time">
 <title>4.8 h slept, 310 ms reaction time</title>
-<circle class="halo" cx="210.8" cy="584.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="210.8" cy="584.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="210.8" cy="541.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="210.8" cy="541.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="131.8" y="544.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.8" y="565.7" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8 h slept</text><text x="140.8" y="581.7" font-size="12.5" font-weight="400" fill="#6E6E73">310 ms reaction time</text></g>
+<g class="tip"><rect x="131.8" y="501.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.8" y="523.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8 h slept</text><text x="140.8" y="539.1" font-size="12.5" font-weight="400" fill="#6E6E73">310 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 386 ms reaction time">
 <title>4.0 h slept, 386 ms reaction time</title>
-<circle class="halo" cx="118.0" cy="443.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="443.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="118.0" cy="377.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="118.0" cy="377.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="39" y="403.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="424.6" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="440.6" font-size="12.5" font-weight="400" fill="#6E6E73">386 ms reaction time</text></g>
+<g class="tip"><rect x="39" y="337.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="358.9" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="374.9" font-size="12.5" font-weight="400" fill="#6E6E73">386 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 280 ms reaction time">
 <title>6.3 h slept, 280 ms reaction time</title>
-<circle class="halo" cx="384.8" cy="639.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="639.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="384.8" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="384.8" cy="606.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="305.8" y="599.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="621.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="637.3" font-size="12.5" font-weight="400" fill="#6E6E73">280 ms reaction time</text></g>
+<g class="tip"><rect x="305.8" y="566.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="587.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="603.9" font-size="12.5" font-weight="400" fill="#6E6E73">280 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 334 ms reaction time">
 <title>4.8 h slept, 334 ms reaction time</title>
-<circle class="halo" cx="210.8" cy="539.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="210.8" cy="539.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="210.8" cy="489.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="210.8" cy="489.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="131.8" y="499.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.8" y="521.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8 h slept</text><text x="140.8" y="537.1" font-size="12.5" font-weight="400" fill="#6E6E73">334 ms reaction time</text></g>
+<g class="tip"><rect x="131.8" y="449.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.8" y="471.3" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8 h slept</text><text x="140.8" y="487.3" font-size="12.5" font-weight="400" fill="#6E6E73">334 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 254 ms reaction time">
 <title>7.0 h slept, 254 ms reaction time</title>
-<circle class="halo" cx="466.0" cy="688.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="466.0" cy="688.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="466.0" cy="662.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="466.0" cy="662.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="387" y="648.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="396" y="669.6" font-size="12.5" font-weight="700" fill="#1D1D1F">7.0 h slept</text><text x="396" y="685.6" font-size="12.5" font-weight="400" fill="#6E6E73">254 ms reaction time</text></g>
+<g class="tip"><rect x="387" y="622.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="396" y="644.1" font-size="12.5" font-weight="700" fill="#1D1D1F">7.0 h slept</text><text x="396" y="660.1" font-size="12.5" font-weight="400" fill="#6E6E73">254 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 263 ms reaction time">
 <title>6.8 h slept, 263 ms reaction time</title>
-<circle class="halo" cx="442.8" cy="671.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="671.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="442.8" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="442.8" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="363.8" y="631.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="652.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="668.9" font-size="12.5" font-weight="400" fill="#6E6E73">263 ms reaction time</text></g>
+<g class="tip"><rect x="363.8" y="603.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="624.6" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="640.6" font-size="12.5" font-weight="400" fill="#6E6E73">263 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 259 ms reaction time">
 <title>6.3 h slept, 259 ms reaction time</title>
-<circle class="halo" cx="384.8" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="384.8" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="384.8" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="305.8" y="638.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="660.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="676.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
+<g class="tip"><rect x="305.8" y="611.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="633.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="649.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 391 ms reaction time">
 <title>4.0 h slept, 391 ms reaction time</title>
-<circle class="halo" cx="118.0" cy="433.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="433.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="118.0" cy="366.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="118.0" cy="366.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="39" y="393.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="415.3" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="431.3" font-size="12.5" font-weight="400" fill="#6E6E73">391 ms reaction time</text></g>
+<g class="tip"><rect x="39" y="326.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="348.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="364.1" font-size="12.5" font-weight="400" fill="#6E6E73">391 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 302 ms reaction time">
 <title>5.8 h slept, 302 ms reaction time</title>
-<circle class="halo" cx="326.8" cy="599.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="326.8" cy="599.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="326.8" cy="558.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="326.8" cy="558.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="247.8" y="559" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="256.8" y="580.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.8 h slept</text><text x="256.8" y="596.5" font-size="12.5" font-weight="400" fill="#6E6E73">302 ms reaction time</text></g>
+<g class="tip"><rect x="247.8" y="518.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="256.8" y="540.4" font-size="12.5" font-weight="700" fill="#1D1D1F">5.8 h slept</text><text x="256.8" y="556.4" font-size="12.5" font-weight="400" fill="#6E6E73">302 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 312 ms reaction time">
 <title>6.5 h slept, 312 ms reaction time</title>
-<circle class="halo" cx="408.0" cy="580.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="580.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="408.0" cy="537.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="408.0" cy="537.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="329" y="540.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="561.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="577.9" font-size="12.5" font-weight="400" fill="#6E6E73">312 ms reaction time</text></g>
+<g class="tip"><rect x="329" y="497.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="518.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="534.8" font-size="12.5" font-weight="400" fill="#6E6E73">312 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 281 ms reaction time">
 <title>6.8 h slept, 281 ms reaction time</title>
-<circle class="halo" cx="442.8" cy="638.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="638.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="442.8" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="442.8" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="363.8" y="598" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="619.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="635.5" font-size="12.5" font-weight="400" fill="#6E6E73">281 ms reaction time</text></g>
+<g class="tip"><rect x="363.8" y="564.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="585.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="601.7" font-size="12.5" font-weight="400" fill="#6E6E73">281 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.5 h slept, 327 ms reaction time">
 <title>4.5 h slept, 327 ms reaction time</title>
-<circle class="halo" cx="176.0" cy="552.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="176.0" cy="552.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="176.0" cy="504.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="176.0" cy="504.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="97" y="512.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="106" y="534.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.5 h slept</text><text x="106" y="550.1" font-size="12.5" font-weight="400" fill="#6E6E73">327 ms reaction time</text></g>
+<g class="tip"><rect x="97" y="464.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="106" y="486.4" font-size="12.5" font-weight="700" fill="#1D1D1F">4.5 h slept</text><text x="106" y="502.4" font-size="12.5" font-weight="400" fill="#6E6E73">327 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.9 h slept, 295 ms reaction time">
 <title>5.9 h slept, 295 ms reaction time</title>
-<circle class="halo" cx="338.4" cy="612.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="338.4" cy="612.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="338.4" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="338.4" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="259.4" y="572" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="268.4" y="593.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.9 h slept</text><text x="268.4" y="609.5" font-size="12.5" font-weight="400" fill="#6E6E73">295 ms reaction time</text></g>
+<g class="tip"><rect x="259.4" y="534" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="268.4" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.9 h slept</text><text x="268.4" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">295 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 309 ms reaction time">
 <title>5.2 h slept, 309 ms reaction time</title>
-<circle class="halo" cx="257.2" cy="586.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="257.2" cy="586.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="257.2" cy="543.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="257.2" cy="543.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="178.2" y="546" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="187.2" y="567.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2 h slept</text><text x="187.2" y="583.5" font-size="12.5" font-weight="400" fill="#6E6E73">309 ms reaction time</text></g>
+<g class="tip"><rect x="178.2" y="503.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="187.2" y="525.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2 h slept</text><text x="187.2" y="541.3" font-size="12.5" font-weight="400" fill="#6E6E73">309 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 317 ms reaction time">
 <title>5.5 h slept, 317 ms reaction time</title>
-<circle class="halo" cx="292.0" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="292.0" cy="571.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="292.0" cy="526.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="292.0" cy="526.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="213" y="531.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222" y="552.7" font-size="12.5" font-weight="700" fill="#1D1D1F">5.5 h slept</text><text x="222" y="568.7" font-size="12.5" font-weight="400" fill="#6E6E73">317 ms reaction time</text></g>
+<g class="tip"><rect x="213" y="486.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222" y="508" font-size="12.5" font-weight="700" fill="#1D1D1F">5.5 h slept</text><text x="222" y="524" font-size="12.5" font-weight="400" fill="#6E6E73">317 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.1 h slept, 234 ms reaction time">
 <title>8.1 h slept, 234 ms reaction time</title>
-<circle class="halo" cx="593.6" cy="725.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="593.6" cy="725.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="593.6" cy="705.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="593.6" cy="705.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="514.6" y="685.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="523.6" y="706.7" font-size="12.5" font-weight="700" fill="#1D1D1F">8.1 h slept</text><text x="523.6" y="722.7" font-size="12.5" font-weight="400" fill="#6E6E73">234 ms reaction time</text></g>
+<g class="tip"><rect x="514.6" y="665.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="523.6" y="687.3" font-size="12.5" font-weight="700" fill="#1D1D1F">8.1 h slept</text><text x="523.6" y="703.3" font-size="12.5" font-weight="400" fill="#6E6E73">234 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 309 ms reaction time">
 <title>5.5 h slept, 309 ms reaction time</title>
-<circle class="halo" cx="292.0" cy="586.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="292.0" cy="586.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="292.0" cy="543.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="292.0" cy="543.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="213" y="546" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222" y="567.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.5 h slept</text><text x="222" y="583.5" font-size="12.5" font-weight="400" fill="#6E6E73">309 ms reaction time</text></g>
+<g class="tip"><rect x="213" y="503.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222" y="525.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.5 h slept</text><text x="222" y="541.3" font-size="12.5" font-weight="400" fill="#6E6E73">309 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 251 ms reaction time">
 <title>6.6 h slept, 251 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="693.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="693.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="669.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="669.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="653.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="675.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="691.2" font-size="12.5" font-weight="400" fill="#6E6E73">251 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="629" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="650.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="666.5" font-size="12.5" font-weight="400" fill="#6E6E73">251 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.8 h slept, 230 ms reaction time">
 <title>7.8 h slept, 230 ms reaction time</title>
-<circle class="halo" cx="558.8" cy="732.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="558.8" cy="732.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="558.8" cy="714.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="558.8" cy="714.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="479.8" y="692.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="488.8" y="714.1" font-size="12.5" font-weight="700" fill="#1D1D1F">7.8 h slept</text><text x="488.8" y="730.1" font-size="12.5" font-weight="400" fill="#6E6E73">230 ms reaction time</text></g>
+<g class="tip"><rect x="479.8" y="674.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="488.8" y="695.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.8 h slept</text><text x="488.8" y="711.9" font-size="12.5" font-weight="400" fill="#6E6E73">230 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 351 ms reaction time">
 <title>5.8 h slept, 351 ms reaction time</title>
-<circle class="halo" cx="326.8" cy="508.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="326.8" cy="508.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="326.8" cy="453.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="326.8" cy="453.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="247.8" y="468.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="256.8" y="489.6" font-size="12.5" font-weight="700" fill="#1D1D1F">5.8 h slept</text><text x="256.8" y="505.6" font-size="12.5" font-weight="400" fill="#6E6E73">351 ms reaction time</text></g>
+<g class="tip"><rect x="247.8" y="413" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="256.8" y="434.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.8 h slept</text><text x="256.8" y="450.5" font-size="12.5" font-weight="400" fill="#6E6E73">351 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 272 ms reaction time">
 <title>6.4 h slept, 272 ms reaction time</title>
-<circle class="halo" cx="396.4" cy="654.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="396.4" cy="654.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="396.4" cy="623.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="396.4" cy="623.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="317.4" y="614.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="326.4" y="636.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4 h slept</text><text x="326.4" y="652.2" font-size="12.5" font-weight="400" fill="#6E6E73">272 ms reaction time</text></g>
+<g class="tip"><rect x="317.4" y="583.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="326.4" y="605.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4 h slept</text><text x="326.4" y="621.2" font-size="12.5" font-weight="400" fill="#6E6E73">272 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 253 ms reaction time">
 <title>6.8 h slept, 253 ms reaction time</title>
-<circle class="halo" cx="442.8" cy="690.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="690.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="442.8" cy="664.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="442.8" cy="664.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="363.8" y="650" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="671.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="687.5" font-size="12.5" font-weight="400" fill="#6E6E73">253 ms reaction time</text></g>
+<g class="tip"><rect x="363.8" y="624.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="646.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="662.2" font-size="12.5" font-weight="400" fill="#6E6E73">253 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 291 ms reaction time">
 <title>6.7 h slept, 291 ms reaction time</title>
-<circle class="halo" cx="431.2" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="431.2" cy="582.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="431.2" cy="582.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="352.2" y="579.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="600.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="616.9" font-size="12.5" font-weight="400" fill="#6E6E73">291 ms reaction time</text></g>
+<g class="tip"><rect x="352.2" y="542.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="564.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="580.1" font-size="12.5" font-weight="400" fill="#6E6E73">291 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 370 ms reaction time">
 <title>4.9 h slept, 370 ms reaction time</title>
-<circle class="halo" cx="222.4" cy="472.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="222.4" cy="472.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="222.4" cy="412.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="222.4" cy="412.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="143.4" y="432.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.4" y="454.3" font-size="12.5" font-weight="700" fill="#1D1D1F">4.9 h slept</text><text x="152.4" y="470.3" font-size="12.5" font-weight="400" fill="#6E6E73">370 ms reaction time</text></g>
+<g class="tip"><rect x="143.4" y="372" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.4" y="393.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.9 h slept</text><text x="152.4" y="409.5" font-size="12.5" font-weight="400" fill="#6E6E73">370 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 244 ms reaction time">
 <title>6.7 h slept, 244 ms reaction time</title>
-<circle class="halo" cx="431.2" cy="706.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="706.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="431.2" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="431.2" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="352.2" y="666.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="688.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="704.2" font-size="12.5" font-weight="400" fill="#6E6E73">244 ms reaction time</text></g>
+<g class="tip"><rect x="352.2" y="644.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="665.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="681.7" font-size="12.5" font-weight="400" fill="#6E6E73">244 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.5 h slept, 227 ms reaction time">
 <title>8.5 h slept, 227 ms reaction time</title>
-<circle class="halo" cx="640.0" cy="738.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="640.0" cy="738.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="640.0" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="640.0" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="561" y="698.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="570" y="719.7" font-size="12.5" font-weight="700" fill="#1D1D1F">8.5 h slept</text><text x="570" y="735.7" font-size="12.5" font-weight="400" fill="#6E6E73">227 ms reaction time</text></g>
+<g class="tip"><rect x="561" y="680.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="570" y="702.4" font-size="12.5" font-weight="700" fill="#1D1D1F">8.5 h slept</text><text x="570" y="718.4" font-size="12.5" font-weight="400" fill="#6E6E73">227 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.4 h slept, 329 ms reaction time">
 <title>4.4 h slept, 329 ms reaction time</title>
-<circle class="halo" cx="164.4" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="164.4" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="164.4" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="164.4" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="85.4" y="508.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="94.4" y="530.4" font-size="12.5" font-weight="700" fill="#1D1D1F">4.4 h slept</text><text x="94.4" y="546.4" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
+<g class="tip"><rect x="85.4" y="460.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="94.4" y="482.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.4 h slept</text><text x="94.4" y="498.1" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.8 h slept, 206 ms reaction time">
 <title>7.8 h slept, 206 ms reaction time</title>
-<circle class="halo" cx="558.8" cy="777.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="558.8" cy="777.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="558.8" cy="766.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="558.8" cy="766.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="479.8" y="737.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="488.8" y="758.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.8 h slept</text><text x="488.8" y="774.7" font-size="12.5" font-weight="400" fill="#6E6E73">206 ms reaction time</text></g>
+<g class="tip"><rect x="479.8" y="726.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="488.8" y="747.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.8 h slept</text><text x="488.8" y="763.7" font-size="12.5" font-weight="400" fill="#6E6E73">206 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 300 ms reaction time">
 <title>6.8 h slept, 300 ms reaction time</title>
-<circle class="halo" cx="442.8" cy="602.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="602.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="442.8" cy="563.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="442.8" cy="563.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="363.8" y="562.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="584.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="600.2" font-size="12.5" font-weight="400" fill="#6E6E73">300 ms reaction time</text></g>
+<g class="tip"><rect x="363.8" y="523.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="544.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="560.7" font-size="12.5" font-weight="400" fill="#6E6E73">300 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 310 ms reaction time">
 <title>5.7 h slept, 310 ms reaction time</title>
-<circle class="halo" cx="315.2" cy="584.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="584.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="315.2" cy="541.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="315.2" cy="541.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="236.2" y="544.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="565.7" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="581.7" font-size="12.5" font-weight="400" fill="#6E6E73">310 ms reaction time</text></g>
+<g class="tip"><rect x="236.2" y="501.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="523.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="539.1" font-size="12.5" font-weight="400" fill="#6E6E73">310 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="9.4 h slept, 209 ms reaction time">
 <title>9.4 h slept, 209 ms reaction time</title>
-<circle class="halo" cx="744.4" cy="771.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="744.4" cy="771.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="744.4" cy="759.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="744.4" cy="759.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="665.4" y="731.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="674.4" y="753.1" font-size="12.5" font-weight="700" fill="#1D1D1F">9.4 h slept</text><text x="674.4" y="769.1" font-size="12.5" font-weight="400" fill="#6E6E73">209 ms reaction time</text></g>
+<g class="tip"><rect x="665.4" y="719.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="674.4" y="741.3" font-size="12.5" font-weight="700" fill="#1D1D1F">9.4 h slept</text><text x="674.4" y="757.3" font-size="12.5" font-weight="400" fill="#6E6E73">209 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.7 h slept, 236 ms reaction time">
 <title>7.7 h slept, 236 ms reaction time</title>
-<circle class="halo" cx="547.2" cy="721.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="547.2" cy="721.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="547.2" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="547.2" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="468.2" y="681.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="477.2" y="703" font-size="12.5" font-weight="700" fill="#1D1D1F">7.7 h slept</text><text x="477.2" y="719" font-size="12.5" font-weight="400" fill="#6E6E73">236 ms reaction time</text></g>
+<g class="tip"><rect x="468.2" y="661.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="477.2" y="682.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.7 h slept</text><text x="477.2" y="698.9" font-size="12.5" font-weight="400" fill="#6E6E73">236 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 344 ms reaction time">
 <title>4.9 h slept, 344 ms reaction time</title>
-<circle class="halo" cx="222.4" cy="521.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="222.4" cy="521.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="222.4" cy="468.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="222.4" cy="468.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="143.4" y="481.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.4" y="502.6" font-size="12.5" font-weight="700" fill="#1D1D1F">4.9 h slept</text><text x="152.4" y="518.6" font-size="12.5" font-weight="400" fill="#6E6E73">344 ms reaction time</text></g>
+<g class="tip"><rect x="143.4" y="428.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.4" y="449.7" font-size="12.5" font-weight="700" fill="#1D1D1F">4.9 h slept</text><text x="152.4" y="465.7" font-size="12.5" font-weight="400" fill="#6E6E73">344 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 268 ms reaction time">
 <title>6.7 h slept, 268 ms reaction time</title>
-<circle class="halo" cx="431.2" cy="662.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="662.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="431.2" cy="632.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="431.2" cy="632.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="352.2" y="622.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="643.6" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="659.6" font-size="12.5" font-weight="400" fill="#6E6E73">268 ms reaction time</text></g>
+<g class="tip"><rect x="352.2" y="592.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="361.2" y="613.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.7 h slept</text><text x="361.2" y="629.8" font-size="12.5" font-weight="400" fill="#6E6E73">268 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.4 h slept, 259 ms reaction time">
 <title>7.4 h slept, 259 ms reaction time</title>
-<circle class="halo" cx="512.4" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="512.4" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="512.4" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="512.4" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="433.4" y="638.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="442.4" y="660.3" font-size="12.5" font-weight="700" fill="#1D1D1F">7.4 h slept</text><text x="442.4" y="676.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
+<g class="tip"><rect x="433.4" y="611.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="442.4" y="633.3" font-size="12.5" font-weight="700" fill="#1D1D1F">7.4 h slept</text><text x="442.4" y="649.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 264 ms reaction time">
 <title>6.3 h slept, 264 ms reaction time</title>
-<circle class="halo" cx="384.8" cy="669.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="669.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="384.8" cy="641.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="384.8" cy="641.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="305.8" y="629.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="651" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="667" font-size="12.5" font-weight="400" fill="#6E6E73">264 ms reaction time</text></g>
+<g class="tip"><rect x="305.8" y="601" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="622.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="638.5" font-size="12.5" font-weight="400" fill="#6E6E73">264 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 227 ms reaction time">
 <title>7.6 h slept, 227 ms reaction time</title>
-<circle class="halo" cx="535.6" cy="738.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="738.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="535.6" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="535.6" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="456.6" y="698.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="719.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="735.7" font-size="12.5" font-weight="400" fill="#6E6E73">227 ms reaction time</text></g>
+<g class="tip"><rect x="456.6" y="680.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="702.4" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="718.4" font-size="12.5" font-weight="400" fill="#6E6E73">227 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 323 ms reaction time">
 <title>6.5 h slept, 323 ms reaction time</title>
-<circle class="halo" cx="408.0" cy="560.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="560.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="408.0" cy="513.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="408.0" cy="513.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="329" y="520" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="541.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="557.5" font-size="12.5" font-weight="400" fill="#6E6E73">323 ms reaction time</text></g>
+<g class="tip"><rect x="329" y="473.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="495" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="511" font-size="12.5" font-weight="400" fill="#6E6E73">323 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 246 ms reaction time">
 <title>7.5 h slept, 246 ms reaction time</title>
-<circle class="halo" cx="524.0" cy="702.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="702.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="524.0" cy="679.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="524.0" cy="679.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="445" y="662.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="684.4" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="700.4" font-size="12.5" font-weight="400" fill="#6E6E73">246 ms reaction time</text></g>
+<g class="tip"><rect x="445" y="639.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="661.3" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="677.3" font-size="12.5" font-weight="400" fill="#6E6E73">246 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.6 h slept, 236 ms reaction time">
 <title>8.6 h slept, 236 ms reaction time</title>
-<circle class="halo" cx="651.6" cy="721.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="651.6" cy="721.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="651.6" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="651.6" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="572.6" y="681.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="581.6" y="703" font-size="12.5" font-weight="700" fill="#1D1D1F">8.6 h slept</text><text x="581.6" y="719" font-size="12.5" font-weight="400" fill="#6E6E73">236 ms reaction time</text></g>
+<g class="tip"><rect x="572.6" y="661.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="581.6" y="682.9" font-size="12.5" font-weight="700" fill="#1D1D1F">8.6 h slept</text><text x="581.6" y="698.9" font-size="12.5" font-weight="400" fill="#6E6E73">236 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 311 ms reaction time">
 <title>5.7 h slept, 311 ms reaction time</title>
-<circle class="halo" cx="315.2" cy="582.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="582.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="315.2" cy="539.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="315.2" cy="539.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="236.2" y="542.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="563.8" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="579.8" font-size="12.5" font-weight="400" fill="#6E6E73">311 ms reaction time</text></g>
+<g class="tip"><rect x="236.2" y="499.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="520.9" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="536.9" font-size="12.5" font-weight="400" fill="#6E6E73">311 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 266 ms reaction time">
 <title>6.9 h slept, 266 ms reaction time</title>
-<circle class="halo" cx="454.4" cy="665.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="454.4" cy="665.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="454.4" cy="636.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="454.4" cy="636.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="375.4" y="625.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.4" y="647.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.9 h slept</text><text x="384.4" y="663.3" font-size="12.5" font-weight="400" fill="#6E6E73">266 ms reaction time</text></g>
+<g class="tip"><rect x="375.4" y="596.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.4" y="618.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.9 h slept</text><text x="384.4" y="634.1" font-size="12.5" font-weight="400" fill="#6E6E73">266 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 290 ms reaction time">
 <title>6.0 h slept, 290 ms reaction time</title>
-<circle class="halo" cx="350.0" cy="621.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="621.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="350.0" cy="584.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="350.0" cy="584.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="271" y="581.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="602.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="618.8" font-size="12.5" font-weight="400" fill="#6E6E73">290 ms reaction time</text></g>
+<g class="tip"><rect x="271" y="544.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="566.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="582.3" font-size="12.5" font-weight="400" fill="#6E6E73">290 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 297 ms reaction time">
 <title>6.8 h slept, 297 ms reaction time</title>
-<circle class="halo" cx="442.8" cy="608.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="608.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="442.8" cy="569.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="442.8" cy="569.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="363.8" y="568.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="589.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="605.8" font-size="12.5" font-weight="400" fill="#6E6E73">297 ms reaction time</text></g>
+<g class="tip"><rect x="363.8" y="529.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="551.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="567.2" font-size="12.5" font-weight="400" fill="#6E6E73">297 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 324 ms reaction time">
 <title>4.9 h slept, 324 ms reaction time</title>
-<circle class="halo" cx="222.4" cy="558.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="222.4" cy="558.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="222.4" cy="511.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="222.4" cy="511.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="143.4" y="518.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.4" y="539.7" font-size="12.5" font-weight="700" fill="#1D1D1F">4.9 h slept</text><text x="152.4" y="555.7" font-size="12.5" font-weight="400" fill="#6E6E73">324 ms reaction time</text></g>
+<g class="tip"><rect x="143.4" y="471.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.4" y="492.9" font-size="12.5" font-weight="700" fill="#1D1D1F">4.9 h slept</text><text x="152.4" y="508.9" font-size="12.5" font-weight="400" fill="#6E6E73">324 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 304 ms reaction time">
 <title>5.8 h slept, 304 ms reaction time</title>
-<circle class="halo" cx="326.8" cy="595.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="326.8" cy="595.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="326.8" cy="554.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="326.8" cy="554.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="247.8" y="555.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="256.8" y="576.8" font-size="12.5" font-weight="700" fill="#1D1D1F">5.8 h slept</text><text x="256.8" y="592.8" font-size="12.5" font-weight="400" fill="#6E6E73">304 ms reaction time</text></g>
+<g class="tip"><rect x="247.8" y="514.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="256.8" y="536.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.8 h slept</text><text x="256.8" y="552.1" font-size="12.5" font-weight="400" fill="#6E6E73">304 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 293 ms reaction time">
 <title>6.3 h slept, 293 ms reaction time</title>
-<circle class="halo" cx="384.8" cy="615.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="615.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="384.8" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="384.8" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="305.8" y="575.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="597.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="613.2" font-size="12.5" font-weight="400" fill="#6E6E73">293 ms reaction time</text></g>
+<g class="tip"><rect x="305.8" y="538.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="559.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="575.8" font-size="12.5" font-weight="400" fill="#6E6E73">293 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.9 h slept, 281 ms reaction time">
 <title>7.9 h slept, 281 ms reaction time</title>
-<circle class="halo" cx="570.4" cy="638.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="570.4" cy="638.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="570.4" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="570.4" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="491.4" y="598" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="500.4" y="619.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.9 h slept</text><text x="500.4" y="635.5" font-size="12.5" font-weight="400" fill="#6E6E73">281 ms reaction time</text></g>
+<g class="tip"><rect x="491.4" y="564.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="500.4" y="585.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.9 h slept</text><text x="500.4" y="601.7" font-size="12.5" font-weight="400" fill="#6E6E73">281 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.2 h slept, 258 ms reaction time">
 <title>8.2 h slept, 258 ms reaction time</title>
-<circle class="halo" cx="605.2" cy="680.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="605.2" cy="680.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="605.2" cy="653.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="605.2" cy="653.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="526.2" y="640.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="535.2" y="662.2" font-size="12.5" font-weight="700" fill="#1D1D1F">8.2 h slept</text><text x="535.2" y="678.2" font-size="12.5" font-weight="400" fill="#6E6E73">258 ms reaction time</text></g>
+<g class="tip"><rect x="526.2" y="613.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="535.2" y="635.4" font-size="12.5" font-weight="700" fill="#1D1D1F">8.2 h slept</text><text x="535.2" y="651.4" font-size="12.5" font-weight="400" fill="#6E6E73">258 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.7 h slept, 347 ms reaction time">
 <title>4.7 h slept, 347 ms reaction time</title>
-<circle class="halo" cx="199.2" cy="515.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="199.2" cy="515.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="199.2" cy="461.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="199.2" cy="461.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="120.2" y="475.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="129.2" y="497" font-size="12.5" font-weight="700" fill="#1D1D1F">4.7 h slept</text><text x="129.2" y="513" font-size="12.5" font-weight="400" fill="#6E6E73">347 ms reaction time</text></g>
+<g class="tip"><rect x="120.2" y="421.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="129.2" y="443.2" font-size="12.5" font-weight="700" fill="#1D1D1F">4.7 h slept</text><text x="129.2" y="459.2" font-size="12.5" font-weight="400" fill="#6E6E73">347 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 302 ms reaction time">
 <title>5.5 h slept, 302 ms reaction time</title>
-<circle class="halo" cx="292.0" cy="599.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="292.0" cy="599.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="292.0" cy="558.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="292.0" cy="558.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="213" y="559" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222" y="580.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.5 h slept</text><text x="222" y="596.5" font-size="12.5" font-weight="400" fill="#6E6E73">302 ms reaction time</text></g>
+<g class="tip"><rect x="213" y="518.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222" y="540.4" font-size="12.5" font-weight="700" fill="#1D1D1F">5.5 h slept</text><text x="222" y="556.4" font-size="12.5" font-weight="400" fill="#6E6E73">302 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 224 ms reaction time">
 <title>7.5 h slept, 224 ms reaction time</title>
-<circle class="halo" cx="524.0" cy="743.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="743.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="524.0" cy="727.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="524.0" cy="727.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="445" y="703.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="725.3" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="741.3" font-size="12.5" font-weight="400" fill="#6E6E73">224 ms reaction time</text></g>
+<g class="tip"><rect x="445" y="687.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="708.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="724.9" font-size="12.5" font-weight="400" fill="#6E6E73">224 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 383 ms reaction time">
 <title>4.0 h slept, 383 ms reaction time</title>
-<circle class="halo" cx="118.0" cy="448.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="448.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="118.0" cy="383.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="118.0" cy="383.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="39" y="408.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="430.2" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="446.2" font-size="12.5" font-weight="400" fill="#6E6E73">383 ms reaction time</text></g>
+<g class="tip"><rect x="39" y="343.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="365.4" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="381.4" font-size="12.5" font-weight="400" fill="#6E6E73">383 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 328 ms reaction time">
 <title>6.0 h slept, 328 ms reaction time</title>
-<circle class="halo" cx="350.0" cy="550.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="550.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="350.0" cy="502.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="350.0" cy="502.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="271" y="510.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="532.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="548.3" font-size="12.5" font-weight="400" fill="#6E6E73">328 ms reaction time</text></g>
+<g class="tip"><rect x="271" y="462.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="484.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="500.2" font-size="12.5" font-weight="400" fill="#6E6E73">328 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 285 ms reaction time">
 <title>6.5 h slept, 285 ms reaction time</title>
-<circle class="halo" cx="408.0" cy="630.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="630.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="408.0" cy="595.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="408.0" cy="595.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="329" y="590.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="612.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="628.1" font-size="12.5" font-weight="400" fill="#6E6E73">285 ms reaction time</text></g>
+<g class="tip"><rect x="329" y="555.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="577.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="593.1" font-size="12.5" font-weight="400" fill="#6E6E73">285 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.4 h slept, 250 ms reaction time">
 <title>8.4 h slept, 250 ms reaction time</title>
-<circle class="halo" cx="628.4" cy="695.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="628.4" cy="695.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="628.4" cy="671.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="628.4" cy="671.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="549.4" y="655.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="558.4" y="677" font-size="12.5" font-weight="700" fill="#1D1D1F">8.4 h slept</text><text x="558.4" y="693" font-size="12.5" font-weight="400" fill="#6E6E73">250 ms reaction time</text></g>
+<g class="tip"><rect x="549.4" y="631.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="558.4" y="652.7" font-size="12.5" font-weight="700" fill="#1D1D1F">8.4 h slept</text><text x="558.4" y="668.7" font-size="12.5" font-weight="400" fill="#6E6E73">250 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 278 ms reaction time">
 <title>7.6 h slept, 278 ms reaction time</title>
-<circle class="halo" cx="535.6" cy="643.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="643.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="535.6" cy="610.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="535.6" cy="610.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="456.6" y="603.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="625.1" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="641.1" font-size="12.5" font-weight="400" fill="#6E6E73">278 ms reaction time</text></g>
+<g class="tip"><rect x="456.6" y="570.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="592.2" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="608.2" font-size="12.5" font-weight="400" fill="#6E6E73">278 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 320 ms reaction time">
 <title>6.1 h slept, 320 ms reaction time</title>
-<circle class="halo" cx="361.6" cy="565.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="361.6" cy="565.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="361.6" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="361.6" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="282.6" y="525.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="291.6" y="547.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.1 h slept</text><text x="291.6" y="563.1" font-size="12.5" font-weight="400" fill="#6E6E73">320 ms reaction time</text></g>
+<g class="tip"><rect x="282.6" y="480" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="291.6" y="501.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.1 h slept</text><text x="291.6" y="517.5" font-size="12.5" font-weight="400" fill="#6E6E73">320 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 324 ms reaction time">
 <title>6.1 h slept, 324 ms reaction time</title>
-<circle class="halo" cx="361.6" cy="558.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="361.6" cy="558.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="361.6" cy="511.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="361.6" cy="511.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="282.6" y="518.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="291.6" y="539.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.1 h slept</text><text x="291.6" y="555.7" font-size="12.5" font-weight="400" fill="#6E6E73">324 ms reaction time</text></g>
+<g class="tip"><rect x="282.6" y="471.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="291.6" y="492.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.1 h slept</text><text x="291.6" y="508.9" font-size="12.5" font-weight="400" fill="#6E6E73">324 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 283 ms reaction time">
 <title>6.2 h slept, 283 ms reaction time</title>
-<circle class="halo" cx="373.2" cy="634.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="634.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="373.2" cy="599.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="373.2" cy="599.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="294.2" y="594.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="615.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="631.8" font-size="12.5" font-weight="400" fill="#6E6E73">283 ms reaction time</text></g>
+<g class="tip"><rect x="294.2" y="559.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="581.4" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="597.4" font-size="12.5" font-weight="400" fill="#6E6E73">283 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.7 h slept, 265 ms reaction time">
 <title>8.7 h slept, 265 ms reaction time</title>
-<circle class="halo" cx="663.2" cy="667.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="663.2" cy="667.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="663.2" cy="638.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="663.2" cy="638.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="584.2" y="627.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="593.2" y="649.2" font-size="12.5" font-weight="700" fill="#1D1D1F">8.7 h slept</text><text x="593.2" y="665.2" font-size="12.5" font-weight="400" fill="#6E6E73">265 ms reaction time</text></g>
+<g class="tip"><rect x="584.2" y="598.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="593.2" y="620.3" font-size="12.5" font-weight="700" fill="#1D1D1F">8.7 h slept</text><text x="593.2" y="636.3" font-size="12.5" font-weight="400" fill="#6E6E73">265 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 270 ms reaction time">
 <title>6.0 h slept, 270 ms reaction time</title>
-<circle class="halo" cx="350.0" cy="658.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="658.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="350.0" cy="628.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="350.0" cy="628.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="271" y="618.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="639.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="655.9" font-size="12.5" font-weight="400" fill="#6E6E73">270 ms reaction time</text></g>
+<g class="tip"><rect x="271" y="588" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="609.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="625.5" font-size="12.5" font-weight="400" fill="#6E6E73">270 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 320 ms reaction time">
 <title>6.2 h slept, 320 ms reaction time</title>
-<circle class="halo" cx="373.2" cy="565.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="565.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="373.2" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="373.2" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="294.2" y="525.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="547.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="563.1" font-size="12.5" font-weight="400" fill="#6E6E73">320 ms reaction time</text></g>
+<g class="tip"><rect x="294.2" y="480" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="501.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="517.5" font-size="12.5" font-weight="400" fill="#6E6E73">320 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 284 ms reaction time">
 <title>7.1 h slept, 284 ms reaction time</title>
-<circle class="halo" cx="477.6" cy="632.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="477.6" cy="632.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="477.6" cy="597.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="477.6" cy="597.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="398.6" y="592.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="407.6" y="613.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1 h slept</text><text x="407.6" y="629.9" font-size="12.5" font-weight="400" fill="#6E6E73">284 ms reaction time</text></g>
+<g class="tip"><rect x="398.6" y="557.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="407.6" y="579.3" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1 h slept</text><text x="407.6" y="595.3" font-size="12.5" font-weight="400" fill="#6E6E73">284 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 313 ms reaction time">
 <title>6.4 h slept, 313 ms reaction time</title>
-<circle class="halo" cx="396.4" cy="578.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="396.4" cy="578.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="396.4" cy="535.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="396.4" cy="535.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="317.4" y="538.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="326.4" y="560.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4 h slept</text><text x="326.4" y="576.1" font-size="12.5" font-weight="400" fill="#6E6E73">313 ms reaction time</text></g>
+<g class="tip"><rect x="317.4" y="495.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="326.4" y="516.6" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4 h slept</text><text x="326.4" y="532.6" font-size="12.5" font-weight="400" fill="#6E6E73">313 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 342 ms reaction time">
 <title>6.3 h slept, 342 ms reaction time</title>
-<circle class="halo" cx="384.8" cy="524.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="524.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="384.8" cy="472.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="384.8" cy="472.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="305.8" y="484.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="506.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="522.3" font-size="12.5" font-weight="400" fill="#6E6E73">342 ms reaction time</text></g>
+<g class="tip"><rect x="305.8" y="432.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="454" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="470" font-size="12.5" font-weight="400" fill="#6E6E73">342 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.0 h slept, 367 ms reaction time">
 <title>5.0 h slept, 367 ms reaction time</title>
-<circle class="halo" cx="234.0" cy="478.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="234.0" cy="478.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="234.0" cy="418.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="234.0" cy="418.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="155" y="438.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="164" y="459.9" font-size="12.5" font-weight="700" fill="#1D1D1F">5.0 h slept</text><text x="164" y="475.9" font-size="12.5" font-weight="400" fill="#6E6E73">367 ms reaction time</text></g>
+<g class="tip"><rect x="155" y="378.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="164" y="400" font-size="12.5" font-weight="700" fill="#1D1D1F">5.0 h slept</text><text x="164" y="416" font-size="12.5" font-weight="400" fill="#6E6E73">367 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 256 ms reaction time">
 <title>6.6 h slept, 256 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="684.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="684.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="658.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="658.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="644.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="665.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="681.9" font-size="12.5" font-weight="400" fill="#6E6E73">256 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="618.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="639.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="655.7" font-size="12.5" font-weight="400" fill="#6E6E73">256 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 259 ms reaction time">
 <title>6.0 h slept, 259 ms reaction time</title>
-<circle class="halo" cx="350.0" cy="678.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="678.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="350.0" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="350.0" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="271" y="638.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="660.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="676.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
+<g class="tip"><rect x="271" y="611.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="280" y="633.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.0 h slept</text><text x="280" y="649.3" font-size="12.5" font-weight="400" fill="#6E6E73">259 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.2 h slept, 261 ms reaction time">
 <title>8.2 h slept, 261 ms reaction time</title>
-<circle class="halo" cx="605.2" cy="675.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="605.2" cy="675.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="605.2" cy="647.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="605.2" cy="647.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="526.2" y="635.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="535.2" y="656.6" font-size="12.5" font-weight="700" fill="#1D1D1F">8.2 h slept</text><text x="535.2" y="672.6" font-size="12.5" font-weight="400" fill="#6E6E73">261 ms reaction time</text></g>
+<g class="tip"><rect x="526.2" y="607.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="535.2" y="628.9" font-size="12.5" font-weight="700" fill="#1D1D1F">8.2 h slept</text><text x="535.2" y="644.9" font-size="12.5" font-weight="400" fill="#6E6E73">261 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 233 ms reaction time">
 <title>7.5 h slept, 233 ms reaction time</title>
-<circle class="halo" cx="524.0" cy="727.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="727.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="524.0" cy="707.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="524.0" cy="707.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="445" y="687.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="708.6" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="724.6" font-size="12.5" font-weight="400" fill="#6E6E73">233 ms reaction time</text></g>
+<g class="tip"><rect x="445" y="667.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="689.4" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="705.4" font-size="12.5" font-weight="400" fill="#6E6E73">233 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 286 ms reaction time">
 <title>6.6 h slept, 286 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="628.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="628.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="593.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="593.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="588.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="610.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="626.2" font-size="12.5" font-weight="400" fill="#6E6E73">286 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="553.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="574.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="590.9" font-size="12.5" font-weight="400" fill="#6E6E73">286 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 281 ms reaction time">
 <title>7.5 h slept, 281 ms reaction time</title>
-<circle class="halo" cx="524.0" cy="638.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="638.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="524.0" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="524.0" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="445" y="598" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="619.5" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="635.5" font-size="12.5" font-weight="400" fill="#6E6E73">281 ms reaction time</text></g>
+<g class="tip"><rect x="445" y="564.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="454" y="585.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.5 h slept</text><text x="454" y="601.7" font-size="12.5" font-weight="400" fill="#6E6E73">281 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 256 ms reaction time">
 <title>6.1 h slept, 256 ms reaction time</title>
-<circle class="halo" cx="361.6" cy="684.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="361.6" cy="684.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="361.6" cy="658.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="361.6" cy="658.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="282.6" y="644.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="291.6" y="665.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.1 h slept</text><text x="291.6" y="681.9" font-size="12.5" font-weight="400" fill="#6E6E73">256 ms reaction time</text></g>
+<g class="tip"><rect x="282.6" y="618.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="291.6" y="639.7" font-size="12.5" font-weight="700" fill="#1D1D1F">6.1 h slept</text><text x="291.6" y="655.7" font-size="12.5" font-weight="400" fill="#6E6E73">256 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.1 h slept, 189 ms reaction time">
 <title>8.1 h slept, 189 ms reaction time</title>
-<circle class="halo" cx="593.6" cy="808.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="593.6" cy="808.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="593.6" cy="803.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="593.6" cy="803.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="514.6" y="768.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="523.6" y="790.2" font-size="12.5" font-weight="700" fill="#1D1D1F">8.1 h slept</text><text x="523.6" y="806.2" font-size="12.5" font-weight="400" fill="#6E6E73">189 ms reaction time</text></g>
+<g class="tip"><rect x="514.6" y="763" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="523.6" y="784.5" font-size="12.5" font-weight="700" fill="#1D1D1F">8.1 h slept</text><text x="523.6" y="800.5" font-size="12.5" font-weight="400" fill="#6E6E73">189 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 292 ms reaction time">
 <title>6.6 h slept, 292 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="617.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="617.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="580.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="580.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="577.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="599.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="615.1" font-size="12.5" font-weight="400" fill="#6E6E73">292 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="540.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="562" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="578" font-size="12.5" font-weight="400" fill="#6E6E73">292 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.4 h slept, 263 ms reaction time">
 <title>7.4 h slept, 263 ms reaction time</title>
-<circle class="halo" cx="512.4" cy="671.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="512.4" cy="671.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="512.4" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="512.4" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="433.4" y="631.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="442.4" y="652.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.4 h slept</text><text x="442.4" y="668.9" font-size="12.5" font-weight="400" fill="#6E6E73">263 ms reaction time</text></g>
+<g class="tip"><rect x="433.4" y="603.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="442.4" y="624.6" font-size="12.5" font-weight="700" fill="#1D1D1F">7.4 h slept</text><text x="442.4" y="640.6" font-size="12.5" font-weight="400" fill="#6E6E73">263 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 329 ms reaction time">
 <title>4.8 h slept, 329 ms reaction time</title>
-<circle class="halo" cx="210.8" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="210.8" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="210.8" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="210.8" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="131.8" y="508.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.8" y="530.4" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8 h slept</text><text x="140.8" y="546.4" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
+<g class="tip"><rect x="131.8" y="460.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.8" y="482.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8 h slept</text><text x="140.8" y="498.1" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 273 ms reaction time">
 <title>7.1 h slept, 273 ms reaction time</title>
-<circle class="halo" cx="477.6" cy="652.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="477.6" cy="652.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="477.6" cy="621.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="477.6" cy="621.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="398.6" y="612.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="407.6" y="634.3" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1 h slept</text><text x="407.6" y="650.3" font-size="12.5" font-weight="400" fill="#6E6E73">273 ms reaction time</text></g>
+<g class="tip"><rect x="398.6" y="581.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="407.6" y="603" font-size="12.5" font-weight="700" fill="#1D1D1F">7.1 h slept</text><text x="407.6" y="619" font-size="12.5" font-weight="400" fill="#6E6E73">273 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.2 h slept, 329 ms reaction time">
 <title>4.2 h slept, 329 ms reaction time</title>
-<circle class="halo" cx="141.2" cy="548.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="141.2" cy="548.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="141.2" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="141.2" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="62.2" y="508.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="71.2" y="530.4" font-size="12.5" font-weight="700" fill="#1D1D1F">4.2 h slept</text><text x="71.2" y="546.4" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
+<g class="tip"><rect x="62.2" y="460.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="71.2" y="482.1" font-size="12.5" font-weight="700" fill="#1D1D1F">4.2 h slept</text><text x="71.2" y="498.1" font-size="12.5" font-weight="400" fill="#6E6E73">329 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 319 ms reaction time">
 <title>4.0 h slept, 319 ms reaction time</title>
-<circle class="halo" cx="118.0" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="118.0" cy="522.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="118.0" cy="522.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="39" y="527.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="549" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="565" font-size="12.5" font-weight="400" fill="#6E6E73">319 ms reaction time</text></g>
+<g class="tip"><rect x="39" y="482.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="48" y="503.7" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0 h slept</text><text x="48" y="519.7" font-size="12.5" font-weight="400" fill="#6E6E73">319 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
 <title>6.2 h slept, 293 ms reaction time</title>
-<circle class="halo" cx="373.2" cy="615.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="615.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="373.2" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="294.2" y="575.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="597.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="613.2" font-size="12.5" font-weight="400" fill="#6E6E73">293 ms reaction time</text></g>
+<g class="tip"><rect x="294.2" y="538.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="303.2" y="559.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.2 h slept</text><text x="303.2" y="575.8" font-size="12.5" font-weight="400" fill="#6E6E73">293 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.3 h slept, 295 ms reaction time">
 <title>5.3 h slept, 295 ms reaction time</title>
-<circle class="halo" cx="268.8" cy="612.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="268.8" cy="612.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="268.8" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="268.8" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="189.8" y="572" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="198.8" y="593.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.3 h slept</text><text x="198.8" y="609.5" font-size="12.5" font-weight="400" fill="#6E6E73">295 ms reaction time</text></g>
+<g class="tip"><rect x="189.8" y="534" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="198.8" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.3 h slept</text><text x="198.8" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">295 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 236 ms reaction time">
 <title>6.8 h slept, 236 ms reaction time</title>
-<circle class="halo" cx="442.8" cy="721.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="721.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="442.8" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="442.8" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="363.8" y="681.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="703" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="719" font-size="12.5" font-weight="400" fill="#6E6E73">236 ms reaction time</text></g>
+<g class="tip"><rect x="363.8" y="661.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="372.8" y="682.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.8 h slept</text><text x="372.8" y="698.9" font-size="12.5" font-weight="400" fill="#6E6E73">236 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="9.5 h slept, 217 ms reaction time">
 <title>9.5 h slept, 217 ms reaction time</title>
-<circle class="halo" cx="756.0" cy="756.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="756.0" cy="756.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="756.0" cy="742.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="756.0" cy="742.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="677" y="716.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="686" y="738.3" font-size="12.5" font-weight="700" fill="#1D1D1F">9.5 h slept</text><text x="686" y="754.3" font-size="12.5" font-weight="400" fill="#6E6E73">217 ms reaction time</text></g>
+<g class="tip"><rect x="677" y="702.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="686" y="724" font-size="12.5" font-weight="700" fill="#1D1D1F">9.5 h slept</text><text x="686" y="740" font-size="12.5" font-weight="400" fill="#6E6E73">217 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 316 ms reaction time">
 <title>5.4 h slept, 316 ms reaction time</title>
-<circle class="halo" cx="280.4" cy="573.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="280.4" cy="573.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="280.4" cy="528.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="280.4" cy="528.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="201.4" y="533" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="210.4" y="554.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.4 h slept</text><text x="210.4" y="570.5" font-size="12.5" font-weight="400" fill="#6E6E73">316 ms reaction time</text></g>
+<g class="tip"><rect x="201.4" y="488.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="210.4" y="510.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.4 h slept</text><text x="210.4" y="526.1" font-size="12.5" font-weight="400" fill="#6E6E73">316 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 320 ms reaction time">
 <title>5.7 h slept, 320 ms reaction time</title>
-<circle class="halo" cx="315.2" cy="565.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="565.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="315.2" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="315.2" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="236.2" y="525.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="547.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="563.1" font-size="12.5" font-weight="400" fill="#6E6E73">320 ms reaction time</text></g>
+<g class="tip"><rect x="236.2" y="480" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="245.2" y="501.5" font-size="12.5" font-weight="700" fill="#1D1D1F">5.7 h slept</text><text x="245.2" y="517.5" font-size="12.5" font-weight="400" fill="#6E6E73">320 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 251 ms reaction time">
 <title>6.9 h slept, 251 ms reaction time</title>
-<circle class="halo" cx="454.4" cy="693.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="454.4" cy="693.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="454.4" cy="669.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="454.4" cy="669.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="375.4" y="653.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.4" y="675.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.9 h slept</text><text x="384.4" y="691.2" font-size="12.5" font-weight="400" fill="#6E6E73">251 ms reaction time</text></g>
+<g class="tip"><rect x="375.4" y="629" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.4" y="650.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.9 h slept</text><text x="384.4" y="666.5" font-size="12.5" font-weight="400" fill="#6E6E73">251 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 249 ms reaction time">
 <title>7.3 h slept, 249 ms reaction time</title>
-<circle class="halo" cx="500.8" cy="697.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="500.8" cy="697.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="500.8" cy="673.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="500.8" cy="673.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="421.8" y="657.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="430.8" y="678.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.3 h slept</text><text x="430.8" y="694.9" font-size="12.5" font-weight="400" fill="#6E6E73">249 ms reaction time</text></g>
+<g class="tip"><rect x="421.8" y="633.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="430.8" y="654.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.3 h slept</text><text x="430.8" y="670.9" font-size="12.5" font-weight="400" fill="#6E6E73">249 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 266 ms reaction time">
 <title>6.4 h slept, 266 ms reaction time</title>
-<circle class="halo" cx="396.4" cy="665.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="396.4" cy="665.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="396.4" cy="636.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="396.4" cy="636.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="317.4" y="625.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="326.4" y="647.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4 h slept</text><text x="326.4" y="663.3" font-size="12.5" font-weight="400" fill="#6E6E73">266 ms reaction time</text></g>
+<g class="tip"><rect x="317.4" y="596.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="326.4" y="618.1" font-size="12.5" font-weight="700" fill="#1D1D1F">6.4 h slept</text><text x="326.4" y="634.1" font-size="12.5" font-weight="400" fill="#6E6E73">266 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 270 ms reaction time">
 <title>6.3 h slept, 270 ms reaction time</title>
-<circle class="halo" cx="384.8" cy="658.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="658.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="384.8" cy="628.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="384.8" cy="628.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="305.8" y="618.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="639.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="655.9" font-size="12.5" font-weight="400" fill="#6E6E73">270 ms reaction time</text></g>
+<g class="tip"><rect x="305.8" y="588" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="314.8" y="609.5" font-size="12.5" font-weight="700" fill="#1D1D1F">6.3 h slept</text><text x="314.8" y="625.5" font-size="12.5" font-weight="400" fill="#6E6E73">270 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 263 ms reaction time">
 <title>7.6 h slept, 263 ms reaction time</title>
-<circle class="halo" cx="535.6" cy="671.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="671.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="535.6" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="535.6" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="456.6" y="631.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="652.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="668.9" font-size="12.5" font-weight="400" fill="#6E6E73">263 ms reaction time</text></g>
+<g class="tip"><rect x="456.6" y="603.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="465.6" y="624.6" font-size="12.5" font-weight="700" fill="#1D1D1F">7.6 h slept</text><text x="465.6" y="640.6" font-size="12.5" font-weight="400" fill="#6E6E73">263 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
 <title>7.3 h slept, 244 ms reaction time</title>
-<circle class="halo" cx="500.8" cy="706.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="500.8" cy="706.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="500.8" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="421.8" y="666.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="430.8" y="688.2" font-size="12.5" font-weight="700" fill="#1D1D1F">7.3 h slept</text><text x="430.8" y="704.2" font-size="12.5" font-weight="400" fill="#6E6E73">244 ms reaction time</text></g>
+<g class="tip"><rect x="421.8" y="644.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="430.8" y="665.7" font-size="12.5" font-weight="700" fill="#1D1D1F">7.3 h slept</text><text x="430.8" y="681.7" font-size="12.5" font-weight="400" fill="#6E6E73">244 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 335 ms reaction time">
 <title>5.2 h slept, 335 ms reaction time</title>
-<circle class="halo" cx="257.2" cy="537.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="257.2" cy="537.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="257.2" cy="487.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="257.2" cy="487.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="178.2" y="497.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="187.2" y="519.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2 h slept</text><text x="187.2" y="535.3" font-size="12.5" font-weight="400" fill="#6E6E73">335 ms reaction time</text></g>
+<g class="tip"><rect x="178.2" y="447.6" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="187.2" y="469.1" font-size="12.5" font-weight="700" fill="#1D1D1F">5.2 h slept</text><text x="187.2" y="485.1" font-size="12.5" font-weight="400" fill="#6E6E73">335 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 297 ms reaction time">
 <title>6.5 h slept, 297 ms reaction time</title>
-<circle class="halo" cx="408.0" cy="608.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="608.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="408.0" cy="569.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="408.0" cy="569.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="329" y="568.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="589.8" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="605.8" font-size="12.5" font-weight="400" fill="#6E6E73">297 ms reaction time</text></g>
+<g class="tip"><rect x="329" y="529.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="338" y="551.2" font-size="12.5" font-weight="700" fill="#1D1D1F">6.5 h slept</text><text x="338" y="567.2" font-size="12.5" font-weight="400" fill="#6E6E73">297 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 336 ms reaction time">
 <title>6.6 h slept, 336 ms reaction time</title>
-<circle class="halo" cx="419.6" cy="535.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="535.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="419.6" cy="485.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="419.6" cy="485.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="340.6" y="495.9" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="517.4" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="533.4" font-size="12.5" font-weight="400" fill="#6E6E73">336 ms reaction time</text></g>
+<g class="tip"><rect x="340.6" y="445.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="349.6" y="466.9" font-size="12.5" font-weight="700" fill="#1D1D1F">6.6 h slept</text><text x="349.6" y="482.9" font-size="12.5" font-weight="400" fill="#6E6E73">336 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.1 h slept, 290 ms reaction time">
 <title>5.1 h slept, 290 ms reaction time</title>
-<circle class="halo" cx="245.6" cy="621.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="245.6" cy="621.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="245.6" cy="584.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="245.6" cy="584.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="166.6" y="581.3" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="175.6" y="602.8" font-size="12.5" font-weight="700" fill="#1D1D1F">5.1 h slept</text><text x="175.6" y="618.8" font-size="12.5" font-weight="400" fill="#6E6E73">290 ms reaction time</text></g>
+<g class="tip"><rect x="166.6" y="544.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="175.6" y="566.3" font-size="12.5" font-weight="700" fill="#1D1D1F">5.1 h slept</text><text x="175.6" y="582.3" font-size="12.5" font-weight="400" fill="#6E6E73">290 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 298 ms reaction time">
 <title>7.0 h slept, 298 ms reaction time</title>
-<circle class="halo" cx="466.0" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="466.0" cy="606.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="466.0" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="466.0" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="387" y="566.4" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="396" y="587.9" font-size="12.5" font-weight="700" fill="#1D1D1F">7.0 h slept</text><text x="396" y="603.9" font-size="12.5" font-weight="400" fill="#6E6E73">298 ms reaction time</text></g>
+<g class="tip"><rect x="387" y="527.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="396" y="549" font-size="12.5" font-weight="700" fill="#1D1D1F">7.0 h slept</text><text x="396" y="565" font-size="12.5" font-weight="400" fill="#6E6E73">298 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 317 ms reaction time">
 <title>5.4 h slept, 317 ms reaction time</title>
-<circle class="halo" cx="280.4" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="280.4" cy="571.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="280.4" cy="526.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="280.4" cy="526.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="201.4" y="531.2" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="210.4" y="552.7" font-size="12.5" font-weight="700" fill="#1D1D1F">5.4 h slept</text><text x="210.4" y="568.7" font-size="12.5" font-weight="400" fill="#6E6E73">317 ms reaction time</text></g>
+<g class="tip"><rect x="201.4" y="486.5" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="210.4" y="508" font-size="12.5" font-weight="700" fill="#1D1D1F">5.4 h slept</text><text x="210.4" y="524" font-size="12.5" font-weight="400" fill="#6E6E73">317 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="8.0 h slept, 247 ms reaction time">
 <title>8.0 h slept, 247 ms reaction time</title>
-<circle class="halo" cx="582.0" cy="701.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="582.0" cy="701.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="582.0" cy="677.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="582.0" cy="677.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="503" y="661.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="512" y="682.6" font-size="12.5" font-weight="700" fill="#1D1D1F">8.0 h slept</text><text x="512" y="698.6" font-size="12.5" font-weight="400" fill="#6E6E73">247 ms reaction time</text></g>
+<g class="tip"><rect x="503" y="637.7" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="512" y="659.2" font-size="12.5" font-weight="700" fill="#1D1D1F">8.0 h slept</text><text x="512" y="675.2" font-size="12.5" font-weight="400" fill="#6E6E73">247 ms reaction time</text></g>
 <g class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 240 ms reaction time">
 <title>6.9 h slept, 240 ms reaction time</title>
-<circle class="halo" cx="454.4" cy="714.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="454.4" cy="714.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="halo" cx="454.4" cy="692.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
+<circle class="jp-dot" cx="454.4" cy="692.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g class="tip"><rect x="375.4" y="674.1" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.4" y="695.6" font-size="12.5" font-weight="700" fill="#1D1D1F">6.9 h slept</text><text x="384.4" y="711.6" font-size="12.5" font-weight="400" fill="#6E6E73">240 ms reaction time</text></g>
-<line x1="118.0" y1="506.3" x2="756.0" y2="783.0" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
-<line class="jp-trend" x1="118.0" y1="506.3" x2="756.0" y2="783.0" stroke="#FF9500" stroke-width="4" stroke-linecap="round"/>
-<text x="692.2" y="740.4" font-size="17" font-weight="700" fill="#FF9500" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" text-anchor="middle" transform="rotate(23.5 692.2 740.4)">fitted trend</text>
+<g class="tip"><rect x="375.4" y="652.8" width="158" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.4" y="674.3" font-size="12.5" font-weight="700" fill="#1D1D1F">6.9 h slept</text><text x="384.4" y="690.3" font-size="12.5" font-weight="400" fill="#6E6E73">240 ms reaction time</text></g>
+<line x1="118.0" y1="450.9" x2="756.0" y2="773.1" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+<line class="jp-trend" x1="118.0" y1="450.9" x2="756.0" y2="773.1" stroke="#FF9500" stroke-width="4" stroke-linecap="round"/>
+<text x="692.2" y="725.8" font-size="17" font-weight="700" fill="#FF9500" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" text-anchor="middle" transform="rotate(26.8 692.2 725.8)">fitted trend</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
