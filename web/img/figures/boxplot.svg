@@ -5,20 +5,16 @@
 <rect width="745" height="505" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Salary Distribution by Department</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Synthetic sample, thousands of EUR</text>
-<line x1="64.0" y1="435.0" x2="715.0" y2="435.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="439.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">36.0</text>
-<line x1="64.0" y1="382.2" x2="715.0" y2="382.2" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="386.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">52.6</text>
-<line x1="64.0" y1="329.3" x2="715.0" y2="329.3" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="333.3" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">69.2</text>
-<line x1="64.0" y1="276.5" x2="715.0" y2="276.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="280.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">85.9</text>
-<line x1="64.0" y1="223.7" x2="715.0" y2="223.7" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="227.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">102.5</text>
-<line x1="64.0" y1="170.8" x2="715.0" y2="170.8" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="174.8" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">119.1</text>
-<line x1="64.0" y1="118.0" x2="715.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">135.7</text>
+<line x1="64.0" y1="422.4" x2="715.0" y2="422.4" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="426.4" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">40.0</text>
+<line x1="64.0" y1="358.7" x2="715.0" y2="358.7" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="362.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">60.0</text>
+<line x1="64.0" y1="295.1" x2="715.0" y2="295.1" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="299.1" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">80.0</text>
+<line x1="64.0" y1="231.5" x2="715.0" y2="231.5" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="235.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100.0</text>
+<line x1="64.0" y1="167.9" x2="715.0" y2="167.9" stroke="#E5E5EA" stroke-width="1"/>
+<text x="54.0" y="171.9" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">120.0</text>
 <text x="18" y="276.5" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 276.5)">Salary (thousands EUR)</text>
 <line x1="145.4" y1="139.9" x2="145.4" y2="207.6" stroke="#1D1D1F" stroke-width="1.2"/>
 <line x1="145.4" y1="304.7" x2="145.4" y2="339.6" stroke="#1D1D1F" stroke-width="1.2"/>

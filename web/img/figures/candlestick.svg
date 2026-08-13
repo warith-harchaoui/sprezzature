@@ -5,20 +5,16 @@
 <rect width="745" height="480" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Daily Price (Open, High, Low, Close)</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">20 trading days, synthetic series</text>
-<line x1="60.0" y1="420.0" x2="715.0" y2="420.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="424.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">86</text>
-<line x1="60.0" y1="369.7" x2="715.0" y2="369.7" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="373.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">90</text>
-<line x1="60.0" y1="319.3" x2="715.0" y2="319.3" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="323.3" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">95</text>
-<line x1="60.0" y1="269.0" x2="715.0" y2="269.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="273.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100</text>
-<line x1="60.0" y1="218.7" x2="715.0" y2="218.7" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="222.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">105</text>
-<line x1="60.0" y1="168.3" x2="715.0" y2="168.3" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="172.3" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">110</text>
-<line x1="60.0" y1="118.0" x2="715.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">115</text>
+<line x1="60.0" y1="374.6" x2="715.0" y2="374.6" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="378.6" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">90</text>
+<line x1="60.0" y1="322.9" x2="715.0" y2="322.9" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="326.9" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">95</text>
+<line x1="60.0" y1="271.2" x2="715.0" y2="271.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="275.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100</text>
+<line x1="60.0" y1="219.4" x2="715.0" y2="219.4" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="223.4" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">105</text>
+<line x1="60.0" y1="167.7" x2="715.0" y2="167.7" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="171.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">110</text>
 <text x="18" y="269.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 269.0)">Price</text>
 <g class="candle hit" tabindex="0">
 <title>Day 1: open 100.00, high 101.75, low 98.88, close 100.25</title>

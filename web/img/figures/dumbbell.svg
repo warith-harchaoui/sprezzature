@@ -131,11 +131,11 @@
 <title>Recruiter: Women $34.20 vs Men $36.40 — gap $2.20 (6%)</title>
 <rect class="rowbg" x="56.0" y="804.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
 <text x="344.0" y="845.0" font-size="23" fill="#1D1D1F" text-anchor="end">Recruiter</text>
-<line class="seg" x1="568.8" y1="837.0" x2="599.6" y2="837.0"/>
-<circle class="dot mk-women" cx="568.8" cy="837.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
-<circle class="dot mk-men" cx="599.6" cy="837.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
-<text class="mk-women" x="541.8" y="844.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$34</text>
-<text class="mk-men" x="626.6" y="844.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$36</text>
+<line class="seg" x1="565.2" y1="837.0" x2="603.2" y2="837.0"/>
+<circle class="dot mk-women" cx="565.2" cy="837.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot mk-men" cx="603.2" cy="837.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text class="mk-women" x="538.2" y="844.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$34</text>
+<text class="mk-men" x="630.2" y="844.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$36</text>
 <g transform="translate(556.7,794.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$2</text></g>
 </g>
 <g class="tip"><rect x="505.2" y="776" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#F5F5F7" stroke-width="1.2"/><text x="514.2" y="797.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Recruiter</text><text x="514.2" y="813.5" font-size="12.5" font-weight="400" fill="#6E6E73">Women $34 vs Men $36</text><text x="514.2" y="829.5" font-size="12.5" font-weight="400" fill="#6E6E73">gap +$2 (6%)</text></g>
@@ -143,11 +143,11 @@
 <title>Support specialist: Women $28.90 vs Men $30.50 — gap $1.60 (5%)</title>
 <rect class="rowbg" x="56.0" y="878.0" width="1168.0" height="66.0" rx="12" fill="none" pointer-events="all"/>
 <text x="344.0" y="919.0" font-size="23" fill="#1D1D1F" text-anchor="end">Support specialist</text>
-<line class="seg" x1="494.6" y1="911.0" x2="517.0" y2="911.0"/>
-<circle class="dot mk-women" cx="494.6" cy="911.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
-<circle class="dot mk-men" cx="517.0" cy="911.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
-<text class="mk-women" x="467.6" y="918.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$29</text>
-<text class="mk-men" x="544.0" y="918.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$30</text>
+<line class="seg" x1="486.8" y1="911.0" x2="524.8" y2="911.0"/>
+<circle class="dot mk-women" cx="486.8" cy="911.0" r="15.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="dot mk-men" cx="524.8" cy="911.0" r="15.0" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="2"/>
+<text class="mk-women" x="459.8" y="918.0" font-size="20" font-family="Roboto Mono, monospace" fill="#AF52DE" font-weight="500" text-anchor="end">$29</text>
+<text class="mk-men" x="551.8" y="918.0" font-size="20" font-family="Roboto Mono, monospace" fill="#4B9DC3" font-weight="500">$30</text>
 <g transform="translate(478.3,868.7)"><rect x="0" y="0" width="55.1" height="30.6" rx="15.3" fill="#FFFFFF" stroke="#4B9DC3" stroke-width="1.5"/><text x="27.5" y="21.2" text-anchor="middle" font-family="Roboto, system-ui, sans-serif" font-size="17" font-weight="700" fill="#4B9DC3">+$2</text></g>
 </g>
 <g class="tip"><rect x="426.8" y="850" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#F5F5F7" stroke-width="1.2"/><text x="435.8" y="871.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Support specialist</text><text x="435.8" y="887.5" font-size="12.5" font-weight="400" fill="#6E6E73">Women $29 vs Men $30</text><text x="435.8" y="903.5" font-size="12.5" font-weight="400" fill="#6E6E73">gap +$2 (5%)</text></g>

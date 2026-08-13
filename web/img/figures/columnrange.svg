@@ -16,20 +16,14 @@
 <text x="301.6" y="122.0" font-size="12" fill="#1D1D1F">Stockholm</text>
 <rect x="386.4" y="111.0" width="12" height="12" rx="2" fill="#FF3B30"/>
 <text x="404.4" y="122.0" font-size="12" fill="#1D1D1F">Athens</text>
-<line x1="60.0" y1="449.0" x2="815.0" y2="449.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="453.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">-8</text>
-<line x1="60.0" y1="399.2" x2="815.0" y2="399.2" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="403.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">-1</text>
-<line x1="60.0" y1="349.3" x2="815.0" y2="349.3" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="353.3" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">7</text>
-<line x1="60.0" y1="299.5" x2="815.0" y2="299.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="303.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">14</text>
-<line x1="60.0" y1="249.7" x2="815.0" y2="249.7" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="253.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">22</text>
-<line x1="60.0" y1="199.8" x2="815.0" y2="199.8" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="203.8" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">30</text>
-<line x1="60.0" y1="150.0" x2="815.0" y2="150.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="154.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">37</text>
+<line x1="60.0" y1="395.3" x2="815.0" y2="395.3" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="399.3" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0</text>
+<line x1="60.0" y1="329.2" x2="815.0" y2="329.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="333.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">10</text>
+<line x1="60.0" y1="263.1" x2="815.0" y2="263.1" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="267.1" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">20</text>
+<line x1="60.0" y1="197.1" x2="815.0" y2="197.1" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="201.1" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">30</text>
 <text x="18" y="299.5" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 299.5)">Temperature (°C)</text>
 <rect class="rangebar hit" tabindex="0" x="80.6" y="322.6" width="29.5" height="59.5" rx="4.0" fill="#007AFF" fill-opacity="0.85"><title>Madrid, Jan: 2°C to 11°C</title></rect>
 <g class="tip"><rect x="19.9" y="312.6" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="28.9" y="334.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Madrid, Jan</text><text x="28.9" y="350.1" font-size="12.5" font-weight="400" fill="#6E6E73">low 2°C — high 11°C</text><text x="28.9" y="366.1" font-size="12.5" font-weight="400" fill="#6E6E73">span 9°C</text></g>

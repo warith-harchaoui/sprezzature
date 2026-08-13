@@ -5,18 +5,16 @@
 <rect width="745" height="480" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="22" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Where the Points Pile Up</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Hexagonally binned scatter, cell colour is the point count</text>
-<line x1="60.0" y1="388.0" x2="715.0" y2="388.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="392.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">-0.55</text>
-<line x1="60.0" y1="334.0" x2="715.0" y2="334.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="338.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">1.2</text>
-<line x1="60.0" y1="280.0" x2="715.0" y2="280.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="284.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">3.0</text>
-<line x1="60.0" y1="226.0" x2="715.0" y2="226.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="230.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4.7</text>
-<line x1="60.0" y1="172.0" x2="715.0" y2="172.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="176.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">6.5</text>
-<line x1="60.0" y1="118.0" x2="715.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8.3</text>
+<line x1="60.0" y1="371.2" x2="715.0" y2="371.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="375.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0</text>
+<line x1="60.0" y1="310.0" x2="715.0" y2="310.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="314.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">2</text>
+<line x1="60.0" y1="248.7" x2="715.0" y2="248.7" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="252.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4</text>
+<line x1="60.0" y1="187.5" x2="715.0" y2="187.5" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="191.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">6</text>
+<line x1="60.0" y1="126.2" x2="715.0" y2="126.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="50.0" y="130.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8</text>
 <clipPath id="hex-clip"><rect x="60.0" y="118.0" width="655.0" height="270.0"/></clipPath>
 <g clip-path="url(#hex-clip)">
 <path class="hex hit" tabindex="0" d="M 179.7,301.7 L 164.5,328.0 L 134.1,328.0 L 118.9,301.7 L 134.1,275.4 L 164.5,275.4 Z" fill="#2B91FF"><title>27 points in this cell</title></path>
@@ -252,18 +250,14 @@
 </g>
 <line x1="60.0" y1="388.0" x2="715.0" y2="388.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <line x1="60.0" y1="118.0" x2="60.0" y2="388.0" stroke="#1D1D1F" stroke-width="1.2"/>
-<line x1="60.0" y1="388.0" x2="60.0" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="60.0" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-0.98</text>
-<line x1="191.0" y1="388.0" x2="191.0" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="191.0" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0.81</text>
-<line x1="322.0" y1="388.0" x2="322.0" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="322.0" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">2.6</text>
-<line x1="453.0" y1="388.0" x2="453.0" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="453.0" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">4.4</text>
-<line x1="584.0" y1="388.0" x2="584.0" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="584.0" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">6.2</text>
-<line x1="715.0" y1="388.0" x2="715.0" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="715.0" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">8.0</text>
+<line x1="131.5" y1="388.0" x2="131.5" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
+<text x="131.5" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0</text>
+<line x1="277.9" y1="388.0" x2="277.9" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
+<text x="277.9" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">2</text>
+<line x1="424.4" y1="388.0" x2="424.4" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
+<text x="424.4" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">4</text>
+<line x1="570.8" y1="388.0" x2="570.8" y2="394.0" stroke="#1D1D1F" stroke-width="1"/>
+<text x="570.8" y="408.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">6</text>
 <text x="387.5" y="430.0" font-size="13" fill="#1D1D1F" text-anchor="middle">x</text>
 <text x="22" y="253.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 22 253.0)">y</text>
 <text x="60.0" y="454.0" font-size="11" fill="#6E6E73">0</text>

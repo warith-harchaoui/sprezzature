@@ -5,26 +5,24 @@
 <rect width="745" height="520" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="22" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Two Modes, One Density Surface</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">2-D kernel density estimate, drawn as isocontours over the raw scatter</text>
-<line x1="60.0" y1="118.0" x2="60.0" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="60.0" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-1.8</text>
-<line x1="223.8" y1="118.0" x2="223.8" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="223.8" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0.88</text>
-<line x1="387.5" y1="118.0" x2="387.5" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="387.5" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">3.5</text>
-<line x1="551.2" y1="118.0" x2="551.2" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="551.2" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">6.2</text>
-<line x1="715.0" y1="118.0" x2="715.0" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="715.0" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">8.8</text>
-<line x1="60.0" y1="460.0" x2="715.0" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="52.0" y="464.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">-1.7</text>
-<line x1="60.0" y1="374.5" x2="715.0" y2="374.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="52.0" y="378.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0.63</text>
-<line x1="60.0" y1="289.0" x2="715.0" y2="289.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="52.0" y="293.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">2.9</text>
-<line x1="60.0" y1="203.5" x2="715.0" y2="203.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="52.0" y="207.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">5.2</text>
-<line x1="60.0" y1="118.0" x2="715.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="52.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">7.5</text>
+<line x1="169.7" y1="118.0" x2="169.7" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="169.7" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0</text>
+<line x1="293.0" y1="118.0" x2="293.0" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="293.0" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">2</text>
+<line x1="416.4" y1="118.0" x2="416.4" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="416.4" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">4</text>
+<line x1="539.8" y1="118.0" x2="539.8" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="539.8" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">6</text>
+<line x1="663.2" y1="118.0" x2="663.2" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="663.2" y="478.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">8</text>
+<line x1="60.0" y1="398.2" x2="715.0" y2="398.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="52.0" y="402.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0</text>
+<line x1="60.0" y1="323.4" x2="715.0" y2="323.4" stroke="#E5E5EA" stroke-width="1"/>
+<text x="52.0" y="327.4" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">2</text>
+<line x1="60.0" y1="248.5" x2="715.0" y2="248.5" stroke="#E5E5EA" stroke-width="1"/>
+<text x="52.0" y="252.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4</text>
+<line x1="60.0" y1="173.7" x2="715.0" y2="173.7" stroke="#E5E5EA" stroke-width="1"/>
+<text x="52.0" y="177.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">6</text>
 <circle class="hit" tabindex="0" cx="384.8" cy="322.1" r="2" fill="#C7C7CC" fill-opacity="0.6"><title>x=3.5, y=2.0</title></circle>
 <g class="tip"><rect x="355.2" y="296.1" width="59.2" height="41.9" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="364.2" y="315.6" font-size="10.5" font-weight="700" fill="#1D1D1F">x = 3.5</text><text x="364.2" y="329" font-size="10.5" font-weight="400" fill="#6E6E73">y = 2.0</text></g>
 <circle class="hit" tabindex="0" cx="281.6" cy="291.5" r="2" fill="#C7C7CC" fill-opacity="0.6"><title>x=1.8, y=2.9</title></circle>

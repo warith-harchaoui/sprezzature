@@ -8,6 +8,11 @@
 <text x="66.0" y="110.3" font-size="11" fill="#6E6E73" text-anchor="end">Mon</text>
 <text x="66.0" y="151.4" font-size="11" fill="#6E6E73" text-anchor="end">Wed</text>
 <text x="66.0" y="192.6" font-size="11" fill="#6E6E73" text-anchor="end">Fri</text>
+<text x="90.4" y="88.0" font-size="10" fill="#6E6E73" text-anchor="middle">Wk 1</text>
+<text x="206.0" y="88.0" font-size="10" fill="#6E6E73" text-anchor="middle">Wk 5</text>
+<text x="321.6" y="88.0" font-size="10" fill="#6E6E73" text-anchor="middle">Wk 9</text>
+<text x="437.1" y="88.0" font-size="10" fill="#6E6E73" text-anchor="middle">Wk 13</text>
+<text x="552.7" y="88.0" font-size="10" fill="#6E6E73" text-anchor="middle">Wk 17</text>
 <rect class="cell hit" tabindex="0" x="77.4" y="97.4" width="26.0" height="17.7" fill="#3C99FF" stroke="#FFFFFF" stroke-width="1"><title>Week 1, Mon: 6 events</title></rect>
 <g class="tip"><rect x="35.9" y="91.4" width="109" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="44.9" y="112.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Week 1, Mon</text><text x="44.9" y="128.9" font-size="12.5" font-weight="400" fill="#6E6E73">6 events</text><text x="44.9" y="144.9" font-size="12.5" font-weight="400" fill="#6E6E73">0.9% of total</text></g>
 <rect class="cell hit" tabindex="0" x="77.4" y="118.0" width="26.0" height="17.7" fill="#B0D5FF" stroke="#FFFFFF" stroke-width="1"><title>Week 1, Tue: 2 events</title></rect>

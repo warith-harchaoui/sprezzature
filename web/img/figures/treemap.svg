@@ -51,44 +51,44 @@
 <text x="449.0" y="536.9" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">62 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="496.8" y="128.0" width="181.5" height="199.3" fill="#28CD41" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Data &amp; AI / Data warehouse: 189 k EUR"/>
 <g class="tip"><rect x="515.6" y="124" width="144" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="524.6" y="145.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Data warehouse</text><text x="524.6" y="161.5" font-size="12.5" font-weight="400" fill="#6E6E73">189 k EUR</text><text x="524.6" y="177.5" font-size="12.5" font-weight="400" fill="#6E6E73">47.4% of Data &amp; AI</text></g>
-<text x="587.6" y="224.4" font-size="11.0" fill="#FFFFFF" text-anchor="middle">Data warehouse</text>
-<text x="587.6" y="246.6" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">189 k EUR</text>
+<text x="587.6" y="224.4" font-size="11.0" fill="#1D1D1F" text-anchor="middle">Data warehouse</text>
+<text x="587.6" y="246.6" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">189 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="678.3" y="128.0" width="137.3" height="199.3" fill="#28CD41" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Data &amp; AI / ML training: 143 k EUR"/>
 <g class="tip"><rect x="675" y="124" width="144" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="684" y="145.5" font-size="12.5" font-weight="700" fill="#1D1D1F">ML training</text><text x="684" y="161.5" font-size="12.5" font-weight="400" fill="#6E6E73">143 k EUR</text><text x="684" y="177.5" font-size="12.5" font-weight="400" fill="#6E6E73">35.8% of Data &amp; AI</text></g>
-<text x="747.0" y="224.4" font-size="11.0" fill="#FFFFFF" text-anchor="middle">ML training</text>
-<text x="747.0" y="246.6" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">143 k EUR</text>
+<text x="747.0" y="224.4" font-size="11.0" fill="#1D1D1F" text-anchor="middle">ML training</text>
+<text x="747.0" y="246.6" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">143 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="815.7" y="128.0" width="64.3" height="199.3" fill="#28CD41" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Data &amp; AI / BI tooling: 67 k EUR"/>
 <g class="tip"><rect x="752" y="124" width="144" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="761" y="145.5" font-size="12.5" font-weight="700" fill="#1D1D1F">BI tooling</text><text x="761" y="161.5" font-size="12.5" font-weight="400" fill="#6E6E73">67 k EUR</text><text x="761" y="177.5" font-size="12.5" font-weight="400" fill="#6E6E73">16.8% of Data &amp; AI</text></g>
-<text x="847.8" y="224.4" font-size="11.0" fill="#FFFFFF" text-anchor="middle">BI tooling</text>
-<text x="847.8" y="246.6" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">67 k EUR</text>
+<text x="847.8" y="224.4" font-size="11.0" fill="#1D1D1F" text-anchor="middle">BI tooling</text>
+<text x="847.8" y="246.6" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">67 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="496.8" y="327.3" width="203.0" height="126.4" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Security / SIEM / SOC: 134 k EUR"/>
 <g class="tip"><rect x="529.8" y="323.3" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="538.8" y="344.8" font-size="12.5" font-weight="700" fill="#1D1D1F">SIEM / SOC</text><text x="538.8" y="360.8" font-size="12.5" font-weight="400" fill="#6E6E73">134 k EUR</text><text x="538.8" y="376.8" font-size="12.5" font-weight="400" fill="#6E6E73">50.0% of Security</text></g>
-<text x="598.3" y="387.2" font-size="11.0" fill="#FFFFFF" text-anchor="middle">SIEM / SOC</text>
-<text x="598.3" y="409.4" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">134 k EUR</text>
+<text x="598.3" y="387.2" font-size="11.0" fill="#1D1D1F" text-anchor="middle">SIEM / SOC</text>
+<text x="598.3" y="409.4" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">134 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="496.8" y="453.6" width="115.1" height="126.4" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Security / WAF / DDoS: 76 k EUR"/>
 <g class="tip"><rect x="485.8" y="449.6" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="494.8" y="471.1" font-size="12.5" font-weight="700" fill="#1D1D1F">WAF / DDoS</text><text x="494.8" y="487.1" font-size="12.5" font-weight="400" fill="#6E6E73">76 k EUR</text><text x="494.8" y="503.1" font-size="12.5" font-weight="400" fill="#6E6E73">28.4% of Security</text></g>
-<text x="554.3" y="513.6" font-size="11.0" fill="#FFFFFF" text-anchor="middle">WAF / DDoS</text>
-<text x="554.3" y="535.8" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">76 k EUR</text>
+<text x="554.3" y="513.6" font-size="11.0" fill="#1D1D1F" text-anchor="middle">WAF / DDoS</text>
+<text x="554.3" y="535.8" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">76 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="611.9" y="453.6" width="87.9" height="126.4" fill="#FF9500" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Security / Identity (IAM): 58 k EUR"/>
 <g class="tip"><rect x="587.3" y="449.6" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="596.3" y="471.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Identity (IAM)</text><text x="596.3" y="487.1" font-size="12.5" font-weight="400" fill="#6E6E73">58 k EUR</text><text x="596.3" y="503.1" font-size="12.5" font-weight="400" fill="#6E6E73">21.6% of Security</text></g>
-<text x="655.8" y="513.6" font-size="11.0" fill="#FFFFFF" text-anchor="middle">Identity (IAM)</text>
-<text x="655.8" y="535.8" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">58 k EUR</text>
+<text x="655.8" y="513.6" font-size="11.0" fill="#1D1D1F" text-anchor="middle">Identity (IAM)</text>
+<text x="655.8" y="535.8" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">58 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="699.8" y="327.3" width="121.6" height="176.3" fill="#FF3B30" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Networking / CDN / egress: 112 k EUR"/>
 <g class="tip"><rect x="685.1" y="323.3" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="694.1" y="344.8" font-size="12.5" font-weight="700" fill="#1D1D1F">CDN / egress</text><text x="694.1" y="360.8" font-size="12.5" font-weight="400" fill="#6E6E73">112 k EUR</text><text x="694.1" y="376.8" font-size="12.5" font-weight="400" fill="#6E6E73">67.5% of Networking</text></g>
 <text x="760.6" y="412.2" font-size="11.0" fill="#FFFFFF" text-anchor="middle">CDN / egress</text>
 <text x="760.6" y="434.4" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">112 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="821.4" y="327.3" width="58.6" height="176.3" fill="#FF3B30" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Networking / VPN / SD-WAN: 54 k EUR"/>
 <g class="tip"><rect x="745" y="323.3" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="754" y="344.8" font-size="12.5" font-weight="700" fill="#1D1D1F">VPN / SD-WAN</text><text x="754" y="360.8" font-size="12.5" font-weight="400" fill="#6E6E73">54 k EUR</text><text x="754" y="376.8" font-size="12.5" font-weight="400" fill="#6E6E73">32.5% of Networking</text></g>
-<text x="850.7" y="406.6" font-size="8.0" fill="#FFFFFF" text-anchor="middle">VPN /</text>
-<text x="850.7" y="416.2" font-size="8.0" fill="#FFFFFF" text-anchor="middle">SD-WAN</text>
-<text x="850.7" y="434.8" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">54 k EUR</text>
+<text x="850.7" y="406.1" font-size="9.5" fill="#FFFFFF" text-anchor="middle">VPN /</text>
+<text x="850.7" y="417.5" font-size="9.5" fill="#FFFFFF" text-anchor="middle">SD-WAN</text>
+<text x="850.7" y="437.9" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">54 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="699.8" y="503.5" width="107.6" height="76.5" fill="#79DBDC" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Compliance / Audit tooling: 43 k EUR"/>
 <g class="tip"><rect x="678.1" y="499.5" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="687.1" y="521" font-size="12.5" font-weight="700" fill="#1D1D1F">Audit tooling</text><text x="687.1" y="537" font-size="12.5" font-weight="400" fill="#6E6E73">43 k EUR</text><text x="687.1" y="553" font-size="12.5" font-weight="400" fill="#6E6E73">59.7% of Compliance</text></g>
-<text x="753.6" y="538.5" font-size="11.0" fill="#FFFFFF" text-anchor="middle">Audit tooling</text>
-<text x="753.6" y="560.7" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">43 k EUR</text>
+<text x="753.6" y="538.5" font-size="11.0" fill="#1D1D1F" text-anchor="middle">Audit tooling</text>
+<text x="753.6" y="560.7" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">43 k EUR</text>
 <rect class="leaf hit" tabindex="0" x="807.4" y="503.5" width="72.6" height="76.5" fill="#79DBDC" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="2" role="img" aria-label="Compliance / Data residency: 29 k EUR"/>
 <g class="tip"><rect x="745" y="499.5" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="754" y="521" font-size="12.5" font-weight="700" fill="#1D1D1F">Data residency</text><text x="754" y="537" font-size="12.5" font-weight="400" fill="#6E6E73">29 k EUR</text><text x="754" y="553" font-size="12.5" font-weight="400" fill="#6E6E73">40.3% of Compliance</text></g>
-<text x="843.7" y="538.1" font-size="9.5" fill="#FFFFFF" text-anchor="middle">Data residency</text>
-<text x="843.7" y="558.5" font-size="10" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle">29 k EUR</text>
+<text x="843.7" y="538.1" font-size="9.5" fill="#1D1D1F" text-anchor="middle">Data residency</text>
+<text x="843.7" y="558.5" font-size="10" fill="#1D1D1F" fill-opacity="0.85" text-anchor="middle">29 k EUR</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

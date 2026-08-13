@@ -22,13 +22,10 @@
 <circle class="hit" tabindex="0" cx="378.3" cy="142.2" r="4.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>p90 = 250 ms</title></circle>
 <g class="tip"><rect x="313.3" y="154.2" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="322.3" y="175.7" font-size="12.5" font-weight="700" fill="#1D1D1F">90th percentile</text><text x="322.3" y="191.7" font-size="12.5" font-weight="400" fill="#6E6E73">250 ms</text><text x="322.3" y="207.7" font-size="12.5" font-weight="400" fill="#6E6E73">240 observations</text></g>
 <line x1="64.0" y1="360.0" x2="715.0" y2="360.0" stroke="#1D1D1F" stroke-width="1.2"/>
-<text x="64.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">28</text>
-<text x="172.5" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">105</text>
-<text x="281.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">181</text>
-<text x="389.5" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">258</text>
-<text x="498.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">335</text>
-<text x="606.5" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">411</text>
-<text x="715.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">488</text>
+<text x="165.9" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">100</text>
+<text x="307.4" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">200</text>
+<text x="448.9" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">300</text>
+<text x="590.4" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">400</text>
 <text x="389.5" y="402.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Latency (ms)</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

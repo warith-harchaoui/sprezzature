@@ -5,7 +5,8 @@
   [fill="#1D1D1F"]{fill:#F2F2F7;}
   [fill="#6E6E73"]{fill:#9C9CA3;}
   [style*="multiply"]{mix-blend-mode:screen;}
-}</style>
+}
+.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}.hit:hover+.tip,.hit:focus+.tip{opacity:1}@media (prefers-reduced-motion: reduce){.tip{transition:none}}</style>
 <desc>Millions of EUR, FY-2023 → FY-2024</desc>
 <rect width="1100" height="640" fill="#FFFFFF"/>
 <text x="88" y="56" font-size="28" font-weight="600" fill="#1D1D1F" letter-spacing="-0.3">FY-2024 Operating Income Bridge</text>
@@ -16,58 +17,66 @@
 <text x="185" y="112" font-size="13" fill="#6E6E73">Loss</text>
 <rect x="248" y="102" width="12" height="12" rx="2" fill="#007AFF"/>
 <text x="265" y="112" font-size="13" fill="#6E6E73">Total</text>
-<line x1="88" y1="534.0" x2="1056" y2="534.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="80" y="539.0" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">-20</text>
-<line x1="88" y1="465.8" x2="1056" y2="465.8" stroke="#E5E5EA" stroke-width="1"/>
-<text x="80" y="470.8" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">0</text>
-<line x1="88" y1="397.6" x2="1056" y2="397.6" stroke="#E5E5EA" stroke-width="1"/>
-<text x="80" y="402.6" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">20</text>
-<line x1="88" y1="329.4" x2="1056" y2="329.4" stroke="#E5E5EA" stroke-width="1"/>
-<text x="80" y="334.4" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">40</text>
-<line x1="88" y1="261.1" x2="1056" y2="261.1" stroke="#E5E5EA" stroke-width="1"/>
-<text x="80" y="266.1" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">60</text>
-<line x1="88" y1="192.9" x2="1056" y2="192.9" stroke="#E5E5EA" stroke-width="1"/>
-<text x="80" y="197.9" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">80</text>
-<line x1="88" y1="465.8" x2="1056" y2="465.8" stroke="#1D1D1F" stroke-width="1.5" opacity="0.35"/>
-<rect x="98.6" y="301.4" width="75.5" height="164.4" rx="3" fill="#007AFF" opacity="0.9"><title>FY-2023 operating income: 48.2M</title></rect>
-<text x="136.4" y="295.4" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">48.2</text>
+<line x1="88" y1="505.4" x2="1056" y2="505.4" stroke="#E5E5EA" stroke-width="1"/>
+<text x="80" y="510.4" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">0</text>
+<line x1="88" y1="427.2" x2="1056" y2="427.2" stroke="#E5E5EA" stroke-width="1"/>
+<text x="80" y="432.2" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">20</text>
+<line x1="88" y1="349.0" x2="1056" y2="349.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="80" y="354.0" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">40</text>
+<line x1="88" y1="270.8" x2="1056" y2="270.8" stroke="#E5E5EA" stroke-width="1"/>
+<text x="80" y="275.8" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">60</text>
+<line x1="88" y1="192.7" x2="1056" y2="192.7" stroke="#E5E5EA" stroke-width="1"/>
+<text x="80" y="197.7" font-size="12" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">80</text>
+<line x1="88" y1="505.4" x2="1056" y2="505.4" stroke="#1D1D1F" stroke-width="1.5" opacity="0.35"/>
+<rect class="hit" tabindex="0" x="98.6" y="317.0" width="75.5" height="188.4" rx="3" fill="#007AFF" opacity="0.9" role="img" aria-label="FY-2023 operating income: 48.2M"/>
+<g class="tip"><rect x="43.4" y="301" width="186" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="52.4" y="322.5" font-size="12.5" font-weight="700" fill="#1D1D1F">FY-2023 operating income</text><text x="52.4" y="338.5" font-size="12.5" font-weight="400" fill="#6E6E73">48.2M</text><text x="52.4" y="354.5" font-size="12.5" font-weight="400" fill="#6E6E73">Total</text></g>
+<text x="136.4" y="311.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">48.2</text>
 <text x="136.4" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">FY-2023</text>
 <text x="136.4" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">operating</text>
 <text x="136.4" y="600.0" font-size="11" fill="#1D1D1F" text-anchor="middle">income</text>
-<rect x="195.4" y="235.2" width="75.5" height="66.2" rx="3" fill="#28CD41" opacity="0.9"><title>Subscription revenue: +19.4M</title></rect>
-<text x="233.2" y="229.2" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+19.4</text>
+<rect class="hit" tabindex="0" x="195.4" y="241.1" width="75.5" height="75.8" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Subscription revenue: +19.4M"/>
+<g class="tip"><rect x="154.2" y="225.1" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="163.2" y="246.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Subscription revenue</text><text x="163.2" y="262.6" font-size="12.5" font-weight="400" fill="#6E6E73">+19.4M</text><text x="163.2" y="278.6" font-size="12.5" font-weight="400" fill="#6E6E73">Positive</text></g>
+<text x="233.2" y="235.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+19.4</text>
 <text x="233.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Subscription</text>
 <text x="233.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">revenue</text>
-<rect x="292.2" y="221.2" width="75.5" height="14.0" rx="3" fill="#28CD41" opacity="0.9"><title>Professional services: +4.1M</title></rect>
-<text x="330.0" y="215.2" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+4.1</text>
+<rect class="hit" tabindex="0" x="292.2" y="225.1" width="75.5" height="16.0" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Professional services: +4.1M"/>
+<g class="tip"><rect x="247.5" y="209.1" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="256.5" y="230.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Professional services</text><text x="256.5" y="246.6" font-size="12.5" font-weight="400" fill="#6E6E73">+4.1M</text><text x="256.5" y="262.6" font-size="12.5" font-weight="400" fill="#6E6E73">Positive</text></g>
+<text x="330.0" y="219.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+4.1</text>
 <text x="330.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Professional</text>
 <text x="330.0" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">services</text>
-<rect x="389.0" y="194.6" width="75.5" height="26.6" rx="3" fill="#28CD41" opacity="0.9"><title>Upsell / expansion: +7.8M</title></rect>
+<rect class="hit" tabindex="0" x="389.0" y="194.6" width="75.5" height="30.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Upsell / expansion: +7.8M"/>
+<g class="tip"><rect x="354.8" y="178.6" width="144" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="363.8" y="200.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Upsell / expansion</text><text x="363.8" y="216.1" font-size="12.5" font-weight="400" fill="#6E6E73">+7.8M</text><text x="363.8" y="232.1" font-size="12.5" font-weight="400" fill="#6E6E73">Positive</text></g>
 <text x="426.8" y="188.6" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+7.8</text>
 <text x="426.8" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Upsell /</text>
 <text x="426.8" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">expansion</text>
-<rect x="485.8" y="194.6" width="75.5" height="18.1" rx="3" fill="#FF3B30" opacity="0.9"><title>Churn impact: -5.3M</title></rect>
-<text x="523.6" y="226.7" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">-5.3</text>
+<rect class="hit" tabindex="0" x="485.8" y="194.6" width="75.5" height="20.7" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="Churn impact: -5.3M"/>
+<g class="tip"><rect x="472.6" y="178.6" width="102" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="481.6" y="200.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Churn impact</text><text x="481.6" y="216.1" font-size="12.5" font-weight="400" fill="#6E6E73">-5.3M</text><text x="481.6" y="232.1" font-size="12.5" font-weight="400" fill="#6E6E73">Negative</text></g>
+<text x="523.6" y="229.3" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">-5.3</text>
 <text x="523.6" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Churn</text>
 <text x="523.6" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">impact</text>
-<rect x="582.6" y="212.7" width="75.5" height="39.6" rx="3" fill="#FF3B30" opacity="0.9"><title>R&amp;D investment: -11.6M</title></rect>
-<text x="620.4" y="266.3" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">-11.6</text>
+<rect class="hit" tabindex="0" x="582.6" y="215.3" width="75.5" height="45.3" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="R&amp;D investment: -11.6M"/>
+<g class="tip"><rect x="562.4" y="199.3" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="571.4" y="220.8" font-size="12.5" font-weight="700" fill="#1D1D1F">R&amp;D investment</text><text x="571.4" y="236.8" font-size="12.5" font-weight="400" fill="#6E6E73">-11.6M</text><text x="571.4" y="252.8" font-size="12.5" font-weight="400" fill="#6E6E73">Negative</text></g>
+<text x="620.4" y="274.7" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">-11.6</text>
 <text x="620.4" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">R&amp;D</text>
 <text x="620.4" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">investment</text>
-<rect x="679.4" y="252.3" width="75.5" height="21.2" rx="3" fill="#FF3B30" opacity="0.9"><title>S&amp;M headcount: -6.2M</title></rect>
-<text x="717.2" y="287.4" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">-6.2</text>
+<rect class="hit" tabindex="0" x="679.4" y="260.7" width="75.5" height="24.2" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="S&amp;M headcount: -6.2M"/>
+<g class="tip"><rect x="662.7" y="244.7" width="109" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="671.7" y="266.2" font-size="12.5" font-weight="700" fill="#1D1D1F">S&amp;M headcount</text><text x="671.7" y="282.2" font-size="12.5" font-weight="400" fill="#6E6E73">-6.2M</text><text x="671.7" y="298.2" font-size="12.5" font-weight="400" fill="#6E6E73">Negative</text></g>
+<text x="717.2" y="298.9" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">-6.2</text>
 <text x="717.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">S&amp;M</text>
 <text x="717.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">headcount</text>
-<rect x="776.2" y="260.8" width="75.5" height="12.6" rx="3" fill="#28CD41" opacity="0.9"><title>Infrastructure efficiency: +3.7M</title></rect>
-<text x="814.0" y="254.8" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+3.7</text>
+<rect class="hit" tabindex="0" x="776.2" y="270.5" width="75.5" height="14.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Infrastructure efficiency: +3.7M"/>
+<g class="tip"><rect x="717.5" y="254.5" width="193" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="726.5" y="276" font-size="12.5" font-weight="700" fill="#1D1D1F">Infrastructure efficiency</text><text x="726.5" y="292" font-size="12.5" font-weight="400" fill="#6E6E73">+3.7M</text><text x="726.5" y="308" font-size="12.5" font-weight="400" fill="#6E6E73">Positive</text></g>
+<text x="814.0" y="264.5" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+3.7</text>
 <text x="814.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Infrastructure</text>
 <text x="814.0" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">efficiency</text>
-<rect x="873.0" y="256.0" width="75.5" height="4.8" rx="3" fill="#28CD41" opacity="0.9"><title>G&amp;A reduction: +1.4M</title></rect>
-<text x="910.8" y="250.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+1.4</text>
+<rect class="hit" tabindex="0" x="873.0" y="265.0" width="75.5" height="5.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="G&amp;A reduction: +1.4M"/>
+<g class="tip"><rect x="856.3" y="249" width="109" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="865.3" y="270.5" font-size="12.5" font-weight="700" fill="#1D1D1F">G&amp;A reduction</text><text x="865.3" y="286.5" font-size="12.5" font-weight="400" fill="#6E6E73">+1.4M</text><text x="865.3" y="302.5" font-size="12.5" font-weight="400" fill="#6E6E73">Positive</text></g>
+<text x="910.8" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">+1.4</text>
 <text x="910.8" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">G&amp;A</text>
 <text x="910.8" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">reduction</text>
-<rect x="969.8" y="256.0" width="75.5" height="209.8" rx="3" fill="#007AFF" opacity="0.9"><title>FY-2024 operating income: 61.5M</title></rect>
-<text x="1007.6" y="250.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">61.5</text>
+<rect class="hit" tabindex="0" x="969.8" y="265.0" width="75.5" height="240.4" rx="3" fill="#007AFF" opacity="0.9" role="img" aria-label="FY-2024 operating income: 61.5M"/>
+<g class="tip"><rect x="910" y="249" width="186" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="919" y="270.5" font-size="12.5" font-weight="700" fill="#1D1D1F">FY-2024 operating income</text><text x="919" y="286.5" font-size="12.5" font-weight="400" fill="#6E6E73">61.5M</text><text x="919" y="302.5" font-size="12.5" font-weight="400" fill="#6E6E73">Total</text></g>
+<text x="1007.6" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" font-weight="500">61.5</text>
 <text x="1007.6" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">FY-2024</text>
 <text x="1007.6" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">operating</text>
 <text x="1007.6" y="600.0" font-size="11" fill="#1D1D1F" text-anchor="middle">income</text>

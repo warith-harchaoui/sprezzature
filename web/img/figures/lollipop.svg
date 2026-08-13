@@ -7,36 +7,36 @@
 <text x="40" y="70" font-size="14" fill="#6E6E73">Categories sorted largest to smallest</text>
 <line x1="110.0" y1="118.0" x2="110.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="110.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0</text>
-<line x1="196.5" y1="118.0" x2="196.5" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="196.5" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">18</text>
-<line x1="283.0" y1="118.0" x2="283.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="283.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">36</text>
-<line x1="369.4" y1="118.0" x2="369.4" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="369.4" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">55</text>
-<line x1="455.9" y1="118.0" x2="455.9" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="455.9" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">73</text>
-<line x1="542.4" y1="118.0" x2="542.4" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="542.4" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">91</text>
+<line x1="204.0" y1="118.0" x2="204.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="204.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">20</text>
+<line x1="298.0" y1="118.0" x2="298.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="298.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">40</text>
+<line x1="392.0" y1="118.0" x2="392.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="392.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">60</text>
+<line x1="486.0" y1="118.0" x2="486.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="486.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">80</text>
+<line x1="580.0" y1="118.0" x2="580.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
+<text x="580.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">100</text>
 <text x="345.0" y="402.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Score</text>
-<line x1="110.0" y1="142.2" x2="542.4" y2="142.2" stroke="#C7C7CC" stroke-width="2"/>
-<circle class="pop hit" tabindex="0" cx="542.4" cy="142.2" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="delta: 91 (32.6% of total)"/>
-<g class="tip"><rect x="484.4" y="128.2" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="493.4" y="149.7" font-size="12.5" font-weight="700" fill="#1D1D1F">delta</text><text x="493.4" y="165.7" font-size="12.5" font-weight="400" fill="#6E6E73">91 pts</text><text x="493.4" y="181.7" font-size="12.5" font-weight="400" fill="#6E6E73">32.6% of total</text></g>
+<line x1="110.0" y1="142.2" x2="537.7" y2="142.2" stroke="#C7C7CC" stroke-width="2"/>
+<circle class="pop hit" tabindex="0" cx="537.7" cy="142.2" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="delta: 91 (32.6% of total)"/>
+<g class="tip"><rect x="479.7" y="128.2" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="488.7" y="149.7" font-size="12.5" font-weight="700" fill="#1D1D1F">delta</text><text x="488.7" y="165.7" font-size="12.5" font-weight="400" fill="#6E6E73">91 pts</text><text x="488.7" y="181.7" font-size="12.5" font-weight="400" fill="#6E6E73">32.6% of total</text></g>
 <text x="98.0" y="146.2" font-size="13" fill="#1D1D1F" text-anchor="end">delta</text>
-<line x1="110.0" y1="190.6" x2="404.6" y2="190.6" stroke="#C7C7CC" stroke-width="2"/>
-<circle class="pop hit" tabindex="0" cx="404.6" cy="190.6" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="epsilon: 62 (22.2% of total)"/>
-<g class="tip"><rect x="346.6" y="176.6" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="355.6" y="198.1" font-size="12.5" font-weight="700" fill="#1D1D1F">epsilon</text><text x="355.6" y="214.1" font-size="12.5" font-weight="400" fill="#6E6E73">62 pts</text><text x="355.6" y="230.1" font-size="12.5" font-weight="400" fill="#6E6E73">22.2% of total</text></g>
+<line x1="110.0" y1="190.6" x2="401.4" y2="190.6" stroke="#C7C7CC" stroke-width="2"/>
+<circle class="pop hit" tabindex="0" cx="401.4" cy="190.6" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="epsilon: 62 (22.2% of total)"/>
+<g class="tip"><rect x="343.4" y="176.6" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="352.4" y="198.1" font-size="12.5" font-weight="700" fill="#1D1D1F">epsilon</text><text x="352.4" y="214.1" font-size="12.5" font-weight="400" fill="#6E6E73">62 pts</text><text x="352.4" y="230.1" font-size="12.5" font-weight="400" fill="#6E6E73">22.2% of total</text></g>
 <text x="98.0" y="194.6" font-size="13" fill="#1D1D1F" text-anchor="end">epsilon</text>
-<line x1="110.0" y1="239.0" x2="371.3" y2="239.0" stroke="#C7C7CC" stroke-width="2"/>
-<circle class="pop hit" tabindex="0" cx="371.3" cy="239.0" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="beta: 55 (19.7% of total)"/>
-<g class="tip"><rect x="313.3" y="225" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="322.3" y="246.5" font-size="12.5" font-weight="700" fill="#1D1D1F">beta</text><text x="322.3" y="262.5" font-size="12.5" font-weight="400" fill="#6E6E73">55 pts</text><text x="322.3" y="278.5" font-size="12.5" font-weight="400" fill="#6E6E73">19.7% of total</text></g>
+<line x1="110.0" y1="239.0" x2="368.5" y2="239.0" stroke="#C7C7CC" stroke-width="2"/>
+<circle class="pop hit" tabindex="0" cx="368.5" cy="239.0" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="beta: 55 (19.7% of total)"/>
+<g class="tip"><rect x="310.5" y="225" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="319.5" y="246.5" font-size="12.5" font-weight="700" fill="#1D1D1F">beta</text><text x="319.5" y="262.5" font-size="12.5" font-weight="400" fill="#6E6E73">55 pts</text><text x="319.5" y="278.5" font-size="12.5" font-weight="400" fill="#6E6E73">19.7% of total</text></g>
 <text x="98.0" y="243.0" font-size="13" fill="#1D1D1F" text-anchor="end">beta</text>
-<line x1="110.0" y1="287.4" x2="314.3" y2="287.4" stroke="#C7C7CC" stroke-width="2"/>
-<circle class="pop hit" tabindex="0" cx="314.3" cy="287.4" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="gamma: 43 (15.4% of total)"/>
-<g class="tip"><rect x="256.3" y="273.4" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="265.3" y="294.9" font-size="12.5" font-weight="700" fill="#1D1D1F">gamma</text><text x="265.3" y="310.9" font-size="12.5" font-weight="400" fill="#6E6E73">43 pts</text><text x="265.3" y="326.9" font-size="12.5" font-weight="400" fill="#6E6E73">15.4% of total</text></g>
+<line x1="110.0" y1="287.4" x2="312.1" y2="287.4" stroke="#C7C7CC" stroke-width="2"/>
+<circle class="pop hit" tabindex="0" cx="312.1" cy="287.4" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="gamma: 43 (15.4% of total)"/>
+<g class="tip"><rect x="254.1" y="273.4" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="263.1" y="294.9" font-size="12.5" font-weight="700" fill="#1D1D1F">gamma</text><text x="263.1" y="310.9" font-size="12.5" font-weight="400" fill="#6E6E73">43 pts</text><text x="263.1" y="326.9" font-size="12.5" font-weight="400" fill="#6E6E73">15.4% of total</text></g>
 <text x="98.0" y="291.4" font-size="13" fill="#1D1D1F" text-anchor="end">gamma</text>
-<line x1="110.0" y1="335.8" x2="243.0" y2="335.8" stroke="#C7C7CC" stroke-width="2"/>
-<circle class="pop hit" tabindex="0" cx="243.0" cy="335.8" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="alpha: 28 (10.0% of total)"/>
-<g class="tip"><rect x="185" y="321.8" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="194" y="343.3" font-size="12.5" font-weight="700" fill="#1D1D1F">alpha</text><text x="194" y="359.3" font-size="12.5" font-weight="400" fill="#6E6E73">28 pts</text><text x="194" y="375.3" font-size="12.5" font-weight="400" fill="#6E6E73">10.0% of total</text></g>
+<line x1="110.0" y1="335.8" x2="241.6" y2="335.8" stroke="#C7C7CC" stroke-width="2"/>
+<circle class="pop hit" tabindex="0" cx="241.6" cy="335.8" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="alpha: 28 (10.0% of total)"/>
+<g class="tip"><rect x="183.6" y="321.8" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="192.6" y="343.3" font-size="12.5" font-weight="700" fill="#1D1D1F">alpha</text><text x="192.6" y="359.3" font-size="12.5" font-weight="400" fill="#6E6E73">28 pts</text><text x="192.6" y="375.3" font-size="12.5" font-weight="400" fill="#6E6E73">10.0% of total</text></g>
 <text x="98.0" y="339.8" font-size="13" fill="#1D1D1F" text-anchor="end">alpha</text>
 <line x1="110.0" y1="360.0" x2="580.0" y2="360.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
