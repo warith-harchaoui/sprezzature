@@ -24,9 +24,9 @@ et un `viewBox` correspondant, si bien que le graphique s'adapte à toute
 taille sans un seul pixel flou. Les 91 figures d'exemple portent ce
 `viewBox`. Vega-Lite reste un moyen commode de *décrire* beaucoup de ces
 graphiques, mais le *JavaScript Object Notation* (JSON) de Vega n'est pas ce
-qu'on livre, et le *portable network graphics* (PNG) n'est qu'un export pour
+qu'on livre ; le *portable network graphics* (PNG) n'est qu'un export pour
 les endroits qui ne prennent pas le vectoriel. Le livrable, c'est le SVG :
-le texte reste sélectionnable, les traits restent nets à tout zoom, et le
+le texte reste sélectionnable, les traits restent nets à tout zoom et le
 fichier est léger.
 
 ## Une interactivité qui se compose au lieu de se dupliquer
@@ -85,10 +85,10 @@ déficience de la vision des couleurs (DVC) rouge-vert. Ce ne sont pas des
 affirmations prises pour argent comptant :
 `sprezzature-colors/scripts/simulate_cvd.py` re-rend n'importe quelle image telle
 que la voit un protanope, un deutéranope ou un tritanope (matrices de
-Machado et al. 2009) pour qu'on vérifie, et `sprezzature-accessibility` passe au
+Machado et al. 2009) pour qu'on vérifie ; `sprezzature-accessibility` passe au
 crible le *HyperText Markup Language* (HTML) statique pour les fautes
 d'accessibilité qu'un analyseur peut attraper : texte alternatif manquant,
-champs sans étiquette, état porté par la seule couleur, et d'autres.
+champs sans étiquette, état porté par la seule couleur et d'autres cas.
 
 Le défaut vise le cas le plus dur, un lecteur qui ne voit aucune couleur,
 car une conception qui résiste aux niveaux de gris résiste à toute
@@ -102,7 +102,7 @@ condition d'entrée. Le raisonnement et les sources sont dans
 Le travail d'intelligence artificielle tourne sur votre machine. Un seul
 modèle langue-vision, Qwen3-VL 8B servi via Ollama, écrit le texte
 alternatif, rédige les sous-titres et critique les figures dans le mode hors
-ligne de la boucle Ralph. Un modèle pour le texte et la vision, et un test
+ligne de la boucle Ralph. Un modèle pour le texte et la vision ; un test
 qui empêche un second de se glisser. Le raisonnement et les sources sont
 dans [`docs/LLM_CHOICE.md`](docs/LLM_CHOICE.md). Rien n'a besoin de quitter
 la machine.
@@ -113,7 +113,7 @@ Une soixantaine de générateurs de figures répétaient jadis le même
 passe-partout : la balise racine SVG, la fin d'écriture-et-rapport, quelques
 helpers de géométrie. Tout cela vit maintenant dans `_svg.py` et
 `_render.py`. La règle de chaque refactorisation de ce genre est stricte :
-seul le code qui était *identique* d'un générateur à l'autre est déplacé, et
+seul le code qui était *identique* d'un générateur à l'autre est déplacé ;
 le déplacement est vérifié en régénérant les figures et en confirmant que
 les octets n'ont pas bougé. Toute mutualisation qui changerait un seul pixel
 rendu est refusée. Les helpers restent en *stdlib* seule pour s'importer

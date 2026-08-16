@@ -174,7 +174,7 @@ Don't introduce a second dark-mode toggle mechanism alongside `data-color-scheme
 1. **Container radius 10 px** (`rounded-[10px]`) — matches the mark radius.
 2. **One color per series** drawn from the skill palette in `color-psychology.md`.
 3. **Legends only when 2+ series**; otherwise label inline (matches the `dataviz`
-   skill's non-negotiable: no legend box for a single series, the title names it).
+   skill's own hard rule: no legend box for a single series, the title names it).
 4. **Hover layer, by default.** A native `<title>` per mark (bar segment, line
    point, dot) gives a browser tooltip for free, no JavaScript required; add a
    `:hover`/`:focus` CSS rule (brightness bump or stroke-width increase) so the

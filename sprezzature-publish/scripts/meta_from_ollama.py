@@ -5,7 +5,7 @@ meta_from_ollama
 
 Draft HTML ``<meta>`` tags from a page's *goal and content*, using a local
 Ollama model. The tool reads either a free-text goal description, an existing
-HTML file, or a live URL — alone or in combination — and returns a single
+HTML file, or a live URL, alone or in combination, and returns a single
 JSON object with suggested values for the canonical web meta surfaces.
 
 The script does NOT write to your HTML. It prints the suggestions to stdout;
