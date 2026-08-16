@@ -55,7 +55,7 @@ Dix panneaux, dix techniques (légende verticale à droite sur chacun) :
 - **Ardoise froide** pour le texte et les axes, **jamais du noir pur**.
 
 Sources : [ColorArchive — Financial UI](https://colorarchive.org/guides/financial-ui-color-guide/),
-[Cashbee — Ratio de Sharpe](https://www.cashbee.fr/lexique/ratio-de-sharpe), et la
+[Cashbee — Ratio de Sharpe](https://www.cashbee.fr/lexique/ratio-de-sharpe) et la
 simulation daltonisme de `sprezzature-colors` (matrices Machado 2009).
 
 ## Fichiers
