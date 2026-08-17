@@ -15,7 +15,8 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 .legend-row:focus { outline: 3px solid #0A4DA0; outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .dept, .dots { transition: none; } }
 .tip{opacity:0;pointer-events:none;transition:opacity .12s ease}
-.hit:hover+.tip,.hit:focus+.tip{opacity:1}
+#region-0:hover~#regiontip-0,#region-0:focus~#regiontip-0{opacity:1}#region-1:hover~#regiontip-1,#region-1:focus~#regiontip-1{opacity:1}#region-2:hover~#regiontip-2,#region-2:focus~#regiontip-2{opacity:1}#region-3:hover~#regiontip-3,#region-3:focus~#regiontip-3{opacity:1}#region-4:hover~#regiontip-4,#region-4:focus~#regiontip-4{opacity:1}#region-5:hover~#regiontip-5,#region-5:focus~#regiontip-5{opacity:1}
+#legend-row-0:hover~#legendtip-0,#legend-row-0:focus~#legendtip-0{opacity:1}#legend-row-1:hover~#legendtip-1,#legend-row-1:focus~#legendtip-1{opacity:1}#legend-row-2:hover~#legendtip-2,#legend-row-2:focus~#legendtip-2{opacity:1}#legend-row-3:hover~#legendtip-3,#legend-row-3:focus~#legendtip-3{opacity:1}#legend-row-4:hover~#legendtip-4,#legend-row-4:focus~#legendtip-4{opacity:1}#legend-row-5:hover~#legendtip-5,#legend-row-5:focus~#legendtip-5{opacity:1}
 @media (prefers-reduced-motion:reduce){.tip{transition:none}}
 @media (prefers-contrast: more){
   .rg-île-de-france---north circle{fill:#B50000;}
@@ -157,7 +158,7 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <path class="dept" d="M430.6,354.7L432.3,354.8L434.1,353.8L436.1,354.6L437.3,354.6L437.2,352.7L434.9,352.2L438.2,351.3L440.8,352.5L443.9,355.5L444.8,358.0L443.8,360.5L443.8,361.7L443.0,363.2L443.2,364.4L442.3,364.7L441.1,363.8L440.2,361.5L439.6,361.0L437.1,362.0L435.1,362.4L432.9,362.2L432.0,360.8L430.2,360.0L429.6,359.5L430.4,357.4L430.0,357.0L430.6,354.7Z" fill="#FF3B30" fill-opacity="0.06" stroke="#D1D1D6" stroke-width="0.7"/>
 <path class="dept" d="M443.1,334.4L442.2,335.8L443.1,336.7L441.1,338.7L441.4,339.8L440.4,340.2L439.5,341.9L437.2,343.3L436.8,344.0L434.1,343.9L433.0,342.8L430.9,343.0L430.4,344.0L428.6,343.2L428.2,344.3L427.1,344.7L423.7,347.6L423.9,344.4L422.5,344.1L422.3,342.7L421.3,341.7L419.5,341.1L419.8,339.8L417.6,339.4L414.6,340.7L412.9,338.9L410.2,338.9L408.8,337.3L407.8,337.5L406.7,339.1L405.8,338.0L406.4,336.1L404.6,334.7L402.9,335.0L402.8,336.1L401.1,335.7L399.3,337.1L397.7,336.1L396.7,334.5L395.2,334.3L393.4,334.5L394.7,331.7L395.7,330.5L396.1,328.7L396.5,324.3L398.0,322.6L399.5,323.4L400.0,326.6L400.6,327.1L402.6,326.2L405.2,327.4L406.8,327.3L407.2,328.0L409.5,327.1L411.0,327.1L411.7,326.3L413.0,327.0L416.7,324.4L417.9,325.9L419.7,325.8L422.2,327.1L424.1,326.6L425.8,328.7L427.5,328.2L428.7,326.1L430.6,328.0L432.9,329.0L434.0,328.8L437.0,330.1L438.6,331.5L438.0,332.3L441.4,332.9L443.1,334.4Z" fill="#FF3B30" fill-opacity="0.06" stroke="#D1D1D6" stroke-width="0.7"/>
 </g>
-<g class="dots rg rg-île-de-france---north hit" tabindex="0" role="listitem"><title>Île-de-France &amp; North: about 23.9 million residents (957 dots)</title>
+<g id="region-0" class="dots rg rg-île-de-france---north hit" tabindex="0" role="listitem"><title>Île-de-France &amp; North: about 23.9 million residents (957 dots)</title>
 <circle cx="491.7" cy="304.3" r="1.7" fill="#FF3B30" fill-opacity="0.55"/>
 <circle cx="508.6" cy="291.4" r="1.7" fill="#FF3B30" fill-opacity="0.55"/>
 <circle cx="509.9" cy="268.6" r="1.7" fill="#FF3B30" fill-opacity="0.55"/>
@@ -1116,8 +1117,7 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <circle cx="397.0" cy="329.7" r="1.7" fill="#FF3B30" fill-opacity="0.55"/>
 <circle cx="399.3" cy="327.5" r="1.7" fill="#FF3B30" fill-opacity="0.55"/>
 </g>
-<g class="tip"><rect x="397.5" y="331.2" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="406.5" y="352.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Île-de-France &amp; North</text><text x="406.5" y="368.7" font-size="12.5" font-weight="400" fill="#6E6E73">23.9 million residents</text><text x="406.5" y="384.7" font-size="12.5" font-weight="400" fill="#6E6E73">957 dots on the map</text></g>
-<g class="dots rg rg-atlantic-west hit" tabindex="0" role="listitem"><title>Atlantic West: about 16.5 million residents (661 dots)</title>
+<g id="region-1" class="dots rg rg-atlantic-west hit" tabindex="0" role="listitem"><title>Atlantic West: about 16.5 million residents (661 dots)</title>
 <circle cx="306.5" cy="333.6" r="1.7" fill="#007AFF" fill-opacity="0.55"/>
 <circle cx="268.0" cy="312.4" r="1.7" fill="#007AFF" fill-opacity="0.55"/>
 <circle cx="291.9" cy="344.1" r="1.7" fill="#007AFF" fill-opacity="0.55"/>
@@ -1780,8 +1780,7 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <circle cx="380.3" cy="548.9" r="1.7" fill="#007AFF" fill-opacity="0.55"/>
 <circle cx="360.7" cy="600.5" r="1.7" fill="#007AFF" fill-opacity="0.55"/>
 </g>
-<g class="tip"><rect x="185.4" y="488.7" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="194.4" y="510.2" font-size="12.5" font-weight="700" fill="#1D1D1F">Atlantic West</text><text x="194.4" y="526.2" font-size="12.5" font-weight="400" fill="#6E6E73">16.5 million residents</text><text x="194.4" y="542.2" font-size="12.5" font-weight="400" fill="#6E6E73">661 dots on the map</text></g>
-<g class="dots rg rg-mediterranean-south hit" tabindex="0" role="listitem"><title>Mediterranean South: about 11.0 million residents (441 dots)</title>
+<g id="region-2" class="dots rg rg-mediterranean-south hit" tabindex="0" role="listitem"><title>Mediterranean South: about 11.0 million residents (441 dots)</title>
 <circle cx="660.9" cy="714.8" r="1.7" fill="#FF9500" fill-opacity="0.55"/>
 <circle cx="643.2" cy="699.1" r="1.7" fill="#FF9500" fill-opacity="0.55"/>
 <circle cx="689.3" cy="728.6" r="1.7" fill="#FF9500" fill-opacity="0.55"/>
@@ -2224,8 +2223,7 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <circle cx="604.1" cy="722.6" r="1.7" fill="#FF9500" fill-opacity="0.55"/>
 <circle cx="608.7" cy="745.8" r="1.7" fill="#FF9500" fill-opacity="0.55"/>
 </g>
-<g class="tip"><rect x="448.3" y="757.3" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="457.3" y="778.8" font-size="12.5" font-weight="700" fill="#1D1D1F">Mediterranean South</text><text x="457.3" y="794.8" font-size="12.5" font-weight="400" fill="#6E6E73">11.0 million residents</text><text x="457.3" y="810.8" font-size="12.5" font-weight="400" fill="#6E6E73">441 dots on the map</text></g>
-<g class="dots rg rg-rhône-alps-east hit" tabindex="0" role="listitem"><title>Rhône–Alps East: about 10.9 million residents (433 dots)</title>
+<g id="region-3" class="dots rg rg-rhône-alps-east hit" tabindex="0" role="listitem"><title>Rhône–Alps East: about 10.9 million residents (433 dots)</title>
 <circle cx="607.1" cy="570.2" r="1.7" fill="#AF52DE" fill-opacity="0.55"/>
 <circle cx="607.9" cy="563.3" r="1.7" fill="#AF52DE" fill-opacity="0.55"/>
 <circle cx="571.4" cy="550.9" r="1.7" fill="#AF52DE" fill-opacity="0.55"/>
@@ -2660,8 +2658,7 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <circle cx="667.9" cy="443.5" r="1.7" fill="#AF52DE" fill-opacity="0.55"/>
 <circle cx="675.3" cy="451.7" r="1.7" fill="#AF52DE" fill-opacity="0.55"/>
 </g>
-<g class="tip"><rect x="490.4" y="570.2" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="499.4" y="591.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Rhône–Alps East</text><text x="499.4" y="607.7" font-size="12.5" font-weight="400" fill="#6E6E73">10.9 million residents</text><text x="499.4" y="623.7" font-size="12.5" font-weight="400" fill="#6E6E73">433 dots on the map</text></g>
-<g class="dots rg rg-central-rural-belt hit" tabindex="0" role="listitem"><title>Central rural belt: about 2.6 million residents (102 dots)</title>
+<g id="region-4" class="dots rg rg-central-rural-belt hit" tabindex="0" role="listitem"><title>Central rural belt: about 2.6 million residents (102 dots)</title>
 <circle cx="456.2" cy="512.0" r="1.7" fill="#A52A2A" fill-opacity="0.55"/>
 <circle cx="424.0" cy="473.5" r="1.7" fill="#A52A2A" fill-opacity="0.55"/>
 <circle cx="431.4" cy="450.0" r="1.7" fill="#A52A2A" fill-opacity="0.55"/>
@@ -2765,8 +2762,7 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <circle cx="459.7" cy="451.8" r="1.7" fill="#A52A2A" fill-opacity="0.55"/>
 <circle cx="396.3" cy="420.4" r="1.7" fill="#A52A2A" fill-opacity="0.55"/>
 </g>
-<g class="tip"><rect x="312.6" y="452.2" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="321.6" y="473.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Central rural belt</text><text x="321.6" y="489.7" font-size="12.5" font-weight="400" fill="#6E6E73">2.6 million residents</text><text x="321.6" y="505.7" font-size="12.5" font-weight="400" fill="#6E6E73">102 dots on the map</text></g>
-<g class="dots rg rg-corsica hit" tabindex="0" role="listitem"><title>Corsica: about 0.3 million residents (13 dots)</title>
+<g id="region-5" class="dots rg rg-corsica hit" tabindex="0" role="listitem"><title>Corsica: about 0.3 million residents (13 dots)</title>
 <circle cx="846.2" cy="913.4" r="1.7" fill="#28CD41" fill-opacity="0.55"/>
 <circle cx="826.9" cy="888.7" r="1.7" fill="#28CD41" fill-opacity="0.55"/>
 <circle cx="825.6" cy="904.8" r="1.7" fill="#28CD41" fill-opacity="0.55"/>
@@ -2781,45 +2777,50 @@ svg:hover .rg-corsica:hover, svg:focus-within .rg-corsica:focus { opacity: 1; }
 <circle cx="816.7" cy="851.2" r="1.7" fill="#28CD41" fill-opacity="0.55"/>
 <circle cx="844.2" cy="808.5" r="1.7" fill="#28CD41" fill-opacity="0.55"/>
 </g>
-<g class="tip"><rect x="751.2" y="863.9" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="760.2" y="885.4" font-size="12.5" font-weight="700" fill="#1D1D1F">Corsica</text><text x="760.2" y="901.4" font-size="12.5" font-weight="400" fill="#6E6E73">0.3 million residents</text><text x="760.2" y="917.4" font-size="12.5" font-weight="400" fill="#6E6E73">13 dots on the map</text></g>
+<g id="regiontip-0" class="tip"><rect x="397.5" y="331.2" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="406.5" y="352.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Île-de-France &amp; North</text><text x="406.5" y="368.7" font-size="12.5" font-weight="400" fill="#6E6E73">23.9 million residents</text><text x="406.5" y="384.7" font-size="12.5" font-weight="400" fill="#6E6E73">957 dots on the map</text></g>
+<g id="regiontip-1" class="tip"><rect x="185.4" y="488.7" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="194.4" y="510.2" font-size="12.5" font-weight="700" fill="#1D1D1F">Atlantic West</text><text x="194.4" y="526.2" font-size="12.5" font-weight="400" fill="#6E6E73">16.5 million residents</text><text x="194.4" y="542.2" font-size="12.5" font-weight="400" fill="#6E6E73">661 dots on the map</text></g>
+<g id="regiontip-2" class="tip"><rect x="448.3" y="757.3" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="457.3" y="778.8" font-size="12.5" font-weight="700" fill="#1D1D1F">Mediterranean South</text><text x="457.3" y="794.8" font-size="12.5" font-weight="400" fill="#6E6E73">11.0 million residents</text><text x="457.3" y="810.8" font-size="12.5" font-weight="400" fill="#6E6E73">441 dots on the map</text></g>
+<g id="regiontip-3" class="tip"><rect x="490.4" y="570.2" width="172" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="499.4" y="591.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Rhône–Alps East</text><text x="499.4" y="607.7" font-size="12.5" font-weight="400" fill="#6E6E73">10.9 million residents</text><text x="499.4" y="623.7" font-size="12.5" font-weight="400" fill="#6E6E73">433 dots on the map</text></g>
+<g id="regiontip-4" class="tip"><rect x="312.6" y="452.2" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="321.6" y="473.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Central rural belt</text><text x="321.6" y="489.7" font-size="12.5" font-weight="400" fill="#6E6E73">2.6 million residents</text><text x="321.6" y="505.7" font-size="12.5" font-weight="400" fill="#6E6E73">102 dots on the map</text></g>
+<g id="regiontip-5" class="tip"><rect x="751.2" y="863.9" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="760.2" y="885.4" font-size="12.5" font-weight="700" fill="#1D1D1F">Corsica</text><text x="760.2" y="901.4" font-size="12.5" font-weight="400" fill="#6E6E73">0.3 million residents</text><text x="760.2" y="917.4" font-size="12.5" font-weight="400" fill="#6E6E73">13 dots on the map</text></g>
 <text x="914.0" y="156.0" font-size="17" font-weight="700" fill="#1D1D1F">Macro-region</text>
 <g transform="translate(914.0,190.0)">
-<g class="rg rg-île-de-france---north legend-row hit" tabindex="0" role="listitem" transform="translate(0,0.0)"><title>Île-de-France &amp; North: about 23.9 million residents</title>
+<g id="legend-row-0" class="rg rg-île-de-france---north legend-row hit" tabindex="0" role="listitem" transform="translate(0,0.0)"><title>Île-de-France &amp; North: about 23.9 million residents</title>
 <circle cx="11" cy="8" r="10" fill="#FF3B30" fill-opacity="0.92"/>
 <text x="34" y="5" font-size="18" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Île-de-France &amp; North</text>
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">23.9 M residents</text>
 </g>
-<g class="tip"><rect x="40" y="40" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="61.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Île-de-France &amp; North</text><text x="49" y="77.5" font-size="12.5" font-weight="400" fill="#6E6E73">23.9 million residents</text></g>
-<g class="rg rg-atlantic-west legend-row hit" tabindex="0" role="listitem" transform="translate(0,62.0)"><title>Atlantic West: about 16.5 million residents</title>
+<g id="legend-row-1" class="rg rg-atlantic-west legend-row hit" tabindex="0" role="listitem" transform="translate(0,62.0)"><title>Atlantic West: about 16.5 million residents</title>
 <circle cx="11" cy="8" r="10" fill="#007AFF" fill-opacity="0.92"/>
 <text x="34" y="5" font-size="18" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Atlantic West</text>
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">16.5 M residents</text>
 </g>
-<g class="tip"><rect x="40" y="102" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="123.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Atlantic West</text><text x="49" y="139.5" font-size="12.5" font-weight="400" fill="#6E6E73">16.5 million residents</text></g>
-<g class="rg rg-mediterranean-south legend-row hit" tabindex="0" role="listitem" transform="translate(0,124.0)"><title>Mediterranean South: about 11.0 million residents</title>
+<g id="legend-row-2" class="rg rg-mediterranean-south legend-row hit" tabindex="0" role="listitem" transform="translate(0,124.0)"><title>Mediterranean South: about 11.0 million residents</title>
 <circle cx="11" cy="8" r="10" fill="#FF9500" fill-opacity="0.92"/>
 <text x="34" y="5" font-size="18" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Mediterranean South</text>
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">11.0 M residents</text>
 </g>
-<g class="tip"><rect x="40" y="164" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="185.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mediterranean South</text><text x="49" y="201.5" font-size="12.5" font-weight="400" fill="#6E6E73">11.0 million residents</text></g>
-<g class="rg rg-rhône-alps-east legend-row hit" tabindex="0" role="listitem" transform="translate(0,186.0)"><title>Rhône–Alps East: about 10.9 million residents</title>
+<g id="legend-row-3" class="rg rg-rhône-alps-east legend-row hit" tabindex="0" role="listitem" transform="translate(0,186.0)"><title>Rhône–Alps East: about 10.9 million residents</title>
 <circle cx="11" cy="8" r="10" fill="#AF52DE" fill-opacity="0.92"/>
 <text x="34" y="5" font-size="18" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Rhône–Alps East</text>
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">10.9 M residents</text>
 </g>
-<g class="tip"><rect x="40" y="226" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="247.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Rhône–Alps East</text><text x="49" y="263.5" font-size="12.5" font-weight="400" fill="#6E6E73">10.9 million residents</text></g>
-<g class="rg rg-central-rural-belt legend-row hit" tabindex="0" role="listitem" transform="translate(0,248.0)"><title>Central rural belt: about 2.6 million residents</title>
+<g id="legend-row-4" class="rg rg-central-rural-belt legend-row hit" tabindex="0" role="listitem" transform="translate(0,248.0)"><title>Central rural belt: about 2.6 million residents</title>
 <circle cx="11" cy="8" r="10" fill="#A52A2A" fill-opacity="0.92"/>
 <text x="34" y="5" font-size="18" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Central rural belt</text>
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">2.6 M residents</text>
 </g>
-<g class="tip"><rect x="40" y="288" width="165" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="309.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Central rural belt</text><text x="49" y="325.5" font-size="12.5" font-weight="400" fill="#6E6E73">2.6 million residents</text></g>
-<g class="rg rg-corsica legend-row hit" tabindex="0" role="listitem" transform="translate(0,310.0)"><title>Corsica: about 0.3 million residents</title>
+<g id="legend-row-5" class="rg rg-corsica legend-row hit" tabindex="0" role="listitem" transform="translate(0,310.0)"><title>Corsica: about 0.3 million residents</title>
 <circle cx="11" cy="8" r="10" fill="#28CD41" fill-opacity="0.92"/>
 <text x="34" y="5" font-size="18" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">Corsica</text>
 <text x="34" y="28" font-size="15" fill="#6E6E73" dominant-baseline="middle">0.3 M residents</text>
 </g>
-<g class="tip"><rect x="40" y="350" width="165" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="371.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Corsica</text><text x="49" y="387.5" font-size="12.5" font-weight="400" fill="#6E6E73">0.3 million residents</text></g>
+<g id="legendtip-0" class="tip"><rect x="40" y="40" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="61.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Île-de-France &amp; North</text><text x="49" y="77.5" font-size="12.5" font-weight="400" fill="#6E6E73">23.9 million residents</text></g>
+<g id="legendtip-1" class="tip"><rect x="40" y="102" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="123.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Atlantic West</text><text x="49" y="139.5" font-size="12.5" font-weight="400" fill="#6E6E73">16.5 million residents</text></g>
+<g id="legendtip-2" class="tip"><rect x="40" y="164" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="185.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mediterranean South</text><text x="49" y="201.5" font-size="12.5" font-weight="400" fill="#6E6E73">11.0 million residents</text></g>
+<g id="legendtip-3" class="tip"><rect x="40" y="226" width="172" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="247.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Rhône–Alps East</text><text x="49" y="263.5" font-size="12.5" font-weight="400" fill="#6E6E73">10.9 million residents</text></g>
+<g id="legendtip-4" class="tip"><rect x="40" y="288" width="165" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="309.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Central rural belt</text><text x="49" y="325.5" font-size="12.5" font-weight="400" fill="#6E6E73">2.6 million residents</text></g>
+<g id="legendtip-5" class="tip"><rect x="40" y="350" width="165" height="46.5" rx="9" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.2"/><text x="49" y="371.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Corsica</text><text x="49" y="387.5" font-size="12.5" font-weight="400" fill="#6E6E73">0.3 million residents</text></g>
 </g>
 <text x="40.0" y="980" font-size="14" fill="#6E6E73">Dots randomly placed within each department, not at real addresses · equal-area projection</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>

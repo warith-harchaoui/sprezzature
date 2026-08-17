@@ -26,7 +26,7 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 .row:focus { outline: none; }
 .row:focus .rowlabel { fill: #0A4DA0; }
 .tip{opacity:0;pointer-events:none;transition:opacity .12s ease}
-.hit:hover+.tip,.hit:focus+.tip{opacity:1}
+#row-0:hover~#row-tip-0,#row-0:focus~#row-tip-0{opacity:1}#row-1:hover~#row-tip-1,#row-1:focus~#row-tip-1{opacity:1}#row-2:hover~#row-tip-2,#row-2:focus~#row-tip-2{opacity:1}#row-3:hover~#row-tip-3,#row-3:focus~#row-tip-3{opacity:1}#row-4:hover~#row-tip-4,#row-4:focus~#row-tip-4{opacity:1}
 @media (prefers-reduced-motion: reduce) { .row, .icons { transition: none; } .reveal { animation: none !important; } .tip{transition:none}}
 @media (prefers-contrast: more){
   .pic-copenhagen{fill:#006700;}
@@ -54,7 +54,7 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <rect width="1240" height="900" fill="#FFFFFF"/>
 <text x="56" y="76" font-size="34" font-weight="700" fill="#1D1D1F">Copenhagen bikes; Los Angeles drives</text>
 <text x="56" y="116" font-size="19" fill="#6E6E73">Cyclists per 100 commuters on a typical weekday · one figure = 5 people</text>
-<g class="row row-copenhagen hit" tabindex="0" role="listitem" aria-label="Copenhagen: 62 cyclists per 100 commuters">
+<g id="row-0" class="row row-copenhagen hit" tabindex="0" role="listitem" aria-label="Copenhagen: 62 cyclists per 100 commuters">
 <text class="rowlabel" x="260" y="254.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Copenhagen</text>
 <g>
 <g><circle cx="320.0" cy="231.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 241.1 Q 303.2 245.2 303.2 249.3 L 310.4 259.4 L 309.6 288.0 L 314.4 288.0 L 318.8 264.9 L 321.2 264.9 L 325.6 288.0 L 330.4 288.0 L 329.6 259.4 L 336.8 249.3 Q 336.8 245.2 329.6 241.1 Z" fill="#E3E3E8"/></g>
@@ -92,8 +92,7 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <text class="pic-val" x="1000" y="254.0" font-size="26" font-weight="700" fill="#28CD41" dominant-baseline="middle">62</text>
 <text x="1000" y="278.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">per 100</text>
 </g>
-<g class="tip"><rect x="300" y="206" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="227.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Copenhagen</text><text x="309" y="243.5" font-size="12.5" font-weight="400" fill="#6E6E73">62 per 100 commuters</text><text x="309" y="259.5" font-size="12.5" font-weight="400" fill="#6E6E73">100.0% of the top row</text></g>
-<g class="row row-amsterdam hit" tabindex="0" role="listitem" aria-label="Amsterdam: 48 cyclists per 100 commuters">
+<g id="row-1" class="row row-amsterdam hit" tabindex="0" role="listitem" aria-label="Amsterdam: 48 cyclists per 100 commuters">
 <text class="rowlabel" x="260" y="372.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Amsterdam</text>
 <g>
 <g><circle cx="320.0" cy="349.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 359.1 Q 303.2 363.2 303.2 367.3 L 310.4 377.4 L 309.6 406.0 L 314.4 406.0 L 318.8 382.9 L 321.2 382.9 L 325.6 406.0 L 330.4 406.0 L 329.6 377.4 L 336.8 367.3 Q 336.8 363.2 329.6 359.1 Z" fill="#E3E3E8"/></g>
@@ -128,8 +127,7 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <text class="pic-val" x="1000" y="372.0" font-size="26" font-weight="700" fill="#79DBDC" dominant-baseline="middle">48</text>
 <text x="1000" y="396.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">per 100</text>
 </g>
-<g class="tip"><rect x="300" y="324" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="345.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Amsterdam</text><text x="309" y="361.5" font-size="12.5" font-weight="400" fill="#6E6E73">48 per 100 commuters</text><text x="309" y="377.5" font-size="12.5" font-weight="400" fill="#6E6E73">77.4% of the top row</text></g>
-<g class="row row-tokyo hit" tabindex="0" role="listitem" aria-label="Tokyo: 27 cyclists per 100 commuters">
+<g id="row-2" class="row row-tokyo hit" tabindex="0" role="listitem" aria-label="Tokyo: 27 cyclists per 100 commuters">
 <text class="rowlabel" x="260" y="490.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Tokyo</text>
 <g>
 <g><circle cx="320.0" cy="467.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 477.1 Q 303.2 481.2 303.2 485.3 L 310.4 495.4 L 309.6 524.0 L 314.4 524.0 L 318.8 500.9 L 321.2 500.9 L 325.6 524.0 L 330.4 524.0 L 329.6 495.4 L 336.8 485.3 Q 336.8 481.2 329.6 477.1 Z" fill="#E3E3E8"/></g>
@@ -160,8 +158,7 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <text class="pic-val" x="1000" y="490.0" font-size="26" font-weight="700" fill="#007AFF" dominant-baseline="middle">27</text>
 <text x="1000" y="514.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">per 100</text>
 </g>
-<g class="tip"><rect x="300" y="442" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="463.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Tokyo</text><text x="309" y="479.5" font-size="12.5" font-weight="400" fill="#6E6E73">27 per 100 commuters</text><text x="309" y="495.5" font-size="12.5" font-weight="400" fill="#6E6E73">43.5% of the top row</text></g>
-<g class="row row-berlin hit" tabindex="0" role="listitem" aria-label="Berlin: 18 cyclists per 100 commuters">
+<g id="row-3" class="row row-berlin hit" tabindex="0" role="listitem" aria-label="Berlin: 18 cyclists per 100 commuters">
 <text class="rowlabel" x="260" y="608.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Berlin</text>
 <g>
 <g><circle cx="320.0" cy="585.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 595.1 Q 303.2 599.2 303.2 603.3 L 310.4 613.4 L 309.6 642.0 L 314.4 642.0 L 318.8 618.9 L 321.2 618.9 L 325.6 642.0 L 330.4 642.0 L 329.6 613.4 L 336.8 603.3 Q 336.8 599.2 329.6 595.1 Z" fill="#E3E3E8"/></g>
@@ -190,8 +187,7 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <text class="pic-val" x="1000" y="608.0" font-size="26" font-weight="700" fill="#FF9500" dominant-baseline="middle">18</text>
 <text x="1000" y="632.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">per 100</text>
 </g>
-<g class="tip"><rect x="300" y="560" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="581.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Berlin</text><text x="309" y="597.5" font-size="12.5" font-weight="400" fill="#6E6E73">18 per 100 commuters</text><text x="309" y="613.5" font-size="12.5" font-weight="400" fill="#6E6E73">29.0% of the top row</text></g>
-<g class="row row-los-angeles hit" tabindex="0" role="listitem" aria-label="Los Angeles: 4 cyclists per 100 commuters">
+<g id="row-4" class="row row-los-angeles hit" tabindex="0" role="listitem" aria-label="Los Angeles: 4 cyclists per 100 commuters">
 <text class="rowlabel" x="260" y="726.0" font-size="22" font-weight="600" fill="#1D1D1F" text-anchor="end" dominant-baseline="middle">Los Angeles</text>
 <g>
 <g><circle cx="320.0" cy="703.8" r="10.4" fill="#E3E3E8"/><path d="M 310.4 713.1 Q 303.2 717.2 303.2 721.3 L 310.4 731.4 L 309.6 760.0 L 314.4 760.0 L 318.8 736.9 L 321.2 736.9 L 325.6 760.0 L 330.4 760.0 L 329.6 731.4 L 336.8 721.3 Q 336.8 717.2 329.6 713.1 Z" fill="#E3E3E8"/></g>
@@ -217,7 +213,11 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <text class="pic-val" x="1000" y="726.0" font-size="26" font-weight="700" fill="#FF3B30" dominant-baseline="middle">4</text>
 <text x="1000" y="750.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">per 100</text>
 </g>
-<g class="tip"><rect x="300" y="678" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="699.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Los Angeles</text><text x="309" y="715.5" font-size="12.5" font-weight="400" fill="#6E6E73">4 per 100 commuters</text><text x="309" y="731.5" font-size="12.5" font-weight="400" fill="#6E6E73">6.5% of the top row</text></g>
+<g id="row-tip-0" class="tip"><rect x="300" y="206" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="227.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Copenhagen</text><text x="309" y="243.5" font-size="12.5" font-weight="400" fill="#6E6E73">62 per 100 commuters</text><text x="309" y="259.5" font-size="12.5" font-weight="400" fill="#6E6E73">100.0% of the top row</text></g>
+<g id="row-tip-1" class="tip"><rect x="300" y="324" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="345.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Amsterdam</text><text x="309" y="361.5" font-size="12.5" font-weight="400" fill="#6E6E73">48 per 100 commuters</text><text x="309" y="377.5" font-size="12.5" font-weight="400" fill="#6E6E73">77.4% of the top row</text></g>
+<g id="row-tip-2" class="tip"><rect x="300" y="442" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="463.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Tokyo</text><text x="309" y="479.5" font-size="12.5" font-weight="400" fill="#6E6E73">27 per 100 commuters</text><text x="309" y="495.5" font-size="12.5" font-weight="400" fill="#6E6E73">43.5% of the top row</text></g>
+<g id="row-tip-3" class="tip"><rect x="300" y="560" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="581.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Berlin</text><text x="309" y="597.5" font-size="12.5" font-weight="400" fill="#6E6E73">18 per 100 commuters</text><text x="309" y="613.5" font-size="12.5" font-weight="400" fill="#6E6E73">29.0% of the top row</text></g>
+<g id="row-tip-4" class="tip"><rect x="300" y="678" width="151" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="699.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Los Angeles</text><text x="309" y="715.5" font-size="12.5" font-weight="400" fill="#6E6E73">4 per 100 commuters</text><text x="309" y="731.5" font-size="12.5" font-weight="400" fill="#6E6E73">6.5% of the top row</text></g>
 <g transform="translate(56,836)">
 <circle cx="20.0" cy="11.8" r="10.4" fill="#6E6E73"/>
 <path d="M 10.4 21.1 Q 3.2 25.2 3.2 29.3 L 10.4 39.4 L 9.6 68.0 L 14.4 68.0 L 18.8 44.9 L 21.2 44.9 L 25.6 68.0 L 30.4 68.0 L 29.6 39.4 L 36.8 29.3 Q 36.8 25.2 29.6 21.1 Z" fill="#6E6E73"/>
