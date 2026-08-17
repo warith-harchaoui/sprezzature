@@ -12,7 +12,7 @@
   [fill="#6E6E73"]{fill:#9C9CA3;}
   [style*="multiply"]{mix-blend-mode:screen;}
   [stroke="#EEEEEE"]{stroke:#2A2A2C;}
-}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}.hit:hover+.tip,.hit:focus+.tip{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}</style>
+}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}#pt-hit-0:hover~#pt-tip-0,#pt-hit-0:focus~#pt-tip-0{opacity:1}#pt-hit-1:hover~#pt-tip-1,#pt-hit-1:focus~#pt-tip-1{opacity:1}#pt-hit-2:hover~#pt-tip-2,#pt-hit-2:focus~#pt-tip-2{opacity:1}#pt-hit-3:hover~#pt-tip-3,#pt-hit-3:focus~#pt-tip-3{opacity:1}#pt-hit-4:hover~#pt-tip-4,#pt-hit-4:focus~#pt-tip-4{opacity:1}#pt-hit-5:hover~#pt-tip-5,#pt-hit-5:focus~#pt-tip-5{opacity:1}#pt-hit-6:hover~#pt-tip-6,#pt-hit-6:focus~#pt-tip-6{opacity:1}#pt-hit-7:hover~#pt-tip-7,#pt-hit-7:focus~#pt-tip-7{opacity:1}#pt-hit-8:hover~#pt-tip-8,#pt-hit-8:focus~#pt-tip-8{opacity:1}#pt-hit-9:hover~#pt-tip-9,#pt-hit-9:focus~#pt-tip-9{opacity:1}#pt-hit-10:hover~#pt-tip-10,#pt-hit-10:focus~#pt-tip-10{opacity:1}#pt-hit-11:hover~#pt-tip-11,#pt-hit-11:focus~#pt-tip-11{opacity:1}#pt-hit-12:hover~#pt-tip-12,#pt-hit-12:focus~#pt-tip-12{opacity:1}#pt-hit-13:hover~#pt-tip-13,#pt-hit-13:focus~#pt-tip-13{opacity:1}#pt-hit-14:hover~#pt-tip-14,#pt-hit-14:focus~#pt-tip-14{opacity:1}#pt-hit-15:hover~#pt-tip-15,#pt-hit-15:focus~#pt-tip-15{opacity:1}#pt-hit-16:hover~#pt-tip-16,#pt-hit-16:focus~#pt-tip-16{opacity:1}#pt-hit-17:hover~#pt-tip-17,#pt-hit-17:focus~#pt-tip-17{opacity:1}#pt-hit-18:hover~#pt-tip-18,#pt-hit-18:focus~#pt-tip-18{opacity:1}#pt-hit-19:hover~#pt-tip-19,#pt-hit-19:focus~#pt-tip-19{opacity:1}#pt-hit-20:hover~#pt-tip-20,#pt-hit-20:focus~#pt-tip-20{opacity:1}#pt-hit-21:hover~#pt-tip-21,#pt-hit-21:focus~#pt-tip-21{opacity:1}#pt-hit-22:hover~#pt-tip-22,#pt-hit-22:focus~#pt-tip-22{opacity:1}#pt-hit-23:hover~#pt-tip-23,#pt-hit-23:focus~#pt-tip-23{opacity:1}#pt-hit-24:hover~#pt-tip-24,#pt-hit-24:focus~#pt-tip-24{opacity:1}#pt-hit-25:hover~#pt-tip-25,#pt-hit-25:focus~#pt-tip-25{opacity:1}#pt-hit-26:hover~#pt-tip-26,#pt-hit-26:focus~#pt-tip-26{opacity:1}#pt-hit-27:hover~#pt-tip-27,#pt-hit-27:focus~#pt-tip-27{opacity:1}#pt-hit-28:hover~#pt-tip-28,#pt-hit-28:focus~#pt-tip-28{opacity:1}#pt-hit-29:hover~#pt-tip-29,#pt-hit-29:focus~#pt-tip-29{opacity:1}#pt-hit-30:hover~#pt-tip-30,#pt-hit-30:focus~#pt-tip-30{opacity:1}#pt-hit-31:hover~#pt-tip-31,#pt-hit-31:focus~#pt-tip-31{opacity:1}#pt-hit-32:hover~#pt-tip-32,#pt-hit-32:focus~#pt-tip-32{opacity:1}#pt-hit-33:hover~#pt-tip-33,#pt-hit-33:focus~#pt-tip-33{opacity:1}#pt-hit-34:hover~#pt-tip-34,#pt-hit-34:focus~#pt-tip-34{opacity:1}#pt-hit-35:hover~#pt-tip-35,#pt-hit-35:focus~#pt-tip-35{opacity:1}#pt-hit-36:hover~#pt-tip-36,#pt-hit-36:focus~#pt-tip-36{opacity:1}#pt-hit-37:hover~#pt-tip-37,#pt-hit-37:focus~#pt-tip-37{opacity:1}#pt-hit-38:hover~#pt-tip-38,#pt-hit-38:focus~#pt-tip-38{opacity:1}#pt-hit-39:hover~#pt-tip-39,#pt-hit-39:focus~#pt-tip-39{opacity:1}#pt-hit-40:hover~#pt-tip-40,#pt-hit-40:focus~#pt-tip-40{opacity:1}#pt-hit-41:hover~#pt-tip-41,#pt-hit-41:focus~#pt-tip-41{opacity:1}#pt-hit-42:hover~#pt-tip-42,#pt-hit-42:focus~#pt-tip-42{opacity:1}#pt-hit-43:hover~#pt-tip-43,#pt-hit-43:focus~#pt-tip-43{opacity:1}#pt-hit-44:hover~#pt-tip-44,#pt-hit-44:focus~#pt-tip-44{opacity:1}#pt-hit-45:hover~#pt-tip-45,#pt-hit-45:focus~#pt-tip-45{opacity:1}#pt-hit-46:hover~#pt-tip-46,#pt-hit-46:focus~#pt-tip-46{opacity:1}#pt-hit-47:hover~#pt-tip-47,#pt-hit-47:focus~#pt-tip-47{opacity:1}#pt-hit-48:hover~#pt-tip-48,#pt-hit-48:focus~#pt-tip-48{opacity:1}#pt-hit-49:hover~#pt-tip-49,#pt-hit-49:focus~#pt-tip-49{opacity:1}#pt-hit-50:hover~#pt-tip-50,#pt-hit-50:focus~#pt-tip-50{opacity:1}#pt-hit-51:hover~#pt-tip-51,#pt-hit-51:focus~#pt-tip-51{opacity:1}#pt-hit-52:hover~#pt-tip-52,#pt-hit-52:focus~#pt-tip-52{opacity:1}#pt-hit-53:hover~#pt-tip-53,#pt-hit-53:focus~#pt-tip-53{opacity:1}#pt-hit-54:hover~#pt-tip-54,#pt-hit-54:focus~#pt-tip-54{opacity:1}#pt-hit-55:hover~#pt-tip-55,#pt-hit-55:focus~#pt-tip-55{opacity:1}#pt-hit-56:hover~#pt-tip-56,#pt-hit-56:focus~#pt-tip-56{opacity:1}#pt-hit-57:hover~#pt-tip-57,#pt-hit-57:focus~#pt-tip-57{opacity:1}#pt-hit-58:hover~#pt-tip-58,#pt-hit-58:focus~#pt-tip-58{opacity:1}#pt-hit-59:hover~#pt-tip-59,#pt-hit-59:focus~#pt-tip-59{opacity:1}#pt-hit-60:hover~#pt-tip-60,#pt-hit-60:focus~#pt-tip-60{opacity:1}#pt-hit-61:hover~#pt-tip-61,#pt-hit-61:focus~#pt-tip-61{opacity:1}#pt-hit-62:hover~#pt-tip-62,#pt-hit-62:focus~#pt-tip-62{opacity:1}#pt-hit-63:hover~#pt-tip-63,#pt-hit-63:focus~#pt-tip-63{opacity:1}#pt-hit-64:hover~#pt-tip-64,#pt-hit-64:focus~#pt-tip-64{opacity:1}#pt-hit-65:hover~#pt-tip-65,#pt-hit-65:focus~#pt-tip-65{opacity:1}#pt-hit-66:hover~#pt-tip-66,#pt-hit-66:focus~#pt-tip-66{opacity:1}#pt-hit-67:hover~#pt-tip-67,#pt-hit-67:focus~#pt-tip-67{opacity:1}#pt-hit-68:hover~#pt-tip-68,#pt-hit-68:focus~#pt-tip-68{opacity:1}#pt-hit-69:hover~#pt-tip-69,#pt-hit-69:focus~#pt-tip-69{opacity:1}#pt-hit-70:hover~#pt-tip-70,#pt-hit-70:focus~#pt-tip-70{opacity:1}#pt-hit-71:hover~#pt-tip-71,#pt-hit-71:focus~#pt-tip-71{opacity:1}#pt-hit-72:hover~#pt-tip-72,#pt-hit-72:focus~#pt-tip-72{opacity:1}#pt-hit-73:hover~#pt-tip-73,#pt-hit-73:focus~#pt-tip-73{opacity:1}#pt-hit-74:hover~#pt-tip-74,#pt-hit-74:focus~#pt-tip-74{opacity:1}#pt-hit-75:hover~#pt-tip-75,#pt-hit-75:focus~#pt-tip-75{opacity:1}#pt-hit-76:hover~#pt-tip-76,#pt-hit-76:focus~#pt-tip-76{opacity:1}#pt-hit-77:hover~#pt-tip-77,#pt-hit-77:focus~#pt-tip-77{opacity:1}#pt-hit-78:hover~#pt-tip-78,#pt-hit-78:focus~#pt-tip-78{opacity:1}#pt-hit-79:hover~#pt-tip-79,#pt-hit-79:focus~#pt-tip-79{opacity:1}#pt-hit-80:hover~#pt-tip-80,#pt-hit-80:focus~#pt-tip-80{opacity:1}#pt-hit-81:hover~#pt-tip-81,#pt-hit-81:focus~#pt-tip-81{opacity:1}#pt-hit-82:hover~#pt-tip-82,#pt-hit-82:focus~#pt-tip-82{opacity:1}#pt-hit-83:hover~#pt-tip-83,#pt-hit-83:focus~#pt-tip-83{opacity:1}#pt-hit-84:hover~#pt-tip-84,#pt-hit-84:focus~#pt-tip-84{opacity:1}#pt-hit-85:hover~#pt-tip-85,#pt-hit-85:focus~#pt-tip-85{opacity:1}#pt-hit-86:hover~#pt-tip-86,#pt-hit-86:focus~#pt-tip-86{opacity:1}#pt-hit-87:hover~#pt-tip-87,#pt-hit-87:focus~#pt-tip-87{opacity:1}#pt-hit-88:hover~#pt-tip-88,#pt-hit-88:focus~#pt-tip-88{opacity:1}#pt-hit-89:hover~#pt-tip-89,#pt-hit-89:focus~#pt-tip-89{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}</style>
 <rect width="1280" height="940" fill="#FFFFFF"/>
 <text x="128" y="88" font-size="40" font-weight="700" fill="#1D1D1F">Do the wrist monitor and the arm cuff agree?</text>
 <text x="128" y="134" font-size="23" fill="#6E6E73">Bland-Altman plot. Each dot is one patient: its difference (wrist − arm) against the two methods’ mean.</text>
@@ -58,546 +58,546 @@
 <text x="48.0" y="520.0" font-size="23" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 48.0 520.0)">Difference between methods — wrist − arm (mmHg)</text>
 <line x1="128.0" y1="456.0" x2="1070.0" y2="456.0" stroke="#B8B8BD" stroke-width="1.6" stroke-dasharray="2 5"/>
 <text x="134.0" y="478.0" font-size="18" font-style="italic" fill="#9A9AA0" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke">0 = perfect agreement</text>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -5 mmHg">
+<g id="pt-hit-0" class="pt hit" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -5 mmHg">
 <title>Mean 149 mmHg, wrist − arm -5 mmHg</title>
 <circle class="halo" cx="685.4" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="685.4" cy="534.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="571.4" y="516.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="580.4" y="537.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 149 mmHg</text><text x="580.4" y="553.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.9 mmHg</text><text x="580.4" y="569.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 171 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-1" class="pt hit" tabindex="0" role="img" aria-label="Mean 171 mmHg, wrist − arm -10 mmHg">
 <title>Mean 171 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="903.2" cy="609.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="903.2" cy="609.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="789.2" y="591.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="798.2" y="613.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 171 mmHg</text><text x="798.2" y="629.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.6 mmHg</text><text x="798.2" y="645.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-2" class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -6 mmHg">
 <title>Mean 162 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="813.9" cy="550.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="813.9" cy="550.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="699.9" y="532.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="708.9" y="553.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="708.9" y="569.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.9 mmHg</text><text x="708.9" y="585.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-3" class="pt hit" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -6 mmHg">
 <title>Mean 112 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="327.2" cy="552.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="327.2" cy="552.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="213.2" y="534" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222.2" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 112 mmHg</text><text x="222.2" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.0 mmHg</text><text x="222.2" y="587.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 122 mmHg, wrist − arm -1 mmHg">
+<g id="pt-hit-4" class="pt hit" tabindex="0" role="img" aria-label="Mean 122 mmHg, wrist − arm -1 mmHg">
 <title>Mean 122 mmHg, wrist − arm -1 mmHg</title>
 <circle class="halo" cx="417.5" cy="472.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="417.5" cy="472.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="303.5" y="454" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="312.5" y="475.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 122 mmHg</text><text x="312.5" y="491.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -1.0 mmHg</text><text x="312.5" y="507.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 169 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-5" class="pt hit" tabindex="0" role="img" aria-label="Mean 169 mmHg, wrist − arm -9 mmHg">
 <title>Mean 169 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="883.6" cy="604.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="883.6" cy="604.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="769.6" y="586.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="778.6" y="608.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 169 mmHg</text><text x="778.6" y="624.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.3 mmHg</text><text x="778.6" y="640.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -1 mmHg">
+<g id="pt-hit-6" class="pt hit" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -1 mmHg">
 <title>Mean 95 mmHg, wrist − arm -1 mmHg</title>
 <circle class="halo" cx="158.4" cy="467.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="158.4" cy="467.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="44.4" y="449.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="53.4" y="470.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 95 mmHg</text><text x="53.4" y="486.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -0.7 mmHg</text><text x="53.4" y="502.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
+<g id="pt-hit-7" class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
 <title>Mean 162 mmHg, wrist − arm -14 mmHg</title>
 <circle class="halo" cx="813.9" cy="681.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="813.9" cy="681.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="699.9" y="663.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="708.9" y="685.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="708.9" y="701.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -14.1 mmHg</text><text x="708.9" y="717.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 163 mmHg, wrist − arm -7 mmHg">
+<g id="pt-hit-8" class="pt hit" tabindex="0" role="img" aria-label="Mean 163 mmHg, wrist − arm -7 mmHg">
 <title>Mean 163 mmHg, wrist − arm -7 mmHg</title>
 <circle class="halo" cx="825.7" cy="574.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="825.7" cy="574.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="711.7" y="556.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="720.7" y="577.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 163 mmHg</text><text x="720.7" y="593.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.4 mmHg</text><text x="720.7" y="609.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 131 mmHg, wrist − arm -13 mmHg">
+<g id="pt-hit-9" class="pt hit" tabindex="0" role="img" aria-label="Mean 131 mmHg, wrist − arm -13 mmHg">
 <title>Mean 131 mmHg, wrist − arm -13 mmHg</title>
 <circle class="halo" cx="506.8" cy="665.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="506.8" cy="665.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="392.8" y="647.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="401.8" y="669.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 131 mmHg</text><text x="401.8" y="685.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.1 mmHg</text><text x="401.8" y="701.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 116 mmHg, wrist − arm -13 mmHg">
+<g id="pt-hit-10" class="pt hit" tabindex="0" role="img" aria-label="Mean 116 mmHg, wrist − arm -13 mmHg">
 <title>Mean 116 mmHg, wrist − arm -13 mmHg</title>
 <circle class="halo" cx="359.6" cy="668.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="359.6" cy="668.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="245.6" y="650.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="254.6" y="672.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 116 mmHg</text><text x="254.6" y="688.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.3 mmHg</text><text x="254.6" y="704.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-11" class="pt hit" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -6 mmHg">
 <title>Mean 117 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="372.3" cy="555.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="372.3" cy="555.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="258.3" y="537.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="267.3" y="558.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 117 mmHg</text><text x="267.3" y="574.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.2 mmHg</text><text x="267.3" y="590.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 114 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-12" class="pt hit" tabindex="0" role="img" aria-label="Mean 114 mmHg, wrist − arm -8 mmHg">
 <title>Mean 114 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="340.9" cy="590.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="340.9" cy="590.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="226.9" y="572.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="235.9" y="593.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 114 mmHg</text><text x="235.9" y="609.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.4 mmHg</text><text x="235.9" y="625.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-13" class="pt hit" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
 <title>Mean 132 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="523.4" cy="544.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="523.4" cy="544.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="409.4" y="526" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="418.4" y="547.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 132 mmHg</text><text x="418.4" y="563.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.5 mmHg</text><text x="418.4" y="579.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm +2 mmHg">
+<g id="pt-hit-14" class="pt hit" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm +2 mmHg">
 <title>Mean 142 mmHg, wrist − arm +2 mmHg</title>
 <circle class="halo" cx="614.7" cy="419.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="614.7" cy="419.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="497.2" y="401.2" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="506.2" y="422.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 142 mmHg</text><text x="506.2" y="438.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm +2.3 mmHg</text><text x="506.2" y="454.7" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-15" class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -10 mmHg">
 <title>Mean 140 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="596.1" cy="620.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="596.1" cy="620.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="482.1" y="602.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="491.1" y="624.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="491.1" y="640.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.3 mmHg</text><text x="491.1" y="656.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -13 mmHg">
+<g id="pt-hit-16" class="pt hit" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -13 mmHg">
 <title>Mean 178 mmHg, wrist − arm -13 mmHg</title>
 <circle class="halo" cx="974.8" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="974.8" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="860.8" y="641.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="869.8" y="662.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 178 mmHg</text><text x="869.8" y="678.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.7 mmHg</text><text x="869.8" y="694.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-17" class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -8 mmHg">
 <title>Mean 162 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="818.8" cy="582.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="818.8" cy="582.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="704.8" y="564.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="713.8" y="585.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="713.8" y="601.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.9 mmHg</text><text x="713.8" y="617.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-18" class="pt hit" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -6 mmHg">
 <title>Mean 148 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="679.5" cy="544.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="679.5" cy="544.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="565.5" y="526" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="574.5" y="547.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 148 mmHg</text><text x="574.5" y="563.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.5 mmHg</text><text x="574.5" y="579.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 179 mmHg, wrist − arm -11 mmHg">
+<g id="pt-hit-19" class="pt hit" tabindex="0" role="img" aria-label="Mean 179 mmHg, wrist − arm -11 mmHg">
 <title>Mean 179 mmHg, wrist − arm -11 mmHg</title>
 <circle class="halo" cx="977.8" cy="628.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="977.8" cy="628.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="863.8" y="610.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="872.8" y="632.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 179 mmHg</text><text x="872.8" y="648.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.8 mmHg</text><text x="872.8" y="664.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -5 mmHg">
+<g id="pt-hit-20" class="pt hit" tabindex="0" role="img" aria-label="Mean 112 mmHg, wrist − arm -5 mmHg">
 <title>Mean 112 mmHg, wrist − arm -5 mmHg</title>
 <circle class="halo" cx="321.3" cy="542.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="321.3" cy="542.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="207.3" y="524.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="216.3" y="545.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 112 mmHg</text><text x="216.3" y="561.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.4 mmHg</text><text x="216.3" y="577.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -1 mmHg">
+<g id="pt-hit-21" class="pt hit" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -1 mmHg">
 <title>Mean 109 mmHg, wrist − arm -1 mmHg</title>
 <circle class="halo" cx="291.9" cy="476.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="291.9" cy="476.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="177.9" y="458.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="186.9" y="480.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 109 mmHg</text><text x="186.9" y="496.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -1.3 mmHg</text><text x="186.9" y="512.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -5 mmHg">
+<g id="pt-hit-22" class="pt hit" tabindex="0" role="img" aria-label="Mean 148 mmHg, wrist − arm -5 mmHg">
 <title>Mean 148 mmHg, wrist − arm -5 mmHg</title>
 <circle class="halo" cx="672.6" cy="540.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="672.6" cy="540.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="558.6" y="522.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="567.6" y="544.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 148 mmHg</text><text x="567.6" y="560.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.3 mmHg</text><text x="567.6" y="576.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-23" class="pt hit" tabindex="0" role="img" aria-label="Mean 95 mmHg, wrist − arm -8 mmHg">
 <title>Mean 95 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="159.4" cy="576.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="159.4" cy="576.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="45.4" y="558" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="54.4" y="579.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 95 mmHg</text><text x="54.4" y="595.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.5 mmHg</text><text x="54.4" y="611.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 96 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-24" class="pt hit" tabindex="0" role="img" aria-label="Mean 96 mmHg, wrist − arm -4 mmHg">
 <title>Mean 96 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="171.2" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="171.2" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="57.2" y="495.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="66.2" y="517.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 96 mmHg</text><text x="66.2" y="533.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.6 mmHg</text><text x="66.2" y="549.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 138 mmHg, wrist − arm -7 mmHg">
+<g id="pt-hit-25" class="pt hit" tabindex="0" role="img" aria-label="Mean 138 mmHg, wrist − arm -7 mmHg">
 <title>Mean 138 mmHg, wrist − arm -7 mmHg</title>
 <circle class="halo" cx="580.4" cy="561.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="580.4" cy="561.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="466.4" y="543.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="475.4" y="565.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 138 mmHg</text><text x="475.4" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.6 mmHg</text><text x="475.4" y="597.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -11 mmHg">
+<g id="pt-hit-26" class="pt hit" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -11 mmHg">
 <title>Mean 132 mmHg, wrist − arm -11 mmHg</title>
 <circle class="halo" cx="517.6" cy="625.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="517.6" cy="625.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="403.6" y="607.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="412.6" y="629.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 132 mmHg</text><text x="412.6" y="645.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.6 mmHg</text><text x="412.6" y="661.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 173 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-27" class="pt hit" tabindex="0" role="img" aria-label="Mean 173 mmHg, wrist − arm -9 mmHg">
 <title>Mean 173 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="925.8" cy="593.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="925.8" cy="593.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="811.8" y="575.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="820.8" y="597.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 173 mmHg</text><text x="820.8" y="613.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.6 mmHg</text><text x="820.8" y="629.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -11 mmHg">
+<g id="pt-hit-28" class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -11 mmHg">
 <title>Mean 146 mmHg, wrist − arm -11 mmHg</title>
 <circle class="halo" cx="658.9" cy="632.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="658.9" cy="632.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="544.9" y="614" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="553.9" y="635.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="553.9" y="651.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -11.0 mmHg</text><text x="553.9" y="667.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -3 mmHg">
+<g id="pt-hit-29" class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -3 mmHg">
 <title>Mean 140 mmHg, wrist − arm -3 mmHg</title>
 <circle class="halo" cx="598.0" cy="500.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="598.0" cy="500.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="484" y="482.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="493" y="504.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="493" y="520.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -2.8 mmHg</text><text x="493" y="536.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-30" class="pt hit" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -6 mmHg">
 <title>Mean 137 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="567.6" cy="548.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="567.6" cy="548.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="453.6" y="530.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="462.6" y="552.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 137 mmHg</text><text x="462.6" y="568.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.8 mmHg</text><text x="462.6" y="584.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-31" class="pt hit" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
 <title>Mean 115 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="354.7" cy="526.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="354.7" cy="526.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="240.7" y="508.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="249.7" y="529.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 115 mmHg</text><text x="249.7" y="545.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.4 mmHg</text><text x="249.7" y="561.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 93 mmHg, wrist − arm -5 mmHg">
+<g id="pt-hit-32" class="pt hit" tabindex="0" role="img" aria-label="Mean 93 mmHg, wrist − arm -5 mmHg">
 <title>Mean 93 mmHg, wrist − arm -5 mmHg</title>
 <circle class="halo" cx="140.8" cy="542.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="140.8" cy="542.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="26.8" y="524.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="35.8" y="545.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 93 mmHg</text><text x="35.8" y="561.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.4 mmHg</text><text x="35.8" y="577.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -5 mmHg">
+<g id="pt-hit-33" class="pt hit" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -5 mmHg">
 <title>Mean 110 mmHg, wrist − arm -5 mmHg</title>
 <circle class="halo" cx="303.6" cy="534.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="303.6" cy="534.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="189.6" y="516.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="198.6" y="537.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 110 mmHg</text><text x="198.6" y="553.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.9 mmHg</text><text x="198.6" y="569.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -16 mmHg">
+<g id="pt-hit-34" class="pt hit" tabindex="0" role="img" aria-label="Mean 149 mmHg, wrist − arm -16 mmHg">
 <title>Mean 149 mmHg, wrist − arm -16 mmHg</title>
 <circle class="halo" cx="690.3" cy="712.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="690.3" cy="712.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="572.8" y="694" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="581.8" y="715.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 149 mmHg</text><text x="581.8" y="731.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -16.0 mmHg</text><text x="581.8" y="747.5" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-35" class="pt hit" tabindex="0" role="img" aria-label="Mean 109 mmHg, wrist − arm -9 mmHg">
 <title>Mean 109 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="290.9" cy="600.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="290.9" cy="600.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="176.9" y="582" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="185.9" y="603.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 109 mmHg</text><text x="185.9" y="619.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.0 mmHg</text><text x="185.9" y="635.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 126 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-36" class="pt hit" tabindex="0" role="img" aria-label="Mean 126 mmHg, wrist − arm -4 mmHg">
 <title>Mean 126 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="463.6" cy="523.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="463.6" cy="523.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="349.6" y="505.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="358.6" y="526.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 126 mmHg</text><text x="358.6" y="542.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.2 mmHg</text><text x="358.6" y="558.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 90 mmHg, wrist − arm -12 mmHg">
+<g id="pt-hit-37" class="pt hit" tabindex="0" role="img" aria-label="Mean 90 mmHg, wrist − arm -12 mmHg">
 <title>Mean 90 mmHg, wrist − arm -12 mmHg</title>
 <circle class="halo" cx="104.4" cy="640.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="104.4" cy="640.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="4" y="622" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="13" y="643.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 90 mmHg</text><text x="13" y="659.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -11.5 mmHg</text><text x="13" y="675.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-38" class="pt hit" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -6 mmHg">
 <title>Mean 167 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="863.0" cy="545.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="863.0" cy="545.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="749" y="527.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="758" y="549.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 167 mmHg</text><text x="758" y="565.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.6 mmHg</text><text x="758" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 103 mmHg, wrist − arm -11 mmHg">
+<g id="pt-hit-39" class="pt hit" tabindex="0" role="img" aria-label="Mean 103 mmHg, wrist − arm -11 mmHg">
 <title>Mean 103 mmHg, wrist − arm -11 mmHg</title>
 <circle class="halo" cx="239.9" cy="633.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="239.9" cy="633.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="125.9" y="615.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="134.9" y="637.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 103 mmHg</text><text x="134.9" y="653.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -11.1 mmHg</text><text x="134.9" y="669.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 118 mmHg, wrist − arm -2 mmHg">
+<g id="pt-hit-40" class="pt hit" tabindex="0" role="img" aria-label="Mean 118 mmHg, wrist − arm -2 mmHg">
 <title>Mean 118 mmHg, wrist − arm -2 mmHg</title>
 <circle class="halo" cx="384.1" cy="486.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="384.1" cy="486.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="270.1" y="468.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="279.1" y="489.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 118 mmHg</text><text x="279.1" y="505.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -1.9 mmHg</text><text x="279.1" y="521.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -13 mmHg">
+<g id="pt-hit-41" class="pt hit" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -13 mmHg">
 <title>Mean 168 mmHg, wrist − arm -13 mmHg</title>
 <circle class="halo" cx="872.8" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="872.8" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="758.8" y="641.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="767.8" y="662.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 168 mmHg</text><text x="767.8" y="678.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.7 mmHg</text><text x="767.8" y="694.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 139 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-42" class="pt hit" tabindex="0" role="img" aria-label="Mean 139 mmHg, wrist − arm -4 mmHg">
 <title>Mean 139 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="590.2" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="590.2" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="476.2" y="495.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="485.2" y="517.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 139 mmHg</text><text x="485.2" y="533.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.6 mmHg</text><text x="485.2" y="549.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-43" class="pt hit" tabindex="0" role="img" aria-label="Mean 167 mmHg, wrist − arm -9 mmHg">
 <title>Mean 167 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="863.9" cy="593.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="863.9" cy="593.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="749.9" y="575.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="758.9" y="597.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 167 mmHg</text><text x="758.9" y="613.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.6 mmHg</text><text x="758.9" y="629.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -14 mmHg">
+<g id="pt-hit-44" class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -14 mmHg">
 <title>Mean 146 mmHg, wrist − arm -14 mmHg</title>
 <circle class="halo" cx="654.9" cy="676.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="654.9" cy="676.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="540.9" y="658.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="549.9" y="680.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="549.9" y="696.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.8 mmHg</text><text x="549.9" y="712.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 160 mmHg, wrist − arm -3 mmHg">
+<g id="pt-hit-45" class="pt hit" tabindex="0" role="img" aria-label="Mean 160 mmHg, wrist − arm -3 mmHg">
 <title>Mean 160 mmHg, wrist − arm -3 mmHg</title>
 <circle class="halo" cx="796.2" cy="508.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="796.2" cy="508.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="682.2" y="490.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="691.2" y="512.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 160 mmHg</text><text x="691.2" y="528.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.3 mmHg</text><text x="691.2" y="544.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 104 mmHg, wrist − arm +2 mmHg">
+<g id="pt-hit-46" class="pt hit" tabindex="0" role="img" aria-label="Mean 104 mmHg, wrist − arm +2 mmHg">
 <title>Mean 104 mmHg, wrist − arm +2 mmHg</title>
 <circle class="halo" cx="248.7" cy="422.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="248.7" cy="422.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="131.2" y="404.4" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.2" y="425.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 104 mmHg</text><text x="140.2" y="441.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm +2.1 mmHg</text><text x="140.2" y="457.9" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -7 mmHg">
+<g id="pt-hit-47" class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -7 mmHg">
 <title>Mean 140 mmHg, wrist − arm -7 mmHg</title>
 <circle class="halo" cx="600.0" cy="571.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="600.0" cy="571.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="486" y="553.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="495" y="574.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="495" y="590.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.2 mmHg</text><text x="495" y="606.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-48" class="pt hit" tabindex="0" role="img" aria-label="Mean 137 mmHg, wrist − arm -8 mmHg">
 <title>Mean 137 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="567.6" cy="580.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="567.6" cy="580.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="453.6" y="562.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="462.6" y="584.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 137 mmHg</text><text x="462.6" y="600.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.8 mmHg</text><text x="462.6" y="616.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-49" class="pt hit" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -10 mmHg">
 <title>Mean 168 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="878.7" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="878.7" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="764.7" y="596.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="773.7" y="617.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 168 mmHg</text><text x="773.7" y="633.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.9 mmHg</text><text x="773.7" y="649.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 123 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-50" class="pt hit" tabindex="0" role="img" aria-label="Mean 123 mmHg, wrist − arm -10 mmHg">
 <title>Mean 123 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="430.2" cy="608.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="430.2" cy="608.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="316.2" y="590" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="325.2" y="611.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 123 mmHg</text><text x="325.2" y="627.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.5 mmHg</text><text x="325.2" y="643.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -3 mmHg">
+<g id="pt-hit-51" class="pt hit" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -3 mmHg">
 <title>Mean 147 mmHg, wrist − arm -3 mmHg</title>
 <circle class="halo" cx="671.6" cy="502.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="671.6" cy="502.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="557.6" y="484.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="566.6" y="505.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 147 mmHg</text><text x="566.6" y="521.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -2.9 mmHg</text><text x="566.6" y="537.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 98 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-52" class="pt hit" tabindex="0" role="img" aria-label="Mean 98 mmHg, wrist − arm -6 mmHg">
 <title>Mean 98 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="182.0" cy="545.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="182.0" cy="545.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="68" y="527.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="77" y="549.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 98 mmHg</text><text x="77" y="565.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.6 mmHg</text><text x="77" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 127 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-53" class="pt hit" tabindex="0" role="img" aria-label="Mean 127 mmHg, wrist − arm -6 mmHg">
 <title>Mean 127 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="470.5" cy="552.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="470.5" cy="552.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="356.5" y="534" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="365.5" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 127 mmHg</text><text x="365.5" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.0 mmHg</text><text x="365.5" y="587.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 120 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-54" class="pt hit" tabindex="0" role="img" aria-label="Mean 120 mmHg, wrist − arm -8 mmHg">
 <title>Mean 120 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="400.8" cy="592.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="400.8" cy="592.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="286.8" y="574" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="295.8" y="595.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 120 mmHg</text><text x="295.8" y="611.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.5 mmHg</text><text x="295.8" y="627.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -7 mmHg">
+<g id="pt-hit-55" class="pt hit" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -7 mmHg">
 <title>Mean 105 mmHg, wrist − arm -7 mmHg</title>
 <circle class="halo" cx="257.5" cy="561.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="257.5" cy="561.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="143.5" y="543.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.5" y="565.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 105 mmHg</text><text x="152.5" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.6 mmHg</text><text x="152.5" y="597.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
+<g id="pt-hit-56" class="pt hit" tabindex="0" role="img" aria-label="Mean 162 mmHg, wrist − arm -14 mmHg">
 <title>Mean 162 mmHg, wrist − arm -14 mmHg</title>
 <circle class="halo" cx="810.0" cy="680.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="810.0" cy="680.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="696" y="662" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="705" y="683.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="705" y="699.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -14.0 mmHg</text><text x="705" y="715.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -1 mmHg">
+<g id="pt-hit-57" class="pt hit" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -1 mmHg">
 <title>Mean 129 mmHg, wrist − arm -1 mmHg</title>
 <circle class="halo" cx="489.1" cy="467.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="489.1" cy="467.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="375.1" y="449.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.1" y="470.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 129 mmHg</text><text x="384.1" y="486.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -0.7 mmHg</text><text x="384.1" y="502.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -11 mmHg">
+<g id="pt-hit-58" class="pt hit" tabindex="0" role="img" aria-label="Mean 178 mmHg, wrist − arm -11 mmHg">
 <title>Mean 178 mmHg, wrist − arm -11 mmHg</title>
 <circle class="halo" cx="969.9" cy="627.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="969.9" cy="627.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="855.9" y="609.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="864.9" y="630.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 178 mmHg</text><text x="864.9" y="646.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.7 mmHg</text><text x="864.9" y="662.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -3 mmHg">
+<g id="pt-hit-59" class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -3 mmHg">
 <title>Mean 146 mmHg, wrist − arm -3 mmHg</title>
 <circle class="halo" cx="661.8" cy="510.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="661.8" cy="510.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="547.8" y="492.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="556.8" y="513.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="556.8" y="529.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.4 mmHg</text><text x="556.8" y="545.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -7 mmHg">
+<g id="pt-hit-60" class="pt hit" tabindex="0" role="img" aria-label="Mean 146 mmHg, wrist − arm -7 mmHg">
 <title>Mean 146 mmHg, wrist − arm -7 mmHg</title>
 <circle class="halo" cx="655.9" cy="572.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="655.9" cy="572.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="541.9" y="554.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="550.9" y="576.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="550.9" y="592.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.3 mmHg</text><text x="550.9" y="608.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-61" class="pt hit" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -10 mmHg">
 <title>Mean 147 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="669.6" cy="622.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="669.6" cy="622.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="555.6" y="604.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="564.6" y="625.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 147 mmHg</text><text x="564.6" y="641.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.4 mmHg</text><text x="564.6" y="657.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 151 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-62" class="pt hit" tabindex="0" role="img" aria-label="Mean 151 mmHg, wrist − arm -9 mmHg">
 <title>Mean 151 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="709.9" cy="603.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="709.9" cy="603.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="595.9" y="585.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="604.9" y="606.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 151 mmHg</text><text x="604.9" y="622.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.2 mmHg</text><text x="604.9" y="638.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-63" class="pt hit" tabindex="0" role="img" aria-label="Mean 105 mmHg, wrist − arm -6 mmHg">
 <title>Mean 105 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="259.5" cy="556.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="259.5" cy="556.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="145.5" y="538.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="154.5" y="560.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 105 mmHg</text><text x="154.5" y="576.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.3 mmHg</text><text x="154.5" y="592.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-64" class="pt hit" tabindex="0" role="img" aria-label="Mean 132 mmHg, wrist − arm -6 mmHg">
 <title>Mean 132 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="516.6" cy="553.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="516.6" cy="553.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="402.6" y="535.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="411.6" y="557.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 132 mmHg</text><text x="411.6" y="573.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.1 mmHg</text><text x="411.6" y="589.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 113 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-65" class="pt hit" tabindex="0" role="img" aria-label="Mean 113 mmHg, wrist − arm -6 mmHg">
 <title>Mean 113 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="338.0" cy="555.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="338.0" cy="555.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="224" y="537.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="233" y="558.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 113 mmHg</text><text x="233" y="574.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.2 mmHg</text><text x="233" y="590.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -7 mmHg">
+<g id="pt-hit-66" class="pt hit" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -7 mmHg">
 <title>Mean 128 mmHg, wrist − arm -7 mmHg</title>
 <circle class="halo" cx="478.3" cy="569.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="478.3" cy="569.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="364.3" y="551.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="373.3" y="573.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 128 mmHg</text><text x="373.3" y="589.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.1 mmHg</text><text x="373.3" y="605.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 99 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-67" class="pt hit" tabindex="0" role="img" aria-label="Mean 99 mmHg, wrist − arm -9 mmHg">
 <title>Mean 99 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="197.7" cy="603.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="197.7" cy="603.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="83.7" y="585.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="92.7" y="606.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 99 mmHg</text><text x="92.7" y="622.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.2 mmHg</text><text x="92.7" y="638.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 176 mmHg, wrist − arm -13 mmHg">
+<g id="pt-hit-68" class="pt hit" tabindex="0" role="img" aria-label="Mean 176 mmHg, wrist − arm -13 mmHg">
 <title>Mean 176 mmHg, wrist − arm -13 mmHg</title>
 <circle class="halo" cx="947.3" cy="667.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="947.3" cy="667.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="833.3" y="649.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="842.3" y="670.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 176 mmHg</text><text x="842.3" y="686.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.2 mmHg</text><text x="842.3" y="702.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm +2 mmHg">
+<g id="pt-hit-69" class="pt hit" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm +2 mmHg">
 <title>Mean 115 mmHg, wrist − arm +2 mmHg</title>
 <circle class="halo" cx="357.6" cy="422.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="357.6" cy="422.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="240.1" y="404.4" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="249.1" y="425.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 115 mmHg</text><text x="249.1" y="441.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm +2.1 mmHg</text><text x="249.1" y="457.9" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 150 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-70" class="pt hit" tabindex="0" role="img" aria-label="Mean 150 mmHg, wrist − arm -10 mmHg">
 <title>Mean 150 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="699.1" cy="624.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="699.1" cy="624.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="585.1" y="606" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="594.1" y="627.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 150 mmHg</text><text x="594.1" y="643.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.5 mmHg</text><text x="594.1" y="659.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -9 mmHg">
+<g id="pt-hit-71" class="pt hit" tabindex="0" role="img" aria-label="Mean 117 mmHg, wrist − arm -9 mmHg">
 <title>Mean 117 mmHg, wrist − arm -9 mmHg</title>
 <circle class="halo" cx="376.3" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="376.3" cy="606.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="262.3" y="588.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="271.3" y="609.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 117 mmHg</text><text x="271.3" y="625.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.4 mmHg</text><text x="271.3" y="641.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-72" class="pt hit" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -8 mmHg">
 <title>Mean 170 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="890.4" cy="582.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="890.4" cy="582.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="776.4" y="564.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="785.4" y="585.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 170 mmHg</text><text x="785.4" y="601.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.9 mmHg</text><text x="785.4" y="617.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 154 mmHg, wrist − arm -2 mmHg">
+<g id="pt-hit-73" class="pt hit" tabindex="0" role="img" aria-label="Mean 154 mmHg, wrist − arm -2 mmHg">
 <title>Mean 154 mmHg, wrist − arm -2 mmHg</title>
 <circle class="halo" cx="731.5" cy="489.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="731.5" cy="489.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="617.5" y="471.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="626.5" y="493.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 154 mmHg</text><text x="626.5" y="509.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -2.1 mmHg</text><text x="626.5" y="525.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 102 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-74" class="pt hit" tabindex="0" role="img" aria-label="Mean 102 mmHg, wrist − arm -10 mmHg">
 <title>Mean 102 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="226.1" cy="612.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="226.1" cy="612.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="112.1" y="594.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="121.1" y="616.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 102 mmHg</text><text x="121.1" y="632.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.8 mmHg</text><text x="121.1" y="648.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 166 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-75" class="pt hit" tabindex="0" role="img" aria-label="Mean 166 mmHg, wrist − arm -10 mmHg">
 <title>Mean 166 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="855.1" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="855.1" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="741.1" y="596.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="750.1" y="617.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 166 mmHg</text><text x="750.1" y="633.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.9 mmHg</text><text x="750.1" y="649.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 174 mmHg, wrist − arm -12 mmHg">
+<g id="pt-hit-76" class="pt hit" tabindex="0" role="img" aria-label="Mean 174 mmHg, wrist − arm -12 mmHg">
 <title>Mean 174 mmHg, wrist − arm -12 mmHg</title>
 <circle class="halo" cx="931.6" cy="652.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="931.6" cy="652.8" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="817.6" y="634.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="826.6" y="656.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 174 mmHg</text><text x="826.6" y="672.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.3 mmHg</text><text x="826.6" y="688.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -17 mmHg">
+<g id="pt-hit-77" class="pt hit" tabindex="0" role="img" aria-label="Mean 168 mmHg, wrist − arm -17 mmHg">
 <title>Mean 168 mmHg, wrist − arm -17 mmHg</title>
 <circle class="halo" cx="874.7" cy="721.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="874.7" cy="721.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="757.2" y="703.6" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="766.2" y="725.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 168 mmHg</text><text x="766.2" y="741.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -16.6 mmHg</text><text x="766.2" y="757.1" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 144 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-78" class="pt hit" tabindex="0" role="img" aria-label="Mean 144 mmHg, wrist − arm -4 mmHg">
 <title>Mean 144 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="640.2" cy="523.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="640.2" cy="523.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="526.2" y="505.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="535.2" y="526.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 144 mmHg</text><text x="535.2" y="542.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.2 mmHg</text><text x="535.2" y="558.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 106 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-79" class="pt hit" tabindex="0" role="img" aria-label="Mean 106 mmHg, wrist − arm -4 mmHg">
 <title>Mean 106 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="265.4" cy="521.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="265.4" cy="521.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="151.4" y="503.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="160.4" y="525.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 106 mmHg</text><text x="160.4" y="541.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.1 mmHg</text><text x="160.4" y="557.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-80" class="pt hit" tabindex="0" role="img" aria-label="Mean 110 mmHg, wrist − arm -4 mmHg">
 <title>Mean 110 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="307.6" cy="521.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="307.6" cy="521.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="193.6" y="503.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="202.6" y="525.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 110 mmHg</text><text x="202.6" y="541.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.1 mmHg</text><text x="202.6" y="557.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 172 mmHg, wrist − arm -13 mmHg">
+<g id="pt-hit-81" class="pt hit" tabindex="0" role="img" aria-label="Mean 172 mmHg, wrist − arm -13 mmHg">
 <title>Mean 172 mmHg, wrist − arm -13 mmHg</title>
 <circle class="halo" cx="915.0" cy="659.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="915.0" cy="659.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="801" y="641.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="810" y="662.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 172 mmHg</text><text x="810" y="678.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.7 mmHg</text><text x="810" y="694.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm -5 mmHg">
+<g id="pt-hit-82" class="pt hit" tabindex="0" role="img" aria-label="Mean 142 mmHg, wrist − arm -5 mmHg">
 <title>Mean 142 mmHg, wrist − arm -5 mmHg</title>
 <circle class="halo" cx="619.6" cy="539.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="619.6" cy="539.2" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="505.6" y="521.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="514.6" y="542.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 142 mmHg</text><text x="514.6" y="558.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.2 mmHg</text><text x="514.6" y="574.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 108 mmHg, wrist − arm -6 mmHg">
+<g id="pt-hit-83" class="pt hit" tabindex="0" role="img" aria-label="Mean 108 mmHg, wrist − arm -6 mmHg">
 <title>Mean 108 mmHg, wrist − arm -6 mmHg</title>
 <circle class="halo" cx="285.0" cy="560.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="285.0" cy="560.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="171" y="542" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="180" y="563.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 108 mmHg</text><text x="180" y="579.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.5 mmHg</text><text x="180" y="595.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -10 mmHg">
+<g id="pt-hit-84" class="pt hit" tabindex="0" role="img" aria-label="Mean 170 mmHg, wrist − arm -10 mmHg">
 <title>Mean 170 mmHg, wrist − arm -10 mmHg</title>
 <circle class="halo" cx="889.4" cy="614.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="889.4" cy="614.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="775.4" y="596.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="784.4" y="617.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 170 mmHg</text><text x="784.4" y="633.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.9 mmHg</text><text x="784.4" y="649.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -12 mmHg">
+<g id="pt-hit-85" class="pt hit" tabindex="0" role="img" aria-label="Mean 147 mmHg, wrist − arm -12 mmHg">
 <title>Mean 147 mmHg, wrist − arm -12 mmHg</title>
 <circle class="halo" cx="664.7" cy="649.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="664.7" cy="649.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="550.7" y="631.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="559.7" y="653.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 147 mmHg</text><text x="559.7" y="669.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.1 mmHg</text><text x="559.7" y="685.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -12 mmHg">
+<g id="pt-hit-86" class="pt hit" tabindex="0" role="img" aria-label="Mean 140 mmHg, wrist − arm -12 mmHg">
 <title>Mean 140 mmHg, wrist − arm -12 mmHg</title>
 <circle class="halo" cx="601.9" cy="648.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="601.9" cy="648.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="487.9" y="630" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="496.9" y="651.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="496.9" y="667.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.0 mmHg</text><text x="496.9" y="683.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -0 mmHg">
+<g id="pt-hit-87" class="pt hit" tabindex="0" role="img" aria-label="Mean 129 mmHg, wrist − arm -0 mmHg">
 <title>Mean 129 mmHg, wrist − arm -0 mmHg</title>
 <circle class="halo" cx="488.1" cy="462.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="488.1" cy="462.4" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="374.1" y="444.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="383.1" y="465.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 129 mmHg</text><text x="383.1" y="481.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -0.4 mmHg</text><text x="383.1" y="497.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -8 mmHg">
+<g id="pt-hit-88" class="pt hit" tabindex="0" role="img" aria-label="Mean 128 mmHg, wrist − arm -8 mmHg">
 <title>Mean 128 mmHg, wrist − arm -8 mmHg</title>
 <circle class="halo" cx="481.2" cy="584.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="481.2" cy="584.0" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="367.2" y="566" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="376.2" y="587.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 128 mmHg</text><text x="376.2" y="603.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.0 mmHg</text><text x="376.2" y="619.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
-<g class="pt hit" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
+<g id="pt-hit-89" class="pt hit" tabindex="0" role="img" aria-label="Mean 115 mmHg, wrist − arm -4 mmHg">
 <title>Mean 115 mmHg, wrist − arm -4 mmHg</title>
 <circle class="halo" cx="351.7" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="351.7" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<g class="tip"><rect x="237.7" y="495.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="246.7" y="517.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 115 mmHg</text><text x="246.7" y="533.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.6 mmHg</text><text x="246.7" y="549.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-0" class="tip"><rect x="571.4" y="516.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="580.4" y="537.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 149 mmHg</text><text x="580.4" y="553.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.9 mmHg</text><text x="580.4" y="569.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-1" class="tip"><rect x="789.2" y="591.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="798.2" y="613.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 171 mmHg</text><text x="798.2" y="629.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.6 mmHg</text><text x="798.2" y="645.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-2" class="tip"><rect x="699.9" y="532.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="708.9" y="553.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="708.9" y="569.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.9 mmHg</text><text x="708.9" y="585.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-3" class="tip"><rect x="213.2" y="534" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="222.2" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 112 mmHg</text><text x="222.2" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.0 mmHg</text><text x="222.2" y="587.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-4" class="tip"><rect x="303.5" y="454" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="312.5" y="475.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 122 mmHg</text><text x="312.5" y="491.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -1.0 mmHg</text><text x="312.5" y="507.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-5" class="tip"><rect x="769.6" y="586.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="778.6" y="608.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 169 mmHg</text><text x="778.6" y="624.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.3 mmHg</text><text x="778.6" y="640.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-6" class="tip"><rect x="44.4" y="449.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="53.4" y="470.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 95 mmHg</text><text x="53.4" y="486.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -0.7 mmHg</text><text x="53.4" y="502.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-7" class="tip"><rect x="699.9" y="663.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="708.9" y="685.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="708.9" y="701.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -14.1 mmHg</text><text x="708.9" y="717.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-8" class="tip"><rect x="711.7" y="556.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="720.7" y="577.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 163 mmHg</text><text x="720.7" y="593.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.4 mmHg</text><text x="720.7" y="609.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-9" class="tip"><rect x="392.8" y="647.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="401.8" y="669.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 131 mmHg</text><text x="401.8" y="685.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.1 mmHg</text><text x="401.8" y="701.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-10" class="tip"><rect x="245.6" y="650.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="254.6" y="672.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 116 mmHg</text><text x="254.6" y="688.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.3 mmHg</text><text x="254.6" y="704.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-11" class="tip"><rect x="258.3" y="537.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="267.3" y="558.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 117 mmHg</text><text x="267.3" y="574.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.2 mmHg</text><text x="267.3" y="590.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-12" class="tip"><rect x="226.9" y="572.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="235.9" y="593.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 114 mmHg</text><text x="235.9" y="609.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.4 mmHg</text><text x="235.9" y="625.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-13" class="tip"><rect x="409.4" y="526" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="418.4" y="547.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 132 mmHg</text><text x="418.4" y="563.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.5 mmHg</text><text x="418.4" y="579.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-14" class="tip"><rect x="497.2" y="401.2" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="506.2" y="422.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 142 mmHg</text><text x="506.2" y="438.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm +2.3 mmHg</text><text x="506.2" y="454.7" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
+<g id="pt-tip-15" class="tip"><rect x="482.1" y="602.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="491.1" y="624.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="491.1" y="640.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.3 mmHg</text><text x="491.1" y="656.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-16" class="tip"><rect x="860.8" y="641.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="869.8" y="662.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 178 mmHg</text><text x="869.8" y="678.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.7 mmHg</text><text x="869.8" y="694.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-17" class="tip"><rect x="704.8" y="564.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="713.8" y="585.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="713.8" y="601.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.9 mmHg</text><text x="713.8" y="617.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-18" class="tip"><rect x="565.5" y="526" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="574.5" y="547.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 148 mmHg</text><text x="574.5" y="563.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.5 mmHg</text><text x="574.5" y="579.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-19" class="tip"><rect x="863.8" y="610.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="872.8" y="632.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 179 mmHg</text><text x="872.8" y="648.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.8 mmHg</text><text x="872.8" y="664.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-20" class="tip"><rect x="207.3" y="524.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="216.3" y="545.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 112 mmHg</text><text x="216.3" y="561.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.4 mmHg</text><text x="216.3" y="577.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-21" class="tip"><rect x="177.9" y="458.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="186.9" y="480.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 109 mmHg</text><text x="186.9" y="496.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -1.3 mmHg</text><text x="186.9" y="512.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-22" class="tip"><rect x="558.6" y="522.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="567.6" y="544.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 148 mmHg</text><text x="567.6" y="560.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.3 mmHg</text><text x="567.6" y="576.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-23" class="tip"><rect x="45.4" y="558" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="54.4" y="579.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 95 mmHg</text><text x="54.4" y="595.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.5 mmHg</text><text x="54.4" y="611.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-24" class="tip"><rect x="57.2" y="495.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="66.2" y="517.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 96 mmHg</text><text x="66.2" y="533.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.6 mmHg</text><text x="66.2" y="549.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-25" class="tip"><rect x="466.4" y="543.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="475.4" y="565.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 138 mmHg</text><text x="475.4" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.6 mmHg</text><text x="475.4" y="597.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-26" class="tip"><rect x="403.6" y="607.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="412.6" y="629.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 132 mmHg</text><text x="412.6" y="645.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.6 mmHg</text><text x="412.6" y="661.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-27" class="tip"><rect x="811.8" y="575.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="820.8" y="597.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 173 mmHg</text><text x="820.8" y="613.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.6 mmHg</text><text x="820.8" y="629.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-28" class="tip"><rect x="544.9" y="614" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="553.9" y="635.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="553.9" y="651.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -11.0 mmHg</text><text x="553.9" y="667.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-29" class="tip"><rect x="484" y="482.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="493" y="504.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="493" y="520.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -2.8 mmHg</text><text x="493" y="536.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-30" class="tip"><rect x="453.6" y="530.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="462.6" y="552.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 137 mmHg</text><text x="462.6" y="568.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.8 mmHg</text><text x="462.6" y="584.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-31" class="tip"><rect x="240.7" y="508.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="249.7" y="529.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 115 mmHg</text><text x="249.7" y="545.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.4 mmHg</text><text x="249.7" y="561.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-32" class="tip"><rect x="26.8" y="524.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="35.8" y="545.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 93 mmHg</text><text x="35.8" y="561.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.4 mmHg</text><text x="35.8" y="577.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-33" class="tip"><rect x="189.6" y="516.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="198.6" y="537.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 110 mmHg</text><text x="198.6" y="553.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.9 mmHg</text><text x="198.6" y="569.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-34" class="tip"><rect x="572.8" y="694" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="581.8" y="715.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 149 mmHg</text><text x="581.8" y="731.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -16.0 mmHg</text><text x="581.8" y="747.5" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
+<g id="pt-tip-35" class="tip"><rect x="176.9" y="582" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="185.9" y="603.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 109 mmHg</text><text x="185.9" y="619.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.0 mmHg</text><text x="185.9" y="635.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-36" class="tip"><rect x="349.6" y="505.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="358.6" y="526.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 126 mmHg</text><text x="358.6" y="542.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.2 mmHg</text><text x="358.6" y="558.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-37" class="tip"><rect x="4" y="622" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="13" y="643.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 90 mmHg</text><text x="13" y="659.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -11.5 mmHg</text><text x="13" y="675.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-38" class="tip"><rect x="749" y="527.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="758" y="549.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 167 mmHg</text><text x="758" y="565.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.6 mmHg</text><text x="758" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-39" class="tip"><rect x="125.9" y="615.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="134.9" y="637.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 103 mmHg</text><text x="134.9" y="653.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -11.1 mmHg</text><text x="134.9" y="669.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-40" class="tip"><rect x="270.1" y="468.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="279.1" y="489.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 118 mmHg</text><text x="279.1" y="505.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -1.9 mmHg</text><text x="279.1" y="521.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-41" class="tip"><rect x="758.8" y="641.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="767.8" y="662.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 168 mmHg</text><text x="767.8" y="678.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.7 mmHg</text><text x="767.8" y="694.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-42" class="tip"><rect x="476.2" y="495.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="485.2" y="517.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 139 mmHg</text><text x="485.2" y="533.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.6 mmHg</text><text x="485.2" y="549.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-43" class="tip"><rect x="749.9" y="575.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="758.9" y="597.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 167 mmHg</text><text x="758.9" y="613.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.6 mmHg</text><text x="758.9" y="629.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-44" class="tip"><rect x="540.9" y="658.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="549.9" y="680.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="549.9" y="696.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.8 mmHg</text><text x="549.9" y="712.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-45" class="tip"><rect x="682.2" y="490.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="691.2" y="512.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 160 mmHg</text><text x="691.2" y="528.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.3 mmHg</text><text x="691.2" y="544.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-46" class="tip"><rect x="131.2" y="404.4" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="140.2" y="425.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 104 mmHg</text><text x="140.2" y="441.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm +2.1 mmHg</text><text x="140.2" y="457.9" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
+<g id="pt-tip-47" class="tip"><rect x="486" y="553.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="495" y="574.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="495" y="590.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.2 mmHg</text><text x="495" y="606.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-48" class="tip"><rect x="453.6" y="562.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="462.6" y="584.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 137 mmHg</text><text x="462.6" y="600.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.8 mmHg</text><text x="462.6" y="616.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-49" class="tip"><rect x="764.7" y="596.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="773.7" y="617.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 168 mmHg</text><text x="773.7" y="633.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.9 mmHg</text><text x="773.7" y="649.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-50" class="tip"><rect x="316.2" y="590" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="325.2" y="611.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 123 mmHg</text><text x="325.2" y="627.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.5 mmHg</text><text x="325.2" y="643.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-51" class="tip"><rect x="557.6" y="484.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="566.6" y="505.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 147 mmHg</text><text x="566.6" y="521.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -2.9 mmHg</text><text x="566.6" y="537.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-52" class="tip"><rect x="68" y="527.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="77" y="549.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 98 mmHg</text><text x="77" y="565.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.6 mmHg</text><text x="77" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-53" class="tip"><rect x="356.5" y="534" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="365.5" y="555.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 127 mmHg</text><text x="365.5" y="571.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.0 mmHg</text><text x="365.5" y="587.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-54" class="tip"><rect x="286.8" y="574" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="295.8" y="595.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 120 mmHg</text><text x="295.8" y="611.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.5 mmHg</text><text x="295.8" y="627.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-55" class="tip"><rect x="143.5" y="543.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="152.5" y="565.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 105 mmHg</text><text x="152.5" y="581.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.6 mmHg</text><text x="152.5" y="597.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-56" class="tip"><rect x="696" y="662" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="705" y="683.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 162 mmHg</text><text x="705" y="699.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -14.0 mmHg</text><text x="705" y="715.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-57" class="tip"><rect x="375.1" y="449.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="384.1" y="470.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 129 mmHg</text><text x="384.1" y="486.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -0.7 mmHg</text><text x="384.1" y="502.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-58" class="tip"><rect x="855.9" y="609.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="864.9" y="630.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 178 mmHg</text><text x="864.9" y="646.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.7 mmHg</text><text x="864.9" y="662.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-59" class="tip"><rect x="547.8" y="492.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="556.8" y="513.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="556.8" y="529.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.4 mmHg</text><text x="556.8" y="545.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-60" class="tip"><rect x="541.9" y="554.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="550.9" y="576.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 146 mmHg</text><text x="550.9" y="592.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.3 mmHg</text><text x="550.9" y="608.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-61" class="tip"><rect x="555.6" y="604.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="564.6" y="625.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 147 mmHg</text><text x="564.6" y="641.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.4 mmHg</text><text x="564.6" y="657.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-62" class="tip"><rect x="595.9" y="585.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="604.9" y="606.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 151 mmHg</text><text x="604.9" y="622.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.2 mmHg</text><text x="604.9" y="638.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-63" class="tip"><rect x="145.5" y="538.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="154.5" y="560.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 105 mmHg</text><text x="154.5" y="576.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.3 mmHg</text><text x="154.5" y="592.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-64" class="tip"><rect x="402.6" y="535.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="411.6" y="557.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 132 mmHg</text><text x="411.6" y="573.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.1 mmHg</text><text x="411.6" y="589.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-65" class="tip"><rect x="224" y="537.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="233" y="558.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 113 mmHg</text><text x="233" y="574.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.2 mmHg</text><text x="233" y="590.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-66" class="tip"><rect x="364.3" y="551.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="373.3" y="573.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 128 mmHg</text><text x="373.3" y="589.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.1 mmHg</text><text x="373.3" y="605.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-67" class="tip"><rect x="83.7" y="585.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="92.7" y="606.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 99 mmHg</text><text x="92.7" y="622.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.2 mmHg</text><text x="92.7" y="638.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-68" class="tip"><rect x="833.3" y="649.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="842.3" y="670.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 176 mmHg</text><text x="842.3" y="686.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -13.2 mmHg</text><text x="842.3" y="702.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-69" class="tip"><rect x="240.1" y="404.4" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="249.1" y="425.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 115 mmHg</text><text x="249.1" y="441.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm +2.1 mmHg</text><text x="249.1" y="457.9" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
+<g id="pt-tip-70" class="tip"><rect x="585.1" y="606" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="594.1" y="627.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 150 mmHg</text><text x="594.1" y="643.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -10.5 mmHg</text><text x="594.1" y="659.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-71" class="tip"><rect x="262.3" y="588.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="271.3" y="609.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 117 mmHg</text><text x="271.3" y="625.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.4 mmHg</text><text x="271.3" y="641.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-72" class="tip"><rect x="776.4" y="564.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="785.4" y="585.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 170 mmHg</text><text x="785.4" y="601.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -7.9 mmHg</text><text x="785.4" y="617.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-73" class="tip"><rect x="617.5" y="471.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="626.5" y="493.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 154 mmHg</text><text x="626.5" y="509.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -2.1 mmHg</text><text x="626.5" y="525.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-74" class="tip"><rect x="112.1" y="594.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="121.1" y="616.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 102 mmHg</text><text x="121.1" y="632.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.8 mmHg</text><text x="121.1" y="648.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-75" class="tip"><rect x="741.1" y="596.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="750.1" y="617.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 166 mmHg</text><text x="750.1" y="633.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.9 mmHg</text><text x="750.1" y="649.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-76" class="tip"><rect x="817.6" y="634.8" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="826.6" y="656.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 174 mmHg</text><text x="826.6" y="672.3" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.3 mmHg</text><text x="826.6" y="688.3" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-77" class="tip"><rect x="757.2" y="703.6" width="235" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="766.2" y="725.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 168 mmHg</text><text x="766.2" y="741.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -16.6 mmHg</text><text x="766.2" y="757.1" font-size="12.5" font-weight="400" fill="#6E6E73">outside 95% limits of agreement</text></g>
+<g id="pt-tip-78" class="tip"><rect x="526.2" y="505.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="535.2" y="526.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 144 mmHg</text><text x="535.2" y="542.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.2 mmHg</text><text x="535.2" y="558.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-79" class="tip"><rect x="151.4" y="503.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="160.4" y="525.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 106 mmHg</text><text x="160.4" y="541.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.1 mmHg</text><text x="160.4" y="557.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-80" class="tip"><rect x="193.6" y="503.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="202.6" y="525.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 110 mmHg</text><text x="202.6" y="541.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -4.1 mmHg</text><text x="202.6" y="557.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-81" class="tip"><rect x="801" y="641.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="810" y="662.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 172 mmHg</text><text x="810" y="678.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.7 mmHg</text><text x="810" y="694.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-82" class="tip"><rect x="505.6" y="521.2" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="514.6" y="542.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 142 mmHg</text><text x="514.6" y="558.7" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -5.2 mmHg</text><text x="514.6" y="574.7" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-83" class="tip"><rect x="171" y="542" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="180" y="563.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 108 mmHg</text><text x="180" y="579.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -6.5 mmHg</text><text x="180" y="595.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-84" class="tip"><rect x="775.4" y="596.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="784.4" y="617.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 170 mmHg</text><text x="784.4" y="633.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -9.9 mmHg</text><text x="784.4" y="649.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-85" class="tip"><rect x="550.7" y="631.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="559.7" y="653.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 147 mmHg</text><text x="559.7" y="669.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.1 mmHg</text><text x="559.7" y="685.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-86" class="tip"><rect x="487.9" y="630" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="496.9" y="651.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 140 mmHg</text><text x="496.9" y="667.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -12.0 mmHg</text><text x="496.9" y="683.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-87" class="tip"><rect x="374.1" y="444.4" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="383.1" y="465.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 129 mmHg</text><text x="383.1" y="481.9" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -0.4 mmHg</text><text x="383.1" y="497.9" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-88" class="tip"><rect x="367.2" y="566" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="376.2" y="587.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 128 mmHg</text><text x="376.2" y="603.5" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -8.0 mmHg</text><text x="376.2" y="619.5" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
+<g id="pt-tip-89" class="tip"><rect x="237.7" y="495.6" width="228" height="62.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="246.7" y="517.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mean 115 mmHg</text><text x="246.7" y="533.1" font-size="12.5" font-weight="400" fill="#6E6E73">wrist − arm -3.6 mmHg</text><text x="246.7" y="549.1" font-size="12.5" font-weight="400" fill="#6E6E73">within 95% limits of agreement</text></g>
 <line class="ba-trend" x1="128.0" y1="526.7" x2="1070.0" y2="627.9" stroke="#AF52DE" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round" stroke-opacity="0.9"/>
 <line class="ba-loa" x1="128.0" y1="444.8" x2="1070.0" y2="444.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
 <rect class="ba-loa-chip" x="1080.0" y="427.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>

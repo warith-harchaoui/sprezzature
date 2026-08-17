@@ -7,7 +7,6 @@
 .peak:focus { outline: none; }
 .peak:focus circle { stroke: #1D1D1F; stroke-width: 1.4; }
 .tip{opacity:0;pointer-events:none;transition:opacity .12s ease}
-.hit:hover+.tip,.hit:focus+.tip{opacity:1}
 @media (prefers-reduced-motion: reduce) { .peak { transition: none; } .tip{transition:none} }
 @media (prefers-contrast: more){
   .mh-odd{fill:#004CCE;}
@@ -8131,36 +8130,37 @@
 <line class="mh-gwline" x1="96.0" y1="558.3" x2="1456.0" y2="558.3" stroke="#FF3B30" stroke-width="1.8" stroke-dasharray="6 5"/>
 <rect x="1140.3" y="535.3" width="315.7" height="21" rx="5" fill="#FFFFFF" fill-opacity="0.86"/>
 <text x="1448.0" y="550.3" font-size="14" font-weight="600" fill="#FF3B30" text-anchor="end">genome-wide significance · p = 5×10⁻⁸</text>
-<g class="peak hit" tabindex="0" role="img" aria-label="ZBTB38 on chromosome 3, p = 10.0×10⁻³³">
+<g id="peak-0" class="peak hit" tabindex="0" role="img" aria-label="ZBTB38 on chromosome 3, p = 10.0×10⁻³³">
 <circle class="mh-hit" cx="372.8" cy="180.6" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="372.8" y="167.6" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">ZBTB38</text>
 </g>
-<g class="tip"><rect x="307.8" y="140.6" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="316.8" y="162.1" font-size="12.5" font-weight="700" fill="#1D1D1F">ZBTB38</text><text x="316.8" y="178.1" font-size="12.5" font-weight="400" fill="#6E6E73">chr3:108,900,000</text><text x="316.8" y="194.1" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻³³</text></g>
-<g class="peak hit" tabindex="0" role="img" aria-label="HMGA1 on chromosome 6, p = 10.0×10⁻²⁸">
+<g id="peak-1" class="peak hit" tabindex="0" role="img" aria-label="HMGA1 on chromosome 6, p = 10.0×10⁻²⁸">
 <circle class="mh-hit" cx="616.2" cy="257.1" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="616.2" y="244.1" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">HMGA1</text>
 </g>
-<g class="tip"><rect x="554.7" y="217.1" width="123" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="563.7" y="238.6" font-size="12.5" font-weight="700" fill="#1D1D1F">HMGA1</text><text x="563.7" y="254.6" font-size="12.5" font-weight="400" fill="#6E6E73">chr6:58,140,000</text><text x="563.7" y="270.6" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²⁸</text></g>
-<g class="peak hit" tabindex="0" role="img" aria-label="PLAG1 on chromosome 8, p = 10.0×10⁻²⁵">
+<g id="peak-2" class="peak hit" tabindex="0" role="img" aria-label="PLAG1 on chromosome 8, p = 10.0×10⁻²⁵">
 <circle class="mh-hit" cx="784.9" cy="302.9" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="784.9" y="289.9" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">PLAG1</text>
 </g>
-<g class="tip"><rect x="723.4" y="262.9" width="123" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="732.4" y="284.4" font-size="12.5" font-weight="700" fill="#1D1D1F">PLAG1</text><text x="732.4" y="300.4" font-size="12.5" font-weight="400" fill="#6E6E73">chr8:88,450,000</text><text x="732.4" y="316.4" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²⁵</text></g>
-<g class="peak hit" tabindex="0" role="img" aria-label="HMGA2 on chromosome 12, p = 10.0×10⁻²³">
+<g id="peak-3" class="peak hit" tabindex="0" role="img" aria-label="HMGA2 on chromosome 12, p = 10.0×10⁻²³">
 <circle class="mh-hit" cx="1023.0" cy="333.5" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="1023.0" y="320.5" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">HMGA2</text>
 </g>
-<g class="tip"><rect x="958" y="293.5" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="967" y="315" font-size="12.5" font-weight="700" fill="#1D1D1F">HMGA2</text><text x="967" y="331" font-size="12.5" font-weight="400" fill="#6E6E73">chr12:37,240,000</text><text x="967" y="347" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²³</text></g>
-<g class="peak hit" tabindex="0" role="img" aria-label="ACAN on chromosome 15, p = 10.0×10⁻²¹">
+<g id="peak-4" class="peak hit" tabindex="0" role="img" aria-label="ACAN on chromosome 15, p = 10.0×10⁻²¹">
 <circle class="mh-hit" cx="1196.6" cy="364.1" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="1196.6" y="351.1" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">ACAN</text>
 </g>
-<g class="tip"><rect x="1131.6" y="324.1" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1140.6" y="345.6" font-size="12.5" font-weight="700" fill="#1D1D1F">ACAN</text><text x="1140.6" y="361.6" font-size="12.5" font-weight="400" fill="#6E6E73">chr15:47,940,000</text><text x="1140.6" y="377.6" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²¹</text></g>
-<g class="peak hit" tabindex="0" role="img" aria-label="GDF5 on chromosome 20, p = 10.0×10⁻¹⁹">
+<g id="peak-5" class="peak hit" tabindex="0" role="img" aria-label="GDF5 on chromosome 20, p = 10.0×10⁻¹⁹">
 <circle class="mh-hit" cx="1388.4" cy="394.7" r="4.2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4"/>
 <text x="1388.4" y="381.7" font-size="16" font-weight="700" font-style="italic" fill="#1D1D1F" text-anchor="middle">GDF5</text>
 </g>
-<g class="tip"><rect x="1323.4" y="354.7" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1332.4" y="376.2" font-size="12.5" font-weight="700" fill="#1D1D1F">GDF5</text><text x="1332.4" y="392.2" font-size="12.5" font-weight="400" fill="#6E6E73">chr20:25,600,000</text><text x="1332.4" y="408.2" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻¹⁹</text></g>
+<g id="peak-tip-0" class="tip"><rect x="307.8" y="140.6" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="316.8" y="162.1" font-size="12.5" font-weight="700" fill="#1D1D1F">ZBTB38</text><text x="316.8" y="178.1" font-size="12.5" font-weight="400" fill="#6E6E73">chr3:108,900,000</text><text x="316.8" y="194.1" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻³³</text></g>
+<g id="peak-tip-1" class="tip"><rect x="554.7" y="217.1" width="123" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="563.7" y="238.6" font-size="12.5" font-weight="700" fill="#1D1D1F">HMGA1</text><text x="563.7" y="254.6" font-size="12.5" font-weight="400" fill="#6E6E73">chr6:58,140,000</text><text x="563.7" y="270.6" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²⁸</text></g>
+<g id="peak-tip-2" class="tip"><rect x="723.4" y="262.9" width="123" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="732.4" y="284.4" font-size="12.5" font-weight="700" fill="#1D1D1F">PLAG1</text><text x="732.4" y="300.4" font-size="12.5" font-weight="400" fill="#6E6E73">chr8:88,450,000</text><text x="732.4" y="316.4" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²⁵</text></g>
+<g id="peak-tip-3" class="tip"><rect x="958" y="293.5" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="967" y="315" font-size="12.5" font-weight="700" fill="#1D1D1F">HMGA2</text><text x="967" y="331" font-size="12.5" font-weight="400" fill="#6E6E73">chr12:37,240,000</text><text x="967" y="347" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²³</text></g>
+<g id="peak-tip-4" class="tip"><rect x="1131.6" y="324.1" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1140.6" y="345.6" font-size="12.5" font-weight="700" fill="#1D1D1F">ACAN</text><text x="1140.6" y="361.6" font-size="12.5" font-weight="400" fill="#6E6E73">chr15:47,940,000</text><text x="1140.6" y="377.6" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻²¹</text></g>
+<g id="peak-tip-5" class="tip"><rect x="1323.4" y="354.7" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1332.4" y="376.2" font-size="12.5" font-weight="700" fill="#1D1D1F">GDF5</text><text x="1332.4" y="392.2" font-size="12.5" font-weight="400" fill="#6E6E73">chr20:25,600,000</text><text x="1332.4" y="408.2" font-size="12.5" font-weight="400" fill="#6E6E73">p = 10.0×10⁻¹⁹</text></g>
+<style>#peak-0:hover~#peak-tip-0,#peak-0:focus~#peak-tip-0{opacity:1}#peak-1:hover~#peak-tip-1,#peak-1:focus~#peak-tip-1{opacity:1}#peak-2:hover~#peak-tip-2,#peak-2:focus~#peak-tip-2{opacity:1}#peak-3:hover~#peak-tip-3,#peak-3:focus~#peak-tip-3{opacity:1}#peak-4:hover~#peak-tip-4,#peak-4:focus~#peak-tip-4{opacity:1}#peak-5:hover~#peak-tip-5,#peak-5:focus~#peak-tip-5{opacity:1}</style>
 <g>
 <text x="152.2" y="698.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">1</text>
 <text x="266.0" y="698.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">2</text>
