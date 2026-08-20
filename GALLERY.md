@@ -14,7 +14,7 @@ at the bottom of this file.
 
 
 
-## [md2star — Markdown → branded `.docx` / `.pptx` / `.pdf`](https://github.com/warith-harchaoui/md2star)
+## [md2star: Markdown → branded `.docx` / `.pptx` / `.pdf`](https://github.com/warith-harchaoui/md2star)
 
 <img src="assets/gallery/md2star/logo.png" alt="md2star logo">
 
@@ -60,23 +60,23 @@ findings. The Tauri shell that will wrap it as a desktop application
 is on the [roadmap](CHANGELOG.md#roadmap); the local-web GUI shown
 below is what's live today.
 
-*DOCX mode — Musk's five-step engineering algorithm rendered live:*
+*DOCX mode: Musk's five-step engineering algorithm rendered live.*
 
 | Light | Dark |
 |---|---|
-| ![md2star DOCX — light](assets/gallery/md2star/light.png) | ![md2star DOCX — dark](assets/gallery/md2star/dark.png) |
+| ![md2star DOCX, light](assets/gallery/md2star/light.png) | ![md2star DOCX, dark](assets/gallery/md2star/dark.png) |
 
-*PPTX mode — Kawasaki's 10/20/30 pitch deck rendered live:*
+*PPTX mode: Kawasaki's 10/20/30 pitch deck rendered live.*
 
 | Light | Dark |
 |---|---|
-| ![md2star PPTX — light](assets/gallery/md2star/pptx-light.png) | ![md2star PPTX — dark](assets/gallery/md2star/pptx-dark.png) |
+| ![md2star PPTX, light](assets/gallery/md2star/pptx-light.png) | ![md2star PPTX, dark](assets/gallery/md2star/pptx-dark.png) |
 
 **Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python stdlib HyperText Transfer Protocol (HTTP) server + vanilla JavaScript (JS) + Tailwind + pdf.js + `md2docx` / `md2pptx` + headless LibreOffice
 
 
 
-## [roitelet — local-first lab for large-language-model (LLM) / retrieval-augmented-generation (RAG) / agentic systems](https://github.com/warith-harchaoui/roitelet)
+## [roitelet: local-first lab for large-language-model (LLM) / retrieval-augmented-generation (RAG) / agentic systems](https://github.com/warith-harchaoui/roitelet)
 
 <img src="assets/gallery/roitelet/logo.png" alt="roitelet logo">
 
@@ -99,13 +99,13 @@ self-hosted Roboto. Captures show the fresh-install empty state.
 
 | Light | Dark |
 |---|---|
-| ![roitelet — light](assets/gallery/roitelet/light.png) | ![roitelet — dark](assets/gallery/roitelet/dark.png) |
+| ![roitelet, light](assets/gallery/roitelet/light.png) | ![roitelet, dark](assets/gallery/roitelet/dark.png) |
 
 **Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI + uvicorn) + vanilla JS (no build, Tailwind JIT) + self-hosted Roboto + local Ollama
 
 
 
-## [intentions — Déraison Assurances intent router](https://github.com/warith-harchaoui/intentions)
+## [intentions: Déraison Assurances intent router](https://github.com/warith-harchaoui/intentions)
 
 <img src="assets/gallery/intentions/logo.png" alt="intentions logo">
 
@@ -126,13 +126,13 @@ the 21-intent knowledge base).
 
 | Light | Dark |
 |---|---|
-| ![intentions — light](assets/gallery/intentions/light.png) | ![intentions — dark](assets/gallery/intentions/dark.png) |
+| ![intentions, light](assets/gallery/intentions/light.png) | ![intentions, dark](assets/gallery/intentions/dark.png) |
 
 **Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI) + vanilla JS + Tailwind (vendored) + scikit-learn / sentence-transformers / local Ollama
 
 
 
-## [sql — Text2SQL teaching demo](https://github.com/warith-harchaoui/sql)
+## [sql: Text2SQL teaching demo](https://github.com/warith-harchaoui/sql)
 
 <img src="assets/gallery/sql/logo.png" alt="sql logo">
 
@@ -153,13 +153,13 @@ full `dark:` peer set.
 
 | Light | Dark |
 |---|---|
-| ![sql — light](assets/gallery/sql/light.png) | ![sql — dark](assets/gallery/sql/dark.png) |
+| ![sql, light](assets/gallery/sql/light.png) | ![sql, dark](assets/gallery/sql/dark.png) |
 
 **Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI) + vanilla JS + Tailwind (vendored) + Vega-Lite + local Ollama (qwen2.5-coder / Gemma) + SQLite
 
 
 
-## [Standpoint — a comparison table becomes a 2-D positioning map](https://github.com/warith-harchaoui/standingpoint)
+## [Standpoint: a comparison table becomes a 2-D positioning map](https://github.com/warith-harchaoui/standingpoint)
 
 <img src="assets/gallery/standingpoint/logo.png" alt="Standpoint logo">
 
@@ -198,12 +198,12 @@ and writes the analysis, and `--no-llm` drops even that.
 *The local web app: edit or upload a table, generate the quadrant, read the
 colour-coded analysis. The proof-of-concept is light-only today.*
 
-![Standpoint local web GUI — table editor, live quadrant, colour-coded analysis](assets/gallery/standingpoint/gui.png)
+![Standpoint local web GUI: table editor, live quadrant, colour-coded analysis](assets/gallery/standingpoint/gui.png)
 
 *And the figure on its own, the `sprezzature-figures` deliverable: a dozen
 programming languages rated on eight criteria, points on the house palette,
 axes named from the columns:*
 
-![Standpoint positioning map — programming languages on the house palette](assets/gallery/standingpoint/positioning-map.png)
+![Standpoint positioning map: programming languages on the house palette](assets/gallery/standingpoint/positioning-map.png)
 
 **Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (numpy + pandas + scikit-learn PCA) + Vega-Lite via `vl-convert` / `vega-embed` + FastAPI local GUI + vanilla JS + Tailwind + optional local Ollama

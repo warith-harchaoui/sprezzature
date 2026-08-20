@@ -56,7 +56,7 @@ What `sprezzature-cli-gui` does instead:
 
 Honest limitation: this skill **scaffolds** the GUI. You still need to wire execution to your CLI through the host of your choice. We provide a Python SSE proxy reference implementation in the demo; for production you'll harden it (auth, rate-limit, sandbox).
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 This skill is **make-heavy** in the sprezzature-* duality: one executable
 make-side primary, plus a worked scaffold, plus referenced audit
@@ -66,7 +66,7 @@ gates on the emitted HTML.
 |---|---|---|
 | **Make** — CLI → HTML (three adapters) | `cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command`), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
 | **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
-| **Audit** — gate the emitted HTML | Pair with `sprezzature-accessibility/scripts/lint_a11y.py` and `sprezzature-ux-laws/scripts/audit_laws_of_ux.py` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
+| **Audit** — gate the emitted HTML | Pair with `sprezzature-accessibility-lint` and `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
 
 ## Quick recipe — the one command
 
@@ -76,18 +76,19 @@ script. Don't re-derive the workflow if the user just wants the HTML.
 ```bash
 # Spec is "<file>.py:factory" or "pkg.mod:factory".
 # Factory is a zero-arg callable returning argparse.ArgumentParser
-# OR click.Command (auto-detected).
-python3 scripts/cli_to_gui.py <spec> --out path/to/index.html
+# OR click.Command (auto-detected). `sprezzature-cli-gui` is the console
+# script the standalone package installs (pip install sprezzature-cli-gui).
+sprezzature-cli-gui <spec> --out path/to/index.html
 
 # Examples:
-python3 scripts/cli_to_gui.py mycli/cli.py:make_parser --out dist/gui.html
-python3 scripts/cli_to_gui.py mypkg.cli:cli            --out dist/gui.html
+sprezzature-cli-gui mycli/cli.py:make_parser --out dist/gui.html
+sprezzature-cli-gui mypkg.cli:cli            --out dist/gui.html
 
 # For a non-Python CLI (clap / cobra / commander), or a Python CLI
 # whose factory cannot be imported: --from-help runs the binary
 # with --help and parses the output.
-python3 scripts/cli_to_gui.py --from-help "mybin"        --out dist/gui.html
-python3 scripts/cli_to_gui.py --from-help "cargo run --" --out dist/gui.html
+sprezzature-cli-gui --from-help "mybin"        --out dist/gui.html
+sprezzature-cli-gui --from-help "cargo run --" --out dist/gui.html
 ```
 
 If the user's CLI factory takes arguments (rare), write a tiny
@@ -105,8 +106,8 @@ Then point the spec at `adapter.py:make_parser`.
 Verify the output passes both audit gates (zero findings):
 
 ```bash
-python3 sprezzature-ux-laws/scripts/audit_laws_of_ux.py path/to/index.html
-python3 sprezzature-accessibility/scripts/lint_a11y.py   path/to/index.html
+python3 -m sprezzature_ux_laws_scripts.audit_laws_of_ux path/to/index.html
+sprezzature-accessibility-lint                           path/to/index.html
 ```
 
 The longer design workflow below is for the bespoke cases the

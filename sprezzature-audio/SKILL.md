@@ -72,7 +72,7 @@ A future revision will integrate **``pdbms``** (per the maintainer) to
 improve the whisper.cpp integration. Track shape via
 ``tests/fixtures/audio/README.md``.
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 This skill is **make-only** in the sprezzature-* duality, by design. The
 make side has two tiers: a lightweight **captions** tier and a
@@ -108,14 +108,14 @@ the file; the a11y lint verifies a `<track>` element references it.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "captions" / "transcribe video" / "transcribe audio" / "subtitle file" | `captions_from_whisper.py` | `python scripts/install_captions.py` then `python scripts/captions_from_whisper.py <audio-or-video> [--format vtt\|srt\|text] [--lang fr] [--vocab-from DIR] [--auto-project]`. Always emit `<track kind="captions">` on `<video>` / `<audio>`. |
-| "diarization" / "who spoke when" / "speaker turns" / "Sortformer" | `diarize_from_nemo.py` | `python scripts/install_diarize.py` then `python scripts/diarize_from_nemo.py <audio-or-video> [--max-speakers N] [--device cuda\|mps\|cpu]`. Emits `<stem>.rttm` + `<stem>.diarization.json`. |
-| "identify speakers" / "match voices" / "who is who" / "TitaNet" | `identify_from_titanet.py` | `python scripts/identify_from_titanet.py <stem>.diarization.json --audio <stem>.wav --refs ./voices/`. Writes `<stem>.speakers.json`, the same shape `caption_diarize.py` consumes. |
-| "name the speakers from the transcript" / "vocative naming" / "self-introduction" | `name_from_transcript.py` | `python scripts/name_from_transcript.py <stem>.speakers.vtt [--ollama]`. Rule pass over EN + FR self-introductions and vocatives; `--ollama` calls the local daemon `alt_from_ollama.py` uses for a JSON-formatted refinement. |
-| "speaker VTT" / "labelled captions" / "merge captions with diarization" | `caption_diarize.py` | `python scripts/caption_diarize.py --captions <stem>.vtt --diarization <stem>.diarization.json --speakers <stem>.speakers.json --out <stem>.speakers.vtt`. Output has `<v Name>` voice cues. |
-| "translate captions" / "translated subtitles" / "two-track captions" / "subtitles in another language" | `translate_captions.py` | `python scripts/translate_captions.py <stem>.vtt [--lang fr] [--in page.html] [--media clip.mp4]`. Target language = `--lang` else detected from the surrounding text (`--in` / `--context`). Writes `<stem>.<lang>.vtt` and prints a `<track kind="captions"> + <track kind="subtitles">` snippet. Needs a local Ollama daemon (`qwen3-vl:8b`). |
-| "Whisper not installed" / "first-time setup" (captions only) | `install_captions.py` | `python scripts/install_captions.py`: pip-installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML model so the captioner runs offline. |
-| "NeMo not installed" / "first-time setup" (diarization) | `install_diarize.py` | `python scripts/install_diarize.py`: pip-installs `nemo_toolkit[asr]` and pre-downloads Sortformer + TitaNet weights. Add `--only sortformer` / `--only titanet` to prefetch just one. |
+| "captions" / "transcribe video" / "transcribe audio" / "subtitle file" | `captions_from_whisper.py` | `python -m sprezzature_audio_scripts.install_captions` then `sprezzature-audio-captions <audio-or-video> [--format vtt\|srt\|text] [--lang fr] [--vocab-from DIR] [--auto-project]`. Always emit `<track kind="captions">` on `<video>` / `<audio>`. |
+| "diarization" / "who spoke when" / "speaker turns" / "Sortformer" | `diarize_from_nemo.py` | `python -m sprezzature_audio_scripts.install_diarize` then `sprezzature-audio-diarize <audio-or-video> [--max-speakers N] [--device cuda\|mps\|cpu]`. Emits `<stem>.rttm` + `<stem>.diarization.json`. |
+| "identify speakers" / "match voices" / "who is who" / "TitaNet" | `identify_from_titanet.py` | `sprezzature-audio-identify <stem>.diarization.json --audio <stem>.wav --refs ./voices/`. Writes `<stem>.speakers.json`, the same shape `caption_diarize.py` consumes. |
+| "name the speakers from the transcript" / "vocative naming" / "self-introduction" | `name_from_transcript.py` | `sprezzature-audio-name <stem>.speakers.vtt [--ollama]`. Rule pass over EN + FR self-introductions and vocatives; `--ollama` calls the local daemon `alt_from_ollama.py` uses for a JSON-formatted refinement. |
+| "speaker VTT" / "labelled captions" / "merge captions with diarization" | `caption_diarize.py` | `sprezzature-audio-pipeline --captions <stem>.vtt --diarization <stem>.diarization.json --speakers <stem>.speakers.json --out <stem>.speakers.vtt`. Output has `<v Name>` voice cues. |
+| "translate captions" / "translated subtitles" / "two-track captions" / "subtitles in another language" | `translate_captions.py` | `sprezzature-audio-translate <stem>.vtt [--lang fr] [--in page.html] [--media clip.mp4]`. Target language = `--lang` else detected from the surrounding text (`--in` / `--context`). Writes `<stem>.<lang>.vtt` and prints a `<track kind="captions"> + <track kind="subtitles">` snippet. Needs a local Ollama daemon (`qwen3-vl:8b`). |
+| "Whisper not installed" / "first-time setup" (captions only) | `install_captions.py` | `python -m sprezzature_audio_scripts.install_captions`: pip-installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML model so the captioner runs offline. |
+| "NeMo not installed" / "first-time setup" (diarization) | `install_diarize.py` | `python -m sprezzature_audio_scripts.install_diarize`: pip-installs `nemo_toolkit[asr]` and pre-downloads Sortformer + TitaNet weights. Add `--only sortformer` / `--only titanet` to prefetch just one. |
 
 ## Output contract
 
@@ -171,7 +171,7 @@ under-serving you.
 When emitting ``<video>`` or ``<audio>`` in a deliverable:
 
 ```bash
-python sprezzature-audio/scripts/captions_from_whisper.py --auto-project <media>
+sprezzature-audio-captions --auto-project <media>
 ```
 
 Always emit ``<track kind="captions" srclang="…" default>`` on the
@@ -207,17 +207,23 @@ element. For a **second, translated track**, run
 
 ## Scripts
 
-| Script | Install | Purpose |
-|---|---|---|
-| ``captions_from_whisper.py`` *(WiP)* | ``pip install -r scripts/requirements-captions.txt`` + ``ffmpeg`` on PATH | WebVTT / SRT / plain-text captions via local whisper.cpp. Per-language WER baselines + vocab-biasing reference clip still being collected. |
-| ``install_captions.py`` | subprocess (uses the active Python's ``pip``) | Installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML caption model. |
-| ``diarize_from_nemo.py`` | ``pip install -r scripts/requirements-diarize.txt`` + Python 3.10+ | Speaker diarization via NVIDIA NeMo **Sortformer** (``nvidia/diar_sortformer_4spk-v1``). Emits RTTM + turn JSON; caches on the extracted-audio hash. |
-| ``identify_from_titanet.py`` | ``pip install -r scripts/requirements-diarize.txt`` | Speaker identification via NeMo **TitaNet-Large** embeddings; cosine matching against a directory of reference clips (one WAV per known speaker). Writes ``speakers.json``. |
-| ``name_from_transcript.py`` | stdlib + ``click`` (rule pass); optional local Ollama for the ``--ollama`` refinement | Guesses speaker names from the diarized transcript itself: regex for self-introductions + vocatives, optional LLM refinement via the same daemon ``alt_from_ollama.py`` uses. |
-| ``caption_diarize.py`` | stdlib + ``click`` | Merges captions + diarization + speakers.json → speaker-labelled WebVTT (``<v Name>`` cues), SRT, or plain text. |
-| ``translate_captions.py`` | stdlib + ``click`` + ``langdetect`` (from ``requirements-captions.txt``); a local Ollama daemon (``qwen3-vl:8b``) at runtime | Translates an existing ``.vtt``/``.srt`` into the surrounding-text language and emits a two-``<track>`` snippet (native ``captions`` + translated ``subtitles``). No audio dependency; decoupled from the caption backend. |
-| ``install_diarize.py`` | subprocess (uses the active Python's ``pip``) | Installs ``nemo_toolkit[asr]`` and pre-downloads Sortformer + TitaNet checkpoints so the diarization scripts run offline. |
-| ``_argparse.py``, ``_click.py``, ``_lang.py``, ``_vocab.py`` | (internal helpers) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
+Shipped by the standalone [`sprezzature-audio`](https://github.com/warith-harchaoui/sprezzature-audio)
+package, not by this monorepo. The `Install` column below is the pip
+extra that pulls the tier's dependencies (`pip install
+"sprezzature-audio[captions|diarize|translate|all]"`); the `Console script`
+column is the command that lands on `$PATH` once installed.
+
+| Script | Install | Console script | Purpose |
+|---|---|---|---|
+| ``captions_from_whisper.py`` *(WiP)* | ``sprezzature-audio[captions]`` + ``ffmpeg`` on PATH | ``sprezzature-audio-captions`` | WebVTT / SRT / plain-text captions via local whisper.cpp. Per-language WER baselines + vocab-biasing reference clip still being collected. |
+| ``install_captions.py`` | ``sprezzature-audio[captions]`` | (none; run as ``python -m sprezzature_audio_scripts.install_captions``) | Installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML caption model. |
+| ``diarize_from_nemo.py`` | ``sprezzature-audio[diarize]`` + Python 3.10+ | ``sprezzature-audio-diarize`` | Speaker diarization via NVIDIA NeMo **Sortformer** (``nvidia/diar_sortformer_4spk-v1``). Emits RTTM + turn JSON; caches on the extracted-audio hash. |
+| ``identify_from_titanet.py`` | ``sprezzature-audio[diarize]`` | ``sprezzature-audio-identify`` | Speaker identification via NeMo **TitaNet-Large** embeddings; cosine matching against a directory of reference clips (one WAV per known speaker). Writes ``speakers.json``. |
+| ``name_from_transcript.py`` | ``sprezzature-audio`` (core); optional local Ollama for the ``--ollama`` refinement | ``sprezzature-audio-name`` | Guesses speaker names from the diarized transcript itself: regex for self-introductions + vocatives, optional LLM refinement via the same daemon ``alt_from_ollama.py`` uses. |
+| ``caption_diarize.py`` | ``sprezzature-audio`` (core) | ``sprezzature-audio-pipeline`` | Merges captions + diarization + speakers.json → speaker-labelled WebVTT (``<v Name>`` cues), SRT, or plain text. |
+| ``translate_captions.py`` | ``sprezzature-audio[translate]``; a local Ollama daemon (``qwen3-vl:8b``) at runtime | ``sprezzature-audio-translate`` | Translates an existing ``.vtt``/``.srt`` into the surrounding-text language and emits a two-``<track>`` snippet (native ``captions`` + translated ``subtitles``). No audio dependency; decoupled from the caption backend. |
+| ``install_diarize.py`` | ``sprezzature-audio[diarize]`` | (none; run as ``python -m sprezzature_audio_scripts.install_diarize``) | Installs ``nemo_toolkit[asr]`` and pre-downloads Sortformer + TitaNet checkpoints so the diarization scripts run offline. |
+| ``_argparse.py``, ``_click.py``, ``_lang.py``, ``_vocab.py`` | (internal helpers) | (none) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
 
 ## Companion skills
 

@@ -1,4 +1,4 @@
-# Approche — les idées derrière `sprezzature`
+# Approche : les idées derrière `sprezzature`
 
 Cette page rassemble les convictions de conception qui traversent toute la
 suite `sprezzature-*`. Chacune correspond à ce que le code fait vraiment ; rien

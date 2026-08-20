@@ -1,7 +1,7 @@
 """
-Tests for ``scripts/cleanup_local_skills.py`` — the helper that
+Tests for ``scripts/cleanup_local_skills.py``, the helper that
 audits ``~/.claude/skills/`` and ``~/.opencode/skills/`` for orphan
-``front-*`` folders left behind by past renames.
+``sprezzature-*`` folders left behind by past renames.
 
 All tests redirect HOME to a per-test ``tmp_path`` so they never
 touch the user's real skill directories. The script reads HOME via

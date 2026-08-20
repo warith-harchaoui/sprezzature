@@ -63,7 +63,7 @@ For other work, use the companion skills:
 
 The companion skills assume the same stack rules below.
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 This skill ships both halves of the sprezzature-* loop:
 

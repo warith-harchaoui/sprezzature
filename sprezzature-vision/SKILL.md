@@ -52,7 +52,7 @@ hosted vision (Claude vision, GPT-4o vision, Gemini) is more accurate;
 use this skill when local-only matters or when the volume makes hosted
 costs unattractive.
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 This skill is **make-only** in the sprezzature-* duality, by design:
 
