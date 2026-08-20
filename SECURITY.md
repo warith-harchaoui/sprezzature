@@ -108,7 +108,7 @@ are stdlib + a single optional dependency (the SDK or the daemon).
   (model pulls), Hugging Face mirrors (whisper.cpp model files), the
   jsDelivr `gh` proxy (Tailwind Play content-delivery network (CDN) in prototype mode). No
   vendored binaries, no auto-updaters.
-- **Trust model — short version.** This repo ships text and Python
+- **Trust model, short version.** This repo ships text and Python
   scripts you can read top-to-bottom in under an hour. Read what you
   install. The validators (`scripts/validate_all.py`,
   `sprezzature-ui/scripts/validate.py`) and the deterministic test suite

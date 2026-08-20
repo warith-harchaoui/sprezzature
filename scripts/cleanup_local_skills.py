@@ -4,7 +4,7 @@ cleanup_local_skills
 ====================
 
 Audit ``~/.claude/skills/`` and ``~/.opencode/skills/`` for orphan
-``front-*`` folders left behind by past renames (notably the v0.9.0
+``sprezzature-*`` folders left behind by past renames (notably the v0.9.0
 ``sprezzature-a11y`` → ``sprezzature-accessibility`` rename, the v0.7.0
 ``sprezzature-colors`` split, the v0.8.0 ``sprezzature-vision`` split, the
 v0.9.0 ``sprezzature-audio`` split). Optionally remove them.
@@ -74,7 +74,7 @@ RUNTIME_DIRS: dict[str, Path] = {
 
 def _sprezzature_subdirs(root: Path) -> list[Path]:
     """
-    Return every ``front-*`` subdirectory of ``root``.
+    Return every ``sprezzature-*`` subdirectory of ``root``.
 
     Returns an empty list when ``root`` does not exist — the runtime
     may simply not be installed on this machine.
@@ -87,7 +87,7 @@ def _sprezzature_subdirs(root: Path) -> list[Path]:
     Returns
     -------
     list of Path
-        Sorted, deterministic, only the ``front-*`` subset.
+        Sorted, deterministic, only the ``sprezzature-*`` subset.
     """
     if not root.is_dir():
         return []
@@ -147,7 +147,7 @@ def main(argv: list[str] | None = None) -> int:
         prog="sprezzature-cleanup-local-skills",
         description=(
             "Audit ~/.claude/skills/ and ~/.opencode/skills/ for "
-            "orphan front-* folders left behind by past skill "
+            "orphan sprezzature-* folders left behind by past skill "
             "renames or splits. Optionally remove them."
         ),
         epilog=(
@@ -188,10 +188,10 @@ def main(argv: list[str] | None = None) -> int:
 
         sprezzature_dirs: list[Path] = _sprezzature_subdirs(root)
         if not sprezzature_dirs:
-            print("    no front-* folders found.")
+            print("    no sprezzature-* folders found.")
             continue
 
-        # Orphans: front-* folders the canonical manifest does not name.
+        # Orphans: sprezzature-* folders the canonical manifest does not name.
         orphans: list[Path] = [
             p for p in sprezzature_dirs if p.name not in canonical
         ]

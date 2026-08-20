@@ -45,10 +45,10 @@ from skills_manifest import SHIPPED_SKILLS  # noqa: E402
 
 
 #: Regex matching the canonical "Two modes" section header. Permits the
-#: English form (``## Two modes — make and audit``) and tolerates an
-#: en-dash vs hyphen vs em-dash variation.
+#: English form (``## Two modes: make and audit``) and tolerates a
+#: colon vs en-dash vs hyphen vs em-dash separator.
 RE_TWO_MODES_HEADER: re.Pattern[str] = re.compile(
-    r"^## *Two modes *[—–-] *make and audit *$",
+    r"^## *Two modes *[:—–-] *make and audit *$",
     re.MULTILINE,
 )
 
@@ -118,7 +118,7 @@ def test_readme_matrix_marks_roadmap_gaps_honestly() -> None:
     """An empty cell must be marked '(roadmap)' or '(none — ...)' rather than blank."""
     body: str = _read(REPO_ROOT / "README.md")
     m = re.search(
-        r"^## *Two modes *[—–-] *make and audit",
+        r"^## *Two modes *[:—–-] *make and audit",
         body, re.MULTILINE,
     )
     assert m is not None

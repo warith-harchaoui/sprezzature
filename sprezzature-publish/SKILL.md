@@ -53,7 +53,7 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 | "robots.txt" / "sitemap.xml" / "llms.txt" / "llms-full.txt" / "feed" / "Atom" / "RSS" / "humans.txt" | All from a single command; auto-detects a blog folder for the feed |
 | "plain language" / "simplify this copy" / "rewrite at grade N" | Same meaning, marketing voice stripped, output length ≤ 1.1× original |
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 Ten make-side scripts paired with one audit-side gate.
 

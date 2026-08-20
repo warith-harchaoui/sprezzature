@@ -1,8 +1,8 @@
-# Paysage — alternatives à `sprezzature`
+# Paysage : alternatives à `sprezzature`
 
 `sprezzature` est **une** réponse assumée à une vaste question : *comment un grand modèle de langage (LLM) devrait-il produire du code frontend ?* Ce fichier cartographie les alternatives dans chacune des catégories touchées par les *skills* `sprezzature-*`, sous forme de **matrices** : les lignes sont des outils, les colonnes des caractéristiques qui comptent vraiment. Servez-vous-en pour choisir en connaissance de cause.
 
-## Frameworks agentiques — où se situe sprezzature
+## Frameworks agentiques : où se situe sprezzature
 
 Le monorepo `sprezzature` est en partie un framework agentique : il définit des *skills* que Claude / OpenCode exécutent. Voici comment il se compare aux frameworks agentiques généralistes :
 
@@ -57,7 +57,7 @@ La plupart des autres catégories : il existe un meilleur outil si vous vous sp
 
 Les coûts sont sous licence permissive MIT/Apache sauf mention contraire. La colonne Stack (base technique) liste le langage contre lequel un développeur de l'outil écrit, pas le moteur sous-jacent.
 
-## Positionnement concurrentiel — une table
+## Positionnement concurrentiel : une table
 
 Lignes = projets, colonnes = critères, chaque cellule notée **1–5 ⭐️** (partout, plus c'est
 mieux). Les notes sont celles de l'auteur, volontairement honnêtes : `sprezzature` échange la
@@ -97,7 +97,7 @@ livraison **en *skill***.
 | [TensorFlow Embedding Projector](https://projector.tensorflow.org) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ |
 
 **Sur la localité :** `sprezzature` fonctionne **local d'abord (local-first)**, comme la plupart des
-outils qui tournent sur votre machine — mais plus tous : les plateformes de *business intelligence* (BI)
+outils qui tournent sur votre machine, mais ce n'est plus vrai de tous les acteurs cités ici : les plateformes de *business intelligence* (BI)
 hébergées (Looker, ThoughtSpot) et les intelligences artificielles (IA) en ligne (Claude vision, Deepgram)
 ne le sont pas. Avec ces nouveaux venus, la colonne **discrimine désormais** et entre pleinement dans la carte.
 
@@ -223,9 +223,9 @@ honore toute police nommée par l'utilisateur.
 
 | Police | Graisses | Latin étendu / cyrillique | Licence | Variable | Coût | Compatible sprezzature | Notes |
 |---|---|---|---|:---:|---|:---:|---|
-| **Roboto** (utilisée — sans)     | 100–900 + italiques | les deux | SIL Open Font License (OFL) | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto/`. UI + corps par défaut. |
-| **Roboto Serif** (utilisée — serif) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto-serif/`. Éditorial / textes longs. |
-| **Roboto Mono** (utilisée — mono)   | 100–700 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto-mono/`. `<code>` / `<pre>` / panneaux de logs. |
+| **Roboto** (utilisée, sans)     | 100–900 + italiques | les deux | SIL Open Font License (OFL) | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto/`. UI + corps par défaut. |
+| **Roboto Serif** (utilisée, serif) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto-serif/`. Éditorial / textes longs. |
+| **Roboto Mono** (utilisée, mono)   | 100–700 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto-mono/`. `<code>` / `<pre>` / panneaux de logs. |
 | [Inter](https://rsms.me/inter/) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ~ | Choix par défaut de l'industrie pour l'UI SaaS. Pas celui du *skill*, mais honorée si l'utilisateur la nomme. |
 | [Montserrat](https://fonts.google.com/specimen/Montserrat) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ~ | Ancien choix par défaut, remplacé par Roboto en v0.6.0. Toujours honoré si un projet la nomme. |
 | [IBM Plex Sans](https://www.ibm.com/plex/) | 100–700 | les deux | OFL | ~ | gratuit | ~ | Corporate neutre. Pas le choix par défaut ; le *skill* la porte si un projet la livre. |
@@ -459,9 +459,9 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 
 ## Pour aller plus loin
 
-- [The Complete Guide to Building *Skills* for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — la spec à laquelle `sprezzature` se conforme.
-- [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) — la source de plusieurs ergonomies de `sprezzature`.
-- [Material Design 3](https://m3.material.io) — distillé dans `sprezzature/references/material-design.md`.
-- [WCAG 2.2](https://www.w3.org/TR/WCAG22/) — la base d'accessibilité que le *skill* vise.
-- [Initiative d'accessibilité web (WAI) Image Tutorial](https://www.w3.org/WAI/tutorials/images/) — l'arbre de décision de texte alternatif derrière `alt_from_ollama.py`.
-- [llmstxt.org](https://llmstxt.org) — la spec que suit le `llms.txt` à la racine du dépôt.
+- [The Complete Guide to Building *Skills* for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) : la spec à laquelle `sprezzature` se conforme.
+- [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) : la source de plusieurs ergonomies de `sprezzature`.
+- [Material Design 3](https://m3.material.io) : distillé dans `sprezzature/references/material-design.md`.
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/) : la base d'accessibilité que le *skill* vise.
+- [Initiative d'accessibilité web (WAI) Image Tutorial](https://www.w3.org/WAI/tutorials/images/) : l'arbre de décision de texte alternatif derrière `alt_from_ollama.py`.
+- [llmstxt.org](https://llmstxt.org) : la spec que suit le `llms.txt` à la racine du dépôt.

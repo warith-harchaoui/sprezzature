@@ -24,13 +24,13 @@ findings or error (so the audits gate a commit).
 
 ---
 
-## sprezzature-accessibility `[det]` — static accessibility (a11y) lint
+## sprezzature-accessibility `[det]`: static accessibility (a11y) lint
 
 Lint a static HyperText Markup Language (HTML) file for the 14 source-decidable accessibility rules
 (missing `alt`, unlabelled inputs, `<div onclick>`, heading order, …):
 
 ```bash
-python3 sprezzature-accessibility/scripts/lint_a11y.py tests/fixtures/html/landing.html
+sprezzature-accessibility-lint tests/fixtures/html/landing.html
 ```
 
 Expected output (a clean fixture):
@@ -45,13 +45,13 @@ RULE message`) and exits non-zero. Add `--fix` to apply the safe repairs
 (lang attribute, redundant Accessible Rich Internet Applications (ARIA), positive tabindex, aria-hidden-interactive,
 motion-reduce guard) in place, and `--json` for machine-readable output.
 
-## sprezzature-ux-laws `[det]` — Laws-of-user-experience (UX) audit
+## sprezzature-ux-laws `[det]`: Laws-of-user-experience (UX) audit
 
 Audit HTML for the mechanically-detectable Laws of UX (Hick, Miller, Fitts,
 Jakob, Tesler, Aesthetic-Usability, …), as JavaScript Object Notation (JSON):
 
 ```bash
-python3 sprezzature-ux-laws/scripts/audit_laws_of_ux.py tests/fixtures/html/landing.html --json
+python3 -m sprezzature_ux_laws_scripts.audit_laws_of_ux tests/fixtures/html/landing.html --json
 ```
 
 Expected output (shape):
@@ -73,30 +73,37 @@ Expected output (shape):
 Miller / Jakob) with an idempotent convergence loop; `--only hick,jakob` and
 `--ignore tesler,miller` scope the run; `--strict` upgrades warnings to errors.
 
-## sprezzature-colors `[det]` — Web Content Accessibility Guidelines (WCAG) contrast, color-vision deficiency (CVD), palette → Tailwind
+## sprezzature-colors `[det]`: Web Content Accessibility Guidelines (WCAG) contrast, color-vision deficiency (CVD), palette → Tailwind
 
 Audit a palette for WCAG contrast (suggests OKLCH (the perceptual OKLCH color space)-neighbour fixes):
 
 ```bash
-python3 sprezzature-colors/scripts/audit_contrast.py --palette palette.json --target 4.5
+python3 -m sprezzature_colors_scripts.audit_contrast --palette palette.json --target 4.5
 ```
 
 Turn the canonical palette comma-separated-values (CSV) file into a drop-in `tailwind.config.js`:
 
 ```bash
-python3 sprezzature-colors/scripts/palette_to_tailwind.py --emit theme > tailwind.theme.js
+python3 -m sprezzature_colors_scripts.palette_to_tailwind --emit theme > tailwind.theme.js
 ```
 
 Simulate colour-vision deficiency on a screenshot (writes protanopia /
 deuteranopia / tritanopia variants next to the input):
 
 ```bash
-python3 sprezzature-colors/scripts/simulate_cvd.py tests/fixtures/images/chart-bar.png
+python3 -m sprezzature_colors_scripts.simulate_cvd tests/fixtures/images/chart-bar.png
 ```
 
 All three are deterministic: no model, no network.
 
-## sprezzature-figures `[det]` — figures, diagrams, and the Ralph Eyeball Loop
+## sprezzature-figures `[det]`: figures, diagrams, and the Ralph Eyeball Loop
+
+**Known bug:** `make-figure` (below) currently fails on a normally
+pip-installed `sprezzature-figures` with "Registered module ... not
+found"; the chart-kind registry resolves generator paths against a
+development checkout layout, not the installed package layout. The
+other recipes in this section (`render_diagram`, `audit_figure`,
+`explain_model`, `causal_estimate`) are unaffected.
 
 Prefer Vega-Lite over matplotlib / seaborn / pyplot / plotly: a house-styled
 spec carries its own data, looks better by default, and covers nearly their
@@ -108,7 +115,7 @@ the source, repeat. The kind (Vega / TikZ / Mermaid / SVG) is auto-detected. A
 runnable Vega spec ships in the repo, so this recipe needs no data of your own:
 
 ```bash
-python3 sprezzature-figures/scripts/render_diagram.py \
+python3 -m sprezzature_figures_scripts.render_diagram \
   sprezzature-figures/assets/vega-examples/hexbin.vl.json --background white --out /tmp/hexbin.png
 # → wrote /tmp/hexbin.png   (now open it, critique, edit the spec, re-render)
 ```
@@ -117,40 +124,35 @@ Never draw diagrams in ASCII; write colored Mermaid and render it the same way:
 
 ```bash
 printf 'flowchart LR\n  A[Browser] --> B[FastAPI] --> C[(DB)]\n' > /tmp/flow.mmd
-python3 sprezzature-figures/scripts/render_diagram.py /tmp/flow.mmd --background transparent --out /tmp/flow.png
+python3 -m sprezzature_figures_scripts.render_diagram /tmp/flow.mmd --background transparent --out /tmp/flow.png
 ```
 
 Audit a Vega-Lite spec for data-viz sins (truncated baselines, dual y-axes,
 rainbow palettes, missing labels), again against a committed spec:
 
 ```bash
-python3 sprezzature-figures/scripts/audit_figure.py sprezzature-figures/assets/vega-examples/bar.vl.json
+python3 -m sprezzature_figures_scripts.audit_figure sprezzature-figures/assets/vega-examples/bar.vl.json
 ```
 
-Make a figure straight from a data file, or run the explainability / causal
-recipes (these use *your* files and need the tiers via
-`install_figures.py --tier dataviz+explain+causal`):
+Make a figure straight from a data file (a catalogue kind, not a free
+`--x/--y/--kind` combination: `sprezzature-figures list` shows what exists),
+or run the explainability / causal recipes (these use *your* files and need
+the tiers via `install_figures.py --tier dataviz+explain+causal`):
 
 ```bash
-python3 sprezzature-figures/scripts/make_figure.py --data data.csv --kind bar --x category --y value --out chart
-python3 sprezzature-figures/scripts/explain_model.py --model model.pkl --data X.csv --engine shapash --report shapash --out ./explain/
-python3 sprezzature-figures/scripts/causal_estimate.py --data d.csv --treatment T --outcome Y --confounders "X1,X2,X3" --dag dag.gml
+# `bar`'s roles are `region` (categorical) and `value` (numeric).
+make-figure bar --data data.csv --map region=category_col --map value=value_col --out chart.svg
+python3 -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.csv --engine shapash --report shapash --out ./explain/
+python3 -m sprezzature_figures_scripts.causal_estimate --data d.csv --treatment T --outcome Y --confounders "X1,X2,X3" --dag dag.gml
 ```
 
-Draw an areas-of-control **situation map** for any region from one YAML config.
-Copy a committed example, edit the zones, and render the layered plate (the
-examples are schematic and say so on the plate, never operational intelligence).
-Needs the dataviz tier plus `shapely` + `pyproj`:
+**Situation maps are currently unavailable.** `make_situation_map.py` and
+`build_situation_examples.py` (the areas-of-control plate generator this
+recipe used to show) have been removed from the standalone `sprezzature-figures`
+package; only stale compiled bytecode remains. Do not run the commands this
+recipe used to list here until the generator ships again.
 
-```bash
-python3 sprezzature-figures/scripts/make_situation_map.py \
-  --config sprezzature-figures/assets/situation-maps/ukraine.yaml --out /tmp/ukraine.svg --render
-# → an 11-layer plate (bathymetry, classed fills, white casing, labels, legend,
-#   dual scale bars) as SVG + PNG. Rebuild every tracked example at once with:
-python3 sprezzature-figures/scripts/build_situation_examples.py
-```
-
-## sprezzature-publish `[det]` — Markdown → site, meta, favicons, indexes
+## sprezzature-publish `[det]`: Markdown → site, meta, favicons, indexes
 
 Lint a Markdown file (heading sentinel, trailing whitespace, fenced-code
 language); `--fix` applies the safe rewrites:
@@ -176,7 +178,7 @@ python3 sprezzature-publish/scripts/site_indexes.py --root . --base-url https://
 Narration (`narrate_post.py`) and meta-tag drafting (`meta_from_ollama.py`) are
 `[ai]` local-AI (see below).
 
-## sprezzature-cli-gui `[det]` — wrap a command-line interface (CLI) in a graphical user interface (GUI)
+## sprezzature-cli-gui `[det]`: wrap a command-line interface (CLI) in a graphical user interface (GUI)
 
 Introspect a Python CLI's argument parser (argparse **or** Click, auto-detected)
 and emit a single-page vanilla-JavaScript (JS) + Tailwind GUI. Point `spec` at a zero-arg
@@ -184,7 +186,7 @@ factory that returns the parser/command:
 
 ```bash
 # demo_cli.py exposes `def make_parser() -> argparse.ArgumentParser`
-python3 sprezzature-cli-gui/scripts/cli_to_gui.py demo_cli.py:make_parser --out gui.html
+sprezzature-cli-gui demo_cli.py:make_parser --out gui.html
 ```
 
 Expected output:
@@ -197,14 +199,14 @@ For any CLI whose factory can't be imported, or a non-Python binary
 (clap / cobra / commander), parse its `--help` text instead:
 
 ```bash
-python3 sprezzature-cli-gui/scripts/cli_to_gui.py --from-help "python3 -m json.tool" --out gui.html
+sprezzature-cli-gui --from-help "python3 -m json.tool" --out gui.html
 ```
 
 The emitted HTML passes both the `sprezzature-ux-laws` and `sprezzature-accessibility`
 audits with zero findings (the emitter is its own customer). A runnable worked
 example ships in `sprezzature-cli-gui/assets/examples/cli-gui-demo/`.
 
-## sprezzature-vision `[ai]` — alt text via a local vision model
+## sprezzature-vision `[ai]`: alt text via a local vision model
 
 One-time install (pulls a local Ollama vision model):
 
@@ -223,27 +225,27 @@ text|complex|group` forces the purpose; results are cached on disk so the same
 image + parameters never hit the model twice. Draft-quality: verify before
 committing.
 
-## sprezzature-audio `[ai]` — captions, diarization, speaker naming
+## sprezzature-audio `[ai]`: captions, diarization, speaker naming
 
 One-time install (pip-installs `vocal-helper` / whisper.cpp and pre-downloads a
 GGML model so it runs offline):
 
 ```bash
-python3 sprezzature-audio/scripts/install_captions.py
+python3 -m sprezzature_audio_scripts.install_captions
 ```
 
 Transcribe audio/video to WebVTT / SubRip subtitle format (SRT) / plain text (local, never a SaaS):
 
 ```bash
-python3 sprezzature-audio/scripts/captions_from_whisper.py interview.mp4 --format vtt
+sprezzature-audio-captions interview.mp4 --format vtt
 ```
 
 Add "who spoke when" and "who is who" (needs `install_diarize.py` for the NeMo
 Sortformer + TitaNet weights):
 
 ```bash
-python3 sprezzature-audio/scripts/diarize_from_nemo.py interview.wav --out interview.diarization.json
-python3 sprezzature-audio/scripts/caption_diarize.py --captions interview.vtt --diarization interview.diarization.json
+sprezzature-audio-diarize interview.wav --out interview.diarization.json
+sprezzature-audio-pipeline --captions interview.vtt --diarization interview.diarization.json
 ```
 
 Add a **second, translated subtitle track** in the language of the page that
@@ -251,7 +253,7 @@ embeds the video (native `captions` + translated `subtitles`). Runs on the
 `.vtt` only (no audio) via the local `qwen3-vl:8b` model:
 
 ```bash
-python3 sprezzature-audio/scripts/translate_captions.py interview.vtt --in article.html --media interview.mp4
+sprezzature-audio-translate interview.vtt --in article.html --media interview.mp4
 # → writes interview.<lang>.vtt and prints:
 #   <video controls>
 #     <source src="interview.mp4" />
@@ -260,7 +262,7 @@ python3 sprezzature-audio/scripts/translate_captions.py interview.vtt --in artic
 #   </video>
 ```
 
-## sprezzature-ui `[det]` — the stack rules + component assets
+## sprezzature-ui `[det]`: the stack rules + component assets
 
 `sprezzature-ui` is reference-first: it sets the vanilla-JS + Tailwind house style
 (three-Roboto default, dark-mode peers, focus rings, reduced-motion guards) that
@@ -287,7 +289,7 @@ python3 sprezzature-ui/scripts/i18n_make.py --dir .
 # -> created ./locales/i18n.yaml  |  compiled ./locales/i18n.json  |  emitted ./locales/i18n.js
 
 # audit: flag translations embedded in JS/HTML (I18N001) or prompts inlined
-# in Python (I18N002) — they belong in the catalog. 0 = clean, 1 = findings.
+# in Python (I18N002); they belong in the catalog. 0 = clean, 1 = findings.
 python3 sprezzature-ui/scripts/audit_i18n.py src/
 ```
 

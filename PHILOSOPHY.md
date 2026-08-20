@@ -1,4 +1,4 @@
-# Approach — the ideas behind `sprezzature`
+# Approach: the ideas behind `sprezzature`
 
 This page gathers the design convictions that run through the whole
 `sprezzature-*` stack. Each one is something the code actually does; nothing
@@ -56,7 +56,7 @@ fullscreen the browser paints only the top-layer element, so a tooltip
 parked on `<body>` disappears; the external module re-homes the tooltip
 into the fullscreen element so it stays visible.)
 
-## Look at the figure before you ship it — the Ralph Eyeball Loop
+## Look at the figure before you ship it: the Ralph Eyeball Loop
 
 You can proofread a sentence by reading it back. You cannot do that with a
 chart: whether it is right lives in the pixels, not the source. So

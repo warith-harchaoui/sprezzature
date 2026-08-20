@@ -58,11 +58,11 @@ your brand. Loop a designer in for the final call.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py` | `python scripts/audit_contrast.py [--palette p.json] [--target 4.5\|7\|3] [--fix]` — walks every (label, surface) pair, suggests OKLCH-neighbour fix |
-| "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py` | `python scripts/simulate_cvd.py <image> [--grid]` — renders protanopia / deuteranopia / tritanopia |
-| "what's the hex for Red" / "give me an emotion color" / "Apple palette" | `_colors.py` accessors | `from _colors import name_to_hex, emotion_to_hex, concept_search, psychology_for, apple_palette` |
+| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py` | `python -m sprezzature_colors_scripts.audit_contrast [--palette p.json] [--target 4.5\|7\|3] [--fix]`. Walks every (label, surface) pair, suggests OKLCH-neighbour fix. |
+| "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py` | `python -m sprezzature_colors_scripts.simulate_cvd <image> [--grid]`. Renders protanopia / deuteranopia / tritanopia. |
+| "what's the hex for Red" / "give me an emotion color" / "Apple palette" | `_colors.py` accessors | `from sprezzature_colors_scripts._colors import name_to_hex, emotion_to_hex, concept_search, psychology_for, apple_palette` |
 | "lighten this color" / "darken" / "tint" / "shade" | `_colors.lighten` / `_colors.darken` | OKLCH L-axis shift; hue and chroma preserved (unlike a naïve RGB offset). |
-| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `python scripts/palette_to_tailwind.py [--emit theme\|config] [--with-dark] [--include-neutrals] [--out tailwind.config.js]` — emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
+| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `python -m sprezzature_colors_scripts.palette_to_tailwind [--emit theme\|config] [--with-dark] [--include-neutrals] [--out tailwind.config.js]`. Emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
 
 ## The unified palette
 
@@ -112,7 +112,7 @@ brand.lighten(0.15).contrast_with("#FFFFFF")
 brand.meets_wcag("#FFFFFF", level="AA", size="normal")  # True
 ```
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 This skill covers both sides of color: one make-side
 emitter, two audit-side gates, all backed by the same CSV.
@@ -173,13 +173,13 @@ For a UI deliverable end-to-end:
 
 ```bash
 # Generate the Tailwind config from the canonical palette.
-python sprezzature-colors/scripts/palette_to_tailwind.py \\
+python -m sprezzature_colors_scripts.palette_to_tailwind \
     --emit config --with-dark --out tailwind.config.js
 
 # Then audit the resulting palette.
-python sprezzature-colors/scripts/audit_contrast.py --palette palette.json --fix    # WCAG ratios
-python sprezzature-colors/scripts/simulate_cvd.py screenshot.png --grid             # CVD pass
-python sprezzature-accessibility/scripts/lint_a11y.py public/                                # static a11y gate
+python -m sprezzature_colors_scripts.audit_contrast --palette palette.json --fix    # WCAG ratios
+python -m sprezzature_colors_scripts.simulate_cvd screenshot.png --grid             # CVD pass
+sprezzature-accessibility-lint public/                                              # static a11y gate
 ```
 
 Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
@@ -205,12 +205,18 @@ Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
 
 ## Scripts
 
+Shipped by the standalone [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors)
+package (`pip install sprezzature-colors`, or `sprezzature-colors[cvd]`
+for the Pillow-backed CVD renderer). The package registers no console
+scripts: every entry below runs as `python -m sprezzature_colors_scripts.<module>`
+(module names drop the `.py` suffix).
+
 | Script | Install | Purpose |
 |---|---|---|
 | `audit_contrast.py` | stdlib only | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
-| `simulate_cvd.py` | `pip install -r scripts/requirements-cvd.txt` (Pillow) | Protanopia / deuteranopia / tritanopia rendering (Machado matrices). |
-| `_colors.py` | stdlib only | Shared color primitives — sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
-| `palette_to_tailwind.py` | stdlib only | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `audit_contrast.py` — closes the CSV → emitted-config loop so brand tokens cannot drift. |
+| `simulate_cvd.py` | `sprezzature-colors[cvd]` (Pillow) | Protanopia / deuteranopia / tritanopia rendering (Machado matrices). |
+| `_colors.py` | stdlib only | Shared color primitives: sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
+| `palette_to_tailwind.py` | stdlib only | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `audit_contrast.py`: closes the CSV → emitted-config loop so brand tokens cannot drift. |
 
 ## Companion skills
 

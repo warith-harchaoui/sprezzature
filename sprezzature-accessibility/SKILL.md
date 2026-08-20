@@ -48,7 +48,7 @@ portal mounts), and with manual screen-reader passes for the things
 only a human can verify (logical reading order, dynamic ARIA states
 changing, screen-reader announcement of live regions).
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 This skill is primarily **audit** but ships a small make-side
 auto-fix mode for the rules whose violations have a one-line safe
@@ -109,21 +109,24 @@ parsing, ``--format text`` for terminal review.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "a11y lint" / "check this HTML for accessibility" / "static a11y check" | `lint_a11y.py` | `python scripts/lint_a11y.py <file-or-dir>` — 14 rules, exit 1 on any finding |
-| "contrast audit" / "WCAG ratio" / "colorblind preview" | (see `sprezzature-colors`) | `python sprezzature-colors/scripts/audit_contrast.py [--palette p.json] [--fix]` and `python sprezzature-colors/scripts/simulate_cvd.py <image>`. |
+| "a11y lint" / "check this HTML for accessibility" / "static a11y check" | `lint_a11y.py` | `sprezzature-accessibility-lint <file-or-dir>` (14 rules, exit 1 on any finding). Falls back to `python -m sprezzature_accessibility_scripts.lint_a11y` if the console script is not on `$PATH`. |
+| "contrast audit" / "WCAG ratio" / "colorblind preview" | (see `sprezzature-colors`) | `python -m sprezzature_colors_scripts.audit_contrast [--palette p.json] [--fix]` and `python -m sprezzature_colors_scripts.simulate_cvd <image>` (the `sprezzature-colors` package ships no console script, only these importable modules). |
 | "alt text" / `<img>` with no `alt` / "describe this image" | (see `sprezzature-vision`) | `python sprezzature-vision/scripts/alt_from_ollama.py [--kind informative\|decorative\|functional\|text\|complex\|group] [--lang fr] [--in DOC] [--vocab-from DIR] <src>`. |
-| "captions" / "transcribe video" / "transcribe audio" / "subtitle file" | (see `sprezzature-audio`) | `python sprezzature-audio/scripts/install_captions.py` then `python sprezzature-audio/scripts/captions_from_whisper.py <audio-or-video> [--format vtt\|srt\|text] [--lang fr] [--vocab-from DIR] [--auto-project]`. |
+| "captions" / "transcribe video" / "transcribe audio" / "subtitle file" | (see `sprezzature-audio`) | `python -m sprezzature_audio_scripts.install_captions` then `sprezzature-audio-captions <audio-or-video> [--format vtt\|srt\|text] [--lang fr] [--vocab-from DIR] [--auto-project]`. |
 
 ## Tool composition
 
-For a UI deliverable end-to-end:
+For a UI deliverable end-to-end. Commands below assume the standalone
+packages are pip-installed (`pip install sprezzature-accessibility
+sprezzature-colors sprezzature-vision sprezzature-audio`); `sprezzature-colors`
+exposes no console script, so its two calls go through `python -m`:
 
 ```bash
-python sprezzature-accessibility/scripts/lint_a11y.py public/                  # static a11y gate
-python sprezzature-colors/scripts/audit_contrast.py --palette palette.json     # WCAG ratios
-python sprezzature-colors/scripts/simulate_cvd.py screenshot.png --grid        # CVD pass
-python sprezzature-vision/scripts/alt_from_ollama.py public/hero.jpg           # AI alt text
-python sprezzature-audio/scripts/captions_from_whisper.py public/podcast.mp4   # AI captions
+sprezzature-accessibility-lint public/                                        # static a11y gate
+python -m sprezzature_colors_scripts.audit_contrast --palette palette.json    # WCAG ratios
+python -m sprezzature_colors_scripts.simulate_cvd screenshot.png --grid       # CVD pass
+python sprezzature-vision/scripts/alt_from_ollama.py public/hero.jpg          # AI alt text
+sprezzature-audio-captions public/podcast.mp4                                 # AI captions
 ```
 
 Then pair with a runtime audit (axe-core / Pa11y / Lighthouse) before
@@ -148,10 +151,13 @@ shipping.
 
 ## Scripts
 
-| Script | Install | Purpose |
+Shipped by the standalone [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility)
+package (`pip install sprezzature-accessibility`), not by this monorepo:
+
+| Script | Console entry point | Purpose |
 |---|---|---|
-| ``lint_a11y.py`` | stdlib only | 14-rule static a11y lint. Exit 1 on any finding. **Not** a substitute for runtime audit. |
-| ``_argparse.py`` | (internal helper) | Argparse parser factory shared across the skill family (duplicated per-skill for autonomy). |
+| ``lint_a11y.py`` | ``sprezzature-accessibility-lint`` | 14-rule static a11y lint. Exit 1 on any finding. **Not** a substitute for runtime audit. |
+| ``_argparse.py`` | (internal helper, no entry point) | Argparse parser factory shared across the skill family (duplicated per-skill for autonomy). |
 
 ## Companion skills
 

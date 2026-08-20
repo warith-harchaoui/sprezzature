@@ -43,7 +43,7 @@ model; see each skill's `SKILL.md` for the install path.
 ## Running tests
 
 ```bash
-pytest                  # default — fast, deterministic
+pytest                  # default: fast, deterministic
 pytest -m eval          # opt-in deepeval LLM-quality tests (need Ollama)
 ```
 
@@ -56,9 +56,9 @@ The continuous-integration (CI) `lint` job runs two blocking static gates: the a
 make/audit pattern. Before opening a PR:
 
 ```bash
-ruff check .            # lint audit — must be clean (CI blocks otherwise)
-ruff check --fix .      # lint make — apply the auto-fixable subset
-./scripts/run_mypy.sh   # type audit — per-skill-dir mypy (config in mypy.ini)
+ruff check .            # lint audit: must be clean (CI blocks otherwise)
+ruff check --fix .      # lint make: apply the auto-fixable subset
+./scripts/run_mypy.sh   # type audit: per-skill-dir mypy (config in mypy.ini)
 ```
 
 Config lives in `ruff.toml` and `mypy.ini`. Three conventions the config

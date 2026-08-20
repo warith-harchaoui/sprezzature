@@ -1,8 +1,8 @@
-# Landscape — alternatives to `sprezzature`
+# Landscape: alternatives to `sprezzature`
 
 `sprezzature` is one opinionated answer to a wide question: *how should a large language model (LLM) produce frontend code?* This file maps the alternatives in every category the `sprezzature-*` skills touch as **matrices**: rows are tools, columns are characteristics you actually care about. Use it to choose with eyes open.
 
-## Agentic frameworks — where sprezzature fits
+## Agentic frameworks: where sprezzature fits
 
 The `sprezzature` monorepo is partly an agentic framework: it defines skills that Claude / OpenCode execute. Here is how it compares to the general-purpose agentic frameworks:
 
@@ -57,7 +57,7 @@ Most other categories: there is a better tool if you specialise. The matrices be
 
 Costs are Massachusetts Institute of Technology (MIT)/Apache-permissive unless otherwise noted. Stack column lists the language a developer of the tool writes against, not the underlying engine.
 
-## Competitive positioning — one table
+## Competitive positioning: one table
 
 `sprezzature` is one opinionated answer; this is where it **stands** against the alternatives.
 Rows are projects, columns are criteria, each cell rated **1–5 ⭐️** (all higher-is-better).
@@ -96,8 +96,8 @@ for light weight, restyleability, accessibility, and skill-native delivery.
 | [Highcharts](https://www.highcharts.com) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
 | [TensorFlow Embedding Projector](https://projector.tensorflow.org) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ |
 
-**On locality:** `sprezzature` is **local-first**, as is most tooling that runs on your machine — but no
-longer all of it: the hosted business-intelligence (BI) platforms (Looker, ThoughtSpot) and the online
+**On locality:** `sprezzature` is **local-first**, as is most tooling that runs on your machine, though
+not every entrant here still is: the hosted business-intelligence (BI) platforms (Looker, ThoughtSpot) and the online
 artificial-intelligence (AI) services (Claude vision, Deepgram) are not. With those entrants the column
 now **discriminates**, so it joins the map as a full criterion rather than sitting out as near-constant context.
 

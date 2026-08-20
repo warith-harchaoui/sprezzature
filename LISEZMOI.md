@@ -6,7 +6,7 @@
 [🇫🇷](LISEZMOI.md) · [🇬🇧](README.md)
 
 <p align="center">
-  <img src="assets/logo.png" alt="Sprezzature — neuf skills Claude / OpenCode pour des frontends en JavaScript pur + Tailwind" width="240">
+  <img src="assets/logo.png" alt="Sprezzature : neuf skills Claude / OpenCode pour des frontends en JavaScript pur + Tailwind" width="240">
 </p>
 
 ## De quoi s'agit-il ?
@@ -46,7 +46,7 @@ N'installez que ceux dont vous avez besoin.
 
 Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de release distincts.
 
-**Couche 1 — packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant. Installez uniquement ce dont vous avez besoin :
+**Couche 1 : packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant. Installez uniquement ce dont vous avez besoin :
 
 | `pip install …` | Ce que ça fait |
 |---|---|
@@ -60,9 +60,9 @@ Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de rele
 
 Tous les repos sont sur [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
-**Couche 2 — la couche agentique (ce repo).** Les fichiers `SKILL.md`, `references/` et `web/` restent dans le monorepo `sprezzature`. Ils définissent les contrats entre l'agent Claude / OpenCode et les packages outils.
+**Couche 2 : la couche agentique (ce repo).** Les fichiers `SKILL.md`, `references/` et `web/` restent dans le monorepo `sprezzature`. Ils définissent les contrats entre l'agent Claude / OpenCode et les packages outils.
 
-**Couche 3 — le runtime local.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) est un repo séparé. Chaque appel LLM/VLM d'un script de skill passe par `best_engine_ai_helper.llm.chat`, qui connecte n'importe quel backend compatible OpenAI via des variables d'environnement : `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends : `ollama` (défaut), `openai`, `langchain`. (Anciennement `sprezzature-local`, archivé le 2026-08-06 : il faisait doublon avec ce package.)
+**Couche 3 : le runtime local.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) est un repo séparé. Chaque appel LLM/VLM d'un script de skill passe par `best_engine_ai_helper.llm.chat`, qui connecte n'importe quel backend compatible OpenAI via des variables d'environnement : `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends : `ollama` (défaut), `openai`, `langchain`. (Anciennement `sprezzature-local`, archivé le 2026-08-06 : il faisait doublon avec ce package.)
 
 > **Quelle phrase déclenche quel *skill* ?** Voir
 > [`TRIGGERS.md`](TRIGGERS.md), généré depuis chaque `SKILL.md`,
@@ -122,7 +122,7 @@ des couleurs sur les figures par défaut&#8239;: il simule ce que voit un lecteu
 daltonien, il ne substitue pas une autre figure. Un contrôle **plein écran**
 partagé permet d'ouvrir n'importe quel graphique en grand.
 
-## Fonctionnalités — ce qui est inhabituel pour un *skill* Claude
+## Fonctionnalités : ce qui est inhabituel pour un *skill* Claude
 
 La plupart des *skills* Claude, y compris les `document-skills` d'Anthropic
 (docx, pdf, pptx, xlsx) et les `example-skills` (artifacts, GIFs, serveurs Model Context Protocol (MCP),
@@ -155,7 +155,7 @@ conçu autrement et ces traits le distinguent :
 - **Internationalisation (i18n) unifiée.** Les chaînes d'interface *et* les prompts du grand modèle de langage (LLM) vivent dans un
   seul `locales/i18n.yaml`, appliqué côté make comme côté audit.
 
-## Deux modes — make et audit
+## Deux modes : make et audit
 
 Chaque *skill* sprezzature-* appartient à l'une (ou aux deux) moitiés d'une
 seule boucle : **make** (produire l'artefact) et **audit** (le
@@ -397,7 +397,7 @@ même dossier copié dans deux chemins.
 # Un skill est installé et son SKILL.md est sur disque :
 ls ~/.${RUNTIME}/skills/sprezzature-ui/SKILL.md
 
-# Optionnel — si vous avez aussi cloné le dépôt, vérifiez chaque
+# Optionnel : si vous avez aussi cloné le dépôt, vérifiez chaque
 # skill installé contre la spécification Anthropic (stdlib + PyYAML,
 # pas de réseau) :
 python3 scripts/validate_all.py
@@ -408,7 +408,7 @@ démarrage de la conversation ; les phrases correspondantes activent
 automatiquement le *skill*. Voir [`TRIGGERS.md`](TRIGGERS.md) pour
 l'index par phrase.
 
-### Nettoyage — retirer les *skills* obsolètes ou renommés
+### Nettoyage : retirer les *skills* obsolètes ou renommés
 
 Si vous aviez installé une ancienne version, votre dossier
 `~/.${RUNTIME}/skills/` peut contenir des dossiers orphelins issus
@@ -461,7 +461,7 @@ done
 
 `CONTRIBUTING.md` reprend le même flux côté contributeur.
 
-### OpenCode + Ollama local — l'approche zéro token
+### OpenCode + Ollama local : l'approche zéro token
 
 [OpenCode](https://opencode.ai) est le second environnement d'exécution pris en charge,
 et le compagnon naturel d'un workflow **entièrement local, sans
@@ -496,7 +496,7 @@ local. Zéro appel externe.
 ```bash
 # Démarrage rapide. Suppose Ollama + un binaire OpenCode dans le PATH.
 ollama serve &         # démarrer le daemon
-ollama pull qwen3-vl:8b  # le seul modèle — boucle d'agent ET tous les scripts
+ollama pull qwen3-vl:8b  # le seul modèle, utilisé par la boucle d'agent ET tous les scripts
 ```
 
 Un seul modèle pour toute la pile : il pilote la boucle d'agent
@@ -554,7 +554,7 @@ scripts : même daemon, même tag. `qwen3-vl:8b` est multimodal, donc le
 script de vision (texte alternatif) tourne sur le même modèle que les scripts
 texte. Il n'y a rien d'autre à choisir.
 
-#### Choix du modèle — pourquoi Qwen3-VL 8B (Q4_K_M)
+#### Choix du modèle : pourquoi Qwen3-VL 8B (Q4_K_M)
 
 Le modèle unique est **Qwen3-VL 8B**, quantification Q4_K_M, récupéré par
 `ollama pull qwen3-vl:8b` (~6,1 Go). Il a été choisi selon quatre critères pour
@@ -636,10 +636,10 @@ sans chemins de scripts en dur, sans installation au-delà de
 `pre-commit install`.
 
 ```yaml
-# .pre-commit-config.yaml — ajouter le dépôt en une entrée
+# .pre-commit-config.yaml : ajouter le dépôt en une entrée
 repos:
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v1.0.0          # fixer une tag — bumper via renovate / dependabot
+    rev: v1.0.0          # fixer une tag ; bumper via renovate / dependabot
     hooks:
       - id: sprezzature-accessibility-lint
       - id: sprezzature-ux-laws-audit

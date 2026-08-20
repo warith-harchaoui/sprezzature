@@ -3,7 +3,7 @@
 [🇫🇷](LISEZMOI.md) · [🇬🇧](README.md)
 
 <p align="center"><a href="https://sprezzature.ai/">
-  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
+  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature: nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
 </p>
 
 [🌍 Documentation](https://sprezzature.ai/)
@@ -35,7 +35,7 @@ ones you need.
 
 As of 2026-07-29, sprezzature is organised in three layers with distinct release cycles.
 
-**Layer 1 — pip-installable tool packages.** Each skill's Python scripts live in a standalone repo. Install only the tools you need:
+**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo. Install only the tools you need:
 
 | `pip install …` | What it does |
 |---|---|
@@ -49,9 +49,9 @@ As of 2026-07-29, sprezzature is organised in three layers with distinct release
 
 All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
-**Layer 2 — the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
+**Layer 2: the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
 
-**Layer 3 — the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`. (Formerly `sprezzature-local`, archived 2026-08-06: it duplicated this package.)
+**Layer 3: the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`. (Formerly `sprezzature-local`, archived 2026-08-06: it duplicated this package.)
 
 > **What prompt activates what?** See [`TRIGGERS.md`](TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
@@ -107,7 +107,7 @@ colour-vision-deficiency simulation over the default figures (it simulates what
 a colour-blind reader sees, it does not swap in a different figure), and a shared
 **figure-fullscreen** control so any chart can open full-screen.
 
-## Features — what's unusual for a Claude skill
+## Features: what's unusual for a Claude skill
 
 Most Claude skills, including Anthropic's own `document-skills` (docx, pdf,
 pptx, xlsx) and `example-skills` (artifacts, GIFs, MCP servers, design), are
@@ -138,7 +138,7 @@ these traits set it apart:
 - **Unified i18n.** GUI strings *and* large-language-model (LLM) prompts live in a single
   `locales/i18n.yaml`, enforced on both the make and audit sides.
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 Every sprezzature-* skill belongs to one or both halves of a single loop:
 **make** the artifact, **audit** the artifact. The matrix tells you
@@ -222,10 +222,10 @@ A snapshot of where each surface stands. The nine skill folders are stable; the 
 | `sprezzature-cli` (unified `sprezzature` driver, shell completion) | Stable | Click-based; leaf-command `--help` forwarding fixed in 0.3.0 (regression test in 0.3.1). |
 | `sprezzature-cli-gui` (CLI → GUI flagship) | Stable (skill + runnable demo) | `assets/examples/cli-gui-demo/` runs end-to-end. Production hardening (auth, rate-limit, sandbox) deliberately left to the host. |
 | `sprezzature-publish` (Markdown site, meta tags, favicons, indexes, plain language, audio narration) | Stable | 11 public scripts spanning the four core artifacts (favicons, meta, indexes, plain-language) + Markdown → HTML + Markdown linter + the audio-narration pipeline (narrate orchestrator, OpenVoice and Chatterbox engine wrappers, voice picker, install helper). Broad deterministic test coverage (favicons, site-indexes, meta, plain-language, lint, narrate); eval suite for meta + plain-language. |
-| `sprezzature-accessibility` — lint | Stable (renamed from `sprezzature-a11y` in 0.9.0) | 14-rule static a11y lint, stdlib only. Now narrowed to lint after the color / vision / audio splits. |
-| `sprezzature-colors` — contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable (new in 0.7.0) | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
-| `sprezzature-vision` — W3C alt text via local Ollama vision | Stable (new in 0.8.0) | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. Split out of `sprezzature-accessibility` for clearer scope. Wikipedia-fixture alt-text eval. |
-| `sprezzature-audio` — **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** (split out in 0.9.0) | `captions_from_whisper.py` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](CHANGELOG.md#roadmap). |
+| `sprezzature-accessibility`: lint | Stable (renamed from `sprezzature-a11y` in 0.9.0) | 14-rule static a11y lint, stdlib only. Now narrowed to lint after the color / vision / audio splits. |
+| `sprezzature-colors`: contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable (new in 0.7.0) | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
+| `sprezzature-vision`: W3C alt text via local Ollama vision | Stable (new in 0.8.0) | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. Split out of `sprezzature-accessibility` for clearer scope. Wikipedia-fixture alt-text eval. |
+| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** (split out in 0.9.0) | `captions_from_whisper.py` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](CHANGELOG.md#roadmap). |
 | `LISEZMOI.md` (French README) | Stable | At structural parity with this README, same section ordering, content kept in lock-step on every release. |
 
 For the per-release detail (and what's planned next), see [`CHANGELOG.md`](CHANGELOG.md).
@@ -315,7 +315,7 @@ folder copied to two paths.
 # A skill is installed and its SKILL.md is on disk:
 ls ~/.${RUNTIME}/skills/sprezzature-ui/SKILL.md
 
-# Optional — if you cloned the repo too, verify every installed skill
+# Optional: if you cloned the repo too, verify every installed skill
 # against the Anthropic spec (stdlib + PyYAML, no network):
 python3 scripts/validate_all.py
 ```
@@ -324,7 +324,7 @@ The runtime reads each skill's `SKILL.md` frontmatter description at
 conversation start; matching prompts auto-trigger the skill. See
 [`TRIGGERS.md`](TRIGGERS.md) for the per-phrase index.
 
-### Cleanup — remove stale or renamed skills
+### Cleanup: remove stale or renamed skills
 
 If you installed an older version, your `~/.${RUNTIME}/skills/`
 folder may carry orphan directories from past renames (e.g.
@@ -375,7 +375,7 @@ done
 
 `CONTRIBUTING.md` walks the same flow at the contributor level.
 
-### OpenCode + local Ollama — the zero-token path
+### OpenCode + local Ollama: the zero-token path
 
 [OpenCode](https://opencode.ai) is the second supported runtime,
 and the natural fit for an **all-local, no-tokens** workflow.
@@ -405,7 +405,7 @@ external calls.
 ```bash
 # Quick start. Assumes Ollama + an OpenCode binary on PATH.
 ollama serve &         # start the daemon
-ollama pull qwen3-vl:8b  # the one model — agent loop AND every skill script
+ollama pull qwen3-vl:8b  # the one model, used by the agent loop AND every skill script
 ```
 
 One model handles the whole stack: it drives the OpenCode agent
@@ -462,7 +462,7 @@ skill script, same daemon, same tag. `qwen3-vl:8b` is multimodal, so
 the vision script (alt text) works on the same model as the text
 scripts. There is nothing else to pick.
 
-#### LLM choice — why Qwen3-VL 8B (Q4_K_M)
+#### LLM choice: why Qwen3-VL 8B (Q4_K_M)
 
 The single model is **Qwen3-VL 8B**, Q4_K_M quantization, pulled with
 `ollama pull qwen3-vl:8b` (~6.1 GB). It was chosen against four criteria for a
@@ -538,10 +538,10 @@ with a single `repo:` block: no manual script paths, no install
 beyond `pre-commit install`.
 
 ```yaml
-# .pre-commit-config.yaml — add the repo as one entry
+# .pre-commit-config.yaml: add the repo as one entry
 repos:
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v1.0.0          # pin a tag — bump with renovate / dependabot
+    rev: v1.0.0          # pin a tag; bump with renovate / dependabot
     hooks:
       - id: sprezzature-accessibility-lint
       - id: sprezzature-ux-laws-audit

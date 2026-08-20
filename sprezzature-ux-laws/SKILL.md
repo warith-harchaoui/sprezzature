@@ -51,7 +51,7 @@ bugs ([NN/g, 2024](https://www.nngroup.com/articles/aesthetic-usability-effect/)
 pair this skill with axe-core / Pa11y / Lighthouse and behavioural
 observation in real user sessions.
 
-## Two modes — make and audit
+## Two modes: make and audit
 
 The `sprezzature-*` repo is a toolkit for **making** UI and **auditing**
 the result. This skill ships both halves of that loop for the Laws
@@ -70,11 +70,11 @@ of UX specifically:
 | "design / build / make this screen using Hick / Fitts / Miller / Jakob / Tesler / Peak-End" | make | Load `references/laws-of-ux.md`, jump to the relevant bucket, apply the **smallest concrete change** the law asks for. |
 | "what does the Laws of UX say about this onboarding flow" | make | Load reference, walk the **Time** + **Memory** buckets. |
 | "is this a dark pattern" | make | Stop here, hand to `sprezzature-ui/references/anti-patterns.md`. |
-| "audit this page / component / dir for Laws of UX" | audit | `python scripts/audit_laws_of_ux.py <file-or-dir>` |
-| "auto-fix the easy ones" / "make my UI pass the Laws of UX" | make | `python scripts/audit_laws_of_ux.py --fix <file-or-dir>` — applies the four mechanical fixers (Fitts / Aesthetic-Usability / Miller / Jakob) in place. Add `--dry-run` to preview. |
-| "fail the build on Hick / Jakob violations" | audit | `python scripts/audit_laws_of_ux.py --only hick,jakob --strict <dir>` |
-| "JSON for CI" | audit | `python scripts/audit_laws_of_ux.py --json <dir>` |
-| "false positive on Tesler / Miller" | audit | `python scripts/audit_laws_of_ux.py --ignore tesler,miller <dir>` |
+| "audit this page / component / dir for Laws of UX" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux <file-or-dir>` |
+| "auto-fix the easy ones" / "make my UI pass the Laws of UX" | make | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --fix <file-or-dir>`. Applies the four mechanical fixers (Fitts / Aesthetic-Usability / Miller / Jakob) in place. Add `--dry-run` to preview. |
+| "fail the build on Hick / Jakob violations" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --only hick,jakob --strict <dir>` |
+| "JSON for CI" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --json <dir>` |
+| "false positive on Tesler / Miller" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --ignore tesler,miller <dir>` |
 
 ## Implemented audit checks
 
@@ -148,7 +148,7 @@ User: "Design a hero CTA for a settings page that respects Hick + Fitts."
 ### Audit — pre-commit on the components dir
 
 ```bash
-python sprezzature-ux-laws/scripts/audit_laws_of_ux.py \
+python -m sprezzature_ux_laws_scripts.audit_laws_of_ux \
   --strict --json \
   sprezzature-ui/assets/components/ > .audit.json
 test -s .audit.json && jq length .audit.json
@@ -179,7 +179,12 @@ warnings pass and only fail on real errors (Hick, Jakob).
 
 ## Scripts
 
-- `audit_laws_of_ux.py` — Python 3.10+ stdlib-only static
+Shipped by the standalone [`sprezzature-ux-laws`](https://github.com/warith-harchaoui/sprezzature-ux-laws)
+package (`pip install sprezzature-ux-laws`), not by this monorepo. It
+registers no console script, so it runs as `python -m
+sprezzature_ux_laws_scripts.audit_laws_of_ux`.
+
+- `audit_laws_of_ux.py`: Python 3.10+ stdlib-only static
   auditor. Run `--help` for the full flag list (`--json`, `--strict`,
   `--only LAW1,LAW2`, `--ignore LAW1,LAW2`).
 
