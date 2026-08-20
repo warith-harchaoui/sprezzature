@@ -174,7 +174,9 @@
         <img src="img/logo.png" alt="Sprezzature logo" width="144" height="144"
           class="mx-auto mb-4 h-28 w-28 sm:h-36 sm:w-36">
         <h1 class="font-serif text-4xl font-bold tracking-tight sm:text-6xl">Sprezzature</h1>
-        <p class="mx-auto mt-3 text-lg text-neutral-600 dark:text-neutral-300">in the broadest sense</p>
+        <p class="mx-auto mt-3 text-lg text-neutral-600 dark:text-neutral-300"><em>in the broadest sense</em><br>
+          Create and audit figures, visualizations for app and web content<br>
+          faithful to a standard of accessibility, chromatic rigor, and usability.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a href="#skills"
             class="rounded-xl bg-brand-blue px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-brand-bluedark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-blue motion-safe:hover:-translate-y-0.5">Explore
@@ -227,13 +229,13 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The tool ecosystem</h2>
       <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Each skill's scripts also ship as a standalone pip-installable package. Use them in your own pipelines, without the agent layer.</p>
       <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm" role="list">
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-figures</a> — 126 chart types</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-colors" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-colors</a> — WCAG + CVD + Tailwind</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-audio" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-audio</a> — speech-to-text, diarization</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-accessibility</a> — a11y lint</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-cli-gui</a> — CLI to GUI</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-ux-laws</a> — Laws of UX audit</li>
-        <li><a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="font-mono text-brand-blue underline hover:no-underline">best-engine-ai-helper</a> — hardware + model select, pluggable LLM backend</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-figures</a>: 124 chart types</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-colors" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-colors</a>: WCAG + CVD + Tailwind</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-audio" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-audio</a>: speech-to-text, diarization</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-accessibility</a>: a11y lint</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-cli-gui</a>: CLI to GUI</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-ux-laws</a>: Laws of UX audit</li>
+        <li><a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="font-mono text-brand-blue underline hover:no-underline">best-engine-ai-helper</a>: hardware + model select, pluggable LLM backend</li>
       </ul>
     </section>
 
@@ -394,7 +396,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-vision', 'Alt text (local artificial intelligence)', 'World Wide Web Consortium (W3C) alt text from a local Ollama vision model: per-image decision tree, any language, cached. Work in progress. Drafts for review.', 'vision.html'],
       ['sprezzature-audio', 'Captions & diarization', 'WebVTT / SubRip (SRT) captions from local whisper.cpp, plus who-spoke-when and who-is-who. Runs locally. Work in progress.', 'audio.html'],
       ['sprezzature-ux-laws', 'Laws of user experience (UX)', 'Thirty laws plus an auditor for detectable violations: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
-      ['sprezzature-figures', 'Figures', '126 hand-authored SVG chart types and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
+      ['sprezzature-figures', 'Figures', '124 hand-authored SVG chart types and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `
