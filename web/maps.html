@@ -93,7 +93,7 @@
     <section id="choropleth" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Choropleth</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written closed-form <strong>Equal Earth</strong> projection — restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer — real GMTED2010 elevation, not a flat hillshade — sits under the fills.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written, closed-form <strong>Equal Earth</strong> projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real GMTED2010 elevation rather than a flat hillshade, sits under the fills.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Sequential choropleth" data-src="img/maps/choropleth-sequential.svg" data-alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills.">
@@ -111,7 +111,7 @@
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Choropleth at large size" data-src="img/maps/choropleth-large.svg" data-alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp.">
               <img src="img/maps/choropleth-large.png" alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp." loading="lazy" class="w-full">
             </button>
-            <figcaption class="p-3"><span class="font-medium">At scale</span> <span class="text-neutral-500 dark:text-neutral-400">: the relief layer — Andes, Rockies, Alps, Himalaya — reads clearly once rendered larger.</span></figcaption>
+            <figcaption class="p-3"><span class="font-medium">At scale</span> <span class="text-neutral-500 dark:text-neutral-400">: the relief layer (Andes, Rockies, Alps, Himalaya) reads clearly once rendered larger.</span></figcaption>
           </figure>
         </div>
         <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">From <a class="underline hover:text-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>, the cartography package split out of sprezzature-figures.</p>
@@ -176,25 +176,25 @@
     <section id="situation-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Situation maps</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">A layered reference plate for <em>any</em> region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred <strong>Lambert Conformal Conic</strong> projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed-in the region is — a whole continent doesn't need 10m detail invisible at that scale; a single country does. The same relief technique as the choropleth above — real elevation, texture-shaded, warm/cool duotone — carries every plate.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">A layered reference plate for <em>any</em> region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred <strong>Lambert Conformal Conic</strong> projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed in the region is: a whole continent doesn't need 10m detail invisible at that scale, while a single country does. The same relief technique as the choropleth above (real elevation, texture-shaded, warm/cool duotone) carries every plate.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Western Europe situation map" data-src="img/maps/situation-western-europe.svg" data-alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar.">
               <img src="img/maps/situation-western-europe.png" alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar." loading="lazy" class="w-full">
             </button>
-            <figcaption class="p-3"><span class="font-medium">Western Europe</span> <span class="text-neutral-500 dark:text-neutral-400">: the built-in reference demo — 50m borders, the Alps in full relief texture.</span></figcaption>
+            <figcaption class="p-3"><span class="font-medium">Western Europe</span> <span class="text-neutral-500 dark:text-neutral-400">: the built-in reference demo, 50m borders, the Alps in full relief texture.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Iberia situation map" data-src="img/maps/situation-iberia.svg" data-alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined.">
               <img src="img/maps/situation-iberia.png" alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined." loading="lazy" class="w-full">
             </button>
-            <figcaption class="p-3"><span class="font-medium">Iberia</span> <span class="text-neutral-500 dark:text-neutral-400">: Spain + Portugal — the clearest single example of the texture-shading relief technique.</span></figcaption>
+            <figcaption class="p-3"><span class="font-medium">Iberia</span> <span class="text-neutral-500 dark:text-neutral-400">: Spain and Portugal, the clearest single example of the texture-shading relief technique.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Himalaya situation map" data-src="img/maps/situation-himalaya.svg" data-alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines.">
               <img src="img/maps/situation-himalaya.png" alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines." loading="lazy" class="w-full">
             </button>
-            <figcaption class="p-3"><span class="font-medium">Himalaya</span> <span class="text-neutral-500 dark:text-neutral-400">: an all-land plate — no sea to contrast against, relief carries the whole plate.</span></figcaption>
+            <figcaption class="p-3"><span class="font-medium">Himalaya</span> <span class="text-neutral-500 dark:text-neutral-400">: an all-land plate with no sea to contrast against, so relief carries the whole plate.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Switzerland situation map" data-src="img/maps/situation-switzerland.svg" data-alt="Situation map zoomed to Switzerland alone, crisp 10-metre-resolution Natural Earth borders against neighbouring France, Germany, Austria and Italy, Alpine relief throughout.">
@@ -218,11 +218,11 @@
     <section id="how-its-built" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">How the choropleth and situation maps are built</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Every map above is a hand-authored SVG document — no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Every map above is a hand-authored SVG document: no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.</p>
         <dl class="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <dt class="font-semibold">Equal Earth, not equirectangular</dt>
-            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">A closed-form polynomial projection (Šavrič, Patterson &amp; Jenny, 2018) — equal-area, so a choropleth's colored surface isn't quietly lying about country size.</dd>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">A closed-form polynomial projection (Šavrič, Patterson &amp; Jenny, 2018), equal-area, so a choropleth's colored surface isn't quietly lying about country size.</dd>
           </div>
           <div>
             <dt class="font-semibold">OKLCH color, not RGB lerp</dt>
@@ -234,7 +234,7 @@
           </div>
           <div>
             <dt class="font-semibold">Real elevation, not a flat hillshade</dt>
-            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010 — a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
           </div>
         </dl>
       </div>
