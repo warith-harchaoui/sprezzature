@@ -37,6 +37,13 @@ sys.path.insert(0, str(FIGREPO))
 sys.path.insert(0, str(FIGREPO / "scripts"))
 from _textfit import text_width  # noqa: E402
 
+# Mirrors sprezzature_figures scripts/_svg.py::tooltip_bubble()'s own geometry
+# constants exactly (pad, line-height factor) -- the bubble-resize pass below
+# has to reproduce that formula to stay pixel-consistent with the corporate
+# gallery's own bubbles, just fed the localised text instead of the English.
+_TIP_PAD = 9.0
+_TIP_LH_FACTOR = 1.28
+
 
 def _fit_canvas(svg: str) -> str:
     """Widen the canvas so localised (usually longer) text is not clipped.
@@ -100,6 +107,82 @@ def _fit_canvas(svg: str) -> str:
         f'<g transform="translate({pad:.0f},0)">{body}</g>'
         "</svg>"
     )
+
+def _num(v: float) -> str:
+    """Format a coordinate the way the generators' own fmt_compact does."""
+    r = round(v, 2)
+    return str(int(r)) if r == int(r) else f"{r:.2f}".rstrip("0").rstrip(".")
+
+
+_TIP_GROUP_RE = re.compile(r'<g class="tip">.*?</g>', re.S)
+_TIP_RECT_RE = re.compile(
+    r'<rect x="(-?[\d.]+)" y="(-?[\d.]+)" width="([\d.]+)" height="([\d.]+)"([^/]*)/>'
+)
+_TIP_TEXT_RE = re.compile(
+    r'<text x="(-?[\d.]+)" y="(-?[\d.]+)"([^>]*)>(.*?)</text>', re.S
+)
+
+
+def _resize_tip_bubbles(svg: str) -> str:
+    """Re-fit each ``tooltip_bubble()`` card's rect to its (now localised) text.
+
+    ``tooltip_bubble()`` (sprezzature_figures scripts/_svg.py) bakes the
+    bubble's rect width from the *English* line lengths at generation time --
+    a plain text substitution leaves that rect sized for English, so any
+    French line that runs longer than its English source overflows the card.
+    French tends to run 15-20% longer than English on average, so this is
+    not an edge case; it is the common one.
+
+    Re-derives the same width formula the generator uses (now via the
+    higher-fidelity ``text_width()`` glyph estimate rather than the
+    generator's own cruder ``len(s) * 0.56`` approximation -- fine, since
+    the target is "big enough for this text", not byte parity with the
+    corporate SVG) from the *translated* line content, keeps the vertical
+    geometry untouched (line count and font-size never change here, so
+    height/y are already correct), and re-centres the rect horizontally on
+    its original centre point so it grows/shrinks symmetrically rather than
+    drifting off the anchor. Clamped to the figure's own (possibly
+    already-widened by :func:`_fit_canvas`) canvas width.
+    """
+    vb = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', svg)
+    canvas_w = float(vb.group(1)) if vb else None
+
+    def fix_one(m: re.Match) -> str:
+        block = m.group(0)
+        rect_m = _TIP_RECT_RE.search(block)
+        lines = _TIP_TEXT_RE.findall(block)
+        if not rect_m or not lines:
+            return block
+        old_x, old_y, old_w, old_h, rect_tail = rect_m.groups()
+        old_x, old_w = float(old_x), float(old_w)
+
+        widths = []
+        for i, (_x, _y, attrs, inner) in enumerate(lines):
+            fs_m = re.search(r'font-size="([\d.]+)"', attrs)
+            font_size = float(fs_m.group(1)) if fs_m else 12.5
+            text = html.unescape(re.sub(r"<[^>]+>", "", inner))
+            widths.append(text_width(text, font_size, bold=(i == 0)))
+        new_w = max(widths, default=0.0) + 2 * _TIP_PAD
+
+        old_center = old_x + old_w / 2.0
+        new_x = old_center - new_w / 2.0
+        if canvas_w is not None:
+            new_x = max(4.0, min(new_x, canvas_w - new_w - 4.0))
+
+        block = _TIP_RECT_RE.sub(
+            f'<rect x="{_num(new_x)}" y="{old_y}" width="{_num(new_w)}" '
+            f'height="{old_h}"{rect_tail}/>',
+            block, count=1,
+        )
+        new_text_x = _num(new_x + _TIP_PAD)
+        block = _TIP_TEXT_RE.sub(
+            lambda tm: f'<text x="{new_text_x}" y="{tm.group(2)}"{tm.group(3)}>{tm.group(4)}</text>',
+            block,
+        )
+        return block
+
+    return _TIP_GROUP_RE.sub(fix_one, svg)
+
 
 TR: dict[str, str] = yaml.safe_load(YAML.read_text(encoding="utf-8")) or {}
 SKIP = re.compile(r"^[\d\s.,%:+\-–—−/()·°×→←]*$")  # pure punctuation / numbers
@@ -192,6 +275,7 @@ def localize_hero(name: str) -> None:
     t = TOOLTIP_RE.sub(tip, t)
     t = TEXT_BLOCK.sub(block_sub, t)
     t = _fit_canvas(t)  # grow the canvas if the localised text now overruns it
+    t = _resize_tip_bubbles(t)  # re-fit hover-bubble cards to their new text
     (FR / f"{name}.svg").write_text(t, encoding="utf-8")
 
 
