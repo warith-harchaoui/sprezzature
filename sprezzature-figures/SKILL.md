@@ -34,21 +34,6 @@ metadata:
 
 # sprezzature-figures: data-viz, explainability, and causality figures
 
-## Status: known packaging bug on `make-figure`
-
-**`make-figure` and `sprezzature-figures render` (the primary "make a
-figure" workflow) currently fail on a normally pip-installed package.**
-The chart-kind registry stores each generator's path as `scripts/make_<kind>.py`,
-a location that only resolves inside a development checkout; once
-installed, those files live under `sprezzature_figures_scripts/` instead,
-so rendering any kind raises "Registered module ... not found". `sprezzature-figures
-list` still works (it never touches that path). Confirmed against a real
-`pip install sprezzature-figures` (not an editable install, which
-happens to hide the bug because `scripts/` really is a sibling
-directory there). Tell the user this before they spend time debugging
-their own data if `make-figure`/`render` fails with that message; do not
-attempt a local workaround inside this monorepo.
-
 ## Audience and positioning
 
 Solo developers, data scientists, and small teams who:
@@ -150,7 +135,7 @@ Every figure `make-figure` emits inherits the sprezzature-* design tokens:
    tabular value labels and tick numbers); **tabular numerals**.
 3. **No top/right spine, no tick marks, no gridlines** (heatmaps
    excepted), **no 3D / shadows / gradients** (bar one area fill),
-   matching `sprezzature-ui/references/charts-vega.md`.
+   matching `sprezzature-ui/references/charts-svg.md`.
 4. **Dark-mode aware**: Vega toggles on `data-color-scheme="dark"`;
    matplotlib uses `dark_background` under `--dark`.
 5. **Polarity stated** on every quantitative axis with a well-defined
@@ -162,15 +147,18 @@ Every figure `make-figure` emits inherits the sprezzature-* design tokens:
 
 ## Explainability, causality, and auditor rules: see references
 
-The detailed catalogues are meant to live in `references/` (progressive
-disclosure; load the one you need). **None of the eight files linked
-below exist yet, in this repo or in the standalone `sprezzature-figures`
-package**: this skill promises deep-dive documentation it has not written.
-Until they ship, answer explainability / causality / audit-rule / Ralph
-Eyeball Loop / chart-catalogue questions from the summaries in this
-SKILL.md and from `FIGURES.md` (the chart catalogue that does exist), and
-say plainly that the cited reference file is not available rather than
-inventing its content.
+The detailed catalogues live in `references/` (progressive disclosure;
+load the one you need). Seven of the eight files below are written from
+the actual source (`explain_model.py`, `causal_estimate.py`,
+`audit_figure.py`, `ralph_eyeball_loop.py`, `_style.py`, and the 124-entry
+`figures.json` catalog), not from this summary; where the code disagreed
+with what this SKILL.md used to claim, the reference file says so
+plainly rather than restating the stale claim (see in particular
+`references/figure-catalog.md`, which corrects this skill's own
+"Vega-first" framing). The eighth, `references/publication-presets.md`,
+documents that the journal presets promised below are not implemented in
+the standalone package as of this writing, rather than inventing plausible
+values.
 
 - **Explainability.** `explain_model.py` dispatches to SHAP (default,
   tree/linear/kernel) / Shapash (stakeholder HTML report) / TimeSHAP
