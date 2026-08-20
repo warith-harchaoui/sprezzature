@@ -71,3 +71,69 @@ def test_version_flag_reports_package_version() -> None:
     result = CliRunner().invoke(driver.cli, ["--version"])
     assert result.exit_code == 0
     assert __version__ in result.output
+
+
+# ── _run_tool: the extracted-skill dispatch (regression, see CHANGELOG) ────
+#
+# Six skills (accessibility, audio, colors, cli-gui, ux-laws, figures) had
+# their scripts/ extracted to standalone pip packages; their local
+# scripts/ folder is now just __pycache__/. `_run_tool` is what makes
+# `sprezzature accessibility lint` etc. keep working: it tries the
+# standalone package's console script, then the pre-extraction in-repo
+# path, then `python -m <module>`, before giving up with an actionable
+# message. These tests exercise the resolution order without depending on
+# any of those packages actually being installed.
+
+
+def test_run_tool_prefers_console_script_on_path(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    """When the console script resolves on $PATH, it wins over everything else."""
+    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
+    fake_bin = tmp_path / "sprezzature-accessibility-lint"
+    fake_bin.write_text("#!/bin/sh\nprintf ok\n")
+    fake_bin.chmod(0o755)
+    monkeypatch.setattr(driver.shutil, "which", lambda name: str(fake_bin) if name == fake_bin.name else None)
+    rc = driver._run_tool(
+        "sprezzature-accessibility", "lint_a11y.py", (),
+        console_script="sprezzature-accessibility-lint",
+        module="sprezzature_accessibility_scripts.lint_a11y",
+    )
+    assert rc == 0
+
+
+def test_run_tool_falls_back_to_in_repo_script(monkeypatch: pytest.MonkeyPatch) -> None:
+    """No console script on $PATH, but the in-repo scripts/ still has the file: use it."""
+    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(REPO_ROOT))
+    monkeypatch.setattr(driver.shutil, "which", lambda name: None)
+    # sprezzature-ui is not an extracted skill: its scripts/validate.py is real.
+    rc = driver._run_tool(
+        "sprezzature-ui", "validate.py", ("--help",),
+        console_script="sprezzature-ui-validate",  # deliberately bogus; must not resolve
+        module=None,
+    )
+    assert rc == 0
+
+
+def test_run_tool_reports_actionable_error_when_nothing_resolves(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    """No console script, no in-repo file, no importable module: exit 2, not a traceback."""
+    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
+    monkeypatch.setattr(driver.shutil, "which", lambda name: None)
+    rc = driver._run_tool(
+        "sprezzature-colors", "audit_contrast.py", (),
+        console_script=None,
+        module="sprezzature_this_module_does_not_exist",
+    )
+    assert rc == 2
+
+
+def test_module_available_false_for_unknown_module() -> None:
+    """`_module_available` is a clean False, not an exception, for a missing module."""
+    assert driver._module_available("sprezzature_this_module_does_not_exist") is False
+
+
+def test_module_available_true_for_stdlib_module() -> None:
+    """Sanity check the positive path against a module guaranteed to be importable."""
+    assert driver._module_available("json") is True

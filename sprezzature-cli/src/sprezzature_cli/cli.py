@@ -1,10 +1,26 @@
 """
 cli — the `sprezzature` Click driver.
 
-Maps `sprezzature <skill> <action> [args ...]` to the right script in the
-matching skill folder. Shells out via subprocess; never imports the
-target script. This keeps the stdlib-only scripts (validate, lint,
-contrast, cvd, site-indexes) zero-dep when invoked directly.
+Maps `sprezzature <skill> <action> [args ...]` to the right tool for the
+matching skill. Shells out via subprocess; never imports the target
+script. This keeps the stdlib-only scripts (validate, lint, contrast,
+cvd, site-indexes) zero-dep when invoked directly.
+
+Two skill layouts to support
+-----------------------------
+Some skills still carry their scripts inside this monorepo
+(``sprezzature-ui``, ``sprezzature-vision``, ``sprezzature-publish``): for
+those, shelling out to ``<skill>/scripts/<script>.py`` is enough. Others
+(``sprezzature-accessibility``, ``sprezzature-audio``, ``sprezzature-colors``,
+and more over time) have had their scripts extracted to standalone pip
+packages; the in-repo ``scripts/`` folder for those now only holds the
+SKILL.md's own agentic contract, no runnable code. ``_run_tool`` tries,
+in order: the standalone package's registered console script on
+``$PATH``, the in-repo ``scripts/<script>`` (if it still exists), then
+``python -m <module>`` against the standalone package's script module
+(importable once the package is pip-installed even without a
+console-script entry, e.g. ``sprezzature-colors``). A clean, actionable
+error replaces the previous "script not found" dead end when none apply.
 
 Author
 ------
@@ -13,7 +29,9 @@ Author
 
 from __future__ import annotations
 
+import importlib.util
 import os
+import shutil
 import sys
 import subprocess
 from pathlib import Path
@@ -59,7 +77,12 @@ def _find_skill(skill_name: str) -> Optional[Path]:
 
 
 def _run_script(skill: str, script: str, extra: tuple[str, ...]) -> int:
-    """Execute `python <skill>/scripts/<script>` with the extra args."""
+    """Execute `python <skill>/scripts/<script>` with the extra args.
+
+    Only correct for skills whose scripts still live in this monorepo
+    (``sprezzature-ui``, ``sprezzature-vision``, ``sprezzature-publish``).
+    For an extracted skill, use :func:`_run_tool` instead.
+    """
     skill_root = _find_skill(skill)
     if skill_root is None:
         bases = "\n  ".join(str(b) for b in _candidate_bases())
@@ -76,6 +99,69 @@ def _run_script(skill: str, script: str, extra: tuple[str, ...]) -> int:
         return 2
     completed = subprocess.run([sys.executable, str(target), *extra])
     return completed.returncode
+
+
+def _module_available(module: str) -> bool:
+    """Return True when ``module`` can be imported without importing it."""
+    try:
+        return importlib.util.find_spec(module) is not None
+    except (ImportError, ValueError):
+        # ValueError: a parent package that itself fails to import cleanly
+        # (find_spec still walks it). Treat either as "not usable".
+        return False
+
+
+def _run_tool(
+    skill: str,
+    script: str,
+    extra: tuple[str, ...],
+    *,
+    console_script: Optional[str] = None,
+    module: Optional[str] = None,
+) -> int:
+    """Run a skill's tool via the first invocation that resolves.
+
+    Tries, in order:
+
+    1. ``console_script`` on ``$PATH``: the standalone pip package's
+       registered command (e.g. ``sprezzature-accessibility-lint``).
+    2. ``<skill>/scripts/<script>`` inside the discovered skill folder:
+       the pre-extraction, in-repo layout, still current for the skills
+       that have not moved out.
+    3. ``python -m <module>``: the standalone package's script module.
+       Works even for packages with no console-script entry (e.g.
+       ``sprezzature-colors``), as long as the package is pip-installed.
+
+    Returns the wrapped process's exit code, or 2 with an actionable
+    message on stderr when none of the three resolve.
+    """
+    if console_script is not None:
+        found = shutil.which(console_script)
+        if found is not None:
+            completed = subprocess.run([found, *extra])
+            return completed.returncode
+
+    skill_root = _find_skill(skill)
+    if skill_root is not None:
+        target = skill_root / SCRIPTS_SUBDIR / script
+        if target.is_file():
+            completed = subprocess.run([sys.executable, str(target), *extra])
+            return completed.returncode
+
+    if module is not None and _module_available(module):
+        completed = subprocess.run([sys.executable, "-m", module, *extra])
+        return completed.returncode
+
+    hint = f"pip install {skill}"
+    click.echo(
+        f"sprezzature: no working install found for {skill} → {script}.\n"
+        f"Tried: {console_script or '(no console script)'} on $PATH, "
+        f"{skill}/scripts/{script} on $SPREZZATURE_SKILLS_PATH, "
+        f"and `python -m {module}`" + (" (not importable)." if module else ".") + "\n"
+        f"Install the standalone package: {hint}",
+        err=True,
+    )
+    return 2
 
 
 # ── Root group ──────────────────────────────────────────────────────────────
@@ -134,7 +220,11 @@ def accessibility() -> None:
 @click.pass_context
 def accessibility_lint(ctx: click.Context) -> None:
     """Run the static a11y lint over HTML files (delegates to ``lint_a11y.py``)."""
-    sys.exit(_run_script("sprezzature-accessibility", "lint_a11y.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-accessibility", "lint_a11y.py", tuple(ctx.args),
+        console_script="sprezzature-accessibility-lint",
+        module="sprezzature_accessibility_scripts.lint_a11y",
+    ))
 
 
 # ── audio ───────────────────────────────────────────────────────────────────
@@ -149,7 +239,11 @@ def audio() -> None:
 @click.pass_context
 def audio_captions(ctx: click.Context) -> None:
     """Generate WebVTT / SRT / plain-text captions via local whisper.cpp."""
-    sys.exit(_run_script("sprezzature-audio", "captions_from_whisper.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-audio", "captions_from_whisper.py", tuple(ctx.args),
+        console_script="sprezzature-audio-captions",
+        module="sprezzature_audio_scripts.captions_from_whisper",
+    ))
 
 
 @audio.command(name="install", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -157,7 +251,10 @@ def audio_captions(ctx: click.Context) -> None:
 @click.pass_context
 def audio_install(ctx: click.Context) -> None:
     """Install pywhispercpp and download the caption model."""
-    sys.exit(_run_script("sprezzature-audio", "install_captions.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-audio", "install_captions.py", tuple(ctx.args),
+        module="sprezzature_audio_scripts.install_captions",
+    ))
 
 
 # ── vision ──────────────────────────────────────────────────────────────────
@@ -195,7 +292,10 @@ def colors() -> None:
 @click.pass_context
 def colors_contrast(ctx: click.Context) -> None:
     """Run the WCAG contrast audit with an OKLCH-neighbour fix hint."""
-    sys.exit(_run_script("sprezzature-colors", "audit_contrast.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-colors", "audit_contrast.py", tuple(ctx.args),
+        module="sprezzature_colors_scripts.audit_contrast",
+    ))
 
 
 @colors.command(name="cvd", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -203,7 +303,10 @@ def colors_contrast(ctx: click.Context) -> None:
 @click.pass_context
 def colors_cvd(ctx: click.Context) -> None:
     """Render a screenshot under protanopia / deuteranopia / tritanopia."""
-    sys.exit(_run_script("sprezzature-colors", "simulate_cvd.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-colors", "simulate_cvd.py", tuple(ctx.args),
+        module="sprezzature_colors_scripts.simulate_cvd",
+    ))
 
 
 # ── publish ─────────────────────────────────────────────────────────────────
