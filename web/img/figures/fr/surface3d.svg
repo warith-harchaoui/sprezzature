@@ -850,7 +850,7 @@
 </g>
 <circle class="peak-hit" tabindex="0" cx="490.2" cy="211.8" r="10" fill="transparent" role="img" aria-label="Peak height 2.07"/>
 <circle class="peak-dot" cx="490.2" cy="211.8" r="4" fill="#FFFFFF" stroke="#0A4DA0" stroke-width="2"/>
-<g class="tip"><rect x="442.7" y="197.8" width="95" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="451.7" y="219.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Peak</text><text x="451.7" y="235.3" font-size="12.5" font-weight="400" fill="#6E6E73">height 2.07</text></g>
+<g class="tip"><rect x="451.2" y="197.8" width="78" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="460.2" y="219.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Peak</text><text x="460.2" y="235.3" font-size="12.5" font-weight="400" fill="#6E6E73">height 2.07</text></g>
 <defs><linearGradient id="s3d-grad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#EAF3FF"/><stop offset="0.5" stop-color="#7AA0D0"/><stop offset="1" stop-color="#0A4DA0"/></linearGradient></defs>
 <text x="56" y="186" font-size="15" font-weight="700" fill="#1D1D1F">Hauteur</text>
 <rect x="56" y="200" width="22" height="360" fill="url(#s3d-grad)" rx="2.5"/>
