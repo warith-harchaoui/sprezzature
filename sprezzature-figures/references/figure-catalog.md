@@ -1,17 +1,15 @@
 # The figure catalogue: what actually renders each of the 124 kinds
 
-`SKILL.md`'s frontmatter description and its "Curated defaults" section
-both frame this skill as "Vega-Lite-first": prefer Vega-Lite over
-matplotlib because a spec carries its own data and is natively
-interactive. That framing describes an earlier version of this package.
+`SKILL.md` used to frame this skill as "Vega-Lite-first": prefer Vega-Lite
+over matplotlib because a spec carries its own data and is natively
+interactive. That framing described an earlier version of this package.
 Reading every `scripts/make_*.py` generator (all 124 of them import from
 the shared `_svg` module; none import `vl_convert`, `altair`, or any
 other Vega-Lite binding for actual rendering) shows the catalogue has
-since migrated away from Vega-Lite entirely. This file documents the
-system that ships today, states the migration plainly since it
-contradicts a claim made elsewhere in this skill's own description, and
-covers where Vega genuinely is still used in this package, which is a
-different code path from the 124-kind catalogue.
+since migrated away from Vega-Lite entirely; `SKILL.md` has since been
+corrected to match. This file documents the system that ships today in
+full detail and covers where Vega genuinely is still used in this
+package, which is a different code path from the 124-kind catalogue.
 
 ## What the 124-kind catalogue actually is
 
@@ -107,11 +105,8 @@ constrained by Vega-Lite's schema at all.
 
 ## If you came here expecting a Vega-Lite gallery
 
-The "Vega-first" framing in `SKILL.md`'s frontmatter description and
-House-style bullet 3 (which cites a `sprezzature-ui/references/charts-vega.md`
-file that does not exist in the current `sprezzature-ui` skill, only
-`charts-svg.md` does) predates the SVG migration documented above and has
-not been updated to match. That is a discrepancy in this skill's own
-top-level description, not something this reference file can fix on its
-own, since it sits outside the eight `references/*.md` files, flagged
-here so it does not get missed.
+`SKILL.md`'s frontmatter description, decision-tree row, tier table, and
+References bullet used to carry a "Vega-first" framing that predated the
+SVG migration documented above. All four have since been corrected to
+state plainly that the catalogue is hand-authored SVG, not Vega-backed,
+and to point Vega-Lite questions at `render_diagram.py` instead.
