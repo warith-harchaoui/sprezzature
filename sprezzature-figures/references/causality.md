@@ -102,13 +102,17 @@ Three ways to hand the script your causal graph:
   straight through, useful for a graph small enough to write inline in a
   script or CI config without a separate file.
 
-The rendered `dag.svg` (and a best-effort `dag.png` companion) comes from
-a minimal regex-based parse of the same GML-style node/edge blocks, drawn
-with `graphviz.Digraph` in the house palette: foreground and background
-flip for `--dark`, and edges are colored with the palette's `Blue` accent.
-If `graphviz`'s Python package is not installed, the script prints a
-warning and skips the DAG image rather than failing the whole run, the
-`effect.json` output is unaffected either way.
+The rendered `dag.svg` comes from a minimal regex-based parse of the same
+GML-style node/edge blocks, laid out and drawn by hand: no `graphviz`, no
+Vega, no matplotlib. Nodes are ranked by longest path from a source (rank
+0 = no incoming edges, a Sugiyama-style layered layout) and ranks flow
+left to right; edges are straight lines with a hand-computed arrowhead
+triangle at the target, offset by the node radius. Foreground and
+background flip for `--dark`, and edges are colored with the palette's
+`Blue` accent, the same convention the old graphviz render used. Because
+the layout is pure Python (no external renderer to fail an import check),
+`dag.svg` is written whenever the DAG string parses to at least one node;
+the `effect.json` output is unaffected either way.
 
 ## Output files
 
@@ -118,10 +122,11 @@ Everything lands under `--out` (default `./causal/`):
   instrument, chosen estimator and method name, the estimand DoWhy
   identified, the point estimate, a confidence interval when the estimator
   supports one, and every refuter's result.
-- **`dag.svg`** / **`dag.png`** the rendered causal graph, house-styled.
-- **`forest_plot.svg`** / **`.png`** a compact horizontal plot placing the
-  point estimate alongside each refuter's re-estimated effect, so a
-  reader can see at a glance whether the refuters moved the number.
+- **`dag.svg`** the rendered causal graph, house-styled, hand-authored SVG.
+- **`forest_plot.svg`** a compact horizontal plot placing the point
+  estimate alongside each refuter's re-estimated effect, so a reader can
+  see at a glance whether the refuters moved the number. Also hand-authored
+  SVG, not matplotlib.
 
 ## What this does not do
 

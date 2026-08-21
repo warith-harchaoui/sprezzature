@@ -39,69 +39,92 @@ blocks, because the exact hover behavior (which mark's tooltip shows,
 what text it carries) is specific enough per chart type that a one-size
 helper kept producing subtly wrong behavior.
 
-## Where Vega-Lite is genuinely still used
+## Vega-Lite has been fully removed
 
-Vega has not left the package, it has moved to a different job:
-rendering a **user-supplied or diagram-source** Vega-Lite/Vega spec, not
-producing the catalogue's own charts. `render_diagram.py`, the renderer
-behind the Ralph Eyeball Loop for diagram surfaces (see
-`references/ralph-eyeball-loop.md`), rasterizes a `.vl.json` or `.vg.json`
-file you hand it via `vl-convert-python`, a self-contained wheel that
-bundles its own Vega runtime, no browser, no Node, fully offline. That
-path renders "the real spec that ships in the browser," in the script's
-own words, useful when you have hand-authored or externally-generated
-Vega you want to eyeball, and it can emit vector output at exact physical
-dimensions for print (`--format svg` / `--format pdf`, with `width` /
-`height` set in inches times DPI in the spec itself). This is the correct
-place to reach for Vega-Lite in this package today; `make-figure` and
-`sprezzature-figures render` are not it.
+An earlier version of this file documented a second Vega-Lite code path:
+`render_diagram.py` rasterizing a user-supplied `.vl.json`/`.vg.json`
+spec via `vl-convert-python`. That path is gone. Reading
+`render_diagram.py` today shows `KINDS = ("tikz", "mermaid", "svg")`,
+three entries, no `"vega"`; the `render_vega()` function, the
+`vl-convert-python` dependency, and the JSON-spec auto-detection branch
+were all deleted. A caller with an existing Vega-Lite spec must convert
+or re-author it as TikZ, Mermaid, or raw SVG before this renderer will
+touch it. There is no longer anywhere in this package that imports
+`vl_convert`; `tests/test_no_third_party_plotting.py` grep-guards
+`render_diagram.py` (and every other migrated script) against that
+import returning.
 
 ## The explainability and causality plots: what actually draws them
 
-`SKILL.md`'s references list describes "extractable explainability plots
-(SHAP, LIME, importance, PD/ICE, DAG) that replace matplotlib / seaborn /
-pyplot." Reading `explain_model.py` and `causal_estimate.py` directly
-shows the opposite dependency direction for two of the four: SHAP's own
-plotting functions (`shap.plots.bar`, `shap.plots.beeswarm`,
-`shap.plots.scatter`, `shap.plots.waterfall`) are matplotlib-backed
-internally, `explain_model.py` calls `matplotlib.use("Agg")` and
-`plt.savefig(...)` around every one of them, so SHAP output *uses*
-matplotlib, it does not replace it. TimeSHAP's plots are matplotlib too.
-LIME writes standalone interactive HTML per row
-(`exp.save_to_file(...)`), no matplotlib involved, that one genuinely
-sidesteps it. Shapash produces an HTML report that wraps SHAP internally.
-The causal DAG (`dag.svg`) is drawn with `graphviz.Digraph`, a third
-renderer distinct from both SVG-by-hand and matplotlib; the accompanying
-forest plot (`forest_plot.svg`) is matplotlib again. None of this routes
-through Vega-Lite either.
+`SKILL.md`'s references list used to describe "extractable
+explainability plots (SHAP, LIME, importance, PD/ICE, DAG) that replace
+matplotlib / seaborn / pyplot," a claim that used to be backwards: SHAP's
+own plotting functions were matplotlib-backed internally and
+`explain_model.py` called them directly. Reading `explain_model.py` and
+`causal_estimate.py` today shows that dependency has been cut instead of
+corrected in prose. `shap.plots.bar` / `.beeswarm` / `.scatter` /
+`.waterfall` are never called; `explain_model.py` computes raw SHAP
+values via `shap.Explainer(...)` and hands them to its own hand-authored
+SVG renderers, `_write_shap_bar_svg` and `_write_shap_waterfall_svg`
+reuse the catalogue's `make_bar.py` / `make_waterfall.py` generators
+directly (their data shape is a genuine fit), `_write_shap_beeswarm_svg`
+and `_write_shap_dependence_svg` are bespoke, built from the same shared
+`_svg` / `_style` primitives every catalogue generator uses, because
+SHAP's beeswarm (one swarm row per feature, continuous colour by raw
+feature value) and its dependence scatter (arbitrary x/y roles) do not
+fit either catalogue generator's fixed data contract. TimeSHAP's
+matplotlib-backed plotting functions (`timeshap.plot.*`) are never
+called either; `local_report()`'s own returned dataframes are re-plotted
+by hand, best-effort, wherever their shape carries a `Shapley Value`
+column. LIME already sidestepped matplotlib before this pass (it writes
+its own standalone interactive HTML per row) and is unchanged. Shapash's
+`SmartExplainer.compile()` is still called, fed this run's own SHAP
+contributions, but its own plotly-backed `generate_report()` is never
+called; `report.html` is a static page `explain_model.py` assembles
+itself from the same SVG plots the plain `shap` engine produces. The
+causal DAG (`dag.svg`) no longer goes through `graphviz.Digraph`: it is a
+hand-written layered (Sugiyama-style) layout, nodes ranked by longest
+path from a source, edges drawn as lines with a hand-computed arrowhead
+triangle, no external graph-drawing library at all. The forest plot
+(`forest_plot.svg`) is hand-authored SVG too, not matplotlib. None of
+this ever routed through Vega-Lite, and now none of it routes through
+matplotlib, plotly, or graphviz either.
 
 ## A practical map of what renders with what, today
 
 | Output | Renderer | Interactive at view time? |
 |---|---|---|
 | Any of the 124 `make-figure` catalogue kinds | Hand-built SVG (`_svg.py` helpers) | Yes, CSS-only hover tooltips, no script tag |
-| A user-supplied Vega-Lite/Vega spec, via `render_diagram.py` | `vl-convert-python` | Only if you separately embed the Vega-Lite JS runtime in the page; the rasterized PNG/SVG/PDF output itself is static |
 | A TikZ figure, via `render_diagram.py` | `tectonic` / `pdflatex` + `pdftoppm` | No, static raster/vector |
 | A Mermaid diagram, via `render_diagram.py` | `mmdc` | No, static raster/vector |
-| SHAP / TimeSHAP plots (`explain_model.py`) | matplotlib | No |
-| Shapash report (`explain_model.py --report shapash`) | HTML wrapping SHAP | Yes, a real interactive report |
+| A raw hand-authored SVG, via `render_diagram.py` | `rsvg-convert` / ImageMagick | No, static raster (the source SVG itself may be interactive; the rasterized companion is not) |
+| SHAP summary bar / waterfall (`explain_model.py`) | Hand-authored SVG, reusing `make_bar.py` / `make_waterfall.py` | Yes, CSS-only hover tooltips |
+| SHAP beeswarm / dependence scatter (`explain_model.py`) | Hand-authored SVG, bespoke | Yes, CSS-only hover tooltips |
+| TimeSHAP attribution plots (`explain_model.py`) | Hand-authored SVG, best-effort, reusing `make_bar.py` | Yes, where rendered |
+| Shapash report (`explain_model.py --report shapash`) | Static HTML page embedding this module's own SVG plots | Yes, via each embedded SVG's native hover tooltips; no plotly |
 | LIME explanations (`explain_model.py --engine lime`) | Standalone HTML per row | Yes |
-| Causal DAG (`causal_estimate.py`) | graphviz | No |
-| Forest plot (`causal_estimate.py`) | matplotlib | No |
+| Causal DAG (`causal_estimate.py`) | Hand-authored SVG, layered layout | Yes, CSS-only hover on nodes |
+| Forest plot (`causal_estimate.py`) | Hand-authored SVG | Yes, CSS-only hover on rows |
 
 ## What none of these renderers can do
 
-The hand-built SVG catalogue and `graphviz` share matplotlib's usual
+Every renderer in this package now shares hand-authored SVG's usual
 limits for anything genuinely three-dimensional rendered as true 3D
-geometry with a camera and depth sorting, the catalogue's `3d`-named
+geometry with a camera and depth sorting: the catalogue's `3d`-named
 kinds (`bar3d`, `scatter3d`, `surface3d`, `wireframe3d`) are 2-D
 projections drawn to look three-dimensional, not an actual 3-D scene
-graph. `render_diagram.py`'s own SVG path is documented as "the escape
-hatch for figures Vega cannot express: a smoothing filter, arrowhead
-markers, a gradient," which is really a statement about Vega-Lite's
-declarative grammar specifically, not about this package's own SVG
-catalogue, which already handles those cases directly since it is not
-constrained by Vega-Lite's schema at all.
+graph, and the same is true of any future explainability or causality
+plot built the same way. `render_diagram.py`'s own SVG path is
+documented as "the escape hatch for figures Vega cannot express: a
+smoothing filter, arrowhead markers, a gradient," a leftover phrase from
+when Vega was still the catalogue's renderer; today it means the same
+thing for any diagram surface, not specifically Vega, since the
+catalogue itself already handles those cases directly by hand. The
+causal DAG layout is deliberately modest, one barycenter pass for
+crossing reduction, not an iterative or force-directed general
+graph-drawing engine, sized for the small graphs a causal analysis
+actually has (a handful of confounders around one treatment/outcome
+pair), not for a large or densely connected graph.
 
 ## If you came here expecting a Vega-Lite gallery
 
