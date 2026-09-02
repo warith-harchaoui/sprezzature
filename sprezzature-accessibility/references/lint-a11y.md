@@ -1,4 +1,4 @@
-# A11y linter — `lint_a11y.py`
+# A11y linter: `lint_a11y.py`
 
 Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it runs over HTML source. Catches **14 source-decidable WCAG / WAI-ARIA failures**.
 
@@ -69,15 +69,15 @@ The linter's exit code is also CI-friendly on its own; the JSON dump above is ju
 
 ## What this linter does *not* check
 
-- Live ARIA state (`aria-expanded`, `aria-selected` consistency) — depends on JS behavior.
-- Color contrast — see `references/dataviz-color-palettes.md` and `audit_contrast.py` (planned).
-- Focus order within a JS-built widget — needs runtime.
-- Captioned audio / video presence — `<track>` placement depends on the source's content.
-- Form error association (`aria-describedby` between input and a sibling message) — pattern is too varied for a static rule.
+- Live ARIA state (`aria-expanded`, `aria-selected` consistency): depends on JS behavior.
+- Color contrast: see `references/dataviz-color-palettes.md` and `audit_contrast.py` (planned).
+- Focus order within a JS-built widget: needs runtime.
+- Captioned audio / video presence: `<track>` placement depends on the source's content.
+- Form error association (`aria-describedby` between input and a sibling message): pattern is too varied for a static rule.
 
 For those, pair with axe-core in dev tools and manual testing with a screen reader.
 
-## Colour-blindness & grayscale — the image-layer check
+## Colour-blindness & grayscale: the image-layer check
 
 Static markup can't tell whether colour is *load-bearing*: whether two series
 collapse to one hue for a red-green–blind reader, or a diverging +/− sign

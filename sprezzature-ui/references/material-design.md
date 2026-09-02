@@ -1,4 +1,4 @@
-# Material Design 3 — mapping table
+# Material Design 3: mapping table
 
 Canonical source: <https://m3.material.io/>. This file is a **mapping** from Material 3 vocabulary onto the skill's stack (vanilla JS + Tailwind, configurable typeface). It is not a paraphrase of Material's docs; when the user names a Material component or token, emit the skill's equivalent instead.
 
@@ -32,7 +32,7 @@ Dynamic-colour generation: the skill ships static `DEFAULT` / `dark` / `light` v
 | Body large / medium / small | Body / Callout / Subhead | `text-[17px]` / `text-base` / `text-[15px]` |
 | Label large / medium / small | Footnote / Caption | `text-[13px]` / `text-xs` |
 
-Reference type: Material uses Roboto Flex. The skill ships the classic Roboto super-family (Roboto / Roboto Serif / Roboto Mono — the three-Roboto rule) under `sprezzature-ui/assets/fonts/roboto*/`; see `ui-guidelines/foundations/typography.md`.
+Reference type: Material uses Roboto Flex. The skill ships the classic Roboto super-family (Roboto / Roboto Serif / Roboto Mono: the three-Roboto rule) under `sprezzature-ui/assets/fonts/roboto*/`; see `ui-guidelines/foundations/typography.md`.
 
 ## Shape → corner radius
 
@@ -109,7 +109,7 @@ Material's mandates and the skill's: identical in spirit. Differences:
 
 - Touch target: Material 48 dp ≥, skill 44 px ≥ (still WCAG-compliant). Raise to 48 if Material parity is required.
 - Contrast: WCAG AA (≥ 4.5:1 body, ≥ 3:1 large / UI).
-- Visible keyboard focus, `prefers-reduced-motion`, dynamic type, colour scheme — all honoured.
+- Visible keyboard focus, `prefers-reduced-motion`, dynamic type, colour scheme: all honoured.
 
 ## When to consult this file
 

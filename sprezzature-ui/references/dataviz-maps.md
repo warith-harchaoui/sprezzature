@@ -45,8 +45,8 @@ There is no formal global standard for map semiology; what is optional in one co
 
 ## Visual conventions
 
-- **Use commonly accepted color codes** for known categories — political party colors, traffic-light semantics, climate intensity. Inventing breaks reader expectations.
-- **Convey intensity / abundance with luminance** — cool colors fading to warm colors, or a single hue increasing in saturation. Avoid hue jumps within an ordered scale.
+- **Use commonly accepted color codes** for known categories: political party colors, traffic-light semantics, climate intensity. Inventing breaks reader expectations.
+- **Convey intensity / abundance with luminance**: cool colors fading to warm colors, or a single hue increasing in saturation. Avoid hue jumps within an ordered scale.
 - **One message per map.** A second message means a second map.
 - **Uniformity across a series.** The same indicator must use the same color and same classification across a multi-map publication.
 
@@ -68,11 +68,11 @@ For ratios and rate indicators, cap the number of classes so each zone is distin
 
 ## Choropleth pitfalls
 
-- **Don't choropleth raw counts** — a populous region will always be "high", regardless of intensity. Normalize (per capita, per area, per unit).
+- **Don't choropleth raw counts**: a populous region will always be "high", regardless of intensity. Normalize (per capita, per area, per unit).
 - **Pick a sensible classification**: equal intervals, quantiles, natural breaks (Jenks). Different methods tell different stories from the same data; document the choice.
 - **Avoid > 7 classes**. The eye can't reliably distinguish more than that on a map.
 
-## Map types — quick guide
+## Map types: quick guide
 
 | What you're showing | Best map |
 |---|---|
@@ -85,12 +85,12 @@ For ratios and rate indicators, cap the number of classes so each zone is distin
 
 ## Web implementation hooks
 
-- Prefer SVG basemaps for vector territories (regions, countries) — they scale, they accept Tailwind / CSS classes, they're accessible.
-- For interactive map UIs at scale, hand-author the projection as inline SVG paths (no Vega) or reach for a dedicated library (MapLibre GL, Leaflet). Keep the house chart style — same Roboto type, same brand palette, same 10 px rounded corners on chrome — see `charts-svg.md`.
+- Prefer SVG basemaps for vector territories (regions, countries): they scale, they accept Tailwind / CSS classes, they're accessible.
+- For interactive map UIs at scale, hand-author the projection as inline SVG paths (no Vega) or reach for a dedicated library (MapLibre GL, Leaflet). Keep the house chart style (same Roboto type, same brand palette, same 10 px rounded corners on chrome); see `charts-svg.md`.
 - Provide a textual alternative below the map: a sentence stating the takeaway, plus a table of the top / bottom regions. Screen readers can't read a map.
 - Make hover / focus an interaction parity: every clickable region must also be keyboard-reachable with arrow keys, and the active region must expose name + value via an accessible name.
 
-## Pattern — choropleth tile (SVG basemap + Tailwind chrome)
+## Pattern: choropleth tile (SVG basemap + Tailwind chrome)
 
 ```html
 <figure class="rounded-[10px] bg-surface-secondary p-4 dark:bg-surface-secondary-dark">

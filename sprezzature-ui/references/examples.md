@@ -1,11 +1,11 @@
-# Worked examples — copy-and-adapt shapes
+# Worked examples: copy-and-adapt shapes
 
 Two end-to-end shapes that show the hard rules applied together (semantic
 HTML, Tailwind tokens, dark-mode peers, focus rings, reduced-motion guards).
 For the generic per-surface primaries see `assets/components/*.html`; for the
 law-keyed catalog see `assets/snippets/INDEX.md`.
 
-## Example 1 — primary CTA button
+## Example 1: primary CTA button
 
 User: "Give me a primary button labeled 'Get started'."
 
@@ -22,7 +22,7 @@ User: "Give me a primary button labeled 'Get started'."
 </button>
 ```
 
-## Example 2 — confirm dialog (destructive)
+## Example 2: confirm dialog (destructive)
 
 ```html
 <button id="open-del" class="text-brand-red">Delete project</button>

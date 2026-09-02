@@ -1,19 +1,19 @@
 # Pre-ship Quality Checklist
 
-Run this before returning any non-trivial UI code. Each item is a hard gate — if it fails, fix before shipping.
+Run this before returning any non-trivial UI code. Each item is a hard gate: if it fails, fix before shipping.
 
 ## Two kinds of rule: universal vs house style
 
 The checklist mixes two things; know which is which before you adapt it to
 another brand.
 
-- **Universal engineering — keep no matter the brand.** These are correctness
+- **Universal engineering: keep no matter the brand.** These are correctness
   and accessibility, not taste: semantic HTML (`<button>`, `<label for>`,
   `<nav>`, one `<h1>`, ordered headings), a visible focus ring on every
   interactive element, `prefers-reduced-motion` guards, dark-mode peers, labelled
   form controls, correct ARIA, full keyboard operability, no clickable
   `<div>`/`<span>`. Dropping any of these is a bug in any design system.
-- **House style — opinionated, swap for your own brand.** The three-Roboto
+- **House style: opinionated, swap for your own brand.** The three-Roboto
   typography, the specific palette (`brand-blue` and friends), `rounded-2xl`
   corners, the exact spacing scale, the emoji-in-heading convention. These make
   output look like *this* system; another team can substitute their tokens and
@@ -27,7 +27,7 @@ findings (enforced by `tests/test_dogfood_audits.py`).
 
 - [ ] No framework imports (`react`, `vue`, `svelte`, `solid-js`, `next`, `nuxt`, `angular`).
 - [ ] All scripts are ES modules (`<script type="module">`).
-- [ ] No inline `onclick=` / `onsubmit=` in HTML — JS-side `addEventListener` only.
+- [ ] No inline `onclick=` / `onsubmit=` in HTML: JS-side `addEventListener` only.
 - [ ] Tailwind classes only; no inline `style="…"` except CSS custom-property values.
 - [ ] Three-Roboto rule: only Roboto / Roboto Serif / Roboto Mono, all self-hosted; no third-party CDN for fonts.
 
@@ -45,8 +45,8 @@ findings (enforced by `tests/test_dogfood_audits.py`).
 
 ## Color & contrast
 
-- [ ] No raw hex in markup — semantic Tailwind tokens.
-- [ ] Body text ≥ 4.5:1; UI / large text ≥ 3:1 — verified in BOTH themes.
+- [ ] No raw hex in markup: semantic Tailwind tokens.
+- [ ] Body text ≥ 4.5:1; UI / large text ≥ 3:1, verified in BOTH themes.
 - [ ] Red used only for destructive/critical states.
 - [ ] Color choice traceable to `color-psychology.md` (Choice/Emotion/Concept/Psychology).
 - [ ] State communicated by more than color (icon, text, shape).

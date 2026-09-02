@@ -1,4 +1,4 @@
-# SEO essentials — Google's foundations applied to `sprezzature-publish`
+# SEO essentials: Google's foundations applied to `sprezzature-publish`
 
 ## When to consult this file
 
@@ -10,9 +10,9 @@
 
 Google publishes the canonical guidance for both classic Search and generative-AI search experiences. This file adapts that guidance to the artifacts `sprezzature-publish` actually emits.
 
-- **Google Search Essentials** — the three pillars (technical requirements, spam policies, key best practices). <https://developers.google.com/search/docs/essentials>
-- **AI Optimization Guide** — what changes (and doesn't) when the search surface is an AI Overview / AI Mode rather than a list of blue links. <https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>
-- **Hiring an SEO / third-party SEO advice** — how to recognize legitimate vs. questionable services and tools. <https://developers.google.com/search/docs/fundamentals/third-party-seo>
+- **Google Search Essentials**: the three pillars (technical requirements, spam policies, key best practices). <https://developers.google.com/search/docs/essentials>
+- **AI Optimization Guide**: what changes (and doesn't) when the search surface is an AI Overview / AI Mode rather than a list of blue links. <https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>
+- **Hiring an SEO / third-party SEO advice**: how to recognize legitimate vs. questionable services and tools. <https://developers.google.com/search/docs/fundamentals/third-party-seo>
 
 Cite these sources when a user pushes back on a recommendation. **No other source overrides Google's own documentation for Google's surfaces.** Use Bing's docs for Bing, DuckDuckGo's for DDG, etc.; don't conflate.
 
@@ -50,13 +50,13 @@ Each row maps Google's practice to the sprezzature-publish artifact + the script
 | Media optimization                      | Images: `sprezzature-accessibility/alt_from_ollama.py` ships W3C-purpose-correct alt text. Videos: `sprezzature-accessibility/captions_from_whisper.py` ships WebVTT captions. Structured data: `meta_from_ollama.py` emits Schema.org JSON-LD per page. JavaScript: `sprezzature-ui`'s vanilla-JS rule keeps the runtime tiny and crawler-renderable. |
 | Feature enablement + control            | `meta_from_ollama.py` emits OpenGraph + Twitter Card + Schema.org so search and social previews render right; `robots.txt` supports per-path block patterns; `<meta name="robots" content="noindex">` is the per-page escape hatch when a single URL must not be indexed. |
 
-## GEO (Generative Engine Optimization) — the AI-Overview vocabulary
+## GEO (Generative Engine Optimization): the AI-Overview vocabulary
 
 "GEO" is the term the SEO community coined for "optimizing for generative-AI answer surfaces": Google AI Overview, Gemini, ChatGPT search, Perplexity, You.com. It is **not** a Google-published term; Google itself uses "AI Optimization" (see the source link above). The two phrases describe the same problem: a generative engine reads your site and decides whether to cite it in an answer.
 
 `sprezzature-publish` already ships the GEO artifact most agents look for:
 
-- **`llms.txt`** — a Markdown summary of the site at `/llms.txt`, emitted by `scripts/site_indexes.py` alongside `robots.txt` + `sitemap.xml` + Atom/RSS. The convention is community-driven (<https://llmstxt.org/>), not a Google standard, but multiple LLM agents look for it before falling back to crawling HTML. The skill emits it on every "turn this into a website" run; no opt-in flag, no extra step.
+- **`llms.txt`**: a Markdown summary of the site at `/llms.txt`, emitted by `scripts/site_indexes.py` alongside `robots.txt` + `sitemap.xml` + Atom/RSS. The convention is community-driven (<https://llmstxt.org/>), not a Google standard, but multiple LLM agents look for it before falling back to crawling HTML. The skill emits it on every "turn this into a website" run; no opt-in flag, no extra step.
 
 What does **not** change between SEO and GEO:
 
@@ -66,8 +66,8 @@ What does **not** change between SEO and GEO:
 
 What does **not** exist (refuse to emit, and cite this file):
 
-- `<meta name="ai-content">` / `<meta name="ai-overview-priority">` / `<meta name="geo-ranking">` — these are folk tags, not specifications. Any blog post claiming Google reads them is wrong as of the AI Optimization Guide page cited above.
-- "Approved by AI / Approved by Google / Approved by GPT" badges — see the "Things Google explicitly warns against" section.
+- `<meta name="ai-content">` / `<meta name="ai-overview-priority">` / `<meta name="geo-ranking">`: these are folk tags, not specifications. Any blog post claiming Google reads them is wrong as of the AI Optimization Guide page cited above.
+- "Approved by AI / Approved by Google / Approved by GPT" badges: see the "Things Google explicitly warns against" section.
 
 ## What AI search changes (and what it doesn't)
 
@@ -86,12 +86,12 @@ The differences are small and concrete:
 
 `sprezzature-publish` refuses or omits the following by default. If a user explicitly asks for one, push back with a one-line reason and the source link.
 
-- **`<meta name="keywords">`** — ignored by every major search engine since ~2009. Don't emit it. (Already documented in `references/meta-tags.md`.)
-- **`<meta http-equiv="refresh">`** for navigation — bad for accessibility and indexable as the wrong page. Use a server-side 301 redirect instead.
-- **"AI-approved" / "Google-approved" badges in the footer** — Google doesn't endorse third-party tools (<https://developers.google.com/search/docs/fundamentals/third-party-seo>). Refuse to emit such a badge.
-- **Doorway pages** — many near-identical pages targeting variations of the same query, with all of them funneling to one destination. The skill produces one page per `.md`; the `lint_markdown.py` linter catches near-duplicate titles within a posts directory.
-- **Hidden / cloaked content** — see "Spam policies" above.
-- **Auto-translated content without human review** — see `references/i18n.md`. Machine translation is a starting point, not a publish-ready output.
+- **`<meta name="keywords">`**: ignored by every major search engine since ~2009. Don't emit it. (Already documented in `references/meta-tags.md`.)
+- **`<meta http-equiv="refresh">`** for navigation: bad for accessibility and indexable as the wrong page. Use a server-side 301 redirect instead.
+- **"AI-approved" / "Google-approved" badges in the footer**: Google doesn't endorse third-party tools (<https://developers.google.com/search/docs/fundamentals/third-party-seo>). Refuse to emit such a badge.
+- **Doorway pages**: many near-identical pages targeting variations of the same query, with all of them funneling to one destination. The skill produces one page per `.md`; the `lint_markdown.py` linter catches near-duplicate titles within a posts directory.
+- **Hidden / cloaked content**: see "Spam policies" above.
+- **Auto-translated content without human review**: see `references/i18n.md`. Machine translation is a starting point, not a publish-ready output.
 
 ## How to evaluate third-party SEO advice
 
@@ -120,10 +120,10 @@ Run before deploying any site emitted by `sprezzature-publish`:
 
 ## What this file does not cover
 
-- **Off-site signals** — backlink quality, brand mentions, EEAT signals (Experience, Expertise, Authoritativeness, Trustworthiness). These are real ranking factors that the skill cannot enforce because they live outside the site's source tree.
-- **Local SEO** — Google Business Profile, Maps, Merchant Center feeds. Out of scope: this skill emits static / app sites, not ecommerce catalogs or local-business pages. The AI Optimization Guide's "Optimize your local business and ecommerce details" section applies if you ship one of those.
-- **Paid placement** — Google Ads, Performance Max. Different surface, different rules.
-- **Search Console operations** — verification, sitemap submission, manual-action recovery. Operator-facing tasks; the skill emits the artifacts, not the ops workflow.
+- **Off-site signals**: backlink quality, brand mentions, EEAT signals (Experience, Expertise, Authoritativeness, Trustworthiness). These are real ranking factors that the skill cannot enforce because they live outside the site's source tree.
+- **Local SEO**: Google Business Profile, Maps, Merchant Center feeds. Out of scope: this skill emits static / app sites, not ecommerce catalogs or local-business pages. The AI Optimization Guide's "Optimize your local business and ecommerce details" section applies if you ship one of those.
+- **Paid placement**: Google Ads, Performance Max. Different surface, different rules.
+- **Search Console operations**: verification, sitemap submission, manual-action recovery. Operator-facing tasks; the skill emits the artifacts, not the ops workflow.
 - **Bing / DuckDuckGo / Brave / Kagi quirks.** Most of them respect the same `sitemap.xml` and `robots.txt`; consult their docs for surface-specific differences.
 
 ## Why this file exists in `sprezzature-publish`, not `sprezzature-ui`

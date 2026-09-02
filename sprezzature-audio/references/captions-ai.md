@@ -1,4 +1,4 @@
-# Captions / transcripts — `captions_from_whisper.py`
+# Captions / transcripts: `captions_from_whisper.py`
 
 Generate WebVTT captions, SRT subtitles, or plain transcripts from any audio or video file through **[vocal-helper](https://github.com/warith-harchaoui/vocal-helper)**, the project author's whisper.cpp over-layer. It wraps **[pywhispercpp](https://github.com/absadiki/pywhispercpp)** (the whisper.cpp binding) and owns the model defaults, the word-timestamp wiring, the `min_segment_ms` hallucination guard, and the vocabulary-biasing `initial_prompt` lever (a domain-aligned prompt cut WER by 15–25 pp in the author's AMI sweep). The captions tier drives its `WhisperStage` on the whole file as a single segment: no VAD, no diarization (that lives in the `diarize` tier). The default model is **`large-v3-turbo`**: small enough to run on a laptop and accurate enough for production captions.
 
@@ -186,8 +186,8 @@ translated `subtitles`) so you can wire both at once.
 
 ## Standards
 
-- WCAG SC 1.2.2 — Captions (Prerecorded), Level A.
-- WCAG SC 1.2.5 — Audio Description (Prerecorded), Level AA. (Captions alone do not satisfy this; audio descriptions need a separate workflow.)
+- WCAG SC 1.2.2: Captions (Prerecorded), Level A.
+- WCAG SC 1.2.5: Audio Description (Prerecorded), Level AA. (Captions alone do not satisfy this; audio descriptions need a separate workflow.)
 - whisper.cpp licensing: MIT. Bundled GGML model files keep their original licenses (also MIT for the official OpenAI releases).
 
 ## Checklist

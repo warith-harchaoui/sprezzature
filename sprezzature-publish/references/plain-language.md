@@ -1,4 +1,4 @@
-# Plain-language rewriter — `plain_language.py`
+# Plain-language rewriter: `plain_language.py`
 
 Rewrite any UI copy at a target reading level using the same local Ollama model the skill uses for alt text. Keeps the meaning verbatim; strips jargon and marketing voice.
 
@@ -7,7 +7,7 @@ Rewrite any UI copy at a target reading level using the same local Ollama model 
 Cognitive accessibility is the WCAG criterion almost nobody ships. The relevant Success Criteria are:
 
 - WCAG SC 2.4.5 (Multiple ways).
-- WCAG Understanding 3.1.5 — Reading Level.
+- WCAG Understanding 3.1.5: Reading Level.
 
 Users who benefit beyond cognitive disabilities: second-language readers, anyone reading under stress (medical sites, financial sites, government UIs), and screen-reader users whose focus is already split. The rewrite is cheap to add because the model runs locally and the same setup as `alt_from_ollama.py` is reused.
 

@@ -1,4 +1,4 @@
-# Site indexes — `site_indexes.py`
+# Site indexes: `site_indexes.py`
 
 Generate the standard set of site-index files for a project's web output, respecting the canonical specs for each. One Python script, stdlib only.
 
@@ -6,7 +6,7 @@ Generate the standard set of site-index files for a project's web output, respec
 
 | File | Spec | When |
 |---|---|---|
-| `robots.txt` | [Google Search Central — robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt) | Always |
+| `robots.txt` | [Google Search Central: robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt) | Always |
 <!-- For the rules each of these files enforces in the larger SEO context (Google's three Search Essentials pillars + the AI Optimization Guide's foundations), see `seo-essentials.md` in this folder. -->
 
 | `sitemap.xml` | [sitemaps.org 0.9](https://www.sitemaps.org/protocol.html) | Always |
@@ -37,15 +37,15 @@ python scripts/site_indexes.py --root . --base-url https://example.com --out pub
 
 The script walks the project root looking for `.html` files at the root and inside the conventional output directories (`public/`, `dist/`, `site/`, `_site/`, `build/`, `out/`) plus `.md` files at the root and under `docs/`. Each becomes a sitemap entry and an `llms.txt` bullet.
 
-### `llms-full.txt` — the full-text companion
+### `llms-full.txt`: the full-text companion
 
-`llms.txt` is an *index* (H1 + blockquote + linked bullets); `llms-full.txt` is the *corpus* — the complete text of those pages concatenated so an agent ingests the whole site in one request instead of following each link. It is emitted by default; opt out with `--no-llms-full`.
+`llms.txt` is an *index* (H1 + blockquote + linked bullets); `llms-full.txt` is the *corpus*: the complete text of those pages concatenated so an agent ingests the whole site in one request instead of following each link. It is emitted by default; opt out with `--no-llms-full`.
 
 Three rules keep it from bloating (the failure mode where a full-text file drags in raw HTML, nav, and duplicated pages until it blows past a model's context):
 
 - **Markdown sources only.** Rendered HTML is generated *from* the `.md` pages, so concatenating it would duplicate every page and pull in tag / nav / footer boilerplate. Only `.md` bodies go in; YAML front matter is stripped (we emit a `Source:` line per page instead).
-- **Priority order.** Pages are ordered README / `index.md` first, then other root `.md`, then `docs/` — so any truncation keeps what matters.
-- **Visible size, no silent truncation.** The run prints the page count and KB. Past ~200 KB with no cap it prints a soft advisory. With `--llms-full-max-kb N` it fills the budget in priority order and **names every page it dropped** — a bounded file never silently hides content.
+- **Priority order.** Pages are ordered README / `index.md` first, then other root `.md`, then `docs/`, so any truncation keeps what matters.
+- **Visible size, no silent truncation.** The run prints the page count and KB. Past ~200 KB with no cap it prints a soft advisory. With `--llms-full-max-kb N` it fills the budget in priority order and **names every page it dropped**: a bounded file never silently hides content.
 
 ```bash
 # Default: emit llms-full.txt alongside llms.txt
@@ -58,7 +58,7 @@ python scripts/site_indexes.py --root . --base-url https://example.com --llms-fu
 python scripts/site_indexes.py --root . --base-url https://example.com --no-llms-full
 ```
 
-A generated `llms-full.txt` is only as fresh as its last run — regenerate it in the same CI step as the rest of the site, since a stale full-text corpus feeds an agent confidently wrong content.
+A generated `llms-full.txt` is only as fresh as its last run: regenerate it in the same CI step as the rest of the site, since a stale full-text corpus feeds an agent confidently wrong content.
 
 ## What the skill does automatically
 

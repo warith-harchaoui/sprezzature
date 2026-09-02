@@ -2,7 +2,7 @@
 
 All notable changes to `sprezzature` will be recorded here. Dates are ISO-8601.
 
-The project follows a loose [SemVer](https://semver.org/) — major version
+The project follows a loose [SemVer](https://semver.org/): major version
 bumps mean the on-disk skill layout changes (users have to re-copy folders
 into `~/.claude/skills/`).
 
@@ -14,14 +14,14 @@ Users download the bundle (or a per-skill tarball), run
 `shasum -a 256 -c SHA256SUMS` to verify it, extract, and copy the
 folders they need into `~/.claude/skills/`. The README's *Install*
 section walks the full flow. To upgrade, repeat the steps with a newer
-`VERSION` — the on-disk folder name is stable so the copy overwrites in
+`VERSION`: the on-disk folder name is stable so the copy overwrites in
 place. If the checksum check fails, do not install the artifact.
 Release tarballs are produced by `scripts/release.sh <version>`.
 
 ## Roadmap
 
 Open threads carried through the 0.6.x string. Both remaining
-engineering items are paused on explicit user signal — do not restart
+engineering items are paused on explicit user signal: do not restart
 without one. None of the recent 0.6.0–0.6.3 releases (typography
 overhaul, CI/release workflow fixes, Google SEO + GEO foundations,
 Anthropic skill-spec audit) changed their status; they all sit
@@ -35,17 +35,17 @@ elsewhere in the codebase.
    `sprezzature-a11y/references/captions-ai.md`.
 2. **Real end-to-end application example.** User has deferred. Scope
    pre-decided: wrap `md2star` (user's own CLI) with a Tauri shell
-   that invokes it as a sidecar — not another mock SSE proxy. The
+   that invokes it as a sidecar, not another mock SSE proxy. The
    `cli-gui-demo` stays as the scaffold reference; the Tauri example
    becomes the production reference.
 
 3. **Unified i18n make + audit.** GUI strings and LLM prompts share one
-   concern — language — so one per-project catalog, **`locales/i18n.yaml`**
+   concern (language), so one per-project catalog, **`locales/i18n.yaml`**
    (message id → per-locale text), serves both. **make**: `cli_to_gui` /
    sprezzature-ui scaffolds emit and read `locales/i18n.yaml` instead of hardcoding
    strings. **audit**: a static check flags any GUI string or prompt living
-   outside `locales/i18n.yaml` — a translation dict in `.js`/`.html` or a
-   prompt inlined in `.py` — with a "move to `locales/i18n.yaml`" finding (same
+   outside `locales/i18n.yaml` (a translation dict in `.js`/`.html` or a
+   prompt inlined in `.py`) with a "move to `locales/i18n.yaml`" finding (same
    JSON + exit-code shape as the other auditors). Prompts already comply; the
    GUI side is the build.
 
@@ -54,12 +54,12 @@ Adoption-side milestones (user-driven; not engineering work):
 - Real Claude Code session against the four skills to verify trigger
   phrasing fires on "wrap my CLI", "captions for this video", "audit
   my palette". Refine descriptions if under-triggers.
-- 5 real users — the only signal that says whether anything else on
+- 5 real users: the only signal that says whether anything else on
   this list is worth doing.
 
 ## [Unreleased]
 
-## [1.0.1] — 2026-07-29 — Three-layer architecture, standalone repos, writing charters
+## [1.0.1] (2026-07-29): Three-layer architecture, standalone repos, writing charters
 
 ### Added
 
@@ -83,7 +83,7 @@ Adoption-side milestones (user-driven; not engineering work):
 
 - Each skill tool package extracted from the monorepo into a standalone pip-installable repo. The monorepo retains `SKILL.md`, `references/`, and `web/`.
 
-## [1.0.0] — 2026-07-27 — Renamed `front` → `sprezzature`
+## [1.0.0] (2026-07-27): Renamed `front` → `sprezzature`
 
 The `front` project is frozen; `sprezzature` is its canonical successor. This is
 a major bump because the on-disk skill folders change name (`front-*` →
@@ -118,7 +118,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   `front-*` → `sprezzature-*` when they are ready. Old documentation URLs under
   `harchaoui.org/warith/front/` 301-redirect to the `sprezzature` path.
 
-## [0.33.0] — 2026-07-27 — OS-adaptive, everywhere
+## [0.33.0] (2026-07-27): OS-adaptive, everywhere
 
 ### Added
 
@@ -150,7 +150,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   catalogue, so every default (no-preference) render is byte-for-byte what it was
   in 0.32.0. Documented in `docs/FIGURES.md`.
 
-## [0.32.0] — 2026-07-27 — OS-adaptive figures
+## [0.32.0] (2026-07-27): OS-adaptive figures
 
 ### Added
 
@@ -161,9 +161,9 @@ a major bump because the on-disk skill folders change name (`front-*` →
   hue and strengthens outlines (lightening fills where a straight deepen would
   swallow an overlaid label, as a Venn's region counts), and
   `forced-colors: active` (Windows High Contrast and kin) drops figures whose
-  identity survives without colour — position, shape, a numbered badge, a text
-  label (Venn, parliament, waffle, network, org-chart...) — to system-palette
-  line art. Colour-encoded figures (multi-line, streamgraph, heatmap) leave
+  identity survives without colour to system-palette line art. This covers
+  position, shape, a numbered badge, or a text label (Venn, parliament,
+  waffle, network, org-chart...). Colour-encoded figures (multi-line, streamgraph, heatmap) leave
   forced colours to the browser default, since a roughly four-colour system
   palette cannot preserve a colour encoding. Continuous/perceptual maps
   (viridis, single-hue ramps) are a documented no-op. A shared helper,
@@ -178,7 +178,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   byte-for-byte what it was. Documented in `docs/FIGURES.md` and
   `sprezzature-colors/references/accessibility-levels.md`.
 
-## [0.31.0] — 2026-07-26 — accessibility levels, colour-vision viewer, unified fullscreen
+## [0.31.0] (2026-07-26): accessibility levels, colour-vision viewer, unified fullscreen
 
 ### Added
 
@@ -217,7 +217,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
 
 - **Grayscale check in the CVD simulator** (`sprezzature-colors/scripts/simulate_cvd.py`):
   a `--grayscale` flag adds a relative-luminance panel (computed in linear light)
-  to the existing protanopia / deuteranopia / tritanopia mosaic — the "does it
+  to the existing protanopia / deuteranopia / tritanopia mosaic: the "does it
   read with no colour at all?" test. The simulator is now framed as the image
   layer that reinforces `make` and `audit`: the Ralph loop gains a **render →
   simulate → look** step, documented in `sprezzature-accessibility/references/lint-a11y.md`,
@@ -231,11 +231,11 @@ a major bump because the on-disk skill folders change name (`front-*` →
   `label_cell` (tint / solid / ghost variants), colour-driven with automatic
   contrast text and a white keyline lift, never a black ring. Adopted across
   figures as their labels get a Ralph pass.
-- **Eight more figures — batch 3** (`sprezzature-figures`): funnel, population pyramid,
+- **Eight more figures, batch 3** (`sprezzature-figures`): funnel, population pyramid,
   bubble, strip, volcano, Kaplan–Meier survival, gantt, and slope chart. Each
   built with real domain labels + a takeaway title, rendered and eyeballed
   through the Ralph loop. In `docs/FIGURES.md`; gap tracker now 69 covered.
-- **Eight more figures — batch 2** (`sprezzature-figures`), same loop, same house
+- **Eight more figures, batch 2** (`sprezzature-figures`), same loop, same house
   style: sunburst (full-Vega `partition`), waterfall, calendar heatmap, Q-Q
   plot, ROC curve, confusion matrix, correlation matrix, and radar / spider
   (SVG). Woven into `docs/FIGURES.md`, `vega-gallery.md`, and the website
@@ -264,8 +264,8 @@ a major bump because the on-disk skill folders change name (`front-*` →
   Code reads the PNG) and **local mode** (`--local`, Ollama vision auto-critique,
   fully offline). `--check-tools` / `--install-tools` manage the per-surface
   rendering toolchain. The reference doc now frames the loop as a repo-wide
-  visual-quality technique — data viz is one application, not the scope.
-- **`docs/LLM_CHOICE.md`** — records the single-model decision (Qwen3-VL 8B,
+  visual-quality technique: data viz is one application, not the scope.
+- **`docs/LLM_CHOICE.md`**: records the single-model decision (Qwen3-VL 8B,
   Q4_K_M) with the four selection criteria, a scored comparison against the
   alternatives, quantization notes, and all research sources.
 
@@ -273,17 +273,17 @@ a major bump because the on-disk skill folders change name (`front-*` →
 
 - **Alpha-aware WCAG contrast** (`sprezzature-colors`). Contrast math dropped the alpha
   channel, so a semi-transparent foreground (`#RRGGBBAA`) was judged as if fully
-  opaque — overstating contrast. New `parse_hex_rgba`, `composite_over`,
+  opaque: overstating contrast. New `parse_hex_rgba`, `composite_over`,
   `flatten_alpha`, and `contrast_ratio_hex` composite a translucent color over
   its background in sRGB space (matching how browsers paint CSS alpha) before the
   ratio; `meets_wcag` and `audit_contrast` now use it. 50% black on white is
   correctly ~4:1 (fails AA), not 21:1. Tests in `tests/test_colors_module.py`.
 - **Markdown converter defects** (`sprezzature-publish/scripts/md_to_html.py`):
   (1) it wrote every page as `<stem>.html` in one flat directory, so two sources
-  with the same basename in different folders overwrote each other — output now
-  **mirrors the input tree**; (2) it assumed English — the document language is
+  with the same basename in different folders overwrote each other: output now
+  **mirrors the input tree**; (2) it assumed English: the document language is
   now **detected** per file (`--lang auto`, the new default); (3) rendered
-  Mermaid blocks got the meaningless alt "Mermaid diagram" — the alt now uses the
+  Mermaid blocks got the meaningless alt "Mermaid diagram": the alt now uses the
   author's `accDescr` / `accTitle`, else names the diagram kind. Regression tests
   in `tests/test_md_to_html.py`.
 
@@ -297,13 +297,13 @@ a major bump because the on-disk skill folders change name (`front-*` →
   "each skill audits its own artifacts" claim is now enforced.
 - **sprezzature-ui checklist: universal vs house-style.** The pre-ship checklist now
   separates universal engineering (semantic HTML, focus rings, reduced-motion,
-  dark-mode, ARIA — keep for any brand) from opinionated house style (the
-  three-Roboto typography, the palette, rounded corners — swap for your own).
+  dark-mode, ARIA: keep for any brand) from opinionated house style (the
+  three-Roboto typography, the palette, rounded corners: swap for your own).
 
 ### Changed
 
 - **Choropleth: explicit no-data + Antarctica handling.** The world map is now a
-  two-layer spec — a grey no-data base under the coloured data layer — so a
+  two-layer spec (a grey no-data base under the coloured data layer), so a
   country without a value reads as "no data", not zero. Antarctica is omitted
   (it is not a country-data unit), the legend is titled, and the source line
   says so. The generic value **heatmap** is now an activity-by-weekday/hour
@@ -311,7 +311,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   the correlation figure).
 - **3D surface honestly framed.** `surface-3d` gains a title, a "Height" colour
   legend, and a subtitle stating it is a *static isometric projection, not
-  interactive* — so it reads as analysis with a scale, not decoration.
+  interactive*: so it reads as analysis with a scale, not decoration.
 - **Communicative gallery figures.** The everyday specs were rewritten from
   `x`/`y`/`v`/`count` test fixtures into figures that state *why* you're seeing
   them: a takeaway title, a context subtitle marked "Illustrative data", real
@@ -319,7 +319,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   ECDF marks its 90th percentile). Covers bar, multi-line, scatter, histogram,
   box, stacked bar / area, donut, heatmap, ECDF, violin, Gaussian process, and
   the regression band.
-- **Figure auditor — fewer false negatives and positives.** The axis-title rule
+- **Figure auditor, fewer false negatives and positives.** The axis-title rule
   now accepts the channel-level `title` shorthand (not only `axis.title`) and
   skips explicitly-hidden axes (`axis: null`, as vector fields use), so real
   omissions are caught without nagging intentional choices.
@@ -327,7 +327,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   It now **recurses** into `layer` / `facet` / `concat` / `repeat`, so encodings
   nested below the top level are audited instead of only a flat top-level spec.
   And it no longer **false-flags** ordinary layered constructions (a confidence
-  band + its line, an error bar + its point) as a dual y-axis — Vega-Lite shares
+  band + its line, an error bar + its point) as a dual y-axis: Vega-Lite shares
   scales across layers by default, so only an explicit
   `resolve.scale.y: "independent"` is a real dual axis. The axis-title rule is
   now chart-wide (a titled main layer covers an untitled reference-line layer).
@@ -336,19 +336,19 @@ a major bump because the on-disk skill folders change name (`front-*` →
   longer implies a vision model autonomously critiques figures. Corrected: the
   renderer is deterministic (no model); the loop is a prescribed *agent* review
   loop (the agent inspects the render by default), with an optional fully-offline
-  local vision model (`--local`) — "a prescribed review loop, not an autonomous
+  local vision model (`--local`): "a prescribed review loop, not an autonomous
   critic."
 - **Website: no "Apple" naming.** The palette is described as "curated" / "house"
   rather than "Apple-inspired"; the design-source citation links to the Human
   Interface Guidelines without the brand name in the visible text.
 - **`cli_to_gui.py` split into a package** (`sprezzature-cli-gui`): the 1329-line
-  script is now a thin facade re-exporting a `sprezzature_cli_gui/` package —
+  script is now a thin facade re-exporting a `sprezzature_cli_gui/` package:
   `loader`, `schema` (dispatch), `renderer`, `cli`, and `adapters/{argparse,
   click,help_text}`. Behavior, public API, and emitted HTML are byte-identical
   (62 adapter tests + full suite green); the entry point `scripts/cli_to_gui.py`
   is unchanged for callers. Prepares the ground for more framework adapters.
 - **Single model migrated to `qwen3-vl:8b`** (Qwen3-VL 8B, Q4_K_M) across the
-  whole repo — every Ollama-backed skill script, SKILL.md, reference, doc, and
+  whole repo: every Ollama-backed skill script, SKILL.md, reference, doc, and
   web page. One vision-language model for both text (alt text, captions,
   narration, translation) and vision (Ralph Eyeball Loop critique). Chosen for
   vision + French + OCR/charts + Apple-Silicon fit; see `docs/LLM_CHOICE.md`.
@@ -366,14 +366,14 @@ a major bump because the on-disk skill folders change name (`front-*` →
 
 ---
 
-## [0.30.1] — 2026-07-24 — idiomatic French pass
+## [0.30.1] (2026-07-24): idiomatic French pass
 
 - Repo-wide French copy pass on `LISEZMOI.md`, `PAYSAGE.md` and the `web/fr/`
   pages: fixed mistranslations (*defaults* rendered as « défauts » → « choix par
   défaut », *vendored* → « embarqué », the non-word « réécrivain » → « réécriture »)
   and de-calqued anglicisms, without touching any link, URL, code span or version.
 
-## [0.30.0] — 2026-07-24 — bilingual site, competitive positioning, real-data maps
+## [0.30.0] (2026-07-24): bilingual site, competitive positioning, real-data maps
 
 - **Website is now multi-page.** `web/` gains an on-site detail page per skill
   (make / audit / triggers / reference library) so the home cards link on-site
@@ -382,34 +382,34 @@ a major bump because the on-disk skill folders change name (`front-*` →
   escape hatch, thematic maps). One shared shell with a working 🌞/🌛 theme
   toggle (`web/js/theme.js`); every page passes sprezzature-accessibility.
 - **Six more everyday charts** in `sprezzature-figures`: box plot, 100% stacked bar,
-  stacked area, donut, annotated heatmap, ECDF — plus **Gaussian-process
-  regression** and **violin** plots — Vega-Lite, house palette, catalogued in
+  stacked area, donut, annotated heatmap, ECDF, plus **Gaussian-process
+  regression** and **violin** plots, Vega-Lite, house palette, catalogued in
   `docs/FIGURES.md`.
 - **Bilingual website.** A full French mirror under `web/fr/` (home + nine skill
   pages + figures gallery) and a 🇫🇷/🇬🇧 language toggle on every page, with
   `hreflang` alternates. Figure alt text drafted by `sprezzature-vision` in both
   languages. A click-to-enlarge lightbox on the gallery.
 - **Competitive positioning.** `LANDSCAPE.md` (French: `PAYSAGE.md`) opens with a
-  single table — projects × criteria, rated 1–5 ⭐️ — that feeds
+  single table (projects × criteria, rated 1–5 ⭐️) that feeds
   [standpoint](https://github.com/warith-harchaoui/standingpoint) to plot a 2-D
   map of where `sprezzature` stands. The homepage gains a **Related work** section
   showing that map (EN + FR).
 - **Real-data maps.** A small-multiples figure of the **last five French
-  presidential runoffs** (2002–2022) — the winner's second-round share by
+  presidential runoffs** (2002–2022): the winner's second-round share by
   département, real Ministère de l'Intérieur data, metropolitan France projected
   offline with a Lambert conformal conic. Vendored geometry + per-year result
   JSONs; a results table beside the map on the website's figures gallery (EN + FR).
 
-## [0.29.0] — 2026-07-24 — human docs, a deployable website, editorial-grade maps
+## [0.29.0] (2026-07-24): human docs, a deployable website, editorial-grade maps
 
 ### Added
 
-- **`docs/` — a human-facing guide per skill** (UI, CLI, PUBLISH, ACCESSIBILITY,
+- **`docs/`, a human-facing guide per skill** (UI, CLI, PUBLISH, ACCESSIBILITY,
   COLORS, VISION, AUDIO, UX-LAWS + FIGURES). Each is a thin landing page that
-  points to that skill's `SKILL.md`, `references/`, and `EXAMPLES.md` recipe —
+  points to that skill's `SKILL.md`, `references/`, and `EXAMPLES.md` recipe:
   no duplication. `SKILL.md` stays the agent-facing spec; `docs/` is for humans.
   `FIGURES.md` moved here from `sprezzature-figures/`.
-- **`web/` — a deployable static site**, built with the `front-*` skills
+- **`web/`, a deployable static site**, built with the `front-*` skills
   themselves and publishing to <https://sprezzature.ai/>: sprezzature-ui
   house style (Tailwind + self-hosted three-Roboto + Apple palette + dark mode),
   full SEO (canonical, Open Graph, Twitter, Schema.org JSON-LD), GEO (`llms.txt`),
@@ -420,9 +420,9 @@ a major bump because the on-disk skill folders change name (`front-*` →
   at 0, no-data gray, key countries annotated), and **small multiples** (one
   panel per year, class breaks frozen). All on the Equal-Earth projection.
 
-## [0.28.0] — 2026-07-24 — Ralph Eyeball Loop, Vega-first, SVG engine, publication-grade maps
+## [0.28.0] (2026-07-24): Ralph Eyeball Loop, Vega-first, SVG engine, publication-grade maps
 
-### Added — sprezzature-figures: Vega replaces the plotting toolboxes
+### Added, sprezzature-figures: Vega replaces the plotting toolboxes
 
 - **`references/vega-gallery.md` now maps the base API of matplotlib, seaborn,
   and pyplot to Vega**, with an honest three-column coverage matrix (pyplot |
@@ -437,26 +437,26 @@ a major bump because the on-disk skill folders change name (`front-*` →
   `<svg>`→svg, LaTeX→tikz, `graph`/`%%{init}`→mermaid. Policy: try Vega first
   through the loop; when Vega's grammar can't express it, drop to hand-authored
   SVG (still looped). That closes **interpolated `imshow`** (`feGaussianBlur`)
-  and **streamplot** (offline streamlines + arrowhead markers) — both promoted
+  and **streamplot** (offline streamlines + arrowhead markers): both promoted
   to `assets/svg-examples/`.
-- **`docs/FIGURES.md`** — a catalog of every figure the vega + svg
+- **`docs/FIGURES.md`**: a catalog of every figure the vega + svg
   engines produce, from fake data, each one rendered (`assets/figures-gallery/`).
   Linked from README / LISEZMOI. The gitignored `.private/vega-failures/`
   records the Vega dead ends.
 - Coverage now spans **plotly** too: its 2D interactivity and maps are Vega
   native strengths; sunburst/treemap/sankey are full-Vega. Only live-interactive
   3D and animation stay out.
-- sprezzature-figures triggers now fire on the toolbox vocabulary — `matplotlib`,
+- sprezzature-figures triggers now fire on the toolbox vocabulary: `matplotlib`,
   `seaborn`, `pyplot`, `plotly`, `boxplot`, `heatmap`, `pairplot`, `choropleth`,
   `world map`, `GPS map`, `geojson`, `streamplot`, and more.
 - **Thematic maps.** A vendored, offline Natural Earth basemap
   (`assets/geo/`, public domain) plus a publication-grade map set: Equal-Earth
   classed choropleth, bivariate 3×3 choropleth, area-true proportional-symbol
   map, great-circle connection/flow map, and per-region pie / bar glyph maps
-  (`assets/svg-examples/map-*.svg`). Visualization only — spatial analysis stays
+  (`assets/svg-examples/map-*.svg`). Visualization only: spatial analysis stays
   in geopandas / QGIS.
 
-### Fixed — Agent Skills spec compliance
+### Fixed: Agent Skills spec compliance
 
 - `compatibility` frontmatter is capped at **500 characters** by the
   [Agent Skills spec](https://agentskills.io/specification). `sprezzature-figures`
@@ -476,29 +476,29 @@ a major bump because the on-disk skill folders change name (`front-*` →
   (`sprezzature-audio/references/diarization.md`), the modality decision tree
   (`sprezzature-ui/.../patterns/modality.md`), and the Ralph Eyeball Loop diagram are
   now Mermaid, palette-themed. File-listing trees (scaffold layouts, fixtures)
-  stay as text — a Mermaid diagram is the wrong tool for a file tree.
+  stay as text: a Mermaid diagram is the wrong tool for a file tree.
 - Removed the `Repository structure` ASCII tree from README / LISEZMOI.
 - `sprezzature-ui` and `sprezzature-cli-gui` now point to the Ralph Eyeball Loop for
   screenshotting and refining their emitted UI.
 
-## [0.27.0] — 2026-07-24 — the Ralph Eyeball Loop + Vega-first (sprezzature-figures)
+## [0.27.0] (2026-07-24): the Ralph Eyeball Loop + Vega-first (sprezzature-figures)
 
-### Added — the Ralph Eyeball Loop + Vega-first (sprezzature-figures)
+### Added: the Ralph Eyeball Loop + Vega-first (sprezzature-figures)
 
-- **`sprezzature-figures/scripts/render_diagram.py`** — render a declarative
+- **`sprezzature-figures/scripts/render_diagram.py`**: render a declarative
   graphical *source* to an image for the **Ralph Eyeball Loop** (render →
   look → refine the source). Three kinds, auto-detected: **Vega-Lite/Vega**
-  (rasterised with `vl-convert` — the real spec that ships, not a matplotlib
+  (rasterised with `vl-convert`, the real spec that ships, not a matplotlib
   re-draw), **TikZ** (tectonic/pdflatex + pdftoppm/magick), and **Mermaid**
   (mmdc). Palette-themed from `sprezzature-colors/references/palette.csv`
   (`\definecolor` for TikZ, injected `%%{init}%%` theme for Mermaid);
   `--background white|transparent|dark|auto|#hex`; `--format png|svg|pdf`
   for vector print. Fails loud with install hints; no GUI, no MCP, no model.
-- **`references/ralph-eyeball-loop.md`** — the named technique: never ship a
+- **`references/ralph-eyeball-loop.md`**: the named technique: never ship a
   graphic blind; the agent is the visual critic (the one-LLM rule is
   untouched). Strict preference order **Ralph-Eyeball-Loop Mermaid-with-colors
-  > Mermaid + colors > ASCII art** — never draw diagrams in ASCII.
-- **`references/vega-gallery.md`** — Vega-first template catalog that replaces
+  > Mermaid + colors > ASCII art**: never draw diagrams in ASCII.
+- **`references/vega-gallery.md`**: Vega-first template catalog that replaces
   matplotlib / seaborn / pyplot for every common chart, plus explainability
   (SHAP / LIME / importance / PD-ICE / DAG) rendered as extracted-data Vega,
   and an honest list of the residue Vega genuinely can't do.
@@ -513,7 +513,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   are reproducible); matplotlib is only an escape hatch." Description rewritten
   within the 1024-char cap.
 
-## [0.26.1] — 2026-07-20 — any-language alt-text + captions (best-of-both with md2star)
+## [0.26.1] (2026-07-20): any-language alt-text + captions (best-of-both with md2star)
 
 - **Alt-text + captions now handle any detected language (best-of-both with
   md2star).** Added a shared `language_name()` + `LANGUAGE_NAMES` (28 languages)
@@ -524,25 +524,25 @@ a major bump because the on-disk skill folders change name (`front-*` →
   the rest, so a document in any common language gets alt text in that language.
   sprezzature-audio's `translate_captions.py` reuses the same helper for its prompt +
   track labels (28 language names instead of 11 + raw codes). sprezzature-vision keeps
-  its edge over md2star's version — all-references + Markdown/HTML surrounding
+  its edge over md2star's version: all-references + Markdown/HTML surrounding
   context with heading prefix, and the full per-purpose W3C decision tree.
   sprezzature-vision description/body updated from "bilingual EN/FR" to any-language.
 
-## [0.26.0] — 2026-07-20 — two-track captions + helper packages on PyPI
+## [0.26.0] (2026-07-20): two-track captions + helper packages on PyPI
 
 - **sprezzature-audio: two-track captions (native + translation).** New
-  `scripts/translate_captions.py` turns one caption file into two `<track>`s —
+  `scripts/translate_captions.py` turns one caption file into two `<track>`s:
   the native-language `captions` plus a translated `subtitles` track in the
   **surrounding-text language** (the same signal `sprezzature-vision` uses for
   alt-text language), translated by the one authorized LLM (`gemma3:4b` via
   Ollama). Cues are translated in batched windows for cross-cue context and
   re-attached to their original timestamps 1:1 (per-cue fallback on a count
   mismatch; aborts loudly rather than misalign). Runs on the produced
-  `.vtt`/`.srt` only — no audio, decoupled from the caption backend — and prints
+  `.vtt`/`.srt` only (no audio, decoupled from the caption backend) and prints
   the ready-to-paste two-track snippet. Skips when the surrounding language
   already equals the audio language. New trigger phrases: "translate captions",
   "translated subtitles". Covered by `tests/test_translate_captions.py` and
-  wired into the single-LLM + cli-help gates. Draft output — verify before
+  wired into the single-LLM + cli-help gates. Draft output: verify before
   shipping.
 - **Helper packages migrated from git pins to PyPI.** The author's `*-helper`
   fleet now ships on PyPI, so `sprezzature-audio` pins them with plain lower bounds
@@ -557,15 +557,15 @@ a major bump because the on-disk skill folders change name (`front-*` →
   Removes the git-clone build step (faster, no exFAT AppleDouble breakage) and
   the old `.git@vX` dedupe gotcha (helpers now pin each other from PyPI too).
   Extractor error messages also gained a `https://brew.sh` hint. No version bump
-  yet — staged pending the paused quality round.
+  yet: staged pending the paused quality round.
 
-## [0.25.0] — 2026-07-19 — one-LLM lock, 100% docstrings, progressive disclosure
+## [0.25.0] (2026-07-19): one-LLM lock, 100% docstrings, progressive disclosure
 
 Second ralph-loop conformance round (fresh from-scratch `.private/ASSESSMENT.md`).
 Closes the last real inconsistency the prior round flagged, takes docstrings to
 100%, and pays down the progressive-disclosure debt on the two longest skills.
 
-- **One-LLM lock — the model is no longer user-selectable.** The `--model`
+- **One-LLM lock, the model is no longer user-selectable.** The `--model`
   override is removed from every Ollama-LLM script (`sprezzature-vision`
   alt_from_ollama / install_alt_ai, `sprezzature-audio` name_from_transcript,
   `sprezzature-publish` plain_language / meta_from_ollama / narrate_post). The model is
@@ -574,15 +574,15 @@ Closes the last real inconsistency the prior round flagged, takes docstrings to
   an override. This is now **enforced**: `test_single_llm.py` asserts (a) no LLM
   script defines a `--model` / `--ai-hints-model` CLI flag and (b) no SKILL.md
   `description:` advertises `OLLAMA_MODEL` / `--model`.
-- **Docstrings: 89% → 100%.** Backfilled the remaining 65 callables — HTMLParser
+- **Docstrings: 89% → 100%.** Backfilled the remaining 65 callables: HTMLParser
   hooks (`audit_figure`, `audit_laws_of_ux`, `lint_a11y`), the 15 `sprezzature-cli`
   Click leaf commands, `Finding` / `Conversion` dataclasses, nested closures
   (`keep`, `append`, `blank_fence`, `model_fn`, `add`), and shared-helper methods
   (re-propagated across copies). Every function / class / method is now documented.
 - **Progressive disclosure (Anthropic skill guide).** `sprezzature-figures/SKILL.md`
-  338 → 276: the inline Explainability / Causality / Auditor-rules tables — which
+  338 → 276: the inline Explainability / Causality / Auditor-rules tables (which
   duplicated `references/explainability.md`, `references/causality.md`,
-  `references/audit-figure.md` — collapsed to concise pointers; the house-style
+  `references/audit-figure.md`) collapsed to concise pointers; the house-style
   list tightened. `sprezzature-ui/SKILL.md` 262 → 222: the two inline worked examples
   moved to the new `references/examples.md`. No content lost; the validator
   confirms every reference path resolves.
@@ -594,7 +594,7 @@ Closes the last real inconsistency the prior round flagged, takes docstrings to
 All gates green: ruff, mypy (per-skill-dir), `validate_all.py`,
 `build_triggers.py --check`, the single-LLM lock gate, and the full pytest suite.
 
-## [0.24.0] — 2026-07-19 — dual-runtime + coding-standard conformance pass
+## [0.24.0] (2026-07-19): dual-runtime + coding-standard conformance pass
 
 A ralph-loop conformance round driven by a from-scratch `.private/ASSESSMENT.md`
 rewrite (two fresh sub-audits: the coding-standards gist, and dual-runtime /
@@ -606,10 +606,10 @@ disclosure) is logged for its own round.
   hardcoded `~/.claude/skills/sprezzature-ux-laws/scripts/...`, which fails under
   OpenCode (`~/.opencode/skills/`). Rewritten to the relative
   `sprezzature-ux-laws/scripts/...` form. Zero absolute skill paths remain in any
-  SKILL.md — both runtimes now run every documented command verbatim.
+  SKILL.md: both runtimes now run every documented command verbatim.
 - **AI-tool attribution policy.** Added a stated "AI-tool attribution" section
   to `CONTRIBUTING.md`: AI tools may assist, but authorship and responsibility
-  stay human, and no `Co-Authored-By` AI trailers are added — the paragraph the
+  stay human, and no `Co-Authored-By` AI trailers are added: the paragraph the
   existing `no-claude-trailers.yml` CI gate was already enforcing implicitly.
 - **Trigger coverage.** Added the missing real-capability triggers surfaced by
   the audit: `sprezzature-publish` (OpenVoice / Chatterbox TTS, markdown lint, broken
@@ -623,7 +623,7 @@ disclosure) is logged for its own round.
   header miss).
 - **Version detail correction.** `sprezzature-vision/SKILL.md` now states bilingual
   output is "language auto-detected from context" rather than an "EN/FR default,
-  configurable" — matching the no-default-language, always-detect design.
+  configurable": matching the no-default-language, always-detect design.
 - **Doc freshness.** README/LISEZMOI skill-count staleness fixed (four → nine),
   install pin examples bumped.
 
@@ -631,12 +631,12 @@ All gates green: ruff, mypy (per-skill-dir), `validate_all.py`,
 `build_triggers.py --check`, and the full pytest suite (including the
 `_lang.py` copy-sync guard).
 
-## [0.23.0] — 2026-07-19 — one shared body-text extractor across skills
+## [0.23.0] (2026-07-19): one shared body-text extractor across skills
 
 Consolidates the duplicated HTML/Markdown text-extraction into a single,
-tested helper — the foundation for content-based language detection.
+tested helper: the foundation for content-based language detection.
 
-- **`_lang.extract_body_text(content, fmt)`** — one canonical, stdlib-only
+- **`_lang.extract_body_text(content, fmt)`**: one canonical, stdlib-only
   extractor: HTML (`html.parser`, skips `<script>`/`<style>`/`<svg>`/
   `<noscript>`), Markdown (drops syntax, keeps prose + link/list labels), or
   plain; `fmt="auto"` sniffs. Plus `detect_language(content, fmt)` =
@@ -646,30 +646,30 @@ tested helper — the foundation for content-based language detection.
   `<html lang>` fixer (was a local `_VisibleText`), `meta_from_ollama`
   (was a local `extract_text`), `make_figure` (was `resolve_lang`; now detects
   from the chart's title/labels). No configured default language anywhere.
-- **`tests/test_bodytext.py`** — HTML/Markdown/plain extraction, malformed-HTML
+- **`tests/test_bodytext.py`**: HTML/Markdown/plain extraction, malformed-HTML
   resilience, en/fr detection, no-signal fallback, and the copy-drift guard.
 
-## [0.22.0] — 2026-07-19 — language is always detected; `lang_pair` removed
+## [0.22.0] (2026-07-19): language is always detected; `lang_pair` removed
 
 No configured default language anywhere. The output language is **detected from
 the content** via `langdetect`, never from a per-project setting.
 
-- **Removed `lang_pair` / `FRONT_LANG_PAIR` entirely** — the `metadata.lang_pair`
+- **Removed `lang_pair` / `FRONT_LANG_PAIR` entirely**: the `metadata.lang_pair`
   SKILL.md frontmatter token, the "Changing the language pair" sections (all 7
   skills), `lang_pair_default()` in every `_lang.py`, and all doc/env references
   (README, LISEZMOI, references, make_figure). No almost-empty stub functions
   left behind.
 - **Always detect from content.** The AI-backed scripts detect the language from
-  the text they process — surrounding/context text (alt), extracted page text
+  the text they process: surrounding/context text (alt), extracted page text
   (meta), the input itself (plain-language), the transcript/vocabulary
   (captions), the chart title/labels (figures).
 - **lint_a11y `<html lang>` fixer now detects from the document's own body
   text** (stdlib HTML-text extraction + langdetect). When the language cannot be
   determined (too little text, or langdetect absent), the finding is **left
-  unfixed for a human — no default is injected**.
+  unfixed for a human: no default is injected**.
 - Guard test `test_no_lang_pair_default` prevents reintroducing the hook.
 
-## [0.21.0] — 2026-07-18 — one authorized LLM: `gemma3:4b` (no MLX), enforced
+## [0.21.0] (2026-07-18): one authorized LLM: `gemma3:4b` (no MLX), enforced
 
 Fixes the biggest fresh-user onboarding blocker and locks the model policy down.
 
@@ -677,47 +677,47 @@ Fixes the biggest fresh-user onboarding blocker and locks the model policy down.
   every Ollama-backed script (alt text, meta tags, plain-language, narration,
   speaker-naming). It is multimodal (vision + text) and in the public registry,
   so `ollama pull gemma3:4b` works on any box.
-- **Removed the `-mlx` auto-suffix** — the previous default appended `-mlx` on
+- **Removed the `-mlx` auto-suffix**: the previous default appended `-mlx` on
   Apple silicon, naming a maintainer-local build (`gemma4:e4b-mlx`) that 404'd on
   a fresh machine. Dropped `OLLAMA_MODEL_BASE` and every alternative-model example
   (gemma4, gemma3:12b, gemma3n, llava, qwen, …) from sprezzature's own scripts and docs.
   `OLLAMA_MODEL` remains only as a bare test escape hatch.
 - **Enforced by a guard test** (`tests/test_single_llm.py`): every
   `front-*/scripts/*.py` is checked for any non-`gemma3:4b` model tag or `-mlx`
-  tag and fails if one appears — machine-checkable, forever.
+  tag and fails if one appears: machine-checkable, forever.
 - Docs swept to gemma3:4b throughout (README + LISEZMOI OpenCode config, SKILL.md,
   references, CONTRIBUTING, llms.txt, sprezzature-cli help). External-project mentions in
   `GALLERY.md` and historical `CHANGELOG` entries left as-is (factual / history).
 - Trigger phrases in sprezzature-audio / sprezzature-cli-gui / sprezzature-publish were front-loaded
   (earlier in the description) so keywords survive any listing-budget truncation.
 
-## [0.20.0] — 2026-07-18 — unified i18n make + audit (`locales/i18n.yaml`)
+## [0.20.0] (2026-07-18): unified i18n make + audit (`locales/i18n.yaml`)
 
 New **sprezzature-ui** capability, built to the make/audit paradigm: translatable
-strings — GUI labels **and** LLM prompts — live in one per-project catalog,
+strings (GUI labels **and** LLM prompts) live in one per-project catalog,
 `locales/i18n.yaml`, never in JS or inlined in Python.
 
-- **make** — `sprezzature-ui/scripts/i18n_make.py` scaffolds `locales/i18n.yaml`
+- **make**: `sprezzature-ui/scripts/i18n_make.py` scaffolds `locales/i18n.yaml`
   (`gui:` + `prompts:` namespaces), compiles it to `locales/i18n.json` (the
   browser can't read YAML), and emits `locales/i18n.js`, a framework-free
   loader with `initI18n()` + `t(id)`.
-- **audit** — `sprezzature-ui/scripts/audit_i18n.py` flags **I18N001** (a translation
+- **audit**: `sprezzature-ui/scripts/audit_i18n.py` flags **I18N001** (a translation
   dict embedded in JS/HTML) and **I18N002** (an LLM prompt inlined in Python),
   JSON + exit codes, wired as the `sprezzature-ui-i18n-audit` pre-commit hook.
-- **Dogfood** — the repo now passes its own i18n audit: the narration-emotion
+- **Dogfood**: the repo now passes its own i18n audit: the narration-emotion
   Ollama system prompt moved from an inline `_narrate.py` constant to
   `sprezzature-publish/scripts/prompts/narration_emotion.yaml`, loaded via `_prompts`.
 - Description triggers gain `i18n to YAML` / `audit i18n`; 14 new tests;
   `TRIGGERS.md` regenerated.
 
-## [0.19.0] — 2026-07-18 — exhaustive trigger phrases + version sync
+## [0.19.0] (2026-07-18): exhaustive trigger phrases + version sync
 
 Improves **skill activation** (Claude Code + OpenCode) and fixes a version drift.
 No behavioural change to any script.
 
 - **Trigger-phrase exhaustiveness.** Every skill's `description` gained
   user-language trigger phrases covering capabilities that previously had no
-  activation keyword — so a skill is less likely to "go under the rug". E.g.
+  activation keyword: so a skill is less likely to "go under the rug". E.g.
   sprezzature-ui (+`dark mode toggle`, `dashboard`, `data table`, `empty state`),
   sprezzature-accessibility (+`missing alt`, `WCAG compliance`, `fix accessibility`),
   sprezzature-figures (+`bar / line / scatter chart`, `Vega-Lite`, `visualize data`),
@@ -729,53 +729,53 @@ No behavioural change to any script.
 - **Deterministic type gate.** Pinned `types-PyYAML` + `types-requests` so the
   `mypy` CI job resolves `yaml`/`requests` identically everywhere (fixes a
   works-locally-fails-in-CI stub mismatch).
-- **i18n rule sharpened** — the canonical catalog is named: **`locales/i18n.yaml`**,
+- **i18n rule sharpened**: the canonical catalog is named: **`locales/i18n.yaml`**,
   one file for GUI strings AND prompts, on both the make and audit sides.
 
-## [0.18.0] — 2026-07-18 — `ruff` + `mypy` gates, `EXAMPLES.md`, gallery adoption
+## [0.18.0] (2026-07-18): `ruff` + `mypy` gates, `EXAMPLES.md`, gallery adoption
 
-Documentation + tooling. No on-disk skill layout change — the per-skill tarballs
+Documentation + tooling. No on-disk skill layout change: the per-skill tarballs
 are unchanged; this release adds repo-root docs, CI gates, and dev config.
 
-- **`EXAMPLES.md`** at the repository root — a runnable cookbook, one recipe
+- **`EXAMPLES.md`** at the repository root: a runnable cookbook, one recipe
   per skill (deterministic 🟢 vs local-AI 🤖) anchored on `tests/fixtures/`,
   each showing expected output. Linked from `README.md` and `LISEZMOI.md`.
-- **`ruff` lint gate** (CODING_ALL.md rule 3, lint half) — a pinned `ruff.toml`
+- **`ruff` lint gate** (CODING_ALL.md rule 3, lint half): a pinned `ruff.toml`
   plus a blocking `ruff check` CI job (`lint`), following the suite's own
   make/audit pattern (audit = `ruff check`; make = `ruff check --fix`). Implicit
   re-exports now use the PEP 484 `name as name` form; ~18 genuinely-unused
   imports removed; 5 undefined-name (F821) typing defects fixed.
-- **`mypy` type gate** (CODING_ALL.md rule 3, type half) — `mypy.ini` +
+- **`mypy` type gate** (CODING_ALL.md rule 3, type half): `mypy.ini` +
   `scripts/run_mypy.sh` (per-skill-dir, `ignore_missing_imports`), wired into the
   CI `lint` job. Fixed 27 real type defects surfaced by the first run (bad
   `callable` annotations, lazy `numpy`/`pandas` forward refs, `Optional`
   assignments, `Image.Resampling.LANCZOS`, tuple-width casts, a redefinition).
-- **`GALLERY.md`** — four real adoption entries (md2star, roitelet, intentions,
+- **`GALLERY.md`**: four real adoption entries (md2star, roitelet, intentions,
   sql), each with a project logo. All are projects the maintainer ships with the
   `front-*` skills. The "Adding to the gallery" submission boilerplate was
   dropped (this is a curated showcase, not an open-submission list).
-- **i18n house rule documented** — translatable strings (GUI labels **and** LLM
+- **i18n house rule documented**: translatable strings (GUI labels **and** LLM
   prompts) live in a separate YAML catalog, never embedded in JS or inlined in
   Python; GUI and prompts share one language source of truth. Prompts already
   comply (`prompts/*.yaml`). See `README.md` → "What the skills enforce". The
   make/audit *implementation* for GUI i18n is roadmapped below.
 
-## [0.17.0] — 2026-07-07 — `sprezzature-audio` captions on `vocal-helper` + pinned helper releases
+## [0.17.0] (2026-07-07): `sprezzature-audio` captions on `vocal-helper` + pinned helper releases
 
 Minor release. The `sprezzature-audio` captions tier now delegates speech-to-text
 to the author's `vocal-helper` over-layer instead of driving `pywhispercpp`
 directly, and the audio / video extraction path is repaired against the
-helpers' latest tagged releases. No on-disk folder layout change — upgrading
+helpers' latest tagged releases. No on-disk folder layout change: upgrading
 is the usual overwrite of `sprezzature-audio/`.
 
 ### What changed
 
 - **Captions route through `vocal-helper`.** `captions_from_whisper.py`
   now runs STT via `vocal_helper.asr.WhisperStage` (the author's whisper.cpp
-  over-layer — owns the model defaults, word-timestamp wiring, the
+  over-layer: owns the model defaults, word-timestamp wiring, the
   `min_segment_ms` hallucination guard and the `initial_prompt`
   vocabulary-biasing lever) instead of instantiating `pywhispercpp.Model`
-  directly. The file is driven as a single whole-file segment — no VAD, no
+  directly. The file is driven as a single whole-file segment: no VAD, no
   diarization (that stays in the separate `diarize` tier). The WebVTT / SRT /
   text renderers are unchanged (a seconds→centisecond adapter feeds them),
   and the on-disk cache + `WHISPER_DIR` model cache are preserved.
@@ -796,7 +796,7 @@ is the usual overwrite of `sprezzature-audio/`.
   `ensure_pywhispercpp` → `ensure_captions_engine`. The GGML pre-download
   still goes through `pywhispercpp.utils.download_model`.
 - **CI.** `requirements-captions.txt` is skipped in the per-skill install
-  loop — `vocal-helper` drags in `silero-vad → torch` (~2 GB), the same
+  loop: `vocal-helper` drags in `silero-vad → torch` (~2 GB), the same
   weight class as the diarization / narration backends. `captions_from_whisper`
   defers every heavy import behind the `_pcm_from_wav` / `_run_whisper_stage`
   seams, so it imports cleanly for collection and `test_captions` mocks those
@@ -805,7 +805,7 @@ is the usual overwrite of `sprezzature-audio/`.
   `references/diarization.md`, `tests/test_captions.py` and
   `tests/test_install_captions.py` updated for the new engine. Validated
   end-to-end with real whisper.cpp (Metal) on both audio and video inputs.
-- **Footprint note.** The captions tier is heavier than before — `torch`
+- **Footprint note.** The captions tier is heavier than before: `torch`
   now arrives transitively via `vocal-helper → silero-vad`, where the old
   tier was `click + pywhispercpp + langdetect`.
 
@@ -814,7 +814,7 @@ is the usual overwrite of `sprezzature-audio/`.
 - Shared `SKILL_VERSION` bumped to `0.17.0` across all fourteen
   `_argparse.py` / `_click.py` copies, and `sprezzature-cli` to `0.17.0`.
 
-## [0.16.0] — 2026-07-06 — `sprezzature-figures` skill + audio diarization tier
+## [0.16.0] (2026-07-06): `sprezzature-figures` skill + audio diarization tier
 
 Minor, additive release. Two new capabilities ship as their own tiers;
 no existing on-disk folder changes, so upgrading is a copy of the new
@@ -824,7 +824,7 @@ no existing on-disk folder changes, so upgrading is a copy of the new
 
 - **New skill `sprezzature-figures`.** Static data-viz auditor
   (`audit_figure.py`, stdlib + PyYAML) for Vega-Lite v5 JSON,
-  matplotlib SVG and HTML `<figure>` blocks — flags missing axis
+  matplotlib SVG and HTML `<figure>` blocks: flags missing axis
   titles, dual-y-axis, truncated baselines, pie-3d, rainbow palettes,
   CVD-unsafe encodings, missing polarity and chartjunk. Ships
   optional `make_figure.py` (dataviz tier), `causal_estimate.py`
@@ -839,7 +839,7 @@ no existing on-disk folder changes, so upgrading is a copy of the new
   `requirements-diarize.txt` (NVIDIA NeMo Sortformer + TitaNet). The
   captions tier is unchanged and still stdlib + pywhispercpp.
 - **CI.** The diarization `requirements-diarize.txt` is skipped in the
-  per-skill install loop — same rationale as the narration engines:
+  per-skill install loop, same rationale as the narration engines:
   it pulls `nemo_toolkit[asr]` (~2 GB, torch) and no default-lane test
   imports the diarize scripts.
 
@@ -848,7 +848,7 @@ no existing on-disk folder changes, so upgrading is a copy of the new
 - Shared `SKILL_VERSION` bumped to `0.16.0` across all ten
   `_argparse.py` copies.
 
-## [0.15.1] — 2026-06-29 — restore `gemma3:4b` default
+## [0.15.1] (2026-06-29): restore `gemma3:4b` default
 
 Patch release reverting the model-name swap that briefly landed
 in v0.15.0. ``gemma3:4b`` (with the ``-mlx`` variant on Apple
@@ -878,7 +878,7 @@ tag's availability.
   downgrading to the non-MLX variant on a failed pull would change
   perf + accuracy characteristics under the user's nose. The new
   failure message names the exact ``ollama pull <tag>`` command to
-  run when the registry hasn't propagated a fresh tag yet — match
+  run when the registry hasn't propagated a fresh tag yet: match
   for how the maintainer bootstrapped the tag in the first place.
 
 ### Versions
@@ -889,7 +889,7 @@ constants, and ``sprezzature-cli/pyproject.toml`` bumped to ``0.15.1``.
 
 461 tests pass; spec validator green on all eight skills.
 
-## [0.15.0] — 2026-06-29 — TRIGGERS.md + drift hook
+## [0.15.0] (2026-06-29): TRIGGERS.md + drift hook
 
 Two coherent moves since v0.14.0: a generated trigger-phrase index
 that humans can browse, and an automated drift gate that keeps the
@@ -900,7 +900,7 @@ index honest.
 An intermediate commit during v0.15.0 development swapped the
 ``sprezzature-vision`` default from ``gemma3:4b`` to ``gemma3:4b`` on
 the (mistaken) assumption the former was a forward-looking tag.
-The maintainer reverted the swap before the next release —
+The maintainer reverted the swap before the next release:
 ``gemma3:4b`` (with the ``-mlx`` variant on Apple Silicon) is
 the canonical default and was always available. The
 ``install_alt_ai.py`` script no longer auto-falls-back to the
@@ -909,7 +909,7 @@ message telling the user to ``ollama pull <tag>`` themselves
 when the registry doesn't have a fresh tag yet, rather than
 silently downgrading model quality / perf characteristics.
 
-### `TRIGGERS.md` — generated trigger-phrase reference
+### `TRIGGERS.md`: generated trigger-phrase reference
 
 A repo-root quick-reference table mapping every guaranteed trigger
 phrase to the skill it activates and that skill's status. Three
@@ -933,14 +933,14 @@ shape, completeness, and exact-match drift. README + LISEZMOI gain
 a blockquote at the end of their skill table pointing users at
 ``TRIGGERS.md`` for "what should I say to invoke X" lookup.
 
-### Drift hook — `sprezzature-triggers-sync`
+### Drift hook: `sprezzature-triggers-sync`
 
 A new entry in ``.pre-commit-hooks.yaml`` that runs
 ``scripts/build_triggers.py --check`` on every commit touching a
 ``SKILL.md``, ``TRIGGERS.md``, or the generator itself. Refuses
 the commit when the two have diverged, with a one-line stderr
 pointing the user at ``python scripts/build_triggers.py`` +
-re-stage. Auto-recoverable — never blocks on a human judgement
+re-stage. Auto-recoverable: never blocks on a human judgement
 call.
 
 This is the third drift hook in the repo (``sprezzature-ui-validate-skill``
@@ -948,7 +948,7 @@ gates SKILL.md ↔ Anthropic spec; ``sprezzature-publish-lint-markdown``
 gates markdown ↔ housekeeping rules). The shape generalises:
 **file pair + generator + ``--check`` flag + pre-commit entry**.
 
-### `audit_contrast --fix` asymmetry — documented as intentional
+### `audit_contrast --fix` asymmetry: documented as intentional
 
 While auditing today's work, I noticed
 ``sprezzature-colors/scripts/audit_contrast.py``'s ``--fix`` mode is
@@ -968,15 +968,15 @@ so future contributors don't "harmonise" the inconsistency away.
 453 tests pass. ``scripts/validate_all.py`` green on all eight
 skills. CI green on every push since the v0.14.0 cut.
 
-## [0.14.0] — 2026-06-29 — cli_to_gui shape protocol + BSD-3-Clause
+## [0.14.0] (2026-06-29): cli_to_gui shape protocol + BSD-3-Clause
 
 Two coherent moves landed since the v0.13.0 cut.
 
-### cli_to_gui — adapter protocol (argparse + Click + --from-help)
+### cli_to_gui: adapter protocol (argparse + Click + --from-help)
 
 The make-side emitter introduced in v0.12.0 was argparse-only.
 v0.14.0 generalises the introspection to a small shape-adapter
-protocol — the HTML renderer now consumes a canonical
+protocol: the HTML renderer now consumes a canonical
 ``ParserTree`` dict (``prog`` / ``description`` / ``actions`` /
 ``sub_commands``) regardless of the source framework. Three
 adapters ship today:
@@ -993,7 +993,7 @@ adapters ship today:
   (``Usage:`` / ``Options:`` / ``Commands:`` / ``Positional
   arguments:``). Works on **any** CLI that emits a conventional
   help block: argparse, Click, Typer, clap (Rust), cobra (Go),
-  commander (Node), hand-rolled shell scripts. Lower fidelity —
+  commander (Node), hand-rolled shell scripts. Lower fidelity:
   everything maps to ``"text"`` unless a recognised METAVAR
   (``PATH`` / ``INT`` / ``FLOAT``), a ``[default: …]`` hint, or a
   choice list is visible. The prog-name extractor walks past
@@ -1001,7 +1001,7 @@ adapters ship today:
   ``bash``, …) so ``python3 script.py`` resolves to ``script``.
 
 The public ``walk(obj)`` dispatches by type; adding a fourth
-adapter is a new function + the same dict — the renderer does not
+adapter is a new function + the same dict: the renderer does not
 move.
 
 The emitter is its own customer across all three adapters: the test
@@ -1025,14 +1025,14 @@ The argparse fixture now ships ``if __name__ == "__main__":
 make_parser().parse_args()`` so ``--help`` actually reaches stdout
 on the subprocess path.
 
-### License switch — BSD-3-Clause
+### License switch: BSD-3-Clause
 
 The repo moves from The Unlicense to **BSD-3-Clause** (same license
 as scikit-learn). Permissive (use, modify, redistribute, sell, ship
 in commercial products) with three explicit conditions: copyright
 notice in source, in binary distribution docs, no
 endorsement-without-permission. Stronger fit for users who need a
-recognised SPDX identifier — BSD-3-Clause is universally accepted;
+recognised SPDX identifier: BSD-3-Clause is universally accepted;
 Unlicense often trips procurement / code-import audits.
 
 Files touched (17): LICENSE.md, all eight SKILL.md frontmatters,
@@ -1041,7 +1041,7 @@ CONTRIBUTING vendoring policy, SECURITY opening, LANDSCAPE
 per-script table cells, llms.txt header + LICENSE.md row.
 
 The Roboto / Roboto Serif / Roboto Mono OFL carve-out and the
-Common Voice CC0 fixture carve-out are unchanged — they apply to
+Common Voice CC0 fixture carve-out are unchanged: they apply to
 the bundled assets themselves regardless of repo license.
 
 ### Thanks
@@ -1056,7 +1056,7 @@ Baum](https://www.linkedin.com/in/auguste-baum/). README + LISEZMOI
 427 tests pass. ``scripts/validate_all.py`` green on all eight
 skills. CI green on every push.
 
-## [0.13.0] — 2026-06-29 — make-side completion + user-activation surface
+## [0.13.0] (2026-06-29): make-side completion + user-activation surface
 
 Continues the autonomous overnight build-out that v0.12.0 opened.
 Four more moves: the third `--fix` mode, a real-user activation
@@ -1075,7 +1075,7 @@ This brings the markdown lint into the same audit↔make pattern as
 the spec cares about plus a CLI integration test that confirms the
 re-lint shows zero MD009 findings after a single `--fix` pass.
 
-### `.pre-commit-hooks.yaml` — first real-user activation surface
+### `.pre-commit-hooks.yaml`: first real-user activation surface
 
 External projects can now wire all front-* audit gates with a
 single `repos:` block:
@@ -1099,14 +1099,14 @@ allow-list so the manifest actually ships. New
 against drift: every entry's `entry` script must exist on disk;
 hook ids must be kebab-case + unique; every audit-side skill in
 `SKILLS.txt` must be referenced (sprezzature-vision / sprezzature-audio /
-sprezzature-cli-gui exempt with justification — make-only or covered
+sprezzature-cli-gui exempt with justification: make-only or covered
 indirectly).
 
 README + LISEZMOI gain a "Pre-commit hooks" section showing the
 canonical wiring with the `args: [--fix]` pattern for hooks that
 ship a fix mode.
 
-### `SECURITY.md` — local-execution caveats
+### `SECURITY.md`: local-execution caveats
 
 Two new scripts in this release run code the user names on the
 command line: `cli_to_gui.py` imports the target parser module
@@ -1116,7 +1116,7 @@ intentional design choices but a "should I trust this script"
 audit needs the surface called out explicitly.
 
 The new "Local execution caveats" subsection sits between the
-existing "Disclosure" and "Supply-chain notes" sections — says:
+existing "Disclosure" and "Supply-chain notes" sections and says:
 treat `cli_to_gui`'s spec argument like `python -c '…'`; do not
 pipe the Ollama-backed scripts content you would not show to the
 local model.
@@ -1126,7 +1126,7 @@ local model.
 The make-side gap sprezzature-ui still had after v0.12.0: references +
 component-shape primaries existed
 (`assets/components/{button,card,modal,form-field,nav}.html`)
-but there was no **law-keyed** catalog — no snippet the agent
+but there was no **law-keyed** catalog: no snippet the agent
 could load when the user said "IBAN field", "success screen",
 "loading skeleton", "settings page".
 
@@ -1153,7 +1153,7 @@ New `sprezzature-ui/assets/snippets/INDEX.md` maps each file → the law
 it embodies → 2-4 trigger phrases for agent lookup. New
 `tests/test_snippet_catalog.py` (29 tests) parametrises every
 snippet through BOTH `sprezzature-ux-laws` audit AND `sprezzature-accessibility`
-lint, asserting zero findings from each — the catalog is its own
+lint, asserting zero findings from each: the catalog is its own
 customer. Also enforces INDEX.md ↔ disk symmetry and that every
 snippet opens with an explanatory HTML comment.
 
@@ -1174,24 +1174,24 @@ hooks in the reference, not as snippets here.
 405 tests pass. `scripts/validate_all.py` green on all eight
 skills. CI green on every post-v0.12.0 push.
 
-## [0.12.0] — 2026-06-29 — make-side build-out + repo plumbing
+## [0.12.0] (2026-06-29): make-side build-out + repo plumbing
 
 Investments executed against `.private/ASSESSMENT.md`'s ranked
 priorities. Four moves landed in one session.
 
 ### CI repair
 
-`fix(ci): repoint per-skill requirements glob to post-rename folders`
-— `.github/workflows/ci.yml` still globbed `sprezzature-a11y/scripts/
+`fix(ci): repoint per-skill requirements glob to post-rename folders`:
+`.github/workflows/ci.yml` still globbed `sprezzature-a11y/scripts/
 requirements-*.txt`, which has not existed since the 0.9.0 rename.
 Bash without `nullglob` expanded the empty glob to the literal
 pattern, pip choked, every push since the rename failed. Fix:
 `shopt -s nullglob` + a glob across the seven skill folders that
 ship requirements. CI is now green.
 
-### `SKILLS.txt` — single source of truth
+### `SKILLS.txt`: single source of truth
 
-`refactor(skills): single SKILLS.txt manifest at repo root` — the
+`refactor(skills): single SKILLS.txt manifest at repo root`: the
 shipped skill list lived in seven hand-maintained tuples
 (`release.sh`, `validate_all.py`, `conftest.py`,
 `test_validate_skill.py`, `test_release_packaging.py`,
@@ -1239,7 +1239,7 @@ single-quoted attribute regex fix landed mid-session), both ship a
 the `skipped` counter so users know which findings still need a
 human decision.
 
-### `cli_to_gui.py` — closes the last roadmap cell
+### `cli_to_gui.py`: closes the last roadmap cell
 
 `feat(sprezzature-cli-gui): add cli_to_gui.py — argparse → HTML emitter`
 
@@ -1248,7 +1248,7 @@ The sprezzature-cli-gui skill's roadmap-only make-side cell is now filled.
 `argparse.ArgumentParser` and emits a single-page vanilla-JS +
 Tailwind GUI: one `<details>` per sub-command, form fields mapped
 per action kind, "Build command" button assembling the CLI line
-client-side. The emitter is its own customer — `tests/test_cli_to_gui.py`
+client-side. The emitter is its own customer: `tests/test_cli_to_gui.py`
 asserts the output passes both `sprezzature-ux-laws` and
 `sprezzature-accessibility` auditors with zero findings.
 
@@ -1270,19 +1270,19 @@ carries a `## Two modes — make and audit` section + an entry in
 the README / LISEZMOI matrices; `tests/test_two_modes_discipline.py`
 enforces both on every commit.
 
-## [0.11.0] — 2026-06-28 — make ↔ audit discipline + palette emitter
+## [0.11.0] (2026-06-28): make ↔ audit discipline + palette emitter
 
-The front-* repo's design principle — every skill belongs to either
-the *make* side or the *audit* side of a single loop — is now
+The front-* repo's design principle (every skill belongs to either
+the *make* side or the *audit* side of a single loop) is now
 codified in three places and enforced by tests.
 
 ### New: repo-level make / audit matrix
 
-- `README.md` and `LISEZMOI.md` gain a "Two modes — make and audit"
+- `README.md` and `LISEZMOI.md` gain a "Two modes: make and audit"
   table listing every shipped skill against both axes. Empty cells
   are marked `_(roadmap)_` rather than omitted so the gaps are honest.
 - Every shipped `SKILL.md` (eight in total) carries a small
-  "Two modes — make and audit" subsection mapping its scripts /
+  "Two modes: make and audit" subsection mapping its scripts /
   assets / references to the side they live on.
 
 ### New: `tests/test_two_modes_discipline.py`
@@ -1310,7 +1310,7 @@ brand tokens cannot drift between the canonical
   mode strategy, the label / surface / separator tokens, rounded /
   blur / motion extensions, plugins).
 - `--with-dark`: OKLCH-L-bumped dark variants derived in-script
-  (delta = 0.03). Honest about the derivation — comments in the
+  (delta = 0.03). Honest about the derivation: comments in the
   emitted file mark them as derived, not as exact Apple values.
 - `--include-neutrals`: opt-in for Brown / Black / Gray / White
   (they normally live under surface / label, not brand).
@@ -1331,7 +1331,7 @@ bases, the include-neutrals opt-in, the full-config shape, the
   `sprezzature-ui/references/stack-tailwind.md` now both declare
   `palette.csv` as the single source of truth and link to the
   emitter for regeneration.
-- New "Curated default — user colors win" rule (mirror of the
+- New "Curated default: user colors win" rule (mirror of the
   three-Roboto carve-out): the CSV is the default; a user-supplied
   palette wins.
 
@@ -1343,7 +1343,7 @@ carries `LightHex` for every row (added in a prior commit).
 Renamed to `test_light_variant_for_neutral_returns_curated_hex` and
 updated assertions to the curated values.
 
-## [0.10.0] — 2026-06-28 — new skill `sprezzature-ux-laws`
+## [0.10.0] (2026-06-28): new skill `sprezzature-ux-laws`
 
 A new skill that adds the canonical **Laws of UX** (Jon Yablonski,
 [lawsofux.com](https://lawsofux.com/)) to the front-* ecosystem in
@@ -1352,13 +1352,13 @@ the result.
 
 ### New skill: `sprezzature-ux-laws`
 
-- `SKILL.md` — frontmatter validates against the Anthropic skill spec
+- `SKILL.md`: frontmatter validates against the Anthropic skill spec
   (kebab-case name, description under 1024 chars with explicit What +
   When, no XML brackets, no reserved name, no `README.md` inside the
   folder).
-- `references/laws-of-ux.md` — restates all **30** laws on the
-  canonical site (the curated set has grown beyond the original 21
-  — Paradox of Active User, Flow, Choice Overload, Complexity Bias
+- `references/laws-of-ux.md`: restates all **30** laws on the
+  canonical site (the curated set has grown beyond the original 21:
+  Paradox of Active User, Flow, Choice Overload, Complexity Bias
   joined in the 2nd-edition book and the live index). Each entry is
   one row: **trigger → action → Tailwind / HTML hook**. Definitions
   and origins verified by recursive crawl of every `/<slug>/` page.
@@ -1367,7 +1367,7 @@ the result.
   (the Rose 2001 / Thomson & Schinazi RFC 9413 2023 critique that
   UX writers often omit). The Aesthetic-Usability entry quotes
   [NN/g (Moran & Whitenton, Feb 2024)](https://www.nngroup.com/articles/aesthetic-usability-effect/).
-- `scripts/audit_laws_of_ux.py` — Python 3.9+ stdlib-only static
+- `scripts/audit_laws_of_ux.py`: Python 3.9+ stdlib-only static
   auditor. Eight checks: Hick, Choice Overload, Miller, Jakob, Fitts,
   Aesthetic-Usability, Selective Attention, Tesler. `--json`,
   `--strict`, `--only LAW1,LAW2`, `--ignore LAW1,LAW2`. Exit codes
@@ -1376,7 +1376,7 @@ the result.
   tablists to one logical choice; Miller requires at least one digit
   in the run (so "collaborators" / "implementation" do not fire);
   Tesler accepts a TZ token within a 40-char window.
-- `scripts/_argparse.py` — copied per the established per-skill
+- `scripts/_argparse.py`: copied per the established per-skill
   autonomy convention; provides `-V` / `--version`.
 
 ### Companion-skill updates
@@ -1388,19 +1388,19 @@ the result.
 
 ### Tests + tooling
 
-- New `tests/test_audit_laws_of_ux.py` — 24 tests covering the eight
+- New `tests/test_audit_laws_of_ux.py`: 24 tests covering the eight
   checks, the false-positive suppressions, and the CLI surface
   (`--version`, `--help`, `--json`, `--strict`, `--only`, `--ignore`,
   unknown-law error).
 - `scripts/validate_all.py`, `scripts/release.sh`,
   `tests/conftest.py`, `tests/test_validate_skill.py`,
   `tests/test_release_packaging.py`, `tests/test_cli_help.py` all
-  extended for the new skill — the eight-skill repo now lights up
+  extended for the new skill: the eight-skill repo now lights up
   through every cross-skill validator.
 
 ### Sources studied
 
-- lawsofux.com — full recursive crawl: homepage, all 30 law pages,
+- lawsofux.com, full recursive crawl: homepage, all 30 law pages,
   `/articles/` index, `/book/`, the *Onboarding for Active Users*
   essay.
 - Two outside reads, picked deliberately: NN/g's article on the
@@ -1409,10 +1409,10 @@ the result.
   observation); Wikipedia's Robustness Principle article (because
   Postel's Law has a real dark side UX writers tend to skip).
 - Anthropic, *The Complete Guide to Building Skills for Claude*
-  (PDF, 2026) — the new skill's layout was checked against the
+  (PDF, 2026): the new skill's layout was checked against the
   guide's frontmatter / folder / progressive-disclosure rules.
 
-## [0.9.0] — 2026-06-28 — `sprezzature-audio` split + `sprezzature-a11y` renamed to `sprezzature-accessibility`
+## [0.9.0] (2026-06-28): `sprezzature-audio` split + `sprezzature-a11y` renamed to `sprezzature-accessibility`
 
 After the v0.7.0 (`sprezzature-colors`) and v0.8.0 (`sprezzature-vision`) splits,
 the remaining `sprezzature-a11y` skill was unbalanced: an HTML lint script
@@ -1421,16 +1421,16 @@ HTML. This release ships the final split and a long-overdue rename.
 
 ### New skill: `sprezzature-audio`
 
-- `scripts/captions_from_whisper.py` — moved from
+- `scripts/captions_from_whisper.py`: moved from
   `sprezzature-a11y/scripts/`. Same CLI, new program name
   `sprezzature-audio-captions`. WebVTT / SRT / plain-text captions via local
-  whisper.cpp with project-vocab biasing — semantics unchanged.
-- `scripts/install_captions.py` — moved from `sprezzature-a11y/scripts/`.
+  whisper.cpp with project-vocab biasing: semantics unchanged.
+- `scripts/install_captions.py`: moved from `sprezzature-a11y/scripts/`.
   Same CLI, new program name `sprezzature-audio-install`. Installs
   `pywhispercpp` and pre-downloads a GGML model.
-- `scripts/_argparse.py` / `_click.py` / `_lang.py` / `_vocab.py` —
+- `scripts/_argparse.py` / `_click.py` / `_lang.py` / `_vocab.py`:
   copied (per the established per-skill autonomy convention).
-- `references/captions-ai.md` — moved from `sprezzature-a11y/references/`.
+- `references/captions-ai.md`: moved from `sprezzature-a11y/references/`.
 
 The captions pipeline remains explicitly **WiP** for the same reasons
 as before (WER baselines pending, `vocab-biasing-clip.wav` pending),
@@ -1441,7 +1441,7 @@ plus an upcoming improvement to the whisper.cpp integration via
 ### Renamed skill: `sprezzature-a11y` → `sprezzature-accessibility`
 
 The `a11y` numeronym is community-fluent but trades discoverability
-for insiderness — ironic for an accessibility skill. The other sprezzature
+for insiderness: ironic for an accessibility skill. The other sprezzature
 skills are immediately legible (`sprezzature-ui`, `sprezzature-publish`,
 `sprezzature-cli-gui`, `sprezzature-colors`, `sprezzature-vision`, `sprezzature-audio`); the
 new name brings `sprezzature-accessibility` in line.
@@ -1455,7 +1455,7 @@ new name brings `sprezzature-accessibility` in line.
   every other SKILL.md.
 - CLI router: group renamed from `a11y` to `accessibility`. Old:
   `sprezzature a11y lint`. New: `sprezzature accessibility lint`.
-- The lint script's filename stays `lint_a11y.py` — the term `a11y`
+- The lint script's filename stays `lint_a11y.py`: the term `a11y`
   remains the right name for the *tool* (the script does an a11y lint
   in the WAI/WCAG sense). The change is to the *skill folder* / *CLI
   group*, where discoverability matters.
@@ -1517,7 +1517,7 @@ removed; `sprezzature-accessibility/scripts/` is now just `lint_a11y.py` +
 - The rename to `sprezzature-accessibility` was overdue and removes the
   accessibility-tooling-with-an-inaccessible-name irony.
 
-## [0.8.0] — 2026-06-28 — `sprezzature-vision` skill split out of `sprezzature-a11y`
+## [0.8.0] (2026-06-28): `sprezzature-vision` skill split out of `sprezzature-a11y`
 
 The AI alt-text path (Ollama vision model, per-purpose YAML prompts,
 surrounding-text + vocabulary biasing, on-disk cache) was always a
@@ -1526,22 +1526,22 @@ captions. This release ships the split, alongside a default-model bump.
 
 ### New skill: `sprezzature-vision`
 
-- `scripts/alt_from_ollama.py` — moved from `sprezzature-a11y/scripts/`. Same
+- `scripts/alt_from_ollama.py`: moved from `sprezzature-a11y/scripts/`. Same
   CLI, new program name `sprezzature-vision-alt`. Per-purpose decision tree
   (informative / decorative / functional / text / complex / group),
   surrounding-text + vocabulary biasing, on-disk cache, EN/FR default
-  (configurable via `lang_pair`) — all unchanged.
-- `scripts/install_alt_ai.py` — moved from `sprezzature-a11y/scripts/`. Same
+  (configurable via `lang_pair`): all unchanged.
+- `scripts/install_alt_ai.py`: moved from `sprezzature-a11y/scripts/`. Same
   CLI, new program name `sprezzature-vision-install`. Installs the Ollama
   daemon (brew on macOS, official installer on Linux, winget on
   Windows) and pulls the default vision model.
-- `scripts/prompts/*.yaml` — the nine per-purpose alt-text prompt
+- `scripts/prompts/*.yaml`: the nine per-purpose alt-text prompt
   templates moved from `sprezzature-a11y/scripts/prompts/`.
-- `scripts/{_argparse,_click,_lang,_prompts,_vocab}.py` — copied (per the
+- `scripts/{_argparse,_click,_lang,_prompts,_vocab}.py`: copied (per the
   established per-skill autonomy convention); the originals stay in
   `sprezzature-a11y/scripts/` because `captions_from_whisper.py` still uses
   them.
-- `references/alt-text-ai.md` — moved from `sprezzature-a11y/references/`.
+- `references/alt-text-ai.md`: moved from `sprezzature-a11y/references/`.
 
 ### Default model bumped: `gemma4:e2b` → `gemma3:4b`
 
@@ -1563,8 +1563,8 @@ on `gemma4:e2b` keep working until they re-run the installer.
 After the v0.7.0 split that took colour audits out, this release takes
 AI alt text out as well. `sprezzature-a11y` is now scoped strictly to:
 
-- `lint_a11y.py` — 14-rule static a11y lint (stdlib only).
-- `captions_from_whisper.py` (WiP) + `install_captions.py` — local
+- `lint_a11y.py`: 14-rule static a11y lint (stdlib only).
+- `captions_from_whisper.py` (WiP) + `install_captions.py`: local
   WebVTT / SRT captions via whisper.cpp.
 
 SKILL.md frontmatter (`description`, `compatibility`) updated; the
@@ -1576,7 +1576,7 @@ to `sprezzature-vision`. `metadata.version` → `0.8.0`.
 
 - New group `sprezzature vision` with leaf commands `sprezzature vision alt` and
   `sprezzature vision install`.
-- Removed `sprezzature a11y alt` and `sprezzature a11y install-alt-ai` (breaking —
+- Removed `sprezzature a11y alt` and `sprezzature a11y install-alt-ai` (breaking,
   but the scripts moved, the CLI follows).
 
 ### Documentation
@@ -1612,24 +1612,24 @@ to `sprezzature-vision`. `metadata.version` → `0.8.0`.
   vision-model AI) and leaves room for future vision-only features
   (image OCR, layout reasoning) without re-scoping.
 
-## [0.7.0] — 2026-06-28 — `sprezzature-colors` skill split out of `sprezzature-a11y`
+## [0.7.0] (2026-06-28): `sprezzature-colors` skill split out of `sprezzature-a11y`
 
 Color tooling (WCAG contrast audit, OKLCH-neighbour fix suggester, CVD
 simulation) was always a separate concern from accessibility lint and AI
 content drafting. This release ships the split, plus the curated palette
 that previously lived as an external Python library
-([`colors-helper`](https://github.com/warith-harchaoui/colors-helper)) —
+([`colors-helper`](https://github.com/warith-harchaoui/colors-helper)):
 now archived in favour of the new skill.
 
 ### New skill: `sprezzature-colors`
 
-- `scripts/audit_contrast.py` — moved from `sprezzature-a11y/scripts/`. Same CLI,
+- `scripts/audit_contrast.py`: moved from `sprezzature-a11y/scripts/`. Same CLI,
   new program name `sprezzature-colors-contrast`. The fix suggester (OKLCH L-axis
   walk) is unchanged.
-- `scripts/simulate_cvd.py` — moved from `sprezzature-a11y/scripts/`. Same CLI,
+- `scripts/simulate_cvd.py`: moved from `sprezzature-a11y/scripts/`. Same CLI,
   new program name `sprezzature-colors-cvd`. Machado et al. 2009 matrices
   unchanged.
-- `scripts/_colors.py` — new internal helper consolidating sRGB ↔ linear,
+- `scripts/_colors.py`: new internal helper consolidating sRGB ↔ linear,
   hex parsing, WCAG luminance / contrast (`meets_wcag(fg, bg, level, size)`
   added), OKLab / OKLCH conversions, perceptual `lighten` / `darken` on the
   OKLCH L axis (replaces the naïve `+70` RGB offset from `colors-helper`),
@@ -1638,7 +1638,7 @@ now archived in favour of the new skill.
   `psychology_for`), and a small `Color` ergonomic class.
   Used by both `audit_contrast` and `simulate_cvd`, killing the
   `srgb_to_linear` / `linear_to_srgb` duplication between them.
-- `references/palette.csv` — unified curated palette. **One row per
+- `references/palette.csv`: unified curated palette. **One row per
   canonical color**, with semantic projections as columns:
   `Hexcode, R, G, B, Base, LightHex, Emotion, Concepts,
   PsychologyPositive, PsychologyNegative`. Twelve rows: the eight
@@ -1660,7 +1660,7 @@ now archived in favour of the new skill.
 
 - New group `sprezzature colors` with leaf commands `sprezzature colors contrast` and
   `sprezzature colors cvd`.
-- Removed `sprezzature a11y contrast` and `sprezzature a11y cvd` (breaking — but the
+- Removed `sprezzature a11y contrast` and `sprezzature a11y cvd` (breaking, but the
   scripts moved, the CLI follows). The new commands take the same flags.
 
 ### Documentation
@@ -1678,7 +1678,7 @@ now archived in favour of the new skill.
 - `tests/conftest.py` adds `sprezzature-colors/scripts` to the test sys.path.
 - `tests/test_release_packaging.py`, `tests/test_validate_skill.py`,
   `tests/test_cli_help.py` updated for the new skill.
-- `tests/test_colors_module.py` — 64 new tests covering hex parsing,
+- `tests/test_colors_module.py`: 64 new tests covering hex parsing,
   WCAG, OKLab/OKLCH round-trips, perceptual `lighten` / `darken` (with
   a direct comparison against the naïve RGB +70 approach the new code
   replaces), CVD matrices, palette accessors, and the `Color` class.
@@ -1704,28 +1704,28 @@ The unified palette draws on:
 - Color psychology associations from the user's published page
   <https://harchaoui.org/warith/colors/>
 
-## [0.6.5] — 2026-06-23 — staleness sweep across SKILL descriptions + README status
+## [0.6.5] (2026-06-23): staleness sweep across SKILL descriptions + README status
 
-Patch release. Doc and frontmatter hygiene only — no script behaviour
+Patch release. Doc and frontmatter hygiene only: no script behaviour
 changes. Caught while sweeping the repo for decayed claims after the
 0.5.x → 0.6.x string.
 
-### Changed — `sprezzature-ui/SKILL.md` description
+### Changed: `sprezzature-ui/SKILL.md` description
 
 Rewrote the typography sentence to match the 0.6.4 carve-out. Before:
 *"Three-Roboto typography rule: Roboto (sans), Roboto Serif (serif),
-Roboto Mono (code/monospace); no other downloaded webfont."* — that
+Roboto Mono (code/monospace); no other downloaded webfont."*: that
 last clause is wrong post-0.6.4 (audits respect existing fonts;
 user-named typefaces are honored). Now: *"Default typography is the
 three-Roboto rule (Roboto sans + Roboto Serif + Roboto Mono); honors
 user-specified fonts and respects existing typefaces when auditing
 existing UI."*
 
-### Changed — `sprezzature-publish/SKILL.md` description
+### Changed: `sprezzature-publish/SKILL.md` description
 
 The description had drifted behind the skill's actual scope. Now
 mentions:
-- **Audio narration** (added in 0.5.0 — was documented in the SKILL
+- **Audio narration** (added in 0.5.0, was documented in the SKILL
   body but missing from the description, so it didn't surface as a
   trigger).
 - **SEO + GEO** (Google's Search Essentials + AI Optimization
@@ -1733,9 +1733,9 @@ mentions:
   "AI Overview", "GEO", "narrate this post", "podcast my blog" so
   those queries actually route the skill.
 
-Total length 1018 / 1024 chars — well under the Anthropic spec cap.
+Total length 1018 / 1024 chars: well under the Anthropic spec cap.
 
-### Changed — README + LISEZMOI Status rows
+### Changed: README + LISEZMOI Status rows
 
 The `sprezzature-publish` row in the Status table claimed *"4 scripts, 18
 deterministic tests"*. Actual current state: 11 public scripts (4
@@ -1747,13 +1747,13 @@ across `tests/test_favicons.py`, `…site_indexes.py`, `…meta_from_ollama.py`,
 scripts" decay every release; the rewritten row names the surfaces
 instead of pinning counts. Same fix mirrored in `LISEZMOI.md`.
 
-## [0.6.4] — 2026-06-22 — three-Roboto rule carve-out for audits
+## [0.6.4] (2026-06-22): three-Roboto rule carve-out for audits
 
 Patch release. Re-scopes the three-Roboto typography rule from "hard
 constraint" to "default for generation", so audits and user-specified
 fonts no longer get hijacked.
 
-### Changed — hard rule 3 in `sprezzature-ui/SKILL.md`
+### Changed: hard rule 3 in `sprezzature-ui/SKILL.md`
 
 The three-Roboto rule now applies **only** when generating fresh UI /
 site output **and the user has not specified a typeface**. It does NOT
@@ -1761,7 +1761,7 @@ apply when:
 
 1. **Auditing an existing site / UI.** A user asking to "audit this",
    "review this", "make it look less AI", or "WCAG check" should get
-   feedback on ergonomics, a11y, anti-patterns — **not** an unsolicited
+   feedback on ergonomics, a11y, anti-patterns: **not** an unsolicited
    font-swap recommendation. Respect the typefaces already in use.
 2. **The user names a typeface.** "Use Inter", "we ship IBM Plex",
    "stick to system fonts" → use what they ask for.
@@ -1775,23 +1775,23 @@ existing typeface as part of the review. Now it stays in its lane.
 
 ### Also changed
 
-- **`sprezzature-ui/SKILL.md` decision tree** — the "audit / ergonomic
+- **`sprezzature-ui/SKILL.md` decision tree**: the "audit / ergonomic
   review / UX review" row now explicitly says "Respect the existing
-  typeface stack — do not propose a three-Roboto swap unless the user
+  typeface stack: do not propose a three-Roboto swap unless the user
   explicitly asks about typography."
-- **`sprezzature-ui/references/ui-guidelines/foundations/typography.md`** —
+- **`sprezzature-ui/references/ui-guidelines/foundations/typography.md`**:
   the "The fonts" section opens with the carve-out and renames itself
   to "the three-Roboto rule (generation-only default)".
-- **`sprezzature-ui/references/stack-tailwind.md`** — same carve-out at the
+- **`sprezzature-ui/references/stack-tailwind.md`**: same carve-out at the
   top of the typography section.
 
-## [0.6.3] — 2026-06-22 — Anthropic skill-spec compliance audit
+## [0.6.3] (2026-06-22): Anthropic skill-spec compliance audit
 
 Patch release. Audited the four skills against
 *The Complete Guide to Building Skills for Claude* (Anthropic) and
 brought everything into spec.
 
-### Fixed — README.md inside skill folders (spec violation)
+### Fixed: README.md inside skill folders (spec violation)
 
 The spec is explicit: "Don't include README.md inside your skill
 folder. All documentation goes in SKILL.md or references/. Note: when
@@ -1800,8 +1800,8 @@ human visitors." The repo-level `README.md` and `LISEZMOI.md` are
 fine and required; the nested ones were not.
 
 - **Deleted** `sprezzature-ui/assets/fonts/README.md` (introduced in 0.6.0
-  during the typography migration). Its content — the three-Roboto
-  rule + wiring instructions — was redundant with
+  during the typography migration). Its content (the three-Roboto
+  rule + wiring instructions) was redundant with
   `sprezzature-ui/references/ui-guidelines/foundations/typography.md`,
   which already documents Tailwind config, CSS variables, HTML
   preload, and the per-folder `fonts.css` layout. `sprezzature-ui/SKILL.md`
@@ -1813,24 +1813,24 @@ fine and required; the nested ones were not.
   leading note in the renamed file explains the rule for any reader
   who came in expecting a README.
 
-### Hardened — validators catch the violation now
+### Hardened: validators catch the violation now
 
 Both validators previously checked only the skill root, which is how
 the fonts README slipped past CI in 0.6.0.
 
-- `sprezzature-ui/scripts/validate.py` — Check 6 now uses `Path.rglob` to
+- `sprezzature-ui/scripts/validate.py`: Check 6 now uses `Path.rglob` to
   walk the whole skill tree.
-- `scripts/validate_skill.py` — added Check 10 with the same
+- `scripts/validate_skill.py`: added Check 10 with the same
   rule; the cross-skill validator now reports every nested README
   with its path so the maintainer doesn't have to grep.
-- `tests/test_validate_skill.py` — two new regression tests
+- `tests/test_validate_skill.py`: two new regression tests
   (`test_readme_at_skill_root_is_rejected`,
   `test_readme_nested_is_rejected`) lock the rule in. Total
   deterministic suite is now 425 tests.
 
-### Added — `compatibility` frontmatter field
+### Added: `compatibility` frontmatter field
 
-Optional per the spec, but recommended — declares the runtime
+Optional per the spec, but recommended: declares the runtime
 environment each skill needs. All four SKILL.md frontmatters now
 carry a `compatibility:` block stating: which runtime hosts the skill
 targets (Claude.ai / Claude Code / OpenCode), what Python version (if
@@ -1838,7 +1838,7 @@ any) the scripts need, which third-party deps each script needs, and
 whether network access is required. Shapes future tool discovery
 without expanding the description budget.
 
-### Audited — clean on every other rule
+### Audited: clean on every other rule
 
 - ✅ Folder names kebab-case (`sprezzature-ui`, `sprezzature-cli-gui`,
   `sprezzature-publish`, `sprezzature-a11y`) and match each `name:` field.
@@ -1853,7 +1853,7 @@ without expanding the description budget.
 - ✅ Python style (numpy-docstring module headers, full typing,
   authorship line) consistent across every shipped script.
 
-## [0.6.2] — 2026-06-22 — SEO + GEO foundations from Google's official docs
+## [0.6.2] (2026-06-22): SEO + GEO foundations from Google's official docs
 
 Minor release. New canonical reference adapting Google's
 search-foundations guidance to the artifacts `sprezzature-publish` already
@@ -1861,12 +1861,12 @@ emits, plus explicit SEO / GEO routing in the SKILL decision tree.
 
 ### Added
 
-- **`sprezzature-publish/references/seo-essentials.md`** — the canonical
+- **`sprezzature-publish/references/seo-essentials.md`**: the canonical
   adaptation of:
   - [Google Search Essentials](https://developers.google.com/search/docs/essentials)
     (technical requirements + spam policies + six key best practices)
   - [Google AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
-    ("Apply foundations" section — same foundations as Search
+    ("Apply foundations" section: same foundations as Search
     Essentials for AI Overview / generative search; no new meta tag
     for AI)
   - [Google "Third-party SEO"](https://developers.google.com/search/docs/fundamentals/third-party-seo)
@@ -1887,36 +1887,36 @@ emits, plus explicit SEO / GEO routing in the SKILL decision tree.
   exists** (the skill refuses to emit one and cites the AI
   Optimization Guide).
 
-- **`LANDSCAPE.md` § 14** — new SEO + GEO guidance landscape table
+- **`LANDSCAPE.md` § 14**: new SEO + GEO guidance landscape table
   comparing Google's three official docs, the llmstxt.org community
   convention, Bing's guidelines, Schema.org, SEO-tool blogs, and
   "Google-approved" SaaS badges (refused).
 
 ### Changed
 
-- **`sprezzature-publish/SKILL.md`** — decision tree gained two routing
+- **`sprezzature-publish/SKILL.md`**: decision tree gained two routing
   rows: "SEO / AI search / AI Overview / discoverability / is this
   advice true?" → `seo-essentials.md`, and "GEO / llms.txt / make my
   site readable by ChatGPT / Gemini / Perplexity" → same reference
   with the GEO framing. References list updated.
 
-- **`README.md` + `LISEZMOI.md`** — the "Meta tags / SEO / OG card"
+- **`README.md` + `LISEZMOI.md`**: the "Meta tags / SEO / OG card"
   row in Inputs → outputs now explicitly covers SEO **and** GEO,
   notes that `llms.txt` is already emitted by `site_indexes.py`,
   and links the new reference for the full Google-foundations
   rationale.
 
-- **`sprezzature-publish/references/meta-tags.md`** and **`site-indexes.md`**
-  — cross-linked to `seo-essentials.md` from their authoritative-
+- **`sprezzature-publish/references/meta-tags.md`** and **`site-indexes.md`**:
+  cross-linked to `seo-essentials.md` from their authoritative-
   sources lists so the rule and the implementation point at each
   other.
 
-## [0.6.1] — 2026-06-22 — CI + release workflow fixes
+## [0.6.1] (2026-06-22): CI + release workflow fixes
 
 Patch release. No skill content changes. Repairs the two GitHub
 Actions workflows that broke during the v0.6.0 publish.
 
-### Fixed — `ci` workflow (failing since v0.5.0)
+### Fixed: `ci` workflow (failing since v0.5.0)
 
 `sprezzature-publish/scripts/requirements-narrate-openvoice.txt` pins
 `openvoice @ git+https://github.com/myshell-ai/OpenVoice.git@main`,
@@ -1934,7 +1934,7 @@ optional narration-engine requirements files explicitly. As a side
 benefit, every matrix job stops pulling ~2 GB of torch + torchaudio
 on every push.
 
-### Fixed — `release` workflow (failed on v0.6.0)
+### Fixed: `release` workflow (failed on v0.6.0)
 
 When the maintainer publishes a tag manually (running
 `scripts/release.sh` + `gh release create` locally before the
@@ -1948,7 +1948,7 @@ maintainer's locally-built `SHA256SUMS`.
 ### Documented
 
 - `sprezzature-publish/references/audio-narration.md` now carries a
-  short "Installation gotcha — OpenVoice package rename" note next
+  short "Installation gotcha: OpenVoice package rename" note next
   to the engine matrix so users hit by the same upstream rename know
   the fix without having to read the CHANGELOG.
 - `SECURITY.md` "Supply-chain notes" clarifies that
@@ -1959,7 +1959,7 @@ maintainer's locally-built `SHA256SUMS`.
   workflow; if you want to publish manually first, the workflow now
   no-ops cleanly.
 
-## [0.6.0] — 2026-06-22 — typography overhaul
+## [0.6.0] (2026-06-22): typography overhaul
 
 **The three-Roboto rule.** Replaced the previous Montserrat-default /
 Inter-alternate typography stack with a hard-coded three-family rule:
@@ -1978,14 +1978,14 @@ genuinely needs a fourth family for brand or accessibility reasons,
 that now requires an explicit project-README note rather than an
 in-skill swap.
 
-### Changed — bundled fonts
+### Changed: bundled fonts
 
 - **Removed** `sprezzature-ui/assets/fonts/montserrat/` (Montserrat
   variable + italic-variable + four static weights + OFL) and
   `sprezzature-ui/assets/fonts/inter/` (the empty alternate folder).
 - **Added** `sprezzature-ui/assets/fonts/roboto/`,
   `sprezzature-ui/assets/fonts/roboto-serif/`,
-  `sprezzature-ui/assets/fonts/roboto-mono/` — each shipping a
+  `sprezzature-ui/assets/fonts/roboto-mono/`: each shipping a
   variable-axis upright WOFF2 + italic-variable WOFF2 + upstream
   `OFL.txt` (all three families are SIL OFL 1.1).
 - **Added** `sprezzature-ui/assets/fonts/README.md` codifying the
@@ -1995,51 +1995,51 @@ in-skill swap.
   flagship demo). Demo `index.html`, `manifest.json`, `README.md`,
   and `favicon.svg` updated.
 
-### Changed — skill prompts
+### Changed: skill prompts
 
-- `sprezzature-ui/SKILL.md` — hard-rule 3 rewritten ("three-Roboto rule"
+- `sprezzature-ui/SKILL.md`: hard-rule 3 rewritten ("three-Roboto rule"
   replaces "Montserrat by default; Inter as the documented
   alternate"). Frontmatter `description`, chart-spec font name,
   pre-ship checklist, references list, and assets list updated.
-- `sprezzature-ui/references/stack-tailwind.md` — typography section
+- `sprezzature-ui/references/stack-tailwind.md`: typography section
   rewritten; Tailwind `fontFamily` block now includes `sans`,
   `serif`, `mono` per the three Roboto families; `app.css` `@import`
   block expanded to all three.
-- `sprezzature-ui/references/ui-guidelines/foundations/typography.md` —
+- `sprezzature-ui/references/ui-guidelines/foundations/typography.md`:
   rewritten end-to-end; preload, type scale, concrete rules, and
   checklist all updated. Added a `t-prose` editorial component class
   that lifts Roboto Serif.
-- `sprezzature-ui/references/charts-vega.md` — every Vega-Lite font slot
+- `sprezzature-ui/references/charts-vega.md`: every Vega-Lite font slot
   (`labelFont`, `titleFont`, header / legend) now uses Roboto.
-- `sprezzature-ui/references/{checklist.md,material-design.md,ergonomics-criteria.md,stack-vanilla-js.md,ui-guidelines/INDEX.md}`
-  — single-line mentions updated.
-- `sprezzature-publish/SKILL.md` — typography line + emit-step rewritten.
-- `sprezzature-cli-gui/SKILL.md` — typography rule + step-7 ship list
+- `sprezzature-ui/references/{checklist.md,material-design.md,ergonomics-criteria.md,stack-vanilla-js.md,ui-guidelines/INDEX.md}`:
+  single-line mentions updated.
+- `sprezzature-publish/SKILL.md`: typography line + emit-step rewritten.
+- `sprezzature-cli-gui/SKILL.md`: typography rule + step-7 ship list
   rewritten to call out Roboto Mono for the streaming log panel.
-- `sprezzature-cli/src/sprezzature_cli/cli.py` — `publish md-to-html` help text
+- `sprezzature-cli/src/sprezzature_cli/cli.py`: `publish md-to-html` help text
   now says "three-Roboto + Tailwind shell".
 
-### Changed — emitted code
+### Changed: emitted code
 
-- `sprezzature-publish/scripts/md_to_html.py` — Tailwind `fontFamily`
+- `sprezzature-publish/scripts/md_to_html.py`: Tailwind `fontFamily`
   block in the page template now ships Roboto / Roboto Serif /
   Roboto Mono with sensible system fallbacks (no JetBrains Mono).
-- `sprezzature-publish/scripts/site_indexes.py` — `humans.txt`
+- `sprezzature-publish/scripts/site_indexes.py`: `humans.txt`
   "Components" line updated.
-- `sprezzature-publish/references/i18n.md` — non-latin font-loading
+- `sprezzature-publish/references/i18n.md`: non-latin font-loading
   example reframed around the three-Roboto bundle.
-- `sprezzature-ui/assets/starter-page.html` — `<link rel="preload">` +
+- `sprezzature-ui/assets/starter-page.html`: `<link rel="preload">` +
   `<link rel="stylesheet">` + Tailwind `fontFamily` config updated
   to wire all three Roboto families. Hero kicker text updated.
-- `sprezzature-ui/assets/components/{chart-bar.json,chart-line.json}` —
+- `sprezzature-ui/assets/components/{chart-bar.json,chart-line.json}`:
   Vega `labelFont` / `titleFont` swapped to Roboto.
 
-### Changed — docs + license
+### Changed: docs + license
 
 - `README.md`, `LISEZMOI.md`, `LANDSCAPE.md` (typography section +
   table reframed), `LICENSE.md` (OFL carve-out now covers the three
   Roboto families), `SECURITY.md`, `CONTRIBUTING.md` (OFL template
-  reference) — all updated to the new rule.
+  reference): all updated to the new rule.
 
 ### Notes for upgraders
 
@@ -2050,14 +2050,14 @@ in-skill swap.
   preloads (see the migrated `sprezzature-ui/assets/starter-page.html` for
   the canonical pattern).
 - Existing pages that hard-coded `font-family: Montserrat` in inline
-  CSS (rare — the skill forbids this) will fall through to the
+  CSS (rare, the skill forbids this) will fall through to the
   system sans stack until the family name is updated to `Roboto`.
 
-## [0.5.0] — 2026-06-21
+## [0.5.0] (2026-06-21)
 
 Minor release. New optional editorial feature in `sprezzature-publish`:
 **audio narration of long-form posts** via two MIT-licensed local TTS
-engines (OpenVoice v2 + ChatterboxTTS — both shipping MIT licences
+engines (OpenVoice v2 + ChatterboxTTS: both shipping MIT licences
 on code AND model weights, no licensing trap). Structural narration
 hints derived from the Markdown tree; optional enrichment via the
 same local Ollama daemon already used for alt-text and meta tags;
@@ -2071,9 +2071,9 @@ feature targets multitasking audience, podcast positioning, and the
 narration scripts live in `sprezzature-publish`, not `sprezzature-a11y`, to keep
 this distinction visible.
 
-### Added — narration pipeline
+### Added: narration pipeline
 
-- **`sprezzature-publish/scripts/_narrate.py`** — shared helper. Parses a
+- **`sprezzature-publish/scripts/_narrate.py`**: shared helper. Parses a
   Markdown post into a list of `Segment` dicts (one per heading /
   paragraph / list item / blockquote), each carrying narration
   hints derived from Markdown structure: heading-level → pause
@@ -2084,8 +2084,8 @@ this distinction visible.
   author overrides, frontmatter `narration.tone` + `narration.pace`
   baselines. Manifest cache keyed on
   `(source_sha256, engine, voice)` so re-runs short-circuit on
-  unchanged posts. Pure-Python — no ML deps in the test path.
-- **`sprezzature-publish/scripts/narrate_post.py`** — orchestrator. Reads
+  unchanged posts. Pure-Python: no ML deps in the test path.
+- **`sprezzature-publish/scripts/narrate_post.py`**: orchestrator. Reads
   the post, extracts segments, applies pronunciation overrides
   (`pronunciation.yaml` per-post or project-root), optionally
   enriches each segment via Ollama (`--ai-hints`, off by default,
@@ -2094,49 +2094,49 @@ this distinction visible.
   Engine wrappers are subprocesses so the orchestrator's import
   graph stays light and the deterministic test path never sees
   torch.
-- **`sprezzature-publish/scripts/narrate_openvoice.py`** — OpenVoice v2
+- **`sprezzature-publish/scripts/narrate_openvoice.py`**: OpenVoice v2
   engine wrapper. Built-in voices (`base-en-default`,
   `base-en-friendly`, `base-en-cheerful`, `base-en-sad`,
   `base-en-whispering`, `base-es-default`, `base-fr-default`) plus
   zero-shot voice cloning from `--voice-sample <wav>`. Strength:
-  cross-lingual — an English reference clone speaks French text
+  cross-lingual: an English reference clone speaks French text
   with the cloned voice. Emotion mapped onto OpenVoice's native
   category set.
-- **`sprezzature-publish/scripts/narrate_chatterbox.py`** — ChatterboxTTS
+- **`sprezzature-publish/scripts/narrate_chatterbox.py`**: ChatterboxTTS
   engine wrapper. Continuous `exaggeration` (0.0–2.0) and
   `cfg_weight` (0.0–1.0) dials. Project hint mapping:
   emotion + intensity → exaggeration (neutral=0.5, cheerful=0.8,
   enthusiastic=1.0, angry=1.2, whispering=0.2, etc.; clamped to
   the engine's valid range). Strength: more expressive than
   OpenVoice; better for opinion / essay / mood-swing writing.
-- **`sprezzature-publish/scripts/pick_voice.py`** — voice picker for the
+- **`sprezzature-publish/scripts/pick_voice.py`**: voice picker for the
   designer. Lists built-in voices per installed engine, optionally
   generates a one-sentence demo clip per voice
   (`--sample [--text "..."]`) into `out/voice-samples/<engine>/`.
   Designer listens, picks the one that fits, then uses
   `--voice <name>` on `narrate_post.py`.
-- **`sprezzature-publish/scripts/install_narrate.py`** — install helper
+- **`sprezzature-publish/scripts/install_narrate.py`**: install helper
   (mirrors `install_alt_ai.py` / `install_captions.py` from
   sprezzature-a11y). Downloads OpenVoice v2 checkpoints into
   `~/.cache/sprezzature-skill/openvoice/`; triggers ChatterboxTTS' lazy
   weight pull into `~/.cache/huggingface/` and creates the voices
   library directory. Does not auto-install the heavy Python
-  packages — pip is the canonical channel via the per-engine
+  packages: pip is the canonical channel via the per-engine
   requirements files.
-- **`requirements-narrate-openvoice.txt`** + **`-chatterbox.txt`**
-  — per-engine deps, install one or both. Engine wrappers
+- **`requirements-narrate-openvoice.txt`** + **`-chatterbox.txt`**:
+  per-engine deps, install one or both. Engine wrappers
   fail-soft via `--check` mode so the orchestrator detects missing
   installs without crashing.
 
-### Added — LLM enrichment hook
+### Added: LLM enrichment hook
 
 - Per-segment classification via Ollama (`--ai-hints`, default off).
-  Default model `gemma4:e2b` — same as `alt_from_ollama.py`, so the
+  Default model `gemma4:e2b`: same as `alt_from_ollama.py`, so the
   user only needs one model pulled. The model receives the
   segment + adjacent segments + kind + baseline as context and
   returns strict JSON: emotion / intensity / pace /
   pause_before_ms / pause_after_ms / emphasis_word. Output is
-  clamped to safe bounds and merged with structural baselines —
+  clamped to safe bounds and merged with structural baselines:
   structure is the source of truth, LLM overrides on specifics.
 - `--ai-hints-only` flag prints the enriched segment list as JSON
   and exits without invoking the TTS engine. Lets the author
@@ -2145,7 +2145,7 @@ this distinction visible.
   structural defaults. The deterministic test suite never depends
   on the daemon.
 
-### Added — RSS / Atom audio enclosure
+### Added: RSS / Atom audio enclosure
 
 - **`sprezzature-publish/scripts/site_indexes.py`** gained an
   `--audio-manifest` flag. When passed, every post that has a
@@ -2159,13 +2159,13 @@ this distinction visible.
   etc.); `length_bytes` populated from the on-disk file when
   `--audio-root` resolves to the public directory.
 
-### Added — reference doc
+### Added: reference doc
 
-- **`sprezzature-publish/references/audio-narration.md`** — full
+- **`sprezzature-publish/references/audio-narration.md`**: full
   long-form reference: quick-start, voice-cloning ethics
   (GDPR Article 9 biometric data, BIPA, right-of-publicity in CA
   / NY / TN), engine matrix (with the explicit reason F5-TTS and
-  XTTS-v2 are excluded — non-commercial weights), placement rule
+  XTTS-v2 are excluded: non-commercial weights), placement rule
   (audio player top-of-article with duration estimate, download
   link, `preload="none"`), RSS enclosure pattern, Schema.org
   `Article.audio` → `AudioObject`, OpenGraph `og:audio` snippet,
@@ -2173,14 +2173,14 @@ this distinction visible.
   pipeline" honesty (memoir / streaming TTS / multi-voice dialogue
   → out of scope).
 
-### Added — tests
+### Added: tests
 
-- **`tests/test_narrate.py`** — 39 deterministic tests.
-  Coverage: segment extraction (10 cases — heading levels,
+- **`tests/test_narrate.py`**: 39 deterministic tests.
+  Coverage: segment extraction (10 cases: heading levels,
   lists, blockquotes, inline markup, images, HTML tags,
   frontmatter tone, emoji emotion, inline `[emotion: X]` markers,
   heading reset of sticky emotion), pronunciation overrides
-  (4 cases — whole-word, longest-token-wins, empty-overrides
+  (4 cases: whole-word, longest-token-wins, empty-overrides
   noop, per-post then project-root lookup), `source_sha256`
   + manifest round-trip + corrupt-input soft-failure (4 cases),
   `merge_llm_hint` clamping + key preservation (5 cases),
@@ -2188,11 +2188,11 @@ this distinction visible.
   `site_indexes.load_audio_manifest` + `render_rss` /
   `render_atom` enclosure injection (6 cases), and an end-to-end
   cache short-circuit assertion that exercises the orchestrator
-  without installing an engine. Pure stdlib + PyYAML — no torch,
+  without installing an engine. Pure stdlib + PyYAML: no torch,
   no Ollama, no network. **Total deterministic suite: 423 tests
   (up from 384).**
 
-### Changed — `sprezzature-publish/SKILL.md`
+### Changed: `sprezzature-publish/SKILL.md`
 
 - New row in the "What it does" trigger table for narration
   (clearly marked **optional editorial enhancement**).
@@ -2203,9 +2203,9 @@ this distinction visible.
 - Scripts table gains `narrate_post.py`, `narrate_openvoice.py`,
   `narrate_chatterbox.py`, `pick_voice.py`, `install_narrate.py`.
 
-### Changed — version bumps
+### Changed: version bumps
 
-- All four `SKILL.md` files bumped `0.4.1 → 0.5.0` (minor — new
+- All four `SKILL.md` files bumped `0.4.1 → 0.5.0` (minor: new
   user-facing feature in `sprezzature-publish`).
 
 ### Honest gaps deliberately not addressed
@@ -2218,19 +2218,19 @@ this distinction visible.
 - **No automatic audio embedding in HTML output.** The
   reference doc documents the `<audio>` + Schema.org +
   OpenGraph pattern; the `meta_from_ollama.py` script does not
-  yet auto-inject these tags from a manifest. Deferred —
+  yet auto-inject these tags from a manifest. Deferred:
   current rendering is editorial.
 - **No automatic MP3 transcoding.** Engine wrappers produce
   WAV (lossless). For distribution-size MP3, run `ffmpeg
   -i in.wav -b:a 96k out.mp3` separately. Documented in
   the reference, not yet automated.
 
-## [0.4.1] — 2026-06-21
+## [0.4.1] (2026-06-21)
 
 Hardening release. Closes a critical correctness gap audit found in
 the validation layer, plus a doc lie. **All four `SKILL.md`
 frontmatters were silently YAML-invalid for every release through
-0.4.0** — `yaml.safe_load` rejected them with
+0.4.0**: `yaml.safe_load` rejected them with
 `mapping values are not allowed here` because of unquoted `:`
 characters in `description` (`Trigger phrases: "..."`). The regex
 frontmatter check in `sprezzature-ui/scripts/validate.py` saw the
@@ -2239,32 +2239,32 @@ Claude / OpenCode runtimes call a real YAML parser; depending on the
 client this either reduced the skill to a bare slug or rejected it
 outright. No behaviour change in any shipped script.
 
-### Fixed — SKILL.md YAML frontmatters
+### Fixed: SKILL.md YAML frontmatters
 
 - Rewrote `description:` in every `SKILL.md` as a folded block scalar
   (`>-`) so the `:` characters inside the value are no longer parsed
   as map separators. Verified with `yaml.safe_load` on each. Lengths:
   709 (sprezzature-ui), 754 (sprezzature-cli-gui), 889 (sprezzature-publish), 870
-  (sprezzature-a11y) — all within the Anthropic 50–1024 char cap. Body
+  (sprezzature-a11y): all within the Anthropic 50–1024 char cap. Body
   unchanged.
-- Fixed `SECURITY.md` claim "no signed release, no checksum file" —
+- Fixed `SECURITY.md` claim "no signed release, no checksum file":
   releases have shipped `SHA256SUMS` since v0.3.0. New text states
   the integrity-vs-authenticity distinction honestly: checksums yes,
   GPG signature no.
 
-### Added — real validator + negative tests
+### Added: real validator + negative tests
 
-- **`scripts/validate_skill.py`** — stdlib + PyYAML, parses each
+- **`scripts/validate_skill.py`**: stdlib + PyYAML, parses each
   `SKILL.md` frontmatter with `yaml.safe_load` and checks: name
   present + matches folder, description present + 50–1024 chars, body
   non-empty, no `TODO`/`TBD`/`FIXME`/`XXX` placeholders. Importable
   as `validate_skill(Path) -> list[str]` or callable as a CLI.
-- **`scripts/validate_all.py`** — repo-wide orchestrator. Runs the
+- **`scripts/validate_all.py`**: repo-wide orchestrator. Runs the
   strict YAML validator across all four skills, then runs the
   existing `sprezzature-ui/scripts/validate.py` content gate (framework
   imports, trademarks, marketing voice, INDEX.md path resolution).
   One exit code; one CI step.
-- **`tests/test_validate_skill.py`** — 17 tests:
+- **`tests/test_validate_skill.py`**: 17 tests:
   - Each shipped skill passes (parametrised, 4 tests).
   - Negative cases under `tmp_path`: missing SKILL.md, invalid YAML
     (the exact bug above), missing/empty name, missing/empty
@@ -2275,9 +2275,9 @@ outright. No behaviour change in any shipped script.
     `validate_all.py` exits zero on the shipped repo. 3 tests.
 - **`PyYAML>=6.0`** added to `requirements-dev.txt`.
 
-### Added — release packaging smoke test
+### Added: release packaging smoke test
 
-- **`tests/test_release_packaging.py`** — 19 tests, run end-to-end:
+- **`tests/test_release_packaging.py`**: 19 tests, run end-to-end:
   builds the tarballs via `scripts/release.sh 0.0.0-test` into a
   module-scoped `tmp_path`, then verifies:
   - five tarballs + `SHA256SUMS` (no extras, no missing),
@@ -2294,22 +2294,22 @@ outright. No behaviour change in any shipped script.
   - per-skill tarball ≤ 10 MB (catches accidental model / fixture
     inclusion).
 
-### Added — sprezzature-ui `assets/fonts/inter/`
+### Added: sprezzature-ui `assets/fonts/inter/`
 
 - New folder with a `README.md` documenting the Inter swap recipe
   (same instructions as `references/stack-tailwind.md`, now landed at
   the path the SKILL.md actually points at). Inter WOFF2 files
-  remain user-supplied — the folder is the landing pad. Resolves the
+  remain user-supplied: the folder is the landing pad. Resolves the
   dangling reference caught by the new packaging smoke test.
 
-### Changed — CI gates the YAML validator
+### Changed: CI gates the YAML validator
 
 - `.github/workflows/ci.yml` now runs `python scripts/validate_all.py`
   in addition to the existing sprezzature-ui content gate, on the existing
   Python 3.10 / 3.11 / 3.12 matrix. A PR that breaks any SKILL.md's
   YAML fails CI even if the deterministic test suite somehow doesn't.
 
-### Changed — docs aligned with reality
+### Changed: docs aligned with reality
 
 - **README + LISEZMOI** "Install" section: added an explicit
   `python3 scripts/validate_all.py` verification step after the
@@ -2325,21 +2325,21 @@ outright. No behaviour change in any shipped script.
 
 ### Notes
 
-- No version bump for the shipped scripts themselves — behaviour is
+- No version bump for the shipped scripts themselves: behaviour is
   unchanged.
 - SKILL.md `metadata.version` bumped `0.4.0 → 0.4.1` in all four
   files to align the on-disk skill version with this release tag.
 
-## [0.4.0] — 2026-06-21
+## [0.4.0] (2026-06-21)
 
 Minor release. Adds the three-state colour-scheme toggle component
 (`🌞 Light` / `🌚 Dark` / `🌗 Auto`, Auto-by-default) to the
 sprezzature-ui assets, ships a reusable headless-screenshot helper, and
 opens `GALLERY.md` with the first real-site entry.
 
-### Added — theme toggle component
+### Added: theme toggle component
 
-- **`sprezzature-ui/assets/components/theme-toggle.html`** — copy-pasteable
+- **`sprezzature-ui/assets/components/theme-toggle.html`**: copy-pasteable
   HTML+JS, three variants in one file:
   - **A. Segmented radio control** (3 buttons, emoji + label,
     `role="radiogroup"` / `role="radio"` / `aria-checked`, arrow-key
@@ -2352,10 +2352,10 @@ opens `GALLERY.md` with the first real-site entry.
     `cli-gui-demo` log viewer). Uses `safe-area-inset` padding so it
     clears the mobile home indicator.
 - **Wiring** depends on the existing `applyTheme(mode)` helper from
-  `references/stack-vanilla-js.md` — persists via
+  `references/stack-vanilla-js.md`: persists via
   `localStorage["color-scheme"]` and stays in sync with system
   `prefers-color-scheme` changes when the mode is `auto`. Auto is
-  the explicit default everywhere — a fresh visitor inherits their
+  the explicit default everywhere: a fresh visitor inherits their
   OS choice and is never surprised by a hard-coded scheme.
 - **Canonical placement rule** added to
   `sprezzature-ui/references/stack-vanilla-js.md` § "Toggle UI control":
@@ -2365,49 +2365,49 @@ opens `GALLERY.md` with the first real-site entry.
   variant of the toggle ships in the canonical nav block out of
   the box; the icon-only fallback appears below `sm`.
 
-### Added — `GALLERY.md` and screenshot tooling
+### Added: `GALLERY.md` and screenshot tooling
 
-- **`GALLERY.md`** — Markdown-only showcase of real sites and tools
+- **`GALLERY.md`**: Markdown-only showcase of real sites and tools
   shipped on the stack. Two entries at launch:
-  - **4ml — A Practical Python Environment for AI**
-    (<https://harchaoui.org/warith/4ml>) — long-form single-page
+  - **4ml: A Practical Python Environment for AI**
+    (<https://harchaoui.org/warith/4ml>): long-form single-page
     guide with sticky table of contents, captured headlessly via
     Playwright in both `prefers-color-scheme` variants.
-  - **md2star — Markdown → branded `.docx`/`.pptx`/`.pdf`**
-    (<https://github.com/warith-harchaoui/md2star>) — the concrete
+  - **md2star: Markdown → branded `.docx`/`.pptx`/`.pdf`**
+    (<https://github.com/warith-harchaoui/md2star>): the concrete
     CLI → GUI target `sprezzature-cli-gui` was designed for; light/dark
     hero screenshots sourced from md2star's own README (`assets/
     screenshots/hero-{light,dark}.png`) so the gallery shows what
     md2star itself shows, not a re-render.
-  No CMS, no separate showcase site, no build step — every entry
+  No CMS, no separate showcase site, no build step: every entry
   is a section in this file with screenshots committed under
   `assets/gallery/<slug>/{light,dark}.png`.
-- **`scripts/gallery_screenshot.py`** — headless Chromium via
+- **`scripts/gallery_screenshot.py`**: headless Chromium via
   Playwright, captures both `prefers-color-scheme` variants in one
   pass (retina 2× device-scale, default 1440×900 viewport,
   `--full-page` for the full vertical extent). Calls `pngquant`
   in-place when it's on `PATH` to trim retina captures from ~8 MB
   to ~2.7 MB at quality 70-90. Fails-soft when `pngquant` is
-  missing — the PNG just stays uncompressed.
+  missing: the PNG just stays uncompressed.
 - **README + LISEZMOI** point to `GALLERY.md` from the "not for
   X" / "alternatives" paragraph, alongside the existing
   `LANDSCAPE.md` link, so discovery flows naturally.
 
-### Changed — version bumps
+### Changed: version bumps
 
-- All four `SKILL.md` files bumped `0.3.2 → 0.4.0` (minor — new
+- All four `SKILL.md` files bumped `0.3.2 → 0.4.0` (minor: new
   user-facing component + new top-level doc).
 - README + LISEZMOI install snippets bumped to `VERSION=0.4.0`.
   Status snapshot reference bumped to `v0.4.0`.
 
-## [0.3.2] — 2026-06-21
+## [0.3.2] (2026-06-21)
 
 Cosmetic / hygiene patch release. Closes three of the five roadmap
 items from 0.3.1: LISEZMOI parity, `references/` reshape
 re-assessment, and `sprezzature-cli-gui` production-hardening notes. No
 behaviour change for any script.
 
-### Added — `sprezzature-cli-gui/references/hardening.md`
+### Added: `sprezzature-cli-gui/references/hardening.md`
 
 - New reference, ~250 lines, eight sections: loopback binding,
   bearer-token auth on `/run`, command + flag allow-list with
@@ -2415,19 +2415,19 @@ behaviour change for any script.
   scrubbed `env`, `start_new_session=True`, wall-clock timeout via
   `os.killpg`), per-token rate limit (in-memory sliding window), CORS
   posture (single pinned origin, no `*` with credentials), logging
-  hygiene (cmd / exit / duration only — no argv, no token, no body),
+  hygiene (cmd / exit / duration only: no argv, no token, no body),
   TLS terminated at a reverse proxy. Ends with a 10-line
   "before-promotion" checklist and a "when to outgrow the stdlib host"
   trigger list (multi-worker, schema validation, SSE reconnects,
   Tauri sidecar).
-- Snippets follow the project's Python style — module imports,
+- Snippets follow the project's Python style: module imports,
   numpy-style docstrings on the non-trivial helpers (`validate`,
   `run_sandboxed`, `rate_limited`), full typing, dict over class.
 - Wired into `sprezzature-cli-gui/SKILL.md` § References (the stale link to
   the never-shipped `cli-gui-workflow.md` was removed in the same
   pass).
 
-### Changed — `LISEZMOI.md` brought back to parity
+### Changed: `LISEZMOI.md` brought back to parity
 
 - New section "**État d'avancement**" mirrors the EN README "Status"
   table (eight rows, audio flagged WiP, version reference at 0.3.2).
@@ -2435,7 +2435,7 @@ behaviour change for any script.
   the new section, matching the EN row.
 - Install snippet bumped from `VERSION=0.3.0` to `VERSION=0.3.2`.
 
-### Changed — `references/` reshape re-assessed
+### Changed: `references/` reshape re-assessed
 
 - The 0.3.1 roadmap item *"split teaching prose from rules
   (`<name>-rules.md` + `<name>-guide.md`)"* is **retired** rather than
@@ -2447,7 +2447,7 @@ behaviour change for any script.
   Documenting the decision here so the next reader doesn't re-litigate
   it.
 
-### Changed — version bumps
+### Changed: version bumps
 
 - All four `SKILL.md` files bumped `0.3.1 → 0.3.2`. README + LISEZMOI
   install snippets bumped to `VERSION=0.3.2`. Status snapshot
@@ -2459,14 +2459,14 @@ behaviour change for any script.
   (`references/cli-gui-workflow.md`). Replaced with the real
   `references/hardening.md` link.
 
-## [0.3.1] — 2026-06-20
+## [0.3.1] (2026-06-20)
 
 Patch release. Documents the current status of each surface, marks
 audio captions explicitly **WiP** so users don't expect a finished WER
 gate, and ships one defensive fix for Ollama 0.30 MLX vision
 quantizations. No behaviour change for the stable scripts.
 
-### Added — status and roadmap
+### Added: status and roadmap
 
 - **`README.md` → "Status" section** spells out where each of the five
   surfaces (`sprezzature-ui`, `sprezzature-cli`, `sprezzature-cli-gui`, `sprezzature-publish`,
@@ -2482,17 +2482,17 @@ quantizations. No behaviour change for the stable scripts.
   LISEZMOI parity, full `references/` reshape, and `sprezzature-cli-gui`
   production-hardening notes.
 
-### Changed — `sprezzature-a11y/SKILL.md`
+### Changed: `sprezzature-a11y/SKILL.md`
 
 - Captions row of the "Honest framing" table and the decision-tree
   entry both flagged *(WiP)* with a one-line pointer to
   `tests/fixtures/audio/README.md` for the current shape of the eval
   fixtures. The script itself is unchanged.
 
-### Changed — version bumps
+### Changed: version bumps
 
 - All four `SKILL.md` files bumped from `0.2.0` → `0.3.1`. They were
-  left at `0.2.0` through 0.3.0 by accident — this aligns the on-disk
+  left at `0.2.0` through 0.3.0 by accident: this aligns the on-disk
   frontmatter with the release tag so skill consumers can tell
   versions apart.
 
@@ -2506,9 +2506,9 @@ quantizations. No behaviour change for the stable scripts.
   reports no `vision` capability. Defensive: returns `True` on any
   request error so a flaky daemon doesn't silently downgrade.
 
-## [0.3.0] — 2026-06-20
+## [0.3.0] (2026-06-20)
 
-### Added — unified driver and ergonomics
+### Added: unified driver and ergonomics
 
 - **`sprezzature-cli/` package** ships a Click-based top-level driver. A single
   `sprezzature` executable maps `sprezzature <skill> <action> [...]` onto each
@@ -2524,10 +2524,10 @@ quantizations. No behaviour change for the stable scripts.
   `simulate_cvd.py`, `site_indexes.py`, `favicons.py`, `validate.py`,
   `lint_markdown.py`, `md_to_html.py`, `install_captions.py`) gained a
   shared `_argparse.make_parser` factory that standardises `prog`,
-  `formatter_class`, `epilog`, and the `-V/--version` flag — addressing
+  `formatter_class`, `epilog`, and the `-V/--version` flag, addressing
   the 13 argparse inconsistencies catalogued in `.private/click.md`.
 
-### Added — runtime language configuration
+### Added: runtime language configuration
 
 - **`FRONT_LANG_PAIR` env var** drives the default `--lang` for the four
   Ollama-backed scripts. Precedence: explicit `--lang` flag →
@@ -2542,9 +2542,9 @@ quantizations. No behaviour change for the stable scripts.
   `lang_pair_default()` (env-unset, whitespace tolerance, empty-string
   handling, precedence).
 
-### Added — eval test suite
+### Added: eval test suite
 
-- **`tests/eval/`** — opt-in (`pytest -m eval`) quality bench for the
+- **`tests/eval/`**: opt-in (`pytest -m eval`) quality bench for the
   AI-backed scripts. Four modules: `test_alt_eval.py`,
   `test_plain_language_eval.py`, `test_meta_tags_eval.py`,
   `test_captions_eval.py`. Skip cleanly when Ollama is unreachable, the
@@ -2566,25 +2566,25 @@ quantizations. No behaviour change for the stable scripts.
   Test wires `LANGUAGES = ("en", "fr", "es")` with a parametrised
   per-language median-WER assertion (`≤ 0.10`). Adding a language is
   one line.
-- `tests/test_extract_cv_subset.py` — 18 deterministic tests for the
+- `tests/test_extract_cv_subset.py`: 18 deterministic tests for the
   extractor's pure logic (filter cutoffs, stratified sampling,
   per-speaker cap, determinism with same seed, diversity stats).
 - `tests/fixtures/audio/fetch.py` ships as a single-clip LibriVox /
   archive.org fallback for projects without Common Voice headroom.
 
-### Added — release infrastructure
+### Added: release infrastructure
 
-- **`scripts/release.sh`** — bash, no new deps. Takes a version
+- **`scripts/release.sh`**: bash, no new deps. Takes a version
   argument, builds five tarballs (one per skill + a bundle), generates
   `SHA256SUMS`, and self-verifies. Prefers `shasum -a 256` (macOS) with
   `sha256sum` fallback (Linux). Prints a copy-pasteable `gh release
   create` next-steps message.
-- **`.github/workflows/ci.yml`** — pytest + validator + eval-collect
+- **`.github/workflows/ci.yml`**: pytest + validator + eval-collect
   across Python 3.10 / 3.11 / 3.12 on every push and PR.
-- **`.github/workflows/release.yml`** — tag-driven (`v*.*.*`) release
+- **`.github/workflows/release.yml`**: tag-driven (`v*.*.*`) release
   via `scripts/release.sh` + `gh release create --generate-notes`.
 
-### Added — Wikipedia / Common Voice licensing
+### Added: Wikipedia / Common Voice licensing
 
 - **`LICENSE.md` § "Bundled third-party assets"** gained a "Common
   Voice audio clips" entry documenting the CC0 dedication, voluntary
@@ -2592,7 +2592,7 @@ quantizations. No behaviour change for the stable scripts.
   Manifests record opaque CV `client_id` hashes only, never raw
   identifiers.
 
-### Changed — honesty pass on positioning
+### Changed: honesty pass on positioning
 
 - README + LISEZMOI gained a structured "**Who this is for**" block
   with four explicit audiences (solo devs, pentesters writing internal
@@ -2633,9 +2633,9 @@ quantizations. No behaviour change for the stable scripts.
   updated frontmatters** are the two adoption-side milestones that
   determine whether 0.3.0 needs a fast follow-up.
 
-## [0.2.0] — 2026-06-16
+## [0.2.0] (2026-06-16)
 
-### Changed — the big restructure
+### Changed: the big restructure
 
 - **Split the single `sprezzature/` skill into four focused skills.** The
   previous `sprezzature/SKILL.md` had a description listing twelve trigger
@@ -2643,22 +2643,22 @@ quantizations. No behaviour change for the stable scripts.
   alt text, captions, favicons, meta, site indexes, plain language,
   contrast, CVD). Activation was sloppy and maintenance compounded.
   The new layout:
-  - `sprezzature-ui/` — UI generation core (stack rules, components, design
+  - `sprezzature-ui/`: UI generation core (stack rules, components, design
     system, checklist, dataviz). Always install.
-  - `sprezzature-cli-gui/` — CLI → GUI flagship.
-  - `sprezzature-publish/` — Markdown → website + meta + favicons + site
+  - `sprezzature-cli-gui/`: CLI → GUI flagship.
+  - `sprezzature-publish/`: Markdown → website + meta + favicons + site
     indexes + plain language.
-  - `sprezzature-a11y/` — a11y lint + contrast audit + CVD sim + alt text +
+  - `sprezzature-a11y/`: a11y lint + contrast audit + CVD sim + alt text +
     captions.
 - **Install path changed.** Users previously copied
   `cp -r sprezzature ~/.claude/skills/sprezzature`. Now they pick the skills they
   need: `cp -r sprezzature-ui ~/.claude/skills/sprezzature-ui` plus optional
   companion folders. Existing installs should be removed first.
 
-### Added — audience and positioning
+### Added: audience and positioning
 
 - **Picked a real audience.** Solo developers and small teams (≤ 5)
-  shipping internal tools — dev dashboards, admin panels, ML / data
+  shipping internal tools: dev dashboards, admin panels, ML / data
   demos, CLI wrappers, research showcases. Documented "not for X" cases
   (consumer brand, marketing pages, framework-led teams, large versioned
   docs).
@@ -2671,7 +2671,7 @@ quantizations. No behaviour change for the stable scripts.
   `audit_contrast.py --fix` is framed as a designer hint, not a final
   decision.
 
-### Added — typography
+### Added: typography
 
 - **Inter is now an accepted alternate font** (Montserrat default; Inter
   for dense dev / dashboard / admin / data surfaces). Hard rule 3 in
@@ -2680,19 +2680,19 @@ quantizations. No behaviour change for the stable scripts.
   a folder under `sprezzature-ui/assets/fonts/<family>/` with the TTF or
   WOFF2 files and a license file, the skill swaps `fontFamily.sans` to
   that family without touching the rest of the stack. Recipe is in
-  `sprezzature-ui/references/stack-tailwind.md` → "Typography — default,
+  `sprezzature-ui/references/stack-tailwind.md` → "Typography: default,
   alternate, and custom swap". The previous "two choices, no more"
   framing was too rigid for projects with brand-mismatch or
   language-coverage constraints.
 
-### Added — i18n
+### Added: i18n
 
 - **Bilingual default is now language-pair-configurable.** The previous
   EN/FR-only baking has been dropped from SKILL.md. Projects can declare
   their pair (EN/FR, EN/DE, EN/ES, EN/JA, …) and the skill follows.
   See `sprezzature-publish/references/i18n.md` for the configuration recipe.
 
-### Added — hygiene
+### Added: hygiene
 
 - `CHANGELOG.md` (this file).
 - `CONTRIBUTING.md`.
@@ -2702,7 +2702,7 @@ quantizations. No behaviour change for the stable scripts.
 - `LANDSCAPE.md` preamble made honest about the comparison bias (see
   also § 1 "Quick pick" prose).
 
-### Fixed — rule contradiction
+### Fixed: rule contradiction
 
 - The previous SKILL.md hard rule 2 (Tailwind classes only) explicitly
   allowed `style="--accent: #007AFF"`, which violated rule 7 (no raw hex
@@ -2740,7 +2740,7 @@ quantizations. No behaviour change for the stable scripts.
   for the analysis. A `sprezzature-cli/` package with a unified `sprezzature` command
   is the next ergonomic improvement.
 
-## [0.1.0] — 2025
+## [0.1.0] (2025)
 
 Initial public release: single `sprezzature/` skill folder with twelve trigger
 phrases, EN/FR bilingual defaults, Montserrat-only typography, ~70

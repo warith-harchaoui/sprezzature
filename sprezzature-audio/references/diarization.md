@@ -25,8 +25,8 @@ flowchart TD
 
 | Model | Purpose | Default HF id |
 |---|---|---|
-| **Sortformer** — end-to-end diarization transformer | "who spoke when" for up to 4 concurrent speakers | `nvidia/diar_sortformer_4spk-v1` |
-| **TitaNet-Large** — 192-D speaker-verification embeddings | "who is who" by matching against reference clips | `nvidia/speakerverification_en_titanet_large` |
+| **Sortformer**: end-to-end diarization transformer | "who spoke when" for up to 4 concurrent speakers | `nvidia/diar_sortformer_4spk-v1` |
+| **TitaNet-Large**: 192-D speaker-verification embeddings | "who is who" by matching against reference clips | `nvidia/speakerverification_en_titanet_large` |
 | **whisper.cpp** (via vocal-helper → pywhispercpp) | captions / transcript | `ggml-large-v3-turbo` |
 | **Qwen3-VL** (via Ollama, optional) | name inference from transcript | `qwen3-vl:8b` |
 
@@ -93,10 +93,10 @@ The transcript often names the speakers itself: "Hey Mary,
 where were we?", "I'm Alice, product lead at Acme". Two-pass
 detector:
 
-* **Rule pass** (fast, offline) — regex for self-introduction
+* **Rule pass** (fast, offline): regex for self-introduction
   patterns (EN + FR) and turn-initial / turn-final vocatives. Each
   match carries a confidence score; the highest wins per speaker.
-* **LLM pass** (opt-in via `--ollama`) — sends a compact JSON prompt
+* **LLM pass** (opt-in via `--ollama`): sends a compact JSON prompt
   to a local Ollama daemon (same daemon `alt_from_ollama.py` uses).
   Handles ambiguous cases the regex misses.
 
@@ -117,9 +117,9 @@ python scripts/name_from_transcript.py interview.vtt \
 
 Prior art the rule pass is modelled on:
 
-* Bäuml, Tapaswi & Stiefelhagen — *Person naming with automatically
+* Bäuml, Tapaswi & Stiefelhagen: *Person naming with automatically
   discovered contextual clues* (CVPR 2013).
-* Nagrani, Cole & Zisserman — *"From Benedict Cumberbatch to
+* Nagrani, Cole & Zisserman: *"From Benedict Cumberbatch to
   Sherlock Holmes"* (BMVC 2017).
 
 Both pair face + subtitle + audio evidence; this skill uses only the
@@ -143,7 +143,7 @@ turns inherit the previous speaker's label.
 
 ## Output formats
 
-### WebVTT (default) — voice cues
+### WebVTT (default): voice cues
 
 ```vtt
 WEBVTT
@@ -159,7 +159,7 @@ WebVTT's `<v Name>` extension is understood by every modern browser
 and by common caption-review tools (Amara, Aegisub with the WebVTT
 plugin). Renderers without extension support show the plain text.
 
-### SRT — `Name: text` prefix
+### SRT: `Name: text` prefix
 
 SRT has no voice-cue extension; the merger prefixes the display name
 instead.
@@ -174,7 +174,7 @@ Alice: Hello, welcome to the podcast.
 Bob: Thanks for having me!
 ```
 
-### Plain text — one paragraph per speaker turn
+### Plain text: one paragraph per speaker turn
 
 Long pauses (`> 1.5 s`) and speaker changes both introduce a blank
 line. Useful for feeding a summariser or a searchable transcript.
