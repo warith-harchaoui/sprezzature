@@ -1,4 +1,4 @@
-# Anti-patterns — design tells to avoid
+# Anti-patterns: design tells to avoid
 
 What NOT to emit. These are the reflexive visual choices that mark an interface as "AI-generated" or "designer-by-default". Refuse them unless the user explicitly asks. Most have a simple alternative listed.
 
@@ -34,7 +34,7 @@ A vertical 3–4 px colored bar on the left edge of a card or callout.
 
 ### "AI color palette"
 
-Eight bright primary hues used together — red, orange, yellow, green, blue, indigo, violet, pink — as if every brand color must appear at once.
+Eight bright primary hues used together (red, orange, yellow, green, blue, indigo, violet, pink) as if every brand color must appear at once.
 
 - **Why it's a tell:** zero discipline. Every color competes.
 - **Instead:** one accent color anchors the screen. Secondary colors are semantic only (success / warning / danger). See `color-psychology.md`.
@@ -124,7 +124,7 @@ A laptop or phone mockup PNG with placeholder UI inside.
 Every section laid out as "headline / three bullets / button".
 
 - **Why it's a tell:** every AI landing page does this.
-- **Instead:** mix sections — a quote, a comparison, a screenshot, a short paragraph, a chart. The rhythm should vary.
+- **Instead:** mix sections: a quote, a comparison, a screenshot, a short paragraph, a chart. The rhythm should vary.
 
 ## Component anti-patterns
 

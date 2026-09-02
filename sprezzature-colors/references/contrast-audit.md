@@ -1,8 +1,8 @@
-# Contrast audit — `audit_contrast.py`
+# Contrast audit: `audit_contrast.py`
 
 Audit every (foreground, background) pair in a palette against the WCAG contrast ratio thresholds, and propose the nearest accessible alternative for failing pairs. Deterministic, stdlib-only, no model.
 
-## What this tool is — and isn't
+## What this tool is (and isn't)
 
 This tool **flags WCAG contrast failures** on every (foreground, background) pair in a palette and **proposes a minimal-edit nudge** along the OKLCH lightness axis. The proposed fix preserves the WCAG ratio at the cost of moving along the L axis only: same hue, same chroma, brighter or darker. That is a useful starting suggestion when nothing else is on the line; it is **not** a designer-approved replacement.
 
@@ -89,10 +89,10 @@ If no candidate meets the target across the full L axis, the suggestion is omitt
 
 ## Standards cited
 
-- WCAG 2.x SC 1.4.3 — Contrast (Minimum).
-- WCAG 2.x SC 1.4.6 — Contrast (Enhanced).
-- WCAG 2.x SC 1.4.11 — Non-text Contrast.
-- OKLab / OKLCH — Björn Ottosson, "A perceptual color space for image processing", <https://bottosson.github.io/posts/oklab/>.
+- WCAG 2.x SC 1.4.3: Contrast (Minimum).
+- WCAG 2.x SC 1.4.6: Contrast (Enhanced).
+- WCAG 2.x SC 1.4.11: Non-text Contrast.
+- OKLab / OKLCH: Björn Ottosson, "A perceptual color space for image processing", <https://bottosson.github.io/posts/oklab/>.
 
 ## CI integration
 

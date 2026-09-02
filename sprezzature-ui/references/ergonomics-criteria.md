@@ -18,8 +18,8 @@ How the interface advises, orients, informs, and leads the user.
 
 Organize related items so the user can scan structure at a glance.
 
-- **By location** — related items are physically near each other; unrelated items are separated by whitespace or a separator line. Use `space-y-*` and `divide-y` rather than ad-hoc margins.
-- **By format** — different categories of items use distinct visual treatments (color, weight, shape). The destructive button is red; the link is blue; the heading is heavier than the body. Format must be consistent across the app.
+- **By location**: related items are physically near each other; unrelated items are separated by whitespace or a separator line. Use `space-y-*` and `divide-y` rather than ad-hoc margins.
+- **By format**: different categories of items use distinct visual treatments (color, weight, shape). The destructive button is red; the link is blue; the heading is heavier than the body. Format must be consistent across the app.
 
 ### 1.3 Immediate feedback
 
@@ -50,7 +50,7 @@ How much effort the interface costs the user: to read, to remember, to act.
 
 ### 2.2 Information density
 
-Each screen carries exactly as much information as the user needs to make the next decision — no more, no less.
+Each screen carries exactly as much information as the user needs to make the next decision: no more, no less.
 
 - Cut nice-to-have decoration that competes with content.
 - Hide secondary actions behind a "More" menu when the primary action is clear.
@@ -146,13 +146,13 @@ The interface matches the user's mental model and external context.
 
 Before shipping any non-trivial UI, walk the eight criteria and mark each:
 
-- [ ] **Guidance** — affordances are visible, items are grouped, feedback is immediate, text is legible.
-- [ ] **Workload** — labels are short; goals take the fewest possible steps; no decorative noise.
-- [ ] **Explicit control** — the user, not the system, initiates change; nothing is irreversible without undo.
-- [ ] **Adaptability** — user preferences honored; multiple paths to common goals; onboarding is skippable.
-- [ ] **Error management** — input is constrained; errors say what + why + what to try; prior input is preserved.
-- [ ] **Consistency** — one alignment, one scale, one token set, one icon family.
-- [ ] **Significance** — labels and icons match canonical meaning; no jargon.
-- [ ] **Compatibility** — OS / web conventions honored; locale-aware; matches user vocabulary.
+- [ ] **Guidance**: affordances are visible, items are grouped, feedback is immediate, text is legible.
+- [ ] **Workload**: labels are short; goals take the fewest possible steps; no decorative noise.
+- [ ] **Explicit control**: the user, not the system, initiates change; nothing is irreversible without undo.
+- [ ] **Adaptability**: user preferences honored; multiple paths to common goals; onboarding is skippable.
+- [ ] **Error management**: input is constrained; errors say what + why + what to try; prior input is preserved.
+- [ ] **Consistency**: one alignment, one scale, one token set, one icon family.
+- [ ] **Significance**: labels and icons match canonical meaning; no jargon.
+- [ ] **Compatibility**: OS / web conventions honored; locale-aware; matches user vocabulary.
 
 This complements `references/checklist.md` (technical pre-ship gate). The technical checklist asks "does it work?"; this one asks "is it usable?".

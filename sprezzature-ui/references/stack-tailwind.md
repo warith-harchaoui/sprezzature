@@ -1,11 +1,11 @@
-# Stack — Tailwind CSS
+# Stack: Tailwind CSS
 
 This skill emits Tailwind utility classes for all styling. Two valid setups:
 
-- **Play CDN** (`assets/starter-page.html` uses this) — zero-config, fine for prototypes.
-- **Built CSS via Tailwind CLI or Vite** — recommended for production.
+- **Play CDN** (`assets/starter-page.html` uses this): zero-config, fine for prototypes.
+- **Built CSS via Tailwind CLI or Vite**: recommended for production.
 
-## Typography — the three-Roboto rule (generation default, not an audit rule)
+## Typography: the three-Roboto rule (generation default, not an audit rule)
 
 When generating fresh UI / site output and the user has not specified a
 typeface, default to exactly three downloaded webfonts, all from the
@@ -181,17 +181,17 @@ module.exports = {
 
 ## Plugins
 
-- **`@tailwindcss/forms`** — sane defaults for form controls (consistent across browsers).
-- **`@tailwindcss/typography`** — `prose` classes for long-form content.
+- **`@tailwindcss/forms`**: sane defaults for form controls (consistent across browsers).
+- **`@tailwindcss/typography`**: `prose` classes for long-form content.
 
 ## Conventions
 
-1. **Semantic tokens only.** Never `bg-[#007AFF]` — always `bg-brand-blue`.
-2. **`dark:` peer for every meaningful color utility** — no orphan light-only classes.
-3. **Spacing scale** — `0.5 / 1 / 2 / 3 / 4 / 5 / 6 / 8 / 10 / 12 / 16`. No `gap-7`, no `p-9`.
+1. **Semantic tokens only.** Never `bg-[#007AFF]`, always `bg-brand-blue`.
+2. **`dark:` peer for every meaningful color utility**: no orphan light-only classes.
+3. **Spacing scale**: `0.5 / 1 / 2 / 3 / 4 / 5 / 6 / 8 / 10 / 12 / 16`. No `gap-7`, no `p-9`.
 4. **Order of utilities**: layout → spacing → sizing → typography → color → effects → state. Use Prettier with `prettier-plugin-tailwindcss` to enforce.
-5. **No `@apply` outside `@layer components`** — keep one source of truth.
-6. **Group rare bespoke styles in `@layer components`** — don't bury 30 utilities on one element.
+5. **No `@apply` outside `@layer components`**: keep one source of truth.
+6. **Group rare bespoke styles in `@layer components`**: don't bury 30 utilities on one element.
 
 ## Productivity utilities to know
 

@@ -1,4 +1,4 @@
-# Color-blind simulation — `simulate_cvd.py`
+# Color-blind simulation: `simulate_cvd.py`
 
 Render an image (a chart, a UI screenshot, an asset) as a color-blind viewer would see it. Three simulations are produced by default: protanopia, deuteranopia, tritanopia. Pillow + published transformation matrices. No model.
 

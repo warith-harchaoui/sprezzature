@@ -1,7 +1,7 @@
-# Color Psychology — tokens and selection rules
+# Color Psychology: tokens and selection rules
 
 Source: <https://harchaoui.org/warith/colors/>. The machine-readable
-form lives at `sprezzature-colors/references/palette.csv` — that CSV is the
+form lives at `sprezzature-colors/references/palette.csv`: that CSV is the
 **single source of truth for hexes** in the sprezzature-* ecosystem; this
 file mirrors the CSV's `Hexcode` + `LightHex` columns in human-readable
 table form, with the same rows in the same order. To regenerate the
@@ -14,7 +14,7 @@ python sprezzature-colors/scripts/palette_to_tailwind.py --emit theme
 If a row drifts between this file and the CSV, the **CSV wins** and
 this file is updated to match.
 
-**Curated default — user colors win.** When the user has supplied their
+**Curated default: user colors win.** When the user has supplied their
 own palette, use it. The curated set below is the default for fresh
 generation when no palette is in play. See rule 7 in
 `sprezzature-ui/SKILL.md` for the full carve-out.
@@ -88,7 +88,7 @@ Always check the negative column before locking a colour. A hue that fits the po
 1. Start from intent (emotion, concept, or system semantic), not aesthetics.
 2. Read the negative column. If a negative trait clashes with brand voice, pick a neighbour.
 3. Pair with the light variant for backgrounds, hover, selection. Do **not** reuse the base hue at low opacity for surfaces.
-4. Always emit a Tailwind token (`bg-brand-blue`), never a hex literal (`bg-[#007AFF]`) — `stack-tailwind.md`.
+4. Always emit a Tailwind token (`bg-brand-blue`), never a hex literal (`bg-[#007AFF]`); see `stack-tailwind.md`.
 5. Red is reserved for destructive / critical states. Never primary CTA.
 
 ## Semantic defaults

@@ -2,11 +2,11 @@
 
 Authoritative sources (no single standards body covers all of this):
 
-- **W3C HTML / WHATWG HTML Living Standard** — `charset`, `description`, `viewport`, `theme-color`, `color-scheme`, `referrer`, `robots`. <https://html.spec.whatwg.org/multipage/semantics.html#meta>
-- **Open Graph Protocol** (ogp.me) — social previews (Facebook, LinkedIn, Slack, iMessage, WhatsApp, Discord). <https://ogp.me/>
-- **Twitter Cards** (developer.x.com) — Twitter / X specific previews. <https://developer.x.com/en/docs/twitter-for-websites/cards>
-- **Schema.org** — structured data via JSON-LD for search engines. <https://schema.org/>
-- **Google Search Central** — canonical, robots, alternate hreflang. <https://developers.google.com/search/docs>
+- **W3C HTML / WHATWG HTML Living Standard**: `charset`, `description`, `viewport`, `theme-color`, `color-scheme`, `referrer`, `robots`. <https://html.spec.whatwg.org/multipage/semantics.html#meta>
+- **Open Graph Protocol** (ogp.me): social previews (Facebook, LinkedIn, Slack, iMessage, WhatsApp, Discord). <https://ogp.me/>
+- **Twitter Cards** (developer.x.com): Twitter / X specific previews. <https://developer.x.com/en/docs/twitter-for-websites/cards>
+- **Schema.org**: structured data via JSON-LD for search engines. <https://schema.org/>
+- **Google Search Central**: canonical, robots, alternate hreflang. <https://developers.google.com/search/docs>
 
 For the larger "what makes a page indexable and helpful for AI search" picture (Google's three Search Essentials pillars, the AI Optimization Guide's foundations, and how to evaluate third-party SEO advice), see `seo-essentials.md` in this folder.
 
@@ -74,9 +74,9 @@ Open Graph is the de-facto standard read by every major social platform. Add it 
 <meta property="og:locale"    content="en_US">
 ```
 
-- **`og:image`** — 1200 × 630 PNG/JPG, < 5 MB, served over HTTPS. Aspect ratio 1.91:1 renders consistently across platforms.
-- **`og:image:alt`** — required by accessibility tools; describe the image content.
-- **`og:locale`** — locale tag with underscore (`en_US`, `fr_FR`), not BCP-47 (`en-US`).
+- **`og:image`**: 1200 × 630 PNG/JPG, < 5 MB, served over HTTPS. Aspect ratio 1.91:1 renders consistently across platforms.
+- **`og:image:alt`**: required by accessibility tools; describe the image content.
+- **`og:locale`**: locale tag with underscore (`en_US`, `fr_FR`), not BCP-47 (`en-US`).
 - For multilingual sites, add `og:locale:alternate` per available language.
 
 ## Twitter / X Cards
@@ -92,7 +92,7 @@ Open Graph is the de-facto standard read by every major social platform. Add it 
 
 Twitter falls back to OG if Twitter-specific tags are missing, so the bare minimum is OG + `twitter:card`.
 
-## Structured data — JSON-LD via Schema.org
+## Structured data: JSON-LD via Schema.org
 
 JSON-LD is what Google reads. It's a `<script type="application/ld+json">` block in `<head>`.
 
@@ -137,7 +137,7 @@ Validate output with <https://search.google.com/test/rich-results>.
 
 For the whole site, prefer `/robots.txt` for crawl rules; reserve the `<meta>` tag for page-level overrides.
 
-## Multilingual — `hreflang`
+## Multilingual: `hreflang`
 
 When the page exists in several languages, declare each variant. See `i18n.md` for the full URL strategy.
 
@@ -161,23 +161,23 @@ The favicon set, theme-color, and manifest are produced by `scripts/favicons.py`
 
 ## What NOT to set
 
-- `<meta name="keywords">` — ignored by all major search engines since around 2009. Drop it.
-- `<meta name="author">` — rarely useful at page level; use Schema.org `Article.author` instead.
-- `<meta http-equiv="X-UA-Compatible" content="IE=edge">` — IE is end-of-life. Drop it.
-- `<meta http-equiv="refresh">` — bad for accessibility and SEO. Use a 301 redirect server-side.
-- `<meta name="copyright">` — has no standardized handling; put it in the page footer.
+- `<meta name="keywords">`: ignored by all major search engines since around 2009. Drop it.
+- `<meta name="author">`: rarely useful at page level; use Schema.org `Article.author` instead.
+- `<meta http-equiv="X-UA-Compatible" content="IE=edge">`: IE is end-of-life. Drop it.
+- `<meta http-equiv="refresh">`: bad for accessibility and SEO. Use a 301 redirect server-side.
+- `<meta name="copyright">`: has no standardized handling; put it in the page footer.
 
 ## Filling tags from context
 
 When the user gives the skill a goal ("a marketing page for X") or actual page content, derive the meta tags this way:
 
-1. **Title** — page topic + brand. 50–60 chars before the brand.
-2. **Description** — pull the single most concrete sentence describing the page's value. Strip buzzwords (see `anti-patterns.md`).
-3. **og:image** — if a hero exists, use it (1200×630); else generate or note the gap. `og:image:alt` describes it.
-4. **og:type** — match the kind table above.
-5. **JSON-LD** — pick the type that best fits; fill the required fields; leave optional ones empty rather than invent.
-6. **Theme-color** — light and dark hex from the skill's color tokens, matching the page's primary surface.
-7. **Canonical** — absolute URL of this page.
+1. **Title**: page topic + brand. 50–60 chars before the brand.
+2. **Description**: pull the single most concrete sentence describing the page's value. Strip buzzwords (see `anti-patterns.md`).
+3. **og:image**: if a hero exists, use it (1200×630); else generate or note the gap. `og:image:alt` describes it.
+4. **og:type**: match the kind table above.
+5. **JSON-LD**: pick the type that best fits; fill the required fields; leave optional ones empty rather than invent.
+6. **Theme-color**: light and dark hex from the skill's color tokens, matching the page's primary surface.
+7. **Canonical**: absolute URL of this page.
 
 A local AI helper for the description and `og:image:alt` is `scripts/meta_from_ollama.py` (see `references/alt-text-ai.md` for the install path; same Ollama setup).
 

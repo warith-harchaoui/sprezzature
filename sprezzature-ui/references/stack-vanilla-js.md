@@ -1,4 +1,4 @@
-# Stack — Vanilla JavaScript
+# Stack: Vanilla JavaScript
 
 This skill emits browser-native JavaScript only. No bundler is required to read the output, though one is welcome for production.
 
@@ -173,7 +173,7 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
 applyTheme();
 ```
 
-### Toggle UI control — 🌞 Light / 🌚 Dark / 🌗 Auto
+### Toggle UI control: 🌞 Light / 🌚 Dark / 🌗 Auto
 
 Every page that ships dark-mode peers also ships a visible toggle.
 **Auto is the default** so a fresh visitor inherits the OS choice and
@@ -184,9 +184,9 @@ never gets surprised by a hard-coded scheme.
 1. **Top-right of any sticky header**, immediately before the primary
    action (Sign in / Get started). Standard placement across the major
    docs sites and developer tools, so users look there first.
-2. **Footer**, far-right column — for content-only sites with no
+2. **Footer**, far-right column: for content-only sites with no
    sticky chrome (long-form docs that opt out of the header).
-3. **Fixed bottom-right corner** with `safe-area-inset` padding — for
+3. **Fixed bottom-right corner** with `safe-area-inset` padding: for
    single-card pages, embedded widgets, and the `cli-gui-demo` log
    viewer that have no global chrome at all.
 

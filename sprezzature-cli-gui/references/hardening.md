@@ -1,4 +1,4 @@
-# Hardening notes — `sprezzature-cli-gui` host
+# Hardening notes: `sprezzature-cli-gui` host
 
 The skill scaffolds the GUI. **You wire and harden the host.** This
 file is the opinionated checklist for promoting the
@@ -318,7 +318,7 @@ Never echo back the request's `Origin` header verbatim. Never send
 `Access-Control-Allow-Origin: *` paired with credentials; browsers
 will block it anyway, but the intent matters.
 
-## 7. Logging — say what happened, redact what doesn't matter
+## 7. Logging: say what happened, redact what doesn't matter
 
 The demo silences `log_message` for a clean console. For production:
 

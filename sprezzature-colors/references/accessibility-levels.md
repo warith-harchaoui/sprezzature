@@ -1,4 +1,4 @@
-# Accessibility levels for colour — design for the worst case, offer more
+# Accessibility levels for colour: design for the worst case, offer more
 
 Should a figure (or any coloured interface) be built for the *worst* visual
 condition, or should it ship several levels with a sensible default and stronger
@@ -72,7 +72,7 @@ named rungs, so shipping levels is aligned with where the standards are going.
 
 ## The layered model to adopt
 
-**Level 0 — Default (everyone, no opt-in).** Universal design.
+**Level 0: Default (everyone, no opt-in).** Universal design.
 - No colour-only encoding. Every category or state also carries a label,
   position, shape, or pattern.
 - Marks are separable by lightness, so signed or diverging data uses a
@@ -152,7 +152,7 @@ to pick.
 ## Sources
 
 - [Understanding WCAG Success Criterion 1.4.1: Use of Color (W3C)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)
-- [Types of Colour Blindness — Colour Blind Awareness](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+- [Types of Colour Blindness: Colour Blind Awareness](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 - [Color Universal Design (Okabe & Ito)](https://jfly.uni-koeln.de/color/) and [Colorblind-Safe Palettes for Science Figures](https://sci-draw.com/blog/colorblind-safe-palettes-okabe-ito-reference)
-- [Designing for Color Blindness — greyscale covers every deficiency](https://colorblind.io/guides/designing-for-color-blindness)
+- [Designing for Color Blindness: greyscale covers every deficiency](https://colorblind.io/guides/designing-for-color-blindness)
 - [APCA in a Nutshell](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) and [WCAG 3.0 tiers, APCA, and what is changing](https://designproject.io/blog/web-accessibility-wcag-apca/)

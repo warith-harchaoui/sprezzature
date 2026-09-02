@@ -1,4 +1,4 @@
-# Audio narration — long-form posts → optional MP3 / WAV
+# Audio narration: long-form posts → optional MP3 / WAV
 
 `sprezzature-publish` ships an opt-in pipeline that turns a Markdown post
 into a narrated audio file. The use case is **editorial enhancement**,
@@ -88,7 +88,7 @@ matters (essays with mood swings, opinion pieces). Both are
 acceptable defaults; the narration manifest records which one
 produced each clip so you can A/B.
 
-### Installation gotcha — OpenVoice package rename
+### Installation gotcha: OpenVoice package rename
 
 Between mid-2025 and mid-2026 the upstream `myshell-ai/OpenVoice`
 repo renamed the `pyproject.toml` package name from `openvoice` to

@@ -34,7 +34,7 @@ python scripts/install_alt_ai.py
 The installer:
 
 - Detects the OS and uses the right package manager:
-  - Darwin (any chip): Homebrew (`brew install ollama` — [brew.sh](https://brew.sh)).
+  - Darwin (any chip): Homebrew (`brew install ollama`: [brew.sh](https://brew.sh)).
   - Linux: the official Ollama installer script.
   - Windows: `winget install Ollama.Ollama`.
 - Starts the Ollama daemon if it isn't already running.
@@ -125,7 +125,7 @@ async function altFor(src, opts = {}) {
 ## Rules the prompt enforces
 
 1. **Image purpose decides the prompt** (per W3C). No generic one-size prompt.
-2. **Hard cap 150 characters** — no `…` truncation; the script regenerates or cuts at a word boundary.
+2. **Hard cap 150 characters**: no `…` truncation; the script regenerates or cuts at a word boundary.
 3. **Match meaning, not pixels.** A photo of a smiling teacher in a classroom is "Teacher leading a class", not "An adult standing in front of children with a chalkboard behind".
 4. **No banned prefixes**: "image of", "photo of", "picture of", "illustration of", and their equivalents in 9 other languages. The script strips them if the model ignores the instruction.
 5. **Be specific where relevant to meaning.** For news photos, name visible people, setting, action; don't sanitize to "a person".
@@ -164,7 +164,7 @@ Cache writes fail silently (`try/except OSError`): caching is opportunistic and 
 | Garbled or hallucinated text | Image very small / very large | The script downscales to 1024 px by default; raise quality of source or set `--resize 768`. |
 | Very slow first call | First inference loads weights | Subsequent calls are fast; keep the daemon up. |
 
-## Related script — meta tags
+## Related script: meta tags
 
 The same Ollama setup powers `python sprezzature-publish/scripts/meta_from_ollama.py`, which drafts the page-level `<title>`, `<meta name="description">`, Open Graph, Twitter, and JSON-LD `@type` from a goal description or an HTML page. See `references/meta-tags.md`.
 

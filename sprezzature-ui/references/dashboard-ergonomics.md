@@ -1,6 +1,6 @@
 # Dashboard Ergonomics
 
-Translated and adapted from Synolia, *Data Visualisation : construire un tableau de bord percutant* — <https://www.synolia.com/blog/business-intelligence/data-visualisation-de-limportance-de-lergonomie-tableau-de-bord-percutant/>.
+Translated and adapted from Synolia, *Data Visualisation : construire un tableau de bord percutant*: <https://www.synolia.com/blog/business-intelligence/data-visualisation-de-limportance-de-lergonomie-tableau-de-bord-percutant/>.
 
 Use this file when the user asks for a dashboard, a BI tile, a KPI summary, or any data-visualization-heavy surface. Read alongside `charts-svg.md` (house style for hand-authored SVG charts) and `ergonomics-criteria.md` (Boucher's eight criteria).
 
@@ -10,16 +10,16 @@ Reformatting raw data into a form that the human eye can read in seconds. Tables
 
 ## The content must tell a story
 
-A good dashboard answers a small, specific set of questions: **What? When? Who? Where? Why?** Lay out the content along a logical path — global overview first, fine-grained detail last. The user scrolls or drills down; they don't hunt.
+A good dashboard answers a small, specific set of questions: **What? When? Who? Where? Why?** Lay out the content along a logical path: global overview first, fine-grained detail last. The user scrolls or drills down; they don't hunt.
 
 ## Before picking a chart, decide what you're showing
 
 Four shapes the data can take:
 
-- **Comparison** — same metric across categories.
-- **Relation** — one variable against another (correlation, scatter).
-- **Distribution** — how values spread.
-- **Composition** — how parts make up a whole.
+- **Comparison**: same metric across categories.
+- **Relation**: one variable against another (correlation, scatter).
+- **Distribution**: how values spread.
+- **Composition**: how parts make up a whole.
 
 Two more questions:
 
@@ -74,16 +74,16 @@ Once a dashboard is in users' hands, new questions surface. Self-service BI lets
 
 ## House rules (for emit)
 
-When the skill emits a dashboard, apply these defaults — they sit on top of `charts-svg.md`.
+When the skill emits a dashboard, apply these defaults: they sit on top of `charts-svg.md`.
 
 1. **One question per tile.** A tile that tries to answer two questions answers neither well.
 2. **Title as a question or assertion**, not a label. "Where do sales come from?" beats "Sales".
-3. **Polarity stated on every measurable tile — when it's well-defined for *this* dashboard.** The same metric can be "higher is better" in one product and "lower is better" in another (time-in-app on a social app vs. a productivity tool; bug count on a young vs. mature codebase). Decide the polarity for the audience of this dashboard, then surface it as a tag (*↑ higher is better*, *↓ lower is better*, or *target = N ± k*) in the tile subtitle or chip next to the value. Skip the tag for neutral axes and ambiguous metrics. Never carry polarity by color alone; pair color with a word or glyph. Detail in `charts-svg.md` → "Polarity — higher or lower is better".
+3. **Polarity stated on every measurable tile (when it's well-defined for *this* dashboard).** The same metric can be "higher is better" in one product and "lower is better" in another (time-in-app on a social app vs. a productivity tool; bug count on a young vs. mature codebase). Decide the polarity for the audience of this dashboard, then surface it as a tag (*↑ higher is better*, *↓ lower is better*, or *target = N ± k*) in the tile subtitle or chip next to the value. Skip the tag for neutral axes and ambiguous metrics. Never carry polarity by color alone; pair color with a word or glyph. Detail in `charts-svg.md` → "Polarity: higher or lower is better".
 4. **Reading order top-to-bottom, left-to-right** matches the story: overview tile at top-left, drill-downs flowing toward the bottom-right. Reverse for RTL layouts.
 5. **Same metric, same color across tiles.** If "active users" is `brand-blue` in tile 1, it's `brand-blue` in tile 4.
 6. **No more than two color hues per tile**, plus neutrals. Color carries a dimension; if there's no dimension to carry, drop the color.
 7. **Tabular numerals** on every numeric label (`tabular-nums`).
-8. **Skeleton tiles while loading.** No spinners for ≥ 300 ms waits — see `ui-guidelines/patterns/loading.md`.
+8. **Skeleton tiles while loading.** No spinners for ≥ 300 ms waits; see `ui-guidelines/patterns/loading.md`.
 9. **Filters at the top**, applied to every tile in scope. Filter chips show what's active; one-tap clears.
 10. **Per-tile timeframe selector** if tiles cover different windows.
 11. **Empty state per tile.** Tell the user what to do next, not just "no data".

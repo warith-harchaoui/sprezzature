@@ -1,4 +1,4 @@
-# Lint Markdown — static + AI-assisted
+# Lint Markdown: static + AI-assisted
 
 Static + AI-assisted linter for Markdown content shipped by `sprezzature-publish`
 sites and by anyone consuming the sprezzature skills. Three jobs:

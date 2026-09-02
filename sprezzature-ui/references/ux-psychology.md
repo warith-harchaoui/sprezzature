@@ -1,4 +1,4 @@
-# UX Psychology — triggers and actions
+# UX Psychology: triggers and actions
 
 Rules-only. Each principle is one line: **trigger → action**. Background and worked examples have been removed; Claude already knows the underlying cognitive science. This file exists so the skill can *act* on it.
 
@@ -17,7 +17,7 @@ Organised by the cognitive step a user is in.
 > the canonical file is more concrete on Tailwind hooks for the
 > named-by-the-user set.
 
-## 1. Information — what the user lets in
+## 1. Information: what the user lets in
 
 | Principle | Trigger | Action |
 |---|---|---|
@@ -32,7 +32,7 @@ Organised by the cognitive step a user is in.
 | Banner Blindness | Content styled like an ad strip | Restyle as content, not promo |
 | Fitts corollary (edges) | High-frequency desktop action mid-screen | Move to a screen edge or corner |
 
-## 2. Meaning — what the user fills in
+## 2. Meaning: what the user fills in
 
 | Principle | Trigger | Action |
 |---|---|---|
@@ -48,7 +48,7 @@ Organised by the cognitive step a user is in.
 | Occam's Razor | Flow feels confusing | Look for the obvious mistake first |
 | Curiosity Gap | Clickbait language in copy | Drop it; reserve for content discovery |
 
-## 3. Time — the user is in a hurry
+## 3. Time: the user is in a hurry
 
 | Principle | Trigger | Action |
 |---|---|---|
@@ -63,7 +63,7 @@ Organised by the cognitive step a user is in.
 | Discoverability | Feature only accessible via deep menu | Surface in nav or onboarding |
 | Investment Loops | Reset destroys saved customisation | Persist on logout / device change |
 
-## 4. Memory — what the user takes away
+## 4. Memory: what the user takes away
 
 | Principle | Trigger | Action |
 |---|---|---|
