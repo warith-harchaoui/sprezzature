@@ -26,6 +26,11 @@ module.exports = {
           bluedark: 'rgb(var(--brand-bluedark-rgb) / <alpha-value>)',
           bluelight: 'rgb(var(--brand-bluelight-rgb) / <alpha-value>)',
           navy: 'rgb(var(--brand-navy-rgb) / <alpha-value>)',
+          // Text-only accent (links, inline emphasis): same hue as brand-blue,
+          // but with independent light/dark values so body text always clears
+          // WCAG AA 4.5:1 against both the white and #0B0B0C page backgrounds.
+          // See css/tailwind-input.css for the per-theme/per-scheme values.
+          linktext: 'rgb(var(--brand-linktext-rgb) / <alpha-value>)',
         },
       },
     },

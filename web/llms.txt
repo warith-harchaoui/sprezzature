@@ -8,20 +8,20 @@
 
 ## Skills
 
-- [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI — components, pages, forms, dialogs, dashboards — for solo devs shipping internal tools without a designer.
-- [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI — read the arg parser, emit forms, file inputs and a streaming log panel.
+- [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI, components, pages, forms, dialogs, dashboards, for solo devs shipping internal tools without a designer.
+- [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.
 - [Publishing — Sprezzature](https://sprezzature.ai/publish.html): Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and loc
-- [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output — fourteen rules decidable from source, no browser, no runtime DOM.
-- [Colors — Sprezzature](https://sprezzature.ai/colors.html): Color tooling, make and audit — WCAG contrast with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter. Dete
-- [Vision — alt text — Sprezzature](https://sprezzature.ai/vision.html): W3C-compliant alt-text drafting via a local Ollama vision model — a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b.
+- [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: fourteen rules decidable from source, no browser, no runtime DOM.
+- [Colors — Sprezzature](https://sprezzature.ai/colors.html): Color tooling for vanilla-JS and Tailwind: WCAG contrast checking with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter
+- [Vision — alt text — Sprezzature](https://sprezzature.ai/vision.html): W3C-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b.
 - [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions, speaker diarization and speaker identification for video / audio. WebVTT / SRT from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a
-- [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JS + Tailwind — both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger / action /
+- [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JS + Tailwind: both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger, action, Tailwind hook.
 - [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: 124 hand-authored SVG chart types, all from fake data on a curated palette.
 
 ## Case studies
 
 - [Case studies — Sprezzature](https://sprezzature.ai/case-studies.html): Three advanced examples with the Ralph Eyeball Loop: a tribute to Hans Rosling's animation, publication-grade situation maps, and a systematic markets dashboard, all interactive.
-- [Tribute to Hans Rosling — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated, interactive tribute to Hans Rosling's health-and-wealth bubble chart — every country, one frame per year 1950 to 2025, in a single self-contained SVG with no JavaScript library. Real data, historical splits and merges.
+- [Tribute to Hans Rosling — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated, interactive tribute to Hans Rosling's health-and-wealth bubble chart: every country, one frame per year 1950 to 2025, in a single self-contained SVG with no JavaScript library. Real data, historical splits and merges.
 - [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph/cartogram thematic maps and real French election data.
 - [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ, told in ten interactive SVG panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws. This favourable case shows +123% net return.
 - [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ, told in ten interactive SVG panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws. This adverse case shows -26% net return.
