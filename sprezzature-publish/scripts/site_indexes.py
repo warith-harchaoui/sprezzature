@@ -27,7 +27,11 @@ Conditional
 * **``feed.atom``** — Atom 1.0 (RFC 4287). Emitted when a blog directory
   (``posts/`` or ``blog/``) is detected at the project root, or when
   ``--feed-from DIR`` is supplied. RSS 2.0 is available with ``--rss``
-  for clients that haven't moved past 2002.
+  for clients that haven't moved past 2002. Sites without a blog but
+  with CHANGELOG.md-driven release notes (e.g. sprezzature.ai) build a
+  feed with ``changelog_feed.py`` instead, which imports
+  :func:`render_atom` / :func:`render_rss` from this module rather than
+  duplicating the XML-rendering logic.
 * **``humans.txt``** — per https://humanstxt.org/. Emitted only when
   ``--humans`` is passed or an ``AUTHORS`` / ``CREDITS`` file exists at
   the project root.
@@ -577,6 +581,8 @@ def render_atom(
     feed_title: str,
     posts: list[tuple[Path, str, str, str]],
     audio_entries: dict[str, "AudioEntry"] | None = None,
+    entry_ids: dict[str, str] | None = None,
+    entry_links: dict[str, str] | None = None,
 ) -> str:
     """
     Render an Atom 1.0 feed per RFC 4287.
@@ -591,12 +597,26 @@ def render_atom(
         Human-readable feed title.
     posts : list of (Path, str, str, str)
         ``(relative_path, title, updated_iso, summary)`` per post, in
-        reverse-chronological order.
+        reverse-chronological order. ``relative_path`` doubles as the
+        lookup key (via ``.as_posix()``) for ``entry_ids`` and
+        ``entry_links`` below; it need not resolve to a real file when
+        those are supplied.
     audio_entries : dict or None, optional
         Mapping of *post stem* (the relative HTML path without
         ``.html``) → :class:`AudioEntry`. When present, each matching
         post gets a ``<link rel="enclosure">`` so podcast apps see
         the narration as an audio item.
+    entry_ids : dict or None, optional
+        Mapping of ``relative_path.as_posix()`` → a stable ``<id>``
+        override (e.g. a ``tag:`` URI). Lets callers whose posts are
+        not on-site pages (e.g. an aggregated CHANGELOG feed) supply
+        their own permanent identifiers instead of the derived URL.
+    entry_links : dict or None, optional
+        Mapping of ``relative_path.as_posix()`` → an absolute URL
+        override for the entry's ``<link>`` (and, unless ``entry_ids``
+        overrides it too, its ``<id>``). Lets entries point off-site
+        (e.g. a package's CHANGELOG.md on GitHub) rather than at a
+        page under ``base_url``.
 
     Returns
     -------
@@ -624,8 +644,9 @@ def render_atom(
     for rel, title, updated, summary in posts:
         entry = ET.SubElement(feed, f"{{{ATOM_NS}}}entry")
         ET.SubElement(entry, f"{{{ATOM_NS}}}title").text = title
-        post_url: str = _format_url(base_url, rel)
-        ET.SubElement(entry, f"{{{ATOM_NS}}}id").text = post_url
+        key: str = rel.as_posix()
+        post_url: str = (entry_links or {}).get(key) or _format_url(base_url, rel)
+        ET.SubElement(entry, f"{{{ATOM_NS}}}id").text = (entry_ids or {}).get(key) or post_url
         link = ET.SubElement(entry, f"{{{ATOM_NS}}}link")
         link.set("rel", "alternate")
         link.set("type", "text/html")
@@ -654,6 +675,8 @@ def render_rss(
     feed_description: str,
     posts: list[tuple[Path, str, str, str]],
     audio_entries: dict[str, "AudioEntry"] | None = None,
+    entry_ids: dict[str, str] | None = None,
+    entry_links: dict[str, str] | None = None,
 ) -> str:
     """
     Render an RSS 2.0 feed.
@@ -668,11 +691,25 @@ def render_rss(
         Channel description.
     posts : list of (Path, str, str, str)
         ``(relative_path, title, updated_iso, summary)`` per post.
+        ``relative_path`` doubles as the lookup key (via
+        ``.as_posix()``) for ``entry_ids`` and ``entry_links`` below;
+        it need not resolve to a real file when those are supplied.
     audio_entries : dict or None, optional
         Mapping of *post stem* (the relative HTML path without
         ``.html``) → :class:`AudioEntry`. When present, each matching
         post gets an ``<enclosure>`` row — the feed becomes a valid
         podcast feed automatically consumable in any podcast app.
+    entry_ids : dict or None, optional
+        Mapping of ``relative_path.as_posix()`` → a stable ``<guid>``
+        override. Lets callers whose posts are not on-site pages
+        (e.g. an aggregated CHANGELOG feed) supply their own
+        permanent identifiers instead of the derived URL.
+    entry_links : dict or None, optional
+        Mapping of ``relative_path.as_posix()`` → an absolute URL
+        override for the item's ``<link>`` (and, unless ``entry_ids``
+        overrides it too, its ``<guid>``). Lets entries point off-site
+        (e.g. a package's CHANGELOG.md on GitHub) rather than at a
+        page under ``base_url``.
 
     Returns
     -------
@@ -696,9 +733,10 @@ def render_rss(
     for rel, title, updated, summary in posts:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = title
-        link_url: str = _format_url(base_url, rel)
+        key: str = rel.as_posix()
+        link_url: str = (entry_links or {}).get(key) or _format_url(base_url, rel)
         ET.SubElement(item, "link").text = link_url
-        ET.SubElement(item, "guid").text = link_url
+        ET.SubElement(item, "guid").text = (entry_ids or {}).get(key) or link_url
         if summary:
             ET.SubElement(item, "description").text = summary
         try:
