@@ -61,7 +61,7 @@ geography for any region and any period.
 ### Regenerate
 
 All examples (config + SVG + PNG + gallery raster, plus the a-posteriori layer
-exports below) come from one tracked builder; the schematic sprezzature lines and
+exports below) come from one tracked builder; the schematic front lines and
 control polygons live in the open there, sourced in the comments, so anyone can
 read how each map was drawn and refine it:
 
@@ -112,7 +112,7 @@ frame: {margin: 22, page_color: "#eef1f3", radius: 8}
 ## Honest scope
 
 This is thematic **visualization**, not a geographic information system (GIS) and
-not an intelligence product. Sprezzature lines / control boundaries are only as good as
+not an intelligence product. Front lines / control boundaries are only as good as
 the geometry you feed it; label approximate or synthetic maps as such. Spatial
 analysis (spatial joins, buffers you intend to be metrically exact, coordinate
 reference system transforms beyond the built-in projection) belongs in

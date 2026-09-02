@@ -53,7 +53,7 @@ Why this entry matters for the gallery: md2star is the concrete
 **CLI → GUI** target the `sprezzature-cli-gui` skill was designed for:
 real CLI surface, real local web GUI, dark-mode peer on every panel,
 no framework runtime. The backend is stdlib-only (Python's
-`http.server`); the sprezzature end is a single vanilla ECMAScript (ES) module,
+`http.server`); the front end is a single vanilla ECMAScript (ES) module,
 Tailwind Play CDN, and pdf.js from jsDelivr. The emitted HTML passes
 both `sprezzature-ux-laws` and `sprezzature-accessibility` audits with zero
 findings. The Tauri shell that will wrap it as a desktop application
@@ -118,7 +118,7 @@ latencies so the trade-offs are visible. Intents live in Markdown:
 one `# h1` per intent in `knowledge_base/`, so a domain expert adds
 one without touching code.
 
-Why it earns its place: the sprezzature cites the sprezzature-ui house style in its
+Why it earns its place: the front end cites the sprezzature-ui house style in its
 own source comments (`web/app.js`: "règle sprezzature-ui n°1"): vanilla ES
 modules, vendored Tailwind for an offline page, three-Roboto, and a
 `dark:` peer on every surface (dark capture shows the live LLM badge and
@@ -145,7 +145,7 @@ single `SELECT`), and, when a chart fits, a local Gemma model picks a
 visualization that is rendered as **Vega-Lite** (generated code is
 never executed).
 
-Why it earns its place: the sprezzature cites the sprezzature-ui house style in its
+Why it earns its place: the front end cites the sprezzature-ui house style in its
 source comments and vendors Tailwind for a fully local page; the
 `sprezzature-figures` philosophy shows up literally: the model chooses the
 chart, the page renders it as Vega-Lite. Both color schemes carry the

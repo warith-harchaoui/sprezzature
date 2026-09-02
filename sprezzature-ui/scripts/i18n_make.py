@@ -6,7 +6,7 @@ i18n_make
 Make half of the sprezzature-ui unified-i18n rule: establish
 ``locales/i18n.yaml`` as the single per-project source of truth for
 translatable strings — GUI labels and LLM prompts — and emit the glue so a
-vanilla-JS sprezzature end and a Python prompt loader read from it instead of
+vanilla-JS front end and a Python prompt loader read from it instead of
 hardcoding strings.
 
 Three deterministic steps (all run by default; select one with a flag):
