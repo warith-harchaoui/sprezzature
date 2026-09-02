@@ -64,10 +64,10 @@
   </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Skip to content</a>
   <header class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Primary">
-      <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"><img src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
       <div class="flex items-center gap-3 text-sm sm:gap-4">
         <a href="index.html#skills" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline"><em>Skills</em></a>
         <a href="figures.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Galerie</a>
@@ -75,9 +75,11 @@
           class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Paquets</a>
         <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Études de cas</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
-        <a href="../ux-laws.html" aria-label="English version" title="English version" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
-        <button id="theme-toggle" type="button" aria-label="Changer de thème" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
-        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
+        <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Réglages de la page">
+          <li class="flex"><a href="../ux-laws.html" aria-label="English version" title="English version" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a></li>
+          <li class="flex"><button id="theme-toggle" type="button" aria-label="Changer de thème" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🌞</button></li>
+          <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
+        </menu>
       </div>
     </nav>
   </header>
@@ -87,8 +89,8 @@
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Lois de l'expérience utilisateur (UX)</h1>
       <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Applique les Lois de l'UX canoniques (Jon Yablonski) au JavaScript (JS) standard + Tailwind : à la création d'interface utilisateur (UI) comme à l'audit de HTML (langage de balisage des pages web) existant. La référence couvre 30 lois avec déclencheur / action / hook Tailwind.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
-        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ux-laws/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy">SKILL.md (la spec agent)</a>
-        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600">⭐️ sur GitHub</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ux-laws/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (la spec agent)</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur GitHub</a>
       </div>
     </section>
     <section class="border-t border-neutral-200/70 dark:border-neutral-800">
@@ -129,14 +131,14 @@
         <h2 class="text-lg font-bold">Bibliothèque de références</h2>
         <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Les connaissances sur lesquelles la <em>skill</em> s'appuie : à lire directement dans le repo.</p>
         <div class="mt-4 flex flex-wrap gap-2">
-        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ux-laws/references/laws-of-ux.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700">Les 30 lois</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ux-laws/references/laws-of-ux.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Les 30 lois</a>
         </div>
       </div>
     </section>
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
-      <p><a class="underline hover:text-brand-linktext" href="index.html">← Toutes les <em>skills</em></a> · <em>Skills</em> Claude / OpenCode par <a class="underline hover:text-brand-linktext" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+      <p><a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="index.html">← Toutes les <em>skills</em></a> · <em>Skills</em> Claude / OpenCode par <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-brand-blue focus-visible:ring-2" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>

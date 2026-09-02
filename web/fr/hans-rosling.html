@@ -197,13 +197,13 @@
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main"
-    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Aller
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Aller
     au contenu</a>
   <header
     class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Principale">
       <a href="index.html"
-        class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img
+        class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"><img
           src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
       <div class="flex items-center gap-3 text-sm sm:gap-4">
         <a href="index.html#skills"
@@ -216,11 +216,13 @@
           class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Études de cas</a>
         <a href="https://github.com/warith-harchaoui/sprezzature"
           class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
-        <a href="../hans-rosling.html" aria-label="English version" title="English version"
-          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
-        <button id="theme-toggle" type="button" aria-label="Changer de thème"
-          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
-        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
+        <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Réglages de la page">
+          <li class="flex"><a href="../hans-rosling.html" aria-label="English version" title="English version"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a></li>
+          <li class="flex"><button id="theme-toggle" type="button" aria-label="Changer de thème"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🌞</button></li>
+          <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
+        </menu>
       </div>
     </nav>
   </header>
@@ -230,11 +232,11 @@
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Hommage à Hans Rosling</h1>
       <div class="mt-6 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
         <a href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank" rel="noopener"
-          class="block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+          class="block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">
           <img src="../hans.png" alt="Portrait de Hans Rosling : voir sa conférence sur YouTube"
             loading="lazy" class="h-64 w-full object-cover transition hover:opacity-90"></a>
         <a href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank" rel="noopener"
-          class="block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+          class="block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">
           <img src="../hans-rosling-hands.jpg" alt="Hans Rosling expliquant un graphique, les mains levées : voir sa conférence sur YouTube"
             loading="lazy" class="h-64 w-full object-cover transition hover:opacity-90"></a>
       </div>
@@ -251,7 +253,7 @@
         <figure data-gm-fig
           class="group relative mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
           <button type="button" data-fs
-            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8599;
+            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">&#8599;
             Plein écran</button>
           <div class="gm-scroll overflow-x-auto"><object type="image/svg+xml"
               data="../img/figures/gapminder-income-survival.fr.svg" class="w-full min-w-[600px]"
@@ -265,47 +267,47 @@
           <div class="flex flex-wrap items-center gap-2">
             <button type="button" data-gm="toggle" data-pause="&#9208; Pause" data-play="&#9654; Lire"
               aria-pressed="true"
-              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9208;
+              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">&#9208;
               Pause</button>
             <button type="button" data-gm="restart" aria-label="Recommencer"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#8635;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8635;</button>
             <button type="button" data-gm="prev" aria-label="Année précédente"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9664;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9664;</button>
             <output data-gm-year
               class="w-14 text-center font-mono text-base font-bold tabular-nums text-neutral-900 dark:text-neutral-100">1950</output>
             <button type="button" data-gm="next" aria-label="Année suivante"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9654;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9654;</button>
             <input type="range" data-gm-scrub min="1950" max="2025" value="1950" step="1" aria-label="Année"
-              class="h-2 min-w-[140px] flex-1 accent-brand-blue">
+              class="h-2 min-w-[140px] flex-1 accent-brand-blue min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
           </div>
           <div class="flex flex-wrap items-center gap-2 text-neutral-600 dark:text-neutral-300">
             <span class="text-neutral-500">Vitesse</span>
             <button type="button" data-gm-speed="0.5"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">0,5&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">0,5&#215;</button>
             <button type="button" data-gm-speed="1" aria-pressed="true"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1&#215;</button>
             <button type="button" data-gm-speed="2"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">2&#215;</button>
             <span class="ml-2 text-neutral-500">Aller à</span>
             <button type="button" data-gm-year-jump="1950"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1950</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1950</button>
             <button type="button" data-gm-year-jump="1976"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1976
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1976
               Vietnam</button>
             <button type="button" data-gm-year-jump="1990"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1990
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1990
               Allemagne</button>
             <button type="button" data-gm-year-jump="1991"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1991
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1991
               URSS</button>
             <button type="button" data-gm-year-jump="2020"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2020
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">2020
               Pandémie</button>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex items-center gap-2">Suivre un pays
               <select data-gm-follow
-                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900">
+                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
                 <option value="">&#8212;</option>
               </select>
             </label>
@@ -322,7 +324,7 @@
         <figure data-gm-fig
           class="group relative mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
           <button type="button" data-fs
-            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8599;
+            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">&#8599;
             Plein écran</button>
           <div class="gm-scroll overflow-x-auto"><object type="image/svg+xml"
               data="../img/figures/gapminder-animated.fr.svg" class="w-full min-w-[600px]"
@@ -336,47 +338,47 @@
           <div class="flex flex-wrap items-center gap-2">
             <button type="button" data-gm="toggle" data-pause="&#9208; Pause" data-play="&#9654; Lire"
               aria-pressed="true"
-              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9208;
+              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">&#9208;
               Pause</button>
             <button type="button" data-gm="restart" aria-label="Recommencer"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#8635;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8635;</button>
             <button type="button" data-gm="prev" aria-label="Année précédente"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9664;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9664;</button>
             <output data-gm-year
               class="w-14 text-center font-mono text-base font-bold tabular-nums text-neutral-900 dark:text-neutral-100">1950</output>
             <button type="button" data-gm="next" aria-label="Année suivante"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9654;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9654;</button>
             <input type="range" data-gm-scrub min="1950" max="2025" value="1950" step="1" aria-label="Année"
-              class="h-2 min-w-[140px] flex-1 accent-brand-blue">
+              class="h-2 min-w-[140px] flex-1 accent-brand-blue min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
           </div>
           <div class="flex flex-wrap items-center gap-2 text-neutral-600 dark:text-neutral-300">
             <span class="text-neutral-500">Vitesse</span>
             <button type="button" data-gm-speed="0.5"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">0,5&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">0,5&#215;</button>
             <button type="button" data-gm-speed="1" aria-pressed="true"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1&#215;</button>
             <button type="button" data-gm-speed="2"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">2&#215;</button>
             <span class="ml-2 text-neutral-500">Aller à</span>
             <button type="button" data-gm-year-jump="1950"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1950</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1950</button>
             <button type="button" data-gm-year-jump="1976"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1976
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1976
               Vietnam</button>
             <button type="button" data-gm-year-jump="1990"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1990
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1990
               Allemagne</button>
             <button type="button" data-gm-year-jump="1991"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1991
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1991
               URSS</button>
             <button type="button" data-gm-year-jump="2020"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2020
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">2020
               Pandémie</button>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex items-center gap-2">Suivre un pays
               <select data-gm-follow
-                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900">
+                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
                 <option value="">&#8212;</option>
               </select>
             </label>
@@ -393,7 +395,7 @@
         <figure data-gm-fig
           class="group relative mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
           <button type="button" data-fs
-            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8599;
+            class="absolute right-4 bottom-4 z-10 rounded-full bg-neutral-900/70 px-3 py-1 text-sm text-white hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">&#8599;
             Plein écran</button>
           <div class="gm-scroll overflow-x-auto"><object type="image/svg+xml"
               data="../img/figures/gapminder-fertility.fr.svg" class="w-full min-w-[600px]"
@@ -407,47 +409,47 @@
           <div class="flex flex-wrap items-center gap-2">
             <button type="button" data-gm="toggle" data-pause="&#9208; Pause" data-play="&#9654; Lire"
               aria-pressed="true"
-              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9208;
+              class="rounded-full bg-brand-blue px-4 py-1.5 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">&#9208;
               Pause</button>
             <button type="button" data-gm="restart" aria-label="Recommencer"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#8635;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#8635;</button>
             <button type="button" data-gm="prev" aria-label="Année précédente"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9664;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9664;</button>
             <output data-gm-year
               class="w-14 text-center font-mono text-base font-bold tabular-nums text-neutral-900 dark:text-neutral-100">1950</output>
             <button type="button" data-gm="next" aria-label="Année suivante"
-              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600">&#9654;</button>
+              class="rounded-full border border-neutral-300 px-3 py-1.5 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">&#9654;</button>
             <input type="range" data-gm-scrub min="1950" max="2025" value="1950" step="1" aria-label="Année"
-              class="h-2 min-w-[140px] flex-1 accent-brand-blue">
+              class="h-2 min-w-[140px] flex-1 accent-brand-blue min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
           </div>
           <div class="flex flex-wrap items-center gap-2 text-neutral-600 dark:text-neutral-300">
             <span class="text-neutral-500">Vitesse</span>
             <button type="button" data-gm-speed="0.5"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">0,5&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">0,5&#215;</button>
             <button type="button" data-gm-speed="1" aria-pressed="true"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1&#215;</button>
             <button type="button" data-gm-speed="2"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2&#215;</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">2&#215;</button>
             <span class="ml-2 text-neutral-500">Aller à</span>
             <button type="button" data-gm-year-jump="1950"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1950</button>
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1950</button>
             <button type="button" data-gm-year-jump="1976"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1976
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1976
               Vietnam</button>
             <button type="button" data-gm-year-jump="1990"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1990
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1990
               Allemagne</button>
             <button type="button" data-gm-year-jump="1991"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">1991
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">1991
               URSS</button>
             <button type="button" data-gm-year-jump="2020"
-              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600">2020
+              class="rounded-full border border-neutral-300 px-2.5 py-1 hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">2020
               Pandémie</button>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex items-center gap-2">Suivre un pays
               <select data-gm-follow
-                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900">
+                class="rounded-lg border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
                 <option value="">&#8212;</option>
               </select>
             </label>
@@ -462,8 +464,8 @@
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
-      <p><a class="underline hover:text-brand-linktext" href="index.html">← Toutes les <em>skills</em></a> · Un patrimoine
-        d'artefacts visuels par <a class="underline hover:text-brand-linktext"
+      <p><a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="index.html">← Toutes les <em>skills</em></a> · Un patrimoine
+        d'artefacts visuels par <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
           href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
     </div>
   </footer>
