@@ -58,7 +58,7 @@ your brand. Loop a designer in for the final call.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py` | `python -m sprezzature_colors_scripts.audit_contrast [--palette p.json] [--target 4.5\|7\|3] [--fix]`. Walks every (label, surface) pair, suggests OKLCH-neighbour fix. |
+| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py` | `python -m sprezzature_colors_scripts.audit_contrast [--palette p.json] [--target 4.5\|7\|3] [--fix]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. |
 | "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py` | `python -m sprezzature_colors_scripts.simulate_cvd <image> [--grid]`. Renders protanopia / deuteranopia / tritanopia. |
 | "what's the hex for Red" / "give me an emotion color" / "Apple palette" | `_colors.py` accessors | `from sprezzature_colors_scripts._colors import name_to_hex, emotion_to_hex, concept_search, psychology_for, apple_palette` |
 | "lighten this color" / "darken" / "tint" / "shade" | `_colors.lighten` / `_colors.darken` | OKLCH L-axis shift; hue and chroma preserved (unlike a naïve RGB offset). |

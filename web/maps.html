@@ -67,19 +67,21 @@
   </script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Skip to content</a>
   <header class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Primary">
-      <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img src="img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
+      <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"><img src="img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
       <div class="flex items-center gap-3 text-sm sm:gap-4">
         <a href="index.html#skills" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Skills</a>
         <a href="figures.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Gallery</a>
         <a href="packages.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Packages</a>
         <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Case studies</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
-        <a href="fr/maps.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
-        <button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
-        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
+        <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Page settings">
+          <li class="flex"><a href="fr/maps.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a></li>
+          <li class="flex"><button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🌞</button></li>
+          <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
+        </menu>
       </div>
     </nav>
   </header>
@@ -93,28 +95,28 @@
     <section id="choropleth" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Choropleth</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written, closed-form <strong>Equal Earth</strong> projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real GMTED2010 elevation rather than a flat hillshade, sits under the fills.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written, closed-form <strong>Equal Earth</strong> projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real G MTED 2010 elevation rather than a flat hillshade, sits under the fills.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Sequential choropleth" data-src="img/maps/choropleth-sequential.svg" data-alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Sequential choropleth" data-src="img/maps/choropleth-sequential.svg" data-alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills.">
               <img src="img/maps/choropleth-sequential.png" alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Sequential ramp</span> <span class="text-neutral-500 dark:text-neutral-400">: pale-to-navy blue, magnitude reads by lightness alone.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Diverging choropleth" data-src="img/maps/choropleth-diverging.svg" data-alt="World choropleth map of an illustrative growth rate, terracotta for negative values through a neutral grey zero to navy blue for positive values, ramp auto-detected from the data's sign.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Diverging choropleth" data-src="img/maps/choropleth-diverging.svg" data-alt="World choropleth map of an illustrative growth rate, terracotta for negative values through a neutral grey zero to navy blue for positive values, ramp auto-detected from the data's sign.">
               <img src="img/maps/choropleth-diverging.png" alt="World choropleth map of an illustrative growth rate, terracotta for negative values through a neutral grey zero to navy blue for positive values, ramp auto-detected from the data's sign." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Diverging ramp</span> <span class="text-neutral-500 dark:text-neutral-400">: auto-detected from the data's sign, terracotta ↔ navy through a real neutral zero.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950 sm:col-span-2 lg:col-span-1">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Choropleth at large size" data-src="img/maps/choropleth-large.svg" data-alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Choropleth at large size" data-src="img/maps/choropleth-large.svg" data-alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp.">
               <img src="img/maps/choropleth-large.png" alt="The same choropleth rendered at 1600 by 900 pixels, showing the mountain ranges (Andes, Rockies, Alps, Himalaya, East African Rift) clearly visible through the duotone relief under the data ramp." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">At scale</span> <span class="text-neutral-500 dark:text-neutral-400">: the relief layer (Andes, Rockies, Alps, Himalaya) reads clearly once rendered larger.</span></figcaption>
           </figure>
         </div>
-        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">From <a class="underline hover:text-brand-linktext" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>, the cartography package split out of sprezzature-figures.</p>
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">From <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-brand-blue focus-visible:ring-2" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>, the cartography package split out of sprezzature-figures.</p>
       </div>
     </section>
     <section id="thematic-maps" class="border-t border-neutral-200/70 dark:border-neutral-800">
@@ -123,49 +125,49 @@
         <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">Further glyph and cartogram techniques from sprezzature-figures, layered over the same offline Natural Earth basemap.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Bivariate choropleth" data-src="img/figures/map-bivariate.svg" data-alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Bivariate choropleth" data-src="img/figures/map-bivariate.svg" data-alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia.">
             <img src="img/figures/map-bivariate.svg" alt="Bivariate choropleth map showing global variation in two variables; high values concentrated in Europe and Asia." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Bivariate choropleth</span> <span class="text-neutral-500 dark:text-neutral-400">: Two variables blended on a 3×3 color key.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Proportional-symbol map" data-src="img/figures/map-bubble.svg" data-alt="Proportional-symbol world map: synthetic per-city values drawn as area-true blue bubbles, larger bubbles meaning larger values.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Proportional-symbol map" data-src="img/figures/map-bubble.svg" data-alt="Proportional-symbol world map: synthetic per-city values drawn as area-true blue bubbles, larger bubbles meaning larger values.">
             <img src="img/figures/map-bubble.svg" alt="Proportional-symbol world map: synthetic per-city values drawn as area-true blue bubbles, larger bubbles meaning larger values." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Proportional-symbol map</span> <span class="text-neutral-500 dark:text-neutral-400">: Area-true √-scaled bubbles on a world basemap.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Connection / flow map" data-src="img/figures/map-flow.svg" data-alt="Illustrative connection map: Great-circle links show increasing volume flow across the globe.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Connection / flow map" data-src="img/figures/map-flow.svg" data-alt="Illustrative connection map: Great-circle links show increasing volume flow across the globe.">
             <img src="img/figures/map-flow.svg" alt="Illustrative connection map: Great-circle links show increasing volume flow across the globe." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Connection / flow map</span> <span class="text-neutral-500 dark:text-neutral-400">: Great-circle arcs weighted by volume.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Pie-glyph map" data-src="img/figures/map-pie.svg" data-alt="Pie-glyph world map: a small multi-slice pie showing category shares placed at each world region.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Pie-glyph map" data-src="img/figures/map-pie.svg" data-alt="Pie-glyph world map: a small multi-slice pie showing category shares placed at each world region.">
             <img src="img/figures/map-pie.svg" alt="Pie-glyph world map: a small multi-slice pie showing category shares placed at each world region." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Pie-glyph map</span> <span class="text-neutral-500 dark:text-neutral-400">: A small pie chart placed at each region.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Bar-glyph map" data-src="img/figures/map-bars.svg" data-alt="Bar-glyph world map: a small multi-bar chart placed at each world region.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Bar-glyph map" data-src="img/figures/map-bars.svg" data-alt="Bar-glyph world map: a small multi-bar chart placed at each world region.">
             <img src="img/figures/map-bars.svg" alt="Bar-glyph world map: a small multi-bar chart placed at each world region." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Bar-glyph map</span> <span class="text-neutral-500 dark:text-neutral-400">: Mini bar charts placed at each region.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Tile-grid cartogram" data-src="img/figures/map-tilegrid.svg" data-alt="Tile-grid cartogram: one equal-size rounded tile per country in a rough geographic layout, each shaded by its exposure quintile.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Tile-grid cartogram" data-src="img/figures/map-tilegrid.svg" data-alt="Tile-grid cartogram: one equal-size rounded tile per country in a rough geographic layout, each shaded by its exposure quintile.">
             <img src="img/figures/map-tilegrid.svg" alt="Tile-grid cartogram: one equal-size rounded tile per country in a rough geographic layout, each shaded by its exposure quintile." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Tile-grid cartogram</span> <span class="text-neutral-500 dark:text-neutral-400">: One equal tile per country, geographic layout.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Diverging + annotated" data-src="img/figures/map-diverging.svg" data-alt="World map showing net change in synthetic demo data by country; Russia and United States gained significantly, while China lost.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Diverging + annotated" data-src="img/figures/map-diverging.svg" data-alt="World map showing net change in synthetic demo data by country; Russia and United States gained significantly, while China lost.">
             <img src="img/figures/map-diverging.svg" alt="World map showing net change in synthetic demo data by country; Russia and United States gained significantly, while China lost." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Diverging + annotated</span> <span class="text-neutral-500 dark:text-neutral-400">: Signed change, no-data gray, key countries labeled.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Small multiples" data-src="img/figures/map-small-multiples.svg" data-alt="Small-multiples world map: one panel per year from 2021 to 2024, the same quintile breaks throughout, with more countries shaded darker over time.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Small multiples" data-src="img/figures/map-small-multiples.svg" data-alt="Small-multiples world map: one panel per year from 2021 to 2024, the same quintile breaks throughout, with more countries shaded darker over time.">
             <img src="img/figures/map-small-multiples.svg" alt="Small-multiples world map: one panel per year from 2021 to 2024, the same quintile breaks throughout, with more countries shaded darker over time." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Small multiples</span> <span class="text-neutral-500 dark:text-neutral-400">: One panel per year, class breaks frozen.</span></figcaption>
@@ -179,25 +181,25 @@
         <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">A layered reference plate for <em>any</em> region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred <strong>Lambert Conformal Conic</strong> projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed in the region is: a whole continent doesn't need 10m detail invisible at that scale, while a single country does. The same relief technique as the choropleth above (real elevation, texture-shaded, warm/cool duotone) carries every plate.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Western Europe situation map" data-src="img/maps/situation-western-europe.svg" data-alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Western Europe situation map" data-src="img/maps/situation-western-europe.svg" data-alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar.">
               <img src="img/maps/situation-western-europe.png" alt="Situation map of Western Europe: real coastlines and borders, country labels, bathymetry contour halo in the sea, dendritic river-valley relief texture through the Alps and Scandinavian mountains, dual-unit scale bar." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Western Europe</span> <span class="text-neutral-500 dark:text-neutral-400">: the built-in reference demo, 50m borders, the Alps in full relief texture.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Iberia situation map" data-src="img/maps/situation-iberia.svg" data-alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Iberia situation map" data-src="img/maps/situation-iberia.svg" data-alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined.">
               <img src="img/maps/situation-iberia.png" alt="Situation map of Spain and Portugal: dense dendritic river-valley network in cool blue-green against warm cream highlands, the Pyrenees, Cantabrian range and Sierra Nevada all clearly defined." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Iberia</span> <span class="text-neutral-500 dark:text-neutral-400">: Spain and Portugal, the clearest single example of the texture-shading relief technique.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Himalaya situation map" data-src="img/maps/situation-himalaya.svg" data-alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Himalaya situation map" data-src="img/maps/situation-himalaya.svg" data-alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines.">
               <img src="img/maps/situation-himalaya.png" alt="Situation map centred on the Himalaya: Nepal, Bhutan, and the India/China borders, an all-land plate with no ocean, the mountain range traced by cool blue-toned valleys against warm-toned ridgelines." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Himalaya</span> <span class="text-neutral-500 dark:text-neutral-400">: an all-land plate with no sea to contrast against, so relief carries the whole plate.</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Switzerland situation map" data-src="img/maps/situation-switzerland.svg" data-alt="Situation map zoomed to Switzerland alone, crisp 10-metre-resolution Natural Earth borders against neighbouring France, Germany, Austria and Italy, Alpine relief throughout.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Switzerland situation map" data-src="img/maps/situation-switzerland.svg" data-alt="Situation map zoomed to Switzerland alone, crisp 10-metre-resolution Natural Earth borders against neighbouring France, Germany, Austria and Italy, Alpine relief throughout.">
               <img src="img/maps/situation-switzerland.png" alt="Situation map zoomed to Switzerland alone, crisp 10-metre-resolution Natural Earth borders against neighbouring France, Germany, Austria and Italy, Alpine relief throughout." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Switzerland, zoomed</span> <span class="text-neutral-500 dark:text-neutral-400">: a small enough bbox switches to the 10m border tier automatically.</span></figcaption>
@@ -207,12 +209,12 @@
         <h3 class="mt-12 text-lg font-semibold">Applied: areas of control</h3>
         <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">The same reference plate becomes a geopolitics-desk product once thematic layers go on top: classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, and a floating legend. Below is Ukraine. Schematic, from open sources, not intelligence.</p>
         <figure class="mt-6 mx-auto max-w-3xl overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Ukraine areas of control" data-src="img/figures/situation-ukraine.png" data-alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested zone hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Ukraine areas of control" data-src="img/figures/situation-ukraine.png" data-alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested zone hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions.">
             <img src="img/figures/situation-ukraine.png" alt="Areas-of-control map of Ukraine: Ukrainian government control in blue-grey, Russian-occupied areas in pink, and a contested zone hatched in cream, with flashpoint cities marked in red. Schematic, approximate 2024 positions." loading="lazy" class="w-full">
           </button>
           <figcaption class="p-3"><span class="font-medium">Ukraine</span> <span class="text-neutral-500 dark:text-neutral-400">: government / occupied / contested along an approximate 2024 contact line. Schematic, not operational intelligence.</span></figcaption>
         </figure>
-        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">Reference plates from <a class="underline hover:text-brand-linktext" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>; the areas-of-control layer stays in sprezzature-figures.</p>
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">Reference plates from <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-brand-blue focus-visible:ring-2" href="https://github.com/warith-harchaoui/sprezzature-maps">sprezzature-maps</a>; the areas-of-control layer stays in sprezzature-figures.</p>
       </div>
     </section>
     <section id="how-its-built" class="border-t border-neutral-200/70 dark:border-neutral-800">
@@ -234,7 +236,7 @@
           </div>
           <div>
             <dt class="font-semibold">Real elevation, not a flat hillshade</dt>
-            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real G MTED 2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
           </div>
         </dl>
       </div>
@@ -244,7 +246,7 @@
         <h2 class="text-2xl font-bold tracking-tight">Real data: the last five French presidential runoffs</h2>
         <p class="mt-2 max-w-4xl text-neutral-600 dark:text-neutral-300">The same carefully authored SVG map engine, on <strong>real</strong> data from the French Ministère de l'Intérieur: the winner's second-round vote share <em>by département</em> across the last five presidential elections, on one frozen blue scale so the panels compare. 2002 (the republican sprezzature against the far right) is near-uniform; 2012 (the closest) is the palest; 2017 and 2022 show the lighter départements where Marine Le Pen ran strongest.</p>
         <figure class="mt-8 w-screen max-w-none ml-[calc(50%-50vw)] bg-white px-4 dark:bg-transparent sm:px-8">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: French presidential runoffs 2002–2022" data-src="img/figures/fr-presidentielles-small-multiples.svg" data-alt="Five small-multiple maps of metropolitan France, one per presidential runoff from 2002 to 2022, each département shaded on a shared blue scale by the winner's share of votes cast: 2002 (Chirac) almost uniformly dark blue, 2007 and 2012 pale and mixed, 2017 and 2022 (Macron) medium blue with lighter areas.">
+          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: French presidential runoffs 2002–2022" data-src="img/figures/fr-presidentielles-small-multiples.svg" data-alt="Five small-multiple maps of metropolitan France, one per presidential runoff from 2002 to 2022, each département shaded on a shared blue scale by the winner's share of votes cast: 2002 (Chirac) almost uniformly dark blue, 2007 and 2012 pale and mixed, 2017 and 2022 (Macron) medium blue with lighter areas.">
             <img src="img/figures/fr-presidentielles-small-multiples.svg" alt="Five small-multiple maps of metropolitan France, one per presidential runoff from 2002 to 2022, each département shaded on a shared blue scale by the winner's share of votes cast: 2002 (Chirac) almost uniformly dark blue, 2007 and 2012 pale and mixed, 2017 and 2022 (Macron) medium blue with lighter areas." loading="lazy" class="w-full">
           </button>
         </figure>
@@ -276,31 +278,31 @@
         <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">When a projection or a glyph falls outside a chart grammar, the same loop drives a carefully drawn Scalable Vector Graphics (SVG) map instead.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Dot-density map" data-src="img/figures/dotdensity.svg" data-alt="Dot-density map of France: one dot per 25,000 residents inside real department polygons, tinted by region.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Dot-density map" data-src="img/figures/dotdensity.svg" data-alt="Dot-density map of France: one dot per 25,000 residents inside real department polygons, tinted by region.">
               <img src="img/figures/dotdensity.svg" alt="Dot-density map of France: one dot per 25,000 residents inside real department polygons, tinted by region." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Dot-density map</span> <span class="text-neutral-500 dark:text-neutral-400">: One dot per N people inside real regions.</span></figcaption>
           </figure>
                   <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Hexbin map" data-src="img/figures/hexmap.svg" data-alt="Hexbin map: a metro tiled with hexagons shaded by the count of morning bike-share trips starting inside each.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Hexbin map" data-src="img/figures/hexmap.svg" data-alt="Hexbin map: a metro tiled with hexagons shaded by the count of morning bike-share trips starting inside each.">
               <img src="img/figures/hexmap.svg" alt="Hexbin map: a metro tiled with hexagons shaded by the count of morning bike-share trips starting inside each." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Hexbin map</span> <span class="text-neutral-500 dark:text-neutral-400">: Hexagonal binning of point density over a map.</span></figcaption>
           </figure>
                   <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Spike map" data-src="img/figures/spike-map.svg" data-alt="Spike map with vertical spikes rising from geographic locations, spike height encoding a value, over a faint basemap.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Spike map" data-src="img/figures/spike-map.svg" data-alt="Spike map with vertical spikes rising from geographic locations, spike height encoding a value, over a faint basemap.">
               <img src="img/figures/spike-map.svg" alt="Spike map with vertical spikes rising from geographic locations, spike height encoding a value, over a faint basemap." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Spike map</span> <span class="text-neutral-500 dark:text-neutral-400">: Vertical spikes at locations, height by value.</span></figcaption>
           </figure>
                   <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Hexbin map" data-src="img/figures/hexbin-map.svg" data-alt="World hexbin map of earthquakes, hexagons coloured by earthquake count, the densest bins tracing the Pacific Ring of Fire.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Hexbin map" data-src="img/figures/hexbin-map.svg" data-alt="World hexbin map of earthquakes, hexagons coloured by earthquake count, the densest bins tracing the Pacific Ring of Fire.">
               <img src="img/figures/hexbin-map.svg" alt="World hexbin map of earthquakes, hexagons coloured by earthquake count, the densest bins tracing the Pacific Ring of Fire." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Hexbin map</span> <span class="text-neutral-500 dark:text-neutral-400">: Earthquakes binned into hexagons by count, tracing the Ring of Fire.</span></figcaption>
           </figure>
                   <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" aria-label="Enlarge: Binned grid map" data-src="img/figures/binned-grid-map.svg" data-alt="Binned grid map, square cells aggregating points over geography and coloured by count, a raster-like density surface over a basemap.">
+            <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Binned grid map" data-src="img/figures/binned-grid-map.svg" data-alt="Binned grid map, square cells aggregating points over geography and coloured by count, a raster-like density surface over a basemap.">
               <img src="img/figures/binned-grid-map.svg" alt="Binned grid map, square cells aggregating points over geography and coloured by count, a raster-like density surface over a basemap." loading="lazy" class="w-full">
             </button>
             <figcaption class="p-3"><span class="font-medium">Binned grid map</span> <span class="text-neutral-500 dark:text-neutral-400">: Square-bin aggregation over geography, cells coloured by count.</span></figcaption>
@@ -310,7 +312,7 @@
     </section>
     <dialog id="lightbox" aria-label="Image viewer" class="m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 backdrop:bg-black/80">
       <div class="flex min-h-full items-center justify-center p-4">
-        <button type="button" data-lb-close autofocus aria-label="Close image viewer" class="fixed right-4 top-4 z-10 rounded-full bg-white/10 px-3 py-1 text-2xl leading-none text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">&times;</button>
+        <button type="button" data-lb-close autofocus aria-label="Close image viewer" class="fixed right-4 top-4 z-10 rounded-full bg-white/10 px-3 py-1 text-2xl leading-none text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white min-h-11">&times;</button>
         <figure class="max-w-5xl">
           <img data-lb-img alt="" class="mx-auto max-h-[85vh] w-auto max-w-full rounded-lg bg-white">
           <figcaption data-lb-cap class="mt-3 text-center text-sm text-white/80"></figcaption>
@@ -320,7 +322,7 @@
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
-      <p><a class="underline hover:text-brand-linktext" href="index.html">← All skills</a> · Claude / OpenCode skills by <a class="underline hover:text-brand-linktext" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+      <p><a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="index.html">← All skills</a> · Claude / OpenCode skills by <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-brand-blue focus-visible:ring-2" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
     </div>
   </footer>
   <script src="js/theme.js" defer></script>

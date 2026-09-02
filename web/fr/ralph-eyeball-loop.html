@@ -63,13 +63,13 @@
 
 <body class="bg-white text-neutral-900 dark:bg-[#0B0B0C] dark:text-neutral-100 font-sans antialiased">
   <a href="#main"
-    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white">Aller
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Aller
     au contenu</a>
   <header
     class="sticky top-0 z-40 border-b border-neutral-200/70 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0B0B0C]/80">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Principale">
       <a href="index.html"
-        class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img
+        class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"><img
           src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
       <div class="flex items-center gap-3 text-sm sm:gap-4">
         <a href="index.html#skills"
@@ -82,11 +82,13 @@
           class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Études de cas</a>
         <a href="https://github.com/warith-harchaoui/sprezzature"
           class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
-        <a href="../ralph-eyeball-loop.html" aria-label="English version" title="English version"
-          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
-        <button id="theme-toggle" type="button" aria-label="Changer de thème"
-          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
-        <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
+        <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Réglages de la page">
+          <li class="flex"><a href="../ralph-eyeball-loop.html" aria-label="English version" title="English version"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a></li>
+          <li class="flex"><button id="theme-toggle" type="button" aria-label="Changer de thème"
+          class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🌞</button></li>
+          <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
+        </menu>
       </div>
     </nav>
   </header>
@@ -98,7 +100,7 @@
         graphique, non. Alors regardez-le vraiment, puis corrigez ce que l'œil a repéré et regardez encore.</p>
       <figure class="mt-8">
         <button type="button"
-          class="zoom block w-full cursor-zoom-in rounded-xl border border-neutral-200 bg-white p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-800 dark:bg-neutral-950"
+          class="zoom block w-full cursor-zoom-in rounded-xl border border-neutral-200 bg-white p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-800 dark:bg-neutral-950 min-h-11"
           aria-label="Agrandir : le diagramme de la boucle" data-src="../img/ralph-eyeball-loop-fr.png"
           data-alt="La boucle en cycle : Rendre transforme le code en image toujours de la même façon, puis Regarder signifie étudier l'image, puis Critiquer demande ce que l'œil a repéré, puis Éditer la source (jamais l'image) et retour à Rendre, en répétant jusqu'à ce qu'il n'y ait plus rien à repérer.">
           <img src="../img/ralph-eyeball-loop-fr.png"
@@ -199,7 +201,7 @@
           qualité impression : nous avons regardé le résultat et refusé de livrer tant qu'il ne tenait pas.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="figures.html"
-            class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Voir
+            class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">Voir
             la galerie</a>
         </div>
       </div>
@@ -208,7 +210,7 @@
       class="m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 backdrop:bg-black/80">
       <div class="flex min-h-full items-center justify-center p-4">
         <button type="button" data-lb-close autofocus aria-label="Fermer la visionneuse"
-          class="fixed right-4 top-4 z-10 rounded-full bg-white/10 px-3 py-1 text-2xl leading-none text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">&times;</button>
+          class="fixed right-4 top-4 z-10 rounded-full bg-white/10 px-3 py-1 text-2xl leading-none text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white min-h-11">&times;</button>
         <figure class="max-w-6xl">
           <img data-lb-img alt="" class="mx-auto max-h-[85vh] w-auto max-w-full rounded-lg bg-white">
           <figcaption data-lb-cap class="mt-3 text-center text-sm text-white/80"></figcaption>
@@ -218,8 +220,8 @@
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
-      <p><a class="underline hover:text-brand-linktext" href="index.html">← Toutes les <em>skills</em></a> · <em>Skills</em> Claude / OpenCode
-        par <a class="underline hover:text-brand-linktext" href="https://www.linkedin.com/in/warith-harchaoui/">Warith
+      <p><a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="index.html">← Toutes les <em>skills</em></a> · <em>Skills</em> Claude / OpenCode
+        par <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith
           Harchaoui</a>.</p>
     </div>
   </footer>

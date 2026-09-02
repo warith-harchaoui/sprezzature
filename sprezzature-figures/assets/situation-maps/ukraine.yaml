@@ -1,6 +1,6 @@
 {
   "title": "Ukraine \u2014 Areas of Control",
-  "subtitle": "Schematic, approximate open-source positions circa 2024 \u00b7 roughly 18% of the country occupied \u00b7 illustrative, not operational intelligence",
+  "subtitle": "Approximate open-source positions, circa 2024 \u00b7 ~18% of the country occupied \u00b7 illustrative",
   "region": {
     "bbox": [
       21.53122131221314,
@@ -78,6 +78,7 @@
     "color": "#3a4149",
     "legend_label": "Approx. contact line"
   },
+  "legend_position": "top-right",
   "legend_footer": "As of ~2024 \u00b7 schematic, open-source geography",
   "areas_of_control": {
     "category_field": "actor",
