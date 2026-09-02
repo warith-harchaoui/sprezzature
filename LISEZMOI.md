@@ -46,9 +46,9 @@ N'installez que ceux dont vous avez besoin.
 
 Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de release distincts.
 
-**Couche 1 : packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant. Installez uniquement ce dont vous avez besoin :
+**Couche 1 : packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant. Pas encore sur PyPI — installez directement depuis GitHub, uniquement ce dont vous avez besoin (`pip install git+https://github.com/warith-harchaoui/<package>`) :
 
-| `pip install …` | Ce que ça fait |
+| Package | Ce que ça fait |
 |---|---|
 | `sprezzature-figures` | 124 types de graphiques, SHAP, estimations causales, la Ralph Eyeball Loop |
 | `sprezzature-colors` | Audit de contraste WCAG, simulation de daltonisme (CVD), export palette Tailwind |

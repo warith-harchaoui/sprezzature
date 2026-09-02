@@ -35,9 +35,9 @@ ones you need.
 
 As of 2026-07-29, sprezzature is organised in three layers with distinct release cycles.
 
-**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo. Install only the tools you need:
+**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo. Not on PyPI yet — install straight from GitHub, only the tools you need (`pip install git+https://github.com/warith-harchaoui/<package>`):
 
-| `pip install …` | What it does |
+| Package | What it does |
 |---|---|
 | `sprezzature-figures` | 124 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
 | `sprezzature-colors` | WCAG contrast auditing, CVD simulation, Tailwind palette export |
