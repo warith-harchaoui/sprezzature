@@ -67,11 +67,11 @@
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Principale">
       <a href="index.html" class="flex items-center gap-2 rounded font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><img src="../img/logo.png" alt="" width="24" height="24"> Sprezzature</a>
       <div class="flex items-center gap-3 text-sm sm:gap-4">
-        <a href="index.html#skills" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Compétences</a>
-        <a href="figures.html" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Galerie</a>
-        <a href="packages.html" class="hidden rounded px-1 text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline" aria-current="page">Paquets</a>
-        <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Études de cas</a>
-        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
+        <a href="index.html#skills" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Compétences</a>
+        <a href="figures.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Galerie</a>
+        <a href="packages.html" class="hidden rounded px-1 text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline" aria-current="page">Paquets</a>
+        <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Études de cas</a>
+        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
         <a href="../packages.html" aria-label="English version" title="English version" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a>
         <button id="theme-toggle" type="button" aria-label="Changer le thème" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🌞</button>
         <button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🏫</button>
@@ -80,7 +80,7 @@
   </header>
   <main id="main">
     <section class="mx-auto max-w-4xl px-5 py-14">
-      <p class="font-mono text-sm text-brand-blue">paquets autonomes</p>
+      <p class="font-mono text-sm text-brand-linktext">paquets autonomes</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Paquets</h1>
       <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Sprezzature se compose de trois couches. Les <strong>skills</strong> (les fichiers <code>SKILL.md</code> que lit un agent) restent dans le dépôt principal. Les <strong>outils déterministes</strong> deviennent chacun un paquet installable avec pip, pour en utiliser un seul sans cloner toute la suite. Un <strong>runtime local</strong> fait tourner les outils hors ligne, sur un modèle local.</p>
       <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Chaque paquet est sous licence BSD-3-Clause, local d’abord, et versionné séparément. Ils ne sont pas encore sur PyPI : installez-les directement depuis GitHub.</p>
@@ -89,59 +89,59 @@
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-figures</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-figures</p>
           <h3 class="mt-1 font-semibold">Figures</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">126 types de graphiques en SVG écrit à la main, sans Vega, plus la boucle Ralph Eyeball, l’explicabilité et les graphes causaux.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-figures</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-figures" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-figures" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-maps</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-maps</p>
           <h3 class="mt-1 font-semibold">Cartes</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Cartographie SVG écrite à la main, séparée de sprezzature-figures : une choroplèthe Equal Earth à rampe OKLCH, et des cartes de situation en conique conforme de Lambert, toutes deux avec un relief chaud/froid à partir d'une élévation réelle.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-maps</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-maps" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-maps" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-colors</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-colors</p>
           <h3 class="mt-1 font-semibold">Couleurs</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Audit de contraste WCAG avec corrections par voisinage OKLCH, simulation des déficiences de la vision des couleurs, une palette choisie et un export Tailwind.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-colors</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-colors" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-colors" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-accessibility</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-accessibility</p>
           <h3 class="mt-1 font-semibold">Accessibilité</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Un linter d’accessibilité HTML statique : des règles WCAG/WAI décidables depuis la source, sans navigateur ni DOM. Une barrière pre-commit rapide.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-accessibility</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-cli-gui</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-cli-gui</p>
           <h3 class="mt-1 font-semibold">CLI → interface web</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Génère une interface HTML d’un seul fichier depuis n’importe quel CLI Python : introspection d’argparse, Click ou Typer, sans étape de build.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-cli-gui</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-ux-laws</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-ux-laws</p>
           <h3 class="mt-1 font-semibold">Lois de l’UX</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Un auditeur statique des lois de l’UX pour le HTML : Hick, Miller, Fitts, Jakob, Tesler et d’autres, décidables depuis la source.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-ux-laws</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-audio</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-audio</p>
           <h3 class="mt-1 font-semibold">Audio</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Sous-titres locaux (whisper.cpp), diarisation et qui-est-qui, narration et traduction. Les moteurs ML sont des extras optionnels.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-audio</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-audio" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-audio" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
       </div>
@@ -150,29 +150,29 @@
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">best-engine-ai-helper</p>
+          <p class="font-mono text-xs text-brand-linktext">best-engine-ai-helper</p>
           <h3 class="mt-1 font-semibold">Sélecteur de moteur &amp; runtime local</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Détecte la machine, choisit un modèle dans un catalogue et valide un LLM / VLM local avant que les skills s’appuient dessus. Chaque appel LLM/VLM d’un skill passe par son abstraction <code>chat</code> : un backend connectable (Ollama, compatible OpenAI, LangChain), la boucle Ralph et le pipeline d’écriture.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/best-engine-ai-helper</code></pre>
-          <a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-          <p class="font-mono text-xs text-brand-blue">sprezzature-local</p>
-          <h3 class="mt-1 font-semibold">Runtime hors-ligne</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Le runtime hors-ligne que les skills appellent : le backend de chat connectable de <code>llm.py</code>, la boucle Ralph Eyeball, et le pipeline d'écriture. Lit les variables d'environnement <code>SPREZZATURE_LLM_*</code> ; chaque autre paquet le prend en dépendance optionnelle, jamais obligatoire.</p>
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-local</p>
+          <h3 class="mt-1 font-semibold">Runtime hors-ligne <span class="font-sans text-xs font-normal text-neutral-500 dark:text-neutral-400">(obsolète)</span></h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Archivé depuis août 2026 : il faisait doublon avec best-engine-ai-helper, et chaque appel LLM/VLM des skills passe désormais par l'abstraction <code>chat</code> de ce paquet. Le backend connectable de <code>llm.py</code>, la boucle Ralph Eyeball et le pipeline d'écriture restent tels quels ; les commandes CLI autonomes, elles, ont disparu. Reste installable pour qui y est encore épinglé, sans développement ultérieur.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install git+https://github.com/warith-harchaoui/sprezzature-local</code></pre>
-          <a href="https://github.com/warith-harchaoui/sprezzature-local" class="mt-3 text-sm font-medium text-brand-blue">Dépôt →</a>
+          <a href="https://github.com/warith-harchaoui/sprezzature-local" class="mt-3 text-sm font-medium text-brand-linktext">Dépôt →</a>
         </div>
 
       </div>
 
-      <p class="mt-12 text-sm text-neutral-500 dark:text-neutral-400">Vous cherchez plutôt les skills pour l’agent ? La couche <code>SKILL.md</code> se distribue ensemble sous forme de bundle, dans la section <a class="underline hover:text-brand-blue" href="index.html#getting-started">Pour commencer</a>.</p>
+      <p class="mt-12 text-sm text-neutral-500 dark:text-neutral-400">Vous cherchez plutôt les skills pour l’agent ? La couche <code>SKILL.md</code> se distribue ensemble sous forme de bundle, dans la section <a class="underline hover:text-brand-linktext" href="index.html#getting-started">Pour commencer</a>.</p>
     </section>
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
-      <p><a class="underline hover:text-brand-blue" href="index.html">← Toutes les compétences</a> · Skills Claude / OpenCode par <a class="underline hover:text-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
+      <p><a class="underline hover:text-brand-linktext" href="index.html">← Toutes les compétences</a> · Skills Claude / OpenCode par <a class="underline hover:text-brand-linktext" href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.</p>
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>

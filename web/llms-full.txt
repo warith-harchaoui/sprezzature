@@ -58,7 +58,7 @@ Source: https://sprezzature.ai/audio.html
 
 sprezzature-audio
 
-# Audio — captions
+# Audio: captions
 
 Local artificial intelligence (AI) captions, speaker diarization and speaker identification for video / audio. WebVTT / SubRip subtitle format (SRT) from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a transcript pass. The audio never leaves the machine.
 
@@ -292,7 +292,7 @@ Search figures
 
 ## Comparison & ranking
 
-Rank and contrast categories — bars, lollipops, dumbbells and their kin.
+Rank and contrast categories: bars, lollipops, dumbbells and their kin.
 
 Bar chart : Ranked categories, one house color each.
 
@@ -322,7 +322,7 @@ Waterfall : A running total, step by step.
 
 ## Time series & trends
 
-How a value moves over an ordered axis — lines, areas and event timelines.
+How a value moves over an ordered axis: lines, areas and event timelines.
 
 Line chart : A value over an ordered axis, one line per series.
 
@@ -356,7 +356,7 @@ Difference chart : Two series with the gap shaded bicolour.
 
 ## Distributions
 
-The shape, spread and skew of one variable — histograms, boxes, densities.
+The shape, spread and skew of one variable: histograms, boxes, densities.
 
 Histogram : A single distribution, binned.
 
@@ -392,7 +392,7 @@ Beeswarm : One dot per observation, nudged apart so width reads as density.
 
 ## Correlation & multivariate
 
-Relationships between two or more measures — scatters, pair matrices, projections.
+Relationships between two or more measures: scatters, pair matrices, projections.
 
 Scatter : Two variables, colored by group.
 
@@ -426,7 +426,7 @@ Ternary plot : Three parts summing to 100% on a triangle.
 
 ## Matrices & heatmaps
 
-Values on a grid, colour-encoded — heatmaps, clustermaps, confusion and correlation.
+Values on a grid, colour-encoded: heatmaps, clustermaps, confusion and correlation.
 
 Annotated heatmap : A value matrix with per-cell labels.
 
@@ -442,7 +442,7 @@ Interruption matrix : Who cuts whom, at a glance (hover the crosshair).
 
 ## Part-to-whole & composition
 
-Slices and nested parts of a whole — donuts, treemaps, waffles, flows into stages.
+Slices and nested parts of a whole: donuts, treemaps, waffles, flows into stages.
 
 Donut : A compact part-to-whole.
 
@@ -470,7 +470,7 @@ Funnel : Stage-to-stage drop-off.
 
 ## Hierarchies, networks & flows
 
-Nodes, edges and movement — trees, graphs, chords, Sankeys.
+Nodes, edges and movement: trees, graphs, chords, Sankeys.
 
 Node-link network : Force-directed graph, hover to highlight.
 
@@ -504,7 +504,7 @@ Packed bubbles : Circles sized by value, packed and coloured by group.
 
 ## Maps & spatial
 
-Values in geographic or directional space — thematic maps, spike maps, wind and vector fields.
+Values in geographic or directional space: thematic maps, spike maps, wind and vector fields.
 
 Binned grid map : Values counted into square grid cells over a place.
 
@@ -528,7 +528,7 @@ Polar plot : A line or scatter on an angular axis.
 
 ## Model evaluation & science
 
-Diagnostics and scientific plots — ROC, calibration, survival, forest, volcano.
+Diagnostics and scientific plots: ROC, calibration, survival, forest, volcano.
 
 ROC curve : Classifier trade-off, with AUC.
 
@@ -578,7 +578,7 @@ Radial bar : Bars wrapped around a polar axis.
 
 3D bar : Depth-shaded bars on a grid; use sparingly.
 
-No figure matches — try another term.
+No figure matches. Try another term.
 
 ×
 
@@ -887,6 +887,8 @@ Source: https://sprezzature.ai/
 # Sprezzature
 
 in the broadest sense
+Create and audit figures, visualizations for app and web content
+faithful to a standard of accessibility, chromatic rigor, and usability.
 
 Explore
 the nine skills
@@ -931,19 +933,19 @@ Full install options (checksums, OpenCode + local Ollama, upgrades) →
 
 Each skill's scripts also ship as a standalone pip-installable package. Use them in your own pipelines, without the agent layer.
 
-sprezzature-figures — 126 chart types
+sprezzature-figures : 124 chart types
 
-sprezzature-colors — WCAG + CVD + Tailwind
+sprezzature-colors : WCAG + CVD + Tailwind
 
-sprezzature-audio — speech-to-text, diarization
+sprezzature-audio : speech-to-text, diarization
 
-sprezzature-accessibility — a11y lint
+sprezzature-accessibility : a11y lint
 
-sprezzature-cli-gui — CLI to GUI
+sprezzature-cli-gui : CLI to GUI
 
-sprezzature-ux-laws — Laws of UX audit
+sprezzature-ux-laws : Laws of UX audit
 
-best-engine-ai-helper — hardware + model select, pluggable LLM backend
+best-engine-ai-helper : hardware + model select, pluggable LLM backend
 
 ## The nine skills
 
@@ -1045,13 +1047,13 @@ Good-quality cartography, reproducible on data of your choice.
 
 ## Choropleth
 
-One value per country on a hand-written closed-form Equal Earth projection — restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an OKLCH-interpolated ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer — real GMTED2010 elevation, not a flat hillshade — sits under the fills.
+One value per country on a hand-written, closed-form Equal Earth projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an OKLCH-interpolated ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real GMTED2010 elevation rather than a flat hillshade, sits under the fills.
 
 Sequential ramp : pale-to-navy blue, magnitude reads by lightness alone.
 
 Diverging ramp : auto-detected from the data's sign, terracotta ↔ navy through a real neutral zero.
 
-At scale : the relief layer — Andes, Rockies, Alps, Himalaya — reads clearly once rendered larger.
+At scale : the relief layer (Andes, Rockies, Alps, Himalaya) reads clearly once rendered larger.
 
 From sprezzature-maps , the cartography package split out of sprezzature-figures.
 
@@ -1077,13 +1079,13 @@ Small multiples : One panel per year, class breaks frozen.
 
 ## Situation maps
 
-A layered reference plate for any region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred Lambert Conformal Conic projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed-in the region is — a whole continent doesn't need 10m detail invisible at that scale; a single country does. The same relief technique as the choropleth above — real elevation, texture-shaded, warm/cool duotone — carries every plate.
+A layered reference plate for any region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred Lambert Conformal Conic projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed in the region is: a whole continent doesn't need 10m detail invisible at that scale, while a single country does. The same relief technique as the choropleth above (real elevation, texture-shaded, warm/cool duotone) carries every plate.
 
-Western Europe : the built-in reference demo — 50m borders, the Alps in full relief texture.
+Western Europe : the built-in reference demo, 50m borders, the Alps in full relief texture.
 
-Iberia : Spain + Portugal — the clearest single example of the texture-shading relief technique.
+Iberia : Spain and Portugal, the clearest single example of the texture-shading relief technique.
 
-Himalaya : an all-land plate — no sea to contrast against, relief carries the whole plate.
+Himalaya : an all-land plate with no sea to contrast against, so relief carries the whole plate.
 
 Switzerland, zoomed : a small enough bbox switches to the 10m border tier automatically.
 
@@ -1097,10 +1099,10 @@ Reference plates from sprezzature-maps ; the areas-of-control layer stays in spr
 
 ## How the choropleth and situation maps are built
 
-Every map above is a hand-authored SVG document — no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.
+Every map above is a hand-authored SVG document: no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.
 
 Equal Earth, not equirectangular
-A closed-form polynomial projection (Šavrič, Patterson & Jenny, 2018) — equal-area, so a choropleth's colored surface isn't quietly lying about country size.
+A closed-form polynomial projection (Šavrič, Patterson & Jenny, 2018), equal-area, so a choropleth's colored surface isn't quietly lying about country size.
 
 OKLCH color, not RGB lerp
 Ramps interpolate in a perceptually-uniform space (Björn Ottosson's OKLab), verified colour-vision-deficiency-safe by actually simulating protanopia/deuteranopia/tritanopia on the rendered output.
@@ -1109,7 +1111,7 @@ Natural Earth, 50m and 10m
 Public-domain vector borders, vendored offline. Situation maps pick the tier automatically from how zoomed-in the requested region is.
 
 Real elevation, not a flat hillshade
-Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with texture shading (Brown, 2010 — a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).
+Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with texture shading (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).
 
 ## Real data: the last five French presidential runoffs
 
@@ -1171,7 +1173,7 @@ sprezzature-figures
 
 ### Figures
 
-126 hand-authored SVG chart types, no Vega, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
+124 hand-authored SVG chart types, no Vega, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
 
 pip install git+https://github.com/warith-harchaoui/sprezzature-figures
 Repository →
@@ -1243,9 +1245,9 @@ Repository →
 
 sprezzature-local
 
-### Offline runtime
+### Offline runtime (deprecated)
 
-The offline runtime the skills call into: llm.py 's pluggable chat backend, the Ralph Eyeball Loop, and the writing pipeline. Reads SPREZZATURE_LLM_* env vars; every other package takes it as an optional dependency, never a hard one.
+Archived as of August 2026: it duplicated best-engine-ai-helper, and every skill's LLM/VLM call now routes through that package's chat abstraction instead. llm.py 's pluggable backend, the Ralph Eyeball Loop, and the writing pipeline carry over as-is; the standalone CLI commands do not. Kept installable for anyone still pinned to it, with no further development.
 
 pip install git+https://github.com/warith-harchaoui/sprezzature-local
 Repository →
@@ -1494,7 +1496,7 @@ Source: https://sprezzature.ai/vision.html
 
 sprezzature-vision
 
-# Vision — alt text
+# Vision: alt text
 
 World Wide Web Consortium (W3C)-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b. Nothing leaves the machine.
 

@@ -146,15 +146,15 @@
       </a>
       <div class="flex items-center gap-4 text-sm">
         <a href="#skills"
-          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Skills</a>
+          class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Skills</a>
         <a href="figures.html"
-          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Gallery</a>
+          class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Gallery</a>
         <a href="packages.html"
-          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Packages</a>
+          class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Packages</a>
         <a href="case-studies.html"
-          class="hidden rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Case studies</a>
+          class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Case studies</a>
         <a href="https://github.com/warith-harchaoui/sprezzature"
-          class="rounded px-1 hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
+          class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a>
         <a href="fr/index.html" aria-label="Version française" title="Version française"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a>
         <button id="theme-toggle" type="button" aria-label="Switch theme"
@@ -207,7 +207,7 @@ curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VER
 
 mkdir -p ~/.claude/skills          # OpenCode: ~/.opencode/skills
 cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
-            <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Just want one tool, no agent? Each deterministic tool also ships as a standalone <code>pip</code> package. See <a class="font-medium text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="packages.html">Packages</a>.</p>
+            <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Just want one tool, no agent? Each deterministic tool also ships as a standalone <code>pip</code> package. See <a class="font-medium text-brand-linktext underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="packages.html">Packages</a>.</p>
           </div>
           <div>
             <h3 class="font-semibold">2 · Ask, in plain English</h3>
@@ -218,7 +218,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
               <li>"make a figure of this CSV" &rarr; <strong>sprezzature-figures</strong> draws it, then audits the chart.</li>
               <li>"wrap this CLI in a GUI" &rarr; <strong>sprezzature-cli-gui</strong> scaffolds a usable interface.</li>
             </ul>
-            <p class="mt-4 text-sm"><a class="font-medium text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature#getting-started">Full install options (checksums, OpenCode + local Ollama, upgrades) &rarr;</a></p>
+            <p class="mt-4 text-sm"><a class="font-medium text-brand-linktext underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature#getting-started">Full install options (checksums, OpenCode + local Ollama, upgrades) &rarr;</a></p>
           </div>
         </div>
       </div>
@@ -229,13 +229,13 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The tool ecosystem</h2>
       <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Each skill's scripts also ship as a standalone pip-installable package. Use them in your own pipelines, without the agent layer.</p>
       <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm" role="list">
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-figures</a>: 124 chart types</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-colors" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-colors</a>: WCAG + CVD + Tailwind</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-audio" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-audio</a>: speech-to-text, diarization</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-accessibility</a>: a11y lint</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-cli-gui</a>: CLI to GUI</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="font-mono text-brand-blue underline hover:no-underline">sprezzature-ux-laws</a>: Laws of UX audit</li>
-        <li><a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="font-mono text-brand-blue underline hover:no-underline">best-engine-ai-helper</a>: hardware + model select, pluggable LLM backend</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-linktext underline hover:no-underline">sprezzature-figures</a>: 124 chart types</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-colors" class="font-mono text-brand-linktext underline hover:no-underline">sprezzature-colors</a>: WCAG + CVD + Tailwind</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-audio" class="font-mono text-brand-linktext underline hover:no-underline">sprezzature-audio</a>: speech-to-text, diarization</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="font-mono text-brand-linktext underline hover:no-underline">sprezzature-accessibility</a>: a11y lint</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="font-mono text-brand-linktext underline hover:no-underline">sprezzature-cli-gui</a>: CLI to GUI</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="font-mono text-brand-linktext underline hover:no-underline">sprezzature-ux-laws</a>: Laws of UX audit</li>
+        <li><a href="https://github.com/warith-harchaoui/best-engine-ai-helper" class="font-mono text-brand-linktext underline hover:no-underline">best-engine-ai-helper</a>: hardware + model select, pluggable LLM backend</li>
       </ul>
     </section>
 
@@ -309,7 +309,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
             the canvas, two nodes sitting on top of each other, colors that vanish for a colorblind reader. Fix the
             source, render again, look again. It's a prescribed review loop, not an autonomous critic. Everyone else
             aims this at web pages. We aim it at charts and diagrams too.</p>
-          <p class="mt-3"><a href="ralph-eyeball-loop.html" class="font-medium text-brand-blue underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">How the Ralph Eyeball Loop works →</a></p>
+          <p class="mt-3"><a href="ralph-eyeball-loop.html" class="font-medium text-brand-linktext underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">How the Ralph Eyeball Loop works →</a></p>
         </article>
         <article class="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
           <h3 class="text-lg font-semibold">📐 The figure is a real SVG, not a picture</h3>
@@ -335,9 +335,9 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         </a>
         <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
           The full landscape (15 category matrices) lives in
-          <a class="underline hover:text-brand-blue"
+          <a class="underline hover:text-brand-linktext"
             href="https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md">LANDSCAPE.md</a>
-          (<a class="underline hover:text-brand-blue"
+          (<a class="underline hover:text-brand-linktext"
             href="https://github.com/warith-harchaoui/sprezzature/blob/main/PAYSAGE.md">français</a>).
         </p>
       </div>
@@ -350,28 +350,28 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         <div class="mt-4 space-y-3 text-neutral-600 dark:text-neutral-300">
           <p>
             Special thanks to
-            <a class="text-brand-blue hover:underline" href="https://www.behance.net/dreyadesign/projects">Audrey
+            <a class="text-brand-linktext hover:underline" href="https://www.behance.net/dreyadesign/projects">Audrey
               Dejoux</a>,
-            <a class="text-brand-blue hover:underline" href="https://www.linkedin.com/in/pantanacce/">Laurent
+            <a class="text-brand-linktext hover:underline" href="https://www.linkedin.com/in/pantanacce/">Laurent
               Pantanacce</a>,
-            <a class="text-brand-blue hover:underline" href="https://www.linkedin.com/in/auguste-baum/">Auguste
+            <a class="text-brand-linktext hover:underline" href="https://www.linkedin.com/in/auguste-baum/">Auguste
               Baum</a>,
-            <a class="text-brand-blue hover:underline" href="https://www.linkedin.com/in/julien-boyer-2a76878/">Julien
+            <a class="text-brand-linktext hover:underline" href="https://www.linkedin.com/in/julien-boyer-2a76878/">Julien
               Boyer</a> and
-            <a class="text-brand-blue hover:underline"
+            <a class="text-brand-linktext hover:underline"
               href="https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gombert-84675b1b/">Jérôme Gombert</a>
             for fruitful discussions.
           </p>
-          <p>Color palettes from <a class="text-brand-blue hover:underline"
+          <p>Color palettes from <a class="text-brand-linktext hover:underline"
               href="https://harchaoui.org/warith/colors/">harchaoui.org/warith/colors</a>.</p>
           <p>The three Roboto families are bundled under the SIL Open Font License.</p>
           <p>
             We also drew on the
-            <a class="text-brand-blue hover:underline"
+            <a class="text-brand-linktext hover:underline"
               href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface
               Guidelines</a>,
-            <a class="text-brand-blue hover:underline" href="https://material.io/design">Google Material Design</a> and
-            <a class="text-brand-blue hover:underline" href="https://lawsofux.com/">Laws of UX</a>.
+            <a class="text-brand-linktext hover:underline" href="https://material.io/design">Google Material Design</a> and
+            <a class="text-brand-linktext hover:underline" href="https://lawsofux.com/">Laws of UX</a>.
           </p>
         </div>
       </div>
@@ -380,7 +380,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
 
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
-      <p>By <a class="underline hover:text-brand-blue" href="https://www.linkedin.com/in/warith-harchaoui/">Warith
+      <p>By <a class="underline hover:text-brand-linktext" href="https://www.linkedin.com/in/warith-harchaoui/">Warith
           Harchaoui</a>.</p>
     </div>
   </footer>
@@ -403,9 +403,9 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       <li>
         <a href="${page}" class="group flex h-full flex-col rounded-2xl border border-neutral-200 p-5 transition hover:border-brand-blue hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-800">
           <h3 class="font-semibold">${title}</h3>
-          <p class="mt-0.5 font-mono text-xs text-brand-blue">${id}</p>
+          <p class="mt-0.5 font-mono text-xs text-brand-linktext">${id}</p>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">${desc}</p>
-          <span class="mt-3 text-sm font-medium text-brand-blue">Learn more <span aria-hidden="true" class="inline-block transition group-hover:translate-x-0.5">→</span></span>
+          <span class="mt-3 text-sm font-medium text-brand-linktext">Learn more <span aria-hidden="true" class="inline-block transition group-hover:translate-x-0.5">→</span></span>
         </a>
       </li>`).join('');
 

@@ -19,11 +19,36 @@
     --brand-bluedark-rgb: 0 120 188;   /* #0078BC hover/dark variant */
     --brand-bluelight-rgb: 127 209 255; /* #7FD1FF light wash (used at low opacity) */
     --brand-navy-rgb: 0 60 93;         /* #003C5D deep ink accent */
+    /* Text-only accent: same as brand-blue in light mode (5.19:1 on white). */
+    --brand-linktext-rgb: 0 114 178;   /* #0072B2 */
   }
   [data-color-mode="corporate"] {
-    --brand-blue-rgb: 0 122 255;       /* #007AFF Apple System Blue */
-    --brand-bluedark-rgb: 10 132 255;  /* #0A84FF */
+    /* Darkened slightly from Apple's raw #007AFF/#0A84FF: those failed WCAG AA
+       (4.02:1 / 3.65:1) for white button text. #006FF3/#0072EC pass at
+       4.6:1 / 4.55:1 while staying visually indistinguishable from System Blue.
+       See sprezzature-colors WCAG contrast audit, 2026-09-02. */
+    --brand-blue-rgb: 0 111 243;       /* #006FF3 (was #007AFF) */
+    --brand-bluedark-rgb: 0 114 236;   /* #0072EC (was #0A84FF) */
     --brand-bluelight-rgb: 204 228 255; /* #CCE4FF */
     --brand-navy-rgb: 10 77 160;       /* #0A4DA0 */
+    --brand-linktext-rgb: 0 111 243;   /* #006FF3, 4.6:1 on white */
+  }
+
+  /*
+   * --brand-linktext-rgb dark-mode overrides: text-brand-blue is used
+   * directly on the page background (not inside a button), so it needs
+   * its own light/dark values independent of --brand-blue-rgb (which
+   * buttons use unconditionally). Academic's base blue (#0072B2) is only
+   * 3.79:1 on the dark theme's #0B0B0C background, below WCAG AA's 4.5:1
+   * for body text; lightened to #1F81C2 (4.66:1). Corporate's base blue
+   * already clears 4.9:1 on #0B0B0C, so the dark override keeps the
+   * original, brighter #007AFF rather than the darkened button shade.
+   */
+  :root[data-color-scheme="dark"]:not([data-color-mode="corporate"]),
+  [data-color-mode="academic"][data-color-scheme="dark"] {
+    --brand-linktext-rgb: 31 129 194; /* #1F81C2 */
+  }
+  [data-color-mode="corporate"][data-color-scheme="dark"] {
+    --brand-linktext-rgb: 0 122 255; /* #007AFF */
   }
 }
