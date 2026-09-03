@@ -53,6 +53,7 @@ tests/fixtures/images/wiki/*.svg
 !.github/
 !.gitignore
 !.pre-commit-hooks.yaml
+!web/.htaccess
 # python build artifacts
 build/
 *.egg-info/

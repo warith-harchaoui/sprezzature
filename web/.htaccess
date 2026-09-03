@@ -1,0 +1,16 @@
+# Every text/XML asset on this site is UTF-8. HTML pages carry a
+# <meta charset="utf-8"> fallback, but the feeds, sitemap, and the
+# llms.txt/humans.txt/robots.txt plain-text files have no equivalent
+# in-band fallback that every consumer honors -- without an explicit
+# charset here, some clients (e.g. a browser's raw-XML viewer) guess
+# the wrong encoding and mangle non-ASCII characters (em dashes,
+# accented French text) even though the bytes on disk are correct.
+AddDefaultCharset utf-8
+
+<IfModule mod_mime.c>
+    AddType 'text/html; charset=utf-8' .html
+    AddType 'application/atom+xml; charset=utf-8' .atom
+    AddType 'application/rss+xml; charset=utf-8' .rss
+    AddType 'application/xml; charset=utf-8' .xml
+    AddType 'text/plain; charset=utf-8' .txt
+</IfModule>
