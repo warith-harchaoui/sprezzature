@@ -20,9 +20,9 @@ Différences clés :
 - LangChain / LlamaIndex sont des frameworks de chaînes et de récupération généralistes. Ils ne livrent pas de *skills* de domaine intégrés pour l'accessibilité, les graphiques ou la publication.
 - Haystack se concentre sur les pipelines de traitement du langage naturel (NLP). Pas de sortie multimodale, pas d'outillage frontend.
 - AutoGen / CrewAI gèrent bien l'orchestration multi-agents, mais les agents doivent être écrits de zéro. Pas d'audit de graphiques, pas de lint a11y, pas de simulation de daltonisme.
-- `sprezzature` est délibérément étroit : neuf *skills*, une seule pile frontend (JS pur + Tailwind), exécution locale via `sprezzature-local`. Choisissez LangChain quand votre problème est la récupération à grande échelle ; choisissez `sprezzature` quand le problème est la qualité frontend au niveau du document humain.
+- `sprezzature` est délibérément étroit : neuf *skills*, une seule pile frontend (JS pur + Tailwind), exécution locale via [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) (anciennement `sprezzature-local`, archivé le 2026-08-06). Choisissez LangChain quand votre problème est la récupération à grande échelle ; choisissez `sprezzature` quand le problème est la qualité frontend au niveau du document humain.
 
-`sprezzature-local` (le runtime de la couche 3) propose LangChain comme backend optionnel (`SPREZZATURE_LLM_BACKEND=langchain`), ce qui rend les deux complémentaires.
+`best-engine-ai-helper` (le runtime de la couche 3) propose LangChain comme backend optionnel (`SPREZZATURE_LLM_BACKEND=langchain`), ce qui rend les deux complémentaires.
 
 ## Note sur le biais
 
