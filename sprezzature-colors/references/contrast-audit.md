@@ -1,10 +1,10 @@
 # Contrast audit: `audit_contrast.py`
 
-Audit every (foreground, background) pair in a palette against the WCAG contrast ratio thresholds, and propose the nearest accessible alternative for failing pairs. Deterministic, stdlib-only, no model.
+Audit a palette's (foreground, background) pairs against the WCAG contrast ratio thresholds, and propose the nearest accessible alternative for failing pairs. Deterministic, stdlib-only, no model.
 
 ## What this tool is (and isn't)
 
-This tool **flags WCAG contrast failures** on every (foreground, background) pair in a palette and **proposes a minimal-edit nudge** along the OKLCH lightness axis. The proposed fix preserves the WCAG ratio at the cost of moving along the L axis only: same hue, same chroma, brighter or darker. That is a useful starting suggestion when nothing else is on the line; it is **not** a designer-approved replacement.
+This tool **flags WCAG contrast failures** on the (foreground, background) pairs that co-occur in a rendered theme by default: light labels on light surfaces, dark labels (`*-dark`) on dark surfaces, theme-neutral brand accents on every surface. Pass `--all-pairs` to restore the exhaustive cross-theme cross-product (useful for a full audit, noisy as a default: it flags things like a light-theme label on a dark surface, a pairing that never actually renders together). It then **proposes a minimal-edit nudge** along the OKLCH lightness axis. The proposed fix preserves the WCAG ratio at the cost of moving along the L axis only: same hue, same chroma, brighter or darker. That is a useful starting suggestion when nothing else is on the line; it is **not** a designer-approved replacement.
 
 Brand-critical colours (the primary CTA, accent colours that carry semantic meaning across the product, anything tied to a logo) should be reviewed by a designer. A neighbour that passes 4.5:1 can still violate brand identity, tonal hierarchy, or the relationship between sibling tokens. Treat `--fix` as a flagged failure with a proposed minimum edit, not as the final swatch.
 
@@ -37,9 +37,12 @@ python scripts/audit_contrast.py --palette my-palette.json --fix
 
 # JSON output for CI
 python scripts/audit_contrast.py --format json
+
+# Exhaustive cross-product, cross-theme pairs included
+python scripts/audit_contrast.py --all-pairs
 ```
 
-Exit code is `0` when every pair passes, `1` when any pair fails. The exit code is the same regardless of `--fix`; the script reports the failures even when it suggests alternatives.
+Exit code is `0` when every checked pair passes, `1` when any pair fails. The exit code is the same regardless of `--fix`; the script reports the failures even when it suggests alternatives.
 
 ## Palette format
 
@@ -74,6 +77,8 @@ Variant names other than `DEFAULT` become suffixes (`brand-blue-dark`, `brand-bl
 | `surface-…` | background |
 
 Other roles are ignored. Re-name your palette keys to fit this scheme, or extend the regexes in `is_foreground` / `is_background`.
+
+By default, a `-dark`-suffixed foreground is only checked against a `-dark`-suffixed surface (and vice versa for light); theme-neutral `brand-…` accents are checked against every surface. This avoids flagging pairs that never actually render together, such as a light-theme label composited against a dark surface. Pass `--all-pairs` to check the full cross-product instead, including those cross-theme pairs.
 
 ## The suggestion search
 
