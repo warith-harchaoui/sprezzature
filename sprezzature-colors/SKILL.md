@@ -159,9 +159,10 @@ emitter is just unused).
 live in the sprezzature-* ecosystem when the curated default is in play.
 Both halves of the loop read it:
 
-- **Audit:** `audit_contrast.py` walks every (label × surface) pair
-  against the CSV's hexes and emits an OKLCH-neighbour fix when
-  contrast fails.
+- **Audit:** `audit_contrast.py` walks the (label × surface) pairs that
+  co-occur in a rendered theme by default (`--all-pairs` for the full
+  cross-product) against the CSV's hexes and emits an OKLCH-neighbour
+  fix when contrast fails.
 - **Make:** `palette_to_tailwind.py` emits the same hexes as a
   Tailwind `theme.extend.colors` block (or a complete
   `tailwind.config.js`). The block in
