@@ -1,27 +1,37 @@
 # A11y linter: `lint_a11y.py`
 
-Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it runs over HTML source. Catches **14 source-decidable WCAG / WAI-ARIA failures**.
+Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it runs over HTML source. Catches **15 source-decidable WCAG / WAI-ARIA failures**.
 
 **Not a replacement for axe-core, Pa11y, or Lighthouse.** Those run a real browser and catch the dynamic / runtime failures that no static parser can see: colour-only state after JS, focus order after a route change, name/role/value after ARIA mutation, contrast after a runtime theme switch, live-region announcement order. Use `lint_a11y.py` in pre-commit; use axe-core (or Pa11y, or Lighthouse) in your end-to-end suite. Run both.
 
 ## Install
 
-The linter is stdlib-only: no `pip install` required. Python 3.9+.
+```bash
+pip install sprezzature-accessibility
+```
+
+The linter itself is stdlib-only at runtime (Python 3.10+); the pip install just puts
+the `sprezzature-accessibility-lint` console script on `$PATH`. It also runs directly
+without installing, via `python scripts/lint_a11y.py` or
+`python -m sprezzature_accessibility_scripts.lint_a11y`.
 
 ## Run
 
 ```bash
 # A single page
-python scripts/lint_a11y.py public/index.html
+sprezzature-accessibility-lint public/index.html
 
 # A whole tree
-python scripts/lint_a11y.py public/
+sprezzature-accessibility-lint public/
 
 # JSON output for CI
-python scripts/lint_a11y.py --format json public/index.html
+sprezzature-accessibility-lint --format json public/index.html
 
 # Skip a couple of rules
-python scripts/lint_a11y.py --ignore heading-skip,motion-no-reduce-guard public/
+sprezzature-accessibility-lint --ignore heading-skip,motion-no-reduce-guard public/
+
+# Auto-fix the mechanically-fixable rules (6 of the 15)
+sprezzature-accessibility-lint --fix --dry-run public/
 ```
 
 Exit code is `0` when no findings, `1` when any finding is present. Pipe-friendly for CI.
@@ -46,6 +56,7 @@ Each rule has a stable identifier so the `--ignore` flag and JSON output referen
 | `heading-skip` | Heading levels jump downward (e.g. `<h2>` followed by `<h4>`). | WCAG SC 1.3.1. |
 | `color-only-state` | Tailwind `*-red-*` / `*-green-*` token on an element with no text and no inline icon. State must not rely on color alone. | WCAG SC 1.4.1. |
 | `motion-no-reduce-guard` | `animate-{spin,ping,pulse,bounce}`, `transition-transform`, or `transition-all` without a `motion-reduce:` peer. | WCAG SC 2.3.3 / `prefers-reduced-motion`. |
+| `body-text-tracking-tight` | Tailwind `tracking-tight`/`tracking-tighter` (negative letter-spacing) on running body text (`p`, `li`, `dd`, `blockquote`, `td`, `figcaption`); headings, buttons, and nav labels are excluded. A static proxy for the intent of the SC, not a conformance test: it cannot verify a rendered page survives a user *widening* spacing without clipping. The make-side counterpart, `text_spacing_preset.py`, emits an opt-in CSS block at the WCAG 1.4.12 minimums for the same tag set. | WCAG SC 1.4.12 (proxy). |
 
 ## When a finding is wrong
 
@@ -61,7 +72,7 @@ Three escape valves:
 # .github/workflows/a11y.yml
 - name: A11y lint
   run: |
-    python3 scripts/lint_a11y.py --format json public/ > a11y-report.json
+    sprezzature-accessibility-lint --format json public/ > a11y-report.json
     python3 -c "import json,sys; d=json.load(open('a11y-report.json')); sys.exit(1 if d['findings_total'] else 0)"
 ```
 
@@ -70,7 +81,7 @@ The linter's exit code is also CI-friendly on its own; the JSON dump above is ju
 ## What this linter does *not* check
 
 - Live ARIA state (`aria-expanded`, `aria-selected` consistency): depends on JS behavior.
-- Color contrast: see `references/dataviz-color-palettes.md` and `audit_contrast.py` (planned).
+- Color contrast: see the companion `sprezzature-colors` skill's `audit_contrast.py`.
 - Focus order within a JS-built widget: needs runtime.
 - Captioned audio / video presence: `<track>` placement depends on the source's content.
 - Form error association (`aria-describedby` between input and a sibling message): pattern is too varied for a static rule.
@@ -82,12 +93,13 @@ For those, pair with axe-core in dev tools and manual testing with a screen read
 Static markup can't tell whether colour is *load-bearing*: whether two series
 collapse to one hue for a red-green–blind reader, or a diverging +/− sign
 vanishes in grayscale. That needs the rendered pixels, so it lives one layer
-out from the linter: `sprezzature-colors/scripts/simulate_cvd.py`.
+out from the linter, in the companion `sprezzature-colors` package's
+`simulate_cvd.py` (no console script; invoke as a module).
 
 It reinforces the two existing sprezzature-figures steps rather than replacing them:
 
 - **make** (the Ralph Eyeball Loop): after the render step, run
-  `python sprezzature-colors/scripts/simulate_cvd.py render.png` to get a contact
+  `python -m sprezzature_colors_scripts.simulate_cvd render.png` to get a contact
   sheet (grayscale + protanopia + deuteranopia + tritanopia) and *look*. The
   loop becomes **render → simulate → look**.
 - **audit** (`audit_figure.py`, static): the auditor flags rainbow ramps and
