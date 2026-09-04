@@ -7,9 +7,9 @@ full-width, IEEE transactions)." Searching the standalone
 the style module `_style.py`, every `make_*.py` generator, the CLI
 argument parsers, and a repo-wide grep for "Nature," "PLOS," "IEEE," and
 "journal" as code (not prose) found no implementation. No generator
-accepts a `--preset` or `--journal` flag. `_style.py` defines dark-mode
-matplotlib rcParams (`matplotlib_rc()`), corner-radius helpers, and the
-polarity/palette machinery documented in
+accepts a `--preset` or `--journal` flag. `_style.py` is stdlib-only (no
+numpy, matplotlib, or pandas) and defines dark-mode SVG tokens,
+corner-radius helpers, and the polarity/palette machinery documented in
 `references/polarity-and-color.md`, but no journal-specific column
 widths, DPI targets, or font-size tables. The one hit for "IEEE" in the
 codebase is a citation, `make_upset.py`'s docstring crediting an UpSet
@@ -17,10 +17,7 @@ plot paper published in *IEEE TVCG*, not a layout preset.
 
 Following the same charter that governs every file in this directory,
 clarify what exists and add no fact that is not verifiable: there is
-nothing to document here yet. This mirrors how `SKILL.md` already
-handles a comparable gap for `make_situation_map.py`, stating plainly
-that a promised capability is not currently runnable rather than
-describing it as if it worked.
+nothing to document here yet.
 
 ## What exists today that is adjacent
 
@@ -35,10 +32,12 @@ on print-readiness without amounting to a journal preset:
   rendering path, only the preset's sizing and column-width logic around
   it is missing.
 - **Vector output at exact physical dimensions.** `render_diagram.py`
-  (documented in `references/ralph-eyeball-loop.md`) can already emit a
-  Vega spec as SVG or PDF "at exact physical dimensions" by setting
-  `width`/`height` in inches times DPI and passing `--ppi`. That is a
-  general mechanism for print-accurate sizing, not a named journal
+  (documented in `references/ralph-eyeball-loop.md`) can already
+  rasterise a TikZ figure, a Mermaid diagram, or a hand-authored SVG
+  "at exact physical dimensions" by setting `width`/`height` in inches
+  times DPI and passing `--ppi`; Vega/Vega-Lite is not a source kind
+  here any more (this package no longer renders Vega anywhere). That is
+  a general mechanism for print-accurate sizing, not a named journal
   preset, and it applies to the `render_diagram.py` path (diagram
   surfaces you supply), not to the 124-kind `make-figure` catalogue,
   which does not currently expose a DPI or physical-size argument at all
@@ -71,6 +70,4 @@ current author guidelines, and update this file with citations, or
 remove the "publication presets" bullet from `SKILL.md`'s House-style
 section and its `references/` list once a decision is made not to build
 it. Leaving the promise in `SKILL.md` while this file says "not
-implemented" is the honest interim state, matching how the
-`make_situation_map.py` gap is already handled elsewhere in the same
-document, not a resolution either way.
+implemented" is the honest interim state, not a resolution either way.
