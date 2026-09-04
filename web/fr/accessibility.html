@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Accessibilité — Sprezzature</title>
   <meta name="description"
-    content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind : quatorze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
+    content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind : quinze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
   <link rel="canonical" href="https://sprezzature.ai/fr/accessibility.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/accessibility.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/accessibility.html">
@@ -18,7 +18,7 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="Accessibilité — Sprezzature">
   <meta property="og:description"
-    content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind : quatorze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
+    content="Lint d'accessibilité HTML statique en pré-commit pour du vanilla-JS + Tailwind : quinze règles décidables depuis la source, sans navigateur, sans DOM à l'exécution.">
   <meta property="og:url" content="https://sprezzature.ai/fr/accessibility.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -38,7 +38,7 @@
       {
         "@type": "WebPage",
         "name": "Accessibilité — Sprezzature",
-        "description": "Linter statique d'accessibilité HTML avant commit pour les sorties vanilla-JS et Tailwind : quatorze règles décidables depuis la source, sans navigateur ni DOM.",
+        "description": "Linter statique d'accessibilité HTML avant commit pour les sorties vanilla-JS et Tailwind : quinze règles décidables depuis la source, sans navigateur ni DOM.",
         "url": "https://sprezzature.ai/fr/accessibility.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -47,7 +47,7 @@
         "@type": "SoftwareApplication",
         "name": "sprezzature-accessibility",
         "applicationCategory": "DeveloperApplication",
-        "description": "Linter HTML statique pour l'accessibilité des sorties vanilla-JS et Tailwind. Vérifie quatorze règles depuis la source seule : alt manquant, champs sans étiquette, ordre des titres, attribut lang, état couleur-uniquement, gardes prefers-reduced-motion.",
+        "description": "Linter HTML statique pour l'accessibilité des sorties vanilla-JS et Tailwind. Vérifie quinze règles depuis la source seule : alt manquant, champs sans étiquette, ordre des titres, attribut lang, état couleur-uniquement, gardes prefers-reduced-motion.",
         "url": "https://sprezzature.ai/fr/accessibility.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature-accessibility",
         "author": {"@type": "Person", "name": "Warith Harchaoui", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -59,7 +59,7 @@
           {"@type": "HowToStep", "position": 1, "text": "Installez sprezzature-accessibility en décompressant son archive dans ~/.claude/skills ou ~/.opencode/skills."},
           {"@type": "HowToStep", "position": 2, "text": "Demandez à l'agent : « linter a11y » ou « vérifie l'accessibilité de ce HTML ». Le skill lit la source sans navigateur ni DOM."},
           {"@type": "HowToStep", "position": 3, "text": "Consultez le rapport JSON : chaque constat indique la règle, l'élément fautif et la correction. Le code de sortie est non nul en cas d'échec, ce qui bloque l'intégration continue."},
-          {"@type": "HowToStep", "position": 4, "text": "Corrigez les éléments signalés dans la source, puis relancez pour confirmer que les quatorze règles passent."}
+          {"@type": "HowToStep", "position": 4, "text": "Corrigez les éléments signalés dans la source, puis relancez pour confirmer que les quinze règles passent."}
         ]
       }
     ]
@@ -103,7 +103,7 @@
       <p class="font-mono text-sm text-brand-linktext">sprezzature-accessibility</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Accessibilité</h1>
       <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Lint d'accessibilité HTML (langage de balisage des
-        pages web) statique en pré-commit pour du JavaScript (JS) standard + Tailwind : quatorze règles décidables depuis
+        pages web) statique en pré-commit pour du JavaScript (JS) standard + Tailwind : quinze règles décidables depuis
         la source, sans navigateur, sans modèle objet du document (DOM) à l'exécution.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-accessibility/SKILL.md"
@@ -120,6 +120,7 @@
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
             <li>JSON (notation d'objets JavaScript) / stdout / codes de sortie pour pré-commit et intégration continue
               (CI)</li>
+            <li>Un réglage CSS optionnel « lecture confortable » aux minima WCAG 1.4.12, pour les pages qui le proposent comme un choix visible par le lecteur</li>
           </ul>
         </div>
         <div>
@@ -127,8 +128,8 @@
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
             <li>alt manquant, champs sans label, bouton sans texte, div cliquable</li>
             <li>Fermeture de dialog manquante, attribut lang, ordre des titres</li>
-            <li>État par la couleur seule, garde-fous d'animation réduite et plus : quatorze règles</li>
-            <li>Une barrière rapide et déterministe, pas un remplaçant d'axe-core / Pa11y / Lighthouse</li>
+            <li>État par la couleur seule, garde-fous d'animation réduite, espacement des lettres trop resserré sur le texte de lecture</li>
+            <li>Une barrière rapide et déterministe (quinze règles au total), pas un remplaçant d'axe-core / Pa11y / Lighthouse</li>
           </ul>
         </div>
       </div>
@@ -157,9 +158,9 @@
         <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Les connaissances sur lesquelles la
           <em>skill</em> s'appuie : à lire directement dans le repo.</p>
         <div class="mt-4 flex flex-wrap gap-2">
-          <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-accessibility/references/lint-a11y.md"
+          <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-accessibility/references/lint-rules.md"
             class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Les
-            quatorze règles</a>
+            quinze règles</a>
         </div>
       </div>
     </section>
