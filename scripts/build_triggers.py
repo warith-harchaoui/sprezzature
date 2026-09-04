@@ -86,7 +86,7 @@ WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-ui": "Generates vanilla JS + Tailwind UI (components, pages, dataviz, audit).",
     "sprezzature-cli-gui": "Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters).",
     "sprezzature-publish": "Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite.",
-    "sprezzature-accessibility": "Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs.",
+    "sprezzature-accessibility": "Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs.",
     "sprezzature-colors": "WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter.",
     "sprezzature-vision": "Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b).",
     "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT.",

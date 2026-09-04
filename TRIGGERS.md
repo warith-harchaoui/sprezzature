@@ -52,16 +52,17 @@ The trigger phrases below are what each skill's frontmatter description claims w
 | `humans.txt` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `lint markdown` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `OpenVoice / Chatterbox TTS` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `a11y lint` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `check this HTML for accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `static a11y check` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `WCAG-friendly lint` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `a11y pre-commit` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `missing alt` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `unlabelled input` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `WCAG compliance` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `ARIA / keyboard check` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
-| `fix accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (14 rules) with `--fix` for the five safe mechanical repairs. | Stable |
+| `a11y lint` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `check this HTML for accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `static a11y check` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `WCAG-friendly lint` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `a11y pre-commit` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `missing alt` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `unlabelled input` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `WCAG compliance` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `ARIA / keyboard check` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `letter-spacing` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
+| `fix accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (15 rules) with `--fix` for the six safe mechanical repairs. | Stable |
 | `WCAG check` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `contrast audit` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `is my palette accessible` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
