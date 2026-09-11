@@ -59,6 +59,8 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.1.0] (2026-09-11): a skill zip that installs, and a runnable kit per figure
+
 ### Added
 
 - **`scripts/package_skill.py`**, which builds the `.zip` the Claude
@@ -101,8 +103,18 @@ Adoption-side milestones (user-driven; not engineering work):
   `references/audit-figure.md` rewritten. The first was a migration
   post-mortem; the second documented eleven auditor rules, five of which
   the code no longer has.
-- `release.sh` now also excludes `svg-examples` and `situation-maps`,
-  matching `package_skill.py`'s `SHOWCASE_DIRS`.
+- `release.sh` now builds its per-skill tarballs *through*
+  `package_skill.py` instead of tarring the working tree, and assembles
+  the bundle from those tarballs. The two distribution channels were
+  drifting: the GitHub release tarball for `sprezzature-figures` shipped
+  the prose with none of its 127 generators — the same defect as the
+  import zip, on the other channel. One payload, two containers. The
+  figures tarball goes from 1.9 MB of documentation to 7.0 MB with the
+  code in it.
+- `tests/test_version_consistency.py` also reads repo-root
+  `scripts/_argparse.py`. Its glob only covered `sprezzature-*/scripts/`,
+  so `cleanup_local_skills.py --version` sat at 1.0.1 through this bump
+  until the CLI's own test caught it.
 
 ### Fixed
 

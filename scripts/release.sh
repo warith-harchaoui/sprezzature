@@ -131,18 +131,31 @@ EXCLUDES=(
 
 ARTIFACTS=()
 
+# Delegated to scripts/package_skill.py so a release tarball and a Claude
+# import zip are the *same payload* in two containers. A plain `tar` of the
+# skill folder shipped sprezzature-figures' prose with none of its 127
+# generators, because the monorepo dropped scripts/ when the standalone
+# repos were split out — the release tarball had the bug the import zip had.
 for skill in "${SKILLS[@]}"; do
-    tarball="$OUT_ABS/${skill}-${VERSION}.tar.gz"
     echo "  packaging $skill → ${skill}-${VERSION}.tar.gz"
-    tar -czf "$tarball" "${EXCLUDES[@]}" "$skill"
-    ARTIFACTS+=("$tarball")
+    python3 "$SCRIPT_DIR/package_skill.py" "$skill" \
+        --out-dir "$OUT_ABS" --format tar.gz --suffix="-${VERSION}" >/dev/null
+    ARTIFACTS+=("$OUT_ABS/${skill}-${VERSION}.tar.gz")
 done
 
 # ── Bundle tarball (all four skills) ───────────────────────────────────────
 
 bundle="$OUT_ABS/sprezzature-skills-${VERSION}.tar.gz"
 echo "  packaging bundle → sprezzature-skills-${VERSION}.tar.gz"
-tar -czf "$bundle" "${EXCLUDES[@]}" "${SKILLS[@]}"
+# Assembled from the per-skill tarballs rather than tarred straight out of
+# the working tree, so the bundle carries exactly what the individual
+# downloads carry — grafted generators included.
+STAGE="$(mktemp -d)"
+for skill in "${SKILLS[@]}"; do
+    tar -xzf "$OUT_ABS/${skill}-${VERSION}.tar.gz" -C "$STAGE"
+done
+tar -czf "$bundle" "${EXCLUDES[@]}" -C "$STAGE" "${SKILLS[@]}"
+rm -rf "$STAGE"
 ARTIFACTS+=("$bundle")
 
 # ── Emit SHA256SUMS ────────────────────────────────────────────────────────

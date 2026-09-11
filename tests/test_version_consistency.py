@@ -49,8 +49,13 @@ def _collect() -> dict[str, str]:
         assert m, f"{skill_md.relative_to(REPO_ROOT)} has no metadata.version"
         sources[str(skill_md.relative_to(REPO_ROOT))] = m.group(1)
 
+    # Repo-root ``scripts/`` too, not just the per-skill copies: its
+    # _argparse.py is what ``cleanup_local_skills.py --version`` prints, and
+    # it sat at 1.0.1 through a 1.1.0 bump because this glob did not reach it.
     for helper in sorted(REPO_ROOT.glob("sprezzature-*/scripts/_argparse.py")) + \
-            sorted(REPO_ROOT.glob("sprezzature-*/scripts/_click.py")):
+            sorted(REPO_ROOT.glob("sprezzature-*/scripts/_click.py")) + \
+            sorted(REPO_ROOT.glob("scripts/_argparse.py")) + \
+            sorted(REPO_ROOT.glob("scripts/_click.py")):
         m = _SKILL_VERSION_RE.search(helper.read_text(encoding="utf-8"))
         if m:  # not every helper defines it; check the ones that do
             sources[str(helper.relative_to(REPO_ROOT))] = m.group(1)
