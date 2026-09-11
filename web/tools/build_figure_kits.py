@@ -69,7 +69,7 @@ import sys
 import zipfile
 from pathlib import Path
 from xml.etree import ElementTree
-from typing import Any, Iterable, Sequence
+from typing import Iterable, Sequence
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent.parent
 
