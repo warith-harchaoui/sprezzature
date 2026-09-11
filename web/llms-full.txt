@@ -12,7 +12,7 @@ sprezzature-accessibility
 
 # Accessibility
 
-Pre-commit static HyperText Markup Language (HTML) accessibility lint for vanilla-JavaScript (JS) + Tailwind output: fourteen rules decidable from source, no browser, no runtime Document Object Model (DOM).
+Pre-commit static HyperText Markup Language (HTML) accessibility lint for vanilla-JavaScript (JS) + Tailwind output: fifteen rules decidable from source, no browser, no runtime Document Object Model (DOM).
 
 SKILL.md (the agent spec)
 Give a ⭐️ on GitHub
@@ -21,15 +21,17 @@ Give a ⭐️ on GitHub
 
 JavaScript Object Notation (JSON) / stdout / exit codes for pre-commit and continuous integration (CI)
 
+An opt-in "comfortable reading" CSS toggle at the WCAG 1.4.12 Text Spacing minimums, for pages that ship it as a reader-facing setting
+
 ## Audits
 
 Missing alt, unlabelled inputs, button-without-text, clickable div
 
 Missing dialog close, lang attribute, heading order
 
-Color-only state, motion-reduce guards, and more: fourteen rules
+Color-only state, motion-reduce guards, tight letter-spacing on running text
 
-A fast, deterministic gate, not a replacement for axe-core / Pa11y / Lighthouse
+A fast, deterministic gate (fifteen rules total), not a replacement for axe-core / Pa11y / Lighthouse
 
 ## Say one of these
 
@@ -48,7 +50,7 @@ fix accessibility
 
 The knowledge the skill draws on: read them straight from the repo.
 
-The fourteen rules
+The fifteen rules
 
 ---
 
@@ -275,6 +277,8 @@ Ask our tool:
 
 "render this diagram"
 
+Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all.
+
 FIGURES.md catalog
 Give a ⭐️ on GitHub
 
@@ -295,288 +299,410 @@ Search figures
 Rank and contrast categories: bars, lollipops, dumbbells and their kin.
 
 Bar chart : Ranked categories, one house color each.
+↓ Python + CSV + SVG kit (48 KB)
 
 Grouped bar : Categories split by a second variable.
+↓ Python + CSV + SVG kit (50 KB)
 
 Lollipop : A lighter bar chart for ranked values.
+↓ Python + CSV + SVG kit (47 KB)
 
 Dumbbell chart : Two points per row joined by a segment showing change.
+↓ Python + CSV + SVG kit (53 KB)
 
 Slope chart : Before and after, two points.
+↓ Python + CSV + SVG kit (47 KB)
 
 Bullet graph : Measure bar, target tick and qualitative bands.
+↓ Python + CSV + SVG kit (52 KB)
 
 Pareto chart : Sorted bars, a cumulative line and an 80% mark for the vital few.
+↓ Python + CSV + SVG kit (56 KB)
 
 Radar / spider : Many criteria on radial axes.
+↓ Python + CSV + SVG kit (54 KB)
 
 Variable-width columns : Height, width and area each carry a variable.
+↓ Python + CSV + SVG kit (54 KB)
 
 Column range : High-low intervals per category; temperature ranges, confidence intervals.
+↓ Python + CSV + SVG kit (50 KB)
 
 Population pyramid : Age and sex, back to back.
+↓ Python + CSV + SVG kit (48 KB)
 
 Parliament hemicycle : One dot per seat, coloured by party, with a majority line.
+↓ Python + CSV + SVG kit (76 KB)
 
 Waterfall : A running total, step by step.
+↓ Python + CSV + SVG kit (49 KB)
 
 ## Time series & trends
 
 How a value moves over an ordered axis: lines, areas and event timelines.
 
 Line chart : A value over an ordered axis, one line per series.
+↓ Python + CSV + SVG kit (51 KB)
 
 Multi-line : Two series over time with points.
+↓ Python + CSV + SVG kit (51 KB)
 
 Area chart : How a whole made of categories evolves over time.
+↓ Python + CSV + SVG kit (49 KB)
 
 Stacked area : Composition of series over time.
+↓ Python + CSV + SVG kit (48 KB)
 
 Step / stairs : A value that changes at discrete points.
+↓ Python + CSV + SVG kit (47 KB)
 
 Horizon chart : Banded, folded area for dense time series.
+↓ Python + CSV + SVG kit (60 KB)
 
 Streamgraph : Stacked areas on a wiggle baseline over time.
+↓ Python + CSV + SVG kit (60 KB)
 
 Candlestick (open-high-low-close) : Open-high-low-close price bars.
+↓ Python + CSV + SVG kit (50 KB)
 
 Bollinger bands : A price series with a 20-day average and ±2σ bands, a squeeze then a breakout.
+↓ Python + CSV + SVG kit (76 KB)
 
 Connected scatter : A trajectory through points ordered by time, with year labels and end markers.
+↓ Python + CSV + SVG kit (56 KB)
 
 Calendar heatmap : A value per day across weeks.
+↓ Python + CSV + SVG kit (54 KB)
 
 Timeline : Dated milestones on a spine with alternating callouts.
+↓ Python + CSV + SVG kit (58 KB)
 
 Gantt : A schedule, start to end.
+↓ Python + CSV + SVG kit (48 KB)
 
 Spectrogram : Time x frequency x power heatmap of a clip.
+↓ Python + CSV + SVG kit (287 KB)
 
 Difference chart : Two series with the gap shaded bicolour.
+↓ Python + CSV + SVG kit (72 KB)
 
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
 
 Histogram : A single distribution, binned.
+↓ Python + CSV + SVG kit (50 KB)
 
 Box plot : Spread, quartiles and outliers per group.
+↓ Python + CSV + SVG kit (49 KB)
 
 Violin plot : KDE density per group, mirrored.
+↓ Python + CSV + SVG kit (50 KB)
 
 Density (KDE) : A smoothed distribution curve.
+↓ Python + CSV + SVG kit (47 KB)
 
 Rug + density : Raw values as ticks beneath a density curve.
+↓ Python + CSV + SVG kit (54 KB)
 
 Ridgeline / joyplot : Stacked, overlapping densities, one per group.
+↓ Python + CSV + SVG kit (64 KB)
 
 Beeswarm : Force-packed points, no overlap.
 
 Strip plot : Every point, jittered by group.
+↓ Python + CSV + SVG kit (53 KB)
 
 Wilkinson dot plot : One dot per observation, binned and stacked.
+↓ Python + CSV + SVG kit (52 KB)
 
 Letter-value (boxen) : Nested quantile boxes for large samples.
+↓ Python + CSV + SVG kit (55 KB)
 
 ECDF : empirical cumulative distribution function (ECDF), stepped.
+↓ Python + CSV + SVG kit (49 KB)
 
 Error bars : A mean with its uncertainty interval.
+↓ Python + CSV + SVG kit (47 KB)
 
 Bell curve : Normal distribution with configurable mean and standard deviation.
+↓ Python + CSV + SVG kit (49 KB)
 
 Q-Q plot : Is this sample normal?
+↓ Python + CSV + SVG kit (51 KB)
 
 P-P plot : Empirical vs theoretical CDF probabilities.
+↓ Python + CSV + SVG kit (61 KB)
 
 Beeswarm : One dot per observation, nudged apart so width reads as density.
+↓ Python + CSV + SVG kit (52 KB)
 
 ## Correlation & multivariate
 
 Relationships between two or more measures: scatters, pair matrices, projections.
 
 Scatter : Two variables, colored by group.
+↓ Python + CSV + SVG kit (52 KB)
 
 Bubble : Four variables at once.
+↓ Python + CSV + SVG kit (53 KB)
 
 Hexbin density : Many points binned into hexagons.
+↓ Python + CSV + SVG kit (76 KB)
 
 2D-KDE contour : bivariate kernel density estimate (KDE) as filled level sets.
 
 Joint plot : Scatter with marginal histograms.
+↓ Python + CSV + SVG kit (62 KB)
 
 Pair plot / SPLOM : A scatterplot matrix of several variables.
+↓ Python + CSV + SVG kit (75 KB)
 
 Parallel coordinates : Many variables on shared axes.
+↓ Python + CSV + SVG kit (49 KB)
 
 Andrews curves : Each row a Fourier-series curve, coloured by class.
+↓ Python + CSV + SVG kit (133 KB)
 
 RadViz : Points spring-embedded inside a ring of features.
+↓ Python + CSV + SVG kit (68 KB)
 
 Regression + confidence-interval (CI) band : A fitted line with a 95% confidence band.
+↓ Python + CSV + SVG kit (54 KB)
 
 Residual plot : Residuals vs fitted, with a zero rule.
+↓ Python + CSV + SVG kit (64 KB)
 
 Gaussian process : Posterior mean, 95% band and sampled functions.
+↓ Python + CSV + SVG kit (50 KB)
 
 Convex hull : A grouped scatter with a hull around each cluster.
+↓ Python + CSV + SVG kit (62 KB)
 
 Ternary plot : Three parts summing to 100% on a triangle.
+↓ Python + CSV + SVG kit (53 KB)
 
 2-D density contours : Isocontour rings over a raw bivariate scatter.
+↓ Python + CSV + SVG kit (75 KB)
 
 ## Matrices & heatmaps
 
 Values on a grid, colour-encoded: heatmaps, clustermaps, confusion and correlation.
 
 Annotated heatmap : A value matrix with per-cell labels.
+↓ Python + CSV + SVG kit (59 KB)
 
 Clustermap : Heatmap reordered by hierarchical clustering.
+↓ Python + CSV + SVG kit (51 KB)
 
 Interpolated heatmap : A smoothly interpolated value field (imshow).
+↓ Python + CSV + SVG kit (231 KB)
 
 Correlation matrix : Which variables move together.
+↓ Python + CSV + SVG kit (48 KB)
 
 Confusion matrix : Where a classifier is right and wrong.
+↓ Python + CSV + SVG kit (48 KB)
 
 Interruption matrix : Who cuts whom, at a glance (hover the crosshair).
+↓ Python + CSV + SVG kit (52 KB)
 
 ## Part-to-whole & composition
 
 Slices and nested parts of a whole: donuts, treemaps, waffles, flows into stages.
 
 Donut : A compact part-to-whole.
+↓ Python + CSV + SVG kit (47 KB)
 
 100% stacked bar : Parts of a whole across quarters.
+↓ Python + CSV + SVG kit (47 KB)
 
 Waffle chart : A proportion as a grid of squares.
+↓ Python + CSV + SVG kit (51 KB)
 
 Pictorial unit chart : An ISOTYPE icon array where one icon encodes a fixed count.
+↓ Python + CSV + SVG kit (56 KB)
 
 Mosaic / marimekko : Column width and segment height each encode a share.
+↓ Python + CSV + SVG kit (52 KB)
 
 Treemap : Hierarchical parts, area by size.
+↓ Python + CSV + SVG kit (52 KB)
 
 Sunburst : Hierarchy as nested rings.
+↓ Python + CSV + SVG kit (51 KB)
 
 Icicle : Rectangular partition of a hierarchy.
+↓ Python + CSV + SVG kit (54 KB)
 
 Circle packing : Nested circles for a sized hierarchy.
+↓ Python + CSV + SVG kit (64 KB)
 
 Nightingale rose : Polar-area wedges, radius by value.
+↓ Python + CSV + SVG kit (58 KB)
 
 Cycle wheel : Directed ring of proportional arcs for a recurring process.
+↓ Python + CSV + SVG kit (55 KB)
 
 Funnel : Stage-to-stage drop-off.
+↓ Python + CSV + SVG kit (47 KB)
 
 ## Hierarchies, networks & flows
 
 Nodes, edges and movement: trees, graphs, chords, Sankeys.
 
 Node-link network : Force-directed graph, hover to highlight.
+↓ Python + CSV + SVG kit (59 KB)
 
 Arc diagram : Nodes on a line, links as arcs above.
+↓ Python + CSV + SVG kit (54 KB)
 
 Dendrogram : Hierarchical clustering with a merge-height axis.
+↓ Python + CSV + SVG kit (55 KB)
 
 Tree diagram : A tidy node-link hierarchy.
+↓ Python + CSV + SVG kit (58 KB)
 
 Org chart : Top-down boxes for role and headcount, coloured by division.
+↓ Python + CSV + SVG kit (56 KB)
 
 Radial tree : A hierarchy laid out on concentric rings.
+↓ Python + CSV + SVG kit (56 KB)
 
 Force-directed graph : A 318-author co-authorship network in six communities.
+↓ Python + CSV + SVG kit (82 KB)
 
 Edge bundling : Relations bundled along a radial hierarchy.
+↓ Python + CSV + SVG kit (60 KB)
 
 Elbow detection : Kneedle finds the elbow of a diminishing-returns curve (choosing k).
+↓ Python + CSV + SVG kit (54 KB)
 
 Chord diagram : Ribbons between categories; arc size is the total.
+↓ Python + CSV + SVG kit (55 KB)
 
 Dependency wheel : Directed circular flows, arcs sized by throughput, ribbons by origin.
+↓ Python + CSV + SVG kit (59 KB)
 
 Sankey diagram : Flows between stages, width proportional to volume.
+↓ Python + CSV + SVG kit (54 KB)
 
 Alluvial / parallel sets : Category membership flowing across axes.
+↓ Python + CSV + SVG kit (57 KB)
 
 Parallel sets : Categorical ribbons across class, sex, age and survival, width by count.
+↓ Python + CSV + SVG kit (59 KB)
 
 Packed bubbles : Circles sized by value, packed and coloured by group.
+↓ Python + CSV + SVG kit (55 KB)
 
 ## Maps & spatial
 
 Values in geographic or directional space: thematic maps, spike maps, wind and vector fields.
 
 Binned grid map : Values counted into square grid cells over a place.
+↓ Python + CSV + SVG kit (66 KB)
 
 Hexbin tile map : Values binned into a hex tessellation of a place.
+↓ Python + CSV + SVG kit (78 KB)
 
 Geographic hexbin : Point events binned into hexagons on a world map.
+↓ Python + CSV + SVG kit (196 KB)
 
 Spike map : Vertical spikes sized by value at map points.
+↓ Python + CSV + SVG kit (126 KB)
 
 Dot-density map : One dot per N people, showing where a population lives.
+↓ Python + CSV + SVG kit (363 KB)
 
 Quiver : A vector field of arrows by direction and magnitude.
+↓ Python + CSV + SVG kit (54 KB)
 
 Streamplot : Integrated streamlines with arrowhead markers.
+↓ Python + CSV + SVG kit (126 KB)
 
 Wind-barb station plot : Staffs point from the wind, pennant 50kt, barb 10kt, half 5kt, across a cold front.
+↓ Python + CSV + SVG kit (62 KB)
 
 Wind rose : Stacked polar bars of frequency by direction.
+↓ Python + CSV + SVG kit (61 KB)
 
 Polar plot : A line or scatter on an angular axis.
+↓ Python + CSV + SVG kit (53 KB)
 
 ## Model evaluation & science
 
 Diagnostics and scientific plots: ROC, calibration, survival, forest, volcano.
 
 ROC curve : Classifier trade-off, with AUC.
+↓ Python + CSV + SVG kit (52 KB)
 
 Precision-recall curve : Precision against recall, with the average precision.
+↓ Python + CSV + SVG kit (122 KB)
 
 Calibration curve : Predicted probability against observed frequency.
+↓ Python + CSV + SVG kit (57 KB)
 
 Cumulative gain : Model vs baseline vs perfect targeting.
+↓ Python + CSV + SVG kit (54 KB)
 
 Manhattan plot : −log10 p-values across the genome, peaks above the significance line.
+↓ Python + CSV + SVG kit (96 KB)
 
 Volcano : Effect size versus significance.
+↓ Python + CSV + SVG kit (66 KB)
 
 Kaplan–Meier : Survival over time, per arm.
+↓ Python + CSV + SVG kit (50 KB)
 
 Forest plot : Per-study effect sizes and a pooled estimate.
+↓ Python + CSV + SVG kit (53 KB)
 
 Bland-Altman : Agreement: difference vs mean of two methods.
+↓ Python + CSV + SVG kit (59 KB)
 
 ## Gauges, 3-D, sets & the rest
 
 KPI gauges, projected 3-D, set intersections, and one-of-a-kind figures.
 
 Venn / Euler : Overlapping sets, each region sized by its count.
+↓ Python + CSV + SVG kit (51 KB)
 
 UpSet plot : Set intersections as bars over a matrix, Venn beyond three sets.
+↓ Python + CSV + SVG kit (51 KB)
 
 Voronoi tessellation : Catchment cells coloured by group, with seed points.
+↓ Python + CSV + SVG kit (60 KB)
 
 Embedding projector : 2D word-embedding map; hover a word for its nearest neighbours.
+↓ Python + CSV + SVG kit (87 KB)
 
 Word cloud : Words sized by frequency, coloured by theme.
+↓ Python + CSV + SVG kit (57 KB)
 
 Speaking time : Who spoke, and for how long (donut).
+↓ Python + CSV + SVG kit (49 KB)
 
 Radial gauge : A needle over coloured zones with a big readout.
+↓ Python + CSV + SVG kit (51 KB)
 
 Liquid gauge : A disc filled with wavy liquid to a percentage, a reservoir at 63%.
+↓ Python + CSV + SVG kit (54 KB)
 
 Radial bar : Bars wrapped around a polar axis.
+↓ Python + CSV + SVG kit (55 KB)
 
 3D surface : A static 3-D surface via offline projection.
+↓ Python + CSV + SVG kit (66 KB)
 
 3D wireframe : A projected surface mesh, slowly rotating.
+↓ Python + CSV + SVG kit (161 KB)
 
 3D scatter : Projected 3D points with a slow turntable.
+↓ Python + CSV + SVG kit (71 KB)
 
 3D bar : Depth-shaded bars on a grid; use sparingly.
+↓ Python + CSV + SVG kit (57 KB)
 
 No figure matches. Try another term.
 
@@ -1047,7 +1173,7 @@ Good-quality cartography, reproducible on data of your choice.
 
 ## Choropleth
 
-One value per country on a hand-written, closed-form Equal Earth projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an OKLCH-interpolated ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real GMTED2010 elevation rather than a flat hillshade, sits under the fills.
+One value per country on a hand-written, closed-form Equal Earth projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an OKLCH-interpolated ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real G MTED 2010 elevation rather than a flat hillshade, sits under the fills.
 
 Sequential ramp : pale-to-navy blue, magnitude reads by lightness alone.
 
@@ -1111,7 +1237,7 @@ Natural Earth, 50m and 10m
 Public-domain vector borders, vendored offline. Situation maps pick the tier automatically from how zoomed-in the requested region is.
 
 Real elevation, not a flat hillshade
-Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with texture shading (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).
+Situation maps compute their relief from real G MTED 2010 elevation: a directional hillshade blended with texture shading (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).
 
 ## Real data: the last five French presidential runoffs
 
@@ -1173,7 +1299,7 @@ sprezzature-figures
 
 ### Figures
 
-124 hand-authored SVG chart types, no Vega, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
+124 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
 
 pip install git+https://github.com/warith-harchaoui/sprezzature-figures
 Repository →
@@ -1439,7 +1565,7 @@ Material
 Chart selection
 Dataviz palettes
 Dataviz maps
-Charts in Vega
+Charts in SVG
 Color psychology
 Examples
 
@@ -1466,7 +1592,7 @@ Each law paired with a concrete Tailwind hook
 
 ## Audits
 
-Static auditor flags the mechanically-detectable subset: Hick, Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Doherty, Choice Overload
+Static auditor flags the mechanically-detectable subset: Hick, Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload (eight checks)
 
 Severity + JavaScript Object Notation (JSON) output for pre-commit / continuous integration (CI)
 
