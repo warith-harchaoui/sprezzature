@@ -59,6 +59,62 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+### Added
+
+- **`scripts/package_skill.py`**, which builds the `.zip` the Claude
+  skill-import form accepts and refuses to write one it would reject.
+  The form caps a skill at **30 MB uncompressed**, a constraint
+  `release.sh`'s tarball path does not model, so a `sprezzature-figures`
+  zip that uploaded nowhere was the first anyone heard of it. Two rules
+  the tarballs did not encode: a skill ships its *inputs* (rendered
+  galleries are website material — `SHOWCASE_DIRS`), and a skill ships
+  the code it documents (`EXTRACTED_CODE` grafts back the generators the
+  monorepo dropped when the standalone repos were split out, and fails
+  loudly rather than shipping prose with nothing behind it). The size
+  check runs before the zip is written and prints a per-folder
+  breakdown, so an over-budget skill says what to cut.
+  `sprezzature-figures` now packages at 13.5 MB from 74 MB, and every
+  one of its 127 generators runs from the unpacked zip with no
+  `PYTHONPATH` and no install. Covered by `tests/test_package_skill.py`.
+- **`web/tools/build_figure_kits.py`**: one downloadable, runnable kit
+  per gallery card, 122 of them. Each zip holds the real generator, the
+  drawing engine bundled into one file, the data as an editable CSV, the
+  interactive SVG, pinned requirements, and a README in both languages.
+  The builder runs every kit in a scratch directory with `PYTHONPATH`
+  cleared, so one that still leaned on the checkout never gets zipped,
+  and parses the result as XML before packaging. Kits link their
+  typefaces from Google Fonts instead of embedding them, which takes a
+  figure from ~430 KB to ~20 KB. Covered by `tests/test_figure_kits.py`.
+
+### Changed
+
+- **No charting library is named anywhere in the stack any more.** Vega,
+  Vega-Lite, `vl_convert`, matplotlib, seaborn, plotly and graphviz are
+  gone from `SKILL.md`, every `references/` file, the READMEs, the
+  philosophy essays, the website and `llms.txt`. Every figure here is
+  authored as SVG directly and has been for some time; the prose was
+  still describing the migration rather than the result. Two families of
+  mention are deliberately kept: the guard in the figures repo that must
+  name what it forbids, and the competitive-landscape documents, where
+  naming the alternatives is the point.
+- `sprezzature-figures/references/figure-catalog.md` and
+  `references/audit-figure.md` rewritten. The first was a migration
+  post-mortem; the second documented eleven auditor rules, five of which
+  the code no longer has.
+- `release.sh` now also excludes `svg-examples` and `situation-maps`,
+  matching `package_skill.py`'s `SHOWCASE_DIRS`.
+
+### Fixed
+
+- The French figure gallery still advertised `situation_map` and
+  `choropleth`, two cards the English page dropped when those generators
+  moved to `sprezzature-maps`. Removed, and the page's own counts
+  corrected from 126 to 124. Both figures remain on `maps.html`.
+- `EXAMPLES.md` pointed two runnable recipes at
+  `assets/vega-examples/*.vl.json`, a folder that does not exist; they
+  now use a committed SVG. `llms.txt` linked
+  `sprezzature-ui/references/charts-vega.md`, likewise absent.
+
 ## [1.0.1] (2026-07-29): Three-layer architecture, standalone repos, writing charters
 
 ### Added
