@@ -70,7 +70,9 @@ Author
 from __future__ import annotations
 
 import argparse
+import io
 import sys
+import tarfile
 import zipfile
 from pathlib import Path
 from typing import Iterator, NamedTuple, Sequence
@@ -328,6 +330,8 @@ def build(
     out_dir: Path,
     code_root: Path | None,
     dry_run: bool = False,
+    fmt: str = "zip",
+    suffix: str = "",
 ) -> tuple[Path | None, int]:
     """
     Package one skill, enforcing the uncompressed-size ceiling.
@@ -344,6 +348,14 @@ def build(
         Standalone repo for grafted generators.
     dry_run : bool, optional
         Report the size and skip writing the archive.
+    fmt : str, optional
+        ``"zip"`` for the Claude import form, ``"tar.gz"`` for a GitHub
+        release. Same payload either way — which is the point: the release
+        tarballs used to be a plain ``tar`` of the skill folder, so the
+        figures one shipped the prose without the generators, exactly the
+        way the import zip did.
+    suffix : str, optional
+        Appended to the archive stem, for a release's ``-<version>`` naming.
 
     Returns
     -------
@@ -374,13 +386,27 @@ def build(
         return None, total
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    archive: Path = out_dir / f"{skill}.zip"
-    with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as zf:
+    if fmt == "zip":
+        archive: Path = out_dir / f"{skill}.zip"
+        with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as zf:
+            for entry in entries:
+                if entry.disk is not None:
+                    zf.write(entry.disk, entry.arc.as_posix())
+                else:
+                    zf.writestr(entry.arc.as_posix(), entry.text or "")
+        return archive, total
+
+    archive = out_dir / f"{skill}{suffix}.tar.gz"
+    with tarfile.open(archive, "w:gz") as tf:
         for entry in entries:
             if entry.disk is not None:
-                zf.write(entry.disk, entry.arc.as_posix())
+                tf.add(entry.disk, arcname=entry.arc.as_posix())
             else:
-                zf.writestr(entry.arc.as_posix(), entry.text or "")
+                payload = (entry.text or "").encode("utf-8")
+                info = tarfile.TarInfo(entry.arc.as_posix())
+                info.size = len(payload)
+                info.mode = 0o644
+                tf.addfile(info, io.BytesIO(payload))
     return archive, total
 
 
@@ -437,6 +463,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         action="store_true",
         help="report sizes without writing archives",
     )
+    parser.add_argument(
+        "--format",
+        choices=("zip", "tar.gz"),
+        default="zip",
+        help="zip for the Claude import form, tar.gz for a GitHub release",
+    )
+    parser.add_argument(
+        "--suffix",
+        default="",
+        help="appended to each archive stem, e.g. -1.1.0",
+    )
     args = parser.parse_args(argv)
 
     repo_root: Path = Path(__file__).resolve().parent.parent
@@ -452,7 +489,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         code_root: Path | None = args.code_from or _default_code_root(skill, repo_root)
         try:
             archive, total = build(
-                skill, repo_root, args.out_dir, code_root, args.dry_run
+                skill, repo_root, args.out_dir, code_root, args.dry_run,
+                fmt=args.format, suffix=args.suffix,
             )
         except (ValueError, FileNotFoundError) as exc:
             print(f"FAIL {exc}", file=sys.stderr)
