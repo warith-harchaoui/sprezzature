@@ -22,6 +22,25 @@ jobs:
         with:
           fetch-depth: 0
 
+      # The generators live in their own repository since the split; the
+      # monorepo keeps the prose. scripts/package_skill.py grafts them back
+      # in and refuses to package without them, so a release built on a
+      # runner that only has this checkout would either fail (it does) or,
+      # worse, ship sprezzature-figures as documentation with nothing
+      # behind it. Cloned as a sibling, which is where package_skill.py
+      # looks by default.
+      # A plain clone rather than actions/checkout, which refuses a `path`
+      # outside $GITHUB_WORKSPACE. package_skill.py looks for the sibling
+      # folder next to this checkout, so that is where it lands. The
+      # resolved SHA is printed so a published release can be traced back
+      # to the generator revision it shipped.
+      - name: Fetch the extracted generators
+        run: |
+          dest="$(dirname "$GITHUB_WORKSPACE")/sprezzature-figures"
+          git clone --depth 1 \
+            https://github.com/warith-harchaoui/sprezzature-figures.git "$dest"
+          echo "generators: $(git -C "$dest" rev-parse HEAD)"
+
       - name: Verify tooling
         run: |
           # `sha256sum` ships in coreutils on ubuntu-latest. release.sh
