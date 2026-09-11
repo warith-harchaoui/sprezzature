@@ -22,8 +22,8 @@ produisent directement le balisage SVG ; le helper partagé `svg_open` de
 `_svg.py` ouvre chaque document avec une largeur et une hauteur explicites
 et un `viewBox` correspondant, si bien que le graphique s'adapte à toute
 taille sans un seul pixel flou. Les 91 figures d'exemple portent ce
-`viewBox`. Vega-Lite reste un moyen commode de *décrire* beaucoup de ces
-graphiques, mais le *JavaScript Object Notation* (JSON) de Vega n'est pas ce
+`viewBox`. Une spécification de graphique reste un moyen commode de
+*décrire* beaucoup de ces graphiques, mais cette spécification n'est pas ce
 qu'on livre ; le *portable network graphics* (PNG) n'est qu'un export pour
 les endroits qui ne prennent pas le vectoriel. Le livrable, c'est le SVG :
 le texte reste sélectionnable, les traits restent nets à tout zoom et le
@@ -65,7 +65,7 @@ externe la reloge dans l'élément plein écran pour qu'elle reste visible.)
 On relit une phrase pour la corriger. Impossible de faire pareil avec un
 graphique : sa justesse est dans les pixels, pas dans le code. Alors
 `sprezzature-figures/scripts/ralph_eyeball_loop.py` rend n'importe quel artefact
-visuel-issu-du-code en PNG avec un outil déterministe (un graphique Vega,
+visuel-issu-du-code en PNG avec un outil déterministe (une figure TikZ,
 une figure TikZ, un diagramme Mermaid, une page web entière, un SVG dessiné
 avec soin), puis quelqu'un le regarde vraiment. Par défaut c'est l'agent
 lui-même, celui qui a écrit le code ; entièrement hors ligne, un VLM local

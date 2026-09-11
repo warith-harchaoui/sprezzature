@@ -27,12 +27,11 @@ exists. The kind is auto-detected from the source file's suffix:
 | Mermaid diagram | `.mmd`, `.mermaid` | `mmdc` (mermaid-cli), via `render_diagram.py` |
 | Hand-authored SVG | `.svg` | `rsvg-convert` (preferred) or ImageMagick, via `render_diagram.py` |
 
-A Vega-Lite/Vega spec is no longer one of the surfaces this loop
-understands: `render_diagram.py` dropped the `vega` kind entirely (its
-`KINDS` tuple is now `("tikz", "mermaid", "svg")`), since nothing in this
-package produces or consumes Vega anymore. Every chart the 124-kind
-catalogue emits is already hand-authored SVG, so it goes through the
-`.svg` row above like any other hand-authored figure.
+A declarative chart spec is not one of the surfaces this loop
+understands: `render_diagram.py`'s `KINDS` tuple is `("tikz", "mermaid",
+"svg")`, and nothing in this package produces or consumes a spec. Every
+chart the 124-kind catalogue emits is already hand-authored SVG, so it
+goes through the `.svg` row above like any other hand-authored figure.
 
 For the three diagram surfaces, `ralph_eyeball_loop.py` does not render
 anything itself, it shells out to the sibling script `render_diagram.py`

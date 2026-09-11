@@ -21,7 +21,7 @@ earlier step fails.
    `causal_estimate.py` does not build this graph for you; that is a
    deliberate scope boundary (see "What this does not do" below). Pass it
    as `--dag path/to/dag.gml` (GraphML), `--dag path/to/dag.dot`
-   (Graphviz DOT, converted to GML internally via `networkx`), or
+   (DOT, converted to GML internally via `networkx`), or
    `--dag-string '...'` (DoWhy's inline string form).
 2. **Identify.** `model.identify_effect(proceed_when_unidentifiable=False)`
    asks: given this graph, is the causal effect even computable from the
@@ -96,20 +96,21 @@ Three ways to hand the script your causal graph:
 
 - **`--dag path.gml`** (or `.txt`): a GraphML-flavored text format read
   directly, `node [ id "X" ]` and `edge [ source "X" target "Y" ]` blocks.
-- **`--dag path.dot`**: standard Graphviz DOT, converted to GML internally
-  via `networkx.nx_pydot.read_dot` before DoWhy sees it.
+- **`--dag path.dot`**: the standard DOT graph format, converted to GML
+  internally via `networkx.nx_pydot.read_dot` before DoWhy sees it. That
+  reads the format and draws nothing; the picture is ours (see below).
 - **`--dag-string '...'`**: DoWhy's own inline string syntax, passed
   straight through, useful for a graph small enough to write inline in a
   script or CI config without a separate file.
 
 The rendered `dag.svg` comes from a minimal regex-based parse of the same
-GML-style node/edge blocks, laid out and drawn by hand: no `graphviz`, no
-Vega, no matplotlib. Nodes are ranked by longest path from a source (rank
+GML-style node/edge blocks, laid out and drawn by hand, with no external
+graph-drawing engine. Nodes are ranked by longest path from a source (rank
 0 = no incoming edges, a Sugiyama-style layered layout) and ranks flow
 left to right; edges are straight lines with a hand-computed arrowhead
 triangle at the target, offset by the node radius. Foreground and
 background flip for `--dark`, and edges are colored with the palette's
-`Blue` accent, the same convention the old graphviz render used. Because
+`Blue` accent. Because
 the layout is pure Python (no external renderer to fail an import check),
 `dag.svg` is written whenever the DAG string parses to at least one node;
 the `effect.json` output is unaffected either way.
@@ -126,7 +127,7 @@ Everything lands under `--out` (default `./causal/`):
 - **`forest_plot.svg`** a compact horizontal plot placing the point
   estimate alongside each refuter's re-estimated effect, so a reader can
   see at a glance whether the refuters moved the number. Also hand-authored
-  SVG, not matplotlib.
+  SVG.
 
 ## What this does not do
 

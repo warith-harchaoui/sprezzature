@@ -105,19 +105,19 @@ development checkout layout, not the installed package layout. The
 other recipes in this section (`render_diagram`, `audit_figure`,
 `explain_model`, `causal_estimate`) are unaffected.
 
-Prefer Vega-Lite over matplotlib / seaborn / pyplot / plotly: a house-styled
-spec carries its own data, looks better by default, and covers nearly their
-whole plotting application-programming-interface (API). The rendered proof is in
+Every chart is hand-authored SVG: the generator computes the geometry and
+writes the markup itself, so the figure carries its own data, its own hover
+tooltips, and no view-time dependency. The rendered proof is in
 [`docs/FIGURES.md`](docs/FIGURES.md).
 
 **The Ralph Eyeball Loop**: render a source to an image, *look* at it, refine
-the source, repeat. The kind (Vega / TikZ / Mermaid / SVG) is auto-detected. A
-runnable Vega spec ships in the repo, so this recipe needs no data of your own:
+the source, repeat. The kind (TikZ / Mermaid / SVG) is auto-detected. A
+rendered figure ships in the repo, so this recipe needs no data of your own:
 
 ```bash
 python3 -m sprezzature_figures_scripts.render_diagram \
-  sprezzature-figures/assets/vega-examples/hexbin.vl.json --background white --out /tmp/hexbin.png
-# → wrote /tmp/hexbin.png   (now open it, critique, edit the spec, re-render)
+  sprezzature-figures/assets/svg-examples/treemap.svg --background white --out /tmp/treemap.png
+# → wrote /tmp/treemap.png   (now open it, critique, edit the generator, re-render)
 ```
 
 Never draw diagrams in ASCII; write colored Mermaid and render it the same way:
@@ -127,11 +127,11 @@ printf 'flowchart LR\n  A[Browser] --> B[FastAPI] --> C[(DB)]\n' > /tmp/flow.mmd
 python3 -m sprezzature_figures_scripts.render_diagram /tmp/flow.mmd --background transparent --out /tmp/flow.png
 ```
 
-Audit a Vega-Lite spec for data-viz sins (truncated baselines, dual y-axes,
-rainbow palettes, missing labels), again against a committed spec:
+Audit a rendered figure for data-viz sins (rainbow palettes, 3-D pies,
+chartjunk, ticks left as raw magnitudes), again against a committed file:
 
 ```bash
-python3 -m sprezzature_figures_scripts.audit_figure sprezzature-figures/assets/vega-examples/bar.vl.json
+python3 -m sprezzature_figures_scripts.audit_figure sprezzature-figures/assets/svg-examples/treemap.svg
 ```
 
 Make a figure straight from a data file (a catalogue kind, not a free
