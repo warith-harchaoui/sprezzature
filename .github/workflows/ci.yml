@@ -52,6 +52,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # tests/test_release_packaging.py runs scripts/release.sh, which builds
+      # each skill through package_skill.py — and that refuses to package
+      # sprezzature-figures without the generators, which live in their own
+      # repository since the split. Cloned as a sibling, which is where the
+      # packager looks, so CI exercises the real release path rather than a
+      # weakened one.
+      - name: Fetch the extracted generators
+        run: |
+          git clone --depth 1 \
+            https://github.com/warith-harchaoui/sprezzature-figures.git \
+            "$(dirname "$GITHUB_WORKSPACE")/sprezzature-figures"
+
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
