@@ -8,7 +8,7 @@ the style module `_style.py`, every `make_*.py` generator, the CLI
 argument parsers, and a repo-wide grep for "Nature," "PLOS," "IEEE," and
 "journal" as code (not prose) found no implementation. No generator
 accepts a `--preset` or `--journal` flag. `_style.py` is stdlib-only (no
-numpy, matplotlib, or pandas) and defines dark-mode SVG tokens,
+numpy, no pandas) and defines dark-mode SVG tokens,
 corner-radius helpers, and the polarity/palette machinery documented in
 `references/polarity-and-color.md`, but no journal-specific column
 widths, DPI targets, or font-size tables. The one hit for "IEEE" in the
@@ -35,10 +35,8 @@ on print-readiness without amounting to a journal preset:
   (documented in `references/ralph-eyeball-loop.md`) can already
   rasterise a TikZ figure, a Mermaid diagram, or a hand-authored SVG
   "at exact physical dimensions" by setting `width`/`height` in inches
-  times DPI and passing `--ppi`; Vega/Vega-Lite is not a source kind
-  here any more (this package no longer renders Vega anywhere). That is
-  a general mechanism for print-accurate sizing, not a named journal
-  preset, and it applies to the `render_diagram.py` path (diagram
+  times DPI and passing `--ppi`. That is a general mechanism for
+  print-accurate sizing, not a named journal preset, and it applies to the `render_diagram.py` path (diagram
   surfaces you supply), not to the 124-kind `make-figure` catalogue,
   which does not currently expose a DPI or physical-size argument at all
   (see `references/figure-catalog.md` for what that catalogue actually

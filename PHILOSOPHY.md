@@ -20,10 +20,10 @@ A `sprezzature-figures` figure ships as carefully authored scalable vector graph
 markup directly; the shared `svg_open` helper in `_svg.py` opens every
 document with an explicit width and height and a matching `viewBox`, so the
 graphic scales fluidly to any size without a single blurry pixel. All 91
-example figures carry that `viewBox`. Vega-Lite is a convenient way to
-*describe* many of these charts, but the Vega JavaScript Object Notation
-(JSON) is not what you ship, and the portable network graphics (PNG) file
-is only an export for places that can't take vector art. The deliverable is
+example figures carry that `viewBox`. A chart spec is a convenient way to
+*describe* many of these charts, but a spec is not what you ship, and the
+portable network graphics (PNG) file is only an export for places that
+can't take vector art. The deliverable is
 the SVG: text stays selectable, lines stay crisp at any zoom, and the file
 is small.
 
@@ -61,8 +61,8 @@ into the fullscreen element so it stays visible.)
 You can proofread a sentence by reading it back. You cannot do that with a
 chart: whether it is right lives in the pixels, not the source. So
 `sprezzature-figures/scripts/ralph_eyeball_loop.py` renders any visual-from-code
-artifact to a PNG with a deterministic tool (a Vega chart, a TikZ figure,
-a Mermaid diagram, a whole web page, a carefully drawn SVG), and then something
+artifact to a PNG with a deterministic tool (a TikZ figure, a Mermaid
+diagram, a whole web page, a carefully drawn SVG), and then something
 actually looks at it. By default that is the agent itself, the same one
 that wrote the code; fully offline, an optional local VLM does the
 critique. It catches what a code check never will: a label clipped at the

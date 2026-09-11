@@ -42,16 +42,11 @@ Runtime needs none of these, only the vendored files above.
 
 ## Using it
 
-- **Vega choropleth** — embed the TopoJSON inline (`data.values` +
-  `format: {type: topojson, feature: countries}`) and join a value table with a
-  `lookup` transform. A local `data.url` reference does not load reliably under
-  vl-convert, so the shipped `choropleth.vl.json` embeds the geometry; it is
-  self-contained and renders from anywhere.
 - **SVG maps** — the map generator decodes the TopoJSON, projects it offline
   (**Equal Earth**, equal-area), cuts polygons at the antimeridian, omits
   Antarctica, and draws the basemap plus overlays: bubbles (area-true √),
   pie / bar glyphs, a bivariate 3×3 choropleth, and great-circle connection
-  arcs. Vega's layered `geoshape` + `lon/lat` points does not render reliably
-  under vl-convert, so these take the SVG path, the honest Vega→SVG fallback.
+  arcs. Geometry and overlays are projected and emitted in one pass, so a
+  map is a single self-contained SVG that renders from anywhere.
   Synthetic flow (O-D) data must be labeled illustrative; a real connection map
   needs a real origin-destination matrix.

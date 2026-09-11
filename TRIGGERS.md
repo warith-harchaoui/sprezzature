@@ -121,29 +121,28 @@ The trigger phrases below are what each skill's frontmatter description claims w
 | `cognitive load` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `Doherty threshold` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `reduce clutter` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
-| `make a figure` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `chart this` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `matplotlib` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `seaborn` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `plotly` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `heatmap` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `treemap` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `candlestick` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `choropleth` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `GPS map` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `situation map` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `sankey` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `mermaid diagram` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `no ascii art` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `ralph eyeball loop` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `SHAP plot` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `DAG` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `audit this figure` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `bell curve` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `funnel chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `sunburst` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `waterfall chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
-| `P&L bridge` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs. | Stable |
+| `make a figure` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `chart this` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `plot this` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `draw a chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `heatmap` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `treemap` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `candlestick` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `choropleth` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `GPS map` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `situation map` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `sankey` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `mermaid diagram` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `no ascii art` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `ralph eyeball loop` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `SHAP plot` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `DAG` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `audit this figure` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `bell curve` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `funnel chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `sunburst` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `waterfall chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `P&L bridge` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 
 ## How discovery works
 

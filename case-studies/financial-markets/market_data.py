@@ -6,9 +6,9 @@ The strategy is a fully illustrative systematic long-only equity strategy: a
 universe of 100 stocks priced daily from 02/01/2024 to 23/07/2026, out of which
 the strategy holds an **automatically-sized** basket of the ``K_t`` strongest
 names, re-estimated every 25 sessions and free to range from 3 to 40 holdings.
-The reference matplotlib overview (``dashboard_dynamic_k_overview.png``) drew the
-same idea in six grey panels; this module produces the numbers our house-style
-SVG dashboard re-draws far more beautifully.
+An earlier overview (``dashboard_dynamic_k_overview.png``) drew the same idea in
+six grey panels; this module produces the numbers our house-style SVG dashboard
+re-draws far more beautifully.
 
 Nothing here is a real ticker. The universe is a correlated geometric random
 walk (one shared market factor plus idiosyncratic noise); the sizing rule, the

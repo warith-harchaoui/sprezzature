@@ -14,7 +14,7 @@ method's house-style parameters for sprezzature-ui's stack.
 
 The skill hand-authors **inline SVG** directly in the generated markup. No chart
 library, no JSON spec to interpret, no CDN script, no build step: the SVG the
-skill writes *is* the chart. No D3, no Chart.js, no Recharts, no Vega.
+skill writes *is* the chart. No charting library of any kind underneath it.
 
 ```html
 <!-- The chart is inline markup in the page, not a separate embed step. -->
@@ -100,20 +100,24 @@ In the SVG, put the polarity tag directly in the axis-title `<text>` content, an
 </svg>
 ```
 
-## matplotlib → SVG axis cleanup translation
+## Axis cleanup: what to draw, and what to leave out
 
-The skill targets the same minimalist axis look as the matplotlib idiom below. Translation table:
+The house axis is minimal by subtraction. Drawing SVG by hand makes that the
+default rather than something to switch off: an element you do not write is
+not there.
 
-| matplotlib | Hand-authored SVG |
+| Chart chrome | Hand-authored SVG |
 |---|---|
-| `ax.spines["top"].set_visible(False)` | don't draw a top `<line>` / frame edge |
-| `ax.spines["right"].set_visible(False)` | don't draw a right `<line>` / frame edge |
-| `ax.spines["bottom"].set_visible(False)` | omit the bottom baseline `<line>` |
-| `ax.spines["left"].set_visible(False)` | omit the left baseline `<line>` |
-| `ax.tick_params(axis='x', bottom=False, top=False)` | don't draw the short tick `<line>` under each x label |
-| `ax.tick_params(axis='y', left=False, right=False)` | don't draw the short tick `<line>` beside each y label |
+| Top frame edge | don't draw a top `<line>` |
+| Right frame edge | don't draw a right `<line>` |
+| Bottom baseline | draw one `<line>`, full plot width |
+| Left baseline | draw one `<line>`, full plot height |
+| x tick marks | don't draw the short `<line>` under each x label |
+| y tick marks | don't draw the short `<line>` beside each y label |
 
-The user's exact matplotlib snippet (top/right spines off, x/y tick marks off, bottom/left spines kept) translates to: draw exactly two `<line>` elements (the bottom baseline and the left baseline) and no others. Every other "axis" is just the `<text>` labels, positioned by hand.
+So a standard house chart carries exactly two `<line>` elements of chrome: the
+bottom baseline and the left baseline, and no others. Every other "axis" is
+just the `<text>` labels, positioned by hand.
 
 ## House tokens (light mode)
 

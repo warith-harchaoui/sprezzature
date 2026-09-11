@@ -91,7 +91,7 @@ WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-vision": "Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b).",
     "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT.",
     "sprezzature-ux-laws": "Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers.",
-    "sprezzature-figures": "Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures + audits Vega specs and matplotlib SVGs.",
+    "sprezzature-figures": "Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures.",
 }
 
 

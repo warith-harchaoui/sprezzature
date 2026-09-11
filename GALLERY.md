@@ -178,10 +178,10 @@ command-line interface (CLI) for scripting, and a local web GUI
 type a table and press a button.
 
 Why it earns its place: it is a four-skill showcase in one small app.
-**`sprezzature-figures`**: the quadrant is a house-style Vega-Lite chart, emitted
-as Portable Network Graphics (PNG), Scalable Vector Graphics (SVG), and the
-raw Vega-Lite JavaScript Object Notation (JSON) spec, and rendered live in
-the browser with `vega-embed`. **`sprezzature-colors`**: the "Good Colors"
+**`sprezzature-figures`**: the quadrant is a house-style hand-authored chart,
+emitted as Scalable Vector Graphics (SVG) and Portable Network Graphics
+(PNG), and dropped straight into the browser as markup with no chart
+runtime to load. **`sprezzature-colors`**: the "Good Colors"
 palette is reserved for *data only* (the dots on the map and the role-tinted
 option names in the analysis), while the chrome (buttons, headings, grid)
 stays neutral slate and ink, so a colour in the app always means "data",
@@ -191,9 +191,9 @@ carefully neutral surface. **`sprezzature-accessibility`**: visible keyboard foc
 rings and labelled controls throughout. Standpoint is also the engine that
 renders `sprezzature`'s own competitive-positioning map (the *Related work* panel
 on the homepage, fed from `LANDSCAPE.md`), so the gallery and the tool point
-back at each other. Everything runs on the machine through `vl-convert`; the
-only optional reach-out is a `localhost` Ollama model that names the axes
-and writes the analysis, and `--no-llm` drops even that.
+back at each other. Everything runs on the machine; the only optional
+reach-out is a `localhost` Ollama model that names the axes and writes the
+analysis, and `--no-llm` drops even that.
 
 *The local web app: edit or upload a table, generate the quadrant, read the
 colour-coded analysis. The proof-of-concept is light-only today.*
@@ -206,4 +206,4 @@ axes named from the columns:*
 
 ![Standpoint positioning map: programming languages on the house palette](assets/gallery/standingpoint/positioning-map.png)
 
-**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (numpy + pandas + scikit-learn PCA) + Vega-Lite via `vl-convert` / `vega-embed` + FastAPI local GUI + vanilla JS + Tailwind + optional local Ollama
+**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (numpy + pandas + scikit-learn PCA) + hand-authored SVG + FastAPI local GUI + vanilla JS + Tailwind + optional local Ollama

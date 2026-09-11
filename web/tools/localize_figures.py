@@ -6,8 +6,8 @@ writes a French version of every gallery figure into ``web/img/figures/fr/``
 by localising the exact gallery SVG the reader sees: substituting the text of
 each ``<text>/<tspan>/<title>/<desc>`` node through the map. Every figure in
 the source repo (sprezzature-figures) is hand-authored SVG, so this is the
-only localisation path there is — there is no Vega spec to re-render from
-(the figures repo carries none). A handful of raster-only gallery assets
+only localisation path there is — there is no chart spec anywhere to
+re-render from. A handful of raster-only gallery assets
 (``.png`` with no matching ``.svg``) have no text nodes to translate and are
 skipped.
 

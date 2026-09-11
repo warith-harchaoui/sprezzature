@@ -2,16 +2,16 @@
 name: sprezzature-figures
 description: >-
   Figures, diagrams, and the Ralph Eyeball Loop for the sprezzature-* stack.
-  124 hand-authored, often interactive and animated SVG chart types (no
-  Vega, no matplotlib): hexbin, KDE-2D, beeswarm, clustermap, quiver, 3D,
-  choropleth, GPS/bubble/pie/bar + areas-of-control situation maps (see
+  124 hand-authored, often interactive and animated SVG chart types, the
+  markup authored directly: hexbin, KDE-2D, beeswarm, clustermap, quiver,
+  3D, choropleth, GPS/bubble/pie/bar + areas-of-control situation maps (see
   FIGURES.md).
   Explainability (SHAP/Shapash/LIME) and causal DAGs (DoWhy). TikZ + Mermaid
   via the Ralph Eyeball Loop; never ASCII art. The loop applies to every visual
   from code: data figure, Mermaid diagram, TikZ, SVG, HTML page. Two modes:
   agent (Claude reads the PNG) or --local (qwen3-vl:8b via Ollama, fully offline).
-  Trigger phrases: "make a figure", "chart this", "matplotlib", "seaborn",
-  "plotly", "heatmap", "treemap", "candlestick", "choropleth", "GPS map",
+  Trigger phrases: "make a figure", "chart this", "plot this", "draw a
+  chart", "heatmap", "treemap", "candlestick", "choropleth", "GPS map",
   "situation map", "sankey", "mermaid diagram", "no ascii art",
   "ralph eyeball loop", "SHAP plot", "DAG", "audit this figure",
   "bell curve", "funnel chart", "sunburst", "waterfall chart", "P&L bridge".
@@ -73,11 +73,11 @@ data-science figures:
 |---|---|---|
 | **Make** — plot a dataset in the house style | `make-figure` (console script) / `sprezzature-figures render` | Renders one of the catalogue's chart kinds (`sprezzature-figures list` prints all of them, e.g. `treemap`, `funnel`, `waterfall`) from your own data (`--data file.csv`, columns bound with `--map role=column`) or its built-in demo data, in the same palette and typography as `sprezzature-ui`. `sprezzature-figures recommend --data file.csv` ranks which chart kinds your data can fill before you pick one. |
 | **Make** — explain a fitted model | `explain_model.py` | Dispatches to SHAP / Shapash / TimeSHAP / LIME by model type (tree / linear / sequence / black-box). Writes summary + dependence + waterfall plots; drops a Shapash HTML report when `--report shapash`. |
-| **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (no graphviz) + writes the effect table to JSON. |
+| **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (no external layout engine) + writes the effect table to JSON. |
 | **Make** — an areas-of-control situation map, or a choropleth on a real basemap | `sprezzature-maps` (standalone package, see note below) | `make_situation_map.py` and `build_situation_examples.py` no longer ship inside `sprezzature-figures`; they were split out into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package alongside `make_choropleth.py`, which draws on a real basemap and geographic projection (Natural Earth, auto-centred Lambert conformal conic). `pip install git+https://github.com/warith-harchaoui/sprezzature-maps`, then `make-map situation_map --config my-region.yaml --out region.svg` or `make-map choropleth --out world.svg`. `sprezzature-figures` keeps only the schematic, binned map kinds (`binned-grid-map`, `dotdensity`, `hexbin-map`, `hexmap`, `spike-map`), which plot points or grid cells, not real coastlines. |
 | **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, TikZ figure, Mermaid diagram, hand-authored SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
 | **Render** — diagram source → image (diagram surfaces only) | `render_diagram.py` | Rasterises a TikZ figure, a Mermaid diagram, or a raw SVG to PNG. Palette-themed from `sprezzature-colors`; background white / transparent / dark selectable. Called internally by `ralph_eyeball_loop.py`; use directly when you want the PNG without the assessment file. |
-| **Audit** — gate before ship | `audit_figure.py` | Static parser flags data-viz anti-patterns in a Vega-Lite JSON spec, a hand-authored or matplotlib SVG, or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present unless `--strict`. |
+| **Audit** — gate before ship | `audit_figure.py` | Static parser flags data-viz anti-patterns in an SVG chart or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present unless `--strict`. |
 | **Install** — one-shot setup of the tiered stack | `install_figures.py` | pip-installs the dataviz / explainability / causality tiers as requested. Idempotent; safe to re-run. Detects the active env manager (pip / uv / poetry / conda) and defers to it. |
 
 ## Honest framing of what each tool covers
@@ -86,8 +86,8 @@ data-science figures:
 |---|---|---|
 | `make-figure` / `sprezzature-figures render` | Chart kinds from a fixed, growing catalogue (`sprezzature-figures list [--status stable]`), each in the `sprezzature-ui` house style (rounded corners, no top/right spine, no rainbows, palette from `sprezzature-colors/references/palette.csv`); binds your own CSV/JSON/Parquet columns to the kind's roles via `--map role=column`, or falls back to built-in demo data. | Does not invent the right chart; the catalogue is closed-set (`sprezzature-figures list` shows what exists today), not an open x/y/kind combinator. For chart-type selection see `sprezzature-ui/references/dataviz-chart-selection.md`. Does not do map projections beyond what a given catalogue kind supports; for choropleths see `sprezzature-ui/references/dataviz-maps.md`. |
 | `explain_model.py` | Model-agnostic SHAP for tree / linear / kernel models (via `shap.Explainer`), Shapash HTML report for a full business-facing writeup, TimeSHAP for recurrent / attention-based time-series models, LIME as fallback for opaque classifiers. Writes summary plot + top-N dependence plots + one waterfall for the row with the largest absolute prediction. | Does not train models. Does not evaluate them; use `probabl-ai/skills/evaluate-ml-pipeline` or `scikit-learn`'s report utilities. Does not do counterfactual reasoning; see `alibi` or `DiCE`. |
-| `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no graphviz); a JSON effect table for CI. | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
-| `audit_figure.py` | Vega-Lite specs and hand-authored or matplotlib SVGs. Rules: missing / empty axis title; dual y-axis; y-axis truncated on a non-ratio scale; 3D pie / donut with rotation; rainbow palette (viridis is fine; jet / hsv / rainbow are not); colorblind-unsafe pair (red + green + no other channel); undeclared polarity on a metric the auditor recognises; chartjunk (background gradient, drop shadow, custom mark shadows); missing `role="img"` / alt-text stub on the surrounding `<figure>`. | Does not verify whether the *right chart* was chosen for the data (that's a design decision, not a mechanical one). Does not evaluate statistical soundness (baseline choice, confidence-interval computation). Loop a data-viz reviewer in for the final call. |
+| `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no external layout engine); a JSON effect table for CI. | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
+| `audit_figure.py` | SVG charts and HTML `<figure>` blocks. Rules: perspective-transformed (3D) pie / donut; rainbow palette (viridis is fine; jet / hsv / rainbow are not); chartjunk (drop shadow, blur filter); corner radius over the 16 px cap; axis ticks left as raw magnitudes (`200000` rather than `200k`); ticks left as raw ISO dates; missing `role="img"` / alt-text stub on the surrounding `<figure>`. | Reads what the markup literally says, and nothing more: a chart can pass every rule and still encode the wrong thing. Does not verify whether the *right chart* was chosen (a design decision, not a mechanical one), and does not evaluate statistical soundness (baseline choice, confidence-interval computation). Loop a data-viz reviewer in for the final call. |
 | `make_situation_map.py` (now in `sprezzature-maps`) | A professional-desk layered plate from one YAML config for any region (real national outline from the vendored Natural Earth basemap, per-layer PNG/SVG exports). | Moved to the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package, run as `make-map situation_map --config … --out …`. Does not ship inside `sprezzature-figures` any more; point users at `sprezzature-maps` for this capability. |
 
 ## Decision tree
@@ -103,8 +103,8 @@ data-science figures:
 | "situation map" / "areas of control" / "who controls what" / "conflict map" / "control map" | *(currently unavailable)* | The generator that used to serve this trigger has been removed from the standalone package (see the Two-modes table above). Tell the user the capability is not shipped today rather than attempting a workaround. |
 | "ralph eyeball loop" / "eyeball this" / "screenshot the page" / "render web page" / "look at the PNG" | `ralph_eyeball_loop.py` | `python -m sprezzature_figures_scripts.ralph_eyeball_loop <source> [--width 1440] [--height 900] [--bg white\|transparent\|dark]`: kind auto-detected from suffix (.html → Chrome headless; others → render_diagram.py). Assessment file at `.private/ralph-loop/assessment-<hash>.md`. |
 | "render this diagram" / "tikz to png" / "mermaid diagram" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / mermaid / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
-| "prefer vega" / "make this in Vega" / which chart in Vega | `make-figure` + `sprezzature-figures list` | This package has no Vega renderer at all anymore (`render_diagram.py` dropped the `vega` kind; `explain_model.py` / `causal_estimate.py` never routed through Vega). The catalogue is hand-authored SVG for all 124 kinds; say so plainly rather than promising a Vega output in any form. |
-| "audit this figure" / "is this chart misleading" | `audit_figure.py` | `python -m sprezzature_figures_scripts.audit_figure <path>`: accepts a Vega-Lite JSON, a hand-authored or matplotlib SVG, or an HTML file with `<figure>` blocks. |
+| user asks for a named charting library ("do this in <library>") | `make-figure` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 124 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
+| "audit this figure" / "is this chart misleading" | `audit_figure.py` | `python -m sprezzature_figures_scripts.audit_figure <path>`: accepts an SVG chart or an HTML file with `<figure>` blocks. |
 | "colorblind-safe palette on the figure" | `audit_figure.py` + `sprezzature-colors` | `python -m sprezzature_figures_scripts.audit_figure <path>` catches the pattern; run `python -m sprezzature_colors_scripts.simulate_cvd` on the rendered PNG for a preview. |
 | "first-time setup" / "install the data-viz stack" | `install_figures.py` | `python -m sprezzature_figures_scripts.install_figures --tier dataviz+explain+causal`: installs pinned versions of each tier. |
 
@@ -112,7 +112,7 @@ data-science figures:
 
 | Tier | Libraries | When to install | Key scripts |
 |---|---|---|---|
-| **dataviz** | `networkx`, `wordcloud`, `scikit-learn`, `pandas`, `pyyaml`, `shapely`, `pyproj` | Always; the base tier. | `make-figure`, `audit_figure.py` |
+| **dataviz** | `networkx`, `scikit-learn`, `pandas`, `pyyaml`, `shapely`, `pyproj` | Always; the base tier. Tables, geometry and models — nothing in it draws. | `make-figure`, `audit_figure.py` |
 | **explain** | `shap`, `shapash`, `timeshap`, `lime`, `scikit-learn` | You have a fitted model and want to explain it. | `explain_model.py` |
 | **causal** | `dowhy`, `econml` | You are estimating a causal effect from observational data. | `causal_estimate.py` |
 | **install-only** | `pip` / `uv` / `poetry` / `conda` (whichever the project uses) | First-time setup on a fresh machine. | `install_figures.py` |
@@ -120,12 +120,11 @@ data-science figures:
 The tiers are **additive**. `install_figures.py --tier dataviz` installs
 only the base plotting stack; `--tier dataviz+explain` adds SHAP /
 Shapash / TimeSHAP / LIME; `--tier dataviz+explain+causal` adds DoWhy /
-EconML. Nothing in any tier is matplotlib, Vega, plotly, or seaborn: the
-catalogue, the explainability plots, and the causal DAG/forest plot all
-render as hand-authored SVG. The auditor itself is stdlib + PyYAML; you
-can run `audit_figure.py` on a Vega-Lite JSON without installing any of
-the tiers (it can still statically analyse a spec you bring it, even
-though nothing in this package produces one anymore).
+EconML. No tier contains a charting library: the catalogue, the
+explainability plots, and the causal DAG/forest plot are all SVG authored
+directly. The auditor itself is stdlib + PyYAML, so you can run
+`audit_figure.py` on any SVG or HTML page without installing a tier at
+all.
 
 ## House style — figures that match `sprezzature-ui`
 
@@ -143,8 +142,7 @@ Every figure `make-figure` emits inherits the sprezzature-* design tokens:
    block, embedded directly in the SVG, inverts paper/ink and flips blend
    modes (`_style.py`'s `os_dark_style()`) for the 124-kind catalogue.
    `explain_model.py`'s and `causal_estimate.py`'s hand-authored plots take
-   an explicit `--dark` flag instead and bake the dark canvas directly, no
-   matplotlib anywhere in either path.
+   an explicit `--dark` flag instead and bake the dark canvas directly.
 5. **Polarity stated** on every quantitative axis with a well-defined
    good direction: `(higher is better)` / `(lower is better)` /
    `(target = N)`, reinforced (never carried) by a semantic palette
@@ -161,8 +159,8 @@ the actual source (`explain_model.py`, `causal_estimate.py`,
 `figures.json` catalog), not from this summary; where the code disagreed
 with what this SKILL.md used to claim, the reference file says so
 plainly rather than restating the stale claim (see in particular
-`references/figure-catalog.md`, which corrects this skill's own
-"Vega-first" framing). The eighth, `references/publication-presets.md`,
+`references/figure-catalog.md`, which corrects an earlier framing of this
+skill). The eighth, `references/publication-presets.md`,
 documents that the journal presets promised below are not implemented in
 the standalone package as of this writing, rather than inventing plausible
 values.
@@ -178,25 +176,26 @@ values.
   placebo / random-common-cause / data-subset refuters unless `--refute
   none`), writing `effect.json` + a house-styled `dag.svg`. Backends,
   DAG encodings, and the refutation battery: `references/causality.md`.
-- **Auditor rules.** `audit_figure.py` flags `missing-axis-title`,
-  `dual-y-axis`, `truncated-baseline`, `pie-3d`, `rainbow-palette`,
-  `cvd-unsafe`, `missing-polarity`, `chartjunk`, and `role-img-missing`,
-  each with a severity and an `--ignore` escape. Full rule catalogue with
+- **Auditor rules.** `audit_figure.py` flags `pie-3d`, `rainbow-palette`,
+  `chartjunk`, `radius-over-cap`, `unformatted-tick`, `iso-date-tick`,
+  `role-img-missing`, and `alt-missing`, each with a severity and an
+  `--ignore` escape. Full rule catalogue with
   false-positive notes: `references/audit-figure.md`.
 - **Ralph Eyeball Loop.** The repo-wide visual-quality weapon: render any
   visual-from-code artifact (web page, TikZ figure, Mermaid diagram,
   hand-authored SVG) to PNG, critique it honestly, edit the source, loop.
   `ralph_eyeball_loop.py` is the primary tool (all surfaces);
-  `render_diagram.py` is the diagram-only renderer it delegates to (no
-  Vega kind; TikZ / Mermaid / SVG only).
+  `render_diagram.py` is the diagram-only renderer it delegates to (TikZ /
+  Mermaid / SVG only).
   Protocol, assessment file format, per-surface critique dimensions, and why
   data viz is one application of the loop (not its scope):
   `references/ralph-eyeball-loop.md`.
 - **Figure catalogue.** All 124 `make-figure` kinds render as hand-authored,
   CSS-interactive SVG (`_svg.py` helpers). SHAP / Shapash's underlying
   contributions, TimeSHAP, and the causal DAG / forest plot all render as
-  hand-authored SVG too: no matplotlib, no Vega, no plotly, no seaborn,
-  no graphviz anywhere in this package. LIME and the Shapash report are
+  hand-authored SVG too; no charting library is involved anywhere in this
+  package, and a test sweeps the whole tree to keep it that way. LIME and
+  the Shapash report are
   their own standalone HTML. Full breakdown of what renders what, and what
   none of these renderers can do:
   `references/figure-catalog.md`.
@@ -314,7 +313,7 @@ sprezzature_figures_scripts.<module>`.
 | `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `sprezzature-figures render` / `sprezzature-figures recommend` (the `[cli]` extra) cover the same ground with a Click interface plus a data-driven kind recommender. |
 | `explain_model.py` | `sprezzature-figures[explain]` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
 | `causal_estimate.py` | `sprezzature-figures[causal]` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
-| `audit_figure.py` | stdlib + PyYAML | Static auditor for Vega-Lite JSON / hand-authored or matplotlib SVG / HTML `<figure>` blocks. Deterministic; no model, no network. |
+| `audit_figure.py` | stdlib + PyYAML | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
 | `install_figures.py` | subprocess to project env manager | Idempotent installer for the three tiers (dataviz / explain / causal). Detects pip / uv / poetry / conda. |
 | `make_situation_map.py`, `build_situation_examples.py`, `make_choropleth.py` | *(moved out)* | Split into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package (`make-map` console script). No longer part of `sprezzature-figures`. |
 | `_argparse.py`, `_click.py`, `_lang.py`, `_vocab.py` | (internal helpers) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |

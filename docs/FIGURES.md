@@ -5,7 +5,7 @@ chart types, model-explainability plots (SHAP / Shapash / TimeSHAP / LIME),
 causal-effect estimates (DoWhy / EconML), TikZ / Mermaid diagrams, thematic
 maps, and areas-of-control situation maps for any region — every one
 hand-authored Scalable Vector Graphics (SVG), refined through the **Ralph
-Eyeball Loop** (render → look → refine the source). No Vega, no matplotlib
+Eyeball Loop** (render → look → refine the source). No charting library
 except as a last-resort fallback for a handful of statistical plots.
 
 This is the human landing page. It points to the three places that hold the

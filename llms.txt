@@ -26,7 +26,6 @@ Every shipped skill carries a "Two modes — make and audit" section in its SKIL
 
 ## sprezzature-ui charts and dataviz
 
-- [charts-vega.md](sprezzature-ui/references/charts-vega.md): Vega-Lite house style.
 - [dataviz-chart-selection.md](sprezzature-ui/references/dataviz-chart-selection.md): Decision tree for picking the right chart shape.
 - [dataviz-color-palettes.md](sprezzature-ui/references/dataviz-color-palettes.md): Sequential / divergent / categorical palettes.
 - [dataviz-maps.md](sprezzature-ui/references/dataviz-maps.md): Map-specific ergonomics.
@@ -81,7 +80,7 @@ Every shipped skill carries a "Two modes — make and audit" section in its SKIL
 ## Assets
 
 - [sprezzature-ui/assets/starter-page.html](sprezzature-ui/assets/starter-page.html): Single-file page bootstrap (Montserrat + Tailwind + tokens).
-- [sprezzature-ui/assets/components/](sprezzature-ui/assets/components/): Copy-paste HTML snippets + Vega-Lite chart specs.
+- [sprezzature-ui/assets/components/](sprezzature-ui/assets/components/): Copy-paste HTML snippets + hand-authored SVG charts.
 - [sprezzature-ui/assets/fonts/montserrat/](sprezzature-ui/assets/fonts/montserrat/): Montserrat WOFF2 + `OFL.txt` + `fonts.css`.
 - [sprezzature-cli-gui/assets/examples/cli-gui-demo/](sprezzature-cli-gui/assets/examples/cli-gui-demo/): Runnable CLI → GUI worked example.
 

@@ -117,8 +117,8 @@ The catalogue is closed-set by design (see `SKILL.md`'s "Honest framing"
 table): `make-figure` will not invent a new chart kind from an arbitrary
 `--x`/`--y`/mark combination. If `sprezzature-figures list` does not show
 a kind that fits your question, the honest options are to compose the
-closest available kind and note its limits, or to reach outside this
-skill (matplotlib/seaborn directly, for a genuinely novel chart shape;
+closest available kind and note its limits, or to author the new shape
+as SVG directly, the way every kind in the catalogue was written;
 `sprezzature-ui/references/dataviz-chart-selection.md` and
 `dataviz-maps.md` for chart types the general guide covers that this
 catalogue does not register at all, such as certain map projections).
