@@ -6,7 +6,7 @@
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Puissance et économie de carburant</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Échantillon synthétique, taille selon le poids, couleur selon le segment</text>
 <line x1="60.0" y1="449.0" x2="669.0" y2="449.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="453.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8.2</text>
+<text x="50.0" y="453.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8,2</text>
 <line x1="60.0" y1="393.8" x2="669.0" y2="393.8" stroke="#E5E5EA" stroke-width="1"/>
 <text x="50.0" y="397.8" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">13</text>
 <line x1="60.0" y1="338.7" x2="669.0" y2="338.7" stroke="#E5E5EA" stroke-width="1"/>

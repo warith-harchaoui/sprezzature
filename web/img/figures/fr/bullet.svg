@@ -76,7 +76,7 @@
 <rect class="bu-tick" x="518.2" y="646.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
 <text x="60" y="667.0" font-size="23" font-weight="600" fill="#1D1D1F">Attrition mensuelle</text>
 <text x="60" y="693.0" font-size="16" fill="#6E6E73">mesuré en %</text>
-<text x="992.0" y="667.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">2.4<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> %</tspan></text>
+<text x="992.0" y="667.0" font-size="27" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">2,4<tspan font-size="17" font-family="Roboto, sans-serif" fill="#6E6E73"> %</tspan></text>
 <text class="bu-miss" x="992.0" y="693.0" font-size="16" font-weight="600" fill="#FF3B30">✗ 120 % au-delà de la cible</text>
 <g id="tip-0" class="tip"><rect x="488.7" y="176" width="179" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="497.7" y="197.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Nouveau revenu</text><text x="497.7" y="213.5" font-size="12.5" font-weight="400" fill="#6E6E73">268 $k — 107% of target</text><text x="497.7" y="229.5" font-size="12.5" font-weight="400" fill="#6E6E73">target 250 $k</text></g>
 <g id="tip-1" class="tip"><rect x="423.9" y="294" width="186" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="432.9" y="315.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Inscriptions à l'essai</text><text x="432.9" y="331.5" font-size="12.5" font-weight="400" fill="#6E6E73">1180 /wk — 84% of target</text><text x="432.9" y="347.5" font-size="12.5" font-weight="400" fill="#6E6E73">target 1400 /wk</text></g>

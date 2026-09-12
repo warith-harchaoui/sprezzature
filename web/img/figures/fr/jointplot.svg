@@ -73,17 +73,17 @@
 <line x1="118.0" y1="844.0" x2="756.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="118.0" y1="304.0" x2="118.0" y2="844.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="118.0" y1="844.0" x2="118.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="118.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">4.0</text>
+<text x="118.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">4,0</text>
 <line x1="234.0" y1="844.0" x2="234.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="234.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">5.0</text>
+<text x="234.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">5,0</text>
 <line x1="350.0" y1="844.0" x2="350.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="350.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">6.0</text>
+<text x="350.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">6,0</text>
 <line x1="466.0" y1="844.0" x2="466.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="466.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">7.0</text>
+<text x="466.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">7,0</text>
 <line x1="582.0" y1="844.0" x2="582.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="582.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">8.0</text>
+<text x="582.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">8,0</text>
 <line x1="698.0" y1="844.0" x2="698.0" y2="850.0" stroke="#1D1D1F" stroke-width="1.4"/>
-<text x="698.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">9.0</text>
+<text x="698.0" y="872.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">9,0</text>
 <line x1="112.0" y1="822.4" x2="118.0" y2="822.4" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="104.0" y="828.4" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">180</text>
 <line x1="112.0" y1="736.0" x2="118.0" y2="736.0" stroke="#1D1D1F" stroke-width="1.4"/>
