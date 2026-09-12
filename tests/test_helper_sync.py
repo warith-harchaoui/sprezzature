@@ -42,11 +42,8 @@ def test_helper_copies_are_byte_identical(helper: str) -> None:
         pytest.skip(
             f"{helper}: {len(copies)} copy left in the monorepo; the other copies "
             f"now live in the standalone skill repos, so there is nothing to "
-            f"cross-check here. The invariant is still written in every copy's "
-            f"docstring and this is no longer what enforces it — run "
-            f"scripts/audit_helper_drift.py, which looks across the sibling "
-            f"checkouts. As of 2026-09-12 all four helpers had drifted, _lang.py "
-            f"into four different versions."
+            f"cross-check here. What looks across the sibling checkouts is "
+            f"scripts/sync_helpers.py, which also repairs the drift it finds."
         )
 
     canonical = copies[0].read_bytes()
