@@ -1,6 +1,6 @@
 # Laws of UX: canonical set
 
-The design heuristics curated by **Jon Yablonski** at
+The design heuristics curated by **Jon YABLONSKI** at
 [lawsofux.com](https://lawsofux.com/) and in his book *Laws of UX*
 (O'Reilly, 2020; 2nd ed. 2024). The site currently lists **30 laws**;
 this file restates each one in the skill's house format
@@ -13,7 +13,7 @@ This is the canonical set. The broader, cognitive-step-ordered list
 when both apply, prefer the canonical entry here for trigger phrasing
 and defer to `ux-psychology.md` for application-time tradeoffs.
 
-Attribution: concept names and the curated set are © Jon Yablonski
+Attribution: concept names and the curated set are © Jon YABLONSKI
 (CC-BY-NC-SA 4.0 on lawsofux.com; restatements without verbatim copy
 are fair commentary). Two external citations chosen as further
 reading: the Nielsen Norman Group article on the Aesthetic-Usability

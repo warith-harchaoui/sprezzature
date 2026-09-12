@@ -21,7 +21,7 @@ compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. The lint_a11y script needs
   Python 3.10+ stdlib only: no third-party deps, no browser, no network.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

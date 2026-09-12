@@ -573,21 +573,21 @@ For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see `sprezz
 
 ## Author
 
-[Warith Harchaoui, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
+[Warith HARCHAOUI, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
 
 Nine Claude / OpenCode **skills** for a single frontend stack: vanilla JavaScript, Tailwind CSS, and the three-Roboto typography rule (Roboto / Roboto Serif / Roboto Mono). Built to the [Anthropic skill specification](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
 
 Special thanks to:
 
-  + [Audrey Dejoux](https://www.behance.net/dreyadesign/projects),
+  + [Audrey DEJOUX](https://www.behance.net/dreyadesign/projects),
 
-  + [Laurent Pantanacce](https://www.linkedin.com/in/pantanacce/),
+  + [Laurent PANTANACCE](https://www.linkedin.com/in/pantanacce/),
 
-  + [Auguste Baum](https://www.linkedin.com/in/auguste-baum/),
+  + [Auguste BAUM](https://www.linkedin.com/in/auguste-baum/),
 
-  + [Julien Boyer](https://www.linkedin.com/in/julien-boyer-2a76878/) and
+  + [Julien BOYER](https://www.linkedin.com/in/julien-boyer-2a76878/) and
 
-  + [Jérôme Gombert](https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gombert-84675b1b/)
+  + [Jérôme GOMBERT](https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gombert-84675b1b/)
 
 for fruitful discussions.
 

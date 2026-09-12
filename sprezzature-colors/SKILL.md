@@ -21,7 +21,7 @@ compatibility: >-
   simulate_cvd) need Python 3.10+ stdlib + Pillow (for simulate_cvd only).
   No network or model required at any point.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

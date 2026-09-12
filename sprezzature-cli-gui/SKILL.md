@@ -22,7 +22,7 @@ compatibility: >-
   needs Python 3.10+ stdlib only; no third-party deps. Network access not
   required.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

@@ -1413,7 +1413,7 @@ updated assertions to the curated values.
 
 ## [0.10.0] (2026-06-28): new skill `sprezzature-ux-laws`
 
-A new skill that adds the canonical **Laws of UX** (Jon Yablonski,
+A new skill that adds the canonical **Laws of UX** (Jon YABLONSKI,
 [lawsofux.com](https://lawsofux.com/)) to the front-* ecosystem in
 both modes the repo already supports: **making** UI and **auditing**
 the result.

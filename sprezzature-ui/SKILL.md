@@ -22,7 +22,7 @@ compatibility: >-
   scripts/validate.py needs Python 3.10+ stdlib + PyYAML. Network access not
   required.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 
@@ -153,7 +153,7 @@ The "zero build, drop into Nginx / S3 / Pages" pitch only holds for the prototyp
 | "audit" / "ergonomic review" / "UX review" | `ergonomics-criteria.md` | Walk the 8 criteria: guidance, workload, explicit control, adaptability, error management, consistency, label significance, compatibility. **Respect the existing typeface stack**: do not propose a three-Roboto swap unless the user explicitly asks about typography. |
 | "make it look less AI" / "designer review" | `anti-patterns.md` | Refuse gradient text, glassmorphism on body, side-stripe borders, "boost your productivity" copy, three-card grids |
 | "psychology" / "conversion" / "flow not working" | `ux-psychology.md` | Pick ONE applicable principle per screen (Hick / Anchoring / Default Bias / Peak-End / Goal Gradient) and apply concretely |
-| "Laws of UX" / "Hick" / "Fitts" / "Miller" / "Jakob" / "Doherty" / "Tesler" / "Peak-End" / "Postel" / "Paradox of the Active User" | (see `sprezzature-ux-laws`) | Canonical Jon Yablonski set (30 laws). Reference: `sprezzature-ux-laws/references/laws-of-ux.md`. Auditor: `python sprezzature-ux-laws/scripts/audit_laws_of_ux.py <file-or-dir>`. |
+| "Laws of UX" / "Hick" / "Fitts" / "Miller" / "Jakob" / "Doherty" / "Tesler" / "Peak-End" / "Postel" / "Paradox of the Active User" | (see `sprezzature-ux-laws`) | Canonical Jon YABLONSKI set (30 laws). Reference: `sprezzature-ux-laws/references/laws-of-ux.md`. Auditor: `python sprezzature-ux-laws/scripts/audit_laws_of_ux.py <file-or-dir>`. |
 | "IBAN field" / "success screen" / "checkout progress" / "loading skeleton" / "primary CTA" / "settings page" / "resume onboarding" / "form fields" | `assets/snippets/INDEX.md` | Law-keyed snippet catalog. Pick the snippet whose trigger phrase matches, copy-and-adapt the strings. Each snippet already carries dark-mode peers + focus rings + reduced-motion guards. |
 | "material" / "Material 3" / "M3" | `material-design.md` | Map Material roles to skill tokens; emit plain HTML + Tailwind (no `mdc-*` classes) |
 

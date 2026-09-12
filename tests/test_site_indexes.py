@@ -7,7 +7,7 @@ humans, llms.txt), and an end-to-end run over a temp project tree.
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -213,11 +213,11 @@ class TestRenderRss:
 class TestRenderHumans:
     def test_has_team_and_site_sections(self):
         body = si.render_humans(
-            ["Warith Harchaoui - Author"],
+            ["Warith HARCHAOUI - Author"],
             {"Language": "English", "Doctype": "HTML5"},
         )
         assert "/* TEAM */" in body
-        assert "Warith Harchaoui - Author" in body
+        assert "Warith HARCHAOUI - Author" in body
         assert "/* SITE */" in body
         assert "Language: English" in body
 

@@ -8,7 +8,7 @@ runnable as a module as well as via the installed ``sprezzature`` console script
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from sprezzature_cli.cli import cli

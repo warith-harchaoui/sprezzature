@@ -26,7 +26,7 @@ compatibility: >-
   Transcript naming is stdlib-only unless ``--ollama``. No network at
   inference after install.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

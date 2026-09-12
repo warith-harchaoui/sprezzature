@@ -679,7 +679,7 @@ voir `sprezzature-cli-gui/SKILL.md` → « Why this *skill*, not Gradio / Strea
 
 ## Auteur
 
-[Warith Harchaoui, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
+[Warith HARCHAOUI, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
 
 Neuf ***skills*** Claude / OpenCode pour une seule pile
 frontend : JavaScript pur, Tailwind CSS et la règle des trois Roboto
@@ -688,15 +688,15 @@ frontend : JavaScript pur, Tailwind CSS et la règle des trois Roboto
 
 Un grand merci à :
 
-  + [Audrey Dejoux](https://www.behance.net/dreyadesign/projects),
+  + [Audrey DEJOUX](https://www.behance.net/dreyadesign/projects),
 
-  + [Laurent Pantanacce](https://www.linkedin.com/in/pantanacce/),
+  + [Laurent PANTANACCE](https://www.linkedin.com/in/pantanacce/),
 
-  + [Auguste Baum](https://www.linkedin.com/in/auguste-baum/),
+  + [Auguste BAUM](https://www.linkedin.com/in/auguste-baum/),
 
-  + [Julien Boyer](https://www.linkedin.com/in/julien-boyer-2a76878/) et
+  + [Julien BOYER](https://www.linkedin.com/in/julien-boyer-2a76878/) et
   
-  + [Jérôme Gombert](https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gombert-84675b1b/)
+  + [Jérôme GOMBERT](https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gombert-84675b1b/)
 
 
 pour nos discussions fructueuses.

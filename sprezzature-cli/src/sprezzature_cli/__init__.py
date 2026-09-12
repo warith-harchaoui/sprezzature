@@ -2,7 +2,7 @@
 
 Author
 ------
-Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>
+Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>
 """
 
 __version__ = "1.1.0"
