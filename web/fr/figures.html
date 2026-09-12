@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Figures — Sprezzature</title>
   <meta name="description"
-    content="Un catalogue rendu de graphiques et tracés statistiques issus de sprezzature-figures: 127 types de graphiques en SVG écrit à la main, à partir de données fictives sur une palette soignée.">
+    content="Un catalogue rendu de graphiques et tracés statistiques issus de sprezzature-figures: 125 types de graphiques en SVG écrit à la main, à partir de données fictives sur une palette soignée.">
   <link rel="canonical" href="https://sprezzature.ai/fr/figures.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/figures.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/figures.html">
@@ -18,7 +18,7 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="Figures — Sprezzature">
   <meta property="og:description"
-    content="Un catalogue rendu de graphiques et tracés statistiques issus de sprezzature-figures: 127 types de graphiques en SVG écrit à la main, à partir de données fictives sur une palette soignée.">
+    content="Un catalogue rendu de graphiques et tracés statistiques issus de sprezzature-figures: 125 types de graphiques en SVG écrit à la main, à partir de données fictives sur une palette soignée.">
   <meta property="og:url" content="https://sprezzature.ai/fr/figures.html">
   <meta property="og:image" content="https://sprezzature.ai/img/figures/choropleth.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -38,7 +38,7 @@
       {
         "@type": "WebPage",
         "name": "Figures — Sprezzature",
-        "description": "Catalogue rendu de graphiques et tracés statistiques depuis sprezzature-figures : 127 types de graphiques en SVG écrit à la main, tous sur données fictives avec une palette curatée.",
+        "description": "Catalogue rendu de graphiques et tracés statistiques depuis sprezzature-figures : 125 types de graphiques en SVG écrit à la main, tous sur données fictives avec une palette curatée.",
         "url": "https://sprezzature.ai/fr/figures.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -126,7 +126,7 @@
               class="inline-block rounded-full border border-neutral-300 bg-white px-4 py-2 font-mono text-sm text-neutral-800 shadow-sm dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-200">« render this diagram »</span></li>
         </ul>
       </div>
-      <p class="mt-6 max-w-3xl text-neutral-600 dark:text-neutral-300">Chaque figure ci-dessous est livrée avec son kit : un zip contenant les données en CSV, le générateur qui les lit et le SVG interactif qu’il écrit. Deux fichiers Python, aucune compilation, et pour la plupart rien du tout à installer.</p>
+      <p class="mt-6 max-w-3xl text-neutral-600 dark:text-neutral-300">Chaque figure ci-dessous est livrée avec son kit : un zip contenant les données en CSV, le générateur qui les lit et le SVG interactif qu’il écrit. Deux fichiers Python, aucune compilation, et pour la plupart rien du tout à installer. Les deux générateurs Gapminder animés complètent le catalogue de 127 générateurs sur l’<a href="hans-rosling.html" class="font-medium text-brand-linktext underline decoration-brand-blue/40 underline-offset-2 hover:decoration-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">hommage à Hans ROSLING</a>.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/docs/FIGURES.md"
           class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Catalogue
@@ -167,7 +167,7 @@
         <label class="relative block">
           <span class="sr-only">Rechercher des figures</span>
           <svg width="16" height="16" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M14 14l4 4" stroke-linecap="round"></path></svg>
-          <input id="fig-search" type="search" placeholder="Rechercher parmi 127 figures par nom, usage ou mot-clé…" autocomplete="off" spellcheck="false" class="w-full rounded-lg border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 min-h-11">
+          <input id="fig-search" type="search" placeholder="Rechercher parmi 125 figures par nom, usage ou mot-clé…" autocomplete="off" spellcheck="false" class="w-full rounded-lg border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 min-h-11">
         </label>
         <p id="fig-count" class="mt-1 h-4 text-xs text-neutral-500 dark:text-neutral-400" aria-live="polite"></p>
       </div>
@@ -571,19 +571,6 @@
             class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button"
               class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"
-              aria-label="Agrandir: Essaim (beeswarm)" data-src="../img/figures/fr/beeswarm.png"
-              data-alt="Essaim (beeswarm) des groupes A, B et C, points tassés sans recouvrement ; le groupe B a la plus large dispersion.">
-              <img src="../img/figures/fr/beeswarm.png"
-                alt="Essaim (beeswarm) des groupes A, B et C, points tassés sans recouvrement ; le groupe B a la plus large dispersion."
-                loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Essaim (beeswarm)</span> <span
-                class="text-neutral-500 dark:text-neutral-400">: Points tassés par forces, sans recouvrement.</span></figcaption>
-          </figure>
-        <figure
-            class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button"
-              class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"
               aria-label="Agrandir: Nuage par catégorie" data-src="../img/figures/fr/strip.svg"
               data-alt="Nuage de points de la réponse par dose (contrôle, faible, forte), points dispersés montrant la réponse qui augmente avec la dose.">
               <img src="../img/figures/fr/strip.png"
@@ -720,19 +707,6 @@
             <figcaption class="p-3"><span class="font-medium">Densité hexbin</span> <span
                 class="text-neutral-500 dark:text-neutral-400">: Beaucoup de points regroupés en hexagones.</span>
             <div class="mt-2"><a href="../kits/fr/hexbin.zip" download class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Télécharger le kit de la figure Densité hexbin : Python, CSV et SVG, 103 Ko">↓ Kit Python + CSV + SVG (103 Ko)</a></div></figcaption>
-          </figure>
-        <figure
-            class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <button type="button"
-              class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11"
-              aria-label="Agrandir: Contours KDE-2D" data-src="../img/figures/fr/kde2d-contour.png"
-              data-alt="Contours de densité 2D (KDE) montrant deux amas distincts, suggérant une distribution bimodale.">
-              <img src="../img/figures/fr/kde2d-contour.png"
-                alt="Contours de densité 2D (KDE) montrant deux amas distincts, suggérant une distribution bimodale."
-                loading="lazy" class="w-full">
-            </button>
-            <figcaption class="p-3"><span class="font-medium">Contours d'estimation de densité par noyau (KDE) 2D</span>
-              <span class="text-neutral-500 dark:text-neutral-400">: Densité bivariée en niveaux remplis.</span></figcaption>
           </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Graphique joint" data-src="../img/figures/fr/jointplot.svg" data-alt="Nuage du temps de réaction selon les heures de sommeil avec droite de tendance, bordé d'histogrammes marginaux en haut et à droite.">
