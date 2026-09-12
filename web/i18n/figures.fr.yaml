@@ -197,6 +197,8 @@ $k: k$
 1 billion: 1 billion
 1 incident: 1 incident
 1 line: 1 gamme
+'1 point': '1 point'
+'1 point in this cell': '1 point dans cette cellule'
 1 quake: 1 séisme
 1 trip: 1 trajet
 1,316 passengers · ribbon width = number of people on that path · colour = outcome: 1 316 passagers · largeur du ruban = nombre de personnes sur ce chemin · couleur = issue
@@ -2501,6 +2503,7 @@ Height is written across the whole genome: La taille est inscrite dans tout le g
 : 'Diagramme hiérarchique en cercles imbriqués d''une arborescence source de service web Python. Six paquets de premier niveau sont dessinés en grands cercles, chacun avec sa teinte, et chaque module à l''intérieur est un cercle imbriqué dimensionné par ses lignes de code. Le paquet services est le plus grand et contient payments.py, le plus gros module unique à 2 410 lignes, suivi de api, models, workers, core et tests. Le remplissage est sans espace : de plus grosses billes signifient plus de code.'
 ? Hierarchical edge-bundling diagram of the module-dependency graph of a web application. Modules sit on a circle grouped into six subsystems (Web UI, API, Auth, Billing, Data, Infra); each dependency between two modules is drawn as a smooth curve pulled toward the tree's common ancestor so that dependencies between the same two subsystems bundle into a single cable. The thickest cables run from every subsystem into Auth and from Billing into Data, marking the couplings a refactor must untangle first.
 : Diagramme hiérarchique de regroupement d'arêtes du graphe de dépendances de modules d'une application web. Les modules sont sur un cercle groupés en six sous-systèmes (Interface web, API, Auth, Billing, Data, Infra) ; chaque dépendance entre deux modules est une courbe lisse tirée vers l'ancêtre commun de l'arbre, si bien que les dépendances entre les deux mêmes sous-systèmes se groupent en un seul câble. Les câbles les plus épais vont de chaque sous-système vers Auth et de Billing vers Data, marquant les couplages qu'un remaniement doit démêler en premier.
+Hexagonally binned scatter, cell colour is the point count: Nuage groupé en hexagones ; la couleur d’une cellule donne le nombre de points
 High: Élevée
 'Higher = greater exposure · quintile classes · no data in grey (incl. Antarctica) · Source: synthetic demo data': 'Plus élevé = exposition plus forte · classes en quintiles · aucune donnée en gris (Antarctique compris) · source : données de démonstration synthétiques'
 Highlight the Bio-AI lab (44 researchers): Mettre en évidence le laboratoire Bio-IA (44 chercheurs)
@@ -4916,6 +4919,7 @@ Where each service tier hides its latency tail: Où chaque niveau de service cac
 Where new sign-ups end up after 90 days: Où finissent les nouvelles inscriptions après 90 jours
 Where the French actually live: Où vivent vraiment les Français
 Where the French actually live — one dot per 25,000 residents: Où vivent vraiment les Français · un point pour 25 000 habitants
+Where the Points Pile Up: Où les points s’entassent
 'Where the code lives: two packages carry the weight': 'Où vit le code : deux paquets portent le poids'
 Who cuts whom?: Qui coupe qui ?
 Who gained, who lost: Qui gagne, qui perd

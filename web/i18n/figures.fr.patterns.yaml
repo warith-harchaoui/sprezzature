@@ -359,3 +359,9 @@
   write: '{0} k$ par habitant × {1} Md'
 - match: '\+([-\d.,\u202f ]+)M'
   write: '+{0} M'
+
+# ── Hexbin : légende et résumé, tous deux porteurs de comptes ─────────────
+- match: '([-\d.,\u202f ]+) \(Count\)'
+  write: '{0} (Effectif)'
+- match: 'Hexbin of ([-\d.,\u202f ]+) points into ([-\d.,\u202f ]+) cells, densest cell ([-\d.,\u202f ]+)\. Hover or focus a cell for its exact count\.'
+  write: 'Groupement hexagonal de {0} points en {1} cellules, cellule la plus dense {2}. Survolez une cellule ou donnez-lui le focus pour son effectif exact.'
