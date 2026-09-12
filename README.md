@@ -35,16 +35,17 @@ ones you need.
 
 As of 2026-07-29, sprezzature is organised in three layers with distinct release cycles.
 
-**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo. Not on PyPI yet — install straight from GitHub, only the tools you need (`pip install git+https://github.com/warith-harchaoui/<package>`):
+**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and add the surfaces you want as extras — `[api]` for the FastAPI server, `[mcp]` for the MCP tools, `[cli]` where a richer command line exists:
 
 | Package | What it does |
 |---|---|
-| `sprezzature-figures` | 124 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
+| `sprezzature-figures` | 127 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
 | `sprezzature-colors` | WCAG contrast auditing, CVD simulation, Tailwind palette export |
 | `sprezzature-accessibility` | Static a11y lint (14 rules, stdlib only) |
 | `sprezzature-cli-gui` | CLI argument parser to single-page GUI emitter |
 | `sprezzature-ux-laws` | Laws-of-UX audit (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation |
+| `sprezzature-maps` | Choropleths and situation maps, in five modes, at newsroom quality |
 | `best-engine-ai-helper` | Hardware detection, model selection/pull, pluggable LLM/VLM backend, Ralph gates |
 
 All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).

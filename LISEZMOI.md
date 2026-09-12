@@ -46,16 +46,17 @@ N'installez que ceux dont vous avez besoin.
 
 Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de release distincts.
 
-**Couche 1 : packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant. Pas encore sur PyPI — installez directement depuis GitHub, uniquement ce dont vous avez besoin (`pip install git+https://github.com/warith-harchaoui/<package>`) :
+**Couche 1 : packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant, publié sur PyPI. N'installez que ce dont vous avez besoin (`pip install <package>`), et ajoutez les surfaces voulues en extras — `[api]` pour le serveur FastAPI, `[mcp]` pour les outils MCP, `[cli]` là où une ligne de commande plus riche existe :
 
 | Package | Ce que ça fait |
 |---|---|
-| `sprezzature-figures` | 124 types de graphiques, SHAP, estimations causales, la Ralph Eyeball Loop |
+| `sprezzature-figures` | 127 types de graphiques, SHAP, estimations causales, la Ralph Eyeball Loop |
 | `sprezzature-colors` | Audit de contraste WCAG, simulation de daltonisme (CVD), export palette Tailwind |
 | `sprezzature-accessibility` | Lint a11y statique (14 règles, stdlib uniquement) |
 | `sprezzature-cli-gui` | Parseur d'arguments CLI vers interface graphique une page |
 | `sprezzature-ux-laws` | Audit des Laws of UX (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Parole vers texte, diarisation, identification du locuteur, traduction de sous-titres |
+| `sprezzature-maps` | Choroplèthes et cartes de situation, en cinq modes, de qualité rédactionnelle |
 | `best-engine-ai-helper` | Détection du matériel, sélection/téléchargement du modèle, backend LLM/VLM connectable, portes Ralph |
 
 Tous les repos sont sur [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
