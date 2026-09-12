@@ -16,7 +16,7 @@
 - [Vision — alt text — Sprezzature](https://sprezzature.ai/vision.html): W3C-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b.
 - [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions, speaker diarization and speaker identification for video / audio. WebVTT / SRT from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via speaker embeddings.
 - [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the canonical Laws of UX (Jon YABLONSKI) to vanilla-JS + Tailwind: both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger, action, Tailwind hook.
-- [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: 124 hand-authored SVG chart types, all from fake data on a curated palette.
+- [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: 127 hand-authored SVG chart types, all from fake data on a curated palette.
 
 ## Case studies
 

@@ -22,6 +22,7 @@ from __future__ import annotations
 import glob
 import html
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -223,6 +224,20 @@ NESTED_TAG = re.compile(r"<(?:title|desc)\b[^>]*>.*?</(?:title|desc)>", re.S)
 RUN = re.compile(r"(>)([^<>]+)(<)")
 missing_hover: set[str] = set()  # untranslated strings that live only in <title> tooltips
 
+# French writes 0,75 where English writes 0.75. Applied only to a visible run
+# that is a bare number and nothing else — an axis tick, a data label — so a
+# version string ("1.0.0"), a date, or a number inside a sentence is left alone;
+# a sentence's numbers come through the map, already written in French.
+_BARE_NUMBER = re.compile(r"^(\s*)([+-]?\d{1,3}(?:\u202f\d{3})*\.\d+)(\s*)$")
+
+
+def fr_decimal(run_text: str) -> str | None:
+    """`run_text` with a French decimal comma, or None if it is not a bare number."""
+    m = _BARE_NUMBER.match(run_text)
+    if m is None:
+        return None
+    return m.group(1) + m.group(2).replace(".", ",") + m.group(3)
+
 
 def localize_hero(name: str) -> None:
     t = (GALLERY / f"{name}.svg").read_text(encoding="utf-8")
@@ -254,6 +269,9 @@ def localize_hero(name: str) -> None:
             lead = raw[: len(raw) - len(raw.lstrip())]
             trail = raw[len(raw.rstrip()):]
             return m.group(1) + lead + html.escape(TR[key], quote=False) + trail + m.group(3)
+        decimal = fr_decimal(raw)
+        if decimal is not None:
+            return m.group(1) + decimal + m.group(3)
         if is_human(key):
             missing.add(key)
         return m.group(0)
@@ -276,7 +294,34 @@ def localize_hero(name: str) -> None:
     t = TEXT_BLOCK.sub(block_sub, t)
     t = _fit_canvas(t)  # grow the canvas if the localised text now overruns it
     t = _resize_tip_bubbles(t)  # re-fit hover-bubble cards to their new text
-    (FR / f"{name}.svg").write_text(t, encoding="utf-8")
+    out_svg = FR / f"{name}.svg"
+    out_svg.write_text(t, encoding="utf-8")
+    _rasterise(out_svg, FR / f"{name}.png")
+
+
+#: Gallery thumbnails are a fixed 900px wide whatever the figure's viewBox.
+THUMB_WIDTH = 900
+
+
+def _rasterise(svg: Path, png: Path) -> None:
+    """
+    Write `svg`'s 900px-wide thumbnail to `png`.
+
+    The English thumbnails come from each generator's own rasteriser, but a
+    localised figure is a transformed SVG with no generator behind it, so this
+    goes through rsvg-convert. Its absence is reported rather than raised: the
+    localised SVG is the substantive output, and a missing thumbnail should not
+    lose it.
+    """
+    try:
+        subprocess.run(
+            ["rsvg-convert", "-w", str(THUMB_WIDTH), "-o", str(png), str(svg)],
+            check=True, capture_output=True,
+        )
+    except FileNotFoundError:
+        print(f"  no rsvg-convert on PATH: {png.name} not written")
+    except subprocess.CalledProcessError as exc:
+        print(f"  FAIL rasterising {svg.name}: {exc.stderr.decode()[-200:]}")
 
 
 def main() -> int:
