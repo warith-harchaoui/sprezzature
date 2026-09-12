@@ -53,7 +53,7 @@ Usage
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -483,7 +483,7 @@ def bundle_source(figures_repo: Path) -> str:
         "",
         "Author",
         "------",
-        "`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_",
+        "`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_",
         '"""',
         "",
         _BUNDLE_IMPORTS,
@@ -981,7 +981,7 @@ def data_script(slug: str, module: str, rows: Sequence[dict], french: bool) -> s
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -1348,7 +1348,7 @@ dossier est ce texte ; il vous suffit de ne pas le supprimer.
 
 Extrait de [sprezzature-figures](https://github.com/warith-harchaoui/sprezzature-figures) ·
 Galerie complète : <https://sprezzature.ai/figures.html> ·
-Warith Harchaoui, Ph.D.
+Warith HARCHAOUI, Ph.D.
 """
     return f"""# {slug} — standalone figure
 
@@ -1411,7 +1411,7 @@ is that text; you only have to not delete it.
 
 From [sprezzature-figures](https://github.com/warith-harchaoui/sprezzature-figures) ·
 Full gallery: <https://sprezzature.ai/figures.html> ·
-Warith Harchaoui, Ph.D.
+Warith HARCHAOUI, Ph.D.
 """
 
 

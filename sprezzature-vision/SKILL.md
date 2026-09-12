@@ -25,7 +25,7 @@ compatibility: >-
   installer on Linux, winget on Windows) and pulls the default model on
   first run.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

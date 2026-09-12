@@ -1,7 +1,7 @@
 ---
 name: sprezzature-ux-laws
 description: >-
-  Apply the canonical Laws of UX (Jon Yablonski, lawsofux.com) to vanilla-JS +
+  Apply the canonical Laws of UX (Jon YABLONSKI, lawsofux.com) to vanilla-JS +
   Tailwind work, both when making new UI ("design this screen using Hick /
   Fitts / Miller", "what does Peak-End say here", "is this onboarding fighting
   the Paradox of the Active User") AND when auditing existing HTML ("audit for
@@ -21,7 +21,7 @@ compatibility: >-
   Python 3.10+ stdlib only (html.parser, argparse, json). No network
   access required. Reference is plain Markdown with no exec deps.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
   source: https://lawsofux.com/
 ---
@@ -203,7 +203,7 @@ sprezzature_ux_laws_scripts.audit_laws_of_ux`.
 
 ## Attribution
 
-Concept names and the curated set are © Jon Yablonski under
+Concept names and the curated set are © Jon YABLONSKI under
 CC-BY-NC-SA 4.0 (lawsofux.com). Restatements in
 `references/laws-of-ux.md` are fair commentary; cite the source when
 surfacing a law to a user.

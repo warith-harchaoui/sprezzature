@@ -16,7 +16,7 @@ Usage
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -244,7 +244,7 @@ _CHROME = {
                 "panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws.",
         "footer": ('<a class="underline hover:text-brand-blue" href="index.html">&larr; All skills</a> '
                    '· Claude / OpenCode skills by <a class="underline hover:text-brand-blue" '
-                   'href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.'),
+                   'href="https://www.linkedin.com/in/warith-harchaoui/">Warith HARCHAOUI</a>.'),
         "fs": "Fullscreen",
     },
     "fr": {
@@ -260,7 +260,7 @@ _CHROME = {
                 "Tirages favorable et défavorable.",
         "footer": ('<a class="underline hover:text-brand-blue" href="index.html">&larr; Tous les skills</a> '
                    '· Skills Claude / OpenCode par <a class="underline hover:text-brand-blue" '
-                   'href="https://www.linkedin.com/in/warith-harchaoui/">Warith Harchaoui</a>.'),
+                   'href="https://www.linkedin.com/in/warith-harchaoui/">Warith HARCHAOUI</a>.'),
         "fs": "Plein écran",
     },
 }

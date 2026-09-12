@@ -206,7 +206,7 @@ Substack, The Economist, Bloomberg, BeyondWords clients):
 ```html
 <header class="post-header">
   <h1>Post title</h1>
-  <p class="post-meta">Warith Harchaoui · 2026-06-21 · 8 min read</p>
+  <p class="post-meta">Warith HARCHAOUI · 2026-06-21 · 8 min read</p>
 
   <!--
     Audio player goes RIGHT HERE — between the title/meta and the

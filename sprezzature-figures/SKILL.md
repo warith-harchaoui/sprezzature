@@ -26,7 +26,7 @@ compatibility: >-
   mmdc (Mermaid), rsvg-convert/magick (SVG), all optional, fail loud. No
   network needed once installed.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

@@ -2,7 +2,7 @@
 
 Income, life expectancy and population per country, **one row per country per
 year, 1950–2025**, the crunched dataset behind the animated bubble chart
-(`assets/svg-examples/gapminder-animated.svg`), a tribute to Hans Rosling. We
+(`assets/svg-examples/gapminder-animated.svg`), a tribute to Hans ROSLING. We
 assemble it ourselves from authoritative open series, because no single public
 file carries all three cleanly, annually, for every country across that span.
 

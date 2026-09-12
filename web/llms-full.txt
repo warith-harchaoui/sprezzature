@@ -119,7 +119,7 @@ Three advanced examples, empowered by our Ralph Eyeball Loop .
 
 Animation
 
-## Tribute to Hans Rosling
+## Tribute to Hans ROSLING
 
 The famous income-versus-lifespan bubble
 chart, animated across the decades, with a play button and hover, the way he showed the world getting
@@ -898,15 +898,15 @@ Illustrative data, no real value, no investment advice.
 
 ---
 
-# Tribute to Hans Rosling — Sprezzature
+# Tribute to Hans ROSLING — Sprezzature
 
 Source: https://sprezzature.ai/hans-rosling.html
 
 sprezzature-figures · Case Study
 
-# Tribute to Hans Rosling
+# Tribute to Hans ROSLING
 
-Hans Rosling turned a bubble chart into a
+Hans ROSLING turned a bubble chart into a
 story the whole world could feel.
 
 Best seen in landscape. Tap ↗ for fullscreen, then pinch to zoom.
@@ -1144,7 +1144,7 @@ Auguste
 Baum ,
 Julien
 Boyer and
-Jérôme Gombert
+Jérôme GOMBERT
 for fruitful discussions.
 
 Color palettes from harchaoui.org/warith/colors .
@@ -1579,7 +1579,7 @@ sprezzature-ux-laws
 
 # Laws of user experience (UX)
 
-Apply the canonical Laws of UX (Jon Yablonski) to vanilla-JavaScript (JS) + Tailwind: both when making new user interface (UI) and when auditing existing HyperText Markup Language (HTML). Reference covers 30 laws with trigger / action / Tailwind hook.
+Apply the canonical Laws of UX (Jon YABLONSKI) to vanilla-JavaScript (JS) + Tailwind: both when making new user interface (UI) and when auditing existing HyperText Markup Language (HTML). Reference covers 30 laws with trigger / action / Tailwind hook.
 
 SKILL.md (the agent spec)
 Give a ⭐️ on GitHub

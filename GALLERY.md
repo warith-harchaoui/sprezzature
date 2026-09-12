@@ -72,7 +72,7 @@ below is what's live today.
 |---|---|
 | ![md2star PPTX, light](assets/gallery/md2star/pptx-light.png) | ![md2star PPTX, dark](assets/gallery/md2star/pptx-dark.png) |
 
-**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python stdlib HyperText Transfer Protocol (HTTP) server + vanilla JavaScript (JS) + Tailwind + pdf.js + `md2docx` / `md2pptx` + headless LibreOffice
+**Author:** [Warith HARCHAOUI](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python stdlib HyperText Transfer Protocol (HTTP) server + vanilla JavaScript (JS) + Tailwind + pdf.js + `md2docx` / `md2pptx` + headless LibreOffice
 
 
 
@@ -101,7 +101,7 @@ self-hosted Roboto. Captures show the fresh-install empty state.
 |---|---|
 | ![roitelet, light](assets/gallery/roitelet/light.png) | ![roitelet, dark](assets/gallery/roitelet/dark.png) |
 
-**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI + uvicorn) + vanilla JS (no build, Tailwind JIT) + self-hosted Roboto + local Ollama
+**Author:** [Warith HARCHAOUI](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI + uvicorn) + vanilla JS (no build, Tailwind JIT) + self-hosted Roboto + local Ollama
 
 
 
@@ -128,7 +128,7 @@ the 21-intent knowledge base).
 |---|---|
 | ![intentions, light](assets/gallery/intentions/light.png) | ![intentions, dark](assets/gallery/intentions/dark.png) |
 
-**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI) + vanilla JS + Tailwind (vendored) + scikit-learn / sentence-transformers / local Ollama
+**Author:** [Warith HARCHAOUI](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI) + vanilla JS + Tailwind (vendored) + scikit-learn / sentence-transformers / local Ollama
 
 
 
@@ -155,7 +155,7 @@ full `dark:` peer set.
 |---|---|
 | ![sql, light](assets/gallery/sql/light.png) | ![sql, dark](assets/gallery/sql/dark.png) |
 
-**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI) + vanilla JS + Tailwind (vendored) + Vega-Lite + local Ollama (qwen2.5-coder / Gemma) + SQLite
+**Author:** [Warith HARCHAOUI](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (FastAPI) + vanilla JS + Tailwind (vendored) + Vega-Lite + local Ollama (qwen2.5-coder / Gemma) + SQLite
 
 
 
@@ -206,4 +206,4 @@ axes named from the columns:*
 
 ![Standpoint positioning map: programming languages on the house palette](assets/gallery/standingpoint/positioning-map.png)
 
-**Author:** [Warith Harchaoui](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (numpy + pandas + scikit-learn PCA) + hand-authored SVG + FastAPI local GUI + vanilla JS + Tailwind + optional local Ollama
+**Author:** [Warith HARCHAOUI](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (numpy + pandas + scikit-learn PCA) + hand-authored SVG + FastAPI local GUI + vanilla JS + Tailwind + optional local Ollama

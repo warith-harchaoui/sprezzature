@@ -23,7 +23,7 @@ to break and expensive to notice.
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -73,7 +73,10 @@ def test_every_card_links_an_existing_kit(page: str) -> None:
     slugs = discover_cards(REPO_ROOT / page)
     assert slugs, f"{page}: no cards found"
 
-    linked = set(re.findall(r'href="(?:\.\./)?kits/([a-z0-9_-]+)\.zip"', html))
+    # The French page links ../kits/fr/<slug>.zip; the pattern predates the
+    # language split and matched none of them, so the test reported all 122
+    # French cards as unlinked while the page was perfectly correct.
+    linked = set(re.findall(r'href="(?:\.\./)?kits/(?:fr/)?([a-z0-9_-]+)\.zip"', html))
     missing = [s for s in slugs if s not in linked]
     assert not missing, f"{page}: cards with no kit link: {missing[:5]}"
 
@@ -91,13 +94,25 @@ def test_kit_links_carry_a_distinct_accessible_name(page: str) -> None:
     """
     _require_kits()
     html = (REPO_ROOT / page).read_text(encoding="utf-8")
-    labels = re.findall(r'href="(?:\.\./)?kits/[a-z0-9_-]+\.zip"[^>]*aria-label="([^"]+)"', html)
+    # Same blind spot as the link test above: the French page serves its kits
+    # from kits/fr/, which this pattern did not allow for.
+    labels = re.findall(
+        r'href="(?:\.\./)?kits/(?:fr/)?[a-z0-9_-]+\.zip"[^>]*aria-label="([^"]+)"', html
+    )
     assert len(labels) == len(discover_cards(REPO_ROOT / page))
     assert len(set(labels)) == len(labels), "two kit links share an aria-label"
 
 
 def test_kit_holds_exactly_what_it_promises() -> None:
-    """The zip is the seven documented files, and no PNG."""
+    """
+    The zip is exactly the documented files, and no PNG.
+
+    The contract has grown since this was first written: a kit gained a page
+    that opens the figure, a script that writes the data, and the licence the
+    code is under. It also split by language — the English zip carries
+    README.md, the French one LISEZMOI.md, not both — and requirements.txt
+    is written only when there is something to pin.
+    """
     _require_kits()
     archive = KITS / f"{SAMPLE}.zip"
     if not archive.is_file():
@@ -105,17 +120,30 @@ def test_kit_holds_exactly_what_it_promises() -> None:
     with zipfile.ZipFile(archive) as zf:
         names = {Path(n).name for n in zf.namelist()}
 
-    assert names == {
+    required = {
         f"make_{SAMPLE}.py",
+        "make_data.py",
         "sprezzature_svg.py",
-        "data.csv",
         f"{SAMPLE}.svg",
-        "requirements.txt",
+        "index.html",
         "README.md",
-        "LISEZMOI.md",
+        "LICENSE",
     }
+    assert required <= names, f"missing from the kit: {sorted(required - names)}"
+
+    # Flat rows ship CSV, rows carrying a list ship JSON. Exactly one.
+    data = names & {"data.csv", "data.json"}
+    assert len(data) == 1, f"expected one data file, got {sorted(data)}"
+
+    optional = {"requirements.txt"}
+    unexpected = names - required - data - optional
+    assert not unexpected, f"unexpected files in the kit: {sorted(unexpected)}"
+
+    assert "LISEZMOI.md" not in names, "the English kit carries README.md only"
     assert not any(n.endswith(".png") for n in names), "kits ship vector only"
-    assert sum(n.endswith(".py") for n in names) == 2, "a kit is two Python files"
+    assert sum(n.endswith(".py") for n in names) == 3, (
+        "a kit is three Python files: the generator, the data writer, the engine"
+    )
 
 
 def test_kit_svg_is_well_formed_and_links_its_fonts() -> None:
@@ -143,9 +171,18 @@ def test_kit_svg_is_well_formed_and_links_its_fonts() -> None:
 def test_requirements_are_pinned_exactly() -> None:
     """Every requirement line pins a version; none floats."""
     _require_kits()
+    checked = 0
     for archive in sorted(KITS.glob("*.zip"))[:20]:
         with zipfile.ZipFile(archive) as zf:
-            name = next(n for n in zf.namelist() if n.endswith("requirements.txt"))
+            # A kit with no third-party imports ships no requirements.txt at
+            # all, which is the point of writing it conditionally. `next`
+            # without a default turned that into StopIteration.
+            name = next(
+                (n for n in zf.namelist() if n.endswith("requirements.txt")), None
+            )
+            if name is None:
+                continue
+            checked += 1
             lines = [
                 line.strip()
                 for line in zf.read(name).decode("utf-8").splitlines()
@@ -153,6 +190,7 @@ def test_requirements_are_pinned_exactly() -> None:
             ]
         for line in lines:
             assert "==" in line, f"{archive.name}: '{line}' is not pinned"
+    assert checked, "no kit in the sample shipped a requirements.txt to check"
 
 
 def test_bundled_helpers_share_no_top_level_name() -> None:

@@ -72,7 +72,7 @@ strip the `make_` prefix and replace hyphens and underscores with spaces.
 | Forest plot | make_forest.py | Effect sizes and confidence intervals from multiple studies |
 | Funnel | make_funnel.py | Conversion or attrition across sequential pipeline stages |
 | Gapminder | make_gapminder.py | Animated bubble chart of health vs. wealth by country and year |
-| Gapminder variants | make_gapminder_variants.py | Animated bubble chart variants for the Hans Rosling world-health demo |
+| Gapminder variants | make_gapminder_variants.py | Animated bubble chart variants for the Hans ROSLING world-health demo |
 | Gauge | make_gauge.py | Single KPI on a semicircular dial with colour-coded zones |
 | Heatmap | make_heatmap.py | Row × column matrix with cell colour encoding a numeric value |
 | Hex map | make_hexmap.py | Cartogram where each geographic unit becomes a uniform hexagon |

@@ -5,7 +5,7 @@ Rules-only. Each principle is one line: **trigger → action**. Background and w
 Organised by the cognitive step a user is in.
 
 > **Canonical Laws of UX live in the `sprezzature-ux-laws` skill.** When
-> the user names one of Jon Yablonski's 30 laws explicitly (Hick,
+> the user names one of Jon YABLONSKI's 30 laws explicitly (Hick,
 > Fitts, Miller, Jakob, Tesler, Doherty, Peak-End, Postel, Paradox
 > of the Active User, …), load
 > `sprezzature-ux-laws/references/laws-of-ux.md` instead: it gives the

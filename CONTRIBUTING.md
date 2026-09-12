@@ -150,4 +150,4 @@ For things that involve the Anthropic skill spec itself, also see
 
 ## Maintainer
 
-[Warith Harchaoui](https://www.linkedin.com/in/warith-harchaoui/).
+[Warith HARCHAOUI](https://www.linkedin.com/in/warith-harchaoui/).

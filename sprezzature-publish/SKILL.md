@@ -24,7 +24,7 @@ compatibility: >-
   audio narration (narrate_post + OpenVoice v2 or ChatterboxTTS) pulls
   torch + torchaudio; installed only when explicitly opted into.
 metadata:
-  author: Warith Harchaoui
+  author: Warith HARCHAOUI
   version: 1.1.0
 ---
 

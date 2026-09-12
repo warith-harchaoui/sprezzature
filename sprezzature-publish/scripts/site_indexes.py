@@ -75,7 +75,7 @@ Notes
 
 Author
 ------
-`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -767,7 +767,7 @@ def render_humans(authors: list[str], site_meta: dict[str, str]) -> str:
     Parameters
     ----------
     authors : list of str
-        Author / contributor lines, e.g. ``"Warith Harchaoui - Author -
+        Author / contributor lines, e.g. ``"Warith HARCHAOUI - Author -
         warith@example.com - linkedin.com/in/warith-harchaoui"``.
     site_meta : dict
         Free-form key/value pairs for the ``/* SITE */`` section
