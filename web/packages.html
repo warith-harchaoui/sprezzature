@@ -88,8 +88,78 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">standalone packages</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Packages</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Sprezzature has three layers. The <strong>skills</strong> (the <code>SKILL.md</code> files an agent reads) stay in the main repository. The <strong>deterministic tools</strong> each graduate into their own pip-installable package, so you can use one without cloning the whole stack. A <strong>local runtime</strong> lets the tools run offline against a local model.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Every tool here is one implementation reached five different ways. Which way you want depends on what you are doing — sending a colleague a single file, importing a function, calling it from another language, handing it to an agent — and none of those should require a different tool.</p>
       <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Each package is BSD-3-Clause, local-first, and independently versioned. They are not on PyPI yet, so install straight from GitHub.</p>
+
+      <h2 class="mt-12 text-2xl font-bold tracking-tight">Five ways in</h2>
+      <p class="mt-3 text-neutral-600 dark:text-neutral-300">The rule is that these are <em>surfaces</em>, never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant.</p>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-linktext">zip</p>
+          <h3 class="mt-1 font-semibold">A single self-contained kit</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">One folder that runs on a machine with nothing installed: the generator, the drawing engine in one file, the data, a page that opens the result, and a README. No network, no clone, no account. This is the form you can attach to an email.</p>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-linktext">library</p>
+          <h3 class="mt-1 font-semibold">Python functions</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Import them and call them. Typed, documented, and free of any plotting or charting dependency — the SVG is written directly, so the only thing you install is the thing you asked for.</p>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-linktext">api</p>
+          <h3 class="mt-1 font-semibold">HTTP, via FastAPI</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">The same functions over HTTP, so any language that can make a request can use them. Comes with OpenAPI docs at <code>/docs</code>, which is also how the argument names stay honest: they are generated from the signatures, not written by hand.</p>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-linktext">mcp</p>
+          <h3 class="mt-1 font-semibold">Agent tools, via FastAPI MCP</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">The HTTP routes republished as Model Context Protocol tools, so an assistant calls them as first-class tools rather than by guessing at a shell command. Deliberately a wrapper over the existing routes: a hand-written MCP server would be a second copy of the surface, free to drift from it.</p>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800 sm:col-span-2">
+          <p class="font-mono text-xs text-brand-linktext">skills</p>
+          <h3 class="mt-1 font-semibold">Skills, for Claude and for OpenCode</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">The judgement that is not in the code: when to reach for a chart type, what makes a title honest, which check to run before shipping. MCP gives an agent the <em>ability</em>; a skill gives it the <em>taste</em>. Both runtimes read the same source material.</p>
+        </div>
+
+      </div>
+
+
+      <h2 class="mt-12 text-2xl font-bold tracking-tight">Where each surface actually exists</h2>
+      <p class="mt-3 text-neutral-600 dark:text-neutral-300">Five ways in is the target, not a finished claim. This table is the current state: a dash means the surface is not built yet, and most of them are not. The HTTP and MCP surfaces exist on the two packages that render — those were the ones worth calling from another language first. The skills need no second version for OpenCode: both runtimes read the same <code>SKILL.md</code>.</p>
+
+      <div class="mt-6 overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-800">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-neutral-200 dark:border-neutral-800">
+              <th scope="col" class="px-3 py-2 text-left font-semibold">Package</th>
+              <th scope="col" class="px-3 py-2 text-center font-semibold">Zip</th>
+              <th scope="col" class="px-3 py-2 text-center font-semibold">Library</th>
+              <th scope="col" class="px-3 py-2 text-center font-semibold">API</th>
+              <th scope="col" class="px-3 py-2 text-center font-semibold">MCP</th>
+              <th scope="col" class="px-3 py-2 text-center font-semibold">Claude skill</th>
+              <th scope="col" class="px-3 py-2 text-center font-semibold">OpenCode skill</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-figures</td><td class="px-3 py-2 text-center">122 kits</td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-maps</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-colors</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-accessibility</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-audio</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-cli-gui</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-ux-laws</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-ui</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-vision</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-publish</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">The last three rows are skills with no standalone package: they describe judgement rather than wrap a tool, so there is nothing to <code>pip install</code>.</p>
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Deterministic tools</h2>
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
