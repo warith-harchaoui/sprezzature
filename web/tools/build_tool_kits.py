@@ -753,6 +753,116 @@ _SAMPLE_HTML = """<!doctype html>
 """
 
 
+_MAPS_RUN = '''"""
+run — draw a world choropleth from the numbers in data.csv.
+
+What this is
+------------
+An Equal Earth world map with one value per country, shaded on a perceptual
+ramp, over real terrain. Equal Earth because an area map that distorts area
+is an argument against itself: Mercator would make Greenland the size of
+Africa and every per-country comparison on the plate a lie.
+
+Run it::
+
+    python3 -m pip install -r requirements.txt
+    python3 run.py
+    open index.html
+
+Then edit ``data.csv`` — one row per country, an ISO-3166 numeric code and a
+number — and run it again.
+
+Author
+------
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+"""
+
+from __future__ import annotations
+
+import csv
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE / "lib"))
+
+import make_choropleth  # noqa: E402
+from make_choropleth import build_svg  # noqa: E402
+
+# The repository draws from Natural Earth's 50m outlines, 738 KB of
+# coastline. At world scale the 110m file says the same thing in 105 KB, and
+# a kit is meant to be small enough to email — so this one points at the
+# coarser file. Overridden here, in the open, rather than by editing the
+# vendored generator: the copy in lib/ stays byte-identical to the
+# repository, which is the whole point of vendoring it.
+make_choropleth._GEO = Path(__file__).resolve().parent / "assets" / "geo" / "countries-110m.json"
+
+
+def load_rows():
+    """
+    Read data.csv into the rows the generator expects.
+
+    Returns
+    -------
+    list of dict
+        ``{"id": "840", "value": 71.4}`` per country. The id stays a string:
+        it is a code, not a quantity, and 004 is not 4.
+    """
+    path = HERE / "data.csv"
+    if not path.is_file():
+        return None
+    with path.open(newline="", encoding="utf-8") as handle:
+        return [
+            {"id": str(row["id"]).strip(), "value": float(row["value"])}
+            for row in csv.DictReader(handle)
+            if row.get("value", "").strip()
+        ]
+
+
+def write_demo_data():
+    """
+    Write the generator's own demo rows to data.csv, once.
+
+    Without this the kit told the reader to edit a file that was not there,
+    and quietly drew the built-in demo instead — a promise that looks kept
+    because something appears on the plate.
+    """
+    path = HERE / "data.csv"
+    if path.exists():
+        return
+    from make_choropleth import DEMO_DATA
+
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["id", "value"], lineterminator=chr(10))
+        writer.writeheader()
+        for row in DEMO_DATA:
+            writer.writerow({"id": row["id"], "value": row["value"]})
+    print("wrote data.csv  (" + str(len(DEMO_DATA)) + " countries)")
+
+
+def main():
+    """Draw the map beside this script."""
+    write_demo_data()
+    rows = load_rows()
+    svg = build_svg(
+        data=rows,
+        title="A world map that does not lie about area",
+        subtitle="Equal Earth projection · one value per country, over real terrain",
+    )
+    out = HERE / "choropleth.svg"
+    out.write_text(svg, encoding="utf-8")
+    print("wrote choropleth.svg  (" + str(len(svg) // 1024) + " KB)")
+    print("")
+    print(str(len(rows)) + " countries read from data.csv.")
+    print("Open index.html, or edit data.csv and run again.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'''
+
+
 _PAGE = '''<!doctype html>
 <html lang="{lang}">
 <meta charset="utf-8">
@@ -971,6 +1081,44 @@ KITS: Dict[str, Dict[str, Any]] = {
                   "choix devient une liste. Remplacez build_parser par le vôtre et relancez.",
         },
     },
+    "maps": {
+        "repo": "sprezzature-maps",
+        "sources": [
+            "scripts/make_choropleth.py", "scripts/_assets.py", "scripts/_geo_colors.py",
+            "scripts/_interactive.py", "scripts/_relief.py", "scripts/_render.py",
+            "scripts/_svg.py",
+        ],
+        # geo_dir() resolves to <lib>/../assets/geo, so the data sits at the
+        # kit root and nothing needs patching.
+        "data": [
+            ("assets/geo/countries-110m.json", "assets/geo/countries-110m.json"),
+            ("assets/geo/relief-lowres.png", "assets/geo/relief-lowres.png"),
+        ],
+        "pins": ["numpy==2.3.5", "Pillow==11.3.0"],
+        # A distribution name is not an import name: pip installs "Pillow"
+        # and Python imports "PIL". resvg_py is imported inside the
+        # rasteriser, and sprezzature_figures.fonts inside write_svg's
+        # font-embedding branch. This kit takes neither path: run.py calls
+        # build_svg and writes the text itself, so nothing asks for a PNG
+        # and no font is embedded — the plate uses a system sans-serif,
+        # which the README says. The isolated build-time run is what proves
+        # these three are genuinely unreachable rather than merely hoped to be.
+        "optional": ["PIL", "resvg_py", "sprezzature_figures"],
+        "run": _MAPS_RUN,
+        "outputs": [("choropleth.svg", "A world choropleth on the Equal Earth projection")],
+        "title": {
+            "en": "A world map that does not lie about area",
+            "fr": "Une carte du monde qui ne ment pas sur les surfaces",
+        },
+        "lede": {
+            "en": "One value per country on the Equal Earth projection, over real "
+                  "terrain. Mercator would make Greenland the size of Africa and every "
+                  "comparison on the plate a lie. Edit data.csv and run it again.",
+            "fr": "Une valeur par pays en projection Equal Earth, sur un relief réel. "
+                  "Mercator donnerait au Groenland la taille de l'Afrique et rendrait "
+                  "fausse toute comparaison. Modifiez data.csv et relancez.",
+        },
+    },
     "colors": {
         "repo": "sprezzature-colors",
         "sources": ["scripts/_colors.py"],
@@ -1071,13 +1219,28 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
     shutil.copy2(licence, kit / "LICENSE")
 
     (kit / "run.py").write_text(spec["run"], encoding="utf-8")
+    pins = list(spec.get("pins", []))
+    if pins:
+        (kit / "requirements.txt").write_text(
+            "# Pinned to the versions this kit was built and verified against.\n"
+            "# The generator computes its own geometry and writes its own SVG,\n"
+            "# so there is no plotting library here.\n\n" + "\n".join(pins) + "\n",
+            encoding="utf-8",
+        )
     if spec.get("sample"):
         (kit / "sample.html").write_text(spec["sample"], encoding="utf-8")
 
     # macOS writes AppleDouble sidecars ("._run.py") on non-HFS volumes, and
     # they match *.py while being binary. Skip anything dot-prefixed.
     python_files = [f for f in sorted(kit.rglob("*.py")) if not f.name.startswith(".")]
-    problems = verify_stdlib_only(python_files, vendored, set(spec.get("optional", [])))
+    # A kit may declare pinned requirements. The stdlib promise then reads
+    # "nothing beyond what requirements.txt names", which is still a promise
+    # worth keeping: the check catches an import nobody declared, which is
+    # the failure that strands a recipient.
+    allowed = set(spec.get("optional", [])) | {
+        line.split("==")[0].strip() for line in spec.get("pins", [])
+    }
+    problems = verify_stdlib_only(python_files, vendored, allowed)
     if problems:
         return False, f"{name}: not standalone — {problems[0]}"
 
@@ -1091,12 +1254,17 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
     # -I ignores PYTHONPATH and the user site directory; the scrubbed env
     # removes the rest. What is left is the standard library plus the kit.
     result = subprocess.run(
-        [sys.executable, "-I", "-S", "run.py"],
+        [sys.executable, "-I", "run.py"] if spec.get("pins")
+        else [sys.executable, "-I", "-S", "run.py"],
         cwd=kit,
         capture_output=True,
         text=True,
-        timeout=180,
-        env={"PATH": "/usr/bin:/bin", "HOME": str(kit)},
+        timeout=300,
+        # A kit with pins needs its packages on the path, so the isolation is
+        # necessarily weaker there: -I still drops PYTHONPATH and the user
+        # site directory, but site-packages stays. The stdlib-only kits keep
+        # the stricter -S.
+        env=None if spec.get("pins") else {"PATH": "/usr/bin:/bin", "HOME": str(kit)},
     )
     if result.returncode != 0:
         return False, f"{name}: run.py failed — {result.stderr.strip().splitlines()[-1:]}"
@@ -1124,7 +1292,8 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
     target_dir = out_dir / "fr" if french else out_dir
     size = write_zip(kit, target_dir / f"{name}.zip")
     shutil.rmtree(staging)
-    return True, f"{name}: {size // 1024} KB zip (stdlib only)"
+    needs = ", ".join(pins) if pins else "stdlib only"
+    return True, f"{name}: {size // 1024} KB zip ({needs})"
 
 
 def kit_readme(name: str, spec: Dict[str, Any], french: bool) -> str:
@@ -1245,6 +1414,7 @@ Source: <https://github.com/warith-harchaoui/{spec['repo']}>
 
 #: The package card each kit belongs to, keyed by the card's repository slug.
 _CARD_SLUG: Dict[str, str] = {
+    "maps": "sprezzature-maps",
     "colors": "sprezzature-colors",
     "accessibility": "sprezzature-accessibility",
     "ux-laws": "sprezzature-ux-laws",
