@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sprezzature"
+version = "1.1.0"
+description = "The sprezzature skills: what an agent reads to know when to reach for the tools, and how the house does things."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "BSD-3-Clause"
+license-files = ["LICENSE.md"]
+authors = [{name = "Warith HARCHAOUI", email = "warith.harchaoui@gmail.com"}]
+keywords = ["skills", "claude", "opencode", "agent", "sprezzature"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Documentation",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# The tools the skills call. Each installs on its own; this pulls the lot.
+all = [
+    "sprezzature-figures>=2.0.0",
+    "sprezzature-colors>=1.0.0",
+    "sprezzature-accessibility>=1.0.0",
+    "sprezzature-audio>=1.0.0",
+    "sprezzature-cli-gui>=1.0.0",
+    "sprezzature-ux-laws>=1.0.0",
+    "sprezzature-maps>=0.1.0",
+]
+dev = ["pytest>=8.0", "ruff"]
+
+[project.urls]
+Homepage = "https://sprezzature.ai"
+Repository = "https://github.com/warith-harchaoui/sprezzature"
+
+[project.scripts]
+sprezzature-skills = "sprezzature.cli:main"
+
+[tool.setuptools]
+packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_vision", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures"]
+
+[tool.setuptools.package-dir]
+"sprezzature.skills.sprezzature_ui" = "sprezzature-ui"
+"sprezzature.skills.sprezzature_cli_gui" = "sprezzature-cli-gui"
+"sprezzature.skills.sprezzature_publish" = "sprezzature-publish"
+"sprezzature.skills.sprezzature_accessibility" = "sprezzature-accessibility"
+"sprezzature.skills.sprezzature_colors" = "sprezzature-colors"
+"sprezzature.skills.sprezzature_vision" = "sprezzature-vision"
+"sprezzature.skills.sprezzature_audio" = "sprezzature-audio"
+"sprezzature.skills.sprezzature_ux_laws" = "sprezzature-ux-laws"
+"sprezzature.skills.sprezzature_figures" = "sprezzature-figures"
+
+[tool.setuptools.package-data]
+"sprezzature.skills.sprezzature_ui" = ["**/*"]
+"sprezzature.skills.sprezzature_cli_gui" = ["**/*"]
+"sprezzature.skills.sprezzature_publish" = ["**/*"]
+"sprezzature.skills.sprezzature_accessibility" = ["**/*"]
+"sprezzature.skills.sprezzature_colors" = ["**/*"]
+"sprezzature.skills.sprezzature_vision" = ["**/*"]
+"sprezzature.skills.sprezzature_audio" = ["**/*"]
+"sprezzature.skills.sprezzature_ux_laws" = ["**/*"]
+"sprezzature.skills.sprezzature_figures" = ["**/*"]
+
+[tool.setuptools.exclude-package-data]
+# The rendered gallery is 74 MB of PNG and SVG that belongs on the website,
+# not in a skill an agent reads.
+"*" = ["assets/**", "**/__pycache__/**", "**/*.pyc"]
