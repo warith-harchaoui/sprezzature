@@ -57,3 +57,17 @@ tests/fixtures/images/wiki/*.svg
 # python build artifacts
 build/
 *.egg-info/
+
+# Gallery kits: build output, not source.
+#
+# `web/tools/build_figure_kits.py` regenerates every one of these from the
+# generators and the gallery page, so git gains nothing by carrying them —
+# and a zip is the worst thing to version: already compressed, so git cannot
+# delta it, and a rebuild whose content is unchanged can still produce
+# different bytes (verified: bar and upset come out byte-identical, horizon
+# and voronoi do not).
+#
+# They are published by uploading web/ to the host by hand, the same way the
+# rest of the site is. Rebuild before uploading:
+#     python3 web/tools/build_figure_kits.py
+web/kits/*.zip
