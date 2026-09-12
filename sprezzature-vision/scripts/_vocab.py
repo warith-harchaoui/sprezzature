@@ -2,26 +2,49 @@
 _vocab
 ======
 
-Shared vocabulary-extraction helpers for the local AI helpers.
+A speech or vision model transcribes an unfamiliar name more reliably if
+it is warned about that name in advance. This module reads whatever
+"vocabulary" the user supplies (a list of proper nouns, product names, or
+technical terms likely to appear) and turns it into a clean list of
+strings, so the calling script can fold that list into the hint it sends
+its model.
 
-Both :mod:`captions_from_whisper` (whisper.cpp / pywhispercpp) and
-:mod:`alt_from_ollama` (Qwen3-VL vision via Ollama) accept an optional
-vocabulary biasing input. The user supplies it in one of four shapes:
+Two scripts in the wider sprezzature-* suite use it this way: this
+repository's own :mod:`captions_from_whisper` (which runs Whisper, through
+whisper.cpp / pywhispercpp), and a sibling repository's
+:mod:`alt_from_ollama` (which runs a vision model, Qwen3-VL, through
+Ollama). Both accept the vocabulary in any of four shapes, and it is this
+module's job to figure out which shape was given and turn it into a plain
+list of terms:
 
-1. ``--prompt "<text>"``           — verbatim prompt text.
-2. ``--vocab path/to/glossary.txt`` — one term per line.
-3. ``--vocab-from path``            — single file *or* directory.
-4. ``--auto-project``               — walk upward from the source file
-                                      to find a project root, then collect
-                                      vocabulary from the whole tree.
+1. ``--prompt "<text>"``: the exact prompt text, used verbatim.
+2. ``--vocab path/to/glossary.txt``: a file with one term per line.
+3. ``--vocab-from path``: a single file, or an entire directory to read
+   terms from.
+4. ``--auto-project``: starting at the source file, walk up the directory
+   tree to find the project's root folder, then collect vocabulary from
+   everything under it.
 
-This module owns the input-shape resolution and the term-extraction logic;
-prompt-template composition is left to the consuming script because the
-right wording differs (whisper's ``initial_prompt`` vs Qwen3-VL's instruction).
+This module stops at that plain list of terms; each calling script builds
+its own final prompt text from the list, because the two models expect
+different wording (Whisper's ``initial_prompt`` field reads naturally as a
+sentence, while Qwen3-VL expects an instruction).
 
-The extractor recognizes three pattern classes likely to carry meaningful
-names: backtick code spans, CamelCase / snake_case identifiers, and
-capitalized multi-word phrases.
+When no explicit list is given, the extractor scans a source file for text
+that is *likely* to be a meaningful name, based on three patterns: text
+inside backtick code spans, identifiers written in CamelCase or
+snake_case (a capital mid-word, like ``myVariableName``, or underscores
+between words, like ``my_variable_name``), and capitalized multi-word
+phrases (like "Golden Gate Bridge").
+
+This file is duplicated on purpose into every sprezzature-* repository,
+one copy each, so a skill stays self-contained and runs on its own:
+including from a downloaded zip, with nothing available but Python's
+standard library. The copies are meant to stay byte-for-byte identical. So
+edit the canonical copy rather than this one, unless this is it:
+``scripts/sync_helpers.py``, in the sprezzature monorepo, names the
+canonical copy, reports the ones that have drifted, and propagates the
+change with ``--apply``.
 
 Author
 ------
@@ -32,15 +55,17 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Optional
-
 
 # ── Configuration constants ────────────────────────────────────────────────
 
 #: Filenames probed first when auto-detecting a vocab source next to the
 #: media file. The first sibling found wins.
 AUTO_VOCAB_SOURCES: tuple[str, ...] = (
-    "README.md", "index.html", "transcript.md", "PRODUCT.md", "ABOUT.md",
+    "README.md",
+    "index.html",
+    "transcript.md",
+    "PRODUCT.md",
+    "ABOUT.md",
 )
 
 #: Marker files that indicate the root of a project tree, in priority order.
@@ -56,15 +81,29 @@ PROJECT_ROOT_MARKERS: tuple[str, ...] = (
 )
 
 #: Top-level filenames scanned when collecting project vocabulary.
-PROJECT_VOCAB_NAMES: frozenset[str] = frozenset({
-    "README.md", "SKILL.md", "LISEZMOI.md", "MANIFEST.md",
-    "manifest.json", "package.json", "pyproject.toml",
-})
+PROJECT_VOCAB_NAMES: frozenset[str] = frozenset(
+    {
+        "README.md",
+        "SKILL.md",
+        "LISEZMOI.md",
+        "MANIFEST.md",
+        "manifest.json",
+        "package.json",
+        "pyproject.toml",
+    }
+)
 
 #: Folders walked recursively for ``.md`` files inside a project.
-PROJECT_VOCAB_DIRS: frozenset[str] = frozenset({
-    "docs", "doc", "site", "content", "src", "references",
-})
+PROJECT_VOCAB_DIRS: frozenset[str] = frozenset(
+    {
+        "docs",
+        "doc",
+        "site",
+        "content",
+        "src",
+        "references",
+    }
+)
 
 #: Hard cap on total source bytes read from a project tree.
 PROJECT_READ_BUDGET: int = 512 * 1024
@@ -78,11 +117,12 @@ SURROUNDING_WINDOW: int = 400
 
 # ── Term extraction ─────────────────────────────────────────────────────────
 
+
 def extract_vocabulary(text: str) -> list[str]:
     """
     Extract a list of likely proper-noun and technical terms from prose.
 
-    The extraction is intentionally cheap — no NLP, just three pattern
+    The extraction is intentionally cheap: no NLP, just three pattern
     classes that catch the bulk of high-value names:
 
     1. Backtick-delimited identifiers (Markdown code spans).
@@ -144,7 +184,7 @@ def surrounding_text(doc: Path, image: Path, window: int = SURROUNDING_WINDOW) -
     Extract the text around every reference to ``image`` inside ``doc``.
 
     Both Markdown image references (``![alt](path)``) and HTML
-    ``<img src="path">`` syntaxes are recognized by basename match — the
+    ``<img src="path">`` syntaxes are recognized by basename match; the
     caller's ``image`` argument can be a full path or just the filename
     as it appears in ``doc``.
 
@@ -237,7 +277,8 @@ def read_vocab_file(path: Path) -> list[str]:
 
 # ── Project walking ────────────────────────────────────────────────────────
 
-def find_project_root(start: Path) -> Optional[Path]:
+
+def find_project_root(start: Path) -> Path | None:
     """
     Walk upward from ``start`` looking for the nearest project root.
 
@@ -325,12 +366,13 @@ def collect_project_text(root: Path, budget: int = PROJECT_READ_BUDGET) -> str:
 
 # ── Source-shape resolution ────────────────────────────────────────────────
 
+
 def resolve_vocab_terms(
     source: Path,
     *,
-    in_doc: Optional[Path] = None,
-    vocab_file: Optional[Path] = None,
-    vocab_from: Optional[Path] = None,
+    in_doc: Path | None = None,
+    vocab_file: Path | None = None,
+    vocab_from: Path | None = None,
     auto_project: bool = False,
 ) -> list[str]:
     """
@@ -338,14 +380,14 @@ def resolve_vocab_terms(
 
     Resolution order (first non-empty result wins):
 
-    1. ``in_doc`` — extract surrounding text from the document the source
+    1. ``in_doc``: extract surrounding text from the document the source
        lives in. Highest signal for image alt text (page-level context).
-    2. ``vocab_file`` — explicit glossary file.
-    3. ``vocab_from`` — single file *or* directory (walked as a project).
-    4. ``auto_project`` — walk upward from ``source`` to find a project
+    2. ``vocab_file``: explicit glossary file.
+    3. ``vocab_from``: single file *or* directory (walked as a project).
+    4. ``auto_project``: walk upward from ``source`` to find a project
        root, then collect text from the whole tree.
     5. Auto-detect a sibling source matching :data:`AUTO_VOCAB_SOURCES`.
-    6. Empty list — no vocabulary available.
+    6. Empty list: no vocabulary available.
 
     Parameters
     ----------
@@ -381,7 +423,7 @@ def resolve_vocab_terms(
             text = vocab_from.read_text(encoding="utf-8")
         return extract_vocabulary(text)
 
-    # Subtitle siblings — for audio / video sources, a prior transcript or
+    # Subtitle siblings: for audio / video sources, a prior transcript or
     # caption file (``.vtt`` / ``.srt`` / ``.txt``) sharing the source's
     # stem is the highest-signal vocabulary available.
     for ext in (".vtt", ".srt", ".txt"):
@@ -390,7 +432,7 @@ def resolve_vocab_terms(
             return extract_vocabulary(sibling.read_text(encoding="utf-8"))
 
     if auto_project:
-        root: Optional[Path] = find_project_root(source.parent)
+        root: Path | None = find_project_root(source.parent)
         if root is not None:
             return extract_vocabulary(collect_project_text(root))
 

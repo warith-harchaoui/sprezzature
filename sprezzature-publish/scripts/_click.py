@@ -1,21 +1,35 @@
 """
-_click — shared Click decorators and helpers for a sprezzature-* skill's scripts.
+_click: the same command-line conveniences as `_argparse.py`, for scripts
+built with Click instead of argparse.
 
-Mirrors the ``_argparse.make_parser`` factory in shape and intent: every
-Click-based script in this skill is registered through
-:func:`sprezzature_command` so the surface stays uniform.
+Click is a third-party library for building command-line interfaces: instead
+of assembling a parser object by hand, you decorate a plain function with
+``@click.command()`` and ``@click.option(...)``, and Click turns the
+function's arguments into command-line flags on its own. This module plays
+the same role for Click-based scripts that `_argparse.py` plays for
+argparse-based ones: every script registers its command through
+:func:`sprezzature_command` so all of this project's command-line tools look
+and behave the same way, whichever library built them.
 
 Why a custom ``Command`` subclass
 ---------------------------------
-Click's default usage line reads ``Usage: prog [OPTIONS] ARGS``. The
-sprezzature test suite checks for the literal ``[-h]`` or ``[--help]`` token
-to confirm a help flag is wired up. The subclass below injects
-``[--help]`` into the usage line so the same assertions that covered
-the argparse era keep passing under Click.
+Click's default usage line reads ``Usage: prog [OPTIONS] ARGS``, with no
+mention of a help flag. This project's test suite checks for the literal
+token ``[-h]`` or ``[--help]`` in that line to confirm a script actually
+offers a help flag: a check written back when every script used argparse,
+which does show it by default. The subclass below injects ``[--help]`` into
+Click's usage line too, so that same check still passes now that some
+scripts use Click.
 
-Duplicated (intentionally) across sprezzature-ui/scripts/, sprezzature-publish/
-scripts/, sprezzature-accessibility/scripts/ so each skill stays self-contained — same
-policy as ``_argparse.py``.
+This file is duplicated on purpose into every sprezzature-* repository,
+one copy each, so a skill stays self-contained and runs on its own:
+including from a downloaded zip, with nothing available but Python's
+standard library. The copies are meant to stay byte-for-byte identical
+apart from ``SKILL_VERSION``, which each repository sets to its own
+released version. So edit the canonical copy rather than this one, unless
+this is it: ``scripts/sync_helpers.py``, in the sprezzature monorepo,
+names the canonical copy, reports the ones that have drifted, and
+propagates the change with ``--apply``.
 
 Author
 ------
@@ -24,10 +38,10 @@ Author
 
 from __future__ import annotations
 
-from typing import Any, Callable, Optional, Sequence
+from collections.abc import Callable, Sequence
+from typing import Any
 
 import click
-
 
 SKILL_VERSION = "1.1.0"
 
@@ -61,7 +75,7 @@ def sprezzature_command(
     name: str,
     *,
     help: str,
-    epilog: Optional[str] = None,
+    epilog: str | None = None,
 ) -> Callable[[Callable[..., Any]], click.Command]:
     """Return a decorator that builds a sprezzature-flavoured Click command.
 
@@ -73,7 +87,7 @@ def sprezzature_command(
     help : str
         One-paragraph description shown above the options table.
     epilog : str or None, optional
-        Text shown below the options table — usually usage examples.
+        Text shown below the options table, usually usage examples.
 
     Returns
     -------
@@ -94,10 +108,13 @@ def sprezzature_command(
         # Version flag mirrors the argparse-era ``-V`` / ``--version`` pair
         # and the ``%(prog)s 0.2.0`` payload so test_cli_help keeps passing.
         cmd = click.version_option(
-            SKILL_VERSION, "-V", "--version", prog_name=name,
+            SKILL_VERSION,
+            "-V",
+            "--version",
+            prog_name=name,
         )(cmd)
         # Stash the canonical prog name so :func:`run_command` can pass it
-        # to Click's ``main(prog_name=...)`` — otherwise the usage line
+        # to Click's ``main(prog_name=...)``; otherwise the usage line
         # shows the raw script filename (``meta_from_ollama.py``) instead
         # of the kebab-cased name the user sees in docs.
         cmd._sprezzature_prog_name = name  # type: ignore[attr-defined]
@@ -106,10 +123,10 @@ def sprezzature_command(
     return decorator
 
 
-def run_command(cmd: click.Command, argv: Optional[Sequence[str]] = None) -> int:
+def run_command(cmd: click.Command, argv: Sequence[str] | None = None) -> int:
     """Invoke a sprezzature Click command and return its integer exit code.
 
-    Bridges the argparse-era contract — ``main(argv=None) -> int`` — to
+    Bridges the argparse-era contract (``main(argv=None) -> int``) to
     Click's standalone-mode default of exiting via :class:`SystemExit`.
 
     The helper:
@@ -136,7 +153,7 @@ def run_command(cmd: click.Command, argv: Optional[Sequence[str]] = None) -> int
         Process exit code returned by the command body, or ``0`` when the
         body returned ``None``.
     """
-    prog_name: Optional[str] = getattr(cmd, "_sprezzature_prog_name", None)
+    prog_name: str | None = getattr(cmd, "_sprezzature_prog_name", None)
     try:
         result = cmd.main(args=argv, prog_name=prog_name, standalone_mode=False)
     except click.exceptions.UsageError as exc:

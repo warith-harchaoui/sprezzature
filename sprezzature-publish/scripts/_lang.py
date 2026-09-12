@@ -2,23 +2,44 @@
 _lang
 =====
 
-Shared, stdlib-first helper for **content-based language handling**: extract the
-visible body text from HTML / Markdown / plain content, then detect its language
-with `langdetect`_. One canonical implementation, duplicated (intentionally)
-across every sprezzature-* skill so each stays self-contained — **keep every copy
-byte-identical** (a test, ``tests/test_bodytext.py``, enforces it).
+A shared helper that answers one question: what human language is this
+piece of text written in? It works in two steps: pull the readable body
+text out of HTML, Markdown, or plain content (stripping tags and markup
+noise a language detector should not see), then hand that text to
+`langdetect`_ to name the language. It leans on Python's own standard
+library wherever it can, reaching for the third-party `langdetect`_
+package only for the one thing the standard library cannot do: guess a
+language from raw text.
 
-There is **no configured default language** anywhere in the suite: callers pass
-the content they actually process (surrounding text, page HTML, the input to
-rewrite, a transcript, chart labels) and the language is detected from it.
+This file is duplicated on purpose into every sprezzature-* repository,
+one copy each, so a skill stays self-contained and runs on its own:
+including from a downloaded zip, with nothing available but Python's
+standard library. The copies are meant to stay byte-for-byte identical. So
+edit the canonical copy rather than this one, unless this is it:
+``scripts/sync_helpers.py``, in the sprezzature monorepo, names the
+canonical copy, reports the ones that have drifted, and propagates the
+change with ``--apply``.
 
-``langdetect`` is opt-in — it lives under each Ollama tool's own
-``requirements-*.txt``. When it is absent, detection degrades to the caller's
-explicit fallback; ``extract_body_text`` itself is pure stdlib.
+This project never hard-codes a default language anywhere. Every caller
+passes the actual content it is working with, whether that is the text
+surrounding an image, a page's HTML, a transcript, or a chart's labels,
+and the language is detected from that content itself.
 
-Determinism note: ``langdetect`` seeds its RNG from the input by default; we pin
-``DetectorFactory.seed`` once at import so the same text always maps to the same
-tag.
+The `langdetect`_ dependency is optional: it is declared only in the
+``requirements-*.txt`` files of the tools that call an Ollama model
+(where getting the language right matters most). When it is missing,
+detection falls back to whatever the caller explicitly passes as a
+default; the text-extraction half of this module, ``extract_body_text``,
+needs nothing beyond the standard library and always works.
+
+Determinism note. `langdetect`_'s algorithm is randomized: unless told
+otherwise, it starts from a "seed," a fixed starting number fed into its
+random-number generator so the sequence of "random" choices it makes is
+actually the same every time. Left unset, that seed would itself be
+derived from unpredictable state, so the same sentence could occasionally
+be classified as two different languages on two different runs. This
+module pins ``DetectorFactory.seed`` to a fixed value once, the moment it
+is imported, so the same text always maps to the same language tag.
 
 .. _langdetect: https://github.com/Mimino666/langdetect
 
@@ -33,8 +54,8 @@ import importlib.util
 import re
 from html.parser import HTMLParser
 
-
 # ── Body-text extraction (stdlib only) ──────────────────────────────────────
+
 
 class _VisibleTextParser(HTMLParser):
     """Collect an HTML document's visible text, skipping ``<script>``,
@@ -69,7 +90,7 @@ def _strip_html(content: str) -> str:
     parser = _VisibleTextParser()
     try:
         parser.feed(content)
-    except Exception:  # noqa: BLE001 — malformed HTML must never crash a caller
+    except Exception:  # noqa: BLE001 (malformed HTML must never crash a caller)
         # Fall back to a crude tag strip so we still return *some* text.
         return re.sub(r"<[^>]+>", " ", content)
     return " ".join(parser.chunks)
@@ -78,17 +99,17 @@ def _strip_html(content: str) -> str:
 #: Ordered Markdown cleanups: each (pattern, replacement) drops syntax while
 #: keeping the human-readable text (link/image *labels*, list *items*, …).
 _MD_SUBS: tuple[tuple[re.Pattern[str], str], ...] = (
-    (re.compile(r"```.*?```", re.S), " "),        # fenced code blocks
-    (re.compile(r"~~~.*?~~~", re.S), " "),         # fenced code blocks (~)
-    (re.compile(r"`[^`]*`"), " "),                  # inline code
-    (re.compile(r"!\[[^\]]*\]\([^)]*\)"), " "),     # images (drop alt + url)
+    (re.compile(r"```.*?```", re.S), " "),  # fenced code blocks
+    (re.compile(r"~~~.*?~~~", re.S), " "),  # fenced code blocks (~)
+    (re.compile(r"`[^`]*`"), " "),  # inline code
+    (re.compile(r"!\[[^\]]*\]\([^)]*\)"), " "),  # images (drop alt + url)
     (re.compile(r"\[([^\]]*)\]\([^)]*\)"), r"\1"),  # links -> label text
-    (re.compile(r"^\s{0,3}#{1,6}\s*", re.M), ""),   # ATX heading markers
-    (re.compile(r"^\s{0,3}>\s?", re.M), ""),         # blockquote markers
+    (re.compile(r"^\s{0,3}#{1,6}\s*", re.M), ""),  # ATX heading markers
+    (re.compile(r"^\s{0,3}>\s?", re.M), ""),  # blockquote markers
     (re.compile(r"^\s{0,3}([*+-]|\d+\.)\s+", re.M), ""),  # list markers
     (re.compile(r"^\s*([-*_]\s*){3,}$", re.M), " "),  # horizontal rules
-    (re.compile(r"[*_~]{1,3}"), ""),                 # emphasis / strikethrough
-    (re.compile(r"<[^>]+>"), " "),                    # inline HTML tags
+    (re.compile(r"[*_~]{1,3}"), ""),  # emphasis / strikethrough
+    (re.compile(r"<[^>]+>"), " "),  # inline HTML tags
 )
 
 
@@ -106,9 +127,12 @@ def _sniff_format(content: str) -> str:
     if "<html" in head or "<body" in head or re.search(r"</[a-z][a-z0-9]*>", head):
         return "html"
     # Markdown signals: fenced code, ATX heading, or a link/image.
-    if re.search(r"(^|\n)\s{0,3}#{1,6}\s", content) or "```" in content \
-            or re.search(r"!\?\[[^\]]*\]\([^)]*\)", content) \
-            or re.search(r"\[[^\]]+\]\([^)]+\)", content):
+    if (
+        re.search(r"(^|\n)\s{0,3}#{1,6}\s", content)
+        or "```" in content
+        or re.search(r"!\?\[[^\]]*\]\([^)]*\)", content)
+        or re.search(r"\[[^\]]+\]\([^)]+\)", content)
+    ):
         return "markdown"
     return "text"
 
@@ -123,7 +147,7 @@ def extract_body_text(content: str, fmt: str = "auto") -> str:
     Parameters
     ----------
     content : str
-        Raw source — an HTML document/fragment, a Markdown document, or plain
+        Raw source: an HTML document/fragment, a Markdown document, or plain
         text.
     fmt : str, optional
         ``"html"`` / ``"htm"``, ``"markdown"`` / ``"md"``, ``"text"`` /
@@ -154,6 +178,7 @@ def extract_body_text(content: str, fmt: str = "auto") -> str:
 
 # ── Language detection ──────────────────────────────────────────────────────
 
+
 def _have_langdetect() -> bool:
     """Return ``True`` when ``langdetect`` is importable."""
     return importlib.util.find_spec("langdetect") is not None
@@ -163,6 +188,7 @@ def _have_langdetect() -> bool:
 # importable on lightweight (stdlib-only) installs.
 if _have_langdetect():
     from langdetect import DetectorFactory  # type: ignore[import-not-found]
+
     DetectorFactory.seed = 0
 
 
@@ -200,7 +226,10 @@ def detect_text_language(text: str, fallback: str = "en") -> str:
         # ``langdetect.detect`` returns BCP-47 tags like "en", "fr",
         # "zh-cn"; we keep only the base subtag.
         from langdetect import detect  # type: ignore[import-not-found]
-        from langdetect.lang_detect_exception import LangDetectException  # type: ignore[import-not-found]
+        from langdetect.lang_detect_exception import (
+            LangDetectException,  # type: ignore[import-not-found]
+        )
+
         return detect(text).split("-")[0].lower()[:2]
     except LangDetectException:
         return fallback
@@ -211,7 +240,7 @@ def detect_language(content: str, fmt: str = "auto", fallback: str = "en") -> st
 
     Convenience wrapper: ``detect_text_language(extract_body_text(content,
     fmt), fallback)``. This is the one call every skill should use when it has
-    raw HTML / Markdown / text and wants the language — no configured default,
+    raw HTML / Markdown / text and wants the language, with no configured default,
     always detected from the content.
 
     Parameters
@@ -233,17 +262,38 @@ def detect_language(content: str, fmt: str = "auto", fallback: str = "en") -> st
 
 #: English names for the languages we can name to an LLM in a prompt. Lets ANY
 #: detected language be requested by name ("Write ... in Korean.") instead of
-#: silently collapsing to a hardcoded set — a language whose two-letter code is
+#: silently collapsing to a hardcoded set. A language whose two-letter code is
 #: here gets output in that language even when a skill has no curated,
 #: written-in-the-target-language instruction for it.
 LANGUAGE_NAMES: dict[str, str] = {
-    "en": "English", "fr": "French", "es": "Spanish", "de": "German",
-    "it": "Italian", "pt": "Portuguese", "nl": "Dutch", "ru": "Russian",
-    "zh": "Chinese", "ja": "Japanese", "ko": "Korean", "ar": "Arabic",
-    "hi": "Hindi", "tr": "Turkish", "pl": "Polish", "sv": "Swedish",
-    "no": "Norwegian", "da": "Danish", "fi": "Finnish", "cs": "Czech",
-    "el": "Greek", "he": "Hebrew", "id": "Indonesian", "uk": "Ukrainian",
-    "ro": "Romanian", "hu": "Hungarian", "vi": "Vietnamese", "th": "Thai",
+    "en": "English",
+    "fr": "French",
+    "es": "Spanish",
+    "de": "German",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "nl": "Dutch",
+    "ru": "Russian",
+    "zh": "Chinese",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "ar": "Arabic",
+    "hi": "Hindi",
+    "tr": "Turkish",
+    "pl": "Polish",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "da": "Danish",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "el": "Greek",
+    "he": "Hebrew",
+    "id": "Indonesian",
+    "uk": "Ukrainian",
+    "ro": "Romanian",
+    "hu": "Hungarian",
+    "vi": "Vietnamese",
+    "th": "Thai",
 }
 
 
