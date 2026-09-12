@@ -61,6 +61,7 @@ from __future__ import annotations
 import argparse
 import ast
 import csv
+import html
 import io
 import json
 import re
@@ -69,7 +70,7 @@ import sys
 import zipfile
 from pathlib import Path
 from xml.etree import ElementTree
-from typing import Iterable, Sequence
+from typing import Dict, Iterable, Sequence
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent.parent
 
@@ -309,37 +310,62 @@ def svg_faces_for_theme(theme: str = "corporate") -> Tuple[str, ...]:
 
 
 def load_rows(
-    path: "str | Path" = "data.csv",
+    path: "str | Path | None" = None,
     *,
     text_columns: Sequence[str] = (),
 ) -> List[Dict[str, Any]]:
     """
-    Read ``data.csv`` back into the row dicts the generator expects.
+    Read the kit's data file back into the row dicts the generator expects.
 
-    Round-trips what :mod:`csv` flattens. Numbers come back as ``int`` or
-    ``float`` rather than strings, ``true`` / ``false`` as booleans, an empty
-    cell as ``None``, and a cell holding a JSON array or object (a few charts
-    carry a list per row — a bullet chart's qualitative bands, a horizon
-    chart's series, a set-membership list) is parsed back into that list or
-    dict. Anything else stays the string it was.
+    Two formats, chosen by what the chart actually holds. A chart whose rows
+    are flat — one number per column — ships ``data.csv``, because the point
+    of CSV is that it opens in a spreadsheet. A chart whose rows carry a list
+    (a bullet chart's qualitative bands, a horizon chart's series, a
+    set-membership list) ships ``data.json`` instead: forcing those into a
+    cell gives you ``"[""Email"", ""SMS""]"``, which round-trips fine and is
+    unreadable, losing the one advantage CSV had.
+
+    From CSV, values are coerced back: numbers to ``int`` or ``float``,
+    ``true`` / ``false`` to booleans, an empty cell to ``None``. JSON needs
+    none of that — it kept the types.
 
     Parameters
     ----------
     path : str or pathlib.Path, optional
-        CSV to read. Defaults to ``data.csv`` beside the generator.
+        Data file to read. ``None`` (the default) looks beside the generator
+        for ``data.json`` first, then ``data.csv``.
     text_columns : sequence of str, optional
         Columns to leave as text even when they look numeric. A year used as
         a category label ("2023") is the usual case: CSV cannot distinguish
-        it from the number 2023, and the chart wants the label.
+        it from the number 2023, and the chart wants the label. Ignored for
+        JSON, which never lost the distinction.
 
     Returns
     -------
     list of dict
-        One dict per data row, keyed by the CSV header.
+        One dict per data row.
+
+    Raises
+    ------
+    FileNotFoundError
+        If `path` is given and missing, or if neither default file is there.
     """
-    source = Path(path)
-    if not source.is_absolute():
-        source = Path(__file__).resolve().parent / source
+    here = Path(__file__).resolve().parent
+    if path is None:
+        for candidate in ("data.json", "data.csv"):
+            if (here / candidate).exists():
+                source = here / candidate
+                break
+        else:
+            raise FileNotFoundError("no data.json or data.csv beside this script")
+    else:
+        source = Path(path)
+        if not source.is_absolute():
+            source = here / source
+
+    if source.suffix == ".json":
+        return json.loads(source.read_text(encoding="utf-8"))
+
     keep = set(text_columns)
     with source.open(newline="", encoding="utf-8") as handle:
         return [
@@ -611,8 +637,10 @@ def text_columns(rows: Sequence[dict]) -> tuple[str, ...]:
 
 
 def _main_preamble(rows: Sequence[dict]) -> str:
-    """The ``data.csv`` loader spliced above a generator's ``__main__``."""
-    keep = text_columns(rows)
+    """The data loader spliced above a generator's ``__main__``."""
+    name = data_filename(rows)
+    # JSON kept the types, so the text-column rescue is a CSV problem only.
+    keep = text_columns(rows) if name.endswith(".csv") else ()
     argument = f", text_columns={keep!r}" if keep else ""
     note = (
         f"\n# {', '.join(keep)} stays text: the values look numeric but the\n"
@@ -620,26 +648,65 @@ def _main_preamble(rows: Sequence[dict]) -> str:
         if keep
         else ""
     )
-    return _MAIN_PREAMBLE.format(argument=argument, note=note)
+    return _MAIN_PREAMBLE.format(argument=argument, note=note, name=name)
 
 
 #: Spliced in just above the generator's ``__main__``. The repo's generators
 #: read a module-level ``DEMO_DATA``; a kit reads the CSV beside them, so the
 #: reader's first experiment is "edit the numbers and run it again".
 _MAIN_PREAMBLE: str = '''
-# ── kit: the data comes from data.csv ─────────────────────────────────────
+# ── kit: the data comes from {name} ──────────────────────────────────────
 # The generator keeps its own DEMO_DATA above as a fallback and as a record
-# of the expected column names. When data.csv is present (it ships with this
-# kit), it wins: edit the CSV, re-run this file, and the figure changes.{note}
+# of the expected column names. When {name} is present (it ships with this
+# kit), it wins: edit the data, re-run this file, and the figure changes.{note}
 from sprezzature_svg import load_rows  # noqa: E402
 
 try:
-    DEMO_DATA = load_rows("data.csv"{argument}) or DEMO_DATA
+    DEMO_DATA = load_rows("{name}"{argument}) or DEMO_DATA
 except FileNotFoundError:
     pass
 
 
 '''
+
+
+def is_tabular(rows: Sequence[dict]) -> bool:
+    """
+    True when every value is a scalar, so the rows fit a real table.
+
+    The kits ship CSV because CSV opens in a spreadsheet. That advantage
+    disappears the moment a row carries a list: the cell becomes
+    ``"[""Email"", ""SMS""]"``, which round-trips correctly and cannot be
+    read or edited by the spreadsheet the format was chosen for. Four charts
+    in the catalogue are in that case — a bullet chart's qualitative bands, a
+    horizon chart's series, and the two set-membership charts — and they ship
+    JSON instead.
+
+    Parameters
+    ----------
+    rows : sequence of dict
+        The generator's ``DEMO_DATA``.
+
+    Returns
+    -------
+    bool
+        ``True`` for CSV, ``False`` for JSON.
+    """
+    return all(
+        not isinstance(value, (list, dict, tuple))
+        for row in rows
+        for value in row.values()
+    )
+
+
+def data_filename(rows: Sequence[dict]) -> str:
+    """``"data.csv"`` or ``"data.json"``, whichever `rows` deserve."""
+    return "data.csv" if is_tabular(rows) else "data.json"
+
+
+def rows_to_json(rows: Sequence[dict]) -> str:
+    """Serialise the demo rows as indented JSON, trailing newline included."""
+    return json.dumps(list(rows), ensure_ascii=False, indent=2) + "\n"
 
 
 def rows_to_csv(rows: Sequence[dict]) -> str:
@@ -691,6 +758,35 @@ def discover_cards(page: Path) -> list[str]:
         if match.group(1) not in seen:
             seen.append(match.group(1))
     return seen
+
+
+
+def card_titles(page: Path) -> Dict[str, str]:
+    """
+    Map gallery slug to the human name its card shows.
+
+    Read from the page rather than derived from the slug: "prcurve" is
+    "Precision-recall curve" and "sfdp-largegraph" is "Large graph", and no
+    amount of de-hyphenating gets there.
+
+    Parameters
+    ----------
+    page : Path
+        A figures gallery page.
+
+    Returns
+    -------
+    dict of str to str
+        Slug to display name; slugs whose card has no bold name are absent.
+    """
+    html = page.read_text(encoding="utf-8")
+    titles: Dict[str, str] = {}
+    for block in _FIGURE_BLOCK.finditer(html):
+        slug_match = _CARD_SLUG.search(block.group(0))
+        name_match = re.search(r'<span class="font-medium">([^<]+)</span>', block.group(0))
+        if slug_match and name_match:
+            titles[slug_match.group(1)] = name_match.group(1).strip()
+    return titles
 
 
 def resolve_generator(slug: str, scripts: Path) -> Path:
@@ -751,16 +847,368 @@ def detect_requirements(sources: Iterable[str]) -> list[str]:
 
 
 def requirements_text(pins: Sequence[str]) -> str:
-    """The kit's ``requirements.txt``, pinned exactly, and honest when empty."""
-    header = (
+    """
+    The kit's ``requirements.txt``, pinned exactly.
+
+    Only called when there is something to pin. A file whose entire content
+    says "you need nothing" is worse than no file: it is one more thing to
+    open, and it invites a ``pip install -r`` that does nothing. Most kits in
+    the catalogue are standard-library-only and simply do not ship one — see
+    :func:`build_kit`.
+    """
+    return (
         "# Pinned to the versions this kit was built and verified against.\n"
         "# The generator computes its own geometry and writes its own SVG, so\n"
         "# there is no plotting library here and nothing to install beyond this.\n"
+        "\n" + "\n".join(pins) + "\n"
     )
-    if not pins:
-        return header + "#\n# This kit needs nothing: it runs on the Python standard library alone.\n"
-    return header + "\n" + "\n".join(pins) + "\n"
 
+
+
+def data_script(slug: str, module: str, rows: Sequence[dict], french: bool) -> str:
+    """
+    The kit's ``make_data.py``: the rows as Python, written out as data.
+
+    Splits the kit the way the figure repository is split — one file computes,
+    the other draws. Here the "computation" is only a literal, but keeping it
+    a separate step is what makes the data file a real seam rather than a
+    dump: edit the Python for structure, edit the data for numbers, and the
+    figure redraws from whichever you touched.
+
+    The format follows the rows. Flat rows become ``data.csv``, which opens
+    in a spreadsheet; rows carrying a list become ``data.json``, because a
+    list crammed into a CSV cell is exactly what a spreadsheet cannot show.
+
+    Parameters
+    ----------
+    slug : str
+        Gallery slug, for the docstring.
+    module : str
+        The drawing script's file name, quoted in the usage note.
+    rows : sequence of dict
+        The generator's ``DEMO_DATA``.
+    french : bool
+        Write the prose in French.
+
+    Returns
+    -------
+    str
+        A standalone script, standard library only.
+    """
+    name = data_filename(rows)
+    tabular = name.endswith(".csv")
+    if french:
+        why = (
+            "CSV, qui est la forme éditable — un tableur, un export, un vrai flux."
+            if tabular
+            else "JSON, parce que les lignes portent des listes : les écraser dans\n"
+            "une cellule de tableur donne du texte illisible."
+        )
+        head = (
+            f"make_data — écrit les données de la figure « {slug} » dans {name}.\n\n"
+            "Les lignes sont ci-dessous, en Python : c'est la forme lisible, celle\n"
+            f"où l'on voit les colonnes et leur type. Lancer ce script les écrit en\n"
+            f"{why}\n\n"
+            f"    python3 make_data.py     # écrit {name}\n"
+            f"    python3 {module}   # lit {name} et dessine\n\n"
+            f"Modifier l'un ou l'autre marche : la figure lit toujours {name}."
+        )
+    else:
+        why = (
+            "CSV, which is the editable form — a spreadsheet, an export, a real feed."
+            if tabular
+            else "JSON, because the rows carry lists: flattening those into a\n"
+            "spreadsheet cell produces text nobody can read."
+        )
+        head = (
+            f"make_data — write the data behind the \"{slug}\" figure to {name}.\n\n"
+            "The rows are below, as Python: the readable form, where the columns\n"
+            f"and their types are visible. Running this writes them as\n"
+            f"{why}\n\n"
+            f"    python3 make_data.py     # writes {name}\n"
+            f"    python3 {module}   # reads {name} and draws\n\n"
+            f"Editing either works: the figure always reads {name}."
+        )
+
+    literal = json.dumps(list(rows), ensure_ascii=False, indent=4)
+    # JSON is valid Python for these values except for the three singletons.
+    for a, b in ((": true", ": True"), (": false", ": False"), (": null", ": None")):
+        literal = literal.replace(a, b)
+
+    if tabular:
+        rows_note = (
+            "#: The figure's rows, one flat record each — which is why this kit\n"
+            "#: ships CSV: the file opens in a spreadsheet and edits like one."
+        )
+        writer = '''def write_data(path: "str | Path" = "data.csv") -> Path:
+    """Write :data:`ROWS` to `path` as CSV and report where it went."""
+    out = Path(path)
+    if not out.is_absolute():
+        out = Path(__file__).resolve().parent / out
+
+    columns: List[str] = []
+    for row in ROWS:
+        for key in row:
+            if key not in columns:
+                columns.append(key)
+
+    with out.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\\n")
+        writer.writeheader()
+        writer.writerows(ROWS)
+    print(f"wrote {out}  ({len(ROWS)} rows)")
+    return out'''
+        imports = "import csv\nfrom pathlib import Path"
+    else:
+        rows_note = (
+            "#: The figure's rows. Each one carries a list, so this kit ships\n"
+            "#: JSON: a list squeezed into a CSV cell round-trips but stops\n"
+            "#: being readable, which was the only reason to prefer CSV."
+        )
+        writer = '''def write_data(path: "str | Path" = "data.json") -> Path:
+    """Write :data:`ROWS` to `path` as JSON and report where it went."""
+    out = Path(path)
+    if not out.is_absolute():
+        out = Path(__file__).resolve().parent / out
+    out.write_text(json.dumps(ROWS, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    print(f"wrote {out}  ({len(ROWS)} rows)")
+    return out'''
+        imports = "import json\nfrom pathlib import Path"
+
+    return f'''"""
+{head}
+
+Author
+------
+`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+"""
+
+from __future__ import annotations
+
+{imports}
+from typing import Any, Dict, List
+
+{rows_note}
+ROWS: List[Dict[str, Any]] = {literal}
+
+
+{writer}
+
+
+if __name__ == "__main__":
+    write_data()
+'''
+
+
+def kit_page(
+    slug: str,
+    title: str,
+    module: str,
+    pins: Sequence[str],
+    french: bool,
+    rows: Sequence[dict] = (),
+) -> str:
+    """
+    The kit's ``index.html``: a page that opens the figure properly.
+
+    Exists because the two obvious ways to look at the SVG both lose
+    something. Double-clicking the file works but gives no context; putting it
+    in an ``<img>`` tag sandboxes it, which kills the CSS ``:hover`` the
+    tooltips are built on *and* blocks the linked webfont. ``<object>`` keeps
+    both, so that is what this page uses.
+
+    Fullscreen is a labelled button rather than a click handler on the figure:
+    a click belongs to the mark under it. And ``:fullscreen`` sets
+    ``overflow:auto``, because a promoted element loses the page's scrolling
+    and a tall figure would have its lower half simply unreachable.
+
+    Parameters
+    ----------
+    slug : str
+        Gallery slug; names the SVG the page loads.
+    title : str
+        Human-readable figure name for the heading.
+    module : str
+        The drawing script, quoted in the reproduce note.
+    pins : sequence of str
+        Pinned requirements, or empty for a standard-library-only kit.
+    french : bool
+        Write the prose in French.
+    rows : sequence of dict, optional
+        The figure's rows, consulted only to name the data file the
+        reproduce note points at — CSV for flat rows, JSON otherwise.
+
+    Returns
+    -------
+    str
+        A complete, self-contained HTML page.
+    """
+    install = "python3 -m pip install -r requirements.txt && " if pins else ""
+    data_name = data_filename(rows) if rows else "data.csv"
+    data_word = ("le CSV" if data_name.endswith(".csv") else "le JSON") if french \
+        else ("CSV" if data_name.endswith(".csv") else "JSON")
+    if french:
+        lang, heading = "fr", title
+        lede = ("La figure telle qu'elle est produite par le script du kit. "
+                "Survolez une marque pour son relevé exact.")
+        hint_b, hint = "Survolez ou cliquez", (
+            "— le détail apparaît au pointeur. Un clic l'épingle, ce qui est le "
+            "seul moyen de lire une valeur sur écran tactile ; <kbd>Tab</kbd> "
+            "parcourt les marques au clavier. Tout est en CSS : la figure ne "
+            "contient pas une ligne de JavaScript.")
+        fs_on, fs_off = "⤡ Quitter le plein écran", "⤢ Plein écran"
+        repro_h = "Refaire la figure"
+        repro = (f"{install}python3 make_data.py && python3 {module}")
+        repro_note = (f"<code>make_data.py</code> écrit <code>{data_name}</code>, "
+                      f"<code>{module}</code> le lit et dessine. Modifiez "
+                      f"{data_word}, relancez : la figure change.")
+        foot = "Extrait de la galerie"
+    else:
+        lang, heading = "en", title
+        lede = ("The figure exactly as the kit's script produces it. "
+                "Hover a mark for its precise reading.")
+        hint_b, hint = "Hover or click", (
+            "— the detail follows the pointer. A click pins it, which is the "
+            "only way to read a value on a touch screen; <kbd>Tab</kbd> walks "
+            "the marks from the keyboard. It is all CSS: the figure contains "
+            "no JavaScript at all.")
+        fs_on, fs_off = "⤡ Leave fullscreen", "⤢ Fullscreen"
+        repro_h = "Rebuild it"
+        repro = (f"{install}python3 make_data.py && python3 {module}")
+        repro_note = (f"<code>make_data.py</code> writes <code>{data_name}</code>, "
+                      f"<code>{module}</code> reads it and draws. Edit the "
+                      f"{data_word}, run again, the figure changes.")
+        foot = "From the gallery at"
+
+    return f"""<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(heading)}</title>
+<style>
+  :root {{
+    --ink:#1D1D1F; --secondary:#6E6E73; --line:#E5E5EA; --paper:#FFFFFF; --accent:#007AFF;
+  }}
+  @media (prefers-color-scheme: dark) {{
+    :root {{ --ink:#F2F2F7; --secondary:#9A9AA0; --line:#2C2C2E; --paper:#0B0B0C; --accent:#0A84FF; }}
+  }}
+  * {{ box-sizing: border-box; }}
+  body {{
+    margin:0; padding:40px 24px 64px; background:var(--paper); color:var(--ink);
+    font:15px/1.55 Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }}
+  main {{ max-width:1180px; margin:0 auto; }}
+  h1 {{ font-size:25px; line-height:1.2; margin:0 0 6px; letter-spacing:-0.2px; }}
+  h2 {{ font-size:16px; margin:32px 0 8px; }}
+  .lede {{ color:var(--secondary); margin:0 0 22px; max-width:62ch; }}
+  .hint {{
+    display:flex; gap:10px; align-items:baseline;
+    border-left:3px solid var(--accent); padding:10px 14px; margin:0 0 20px;
+    background:color-mix(in srgb, var(--accent) 7%, transparent);
+    border-radius:0 8px 8px 0; font-size:14px; max-width:78ch;
+  }}
+  .hint b {{ font-weight:600; }}
+  kbd {{
+    font-family:"Roboto Mono", ui-monospace, monospace; font-size:12px;
+    border:1px solid var(--line); border-bottom-width:2px; border-radius:5px;
+    padding:0 5px; background:color-mix(in srgb, var(--secondary) 8%, transparent);
+  }}
+  .toolbar {{ display:flex; margin:0 0 14px; }}
+  .toolbar button {{
+    font:inherit; font-size:14px; padding:7px 15px; min-height:40px;
+    border:1px solid var(--line); border-radius:9px;
+    background:transparent; color:var(--secondary); cursor:pointer;
+  }}
+  .toolbar button:hover {{ border-color:var(--accent); color:var(--accent); }}
+  .toolbar button:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
+  .frame {{
+    border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#FFFFFF;
+  }}
+  /* Fullscreen promotes the element out of the page, so it loses the page's
+     own scrolling: without this a tall figure has its lower half unreachable.
+     `auto` overrides the `hidden` above, which only clips the rounded corners. */
+  .frame:fullscreen {{
+    overflow:auto; border:0; border-radius:0; padding:16px;
+    -webkit-overflow-scrolling:touch;
+  }}
+  /* <object>, not <img>: an image element sandboxes the SVG, killing both the
+     CSS :hover the tooltips rely on and the linked webfont. */
+  .frame object {{ display:block; width:100%; height:auto; border:0; }}
+  pre {{
+    background:color-mix(in srgb, var(--secondary) 10%, transparent);
+    padding:12px 14px; border-radius:9px; overflow-x:auto; font-size:13px;
+  }}
+  code {{ font-family:"Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px; }}
+  p {{ max-width:74ch; }}
+  footer {{
+    margin-top:40px; padding-top:16px; border-top:1px solid var(--line);
+    color:var(--secondary); font-size:13px;
+  }}
+  a {{ color:var(--accent); }}
+</style>
+</head>
+<body>
+<main>
+  <h1>{html.escape(heading)}</h1>
+  <p class="lede">{lede}</p>
+
+  <p class="hint"><b>{hint_b}</b> <span>{hint}</span></p>
+
+  <div class="toolbar">
+    <button id="fs" type="button" aria-pressed="false">{fs_off}</button>
+  </div>
+
+  <div class="frame" tabindex="-1">
+    <object id="fig" data="{slug}.svg" type="image/svg+xml" aria-label="{html.escape(heading)}">
+      <a href="{slug}.svg">{html.escape(heading)} (SVG)</a>
+    </object>
+  </div>
+
+  <h2>{repro_h}</h2>
+  <pre><code>{repro}</code></pre>
+  <p>{repro_note}</p>
+
+  <footer>
+    {foot} <a href="https://sprezzature.ai/figures.html">sprezzature.ai/figures.html</a>
+  </footer>
+</main>
+
+<script>
+  // The page's only script, and none of it is the figure's: the tooltips are
+  // pure CSS and keep working with scripting switched off.
+  const frame = document.querySelector('.frame');
+  const fig = document.getElementById('fig');
+  const fsBtn = document.getElementById('fs');
+
+  fsBtn.addEventListener('click', () => {{
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (frame.requestFullscreen) frame.requestFullscreen();
+  }});
+
+  // Label follows the real mode, including when the reader leaves with Escape.
+  // Focusing the frame is what lets the arrow keys scroll it in fullscreen.
+  document.addEventListener('fullscreenchange', () => {{
+    const on = document.fullscreenElement === frame;
+    fsBtn.textContent = on ? '{fs_on}' : '{fs_off}';
+    fsBtn.setAttribute('aria-pressed', String(on));
+    if (on) frame.focus();
+  }});
+
+  // Escape unpins a latched tooltip. The pin is :focus inside the SVG, so this
+  // only has to blur — and it needs same-origin access, which a file:// page
+  // does not have. Clicking elsewhere unpins either way.
+  document.addEventListener('keydown', e => {{
+    if (e.key !== 'Escape') return;
+    try {{
+      const inner = fig.contentDocument && fig.contentDocument.activeElement;
+      if (inner && inner.blur) inner.blur();
+    }} catch (_) {{ /* cross-origin under file://; the click path still works */ }}
+  }});
+</script>
+</body>
+</html>
+"""
 
 def readme_text(
     slug: str,
@@ -769,6 +1217,7 @@ def readme_text(
     *,
     french: bool,
     bilingual: bool = False,
+    rows: Sequence[dict] = (),
 ) -> str:
     """
     The kit's README, in English or French.
@@ -787,6 +1236,8 @@ def readme_text(
         Pinned requirement lines, or empty for a stdlib-only kit.
     french : bool
         Write ``LISEZMOI.md`` rather than ``README.md``.
+    rows : sequence of dict, optional
+        The figure's rows, consulted only to name the data file in the table.
     bilingual : bool, optional
         Whether the generator carries French chrome text, in which case the
         README says so. This is why one kit serves both gallery pages.
@@ -796,6 +1247,31 @@ def readme_text(
         if pins
         else "# nothing to install — the standard library is enough"
     )
+    # A kit with no third-party imports ships no requirements.txt at all, so
+    # the file table must not list one.
+    if pins:
+        requirements_row = (
+            "| `requirements.txt` | Versions épinglées, exactement celles vérifiées. |"
+            if french
+            else "| `requirements.txt` | Pinned to the exact versions this was verified against. |"
+        )
+    else:
+        requirements_row = (
+            "| — | Aucune dépendance : ce kit tourne sur la bibliothèque standard seule. |"
+            if french
+            else "| — | No dependencies: this kit runs on the standard library alone. |"
+        )
+    page_row = (
+        "| `index.html` | La page qui ouvre la figure : plein écran, survol, clic, clavier. |"
+        if french
+        else "| `index.html` | The page that opens the figure: fullscreen, hover, click, keyboard. |"
+    )
+    # CSV where the rows are a real table, JSON where they carry lists: a
+    # list flattened into a spreadsheet cell is the one thing CSV cannot show.
+    data_name = data_filename(rows) if rows else "data.csv"
+    tabular = data_name.endswith(".csv")
+    data_why_fr = "" if tabular else " (en JSON : chaque ligne porte une liste)"
+    data_why_en = "" if tabular else " (JSON, because each row carries a list)"
     if french:
         language_note = (
             f"\nLa figure existe aussi en français : `python3 {module} --language fr`.\n"
@@ -820,9 +1296,10 @@ la modifier. Rien à compiler, pas de compte, pas de framework.
 |---|---|
 | `{module}` | Le générateur. C'est le fichier intéressant : il calcule la géométrie et écrit le SVG balise par balise. |
 | `sprezzature_svg.py` | Le moteur de dessin : échelles, chemins SVG, palette, placement des étiquettes, survol. |
-| `data.csv` | Les données. Modifiez-les, relancez, la figure change. |
+| `{data_name}` | Les données{data_why_fr}. Modifiez-les, relancez, la figure change. |
 | `{slug}.svg` | La figure déjà produite, interactive. |
-| `requirements.txt` | Versions épinglées, exactement celles vérifiées. |
+{page_row}
+{requirements_row}
 
 ## Lancer
 
@@ -854,7 +1331,7 @@ la figure retombe sur une police système. Tout le reste s'affiche normalement.
 
 ## Modifier
 
-Changez les nombres de `data.csv` et relancez. Pour aller plus loin,
+Changez les nombres de `{data_name}` et relancez. Pour aller plus loin,
 `python3 {module} --help` liste les options disponibles (titre, dimensions,
 niveau d'accessibilité, thème…).
 
@@ -875,9 +1352,10 @@ rebuild and change it. Nothing to compile, no account, no framework.
 |---|---|
 | `{module}` | The generator. This is the interesting one: it computes the geometry and writes the SVG tag by tag. |
 | `sprezzature_svg.py` | The drawing engine: scales, SVG paths, palette, label placement, hover chrome. |
-| `data.csv` | The data. Edit it, re-run, the figure changes. |
+| `{data_name}` | The data{data_why_en}. Edit it, re-run, the figure changes. |
 | `{slug}.svg` | The figure as built, interactive. |
-| `requirements.txt` | Pinned to the exact versions this was verified against. |
+{page_row}
+{requirements_row}
 
 ## Run it
 
@@ -908,7 +1386,7 @@ system typeface. Everything else renders normally.
 
 ## Change it
 
-Edit the numbers in `data.csv` and run it again. Beyond that,
+Edit the numbers in `{data_name}` and run it again. Beyond that,
 `python3 {module} --help` lists the options available (title, dimensions,
 accessibility level, theme, …).
 
@@ -933,7 +1411,7 @@ Warith Harchaoui, Ph.D.
 #: wrapper plus ``inline-block`` gets the same result out of classes that are
 #: already compiled, and leaves the CSS untouched.
 _KIT_LINK: str = (
-    '<div class="mt-2"><a href="{prefix}kits/{slug}.zip" download '
+    '<div class="mt-2"><a href="{prefix}{slug}.zip" download '
     'class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 '
     "text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext "
     "focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue "
@@ -945,7 +1423,7 @@ _KIT_LINK: str = (
 #: rather than stacking a second link onto every card. Tolerates the
 #: unwrapped shape an earlier build wrote.
 _EXISTING_LINK = re.compile(
-    r'\s*(?:<div class="mt-2">)?<a href="(?:\.\./)?kits/[a-z0-9_-]+\.zip".*?</a>(?:</div>)?',
+    r'\s*(?:<div class="mt-2">)?<a href="(?:\.\./)?kits/(?:fr/)?[a-z0-9_-]+\.zip".*?</a>(?:</div>)?',
     re.DOTALL,
 )
 
@@ -978,7 +1456,9 @@ def link_gallery(page: Path, sizes: dict[str, int], *, french: bool) -> int:
     int
         How many cards were linked.
     """
-    prefix = "../" if french else ""
+    # French cards point into kits/fr/, so a reader who found the figure on the
+    # French page does not open the zip into English prose.
+    prefix = "../kits/fr/" if french else "kits/"
     html = page.read_text(encoding="utf-8")
     linked = 0
 
@@ -1006,7 +1486,16 @@ def link_gallery(page: Path, sizes: dict[str, int], *, french: bool) -> int:
     return linked
 
 
-def build_kit(slug: str, scripts: Path, bundle: str, out_dir: Path, *, check: bool) -> tuple[bool, str]:
+def build_kit(
+    slug: str,
+    scripts: Path,
+    bundle: str,
+    out_dir: Path,
+    *,
+    check: bool,
+    title: str = "",
+    language: str = "en",
+) -> tuple[bool, str]:
     """
     Build one kit: assemble it, run it, and zip what ran.
 
@@ -1027,6 +1516,14 @@ def build_kit(slug: str, scripts: Path, bundle: str, out_dir: Path, *, check: bo
         Where ``<slug>.zip`` lands.
     check : bool
         Verify only; write no zip.
+    title : str, optional
+        The name the gallery card shows, used as the page heading. Falls back
+        to the slug when the card could not be read.
+    language : str, optional
+        ``"en"`` or ``"fr"``. A reader who found the figure on the French page
+        should not open the zip into English prose, so each language gets its
+        own archive: its own README, its own page, and — for the generators
+        that take a ``--language`` flag — its own chrome text in the SVG.
 
     Returns
     -------
@@ -1038,6 +1535,8 @@ def build_kit(slug: str, scripts: Path, bundle: str, out_dir: Path, *, check: bo
 
     generator = resolve_generator(slug, scripts)
     module = f"make_{slug.replace('-', '_')}.py"
+    title = title or slug
+    french = language == "fr"
 
     sys.path.insert(0, str(scripts))
     try:
@@ -1074,19 +1573,30 @@ def build_kit(slug: str, scripts: Path, bundle: str, out_dir: Path, *, check: bo
             shutil.copy2(origin, target)
         (kit / module).write_text(source, encoding="utf-8")
         (kit / "sprezzature_svg.py").write_text(bundle, encoding="utf-8")
-        (kit / "data.csv").write_text(rows_to_csv(demo), encoding="utf-8")
-        (kit / "requirements.txt").write_text(requirements_text(pins), encoding="utf-8")
-        (kit / "README.md").write_text(
-            readme_text(slug, module, pins, french=False, bilingual=bilingual), encoding="utf-8"
+        data_name = data_filename(demo)
+        payload = rows_to_csv(demo) if data_name.endswith(".csv") else rows_to_json(demo)
+        (kit / data_name).write_text(payload, encoding="utf-8")
+        (kit / "make_data.py").write_text(
+            data_script(slug, module, demo, french=french), encoding="utf-8"
         )
-        (kit / "LISEZMOI.md").write_text(
-            readme_text(slug, module, pins, french=True, bilingual=bilingual), encoding="utf-8"
+        if pins:
+            (kit / "requirements.txt").write_text(requirements_text(pins), encoding="utf-8")
+        readme_name = "LISEZMOI.md" if french else "README.md"
+        (kit / readme_name).write_text(
+            readme_text(slug, module, pins, french=french, bilingual=bilingual, rows=demo),
+            encoding="utf-8",
+        )
+        (kit / "index.html").write_text(
+            kit_page(slug, title, module, pins, french=french, rows=demo), encoding="utf-8"
         )
 
         # Run it the way a reader would: plain python, from inside the kit,
         # with PYTHONPATH cleared so nothing resolves back to the checkout.
+        argv = [sys.executable, module]
+        if bilingual:
+            argv += ["--language", language]
         result = subprocess.run(
-            [sys.executable, module],
+            argv,
             cwd=kit,
             capture_output=True,
             text=True,
@@ -1118,8 +1628,9 @@ def build_kit(slug: str, scripts: Path, bundle: str, out_dir: Path, *, check: bo
         if check:
             return True, f"{slug}: ok ({size_kb:.0f} KB SVG, {', '.join(pins) or 'stdlib only'})"
 
-        out_dir.mkdir(parents=True, exist_ok=True)
-        archive = out_dir / f"{slug}.zip"
+        target_dir = out_dir / "fr" if french else out_dir
+        target_dir.mkdir(parents=True, exist_ok=True)
+        archive = target_dir / f"{slug}.zip"
         with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as zf:
             for path in sorted(kit.rglob("*")):
                 if path.is_file() and "__pycache__" not in path.parts:
@@ -1138,26 +1649,49 @@ def build_all(slugs: Sequence[str], scripts: Path, out_dir: Path, *, check: bool
     card it did not rebuild.
     """
     bundle = bundle_source(scripts.parent)
+    titles = {
+        "en": card_titles(REPO_ROOT / GALLERY_PAGES[0]),
+        "fr": card_titles(REPO_ROOT / GALLERY_PAGES[1]),
+    }
     failures: list[str] = []
-    for slug in slugs:
-        ok, report = build_kit(slug, scripts, bundle, out_dir, check=check)
-        print(("  " if ok else "  FAIL ") + report)
-        if not ok:
-            failures.append(report)
-    print(f"\n{len(slugs) - len(failures)}/{len(slugs)} kit(s) built")
+    for language in ("en", "fr"):
+        print(f"\n── {language} ──")
+        for slug in slugs:
+            ok, report = build_kit(
+                slug,
+                scripts,
+                bundle,
+                out_dir,
+                check=check,
+                title=titles[language].get(slug, ""),
+                language=language,
+            )
+            print(("  " if ok else "  FAIL ") + report)
+            if not ok:
+                failures.append(f"{language}/{report}")
+    built = len(slugs) * 2 - len(failures)
+    print(f"\n{built}/{len(slugs) * 2} kit(s) built ({len(slugs)} figures x 2 languages)")
     if failures:
         print(f"{len(failures)} failed", file=sys.stderr)
         return 1
     if check:
         return 0
 
-    sizes = {s: (out_dir / f"{s}.zip").stat().st_size for s in slugs if (out_dir / f"{s}.zip").is_file()}
-    if len(sizes) < len(discover_cards(REPO_ROOT / GALLERY_PAGES[0])):
+    sizes = {
+        "en": {s: (out_dir / f"{s}.zip").stat().st_size for s in slugs if (out_dir / f"{s}.zip").is_file()},
+        "fr": {
+            s: (out_dir / "fr" / f"{s}.zip").stat().st_size
+            for s in slugs
+            if (out_dir / "fr" / f"{s}.zip").is_file()
+        },
+    }
+    if len(sizes["en"]) < len(discover_cards(REPO_ROOT / GALLERY_PAGES[0])):
         print("partial build: gallery pages left untouched")
         return 0
     for relative in GALLERY_PAGES:
         page = REPO_ROOT / relative
-        count = link_gallery(page, sizes, french=relative.startswith("web/fr/"))
+        french = relative.startswith("web/fr/")
+        count = link_gallery(page, sizes["fr" if french else "en"], french=french)
         print(f"  linked {count} card(s) in {relative}")
     return 0
 

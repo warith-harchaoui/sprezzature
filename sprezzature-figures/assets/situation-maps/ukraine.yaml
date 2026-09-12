@@ -78,7 +78,7 @@
     "color": "#3a4149",
     "legend_label": "Approx. contact line"
   },
-  "legend_position": "top-right",
+  "legend_position": "right",
   "legend_footer": "As of ~2024 \u00b7 schematic, open-source geography",
   "areas_of_control": {
     "category_field": "actor",

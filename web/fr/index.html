@@ -205,9 +205,9 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
     <!-- Écosystème -->
     <section id="ecosystem" class="mx-auto max-w-6xl px-5 py-12">
       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">L'écosystème d'outils</h2>
-      <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Les scripts de chaque <em>skill</em> sont aussi disponibles comme package pip autonome. Utilisez-les dans vos propres pipelines, sans la couche agentique.</p>
+      <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Les scripts de chaque <em>skill</em> sont aussi disponibles comme paquet autonome, qu’on atteint de <a href="packages.html" class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">cinq façons</a> : un zip autonome, une bibliothèque Python, une API HTTP, des outils MCP pour un agent, ou le skill lui-même. La même implémentation derrière toutes.</p>
       <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm" role="list">
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-figures</a>: 126 types de graphiques</li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-figures</a>: 124 types de graphiques</li>
         <li><a href="https://github.com/warith-harchaoui/sprezzature-colors" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-colors</a>: WCAG + CVD + Tailwind</li>
         <li><a href="https://github.com/warith-harchaoui/sprezzature-audio" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-audio</a>: parole vers texte, diarisation</li>
         <li><a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-accessibility</a>: lint a11y</li>
@@ -381,7 +381,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-vision', 'Texte alternatif (intelligence artificielle locale)', 'Texte alternatif conforme au World Wide Web Consortium (W3C) depuis un modèle de vision Ollama local: arbre de décision par image, toute langue, mis en cache. En cours. Des brouillons à relire.', 'vision.html'],
       ['sprezzature-audio', 'Sous-titres & diarisation', 'Sous-titres WebVTT / SubRip (SRT) depuis whisper.cpp local, avec en prime qui parle et quand. Fonctionne en local. En cours de développement.', 'audio.html'],
       ['sprezzature-ux-laws', "Lois de l'expérience utilisateur (UX)", 'Trente lois plus un auditeur des violations détectables: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
-      ['sprezzature-figures', 'Figures', '126 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
+      ['sprezzature-figures', 'Figures', '124 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `
