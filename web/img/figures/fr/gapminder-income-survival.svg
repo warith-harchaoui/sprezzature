@@ -121,17 +121,17 @@
 <line x1="710.0" y1="60" x2="710.0" y2="448" stroke="#EFEFF4" stroke-width="1"/>
 <text x="710.0" y="466" text-anchor="middle" font-size="12" fill="#6E6E73">$200k</text>
 <line x1="100" y1="448.0" x2="710" y2="448.0" stroke="#EFEFF4" stroke-width="1"/>
-<text x="92" y="452.0" text-anchor="end" font-size="12" fill="#6E6E73">50%</text>
+<text x="92" y="452.0" text-anchor="end" font-size="12" fill="#6E6E73">50 %</text>
 <line x1="100" y1="416.1" x2="710" y2="416.1" stroke="#EFEFF4" stroke-width="1"/>
-<text x="92" y="420.1" text-anchor="end" font-size="12" fill="#6E6E73">70%</text>
+<text x="92" y="420.1" text-anchor="end" font-size="12" fill="#6E6E73">70 %</text>
 <line x1="100" y1="347.5" x2="710" y2="347.5" stroke="#EFEFF4" stroke-width="1"/>
-<text x="92" y="351.5" text-anchor="end" font-size="12" fill="#6E6E73">90%</text>
+<text x="92" y="351.5" text-anchor="end" font-size="12" fill="#6E6E73">90 %</text>
 <line x1="100" y1="304.2" x2="710" y2="304.2" stroke="#EFEFF4" stroke-width="1"/>
-<text x="92" y="308.2" text-anchor="end" font-size="12" fill="#6E6E73">95%</text>
+<text x="92" y="308.2" text-anchor="end" font-size="12" fill="#6E6E73">95 %</text>
 <line x1="100" y1="203.8" x2="710" y2="203.8" stroke="#EFEFF4" stroke-width="1"/>
-<text x="92" y="207.8" text-anchor="end" font-size="12" fill="#6E6E73">99%</text>
+<text x="92" y="207.8" text-anchor="end" font-size="12" fill="#6E6E73">99 %</text>
 <line x1="100" y1="60.0" x2="710" y2="60.0" stroke="#EFEFF4" stroke-width="1"/>
-<text x="92" y="64.0" text-anchor="end" font-size="12" fill="#6E6E73">99.9%</text>
+<text x="92" y="64.0" text-anchor="end" font-size="12" fill="#6E6E73">99,9 %</text>
 <text x="405" y="496" text-anchor="middle" font-size="13" fill="#1D1D1F">PIB par habitant ($, échelle log.) →</text>
 <text x="20" y="254" font-size="13" fill="#1D1D1F" transform="rotate(-90 20 254)" text-anchor="middle">Enfants survivant à 5 ans ( % des naissances) →</text>
 <text x="20" y="24" font-size="15" font-weight="700" fill="#1D1D1F"><a href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank"><tspan fill="#007AFF" text-decoration="underline">Tribute to Hans Rosling</tspan></a> &#8212; 1950&#8211;2025</text>
@@ -332,9 +332,9 @@
 <circle class="rg-africa" cx="788" cy="84" r="6" fill="#E69F00" fill-opacity="0.6" stroke="#E69F00"/>
 <text x="802" y="88" font-size="12" fill="#1D1D1F">Afrique</text>
 <circle class="rg-americas" cx="788" cy="102" r="6" fill="#009E73" fill-opacity="0.6" stroke="#009E73"/>
-<text x="802" y="106" font-size="12" fill="#1D1D1F">Americas</text>
+<text x="802" y="106" font-size="12" fill="#1D1D1F">les Amériques</text>
 <circle class="rg-europe" cx="788" cy="120" r="6" fill="#CC79A7" fill-opacity="0.6" stroke="#CC79A7"/>
-<text x="802" y="124" font-size="12" fill="#1D1D1F">Europe</text>
+<text x="802" y="124" font-size="12" fill="#1D1D1F">l’Europe</text>
 <circle class="rg-oceania" cx="788" cy="138" r="6" fill="#D55E00" fill-opacity="0.6" stroke="#D55E00"/>
 <text x="802" y="142" font-size="12" fill="#1D1D1F">Oceania</text>
 <text x="782" y="172" font-size="10" font-weight="700" fill="#6E6E73" letter-spacing="0.5">POPULATION</text>

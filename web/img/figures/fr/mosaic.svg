@@ -23,39 +23,39 @@
 <text x="96" y="66" font-size="34" font-weight="700" fill="#1D1D1F">Sur mobile, les portefeuilles ont dépassé les cartes</text>
 <text x="96" y="102" font-size="20" fill="#6E6E73">Part des paiements en ligne par appareil et moyen de paiement</text>
 <text x="34" y="476" font-size="18" fill="#6E6E73" text-anchor="middle" transform="rotate(-90 34 476)">Part au sein de l'appareil</text>
-<text x="78" y="222" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0%</text>
+<text x="78" y="222" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">0 %</text>
 <line x1="84" y1="216" x2="96" y2="216" stroke="#E5E5EA" stroke-width="1.5"/>
-<text x="78" y="352" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">25%</text>
+<text x="78" y="352" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">25 %</text>
 <line x1="84" y1="346" x2="96" y2="346" stroke="#E5E5EA" stroke-width="1.5"/>
-<text x="78" y="482" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">50%</text>
+<text x="78" y="482" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">50 %</text>
 <line x1="84" y1="476" x2="96" y2="476" stroke="#E5E5EA" stroke-width="1.5"/>
-<text x="78" y="612" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">75%</text>
+<text x="78" y="612" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">75 %</text>
 <line x1="84" y1="606" x2="96" y2="606" stroke="#E5E5EA" stroke-width="1.5"/>
-<text x="78" y="742" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">100%</text>
+<text x="78" y="742" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">100 %</text>
 <line x1="84" y1="736" x2="96" y2="736" stroke="#E5E5EA" stroke-width="1.5"/>
 <rect id="tile-0" class="tile tile-wallet hit" tabindex="0" x="96" y="216" width="373.68" height="249.6" rx="5" fill="#007AFF" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Mobile - Wallet: 48% of Mobile orders (Mobile = 54% of all orders)"/>
-<text x="282.84" y="346.8" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">48%</text>
+<text x="282.84" y="346.8" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">48 %</text>
 <rect id="tile-1" class="tile tile-card hit" tabindex="0" x="96" y="465.6" width="373.68" height="166.4" rx="5" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Mobile - Card: 32% of Mobile orders (Mobile = 54% of all orders)"/>
-<text x="282.84" y="554.8" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">32%</text>
+<text x="282.84" y="554.8" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">32 %</text>
 <rect id="tile-2" class="tile tile-buy-now-pay-later hit" tabindex="0" x="96" y="632" width="373.68" height="78" rx="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Mobile - Buy-now-pay-later: 15% of Mobile orders (Mobile = 54% of all orders)"/>
-<text x="282.84" y="677" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">15%</text>
+<text x="282.84" y="677" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">15 %</text>
 <rect id="tile-3" class="tile tile-bank-transfer hit" tabindex="0" x="96" y="710" width="373.68" height="26" rx="5" fill="#808080" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Mobile - Bank transfer: 5% of Mobile orders (Mobile = 54% of all orders)"/>
 <rect id="tile-4" class="tile tile-wallet hit" tabindex="0" x="485.68" y="216" width="214.52" height="114.4" rx="5" fill="#007AFF" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Desktop - Wallet: 22% of Desktop orders (Desktop = 31% of all orders)"/>
-<text x="592.94" y="279.2" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">22%</text>
+<text x="592.94" y="279.2" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">22 %</text>
 <rect id="tile-5" class="tile tile-card hit" tabindex="0" x="485.68" y="330.4" width="214.52" height="286" rx="5" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Desktop - Card: 55% of Desktop orders (Desktop = 31% of all orders)"/>
-<text x="592.94" y="479.4" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">55%</text>
+<text x="592.94" y="479.4" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">55 %</text>
 <rect id="tile-6" class="tile tile-buy-now-pay-later hit" tabindex="0" x="485.68" y="616.4" width="214.52" height="72.8" rx="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Desktop - Buy-now-pay-later: 14% of Desktop orders (Desktop = 31% of all orders)"/>
-<text x="592.94" y="658.8" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">14%</text>
+<text x="592.94" y="658.8" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">14 %</text>
 <rect id="tile-7" class="tile tile-bank-transfer hit" tabindex="0" x="485.68" y="689.2" width="214.52" height="46.8" rx="5" fill="#808080" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Desktop - Bank transfer: 9% of Desktop orders (Desktop = 31% of all orders)"/>
-<text x="592.94" y="718.6" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">9%</text>
+<text x="592.94" y="718.6" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">9 %</text>
 <rect id="tile-8" class="tile tile-wallet hit" tabindex="0" x="716.2" y="216" width="103.8" height="156" rx="5" fill="#007AFF" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Tablet - Wallet: 30% of Tablet orders (Tablet = 15% of all orders)"/>
-<text x="768.1" y="300" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">30%</text>
+<text x="768.1" y="300" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">30 %</text>
 <rect id="tile-9" class="tile tile-card hit" tabindex="0" x="716.2" y="372" width="103.8" height="244.4" rx="5" fill="#5AC8FA" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Tablet - Card: 47% of Tablet orders (Tablet = 15% of all orders)"/>
-<text x="768.1" y="500.2" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">47%</text>
+<text x="768.1" y="500.2" font-size="17" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">47 %</text>
 <rect id="tile-10" class="tile tile-buy-now-pay-later hit" tabindex="0" x="716.2" y="616.4" width="103.8" height="78" rx="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Tablet - Buy-now-pay-later: 15% of Tablet orders (Tablet = 15% of all orders)"/>
-<text x="768.1" y="661.4" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">15%</text>
+<text x="768.1" y="661.4" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">15 %</text>
 <rect id="tile-11" class="tile tile-bank-transfer hit" tabindex="0" x="716.2" y="694.4" width="103.8" height="41.6" rx="5" fill="#808080" stroke="#FFFFFF" stroke-width="3" role="img" aria-label="Tablet - Bank transfer: 8% of Tablet orders (Tablet = 15% of all orders)"/>
-<text x="768.1" y="721.2" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">8%</text>
+<text x="768.1" y="721.2" font-size="17" fill="#FFFFFF" text-anchor="middle" font-family="Roboto Mono, monospace" pointer-events="none">8 %</text>
 <g id="tile-tip-0" class="tip"><rect x="182.8" y="204" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="191.8" y="225.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mobile · Wallet</text><text x="191.8" y="241.5" font-size="12.5" font-weight="400" fill="#6E6E73">48% of Mobile orders</text><text x="191.8" y="257.5" font-size="12.5" font-weight="400" fill="#6E6E73">Mobile = 54% of all orders</text></g>
 <g id="tile-tip-1" class="tip"><rect x="182.8" y="453.6" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="191.8" y="475.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Mobile · Card</text><text x="191.8" y="491.1" font-size="12.5" font-weight="400" fill="#6E6E73">32% of Mobile orders</text><text x="191.8" y="507.1" font-size="12.5" font-weight="400" fill="#6E6E73">Mobile = 54% of all orders</text></g>
 <g id="tile-tip-2" class="tip"><rect x="182.8" y="620" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="191.8" y="641.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Mobile · Buy-now-pay-later</text><text x="191.8" y="657.5" font-size="12.5" font-weight="400" fill="#6E6E73">15% of Mobile orders</text><text x="191.8" y="673.5" font-size="12.5" font-weight="400" fill="#6E6E73">Mobile = 54% of all orders</text></g>

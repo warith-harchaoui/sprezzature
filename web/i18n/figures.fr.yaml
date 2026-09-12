@@ -6269,3 +6269,10 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Global optimum · objective 1.01': 'Optimum global · objectif 1,01'
 'start · objective 0.28': 'départ · objectif 0,28'
 'settles here · objective 0.73': 'se fixe ici · objectif 0,73'
+# --- noms de cellules de batterie (préfixes d'infobulles composées) ---
+'NMC-811 (high nickel)': 'NMC-811 (riche en nickel)'
+'LFP (iron phosphate)': 'LFP (phosphate de fer)'
+'Silicon-anode (fast)': 'Anode silicium (rapide)'
+'Europe': 'l’Europe'
+'Asia Pacific': 'l’Asie-Pacifique'
+'Americas': 'les Amériques'
