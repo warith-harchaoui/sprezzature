@@ -215,16 +215,27 @@
         <a href="case-studies.html"
           class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Études de cas</a>
         <a href="https://github.com/warith-harchaoui/sprezzature"
-          class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur Github</a>
+          class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">⭐️ sur Github</a>
         <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Réglages de la page">
           <li class="flex"><a href="../hans-rosling.html" aria-label="English version" title="English version"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇬🇧</a></li>
           <li class="flex"><button id="theme-toggle" type="button" aria-label="Changer de thème"
           class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🌞</button></li>
-          <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
+          <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Basculer les couleurs académiques/corporate" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
         </menu>
+        <button id="nav-toggle" type="button" aria-controls="nav-mobile" aria-expanded="false"
+          class="flex items-center justify-center rounded-full px-2 py-1 hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11 sm:hidden"><span class="sr-only">Menu</span><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M3 6h16M3 11h16M3 16h16"></path></svg></button>
       </div>
     </nav>
+    <div id="nav-mobile" hidden class="border-t border-neutral-200/70 bg-white/95 dark:border-neutral-800 dark:bg-[#0B0B0C]/95 sm:hidden">
+      <ul class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3 text-sm">
+        <li><a href="index.html#skills" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11"><em>Skills</em></a></li>
+        <li><a href="figures.html" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Galerie</a></li>
+        <li><a href="packages.html" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Paquets</a></li>
+        <li><a href="case-studies.html" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Études de cas</a></li>
+        <li><a href="https://github.com/warith-harchaoui/sprezzature" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">⭐️ sur Github</a></li>
+      </ul>
+    </div>
   </header>
   <main id="main">
     <section class="mx-auto max-w-6xl px-5 py-14">
@@ -470,6 +481,7 @@
     </div>
   </footer>
   <script src="../js/theme.js" defer></script>
+  <script src="../js/nav.js?v=feeeba7150" defer></script>
   <script src="../js/color-mode.js" defer></script>
   <script src="../js/fullscreen.js" defer></script>
   <script src="../js/gapminder-player.js" defer></script>
