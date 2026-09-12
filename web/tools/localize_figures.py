@@ -223,19 +223,32 @@ NESTED_TAG = re.compile(r"<(?:title|desc)\b[^>]*>.*?</(?:title|desc)>", re.S)
 RUN = re.compile(r"(>)([^<>]+)(<)")
 missing_hover: set[str] = set()  # untranslated strings that live only in <title> tooltips
 
-# French writes 0,75 where English writes 0.75. Applied only to a visible run
-# that is a bare number and nothing else — an axis tick, a data label — so a
-# version string ("1.0.0"), a date, or a number inside a sentence is left alone;
-# a sentence's numbers come through the map, already written in French.
-_BARE_NUMBER = re.compile(r"^(\s*)([+-]?\d{1,3}(?:\u202f\d{3})*\.\d+)(\s*)$")
+# Number formatting is a property of the target language, not of the figure:
+# English writes 0.75 and 124,800, French writes 0,75 and 124 800 (a narrow
+# no-break space, U+202F). Getting the second one wrong is worse than leaving
+# it alone — "124,800" reads as 124.8 to a French reader, off by a factor of
+# a thousand — so the grouping separator is converted, not just the decimal.
+#
+# Applied only to a visible run that is a bare number and nothing else: an axis
+# tick, a data label. A version string, a date, or a number inside a sentence
+# is left alone — a sentence's numbers arrive through the translation map,
+# already written in French. An integer written without a separator is left
+# alone too: "2024" is as likely to be a year or an identifier as a quantity,
+# and there is nothing in the text node that says which.
+DECIMAL_SEP = ","
+GROUP_SEP = "\u202f"
+_BARE_NUMBER = re.compile(
+    r"^(\s*)([+-]?\d{1,3}(?:,\d{3})+(?:\.\d+)?|[+-]?\d+\.\d+)(\s*)$"
+)
 
 
-def fr_decimal(run_text: str) -> str | None:
-    """`run_text` with a French decimal comma, or None if it is not a bare number."""
+def fr_number(run_text: str) -> str | None:
+    """`run_text` written the French way, or None if it is not a bare number."""
     m = _BARE_NUMBER.match(run_text)
     if m is None:
         return None
-    return m.group(1) + m.group(2).replace(".", ",") + m.group(3)
+    number = m.group(2).replace(",", GROUP_SEP).replace(".", DECIMAL_SEP)
+    return m.group(1) + number + m.group(3)
 
 
 def localize_hero(name: str) -> None:
@@ -268,9 +281,9 @@ def localize_hero(name: str) -> None:
             lead = raw[: len(raw) - len(raw.lstrip())]
             trail = raw[len(raw.rstrip()):]
             return m.group(1) + lead + html.escape(TR[key], quote=False) + trail + m.group(3)
-        decimal = fr_decimal(raw)
-        if decimal is not None:
-            return m.group(1) + decimal + m.group(3)
+        number = fr_number(raw)
+        if number is not None:
+            return m.group(1) + number + m.group(3)
         if is_human(key):
             missing.add(key)
         return m.group(0)
