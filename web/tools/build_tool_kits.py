@@ -1051,6 +1051,17 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
 
+    # The licence travels with the code. A kit is meant to be passed around
+    # — emailed, dropped in a shared folder, committed into someone else's
+    # project — and at that point the repository it came from is not
+    # reachable from the folder. BSD-3-Clause is permissive, but it is
+    # permissive *on condition* that the notice is retained, so shipping the
+    # code without it is the one thing the licence actually forbids.
+    licence = repo / "LICENSE"
+    if not licence.is_file():
+        return False, f"{name}: {repo.name} has no LICENSE to ship"
+    shutil.copy2(licence, kit / "LICENSE")
+
     (kit / "run.py").write_text(spec["run"], encoding="utf-8")
     if spec.get("sample"):
         (kit / "sample.html").write_text(spec["sample"], encoding="utf-8")
@@ -1137,6 +1148,7 @@ plus récent suffit.
 | `references/palette.csv` | Les données. Modifiez-les, relancez, tout change. |
 {outputs}
 | `index.html` | La page qui ouvre les figures : plein écran, survol. |
+| `LICENSE` | Le texte de la licence. Conservez-le si vous redistribuez. |
 
 ## Modifier
 
@@ -1147,7 +1159,12 @@ n'est à installer.
 
 ## Licence
 
-BSD-3-Clause · <https://github.com/warith-harchaoui/{spec['repo']}>
+**BSD-3-Clause**, la même que scikit-learn ou NumPy : faites-en ce que vous
+voulez, y compris commercialement, à une condition — gardez l'avis de
+copyright et le texte de la licence avec le code. Le fichier `LICENSE` de ce
+dossier est ce texte ; il vous suffit de ne pas le supprimer.
+
+Source : <https://github.com/warith-harchaoui/{spec['repo']}>
 """
     return f"""# {spec['title']['en']}
 
@@ -1173,6 +1190,7 @@ Then open `index.html` in a browser.
 | `references/palette.csv` | The data. Edit it, re-run, everything changes. |
 {outputs}
 | `index.html` | The page that opens the figures: fullscreen, hover. |
+| `LICENSE` | The licence text. Keep it if you redistribute. |
 
 ## Change it
 
@@ -1182,7 +1200,12 @@ involved, which is exactly why there is nothing to install.
 
 ## Licence
 
-BSD-3-Clause · <https://github.com/warith-harchaoui/{spec['repo']}>
+**BSD-3-Clause**, the same licence as scikit-learn or NumPy: do what you
+like with this, commercially included, on one condition — keep the copyright
+notice and the licence text with the code. The `LICENSE` file in this folder
+is that text; you only have to not delete it.
+
+Source: <https://github.com/warith-harchaoui/{spec['repo']}>
 """
 
 

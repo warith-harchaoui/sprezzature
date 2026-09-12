@@ -65,6 +65,7 @@ import html
 import io
 import json
 import re
+import shutil
 import subprocess
 import sys
 import zipfile
@@ -1297,6 +1298,7 @@ la modifier. Rien à compiler, pas de compte, pas de framework.
 | `{module}` | Le générateur. C'est le fichier intéressant : il calcule la géométrie et écrit le SVG balise par balise. |
 | `sprezzature_svg.py` | Le moteur de dessin : échelles, chemins SVG, palette, placement des étiquettes, survol. |
 | `{data_name}` | Les données{data_why_fr}. Modifiez-les, relancez, la figure change. |
+| `LICENSE` | Le texte de la licence. Conservez-le si vous redistribuez. |
 | `{slug}.svg` | La figure déjà produite, interactive. |
 {page_row}
 {requirements_row}
@@ -1335,6 +1337,13 @@ Changez les nombres de `{data_name}` et relancez. Pour aller plus loin,
 `python3 {module} --help` liste les options disponibles (titre, dimensions,
 niveau d'accessibilité, thème…).
 
+## Licence
+
+**BSD-3-Clause**, la même que scikit-learn ou NumPy : faites-en ce que vous
+voulez, y compris commercialement, à une condition — gardez l'avis de
+copyright et le texte de la licence avec le code. Le fichier `LICENSE` de ce
+dossier est ce texte ; il vous suffit de ne pas le supprimer.
+
 ---
 
 Extrait de [sprezzature-figures](https://github.com/warith-harchaoui/sprezzature-figures) ·
@@ -1353,6 +1362,7 @@ rebuild and change it. Nothing to compile, no account, no framework.
 | `{module}` | The generator. This is the interesting one: it computes the geometry and writes the SVG tag by tag. |
 | `sprezzature_svg.py` | The drawing engine: scales, SVG paths, palette, label placement, hover chrome. |
 | `{data_name}` | The data{data_why_en}. Edit it, re-run, the figure changes. |
+| `LICENSE` | The licence text. Keep it if you redistribute. |
 | `{slug}.svg` | The figure as built, interactive. |
 {page_row}
 {requirements_row}
@@ -1389,6 +1399,13 @@ system typeface. Everything else renders normally.
 Edit the numbers in `{data_name}` and run it again. Beyond that,
 `python3 {module} --help` lists the options available (title, dimensions,
 accessibility level, theme, …).
+
+## Licence
+
+**BSD-3-Clause**, the same licence as scikit-learn or NumPy: do what you like
+with this, commercially included, on one condition — keep the copyright
+notice and the licence text with the code. The `LICENSE` file in this folder
+is that text; you only have to not delete it.
 
 ---
 
@@ -1573,6 +1590,16 @@ def build_kit(
             shutil.copy2(origin, target)
         (kit / module).write_text(source, encoding="utf-8")
         (kit / "sprezzature_svg.py").write_text(bundle, encoding="utf-8")
+        # The licence travels with the code. A kit is made to be passed
+        # around — emailed, dropped in a shared folder, committed into
+        # someone else's project — and from inside that folder the
+        # repository it came from is not reachable. BSD-3-Clause is
+        # permissive on condition that the notice is retained, so shipping
+        # the code without it is the one thing the licence forbids.
+        licence = scripts.parent / "LICENSE"
+        if not licence.is_file():
+            return False, f"{slug}: sprezzature-figures has no LICENSE to ship"
+        shutil.copy2(licence, kit / "LICENSE")
         data_name = data_filename(demo)
         payload = rows_to_csv(demo) if data_name.endswith(".csv") else rows_to_json(demo)
         (kit / data_name).write_text(payload, encoding="utf-8")
