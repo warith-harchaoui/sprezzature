@@ -65,7 +65,9 @@ HOME = Path.home()
 _STDLIB = set(sys.stdlib_module_names) | {"__future__"}
 
 
-def verify_stdlib_only(paths: List[Path], vendored: set[str]) -> List[str]:
+def verify_stdlib_only(
+    paths: List[Path], vendored: set[str], optional: "set[str] | None" = None
+) -> List[str]:
     """
     Report any third-party import in the files a kit is about to ship.
 
@@ -81,12 +83,19 @@ def verify_stdlib_only(paths: List[Path], vendored: set[str]) -> List[str]:
         Python files to inspect.
     vendored : set of str
         Module names shipped inside the kit, which are therefore fine.
+    optional : set of str, optional
+        Modules the kit declares it can run without. Declared rather than
+        detected: an earlier version treated any import inside an ``if`` as
+        optional, which is true of ``_lang.py``'s find_spec guard and false
+        of ``schema.walk``'s adapter import on the normal path — and the
+        false case shipped a kit that died on a bare machine.
 
     Returns
     -------
     list of str
         One line per offending import, empty when the kit is clean.
     """
+    optional = optional or set()
     problems: List[str] = []
     for path in paths:
         try:
@@ -94,13 +103,13 @@ def verify_stdlib_only(paths: List[Path], vendored: set[str]) -> List[str]:
         except SyntaxError as exc:  # a file that will not parse cannot ship
             problems.append(f"{path.name}: does not parse ({exc})")
             continue
-        # An import inside `try:` or `if:` is optional by construction —
-        # _lang.py guards `from langdetect import ...` behind a find_spec
-        # check precisely so the module stays importable without it. Only
-        # unconditional imports can break a bare machine.
+        # Only a try/except counts as optional. An import inside a plain
+        # `if` is not a guard at all — schema.walk puts its adapter import
+        # inside `if isinstance(obj, ArgumentParser)`, which is the *normal*
+        # path, and treating that as optional is how a broken kit shipped.
         guarded: set[int] = set()
         for node in ast.walk(tree):
-            if isinstance(node, (ast.Try, ast.If)):
+            if isinstance(node, ast.Try):
                 for inner in ast.walk(node):
                     if isinstance(inner, (ast.Import, ast.ImportFrom)):
                         guarded.add(id(inner))
@@ -118,7 +127,7 @@ def verify_stdlib_only(paths: List[Path], vendored: set[str]) -> List[str]:
             else:
                 continue
             for name in names:
-                if name not in _STDLIB and name not in vendored:
+                if name not in _STDLIB and name not in vendored and name not in optional:
                     problems.append(f"{path.name}:{node.lineno} imports {name!r}")
     return problems
 
@@ -573,6 +582,139 @@ def lint_run(repo, import_line, key, severity, call, aria, headline, group):
     return text
 
 
+_CLI_RUN = '''"""
+run — turn a command-line parser into a working web form.
+
+``schema.walk`` reads an ``argparse`` parser by introspection — it never
+calls ``parse_args`` — and returns a plain tree: prog, description,
+actions, sub_commands. ``renderer.render_html`` turns that tree into a page.
+
+The parser below is a stand-in. Replace ``build_parser`` with your own and
+run it again: anything argparse can describe, this can render.
+
+What this kit deliberately does not do
+---------------------------------------
+The full tool can load a parser from a ``module:factory`` string, which
+means importing an arbitrary file and calling it. That is fine on your own
+machine and unacceptable over a network, so the loader is not bundled here
+— the parser is written in this file, where you can read it.
+
+Run it::
+
+    python3 run.py            # writes gui.html
+    open index.html
+
+Author
+------
+`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+
+from sprezzature_cli_gui.renderer import render_html
+from sprezzature_cli_gui.schema import walk
+
+
+def build_parser():
+    """
+    A stand-in command line, with one of each kind of argument.
+
+    Deliberately varied rather than realistic: the point is to show how each
+    argument type becomes a form control — a flag becomes a checkbox, a
+    choice becomes a select, a count becomes a number field.
+    """
+    parser = argparse.ArgumentParser(
+        prog="publish",
+        description="Publish a report: pick the inputs, choose a format, send it.",
+    )
+    parser.add_argument("source", help="Directory to read.")
+    parser.add_argument("--title", default="Quarterly report", help="Title on the cover.")
+    parser.add_argument("--format", choices=["pdf", "html", "epub"], default="pdf",
+                        help="Output format.")
+    parser.add_argument("--copies", type=int, default=1, help="How many to produce.")
+    parser.add_argument("--draft", action="store_true", help="Watermark every page.")
+    parser.add_argument("--quiet", action="store_true", help="Say nothing unless it fails.")
+    return parser
+
+
+#: Offline styling for the classes the renderer emits.
+#:
+#: The renderer targets Tailwind and links it from a CDN. That is right for
+#: a page served on the web and wrong for a kit: the whole promise here is
+#: that the folder works with no network, and without the CDN the form
+#: renders as unstyled boxes. Rather than ship a megabyte of Tailwind, this
+#: covers the sixty-odd utility classes the renderer actually uses. The CDN
+#: script is removed so the result is the same online and off.
+FALLBACK_CSS = """
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+     line-height:1.5;background:#fff;color:#000}
+@media (prefers-color-scheme:dark){body{background:#000;color:#fff}}
+main{margin:0 auto;max-width:48rem;padding:2rem 1rem}
+header{margin-bottom:1.5rem}
+h1{font-size:28px;font-weight:600;margin:0 0 .25rem}
+label{display:block;font-size:13px;font-weight:500;margin-bottom:.5rem}
+input[type=text],input[type=number],select,textarea{
+  display:block;width:100%;min-height:44px;padding:.5rem .75rem;margin-top:.25rem;
+  font:inherit;font-size:15px;color:inherit;background:#fff;
+  border:1px solid rgba(60,60,67,.29);border-radius:10px}
+@media (prefers-color-scheme:dark){
+  input[type=text],input[type=number],select,textarea{background:#1c1c1e;
+    border-color:rgba(235,235,245,.3)}}
+input[type=checkbox]{width:20px;height:20px;margin-top:.25rem;accent-color:#007AFF}
+input:focus-visible,select:focus-visible,button:focus-visible{
+  outline:2px solid #007AFF;outline-offset:2px}
+button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:44px;padding:.5rem 1.25rem;font:inherit;font-size:15px;font-weight:500;
+  color:#fff;background:#007AFF;border:0;border-radius:9999px;cursor:pointer}
+button:hover{opacity:.9}
+p,div{margin-top:0}
+.font-mono,code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+pre,.overflow-x-auto{overflow-x:auto}
+[class*="text-label-secondary"]{color:rgba(60,60,67,.6)}
+@media (prefers-color-scheme:dark){
+  [class*="text-label-secondary"]{color:rgba(235,235,245,.6)}}
+[class*="bg-surface-secondary"]{background:rgba(120,120,128,.12);border-radius:14px;padding:1rem}
+[class*="text-brand-red"]{color:#FF3B30}
+[class*="text-brand-blue"]{color:#007AFF}
+.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}
+.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.ml-2{margin-left:.5rem}
+"""
+
+
+def main():
+    """Walk the parser, render the GUI, write it beside this script."""
+    here = Path(__file__).resolve().parent
+    tree = walk(build_parser())
+    page = render_html(tree, title="publish")
+
+    # Drop the CDN <script> and splice the fallback in, so the page looks
+    # the same with or without a network — and never silently depends on one.
+    start = page.find('<script src="https://cdn.tailwindcss.com"')
+    if start != -1:
+        end = page.index("</script>", start) + len("</script>")
+        page = page[:start] + page[end:]
+    page = page.replace("<style>", "<style>" + FALLBACK_CSS, 1)
+
+    (here / "gui.html").write_text(page, encoding="utf-8")
+    print("wrote gui.html  (" + str(len(page) // 1024) + " KB)")
+    print("")
+    print(str(len(tree["actions"])) + " argument(s) became form controls.")
+    print("Open index.html, or gui.html directly.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'''
+
+
 
 #: A page with one clear instance of several faults. Deliberately small:
 #: a kit whose sample throws two hundred findings teaches nothing, and a
@@ -689,12 +831,27 @@ def kit_page(
     str
         A complete, self-contained HTML page.
     """
-    blocks = "\n".join(
-        f'  <div class="frame">\n'
-        f'    <object data="{name}" type="image/svg+xml" aria-label="{caption}"></object>\n'
-        f"  </div>"
-        for name, caption in figures
-    )
+    # An SVG goes in an <object>: an <img> sandboxes it, which kills the
+    # native <title> tooltips these figures carry and blocks any linked
+    # webfont. An HTML output needs an <iframe> instead — a page inside a
+    # page — and gets an explicit height, since an iframe has no intrinsic
+    # size to grow to the way an <object> does.
+    parts = []
+    for name, caption in figures:
+        if name.endswith(".html"):
+            parts.append(
+                f'  <div class="frame">\n'
+                f'    <iframe src="{name}" title="{caption}" '
+                f'style="width:100%;height:560px;border:0"></iframe>\n'
+                f"  </div>"
+            )
+        else:
+            parts.append(
+                f'  <div class="frame">\n'
+                f'    <object data="{name}" type="image/svg+xml" aria-label="{caption}"></object>\n'
+                f"  </div>"
+            )
+    blocks = "\n".join(parts)
     return _PAGE.format(
         lang="fr" if french else "en",
         title=title,
@@ -716,6 +873,9 @@ KITS: Dict[str, Dict[str, Any]] = {
     "accessibility": {
         "repo": "sprezzature-accessibility",
         "sources": ["scripts/lint_a11y.py", "scripts/_argparse.py", "scripts/_lang.py"],
+        # _lang.py guards `from langdetect import ...` behind a find_spec
+        # check, and falls back to no detection when it is absent.
+        "optional": ["langdetect"],
         "data": [],
         "sample": _SAMPLE_HTML,
         "run": lint_run(
@@ -776,6 +936,33 @@ KITS: Dict[str, Dict[str, Any]] = {
                   "pour un concepteur, pas des verdicts : aucun outil ne connaît votre public.",
         },
     },
+    "cli-gui": {
+        "repo": "sprezzature-cli-gui",
+        "sources": [],
+        "package": ["sprezzature_cli_gui"],
+        # api.py and mcp.py need fastapi and pydantic, which a kit must not.
+        # cli.py is the console entry point, irrelevant here. loader.py is
+        # left out on purpose and not for weight: it imports an arbitrary
+        # file and calls the factory it names, which is fine on your own
+        # machine and a liability in a folder people pass around. The kit's
+        # parser is written in run.py, where a reader can see it.
+        "package_exclude": ["api.py", "mcp.py", "cli.py", "loader.py", "_argparse.py"],
+        "data": [],
+        "run": _CLI_RUN,
+        "outputs": [("gui.html", "The parser, rendered as a web form")],
+        "title": {
+            "en": "Your command line, as a form",
+            "fr": "Votre ligne de commande, en formulaire",
+        },
+        "lede": {
+            "en": "An argparse parser read by introspection — never executed — and "
+                  "rendered as a web form. A flag becomes a checkbox, a choice becomes "
+                  "a select. Replace build_parser with your own and run it again.",
+            "fr": "Un analyseur argparse lu par introspection — jamais exécuté — et "
+                  "rendu en formulaire web. Une option devient une case à cocher, un "
+                  "choix devient une liste. Remplacez build_parser par le vôtre et relancez.",
+        },
+    },
     "colors": {
         "repo": "sprezzature-colors",
         "sources": ["scripts/_colors.py"],
@@ -833,6 +1020,22 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
     (kit / "lib").mkdir(parents=True)
 
     vendored: set[str] = set()
+    for relative in spec.get("package", []):
+        # Some modules import each other by their real package path
+        # (schema.walk reaches for sprezzature_cli_gui.adapters.argparse).
+        # Flattening them into lib/ breaks those imports; vendoring the
+        # package under its own name keeps every import resolving exactly
+        # as it does in the repository.
+        source = repo / relative
+        if not source.exists():
+            return False, f"{name}: missing package {relative}"
+        drop = tuple(spec.get("package_exclude", ()))
+        shutil.copytree(
+            source, kit / "lib" / source.name,
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".*", *drop),
+        )
+        vendored.add(source.name)
+
     for relative in spec["sources"]:
         source = repo / relative
         if not source.is_file():
@@ -855,14 +1058,26 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
     # macOS writes AppleDouble sidecars ("._run.py") on non-HFS volumes, and
     # they match *.py while being binary. Skip anything dot-prefixed.
     python_files = [f for f in sorted(kit.rglob("*.py")) if not f.name.startswith(".")]
-    problems = verify_stdlib_only(python_files, vendored)
+    problems = verify_stdlib_only(python_files, vendored, set(spec.get("optional", [])))
     if problems:
         return False, f"{name}: not standalone — {problems[0]}"
 
-    # Run it now: a kit that ships without ever having been executed is a
-    # promise, not a deliverable. This also produces the SVGs the page loads.
+    # Run it now, in an *isolated* interpreter: a kit that ships without
+    # having been executed is a promise, not a deliverable — and running it
+    # in this process's environment proves nothing, because every repo is
+    # pip-installed here. The cli-gui kit passed that weaker check and then
+    # died on a bare machine, because schema.walk imports its adapter
+    # package lazily and the packager had it installed.
+    #
+    # -I ignores PYTHONPATH and the user site directory; the scrubbed env
+    # removes the rest. What is left is the standard library plus the kit.
     result = subprocess.run(
-        [sys.executable, "run.py"], cwd=kit, capture_output=True, text=True, timeout=180
+        [sys.executable, "-I", "-S", "run.py"],
+        cwd=kit,
+        capture_output=True,
+        text=True,
+        timeout=180,
+        env={"PATH": "/usr/bin:/bin", "HOME": str(kit)},
     )
     if result.returncode != 0:
         return False, f"{name}: run.py failed — {result.stderr.strip().splitlines()[-1:]}"
