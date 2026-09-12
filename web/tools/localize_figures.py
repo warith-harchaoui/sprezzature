@@ -32,6 +32,7 @@ FIGREPO = Path.home() / "sprezzature-figures"
 GALLERY = WEB / "img" / "figures"
 FR = GALLERY / "fr"
 YAML = WEB / "i18n" / "figures.fr.yaml"
+PATTERNS_YAML = WEB / "i18n" / "figures.fr.patterns.yaml"
 
 sys.path.insert(0, str(FIGREPO))
 sys.path.insert(0, str(FIGREPO / "scripts"))
@@ -242,6 +243,60 @@ _BARE_NUMBER = re.compile(
 )
 
 
+#: Per-datum labels ("x = 3.5", "Fitted 142 k$", "63% of densest cell") are
+#: one sentence written a few hundred times with different numbers in it. A
+#: flat English-to-French map would need an entry per occurrence — 11 668 of
+#: them across the gallery, for 1 783 distinct shapes — so those go through
+#: patterns instead: a regex per shape, and a French template beside it.
+#: Numbers captured by the regex come out formatted the French way.
+_PATTERNS: list[tuple[re.Pattern[str], str]] = []
+
+
+def load_patterns() -> None:
+    """Read the pattern rules, if the file is there. Absence is not an error."""
+    if not PATTERNS_YAML.exists():
+        return
+    rules = yaml.safe_load(PATTERNS_YAML.read_text(encoding="utf-8")) or []
+    for i, rule in enumerate(rules, 1):
+        try:
+            _PATTERNS.append((re.compile(rule["match"]), rule["write"]))
+        except (KeyError, re.error) as exc:
+            print(f"  rule {i} in {PATTERNS_YAML.name} ignored: {exc}")
+
+
+def fr_numbers_in(text: str) -> str:
+    """Every number inside `text` written the French way, the rest untouched.
+
+    A captured group is not always one bare number: a rule for "4.0-4.4 h
+    slept" captures a range, one for "$27.4T total GDP" captures a figure with
+    a unit stuck to it. Formatting only whole-group numbers left those written
+    the English way inside otherwise French sentences, which is the one outcome
+    worse than not translating at all.
+    """
+    return _NUMBER_TOKEN.sub(lambda m: fr_number(m.group(0)) or m.group(0), text)
+
+
+#: A number on its own, not part of a time (00:00) or an identifier (v1.2.3).
+_NUMBER_TOKEN = re.compile(
+    r"(?<![\d:.,])([+-]?\d{1,3}(?:,\d{3})+(?:\.\d+)?|[+-]?\d+\.\d+)(?![\d:.,])"
+)
+
+
+def by_pattern(run_text: str) -> str | None:
+    """`run_text` rewritten by the first matching rule, or None if none match."""
+    for pattern, template in _PATTERNS:
+        m = pattern.fullmatch(run_text.strip())
+        if m is None:
+            continue
+        groups = [fr_numbers_in(g) if g is not None else "" for g in m.groups()]
+        try:
+            return template.format(*groups)
+        except (IndexError, KeyError):
+            print(f"  rule {pattern.pattern!r}: template wants a group it has not got")
+            return None
+    return None
+
+
 def fr_number(run_text: str) -> str | None:
     """`run_text` written the French way, or None if it is not a bare number."""
     m = _BARE_NUMBER.match(run_text)
@@ -249,6 +304,37 @@ def fr_number(run_text: str) -> str | None:
         return None
     number = m.group(2).replace(",", GROUP_SEP).replace(".", DECIMAL_SEP)
     return m.group(1) + number + m.group(3)
+
+
+def by_parts(text: str) -> str | None:
+    """
+    `text` rebuilt from its own pieces, or None if any piece is untranslatable.
+
+    A composite tooltip — "LFP (iron phosphate): Energy density 170 Wh/kg,
+    Fast-charge time 55 min" — is a known prefix followed by a list of known
+    measurements. Each piece is already in the map or matched by a pattern;
+    only the assembled sentence is not, and there is one per combination of
+    battery and pair of metrics. Splitting on the punctuation that joins them
+    turns a combinatorial list of tooltips back into the handful of phrases it
+    was built from.
+
+    Every piece must resolve. A half-translated tooltip reads worse than an
+    English one, because the reader cannot tell which half to trust.
+    """
+    def piece(part: str) -> str | None:
+        part = part.strip()
+        return TR.get(part) or by_pattern(part) or fr_number(part)
+
+    head, sep, tail = text.partition(": ")
+    if not sep:
+        return None
+    head_fr = piece(head)
+    if head_fr is None:
+        return None
+    parts = [piece(p) for p in tail.split(", ")]
+    if any(p is None for p in parts):
+        return None
+    return f"{head_fr} : " + ", ".join(parts)
 
 
 def localize_hero(name: str) -> None:
@@ -270,6 +356,9 @@ def localize_hero(name: str) -> None:
             if suffix in TR:
                 new = f"{prefix} — {TR[suffix]}"
                 return m.group(1) + html.escape(new, quote=False) + m.group(4)
+        rebuilt = by_pattern(key) or by_parts(key)
+        if rebuilt is not None:
+            return m.group(1) + html.escape(rebuilt, quote=False) + m.group(4)
         if is_human(key):
             (missing_hover if tag == "title" else missing).add(key)
         return m.group(0)
@@ -284,6 +373,11 @@ def localize_hero(name: str) -> None:
         number = fr_number(raw)
         if number is not None:
             return m.group(1) + number + m.group(3)
+        patterned = by_pattern(key) or by_parts(key)
+        if patterned is not None:
+            lead = raw[: len(raw) - len(raw.lstrip())]
+            trail = raw[len(raw.rstrip()):]
+            return m.group(1) + lead + html.escape(patterned, quote=False) + trail + m.group(3)
         if is_human(key):
             missing.add(key)
         return m.group(0)
@@ -347,6 +441,7 @@ def _rasterise(svg: Path, png: Path) -> None:
 
 
 def main() -> int:
+    load_patterns()
     FR.mkdir(parents=True, exist_ok=True)
     only = None
     if len(sys.argv) > 2 and sys.argv[1] == "--only":

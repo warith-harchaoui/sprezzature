@@ -12,15 +12,15 @@
 <rect x="194.0" y="88.0" width="14" height="14" rx="3" fill="#FF9500"/>
 <text x="214.0" y="100.0" font-size="12" fill="#1D1D1F">Expansion</text>
 <line x1="60.0" y1="420.0" x2="590.0" y2="420.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="424.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0%</text>
+<text x="50.0" y="424.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0 %</text>
 <line x1="60.0" y1="352.5" x2="590.0" y2="352.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="356.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">25%</text>
+<text x="50.0" y="356.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">25 %</text>
 <line x1="60.0" y1="285.0" x2="590.0" y2="285.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="289.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">50%</text>
+<text x="50.0" y="289.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">50 %</text>
 <line x1="60.0" y1="217.5" x2="590.0" y2="217.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="221.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">75%</text>
+<text x="50.0" y="221.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">75 %</text>
 <line x1="60.0" y1="150.0" x2="590.0" y2="150.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="154.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100%</text>
+<text x="50.0" y="154.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100 %</text>
 <text x="18" y="285.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 285.0)">Part du revenu</text>
 <rect id="hit-0" class="seg hit" tabindex="0" x="86.5" y="271.5" width="79.5" height="148.5" fill="#007AFF" role="img" aria-label="New, Q1: 55% of revenue"/>
 <rect id="hit-1" class="seg hit" tabindex="0" x="86.5" y="190.5" width="79.5" height="81.0" fill="#28CD41" role="img" aria-label="Renewal, Q1: 30% of revenue"/>

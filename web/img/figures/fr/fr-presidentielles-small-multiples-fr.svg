@@ -503,6 +503,6 @@
 <defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0%" stop-color="#EAF3FF"/><stop offset="25%" stop-color="#9CC7FF"/><stop offset="50%" stop-color="#3E9BFF"/><stop offset="75%" stop-color="#007AFF"/><stop offset="100%" stop-color="#0A4DA0"/></linearGradient></defs>
 <text x="580.0" y="264" text-anchor="middle" font-family="Roboto,sans-serif" font-size="10.5" fill="#6B7280">Vote pour le vainqueur, 2ᵉ tour (% des exprimés) — même échelle sur tous les panneaux</text>
 <rect x="440.0" y="270" width="280" height="9" fill="url(#lg)" stroke="#D1D5DB" stroke-width="0.5"/>
-<text x="440.0" y="292" font-family="Roboto,sans-serif" font-size="10" fill="#6B7280">30%</text>
-<text x="720.0" y="292" text-anchor="end" font-family="Roboto,sans-serif" font-size="10" fill="#6B7280">90%</text>
+<text x="440.0" y="292" font-family="Roboto,sans-serif" font-size="10" fill="#6B7280">30 %</text>
+<text x="720.0" y="292" text-anchor="end" font-family="Roboto,sans-serif" font-size="10" fill="#6B7280">90 %</text>
 </svg>

@@ -340,9 +340,9 @@
 <circle class="rg-africa" cx="788" cy="84" r="6" fill="#E69F00" fill-opacity="0.6" stroke="#E69F00"/>
 <text x="802" y="88" font-size="12" fill="#1D1D1F">Afrique</text>
 <circle class="rg-americas" cx="788" cy="102" r="6" fill="#009E73" fill-opacity="0.6" stroke="#009E73"/>
-<text x="802" y="106" font-size="12" fill="#1D1D1F">Americas</text>
+<text x="802" y="106" font-size="12" fill="#1D1D1F">les Amériques</text>
 <circle class="rg-europe" cx="788" cy="120" r="6" fill="#CC79A7" fill-opacity="0.6" stroke="#CC79A7"/>
-<text x="802" y="124" font-size="12" fill="#1D1D1F">Europe</text>
+<text x="802" y="124" font-size="12" fill="#1D1D1F">l’Europe</text>
 <circle class="rg-oceania" cx="788" cy="138" r="6" fill="#D55E00" fill-opacity="0.6" stroke="#D55E00"/>
 <text x="802" y="142" font-size="12" fill="#1D1D1F">Oceania</text>
 <text x="782" y="172" font-size="10" font-weight="700" fill="#6E6E73" letter-spacing="0.5">POPULATION</text>

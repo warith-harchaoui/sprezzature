@@ -243,8 +243,8 @@
 <circle cx="854.7" cy="507.7" r="2.6" fill="#1D1D1F" fill-opacity="0.45"/>
 <circle cx="897.3" cy="510.8" r="2.6" fill="#1D1D1F" fill-opacity="0.45"/>
 <circle cx="940.0" cy="510.8" r="2.6" fill="#1D1D1F" fill-opacity="0.45"/>
-<text x="556.0" y="537.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">100%</text>
-<text x="940.0" y="537.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end">8%</text>
+<text x="556.0" y="537.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">100 %</text>
+<text x="940.0" y="537.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end">8 %</text>
 <circle cx="556.0" cy="402.0" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="2"><animate attributeName="cx" values="556;556;599;599;641;641;684;684;727;727;769;769;812;812;855;855;897;897;940;940;897;897;855;855;812;812;769;769;727;727;684;684;641;641;599;599;556;556" dur="14s" repeatCount="indefinite"/><animate attributeName="cy" values="402;402;450;450;476;476;494;494;502;502;509;509;508;508;508;508;511;511;511;511;511;511;508;508;508;508;509;509;502;502;494;494;476;476;450;450;402;402" dur="14s" repeatCount="indefinite"/></circle>
 <text x="40.0" y="626.0" font-size="13" font-weight="600" fill="#1D1D1F">Chaque étape, en fixe</text>
 <rect x="40.0" y="640.0" width="82.8" height="82.8" fill="none" stroke="#E5E5EA" stroke-width="1" rx="5"/>

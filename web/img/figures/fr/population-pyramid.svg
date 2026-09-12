@@ -23,29 +23,29 @@
 <rect x="284.0" y="389.5" width="52" height="16" fill="#FFFFFF"/>
 <text x="310.0" y="401.5" font-size="12" fill="#1D1D1F" text-anchor="middle">0-14</text>
 <rect id="pyr-0" class="pyr hit" tabindex="0" x="230.7" y="159.0" width="57.3" height="27.0" rx="4.0" fill="#007AFF" role="img" aria-label="Male, 75+: 4%"/>
-<text x="224.7" y="176.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4%</text>
+<text x="224.7" y="176.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4 %</text>
 <rect id="pyr-1" class="pyr hit" tabindex="0" x="332.0" y="159.0" width="86.0" height="27.0" rx="4.0" fill="#FF9500" role="img" aria-label="Female, 75+: 6%"/>
-<text x="424.0" y="176.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">6%</text>
+<text x="424.0" y="176.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">6 %</text>
 <rect id="pyr-2" class="pyr hit" tabindex="0" x="173.3" y="204.0" width="114.7" height="27.0" rx="4.0" fill="#007AFF" role="img" aria-label="Male, 60-74: 8%"/>
-<text x="167.3" y="221.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8%</text>
+<text x="167.3" y="221.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8 %</text>
 <rect id="pyr-3" class="pyr hit" tabindex="0" x="332.0" y="204.0" width="129.0" height="27.0" rx="4.0" fill="#FF9500" role="img" aria-label="Female, 60-74: 9%"/>
-<text x="467.0" y="221.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">9%</text>
+<text x="467.0" y="221.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">9 %</text>
 <rect id="pyr-4" class="pyr hit" tabindex="0" x="116.0" y="249.0" width="172.0" height="27.0" rx="4.0" fill="#007AFF" role="img" aria-label="Male, 45-59: 12%"/>
-<text x="110.0" y="266.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">12%</text>
+<text x="110.0" y="266.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">12 %</text>
 <rect id="pyr-5" class="pyr hit" tabindex="0" x="332.0" y="249.0" width="186.3" height="27.0" rx="4.0" fill="#FF9500" role="img" aria-label="Female, 45-59: 13%"/>
-<text x="524.3" y="266.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">13%</text>
+<text x="524.3" y="266.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">13 %</text>
 <rect id="pyr-6" class="pyr hit" tabindex="0" x="87.3" y="294.0" width="200.7" height="27.0" rx="4.0" fill="#007AFF" role="img" aria-label="Male, 30-44: 14%"/>
-<text x="81.3" y="311.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">14%</text>
+<text x="81.3" y="311.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">14 %</text>
 <rect id="pyr-7" class="pyr hit" tabindex="0" x="332.0" y="294.0" width="200.7" height="27.0" rx="4.0" fill="#FF9500" role="img" aria-label="Female, 30-44: 14%"/>
-<text x="538.7" y="311.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">14%</text>
+<text x="538.7" y="311.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">14 %</text>
 <rect id="pyr-8" class="pyr hit" tabindex="0" x="73.0" y="339.0" width="215.0" height="27.0" rx="4.0" fill="#007AFF" role="img" aria-label="Male, 15-29: 15%"/>
-<text x="67.0" y="356.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">15%</text>
+<text x="67.0" y="356.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">15 %</text>
 <rect id="pyr-9" class="pyr hit" tabindex="0" x="332.0" y="339.0" width="200.7" height="27.0" rx="4.0" fill="#FF9500" role="img" aria-label="Female, 15-29: 14%"/>
-<text x="538.7" y="356.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">14%</text>
+<text x="538.7" y="356.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">14 %</text>
 <rect id="pyr-10" class="pyr hit" tabindex="0" x="116.0" y="384.0" width="172.0" height="27.0" rx="4.0" fill="#007AFF" role="img" aria-label="Male, 0-14: 12%"/>
-<text x="110.0" y="401.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">12%</text>
+<text x="110.0" y="401.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">12 %</text>
 <rect id="pyr-11" class="pyr hit" tabindex="0" x="332.0" y="384.0" width="157.7" height="27.0" rx="4.0" fill="#FF9500" role="img" aria-label="Female, 0-14: 11%"/>
-<text x="495.7" y="401.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">11%</text>
+<text x="495.7" y="401.5" font-size="10" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="start">11 %</text>
 <g id="pyr-tip-0" class="tip"><rect x="205.5" y="147" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="214.5" y="168.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Male, 75+</text><text x="214.5" y="184.5" font-size="12.5" font-weight="400" fill="#6E6E73">4% of population</text><text x="214.5" y="200.5" font-size="12.5" font-weight="400" fill="#6E6E73">3.0% of pyramid total</text></g>
 <g id="pyr-tip-1" class="tip"><rect x="249.5" y="147" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="258.5" y="168.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Female, 75+</text><text x="258.5" y="184.5" font-size="12.5" font-weight="400" fill="#6E6E73">6% of population</text><text x="258.5" y="200.5" font-size="12.5" font-weight="400" fill="#6E6E73">4.5% of pyramid total</text></g>
 <g id="pyr-tip-2" class="tip"><rect x="205.5" y="192" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="214.5" y="213.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Male, 60-74</text><text x="214.5" y="229.5" font-size="12.5" font-weight="400" fill="#6E6E73">8% of population</text><text x="214.5" y="245.5" font-size="12.5" font-weight="400" fill="#6E6E73">6.1% of pyramid total</text></g>

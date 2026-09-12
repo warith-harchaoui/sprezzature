@@ -30,25 +30,25 @@
 <line x1="128.0" y1="1022.0" x2="924.0" y2="1022.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="128.0" y1="226.0" x2="128.0" y2="1022.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="128.0" y1="1022.0" x2="128.0" y2="1029.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="128.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0%</text>
+<text x="128.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0 %</text>
 <line x1="121.0" y1="1022.0" x2="128.0" y2="1022.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="112.0" y="1029.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">0%</text>
+<text x="112.0" y="1029.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">0 %</text>
 <line x1="327.0" y1="1022.0" x2="327.0" y2="1029.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="327.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">25%</text>
+<text x="327.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">25 %</text>
 <line x1="121.0" y1="823.0" x2="128.0" y2="823.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="112.0" y="830.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">25%</text>
+<text x="112.0" y="830.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">25 %</text>
 <line x1="526.0" y1="1022.0" x2="526.0" y2="1029.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="526.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">50%</text>
+<text x="526.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">50 %</text>
 <line x1="121.0" y1="624.0" x2="128.0" y2="624.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="112.0" y="631.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">50%</text>
+<text x="112.0" y="631.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">50 %</text>
 <line x1="725.0" y1="1022.0" x2="725.0" y2="1029.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="725.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">75%</text>
+<text x="725.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">75 %</text>
 <line x1="121.0" y1="425.0" x2="128.0" y2="425.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="112.0" y="432.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">75%</text>
+<text x="112.0" y="432.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">75 %</text>
 <line x1="924.0" y1="1022.0" x2="924.0" y2="1029.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="924.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100%</text>
+<text x="924.0" y="1054.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100 %</text>
 <line x1="121.0" y1="226.0" x2="128.0" y2="226.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="112.0" y="233.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100%</text>
+<text x="112.0" y="233.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100 %</text>
 <text x="52.0" y="624.0" font-size="22" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 624.0)">Taux d'attrition observé</text>
 <line class="cal-stem-under" x1="163.3" y1="907.0" x2="163.3" y2="986.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
 <line class="cal-stem-under" x1="247.2" y1="787.7" x2="247.2" y2="902.8" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
@@ -187,15 +187,15 @@
 <line x1="121.0" y1="1154.0" x2="128.0" y2="1154.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="112.0" y="1160.0" font-size="18" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">1200</text>
 <line x1="128.0" y1="1330.0" x2="128.0" y2="1337.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="128.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0%</text>
+<text x="128.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0 %</text>
 <line x1="327.0" y1="1330.0" x2="327.0" y2="1337.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="327.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">25%</text>
+<text x="327.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">25 %</text>
 <line x1="526.0" y1="1330.0" x2="526.0" y2="1337.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="526.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">50%</text>
+<text x="526.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">50 %</text>
 <line x1="725.0" y1="1330.0" x2="725.0" y2="1337.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="725.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">75%</text>
+<text x="725.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">75 %</text>
 <line x1="924.0" y1="1330.0" x2="924.0" y2="1337.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<text x="924.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100%</text>
+<text x="924.0" y="1362.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">100 %</text>
 <text x="526.0" y="1404.0" font-size="22" fill="#1D1D1F" text-anchor="middle">Probabilité d'attrition prédite</text>
 <text x="52.0" y="1242.0" font-size="20" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 1242.0)">Prédictions</text>
 <text x="128.0" y="1088.0" font-size="18" fill="#6E6E73">Taille du point = prédictions dans la classe :</text>

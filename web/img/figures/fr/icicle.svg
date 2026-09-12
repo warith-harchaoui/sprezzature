@@ -14,19 +14,19 @@
 <text x="88" y="156" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">Temps dans la requête (largeur de barre = millisecondes)</text>
 <line x1="88" y1="204" x2="88" y2="644" stroke="#E5E5EA" stroke-width="1"/>
 <text x="88" y="196" font-size="15" fill="#6E6E73" text-anchor="start" font-family="Roboto Mono, monospace">0 ms</text>
-<text x="88" y="178" font-size="13" fill="#9A9AA0" text-anchor="start" font-family="Roboto Mono, monospace">0%</text>
+<text x="88" y="178" font-size="13" fill="#9A9AA0" text-anchor="start" font-family="Roboto Mono, monospace">0 %</text>
 <line x1="369" y1="204" x2="369" y2="644" stroke="#E5E5EA" stroke-width="1"/>
 <text x="369" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">120 ms</text>
-<text x="369" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">25%</text>
+<text x="369" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">25 %</text>
 <line x1="650" y1="204" x2="650" y2="644" stroke="#E5E5EA" stroke-width="1"/>
 <text x="650" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">240 ms</text>
-<text x="650" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">50%</text>
+<text x="650" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">50 %</text>
 <line x1="931" y1="204" x2="931" y2="644" stroke="#E5E5EA" stroke-width="1"/>
 <text x="931" y="196" font-size="15" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, monospace">360 ms</text>
-<text x="931" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">75%</text>
+<text x="931" y="178" font-size="13" fill="#9A9AA0" text-anchor="middle" font-family="Roboto Mono, monospace">75 %</text>
 <line x1="1212" y1="204" x2="1212" y2="644" stroke="#E5E5EA" stroke-width="1"/>
 <text x="1212" y="196" font-size="15" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">480 ms</text>
-<text x="1212" y="178" font-size="13" fill="#9A9AA0" text-anchor="end" font-family="Roboto Mono, monospace">100%</text>
+<text x="1212" y="178" font-size="13" fill="#9A9AA0" text-anchor="end" font-family="Roboto Mono, monospace">100 %</text>
 <text x="72" y="276" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L0</text>
 <text x="72" y="358" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L1</text>
 <text x="72" y="440" font-size="14" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, monospace">L2</text>
