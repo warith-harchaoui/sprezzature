@@ -139,7 +139,7 @@ _SHELL = """<!doctype html>
   </div>
 </div>
 
-<footer>{footer}</footer>
+<footer>{footer}{sources}</footer>
 
 <script>
 // The page works without this; all it adds is the stickiness.
@@ -170,6 +170,32 @@ document.body.classList.remove('no-js');
 </script>
 </html>
 """
+
+
+def _sources_html(cfg: Dict[str, Any]) -> str:
+    """
+    The provenance block under the footer.
+
+    Named as a courtesy rather than to satisfy anyone: most of what a map
+    like this stands on is public domain and asks for nothing. Saying where
+    it came from costs a line and tells the reader where to go for the real
+    thing, which is the more useful half of a credit anyway.
+    """
+    sources = cfg.get("sources") or []
+    if not sources:
+        return ""
+    rows = "".join(
+        f"<li>{html.escape(str(s.get('what', '')))} — "
+        f"{html.escape(str(s.get('from', '')))}</li>"
+        for s in sources
+    )
+    label = "Sources, par courtoisie" if str(cfg.get("lang", "en")) == "fr" else (
+        "Sources, as a courtesy"
+    )
+    return (
+        f'<p style="margin-top:26px">{label}</p>'
+        f'<ul style="margin:8px 0 0;padding-left:18px">{rows}</ul>'
+    )
 
 
 def build_page(cfg: Dict[str, Any]) -> str:
@@ -218,6 +244,7 @@ def build_page(cfg: Dict[str, Any]) -> str:
         standfirst=esc(str(cfg.get("standfirst", ""))),
         hint=esc(str(cfg.get("hint", "Scroll to read it"))),
         footer=esc(str(cfg.get("footer", ""))),
+        sources=_sources_html(cfg),
         steps=step_html,
         plates=plate_html,
         first_caption=esc(str(steps[0].get("caption", ""))),

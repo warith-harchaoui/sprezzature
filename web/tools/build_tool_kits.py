@@ -783,7 +783,7 @@ _PAGE = '''<!doctype html>
   <p class="lede">{lede}</p>
 {figures}
   <p><button id="fs" type="button">{fs_label}</button></p>
-  <footer>{repro_note}<br><code>{repro}</code></footer>
+  <footer>{repro_note}<br><code>{repro}</code><br><br>{sources}</footer>
 </main>
 <script>
   // Fullscreen is a labelled button rather than a click handler on the
@@ -852,7 +852,15 @@ def kit_page(
                 f"  </div>"
             )
     blocks = "\n".join(parts)
+    sources = (
+        "Sources, par courtoisie : typographies Roboto et Roboto Mono "
+        "(Christian ROBERTSON, SIL Open Font License)."
+        if french else
+        "Sources, as a courtesy: Roboto and Roboto Mono typefaces "
+        "(Christian ROBERTSON, SIL Open Font License)."
+    )
     return _PAGE.format(
+        sources=sources,
         lang="fr" if french else "en",
         title=title,
         lede=lede,
@@ -1157,6 +1165,17 @@ relancez. Le SVG est écrit directement, balise par balise — aucune
 bibliothèque graphique n'intervient, ce qui est précisément pourquoi rien
 n'est à installer.
 
+
+## Sources
+
+Par courtoisie, pas par obligation. Rien ici n'exige de crédit ; c'est
+nommé parce que le travail s'en est servi, et le dire ne coûte rien.
+
+| Élément | Origine |
+|---|---|
+| Typographies | Roboto et Roboto Mono, Christian ROBERTSON, sous SIL Open Font License |
+| Palette | `references/palette.csv`, la palette maison |
+
 ## Licence
 
 **BSD-3-Clause**, la même que scikit-learn ou NumPy : faites-en ce que vous
@@ -1197,6 +1216,17 @@ Then open `index.html` in a browser.
 Replace the rows in `references/palette.csv` with your own colours and run it
 again. The SVG is written directly, tag by tag — no charting library is
 involved, which is exactly why there is nothing to install.
+
+
+## Sources
+
+Out of courtesy, not obligation. Nothing here requires a credit; it is named
+because the work drew on it, and saying so costs nothing.
+
+| Item | Origin |
+|---|---|
+| Typefaces | Roboto and Roboto Mono, Christian ROBERTSON, under the SIL Open Font License |
+| Palette | `references/palette.csv`, the house palette |
 
 ## Licence
 
