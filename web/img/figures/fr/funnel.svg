@@ -6,7 +6,7 @@
 <text x="450" y="80" font-size="14" fill="#6E6E73" text-anchor="middle">Nombre d'utilisateurs atteignant chaque étape de conversion</text>
 <path id="stage-0" class="hit" tabindex="0" d="M160.0,120.0 L740.0,120.0 C740.0,150.0 493.5,150.0 493.5,180.0 L406.5,180.0 C406.5,150.0 160.0,150.0 160.0,120.0 Z" fill="#007AFF" opacity="0.88"><title>Website visits : 124,800</title></path>
 <text x="150.0" y="155.0" font-size="13" fill="#1D1D1F" text-anchor="end">Visites du site</text>
-<text x="750.0" y="155.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">124,800</text>
+<text x="750.0" y="155.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">124 800</text>
 <path id="stage-1" class="hit" tabindex="0" d="M406.5,180.0 L493.5,180.0 C493.5,210.0 471.8,210.0 471.8,240.0 L428.2,240.0 C428.2,210.0 406.5,210.0 406.5,180.0 Z" fill="#AF52DE" opacity="0.88"><title>Inscriptions à l'essai : 18 720 (15,0 % de conversion)</title></path>
 <text x="396.5" y="215.0" font-size="13" fill="#1D1D1F" text-anchor="end">Inscriptions à l'essai</text>
 <text x="503.5" y="215.0" font-size="13" fill="#1D1D1F" text-anchor="start" font-family="Roboto Mono, ui-monospace, monospace">18,720  (15.0%)</text>

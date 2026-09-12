@@ -1143,11 +1143,11 @@
 <line x1="846.0" y1="1156.0" x2="846.0" y2="1162.0" stroke="#6E6E73" stroke-width="1.2"/>
 <text x="850.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="start">0</text>
 <line x1="916.0" y1="1156.0" x2="916.0" y2="1162.0" stroke="#6E6E73" stroke-width="1.2"/>
-<text x="916.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">2,000</text>
+<text x="916.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">2 000</text>
 <line x1="986.0" y1="1156.0" x2="986.0" y2="1162.0" stroke="#6E6E73" stroke-width="1.2"/>
-<text x="986.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">4,000</text>
+<text x="986.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">4 000</text>
 <line x1="1056.0" y1="1156.0" x2="1056.0" y2="1162.0" stroke="#6E6E73" stroke-width="1.2"/>
-<text x="1056.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">6,000</text>
+<text x="1056.0" y="1180.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="middle">6 000</text>
 <text x="951.0" y="1214.0" font-size="18" font-weight="600" fill="#1D1D1F" text-anchor="middle">Durée de vie nominale</text>
 <text x="951.0" y="1236.0" font-size="15" fill="#6E6E73" text-anchor="middle">(cycles)</text>
 <line x1="144.0" y1="460.0" x2="150.0" y2="460.0" stroke="#6E6E73" stroke-width="1.2"/>
@@ -1178,11 +1178,11 @@
 <line x1="144.0" y1="1156.0" x2="150.0" y2="1156.0" stroke="#6E6E73" stroke-width="1.2"/>
 <text x="139.0" y="1161.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">0</text>
 <line x1="144.0" y1="1086.0" x2="150.0" y2="1086.0" stroke="#6E6E73" stroke-width="1.2"/>
-<text x="139.0" y="1091.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">2,000</text>
+<text x="139.0" y="1091.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">2 000</text>
 <line x1="144.0" y1="1016.0" x2="150.0" y2="1016.0" stroke="#6E6E73" stroke-width="1.2"/>
-<text x="139.0" y="1021.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">4,000</text>
+<text x="139.0" y="1021.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">4 000</text>
 <line x1="144.0" y1="946.0" x2="150.0" y2="946.0" stroke="#6E6E73" stroke-width="1.2"/>
-<text x="139.0" y="951.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">6,000</text>
+<text x="139.0" y="951.0" font-size="14" font-family="Roboto Mono, monospace" fill="#6E6E73" text-anchor="end">6 000</text>
 <text x="58.0" y="1051.0" font-size="18" font-weight="600" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 58.0 1051.0)">Durée de vie nominale (cycles)</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </g></svg>
