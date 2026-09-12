@@ -70,4 +70,6 @@ build/
 # They are published by uploading web/ to the host by hand, the same way the
 # rest of the site is. Rebuild before uploading:
 #     python3 web/tools/build_figure_kits.py
-web/kits/*.zip
+# ``*.zip`` alone misses web/kits/fr/, where the French kits land — three
+# of them were staged for commit before this was noticed.
+web/kits/**/*.zip

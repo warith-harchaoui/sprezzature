@@ -94,7 +94,20 @@ def verify_stdlib_only(paths: List[Path], vendored: set[str]) -> List[str]:
         except SyntaxError as exc:  # a file that will not parse cannot ship
             problems.append(f"{path.name}: does not parse ({exc})")
             continue
+        # An import inside `try:` or `if:` is optional by construction —
+        # _lang.py guards `from langdetect import ...` behind a find_spec
+        # check precisely so the module stays importable without it. Only
+        # unconditional imports can break a bare machine.
+        guarded: set[int] = set()
         for node in ast.walk(tree):
+            if isinstance(node, (ast.Try, ast.If)):
+                for inner in ast.walk(node):
+                    if isinstance(inner, (ast.Import, ast.ImportFrom)):
+                        guarded.add(id(inner))
+
+        for node in ast.walk(tree):
+            if id(node) in guarded:
+                continue
             if isinstance(node, ast.Import):
                 names = [a.name.split(".")[0] for a in node.names]
             elif isinstance(node, ast.ImportFrom):
@@ -412,6 +425,192 @@ if __name__ == "__main__":
 '''
 
 
+_LINT_RUN = """
+\"\"\"
+run @@DASH@@ check the sample page, and draw what it found.
+
+The checker is the one from @@REPO@@, copied here unmodified. It reads
+``sample.html`` and writes ``report.svg``: one row per group, so the shape
+of the problem is visible before any single line is.
+
+Run it::
+
+    python3 run.py            # writes report.svg
+    open index.html
+
+Then replace ``sample.html`` with a page of your own and run it again.
+Nothing here needs installing: the standard library is enough.
+
+Author
+------
+`Warith Harchaoui, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
+\"\"\"
+
+from __future__ import annotations
+
+import sys
+from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+
+@@IMPORT@@
+
+INK = "#1d1d1f"
+SUBTLE = "#6e6e73"
+ERROR = "#d1372e"
+WARN = "#b8860b"
+ROW = 26
+WIDTH = 860
+
+
+def escape(text):
+    \"\"\"Minimal XML escaping for text that goes into an SVG.\"\"\"
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def report(findings):
+    \"\"\"
+    Draw the findings as a grouped list.
+
+    Grouped rather than listed line by line, because the useful question is
+    "what is wrong with this page" and not "what is wrong with line 42":
+    one rule broken nineteen times is one decision to make, not nineteen.
+    \"\"\"
+    counts = Counter(@@KEY@@ for f in findings)
+    order = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    height = 150 + max(1, len(order)) * ROW + 40
+    out = []
+    out.append(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="' + str(WIDTH)
+        + '" height="' + str(height) + '" viewBox="0 0 ' + str(WIDTH) + ' '
+        + str(height) + '" role="img" aria-label="@@ARIA@@">'
+    )
+    out.append('<rect width="' + str(WIDTH) + '" height="' + str(height) + '" fill="#ffffff"/>')
+    out.append(
+        '<text x="24" y="40" font-family="system-ui, sans-serif" font-size="21" '
+        'font-weight="700" fill="' + INK + '">@@HEADLINE@@</text>'
+    )
+    total = len(findings)
+    plural = "" if total == 1 else "s"
+    out.append(
+        '<text x="24" y="64" font-family="system-ui, sans-serif" font-size="13" fill="'
+        + SUBTLE + '">' + str(total) + " finding" + plural
+        + ' in sample.html, grouped by @@GROUP@@</text>'
+    )
+    if not order:
+        out.append(
+            '<text x="24" y="120" font-family="system-ui, sans-serif" font-size="15" fill="'
+            + INK + '">Nothing to report ' + chr(8212) + ' the page passes every check.</text>'
+        )
+        out.append("</svg>")
+        return chr(10).join(out)
+
+    biggest = max(counts.values())
+    for i, item in enumerate(order):
+        name, n = item
+        y = 110 + i * ROW
+        colour = @@SEVERITY@@
+        bar = 380.0 * n / biggest
+        out.append(
+            '<rect x="330" y="' + str(y - 12) + '" width="' + format(bar, ".1f")
+            + '" height="16" fill="' + colour + '" fill-opacity="0.85">'
+            + "<title>" + escape(name) + ": " + str(n) + "</title></rect>"
+        )
+        out.append(
+            '<text x="24" y="' + str(y) + '" font-family="ui-monospace, monospace" '
+            'font-size="12" fill="' + INK + '">' + escape(name) + "</text>"
+        )
+        out.append(
+            '<text x="' + format(336 + bar, ".1f") + '" y="' + str(y)
+            + '" font-family="system-ui, sans-serif" font-size="12" fill="'
+            + SUBTLE + '">' + str(n) + "</text>"
+        )
+    out.append("</svg>")
+    return chr(10).join(out)
+
+
+def main():
+    \"\"\"Check the sample and write the report.\"\"\"
+    here = Path(__file__).resolve().parent
+    findings = @@CALL@@
+    svg = report(findings)
+    (here / "report.svg").write_text(svg, encoding="utf-8")
+    print("wrote report.svg  (" + str(len(svg) // 1024) + " KB)")
+    print("")
+    print(str(len(findings)) + " finding(s) in sample.html.")
+    print("Open index.html to see them, or edit sample.html and run again.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+"""
+
+
+def lint_run(repo, import_line, key, severity, call, aria, headline, group):
+    """
+    Fill the shared checker-kit template.
+
+    Token substitution rather than ``str.format``: the template is Python
+    source full of braces, and doubling every one of them to survive
+    ``format`` is how the previous version acquired three separate quoting
+    bugs in a row.
+    """
+    text = _LINT_RUN
+    for token, value in (
+        ("@@DASH@@", chr(8212)),
+        ("@@REPO@@", repo),
+        ("@@IMPORT@@", import_line),
+        ("@@KEY@@", key),
+        ("@@SEVERITY@@", severity),
+        ("@@CALL@@", call),
+        ("@@ARIA@@", aria),
+        ("@@HEADLINE@@", headline),
+        ("@@GROUP@@", group),
+    ):
+        text = text.replace(token, value)
+    return text
+
+
+
+#: A page with one clear instance of several faults. Deliberately small:
+#: a kit whose sample throws two hundred findings teaches nothing, and a
+#: kit whose sample is clean cannot demonstrate that the tool works.
+_SAMPLE_HTML = """<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Sample page</title></head>
+<body>
+  <h1>Quarterly review</h1>
+  <h3>Revenue</h3>
+
+  <img src="chart.png">
+  <img src="spacer.gif" alt="" role="presentation">
+
+  <a>Read more</a>
+  <button></button>
+  <div onclick="open()">Open the panel</div>
+
+  <input type="email" placeholder="Your email">
+
+  <video src="briefing.mp4"></video>
+  <audio src="summary.mp3" autoplay></audio>
+
+  <nav>
+    <a href="/a">One</a><a href="/b">Two</a><a href="/c">Three</a>
+    <a href="/d">Four</a><a href="/e">Five</a><a href="/f">Six</a>
+    <a href="/g">Seven</a><a href="/h">Eight</a><a href="/i">Nine</a>
+    <a href="/j">Ten</a><a href="/k">Eleven</a><a href="/l">Twelve</a>
+  </nav>
+
+  <p class="text-red-500">Failed</p>
+  <p>Reference 4815162342 was filed at 14:32.</p>
+  <button class="p-1">Go</button>
+</body>
+</html>
+"""
+
+
 _PAGE = '''<!doctype html>
 <html lang="{lang}">
 <meta charset="utf-8">
@@ -514,6 +713,69 @@ def kit_page(
 #: One entry per kit. ``sources`` are copied into ``lib/``; ``data`` is
 #: copied to the kit root (where the vendored modules expect to find it).
 KITS: Dict[str, Dict[str, Any]] = {
+    "accessibility": {
+        "repo": "sprezzature-accessibility",
+        "sources": ["scripts/lint_a11y.py", "scripts/_argparse.py", "scripts/_lang.py"],
+        "data": [],
+        "sample": _SAMPLE_HTML,
+        "run": lint_run(
+            repo="sprezzature-accessibility",
+            import_line="from lint_a11y import lint_html",
+            key="f.rule",
+            severity='WARN if name in _SOFT else ERROR',
+            call='lint_html((here / "sample.html").read_text(encoding="utf-8"))',
+            aria="Accessibility findings by rule",
+            headline="What this page gets wrong",
+            group="rule",
+        ).replace(
+            "ROW = 26",
+            'ROW = 26\n\n#: Rules that make a page harder to use rather than impossible.\n'
+            '_SOFT = ("img-redundant-aria", "color-only-state", "motion-no-reduce-guard",\n'
+            '         "track-missing-srclang", "body-text-tracking-tight")',
+        ),
+        "outputs": [("report.svg", "Accessibility findings, grouped by rule")],
+        "title": {
+            "en": "What this page gets wrong",
+            "fr": "Ce que cette page rate",
+        },
+        "lede": {
+            "en": "Twenty WCAG-oriented checks over a sample page — images, controls, "
+                  "headings, motion and captions. Replace sample.html with a page of "
+                  "your own and run it again.",
+            "fr": "Vingt contrôles inspirés du WCAG sur une page d'exemple — images, "
+                  "commandes, titres, animation et sous-titres. Remplacez sample.html "
+                  "par une page à vous et relancez.",
+        },
+    },
+    "ux-laws": {
+        "repo": "sprezzature-ux-laws",
+        "sources": ["scripts/audit_laws_of_ux.py", "scripts/_argparse.py"],
+        "data": [],
+        "sample": _SAMPLE_HTML,
+        "run": lint_run(
+            repo="sprezzature-ux-laws",
+            import_line="from audit_laws_of_ux import audit_html",
+            key="f.law",
+            severity='ERROR if any(g.severity == "error" for g in findings if g.law == name) else WARN',
+            call='audit_html((here / "sample.html").read_text(encoding="utf-8"))',
+            aria="Laws-of-UX findings by law",
+            headline="Where this interface fights its reader",
+            group="law",
+        ),
+        "outputs": [("report.svg", "Laws-of-UX findings, grouped by law")],
+        "title": {
+            "en": "Where this interface fights its reader",
+            "fr": "Où cette interface contrarie son lecteur",
+        },
+        "lede": {
+            "en": "Eight laws of UX — Hick, Miller, Fitts, Jakob, Tesler and friends — "
+                  "read off the structure of a sample page. These are prompts for a "
+                  "designer, not verdicts: no linter knows your audience.",
+            "fr": "Huit lois de l'UX — Hick, Miller, Fitts, Jakob, Tesler et les autres — "
+                  "lues dans la structure d'une page d'exemple. Ce sont des questions "
+                  "pour un concepteur, pas des verdicts : aucun outil ne connaît votre public.",
+        },
+    },
     "colors": {
         "repo": "sprezzature-colors",
         "sources": ["scripts/_colors.py"],
@@ -587,6 +849,8 @@ def build_kit(name: str, spec: Dict[str, Any], out_dir: Path, language: str) -> 
         shutil.copy2(source, destination)
 
     (kit / "run.py").write_text(spec["run"], encoding="utf-8")
+    if spec.get("sample"):
+        (kit / "sample.html").write_text(spec["sample"], encoding="utf-8")
 
     # macOS writes AppleDouble sidecars ("._run.py") on non-HFS volumes, and
     # they match *.py while being binary. Skip anything dot-prefixed.
