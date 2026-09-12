@@ -22,7 +22,6 @@ from __future__ import annotations
 import glob
 import html
 import re
-import subprocess
 import sys
 from pathlib import Path
 
@@ -301,27 +300,37 @@ def localize_hero(name: str) -> None:
 
 #: Gallery thumbnails are a fixed 900px wide whatever the figure's viewBox.
 THUMB_WIDTH = 900
+_VIEWBOX_RE = re.compile(r'viewBox="0 0 ([\d.]+) ([\d.]+)"')
 
 
 def _rasterise(svg: Path, png: Path) -> None:
     """
     Write `svg`'s 900px-wide thumbnail to `png`.
 
-    The English thumbnails come from each generator's own rasteriser, but a
-    localised figure is a transformed SVG with no generator behind it, so this
-    goes through rsvg-convert. Its absence is reported rather than raised: the
-    localised SVG is the substantive output, and a missing thumbnail should not
-    lose it.
+    The English thumbnails come from each generator's own rasteriser, which is
+    resvg (through ``resvg_py``); a localised figure is a transformed SVG with
+    no generator behind it, so this calls the same library directly rather than
+    a different one. It matters: rsvg-convert renders the same pixels but
+    writes a PNG close to twice the size, and these are gallery thumbnails.
+
+    A missing rasteriser is reported rather than raised — the localised SVG is
+    the substantive output, and a missing thumbnail should not lose it.
     """
+    text = svg.read_text(encoding="utf-8")
+    m = _VIEWBOX_RE.search(text)
+    if m is None:
+        print(f"  no viewBox in {svg.name}: {png.name} not written")
+        return
+    zoom = THUMB_WIDTH / float(m.group(1))
     try:
-        subprocess.run(
-            ["rsvg-convert", "-w", str(THUMB_WIDTH), "-o", str(png), str(svg)],
-            check=True, capture_output=True,
-        )
-    except FileNotFoundError:
-        print(f"  no rsvg-convert on PATH: {png.name} not written")
-    except subprocess.CalledProcessError as exc:
-        print(f"  FAIL rasterising {svg.name}: {exc.stderr.decode()[-200:]}")
+        import resvg_py
+    except ImportError:
+        print(f"  resvg_py not installed: {png.name} not written")
+        return
+    try:
+        png.write_bytes(bytes(resvg_py.svg_to_bytes(svg_string=text, zoom=zoom)))
+    except Exception as exc:  # noqa: BLE001
+        print(f"  FAIL rasterising {svg.name}: {exc}")
 
 
 def main() -> int:

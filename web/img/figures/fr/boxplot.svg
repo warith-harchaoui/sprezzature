@@ -6,15 +6,15 @@
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Distribution des salaires par service</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Échantillon synthétique, en milliers d'euros</text>
 <line x1="64.0" y1="422.4" x2="715.0" y2="422.4" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="426.4" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">40.0</text>
+<text x="54.0" y="426.4" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">40,0</text>
 <line x1="64.0" y1="358.7" x2="715.0" y2="358.7" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="362.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">60.0</text>
+<text x="54.0" y="362.7" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">60,0</text>
 <line x1="64.0" y1="295.1" x2="715.0" y2="295.1" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="299.1" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">80.0</text>
+<text x="54.0" y="299.1" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">80,0</text>
 <line x1="64.0" y1="231.5" x2="715.0" y2="231.5" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="235.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100.0</text>
+<text x="54.0" y="235.5" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100,0</text>
 <line x1="64.0" y1="167.9" x2="715.0" y2="167.9" stroke="#E5E5EA" stroke-width="1"/>
-<text x="54.0" y="171.9" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">120.0</text>
+<text x="54.0" y="171.9" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">120,0</text>
 <text x="18" y="276.5" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 276.5)">Salaire (milliers d'euros)</text>
 <line x1="145.4" y1="139.9" x2="145.4" y2="207.6" stroke="#1D1D1F" stroke-width="1.2"/>
 <line x1="145.4" y1="304.7" x2="145.4" y2="339.6" stroke="#1D1D1F" stroke-width="1.2"/>

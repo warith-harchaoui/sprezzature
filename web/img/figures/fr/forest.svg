@@ -120,7 +120,7 @@
 <g id="rowtip-8" class="tip"><rect x="271.3" y="398" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="280.3" y="419.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Groupé (effets aléatoires)</text><text x="280.3" y="435.5" font-size="12.5" font-weight="400" fill="#6E6E73">OR 1.44 (95% CI 1.26-1.64)</text><text x="280.3" y="451.5" font-size="12.5" font-weight="400" fill="#6E6E73">I² = 34%</text></g>
 <line x1="210.0" y1="430.0" x2="528.0" y2="430.0" stroke="#1D1D1F" stroke-width="1"/>
 <line x1="238.1" y1="430.0" x2="238.1" y2="435.0" stroke="#1D1D1F" stroke-width="1"/>
-<text x="238.1" y="449.0" font-size="11" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0.5</text>
+<text x="238.1" y="449.0" font-size="11" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">0,5</text>
 <line x1="325.4" y1="430.0" x2="325.4" y2="435.0" stroke="#1D1D1F" stroke-width="1"/>
 <text x="325.4" y="449.0" font-size="11" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="middle">1</text>
 <line x1="412.6" y1="430.0" x2="412.6" y2="435.0" stroke="#1D1D1F" stroke-width="1"/>

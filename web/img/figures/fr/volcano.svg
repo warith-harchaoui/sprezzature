@@ -12,19 +12,19 @@
 <circle cx="173.0" cy="96.0" r="5" fill="#FF3B30"/>
 <text x="184.0" y="100.0" font-size="12" fill="#1D1D1F">Sur-exprimé</text>
 <line x1="60.0" y1="460.0" x2="590.0" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="464.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0.0</text>
+<text x="50.0" y="464.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0,0</text>
 <line x1="60.0" y1="403.0" x2="590.0" y2="403.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="407.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">1.0</text>
+<text x="50.0" y="407.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">1,0</text>
 <line x1="60.0" y1="346.0" x2="590.0" y2="346.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="350.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">2.0</text>
+<text x="50.0" y="350.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">2,0</text>
 <line x1="60.0" y1="289.0" x2="590.0" y2="289.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="293.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">3.0</text>
+<text x="50.0" y="293.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">3,0</text>
 <line x1="60.0" y1="232.0" x2="590.0" y2="232.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="236.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4.0</text>
+<text x="50.0" y="236.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">4,0</text>
 <line x1="60.0" y1="175.0" x2="590.0" y2="175.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="179.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">5.0</text>
+<text x="50.0" y="179.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">5,0</text>
 <line x1="60.0" y1="118.0" x2="590.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="50.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">6.0</text>
+<text x="50.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">6,0</text>
 <text x="18" y="289.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 289.0)">-log10 p</text>
 <line x1="258.8" y1="118.0" x2="258.8" y2="460.0" stroke="#AEAEB2" stroke-width="1.3" stroke-dasharray="4 3"/>
 <line x1="391.2" y1="118.0" x2="391.2" y2="460.0" stroke="#AEAEB2" stroke-width="1.3" stroke-dasharray="4 3"/>
@@ -310,15 +310,15 @@
 <circle id="point-278" class="hit" tabindex="0" cx="186.5" cy="333.5" r="3.5" fill="#007AFF" fill-opacity="0.7" role="img" aria-label="log2FC -2.09, -log10p 2.22 (Down)"/>
 <circle id="point-279" class="hit" tabindex="0" cx="184.6" cy="351.1" r="3.5" fill="#007AFF" fill-opacity="0.7" role="img" aria-label="log2FC -2.12, -log10p 1.91 (Down)"/>
 <line x1="60.0" y1="460.0" x2="590.0" y2="460.0" stroke="#1D1D1F" stroke-width="1.2"/>
-<text x="60.0" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-4.0</text>
-<text x="126.2" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-3.0</text>
-<text x="192.5" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-2.0</text>
-<text x="258.8" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-1.0</text>
-<text x="325.0" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0.0</text>
-<text x="391.2" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">1.0</text>
-<text x="457.5" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">2.0</text>
-<text x="523.8" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">3.0</text>
-<text x="590.0" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">4.0</text>
+<text x="60.0" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-4,0</text>
+<text x="126.2" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-3,0</text>
+<text x="192.5" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-2,0</text>
+<text x="258.8" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">-1,0</text>
+<text x="325.0" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0,0</text>
+<text x="391.2" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">1,0</text>
+<text x="457.5" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">2,0</text>
+<text x="523.8" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">3,0</text>
+<text x="590.0" y="480.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">4,0</text>
 <text x="325.0" y="502.0" font-size="13" fill="#1D1D1F" text-anchor="middle">log2 fold change</text>
 <g id="tip-0" class="tip"><rect x="221.7" y="379.3" width="102" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="230.7" y="400.8" font-size="12.5" font-weight="700" fill="#1D1D1F">n.s.</text><text x="230.7" y="416.8" font-size="12.5" font-weight="400" fill="#6E6E73">log2FC -0.79</text><text x="230.7" y="432.8" font-size="12.5" font-weight="400" fill="#6E6E73">-log10p 1.17</text></g>
 <g id="tip-1" class="tip"><rect x="256.8" y="404.4" width="102" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="265.8" y="425.9" font-size="12.5" font-weight="700" fill="#1D1D1F">n.s.</text><text x="265.8" y="441.9" font-size="12.5" font-weight="400" fill="#6E6E73">log2FC -0.26</text><text x="265.8" y="457.9" font-size="12.5" font-weight="400" fill="#6E6E73">-log10p 0.73</text></g>

@@ -29,44 +29,44 @@
 <text x="80" y="197.7" font-size="12" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">80</text>
 <line x1="88" y1="505.4" x2="1056" y2="505.4" stroke="#1D1D1F" stroke-width="1.5" opacity="0.35"/>
 <rect id="bar-0" class="hit" tabindex="0" x="98.6" y="317.0" width="75.5" height="188.4" rx="3" fill="#007AFF" opacity="0.9" role="img" aria-label="FY-2023 operating income: 48.2M"/>
-<text x="136.4" y="311.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">48.2</text>
+<text x="136.4" y="311.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">48,2</text>
 <text x="136.4" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ex. 2023</text>
 <text x="136.4" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Résultat</text>
 <text x="136.4" y="600.0" font-size="11" fill="#1D1D1F" text-anchor="middle">d'exploitation</text>
 <rect id="bar-1" class="hit" tabindex="0" x="195.4" y="241.1" width="75.5" height="75.8" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Subscription revenue: +19.4M"/>
-<text x="233.2" y="235.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+19.4</text>
+<text x="233.2" y="235.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+19,4</text>
 <text x="233.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Revenus</text>
 <text x="233.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">d'abonnement</text>
 <rect id="bar-2" class="hit" tabindex="0" x="292.2" y="225.1" width="75.5" height="16.0" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Professional services: +4.1M"/>
-<text x="330.0" y="219.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+4.1</text>
+<text x="330.0" y="219.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+4,1</text>
 <text x="330.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Services</text>
 <text x="330.0" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">professionnels</text>
 <rect id="bar-3" class="hit" tabindex="0" x="389.0" y="194.6" width="75.5" height="30.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Upsell / expansion: +7.8M"/>
-<text x="426.8" y="188.6" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+7.8</text>
+<text x="426.8" y="188.6" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+7,8</text>
 <text x="426.8" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ventes add. /</text>
 <text x="426.8" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">expansion</text>
 <rect id="bar-4" class="hit" tabindex="0" x="485.8" y="194.6" width="75.5" height="20.7" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="Churn impact: -5.3M"/>
-<text x="523.6" y="229.3" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-5.3</text>
+<text x="523.6" y="229.3" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-5,3</text>
 <text x="523.6" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Attrition</text>
 <text x="523.6" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">impact</text>
 <rect id="bar-5" class="hit" tabindex="0" x="582.6" y="215.3" width="75.5" height="45.3" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="R&amp;D investment: -11.6M"/>
-<text x="620.4" y="274.7" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-11.6</text>
+<text x="620.4" y="274.7" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-11,6</text>
 <text x="620.4" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">R&amp;D</text>
 <text x="620.4" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">investissement</text>
 <rect id="bar-6" class="hit" tabindex="0" x="679.4" y="260.7" width="75.5" height="24.2" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="S&amp;M headcount: -6.2M"/>
-<text x="717.2" y="298.9" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-6.2</text>
+<text x="717.2" y="298.9" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-6,2</text>
 <text x="717.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ventes et mkt</text>
 <text x="717.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">effectifs</text>
 <rect id="bar-7" class="hit" tabindex="0" x="776.2" y="270.5" width="75.5" height="14.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Infrastructure efficiency: +3.7M"/>
-<text x="814.0" y="264.5" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+3.7</text>
+<text x="814.0" y="264.5" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+3,7</text>
 <text x="814.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Infrastructure</text>
 <text x="814.0" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">efficacité</text>
 <rect id="bar-8" class="hit" tabindex="0" x="873.0" y="265.0" width="75.5" height="5.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="G&amp;A reduction: +1.4M"/>
-<text x="910.8" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+1.4</text>
+<text x="910.8" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+1,4</text>
 <text x="910.8" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Frais génér.</text>
 <text x="910.8" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">réduction</text>
 <rect id="bar-9" class="hit" tabindex="0" x="969.8" y="265.0" width="75.5" height="240.4" rx="3" fill="#007AFF" opacity="0.9" role="img" aria-label="FY-2024 operating income: 61.5M"/>
-<text x="1007.6" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">61.5</text>
+<text x="1007.6" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">61,5</text>
 <text x="1007.6" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ex. 2024</text>
 <text x="1007.6" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Résultat</text>
 <text x="1007.6" y="600.0" font-size="11" fill="#1D1D1F" text-anchor="middle">d'exploitation</text>
