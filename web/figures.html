@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Figures — Sprezzature</title>
-  <meta name="description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 127 hand-authored SVG chart types, all from fake data on a curated palette.">
+  <meta name="description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 125 hand-authored SVG chart types, all from fake data on a curated palette.">
   <link rel="canonical" href="https://sprezzature.ai/figures.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/figures.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/figures.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Figures — Sprezzature">
-  <meta property="og:description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 127 hand-authored SVG chart types, all from fake data on a curated palette.">
+  <meta property="og:description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 125 hand-authored SVG chart types, all from fake data on a curated palette.">
   <meta property="og:url" content="https://sprezzature.ai/figures.html">
   <meta property="og:image" content="https://sprezzature.ai/img/figures/bar.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -38,7 +38,7 @@
       {
         "@type": "WebPage",
         "name": "Figures — Sprezzature",
-        "description": "A rendered catalog of charts and statistical plots from sprezzature-figures: 127 hand-authored SVG chart types, all from fake data on a curated palette.",
+        "description": "A rendered catalog of charts and statistical plots from sprezzature-figures: 125 hand-authored SVG chart types, all from fake data on a curated palette.",
         "url": "https://sprezzature.ai/figures.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -103,7 +103,7 @@
           <li><span class="inline-block rounded-full border border-neutral-300 bg-white px-4 py-2 font-mono text-sm text-neutral-800 shadow-sm dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-200">"render this diagram"</span></li>
         </ul>
       </div>
-      <p class="mt-6 max-w-3xl text-neutral-600 dark:text-neutral-300">Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all.</p>
+      <p class="mt-6 max-w-3xl text-neutral-600 dark:text-neutral-300">Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The two animated Gapminder generators complete the 127-generator catalogue on the <a href="hans-rosling.html" class="font-medium text-brand-linktext underline decoration-brand-blue/40 underline-offset-2 hover:decoration-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Hans ROSLING tribute</a>.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/docs/FIGURES.md" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">FIGURES.md catalog</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Give a ⭐️ on GitHub</a>
@@ -141,7 +141,7 @@
         <label class="relative block">
           <span class="sr-only">Search figures</span>
           <svg width="16" height="16" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M14 14l4 4" stroke-linecap="round"></path></svg>
-          <input id="fig-search" type="search" placeholder="Search 127 figures by name, use, or keyword…" autocomplete="off" spellcheck="false" class="w-full rounded-lg border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 min-h-11">
+          <input id="fig-search" type="search" placeholder="Search 125 figures by name, use, or keyword…" autocomplete="off" spellcheck="false" class="w-full rounded-lg border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 min-h-11">
         </label>
         <p id="fig-count" class="mt-1 h-4 text-xs text-neutral-500 dark:text-neutral-400" aria-live="polite"></p>
       </div>
@@ -406,12 +406,6 @@
             <div class="mt-2"><a href="kits/ridgeline.zip" download class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Download the Ridgeline / joyplot kit: Python, CSV and SVG, 68 KB">↓ Python + CSV + SVG kit (68 KB)</a></div></figcaption>
           </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Beeswarm" data-src="img/figures/beeswarm.png" data-src-academic="img/figures/academic/beeswarm.png" data-alt="Beeswarm plot showing groups A, B, and C with varying values; group B has the widest spread.">
-            <img src="img/figures/beeswarm.png" data-src-academic="img/figures/academic/beeswarm.png" alt="Beeswarm plot showing groups A, B, and C with varying values; group B has the widest spread." loading="lazy" class="w-full">
-          </button>
-          <figcaption class="p-3"><span class="font-medium">Beeswarm</span> <span class="text-neutral-500 dark:text-neutral-400">: Force-packed points, no overlap.</span></figcaption>
-        </figure>
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
           <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Strip plot" data-src="img/figures/strip.svg" data-src-academic="img/figures/academic/strip.svg" data-alt="Strip plot of response by dose (Control, Low, High), jittered points showing response rising with dose.">
             <img src="img/figures/strip.png" data-src-academic="img/figures/academic/strip.png" alt="Strip plot of response by dose (Control, Low, High), jittered points showing response rising with dose." loading="lazy" class="w-full">
           </button>
@@ -502,12 +496,6 @@
           </button>
           <figcaption class="p-3"><span class="font-medium">Hexbin density</span> <span class="text-neutral-500 dark:text-neutral-400">: Many points binned into hexagons.</span>
             <div class="mt-2"><a href="kits/hexbin.zip" download class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Download the Hexbin density kit: Python, CSV and SVG, 102 KB">↓ Python + CSV + SVG kit (102 KB)</a></div></figcaption>
-        </figure>
-        <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-          <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: 2D-KDE contour" data-src="img/figures/kde2d-contour.png" data-src-academic="img/figures/academic/kde2d-contour.png" data-alt="2D KDE shows two distinct density clusters in the data, suggesting a bimodal distribution.">
-            <img src="img/figures/kde2d-contour.png" data-src-academic="img/figures/academic/kde2d-contour.png" alt="2D KDE shows two distinct density clusters in the data, suggesting a bimodal distribution." loading="lazy" class="w-full">
-          </button>
-          <figcaption class="p-3"><span class="font-medium">2D-KDE contour</span> <span class="text-neutral-500 dark:text-neutral-400">: bivariate kernel density estimate (KDE) as filled level sets.</span></figcaption>
         </figure>
         <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Joint plot" data-src="img/figures/jointplot.svg" data-src-academic="img/figures/academic/jointplot.svg" data-alt="Scatter of reaction time against hours slept with a trend line, flanked by top and right marginal histograms.">
