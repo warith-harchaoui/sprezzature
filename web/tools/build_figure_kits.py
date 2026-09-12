@@ -1337,6 +1337,17 @@ Changez les nombres de `{data_name}` et relancez. Pour aller plus loin,
 `python3 {module} --help` liste les options disponibles (titre, dimensions,
 niveau d'accessibilité, thème…).
 
+
+## Sources
+
+Par courtoisie, pas par obligation. Rien ici n'exige de crédit ; c'est
+nommé parce que le travail s'en est servi, et le dire ne coûte rien.
+
+| Élément | Origine |
+|---|---|
+| Typographies | Roboto et Roboto Mono, Christian ROBERTSON, sous SIL Open Font License |
+| Données de la figure | synthétiques, engendrées par `make_data.py` — aucune observation réelle |
+
 ## Licence
 
 **BSD-3-Clause**, la même que scikit-learn ou NumPy : faites-en ce que vous
@@ -1399,6 +1410,17 @@ system typeface. Everything else renders normally.
 Edit the numbers in `{data_name}` and run it again. Beyond that,
 `python3 {module} --help` lists the options available (title, dimensions,
 accessibility level, theme, …).
+
+
+## Sources
+
+Out of courtesy, not obligation. Nothing here requires a credit; it is named
+because the work drew on it, and saying so costs nothing.
+
+| Item | Origin |
+|---|---|
+| Typefaces | Roboto and Roboto Mono, Christian ROBERTSON, under the SIL Open Font License |
+| The figure's data | synthetic, written by `make_data.py` — no real observation |
 
 ## Licence
 
