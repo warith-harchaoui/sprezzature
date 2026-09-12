@@ -1209,6 +1209,101 @@ Source: <https://github.com/warith-harchaoui/{spec['repo']}>
 """
 
 
+# ──────────────────────────────────────────────────────────────────────────
+# Linking the kits from the site
+# ──────────────────────────────────────────────────────────────────────────
+
+#: The package card each kit belongs to, keyed by the card's repository slug.
+_CARD_SLUG: Dict[str, str] = {
+    "colors": "sprezzature-colors",
+    "accessibility": "sprezzature-accessibility",
+    "ux-laws": "sprezzature-ux-laws",
+    "cli-gui": "sprezzature-cli-gui",
+}
+
+#: What the chip says, per language. The size is filled in from the archive
+#: that actually exists, never from a number typed into the page: a download
+#: chip advertising a stale size is a small lie the reader discovers only
+#: after clicking.
+_CHIP: Dict[str, Dict[str, str]] = {
+    "en": {"label": "↓ Runnable kit", "aria": "Download the {name} kit: runs on the standard library alone, {size} KB"},
+    "fr": {"label": "↓ Kit exécutable", "aria": "Télécharger le kit {name} : tourne sur la bibliothèque standard seule, {size} Ko"},
+}
+
+
+def link_package_cards(out_dir: Path, language: str) -> tuple[int, str]:
+    """
+    Put a download chip on every package card that has a kit.
+
+    Rewrites the chip when it is already there, so re-running after a rebuild
+    refreshes the size rather than stacking a second link.
+
+    Parameters
+    ----------
+    out_dir : pathlib.Path
+        Where the zips were written; the sizes are read from there.
+    language : str
+        ``"en"`` or ``"fr"``; picks the page and the prose.
+
+    Returns
+    -------
+    tuple of (int, str)
+        How many cards were linked, and the page it touched.
+    """
+    web = Path(__file__).resolve().parent.parent
+    page = web / ("fr/packages.html" if language == "fr" else "packages.html")
+    if not page.is_file():
+        return 0, str(page)
+
+    html_text = page.read_text(encoding="utf-8")
+    prefix = "../kits/fr/" if language == "fr" else "kits/"
+    kit_dir = out_dir / "fr" if language == "fr" else out_dir
+    words = _CHIP[language]
+    linked = 0
+
+    for kit, slug in _CARD_SLUG.items():
+        archive = kit_dir / f"{kit}.zip"
+        if not archive.is_file():
+            continue
+        size = archive.stat().st_size // 1024
+
+        # The card is the <div> holding this slug; its "Repository →" anchor
+        # is the last thing in it, so the chip goes just after that anchor.
+        marker = f'>{slug}</p>'
+        start = html_text.find(marker)
+        if start < 0:
+            continue
+        anchor = html_text.find("Repository →</a>", start)
+        if anchor < 0:
+            anchor = html_text.find("Dépôt →</a>", start)
+        if anchor < 0:
+            continue
+        end = html_text.index("</a>", anchor) + len("</a>")
+
+        # Drop a chip left by an earlier run before adding this one.
+        tail = html_text[end:end + 700]
+        existing = tail.find('<div class="mt-2"><a href="' + prefix)
+        if existing == 0:
+            close = html_text.index("</div>", end) + len("</div>")
+            html_text = html_text[:end] + html_text[close:]
+
+        name = slug.replace("sprezzature-", "")
+        chip = (
+            f'<div class="mt-2"><a href="{prefix}{kit}.zip" download '
+            f'class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 '
+            f'text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext '
+            f'focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue '
+            f'dark:border-neutral-700 dark:text-neutral-400" '
+            f'aria-label="{words["aria"].format(name=name, size=size)}">'
+            f'{words["label"]} ({size} KB)</a></div>'
+        )
+        html_text = html_text[:end] + chip + html_text[end:]
+        linked += 1
+
+    page.write_text(html_text, encoding="utf-8")
+    return linked, str(page.relative_to(web.parent))
+
+
 def main(argv: "list[str] | None" = None) -> int:
     """Command-line entry point."""
     parser = argparse.ArgumentParser(
@@ -1237,6 +1332,13 @@ def main(argv: "list[str] | None" = None) -> int:
             built += ok
             failed += not ok
     print(f"\n{built} kit(s) built, {failed} failed")
+
+    if not args.only and not failed:
+        for language in ("en", "fr"):
+            count, page = link_package_cards(args.out_dir, language)
+            print(f"  linked {count} card(s) in {page}")
+    elif args.only:
+        print("partial build: package pages left untouched")
     return 1 if failed else 0
 
 
