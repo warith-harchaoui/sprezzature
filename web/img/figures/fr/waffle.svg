@@ -171,49 +171,49 @@ svg:has(#badge-heating---cooling:hover) #tip-heating---cooling,svg:has(#badge-he
 <circle class="cat-heating---cooling" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
 <text class="cat-heating---cooling" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">1</text>
 <text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">1. Chauffage et climatisation</text>
-<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">34 %</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">34  %</text>
 </g>
 <g class="cat cat-water-heating legend-row" tabindex="0" role="listitem" transform="translate(0,88.0)"><title>Water heating : 18 %</title>
 <rect class="cat-water-heating" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#FF9500"/>
 <circle class="cat-water-heating" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
 <text class="cat-water-heating" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">2</text>
 <text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">2. Chauffe-eau</text>
-<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">18 %</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">18  %</text>
 </g>
 <g class="cat cat-appliances---plug-loads legend-row" tabindex="0" role="listitem" transform="translate(0,176.0)"><title>Appliances &amp; plug loads : 16 %</title>
 <rect class="cat-appliances---plug-loads" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#FFCC00"/>
 <circle class="cat-appliances---plug-loads" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
 <text class="cat-appliances---plug-loads" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">3</text>
 <text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">3. Appareils et prises</text>
-<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">16 %</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">16  %</text>
 </g>
 <g class="cat cat-electric-vehicle legend-row" tabindex="0" role="listitem" transform="translate(0,264.0)"><title>Electric vehicle : 14 %</title>
 <rect class="cat-electric-vehicle" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#28CD41"/>
 <circle class="cat-electric-vehicle" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
 <text class="cat-electric-vehicle" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">4</text>
 <text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">4. Véhicule électrique</text>
-<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">14 %</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">14  %</text>
 </g>
 <g class="cat cat-lighting legend-row" tabindex="0" role="listitem" transform="translate(0,352.0)"><title>Lighting : 9 %</title>
 <rect class="cat-lighting" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#79DBDC"/>
 <circle class="cat-lighting" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
 <text class="cat-lighting" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">5</text>
 <text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">5. Éclairage</text>
-<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">9 %</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">9  %</text>
 </g>
 <g class="cat cat-cooking legend-row" tabindex="0" role="listitem" transform="translate(0,440.0)"><title>Cooking : 9 %</title>
 <rect class="cat-cooking" x="0" y="0" width="30.0" height="30.0" rx="7" fill="#007AFF"/>
 <circle class="cat-cooking" cx="15.0" cy="15.0" r="11" fill="#FFFFFF" fill-opacity="0.92"/>
 <text class="cat-cooking" x="15.0" y="15.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="700" fill="#1D1D1F">6</text>
 <text x="48" y="12" font-size="20" font-weight="600" fill="#1D1D1F" dominant-baseline="middle">6. Cuisson</text>
-<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">9 %</text>
+<text x="48" y="38" font-size="16" font-weight="600" fill="#6E6E73" dominant-baseline="middle">9  %</text>
 </g>
 </g>
-<g id="tip-heating---cooling" class="tip"><rect x="10.5" y="657" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="19.5" y="678.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Heating &amp; cooling</text><text x="19.5" y="694.5" font-size="12.5" font-weight="400" fill="#6E6E73">34 %</text><text x="19.5" y="710.5" font-size="12.5" font-weight="400" fill="#6E6E73">34 of 100 squares</text></g>
-<g id="tip-water-heating" class="tip"><rect x="178.5" y="433" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="187.5" y="454.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Water heating</text><text x="187.5" y="470.5" font-size="12.5" font-weight="400" fill="#6E6E73">18 %</text><text x="187.5" y="486.5" font-size="12.5" font-weight="400" fill="#6E6E73">18 of 100 squares</text></g>
-<g id="tip-appliances---plug-loads" class="tip"><rect x="269.5" y="545" width="179" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="278.5" y="566.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Appliances &amp; plug loads</text><text x="278.5" y="582.5" font-size="12.5" font-weight="400" fill="#6E6E73">16 %</text><text x="278.5" y="598.5" font-size="12.5" font-weight="400" fill="#6E6E73">16 of 100 squares</text></g>
-<g id="tip-electric-vehicle" class="tip"><rect x="346.5" y="209" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="355.5" y="230.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Electric vehicle</text><text x="355.5" y="246.5" font-size="12.5" font-weight="400" fill="#6E6E73">14 %</text><text x="355.5" y="262.5" font-size="12.5" font-weight="400" fill="#6E6E73">14 of 100 squares</text></g>
-<g id="tip-lighting" class="tip"><rect x="462" y="545" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="471" y="566.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Lighting</text><text x="471" y="582.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 %</text><text x="471" y="598.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 of 100 squares</text></g>
-<g id="tip-cooking" class="tip"><rect x="518" y="601" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="527" y="622.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Cooking</text><text x="527" y="638.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 %</text><text x="527" y="654.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 of 100 squares</text></g>
+<g id="tip-heating---cooling" class="tip"><rect x="10.5" y="657" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="19.5" y="678.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Heating &amp; cooling</text><text x="19.5" y="694.5" font-size="12.5" font-weight="400" fill="#6E6E73">34  %</text><text x="19.5" y="710.5" font-size="12.5" font-weight="400" fill="#6E6E73">34 of 100 squares</text></g>
+<g id="tip-water-heating" class="tip"><rect x="178.5" y="433" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="187.5" y="454.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Water heating</text><text x="187.5" y="470.5" font-size="12.5" font-weight="400" fill="#6E6E73">18  %</text><text x="187.5" y="486.5" font-size="12.5" font-weight="400" fill="#6E6E73">18 of 100 squares</text></g>
+<g id="tip-appliances---plug-loads" class="tip"><rect x="269.5" y="545" width="179" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="278.5" y="566.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Appliances &amp; plug loads</text><text x="278.5" y="582.5" font-size="12.5" font-weight="400" fill="#6E6E73">16  %</text><text x="278.5" y="598.5" font-size="12.5" font-weight="400" fill="#6E6E73">16 of 100 squares</text></g>
+<g id="tip-electric-vehicle" class="tip"><rect x="346.5" y="209" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="355.5" y="230.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Electric vehicle</text><text x="355.5" y="246.5" font-size="12.5" font-weight="400" fill="#6E6E73">14  %</text><text x="355.5" y="262.5" font-size="12.5" font-weight="400" fill="#6E6E73">14 of 100 squares</text></g>
+<g id="tip-lighting" class="tip"><rect x="462" y="545" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="471" y="566.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Lighting</text><text x="471" y="582.5" font-size="12.5" font-weight="400" fill="#6E6E73">9  %</text><text x="471" y="598.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 of 100 squares</text></g>
+<g id="tip-cooking" class="tip"><rect x="518" y="601" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="527" y="622.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Cooking</text><text x="527" y="638.5" font-size="12.5" font-weight="400" fill="#6E6E73">9  %</text><text x="527" y="654.5" font-size="12.5" font-weight="400" fill="#6E6E73">9 of 100 squares</text></g>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>
