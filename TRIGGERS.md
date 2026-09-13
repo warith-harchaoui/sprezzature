@@ -143,6 +143,9 @@ The trigger phrases below are what each skill's frontmatter description claims w
 | `sunburst` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `waterfall chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `P&L bridge` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `redraw this chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `make this ugly chart better` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `rends ce graphique plus lisible` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 
 ## How discovery works
 

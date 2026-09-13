@@ -2,19 +2,19 @@
 name: sprezzature-figures
 description: >-
   Figures, diagrams, and the Ralph Eyeball Loop for the sprezzature-* stack.
-  124 hand-authored, often interactive and animated SVG chart types, the
-  markup authored directly: hexbin, KDE-2D, beeswarm, clustermap, quiver,
-  3D, choropleth, GPS/bubble/pie/bar + areas-of-control situation maps (see
-  FIGURES.md).
-  Explainability (SHAP/Shapash/LIME) and causal DAGs (DoWhy). TikZ + Mermaid
-  via the Ralph Eyeball Loop; never ASCII art. The loop applies to every visual
-  from code: data figure, Mermaid diagram, TikZ, SVG, HTML page. Two modes:
-  agent (Claude reads the PNG) or --local (qwen3-vl:8b via Ollama, fully offline).
+  127 hand-authored, often interactive and animated SVG chart types, the
+  markup written directly (see FIGURES.md). Explainability
+  (SHAP/Shapash/LIME) and causal DAGs (DoWhy). TikZ + Mermaid via the Ralph
+  Eyeball Loop; never ASCII art. The loop reads any visual from code —
+  figure, Mermaid, TikZ, SVG, HTML page — as an agent or --local
+  (qwen3-vl:8b, offline). redraw() takes a picture of someone else's chart
+  and redraws it here, never inventing the numbers.
   Trigger phrases: "make a figure", "chart this", "plot this", "draw a
   chart", "heatmap", "treemap", "candlestick", "choropleth", "GPS map",
-  "situation map", "sankey", "mermaid diagram", "no ascii art",
-  "ralph eyeball loop", "SHAP plot", "DAG", "audit this figure",
-  "bell curve", "funnel chart", "sunburst", "waterfall chart", "P&L bridge".
+  "situation map", "sankey", "mermaid diagram", "no ascii art", "ralph
+  eyeball loop", "SHAP plot", "DAG", "audit this figure", "bell curve",
+  "funnel chart", "sunburst", "waterfall chart", "P&L bridge", "redraw this
+  chart", "make this ugly chart better", "rends ce graphique plus lisible".
   Output: SVG (PNG/PDF via render_diagram.py).
 license: BSD-3-Clause
 compatibility: >-
@@ -75,6 +75,7 @@ data-science figures:
 | **Make** — explain a fitted model | `explain_model.py` | Dispatches to SHAP / Shapash / TimeSHAP / LIME by model type (tree / linear / sequence / black-box). Writes summary + dependence + waterfall plots; drops a Shapash HTML report when `--report shapash`. |
 | **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (no external layout engine) + writes the effect table to JSON. |
 | **Make** — an areas-of-control situation map, or a choropleth on a real basemap | `sprezzature-maps` (standalone package, see note below) | `make_situation_map.py` and `build_situation_examples.py` no longer ship inside `sprezzature-figures`; they were split out into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package alongside `make_choropleth.py`, which draws on a real basemap and geographic projection (Natural Earth, auto-centred Lambert conformal conic). `pip install git+https://github.com/warith-harchaoui/sprezzature-maps`, then `make-map situation_map --config my-region.yaml --out region.svg` or `make-map choropleth --out world.svg`. `sprezzature-figures` keeps only the schematic, binned map kinds (`binned-grid-map`, `dotdensity`, `hexbin-map`, `hexmap`, `spike-map`), which plot points or grid cells, not real coastlines. |
+| **Make** — somebody else's chart, from a picture of it | `sprezzature-figures redraw` | Takes a screenshot (PNG/JPEG/GIF/WebP/SVG) of an existing chart, has a vision model read what kind it is and what costs the reader effort, and draws it here. **Never invents numbers**: `data_origin` reports `your-data` (rows you passed), `read-from-image` (printed on the original and read back, approximate) or `demo` (nothing readable — the redesign on sample rows, captioned as such on the figure itself). Pass `--data` to get a figure worth publishing. |
 | **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, TikZ figure, Mermaid diagram, hand-authored SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
 | **Render** — diagram source → image (diagram surfaces only) | `render_diagram.py` | Rasterises a TikZ figure, a Mermaid diagram, or a raw SVG to PNG. Palette-themed from `sprezzature-colors`; background white / transparent / dark selectable. Called internally by `ralph_eyeball_loop.py`; use directly when you want the PNG without the assessment file. |
 | **Audit** — gate before ship | `audit_figure.py` | Static parser flags data-viz anti-patterns in an SVG chart or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present unless `--strict`. |
@@ -85,6 +86,7 @@ data-science figures:
 | Tool | Catches | Misses |
 |---|---|---|
 | `make-figure` / `sprezzature-figures render` | Chart kinds from a fixed, growing catalogue (`sprezzature-figures list [--status stable]`), each in the `sprezzature-ui` house style (rounded corners, no top/right spine, no rainbows, palette from `sprezzature-colors/references/palette.csv`); binds your own CSV/JSON/Parquet columns to the kind's roles via `--map role=column`, or falls back to built-in demo data. | Does not invent the right chart; the catalogue is closed-set (`sprezzature-figures list` shows what exists today), not an open x/y/kind combinator. For chart-type selection see `sprezzature-ui/references/dataviz-chart-selection.md`. Does not do map projections beyond what a given catalogue kind supports; for choropleths see `sprezzature-ui/references/dataviz-maps.md`. |
+| `sprezzature-figures redraw` | The **design** of a chart in a picture: which of the catalogue's kinds shows the same thing, the text printed on it, and what makes it harder to read than it needs to be. Chooses only from the catalogue — a kind outside the candidate list is a hard error, not a result. | The **data**. A chart drawn without data labels does not contain its numbers, and this refuses to estimate them from mark size: without `--data` you get the redesign on sample rows, and the figure says so. Read `data_origin` before sharing the output. A local 7B vision model takes ~90 s and reads fewer issues than a larger one. |
 | `explain_model.py` | Model-agnostic SHAP for tree / linear / kernel models (via `shap.Explainer`), Shapash HTML report for a full business-facing writeup, TimeSHAP for recurrent / attention-based time-series models, LIME as fallback for opaque classifiers. Writes summary plot + top-N dependence plots + one waterfall for the row with the largest absolute prediction. | Does not train models. Does not evaluate them; use `probabl-ai/skills/evaluate-ml-pipeline` or `scikit-learn`'s report utilities. Does not do counterfactual reasoning; see `alibi` or `DiCE`. |
 | `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no external layout engine); a JSON effect table for CI. | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
 | `audit_figure.py` | SVG charts and HTML `<figure>` blocks. Rules: perspective-transformed (3D) pie / donut; rainbow palette (viridis is fine; jet / hsv / rainbow are not); chartjunk (drop shadow, blur filter); corner radius over the 16 px cap; axis ticks left as raw magnitudes (`200000` rather than `200k`); ticks left as raw ISO dates; missing `role="img"` / alt-text stub on the surrounding `<figure>`. | Reads what the markup literally says, and nothing more: a chart can pass every rule and still encode the wrong thing. Does not verify whether the *right chart* was chosen (a design decision, not a mechanical one), and does not evaluate statistical soundness (baseline choice, confidence-interval computation). Loop a data-viz reviewer in for the final call. |
@@ -96,6 +98,7 @@ data-science figures:
 |---|---|---|
 | "chart this" / "plot the data" / "make a figure" / "dashboard tile" | `make-figure` / `sprezzature-figures render` | `sprezzature-figures list` to see the catalogue, then `make-figure <kind> --data <data.csv> [--map role=column ...] [--out fig.svg] [--title T]`. `<kind>` is a catalogue name (e.g. `bar`, `treemap`, `funnel`), not a free `--x/--y/--kind` combination. |
 | "which chart fits my data" / "recommend a chart" | `sprezzature-figures recommend` | `sprezzature-figures recommend --data <data.csv> [--intent comparison\|trend\|distribution\|...] [--render out.svg]`: ranks catalogue kinds your data can fill, best first; `--render` also draws the top pick. |
+| "redraw this chart" / "make this ugly chart better" / "a colleague sent me this graph" / "rends ce graphique plus lisible" | `sprezzature-figures redraw` | `sprezzature-figures redraw <image.png> [--data rows.csv] [--kind <kind>] [--out fig.svg] [--language en|fr]`. Report back what `data_origin` says: if it is `demo`, tell the user the numbers are sample data and ask for theirs — do not let a mock-up be mistaken for their figure. |
 | "explain this model" / "SHAP plot" / "feature importance" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.csv [--engine auto\|shap\|shapash\|timeshap\|lime] [--out ./explain/]` |
 | "shapash report" / "give a stakeholder-facing explanation" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.csv --engine shapash --report shapash --out ./explain/`: writes a full HTML report. |
 | "timeshap" / "explain my LSTM / transformer sequence model" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model seq_model.pkl --data X.npy --engine timeshap --sequence-cols "t_0,t_1,...,t_N" --out ./explain/` |
