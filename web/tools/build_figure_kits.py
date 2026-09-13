@@ -1569,7 +1569,6 @@ def build_kit(
     tuple of (bool, str)
         Success flag and a one-line report.
     """
-    import shutil
     import tempfile
 
     generator = resolve_generator(slug, scripts)

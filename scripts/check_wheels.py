@@ -119,8 +119,8 @@ def check(repo_name: str, package: str, keep: bool) -> list[str]:
                                 f"in 30s — it probably starts something instead")
                 continue
             if r.returncode != 0:
-                last = (r.stderr or r.stdout).strip().splitlines()
-                message = last[-1] if last else "?"
+                lines = (r.stderr or r.stdout).strip().splitlines()
+                message = lines[-1] if lines else "?"
                 if _REFUSAL.search(message):
                     # A command that needs an optional extra this check did
                     # not install, and says which one, is behaving. Only the
