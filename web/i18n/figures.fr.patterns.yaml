@@ -365,3 +365,9 @@
   write: '{0} (Effectif)'
 - match: 'Hexbin of ([-\d.,\u202f ]+) points into ([-\d.,\u202f ]+) cells, densest cell ([-\d.,\u202f ]+)\. Hover or focus a cell for its exact count\.'
   write: 'Groupement hexagonal de {0} points en {1} cellules, cellule la plus dense {2}. Survolez une cellule ou donnez-lui le focus pour son effectif exact.'
+
+# ── Quiver : légende et résumé, porteurs de la norme et de la taille de grille
+- match: '([-\d.,\u202f ]+) \(Magnitude\)'
+  write: '{0} (Norme)'
+- match: 'Vector field over a ([-\d.,\u202f ]+)x([-\d.,\u202f ]+) grid, peak magnitude ([-\d.,\u202f ]+)\. Hover or focus an arrow for its exact vector\.'
+  write: 'Champ de vecteurs sur une grille {0} × {1}, norme maximale {2}. Survolez une flèche ou donnez-lui le focus pour son vecteur exact.'

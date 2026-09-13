@@ -768,6 +768,8 @@ $k: k$
 A: A
 ? A Bland-Altman agreement plot of paired systolic-pressure readings from a wrist monitor and an arm cuff. The horizontal axis is the mean of the two readings; the vertical axis is their difference (wrist minus arm). Each dot is one of 90 patients. A solid blue line marks the mean bias (-7.3 mmHg) and two dashed red lines mark the 95 percent limits of agreement (-15.3 to +0.7 mmHg). The bias sits below zero and the cloud tilts down to the right, so the wrist tends to read low, and more so at higher pressure. Illustrative data.
 : Diagramme d'accord de Bland-Altman de mesures appariées de pression systolique par un tensiomètre au poignet et un brassard au bras. L'axe horizontal est la moyenne des deux mesures ; l'axe vertical est leur différence (poignet moins bras). Chaque point est l'un des 90 patients. Une ligne bleue pleine marque le biais moyen (-7,3 mmHg) et deux lignes rouges pointillées marquent les limites d'accord à 95 pour cent (-15,3 à +0,7 mmHg). Le biais est sous zéro et le nuage penche vers le bas à droite, donc le poignet a tendance à sous-estimer, davantage à haute pression. Données illustratives.
+A Vortex Field: Un champ tourbillonnaire
+A broadband transient (energy across all frequencies at once) -- three of these are synthesized into the clip.: Un transitoire large bande (de l’énergie sur toutes les fréquences à la fois) · l’extrait en contient trois.
 A churn model reaches most churners from a small fraction of the ranked list: Un modèle d'attrition touche la plupart des partants à partir d'une petite fraction de la liste classée
 ? A circular liquid-fill gauge shaped like a water tank. Wavy blue liquid fills the vessel to 63 percent of its height, with a bold percentage readout at the centre. A dashed line marks the ten-year seasonal median of 68 percent, which sits just above the current level.
 : Jauge circulaire à remplissage en forme de citerne. Un liquide bleu ondulé remplit la cuve à 63 pour cent de sa hauteur, avec un pourcentage en gras au centre. Une ligne pointillée marque la médiane saisonnière décennale de 68 pour cent, juste au-dessus du niveau actuel.
@@ -794,6 +796,7 @@ A single ripple ripples out, then fades to stillness: Une seule ondulation se pr
 : 'Un nuage de mots en spirale d''une année d''avis produit sur un moulin à café à meules. Chaque mot est dimensionné par le nombre d''avis qui le mentionnent et étiqueté par thème avec une couleur et un signe : un plus en tête et du vert pour l''éloge, un moins en tête et du rouge pour la plainte, et aucun signe en bleu pour les mots produit neutres. Les plus gros mots sont mouture, silencieux et régulier ; le plus gros mot de plainte est bruyant.'
 ? A variable-width column chart of the eight largest economies in 2023. Each column height is GDP per capita, each width is population, so the area is total GDP. The United States, a tall narrow column, and China, a short wide one, enclose similar area — 27.4 and 17.8 trillion US dollars — reached two different ways. India is the widest but shortest column. Illustrative figures, World Bank and IMF 2023 estimates.
 : Diagramme en colonnes de largeur variable des huit plus grandes économies en 2023. La hauteur de chaque colonne est le PIB par habitant, sa largeur la population, donc l'aire est le PIB total. Les États-Unis, colonne haute et étroite, et la Chine, courte et large, enferment une aire semblable, 27,4 et 17,8 mille milliards de dollars, atteinte de deux façons différentes. L'Inde est la colonne la plus large mais la plus basse. Données illustratives, estimations Banque mondiale et FMI 2023.
+A steady low-frequency drone held constant for the whole clip.: Un bourdon grave, tenu constant sur toute la durée de l’extrait.
 ACAN: ACAN
 ACAN — chr15:47,940,000 · p = 10.0×10⁻²¹: ACAN · chr15:47 940 000 · p = 10,0×10⁻²¹
 ACQUISITION CHANNEL: CANAL D'ACQUISITION
@@ -1016,6 +1019,7 @@ Armenia (Americas): Arménie (Amériques)
 Armenia (Asia): Arménie (Asie)
 Armenia (Europe): Arménie (Europe)
 Armenia (Oceania): Arménie (Océanie)
+Arrow direction and colour follow the local vector; length follows magnitude: La direction et la couleur de la flèche suivent le vecteur local ; sa longueur suit la norme
 Arrows follow time →: Les flèches suivent le temps →
 Ashford 2016: Ashford 2016
 'Ashford 2016: OR 1.42 (95% CI 1.08–1.87), weight 12% — significant': 'Ashford 2016 : RC 1,42 (IC 95 % 1,08-1,87), poids 12 % · significatif'
@@ -1203,6 +1207,7 @@ Bike-share demand clusters on the downtown core: La demande de vélos en libre-s
 Bike-share departures by hour of an average weekday — Illustrative data: Départs de vélos en libre-service par heure un jour de semaine type · données illustratives
 'Bike-share trips by hour of day: two commute peaks around 8am and 6pm': 'Trajets de vélos en libre-service par heure : deux pics de pendulaires vers 8 h et 18 h'
 Bike-share trips pile up downtown, thin out at the edges: Les trajets de vélos en libre-service s'entassent au centre et se raréfient en périphérie
+Bilinearly interpolated survey grid (imshow) · deeper blue = wetter soil: Grille de relevés interpolée bilinéairement (imshow) · plus le bleu est soutenu, plus le sol est humide
 Bilinearly interpolated survey grid (imshow) · deeper blue = wetter soil · illustrative data: Grille de relevé interpolée bilinéairement (imshow) · bleu plus foncé = sol plus humide · données illustratives
 Billing: Billing
 Billing & invoice errors: Erreurs de facturation
@@ -4311,6 +4316,7 @@ Shenzhen · 12.4 M: Shenzhen · 12,4 M
 'Shenzhen: 12.4 million': 'Shenzhen : 12,4 millions'
 Shipping: Expédition
 'Shipping · Fulfilment team — called by 1 service(s): Orders; calls Notifications': 'Expédition · équipe Logistique — appelé par 1 service(s) : Commandes ; appelle Notifications'
+Short-time Fourier transform of a synthesised clip — brighter = louder: Transformée de Fourier à court terme d’un extrait de synthèse · plus c’est clair, plus c’est fort
 Short-time Fourier transform of a synthesised clip — brighter = louder · Illustrative data: Transformée de Fourier à court terme d'un extrait synthétisé · plus clair = plus fort · données illustratives
 Sierra Leone: Sierra Leone
 Sierra Leone (Africa): Sierra Leone (Afrique)
@@ -4585,6 +4591,7 @@ The century’s tallest skyline is made of people: La plus haute skyline du siè
 'The churn model is overconfident:': 'Le modèle d''attrition est trop confiant :'
 'The churn model is overconfident: its high-risk calls miss the diagonal': 'Le modèle d''attrition est trop confiant : ses prédictions à haut risque ratent la diagonale'
 The city breathes twice a day: La ville respire deux fois par jour
+'The glissando: a tone sweeping upward from about 300 Hz to 3 kHz over the full 3 seconds.': 'Le glissando : un son qui monte d’environ 300 Hz à 3 kHz sur les 3 secondes.'
 The model is unsure between samples: Le modèle hésite entre les échantillons
 The morning coffee rush arrives ever earlier through the week: La ruée du café matinal arrive toujours plus tôt au fil de la semaine
 The radius is that month’s death rate;: Le rayon est le taux de mortalité de ce mois ;
