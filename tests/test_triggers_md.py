@@ -24,7 +24,7 @@ from pathlib import Path
 
 import pytest
 
-from build_triggers import STATUS, WHAT_IT_DOES, build
+from build_triggers import ROUTES, STATUS, WHAT_IT_DOES, build
 from skills_manifest import SHIPPED_SKILLS
 
 
@@ -47,6 +47,22 @@ def test_status_map_covers_every_skill(skill: str) -> None:
         f"Skill '{skill}' missing from build_triggers.STATUS. "
         f"Add an entry before merging."
     )
+
+
+@pytest.mark.parametrize("skill", SHIPPED_SKILLS)
+def test_routes_cover_every_skill(skill: str) -> None:
+    """A skill missing from ROUTES is a skill an agent cannot find.
+
+    The phrase table matches one phrase at a time; the routing table is what
+    answers "which of these nine do I want", and a skill absent from it is
+    invisible to that question. Adding skill #10 forces the decision here.
+    """
+    assert skill in ROUTES, (
+        f"Skill '{skill}' missing from build_triggers.ROUTES. Say what the "
+        f"user is holding when this skill is the answer, before merging."
+    )
+    holding, phrasing = ROUTES[skill]
+    assert holding and phrasing, f"Skill '{skill}' has an empty ROUTES entry."
 
 
 @pytest.mark.parametrize("skill", SHIPPED_SKILLS)

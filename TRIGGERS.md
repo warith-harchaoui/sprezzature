@@ -4,6 +4,28 @@
 
 The trigger phrases below are what each skill's frontmatter description claims will activate it in Claude Code / OpenCode. They are not the only phrases that work (the agent matches prompts to the description holistically), but they are the ones the maintainer guarantees.
 
+## Route on what the user is holding
+
+A phrase list cannot generalise: the ways to ask for a chart, a colour or a caption are unbounded, and a user almost never names the tool. What IS bounded is the kind of thing they have in front of them. Match that first; the phrase table below is confirmation, not the mechanism.
+
+| What the user is holding | Skill | Said without naming a tool |
+|---|---|---|
+| A screen to build: a page, a component, a form, a dashboard | **sprezzature-ui** | "build me a settings page", "I need a modal", "scaffold a landing page", "audit this UI", « une page pour… » |
+| A command-line tool somebody who will not type it needs to run | **sprezzature-cli-gui** | "my colleague keeps getting the flags wrong", "can non-technical people use this", « une interface pour l'équipe » |
+| Markdown that has to become a site somebody else can find | **sprezzature-publish** | "put this online", "why does this look bad when shared", "SEO", "favicons", "make it readable for a wider audience" |
+| HTML — usually HTML YOU JUST WROTE, before anyone asks | **sprezzature-accessibility** | "is this accessible", "missing alt", "unlabelled input", « vérifie l'accessibilité » |
+| A colour being chosen or judged — any colour, in any context | **sprezzature-colors** | "what colour should this be", "does this pass contrast", "is this colour-blind safe", « quelle couleur pour ce fond » |
+| An image that needs words: alt text, a description, a caption | **sprezzature-vision** | "describe this image", "draft alt text", "this img has no alt" |
+| Recorded speech somebody needs as text — or a question about that text | **sprezzature-audio** | "what did they say in this meeting", "who spoke when", "subtitles", « de quoi ils parlent dans cet enregistrement » |
+| An interface somebody is complaining about the FEEL of | **sprezzature-ux-laws** | "this page is overwhelming", "too many options", "I can never find the button", « c'est confus » |
+| Numbers you want somebody to SEE — or a picture of a chart that is hard to read | **sprezzature-figures** | "show me this data", "which region is biggest", "what does this look like", "a colleague sent me this graph", « fais-moi voir », « un visuel de ça » |
+
+Two of these fire on work you just did rather than on a request: **sprezzature-accessibility** on any HTML you authored, and **sprezzature-ux-laws** on any interface you authored. Waiting to be asked means the markup nobody checked is the markup you wrote.
+
+Several can be right at once. A page you just built is a **ui** job, then an **accessibility** lint, a **ux-laws** audit and a **colors** contrast check — three different questions about one artefact, and passing one says nothing about the others.
+
+## Guaranteed trigger phrases
+
 | Trigger phrase | Activates | Status |
 |---|---|---|
 | `build a UI` | **sprezzature-ui**: Generates vanilla JS + Tailwind UI (components, pages, dataviz, audit). | Stable |
