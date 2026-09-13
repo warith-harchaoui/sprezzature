@@ -95,6 +95,61 @@ WHAT_IT_DOES: dict[str, str] = {
 }
 
 
+#: What the user is holding when each skill is the right answer, and the
+#: phrases that say so without naming a tool. This is the half of discovery
+#: a phrase list cannot do: the phrases below the routing table are matched
+#: one at a time, but a reader choosing between nine skills needs to know
+#: what KIND of thing each one takes. The test asserts every entry in
+#: :data:`SHIPPED_SKILLS` appears here, so skill #10 forces the decision at
+#: PR time rather than quietly missing from the table.
+ROUTES: dict[str, tuple[str, str]] = {
+    "sprezzature-figures": (
+        "Numbers you want somebody to SEE — or a picture of a chart that is hard to read",
+        '"show me this data", "which region is biggest", "what does this look like", '
+        '"a colleague sent me this graph", « fais-moi voir », « un visuel de ça »',
+    ),
+    "sprezzature-ui": (
+        "A screen to build: a page, a component, a form, a dashboard",
+        '"build me a settings page", "I need a modal", "scaffold a landing page", '
+        '"audit this UI", « une page pour… »',
+    ),
+    "sprezzature-cli-gui": (
+        "A command-line tool somebody who will not type it needs to run",
+        '"my colleague keeps getting the flags wrong", "can non-technical people use '
+        'this", « une interface pour l\'équipe »',
+    ),
+    "sprezzature-publish": (
+        "Markdown that has to become a site somebody else can find",
+        '"put this online", "why does this look bad when shared", "SEO", "favicons", '
+        '"make it readable for a wider audience"',
+    ),
+    "sprezzature-accessibility": (
+        "HTML — usually HTML YOU JUST WROTE, before anyone asks",
+        '"is this accessible", "missing alt", "unlabelled input", « vérifie '
+        'l\'accessibilité »',
+    ),
+    "sprezzature-ux-laws": (
+        "An interface somebody is complaining about the FEEL of",
+        '"this page is overwhelming", "too many options", "I can never find the '
+        'button", « c\'est confus »',
+    ),
+    "sprezzature-colors": (
+        "A colour being chosen or judged — any colour, in any context",
+        '"what colour should this be", "does this pass contrast", "is this '
+        'colour-blind safe", « quelle couleur pour ce fond »',
+    ),
+    "sprezzature-vision": (
+        "An image that needs words: alt text, a description, a caption",
+        '"describe this image", "draft alt text", "this img has no alt"',
+    ),
+    "sprezzature-audio": (
+        "Recorded speech somebody needs as text — or a question about that text",
+        '"what did they say in this meeting", "who spoke when", "subtitles", '
+        '« de quoi ils parlent dans cet enregistrement »',
+    ),
+}
+
+
 def _description(skill: str) -> str:
     """
     Read the ``description`` field from a skill's SKILL.md frontmatter.
@@ -176,6 +231,37 @@ def build() -> str:
         "prompts to the description holistically), but they are the "
         "ones the maintainer guarantees."
     )
+    rows.append("")
+    rows.append("## Route on what the user is holding")
+    rows.append("")
+    rows.append(
+        "A phrase list cannot generalise: the ways to ask for a chart, a "
+        "colour or a caption are unbounded, and a user almost never names "
+        "the tool. What IS bounded is the kind of thing they have in front "
+        "of them. Match that first; the phrase table below is confirmation, "
+        "not the mechanism."
+    )
+    rows.append("")
+    rows.append("| What the user is holding | Skill | Said without naming a tool |")
+    rows.append("|---|---|---|")
+    for skill in SHIPPED_SKILLS:
+        holding, phrasing = ROUTES[skill]
+        rows.append(f"| {holding} | **{skill}** | {phrasing} |")
+    rows.append("")
+    rows.append(
+        "Two of these fire on work you just did rather than on a request: "
+        "**sprezzature-accessibility** on any HTML you authored, and "
+        "**sprezzature-ux-laws** on any interface you authored. Waiting to "
+        "be asked means the markup nobody checked is the markup you wrote."
+    )
+    rows.append("")
+    rows.append("Several can be right at once. A page you just built is a "
+                "**ui** job, then an **accessibility** lint, a **ux-laws** "
+                "audit and a **colors** contrast check — three different "
+                "questions about one artefact, and passing one says nothing "
+                "about the others.")
+    rows.append("")
+    rows.append("## Guaranteed trigger phrases")
     rows.append("")
     rows.append("| Trigger phrase | Activates | Status |")
     rows.append("|---|---|---|")
