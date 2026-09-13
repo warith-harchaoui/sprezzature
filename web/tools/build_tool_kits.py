@@ -54,7 +54,7 @@ import subprocess
 import sys
 import zipfile
 from pathlib import Path
-from typing import Any, Callable, Dict, List
+from typing import Any, Dict, List
 
 #: Where the standalone repositories live, relative to the monorepo root.
 HOME = Path.home()
