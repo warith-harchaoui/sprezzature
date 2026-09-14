@@ -32,7 +32,7 @@ from __future__ import annotations
 
 import argparse
 
-SKILL_VERSION = "1.3.4"
+SKILL_VERSION = "1.3.5"
 
 
 def make_parser(

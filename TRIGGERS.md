@@ -185,7 +185,7 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `contested zones` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `who controls what` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `situation map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
-| `situational awareness plate` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `where did these incidents fall` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 
 ## How discovery works
 
