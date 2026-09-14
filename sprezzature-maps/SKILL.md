@@ -45,7 +45,14 @@ is also the line an agent gets wrong.
 |---|---|---|
 | Territories shaded by a value, on real coastlines | **here** — `make-map choropleth` | the shape of the land carries meaning |
 | Who holds which ground, front lines, contested zones | **here** — `make-map situation_map` | same |
+| Where events *fell* — incidents, outages, strikes, sightings | **here** — `make-map density` | positions, not a value per territory |
 | A hex map, dot density, spike map, binned grid, cartogram | **`sprezzature-figures`** | those are layout conventions, not geography |
+
+**The line between `choropleth` and `density` is the one to get right.** A
+choropleth answers "what is the rate *here*"; it needs one number per
+territory, and filling it with a raw count draws population rather than your
+phenomenon. `density` answers "where did this happen"; it takes the positions
+themselves and needs no territories at all.
 
 Ask the question plainly: **does the shape of the land matter?** If it does,
 this skill. If the map is a seating chart that happens to look like a country,
@@ -57,6 +64,7 @@ this skill. If the map is a seating chart that happens to look like a country,
 |---|---|---|
 | `choropleth` | one fill colour per territory on a perceptual OKLCH ramp, Equal Earth projection, hillshade relief, automatic diverging scale when the values span both signs, neutral grey for territories with no data | it maps a value per *territory*, so it inherits the choropleth's own bias: a large sparsely-populated region shouts louder than a small dense one. If the story is about people rather than land, say so, and consider a cartogram or a per-capita normalisation before drawing. |
 | `situation_map` | a layered plate for any region: auto-centred Lambert conformal conic projection, real national outlines, bathymetry halo near the coast, zones filled by category, flashpoint markers, a scale bar in kilometres **and** miles | it has **no view on whether a claim of control is true**. It draws exactly what the config says. |
+| `density` | an accumulation map: point events binned to a luminous field. No coastline, no border, no graticule are drawn — the land appears because events fell on it and the sea stays dark because none did, so a reader recognises the shape without being shown it. Vector, binned, one path per level. | it shows *where*, never *how many per capita*: a dense city looks dense because people are there. And the form is persuasive enough to be believed, so the caption carrying the events' provenance is not decoration — the bundled demo says on the plate that its data is synthetic. |
 
 ## One contract an agent must not break
 
@@ -72,8 +80,9 @@ evidence.
 | Trigger | Call | Run |
 |---|---|---|
 | "map this by country" / "colour the regions by score" / "which country is highest" / « une carte par département » | `choropleth` | `make-map choropleth --data rows.json --out world.svg [--title "…"]`. Rows are `{"id": "<ISO-3166-1 numeric>", "value": <number>}` — `"840"` for the United States, `"124"` for Canada. Send nothing at all and you get the demo map, which is the fastest way to show someone the shape of the input before they commit real data to it. |
+| the values are skewed — income, density, counts, anything with a long tail | `choropleth` with `classes` | `make-map choropleth --classes 5 --method quantile`, or `{"classes": 5, "method": "jenks"}` on the route. Without it the ramp stretches min-to-max and most territories collapse into its bottom. See the section above for which method answers which question; the legend names whichever you pick. |
 | "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation_map --config region.yaml --out region.svg`. The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Western-Europe demo config runs with no arguments. |
-| "what kinds of map can you draw" | `list_kinds` | Two. If the answer the user needs is a third, it is in `sprezzature-figures`. |
+| "what kinds of map can you draw" | `list_kinds` | Three: `choropleth`, `density`, `situation_map`. Anything else map-shaped is in `sprezzature-figures`. |
 
 ## The situation map is configured, not flagged
 
@@ -96,6 +105,42 @@ Rivers taper by prominence when `rivers` asks them to; they are absent
 otherwise. The same is true of every other layer — ask for what the map is
 about, not for everything the generator can draw.
 
+## The choropleth's one real decision: how to class the values
+
+A choropleth turns numbers into colours, and **the rule it uses is the most
+consequential setting on the map**. The same dataset classed four ways tells
+four stories, and a reader given no statement of the method cannot tell which
+one they are being told.
+
+By default this generator does not class at all: it stretches the ramp
+linearly from the smallest value to the largest. That is fine for values
+spread evenly, and it is the weakest possible choice for the right-skewed data
+most indicators are — income, density, counts, GDP per head. On GDP per head
+for twenty countries it puts nine of them in the bottom quarter of the ramp,
+and leaves India, at ten times Burundi's figure, a shade the eye cannot tell
+from Burundi's.
+
+**So: whenever the values are skewed, pass `classes`.** Then pick the method
+for the question being asked, not by habit:
+
+| The map has to… | `method` | What it costs |
+|---|---|---|
+| support ranking — "which fifth is this region in?" | `quantile` | two regions with very different values can share a class; it flattens the skew by construction |
+| show the groupings the data itself has | `jenks` | classes can be very unequal in count, and a lone outlier gets a class of its own |
+| mean something outside the data — decades, percentage bands | `equal` | on skewed data most regions land in one class, which is the failure above |
+| handle a heavy tail — "far more small things than large" | `headtail` | the class count comes from the data, not from you, and may be small |
+
+**When the bands are editorial, pass them.** `breaks=[5, 10, 25]` (or
+`--breaks 5,10,25`) overrides both `classes` and `method`: a regulatory
+threshold, a figure the newsroom already published, a number the reader
+arrives with — no algorithm will land on those by luck. The legend then says
+the breaks were *given*, which is the provenance that matters.
+
+The legend prints the method and the boundaries. Do not strip that: a classed
+map without its method is a claim with the evidence removed. When you hand the
+figure on, say which method it used and why — the choice is editorial, and it
+belongs with the map.
+
 ## Two modes: make and audit
 
 | Mode | Tool | Purpose |
@@ -114,10 +159,10 @@ Every tool in this suite is reachable five ways, and maps is no exception.
 
 | Surface | How |
 |---|---|
-| Library | `from sprezzature_maps import make_choropleth, make_situation_map` |
-| CLI | `make-map choropleth --out world.svg` |
-| HTTP API | `POST /render_choropleth`, `POST /render_situation_map` (`pip install 'sprezzature-maps[api]'`) |
-| MCP | the `render_choropleth` / `render_situation_map` / `list_kinds` tools, derived from those routes (`[mcp]`) |
+| Library | `from sprezzature_maps import make_choropleth, make_density, make_situation_map` |
+| CLI | `make-map choropleth --out world.svg`, `make-map density`, `make-map situation_map` |
+| HTTP API | `POST /v1/choropleth`, `/v1/density`, `/v1/situation-map` (`pip install 'sprezzature-maps[api]'`) |
+| MCP | `render_choropleth` / `render_density` / `render_situation_map` / `list_kinds`, derived from those routes (`[mcp]`) |
 | Skill | this file |
 
 Both render surfaces take every field as optional: send an empty body and you
