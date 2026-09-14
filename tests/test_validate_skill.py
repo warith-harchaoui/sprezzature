@@ -268,4 +268,9 @@ def test_validate_all_passes_on_shipped_repo(repo_root: Path) -> None:
         f"validate_all.py exited {proc.returncode}\n"
         f"stdout:\n{proc.stdout}\nstderr:\n{proc.stderr}"
     )
-    assert "PASS — all 9 skill(s)" in proc.stdout
+    # Count from the manifest, not a literal: the 9 here went stale the
+    # first time a tenth skill shipped, failing a test about validation
+    # for a reason that had nothing to do with validation.
+    from skills_manifest import SHIPPED_SKILLS
+
+    assert f"PASS — all {len(SHIPPED_SKILLS)} skill(s)" in proc.stdout

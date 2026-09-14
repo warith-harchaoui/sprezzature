@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sprezzature"
-version = "1.2.0"
+version = "1.3.0"
 description = "The sprezzature skills: what an agent reads to know when to reach for the tools, and how the house does things."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -44,7 +44,7 @@ Repository = "https://github.com/warith-harchaoui/sprezzature"
 sprezzature-skills = "sprezzature.cli:main"
 
 [tool.setuptools]
-packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_vision", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures"]
+packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_vision", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures", "sprezzature.skills.sprezzature_maps"]
 
 [tool.setuptools.package-dir]
 "sprezzature.skills.sprezzature_ui" = "sprezzature-ui"
@@ -56,6 +56,7 @@ packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.ski
 "sprezzature.skills.sprezzature_audio" = "sprezzature-audio"
 "sprezzature.skills.sprezzature_ux_laws" = "sprezzature-ux-laws"
 "sprezzature.skills.sprezzature_figures" = "sprezzature-figures"
+"sprezzature.skills.sprezzature_maps" = "sprezzature-maps"
 
 [tool.setuptools.package-data]
 "sprezzature.skills.sprezzature_ui" = ["**/*"]
@@ -67,6 +68,7 @@ packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.ski
 "sprezzature.skills.sprezzature_audio" = ["**/*"]
 "sprezzature.skills.sprezzature_ux_laws" = ["**/*"]
 "sprezzature.skills.sprezzature_figures" = ["**/*"]
+"sprezzature.skills.sprezzature_maps" = ["**/*"]
 
 [tool.setuptools.exclude-package-data]
 # The rendered gallery is 74 MB of PNG and SVG that belongs on the website,

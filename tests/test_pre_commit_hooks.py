@@ -137,6 +137,12 @@ def test_every_audit_skill_has_a_hook() -> None:
         # emitter's output is exercised through sprezzature-ux-laws +
         # sprezzature-accessibility hooks above.
         "sprezzature-cli-gui",
+        # sprezzature-maps is make-only by design. What it emits is an SVG
+        # figure, so sprezzature-figures' audit_figure.py already covers it;
+        # a second SVG auditor here would drift from that one within a
+        # release. One auditor, two producers — the maps SKILL.md says so in
+        # its own "Two modes" table rather than leaving the cell blank.
+        "sprezzature-maps",
     }
     hooks_text: str = MANIFEST.read_text(encoding="utf-8")
     for skill in audit_skills:
