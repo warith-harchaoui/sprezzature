@@ -20,7 +20,7 @@ compatibility: >-
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.3
+  version: 1.3.4
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
