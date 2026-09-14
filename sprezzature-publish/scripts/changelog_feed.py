@@ -78,7 +78,7 @@ from site_indexes import _today_iso, render_atom, render_rss  # noqa: E402
 #: Directory names (siblings of the monorepo root, one level up) that
 #: carry a release-worthy CHANGELOG.md. ``sprezzature`` itself (the
 #: monorepo / skills repo) is included; ``sprezzature-local`` is skipped
-#: because it is archived/deprecated.
+#: because it is deleted — see :data:`RETIRED_PACKAGES`.
 PACKAGE_REPOS: tuple[str, ...] = (
     "sprezzature-accessibility",
     "sprezzature-audio",
@@ -89,6 +89,20 @@ PACKAGE_REPOS: tuple[str, ...] = (
     "sprezzature-ux-laws",
     "sprezzature",
 )
+
+#: Packages that no longer exist. Skipping their CHANGELOG is not enough:
+#: their name also appears inside older entries of the repos that did ship,
+#: and the feed republishes those entries verbatim. A reader following a
+#: name from the feed reaches a 404, so a line naming a retired package is
+#: dropped from the description. The CHANGELOG itself is a dated record and
+#: is never rewritten — this filters the publication, not the history.
+RETIRED_PACKAGES: tuple[str, ...] = ("sprezzature-local",)
+
+
+def _drop_retired(lines: list[str]) -> list[str]:
+    """Lines of a release description, minus any naming a retired package."""
+    return [ln for ln in lines if not any(p in ln for p in RETIRED_PACKAGES)]
+
 
 #: Matches a full ISO-8601 date. Deliberately does not match a bare year
 #: (``(2025)``) — a year alone isn't a stable enough date to sort or feed.
@@ -312,7 +326,7 @@ def parse_changelog(path: Path, package: str) -> list[ChangelogEntry]:
         heading_title = title_m.group(1).strip() if title_m else ""
 
         body_end = heading_idx[pos + 1] if pos + 1 < len(heading_idx) else len(lines)
-        logical_lines = _unwrap_lines(lines[idx + 1 : body_end])
+        logical_lines = _drop_retired(_unwrap_lines(lines[idx + 1 : body_end]))
 
         title = heading_title or _synopsis(logical_lines)
         summary = _summary_text(logical_lines)
