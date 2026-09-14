@@ -59,6 +59,35 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.5] (2026-09-14): the maps skill catches up with three kinds and real class breaks
+
+### Added
+
+- **The maps skill carries classification.** `sprezzature-maps` 0.3.0 gave the
+  choropleth `classes` / `method` / `breaks`, and the choice is the most
+  consequential setting on a thematic map: the same values classed four ways
+  tell four stories. The skill now says which method answers which question and
+  what each costs, that editorial boundaries can be passed outright, and that
+  the legend reports *given* breaks as given rather than naming a method that
+  never ran.
+- **`density` as a third kind**, with the routing line that is easy to get
+  wrong: a choropleth answers "what is the rate here" and wants one number per
+  territory, so filling it with a raw count draws population rather than the
+  phenomenon; `density` answers "where did this happen" and wants no
+  territories at all.
+
+### Fixed
+
+- **The skill's own description said dot density was not here.** True this
+  morning, false once 0.4.0 landed, and a direct contradiction of the kind the
+  same file now advertises. Rewritten to name the three kinds and to keep the
+  exclusion precise: a dot density drawn over a schematic outline is still
+  `sprezzature-figures`' job; an accumulation map on real coordinates is this
+  one's. Paid for out of prose, not out of any existing trigger.
+- **The `all` extra floored `sprezzature-maps` at 0.2.0** while the skill above
+  documents commands from 0.3.0 and 0.4.0. Third time the floor guard has
+  caught this, and the third time it was faster than I was.
+
 ## [1.3.4] (2026-09-14): the command the skill prints needs an extra, and now says so
 
 ### Fixed

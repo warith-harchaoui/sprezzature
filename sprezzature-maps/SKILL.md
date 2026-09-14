@@ -1,18 +1,20 @@
 ---
 name: sprezzature-maps
 description: >-
-  Real geography: a choropleth on an actual basemap with an actual projection,
-  and a layered areas-of-control "situation" plate for any region. The trigger
-  is data attached to PLACES, not the word "map": a column of country names,
-  ISO codes, states or départements is a map waiting to be drawn. Trigger
+  Real geography, three kinds: a choropleth on a true basemap and projection, a
+  layered areas-of-control "situation" plate, and an accumulation map where
+  point events draw the land themselves, no coastline drawn. The trigger is
+  data attached to PLACES, not the word "map": a column of countries, ISO
+  codes, states or départements is a map waiting to be drawn, and so is a list
+  of coordinates where something happened. Trigger
   phrases: "map this by country", "colour the regions by score", "which country
   is worst affected", "break this down by region", "where is this happening",
   "show me the spread across Europe", "world map", "choropleth", "thematic map",
   "areas of control", "front line", "contested zones", "who controls what",
-  "situation map", "situational awareness plate", « une carte par département »,
-  « carte de situation ». Schematic place-shaped charts — hex map, dot density,
-  spike map, binned grid — are NOT here; they live in sprezzature-figures.
-  Output is SVG (PNG / PDF on request).
+  "situation map", "where did these incidents fall", « une carte par
+  département », « carte de situation ». Schematic place-shaped charts — hex
+  map, spike map, binned grid, dot density over an outline — are NOT here; they
+  live in sprezzature-figures. Output is SVG (PNG / PDF on request).
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Ships as the standalone
@@ -20,7 +22,7 @@ compatibility: >-
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.4
+  version: 1.3.5
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
