@@ -25,7 +25,7 @@ compatibility: >-
   torch + torchaudio; installed only when explicitly opted into.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.0
+  version: 1.3.1
 ---
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language
