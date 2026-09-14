@@ -19,6 +19,7 @@ A phrase list cannot generalise: the ways to ask for a chart, a colour or a capt
 | Recorded speech somebody needs as text — or a question about that text | **sprezzature-audio** | "what did they say in this meeting", "who spoke when", "subtitles", « de quoi ils parlent dans cet enregistrement » |
 | An interface somebody is complaining about the FEEL of | **sprezzature-ux-laws** | "this page is overwhelming", "too many options", "I can never find the button", « c'est confus » |
 | Numbers you want somebody to SEE — or a picture of a chart that is hard to read | **sprezzature-figures** | "show me this data", "which region is biggest", "what does this look like", "a colleague sent me this graph", « fais-moi voir », « un visuel de ça » |
+| Numbers attached to PLACES — a column of countries, regions, states, départements | **sprezzature-maps** | "which countries are worst affected", "break this down by region", "where is this happening", "who holds the east", « par département » |
 
 Two of these fire on work you just did rather than on a request: **sprezzature-accessibility** on any HTML you authored, and **sprezzature-ux-laws** on any interface you authored. Waiting to be asked means the markup nobody checked is the markup you wrote.
 
@@ -168,6 +169,23 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `redraw this chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `make this ugly chart better` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `rends ce graphique plus lisible` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
+| `situation` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `map this by country` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `colour the regions by score` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `which country is worst affected` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `break this down by region` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `where is this happening` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `show me the spread across Europe` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `world map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `choropleth` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `thematic map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `areas of control` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `front line` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `contested zones` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `who controls what` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `situation map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `situational awareness plate` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 
 ## How discovery works
 

@@ -59,6 +59,57 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.0] (2026-09-14): the tenth skill — maps had four surfaces and no agent could find it
+
+### Added
+
+- **`sprezzature-maps` is a skill.** The package had four of the suite's five
+  surfaces — zip, library, HTTP API, MCP — and no fifth: no SKILL.md, no entry
+  in `SKILLS.txt`, and no row in the `TRIGGERS.md` routing table. An agent
+  holding a column of country names was never routed to it, which is the only
+  moment the package exists for.
+
+  The skill carries the routing decision that the catalogue cannot make for
+  itself: **does the shape of the land matter?** A choropleth or an
+  areas-of-control plate needs real coastlines and a real projection, and lives
+  here. A hex map, dot density, spike map or binned grid is a layout
+  convention, and stays in `sprezzature-figures`. Both skills now say so, in
+  the same words, from opposite sides.
+
+  It also carries the one contract a situation map cannot be handed over
+  without: the generator draws exactly what the config claims and has no view
+  on whether the claim is true, so a plate that looks like an intelligence
+  product must travel with the provenance of its assessment. That is part of
+  the map's meaning, not a disclaimer appended underneath.
+
+  `references/choosing-a-map.md` is the longer form: three map families, the
+  question each answers, and the failure each is prone to — the choropleth's
+  large-empty-region bias above all, which is the most common defect in
+  published thematic maps and the one to raise *before* rendering.
+
+### Fixed
+
+- **Both READMEs still credited `sprezzature-figures` with thematic and
+  situation maps.** Those generators moved to `sprezzature-maps`; the trigger
+  phrases "choropleth", "world map", "situation map" and "areas of control"
+  pointed readers at the package that no longer draws them.
+- **`test_validate_skill` asserted `"PASS — all 9 skill(s)"` as a literal.** It
+  went red the moment a tenth skill shipped, for a reason that had nothing to
+  do with validation. It counts from `SKILLS.txt` now, like every other
+  consumer of the manifest.
+- **The wheel would have named a skill it did not carry.** setuptools learns
+  which folders to ship from three hand-maintained blocks in `pyproject.toml`
+  (`packages`, `package-dir`, `package-data`). `SKILL_NAMES` and `SKILLS.txt`
+  are two more lists of the same thing — five hand-edited places, silent when
+  they disagree. They disagreed: the first 1.3.0 wheel advertised ten skills
+  and shipped nine, so `skill_path("sprezzature-maps")` returned a path that
+  did not exist. Nothing caught it, because in a checkout the folder is sitting
+  right there and no test reads the packaging tables.
+
+  `tests/test_wheel_ships_every_skill.py` now cross-checks the five lists
+  statically, and `check_wheels.py` asks the *installed* package to resolve
+  every name it advertises — the runtime half, which a checkout cannot answer.
+
 ## [1.2.0] (2026-09-14): routing on what the user is holding, and a catalogue that counts itself
 
 ### Changed

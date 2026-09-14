@@ -75,6 +75,7 @@ STATUS: dict[str, str] = {
     "sprezzature-audio": "Stable (WiP: caption WER baselines)",
     "sprezzature-ux-laws": "Stable",
     "sprezzature-figures": "Stable",
+    "sprezzature-maps": "Stable",
 }
 
 
@@ -92,6 +93,7 @@ WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT.",
     "sprezzature-ux-laws": "Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers.",
     "sprezzature-figures": "Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures.",
+    "sprezzature-maps": "Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap.",
 }
 
 
@@ -146,6 +148,12 @@ ROUTES: dict[str, tuple[str, str]] = {
         "Recorded speech somebody needs as text — or a question about that text",
         '"what did they say in this meeting", "who spoke when", "subtitles", '
         '« de quoi ils parlent dans cet enregistrement »',
+    ),
+    "sprezzature-maps": (
+        "Numbers attached to PLACES — a column of countries, regions, states, "
+        "départements",
+        '"which countries are worst affected", "break this down by region", '
+        '"where is this happening", "who holds the east", « par département »',
     ),
 }
 

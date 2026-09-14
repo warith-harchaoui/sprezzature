@@ -91,6 +91,24 @@ def surfaces_of(repo: Path) -> tuple[str, ...]:
     return tuple(s for s in SURFACES if s in declared)
 
 
+def _missing_skills(py: Path) -> list[str]:
+    """Skill folders `sprezzature` advertises but did not ship, if any."""
+    probe = (
+        "import sprezzature as s;"
+        "print(' '.join(n for n in s.SKILL_NAMES "
+        "if not (s.skill_path(n) / 'SKILL.md').is_file()))"
+    )
+    r = subprocess.run([str(py), "-c", probe], cwd="/", capture_output=True,
+                       text=True, timeout=60)
+    if r.returncode != 0:
+        last = r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "?"
+        return [f"sprezzature: could not enumerate the shipped skills — {last[:120]}"]
+    absent = r.stdout.split()
+    if absent:
+        return [f"sprezzature: the wheel names {len(absent)} skill(s) it does not "
+                f"carry — {', '.join(absent)}"]
+    return []
+
 def check(repo_name: str, package: str, keep: bool) -> list[str]:
     """
     Install `repo_name`'s wheel alone and exercise it. Returns the failures.
@@ -120,6 +138,14 @@ def check(repo_name: str, package: str, keep: bool) -> list[str]:
         if r.returncode != 0:
             last = r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "?"
             problems.append(f"{repo_name}: import {package} — {last[:120]}")
+        elif repo_name == "sprezzature":
+            # This package's whole payload is folders, not modules: importing
+            # it proves nothing about whether the skills came with it. The
+            # three hand-kept tables in pyproject.toml decide that, and when
+            # SKILL_NAMES grows and they do not, the wheel names a skill whose
+            # files are absent — invisible from a checkout, where the folder
+            # sits in the source tree.
+            problems += _missing_skills(py)
 
         for surface in surfaces:
             r = subprocess.run([str(py), "-c", f"import {package}.{surface}"],
