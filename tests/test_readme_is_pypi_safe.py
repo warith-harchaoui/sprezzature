@@ -34,5 +34,5 @@ def test_readme_has_no_repository_relative_links() -> None:
     assert not relative, (
         "README.md is the PyPI long description, where a relative link 404s. "
         "Point these at https://github.com/warith-harchaoui/sprezzature/blob/main/… "
-        f"instead:\n  " + "\n  ".join(relative)
+        "instead:\n  " + "\n  ".join(relative)
     )

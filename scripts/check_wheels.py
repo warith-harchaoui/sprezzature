@@ -41,8 +41,12 @@ import tempfile
 import tomllib
 from pathlib import Path
 
-#: Every sibling checkout that publishes a package, and its import name.
+#: Every checkout that publishes a package, and its import name. This
+#: repository is in the list: it publishes ``sprezzature``, the distribution
+#: that carries the skills, and leaving it out meant the one package whose
+#: wheel nobody had ever installed from a clean venv was the flagship.
 PACKAGES: dict[str, str] = {
+    "sprezzature": "sprezzature",
     "sprezzature-figures": "sprezzature_figures",
     "sprezzature-colors": "sprezzature_colors",
     "sprezzature-accessibility": "sprezzature_accessibility",
@@ -53,6 +57,8 @@ PACKAGES: dict[str, str] = {
 }
 
 #: Imported with the [api,mcp] extras: the two surfaces that broke silently.
+#: A package that declares neither (``sprezzature`` is skills and a copier,
+#: not a server) is checked on its top-level import and its commands alone.
 SURFACES = ("api", "mcp")
 
 #: A command refusing because an optional extra is missing, and naming it.
@@ -78,6 +84,13 @@ def scripts_of(repo: Path) -> list[str]:
     return list(data["project"].get("scripts", {}))
 
 
+def surfaces_of(repo: Path) -> tuple[str, ...]:
+    """Which of `SURFACES` this package actually declares an extra for."""
+    data = tomllib.loads((repo / "pyproject.toml").read_text(encoding="utf-8"))
+    declared = data["project"].get("optional-dependencies", {})
+    return tuple(s for s in SURFACES if s in declared)
+
+
 def check(repo_name: str, package: str, keep: bool) -> list[str]:
     """
     Install `repo_name`'s wheel alone and exercise it. Returns the failures.
@@ -88,18 +101,27 @@ def check(repo_name: str, package: str, keep: bool) -> list[str]:
     """
     repo = Path.home() / repo_name
     problems: list[str] = []
+    surfaces = surfaces_of(repo)
     wheel = build(repo)
     venv = Path(tempfile.mkdtemp(prefix=f"wheelcheck-{repo_name}-"))
     try:
         subprocess.run([sys.executable, "-m", "venv", str(venv)], check=True,
                        capture_output=True)
         py = venv / "bin" / "python"
-        pip = subprocess.run([str(venv / "bin" / "pip"), "install", "-q",
-                              f"{wheel}[api,mcp]"], capture_output=True, text=True)
+        target = f"{wheel}[{','.join(surfaces)}]" if surfaces else str(wheel)
+        pip = subprocess.run([str(venv / "bin" / "pip"), "install", "-q", target],
+                             capture_output=True, text=True)
         if pip.returncode != 0:
             return [f"{repo_name}: install failed: {pip.stderr.strip()[-300:]}"]
 
-        for surface in SURFACES:
+        # A package with no server surface still has to import at all.
+        r = subprocess.run([str(py), "-c", f"import {package}"],
+                           cwd="/", capture_output=True, text=True, timeout=120)
+        if r.returncode != 0:
+            last = r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "?"
+            problems.append(f"{repo_name}: import {package} — {last[:120]}")
+
+        for surface in surfaces:
             r = subprocess.run([str(py), "-c", f"import {package}.{surface}"],
                                cwd="/", capture_output=True, text=True, timeout=120)
             if r.returncode != 0:
