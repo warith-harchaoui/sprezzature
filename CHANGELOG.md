@@ -97,6 +97,15 @@ Adoption-side milestones (user-driven; not engineering work):
   went red the moment a tenth skill shipped, for a reason that had nothing to
   do with validation. It counts from `SKILLS.txt` now, like every other
   consumer of the manifest.
+- **`sprezzature[all]` could not resolve.** The extra required
+  `sprezzature-audio` and `sprezzature-maps`, neither of which was on PyPI, so
+  the one command that installs the whole suite failed at resolution. Both are
+  published now (audio 1.1.0, maps 0.2.0) and every requirement is floored at
+  the release that actually carries what the matching skill documents — the
+  figures floor had sat at 2.0.0 while the skill described `redraw`, which
+  arrives in 2.2.0. `tests/test_all_extra_is_the_suite.py` now checks the
+  extra against `check_wheels.py`'s table of suite packages in both
+  directions, and that every requirement carries a floor.
 - **The wheel would have named a skill it did not carry.** setuptools learns
   which folders to ship from three hand-maintained blocks in `pyproject.toml`
   (`packages`, `package-dir`, `package-data`). `SKILL_NAMES` and `SKILLS.txt`

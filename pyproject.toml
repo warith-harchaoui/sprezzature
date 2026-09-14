@@ -29,10 +29,10 @@ all = [
     "sprezzature-figures>=2.2.0",
     "sprezzature-colors>=1.0.0",
     "sprezzature-accessibility>=1.0.0",
-    "sprezzature-audio>=1.0.0",
+    "sprezzature-audio>=1.1.0",
     "sprezzature-cli-gui>=1.0.0",
     "sprezzature-ux-laws>=1.0.0",
-    "sprezzature-maps>=0.1.0",
+    "sprezzature-maps>=0.2.0",
 ]
 dev = ["pytest>=8.0", "ruff"]
 
