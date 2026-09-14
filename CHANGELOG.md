@@ -59,6 +59,19 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.4] (2026-09-14): the command the skill prints needs an extra, and now says so
+
+### Fixed
+
+- **`sprezzature-figures check` (and `redraw`, `list`, `render`, `recommend`)
+  need the `[cli]` extra**, and the skill printed the command without saying
+  so. Found by installing the published package from the index rather than
+  reading the repository: the command answers with a one-line refusal naming
+  the extra, which is recoverable but a round-trip an agent should not have to
+  spend. The scripts table now names the full Click command set and its extra,
+  and the decision tree says it at the point where an agent copies the command
+  — along with the fact that `check_render` from Python needs nothing.
+
 ## [1.3.3] (2026-09-14): the figures skill learns to check a render without eyes
 
 ### Added

@@ -27,7 +27,7 @@ compatibility: >-
   network needed once installed.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.3
+  version: 1.3.4
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures) (`pip install`), invoked as `sprezzature-figures …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -106,7 +106,7 @@ data-science figures:
 | "timeshap" / "explain my LSTM / transformer sequence model" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model seq_model.pkl --data X.npy --engine timeshap --sequence-cols "t_0,t_1,...,t_N" --out ./explain/` |
 | "causal effect" / "average treatment effect" / "DAG" / "DoWhy" | `causal_estimate.py` | `python -m sprezzature_figures_scripts.causal_estimate --data d.csv --treatment T --outcome Y --confounders "X1,X2,X3" --dag dag.gml [--estimator dml\|dr\|causal-forest\|linear] [--refute all\|placebo\|subset\|random-cause]` |
 | "situation map" / "areas of control" / "who controls what" / "conflict map" / "control map" | *(currently unavailable)* | The generator that used to serve this trigger has been removed from the standalone package (see the Two-modes table above). Tell the user the capability is not shipped today rather than attempting a workaround. |
-| "is this figure readable" / "check my chart" / "did the title make it" / "I have no vision model" | `sprezzature-figures check` | `sprezzature-figures check fig.svg [--dark] [--expect-title "..."] [--forbid "placeholder"]`. Exit 1 on any finding, so it gates a commit. Pass `--expect-title` whenever you asked for a title: a generator that silently drops the parameter is the failure nothing else catches. |
+| "is this figure readable" / "check my chart" / "did the title make it" / "I have no vision model" | `sprezzature-figures check` | `sprezzature-figures check fig.svg [--dark] [--expect-title "..."] [--forbid "placeholder"]` (needs the `[cli]` extra; from Python it is `check_render`, which never does). Exit 1 on any finding, so it gates a commit. Pass `--expect-title` whenever you asked for a title: a generator that silently drops the parameter is the failure nothing else catches. |
 | "ralph eyeball loop" / "eyeball this" / "screenshot the page" / "render web page" / "look at the PNG" | `ralph_eyeball_loop.py` | `python -m sprezzature_figures_scripts.ralph_eyeball_loop <source> [--width 1440] [--height 900] [--bg white\|transparent\|dark]`: kind auto-detected from suffix (.html → Chrome headless; others → render_diagram.py). Assessment file at `.private/ralph-loop/assessment-<hash>.md`. |
 | "render this diagram" / "tikz to png" / "mermaid diagram" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / mermaid / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
 | user asks for a named charting library ("do this in <library>") | `make-figure` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 127 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
@@ -316,7 +316,7 @@ sprezzature_figures_scripts.<module>`.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `sprezzature-figures render` / `sprezzature-figures recommend` (the `[cli]` extra) cover the same ground with a Click interface plus a data-driven kind recommender. |
+| `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `render` / `recommend` / `redraw` / `check` cover the same ground with a Click interface plus a kind recommender and a render checker. **They all need the `[cli]` extra** — without it the command prints a one-line refusal naming it, which is recoverable but a wasted round-trip: reach for `pip install 'sprezzature-figures[cli]'` up front. |
 | `explain_model.py` | `sprezzature-figures[explain]` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
 | `causal_estimate.py` | `sprezzature-figures[causal]` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
 | `audit_figure.py` | stdlib + PyYAML | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
