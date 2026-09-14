@@ -6,12 +6,12 @@
 [🇫🇷](LISEZMOI.md) · [🇬🇧](README.md)
 
 <p align="center">
-  <img src="assets/logo.png" alt="Sprezzature : neuf skills Claude / OpenCode pour des frontends en JavaScript pur + Tailwind" width="240">
+  <img src="assets/logo.png" alt="Sprezzature : dix skills Claude / OpenCode pour des frontends en JavaScript pur + Tailwind" width="240">
 </p>
 
 ## De quoi s'agit-il ?
 
-`sprezzature`, c'est **neuf *skills* Claude / OpenCode** qui cadrent
+`sprezzature`, c'est **dix *skills* Claude / OpenCode** qui cadrent
 l'agent sur une seule pile frontend (JavaScript (JS) pur, Tailwind CSS,
 et la règle des trois Roboto : Roboto pour les sans-serif, Roboto Serif
 pour les serif, Roboto Mono pour le code) et lui fournissent un
@@ -25,7 +25,7 @@ stylé, anneau de focus visible, garde-fous pour `prefers-reduced-motion`,
 graphiques en SVG écrite à la main, texte alternatif rédigé selon les recommandations
 du World Wide Web Consortium (W3C) et de sa Web Accessibility Initiative (WAI).
 
-Les neuf *skills* :
+Les dix *skills* :
 
 | *Skill* | Quand l'installer | Phrases déclencheuses |
 |---|---|---|
@@ -290,7 +290,7 @@ carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur
 
 ## État d'avancement
 
-Photographie de l'état de chaque surface. Les neuf dossiers
+Photographie de l'état de chaque surface. Les dix dossiers
 de *skills* sont stables ; la seule zone en travaux est l'**audio /
 sous-titres** (sprezzature-audio, vidéo → texte). La **narration audio**
 (sprezzature-publish, texte → audio) est stable et explicitement encadrée
@@ -684,7 +684,7 @@ voir `sprezzature-cli-gui/SKILL.md` → « Why this *skill*, not Gradio / Strea
 
 [Warith HARCHAOUI, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
 
-Neuf ***skills*** Claude / OpenCode pour une seule pile
+Dix ***skills*** Claude / OpenCode pour une seule pile
 frontend : JavaScript pur, Tailwind CSS et la règle des trois Roboto
 (Roboto / Roboto Serif / Roboto Mono). Conformes à la
 [spécification Anthropic des *skills*](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).

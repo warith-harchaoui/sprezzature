@@ -75,6 +75,27 @@ evidence.
 | "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation_map --config region.yaml --out region.svg`. The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Western-Europe demo config runs with no arguments. |
 | "what kinds of map can you draw" | `list_kinds` | Two. If the answer the user needs is a third, it is in `sprezzature-figures`. |
 
+## The situation map is configured, not flagged
+
+Everything a situation plate shows lives in one YAML file, and **almost
+nothing is on by default** — they are modes, and a plate that switches them
+all on says less than one that picks. The keys the generator reads:
+
+`title`, `subtitle`, `caption`, `as_of` · `projection`, `basemap`, `frame`,
+`padding`, `canvas_width` · `areas_of_control`, `front`, `frontiers`,
+`internal_borders` · `forces`, `events`, `infrastructure`, `labels`,
+`rivers` · `legend_position`, `legend_footer`, `marker_legend` ·
+`source`, `attribution`, `method`.
+
+The last three are the provenance block, and they are the ones to fill in
+first rather than last: `source` and `as_of` are what stop a plate from being
+read as current when it is not, and `method` is where the assessment behind
+the zones is named. See the contract above.
+
+Rivers taper by prominence when `rivers` asks them to; they are absent
+otherwise. The same is true of every other layer — ask for what the map is
+about, not for everything the generator can draw.
+
 ## Two modes: make and audit
 
 | Mode | Tool | Purpose |
