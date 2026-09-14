@@ -83,6 +83,47 @@ def test_all_extra_names_nothing_else() -> None:
     )
 
 
+def _sibling_version(package: str) -> str | None:
+    """The version the sibling checkout declares, or None if it is not here."""
+    pyproject = REPO_ROOT.parent / package / "pyproject.toml"
+    if not pyproject.is_file():
+        return None
+    match = re.search(
+        r'^\s*version\s*=\s*["\']([\d.]+)["\']',
+        pyproject.read_text(encoding="utf-8"),
+        re.MULTILINE,
+    )
+    return match.group(1) if match else None
+
+
+def test_floors_name_the_current_release_of_each_sibling() -> None:
+    """
+    A floor that lags a correction installs the uncorrected package forever.
+
+    `sprezzature-accessibility` shipped 1.0.1 and 1.0.2 to fix a rule count its
+    own documentation got wrong, and `sprezzature[all]` kept floor 1.0.0 — so
+    the one command that installs the whole suite kept handing people the
+    version with the wrong docs. The floor has to move with the release.
+
+    Skipped when the sibling checkouts are absent, which is the normal state on
+    CI: this is a check for the machine that cuts the release.
+    """
+    stale: list[str] = []
+    for name, raw in _all_extra().items():
+        current = _sibling_version(name)
+        if current is None:
+            continue
+        floor = re.search(r">=\s*([\d.]+)", raw)
+        assert floor, f"{name} has no floor to compare"
+        if tuple(map(int, floor.group(1).split("."))) < tuple(map(int, current.split("."))):
+            stale.append(f"{name}: floor {floor.group(1)} < checkout {current}")
+
+    assert not stale, (
+        "the `all` extra floors a package below the release sitting next to it:\n  "
+        + "\n  ".join(stale)
+    )
+
+
 def test_every_requirement_carries_a_floor() -> None:
     """An unpinned requirement resolves to whatever is oldest-compatible."""
     unfloored = sorted(name for name, raw in _all_extra().items() if ">=" not in raw)
