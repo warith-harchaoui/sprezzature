@@ -59,6 +59,27 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.3] (2026-09-14): the figures skill learns to check a render without eyes
+
+### Added
+
+- **`sprezzature-figures check` in the skill.** `check_render` shipped in
+  figures 2.3.0 as a library function with no way for an agent to reach it. The
+  skill now carries it in the make/audit table, in the honest
+  what-it-catches / what-it-misses table, and in the decision tree with the
+  instruction that matters: pass `--expect-title` whenever you asked for a
+  title, because a generator that silently drops the parameter is the failure
+  nothing else catches. It answers the eyeball loop's questions without a
+  vision model — the only version available when you have none — and judges
+  facts, never taste.
+
+### Fixed
+
+- **The `all` extra floored `sprezzature-figures` at 2.2.0** while the skill
+  above documents a command that arrives in 2.3.0. Caught by
+  `test_floors_name_the_current_release_of_each_sibling`, added in 1.3.2 for
+  precisely this, on its first real outing.
+
 ## [1.3.2] (2026-09-14): a floor that lags a correction ships the uncorrected package
 
 ### Fixed

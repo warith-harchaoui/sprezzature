@@ -22,7 +22,7 @@ compatibility: >-
   No network or model required at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.2
+  version: 1.3.3
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors) (`pip install`), invoked as `sprezzature-colors …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
