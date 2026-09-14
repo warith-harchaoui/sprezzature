@@ -59,6 +59,27 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.1] (2026-09-14): two claims the shipped skills made that the tools do not back
+
+### Fixed
+
+- **The accessibility skill advertised fifteen rules; the linter has twenty.**
+  Four different wrong numbers for one catalogue: fifteen in the skill's
+  frontmatter, fourteen in both READMEs, fifteen in the routing table, fourteen
+  in `sprezzature-cli`'s help. The five nobody counted are the time-based-media
+  family — video captions, audio transcripts, unmuted autoplay, keyboard
+  controls, caption-track language — so a reader could not learn their
+  `<video>` was checked at all.
+- **The ux-laws skill listed Doherty among the laws its auditor flags.**
+  `LAW_REGISTRY` holds eight and Doherty is not one of them; it cannot be,
+  because response time is not a fact about source. The same SKILL.md already
+  said so further down, under "out of scope for static analysis — use
+  Lighthouse on a real device". An agent reading the frontmatter would have
+  promised a user a check that never runs, which is worse than a stale count.
+  Doherty stays a trigger phrase: whoever says it should land here and get that
+  answer. The correction cost 46 characters over the 1024-char frontmatter
+  budget, paid out of prose rather than out of any existing trigger.
+
 ## [1.3.0] (2026-09-14): the tenth skill — maps had four surfaces and no agent could find it
 
 ### Added
