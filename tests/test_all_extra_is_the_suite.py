@@ -15,6 +15,11 @@ flaky. It checks the half that is decidable locally — that the extra names the
 suite, exactly. Whether those versions exist is what ``check_wheels.py`` and
 the publication step answer.
 
+``check_wheels.py`` is read rather than imported. It imports ``tomllib``, which
+is stdlib only from 3.11, and this repo's floor is 3.10 — the same trap
+``test_version_consistency`` documents in its own comment and avoids the same
+way.
+
 Author
 ------
 Project maintainers.
@@ -23,16 +28,26 @@ Project maintainers.
 from __future__ import annotations
 
 import re
-import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from check_wheels import PACKAGES  # noqa: E402
+_PACKAGES_TABLE_RE = re.compile(
+    r"^PACKAGES: dict\[str, str\] = \{(.*?)^\}", re.MULTILINE | re.DOTALL
+)
+_REPO_KEY_RE = re.compile(r'^\s*"([a-z0-9-]+)":', re.MULTILINE)
 
-#: Every sibling tool package: what `check_wheels` builds, less this repo.
-TOOL_PACKAGES = frozenset(PACKAGES) - {"sprezzature"}
+
+def _tool_packages() -> frozenset[str]:
+    """Sibling tool packages: what ``check_wheels`` builds, less this repo."""
+    source = (REPO_ROOT / "scripts" / "check_wheels.py").read_text(encoding="utf-8")
+    table = _PACKAGES_TABLE_RE.search(source)
+    assert table, "scripts/check_wheels.py has no PACKAGES table"
+    return frozenset(_REPO_KEY_RE.findall(table.group(1))) - {"sprezzature"}
+
+
+#: Every sibling tool package, read from that table.
+TOOL_PACKAGES = _tool_packages()
 
 _ALL_EXTRA_RE = re.compile(r"^all = \[(.*?)\]", re.MULTILINE | re.DOTALL)
 _REQUIREMENT_RE = re.compile(r'"([A-Za-z0-9_.-]+)\s*(?:[<>=!~]=?[^"]*)?"')
