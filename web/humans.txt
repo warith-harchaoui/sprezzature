@@ -4,7 +4,7 @@ Author -- see repository metadata.
 
 /* SITE */
 
-Last update: 2026-09-12
+Last update: 2026-09-14
 Language: English
 Doctype: HTML5
 Components: vanilla JavaScript, Tailwind CSS, Roboto / Roboto Serif / Roboto Mono
