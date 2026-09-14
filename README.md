@@ -3,7 +3,7 @@
 [🇫🇷](https://github.com/warith-harchaoui/sprezzature/blob/main/LISEZMOI.md) · [🇬🇧](https://github.com/warith-harchaoui/sprezzature/blob/main/README.md)
 
 <p align="center"><a href="https://sprezzature.ai/">
-  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature: nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
+  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature: ten Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
 </p>
 
 [🌍 Documentation](https://sprezzature.ai/)
@@ -217,7 +217,7 @@ recipes per skill (with expected output), see [`EXAMPLES.md`](https://github.com
 
 ## Status
 
-A snapshot of where each surface stands. The nine skill folders are stable; the only WiP area is **audio captions** (sprezzature-audio, video → text). The **audio narration** feature (sprezzature-publish, text → audio) is stable and clearly framed as optional editorial enhancement, not Web Content Accessibility Guidelines (WCAG) compliance.
+A snapshot of where each surface stands. The ten skill folders are stable; the only WiP area is **audio captions** (sprezzature-audio, video → text). The **audio narration** feature (sprezzature-publish, text → audio) is stable and clearly framed as optional editorial enhancement, not Web Content Accessibility Guidelines (WCAG) compliance.
 
 | Area | Status | Notes |
 |---|---|---|
@@ -578,7 +578,7 @@ For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see `sprezz
 
 [Warith HARCHAOUI, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
 
-Nine Claude / OpenCode **skills** for a single frontend stack: vanilla JavaScript, Tailwind CSS, and the three-Roboto typography rule (Roboto / Roboto Serif / Roboto Mono). Built to the [Anthropic skill specification](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
+Ten Claude / OpenCode **skills** for a single frontend stack: vanilla JavaScript, Tailwind CSS, and the three-Roboto typography rule (Roboto / Roboto Serif / Roboto Mono). Built to the [Anthropic skill specification](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
 
 Special thanks to:
 
