@@ -1,11 +1,14 @@
 """
-README.md is the ``sprezzature`` package's long description, so it is read on
-PyPI as often as on GitHub — and PyPI has no repository to resolve a relative
-link against. ``[docs/](docs/)`` renders there as a link to
-``pypi.org/project/sprezzature/docs/``, which is a 404.
+README.md is this package's long description, so it is read on PyPI as often
+as on GitHub — and PyPI has no repository to resolve a relative target
+against. ``[EXAMPLES.md](EXAMPLES.md)`` renders there as a link to
+``pypi.org/project/sprezzature/EXAMPLES.md``, a 404, and a relative image
+source is a broken image on the page a reader lands on.
 
-Every link therefore has to be absolute, or an anchor into the page itself.
-The two are the only forms that survive both renderings.
+Every link and every image therefore has to be absolute, or an anchor into
+the page itself. Those two forms are the only ones that survive both
+renderings. Markdown and inline HTML are both checked: a README that uses
+``<img src="assets/logo.png">`` fails the same way.
 
 Author
 ------
@@ -19,20 +22,24 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-#: Markdown inline links: the target between the parentheses of ``[text](target)``.
-_LINK_RE = re.compile(r"\]\(([^)\s]+)\)")
+#: ``[text](target)`` — and ``![alt](source)``, which ends the same way.
+_MD_TARGET_RE = re.compile(r"\]\(([^)\s]+)\)")
+
+#: ``src="…"`` / ``href="…"`` in the inline HTML a README may carry.
+_HTML_TARGET_RE = re.compile(r'(?i)\b(?:src|href)="([^"]+)"')
 
 #: Forms that render correctly wherever the README is shown.
-_PORTABLE_PREFIXES = ("https://", "http://", "#", "mailto:")
+_PORTABLE_PREFIXES = ("https://", "http://", "#", "mailto:", "data:")
 
 
-def test_readme_has_no_repository_relative_links() -> None:
-    """Nothing in README.md points at a path only a git checkout can resolve."""
+def test_readme_targets_are_absolute() -> None:
+    """No link or image in README.md needs a git checkout to resolve."""
     readme = REPO_ROOT / "README.md"
-    targets = _LINK_RE.findall(readme.read_text(encoding="utf-8"))
+    text = readme.read_text(encoding="utf-8")
+    targets = _MD_TARGET_RE.findall(text) + _HTML_TARGET_RE.findall(text)
     relative = sorted({t for t in targets if not t.startswith(_PORTABLE_PREFIXES)})
     assert not relative, (
-        "README.md is the PyPI long description, where a relative link 404s. "
+        "README.md is the PyPI long description, where a relative target 404s. "
         "Point these at https://github.com/warith-harchaoui/sprezzature/blob/main/… "
         "instead:\n  " + "\n  ".join(relative)
     )
