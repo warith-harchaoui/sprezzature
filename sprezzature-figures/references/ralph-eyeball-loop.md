@@ -30,7 +30,7 @@ exists. The kind is auto-detected from the source file's suffix:
 A declarative chart spec is not one of the surfaces this loop
 understands: `render_diagram.py`'s `KINDS` tuple is `("tikz", "mermaid",
 "svg")`, and nothing in this package produces or consumes a spec. Every
-chart the 124-kind catalogue emits is already hand-authored SVG, so it
+chart the 127-kind catalogue emits is already hand-authored SVG, so it
 goes through the `.svg` row above like any other hand-authored figure.
 
 For the three diagram surfaces, `ralph_eyeball_loop.py` does not render

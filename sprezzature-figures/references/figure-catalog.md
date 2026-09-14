@@ -1,4 +1,4 @@
-# The figure catalogue: what actually renders each of the 124 kinds
+# The figure catalogue: what actually renders each of the 127 kinds
 
 Every visual this package produces is SVG markup written directly by the
 code that computes the geometry. There is no charting library underneath,
@@ -6,7 +6,7 @@ in any tier, on any code path — not for the catalogue, not for the
 explainability plots, not for the causal diagrams. This file documents
 what ships, kind by kind, and where the approach stops.
 
-## What the 124-kind catalogue actually is
+## What the 127-kind catalogue actually is
 
 Every entry in `sprezzature_figures/catalog/figures.json` lists
 `"renderer": "svg"`, with no other value appearing anywhere in the file.
@@ -70,7 +70,7 @@ none of the above can quietly drift back.
 
 | Output | Renderer | Interactive at view time? |
 |---|---|---|
-| Any of the 124 `make-figure` catalogue kinds | Hand-built SVG (`_svg.py` helpers) | Yes, CSS-only hover tooltips, no script tag |
+| Any of the 127 `make-figure` catalogue kinds | Hand-built SVG (`_svg.py` helpers) | Yes, CSS-only hover tooltips, no script tag |
 | A TikZ figure, via `render_diagram.py` | `tectonic` / `pdflatex` + `pdftoppm` | No, static raster/vector |
 | A Mermaid diagram, via `render_diagram.py` | `mmdc` | No, static raster/vector |
 | A raw hand-authored SVG, via `render_diagram.py` | `rsvg-convert` / ImageMagick | No, static raster (the source SVG itself may be interactive; the rasterized companion is not) |

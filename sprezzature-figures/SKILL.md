@@ -27,7 +27,7 @@ compatibility: >-
   network needed once installed.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures) (`pip install`), invoked as `sprezzature-figures …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -106,7 +106,7 @@ data-science figures:
 | "situation map" / "areas of control" / "who controls what" / "conflict map" / "control map" | *(currently unavailable)* | The generator that used to serve this trigger has been removed from the standalone package (see the Two-modes table above). Tell the user the capability is not shipped today rather than attempting a workaround. |
 | "ralph eyeball loop" / "eyeball this" / "screenshot the page" / "render web page" / "look at the PNG" | `ralph_eyeball_loop.py` | `python -m sprezzature_figures_scripts.ralph_eyeball_loop <source> [--width 1440] [--height 900] [--bg white\|transparent\|dark]`: kind auto-detected from suffix (.html → Chrome headless; others → render_diagram.py). Assessment file at `.private/ralph-loop/assessment-<hash>.md`. |
 | "render this diagram" / "tikz to png" / "mermaid diagram" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / mermaid / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
-| user asks for a named charting library ("do this in <library>") | `make-figure` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 124 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
+| user asks for a named charting library ("do this in <library>") | `make-figure` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 127 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
 | "audit this figure" / "is this chart misleading" | `audit_figure.py` | `python -m sprezzature_figures_scripts.audit_figure <path>`: accepts an SVG chart or an HTML file with `<figure>` blocks. |
 | "colorblind-safe palette on the figure" | `audit_figure.py` + `sprezzature-colors` | `python -m sprezzature_figures_scripts.audit_figure <path>` catches the pattern; run `python -m sprezzature_colors_scripts.simulate_cvd` on the rendered PNG for a preview. |
 | "first-time setup" / "install the data-viz stack" | `install_figures.py` | `python -m sprezzature_figures_scripts.install_figures --tier dataviz+explain+causal`: installs pinned versions of each tier. |
@@ -143,7 +143,7 @@ Every figure `make-figure` emits inherits the sprezzature-* design tokens:
    matching `sprezzature-ui/references/charts-svg.md`.
 4. **Dark-mode aware**: an additive `@media (prefers-color-scheme: dark)`
    block, embedded directly in the SVG, inverts paper/ink and flips blend
-   modes (`_style.py`'s `os_dark_style()`) for the 124-kind catalogue.
+   modes (`_style.py`'s `os_dark_style()`) for the 127-kind catalogue.
    `explain_model.py`'s and `causal_estimate.py`'s hand-authored plots take
    an explicit `--dark` flag instead and bake the dark canvas directly.
 5. **Polarity stated** on every quantitative axis with a well-defined
@@ -158,7 +158,7 @@ Every figure `make-figure` emits inherits the sprezzature-* design tokens:
 The detailed catalogues live in `references/` (progressive disclosure;
 load the one you need). Seven of the eight files below are written from
 the actual source (`explain_model.py`, `causal_estimate.py`,
-`audit_figure.py`, `ralph_eyeball_loop.py`, `_style.py`, and the 124-entry
+`audit_figure.py`, `ralph_eyeball_loop.py`, `_style.py`, and the 127-entry
 `figures.json` catalog), not from this summary; where the code disagreed
 with what this SKILL.md used to claim, the reference file says so
 plainly rather than restating the stale claim (see in particular
@@ -193,7 +193,7 @@ values.
   Protocol, assessment file format, per-surface critique dimensions, and why
   data viz is one application of the loop (not its scope):
   `references/ralph-eyeball-loop.md`.
-- **Figure catalogue.** All 124 `make-figure` kinds render as hand-authored,
+- **Figure catalogue.** All 127 `make-figure` kinds render as hand-authored,
   CSS-interactive SVG (`_svg.py` helpers). SHAP / Shapash's underlying
   contributions, TimeSHAP, and the causal DAG / forest plot all render as
   hand-authored SVG too; no charting library is involved anywhere in this

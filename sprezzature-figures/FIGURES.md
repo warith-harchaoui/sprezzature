@@ -40,8 +40,10 @@ python sprezzature-figures/scripts/ralph_eyeball_loop.py output.png --local
 nothing else. The script name encodes the chart type: strip the `make_`
 prefix and replace hyphens and underscores with spaces.
 
-Situation maps (areas of control, military symbols) are not here; they live
-in the companion `sprezzature-maps` skill.
+Situation maps (areas of control, military symbols) are not here, and neither
+are choropleths on a real basemap; they live in the companion
+`sprezzature-maps` package, which has no skill of its own — reach for it from
+here.
 
 | Chart | Script | When to use |
 |---|---|---|

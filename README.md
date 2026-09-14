@@ -1,6 +1,6 @@
 # Sprezzature
 
-[🇫🇷](LISEZMOI.md) · [🇬🇧](README.md)
+[🇫🇷](https://github.com/warith-harchaoui/sprezzature/blob/main/LISEZMOI.md) · [🇬🇧](https://github.com/warith-harchaoui/sprezzature/blob/main/README.md)
 
 <p align="center"><a href="https://sprezzature.ai/">
   <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature: nine Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
@@ -8,7 +8,7 @@
 
 [🌍 Documentation](https://sprezzature.ai/)
 
-[💻 Examples](EXAMPLES.md)
+[💻 Examples](https://github.com/warith-harchaoui/sprezzature/blob/main/EXAMPLES.md)
 
 ## What this is
 
@@ -26,7 +26,7 @@ The skills:
 | **sprezzature-vision** | You draft World Wide Web Consortium (W3C)-compliant alt text from images locally (no SaaS). | "alt text", "alt text for this image", "describe this image", "draft alt", "image description", "img has no alt". |
 | **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally (no SaaS). | "captions", "transcribe video", "transcribe audio", "WebVTT", "SRT", "subtitle file", "VTT", "caption track". |
 | **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Doherty, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
-| **sprezzature-figures** | You emit data-science figures (124 hand-authored Scalable Vector Graphics (SVG) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)) included), causal-effect estimates (DoWhy / EconML), TikZ / Mermaid diagrams, thematic maps, or areas-of-control situation maps for any region, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "choropleth", "world map", "situation map", "areas of control", "DoWhy", "DAG", "audit this figure". |
+| **sprezzature-figures** | You emit data-science figures (127 hand-authored Scalable Vector Graphics (SVG) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)) included), causal-effect estimates (DoWhy / EconML), TikZ / Mermaid diagrams, thematic maps, or areas-of-control situation maps for any region, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "choropleth", "world map", "situation map", "areas of control", "DoWhy", "DAG", "audit this figure". |
 
 The companion skills inherit the sprezzature-ui stack rules. Install only the
 ones you need.
@@ -54,7 +54,7 @@ All repos live under [github.com/warith-harchaoui/](https://github.com/warith-ha
 
 **Layer 3: the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`. (Formerly `sprezzature-local`, archived 2026-08-06: it duplicated this package.)
 
-> **What prompt activates what?** See [`TRIGGERS.md`](TRIGGERS.md),
+> **What prompt activates what?** See [`TRIGGERS.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
 > trigger phrase against the skill it invokes.
 
@@ -85,22 +85,22 @@ zero-token path, upgrades, cleanup) are in [Install](#install) below.
 
 ## Docs & website
 
-Human-facing guides live in [`docs/`](docs/), one landing page per skill
-([UI](docs/UI.md) · [CLI](docs/CLI.md) · [publish](docs/PUBLISH.md) ·
-[accessibility](docs/ACCESSIBILITY.md) · [colors](docs/COLORS.md) ·
-[vision](docs/VISION.md) · [audio](docs/AUDIO.md) · [UX-laws](docs/UX-LAWS.md) ·
-[figures & maps](docs/FIGURES.md)), each a thin pointer to that skill's
+Human-facing guides live in [`docs/`](https://github.com/warith-harchaoui/sprezzature/tree/main/docs), one landing page per skill
+([UI](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/UI.md) · [CLI](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/CLI.md) · [publish](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/PUBLISH.md) ·
+[accessibility](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/ACCESSIBILITY.md) · [colors](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/COLORS.md) ·
+[vision](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/VISION.md) · [audio](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/AUDIO.md) · [UX-laws](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/UX-LAWS.md) ·
+[figures & maps](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/FIGURES.md)), each a thin pointer to that skill's
 `SKILL.md`, its `references/`, and its `EXAMPLES.md` recipe (no duplication).
 `SKILL.md` is the agent-facing spec; `docs/` is for humans.
 
 For the *why* behind the stack (the design convictions that run through
-every skill) see [`PHILOSOPHY.md`](PHILOSOPHY.md) (français :
-[`PHILOSOPHIE.md`](PHILOSOPHIE.md)).
+every skill) see [`PHILOSOPHY.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/PHILOSOPHY.md) (français :
+[`PHILOSOPHIE.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/PHILOSOPHIE.md)).
 
 A deployable, multi-page static site, built with the `sprezzature-*` skills themselves
 (sprezzature-ui house style, sprezzature-publish meta / favicons / sitemap / llms.txt,
 sprezzature-colors palette, sprezzature-accessibility clean, a working 🌞/🌛 toggle), lives
-in [`web/`](web/) and publishes to <https://sprezzature.ai/>. It has
+in [`web/`](https://github.com/warith-harchaoui/sprezzature/tree/main/web) and publishes to <https://sprezzature.ai/>. It has
 a detail page per skill (make / audit / triggers / reference library) plus a
 dedicated **figures gallery** rendering the whole `sprezzature-figures` catalog. The
 gallery carries a **"See it for…" colour-vision viewer** that applies a live
@@ -121,7 +121,7 @@ these traits set it apart:
   `lint_markdown`). No official Anthropic skill ships a static lint gate as its
   purpose; here it's half the design.
 - **Continuous integration (CI) / pre-commit gates, not vibes.** The auditors emit JavaScript Object Notation (JSON) + exit codes and
-  ship as a [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) manifest; one
+  ship as a [`.pre-commit-hooks.yaml`](https://github.com/warith-harchaoui/sprezzature/blob/main/.pre-commit-hooks.yaml) manifest; one
   `repo:` block and they block commits, whoever (or whatever) wrote the code.
 - **AI that runs on your machine, zero SaaS egress.** Alt text runs on a local Ollama vision
   model; captions / diarization on a local whisper.cpp build. Nothing leaves the
@@ -155,7 +155,7 @@ when to load each skill and what is still on the roadmap.
 | **sprezzature-vision** | `alt_from_ollama.py` (W3C alt text via local Ollama) | _(presence of `alt=` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-audio** | `captions_from_whisper.py` (WebVTT / SRT via local whisper.cpp) | _(presence of `<track>` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-ux-laws** | `references/laws-of-ux.md` (30-law Markdown playbook) | `audit_laws_of_ux.py` (Hick / Miller / Fitts / Jakob / Tesler / …) |
-| **sprezzature-figures** | `make_figure.py` (CSV → hand-authored SVG, 124 chart types), `explain_model.py` (SHAP / Shapash / TimeSHAP / LIME dispatcher), `causal_estimate.py` (DoWhy loop + EconML backends + directed acyclic graph (DAG) render), `render_diagram.py` (auto-routed TikZ / Mermaid / SVG → Portable Network Graphics (PNG) / SVG / Portable Document Format (PDF) for the Ralph Eyeball Loop; rendered catalog in `docs/FIGURES.md`), `ralph_eyeball_loop.py` (render → look → refine any visual from code, agent mode or `--local` offline vision), `install_figures.py` (tier installer). Every generator takes an `--accessibility` level (`universal` default is byte-for-byte identical) | `audit_figure.py` (pie-3d, rainbow-palette, chartjunk, radius-over-cap, unformatted-tick, iso-date-tick, role-img-missing, alt-missing) |
+| **sprezzature-figures** | `make_figure.py` (CSV → hand-authored SVG, 127 chart types), `explain_model.py` (SHAP / Shapash / TimeSHAP / LIME dispatcher), `causal_estimate.py` (DoWhy loop + EconML backends + directed acyclic graph (DAG) render), `render_diagram.py` (auto-routed TikZ / Mermaid / SVG → Portable Network Graphics (PNG) / SVG / Portable Document Format (PDF) for the Ralph Eyeball Loop; rendered catalog in `docs/FIGURES.md`), `ralph_eyeball_loop.py` (render → look → refine any visual from code, agent mode or `--local` offline vision), `install_figures.py` (tier installer). Every generator takes an `--accessibility` level (`universal` default is byte-for-byte identical) | `audit_figure.py` (pie-3d, rainbow-palette, chartjunk, radius-over-cap, unformatted-tick, iso-date-tick, role-img-missing, alt-missing) |
 
 The matrix is honest about gaps. Empty cells mark genuine roadmap
 items, not omissions; see `.private/todo.md` (gitignored) for the
@@ -193,13 +193,13 @@ This is **not** the right pick for:
 - Versioned docs sites with hundreds of pages: pick MkDocs Material, Hugo, or Astro.
 
 For alternatives in every category, and how to decide whether `sprezzature`
-is the right pick, see [LANDSCAPE.md](LANDSCAPE.md) (French:
-[PAYSAGE.md](PAYSAGE.md)). It opens with a single **competitive-positioning**
+is the right pick, see [LANDSCAPE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md) (French:
+[PAYSAGE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/PAYSAGE.md)). It opens with a single **competitive-positioning**
 table (projects × criteria, rated 1–5 ⭐️) that feeds
 [standpoint](https://github.com/warith-harchaoui/standingpoint) to plot a 2-D map
 of where `sprezzature` stands. For real sites
-already shipped on the stack, see [GALLERY.md](GALLERY.md). For copy-paste
-recipes per skill (with expected output), see [`EXAMPLES.md`](EXAMPLES.md).
+already shipped on the stack, see [GALLERY.md](https://github.com/warith-harchaoui/sprezzature/blob/main/GALLERY.md). For copy-paste
+recipes per skill (with expected output), see [`EXAMPLES.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/EXAMPLES.md).
 
 ## What the skills enforce
 
@@ -226,10 +226,10 @@ A snapshot of where each surface stands. The nine skill folders are stable; the 
 | `sprezzature-accessibility`: lint | Stable (renamed from `sprezzature-a11y` in 0.9.0) | 14-rule static a11y lint, stdlib only. Now narrowed to lint after the color / vision / audio splits. |
 | `sprezzature-colors`: contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable (new in 0.7.0) | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
 | `sprezzature-vision`: W3C alt text via local Ollama vision | Stable (new in 0.8.0) | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. Split out of `sprezzature-accessibility` for clearer scope. Wikipedia-fixture alt-text eval. |
-| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** (split out in 0.9.0) | `captions_from_whisper.py` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](CHANGELOG.md#roadmap). |
+| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** (split out in 0.9.0) | `captions_from_whisper.py` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md#roadmap). |
 | `LISEZMOI.md` (French README) | Stable | At structural parity with this README, same section ordering, content kept in lock-step on every release. |
 
-For the per-release detail (and what's planned next), see [`CHANGELOG.md`](CHANGELOG.md).
+For the per-release detail (and what's planned next), see [`CHANGELOG.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md).
 
 ## Inputs → outputs
 
@@ -323,7 +323,7 @@ python3 scripts/validate_all.py
 
 The runtime reads each skill's `SKILL.md` frontmatter description at
 conversation start; matching prompts auto-trigger the skill. See
-[`TRIGGERS.md`](TRIGGERS.md) for the per-phrase index.
+[`TRIGGERS.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/TRIGGERS.md) for the per-phrase index.
 
 ### Cleanup: remove stale or renamed skills
 
@@ -342,7 +342,7 @@ python3 scripts/cleanup_local_skills.py --apply
 
 It checks both `~/.claude/skills/` and `~/.opencode/skills/` against
 the canonical `SKILLS.txt` manifest and flags any `sprezzature-*` folder
-that no longer ships from this repo. Read [`SKILLS.txt`](SKILLS.txt)
+that no longer ships from this repo. Read [`SKILLS.txt`](https://github.com/warith-harchaoui/sprezzature/blob/main/SKILLS.txt)
 for the canonical list.
 
 ### Upgrade
@@ -351,7 +351,7 @@ Repeat steps 1–3 with the new `VERSION`. The on-disk skill folder
 name is stable so each `cp -r` overwrites in place: no manual
 removal between versions, except when a skill is **renamed** (use
 the cleanup helper above for those). Skill renames are listed in
-[`CHANGELOG.md`](CHANGELOG.md).
+[`CHANGELOG.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md).
 
 ### Install from source (contributor / developer path)
 
@@ -473,7 +473,7 @@ top-tier on vision, OCR/charts, and Mac-fit at once while being strong on
 French (DocVQA 96.1%, OCRBench ~896, ScreenSpot 94.4%, OCR across 32 languages).
 The full rationale, the scored comparison against Gemma 3, Pixtral, InternVL,
 MiniCPM, and the specialist OCR models, and all research sources are in
-[`docs/LLM_CHOICE.md`](docs/LLM_CHOICE.md). The rule is machine-enforced by
+[`docs/LLM_CHOICE.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/docs/LLM_CHOICE.md). The rule is machine-enforced by
 `tests/test_single_llm.py`.
 
 #### Configure the skill scripts (same daemon, separate env vars)
@@ -517,7 +517,7 @@ GPG-signed** or Sigstore-attested today. If you need authenticity
 beyond a transport-integrity check, build from a tagged commit you've
 reviewed yourself; `scripts/release.sh` is in-tree and reproducible,
 and the `release.yml` workflow does nothing the script can't do
-locally. See [`SECURITY.md`](SECURITY.md) for the full supply-chain
+locally. See [`SECURITY.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/SECURITY.md) for the full supply-chain
 note.
 
 ### Shell completion
@@ -526,7 +526,7 @@ The `sprezzature` driver (and the four Click-migrated per-script CLIs:
 `alt_from_ollama.py`, `captions_from_whisper.py`, `meta_from_ollama.py`,
 `plain_language.py`) ship `bash` / `zsh` / `fish` completion for free
 via Click's `_<TOOL>_COMPLETE=<shell>_source` trick. See
-[`sprezzature-cli/README.md`](sprezzature-cli/README.md#shell-completion) for the
+[`sprezzature-cli/README.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-cli/README.md#shell-completion) for the
 one-line setup per shell. The same env-var pattern works for any of
 the per-script CLIs invoked directly (e.g.
 `_ALT_FROM_OLLAMA_COMPLETE=zsh_source alt_from_ollama.py`).
@@ -570,7 +570,7 @@ cd sprezzature-cli-gui/assets/examples/cli-gui-demo
 python server.py  # stdlib only, opens http://localhost:8787
 ```
 
-For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see `sprezzature-cli-gui/SKILL.md` → "Why this skill, not Gradio / Streamlit / Tauri / Taipy" and [LANDSCAPE.md](LANDSCAPE.md) § 7.
+For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see `sprezzature-cli-gui/SKILL.md` → "Why this skill, not Gradio / Streamlit / Tauri / Taipy" and [LANDSCAPE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md) § 7.
 
 ## Author
 

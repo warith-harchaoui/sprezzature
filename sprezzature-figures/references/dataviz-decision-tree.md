@@ -6,10 +6,10 @@ families (comparison, composition, relationship, distribution), then pick
 the chart built for that family. Read that file first if you have not;
 this one does not repeat its reasoning. What this file adds is specific
 to `sprezzature-figures`: its catalogue is **closed**, `make-figure` only
-renders one of 124 registered kinds (`sprezzature-figures list` prints
+renders one of 127 registered kinds (`sprezzature-figures list` prints
 the current count and names), not an open combination of any x, y, and
 mark type. So the real question here is narrower than "what chart shape
-fits," it is "which of these 124 already-built kinds fits, and where does
+fits," it is "which of these 127 already-built kinds fits, and where does
 the catalogue simply not have what you need yet."
 
 ## The catalogue's own category groupings
@@ -101,7 +101,7 @@ your actual data can fill, checked against each kind's declared
 column; your data either has columns that could fill those roles or it
 does not). The CLI also accepts `--intent
 comparison|trend|distribution|...` to narrow by declared analytical
-intent. As shipped, every one of the 124 catalogue entries has an empty
+intent. As shipped, every one of the 127 catalogue entries has an empty
 `intents` list, the schema supports it, the field is not yet populated
 for any kind, so `--intent` filtering has nothing tagged to filter by
 today; treat the ranking as driven by data-shape fit (which roles your

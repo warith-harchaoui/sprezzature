@@ -37,7 +37,7 @@ on print-readiness without amounting to a journal preset:
   "at exact physical dimensions" by setting `width`/`height` in inches
   times DPI and passing `--ppi`. That is a general mechanism for
   print-accurate sizing, not a named journal preset, and it applies to the `render_diagram.py` path (diagram
-  surfaces you supply), not to the 124-kind `make-figure` catalogue,
+  surfaces you supply), not to the 127-kind `make-figure` catalogue,
   which does not currently expose a DPI or physical-size argument at all
   (see `references/figure-catalog.md` for what that catalogue actually
   renders).

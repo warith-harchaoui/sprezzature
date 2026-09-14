@@ -59,6 +59,77 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.2.0] (2026-09-14): routing on what the user is holding, and a catalogue that counts itself
+
+### Changed
+
+- **`TRIGGERS.md` leads with a routing table rather than a phrase list.** Two
+  hundred rows of *phrase → skill* answer "does this phrase match a skill",
+  which is the easy half. The hard half — *which of these nine do I want* —
+  needs what a phrase list cannot carry: the kind of artefact each skill
+  takes. The generated file now opens on a table keyed on what the user has in
+  front of them (numbers to show, a screen to build, HTML just written, a
+  colour being judged, recorded speech, an interface someone is complaining
+  about), each row carrying phrasings that say so **without naming a tool** —
+  "my colleague keeps getting the flags wrong", "this page is overwhelming",
+  « fais-moi voir ». None of those would have matched a row in the old table.
+  Two facts the table exists to carry: `sprezzature-accessibility` and
+  `sprezzature-ux-laws` fire on work you just did rather than on a request,
+  and several skills are routinely right at once. `ROUTES` sits beside
+  `STATUS` and `WHAT_IT_DOES` with the same test shape, so a tenth skill fails
+  the build until it is routed instead of being quietly invisible.
+- **The figures skill carries the `redraw` contract.** `sprezzature-figures
+  redraw` takes a picture of somebody else's chart and draws it here. The
+  agentic half lives in this repository: the make/audit row, the honest
+  what-it-catches / what-it-misses line, and the decision-tree entry — with
+  the instruction that matters, which is to report what `data_origin` says
+  and, when it is `demo`, to tell the user the numbers are sample data rather
+  than let a mock-up pass for their figure.
+
+### Fixed
+
+- **The shipped figure catalogue listed 91 of 127 charts, and two scripts that
+  do not exist.** `FIGURES.md` is what the wheel ships as the figures skill's
+  reference, and it had been maintained by hand while the catalogue grew: it
+  claimed 91 generators, listed 92 rows, and pointed at `make_figure.py` and
+  `make_situation_map.py`, neither of which is in `scripts/`. Thirty-eight
+  charts a reader might reach for were absent, `bar`, `line-multi`, `violin`,
+  `roc-curve`, `confusion-matrix` and `hexbin` among them. The table is now
+  generated from the generators themselves, and the "when to use" lines come
+  from each generator's own docstring.
+- **Every catalogue count in the prose said 124 or 91.** The figures skill,
+  its five reference documents, both READMEs and both philosophy pages quoted
+  a size the catalogue outgrew. All of them now say 127, the number
+  `list_kinds()` returns.
+- **`sprezzature[all]` floors `sprezzature-figures` at 2.2.0.** The skill
+  documents `redraw` and `recommend`, which 2.0.0 does not have — an extra
+  that resolves to a version missing the commands its own skill tells an agent
+  to run.
+- **The lint gate was red, and hid a red type gate behind it.** Three unused
+  imports, plus a module-level `shutil` in `web/tools/build_figure_kits.py`
+  that a function-local `import shutil` re-declared 1500 lines later. Behind
+  ruff, mypy had been failing invisibly: `last` in `scripts/check_wheels.py`
+  held a `str` in one branch and a `list[str]` in the next.
+
+### Web
+
+- **A navigation that survives a phone.** Below the `sm` breakpoint the links
+  carried `hidden` and nothing replaced them, so there was no navigation at
+  all on a phone. All 34 pages gained a hamburger and a panel whose links are
+  read from the page itself, so each page keeps its own labels and hrefs.
+- **The gallery showed `beeswarm` and `kde2d-contour` twice** — pre-kit cards
+  that survived above the real card for the same chart — and claimed two
+  figures it did not carry. It now says 125, which is what it shows; the
+  catalogue is 127, and the two that live on `hans-rosling.html` are named in
+  the introduction.
+- **The two rasters were re-rendered: 7.2 MB of gallery SVG down to 2.0 MB.**
+  `spectrogram` and `imshow-interpolated` emitted 60 000 rectangles saying the
+  same thing over and over.
+- **The French gallery moved from a flat translation table to patterns and
+  composition**, rather than 11 668 map entries: visible English strings are
+  down from 6 403 to 1 854, tooltips from 2 325 to 368, English-formatted
+  numbers from 998 to 285.
+
 ## [1.1.0] (2026-09-11): a skill zip that installs, and a runnable kit per figure
 
 ### Added
