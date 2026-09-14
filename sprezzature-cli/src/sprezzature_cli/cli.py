@@ -216,7 +216,7 @@ def accessibility() -> None:
 
 
 @accessibility.command(name="lint", context_settings=CONTEXT_SETTINGS, add_help_option=False,
-                       help="Static a11y lint over HTML files (14 rules).")
+                       help="Static a11y lint over HTML files (20 rules).")
 @click.pass_context
 def accessibility_lint(ctx: click.Context) -> None:
     """Run the static a11y lint over HTML files (delegates to ``lint_a11y.py``)."""

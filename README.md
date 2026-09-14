@@ -25,7 +25,7 @@ The skills:
 | **sprezzature-colors** | You audit contrast, simulate color blindness, or want a curated palette with perceptual lighten / darken. | "WCAG check", "contrast audit", "is my palette accessible", "colorblind preview", "deuteranope", "CVD", "OKLCH", "lighten this color". |
 | **sprezzature-vision** | You draft World Wide Web Consortium (W3C)-compliant alt text from images locally (no SaaS). | "alt text", "alt text for this image", "describe this image", "draft alt", "image description", "img has no alt". |
 | **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally (no SaaS). | "captions", "transcribe video", "transcribe audio", "WebVTT", "SRT", "subtitle file", "VTT", "caption track". |
-| **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Doherty, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
+| **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
 | **sprezzature-figures** | You emit data-science figures (127 hand-authored Scalable Vector Graphics (SVG) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)) included), causal-effect estimates (DoWhy / EconML), or TikZ / Mermaid diagrams, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "DoWhy", "DAG", "audit this figure". |
 | **sprezzature-maps** | You have numbers attached to places and the shape of the land matters: a choropleth on a real basemap, or an areas-of-control situation plate for any region. Schematic place-shaped charts (hex map, dot density, spike map, binned grid) stay in **sprezzature-figures**. | "map this by country", "colour the regions by score", "which country is worst affected", "where is this happening", "world map", "choropleth", "areas of control", "front line", "situation map", « une carte par département ». |
 
@@ -42,7 +42,7 @@ As of 2026-07-29, sprezzature is organised in three layers with distinct release
 |---|---|
 | `sprezzature-figures` | 127 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
 | `sprezzature-colors` | WCAG contrast auditing, CVD simulation, Tailwind palette export |
-| `sprezzature-accessibility` | Static a11y lint (14 rules, stdlib only) |
+| `sprezzature-accessibility` | Static a11y lint (20 rules, stdlib only) |
 | `sprezzature-cli-gui` | CLI argument parser to single-page GUI emitter |
 | `sprezzature-ux-laws` | Laws-of-UX audit (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation |
@@ -151,7 +151,7 @@ when to load each skill and what is still on the roadmap.
 | **sprezzature-ui** | `references/` + `assets/components/`, generation playbook for HTML / Tailwind / dataviz | `scripts/validate.py`, `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
 | **sprezzature-cli-gui** | `scripts/cli_to_gui.py` (CLI → HTML emitter: argparse + Click + `--from-help` adapters) + `assets/examples/cli-gui-demo/` (worked scaffold) | Pair with `sprezzature-accessibility` + `sprezzature-ux-laws` on the emitted HTML (the emitter is its own customer; its output passes both gates with zero findings). |
 | **sprezzature-publish** | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate.py` | `lint_markdown.py` |
-| **sprezzature-accessibility** | _(none, see `sprezzature-ui` templates, `sprezzature-vision` for alt text, `sprezzature-audio` for captions)_ | `lint_a11y.py` (14 rules, stdlib only) |
+| **sprezzature-accessibility** | _(none, see `sprezzature-ui` templates, `sprezzature-vision` for alt text, `sprezzature-audio` for captions)_ | `lint_a11y.py` (20 rules, stdlib only) |
 | **sprezzature-colors** | `palette_to_tailwind.py` (comma-separated values (CSV) → tailwind.config.js), `accessibility_levels.py` (project the palette to `universal` / `high-contrast` / `monochrome` / a colour-vision-deficiency variant) | `audit_contrast.py`, `simulate_cvd.py` (mosaic + `--grayscale` luminance panel) |
 | **sprezzature-vision** | `alt_from_ollama.py` (W3C alt text via local Ollama) | _(presence of `alt=` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-audio** | `captions_from_whisper.py` (WebVTT / SRT via local whisper.cpp) | _(presence of `<track>` checked by `sprezzature-accessibility`)_ |

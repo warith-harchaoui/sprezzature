@@ -2,7 +2,7 @@
 name: sprezzature-accessibility
 description: >-
   Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output.
-  Fifteen rules decidable from source: missing alt, unlabelled inputs,
+  Twenty rules decidable from source: missing alt, unlabelled inputs,
   button-without-text, clickable div (onclick), missing dialog close, lang
   attribute, bad heading order, color-only state, motion-reduce guards,
   tight letter-spacing, and more, without a browser or runtime DOM. For
@@ -74,7 +74,7 @@ rules before the diff lands.
 
 ## What `lint_a11y.py` catches
 
-Fifteen rules decidable from the HTML source, no JavaScript
+Twenty rules decidable from the HTML source, no JavaScript
 execution required (canonical IDs used by ``--ignore`` and JSON
 output in parentheses):
 
