@@ -59,6 +59,22 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.2] (2026-09-14): a floor that lags a correction ships the uncorrected package
+
+### Fixed
+
+- **`sprezzature[all]` floored `sprezzature-accessibility` at 1.0.0** while
+  1.0.1 and 1.0.2 were shipping to correct a rule count its own documentation
+  got wrong. The one command that installs the whole suite kept handing people
+  the version with the wrong docs, indefinitely — a floor is not a formality,
+  it is the sentence that says *which* release the skill was written against.
+
+  `tests/test_all_extra_is_the_suite.py` now compares every floor to the
+  version of the sibling checkout sitting next to this one, so cutting a
+  release in a tool repository and forgetting the extra fails here rather than
+  on somebody's machine. Skipped when the siblings are absent, which is the
+  normal state on CI: this is a check for the machine that cuts the release.
+
 ## [1.3.1] (2026-09-14): two claims the shipped skills made that the tools do not back
 
 ### Fixed
