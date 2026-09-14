@@ -10,8 +10,8 @@ description: >-
   threshold", "reduce clutter"). Reference covers 30 laws with trigger /
   action / Tailwind hook. Static auditor scripts/audit_laws_of_ux.py flags the
   mechanically-detectable subset (Hick, Miller, Fitts, Jakob, Tesler,
-  Aesthetic-Usability, Selective Attention, Doherty, Choice Overload) with
-  severity and JSON output. Pairs with companion skills sprezzature-ui (generation),
+  Aesthetic-Usability, Selective Attention, Choice Overload) with severity and
+  JSON output; Doherty is vocabulary, not a check. Pairs with companion skills sprezzature-ui (generation),
   sprezzature-accessibility (a11y lint), sprezzature-publish (docs site), sprezzature-colors
   (contrast). Output is HTML-aware findings via JSON or stdout, exit codes for
   pre-commit / CI.
