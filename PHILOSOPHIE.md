@@ -21,7 +21,7 @@ Une figure `sprezzature-figures` se livre en *scalable vector graphics* (SVG)
 produisent directement le balisage SVG ; le helper partagé `svg_open` de
 `_svg.py` ouvre chaque document avec une largeur et une hauteur explicites
 et un `viewBox` correspondant, si bien que le graphique s'adapte à toute
-taille sans un seul pixel flou. Les 91 figures d'exemple portent ce
+taille sans un seul pixel flou. Les 127 figures d’exemple portent ce
 `viewBox`. Une spécification de graphique reste un moyen commode de
 *décrire* beaucoup de ces graphiques, mais cette spécification n'est pas ce
 qu'on livre ; le *portable network graphics* (PNG) n'est qu'un export pour

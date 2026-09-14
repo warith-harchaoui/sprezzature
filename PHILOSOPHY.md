@@ -19,7 +19,7 @@ A `sprezzature-figures` figure ships as carefully authored scalable vector graph
 (SVG). The generators in `sprezzature-figures/scripts/make_*.py` write the SVG
 markup directly; the shared `svg_open` helper in `_svg.py` opens every
 document with an explicit width and height and a matching `viewBox`, so the
-graphic scales fluidly to any size without a single blurry pixel. All 91
+graphic scales fluidly to any size without a single blurry pixel. All 127
 example figures carry that `viewBox`. A chart spec is a convenient way to
 *describe* many of these charts, but a spec is not what you ship, and the
 portable network graphics (PNG) file is only an export for places that

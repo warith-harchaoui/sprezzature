@@ -6,7 +6,11 @@ The version is hand-maintained in three kinds of place:
 * the ``metadata.version`` field of every ``sprezzature-*/SKILL.md`` (9 skills),
 * the ``SKILL_VERSION`` literal in each skill's ``scripts/_argparse.py`` and
   ``scripts/_click.py`` copies,
-* ``sprezzature-cli/pyproject.toml``'s ``project.version``.
+* ``sprezzature-cli/pyproject.toml``'s ``project.version``,
+* the repo-root ``pyproject.toml`` and ``sprezzature/__init__.py`` — the
+  version of the ``sprezzature`` distribution itself. This pair was outside
+  the sweep until 1.2.0, which is the worst place for a gap: it is the number
+  PyPI shows and the one ``pip install sprezzature==`` resolves against.
 
 A release bumps all of them. With that many hand-edited sources, a missed one is
 the obvious failure mode — this test makes any drift a red build, and doubles as
@@ -33,10 +37,15 @@ _DUNDER_VERSION_RE = re.compile(r'^\s*__version__\s*=\s*["\']([\d.]+)["\']', re.
 _PYPROJECT_VERSION_RE = re.compile(r'^\s*version\s*=\s*["\']([\d.]+)["\']', re.MULTILINE)
 
 
-def _pyproject_version() -> tuple[str, str]:
-    path = REPO_ROOT / "sprezzature-cli" / "pyproject.toml"
+def _pyproject_version(path: Path) -> tuple[str, str]:
     m = _PYPROJECT_VERSION_RE.search(path.read_text(encoding="utf-8"))
     assert m, f"{path.relative_to(REPO_ROOT)} has no project version"
+    return str(path.relative_to(REPO_ROOT)), m.group(1)
+
+
+def _dunder_version(path: Path) -> tuple[str, str]:
+    m = _DUNDER_VERSION_RE.search(path.read_text(encoding="utf-8"))
+    assert m, f"{path.relative_to(REPO_ROOT)} has no __version__"
     return str(path.relative_to(REPO_ROOT)), m.group(1)
 
 
@@ -60,14 +69,17 @@ def _collect() -> dict[str, str]:
         if m:  # not every helper defines it; check the ones that do
             sources[str(helper.relative_to(REPO_ROOT))] = m.group(1)
 
-    rel, version = _pyproject_version()
-    sources[rel] = version
+    for pyproject in (REPO_ROOT / "pyproject.toml",
+                      REPO_ROOT / "sprezzature-cli" / "pyproject.toml"):
+        rel, version = _pyproject_version(pyproject)
+        sources[rel] = version
 
-    # The installed package's ``__version__`` — what ``sprezzature --version`` prints.
-    init_py = REPO_ROOT / "sprezzature-cli" / "src" / "sprezzature_cli" / "__init__.py"
-    m = _DUNDER_VERSION_RE.search(init_py.read_text(encoding="utf-8"))
-    assert m, f"{init_py.relative_to(REPO_ROOT)} has no __version__"
-    sources[str(init_py.relative_to(REPO_ROOT))] = m.group(1)
+    # The installed packages' ``__version__`` — what ``sprezzature --version``
+    # prints, and what ``sprezzature.__version__`` reports to anything that asks.
+    for init_py in (REPO_ROOT / "sprezzature" / "__init__.py",
+                    REPO_ROOT / "sprezzature-cli" / "src" / "sprezzature_cli" / "__init__.py"):
+        rel, version = _dunder_version(init_py)
+        sources[rel] = version
 
     return sources
 
