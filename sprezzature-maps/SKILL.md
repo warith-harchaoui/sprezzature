@@ -22,7 +22,7 @@ compatibility: >-
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.5
+  version: 1.3.6
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
@@ -132,6 +132,15 @@ for the question being asked, not by habit:
 | mean something outside the data — decades, percentage bands | `equal` | on skewed data most regions land in one class, which is the failure above |
 | handle a heavy tail — "far more small things than large" | `headtail` | the class count comes from the data, not from you, and may be small |
 
+**On a diverging indicator, zero is always a boundary.** Growth rates,
+anomalies, swings — anything where the sign is the story. A class spanning
+zero takes the colour of its own centre, so a country in recession comes out
+the colour of growth; that is the one thing a diverging scale exists to
+prevent. The generator now classes each side on its own values and keeps zero
+as a break, so you do not have to arrange it. Worth knowing because it was
+broken between 0.3.0 and 0.5.0: if you have a classed diverging map from that
+window, re-render it.
+
 **When the bands are editorial, pass them.** `breaks=[5, 10, 25]` (or
 `--breaks 5,10,25`) overrides both `classes` and `method`: a regulatory
 threshold, a figure the newsroom already published, a number the reader
@@ -142,6 +151,17 @@ The legend prints the method and the boundaries. Do not strip that: a classed
 map without its method is a claim with the evidence removed. When you hand the
 figure on, say which method it used and why — the choice is editorial, and it
 belongs with the map.
+
+## A mistyped config key is an error, not a missing feature
+
+The situation map is driven by two dozen optional keys. Get one wrong and the
+generator used to read past it in silence, so a slip on `areas_of_control`
+dropped a whole layer while the plate still looked finished. Since 0.6.0 an
+unknown key is refused and the error names the closest known one.
+
+So when you see *"config has key(s) this generator never reads"*, read it as a
+typo with the fix already in the message — not as a capability that is
+missing. The keys are listed in the section above.
 
 ## Two modes: make and audit
 

@@ -59,6 +59,24 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.6] (2026-09-15): the maps skill gains the two failures classing brought with it
+
+### Added
+
+- **The diverging rule.** A classed diverging map could paint a recession the
+  colour of growth — a class spanning zero takes the colour of its own centre.
+  `sprezzature-maps` 0.5.0 makes zero a boundary; the skill now says why that
+  rule exists, because an agent choosing `classes` on growth rates or
+  anomalies needs to know the trap was there and is closed.
+- **Config keys are validated.** 0.6.0 refuses a situation-map key the
+  generator does not read, naming the closest known one. The skill says so, so
+  an agent that gets the error knows it is a typo and not a missing feature.
+
+### Fixed
+
+- The `all` extra floored `sprezzature-maps` at 0.4.0 while the skill
+  documents behaviour from 0.5.0 and 0.6.0.
+
 ## [1.3.5] (2026-09-14): the maps skill catches up with three kinds and real class breaks
 
 ### Added

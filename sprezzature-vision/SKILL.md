@@ -26,7 +26,7 @@ compatibility: >-
   first run.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.5
+  version: 1.3.6
 ---
 
 # sprezzature-vision — local AI alt text for accessibility

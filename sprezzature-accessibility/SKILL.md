@@ -22,7 +22,7 @@ compatibility: >-
   Python 3.10+ stdlib only: no third-party deps, no browser, no network.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.5
+  version: 1.3.6
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility) (`pip install`), invoked as `sprezzature-accessibility …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
