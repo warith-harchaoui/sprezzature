@@ -59,6 +59,26 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.7] (2026-09-16): the maps skill says what a map now carries on its own
+
+### Added
+
+- **A map is of a populated planet by default.** `sprezzature-maps` 0.7.0 puts
+  cities, rivers and computed relief on every map without being asked, so the
+  skill now leads with what arrives on its own and how to switch each off —
+  the reverse of the previous posture, where everything was a mode.
+
+  The two rules an agent needs from it: cities are chosen by cartographic
+  prominence rather than by "is it a capital", which is a political list that
+  omits six of the world's twelve largest; and a label in the way is dropped,
+  never moved, because a name nudged clear of its dot points at the wrong
+  place and the reader cannot tell. If a wanted name is missing, widen the
+  selection or place it by hand — hand-placed names always win.
+
+### Fixed
+
+- The `all` extra floored `sprezzature-maps` at 0.6.0.
+
 ## [1.3.6] (2026-09-15): the maps skill gains the two failures classing brought with it
 
 ### Added
