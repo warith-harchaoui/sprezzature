@@ -22,7 +22,7 @@ compatibility: >-
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.6
+  version: 1.3.7
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
@@ -106,6 +106,22 @@ the zones is named. See the contract above.
 Rivers taper by prominence when `rivers` asks them to; they are absent
 otherwise. The same is true of every other layer — ask for what the map is
 about, not for everything the generator can draw.
+
+## What every map carries by default
+
+Since 0.7.0 a map is of a populated planet unless you say otherwise. Three
+layers come on their own, and each has an off switch rather than an on one.
+
+| Layer | Why it is on | Turn it off with |
+|---|---|---|
+| **Cities** | A map with nobody on it gives a reader nowhere to stand — they see where the Andes are and not where Lima is. Chosen by cartographic prominence, **not** by "is it a capital": that list omits New York, Mumbai, São Paulo, Shanghai, Los Angeles and Karachi, six of the world's twelve largest. The selection widens as the map zooms in. | `cities=False` / `--no-cities` / `"cities": false`; on a situation plate, `cities: {show: false}` |
+| **Rivers** | Drainage is the structure of a landmass, and tapering by prominence turns a tangle of blue lines into a network you can follow. Drawn over the thematic fill, where published cartography puts water. | `rivers=False` / `--no-rivers`; on a plate, `rivers: {show: false}` |
+| **Relief** | Computed from real elevation — a Lambertian hillshade blended with Brown's fractional-Laplacian texture shading — not a pre-shaded picture. | `relief=False` |
+
+**A label in the way is dropped, not moved.** A city name nudged clear of its
+own dot points at the wrong place and the reader has no way to tell. If a name
+you want is missing, widen the selection (`cities.limit`, `cities.max_rank`) or
+place it by hand in `labels.places`, which always wins over the automatic layer.
 
 ## The choropleth's one real decision: how to class the values
 

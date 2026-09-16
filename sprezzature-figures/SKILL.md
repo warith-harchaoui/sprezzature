@@ -27,7 +27,7 @@ compatibility: >-
   network needed once installed.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.6
+  version: 1.3.7
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures) (`pip install`), invoked as `sprezzature-figures …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
