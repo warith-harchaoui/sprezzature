@@ -129,7 +129,7 @@ COPY: dict[str, dict[str, Any]] = {
         ],
         fallback="Your browser cannot play this video.",
         download="Download the MP4",
-        nav="Films", secs_word="s",
+        secs_word="s",
     ),
     "fr": dict(
         lang="fr", vdir="../video", jsdir="../js", other="../films.html",
@@ -158,7 +158,7 @@ COPY: dict[str, dict[str, Any]] = {
         ],
         fallback="Votre navigateur ne peut pas lire cette vidéo.",
         download="Télécharger le MP4",
-        nav="Films", secs_word="s",
+        secs_word="s",
     ),
 }
 
@@ -168,34 +168,6 @@ def grab(path: pathlib.Path, tag: str) -> str:
     m = re.search(rf"(<{tag}\b.*?</{tag}>)", s, re.S)
     assert m, f"{tag} not found in {path}"
     return m.group(1)
-
-
-def add_nav_film(header: str, label: str, href: str) -> str:
-    """Slot a Films entry next to the gallery link, in both navs.
-
-    Idempotent: the source page it lifts the header from already carries the
-    link, so re-running must not stack duplicates.
-    """
-    if f'href="{href}"' in header:
-        return header
-    out = header
-    # Desktop nav, then the mobile list. Each new entry copies the classes of
-    # the gallery link beside it, so the two stay styled alike.
-    for pattern, template in (
-        (r'<a href="figures\.html"[^>]*>(?:Gallery|Galerie)</a>',
-         '\n        <a href="{href}" class="{cls}">{label}</a>'),
-        (r'<li><a href="figures\.html"[^>]*>(?:Gallery|Galerie)</a></li>',
-         '\n        <li><a href="{href}" class="{cls}">{label}</a></li>'),
-    ):
-        m = re.search(pattern, out, re.S)
-        if m is None:
-            continue
-        cls_match = re.search(r'class="([^"]*)"', m.group(0))
-        if cls_match is None:
-            continue
-        addition = template.format(href=href, cls=cls_match.group(1), label=label)
-        out = out.replace(m.group(0), m.group(0) + addition, 1)
-    return out
 
 
 def player(film: dict[str, Any], c: dict[str, Any]) -> str:
@@ -214,7 +186,7 @@ def player(film: dict[str, Any], c: dict[str, Any]) -> str:
 def build(lang: str) -> None:
     c = COPY[lang]
     src = ROOT / ("fr/ralph-eyeball-loop.html" if lang == "fr" else "ralph-eyeball-loop.html")
-    header = add_nav_film(grab(src, "header"), c["nav"], "films.html")
+    header = grab(src, "header")
     footer = grab(src, "footer")
     base = "https://sprezzature.ai/" + ("fr/" if lang == "fr" else "")
     prefix = "../" if lang == "fr" else ""
