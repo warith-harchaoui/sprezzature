@@ -1011,7 +1011,7 @@ Follow a country
 
 ---
 
-# Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind
+# Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind
 
 Source: https://sprezzature.ai/
 
@@ -1022,7 +1022,7 @@ Create and audit figures, visualizations for app and web content
 faithful to a standard of accessibility, chromatic rigor, and usability.
 
 Explore
-the nine skills
+the ten skills
 See
 the gallery
 Give a ⭐️ on GitHub
@@ -1078,7 +1078,7 @@ sprezzature-ux-laws : Laws of UX audit
 
 best-engine-ai-helper : hardware + model select, pluggable LLM backend
 
-## The nine skills
+## The ten skills
 
 ## A taste of what it renders
 
