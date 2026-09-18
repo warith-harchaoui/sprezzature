@@ -1,10 +1,10 @@
 # Sprezzature
 
-> Nine Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.
+> Ten Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.
 
 ## Home
 
-- [Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.
+- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, and data-science figures. Each skill both makes artifacts and audits them.
 
 ## Skills
 
@@ -30,6 +30,7 @@
 
 - [Packages — Sprezzature](https://sprezzature.ai/packages.html): The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, colors, accessibility, CLI-to-GUI, Laws of UX, audio, the local runtime, and the engine picker.
 - [The Ralph Eyeball Loop — Sprezzature](https://sprezzature.ai/ralph-eyeball-loop.html): You can't proofread a chart by reading its code. The Ralph Eyeball Loop renders the thing, looks at it, and fixes what the eye catches, then does it again. How Sprezzature makes figures, diagrams and pages that hold up.
+- [Five short films — Sprezzature](https://sprezzature.ai/films.html): Five short films about Sprezzature: one on the suite, four on what it is made of. Every figure, form and colour-vision simulation in them is real output from the tools themselves, not a mock-up.
 
 ## French (Français)
 
