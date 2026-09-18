@@ -76,24 +76,29 @@ web/kits/**/*.zip
 
 # The films: render output, not source.
 #
-# Same reasoning as the gallery kits above. An H.264 file is already
-# compressed, so git cannot delta it, and a re-render of an unchanged
-# composition does not come out byte-identical. Twenty-six megabytes in
-# web/video/ and seventy-three in brag-output/out/ would sit in every clone
-# forever for no gain.
+# Same reasoning as the gallery kits above, applied to the whole of web/video/
+# and brag-output/out/. An H.264 file is already compressed, so git cannot
+# delta it, and a re-render of an unchanged composition does not come out
+# byte-identical. The posters are frames pulled straight out of those files, so
+# they are the same output wearing a different extension, and the WebVTT tracks
+# fall out of a generator that is itself tracked. None of it belongs in a clone.
 #
-# What stays tracked is everything needed to rebuild them: the narration
-# scripts, the composition generator, the caption generator, the posters and
-# the WebVTT tracks. Rebuild with:
-#     python3 brag-output/build_films.py
-#     cd brag-output/films/<film>-<format> && npx hyperframes render \
-#       --low-memory-mode --output ../../out/<film>-<format>.mp4
-#     python3 brag-output/make_captions.py
+# What stays tracked is everything needed to rebuild all of it from nothing:
+#     python3 brag-output/build_films.py            # the 15 compositions
+#     cd brag-output/films/<film>-<format>
+#     npx hyperframes check                         # the gate before render
+#     npx hyperframes render --quality looks --low-memory-mode \
+#       --output ../../out/<film>-<format>.mp4
+#     ffmpeg -ss <t> -i out/<f>.mp4 -frames:v 1 -q:v 2 out/<f>.jpg
+#     python3 brag-output/make_captions.py          # the WebVTT tracks
+#     cp brag-output/out/<film>-landscape.{mp4,jpg} web/video/<film>.{mp4,jpg}
+# The poster timestamps and every other decision are recorded in
+# brag-output/brag-plan.md.
 #
-# They reach sprezzature.ai the same way the kits do, by uploading web/:
-#     python3 sftp/sync_web.py
-web/video/*.mp4
-brag-output/out/*.mp4
+# They reach sprezzature.ai the way the kits do, by uploading web/ to the host.
+# sftp/UPLOAD-films.txt lists exactly which files that takes.
+web/video/
+brag-output/out/
 
 # Assets copied into the film projects (fonts, figures, music, narration) and
 # the fifteen generated HyperFrames projects. build_films.py rewrites both.

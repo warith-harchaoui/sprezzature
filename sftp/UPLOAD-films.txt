@@ -1,0 +1,72 @@
+# Files the films deploy touches, relative to web/, as of 2026-09-18.
+#
+# web/video/ is not in git (see .gitignore), so a clone does not carry these
+# and `git status` will never remind anyone they are pending. This list is the
+# reminder. The three files of a film travel together: drop one .vtt and the
+# player loses its captions silently, and the page stops passing the project's
+# own accessibility lint.
+#
+# The host needs a video/ directory; fr/ already exists.
+# Once uploaded, two checks say whether it landed:
+#     curl -sI https://sprezzature.ai/video/sprezzature.mp4 | head -1   -> 200
+#     curl -s https://sprezzature.ai/films.html | grep -c '<track'      -> 10
+
+accessibility.html
+audio.html
+case-studies.html
+cli.html
+colors.html
+figures.html
+films.html
+financial-markets-adverse.html
+financial-markets.html
+fr/accessibility.html
+fr/audio.html
+fr/case-studies.html
+fr/cli.html
+fr/colors.html
+fr/figures.html
+fr/films.html
+fr/financial-markets-adverse.html
+fr/financial-markets.html
+fr/hans-rosling.html
+fr/index.html
+fr/maps.html
+fr/packages.html
+fr/publish.html
+fr/ralph-eyeball-loop.html
+fr/ui.html
+fr/ux-laws.html
+fr/vision.html
+hans-rosling.html
+index.html
+llms-full.txt
+llms.txt
+maps.html
+packages.html
+publish.html
+ralph-eyeball-loop.html
+sitemap.xml
+ui.html
+ux-laws.html
+video/accessibilite.en.vtt
+video/accessibilite.fr.vtt
+video/accessibilite.jpg
+video/accessibilite.mp4
+video/figures-et-cartes.en.vtt
+video/figures-et-cartes.fr.vtt
+video/figures-et-cartes.jpg
+video/figures-et-cartes.mp4
+video/interface.en.vtt
+video/interface.fr.vtt
+video/interface.jpg
+video/interface.mp4
+video/moteur-local.en.vtt
+video/moteur-local.fr.vtt
+video/moteur-local.jpg
+video/moteur-local.mp4
+video/sprezzature.en.vtt
+video/sprezzature.fr.vtt
+video/sprezzature.jpg
+video/sprezzature.mp4
+vision.html
