@@ -198,7 +198,7 @@ For alternatives in every category, and how to decide whether `sprezzature`
 is the right pick, see [LANDSCAPE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md) (French:
 [PAYSAGE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/PAYSAGE.md)). It opens with a single **competitive-positioning**
 table (projects × criteria, rated 1–5 ⭐️) that feeds
-[standpoint](https://github.com/warith-harchaoui/standingpoint) to plot a 2-D map
+[standpoint](https://github.com/warith-harchaoui/standpoint) to plot a 2-D map
 of where `sprezzature` stands. For real sites
 already shipped on the stack, see [GALLERY.md](https://github.com/warith-harchaoui/sprezzature/blob/main/GALLERY.md). For copy-paste
 recipes per skill (with expected output), see [`EXAMPLES.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/EXAMPLES.md).
