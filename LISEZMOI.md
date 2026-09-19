@@ -221,7 +221,7 @@ Pour les alternatives par catégorie et l'aide à la décision « est-ce
 que `sprezzature` est le bon outil ? », voir [PAYSAGE.md](PAYSAGE.md) (anglais :
 [LANDSCAPE.md](LANDSCAPE.md)). Le document ouvre sur une table de
 **positionnement concurrentiel** (projets × critères, notés 1–5 ⭐️) qui alimente
-[standpoint](https://github.com/warith-harchaoui/standingpoint) pour tracer une
+[standpoint](https://github.com/warith-harchaoui/standpoint) pour tracer une
 carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur cette pile, voir
 [GALLERY.md](GALLERY.md). Pour des recettes copier-coller par *skill*
 (avec la sortie attendue), voir [`EXAMPLES.md`](EXAMPLES.md).

@@ -101,7 +101,7 @@ outils qui tournent sur votre machine, mais ce n'est plus vrai de tous les acteu
 hébergées (Looker, ThoughtSpot) et les intelligences artificielles (IA) en ligne (Claude vision, Deepgram)
 ne le sont pas. Avec ces nouveaux venus, la colonne **discrimine désormais** et entre pleinement dans la carte.
 
-Passés en entiers à [standpoint](https://github.com/warith-harchaoui/standingpoint) (avec `sprezzature`
+Passés en entiers à [standpoint](https://github.com/warith-harchaoui/standpoint) (avec `sprezzature`
 en ligne de référence), les dix critères se projettent sur une **carte de positionnement** 2-D :
 
 ![Carte de positionnement concurrentiel de sprezzature face aux alternatives : un nuage 2-D avec sprezzature ancré en haut à droite comme référence, Looker à l'opposé exact, un axe horizontal Stabilité–Simplicité et un axe vertical Flexibilité–Interactivité.](sprezzature-figures/assets/figures-gallery/landscape-positioning-fr.png)

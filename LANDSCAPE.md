@@ -101,7 +101,7 @@ not every entrant here still is: the hosted business-intelligence (BI) platforms
 artificial-intelligence (AI) services (Claude vision, Deepgram) are not. With those entrants the column
 now **discriminates**, so it joins the map as a full criterion rather than sitting out as near-constant context.
 
-Fed as integers to [standpoint](https://github.com/warith-harchaoui/standingpoint) (with `sprezzature`
+Fed as integers to [standpoint](https://github.com/warith-harchaoui/standpoint) (with `sprezzature`
 as the reference row), the ten criteria project onto a 2-D **positioning map**:
 
 ![Competitive-positioning map of sprezzature against the alternatives: a 2-D scatter with sprezzature anchored top-right as the reference, Looker diametrically opposite, a horizontal Mature–Simple axis and a vertical Adaptable–Interactive axis.](sprezzature-figures/assets/figures-gallery/landscape-positioning.png)

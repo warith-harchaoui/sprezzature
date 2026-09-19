@@ -728,7 +728,7 @@ a major bump because the on-disk skill folders change name (`front-*` →
   languages. A click-to-enlarge lightbox on the gallery.
 - **Competitive positioning.** `LANDSCAPE.md` (French: `PAYSAGE.md`) opens with a
   single table (projects × criteria, rated 1–5 ⭐️) that feeds
-  [standpoint](https://github.com/warith-harchaoui/standingpoint) to plot a 2-D
+  [standpoint](https://github.com/warith-harchaoui/standpoint) to plot a 2-D
   map of where `sprezzature` stands. The homepage gains a **Related work** section
   showing that map (EN + FR).
 - **Real-data maps.** A small-multiples figure of the **last five French

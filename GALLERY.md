@@ -159,9 +159,9 @@ full `dark:` peer set.
 
 
 
-## [Standpoint: a comparison table becomes a 2-D positioning map](https://github.com/warith-harchaoui/standingpoint)
+## [Standpoint: a comparison table becomes a 2-D positioning map](https://github.com/warith-harchaoui/standpoint)
 
-<img src="assets/gallery/standingpoint/logo.png" alt="Standpoint logo">
+<img src="assets/gallery/standpoint/logo.png" alt="Standpoint logo">
 
 > *Know where each option actually stands: feed a ratings table, get a positioning map, a written analysis, and every coordinate.*
 
@@ -198,12 +198,12 @@ analysis, and `--no-llm` drops even that.
 *The local web app: edit or upload a table, generate the quadrant, read the
 colour-coded analysis. The proof-of-concept is light-only today.*
 
-![Standpoint local web GUI: table editor, live quadrant, colour-coded analysis](assets/gallery/standingpoint/gui.png)
+![Standpoint local web GUI: table editor, live quadrant, colour-coded analysis](assets/gallery/standpoint/gui.png)
 
 *And the figure on its own, the `sprezzature-figures` deliverable: a dozen
 programming languages rated on eight criteria, points on the house palette,
 axes named from the columns:*
 
-![Standpoint positioning map: programming languages on the house palette](assets/gallery/standingpoint/positioning-map.png)
+![Standpoint positioning map: programming languages on the house palette](assets/gallery/standpoint/positioning-map.png)
 
 **Author:** [Warith HARCHAOUI](https://linkedin.com/in/warith-harchaoui)  ·  **Stack:** Python (numpy + pandas + scikit-learn PCA) + hand-authored SVG + FastAPI local GUI + vanilla JS + Tailwind + optional local Ollama
