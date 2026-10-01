@@ -1235,7 +1235,7 @@ Julien BOYER and
 Jérôme GOMBERT
 for fruitful discussions.
 
-Color palettes from harchaoui.org/warith/colors .
+Color palettes from harchaoui.org/warith/colors , shipped here as the colors skill .
 
 The three Roboto families are bundled under the SIL Open Font License.
 
