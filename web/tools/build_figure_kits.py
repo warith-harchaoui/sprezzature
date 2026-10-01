@@ -1442,16 +1442,20 @@ Warith HARCHAOUI, Ph.D.
 #: the figure's own name in ``aria-label`` because a screen-reader user tabs
 #: past 121 siblings and "Download" alone tells them nothing.
 #:
-#: Every class here exists in the committed ``css/app.css``. That build is a
-#: Tailwind scan of the pages as they were, so a class nobody used yet — the
-#: obvious ``inline-flex w-fit`` for a chip — simply is not in the file and
-#: silently does nothing: the anchor stays inline, and a long caption wraps
-#: *inside* the button box, splitting its border across two lines. A block
-#: wrapper plus ``inline-block`` gets the same result out of classes that are
-#: already compiled, and leaves the CSS untouched.
+#: Every class here must exist in the committed ``css/app.css``, which is a
+#: Tailwind scan of the pages as they were: a class nobody used yet simply is
+#: not in the file and silently does nothing. ``inline-flex`` was in that
+#: position until 2026-10-02, which is why this chip used to be an
+#: ``inline-block`` with ``py-1`` and so stood 24 px tall, under the 44 px
+#: Fitts floor the project's own auditor asks for. The chip now carries
+#: ``inline-flex items-center min-h-11``; if you change any class here, rerun
+#: the Tailwind build (see ``css/BUILD.md``) or the new class will do nothing.
+#: The ``<div class="mt-2">`` wrapper stays: it keeps a long caption from
+#: wrapping inside the button box and splitting its border across two lines.
 _KIT_LINK: str = (
     '<div class="mt-2"><a href="{prefix}{slug}.zip" download '
-    'class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 '
+    'class="inline-flex items-center min-h-11 rounded-lg border '
+    'border-neutral-200 px-3 '
     "text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext "
     "focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue "
     'dark:border-neutral-700 dark:text-neutral-400" '
