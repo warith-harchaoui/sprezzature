@@ -43,6 +43,7 @@ _SECTIONS: list[tuple[str, list[str]]] = [
         "financial-markets.html", "financial-markets-adverse.html",
     ]),
     ("Reference", ["packages.html", "ralph-eyeball-loop.html"]),
+    ("Films", ["films.html"]),
 ]
 
 
@@ -104,9 +105,10 @@ def render_llms_txt(en: list[Path]) -> str:
     lines = [
         "# Sprezzature",
         "",
-        "> Nine Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, "
-        "publishing, accessibility, colors, alt text, captions, Laws of UX, and "
-        "data-science figures. Each skill both makes artifacts and audits them.",
+        "> Ten Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, "
+        "publishing, accessibility, colors, alt text, captions, Laws of UX, "
+        "data-science figures, and maps. Each skill both makes artifacts and "
+        "audits them.",
         "",
     ]
     for heading, names in _SECTIONS:
