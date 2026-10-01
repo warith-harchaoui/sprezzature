@@ -76,8 +76,9 @@
         <a href="figures.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Gallery</a>
         <a href="packages.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Packages</a>
         <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Case studies</a>
-        <a href="https://github.com/warith-harchaoui/sprezzature" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">⭐️ on Github</a>
-        <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Page settings">
+        <menu class="m-0 hidden list-none items-center gap-2 p-0 sm:flex" aria-label="Project">
+          <li class="flex"><a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ on Github</a></li>
+        </menu><menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Page settings">
           <li class="flex"><a href="fr/maps.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a></li>
           <li class="flex"><button id="theme-toggle" type="button" aria-label="Switch theme" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🌞</button></li>
           <li class="flex"><button id="color-mode-toggle" type="button" aria-label="Switch academic/corporate colors" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">🏫</button></li>
@@ -106,7 +107,7 @@
     <section id="choropleth" class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-6xl px-5 py-12">
         <h2 class="text-2xl font-bold tracking-tight">Choropleth</h2>
-        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written, closed-form <strong>Equal Earth</strong> projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real GMTED 2010 elevation rather than a flat hillshade, sits under the fills.</p>
+        <p class="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-300">One value per country on a hand-written, closed-form <strong>Equal Earth</strong> projection: it restores the equal-area property a plain equirectangular map quietly loses (Greenland does not read fourteen times its real size here). Color comes from an <strong>OKLCH-interpolated</strong> ramp, not a naive per-channel RGB lerp, verified colour-vision-deficiency-safe by actually running the simulation rather than asserting it. A diverging ramp switches on automatically when the data has a meaningful zero. A warm/cool duotone relief layer, real GMTED2010 elevation rather than a flat hillshade, sits under the fills.</p>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <button type="button" class="zoom block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11" aria-label="Enlarge: Sequential choropleth" data-src="img/maps/choropleth-sequential.svg" data-alt="World choropleth map, a synthetic global exposure index shaded on an OKLCH-interpolated pale-to-navy blue ramp, Equal Earth projection, warm/cool duotone relief under the country fills.">
@@ -273,7 +274,7 @@
           </div>
           <div>
             <dt class="font-semibold">Real elevation, not a flat hillshade</dt>
-            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED 2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
           </div>
         </dl>
       </div>

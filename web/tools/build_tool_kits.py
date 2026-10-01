@@ -1490,7 +1490,8 @@ def link_package_cards(out_dir: Path, language: str) -> tuple[int, str]:
         name = slug.replace("sprezzature-", "")
         chip = (
             f'<div class="mt-2"><a href="{prefix}{kit}.zip" download '
-            f'class="inline-block rounded-lg border border-neutral-200 px-2.5 py-1 '
+            f'class="inline-flex items-center min-h-11 rounded-lg border '
+            f'border-neutral-200 px-3 '
             f'text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext '
             f'focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue '
             f'dark:border-neutral-700 dark:text-neutral-400" '
