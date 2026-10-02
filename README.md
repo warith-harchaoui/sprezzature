@@ -65,8 +65,9 @@ Sprezzature is a set of skills for **Claude Code** or **OpenCode**. Install the 
 want, then ask in plain English. The skill both **makes** the artifact and **audits** it.
 
 ```bash
-# 1. Grab the latest release (set VERSION to the latest tag on the releases page)
-VERSION=1.0.0
+# 1. Grab the latest release (resolved, so this never goes stale)
+VERSION=$(curl -fsSL https://api.github.com/repos/warith-harchaoui/sprezzature/releases/latest \
+  | sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p')
 curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz | tar xz
 
 # 2. Copy the skills you want into your runtime
@@ -270,7 +271,8 @@ below show one path; the second runtime is a one-line substitution.
 ### 1. Download a tagged release (checksum-verified)
 
 ```bash
-VERSION=1.0.0
+VERSION=$(curl -fsSL https://api.github.com/repos/warith-harchaoui/sprezzature/releases/latest \
+  | sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p')
 curl -L -o sprezzature-skills.tar.gz \
     https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz
 curl -L -o SHA256SUMS \
