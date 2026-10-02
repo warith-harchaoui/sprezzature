@@ -51,6 +51,7 @@ tests/fixtures/images/wiki/*.svg
 
 .*
 !.github/
+!.githooks/
 !.gitignore
 !.pre-commit-hooks.yaml
 !web/.htaccess
