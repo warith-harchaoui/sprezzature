@@ -83,7 +83,16 @@ web/kits/**/*.zip
 # they are the same output wearing a different extension, and the WebVTT tracks
 # fall out of a generator that is itself tracked. None of it belongs in a clone.
 #
-# What stays tracked is everything needed to rebuild all of it from nothing:
+# What stays tracked rebuilds the films from a clone AS FAR AS IT GOES, which is
+# not all the way: `python3 brag-output/restore_assets.py` audits the gap and
+# names it. Eleven files in brag-output/_assets/ exist nowhere else — a licensed
+# music track the whole BEATS grid is measured off, three sound effects, a GSAP
+# build whose version is unrecorded, and five screen captures. They live in an
+# off-repo archive (~/sauvegardes-sprezzature/), restored with
+# `restore_assets.py --fix --seed`. Everything else, narration included, the
+# repo really does rebuild byte-for-byte.
+#
+#     python3 brag-output/restore_assets.py --fix   # rebuild _assets/ first
 #     python3 brag-output/build_films.py            # the 15 compositions
 #     cd brag-output/films/<film>-<format>
 #     npx hyperframes check                         # the gate before render
