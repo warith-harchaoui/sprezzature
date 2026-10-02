@@ -59,6 +59,25 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.9] (2026-10-02): the package page told readers to install v1.0.0
+
+### Fixed
+
+- **The install snippet named a version three minor releases old**, in all four
+  places that show it: the English and French sites, the README and the
+  LISEZMOI. Its comment said "set VERSION to the latest tag on the releases
+  page", which names the work instead of doing it, and nobody had done it since
+  1.0.0. 1.3.8 shipped that README to PyPI, so the package page itself handed
+  readers a stale tarball.
+
+  The version is now resolved on the spot from the releases API, so the line
+  cannot age again. Verified end to end in a throwaway directory: it resolves
+  the current tag, downloads, extracts the ten skill folders, and the two
+  targets of the next step's `cp` are there.
+
+  This release exists to put that corrected README on the package page; a fix
+  that only lands in git leaves the live page saying the wrong thing.
+
 ## [1.3.8] (2026-10-02): the one command that installs the suite was handing out old packages
 
 ### Fixed
