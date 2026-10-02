@@ -128,7 +128,7 @@ polarity table.
 
 The semantic mapping itself, which emotion and which concepts belong to
 which base color, is documented at
-<https://harchaoui.org/warith/colors/> and mirrored in
+<https://deraison.ai/colors/> and mirrored in
 `sprezzature-colors/references/palette.csv`; this file documents the
 `sprezzature-figures` code that reads it, not the palette's own design
 rationale.

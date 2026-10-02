@@ -260,7 +260,7 @@ carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur
   `sprezzature-ui/references/stack-vanilla-js.md` § « Theme switching ».
 - Les choix de couleur renvoient aux palettes de
   `sprezzature-ui/references/color-psychology.md` (source :
-  <https://harchaoui.org/warith/colors/>).
+  <https://deraison.ai/colors/>).
 - La sortie du *skill* est **du HTML mono-fichier de niveau prototype**
   par défaut, adaptée aux démos, maquettes, outils internes et
   petites landings. La page d'amorçage utilise le CDN Play de
@@ -704,7 +704,7 @@ Un grand merci à :
 
 pour nos discussions fructueuses.
 
-Palettes de couleurs issues de <https://harchaoui.org/warith/colors/>.
+Palettes de couleurs issues de <https://deraison.ai/colors/>.
 
 Les trois familles Roboto sont livrées dans
 `sprezzature-ui/assets/fonts/roboto/`, `sprezzature-ui/assets/fonts/roboto-serif/`

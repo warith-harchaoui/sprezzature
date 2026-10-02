@@ -1,6 +1,6 @@
 <!--
 House-style bar chart — Roboto type, rounded corners 10 px, no top/right spines,
-no tick marks, colors from harchaoui.org/warith/colors. Polarity is contextual:
+no tick marks, colors from deraison.ai/colors/. Polarity is contextual:
 replace the subtitle / axis tag below to match this dashboard's interpretation.
 Inline SVG (no chart library), fixed light-mode colors below for a working
 standalone template; swap the fills for `currentColor` + Tailwind

@@ -257,7 +257,7 @@ livre les trois familles Roboto en WOFF2 avec les licences OFL groupées).
 
 | Alternative | Forme | Workflow a11y | Mode sombre | Source | Compatible sprezzature | Notes |
 |---|---|---|---|---|:---:|---|
-| **Palettes `sprezzature`** (utilisées) | 4 palettes nommées + variables de design sémantiques | manuel + `audit_contrast.py` | de première classe | <https://harchaoui.org/warith/colors/> | ✓ | Choice / Emotion / Concept / Psychology. |
+| **Palettes `sprezzature`** (utilisées) | 4 palettes nommées + variables de design sémantiques | manuel + `audit_contrast.py` | de première classe | <https://deraison.ai/colors/> | ✓ | Choice / Emotion / Concept / Psychology. |
 | [Tailwind par défaut](https://tailwindcss.com/docs/customizing-colors) | échelles (slate, sky, …) | manuel | à basculer | maison | ~ | Look d'écosystème fort. |
 | [Radix Colors](https://www.radix-ui.com/colors) | échelles sémantiques à 12 pas | intention par pas (1=fond, 12=texte) | échelle sombre en miroir | maison | ~ | Meilleur pour les UI à états. |
 | [Open Color](https://yeun.github.io/open-color/) | palette à 13 pas | manuel | manuel | maison | ~ | Minimal. |
