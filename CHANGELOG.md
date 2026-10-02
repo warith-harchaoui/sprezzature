@@ -59,6 +59,47 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+## [1.3.8] (2026-10-02): the one command that installs the suite was handing out old packages
+
+### Fixed
+
+- **Every floor in the `all` extra named a version older than the release
+  sitting beside it.** `pip install sprezzature[all]` is the one command that
+  installs the whole suite, and a floor that lags a correction installs the
+  uncorrected package forever. `sprezzature-maps` was the worst of them, floored
+  at 0.7.0 against a checkout at 0.12.0, five releases behind. The floors now
+  name the versions published today: figures 2.4.0, colors 1.0.1, accessibility
+  1.0.3, audio 1.1.1, cli-gui 1.1.0, ux-laws 1.1.0, maps 0.12.0.
+
+  `tests/test_all_extra_is_the_suite.py` has been saying so and failing. It is
+  the check for the machine that cuts the release, and it was right.
+- **`scripts/check_wheels.py` could not run on the lowest interpreter it
+  vouches for.** It imported `tomllib`, which joined the standard library in
+  3.11, while every package in the suite declares 3.10. It falls back to
+  `tomli`, declared for 3.10 alone.
+
+### Changed
+
+- **The lint gate names its rules instead of pinning ruff's version.**
+  `ruff.toml` relied on the tool's default rule set, with a comment saying
+  which: pyflakes F plus a curated pycodestyle E/W subset. That default is not
+  a fixed set. The 0.16 line widened it to pull in isort, pyupgrade,
+  flake8-comprehensions and more, turning "all checks passed" into 515 findings
+  across the monorepo without a line of code changing. The `ruff<0.16` ceiling
+  in `requirements-dev.txt` hid that at the price of a gate meaning whatever
+  the installed ruff thought it meant: green on CI at 0.15, red on a machine
+  with anything newer. With the rules written out, ruff 0.16.10 passes the
+  repository clean, so the 515 were the widening and not regressions. The
+  ceiling is lifted, and widening the gate goes back to being a decision
+  somebody takes.
+
+### Added
+
+- **A versioned `.githooks/pre-push`** running lint, types, the test suite,
+  skill validation and the eval-suite collection, in the workflow's own order,
+  so a red state cannot reach the remote. `.gitignore` exempts `.githooks/`
+  from its `.*` rule, as it already did for `.github/`.
+
 ## [1.3.7] (2026-09-16): the maps skill says what a map now carries on its own
 
 ### Added

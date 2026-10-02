@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sprezzature"
-version = "1.3.7"
+version = "1.3.8"
 description = "The sprezzature skills: what an agent reads to know when to reach for the tools, and how the house does things."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -26,13 +26,13 @@ dependencies = []
 [project.optional-dependencies]
 # The tools the skills call. Each installs on its own; this pulls the lot.
 all = [
-    "sprezzature-figures>=2.3.0",
-    "sprezzature-colors>=1.0.0",
-    "sprezzature-accessibility>=1.0.2",
-    "sprezzature-audio>=1.1.0",
-    "sprezzature-cli-gui>=1.0.0",
-    "sprezzature-ux-laws>=1.0.0",
-    "sprezzature-maps>=0.7.0",
+    "sprezzature-figures>=2.4.0",
+    "sprezzature-colors>=1.0.1",
+    "sprezzature-accessibility>=1.0.3",
+    "sprezzature-audio>=1.1.1",
+    "sprezzature-cli-gui>=1.1.0",
+    "sprezzature-ux-laws>=1.1.0",
+    "sprezzature-maps>=0.12.0",
 ]
 dev = ["pytest>=8.0", "ruff"]
 
