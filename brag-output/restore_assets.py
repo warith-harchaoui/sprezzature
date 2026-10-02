@@ -11,13 +11,14 @@ Three classes, and the distinction is the whole point:
   A. copies of files git DOES track (fonts, figures, maps) — restored here, and
      verified byte-for-byte against their source rather than assumed.
   B. output of a tool that is still on the machine (Kokoro narration, the colour
-     vision simulations, the resized logo) — regenerated. The narration comes
+     vision simulations, the resized logo, the cli-gui form) — regenerated. The narration comes
      back byte-identical: Kokoro is deterministic for a given text, voice and
      speed, verified against vo-global-3.wav on hyperframes 0.8.60.
   C. neither: a licensed music track, three sound effects, a pinned GSAP build,
-     five screen captures. These exist in exactly one place, and if that place
-     is a single disk the films are one disk failure from unrenderable. Pass
-     --seed to restore them from an off-repo archive.
+     three screen captures of another project's GUI, a logo. Nine files. They
+     exist in exactly one place, and if that place is a single disk the films
+     are one disk failure from unrenderable. Pass --seed to restore them from
+     an off-repo archive.
 
 Run from brag-output/:
     python3 restore_assets.py                    # report only
@@ -93,12 +94,6 @@ SEED_ONLY: dict[str, str] = {
     "sfx/impact/impactSoft_medium_001.ogg": "idem",
     "sfx/interface/drop_001.ogg": "idem",
     "vendor/gsap.min.js": "CDN-fetchable, but the pinned version is written down nowhere",
-    "shots/cli-gui.png":
-        "render_html output, but the argparse written for the shot was not kept. "
-        "Fields on screen: --kind --input --output --accessibility --title --audit",
-    "shots/cli-gui-full.png":
-        "same as shots/cli-gui.png, full page at 760x1040 — the argparse that "
-        "produced it was not kept either",
     "shots/engine-full.png":
         "full-page recapture of best-engine-ai-helper's GUI — hashes match none "
         "of its assets/screenshots/, so it is a recapture and not a copy",
@@ -178,14 +173,14 @@ def restore_voice(dest: pathlib.Path, fix: bool) -> list[str]:
             continue
         cmd = ["npx", "hyperframes", "tts", text, "--voice", VOICE,
                "--speed", SPEED, "-o", str(out)]
-        done = subprocess.run(cmd, capture_output=True, text=True)
+        done = subprocess.run(cmd, capture_output=True, text=True, check=False)
         if done.returncode != 0 or not out.exists():
             notes.append(f"  TTS FAILED       vo-{stem}.wav  ({done.stderr.strip()[:120]})")
         else:
             notes.append(f"  synthesized      vo-{stem}.wav")
     if notes and fix:
-        notes.append("  check: `cmp` a resynthesized WAV against the archive before trusting "
-                     "make_captions.py's durations — they are hard-coded")
+        notes.append("  check: `cmp` a resynthesized WAV against the archive before "
+                     + "trusting make_captions.py's durations — they are hard-coded")
     return notes
 
 
@@ -198,18 +193,129 @@ def restore_derived(dest: pathlib.Path, fix: bool) -> list[str]:
             notes.append("  would resize     logo-512.png  <- web/img/logo.png at 512x512")
         else:
             done = subprocess.run(["sips", "-z", "512", "512", str(logo_src),
-                                   "--out", str(logo_out)], capture_output=True, text=True)
-            notes.append(("  resized          logo-512.png" if logo_out.exists()
-                          else f"  RESIZE FAILED    logo-512.png ({done.stderr.strip()[:90]})"))
+                                   "--out", str(logo_out)],
+                                  capture_output=True, text=True, check=False)
+            notes.append("  resized          logo-512.png" if logo_out.exists()
+                         else f"  RESIZE FAILED    logo-512.png ({done.stderr.strip()[:90]})")
 
+    notes += restore_cvd(dest, fix)
+    notes += restore_shots(dest, fix)
+    return notes
+
+
+def chrome_png(url: str, out: pathlib.Path, w: int, h: int,
+               full: bool = False, scale: int = 2) -> str | None:
+    """Rasterize a page with Chrome at 2x. Returns an error string, or None.
+
+    Chrome and not rsvg-convert: rasterizing bar-grouped.svg with rsvg left 1.41%
+    of pixels differing from the shipped original, text antialiasing mostly.
+    Through Chrome at device_scale_factor=2 the difference is zero, because
+    Chrome is what cut these assets in the first place.
+    """
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return "playwright absent (pip install playwright && playwright install chromium)"
+    try:
+        with sync_playwright() as p:
+            b = p.chromium.launch()
+            page = b.new_page(viewport={"width": w, "height": h}, device_scale_factor=scale)
+            page.goto(url)
+            page.wait_for_timeout(1200)
+            page.screenshot(path=str(out), full_page=full)
+            b.close()
+    except Exception as exc:                                   # noqa: BLE001
+        return str(exc)[:140]
+    return None
+
+
+def restore_cvd(dest: pathlib.Path, fix: bool) -> list[str]:
+    """The four colour-vision simulations, plus the original they are made from.
+
+    The chain is: rasterize the shipped bar-grouped.svg at 2x, then hand it to
+    sprezzature-colors, which applies the Machado matrices. The numbered names
+    are this tree's, not the tool's — it writes `<stem>-protanopia.png` and so
+    on, and the film needs them ordered.
+    """
+    out_dir = dest / "figures/cvd"
+    missing = [n for n in CVD if not (out_dir / n).exists()]
+    if not missing:
+        return []
     sim = pathlib.Path.home() / "sprezzature-colors/scripts/simulate_cvd.py"
-    missing = [n for n in CVD if not (dest / "figures/cvd" / n).exists()]
-    if missing:
-        if not sim.exists():
-            notes.append(f"  NO TOOL          figures/cvd/ ({len(missing)} files): {sim} absent")
-        else:
-            notes.append(f"  run by hand      figures/cvd/ ({len(missing)} files): "
-                         f"{sim} on bar-grouped.svg rasterized — Machado matrices")
+    svg = REPO / "web/img/figures/bar-grouped.svg"
+    if not sim.exists():
+        return [f"  NO TOOL          figures/cvd/ ({len(missing)}): {sim} absent"]
+    if not fix:
+        return [f"  would simulate   figures/cvd/ ({len(missing)}): {svg.name} at 2x"
+                + f" -> {sim.name}, Machado matrices"]
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    original = out_dir / "00-original.png"
+    err = chrome_png(svg.resolve().as_uri(), original, 745, 505)
+    if err:
+        return [f"  RASTER FAILED    figures/cvd/00-original.png ({err})"]
+
+    done = subprocess.run([sys.executable, str(sim), str(original),
+                           "--grayscale", "--out", str(out_dir)],
+                          capture_output=True, text=True, check=False)
+    if done.returncode != 0:
+        return [f"  CVD FAILED       {done.stderr.strip()[:140]}"]
+
+    notes = ["  rasterized       figures/cvd/00-original.png (Chrome, 2x)"]
+    for n in CVD[1:]:
+        src = out_dir / f"00-original-{n.split('-', 1)[1]}"
+        if not src.exists():
+            notes.append(f"  MISSING          figures/cvd/{n} (tool wrote no {src.name})")
+            continue
+        src.rename(out_dir / n)
+        notes.append(f"  simulated        figures/cvd/{n}")
+    return notes
+
+
+def restore_shots(dest: pathlib.Path, fix: bool) -> list[str]:
+    """The two screen captures of the cli-gui form the `interface` film shows.
+
+    The argparse behind them was written for the shoot and thrown away; it is
+    rebuilt in figure_cli.py from what the captures themselves show. The page is
+    produced by sprezzature-cli-gui, not mocked, which is the whole claim the
+    film makes about that scene.
+
+    Unlike the narration, this does NOT come back byte-identical, and chasing
+    that would be the wrong target: the pixels belong to the tool's stylesheet,
+    which has moved since the shoot — the rebuilt full page is 1054px tall where
+    the original was 1040. What has to hold is the content, and it does: all 18
+    strings visible in the capture (prog, description, every flag, every default,
+    every help line, both button labels) are in the rebuilt page, checked by
+    tests/test_figure_cli.py. That is the invariant worth guarding; a byte
+    compare would just break on the next CSS tweak.
+    """
+    # Viewports read off the originals. These are 1x, unlike the CVD frames:
+    # the shoot captured the form at CSS size and the figure at 2x.
+    wanted = {"shots/cli-gui-full.png": (760, 1040, True),
+              "shots/cli-gui.png": (780, 560, False)}
+    missing = [r for r in wanted if not (dest / r).exists()]
+    if not missing:
+        return []
+    tool = pathlib.Path.home() / "sprezzature-cli-gui/scripts/cli_to_gui.py"
+    if not tool.exists():
+        return [f"  NO TOOL          shots/cli-gui*.png: {tool} absent"]
+    if not fix:
+        return [f"  would render     {r}  <- figure_cli.py:parser through {tool.name}"
+                for r in sorted(missing)]
+
+    html = dest / "shots/_cli-gui.html"
+    html.parent.mkdir(parents=True, exist_ok=True)
+    done = subprocess.run([sys.executable, str(tool), f"{ROOT / 'figure_cli.py'}:parser",
+                           "--out", str(html)], capture_output=True, text=True, check=False)
+    if done.returncode != 0 or not html.exists():
+        return [f"  GUI FAILED       {(done.stderr or done.stdout).strip()[:140]}"]
+
+    notes = [f"  rendered         {html.name} from figure_cli.py:parser"]
+    for rel in sorted(missing):
+        w, h, full = wanted[rel]
+        err = chrome_png(html.resolve().as_uri(), dest / rel, w, h, full=full, scale=1)
+        notes.append(f"  CAPTURE FAILED   {rel} ({err})" if err else f"  captured         {rel}")
+    html.unlink(missing_ok=True)
     return notes
 
 
@@ -285,7 +391,7 @@ def main() -> None:
 
     have = sum(1 for f in dest.rglob("*")
            if f.is_file() and f.name != ".DS_Store" and not f.name.startswith("._"))
-    want = len(TRACKED) + 17 + 1 + len(CVD) + len(SEED_ONLY)
+    want = len(TRACKED) + 17 + 1 + len(CVD) + 2 + len(SEED_ONLY)
     print(f"{have}/{want} files present" + ("" if args.fix else "   (report only; pass --fix)"))
 
 
