@@ -1125,7 +1125,8 @@ language. The skill both makes the artifact and audits it.
 Grab the latest release, copy the skills you
 want into your runtime.
 
-VERSION=1.0.0 # latest tag on the releases page
+VERSION=$(curl -fsSL https://api.github.com/repos/warith-harchaoui/sprezzature/releases/latest \
+| sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p') # the latest release, resolved
 curl -L https://github.com/warith-harchaoui/sprezzature/releases/download/v${VERSION}/sprezzature-skills-${VERSION}.tar.gz | tar xz
 
 mkdir -p ~/.claude/skills # OpenCode: ~/.opencode/skills
