@@ -89,19 +89,60 @@ evidence.
 ## The situation map is configured, not flagged
 
 Everything a situation plate shows lives in one YAML file, and **almost
-nothing is on by default** — they are modes, and a plate that switches them
-all on says less than one that picks. The keys the generator reads:
+every thematic layer is off by default** — they are modes, and a plate that
+switches them all on says less than one that picks. The keys the generator
+reads:
+
+**`region`** is the only required one — `{bbox: [west, south, east, north]}`
+in degrees, and what the projection auto-centres on. The rest:
 
 `title`, `subtitle`, `caption`, `as_of` · `projection`, `basemap`, `frame`,
-`padding`, `canvas_width` · `areas_of_control`, `front`, `frontiers`,
-`internal_borders` · `forces`, `events`, `infrastructure`, `labels`,
-`rivers` · `legend_position`, `legend_footer`, `marker_legend` ·
-`source`, `attribution`, `method`.
+`padding`, `canvas_width`, `simplify`, `interactivity` ·
+`areas_of_control`, `front`, `arrows`, `frontiers`, `internal_borders` ·
+`forces`, `events`, `infrastructure`, `labels`, `annotations`, `rivers`,
+`lakes`, `cities`, `inset` · `legend_position`, `legend_footer`,
+`marker_legend` · `source`, `attribution`, `method`.
+
+`make_situation_map`'s module docstring carries the full reference under
+**Every configuration key**, and a test fails if a top-level key is added
+without a line there. That guard covers the top level only, so a nested key
+can still arrive undocumented — `areas_of_control.over_water` and
+`lakes.depth_rings` both did, in 0.10.0.
 
 The last three are the provenance block, and they are the ones to fill in
 first rather than last: `source` and `as_of` are what stop a plate from being
 read as current when it is not, and `method` is where the assessment behind
 the zones is named. See the contract above.
+
+### The one key that is on by default
+
+`interactivity` is the exception to "off unless asked", and it is worth
+knowing before a plate goes on a page.
+
+| Value | What ships |
+|---|---|
+| `"self-contained"` *(default)* | the plate carries its own layer switches, confidence filter and clickable legend, inside the file, with no page script |
+| `"external"` | the controls are left to a page-level script |
+| `"static"` | none of it ships |
+
+It only materializes when `areas_of_control` has a `palette` — a plate with
+no assessment on it is unaffected. And it degrades by construction: the panel
+ships hidden and the script reveals it, so an `<img>` embed, a rasteriser or
+a PDF see exactly the plain map. **An `<object>` embed does not** — there the
+SVG is a live document and the controls come up, which is the point, but it
+means a page that enlarges plates in a lightbox is shipping an interactive
+map whether or not it meant to.
+
+The controls keep their state in the URL fragment, which sounds alarming on
+a page that routes by fragment itself and is not: the script reads and writes
+`svg.ownerDocument.defaultView.location`, so inside an `<object>` it addresses
+its own nested document and never the host page, and it uses
+`history.replaceState` rather than `pushState`, so it adds no history entries.
+
+Two more keys arrived with it, both nested, both off by default:
+`areas_of_control.over_water` (`false`) keeps a zone's own shape instead of
+clipping it to land, for a claim that really is maritime; `lakes.depth_rings`
+(`4`) steps shelf rings inward from a lake's shore, `0` turns them off.
 
 Rivers taper by prominence when `rivers` asks them to; they are absent
 otherwise. The same is true of every other layer — ask for what the map is
