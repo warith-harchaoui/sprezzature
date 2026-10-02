@@ -14,8 +14,15 @@
 target-version = "py310"
 
 [lint]
-# Ruff's default rule set (pyflakes F + a curated pycodestyle E/W subset).
-extend-select = ["W"]
+# Pyflakes F plus the curated pycodestyle E/W subset — written out rather
+# than inherited from ruff's defaults. The defaults are not a fixed set: the
+# 0.16 line widened them to pull in isort, pyupgrade, flake8-comprehensions
+# and more, which turned this gate from "all checks passed" into 515 findings
+# across the monorepo without a line of code changing. Pinning the tool to
+# `<0.16` hid that but left the gate meaning whatever the installed ruff
+# thought it meant. Naming the rules makes it mean the same thing everywhere,
+# and makes widening it a decision someone takes on purpose.
+select = ["E4", "E7", "E9", "F", "W"]
 
 ignore = [
     # E741 — "ambiguous variable name l/I/O". Intentional here: `l` is the
