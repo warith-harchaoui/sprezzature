@@ -87,10 +87,13 @@ web/kits/**/*.zip
 # not all the way: `python3 brag-output/restore_assets.py` audits the gap and
 # names it. Eleven files in brag-output/_assets/ exist nowhere else — a licensed
 # music track the whole BEATS grid is measured off, three sound effects, a GSAP
-# build whose version is unrecorded, and five screen captures. They live in an
-# off-repo archive (~/sauvegardes-sprezzature/), restored with
-# `restore_assets.py --fix --seed`. Everything else, narration included, the
-# repo really does rebuild byte-for-byte.
+# build whose version is unrecorded, three captures of another project's GUI,
+# and its logo. They live in an off-repo archive (~/sauvegardes-sprezzature/),
+# restored with `restore_assets.py --fix --seed`. Everything else the repo
+# rebuilds itself: the 17 narration WAVs and the five colour-vision frames come
+# back byte-for-byte, and the cli-gui form is re-rendered from figure_cli.py,
+# the argparse of the shoot, rebuilt from the captures and guarded by
+# tests/test_figure_cli.py.
 #
 #     python3 brag-output/restore_assets.py --fix   # rebuild _assets/ first
 #     python3 brag-output/build_films.py            # the 15 compositions
