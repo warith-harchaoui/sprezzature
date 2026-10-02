@@ -96,12 +96,35 @@ def remote_path_for(local_file: Path, dest_root: str) -> str:
     return f"{root}/{rel_path_for(local_file)}"
 
 
-def fetch_remote_tree(cred: dict, dest_root: str) -> dict[str, dict]:
+#: Substrings in an SFTP error that mean "the destination directory is not
+#: there yet", as opposed to "the connection or the host key failed". Only the
+#: first kind is a legitimate empty remote; see ``fetch_remote_tree``.
+_ABSENT_MARKERS: tuple[str, ...] = (
+    "no such file",
+    "not found",
+    "does not exist",
+    "nosuchfile",
+)
+
+
+def fetch_remote_tree(cred: dict, dest_root: str) -> dict[str, dict] | None:
     """The whole remote tree's ``{relative_path: {"size", "mtime"}}``.
 
-    Empty dict when `dest_root` does not exist yet (a first-time deploy) or
-    is empty — never raises for that case, since "nothing there yet" simply
-    means every local file is new.
+    Three outcomes, and the difference matters:
+
+    * a dict, possibly empty, when the listing succeeded;
+    * an **empty dict** when `dest_root` is simply not there yet, which is
+      what a first deploy looks like and is not an error;
+    * **None** when the listing could not be performed at all: a refused
+      login, an unverified host key, a dropped connection. Nothing is known
+      about the server in that case.
+
+    The third outcome used to be folded into the second, and that was a
+    lie with consequences. An unknown ED25519 host key made every local
+    file look new, so ``--dry-run`` announced 1 226 files "would be
+    uploaded" when 24 had changed, and a real run would have re-sent the
+    whole site. Callers now have to handle ``None`` rather than read it as
+    "the server is empty".
 
     Parameters
     ----------
@@ -109,12 +132,21 @@ def fetch_remote_tree(cred: dict, dest_root: str) -> dict[str, dict]:
         sftp-helper credentials dict.
     dest_root : str
         Remote base directory the site is published under.
+
+    Returns
+    -------
+    dict or None
+        The remote tree, or ``None`` when it could not be read.
     """
     try:
         return sftph.list_dir_stat(dest_root or "/", cred)
-    except Exception as exc:  # noqa: BLE001 - a missing/empty remote root is expected on first deploy
-        osh.info(f"Remote tree unreadable or absent ({exc}); treating as empty (first deploy).")
-        return {}
+    except Exception as exc:  # noqa: BLE001 - absent destination vs. unreachable server
+        text = str(exc).lower()
+        if any(marker in text for marker in _ABSENT_MARKERS):
+            osh.info(f"Remote destination {dest_root or '/'} is not there yet; treating as a first deploy.")
+            return {}
+        osh.warning(f"Could not read the remote tree ({exc}).")
+        return None
 
 
 def should_upload(local_file: Path, remote_tree: dict[str, dict], *, force: bool) -> bool:
@@ -171,14 +203,22 @@ def main() -> int:
     have_config = Path(args.config).is_file()
     cred = sftph.credentials(args.config) if have_config else None
     dest_root = (cred.get("sftp_destination_path", "") or "") if cred else ""
-    remote_tree = fetch_remote_tree(cred, dest_root) if cred else {}
+    remote_tree = fetch_remote_tree(cred, dest_root) if cred else None
+    # Known means "the server answered"; unknown means we are blind, which is
+    # not the same as "the server is empty" and must never be reported as a diff.
+    remote_known = remote_tree is not None
+    comparable = remote_tree if remote_known else {}
 
-    to_upload = [f for f in files if should_upload(f, remote_tree, force=args.force)] if cred else files
+    to_upload = (
+        [f for f in files if should_upload(f, comparable, force=args.force)]
+        if remote_known
+        else files
+    )
     skipped = [f for f in files if f not in to_upload]
 
     orphans: list[str] = []
-    if args.prune and cred:
-        orphans = find_orphaned_remote_files(remote_tree, files)
+    if args.prune and remote_known:
+        orphans = find_orphaned_remote_files(comparable, files)
 
     if args.dry_run:
         print(f"[dry-run] {len(to_upload)} file(s) would be uploaded from {WEB}:")
@@ -186,6 +226,12 @@ def main() -> int:
             print(f"  {rel_path_for(f)}")
         if not have_config:
             osh.warning(f"No credentials at {args.config} — skip-rule preview unavailable, showing the full candidate set as 'would upload'.")
+        elif not remote_known:
+            osh.warning(
+                "The server did not answer, so nothing above is a comparison: that "
+                f"is every file under {WEB}, not the changed ones. Fix the "
+                "connection and run again before trusting the count."
+            )
         elif skipped:
             print(f"\n[dry-run] {len(skipped)} file(s) unchanged, would be skipped:")
             for f in skipped:
@@ -204,6 +250,27 @@ def main() -> int:
             " — then fill in your real host/login/key."
         )
         return 1
+
+    if not remote_known:
+        if args.prune:
+            osh.error(
+                "--prune needs to know what is on the server, and the listing "
+                "failed. Refusing: pruning against an unknown remote is "
+                "meaningless. Fix the connection first."
+            )
+            return 1
+        if not args.force:
+            osh.error(
+                f"The server did not answer, so the skip rule cannot run and all "
+                f"{len(files)} file(s) would be re-sent. Refusing. Fix the "
+                "connection, or pass --force if you really mean to upload "
+                "everything."
+            )
+            return 1
+        osh.warning(
+            f"The server did not answer; --force was given, so all {len(files)} "
+            "file(s) will be sent without comparing."
+        )
 
     if not to_upload and not orphans:
         osh.info(f"Nothing to do: all {len(files)} file(s) already match the server.")
