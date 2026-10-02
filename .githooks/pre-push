@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Pre-push gate: block the push on a lint, type or test failure, so a red local
+# state never reaches CI. The steps mirror this repository's own workflow, in
+# the same order, so "the hook passed" and "CI will pass" mean the same thing.
+#
+# One-time setup per clone (the repo config already does it here):
+#   git config core.hooksPath .githooks
+# Bypass, rare and deliberate only:
+#   git push --no-verify
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+
+echo "[pre-push] ruff..."
+ruff check . || { echo "[pre-push] ruff failed - push aborted."; exit 1; }
+
+echo "[pre-push] mypy..."
+./scripts/run_mypy.sh || { echo "[pre-push] mypy failed - push aborted."; exit 1; }
+
+echo "[pre-push] pytest..."
+python3 -m pytest -q || { echo "[pre-push] pytest failed - push aborted."; exit 1; }
+
+echo "[pre-push] skill validation..."
+python3 scripts/validate_all.py || { echo "[pre-push] skill validation failed - push aborted."; exit 1; }
+
+echo "[pre-push] eval suite collects..."
+python3 -m pytest -m eval --collect-only -q || { echo "[pre-push] eval suite collects failed - push aborted."; exit 1; }
+
+echo "[pre-push] all green - pushing."
