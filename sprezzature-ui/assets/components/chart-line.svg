@@ -1,6 +1,6 @@
 <!--
 House-style line + area chart — Roboto type, no top/right spines, no tick marks,
-colors from harchaoui.org/warith/colors. Polarity is contextual: replace the
+colors from deraison.ai/colors/. Polarity is contextual: replace the
 subtitle / axis tag below to match this dashboard's interpretation. Inline SVG
 (no chart library) — see references/charts-svg.md.
 -->

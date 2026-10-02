@@ -292,7 +292,7 @@ sprezzature-accessibility-lint public/report.html
   tag; how the polarity color is picked from the palette's
   Psychology-Positive / Negative projections; Emotion / Concept
   accessors. Source of the semantic mapping:
-  <https://harchaoui.org/warith/colors/>.
+  <https://deraison.ai/colors/>.
 - `references/explainability.md` — SHAP / Shapash / TimeSHAP / LIME
   engine choice; per-engine output contract; when to prefer each.
 - `references/causality.md` — DoWhy's four-step loop; EconML backends;

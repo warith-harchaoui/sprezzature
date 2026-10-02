@@ -255,7 +255,7 @@ Roboto families as WOFF2 with bundled OFL licenses).
 
 | Alternative | Shape | A11y workflow | Dark mode | Source | Skill alignment | Notes |
 |---|---|---|---|---|:---:|---|
-| **`sprezzature` palettes** (used) | 4 named palettes + semantic tokens | manual + `audit_contrast.py` | first-class | <https://harchaoui.org/warith/colors/> | ✓ | Choice / Emotion / Concept / Psychology. |
+| **`sprezzature` palettes** (used) | 4 named palettes + semantic tokens | manual + `audit_contrast.py` | first-class | <https://deraison.ai/colors/> | ✓ | Choice / Emotion / Concept / Psychology. |
 | [Tailwind defaults](https://tailwindcss.com/docs/customizing-colors) | scales (slate, sky, …) | manual | toggle | inhouse | ~ | Strong ecosystem look. |
 | [Radix Colors](https://www.radix-ui.com/colors) | 12-step semantic scales | per-step intent (1=bg, 12=text) | mirror dark scale | inhouse | ~ | Best for stateful UIs. |
 | [Open Color](https://yeun.github.io/open-color/) | 13-step palette | manual | manual | inhouse | ~ | Minimal. |

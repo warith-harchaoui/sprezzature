@@ -1,6 +1,6 @@
 # Charts: hand-authored SVG
 
-Source for colors: <https://harchaoui.org/warith/colors/> (see also `references/color-psychology.md`).
+Source for colors: <https://deraison.ai/colors/> (see also `references/color-psychology.md`).
 Source for the chart method: the `dataviz` skill (form heuristic, color formula,
 validated palette, mark specs, interaction, accessibility); this file is that
 method's house-style parameters for sprezzature-ui's stack.

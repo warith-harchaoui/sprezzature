@@ -17,7 +17,7 @@ Usage
 
     # Single URL → light + dark variant in assets/gallery/4ml/
     python3 scripts/gallery_screenshot.py \\
-        --url https://harchaoui.org/warith/4ml \\
+        --url https://deraison.ai/4ml/ \\
         --slug 4ml
 
     # Custom viewport, full-page capture, into a custom dir

@@ -1,6 +1,6 @@
 # Color Psychology: tokens and selection rules
 
-Source: <https://harchaoui.org/warith/colors/>. The machine-readable
+Source: <https://deraison.ai/colors/>. The machine-readable
 form lives at `sprezzature-colors/references/palette.csv`: that CSV is the
 **single source of truth for hexes** in the sprezzature-* ecosystem; this
 file mirrors the CSV's `Hexcode` + `LightHex` columns in human-readable
