@@ -49,3 +49,7 @@ deepeval>=1.0.0
 textstat>=0.7.0
 # jiwer — Word Error Rate for the captions eval.
 jiwer>=3.0.0
+
+# scripts/check_wheels.py parses each package's pyproject.toml. `tomllib` is
+# stdlib only from 3.11 and this project supports 3.10.
+tomli; python_version < '3.11'

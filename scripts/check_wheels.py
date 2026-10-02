@@ -38,8 +38,15 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import tomllib
 from pathlib import Path
+
+# `tomllib` is stdlib only from 3.11 while every package here declares 3.10, so
+# this maintainer script would not even import on the lowest interpreter it is
+# meant to vouch for. `tomli` is the same parser under its pre-stdlib name.
+try:
+    import tomllib
+except ModuleNotFoundError:  # pragma: no cover - Python 3.10 only
+    import tomli as tomllib
 
 #: Every checkout that publishes a package, and its import name. This
 #: repository is in the list: it publishes ``sprezzature``, the distribution

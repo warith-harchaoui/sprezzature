@@ -22,7 +22,7 @@ compatibility: >-
   access required. Reference is plain Markdown with no exec deps.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.7
+  version: 1.3.8
   source: https://lawsofux.com/
 ---
 
