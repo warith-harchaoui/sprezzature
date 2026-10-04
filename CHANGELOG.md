@@ -2099,7 +2099,7 @@ The unified palette draws on:
 - Apple Human Interface Guidelines (macOS system colors)
 - maketintsandshades.com (curated light counterparts)
 - Color psychology associations from the user's published page
-  <https://harchaoui.org/warith/colors/>
+  <https://deraison.ai/colors/>
 
 ## [0.6.5] (2026-06-23): staleness sweep across SKILL descriptions + README status
 
@@ -2767,7 +2767,7 @@ opens `GALLERY.md` with the first real-site entry.
 - **`GALLERY.md`**: Markdown-only showcase of real sites and tools
   shipped on the stack. Two entries at launch:
   - **4ml: A Practical Python Environment for AI**
-    (<https://harchaoui.org/warith/4ml>): long-form single-page
+    (<https://deraison.ai/4ml>): long-form single-page
     guide with sticky table of contents, captured headlessly via
     Playwright in both `prefers-color-scheme` variants.
   - **md2star: Markdown → branded `.docx`/`.pptx`/`.pdf`**
