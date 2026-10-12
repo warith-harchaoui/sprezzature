@@ -1258,6 +1258,8 @@ sprezzature · case studies
 
 Good-quality cartography, reproducible on data of your choice.
 
+Work in progress: the generators are versioned and every map below is rebuilt from them in one command, but the cartographic judgement is still being revised plate by plate — label placement, relief strength and the confidence scale have all changed this month. Read these as illustrations of the method, not as operational assessments.
+
 ← All case studies
 
 ## Choropleth

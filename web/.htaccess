@@ -14,3 +14,41 @@ AddDefaultCharset utf-8
     AddType 'application/xml; charset=utf-8' .xml
     AddType 'text/plain; charset=utf-8' .txt
 </IfModule>
+
+# Caching. Measured before writing this: not one asset on the deployed
+# site carried a Cache-Control header, so every image, font and stylesheet
+# was revalidated on every visit -- 48 conditional requests to re-open the
+# maps page and see nothing changed.
+#
+# The values are deliberately asymmetric, because the filenames here carry
+# no content hash and a stale cache cannot be busted by renaming:
+#
+#   * HTML always revalidates. A page is the thing that changes, and a
+#     reader who gets yesterday's copy of it has been given the wrong
+#     answer. 304s are cheap; a wrong page is not.
+#   * Fonts are immutable in practice -- a Roboto file is a Roboto file --
+#     so they get a year.
+#   * Images, stylesheets and scripts get a week. Long enough that a second
+#     visit costs nothing, short enough that a deploy reaches everyone
+#     inside a week without anybody having to clear anything.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.(woff2|woff|ttf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(png|jpg|jpeg|webp|gif|svg|ico|css|js)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+# Compression. The server already gzips HTML, CSS and SVG; this states it
+# rather than relying on a host default that a migration could drop. The
+# feeds and the llms.txt files are text too, and were not covered.
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml application/atom+xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>

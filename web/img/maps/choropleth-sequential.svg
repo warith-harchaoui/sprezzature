@@ -553,13 +553,13 @@
 <circle cx="300.6" cy="285.5" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="305.4" y="288.3" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">São Paulo</text>
 <circle cx="553.8" cy="169.6" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
-<text x="509.4" y="172.4" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Shanghai</text>
+<text x="508.5" y="172.4" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Shanghai</text>
 <circle cx="198.4" cy="164.0" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="203.2" y="166.8" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Los Angeles</text>
 <circle cx="419.4" cy="171.9" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="424.2" y="174.7" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Cairo</text>
 <circle cx="305.8" cy="284.2" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
-<text x="231.7" y="287.0" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Rio de Janeiro</text>
+<text x="238.9" y="287.0" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Rio de Janeiro</text>
 <circle cx="538.2" cy="152.8" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="543.0" y="155.6" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Beijing</text>
 <circle cx="419.9" cy="125.5" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
@@ -573,7 +573,7 @@
 <circle cx="543.5" cy="248.7" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="548.3" y="251.5" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Jakarta</text>
 <circle cx="372.3" cy="132.3" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
-<text x="337.8" y="135.1" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">London</text>
+<text x="334.6" y="135.1" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">London</text>
 <circle cx="253.7" cy="225.4" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="258.5" y="228.2" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Bogota</text>
 <circle cx="549.2" cy="187.8" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
@@ -584,8 +584,10 @@
 <text x="544.0" y="235.3" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Singapore</text>
 <circle cx="595.3" cy="306.3" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="600.1" y="309.1" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Sydney</text>
+<circle cx="444.2" cy="182.9" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
+<text x="449.0" y="185.7" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Riyadh</text>
 <circle cx="390.0" cy="149.1" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
-<text x="394.8" y="151.9" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Rome</text>
+<text x="360.2" y="151.9" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Rome</text>
 <circle cx="399.7" cy="306.4" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>
 <text x="404.5" y="309.2" font-size="9" fill="#1D1D1F" fill-opacity="0.8" paint-order="stroke" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round">Cape Town</text>
 <circle cx="431.6" cy="238.1" r="1.8" fill="#1D1D1F" fill-opacity="0.75"/>

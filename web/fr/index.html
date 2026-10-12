@@ -28,6 +28,10 @@
     content="Un design system local pour une seule stack sprezzature : UI, CLI→GUI, publication, accessibilité, couleurs, texte alternatif, sous-titres, Lois de l'UX et figures. Produire et auditer.">
   <meta property="og:url" content="https://sprezzature.ai/fr/">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image:width" content="1254">
+  <meta property="og:image:height" content="1254">
   <meta property="og:image:alt" content="Le logo du projet Sprezzature.">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,7 +119,7 @@
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3" aria-label="Principale">
       <a href="#main"
         class="flex items-center gap-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-11">
-        <img src="../img/logo.png" alt="" width="28" height="28" class="rounded">
+        <img src="../img/logo-96.png" alt="" width="28" height="28" class="rounded">
         <span class="font-semibold tracking-tight">Sprezzature</span>
       </a>
       <div class="flex items-center gap-4 text-sm">
@@ -163,7 +167,7 @@
         class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand-bluelight/40 to-transparent dark:from-brand-navy/20">
       </div>
       <div class="mx-auto max-w-6xl px-5 py-12 text-center sm:py-16">
-        <img src="../img/logo.png" alt="" width="144" height="144"
+        <img src="../img/logo-288.png" alt="" width="144" height="144"
           class="mx-auto mb-4 h-28 w-28 sm:h-36 sm:w-36">
         <h1 class="font-serif text-4xl font-bold tracking-tight sm:text-6xl">Sprezzature</h1>
         <p class="mx-auto mt-3 text-lg text-neutral-600 dark:text-neutral-300"><em>au sens large</em><br>
@@ -417,7 +421,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-audio', 'Sous-titres & diarisation', 'Sous-titres WebVTT / SubRip (SRT) depuis whisper.cpp local, avec en prime qui parle et quand. Fonctionne en local. En cours de développement.', 'audio.html'],
       ['sprezzature-ux-laws', "Lois de l'expérience utilisateur (UX)", 'Trente lois plus un auditeur des violations détectables: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
       ['sprezzature-figures', 'Figures', '127 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
-      ['sprezzature-maps', 'Cartes', 'Choroplèthes et cartes de situation sur une vraie projection géographique ; les cartes schématiques restent dans figures.', 'maps.html'],
+      ['sprezzature-maps', 'Cartes', 'Choroplèthes et cartes de situation sur une vraie projection géographique ; les cartes schématiques restent dans figures. En cours. Des illustrations de la méthode, pas des appréciations opérationnelles.', 'maps.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `
