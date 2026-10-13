@@ -446,9 +446,9 @@
 
 # Les infobulles natives n'écrivent pas « examples » : « Training · 250: 0.99 ».
 # `by_parts` coupe sur « : » et a besoin de la tête.
-- match: 'Training · ([-\d.,\u202f ]+)'
+- match: 'Training · ([-+\de.,\u202f ]+)'
   write: 'Entraînement · {0}'
-- match: 'Validation · ([-\d.,\u202f ]+)'
+- match: 'Validation · ([-+\de.,\u202f ]+)'
   write: 'Validation · {0}'
 
 # ── Courbe de perte ───────────────────────────────────────────────────────
@@ -464,3 +464,15 @@
   write: '{0} : {1} à la dernière époque'
 - match: '(.+): from ([-\d.,\u202f ]+) at epoch ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+) at epoch ([-\d.,\u202f ]+)'
   write: '{0} : de {1} à l''époque {2} jusqu''à {3} à l''époque {4}'
+
+# ── Courbe de validation et silhouette ────────────────────────────────────
+- match: '(\d+) samples · mean ([-\d.,\u202f ]+)'
+  write: '{0} échantillons · moyenne {1}'
+- match: '(\d+) below zero'
+  write: '{0} sous zéro'
+- match: 'n ([-\d.,\u202f ]+) · mean ([-\d.,\u202f ]+)'
+  write: 'n {0} · moyenne {1}'
+- match: 'peak ([-\d.,\u202f ]+)'
+  write: 'sommet {0}'
+- match: 'take this ([-\d.,\u202f ]+)'
+  write: 'prendre {0}'
