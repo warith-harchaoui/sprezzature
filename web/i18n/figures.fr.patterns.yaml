@@ -450,3 +450,17 @@
   write: 'Entraînement · {0}'
 - match: 'Validation · ([-\d.,\u202f ]+)'
   write: 'Validation · {0}'
+
+# ── Courbe de perte ───────────────────────────────────────────────────────
+- match: '(\d+) epochs past the minimum'
+  write: '{0} époques après le minimum'
+- match: 'best epoch ([-\d.,\u202f ]+) · ([-\d.,\u202f ]+)'
+  write: 'meilleure époque {0} · {1}'
+- match: 'over (\d+) epochs'
+  write: 'sur {0} époques'
+- match: 'start ([-\d.,\u202f ]+) · end ([-\d.,\u202f ]+)'
+  write: 'début {0} · fin {1}'
+- match: '(.+): ([-\d.,\u202f ]+) at the last epoch'
+  write: '{0} : {1} à la dernière époque'
+- match: '(.+): from ([-\d.,\u202f ]+) at epoch ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+) at epoch ([-\d.,\u202f ]+)'
+  write: '{0} : de {1} à l''époque {2} jusqu''à {3} à l''époque {4}'
