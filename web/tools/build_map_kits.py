@@ -315,7 +315,7 @@ def readme(slug: str, title: str, kind: str, *, french: bool) -> str:
     if french:
         return f"""# {title} — plateau autonome
 
-Le plateau «&nbsp;{title}&nbsp;» de la galerie Sprezzature, avec de quoi le
+Le plateau « {title} » de la galerie Sprezzature, avec de quoi le
 reconstruire et le changer.
 
 ## Ce qu'il y a dedans
