@@ -6526,3 +6526,18 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'yes': 'oui'
 'no': 'non'
 'A waterfall of 9 steps explaining one prediction, from average output -1.86 to -0.66. contributions in log-odds, from average output -1.86 to -0.66 · 13% to 34% once passed through the logistic. credit_utilisation is worth 0.94 on its own, 27% of all the movement here. The 6 features not drawn separately come to 0.10 between them. this explains one row; the next applicant can have the opposite explanation.': 'Une cascade de 9 marches expliquant une prédiction, de la sortie moyenne -1,86 à -0,66. Contributions en log des cotes, de la sortie moyenne -1,86 à -0,66 · 13 % à 34 % une fois passé par la logistique. taux_utilisation_credit vaut 0,94 à lui seul, 27 % de tout le mouvement ici. Les 6 variables non tracées séparément valent 0,10 à elles toutes. Ceci explique une ligne ; le dossier suivant peut avoir l''explication inverse.'
+
+# ── Essaim SHAP (shap-beeswarm) ───────────────────────────────────────────
+'Five features push one way with their value; tenure pushes up at both ends': 'Cinq variables poussent dans un sens avec leur valeur ; l''ancienneté pousse vers le haut aux deux bouts'
+'One dot per row per feature, placed at its contribution and coloured by the value the feature took.': 'Un point par ligne et par variable, placé à sa contribution et coloré par la valeur que la variable y prenait.'
+'Contribution to the prediction': 'Contribution à la prédiction'
+'colour does not line up': 'la couleur ne s''aligne pas'
+'There, reading the colour along the axis gets it backwards for part of the data.': 'Là, lire la couleur le long de l''axe donne l''inverse pour une partie des données.'
+'any one of them · colour runs from each feature''s own lowest value to its own highest': 'sur l''une d''elles · la couleur va de la plus petite valeur de chaque variable à sa plus grande'
+'credit_utilisation': 'taux_utilisation_credit'
+'tenure_months': 'anciennete_mois'
+'monthly_charge': 'facture_mensuelle'
+'support_tickets': 'tickets_support'
+'has_fibre': 'a_la_fibre'
+'age': 'age'
+'A beeswarm of 6 features over 220 observations, each dot one observation placed at its contribution and coloured by the value the feature took. rows ordered by mean absolute contribution, a summary over all 220 observations and not a claim about any one of them · colour runs from each feature''s own lowest value to its own highest. 1 of 6 rows has a rank correlation below 0.45 between value and contribution: tenure_months. There, reading the colour along the axis gets it backwards for part of the data.': 'Un essaim de 6 variables sur 220 observations, chaque point une observation placée à sa contribution et colorée par la valeur que la variable y prenait. Lignes classées par contribution absolue moyenne, un résumé sur les 220 observations et non une affirmation sur l''une d''elles · la couleur va de la plus petite valeur de chaque variable à sa plus grande. 1 ligne sur 6 a une corrélation de rang sous 0,45 entre valeur et contribution : anciennete_mois. Là, lire la couleur le long de l''axe donne l''inverse pour une partie des données.'
