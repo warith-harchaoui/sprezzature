@@ -6457,3 +6457,11 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Month': 'Mois'
 'further than the threshold': 'au-delà du seuil'
 'A series of 72 observations split into four stacked panels: Observed, Trend, Seasonal and Remainder. additive model, period 12 · seasonal strength 0.91 · trend strength 0.95, both on 0 to 1. 1 of 60 months sits more than 3 standard deviations from trend plus season: 2023-04. Trend covers 2020-07 to 2025-06; the centred average cannot reach the first or last 6 months.': 'Une série de 72 observations découpée en quatre panneaux superposés : Observé, Tendance, Saisonnier et Reste. Modèle additif, période 12 · force saisonnière 0,91 · force de tendance 0,95, toutes deux sur 0 à 1. 1 mois sur 60 s''écarte de plus de 3 écarts types de la tendance plus la saison : 2023-04. La tendance couvre 2020-07 à 2025-06 ; la moyenne centrée ne peut atteindre ni les 6 premiers ni les 6 derniers mois.'
+
+# ── Éventail de prévision (forecast-fan) ──────────────────────────────────
+'Twelve months out, the interval is twice as wide as at three': 'À douze mois, l''intervalle est deux fois plus large qu''à trois'
+'Three years of monthly subscriptions, then a year of forecast drawn at the width of its uncertainty.': 'Trois ans d''abonnements mensuels, puis un an de prévision tracée à la largeur de son incertitude.'
+'Forecast': 'Prévision'
+'forecast starts': 'début de la prévision'
+'Subscriptions': 'Abonnements'
+'A fan chart: 36 observed periods from 1 to 36, then 12 forecast periods to 48, each drawn inside nested intervals that widen with the horizon. bands are 50, 80, 95% intervals: 5 times in 100 the outcome falls outside the widest one. 12 periods out, the 80% interval runs 1570 to 1783: plus or minus 6.4% of the 1677 forecast.': 'Un éventail de prévision : 36 périodes observées, de 1 à 36, puis 12 périodes prévues jusqu''à 48, chacune tracée dans des intervalles emboîtés qui s''élargissent avec l''horizon. Les bandes sont des intervalles à 50, 80, 95 % : 5 fois sur 100 l''issue tombe hors de la plus large. À 12 périodes, l''intervalle à 80 % va de 1570 à 1783 : plus ou moins 6,4 % de la prévision de 1677.'
