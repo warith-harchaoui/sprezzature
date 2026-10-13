@@ -97,6 +97,7 @@ BUNDLED_HELPERS: tuple[str, ...] = (
     "_style",
     "_svg",
     "_labels",
+    "_swarm",
     "_interactive",
 )
 

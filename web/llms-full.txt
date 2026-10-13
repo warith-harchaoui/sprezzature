@@ -419,6 +419,9 @@ Permutation importance : What the model loses when a column is shuffled.
 SHAP waterfall : One prediction, taken apart.
 ↓ Python + CSV + SVG kit (57 KB)
 
+SHAP beeswarm : Every row's explanation, and when the colour lies.
+↓ Python + CSV + SVG kit (90 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
