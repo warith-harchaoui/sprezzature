@@ -376,9 +376,9 @@
 # « 1–2 × 6–8: 14 points » est la même phrase écrite une fois par case
 # occupée — 132 pour la seule figure hist2d. Une règle suffit.
 - match: '([-\d.,\u202f ]+)–([-\d.,\u202f ]+) × ([-\d.,\u202f ]+)–([-\d.,\u202f ]+): (\d+) points'
-  write: '{0}–{1} × {2}–{3}\u00a0: {4} points'
+  write: '{0}–{1} × {2}–{3} : {4} points'
 - match: '([-\d.,\u202f ]+)–([-\d.,\u202f ]+) × ([-\d.,\u202f ]+)–([-\d.,\u202f ]+): (\d+) point'
-  write: '{0}–{1} × {2}–{3}\u00a0: {4} point'
+  write: '{0}–{1} × {2}–{3} : {4} point'
 
 # ── Pile de sparklines et graphique combiné ───────────────────────────────
 # Une étiquette par rangée et par période : « latest 556 k$ · range 408 to
@@ -402,9 +402,9 @@
 # recomposer, parce qu'un entier sans séparateur (« 471 ») est laissé tel
 # quel par `fr_number` — il pourrait être une année.
 - match: 'Revenue \(k\$\): ([-\d.,\u202f ]+)'
-  write: 'Chiffre d''affaires (k$)\u00a0: {0}'
+  write: 'Chiffre d''affaires (k$) : {0}'
 - match: 'Trial conversion \(%\): ([-\d.,\u202f ]+)'
-  write: 'Conversion d''essai (%)\u00a0: {0}'
+  write: 'Conversion d''essai (%) : {0}'
 # Un relevé avec son unité collée : « 556 k$ », « 243 ms ». L'unité
 # s'écrit pareil, seul le nombre change de forme.
 - match: '([-\d.,\u202f ]+) (k\$|M\$|ms|s|%|h)'
@@ -412,7 +412,7 @@
 
 # ── Estimation ponctuelle : une étiquette par point ───────────────────────
 - match: '([-\d.,\u202f ]+) \(95%: ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+)\)'
-  write: '{0} (95\u00a0%\u00a0: {1} à {2})'
+  write: '{0} (95 % : {1} à {2})'
 - match: 'over (\d+) runs'
   write: 'sur {0} exécutions'
 - match: '(.+) · Baseline'
@@ -422,8 +422,31 @@
 - match: '(.+) · Ours'
   write: '{0} · La nôtre'
 - match: '(.+), Baseline: ([-\d.,\u202f ]+), 95% interval ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+), (\d+) runs'
-  write: '{0}, Référence\u00a0: {1}, intervalle à 95\u00a0% de {2} à {3}, {4} exécutions'
+  write: '{0}, Référence : {1}, intervalle à 95 % de {2} à {3}, {4} exécutions'
 - match: '(.+), Tuned: ([-\d.,\u202f ]+), 95% interval ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+), (\d+) runs'
-  write: '{0}, Réglée\u00a0: {1}, intervalle à 95\u00a0% de {2} à {3}, {4} exécutions'
+  write: '{0}, Réglée : {1}, intervalle à 95 % de {2} à {3}, {4} exécutions'
 - match: '(.+), Ours: ([-\d.,\u202f ]+), 95% interval ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+), (\d+) runs'
-  write: '{0}, La nôtre\u00a0: {1}, intervalle à 95\u00a0% de {2} à {3}, {4} exécutions'
+  write: '{0}, La nôtre : {1}, intervalle à 95 % de {2} à {3}, {4} exécutions'
+
+# ── Courbe d'apprentissage : une étiquette par taille et par série ────────
+- match: 'Training · ([-\d.,\u202f ]+) examples'
+  write: 'Entraînement · {0} exemples'
+- match: 'Validation · ([-\d.,\u202f ]+) examples'
+  write: 'Validation · {0} exemples'
+- match: 'mean ([-\d.,\u202f ]+)'
+  write: 'moyenne {0}'
+- match: 'folds ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+)'
+  write: 'plis {0} à {1}'
+- match: 'Training at ([-\d.,\u202f ]+) examples: ([-\d.,\u202f ]+), folds ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+)'
+  write: 'Entraînement à {0} exemples : {1}, plis {2} à {3}'
+- match: 'Validation at ([-\d.,\u202f ]+) examples: ([-\d.,\u202f ]+), folds ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+)'
+  write: 'Validation à {0} exemples : {1}, plis {2} à {3}'
+- match: 'gap ([-\d.,\u202f ]+)'
+  write: 'écart {0}'
+
+# Les infobulles natives n'écrivent pas « examples » : « Training · 250: 0.99 ».
+# `by_parts` coupe sur « : » et a besoin de la tête.
+- match: 'Training · ([-\d.,\u202f ]+)'
+  write: 'Entraînement · {0}'
+- match: 'Validation · ([-\d.,\u202f ]+)'
+  write: 'Validation · {0}'
