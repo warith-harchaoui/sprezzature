@@ -39,7 +39,7 @@
 <text x="972.0" y="217.1" font-size="23" font-weight="700" fill="#007AFF" text-anchor="end">Modèle</text>
 <line x1="290.4" y1="820.0" x2="290.4" y2="450.1" stroke="#FF9500" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.85"/>
 <line x1="118.0" y1="450.1" x2="290.4" y2="450.1" stroke="#FF9500" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.85"/>
-<g id="hit-0" class="pt hit" tabindex="0" role="img" aria-label="Top 20% contacted → 63% of churners reached (3.16× better than random)">
+<g id="hit-0" class="pt hit" tabindex="0" role="img" aria-label="Top 20 % contactés → 63 % des partants touchés (3,16× mieux que le hasard)">
 <title>Top 20 % contactés → 63 % des partants touchés (3,16× mieux que le hasard)</title>
 <circle class="halo" cx="290.4" cy="450.1" r="22" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="lg-marker" cx="290.4" cy="450.1" r="11" fill="#FF9500" stroke="#FFFFFF" stroke-width="2.5"/>

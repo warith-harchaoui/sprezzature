@@ -100,602 +100,602 @@
 <text x="104.0" y="310.0" font-size="17" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">420</text>
 <text x="437.0" y="906.0" font-size="19" fill="#1D1D1F" text-anchor="middle">Sommeil la veille (heures)</text>
 <text x="44.0" y="574.0" font-size="19" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 44.0 574.0)">Temps de réaction moyen, ms (plus c’est bas, mieux c’est)</text>
-<g id="point-0" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 287 ms reaction time">
+<g id="point-0" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 287 ms de temps de réaction">
 <title>6,6 h de sommeil, 287 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="591.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="591.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-1" class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 258 ms reaction time">
+<g id="point-1" class="pt hit" tabindex="0" role="img" aria-label="7,0 h de sommeil, 258 ms de temps de réaction">
 <title>7,0 h de sommeil, 258 ms de temps de réaction</title>
 <circle class="halo" cx="466.0" cy="653.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="466.0" cy="653.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-2" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
+<g id="point-2" class="pt hit" tabindex="0" role="img" aria-label="6,2 h de sommeil, 293 ms de temps de réaction">
 <title>6,2 h de sommeil, 293 ms de temps de réaction</title>
 <circle class="halo" cx="373.2" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-3" class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 268 ms reaction time">
+<g id="point-3" class="pt hit" tabindex="0" role="img" aria-label="5,4 h de sommeil, 268 ms de temps de réaction">
 <title>5,4 h de sommeil, 268 ms de temps de réaction</title>
 <circle class="halo" cx="280.4" cy="632.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="280.4" cy="632.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-4" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 274 ms reaction time">
+<g id="point-4" class="pt hit" tabindex="0" role="img" aria-label="6,0 h de sommeil, 274 ms de temps de réaction">
 <title>6,0 h de sommeil, 274 ms de temps de réaction</title>
 <circle class="halo" cx="350.0" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="350.0" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-5" class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 334 ms reaction time">
+<g id="point-5" class="pt hit" tabindex="0" role="img" aria-label="5,2 h de sommeil, 334 ms de temps de réaction">
 <title>5,2 h de sommeil, 334 ms de temps de réaction</title>
 <circle class="halo" cx="257.2" cy="489.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="257.2" cy="489.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-6" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 227 ms reaction time">
+<g id="point-6" class="pt hit" tabindex="0" role="img" aria-label="6,7 h de sommeil, 227 ms de temps de réaction">
 <title>6,7 h de sommeil, 227 ms de temps de réaction</title>
 <circle class="halo" cx="431.2" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="431.2" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-7" class="pt hit" tabindex="0" role="img" aria-label="8.5 h slept, 255 ms reaction time">
+<g id="point-7" class="pt hit" tabindex="0" role="img" aria-label="8,5 h de sommeil, 255 ms de temps de réaction">
 <title>8,5 h de sommeil, 255 ms de temps de réaction</title>
 <circle class="halo" cx="640.0" cy="660.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="640.0" cy="660.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-8" class="pt hit" tabindex="0" role="img" aria-label="5.9 h slept, 259 ms reaction time">
+<g id="point-8" class="pt hit" tabindex="0" role="img" aria-label="5,9 h de sommeil, 259 ms de temps de réaction">
 <title>5,9 h de sommeil, 259 ms de temps de réaction</title>
 <circle class="halo" cx="338.4" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="338.4" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-9" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 329 ms reaction time">
+<g id="point-9" class="pt hit" tabindex="0" role="img" aria-label="5,7 h de sommeil, 329 ms de temps de réaction">
 <title>5,7 h de sommeil, 329 ms de temps de réaction</title>
 <circle class="halo" cx="315.2" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="315.2" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-10" class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
+<g id="point-10" class="pt hit" tabindex="0" role="img" aria-label="7,3 h de sommeil, 244 ms de temps de réaction">
 <title>7,3 h de sommeil, 244 ms de temps de réaction</title>
 <circle class="halo" cx="500.8" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-11" class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 291 ms reaction time">
+<g id="point-11" class="pt hit" tabindex="0" role="img" aria-label="7,1 h de sommeil, 291 ms de temps de réaction">
 <title>7,1 h de sommeil, 291 ms de temps de réaction</title>
 <circle class="halo" cx="477.6" cy="582.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="477.6" cy="582.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-12" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 284 ms reaction time">
+<g id="point-12" class="pt hit" tabindex="0" role="img" aria-label="6,7 h de sommeil, 284 ms de temps de réaction">
 <title>6,7 h de sommeil, 284 ms de temps de réaction</title>
 <circle class="halo" cx="431.2" cy="597.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="431.2" cy="597.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-13" class="pt hit" tabindex="0" role="img" aria-label="5.3 h slept, 282 ms reaction time">
+<g id="point-13" class="pt hit" tabindex="0" role="img" aria-label="5,3 h de sommeil, 282 ms de temps de réaction">
 <title>5,3 h de sommeil, 282 ms de temps de réaction</title>
 <circle class="halo" cx="268.8" cy="602.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="268.8" cy="602.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-14" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 319 ms reaction time">
+<g id="point-14" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 319 ms de temps de réaction">
 <title>6,6 h de sommeil, 319 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="522.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="522.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-15" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 295 ms reaction time">
+<g id="point-15" class="pt hit" tabindex="0" role="img" aria-label="7,6 h de sommeil, 295 ms de temps de réaction">
 <title>7,6 h de sommeil, 295 ms de temps de réaction</title>
 <circle class="halo" cx="535.6" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="535.6" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-16" class="pt hit" tabindex="0" role="img" aria-label="4.7 h slept, 336 ms reaction time">
+<g id="point-16" class="pt hit" tabindex="0" role="img" aria-label="4,7 h de sommeil, 336 ms de temps de réaction">
 <title>4,7 h de sommeil, 336 ms de temps de réaction</title>
 <circle class="halo" cx="199.2" cy="485.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="199.2" cy="485.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-17" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 296 ms reaction time">
+<g id="point-17" class="pt hit" tabindex="0" role="img" aria-label="6,0 h de sommeil, 296 ms de temps de réaction">
 <title>6,0 h de sommeil, 296 ms de temps de réaction</title>
 <circle class="halo" cx="350.0" cy="571.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="350.0" cy="571.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-18" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 354 ms reaction time">
+<g id="point-18" class="pt hit" tabindex="0" role="img" aria-label="4,0 h de sommeil, 354 ms de temps de réaction">
 <title>4,0 h de sommeil, 354 ms de temps de réaction</title>
 <circle class="halo" cx="118.0" cy="446.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="118.0" cy="446.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-19" class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 310 ms reaction time">
+<g id="point-19" class="pt hit" tabindex="0" role="img" aria-label="4,8 h de sommeil, 310 ms de temps de réaction">
 <title>4,8 h de sommeil, 310 ms de temps de réaction</title>
 <circle class="halo" cx="210.8" cy="541.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="210.8" cy="541.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-20" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 386 ms reaction time">
+<g id="point-20" class="pt hit" tabindex="0" role="img" aria-label="4,0 h de sommeil, 386 ms de temps de réaction">
 <title>4,0 h de sommeil, 386 ms de temps de réaction</title>
 <circle class="halo" cx="118.0" cy="377.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="118.0" cy="377.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-21" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 280 ms reaction time">
+<g id="point-21" class="pt hit" tabindex="0" role="img" aria-label="6,3 h de sommeil, 280 ms de temps de réaction">
 <title>6,3 h de sommeil, 280 ms de temps de réaction</title>
 <circle class="halo" cx="384.8" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="384.8" cy="606.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-22" class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 334 ms reaction time">
+<g id="point-22" class="pt hit" tabindex="0" role="img" aria-label="4,8 h de sommeil, 334 ms de temps de réaction">
 <title>4,8 h de sommeil, 334 ms de temps de réaction</title>
 <circle class="halo" cx="210.8" cy="489.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="210.8" cy="489.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-23" class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 254 ms reaction time">
+<g id="point-23" class="pt hit" tabindex="0" role="img" aria-label="7,0 h de sommeil, 254 ms de temps de réaction">
 <title>7,0 h de sommeil, 254 ms de temps de réaction</title>
 <circle class="halo" cx="466.0" cy="662.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="466.0" cy="662.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-24" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 263 ms reaction time">
+<g id="point-24" class="pt hit" tabindex="0" role="img" aria-label="6,8 h de sommeil, 263 ms de temps de réaction">
 <title>6,8 h de sommeil, 263 ms de temps de réaction</title>
 <circle class="halo" cx="442.8" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="442.8" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-25" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 259 ms reaction time">
+<g id="point-25" class="pt hit" tabindex="0" role="img" aria-label="6,3 h de sommeil, 259 ms de temps de réaction">
 <title>6,3 h de sommeil, 259 ms de temps de réaction</title>
 <circle class="halo" cx="384.8" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="384.8" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-26" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 391 ms reaction time">
+<g id="point-26" class="pt hit" tabindex="0" role="img" aria-label="4,0 h de sommeil, 391 ms de temps de réaction">
 <title>4,0 h de sommeil, 391 ms de temps de réaction</title>
 <circle class="halo" cx="118.0" cy="366.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="118.0" cy="366.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-27" class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 302 ms reaction time">
+<g id="point-27" class="pt hit" tabindex="0" role="img" aria-label="5,8 h de sommeil, 302 ms de temps de réaction">
 <title>5,8 h de sommeil, 302 ms de temps de réaction</title>
 <circle class="halo" cx="326.8" cy="558.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="326.8" cy="558.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-28" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 312 ms reaction time">
+<g id="point-28" class="pt hit" tabindex="0" role="img" aria-label="6,5 h de sommeil, 312 ms de temps de réaction">
 <title>6,5 h de sommeil, 312 ms de temps de réaction</title>
 <circle class="halo" cx="408.0" cy="537.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="408.0" cy="537.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-29" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 281 ms reaction time">
+<g id="point-29" class="pt hit" tabindex="0" role="img" aria-label="6,8 h de sommeil, 281 ms de temps de réaction">
 <title>6,8 h de sommeil, 281 ms de temps de réaction</title>
 <circle class="halo" cx="442.8" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="442.8" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-30" class="pt hit" tabindex="0" role="img" aria-label="4.5 h slept, 327 ms reaction time">
+<g id="point-30" class="pt hit" tabindex="0" role="img" aria-label="4,5 h de sommeil, 327 ms de temps de réaction">
 <title>4,5 h de sommeil, 327 ms de temps de réaction</title>
 <circle class="halo" cx="176.0" cy="504.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="176.0" cy="504.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-31" class="pt hit" tabindex="0" role="img" aria-label="5.9 h slept, 295 ms reaction time">
+<g id="point-31" class="pt hit" tabindex="0" role="img" aria-label="5,9 h de sommeil, 295 ms de temps de réaction">
 <title>5,9 h de sommeil, 295 ms de temps de réaction</title>
 <circle class="halo" cx="338.4" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="338.4" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-32" class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 309 ms reaction time">
+<g id="point-32" class="pt hit" tabindex="0" role="img" aria-label="5,2 h de sommeil, 309 ms de temps de réaction">
 <title>5,2 h de sommeil, 309 ms de temps de réaction</title>
 <circle class="halo" cx="257.2" cy="543.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="257.2" cy="543.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-33" class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 317 ms reaction time">
+<g id="point-33" class="pt hit" tabindex="0" role="img" aria-label="5,5 h de sommeil, 317 ms de temps de réaction">
 <title>5,5 h de sommeil, 317 ms de temps de réaction</title>
 <circle class="halo" cx="292.0" cy="526.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="292.0" cy="526.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-34" class="pt hit" tabindex="0" role="img" aria-label="8.1 h slept, 234 ms reaction time">
+<g id="point-34" class="pt hit" tabindex="0" role="img" aria-label="8,1 h de sommeil, 234 ms de temps de réaction">
 <title>8,1 h de sommeil, 234 ms de temps de réaction</title>
 <circle class="halo" cx="593.6" cy="705.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="593.6" cy="705.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-35" class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 309 ms reaction time">
+<g id="point-35" class="pt hit" tabindex="0" role="img" aria-label="5,5 h de sommeil, 309 ms de temps de réaction">
 <title>5,5 h de sommeil, 309 ms de temps de réaction</title>
 <circle class="halo" cx="292.0" cy="543.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="292.0" cy="543.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-36" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 251 ms reaction time">
+<g id="point-36" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 251 ms de temps de réaction">
 <title>6,6 h de sommeil, 251 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="669.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="669.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-37" class="pt hit" tabindex="0" role="img" aria-label="7.8 h slept, 230 ms reaction time">
+<g id="point-37" class="pt hit" tabindex="0" role="img" aria-label="7,8 h de sommeil, 230 ms de temps de réaction">
 <title>7,8 h de sommeil, 230 ms de temps de réaction</title>
 <circle class="halo" cx="558.8" cy="714.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="558.8" cy="714.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-38" class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 351 ms reaction time">
+<g id="point-38" class="pt hit" tabindex="0" role="img" aria-label="5,8 h de sommeil, 351 ms de temps de réaction">
 <title>5,8 h de sommeil, 351 ms de temps de réaction</title>
 <circle class="halo" cx="326.8" cy="453.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="326.8" cy="453.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-39" class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 272 ms reaction time">
+<g id="point-39" class="pt hit" tabindex="0" role="img" aria-label="6,4 h de sommeil, 272 ms de temps de réaction">
 <title>6,4 h de sommeil, 272 ms de temps de réaction</title>
 <circle class="halo" cx="396.4" cy="623.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="396.4" cy="623.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-40" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 253 ms reaction time">
+<g id="point-40" class="pt hit" tabindex="0" role="img" aria-label="6,8 h de sommeil, 253 ms de temps de réaction">
 <title>6,8 h de sommeil, 253 ms de temps de réaction</title>
 <circle class="halo" cx="442.8" cy="664.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="442.8" cy="664.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-41" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 291 ms reaction time">
+<g id="point-41" class="pt hit" tabindex="0" role="img" aria-label="6,7 h de sommeil, 291 ms de temps de réaction">
 <title>6,7 h de sommeil, 291 ms de temps de réaction</title>
 <circle class="halo" cx="431.2" cy="582.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="431.2" cy="582.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-42" class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 370 ms reaction time">
+<g id="point-42" class="pt hit" tabindex="0" role="img" aria-label="4,9 h de sommeil, 370 ms de temps de réaction">
 <title>4,9 h de sommeil, 370 ms de temps de réaction</title>
 <circle class="halo" cx="222.4" cy="412.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="222.4" cy="412.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-43" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 244 ms reaction time">
+<g id="point-43" class="pt hit" tabindex="0" role="img" aria-label="6,7 h de sommeil, 244 ms de temps de réaction">
 <title>6,7 h de sommeil, 244 ms de temps de réaction</title>
 <circle class="halo" cx="431.2" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="431.2" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-44" class="pt hit" tabindex="0" role="img" aria-label="8.5 h slept, 227 ms reaction time">
+<g id="point-44" class="pt hit" tabindex="0" role="img" aria-label="8,5 h de sommeil, 227 ms de temps de réaction">
 <title>8,5 h de sommeil, 227 ms de temps de réaction</title>
 <circle class="halo" cx="640.0" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="640.0" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-45" class="pt hit" tabindex="0" role="img" aria-label="4.4 h slept, 329 ms reaction time">
+<g id="point-45" class="pt hit" tabindex="0" role="img" aria-label="4,4 h de sommeil, 329 ms de temps de réaction">
 <title>4,4 h de sommeil, 329 ms de temps de réaction</title>
 <circle class="halo" cx="164.4" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="164.4" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-46" class="pt hit" tabindex="0" role="img" aria-label="7.8 h slept, 206 ms reaction time">
+<g id="point-46" class="pt hit" tabindex="0" role="img" aria-label="7,8 h de sommeil, 206 ms de temps de réaction">
 <title>7,8 h de sommeil, 206 ms de temps de réaction</title>
 <circle class="halo" cx="558.8" cy="766.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="558.8" cy="766.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-47" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 300 ms reaction time">
+<g id="point-47" class="pt hit" tabindex="0" role="img" aria-label="6,8 h de sommeil, 300 ms de temps de réaction">
 <title>6,8 h de sommeil, 300 ms de temps de réaction</title>
 <circle class="halo" cx="442.8" cy="563.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="442.8" cy="563.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-48" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 310 ms reaction time">
+<g id="point-48" class="pt hit" tabindex="0" role="img" aria-label="5,7 h de sommeil, 310 ms de temps de réaction">
 <title>5,7 h de sommeil, 310 ms de temps de réaction</title>
 <circle class="halo" cx="315.2" cy="541.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="315.2" cy="541.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-49" class="pt hit" tabindex="0" role="img" aria-label="9.4 h slept, 209 ms reaction time">
+<g id="point-49" class="pt hit" tabindex="0" role="img" aria-label="9,4 h de sommeil, 209 ms de temps de réaction">
 <title>9,4 h de sommeil, 209 ms de temps de réaction</title>
 <circle class="halo" cx="744.4" cy="759.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="744.4" cy="759.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-50" class="pt hit" tabindex="0" role="img" aria-label="7.7 h slept, 236 ms reaction time">
+<g id="point-50" class="pt hit" tabindex="0" role="img" aria-label="7,7 h de sommeil, 236 ms de temps de réaction">
 <title>7,7 h de sommeil, 236 ms de temps de réaction</title>
 <circle class="halo" cx="547.2" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="547.2" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-51" class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 344 ms reaction time">
+<g id="point-51" class="pt hit" tabindex="0" role="img" aria-label="4,9 h de sommeil, 344 ms de temps de réaction">
 <title>4,9 h de sommeil, 344 ms de temps de réaction</title>
 <circle class="halo" cx="222.4" cy="468.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="222.4" cy="468.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-52" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 268 ms reaction time">
+<g id="point-52" class="pt hit" tabindex="0" role="img" aria-label="6,7 h de sommeil, 268 ms de temps de réaction">
 <title>6,7 h de sommeil, 268 ms de temps de réaction</title>
 <circle class="halo" cx="431.2" cy="632.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="431.2" cy="632.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-53" class="pt hit" tabindex="0" role="img" aria-label="7.4 h slept, 259 ms reaction time">
+<g id="point-53" class="pt hit" tabindex="0" role="img" aria-label="7,4 h de sommeil, 259 ms de temps de réaction">
 <title>7,4 h de sommeil, 259 ms de temps de réaction</title>
 <circle class="halo" cx="512.4" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="512.4" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-54" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 264 ms reaction time">
+<g id="point-54" class="pt hit" tabindex="0" role="img" aria-label="6,3 h de sommeil, 264 ms de temps de réaction">
 <title>6,3 h de sommeil, 264 ms de temps de réaction</title>
 <circle class="halo" cx="384.8" cy="641.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="384.8" cy="641.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-55" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 227 ms reaction time">
+<g id="point-55" class="pt hit" tabindex="0" role="img" aria-label="7,6 h de sommeil, 227 ms de temps de réaction">
 <title>7,6 h de sommeil, 227 ms de temps de réaction</title>
 <circle class="halo" cx="535.6" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="535.6" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-56" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 323 ms reaction time">
+<g id="point-56" class="pt hit" tabindex="0" role="img" aria-label="6,5 h de sommeil, 323 ms de temps de réaction">
 <title>6,5 h de sommeil, 323 ms de temps de réaction</title>
 <circle class="halo" cx="408.0" cy="513.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="408.0" cy="513.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-57" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 246 ms reaction time">
+<g id="point-57" class="pt hit" tabindex="0" role="img" aria-label="7,5 h de sommeil, 246 ms de temps de réaction">
 <title>7,5 h de sommeil, 246 ms de temps de réaction</title>
 <circle class="halo" cx="524.0" cy="679.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="524.0" cy="679.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-58" class="pt hit" tabindex="0" role="img" aria-label="8.6 h slept, 236 ms reaction time">
+<g id="point-58" class="pt hit" tabindex="0" role="img" aria-label="8,6 h de sommeil, 236 ms de temps de réaction">
 <title>8,6 h de sommeil, 236 ms de temps de réaction</title>
 <circle class="halo" cx="651.6" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="651.6" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-59" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 311 ms reaction time">
+<g id="point-59" class="pt hit" tabindex="0" role="img" aria-label="5,7 h de sommeil, 311 ms de temps de réaction">
 <title>5,7 h de sommeil, 311 ms de temps de réaction</title>
 <circle class="halo" cx="315.2" cy="539.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="315.2" cy="539.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-60" class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 266 ms reaction time">
+<g id="point-60" class="pt hit" tabindex="0" role="img" aria-label="6,9 h de sommeil, 266 ms de temps de réaction">
 <title>6,9 h de sommeil, 266 ms de temps de réaction</title>
 <circle class="halo" cx="454.4" cy="636.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="454.4" cy="636.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-61" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 290 ms reaction time">
+<g id="point-61" class="pt hit" tabindex="0" role="img" aria-label="6,0 h de sommeil, 290 ms de temps de réaction">
 <title>6,0 h de sommeil, 290 ms de temps de réaction</title>
 <circle class="halo" cx="350.0" cy="584.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="350.0" cy="584.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-62" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 297 ms reaction time">
+<g id="point-62" class="pt hit" tabindex="0" role="img" aria-label="6,8 h de sommeil, 297 ms de temps de réaction">
 <title>6,8 h de sommeil, 297 ms de temps de réaction</title>
 <circle class="halo" cx="442.8" cy="569.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="442.8" cy="569.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-63" class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 324 ms reaction time">
+<g id="point-63" class="pt hit" tabindex="0" role="img" aria-label="4,9 h de sommeil, 324 ms de temps de réaction">
 <title>4,9 h de sommeil, 324 ms de temps de réaction</title>
 <circle class="halo" cx="222.4" cy="511.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="222.4" cy="511.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-64" class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 304 ms reaction time">
+<g id="point-64" class="pt hit" tabindex="0" role="img" aria-label="5,8 h de sommeil, 304 ms de temps de réaction">
 <title>5,8 h de sommeil, 304 ms de temps de réaction</title>
 <circle class="halo" cx="326.8" cy="554.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="326.8" cy="554.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-65" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 293 ms reaction time">
+<g id="point-65" class="pt hit" tabindex="0" role="img" aria-label="6,3 h de sommeil, 293 ms de temps de réaction">
 <title>6,3 h de sommeil, 293 ms de temps de réaction</title>
 <circle class="halo" cx="384.8" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="384.8" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-66" class="pt hit" tabindex="0" role="img" aria-label="7.9 h slept, 281 ms reaction time">
+<g id="point-66" class="pt hit" tabindex="0" role="img" aria-label="7,9 h de sommeil, 281 ms de temps de réaction">
 <title>7,9 h de sommeil, 281 ms de temps de réaction</title>
 <circle class="halo" cx="570.4" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="570.4" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-67" class="pt hit" tabindex="0" role="img" aria-label="8.2 h slept, 258 ms reaction time">
+<g id="point-67" class="pt hit" tabindex="0" role="img" aria-label="8,2 h de sommeil, 258 ms de temps de réaction">
 <title>8,2 h de sommeil, 258 ms de temps de réaction</title>
 <circle class="halo" cx="605.2" cy="653.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="605.2" cy="653.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-68" class="pt hit" tabindex="0" role="img" aria-label="4.7 h slept, 347 ms reaction time">
+<g id="point-68" class="pt hit" tabindex="0" role="img" aria-label="4,7 h de sommeil, 347 ms de temps de réaction">
 <title>4,7 h de sommeil, 347 ms de temps de réaction</title>
 <circle class="halo" cx="199.2" cy="461.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="199.2" cy="461.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-69" class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 302 ms reaction time">
+<g id="point-69" class="pt hit" tabindex="0" role="img" aria-label="5,5 h de sommeil, 302 ms de temps de réaction">
 <title>5,5 h de sommeil, 302 ms de temps de réaction</title>
 <circle class="halo" cx="292.0" cy="558.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="292.0" cy="558.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-70" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 224 ms reaction time">
+<g id="point-70" class="pt hit" tabindex="0" role="img" aria-label="7,5 h de sommeil, 224 ms de temps de réaction">
 <title>7,5 h de sommeil, 224 ms de temps de réaction</title>
 <circle class="halo" cx="524.0" cy="727.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="524.0" cy="727.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-71" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 383 ms reaction time">
+<g id="point-71" class="pt hit" tabindex="0" role="img" aria-label="4,0 h de sommeil, 383 ms de temps de réaction">
 <title>4,0 h de sommeil, 383 ms de temps de réaction</title>
 <circle class="halo" cx="118.0" cy="383.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="118.0" cy="383.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-72" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 328 ms reaction time">
+<g id="point-72" class="pt hit" tabindex="0" role="img" aria-label="6,0 h de sommeil, 328 ms de temps de réaction">
 <title>6,0 h de sommeil, 328 ms de temps de réaction</title>
 <circle class="halo" cx="350.0" cy="502.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="350.0" cy="502.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-73" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 285 ms reaction time">
+<g id="point-73" class="pt hit" tabindex="0" role="img" aria-label="6,5 h de sommeil, 285 ms de temps de réaction">
 <title>6,5 h de sommeil, 285 ms de temps de réaction</title>
 <circle class="halo" cx="408.0" cy="595.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="408.0" cy="595.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-74" class="pt hit" tabindex="0" role="img" aria-label="8.4 h slept, 250 ms reaction time">
+<g id="point-74" class="pt hit" tabindex="0" role="img" aria-label="8,4 h de sommeil, 250 ms de temps de réaction">
 <title>8,4 h de sommeil, 250 ms de temps de réaction</title>
 <circle class="halo" cx="628.4" cy="671.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="628.4" cy="671.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-75" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 278 ms reaction time">
+<g id="point-75" class="pt hit" tabindex="0" role="img" aria-label="7,6 h de sommeil, 278 ms de temps de réaction">
 <title>7,6 h de sommeil, 278 ms de temps de réaction</title>
 <circle class="halo" cx="535.6" cy="610.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="535.6" cy="610.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-76" class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 320 ms reaction time">
+<g id="point-76" class="pt hit" tabindex="0" role="img" aria-label="6,1 h de sommeil, 320 ms de temps de réaction">
 <title>6,1 h de sommeil, 320 ms de temps de réaction</title>
 <circle class="halo" cx="361.6" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="361.6" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-77" class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 324 ms reaction time">
+<g id="point-77" class="pt hit" tabindex="0" role="img" aria-label="6,1 h de sommeil, 324 ms de temps de réaction">
 <title>6,1 h de sommeil, 324 ms de temps de réaction</title>
 <circle class="halo" cx="361.6" cy="511.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="361.6" cy="511.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-78" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 283 ms reaction time">
+<g id="point-78" class="pt hit" tabindex="0" role="img" aria-label="6,2 h de sommeil, 283 ms de temps de réaction">
 <title>6,2 h de sommeil, 283 ms de temps de réaction</title>
 <circle class="halo" cx="373.2" cy="599.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="373.2" cy="599.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-79" class="pt hit" tabindex="0" role="img" aria-label="8.7 h slept, 265 ms reaction time">
+<g id="point-79" class="pt hit" tabindex="0" role="img" aria-label="8,7 h de sommeil, 265 ms de temps de réaction">
 <title>8,7 h de sommeil, 265 ms de temps de réaction</title>
 <circle class="halo" cx="663.2" cy="638.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="663.2" cy="638.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-80" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 270 ms reaction time">
+<g id="point-80" class="pt hit" tabindex="0" role="img" aria-label="6,0 h de sommeil, 270 ms de temps de réaction">
 <title>6,0 h de sommeil, 270 ms de temps de réaction</title>
 <circle class="halo" cx="350.0" cy="628.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="350.0" cy="628.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-81" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 320 ms reaction time">
+<g id="point-81" class="pt hit" tabindex="0" role="img" aria-label="6,2 h de sommeil, 320 ms de temps de réaction">
 <title>6,2 h de sommeil, 320 ms de temps de réaction</title>
 <circle class="halo" cx="373.2" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="373.2" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-82" class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 284 ms reaction time">
+<g id="point-82" class="pt hit" tabindex="0" role="img" aria-label="7,1 h de sommeil, 284 ms de temps de réaction">
 <title>7,1 h de sommeil, 284 ms de temps de réaction</title>
 <circle class="halo" cx="477.6" cy="597.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="477.6" cy="597.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-83" class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 313 ms reaction time">
+<g id="point-83" class="pt hit" tabindex="0" role="img" aria-label="6,4 h de sommeil, 313 ms de temps de réaction">
 <title>6,4 h de sommeil, 313 ms de temps de réaction</title>
 <circle class="halo" cx="396.4" cy="535.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="396.4" cy="535.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-84" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 342 ms reaction time">
+<g id="point-84" class="pt hit" tabindex="0" role="img" aria-label="6,3 h de sommeil, 342 ms de temps de réaction">
 <title>6,3 h de sommeil, 342 ms de temps de réaction</title>
 <circle class="halo" cx="384.8" cy="472.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="384.8" cy="472.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-85" class="pt hit" tabindex="0" role="img" aria-label="5.0 h slept, 367 ms reaction time">
+<g id="point-85" class="pt hit" tabindex="0" role="img" aria-label="5,0 h de sommeil, 367 ms de temps de réaction">
 <title>5,0 h de sommeil, 367 ms de temps de réaction</title>
 <circle class="halo" cx="234.0" cy="418.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="234.0" cy="418.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-86" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 256 ms reaction time">
+<g id="point-86" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 256 ms de temps de réaction">
 <title>6,6 h de sommeil, 256 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="658.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="658.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-87" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 259 ms reaction time">
+<g id="point-87" class="pt hit" tabindex="0" role="img" aria-label="6,0 h de sommeil, 259 ms de temps de réaction">
 <title>6,0 h de sommeil, 259 ms de temps de réaction</title>
 <circle class="halo" cx="350.0" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="350.0" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-88" class="pt hit" tabindex="0" role="img" aria-label="8.2 h slept, 261 ms reaction time">
+<g id="point-88" class="pt hit" tabindex="0" role="img" aria-label="8,2 h de sommeil, 261 ms de temps de réaction">
 <title>8,2 h de sommeil, 261 ms de temps de réaction</title>
 <circle class="halo" cx="605.2" cy="647.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="605.2" cy="647.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-89" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 233 ms reaction time">
+<g id="point-89" class="pt hit" tabindex="0" role="img" aria-label="7,5 h de sommeil, 233 ms de temps de réaction">
 <title>7,5 h de sommeil, 233 ms de temps de réaction</title>
 <circle class="halo" cx="524.0" cy="707.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="524.0" cy="707.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-90" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 286 ms reaction time">
+<g id="point-90" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 286 ms de temps de réaction">
 <title>6,6 h de sommeil, 286 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="593.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="593.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-91" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 281 ms reaction time">
+<g id="point-91" class="pt hit" tabindex="0" role="img" aria-label="7,5 h de sommeil, 281 ms de temps de réaction">
 <title>7,5 h de sommeil, 281 ms de temps de réaction</title>
 <circle class="halo" cx="524.0" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="524.0" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-92" class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 256 ms reaction time">
+<g id="point-92" class="pt hit" tabindex="0" role="img" aria-label="6,1 h de sommeil, 256 ms de temps de réaction">
 <title>6,1 h de sommeil, 256 ms de temps de réaction</title>
 <circle class="halo" cx="361.6" cy="658.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="361.6" cy="658.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-93" class="pt hit" tabindex="0" role="img" aria-label="8.1 h slept, 189 ms reaction time">
+<g id="point-93" class="pt hit" tabindex="0" role="img" aria-label="8,1 h de sommeil, 189 ms de temps de réaction">
 <title>8,1 h de sommeil, 189 ms de temps de réaction</title>
 <circle class="halo" cx="593.6" cy="803.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="593.6" cy="803.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-94" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 292 ms reaction time">
+<g id="point-94" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 292 ms de temps de réaction">
 <title>6,6 h de sommeil, 292 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="580.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="580.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-95" class="pt hit" tabindex="0" role="img" aria-label="7.4 h slept, 263 ms reaction time">
+<g id="point-95" class="pt hit" tabindex="0" role="img" aria-label="7,4 h de sommeil, 263 ms de temps de réaction">
 <title>7,4 h de sommeil, 263 ms de temps de réaction</title>
 <circle class="halo" cx="512.4" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="512.4" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-96" class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 329 ms reaction time">
+<g id="point-96" class="pt hit" tabindex="0" role="img" aria-label="4,8 h de sommeil, 329 ms de temps de réaction">
 <title>4,8 h de sommeil, 329 ms de temps de réaction</title>
 <circle class="halo" cx="210.8" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="210.8" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-97" class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 273 ms reaction time">
+<g id="point-97" class="pt hit" tabindex="0" role="img" aria-label="7,1 h de sommeil, 273 ms de temps de réaction">
 <title>7,1 h de sommeil, 273 ms de temps de réaction</title>
 <circle class="halo" cx="477.6" cy="621.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="477.6" cy="621.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-98" class="pt hit" tabindex="0" role="img" aria-label="4.2 h slept, 329 ms reaction time">
+<g id="point-98" class="pt hit" tabindex="0" role="img" aria-label="4,2 h de sommeil, 329 ms de temps de réaction">
 <title>4,2 h de sommeil, 329 ms de temps de réaction</title>
 <circle class="halo" cx="141.2" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="141.2" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-99" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 319 ms reaction time">
+<g id="point-99" class="pt hit" tabindex="0" role="img" aria-label="4,0 h de sommeil, 319 ms de temps de réaction">
 <title>4,0 h de sommeil, 319 ms de temps de réaction</title>
 <circle class="halo" cx="118.0" cy="522.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="118.0" cy="522.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-100" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
+<g id="point-100" class="pt hit" tabindex="0" role="img" aria-label="6,2 h de sommeil, 293 ms de temps de réaction">
 <title>6,2 h de sommeil, 293 ms de temps de réaction</title>
 <circle class="halo" cx="373.2" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-101" class="pt hit" tabindex="0" role="img" aria-label="5.3 h slept, 295 ms reaction time">
+<g id="point-101" class="pt hit" tabindex="0" role="img" aria-label="5,3 h de sommeil, 295 ms de temps de réaction">
 <title>5,3 h de sommeil, 295 ms de temps de réaction</title>
 <circle class="halo" cx="268.8" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="268.8" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-102" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 236 ms reaction time">
+<g id="point-102" class="pt hit" tabindex="0" role="img" aria-label="6,8 h de sommeil, 236 ms de temps de réaction">
 <title>6,8 h de sommeil, 236 ms de temps de réaction</title>
 <circle class="halo" cx="442.8" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="442.8" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-103" class="pt hit" tabindex="0" role="img" aria-label="9.5 h slept, 217 ms reaction time">
+<g id="point-103" class="pt hit" tabindex="0" role="img" aria-label="9,5 h de sommeil, 217 ms de temps de réaction">
 <title>9,5 h de sommeil, 217 ms de temps de réaction</title>
 <circle class="halo" cx="756.0" cy="742.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="756.0" cy="742.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-104" class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 316 ms reaction time">
+<g id="point-104" class="pt hit" tabindex="0" role="img" aria-label="5,4 h de sommeil, 316 ms de temps de réaction">
 <title>5,4 h de sommeil, 316 ms de temps de réaction</title>
 <circle class="halo" cx="280.4" cy="528.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="280.4" cy="528.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-105" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 320 ms reaction time">
+<g id="point-105" class="pt hit" tabindex="0" role="img" aria-label="5,7 h de sommeil, 320 ms de temps de réaction">
 <title>5,7 h de sommeil, 320 ms de temps de réaction</title>
 <circle class="halo" cx="315.2" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="315.2" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-106" class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 251 ms reaction time">
+<g id="point-106" class="pt hit" tabindex="0" role="img" aria-label="6,9 h de sommeil, 251 ms de temps de réaction">
 <title>6,9 h de sommeil, 251 ms de temps de réaction</title>
 <circle class="halo" cx="454.4" cy="669.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="454.4" cy="669.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-107" class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 249 ms reaction time">
+<g id="point-107" class="pt hit" tabindex="0" role="img" aria-label="7,3 h de sommeil, 249 ms de temps de réaction">
 <title>7,3 h de sommeil, 249 ms de temps de réaction</title>
 <circle class="halo" cx="500.8" cy="673.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="500.8" cy="673.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-108" class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 266 ms reaction time">
+<g id="point-108" class="pt hit" tabindex="0" role="img" aria-label="6,4 h de sommeil, 266 ms de temps de réaction">
 <title>6,4 h de sommeil, 266 ms de temps de réaction</title>
 <circle class="halo" cx="396.4" cy="636.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="396.4" cy="636.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-109" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 270 ms reaction time">
+<g id="point-109" class="pt hit" tabindex="0" role="img" aria-label="6,3 h de sommeil, 270 ms de temps de réaction">
 <title>6,3 h de sommeil, 270 ms de temps de réaction</title>
 <circle class="halo" cx="384.8" cy="628.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="384.8" cy="628.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-110" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 263 ms reaction time">
+<g id="point-110" class="pt hit" tabindex="0" role="img" aria-label="7,6 h de sommeil, 263 ms de temps de réaction">
 <title>7,6 h de sommeil, 263 ms de temps de réaction</title>
 <circle class="halo" cx="535.6" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="535.6" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-111" class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
+<g id="point-111" class="pt hit" tabindex="0" role="img" aria-label="7,3 h de sommeil, 244 ms de temps de réaction">
 <title>7,3 h de sommeil, 244 ms de temps de réaction</title>
 <circle class="halo" cx="500.8" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-112" class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 335 ms reaction time">
+<g id="point-112" class="pt hit" tabindex="0" role="img" aria-label="5,2 h de sommeil, 335 ms de temps de réaction">
 <title>5,2 h de sommeil, 335 ms de temps de réaction</title>
 <circle class="halo" cx="257.2" cy="487.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="257.2" cy="487.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-113" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 297 ms reaction time">
+<g id="point-113" class="pt hit" tabindex="0" role="img" aria-label="6,5 h de sommeil, 297 ms de temps de réaction">
 <title>6,5 h de sommeil, 297 ms de temps de réaction</title>
 <circle class="halo" cx="408.0" cy="569.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="408.0" cy="569.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-114" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 336 ms reaction time">
+<g id="point-114" class="pt hit" tabindex="0" role="img" aria-label="6,6 h de sommeil, 336 ms de temps de réaction">
 <title>6,6 h de sommeil, 336 ms de temps de réaction</title>
 <circle class="halo" cx="419.6" cy="485.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="419.6" cy="485.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-115" class="pt hit" tabindex="0" role="img" aria-label="5.1 h slept, 290 ms reaction time">
+<g id="point-115" class="pt hit" tabindex="0" role="img" aria-label="5,1 h de sommeil, 290 ms de temps de réaction">
 <title>5,1 h de sommeil, 290 ms de temps de réaction</title>
 <circle class="halo" cx="245.6" cy="584.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="245.6" cy="584.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-116" class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 298 ms reaction time">
+<g id="point-116" class="pt hit" tabindex="0" role="img" aria-label="7,0 h de sommeil, 298 ms de temps de réaction">
 <title>7,0 h de sommeil, 298 ms de temps de réaction</title>
 <circle class="halo" cx="466.0" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="466.0" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-117" class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 317 ms reaction time">
+<g id="point-117" class="pt hit" tabindex="0" role="img" aria-label="5,4 h de sommeil, 317 ms de temps de réaction">
 <title>5,4 h de sommeil, 317 ms de temps de réaction</title>
 <circle class="halo" cx="280.4" cy="526.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="280.4" cy="526.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-118" class="pt hit" tabindex="0" role="img" aria-label="8.0 h slept, 247 ms reaction time">
+<g id="point-118" class="pt hit" tabindex="0" role="img" aria-label="8,0 h de sommeil, 247 ms de temps de réaction">
 <title>8,0 h de sommeil, 247 ms de temps de réaction</title>
 <circle class="halo" cx="582.0" cy="677.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="582.0" cy="677.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
-<g id="point-119" class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 240 ms reaction time">
+<g id="point-119" class="pt hit" tabindex="0" role="img" aria-label="6,9 h de sommeil, 240 ms de temps de réaction">
 <title>6,9 h de sommeil, 240 ms de temps de réaction</title>
 <circle class="halo" cx="454.4" cy="692.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="jp-dot" cx="454.4" cy="692.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>

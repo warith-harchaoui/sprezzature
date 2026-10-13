@@ -64,39 +64,39 @@
 <path d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 <path class="pa-line" d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FF9500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="225.4" y="521.2" font-size="21" font-weight="600" fill="#FF9500">% cumulé</text>
-<g id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Login &amp; password resets: cumulative 34.2% of total">
+<g id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Connexion &amp; mots de passe : cumul 34,2 % du total">
 <circle class="halo" cx="207.4" cy="535.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="207.4" cy="535.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Billing &amp; invoice errors: cumulative 58.8% of total">
+<g id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Erreurs de facturation : cumul 58,8 % du total">
 <circle class="halo" cx="322.3" cy="423.9" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="322.3" cy="423.9" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Sync fails across devices: cumulative 74.3% of total">
+<g id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Échecs de synchro entre appareils : cumul 74,3 % du total">
 <circle class="halo" cx="437.2" cy="353.7" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="437.2" cy="353.7" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Slow / timing-out pages: cumulative 82.2% of total">
+<g id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Pages lentes / expirées : cumul 82,2 % du total">
 <circle class="halo" cx="552.1" cy="317.6" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="552.1" cy="317.6" r="10.0" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Export to PDF broken: cumulative 88.4% of total">
+<g id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Export PDF cassé : cumul 88,4 % du total">
 <circle class="halo" cx="667.0" cy="289.8" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="667.0" cy="289.8" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Notifications not arriving: cumulative 92.6% of total">
+<g id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Notifications non reçues : cumul 92,6 % du total">
 <circle class="halo" cx="781.9" cy="270.6" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="781.9" cy="270.6" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Mobile app crashes: cumulative 95.8% of total">
+<g id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Plantages de l&#x27;appli mobile : cumul 95,8 % du total">
 <circle class="halo" cx="896.8" cy="256.3" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="896.8" cy="256.3" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Feature requests: cumulative 98.2% of total">
+<g id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Demandes de fonctionnalités : cumul 98,2 % du total">
 <circle class="halo" cx="1011.7" cy="245.5" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="1011.7" cy="245.5" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
-<g id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Everything else: cumulative 100.0% of total">
+<g id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Tout le reste : cumul 100,0 % du total">
 <circle class="halo" cx="1126.6" cy="237.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="pa-line" cx="1126.6" cy="237.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
 </g>
