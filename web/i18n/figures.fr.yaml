@@ -104,6 +104,32 @@ $71: $71
 $80k: $80k
 $81.7k: $81.7k
 $k: k$
+'14.3% of the whole': '14,3 % du tout'
+'2 smaller categories, summed': '2 catégories plus petites, sommées'
+'22.5% of the whole': '22,5 % du tout'
+'35.5% of the whole': '35,5 % du tout'
+'5.3% of the whole': '5,3 % du tout'
+'5.5% of the whole': '5,5 % du tout'
+'7 parts of a whole · Other groups the 2 smallest': '7 parts d''un tout · Autre regroupe les 2 plus petites'
+'7.8% of the whole': '7,8 % du tout'
+'9.1% of the whole': '9,1 % du tout'
+'Coal': 'Charbon'
+'Hydro': 'Hydraulique'
+'Natural gas': 'Gaz naturel'
+'Nuclear': 'Nucléaire'
+'Other': 'Autre'
+'Pie chart of 7 parts of a whole totalling 100%. The largest is Coal at 36%. Every slice is labelled on the figure; hover or focus one for its exact value.': 'Camembert de 7 parts d''un tout totalisant 100 %. La plus grande est Charbon, à 36 %. Chaque part est étiquetée sur la figure ; survolez-en une ou donnez-lui le focus pour sa valeur exacte.'
+'Share of global generation by source, 2024': 'Part de la production mondiale par source, 2024'
+'Solar': 'Solaire'
+'Two thirds of the world''s electricity still comes from burning something': 'Les deux tiers de l''électricité mondiale viennent encore d''une combustion'
+'Wind': 'Éolien'
+'rank 1 of 7': 'rang 1 sur 7'
+'rank 2 of 7': 'rang 2 sur 7'
+'rank 3 of 7': 'rang 3 sur 7'
+'rank 4 of 7': 'rang 4 sur 7'
+'rank 5 of 7': 'rang 5 sur 7'
+'rank 6 of 7': 'rang 6 sur 7'
+'rank 7 of 7': 'rang 7 sur 7'
 (Wh/kg): (Wh/kg)
 (cycles): (cycles)
 (datum.colIndex - 1) * gap: (datum.colIndex - 1) * gap
