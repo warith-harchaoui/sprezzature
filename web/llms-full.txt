@@ -407,6 +407,9 @@ Forecast fan : A forecast drawn with the width of its own uncertainty.
 Control chart : A process behaving, until it stops.
 ↓ Python + CSV + SVG kit (63 KB)
 
+Missing-data matrix : Where the holes are, and whether they fall together.
+↓ Python + CSV + SVG kit (112 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.

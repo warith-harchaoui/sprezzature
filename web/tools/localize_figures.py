@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import glob
 import html
+import math
 import re
 import sys
 from pathlib import Path
@@ -71,11 +72,25 @@ def _fit_canvas(svg: str) -> str:
     vw, vh = float(vb.group(1)), float(vb.group(2))
 
     max_right = 0.0
+    min_left = vw
     for tm in re.finditer(r"<text\b([^>]*)>(.*?)</text>", svg, re.S):
         attrs, inner = tm.group(1), tm.group(2)
         xa = re.search(r'\bx="(-?[\d.]+)"', attrs)
         if not xa:
             continue
+        # A rotated label does not occupy the horizontal box that its
+        # width implies: turned by t degrees about its anchor it spans
+        # w*|cos t| across. Measuring it flat padded the French dendrogram
+        # by 737px for a label that was never clipped; ignoring it instead
+        # would under-measure the long diagonal category names that really
+        # do reach the edge. So it is projected.
+        transform = re.search(r'\btransform="([^"]*)"', attrs)
+        angle = 0.0
+        if transform:
+            spin = re.search(r"rotate\(\s*(-?[\d.]+)", transform.group(1))
+            if spin:
+                angle = float(spin.group(1))
+        squeeze = abs(math.cos(math.radians(angle)))
         x = float(xa.group(1))
         fs_a = re.search(r'font-size="([\d.]+)', attrs)
         fs = float(fs_a.group(1)) if fs_a else 16.0
@@ -96,14 +111,27 @@ def _fit_canvas(svg: str) -> str:
                 pieces.append((float(txa.group(1)) if txa else x,
                                float(tfs.group(1)) if tfs else fs, txt, anchor))
         else:
-            visible = re.sub(r"<[^>]+>", "", inner)
+            # Strip the nested <title> first. A leaf label that carries its
+            # own tooltip looks like "<text>Yaourts<title>Yaourts — Frais &
+            # santé</title></text>", and taking the tags out without taking
+            # their contents out measures the label plus its tooltip as one
+            # run -- three times the real width, which is how the French
+            # dendrogram came to ask for 546 pixels it did not need.
+            visible = re.sub(r"<[^>]+>", "", NESTED_TAG.sub("", inner))
             pieces.append((x, fs, visible, anchor))
         for px, pfs, txt, anc in pieces:
-            w = text_width(txt.strip(), pfs, mono=mono)
+            w = text_width(txt.strip(), pfs, mono=mono) * squeeze
             right = px + w if anc == "start" else (px + w / 2 if anc == "middle" else px)
+            left = px if anc == "start" else (px - w / 2 if anc == "middle" else px - w)
             max_right = max(max_right, right)
+            min_left = min(min_left, left)
 
-    pad = max_right + 22.0 - vw  # keep a comfortable right margin, not a hairline
+    # Both edges, not just the right one. An axis title anchored at the end
+    # of its run grows *leftwards* when it is translated, and the French
+    # missing-matrix lost the first nine characters of "Enregistrements,
+    # par ordre d'arrivée" off the left of the canvas while this function,
+    # looking only rightwards, reported nothing to do.
+    pad = max(max_right + 22.0 - vw, 22.0 - min_left)
     if pad <= 2.0:
         return svg
     pad = min(pad, 0.4 * vw)  # never balloon the canvas
