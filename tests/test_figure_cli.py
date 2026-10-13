@@ -100,8 +100,15 @@ def test_the_palette_levels_are_the_suite_s_own():
     assert tuple(ns["LEVELS"]) == figure_cli.LEVELS
 
 
-def test_the_form_can_claim_127_kinds():
+def test_the_form_can_back_the_count_it_claims():
     """The description says "127 chart kinds" out loud; the select must back it.
+
+    Not an equality: the strings above are read off a committed screenshot,
+    which is a snapshot of one past demo and does not grow, while the
+    catalogue does -- it passed 127 when `pie` was added. Equality would
+    turn every new figure in the sibling repo into a failure here, about a
+    PNG nobody is going to re-shoot. What still has to hold is that the
+    form could have offered what it advertised.
 
     Skipped rather than failed without the catalog: figure_cli deliberately
     falls back to a one-entry list so the form still renders from a bare clone,
@@ -110,5 +117,5 @@ def test_the_form_can_claim_127_kinds():
     if figure_cli.catalog() is None:
         pytest.skip("sprezzature-figures catalog not reachable")
     kinds = figure_cli.kinds()
-    assert len(kinds) == 127, f"description says 127, catalog has {len(kinds)}"
+    assert len(kinds) >= 127, f"description says 127, catalog has only {len(kinds)}"
     assert "bar" in kinds, "the capture shows 'bar' selected"
