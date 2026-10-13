@@ -536,7 +536,10 @@ def generator_source(path: Path, rows: Sequence[dict]) -> str:
     """
     source = path.read_text(encoding="utf-8")
     source = re.sub(
-        r"^from (?:_[a-z]+|sprezzature_figures\.fonts) import ",
+        # ``[a-z0-9_]`` rather than ``[a-z]``: `_project3d` carries a digit,
+        # and the narrower class left its import untouched, so the kit's
+        # generator looked for a module the kit does not ship.
+        r"^from (?:_[a-z][a-z0-9_]*|sprezzature_figures\.fonts) import ",
         "from sprezzature_svg import ",
         source,
         flags=re.MULTILINE,
@@ -544,7 +547,7 @@ def generator_source(path: Path, rows: Sequence[dict]) -> str:
     # A couple of generators reach for a whole helper module rather than
     # naming what they want (``import _style`` … ``_style.CORNERS``).
     source = re.sub(
-        r"^import (_[a-z]+)$",
+        r"^import (_[a-z][a-z0-9_]*)$",
         r"import sprezzature_svg as \1",
         source,
         flags=re.MULTILINE,
