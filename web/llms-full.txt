@@ -422,6 +422,9 @@ SHAP waterfall : One prediction, taken apart.
 SHAP beeswarm : Every row's explanation, and when the colour lies.
 ↓ Python + CSV + SVG kit (90 KB)
 
+Partial dependence and ICE : The average effect, and the rows that disagree with it.
+↓ Python + CSV + SVG kit (78 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
