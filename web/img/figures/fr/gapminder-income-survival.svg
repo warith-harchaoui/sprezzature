@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 520" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="gm-t gm-d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 520" font-family="Roboto, system-ui, sans-serif" role="img" aria-labelledby="gm-t gm-d"><rect width="1024" height="520" fill="#FFFFFF"/><g transform="translate(2,0)">
 <title id="gm-t">PIB par habitant et survie infantile, 1950 à 2025</title>
 <desc id="gm-d">An animated bubble chart in homage to Hans Rosling, one frame per year from 1950 to 2025. Each bubble is a country: horizontal is GDP per capita on a log scale, vertical is the share of children who reach their fifth birthday, area is population, colour is world region. The vertical axis uses a spread scale so that 90, 99 and 99.9 percent are evenly spaced, keeping the last hard-won gains visible instead of piling every country against the top. As the years tick by the whole cloud sweeps up and to the right: as countries grow richer, far more of their children live. Historical federations (USSR, Yugoslavia, Czechoslovakia) show as one bubble until they dissolve; divided nations (East and West Germany, North and South Vietnam and Yemen) show as two until they merge. Recent years are part-projected.</desc>
 <rect width="1020" height="520" fill="#FFFFFF"/>
@@ -393,4 +393,4 @@ window.addEventListener("mousemove",function(e){if(!dg)return;var r=S.getBoundin
 window.addEventListener("mouseup",function(){dg=false;});
 try{window.parent.document.addEventListener("fullscreenchange",function(){if(!big()){V=B.slice();ap();}});}catch(e){}
 })();]]></script>
-</svg>
+</g></svg>
