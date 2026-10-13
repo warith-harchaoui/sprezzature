@@ -401,6 +401,9 @@ ACF correlogram : How far back a series remembers, and how much of that is direc
 Seasonal decomposition : The climb, the year's shape, and the month that is neither.
 ↓ Python + CSV + SVG kit (76 KB)
 
+Forecast fan : A forecast drawn with the width of its own uncertainty.
+↓ Python + CSV + SVG kit (61 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
