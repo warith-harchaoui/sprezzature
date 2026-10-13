@@ -371,3 +371,11 @@
   write: '{0} (Norme)'
 - match: 'Vector field over a ([-\d.,\u202f ]+)x([-\d.,\u202f ]+) grid, peak magnitude ([-\d.,\u202f ]+)\. Hover or focus an arrow for its exact vector\.'
   write: 'Champ de vecteurs sur une grille {0} × {1}, norme maximale {2}. Survolez une flèche ou donnez-lui le focus pour son vecteur exact.'
+
+# ── Histogramme à deux dimensions : une étiquette par case ────────────────
+# « 1–2 × 6–8: 14 points » est la même phrase écrite une fois par case
+# occupée — 132 pour la seule figure hist2d. Une règle suffit.
+- match: '([-\d.,\u202f ]+)–([-\d.,\u202f ]+) × ([-\d.,\u202f ]+)–([-\d.,\u202f ]+): (\d+) points'
+  write: '{0}–{1} × {2}–{3}\u00a0: {4} points'
+- match: '([-\d.,\u202f ]+)–([-\d.,\u202f ]+) × ([-\d.,\u202f ]+)–([-\d.,\u202f ]+): (\d+) point'
+  write: '{0}–{1} × {2}–{3}\u00a0: {4} point'

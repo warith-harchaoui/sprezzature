@@ -330,24 +330,20 @@
         <p class="mt-3 max-w-3xl text-neutral-600 dark:text-neutral-300">Les cartes de ces données dessinent tout cela avec le même point. C&rsquo;est affirmer un coin de rue que la source n&rsquo;a jamais donné, une fois par ligne, plusieurs centaines de fois par figure. Ici le code atteint la marque :</p>
         <dl class="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-3">
           <div>
-            <dt class="font-semibold">Un lieu nommé</dt>
+            <dt class="flex items-center gap-2 font-semibold"><svg viewBox="0 0 44 44" width="36" height="36" role="img" aria-label="La marque d'un lieu nomme : un disque plein cercle de blanc." class="shrink-0 rounded-md"><rect width="44" height="44" rx="6" fill="#f4efdd"/><circle cx="22" cy="22" r="7" fill="#0072B2" stroke="#fff" stroke-width="2"/></svg><span>Un lieu nommé</span></dt>
             <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Un disque plein cerclé de blanc. La marque veut dire ce qu&rsquo;elle a toujours voulu dire : on connaît l&rsquo;endroit.</dd>
           </div>
           <div>
-            <dt class="font-semibold">Un lieu qui tient lieu de zone</dt>
+            <dt class="flex items-center gap-2 font-semibold"><svg viewBox="0 0 44 44" width="36" height="36" role="img" aria-label="La marque d'une position approximative : un anneau creux." class="shrink-0 rounded-md"><rect width="44" height="44" rx="6" fill="#f4efdd"/><circle cx="22" cy="22" r="7" fill="#ffffff" fill-opacity="0.65" stroke="#0072B2" stroke-width="3.2"/></svg><span>Un lieu qui tient lieu de zone</span></dt>
             <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Un anneau creux. Le vieux signal cartographique du «&nbsp;par ici&nbsp;», et contrairement à un disque de rayon inventé il n&rsquo;affirme rien qu&rsquo;il ne puisse soutenir. Quand le jeu de données énonce un rayon &mdash; le <code>where_prec</code> 2 d&rsquo;UCDP dit environ 25&nbsp;km &mdash; il est dessiné, à l&rsquo;échelle du plateau.</dd>
           </div>
           <div>
-            <dt class="font-semibold">Une région épinglée à son chef-lieu</dt>
+            <dt class="flex items-center gap-2 font-semibold"><svg viewBox="0 0 44 44" width="36" height="36" role="img" aria-label="La marque d'une region epinglee a son chef-lieu : un anneau creux brise." class="shrink-0 rounded-md"><rect width="44" height="44" rx="6" fill="#f4efdd"/><circle cx="22" cy="22" r="7" fill="#ffffff" fill-opacity="0.65" stroke="#0072B2" stroke-width="3.2" stroke-dasharray="3 2.2"/></svg><span>Une région épinglée à son chef-lieu</span></dt>
             <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Un anneau creux <em>brisé</em> : un pas de plus loin de «&nbsp;un lieu&nbsp;». La date se dit de la même manière, depuis <code>time_precision</code> &mdash; «&nbsp;semaine du&nbsp;», «&nbsp;mois de&nbsp;», «&nbsp;en 2023&nbsp;».</dd>
           </div>
         </dl>
         <p class="mt-6 max-w-3xl text-neutral-600 dark:text-neutral-300">Les lignes qu&rsquo;on ne peut pas placer honnêtement <strong>ne sont pas placées</strong>. Une ligne UCDP en <code>where_prec</code> 6 se voit refuser un point par défaut, et le compte part sur la ligne de méthode du plateau au lieu de disparaître &mdash; une suppression silencieuse étant l&rsquo;autre moitié de la même malhonnêteté.</p>
-        <pre class="mt-6 max-w-3xl overflow-x-auto rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm dark:border-neutral-800 dark:bg-neutral-900"><code>from sprezzature_maps import acled_events, make_situation_map
-
-cfg = {"title": "Soudan : violences politiques recensées, 2024"}
-cfg.update(acled_events("soudan-2024.csv", derive_region=True))
-make_situation_map(config=cfg, out="soudan.svg")</code></pre>
+        <p class="mt-6 max-w-3xl text-neutral-600 dark:text-neutral-300">Entre le fichier et la marque, il y a un appel. <code class="rounded bg-neutral-100 px-1.5 py-0.5 text-sm dark:bg-neutral-800">acled_events("soudan-2024.csv", derive_region=True)</code> renvoie un fragment de configuration dont chaque clé était déjà lue par le générateur&nbsp;: <code class="rounded bg-neutral-100 px-1.5 py-0.5 text-sm dark:bg-neutral-800">cfg.update(...)</code> suffit, et une configuration écrite à la main garde tout ce qu&rsquo;elle dit. <code class="rounded bg-neutral-100 px-1.5 py-0.5 text-sm dark:bg-neutral-800">ucdp_events</code> fait de même pour GED.</p>
         <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">Les noms de colonnes, les plages de codes et la formulation de chaque code viennent du codebook ACLED et du codebook UCDP GED, lus plutôt que récités. Ce que ce paquet laisse délibérément à CShapes, PRIO-GRID, geoBoundaries et GeoPandas est listé dans <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps/blob/main/LANDSCAPE.md">LANDSCAPE.md</a>.</p>
       </div>
     </section>
