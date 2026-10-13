@@ -47,6 +47,9 @@ _TIP_PAD = 9.0
 _TIP_LH_FACTOR = 1.28
 
 
+_MONO_HINT = re.compile(r"mono|courier|consolas|menlo", re.I)
+
+
 def _fit_canvas(svg: str) -> str:
     """Widen the canvas so localised (usually longer) text is not clipped.
 
@@ -78,6 +81,11 @@ def _fit_canvas(svg: str) -> str:
         fs = float(fs_a.group(1)) if fs_a else 16.0
         anchor_a = re.search(r'text-anchor="(\w+)"', attrs)
         anchor = anchor_a.group(1) if anchor_a else "start"
+        # A monospaced caption is about 40% wider than the proportional
+        # table says, which is how the French control-chart limit captions
+        # came to be clipped while this fitter reported room to spare.
+        family_a = re.search(r'font-family="([^"]*)"', attrs)
+        mono = bool(family_a) and _MONO_HINT.search(family_a.group(1)) is not None
         # Prefer per-tspan positions when present; else the whole visible text.
         tspans = re.findall(r'<tspan\b([^>]*)>([^<]*)</tspan>', inner)
         pieces = []
@@ -91,7 +99,7 @@ def _fit_canvas(svg: str) -> str:
             visible = re.sub(r"<[^>]+>", "", inner)
             pieces.append((x, fs, visible, anchor))
         for px, pfs, txt, anc in pieces:
-            w = text_width(txt.strip(), pfs)
+            w = text_width(txt.strip(), pfs, mono=mono)
             right = px + w if anc == "start" else (px + w / 2 if anc == "middle" else px)
             max_right = max(max_right, right)
 

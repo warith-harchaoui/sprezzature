@@ -61,52 +61,52 @@
 <line class="cal-stem-over" x1="804.6" y1="467.0" x2="804.6" y2="345.4" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
 <line class="cal-stem-over" x1="881.1" y1="368.4" x2="881.1" y2="268.9" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
 <path class="cal-curve" d="M 163.3 907.0 L 247.2 787.7 L 326.3 745.9 L 405.1 711.2 L 483.3 659.7 L 566.9 588.7 L 646.4 616.4 L 724.9 560.6 L 804.6 467.0 L 881.1 368.4" fill="none" stroke="#AF52DE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
-<g id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Predicted 4%, observed 14% (gap +10%, under-states); 1017 predictions">
+<g id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Prédit 4 %, observé 14 % (écart +10 %, sous-estime) ; 1017 prédictions">
 <title>Prédit 4 %, observé 14 % (écart +10 %, sous-estime) ; 1017 prédictions</title>
 <circle class="halo" cx="163.3" cy="907.0" r="34.0" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-under" cx="163.3" cy="907.0" r="26.0" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Predicted 15%, observed 29% (gap +14%, under-states); 564 predictions">
+<g id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Prédit 15 %, observé 29 % (écart +14 %, sous-estime) ; 564 prédictions">
 <title>Prédit 15 %, observé 29 % (écart +14 %, sous-estime) ; 564 prédictions</title>
 <circle class="halo" cx="247.2" cy="787.7" r="29.7" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-under" cx="247.2" cy="787.7" r="21.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Predicted 25%, observed 35% (gap +10%, under-states); 447 predictions">
+<g id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Prédit 25 %, observé 35 % (écart +10 %, sous-estime) ; 447 prédictions">
 <title>Prédit 25 %, observé 35 % (écart +10 %, sous-estime) ; 447 prédictions</title>
 <circle class="halo" cx="326.3" cy="745.9" r="28.3" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-under" cx="326.3" cy="745.9" r="20.3" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Predicted 35%, observed 39% (gap +4%, under-states); 356 predictions">
+<g id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Prédit 35 %, observé 39 % (écart +4 %, sous-estime) ; 356 prédictions">
 <title>Prédit 35 %, observé 39 % (écart +4 %, sous-estime) ; 356 prédictions</title>
 <circle class="halo" cx="405.1" cy="711.2" r="27.1" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-under" cx="405.1" cy="711.2" r="19.1" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Predicted 45%, observed 46% (gap +1%, under-states); 334 predictions">
+<g id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Prédit 45 %, observé 46 % (écart +1 %, sous-estime) ; 334 prédictions">
 <title>Prédit 45 %, observé 46 % (écart +1 %, sous-estime) ; 334 prédictions</title>
 <circle class="halo" cx="483.3" cy="659.7" r="26.7" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-under" cx="483.3" cy="659.7" r="18.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Predicted 55%, observed 54% (gap -1%, over-states); 305 predictions">
+<g id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Prédit 55 %, observé 54 % (écart -1 %, surestime) ; 305 prédictions">
 <title>Prédit 55 %, observé 54 % (écart -1 %, surestime) ; 305 prédictions</title>
 <circle class="halo" cx="566.9" cy="588.7" r="26.3" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-over" cx="566.9" cy="588.7" r="18.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Predicted 65%, observed 51% (gap -14%, over-states); 263 predictions">
+<g id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Prédit 65 %, observé 51 % (écart -14 %, surestime) ; 263 prédictions">
 <title>Prédit 65 %, observé 51 % (écart -14 %, surestime) ; 263 prédictions</title>
 <circle class="halo" cx="646.4" cy="616.4" r="25.6" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-over" cx="646.4" cy="616.4" r="17.6" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Predicted 75%, observed 58% (gap -17%, over-states); 245 predictions">
+<g id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Prédit 75 %, observé 58 % (écart -17 %, surestime) ; 245 prédictions">
 <title>Prédit 75 %, observé 58 % (écart -17 %, surestime) ; 245 prédictions</title>
 <circle class="halo" cx="724.9" cy="560.6" r="25.3" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-over" cx="724.9" cy="560.6" r="17.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Predicted 85%, observed 70% (gap -15%, over-states); 251 predictions">
+<g id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Prédit 85 %, observé 70 % (écart -15 %, surestime) ; 251 prédictions">
 <title>Prédit 85 %, observé 70 % (écart -15 %, surestime) ; 251 prédictions</title>
 <circle class="halo" cx="804.6" cy="467.0" r="25.4" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-over" cx="804.6" cy="467.0" r="17.4" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<g id="pt-9" class="pt hit" tabindex="0" role="img" aria-label="Predicted 95%, observed 82% (gap -12%, over-states); 218 predictions">
+<g id="pt-9" class="pt hit" tabindex="0" role="img" aria-label="Prédit 95 %, observé 82 % (écart -12 %, surestime) ; 218 prédictions">
 <title>Prédit 95 %, observé 82 % (écart -12 %, surestime) ; 218 prédictions</title>
 <circle class="halo" cx="881.1" cy="368.4" r="24.9" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle class="cal-mark-over" cx="881.1" cy="368.4" r="16.9" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
@@ -128,43 +128,43 @@
 <text class="cal-mark-under" x="263.3" y="608.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">Pas assez confiant :</text>
 <text class="cal-mark-under" x="263.3" y="632.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">annonce moins d'attrition</text>
 <text class="cal-mark-under" x="263.3" y="656.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">qu'il n'en survient</text>
-<g id="bar-0" class="bar hit" tabindex="0" role="img" aria-label="1017 predictions near 4%">
+<g id="bar-0" class="bar hit" tabindex="0" role="img" aria-label="1017 prédictions autour de 4 %">
 <title>1017 prédictions autour de 4 %</title>
 <rect class="cal-hist" x="130.6" y="1180.8" width="65.3" height="149.2" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-1" class="bar hit" tabindex="0" role="img" aria-label="564 predictions near 15%">
+<g id="bar-1" class="bar hit" tabindex="0" role="img" aria-label="564 prédictions autour de 15 %">
 <title>564 prédictions autour de 15 %</title>
 <rect class="cal-hist" x="214.5" y="1247.3" width="65.3" height="82.7" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-2" class="bar hit" tabindex="0" role="img" aria-label="447 predictions near 25%">
+<g id="bar-2" class="bar hit" tabindex="0" role="img" aria-label="447 prédictions autour de 25 %">
 <title>447 prédictions autour de 25 %</title>
 <rect class="cal-hist" x="293.6" y="1264.4" width="65.3" height="65.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-3" class="bar hit" tabindex="0" role="img" aria-label="356 predictions near 35%">
+<g id="bar-3" class="bar hit" tabindex="0" role="img" aria-label="356 prédictions autour de 35 %">
 <title>356 prédictions autour de 35 %</title>
 <rect class="cal-hist" x="372.5" y="1277.8" width="65.3" height="52.2" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-4" class="bar hit" tabindex="0" role="img" aria-label="334 predictions near 45%">
+<g id="bar-4" class="bar hit" tabindex="0" role="img" aria-label="334 prédictions autour de 45 %">
 <title>334 prédictions autour de 45 %</title>
 <rect class="cal-hist" x="450.6" y="1281.0" width="65.3" height="49.0" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-5" class="bar hit" tabindex="0" role="img" aria-label="305 predictions near 55%">
+<g id="bar-5" class="bar hit" tabindex="0" role="img" aria-label="305 prédictions autour de 55 %">
 <title>305 prédictions autour de 55 %</title>
 <rect class="cal-hist" x="534.3" y="1285.3" width="65.3" height="44.7" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-6" class="bar hit" tabindex="0" role="img" aria-label="263 predictions near 65%">
+<g id="bar-6" class="bar hit" tabindex="0" role="img" aria-label="263 prédictions autour de 65 %">
 <title>263 prédictions autour de 65 %</title>
 <rect class="cal-hist" x="613.8" y="1291.4" width="65.3" height="38.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-7" class="bar hit" tabindex="0" role="img" aria-label="245 predictions near 75%">
+<g id="bar-7" class="bar hit" tabindex="0" role="img" aria-label="245 prédictions autour de 75 %">
 <title>245 prédictions autour de 75 %</title>
 <rect class="cal-hist" x="692.3" y="1294.1" width="65.3" height="35.9" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-8" class="bar hit" tabindex="0" role="img" aria-label="251 predictions near 85%">
+<g id="bar-8" class="bar hit" tabindex="0" role="img" aria-label="251 prédictions autour de 85 %">
 <title>251 prédictions autour de 85 %</title>
 <rect class="cal-hist" x="772.0" y="1293.2" width="65.3" height="36.8" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>
-<g id="bar-9" class="bar hit" tabindex="0" role="img" aria-label="218 predictions near 95%">
+<g id="bar-9" class="bar hit" tabindex="0" role="img" aria-label="218 prédictions autour de 95 %">
 <title>218 prédictions autour de 95 %</title>
 <rect class="cal-hist" x="848.5" y="1298.0" width="65.3" height="32.0" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
 </g>

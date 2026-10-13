@@ -404,6 +404,9 @@ Seasonal decomposition : The climb, the year's shape, and the month that is neit
 Forecast fan : A forecast drawn with the width of its own uncertainty.
 ↓ Python + CSV + SVG kit (61 KB)
 
+Control chart : A process behaving, until it stops.
+↓ Python + CSV + SVG kit (63 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.

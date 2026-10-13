@@ -6465,3 +6465,17 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'forecast starts': 'début de la prévision'
 'Subscriptions': 'Abonnements'
 'A fan chart: 36 observed periods from 1 to 36, then 12 forecast periods to 48, each drawn inside nested intervals that widen with the horizon. bands are 50, 80, 95% intervals: 5 times in 100 the outcome falls outside the widest one. 12 periods out, the 80% interval runs 1570 to 1783: plus or minus 6.4% of the 1677 forecast.': 'Un éventail de prévision : 36 périodes observées, de 1 à 36, puis 12 périodes prévues jusqu''à 48, chacune tracée dans des intervalles emboîtés qui s''élargissent avec l''horizon. Les bandes sont des intervalles à 50, 80, 95 % : 5 fois sur 100 l''issue tombe hors de la plus large. À 12 périodes, l''intervalle à 80 % va de 1570 à 1783 : plus ou moins 6,4 % de la prévision de 1677.'
+
+# ── Carte de contrôle (control-chart) ─────────────────────────────────────
+'The run rule saw the shift at batch 43; a crossing came only at 45': 'La règle de suite a vu le décalage au lot 43 ; un franchissement n''est venu qu''au 45'
+'Sixty batches of fill weight. From the overall standard deviation instead, neither sigma rule fires.': 'Soixante lots de masse de remplissage. Depuis l''écart type global, aucune des deux règles sigma ne se déclenche.'
+'control limits, not specification limits': 'limites de contrôle, pas limites de spécification'
+'Batch': 'Lot'
+'Fill weight (g)': 'Masse de remplissage (g)'
+'a point past the limits': 'un point hors des limites'
+'a run on one side of the centre': 'une suite du même côté du centre'
+'a steady climb or fall': 'une montée ou une baisse régulière'
+'two of three points past two sigma': 'deux points sur trois au-delà de deux sigma'
+'3 of 4 rules fired over 16 units: a point past the limits from 45; a run on one side of the centre': '3 règles sur 4 se sont déclenchées sur 16 unités : un point hors des limites dès 45 ; une suite du'
+'from 43; two of three points past two sigma from 49.': 'même côté du centre dès 43 ; deux points sur trois au-delà de deux sigma dès 49.'
+'An individuals control chart of 60 units from 1 to 60, with a centre line at 500.39 and control limits at 497.92 and 502.87. control limits at 500.39 ± 3 × 0.83, sigma from the mean moving range · control limits, not specification limits. 3 of 4 rules fired over 16 units: a point past the limits from 45; a run on one side of the centre from 43; two of three points past two sigma from 49.': 'Une carte de contrôle aux valeurs individuelles de 60 unités, de 1 à 60, avec une ligne centrale à 500,39 et des limites de contrôle à 497,92 et 502,87. Limites de contrôle à 500,39 ± 3 × 0,83, sigma depuis l''amplitude mobile moyenne · limites de contrôle, pas limites de spécification. 3 règles sur 4 se sont déclenchées sur 16 unités : un point hors des limites dès 45 ; une suite du même côté du centre dès 43 ; deux points sur trois au-delà de deux sigma dès 49.'

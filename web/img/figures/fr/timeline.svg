@@ -55,7 +55,7 @@
 <line class="era-stroke era-sample-return" x1="1580.6" y1="548" x2="1580.6" y2="334.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
 <line class="era-stroke era-sample-return" x1="1648.9" y1="548" x2="1648.9" y2="494.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
 <line class="era-stroke era-sample-return" x1="1694.4" y1="548" x2="1694.4" y2="986.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
-<g id="hit-0" class="mstone hit" tabindex="0" role="img" aria-label="1965 — Mariner 4: First close-up photos of Mars on a flyby: 21 grainy frames.">
+<g id="hit-0" class="mstone hit" tabindex="0" role="img" aria-label="1965 — Mariner 4 : premières photos rapprochées de Mars lors d&#x27;un survol : 21 images granuleuses.">
 <circle cx="145.6" cy="548" r="12" fill="#8CC3FF"/>
 <circle class="dot era-fill era-flybys---orbiters" cx="145.6" cy="548" r="7.5" fill="#007AFF"/>
 <rect class="card" x="100.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -66,7 +66,7 @@
 <text x="123.0" y="460.0" font-size="14" fill="#6E6E73">Mars lors d'un survol : 21</text>
 <text x="123.0" y="480.0" font-size="14" fill="#6E6E73">frames.</text>
 </g>
-<g id="hit-1" class="mstone hit" tabindex="0" role="img" aria-label="1971 — Mariner 9: First spacecraft to orbit another planet; mapped 85% of Mars.">
+<g id="hit-1" class="mstone hit" tabindex="0" role="img" aria-label="1971 — Mariner 9 : premier engin à orbiter une autre planète ; a cartographié 85 % de Mars.">
 <circle cx="282.2" cy="548" r="12" fill="#8CC3FF"/>
 <circle class="dot era-fill era-flybys---orbiters" cx="282.2" cy="548" r="7.5" fill="#007AFF"/>
 <rect class="card" x="175.2" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -77,7 +77,7 @@
 <text x="198.2" y="772.0" font-size="14" fill="#6E6E73">another planet; mapped 85%</text>
 <text x="198.2" y="792.0" font-size="14" fill="#6E6E73">of Mars.</text>
 </g>
-<g id="hit-2" class="mstone hit" tabindex="0" role="img" aria-label="1976 — Viking 1: First fully successful landing; ran the first soil biology tests.">
+<g id="hit-2" class="mstone hit" tabindex="0" role="img" aria-label="1976 — Viking 1 : premier atterrissage pleinement réussi ; a mené les premiers essais de biologie du sol.">
 <circle cx="396.1" cy="548" r="12" fill="#8CC3FF"/>
 <circle class="dot era-fill era-first-landers" cx="396.1" cy="548" r="7.5" fill="#007AFF"/>
 <rect class="card" x="289.1" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -88,7 +88,7 @@
 <text x="312.1" y="300.0" font-size="14" fill="#6E6E73">; a mené les premiers essais de sol</text>
 <text x="312.1" y="320.0" font-size="14" fill="#6E6E73">biology tests.</text>
 </g>
-<g id="hit-3" class="mstone hit" tabindex="0" role="img" aria-label="1997 — Pathfinder: Airbag landing delivered Sojourner, the first Mars rover.">
+<g id="hit-3" class="mstone hit" tabindex="0" role="img" aria-label="1997 — Pathfinder : un atterrissage par coussins gonflables a livré Sojourner, le premier rover martien.">
 <circle cx="874.4" cy="548" r="12" fill="#8CC3FF"/>
 <circle class="dot era-fill era-first-landers" cx="874.4" cy="548" r="7.5" fill="#007AFF"/>
 <rect class="card" x="767.4" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -99,7 +99,7 @@
 <text x="790.4" y="772.0" font-size="14" fill="#6E6E73">Sojourner, le premier</text>
 <text x="790.4" y="792.0" font-size="14" fill="#6E6E73">rover.</text>
 </g>
-<g id="hit-4" class="mstone hit" tabindex="0" role="img" aria-label="2004 — Spirit &amp; Opportunity: Twin rovers found hard proof that liquid water once flowed.">
+<g id="hit-4" class="mstone hit" tabindex="0" role="img" aria-label="2004 — Spirit &amp; Opportunity : des rovers jumeaux ont trouvé la preuve tangible que l&#x27;eau liquide a jadis coulé.">
 <circle cx="1033.9" cy="548" r="12" fill="#9EE8AA"/>
 <circle class="dot era-fill era-rover-age" cx="1033.9" cy="548" r="7.5" fill="#28CD41"/>
 <rect class="card" x="926.9" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -110,7 +110,7 @@
 <text x="949.9" y="460.0" font-size="14" fill="#6E6E73">que l'eau liquide a jadis</text>
 <text x="949.9" y="480.0" font-size="14" fill="#6E6E73">flowed.</text>
 </g>
-<g id="hit-5" class="mstone hit" tabindex="0" role="img" aria-label="2008 — Phoenix: Touched and confirmed water ice just under the polar soil.">
+<g id="hit-5" class="mstone hit" tabindex="0" role="img" aria-label="2008 — Phoenix : a touché et confirmé de la glace d&#x27;eau juste sous le sol polaire.">
 <circle cx="1125.0" cy="548" r="12" fill="#9EE8AA"/>
 <circle class="dot era-fill era-rover-age" cx="1125.0" cy="548" r="7.5" fill="#28CD41"/>
 <rect class="card" x="1018.0" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -121,7 +121,7 @@
 <text x="1041.0" y="772.0" font-size="14" fill="#6E6E73">glace juste sous le sol</text>
 <text x="1041.0" y="792.0" font-size="14" fill="#6E6E73">soil.</text>
 </g>
-<g id="hit-6" class="mstone hit" tabindex="0" role="img" aria-label="2012 — Curiosity: Sky-crane lander set down a car-sized nuclear lab in Gale crater.">
+<g id="hit-6" class="mstone hit" tabindex="0" role="img" aria-label="2012 — Curiosity : un atterrisseur à grue aérienne a posé un labo nucléaire de la taille d&#x27;une voiture dans le cratère Gale.">
 <circle cx="1216.1" cy="548" r="12" fill="#9EE8AA"/>
 <circle class="dot era-fill era-rover-age" cx="1216.1" cy="548" r="7.5" fill="#28CD41"/>
 <rect class="card" x="1109.1" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -132,7 +132,7 @@
 <text x="1132.1" y="300.0" font-size="14" fill="#6E6E73">labo nucléaire de la taille d'une voiture dans</text>
 <text x="1132.1" y="320.0" font-size="14" fill="#6E6E73">Gale crater.</text>
 </g>
-<g id="hit-7" class="mstone hit" tabindex="0" role="img" aria-label="2018 — InSight: First seismometer on Mars; recorded hundreds of marsquakes.">
+<g id="hit-7" class="mstone hit" tabindex="0" role="img" aria-label="2018 — InSight : premier sismomètre sur Mars ; a enregistré des centaines de séismes martiens.">
 <circle cx="1352.8" cy="548" r="12" fill="#9EE8AA"/>
 <circle class="dot era-fill era-rover-age" cx="1352.8" cy="548" r="7.5" fill="#28CD41"/>
 <rect class="card" x="1245.8" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -143,7 +143,7 @@
 <text x="1268.8" y="460.0" font-size="14" fill="#6E6E73">a enregistré des centaines de</text>
 <text x="1268.8" y="480.0" font-size="14" fill="#6E6E73">marsquakes.</text>
 </g>
-<g id="hit-8" class="mstone hit" tabindex="0" role="img" aria-label="2021 — Perseverance: Began caching rock cores; Ingenuity flew the first Mars aircraft.">
+<g id="hit-8" class="mstone hit" tabindex="0" role="img" aria-label="2021 — Perseverance : a commencé à mettre en réserve des carottes de roche ; Ingenuity a réalisé le premier vol aérien sur Mars.">
 <circle cx="1421.1" cy="548" r="12" fill="#9EE8AA"/>
 <circle class="dot era-fill era-rover-age" cx="1421.1" cy="548" r="7.5" fill="#28CD41"/>
 <rect class="card" x="1314.1" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -154,7 +154,7 @@
 <text x="1337.1" y="772.0" font-size="14" fill="#6E6E73">Ingenuity a réalisé le premier</text>
 <text x="1337.1" y="792.0" font-size="14" fill="#6E6E73">Mars aircraft.</text>
 </g>
-<g id="hit-9" class="mstone hit" tabindex="0" role="img" aria-label="2021 — Tianwen-1: China's Zhurong rover landed, a first on its debut Mars attempt.">
+<g id="hit-9" class="mstone hit" tabindex="0" role="img" aria-label="2021 — Tianwen-1 : le rover chinois Zhurong a atterri, une première dès sa tentative inaugurale sur Mars.">
 <circle cx="1421.1" cy="548" r="12" fill="#9EE8AA"/>
 <circle class="dot era-fill era-rover-age" cx="1421.1" cy="548" r="7.5" fill="#28CD41"/>
 <rect class="card" x="1314.1" y="826.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -165,7 +165,7 @@
 <text x="1337.1" y="932.0" font-size="14" fill="#6E6E73">a atterri, une première dès ses débuts</text>
 <text x="1337.1" y="952.0" font-size="14" fill="#6E6E73">Mars attempt.</text>
 </g>
-<g id="hit-10" class="mstone hit" tabindex="0" role="img" aria-label="2028 (planned) — Sample Retrieval: Planned lander to gather Perseverance's cached tubes for launch.">
+<g id="hit-10" class="mstone hit" tabindex="0" role="img" aria-label="2028 (prévu) — Récupération d&#x27;échantillons : atterrisseur prévu pour rassembler les tubes mis en réserve par Perseverance en vue du lancement.">
 <circle cx="1580.6" cy="548" r="12" fill="#FFCF8C"/>
 <circle class="dot era-stroke era-sample-return" cx="1580.6" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1473.6" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -176,7 +176,7 @@
 <text x="1496.6" y="300.0" font-size="14" fill="#6E6E73">les tubes en réserve de Perseverance</text>
 <text x="1496.6" y="320.0" font-size="14" fill="#6E6E73">for launch.</text>
 </g>
-<g id="hit-11" class="mstone hit" tabindex="0" role="img" aria-label="2031 (planned) — Earth Return Orbiter: Planned relay to ferry the sealed samples back toward Earth.">
+<g id="hit-11" class="mstone hit" tabindex="0" role="img" aria-label="2031 (prévu) — Orbiteur de retour vers la Terre : relais prévu pour convoyer les échantillons scellés vers la Terre.">
 <circle cx="1648.9" cy="548" r="12" fill="#FFCF8C"/>
 <circle class="dot era-stroke era-sample-return" cx="1648.9" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1526.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
@@ -187,7 +187,7 @@
 <text x="1549.0" y="460.0" font-size="14" fill="#6E6E73">sealed samples back toward</text>
 <text x="1549.0" y="480.0" font-size="14" fill="#6E6E73">Earth.</text>
 </g>
-<g id="hit-12" class="mstone hit" tabindex="0" role="img" aria-label="2033 (planned) — Samples on Earth: Target for the first Mars rocks to reach a lab on Earth.">
+<g id="hit-12" class="mstone hit" tabindex="0" role="img" aria-label="2033 (prévu) — Échantillons sur Terre : cible pour que les premières roches martiennes atteignent un labo sur Terre.">
 <circle cx="1694.4" cy="548" r="12" fill="#FFCF8C"/>
 <circle class="dot era-stroke era-sample-return" cx="1694.4" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
 <rect class="card" x="1526.0" y="986.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>

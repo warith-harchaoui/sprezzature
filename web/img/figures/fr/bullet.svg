@@ -24,7 +24,7 @@
 <rect x="611.9" y="168.0" width="147.44" height="62" fill="#B2D3F5"/>
 <rect x="759.4" y="168.0" width="210.62" height="62" fill="#7EB8F0"/>
 </g>
-<rect id="hit-0" class="bar hit" x="296.0" y="188.0" width="564.48" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="New revenue: 268 $k — 107% of target (250 $k)"><title>Nouveau revenu : 268 k$ · 107 % de la cible (250 k$)</title></rect>
+<rect id="hit-0" class="bar hit" x="296.0" y="188.0" width="564.48" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Nouveau revenu : 268 k$ · 107 % de la cible (250 k$)"><title>Nouveau revenu : 268 k$ · 107 % de la cible (250 k$)</title></rect>
 <rect class="bu-tick" x="820.1" y="174.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
 <text x="60" y="195.0" font-size="23" font-weight="600" fill="#1D1D1F">Nouveau revenu</text>
 <text x="60" y="221.0" font-size="16" fill="#6E6E73">mesuré en k$</text>
@@ -36,7 +36,7 @@
 <rect x="633.0" y="286.0" width="168.50" height="62" fill="#B2D3F5"/>
 <rect x="801.5" y="286.0" width="168.50" height="62" fill="#7EB8F0"/>
 </g>
-<rect id="hit-1" class="bar hit" x="296.0" y="306.0" width="441.84" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Trial signups: 1180 /wk — 84% of target (1400 /wk)"><title>Inscriptions à l'essai : 1180 /sem · 84 % de la cible (1400 /sem)</title></rect>
+<rect id="hit-1" class="bar hit" x="296.0" y="306.0" width="441.84" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Inscriptions à l&#x27;essai : 1180 /sem · 84 % de la cible (1400 /sem)"><title>Inscriptions à l'essai : 1180 /sem · 84 % de la cible (1400 /sem)</title></rect>
 <rect class="bu-tick" x="817.7" y="292.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
 <text x="60" y="313.0" font-size="23" font-weight="600" fill="#1D1D1F">Inscriptions à l'essai</text>
 <text x="60" y="339.0" font-size="16" fill="#6E6E73">mesuré en /sem</text>
@@ -48,7 +48,7 @@
 <rect x="584.9" y="404.0" width="115.54" height="62" fill="#B2D3F5"/>
 <rect x="700.4" y="404.0" width="269.60" height="62" fill="#7EB8F0"/>
 </g>
-<rect id="hit-2" class="bar hit" x="296.0" y="424.0" width="452.54" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Activation rate: 47 % — 104% of target (45 %)"><title>Taux d'activation : 47 % · 104 % de la cible (45 %)</title></rect>
+<rect id="hit-2" class="bar hit" x="296.0" y="424.0" width="452.54" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Taux d&#x27;activation : 47 % · 104 % de la cible (45 %)"><title>Taux d'activation : 47 % · 104 % de la cible (45 %)</title></rect>
 <rect class="bu-tick" x="726.8" y="410.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
 <text x="60" y="431.0" font-size="23" font-weight="600" fill="#1D1D1F">Taux d'activation</text>
 <text x="60" y="457.0" font-size="16" fill="#6E6E73">mesuré en %</text>
@@ -60,7 +60,7 @@
 <rect x="565.6" y="522.0" width="179.73" height="62" fill="#B2D3F5"/>
 <rect x="745.3" y="522.0" width="224.67" height="62" fill="#DCEAFB"/>
 </g>
-<rect id="hit-3" class="bar hit" x="296.0" y="542.0" width="296.56" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="p95 API latency: 132 ms — 110% of target (120 ms)"><title>Latence API p95 : 132 ms · 110 % de la cible (120 ms)</title></rect>
+<rect id="hit-3" class="bar hit" x="296.0" y="542.0" width="296.56" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Latence API p95 : 132 ms · 110 % de la cible (120 ms)"><title>Latence API p95 : 132 ms · 110 % de la cible (120 ms)</title></rect>
 <rect class="bu-tick" x="563.1" y="528.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
 <text x="60" y="549.0" font-size="23" font-weight="600" fill="#1D1D1F">Latence API p95</text>
 <text x="60" y="575.0" font-size="16" fill="#6E6E73">mesuré en ms</text>
@@ -72,7 +72,7 @@
 <rect x="576.8" y="640.0" width="168.50" height="62" fill="#B2D3F5"/>
 <rect x="745.3" y="640.0" width="224.67" height="62" fill="#DCEAFB"/>
 </g>
-<rect id="hit-4" class="bar hit" x="296.0" y="660.0" width="269.60" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Monthly churn: 2.4 % — 120% of target (2 %)"><title>Attrition mensuelle : 2,4 % · 120 % de la cible (2 %)</title></rect>
+<rect id="hit-4" class="bar hit" x="296.0" y="660.0" width="269.60" height="22" rx="5" fill="#0A2540" tabindex="0" role="img" aria-label="Attrition mensuelle : 2,4 % · 120 % de la cible (2 %)"><title>Attrition mensuelle : 2,4 % · 120 % de la cible (2 %)</title></rect>
 <rect class="bu-tick" x="518.2" y="646.0" width="5" height="50.0" rx="2.5" fill="#FF9500"/>
 <text x="60" y="667.0" font-size="23" font-weight="600" fill="#1D1D1F">Attrition mensuelle</text>
 <text x="60" y="693.0" font-size="16" fill="#6E6E73">mesuré en %</text>
