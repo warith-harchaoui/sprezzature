@@ -8,8 +8,8 @@ One downloadable, runnable kit per card in the map gallery, the way
 
 A reader who likes a plate on ``maps.html`` currently gets a picture. The kit
 gives them the thing that made it: the configuration as the generator reads
-it, a short script that renders it, and the SVG it produces, in a zip they can
-open, change and re-run.
+it, a short script that renders it, and a preview of the result, in a zip they
+can open, change and re-run.
 
 Where this differs from the figure kits, and why
 ------------------------------------------------
@@ -200,8 +200,9 @@ def main() -> None:
     # The generator resolves any relative path in the config against this,
     # so a config that points at a local GeoJSON keeps working from the kit.
     cfg["_config_dir"] = str(HERE)
+    # The library prints the path it wrote; a second line here would only
+    # say the same thing twice.
     make_situation_map(config=cfg, out=OUT)
-    print(f"wrote {{OUT.name}}  ({{OUT.stat().st_size // 1024}} KB)")
 
 
 if __name__ == "__main__":
@@ -243,7 +244,6 @@ def main() -> None:
         out=OUT,
         title={title!r},
 {extra}    )
-    print(f"wrote {{OUT.name}}  ({{OUT.stat().st_size // 1024}} KB)")
 
 
 if __name__ == "__main__":
@@ -506,13 +506,17 @@ def link_gallery(page: Path, sizes: dict[str, int], *, french: bool) -> int:
         name_match = re.search(r'<span class="font-medium">([^<]+)</span>', block)
         name = name_match.group(1) if name_match else slug
         kb = round(sizes[slug] / 1024)
+        # Name what is in the archive, not what comes out of it. The kits
+        # ship a PNG preview and a script; the SVG is what the script writes,
+        # and a chip promising an SVG that is not in the zip is the same
+        # small lie as a caption that disagrees with its plate.
         config = "YAML" if slug.startswith("situation-") else "CSV"
         if french:
-            label = f"↓ Kit {config} + Python + SVG ({kb} Ko)"
-            aria = f"Télécharger le kit de la carte {name} : {config}, Python et SVG, {kb} Ko"
+            label = f"↓ Kit {config} + Python + PNG ({kb} Ko)"
+            aria = f"Télécharger le kit de la carte {name} : {config}, Python et PNG, {kb} Ko"
         else:
-            label = f"↓ {config} + Python + SVG kit ({kb} KB)"
-            aria = f"Download the {name} kit: {config}, Python and SVG, {kb} KB"
+            label = f"↓ {config} + Python + PNG kit ({kb} KB)"
+            aria = f"Download the {name} kit: {config}, Python and PNG, {kb} KB"
         chip = _KIT_LINK.format(prefix=prefix, slug=slug, aria=aria, label=label)
         linked += 1
         return block.replace("</figcaption>", f"\n            {chip}</figcaption>", 1)
