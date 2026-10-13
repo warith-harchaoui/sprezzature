@@ -6446,3 +6446,14 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'outside the band': 'hors de la bande'
 'that is a season, not a trend.': 'c''est une saison, pas une tendance.'
 'Two correlograms of a series of 144 observations, for lags 1 to 36: Autocorrelation above, Partial autocorrelation below. Each stem is one lag; the shaded band is the 95% white-noise null at plus or minus 0.16. 5 of 36 lags cross the band: 1, 2, 12, 24, 36. The crossings at 12, 24, 36 are multiples of 12: that is a season, not a trend.': 'Deux corrélogrammes d''une série de 144 observations, pour les retards 1 à 36 : l''autocorrélation au-dessus, l''autocorrélation partielle en dessous. Chaque bâton est un retard ; la bande ombrée est l''hypothèse nulle de bruit blanc à 95 %, à plus ou moins 0,16. 5 retards sur 36 sortent de la bande : 1, 2, 12, 24, 36. Les passages à 12, 24, 36 sont des multiples de 12 : c''est une saison, pas une tendance.'
+
+# ── Décomposition saisonnière (seasonal-decomposition) ────────────────────
+'A strong season, a stronger climb, and one month that belongs to neither': 'Une saison forte, une montée plus forte encore, et un mois qui n''appartient ni à l''une ni à l''autre'
+'Six years of monthly revenue, split into the climb, the year''s shape, and what neither accounts for.': 'Six ans de revenu mensuel, découpés en la montée, la forme de l''année, et ce qu''aucune des deux n''explique.'
+'Observed': 'Observé'
+'Trend': 'Tendance'
+'Seasonal': 'Saisonnier'
+'Remainder': 'Reste'
+'Month': 'Mois'
+'further than the threshold': 'au-delà du seuil'
+'A series of 72 observations split into four stacked panels: Observed, Trend, Seasonal and Remainder. additive model, period 12 · seasonal strength 0.91 · trend strength 0.95, both on 0 to 1. 1 of 60 months sits more than 3 standard deviations from trend plus season: 2023-04. Trend covers 2020-07 to 2025-06; the centred average cannot reach the first or last 6 months.': 'Une série de 72 observations découpée en quatre panneaux superposés : Observé, Tendance, Saisonnier et Reste. Modèle additif, période 12 · force saisonnière 0,91 · force de tendance 0,95, toutes deux sur 0 à 1. 1 mois sur 60 s''écarte de plus de 3 écarts types de la tendance plus la saison : 2023-04. La tendance couvre 2020-07 à 2025-06 ; la moyenne centrée ne peut atteindre ni les 6 premiers ni les 6 derniers mois.'
