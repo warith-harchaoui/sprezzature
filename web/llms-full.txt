@@ -298,6 +298,9 @@ Search figures
 
 Rank and contrast categories: bars, lollipops, dumbbells and their kin.
 
+Dual axis : Two units, one frame, the caveat printed.
+↓ Python + CSV + SVG kit (55 KB)
+
 Bar chart : Ranked categories, one house color each.
 ↓ Python + CSV + SVG kit (52 KB)
 
@@ -340,6 +343,9 @@ Waterfall : A running total, step by step.
 ## Time series & trends
 
 How a value moves over an ordered axis: lines, areas and event timelines.
+
+Sparklines : Twenty metrics, one screen.
+↓ Python + CSV + SVG kit (59 KB)
 
 Small multiples : One panel each, one scale for all.
 ↓ Python + CSV + SVG kit (60 KB)
@@ -389,9 +395,15 @@ Spectrogram : Time x frequency x power heatmap of a clip.
 Difference chart : Two series with the gap shaded bicolour.
 ↓ Python + CSV + SVG kit (77 KB)
 
+ACF correlogram : How far back a series remembers, and how much of that is direct.
+↓ Python + CSV + SVG kit (64 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
+
+Point plot : The estimate, its interval, and its n.
+↓ Python + CSV + SVG kit (58 KB)
 
 2-D histogram : Count the points, do not draw them.
 ↓ Python + CSV + SVG kit (82 KB)
@@ -641,6 +653,18 @@ Polar plot : A line or scatter on an angular axis.
 ## Model evaluation & science
 
 Diagnostics and scientific plots: ROC, calibration, survival, forest, volcano.
+
+Silhouette : Which cluster is not a cluster.
+↓ Python + CSV + SVG kit (60 KB)
+
+Validation curve : Not the peak — the simplest value that ties it.
+↓ Python + CSV + SVG kit (58 KB)
+
+Loss curve : The epoch you should have stopped at.
+↓ Python + CSV + SVG kit (56 KB)
+
+Learning curve : Would more data help? It says so.
+↓ Python + CSV + SVG kit (58 KB)
 
 ROC curve : Classifier trade-off, with AUC.
 ↓ Python + CSV + SVG kit (60 KB)
