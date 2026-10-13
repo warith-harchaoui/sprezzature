@@ -75,9 +75,9 @@ moving on.
 **Local mode** (`--local`) is the fully offline alternative: after
 rendering, the script calls a vision-language model, `qwen3-vl:8b`, and
 uses its answer to pre-fill the same template automatically. This is not
-a second, separate integration, every LLM or VLM call anywhere in the
-`sprezzature-*` suite routes through one function,
-`best_engine_ai_helper.llm.chat`, which resolves the actual backend
+a second, separate integration: every LLM or VLM call anywhere in the
+`sprezzature-*` suite routes through one helper, declared in the
+script's `requirements-*.txt`, which resolves the actual backend
 (Ollama by default, OpenAI-compatible or LangChain opt-in via an
 environment variable) and shapes the request. `ralph_eyeball_loop.py`
 itself never opens a connection to Ollama directly; it only builds the

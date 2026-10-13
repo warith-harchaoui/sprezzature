@@ -19,3 +19,8 @@ torch>=2.0.0
 torchaudio>=2.0.0
 librosa>=0.10.0
 numpy>=1.24.0
+
+# narrate_post.py routes its optional LLM enrichment of the narration hints
+# through best_engine_ai_helper.llm.chat, imported at module level — so the
+# script cannot be imported without it, whichever TTS engine is installed.
+best-engine-ai-helper>=1.4

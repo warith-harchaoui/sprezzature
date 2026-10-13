@@ -43,9 +43,9 @@ Les dix *skills* :
 Les *skills* compagnons héritent des règles de pile de `sprezzature-ui`.
 N'installez que ceux dont vous avez besoin.
 
-## Architecture à trois couches
+## Architecture à deux couches
 
-Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de release distincts.
+Depuis le 2026-07-29, sprezzature s'organise en deux couches aux cycles de release distincts.
 
 **Couche 1 : packages pip autonomes.** Les scripts Python de chaque *skill* vivent dans un repo indépendant, publié sur PyPI. N'installez que ce dont vous avez besoin (`pip install <package>`), et ajoutez les surfaces voulues en extras — `[api]` pour le serveur FastAPI, `[mcp]` pour les outils MCP, `[cli]` là où une ligne de commande plus riche existe :
 
@@ -58,13 +58,10 @@ Depuis le 2026-07-29, sprezzature s'organise en trois couches aux cycles de rele
 | `sprezzature-ux-laws` | Audit des Laws of UX (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Parole vers texte, diarisation, identification du locuteur, traduction de sous-titres |
 | `sprezzature-maps` | Choroplèthes et cartes de situation, en cinq modes, de qualité rédactionnelle |
-| `best-engine-ai-helper` | Détection du matériel, sélection/téléchargement du modèle, backend LLM/VLM connectable, portes Ralph |
 
 Tous les repos sont sur [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
 **Couche 2 : la couche agentique (ce repo).** Les fichiers `SKILL.md`, `references/` et `web/` restent dans le monorepo `sprezzature`. Ils définissent les contrats entre l'agent Claude / OpenCode et les packages outils.
-
-**Couche 3 : le runtime local.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) est un repo séparé. Chaque appel LLM/VLM d'un script de skill passe par `best_engine_ai_helper.llm.chat`, qui connecte n'importe quel backend compatible OpenAI via des variables d'environnement : `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends : `ollama` (défaut), `openai`, `langchain`.
 
 > **Quelle phrase déclenche quel *skill* ?** Voir
 > [`TRIGGERS.md`](TRIGGERS.md), généré depuis chaque `SKILL.md`,

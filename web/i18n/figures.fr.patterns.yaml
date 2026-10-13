@@ -379,3 +379,51 @@
   write: '{0}–{1} × {2}–{3}\u00a0: {4} points'
 - match: '([-\d.,\u202f ]+)–([-\d.,\u202f ]+) × ([-\d.,\u202f ]+)–([-\d.,\u202f ]+): (\d+) point'
   write: '{0}–{1} × {2}–{3}\u00a0: {4} point'
+
+# ── Pile de sparklines et graphique combiné ───────────────────────────────
+# Une étiquette par rangée et par période : « latest 556 k$ · range 408 to
+# 556 », « +143 over 26 periods », « Revenue (k$) 412 ». Les unités (%, k$,
+# ms) s'écrivent pareil en français et traversent la règle telles quelles.
+- match: 'latest ([-\d.,\u202f ]+)([%\w$ ]*) · range ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+)'
+  write: 'dernier {0}{1} · plage {2} à {3}'
+- match: 'latest ([-\d.,\u202f ]+)([%\w$ ]*)'
+  write: 'dernier {0}{1}'
+- match: 'up ([-\d.,\u202f ]+) over the window'
+  write: 'en hausse de {0} sur la fenêtre'
+- match: 'down ([-\d.,\u202f ]+) over the window'
+  write: 'en baisse de {0} sur la fenêtre'
+- match: '([+\u2212-]?[\d.,\u202f ]+) over (\d+) periods'
+  write: '{0} sur {1} périodes'
+- match: 'Revenue \(k\$\) ([-\d.,\u202f ]+)'
+  write: 'Chiffre d''affaires (k$) {0}'
+- match: 'Trial conversion \(%\) ([-\d.,\u202f ]+)'
+  write: 'Conversion d''essai (%) {0}'
+# La forme à deux-points de la même étiquette : `by_parts` ne peut pas la
+# recomposer, parce qu'un entier sans séparateur (« 471 ») est laissé tel
+# quel par `fr_number` — il pourrait être une année.
+- match: 'Revenue \(k\$\): ([-\d.,\u202f ]+)'
+  write: 'Chiffre d''affaires (k$)\u00a0: {0}'
+- match: 'Trial conversion \(%\): ([-\d.,\u202f ]+)'
+  write: 'Conversion d''essai (%)\u00a0: {0}'
+# Un relevé avec son unité collée : « 556 k$ », « 243 ms ». L'unité
+# s'écrit pareil, seul le nombre change de forme.
+- match: '([-\d.,\u202f ]+) (k\$|M\$|ms|s|%|h)'
+  write: '{0} {1}'
+
+# ── Estimation ponctuelle : une étiquette par point ───────────────────────
+- match: '([-\d.,\u202f ]+) \(95%: ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+)\)'
+  write: '{0} (95\u00a0%\u00a0: {1} à {2})'
+- match: 'over (\d+) runs'
+  write: 'sur {0} exécutions'
+- match: '(.+) · Baseline'
+  write: '{0} · Référence'
+- match: '(.+) · Tuned'
+  write: '{0} · Réglée'
+- match: '(.+) · Ours'
+  write: '{0} · La nôtre'
+- match: '(.+), Baseline: ([-\d.,\u202f ]+), 95% interval ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+), (\d+) runs'
+  write: '{0}, Référence\u00a0: {1}, intervalle à 95\u00a0% de {2} à {3}, {4} exécutions'
+- match: '(.+), Tuned: ([-\d.,\u202f ]+), 95% interval ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+), (\d+) runs'
+  write: '{0}, Réglée\u00a0: {1}, intervalle à 95\u00a0% de {2} à {3}, {4} exécutions'
+- match: '(.+), Ours: ([-\d.,\u202f ]+), 95% interval ([-\d.,\u202f ]+) to ([-\d.,\u202f ]+), (\d+) runs'
+  write: '{0}, La nôtre\u00a0: {1}, intervalle à 95\u00a0% de {2} à {3}, {4} exécutions'

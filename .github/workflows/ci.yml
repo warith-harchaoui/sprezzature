@@ -74,10 +74,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-          # requirements-dev.txt already covers best-engine-ai-helper, which
-          # every surviving skill script imports (best_engine_ai_helper.llm)
-          # at module load, for both in-process imports and the subprocess
-          # ``--help`` smoke tests, as in production.
+          # requirements-dev.txt already covers best-engine-ai-helper, the
+          # third-party LLM/VLM backend that the four Ollama-backed scripts
+          # import (best_engine_ai_helper.llm) at module load, for both
+          # in-process imports and the subprocess ``--help`` smoke tests,
+          # as in production.
           # Per-skill runtime deps so the Ollama-backed scripts import
           # cleanly during collection (they don't call the daemon — that's
           # gated by the `eval` marker). The two narration engines are

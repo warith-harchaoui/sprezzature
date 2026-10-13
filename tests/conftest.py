@@ -58,6 +58,33 @@ def isolate_cache(tmp_path, monkeypatch):
     monkeypatch.delenv("SPREZZATURE_NO_CACHE", raising=False)
 
 
+@pytest.fixture(autouse=True)
+def no_content_scan(monkeypatch):
+    """
+    Keep the content-safety scan out of unit tests that mock the transport.
+
+    The Ollama-backed scripts call ``best_engine_ai_helper.llm.chat``, which
+    since 1.4 scans every prompt and response through its NSFW classifier
+    before the request leaves — on by default for local engines too. The
+    classifier is an optional extra (``[filtered]``), so a bare install falls
+    back to a keyword heuristic and nothing happens here. But on a machine
+    where ``transformers`` is installed for some other project, the scan loads
+    a 270 MB model from HuggingFace, and these tests go from "the Ollama call
+    is mocked" to "the test suite downloads a model and needs the network".
+
+    Stubbing the two scan entry points keeps the unit tests measuring what they
+    claim to measure. The scan itself belongs to the dependency and is tested
+    there; nothing in this suite asserts on it.
+    """
+    try:
+        from best_engine_ai_helper import safety
+    except ImportError:  # the dependency is absent — nothing to neutralise
+        return
+    for name in ("check_text", "check_image"):
+        if hasattr(safety, name):
+            monkeypatch.setattr(safety, name, lambda *a, **k: None)
+
+
 @pytest.fixture
 def repo_root() -> Path:
     """Return the repository root path."""

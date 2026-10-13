@@ -330,7 +330,16 @@ def by_parts(text: str) -> str | None:
     """
     def piece(part: str) -> str | None:
         part = part.strip()
-        return TR.get(part) or by_pattern(part) or fr_number(part)
+        rebuilt = TR.get(part) or by_pattern(part) or fr_number(part)
+        if rebuilt is not None:
+            return rebuilt
+        # A bare integer is a piece that needs no translating, and
+        # `fr_number` deliberately refuses it: an un-separated integer could
+        # be a year or an identifier, so it is left alone everywhere. Left
+        # alone it must also be *accepted* here, or a tooltip as ordinary as
+        # "Active teams: 757" resolves its label, fails on its number, and
+        # ships in English.
+        return part if re.fullmatch(r"[-+]?\d+", part) else None
 
     head, sep, tail = text.partition(": ")
     if not sep:

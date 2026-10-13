@@ -78,18 +78,6 @@ une légende par film et quelques variantes par plateforme.
 
 ---
 
-## Le moteur local
-
-> Who checks the checker?
->
-> Before it trusts a local model, best-engine-ai-helper seeds a known flaw into
-> a text and a known defect into an image. Only a model that catches both gets
-> written to the engine file.
->
-> sprezzature.ai
-
----
-
 ## Une phrase
 
 > Sprezzature: ten Claude and OpenCode skills that make the artifact, audit the
