@@ -142,5 +142,5 @@ Traffic-light routing:
 - Amber: charter violations only (no invented facts). Flag the field; offer a rewrite.
 - Red: unsupported factual claims. Strip the field and regenerate from source.
 
-This gate will run as a post-processing step in `build_site.py` and as a standalone
-`best-engine-ai-helper validate` subcommand once the prose Ralph loop is implemented.
+This gate will run as a post-processing step in `build_site.py` once the prose
+Ralph loop is implemented.

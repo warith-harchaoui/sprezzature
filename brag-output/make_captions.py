@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write WebVTT captions for the five films, English and French.
+"""Write WebVTT captions for the four films, English and French.
 
 The text is not transcribed: it is the narration script the Kokoro voice was
 generated from, and the timings are the measured start and duration of each
@@ -51,15 +51,6 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
         "fr": [(0.80, 2.709, "Une ligne de commande est un mur. Ceci en fait une porte."),
                (4.40, 4.245, "Pointez-le sur argparse, Click ou Typer. Chaque option devient un champ."),
                (10.90, 3.541, "Trente lois d'expérience utilisateur, auditées depuis la source.")],
-    },
-    "moteur-local": {
-        "en": [(0.90, 1.323, "Who checks the checker?"),
-               (4.50, 2.624, "It picks the strongest model your machine can hold."),
-               (10.90, 4.373, "Then seeds a flaw, seeds a defect, and hires only what catches both.")],
-        "fr": [(0.90, 1.323, "Qui contrôle le contrôleur ?"),
-               (4.50, 2.624, "Il choisit le modèle le plus fort que la machine peut tenir."),
-               (10.90, 4.373, "Puis il sème un défaut, puis un défaut visuel, "
-                              "et n'engage que ce qui attrape les deux.")],
     },
 }
 

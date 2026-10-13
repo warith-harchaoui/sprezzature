@@ -60,7 +60,7 @@ TRACKED: dict[str, str] = {
     # The films' only two raster maps, and the one figure that is really a map.
     # NOTE: sprezzature-maps is actively changing how situation plates render.
     # When its work lands and web/img/maps/ is regenerated, these two change
-    # with it and the five films stop matching the gallery they quote.
+    # with it and the four films stop matching the gallery they quote.
     "figures/situation-western-europe.png": "web/img/maps/situation-western-europe.png",
     "maps/situation-western-europe.png": "web/img/maps/situation-western-europe.png",
     "maps/situation-himalaya.png": "web/img/maps/situation-himalaya.png",
@@ -75,8 +75,7 @@ TRACKED.update({f"figures/{n}.svg": f"web/img/figures/{n}.svg" for n in FIGURES}
 #    writes the subtitles and the script that writes the voice cannot drift.
 # ---------------------------------------------------------------------------
 VO_PREFIX = {"sprezzature": "global", "figures-et-cartes": "figures",
-             "accessibilite": "access", "interface": "interface",
-             "moteur-local": "engine"}
+             "accessibilite": "access", "interface": "interface"}
 
 VOICE, SPEED = "af_heart", "0.95"
 
@@ -94,12 +93,6 @@ SEED_ONLY: dict[str, str] = {
     "sfx/impact/impactSoft_medium_001.ogg": "idem",
     "sfx/interface/drop_001.ogg": "idem",
     "vendor/gsap.min.js": "CDN-fetchable, but the pinned version is written down nowhere",
-    "shots/engine-full.png":
-        "full-page recapture of best-engine-ai-helper's GUI — hashes match none "
-        "of its assets/screenshots/, so it is a recapture and not a copy",
-    "shots/engine-hardware.png": "idem",
-    "shots/engine-models.png": "idem",
-    "engine-logo.png": "420x420, matches no best-engine-ai-helper icon byte-for-byte",
     "music/cues/happy-beats-business-moves-vol-12-by-ende-dot-app.music-cues.json":
         "derived from the MP3 by `npx hyperframes beats <project>`",
     "music/audio-data.js":

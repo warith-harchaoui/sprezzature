@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit the fifteen HyperFrames projects: five films, three canvases each.
+"""Emit the twelve HyperFrames projects: four films, three canvases each.
 
 One spec per film drives all three formats, so the series stays frame-synced:
 the same beat lands at the same second in landscape, portrait and square.
@@ -165,23 +165,6 @@ FILMS = {
                  at=[10.93, 11.46, 12.02, 12.55, 13.11, 13.64, 14.20, 14.73],
                  caption="the same skill builds it and audits it"),
             "Interface"),
-    ),
-    # ---------------------------------------------------------------- engine
-    "moteur-local": dict(
-        duration=18.3,
-        vo=[("engine-1", 0.90), ("engine-2", 4.50), ("engine-3", 10.90)],
-        sfx=[("drop", 4.20), ("tile", 11.46), ("bell", 15.25)],
-        scenes=group_scenes(
-            "Who checks the checker?",
-            dict(type="shot", eyebrow="best-engine-ai-helper",
-                 src="shots/engine-full.png", ratio=900 / 1560, at=4.39, scroll=True,
-                 caption="it reads the memory in the machine, then picks what fits"),
-            dict(type="panel", eyebrow="Two gates before the model is trusted",
-                 rows=[("Ralph Loop", "a known flaw seeded into a text"),
-                       ("Ralph Eyeball Loop", "a known defect seeded into an image")],
-                 at=[10.93, 11.46],
-                 caption="only a model that catches both gets written to the engine file"),
-            "The Engine", logo="engine-logo.png"),
     ),
 }
 

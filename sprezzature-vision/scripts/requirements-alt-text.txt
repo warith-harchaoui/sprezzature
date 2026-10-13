@@ -19,4 +19,4 @@
 click>=8.1
 langdetect>=1.0.9
 Pillow>=10.0.0
-best-engine-ai-helper>=0.4.0
+best-engine-ai-helper>=1.4

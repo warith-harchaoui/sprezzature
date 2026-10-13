@@ -32,9 +32,9 @@ The skills:
 The companion skills inherit the sprezzature-ui stack rules. Install only the
 ones you need.
 
-## Three-layer architecture
+## Two-layer architecture
 
-As of 2026-07-29, sprezzature is organised in three layers with distinct release cycles.
+As of 2026-07-29, sprezzature is organised in two layers with distinct release cycles.
 
 **Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and add the surfaces you want as extras — `[api]` for the FastAPI server, `[mcp]` for the MCP tools, `[cli]` where a richer command line exists:
 
@@ -47,13 +47,10 @@ As of 2026-07-29, sprezzature is organised in three layers with distinct release
 | `sprezzature-ux-laws` | Laws-of-UX audit (Hick, Fitts, Miller, Jakob, Tesler, …) |
 | `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation |
 | `sprezzature-maps` | Choropleths and situation maps, in five modes, at newsroom quality |
-| `best-engine-ai-helper` | Hardware detection, model selection/pull, pluggable LLM/VLM backend, Ralph gates |
 
 All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
 **Layer 2: the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
-
-**Layer 3: the local runtime.** [`best-engine-ai-helper`](https://github.com/warith-harchaoui/best-engine-ai-helper) is a separate repo. Every skill script's LLM/VLM call routes through `best_engine_ai_helper.llm.chat`, which wires any OpenAI-compatible backend via env vars: `SPREZZATURE_LLM_BACKEND`, `SPREZZATURE_LLM_TEXT`, `SPREZZATURE_LLM_VISION`, `SPREZZATURE_LLM_BASE_URL`, `SPREZZATURE_LLM_API_KEY`. Backends: `ollama` (default), `openai`, `langchain`.
 
 > **What prompt activates what?** See [`TRIGGERS.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
