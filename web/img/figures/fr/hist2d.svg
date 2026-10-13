@@ -7,137 +7,137 @@
 <text x="74.0" y="72" font-size="14" fill="#6E6E73">Toutes les courses de taxi d'une semaine, comptées par case. En nuage de points, ce serait une seule tache noire.</text>
 <text x="74.0" y="98" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">2 599 points · cases de 1 × 2 · la plus chargée en tient 235 · couleur en racine carrée</text>
 <rect x="74.0" y="136.0" width="656.0" height="410.0" fill="none" stroke="#E5E5EA" stroke-width="1"/>
-<rect class="cell" x="74.00" y="531.86" width="29.02" height="14.64" fill="#3A558B" role="img" aria-label="0–1 × 0–2\u00a0: 23 points"><title>0–1 × 0–2\u00a0: 23 points</title></rect>
-<rect class="cell" x="74.00" y="517.72" width="29.02" height="14.64" fill="#36B479" role="img" aria-label="0–1 × 2–4\u00a0: 134 points"><title>0–1 × 2–4\u00a0: 134 points</title></rect>
-<rect class="cell" x="74.00" y="503.59" width="29.02" height="14.64" fill="#C1DF2E" role="img" aria-label="0–1 × 4–6\u00a0: 212 points"><title>0–1 × 4–6\u00a0: 212 points</title></rect>
-<rect class="cell" x="74.00" y="489.45" width="29.02" height="14.64" fill="#34B47A" role="img" aria-label="0–1 × 6–8\u00a0: 133 points"><title>0–1 × 6–8\u00a0: 133 points</title></rect>
-<rect class="cell" x="74.00" y="475.31" width="29.02" height="14.64" fill="#3E4887" role="img" aria-label="0–1 × 8–10\u00a0: 16 points"><title>0–1 × 8–10\u00a0: 16 points</title></rect>
-<rect class="cell" x="74.00" y="461.17" width="29.02" height="14.64" fill="#451465" role="img" aria-label="0–1 × 10–12\u00a0: 1 point"><title>0–1 × 10–12\u00a0: 1 point</title></rect>
-<rect class="cell" x="102.52" y="531.86" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="1–2 × 0–2\u00a0: 5 points"><title>1–2 × 0–2\u00a0: 5 points</title></rect>
-<rect class="cell" x="102.52" y="517.72" width="29.02" height="14.64" fill="#31678D" role="img" aria-label="1–2 × 2–4\u00a0: 37 points"><title>1–2 × 2–4\u00a0: 37 points</title></rect>
-<rect class="cell" x="102.52" y="503.59" width="29.02" height="14.64" fill="#55C468" role="img" aria-label="1–2 × 4–6\u00a0: 162 points"><title>1–2 × 4–6\u00a0: 162 points</title></rect>
-<rect class="cell" x="102.52" y="489.45" width="29.02" height="14.64" fill="#FDE725" role="img" aria-label="1–2 × 6–8\u00a0: 235 points"><title>1–2 × 6–8\u00a0: 235 points</title></rect>
-<rect class="cell" x="102.52" y="475.31" width="29.02" height="14.64" fill="#53C369" role="img" aria-label="1–2 × 8–10\u00a0: 160 points"><title>1–2 × 8–10\u00a0: 160 points</title></rect>
-<rect class="cell" x="102.52" y="461.17" width="29.02" height="14.64" fill="#3F4686" role="img" aria-label="1–2 × 10–12\u00a0: 15 points"><title>1–2 × 10–12\u00a0: 15 points</title></rect>
-<rect class="cell" x="102.52" y="447.03" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="1–2 × 12–14\u00a0: 2 points"><title>1–2 × 12–14\u00a0: 2 points</title></rect>
-<rect class="cell" x="131.04" y="517.72" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="2–3 × 2–4\u00a0: 2 points"><title>2–3 × 2–4\u00a0: 2 points</title></rect>
-<rect class="cell" x="131.04" y="503.59" width="29.02" height="14.64" fill="#3C508A" role="img" aria-label="2–3 × 4–6\u00a0: 20 points"><title>2–3 × 4–6\u00a0: 20 points</title></rect>
-<rect class="cell" x="131.04" y="489.45" width="29.02" height="14.64" fill="#239B88" role="img" aria-label="2–3 × 6–8\u00a0: 98 points"><title>2–3 × 6–8\u00a0: 98 points</title></rect>
-<rect class="cell" x="131.04" y="475.31" width="29.02" height="14.64" fill="#54C368" role="img" aria-label="2–3 × 8–10\u00a0: 161 points"><title>2–3 × 8–10\u00a0: 161 points</title></rect>
-<rect class="cell" x="131.04" y="461.17" width="29.02" height="14.64" fill="#26AA82" role="img" aria-label="2–3 × 10–12\u00a0: 118 points"><title>2–3 × 10–12\u00a0: 118 points</title></rect>
-<rect class="cell" x="131.04" y="447.03" width="29.02" height="14.64" fill="#365D8C" role="img" aria-label="2–3 × 12–14\u00a0: 29 points"><title>2–3 × 12–14\u00a0: 29 points</title></rect>
-<rect class="cell" x="131.04" y="432.90" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="2–3 × 14–16\u00a0: 2 points"><title>2–3 × 14–16\u00a0: 2 points</title></rect>
-<rect class="cell" x="159.57" y="503.59" width="29.02" height="14.64" fill="#451465" role="img" aria-label="3–4 × 4–6\u00a0: 1 point"><title>3–4 × 4–6\u00a0: 1 point</title></rect>
-<rect class="cell" x="159.57" y="489.45" width="29.02" height="14.64" fill="#45337D" role="img" aria-label="3–4 × 6–8\u00a0: 7 points"><title>3–4 × 6–8\u00a0: 7 points</title></rect>
-<rect class="cell" x="159.57" y="475.31" width="29.02" height="14.64" fill="#32658D" role="img" aria-label="3–4 × 8–10\u00a0: 36 points"><title>3–4 × 8–10\u00a0: 36 points</title></rect>
-<rect class="cell" x="159.57" y="461.17" width="29.02" height="14.64" fill="#239989" role="img" aria-label="3–4 × 10–12\u00a0: 95 points"><title>3–4 × 10–12\u00a0: 95 points</title></rect>
-<rect class="cell" x="159.57" y="447.03" width="29.02" height="14.64" fill="#228E8C" role="img" aria-label="3–4 × 12–14\u00a0: 82 points"><title>3–4 × 12–14\u00a0: 82 points</title></rect>
-<rect class="cell" x="159.57" y="432.90" width="29.02" height="14.64" fill="#31678D" role="img" aria-label="3–4 × 14–16\u00a0: 37 points"><title>3–4 × 14–16\u00a0: 37 points</title></rect>
-<rect class="cell" x="159.57" y="418.76" width="29.02" height="14.64" fill="#472776" role="img" aria-label="3–4 × 16–18\u00a0: 4 points"><title>3–4 × 16–18\u00a0: 4 points</title></rect>
-<rect class="cell" x="188.09" y="489.45" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="4–5 × 6–8\u00a0: 2 points"><title>4–5 × 6–8\u00a0: 2 points</title></rect>
-<rect class="cell" x="188.09" y="475.31" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="4–5 × 8–10\u00a0: 6 points"><title>4–5 × 8–10\u00a0: 6 points</title></rect>
-<rect class="cell" x="188.09" y="461.17" width="29.02" height="14.64" fill="#3A538B" role="img" aria-label="4–5 × 10–12\u00a0: 22 points"><title>4–5 × 10–12\u00a0: 22 points</title></rect>
-<rect class="cell" x="188.09" y="447.03" width="29.02" height="14.64" fill="#2A798E" role="img" aria-label="4–5 × 12–14\u00a0: 55 points"><title>4–5 × 12–14\u00a0: 55 points</title></rect>
-<rect class="cell" x="188.09" y="432.90" width="29.02" height="14.64" fill="#2C718E" role="img" aria-label="4–5 × 14–16\u00a0: 47 points"><title>4–5 × 14–16\u00a0: 47 points</title></rect>
-<rect class="cell" x="188.09" y="418.76" width="29.02" height="14.64" fill="#3C4E89" role="img" aria-label="4–5 × 16–18\u00a0: 19 points"><title>4–5 × 16–18\u00a0: 19 points</title></rect>
-<rect class="cell" x="188.09" y="404.62" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="4–5 × 18–20\u00a0: 8 points"><title>4–5 × 18–20\u00a0: 8 points</title></rect>
-<rect class="cell" x="188.09" y="390.48" width="29.02" height="14.64" fill="#451465" role="img" aria-label="4–5 × 20–22\u00a0: 1 point"><title>4–5 × 20–22\u00a0: 1 point</title></rect>
-<rect class="cell" x="188.09" y="376.34" width="29.02" height="14.64" fill="#451465" role="img" aria-label="4–5 × 22–24\u00a0: 1 point"><title>4–5 × 22–24\u00a0: 1 point</title></rect>
-<rect class="cell" x="216.61" y="461.17" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="5–6 × 10–12\u00a0: 2 points"><title>5–6 × 10–12\u00a0: 2 points</title></rect>
-<rect class="cell" x="216.61" y="447.03" width="29.02" height="14.64" fill="#433880" role="img" aria-label="5–6 × 12–14\u00a0: 9 points"><title>5–6 × 12–14\u00a0: 9 points</title></rect>
-<rect class="cell" x="216.61" y="432.90" width="29.02" height="14.64" fill="#30698D" role="img" aria-label="5–6 × 14–16\u00a0: 39 points"><title>5–6 × 14–16\u00a0: 39 points</title></rect>
-<rect class="cell" x="216.61" y="418.76" width="29.02" height="14.64" fill="#2C728E" role="img" aria-label="5–6 × 16–18\u00a0: 48 points"><title>5–6 × 16–18\u00a0: 48 points</title></rect>
-<rect class="cell" x="216.61" y="404.62" width="29.02" height="14.64" fill="#375A8C" role="img" aria-label="5–6 × 18–20\u00a0: 27 points"><title>5–6 × 18–20\u00a0: 27 points</title></rect>
-<rect class="cell" x="216.61" y="390.48" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="5–6 × 20–22\u00a0: 6 points"><title>5–6 × 20–22\u00a0: 6 points</title></rect>
-<rect class="cell" x="216.61" y="376.34" width="29.02" height="14.64" fill="#462271" role="img" aria-label="5–6 × 22–24\u00a0: 3 points"><title>5–6 × 22–24\u00a0: 3 points</title></rect>
-<rect class="cell" x="245.13" y="447.03" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="6–7 × 12–14\u00a0: 2 points"><title>6–7 × 12–14\u00a0: 2 points</title></rect>
-<rect class="cell" x="245.13" y="432.90" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="6–7 × 14–16\u00a0: 5 points"><title>6–7 × 14–16\u00a0: 5 points</title></rect>
-<rect class="cell" x="245.13" y="418.76" width="29.02" height="14.64" fill="#3E4887" role="img" aria-label="6–7 × 16–18\u00a0: 16 points"><title>6–7 × 16–18\u00a0: 16 points</title></rect>
-<rect class="cell" x="245.13" y="404.62" width="29.02" height="14.64" fill="#38598C" role="img" aria-label="6–7 × 18–20\u00a0: 26 points"><title>6–7 × 18–20\u00a0: 26 points</title></rect>
-<rect class="cell" x="245.13" y="390.48" width="29.02" height="14.64" fill="#3D4A88" role="img" aria-label="6–7 × 20–22\u00a0: 17 points"><title>6–7 × 20–22\u00a0: 17 points</title></rect>
-<rect class="cell" x="245.13" y="376.34" width="29.02" height="14.64" fill="#433880" role="img" aria-label="6–7 × 22–24\u00a0: 9 points"><title>6–7 × 22–24\u00a0: 9 points</title></rect>
-<rect class="cell" x="273.65" y="432.90" width="29.02" height="14.64" fill="#451465" role="img" aria-label="7–8 × 14–16\u00a0: 1 point"><title>7–8 × 14–16\u00a0: 1 point</title></rect>
-<rect class="cell" x="273.65" y="418.76" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="7–8 × 16–18\u00a0: 8 points"><title>7–8 × 16–18\u00a0: 8 points</title></rect>
-<rect class="cell" x="273.65" y="404.62" width="29.02" height="14.64" fill="#414083" role="img" aria-label="7–8 × 18–20\u00a0: 12 points"><title>7–8 × 18–20\u00a0: 12 points</title></rect>
-<rect class="cell" x="273.65" y="390.48" width="29.02" height="14.64" fill="#3C4E89" role="img" aria-label="7–8 × 20–22\u00a0: 19 points"><title>7–8 × 20–22\u00a0: 19 points</title></rect>
-<rect class="cell" x="273.65" y="376.34" width="29.02" height="14.64" fill="#3E4887" role="img" aria-label="7–8 × 22–24\u00a0: 16 points"><title>7–8 × 22–24\u00a0: 16 points</title></rect>
-<rect class="cell" x="273.65" y="362.21" width="29.02" height="14.64" fill="#423D82" role="img" aria-label="7–8 × 24–26\u00a0: 11 points"><title>7–8 × 24–26\u00a0: 11 points</title></rect>
-<rect class="cell" x="273.65" y="348.07" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="7–8 × 26–28\u00a0: 5 points"><title>7–8 × 26–28\u00a0: 5 points</title></rect>
-<rect class="cell" x="302.17" y="418.76" width="29.02" height="14.64" fill="#451465" role="img" aria-label="8–9 × 16–18\u00a0: 1 point"><title>8–9 × 16–18\u00a0: 1 point</title></rect>
-<rect class="cell" x="302.17" y="404.62" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="8–9 × 18–20\u00a0: 5 points"><title>8–9 × 18–20\u00a0: 5 points</title></rect>
-<rect class="cell" x="302.17" y="390.48" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="8–9 × 20–22\u00a0: 8 points"><title>8–9 × 20–22\u00a0: 8 points</title></rect>
-<rect class="cell" x="302.17" y="376.34" width="29.02" height="14.64" fill="#423B81" role="img" aria-label="8–9 × 22–24\u00a0: 10 points"><title>8–9 × 22–24\u00a0: 10 points</title></rect>
-<rect class="cell" x="302.17" y="362.21" width="29.02" height="14.64" fill="#423D82" role="img" aria-label="8–9 × 24–26\u00a0: 11 points"><title>8–9 × 24–26\u00a0: 11 points</title></rect>
-<rect class="cell" x="302.17" y="348.07" width="29.02" height="14.64" fill="#462271" role="img" aria-label="8–9 × 26–28\u00a0: 3 points"><title>8–9 × 26–28\u00a0: 3 points</title></rect>
-<rect class="cell" x="302.17" y="333.93" width="29.02" height="14.64" fill="#451465" role="img" aria-label="8–9 × 28–30\u00a0: 1 point"><title>8–9 × 28–30\u00a0: 1 point</title></rect>
-<rect class="cell" x="302.17" y="319.79" width="29.02" height="14.64" fill="#451465" role="img" aria-label="8–9 × 30–32\u00a0: 1 point"><title>8–9 × 30–32\u00a0: 1 point</title></rect>
-<rect class="cell" x="330.70" y="404.62" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="9–10 × 18–20\u00a0: 2 points"><title>9–10 × 18–20\u00a0: 2 points</title></rect>
-<rect class="cell" x="330.70" y="390.48" width="29.02" height="14.64" fill="#451465" role="img" aria-label="9–10 × 20–22\u00a0: 1 point"><title>9–10 × 20–22\u00a0: 1 point</title></rect>
-<rect class="cell" x="330.70" y="376.34" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="9–10 × 22–24\u00a0: 5 points"><title>9–10 × 22–24\u00a0: 5 points</title></rect>
-<rect class="cell" x="330.70" y="362.21" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="9–10 × 24–26\u00a0: 6 points"><title>9–10 × 24–26\u00a0: 6 points</title></rect>
-<rect class="cell" x="330.70" y="348.07" width="29.02" height="14.64" fill="#472776" role="img" aria-label="9–10 × 26–28\u00a0: 4 points"><title>9–10 × 26–28\u00a0: 4 points</title></rect>
-<rect class="cell" x="330.70" y="333.93" width="29.02" height="14.64" fill="#472776" role="img" aria-label="9–10 × 28–30\u00a0: 4 points"><title>9–10 × 28–30\u00a0: 4 points</title></rect>
-<rect class="cell" x="330.70" y="319.79" width="29.02" height="14.64" fill="#472776" role="img" aria-label="9–10 × 30–32\u00a0: 4 points"><title>9–10 × 30–32\u00a0: 4 points</title></rect>
-<rect class="cell" x="359.22" y="390.48" width="29.02" height="14.64" fill="#451465" role="img" aria-label="10–11 × 20–22\u00a0: 1 point"><title>10–11 × 20–22\u00a0: 1 point</title></rect>
-<rect class="cell" x="359.22" y="376.34" width="29.02" height="14.64" fill="#451465" role="img" aria-label="10–11 × 22–24\u00a0: 1 point"><title>10–11 × 22–24\u00a0: 1 point</title></rect>
-<rect class="cell" x="359.22" y="362.21" width="29.02" height="14.64" fill="#451465" role="img" aria-label="10–11 × 24–26\u00a0: 1 point"><title>10–11 × 24–26\u00a0: 1 point</title></rect>
-<rect class="cell" x="359.22" y="348.07" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="10–11 × 26–28\u00a0: 6 points"><title>10–11 × 26–28\u00a0: 6 points</title></rect>
-<rect class="cell" x="359.22" y="333.93" width="29.02" height="14.64" fill="#45337D" role="img" aria-label="10–11 × 28–30\u00a0: 7 points"><title>10–11 × 28–30\u00a0: 7 points</title></rect>
-<rect class="cell" x="359.22" y="319.79" width="29.02" height="14.64" fill="#462271" role="img" aria-label="10–11 × 30–32\u00a0: 3 points"><title>10–11 × 30–32\u00a0: 3 points</title></rect>
-<rect class="cell" x="359.22" y="305.66" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="10–11 × 32–34\u00a0: 2 points"><title>10–11 × 32–34\u00a0: 2 points</title></rect>
-<rect class="cell" x="387.74" y="362.21" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 24–26\u00a0: 1 point"><title>11–12 × 24–26\u00a0: 1 point</title></rect>
-<rect class="cell" x="387.74" y="348.07" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 26–28\u00a0: 1 point"><title>11–12 × 26–28\u00a0: 1 point</title></rect>
-<rect class="cell" x="387.74" y="333.93" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="11–12 × 28–30\u00a0: 5 points"><title>11–12 × 28–30\u00a0: 5 points</title></rect>
-<rect class="cell" x="387.74" y="319.79" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="11–12 × 30–32\u00a0: 8 points"><title>11–12 × 30–32\u00a0: 8 points</title></rect>
-<rect class="cell" x="387.74" y="305.66" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 32–34\u00a0: 1 point"><title>11–12 × 32–34\u00a0: 1 point</title></rect>
-<rect class="cell" x="387.74" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 34–36\u00a0: 1 point"><title>11–12 × 34–36\u00a0: 1 point</title></rect>
-<rect class="cell" x="387.74" y="277.38" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 36–38\u00a0: 1 point"><title>11–12 × 36–38\u00a0: 1 point</title></rect>
-<rect class="cell" x="416.26" y="319.79" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="12–13 × 30–32\u00a0: 2 points"><title>12–13 × 30–32\u00a0: 2 points</title></rect>
-<rect class="cell" x="416.26" y="305.66" width="29.02" height="14.64" fill="#451465" role="img" aria-label="12–13 × 32–34\u00a0: 1 point"><title>12–13 × 32–34\u00a0: 1 point</title></rect>
-<rect class="cell" x="416.26" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="12–13 × 34–36\u00a0: 1 point"><title>12–13 × 34–36\u00a0: 1 point</title></rect>
-<rect class="cell" x="416.26" y="277.38" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="12–13 × 36–38\u00a0: 2 points"><title>12–13 × 36–38\u00a0: 2 points</title></rect>
-<rect class="cell" x="444.78" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="13–14 × 34–36\u00a0: 1 point"><title>13–14 × 34–36\u00a0: 1 point</title></rect>
-<rect class="cell" x="444.78" y="277.38" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="13–14 × 36–38\u00a0: 2 points"><title>13–14 × 36–38\u00a0: 2 points</title></rect>
-<rect class="cell" x="444.78" y="249.10" width="29.02" height="14.64" fill="#451465" role="img" aria-label="13–14 × 40–42\u00a0: 1 point"><title>13–14 × 40–42\u00a0: 1 point</title></rect>
-<rect class="cell" x="473.30" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="14–15 × 34–36\u00a0: 1 point"><title>14–15 × 34–36\u00a0: 1 point</title></rect>
-<rect class="cell" x="473.30" y="277.38" width="29.02" height="14.64" fill="#451465" role="img" aria-label="14–15 × 36–38\u00a0: 1 point"><title>14–15 × 36–38\u00a0: 1 point</title></rect>
-<rect class="cell" x="473.30" y="263.24" width="29.02" height="14.64" fill="#462271" role="img" aria-label="14–15 × 38–40\u00a0: 3 points"><title>14–15 × 38–40\u00a0: 3 points</title></rect>
-<rect class="cell" x="473.30" y="192.55" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="14–15 × 48–50\u00a0: 2 points"><title>14–15 × 48–50\u00a0: 2 points</title></rect>
-<rect class="cell" x="473.30" y="178.41" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="14–15 × 50–52\u00a0: 2 points"><title>14–15 × 50–52\u00a0: 2 points</title></rect>
-<rect class="cell" x="473.30" y="164.28" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="14–15 × 52–54\u00a0: 5 points"><title>14–15 × 52–54\u00a0: 5 points</title></rect>
-<rect class="cell" x="473.30" y="150.14" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="14–15 × 54–56\u00a0: 2 points"><title>14–15 × 54–56\u00a0: 2 points</title></rect>
-<rect class="cell" x="501.83" y="277.38" width="29.02" height="14.64" fill="#451465" role="img" aria-label="15–16 × 36–38\u00a0: 1 point"><title>15–16 × 36–38\u00a0: 1 point</title></rect>
-<rect class="cell" x="501.83" y="220.83" width="29.02" height="14.64" fill="#451465" role="img" aria-label="15–16 × 44–46\u00a0: 1 point"><title>15–16 × 44–46\u00a0: 1 point</title></rect>
-<rect class="cell" x="501.83" y="206.69" width="29.02" height="14.64" fill="#451465" role="img" aria-label="15–16 × 46–48\u00a0: 1 point"><title>15–16 × 46–48\u00a0: 1 point</title></rect>
-<rect class="cell" x="501.83" y="192.55" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="15–16 × 48–50\u00a0: 6 points"><title>15–16 × 48–50\u00a0: 6 points</title></rect>
-<rect class="cell" x="501.83" y="178.41" width="29.02" height="14.64" fill="#414083" role="img" aria-label="15–16 × 50–52\u00a0: 12 points"><title>15–16 × 50–52\u00a0: 12 points</title></rect>
-<rect class="cell" x="501.83" y="164.28" width="29.02" height="14.64" fill="#414083" role="img" aria-label="15–16 × 52–54\u00a0: 12 points"><title>15–16 × 52–54\u00a0: 12 points</title></rect>
-<rect class="cell" x="501.83" y="150.14" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="15–16 × 54–56\u00a0: 8 points"><title>15–16 × 54–56\u00a0: 8 points</title></rect>
-<rect class="cell" x="530.35" y="220.83" width="29.02" height="14.64" fill="#451465" role="img" aria-label="16–17 × 44–46\u00a0: 1 point"><title>16–17 × 44–46\u00a0: 1 point</title></rect>
-<rect class="cell" x="530.35" y="206.69" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="16–17 × 46–48\u00a0: 2 points"><title>16–17 × 46–48\u00a0: 2 points</title></rect>
-<rect class="cell" x="530.35" y="192.55" width="29.02" height="14.64" fill="#433880" role="img" aria-label="16–17 × 48–50\u00a0: 9 points"><title>16–17 × 48–50\u00a0: 9 points</title></rect>
-<rect class="cell" x="530.35" y="178.41" width="29.02" height="14.64" fill="#3D4A88" role="img" aria-label="16–17 × 50–52\u00a0: 17 points"><title>16–17 × 50–52\u00a0: 17 points</title></rect>
-<rect class="cell" x="530.35" y="164.28" width="29.02" height="14.64" fill="#404284" role="img" aria-label="16–17 × 52–54\u00a0: 13 points"><title>16–17 × 52–54\u00a0: 13 points</title></rect>
-<rect class="cell" x="530.35" y="150.14" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="16–17 × 54–56\u00a0: 6 points"><title>16–17 × 54–56\u00a0: 6 points</title></rect>
-<rect class="cell" x="530.35" y="136.00" width="29.02" height="14.64" fill="#462271" role="img" aria-label="16–17 × 56–58\u00a0: 3 points"><title>16–17 × 56–58\u00a0: 3 points</title></rect>
-<rect class="cell" x="558.87" y="192.55" width="29.02" height="14.64" fill="#45337D" role="img" aria-label="17–18 × 48–50\u00a0: 7 points"><title>17–18 × 48–50\u00a0: 7 points</title></rect>
-<rect class="cell" x="558.87" y="178.41" width="29.02" height="14.64" fill="#3F4485" role="img" aria-label="17–18 × 50–52\u00a0: 14 points"><title>17–18 × 50–52\u00a0: 14 points</title></rect>
-<rect class="cell" x="558.87" y="164.28" width="29.02" height="14.64" fill="#3C508A" role="img" aria-label="17–18 × 52–54\u00a0: 20 points"><title>17–18 × 52–54\u00a0: 20 points</title></rect>
-<rect class="cell" x="558.87" y="150.14" width="29.02" height="14.64" fill="#423B81" role="img" aria-label="17–18 × 54–56\u00a0: 10 points"><title>17–18 × 54–56\u00a0: 10 points</title></rect>
-<rect class="cell" x="558.87" y="136.00" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="17–18 × 56–58\u00a0: 2 points"><title>17–18 × 56–58\u00a0: 2 points</title></rect>
-<rect class="cell" x="587.39" y="206.69" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="18–19 × 46–48\u00a0: 2 points"><title>18–19 × 46–48\u00a0: 2 points</title></rect>
-<rect class="cell" x="587.39" y="192.55" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="18–19 × 48–50\u00a0: 2 points"><title>18–19 × 48–50\u00a0: 2 points</title></rect>
-<rect class="cell" x="587.39" y="178.41" width="29.02" height="14.64" fill="#414083" role="img" aria-label="18–19 × 50–52\u00a0: 12 points"><title>18–19 × 50–52\u00a0: 12 points</title></rect>
-<rect class="cell" x="587.39" y="164.28" width="29.02" height="14.64" fill="#404284" role="img" aria-label="18–19 × 52–54\u00a0: 13 points"><title>18–19 × 52–54\u00a0: 13 points</title></rect>
-<rect class="cell" x="587.39" y="150.14" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="18–19 × 54–56\u00a0: 2 points"><title>18–19 × 54–56\u00a0: 2 points</title></rect>
-<rect class="cell" x="615.91" y="192.55" width="29.02" height="14.64" fill="#451465" role="img" aria-label="19–20 × 48–50\u00a0: 1 point"><title>19–20 × 48–50\u00a0: 1 point</title></rect>
-<rect class="cell" x="615.91" y="178.41" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="19–20 × 50–52\u00a0: 5 points"><title>19–20 × 50–52\u00a0: 5 points</title></rect>
-<rect class="cell" x="615.91" y="164.28" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="19–20 × 52–54\u00a0: 8 points"><title>19–20 × 52–54\u00a0: 8 points</title></rect>
-<rect class="cell" x="615.91" y="150.14" width="29.02" height="14.64" fill="#462271" role="img" aria-label="19–20 × 54–56\u00a0: 3 points"><title>19–20 × 54–56\u00a0: 3 points</title></rect>
-<rect class="cell" x="644.43" y="192.55" width="29.02" height="14.64" fill="#451465" role="img" aria-label="20–21 × 48–50\u00a0: 1 point"><title>20–21 × 48–50\u00a0: 1 point</title></rect>
-<rect class="cell" x="644.43" y="178.41" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="20–21 × 50–52\u00a0: 2 points"><title>20–21 × 50–52\u00a0: 2 points</title></rect>
-<rect class="cell" x="644.43" y="150.14" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="20–21 × 54–56\u00a0: 2 points"><title>20–21 × 54–56\u00a0: 2 points</title></rect>
-<rect class="cell" x="701.48" y="150.14" width="29.02" height="14.64" fill="#451465" role="img" aria-label="22–23 × 54–56\u00a0: 1 point"><title>22–23 × 54–56\u00a0: 1 point</title></rect>
+<rect class="cell" x="74.00" y="531.86" width="29.02" height="14.64" fill="#3A558B" role="img" aria-label="0–1 × 0–2 : 23 points"><title>0–1 × 0–2 : 23 points</title></rect>
+<rect class="cell" x="74.00" y="517.72" width="29.02" height="14.64" fill="#36B479" role="img" aria-label="0–1 × 2–4 : 134 points"><title>0–1 × 2–4 : 134 points</title></rect>
+<rect class="cell" x="74.00" y="503.59" width="29.02" height="14.64" fill="#C1DF2E" role="img" aria-label="0–1 × 4–6 : 212 points"><title>0–1 × 4–6 : 212 points</title></rect>
+<rect class="cell" x="74.00" y="489.45" width="29.02" height="14.64" fill="#34B47A" role="img" aria-label="0–1 × 6–8 : 133 points"><title>0–1 × 6–8 : 133 points</title></rect>
+<rect class="cell" x="74.00" y="475.31" width="29.02" height="14.64" fill="#3E4887" role="img" aria-label="0–1 × 8–10 : 16 points"><title>0–1 × 8–10 : 16 points</title></rect>
+<rect class="cell" x="74.00" y="461.17" width="29.02" height="14.64" fill="#451465" role="img" aria-label="0–1 × 10–12 : 1 point"><title>0–1 × 10–12 : 1 point</title></rect>
+<rect class="cell" x="102.52" y="531.86" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="1–2 × 0–2 : 5 points"><title>1–2 × 0–2 : 5 points</title></rect>
+<rect class="cell" x="102.52" y="517.72" width="29.02" height="14.64" fill="#31678D" role="img" aria-label="1–2 × 2–4 : 37 points"><title>1–2 × 2–4 : 37 points</title></rect>
+<rect class="cell" x="102.52" y="503.59" width="29.02" height="14.64" fill="#55C468" role="img" aria-label="1–2 × 4–6 : 162 points"><title>1–2 × 4–6 : 162 points</title></rect>
+<rect class="cell" x="102.52" y="489.45" width="29.02" height="14.64" fill="#FDE725" role="img" aria-label="1–2 × 6–8 : 235 points"><title>1–2 × 6–8 : 235 points</title></rect>
+<rect class="cell" x="102.52" y="475.31" width="29.02" height="14.64" fill="#53C369" role="img" aria-label="1–2 × 8–10 : 160 points"><title>1–2 × 8–10 : 160 points</title></rect>
+<rect class="cell" x="102.52" y="461.17" width="29.02" height="14.64" fill="#3F4686" role="img" aria-label="1–2 × 10–12 : 15 points"><title>1–2 × 10–12 : 15 points</title></rect>
+<rect class="cell" x="102.52" y="447.03" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="1–2 × 12–14 : 2 points"><title>1–2 × 12–14 : 2 points</title></rect>
+<rect class="cell" x="131.04" y="517.72" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="2–3 × 2–4 : 2 points"><title>2–3 × 2–4 : 2 points</title></rect>
+<rect class="cell" x="131.04" y="503.59" width="29.02" height="14.64" fill="#3C508A" role="img" aria-label="2–3 × 4–6 : 20 points"><title>2–3 × 4–6 : 20 points</title></rect>
+<rect class="cell" x="131.04" y="489.45" width="29.02" height="14.64" fill="#239B88" role="img" aria-label="2–3 × 6–8 : 98 points"><title>2–3 × 6–8 : 98 points</title></rect>
+<rect class="cell" x="131.04" y="475.31" width="29.02" height="14.64" fill="#54C368" role="img" aria-label="2–3 × 8–10 : 161 points"><title>2–3 × 8–10 : 161 points</title></rect>
+<rect class="cell" x="131.04" y="461.17" width="29.02" height="14.64" fill="#26AA82" role="img" aria-label="2–3 × 10–12 : 118 points"><title>2–3 × 10–12 : 118 points</title></rect>
+<rect class="cell" x="131.04" y="447.03" width="29.02" height="14.64" fill="#365D8C" role="img" aria-label="2–3 × 12–14 : 29 points"><title>2–3 × 12–14 : 29 points</title></rect>
+<rect class="cell" x="131.04" y="432.90" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="2–3 × 14–16 : 2 points"><title>2–3 × 14–16 : 2 points</title></rect>
+<rect class="cell" x="159.57" y="503.59" width="29.02" height="14.64" fill="#451465" role="img" aria-label="3–4 × 4–6 : 1 point"><title>3–4 × 4–6 : 1 point</title></rect>
+<rect class="cell" x="159.57" y="489.45" width="29.02" height="14.64" fill="#45337D" role="img" aria-label="3–4 × 6–8 : 7 points"><title>3–4 × 6–8 : 7 points</title></rect>
+<rect class="cell" x="159.57" y="475.31" width="29.02" height="14.64" fill="#32658D" role="img" aria-label="3–4 × 8–10 : 36 points"><title>3–4 × 8–10 : 36 points</title></rect>
+<rect class="cell" x="159.57" y="461.17" width="29.02" height="14.64" fill="#239989" role="img" aria-label="3–4 × 10–12 : 95 points"><title>3–4 × 10–12 : 95 points</title></rect>
+<rect class="cell" x="159.57" y="447.03" width="29.02" height="14.64" fill="#228E8C" role="img" aria-label="3–4 × 12–14 : 82 points"><title>3–4 × 12–14 : 82 points</title></rect>
+<rect class="cell" x="159.57" y="432.90" width="29.02" height="14.64" fill="#31678D" role="img" aria-label="3–4 × 14–16 : 37 points"><title>3–4 × 14–16 : 37 points</title></rect>
+<rect class="cell" x="159.57" y="418.76" width="29.02" height="14.64" fill="#472776" role="img" aria-label="3–4 × 16–18 : 4 points"><title>3–4 × 16–18 : 4 points</title></rect>
+<rect class="cell" x="188.09" y="489.45" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="4–5 × 6–8 : 2 points"><title>4–5 × 6–8 : 2 points</title></rect>
+<rect class="cell" x="188.09" y="475.31" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="4–5 × 8–10 : 6 points"><title>4–5 × 8–10 : 6 points</title></rect>
+<rect class="cell" x="188.09" y="461.17" width="29.02" height="14.64" fill="#3A538B" role="img" aria-label="4–5 × 10–12 : 22 points"><title>4–5 × 10–12 : 22 points</title></rect>
+<rect class="cell" x="188.09" y="447.03" width="29.02" height="14.64" fill="#2A798E" role="img" aria-label="4–5 × 12–14 : 55 points"><title>4–5 × 12–14 : 55 points</title></rect>
+<rect class="cell" x="188.09" y="432.90" width="29.02" height="14.64" fill="#2C718E" role="img" aria-label="4–5 × 14–16 : 47 points"><title>4–5 × 14–16 : 47 points</title></rect>
+<rect class="cell" x="188.09" y="418.76" width="29.02" height="14.64" fill="#3C4E89" role="img" aria-label="4–5 × 16–18 : 19 points"><title>4–5 × 16–18 : 19 points</title></rect>
+<rect class="cell" x="188.09" y="404.62" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="4–5 × 18–20 : 8 points"><title>4–5 × 18–20 : 8 points</title></rect>
+<rect class="cell" x="188.09" y="390.48" width="29.02" height="14.64" fill="#451465" role="img" aria-label="4–5 × 20–22 : 1 point"><title>4–5 × 20–22 : 1 point</title></rect>
+<rect class="cell" x="188.09" y="376.34" width="29.02" height="14.64" fill="#451465" role="img" aria-label="4–5 × 22–24 : 1 point"><title>4–5 × 22–24 : 1 point</title></rect>
+<rect class="cell" x="216.61" y="461.17" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="5–6 × 10–12 : 2 points"><title>5–6 × 10–12 : 2 points</title></rect>
+<rect class="cell" x="216.61" y="447.03" width="29.02" height="14.64" fill="#433880" role="img" aria-label="5–6 × 12–14 : 9 points"><title>5–6 × 12–14 : 9 points</title></rect>
+<rect class="cell" x="216.61" y="432.90" width="29.02" height="14.64" fill="#30698D" role="img" aria-label="5–6 × 14–16 : 39 points"><title>5–6 × 14–16 : 39 points</title></rect>
+<rect class="cell" x="216.61" y="418.76" width="29.02" height="14.64" fill="#2C728E" role="img" aria-label="5–6 × 16–18 : 48 points"><title>5–6 × 16–18 : 48 points</title></rect>
+<rect class="cell" x="216.61" y="404.62" width="29.02" height="14.64" fill="#375A8C" role="img" aria-label="5–6 × 18–20 : 27 points"><title>5–6 × 18–20 : 27 points</title></rect>
+<rect class="cell" x="216.61" y="390.48" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="5–6 × 20–22 : 6 points"><title>5–6 × 20–22 : 6 points</title></rect>
+<rect class="cell" x="216.61" y="376.34" width="29.02" height="14.64" fill="#462271" role="img" aria-label="5–6 × 22–24 : 3 points"><title>5–6 × 22–24 : 3 points</title></rect>
+<rect class="cell" x="245.13" y="447.03" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="6–7 × 12–14 : 2 points"><title>6–7 × 12–14 : 2 points</title></rect>
+<rect class="cell" x="245.13" y="432.90" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="6–7 × 14–16 : 5 points"><title>6–7 × 14–16 : 5 points</title></rect>
+<rect class="cell" x="245.13" y="418.76" width="29.02" height="14.64" fill="#3E4887" role="img" aria-label="6–7 × 16–18 : 16 points"><title>6–7 × 16–18 : 16 points</title></rect>
+<rect class="cell" x="245.13" y="404.62" width="29.02" height="14.64" fill="#38598C" role="img" aria-label="6–7 × 18–20 : 26 points"><title>6–7 × 18–20 : 26 points</title></rect>
+<rect class="cell" x="245.13" y="390.48" width="29.02" height="14.64" fill="#3D4A88" role="img" aria-label="6–7 × 20–22 : 17 points"><title>6–7 × 20–22 : 17 points</title></rect>
+<rect class="cell" x="245.13" y="376.34" width="29.02" height="14.64" fill="#433880" role="img" aria-label="6–7 × 22–24 : 9 points"><title>6–7 × 22–24 : 9 points</title></rect>
+<rect class="cell" x="273.65" y="432.90" width="29.02" height="14.64" fill="#451465" role="img" aria-label="7–8 × 14–16 : 1 point"><title>7–8 × 14–16 : 1 point</title></rect>
+<rect class="cell" x="273.65" y="418.76" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="7–8 × 16–18 : 8 points"><title>7–8 × 16–18 : 8 points</title></rect>
+<rect class="cell" x="273.65" y="404.62" width="29.02" height="14.64" fill="#414083" role="img" aria-label="7–8 × 18–20 : 12 points"><title>7–8 × 18–20 : 12 points</title></rect>
+<rect class="cell" x="273.65" y="390.48" width="29.02" height="14.64" fill="#3C4E89" role="img" aria-label="7–8 × 20–22 : 19 points"><title>7–8 × 20–22 : 19 points</title></rect>
+<rect class="cell" x="273.65" y="376.34" width="29.02" height="14.64" fill="#3E4887" role="img" aria-label="7–8 × 22–24 : 16 points"><title>7–8 × 22–24 : 16 points</title></rect>
+<rect class="cell" x="273.65" y="362.21" width="29.02" height="14.64" fill="#423D82" role="img" aria-label="7–8 × 24–26 : 11 points"><title>7–8 × 24–26 : 11 points</title></rect>
+<rect class="cell" x="273.65" y="348.07" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="7–8 × 26–28 : 5 points"><title>7–8 × 26–28 : 5 points</title></rect>
+<rect class="cell" x="302.17" y="418.76" width="29.02" height="14.64" fill="#451465" role="img" aria-label="8–9 × 16–18 : 1 point"><title>8–9 × 16–18 : 1 point</title></rect>
+<rect class="cell" x="302.17" y="404.62" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="8–9 × 18–20 : 5 points"><title>8–9 × 18–20 : 5 points</title></rect>
+<rect class="cell" x="302.17" y="390.48" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="8–9 × 20–22 : 8 points"><title>8–9 × 20–22 : 8 points</title></rect>
+<rect class="cell" x="302.17" y="376.34" width="29.02" height="14.64" fill="#423B81" role="img" aria-label="8–9 × 22–24 : 10 points"><title>8–9 × 22–24 : 10 points</title></rect>
+<rect class="cell" x="302.17" y="362.21" width="29.02" height="14.64" fill="#423D82" role="img" aria-label="8–9 × 24–26 : 11 points"><title>8–9 × 24–26 : 11 points</title></rect>
+<rect class="cell" x="302.17" y="348.07" width="29.02" height="14.64" fill="#462271" role="img" aria-label="8–9 × 26–28 : 3 points"><title>8–9 × 26–28 : 3 points</title></rect>
+<rect class="cell" x="302.17" y="333.93" width="29.02" height="14.64" fill="#451465" role="img" aria-label="8–9 × 28–30 : 1 point"><title>8–9 × 28–30 : 1 point</title></rect>
+<rect class="cell" x="302.17" y="319.79" width="29.02" height="14.64" fill="#451465" role="img" aria-label="8–9 × 30–32 : 1 point"><title>8–9 × 30–32 : 1 point</title></rect>
+<rect class="cell" x="330.70" y="404.62" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="9–10 × 18–20 : 2 points"><title>9–10 × 18–20 : 2 points</title></rect>
+<rect class="cell" x="330.70" y="390.48" width="29.02" height="14.64" fill="#451465" role="img" aria-label="9–10 × 20–22 : 1 point"><title>9–10 × 20–22 : 1 point</title></rect>
+<rect class="cell" x="330.70" y="376.34" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="9–10 × 22–24 : 5 points"><title>9–10 × 22–24 : 5 points</title></rect>
+<rect class="cell" x="330.70" y="362.21" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="9–10 × 24–26 : 6 points"><title>9–10 × 24–26 : 6 points</title></rect>
+<rect class="cell" x="330.70" y="348.07" width="29.02" height="14.64" fill="#472776" role="img" aria-label="9–10 × 26–28 : 4 points"><title>9–10 × 26–28 : 4 points</title></rect>
+<rect class="cell" x="330.70" y="333.93" width="29.02" height="14.64" fill="#472776" role="img" aria-label="9–10 × 28–30 : 4 points"><title>9–10 × 28–30 : 4 points</title></rect>
+<rect class="cell" x="330.70" y="319.79" width="29.02" height="14.64" fill="#472776" role="img" aria-label="9–10 × 30–32 : 4 points"><title>9–10 × 30–32 : 4 points</title></rect>
+<rect class="cell" x="359.22" y="390.48" width="29.02" height="14.64" fill="#451465" role="img" aria-label="10–11 × 20–22 : 1 point"><title>10–11 × 20–22 : 1 point</title></rect>
+<rect class="cell" x="359.22" y="376.34" width="29.02" height="14.64" fill="#451465" role="img" aria-label="10–11 × 22–24 : 1 point"><title>10–11 × 22–24 : 1 point</title></rect>
+<rect class="cell" x="359.22" y="362.21" width="29.02" height="14.64" fill="#451465" role="img" aria-label="10–11 × 24–26 : 1 point"><title>10–11 × 24–26 : 1 point</title></rect>
+<rect class="cell" x="359.22" y="348.07" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="10–11 × 26–28 : 6 points"><title>10–11 × 26–28 : 6 points</title></rect>
+<rect class="cell" x="359.22" y="333.93" width="29.02" height="14.64" fill="#45337D" role="img" aria-label="10–11 × 28–30 : 7 points"><title>10–11 × 28–30 : 7 points</title></rect>
+<rect class="cell" x="359.22" y="319.79" width="29.02" height="14.64" fill="#462271" role="img" aria-label="10–11 × 30–32 : 3 points"><title>10–11 × 30–32 : 3 points</title></rect>
+<rect class="cell" x="359.22" y="305.66" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="10–11 × 32–34 : 2 points"><title>10–11 × 32–34 : 2 points</title></rect>
+<rect class="cell" x="387.74" y="362.21" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 24–26 : 1 point"><title>11–12 × 24–26 : 1 point</title></rect>
+<rect class="cell" x="387.74" y="348.07" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 26–28 : 1 point"><title>11–12 × 26–28 : 1 point</title></rect>
+<rect class="cell" x="387.74" y="333.93" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="11–12 × 28–30 : 5 points"><title>11–12 × 28–30 : 5 points</title></rect>
+<rect class="cell" x="387.74" y="319.79" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="11–12 × 30–32 : 8 points"><title>11–12 × 30–32 : 8 points</title></rect>
+<rect class="cell" x="387.74" y="305.66" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 32–34 : 1 point"><title>11–12 × 32–34 : 1 point</title></rect>
+<rect class="cell" x="387.74" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 34–36 : 1 point"><title>11–12 × 34–36 : 1 point</title></rect>
+<rect class="cell" x="387.74" y="277.38" width="29.02" height="14.64" fill="#451465" role="img" aria-label="11–12 × 36–38 : 1 point"><title>11–12 × 36–38 : 1 point</title></rect>
+<rect class="cell" x="416.26" y="319.79" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="12–13 × 30–32 : 2 points"><title>12–13 × 30–32 : 2 points</title></rect>
+<rect class="cell" x="416.26" y="305.66" width="29.02" height="14.64" fill="#451465" role="img" aria-label="12–13 × 32–34 : 1 point"><title>12–13 × 32–34 : 1 point</title></rect>
+<rect class="cell" x="416.26" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="12–13 × 34–36 : 1 point"><title>12–13 × 34–36 : 1 point</title></rect>
+<rect class="cell" x="416.26" y="277.38" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="12–13 × 36–38 : 2 points"><title>12–13 × 36–38 : 2 points</title></rect>
+<rect class="cell" x="444.78" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="13–14 × 34–36 : 1 point"><title>13–14 × 34–36 : 1 point</title></rect>
+<rect class="cell" x="444.78" y="277.38" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="13–14 × 36–38 : 2 points"><title>13–14 × 36–38 : 2 points</title></rect>
+<rect class="cell" x="444.78" y="249.10" width="29.02" height="14.64" fill="#451465" role="img" aria-label="13–14 × 40–42 : 1 point"><title>13–14 × 40–42 : 1 point</title></rect>
+<rect class="cell" x="473.30" y="291.52" width="29.02" height="14.64" fill="#451465" role="img" aria-label="14–15 × 34–36 : 1 point"><title>14–15 × 34–36 : 1 point</title></rect>
+<rect class="cell" x="473.30" y="277.38" width="29.02" height="14.64" fill="#451465" role="img" aria-label="14–15 × 36–38 : 1 point"><title>14–15 × 36–38 : 1 point</title></rect>
+<rect class="cell" x="473.30" y="263.24" width="29.02" height="14.64" fill="#462271" role="img" aria-label="14–15 × 38–40 : 3 points"><title>14–15 × 38–40 : 3 points</title></rect>
+<rect class="cell" x="473.30" y="192.55" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="14–15 × 48–50 : 2 points"><title>14–15 × 48–50 : 2 points</title></rect>
+<rect class="cell" x="473.30" y="178.41" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="14–15 × 50–52 : 2 points"><title>14–15 × 50–52 : 2 points</title></rect>
+<rect class="cell" x="473.30" y="164.28" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="14–15 × 52–54 : 5 points"><title>14–15 × 52–54 : 5 points</title></rect>
+<rect class="cell" x="473.30" y="150.14" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="14–15 × 54–56 : 2 points"><title>14–15 × 54–56 : 2 points</title></rect>
+<rect class="cell" x="501.83" y="277.38" width="29.02" height="14.64" fill="#451465" role="img" aria-label="15–16 × 36–38 : 1 point"><title>15–16 × 36–38 : 1 point</title></rect>
+<rect class="cell" x="501.83" y="220.83" width="29.02" height="14.64" fill="#451465" role="img" aria-label="15–16 × 44–46 : 1 point"><title>15–16 × 44–46 : 1 point</title></rect>
+<rect class="cell" x="501.83" y="206.69" width="29.02" height="14.64" fill="#451465" role="img" aria-label="15–16 × 46–48 : 1 point"><title>15–16 × 46–48 : 1 point</title></rect>
+<rect class="cell" x="501.83" y="192.55" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="15–16 × 48–50 : 6 points"><title>15–16 × 48–50 : 6 points</title></rect>
+<rect class="cell" x="501.83" y="178.41" width="29.02" height="14.64" fill="#414083" role="img" aria-label="15–16 × 50–52 : 12 points"><title>15–16 × 50–52 : 12 points</title></rect>
+<rect class="cell" x="501.83" y="164.28" width="29.02" height="14.64" fill="#414083" role="img" aria-label="15–16 × 52–54 : 12 points"><title>15–16 × 52–54 : 12 points</title></rect>
+<rect class="cell" x="501.83" y="150.14" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="15–16 × 54–56 : 8 points"><title>15–16 × 54–56 : 8 points</title></rect>
+<rect class="cell" x="530.35" y="220.83" width="29.02" height="14.64" fill="#451465" role="img" aria-label="16–17 × 44–46 : 1 point"><title>16–17 × 44–46 : 1 point</title></rect>
+<rect class="cell" x="530.35" y="206.69" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="16–17 × 46–48 : 2 points"><title>16–17 × 46–48 : 2 points</title></rect>
+<rect class="cell" x="530.35" y="192.55" width="29.02" height="14.64" fill="#433880" role="img" aria-label="16–17 × 48–50 : 9 points"><title>16–17 × 48–50 : 9 points</title></rect>
+<rect class="cell" x="530.35" y="178.41" width="29.02" height="14.64" fill="#3D4A88" role="img" aria-label="16–17 × 50–52 : 17 points"><title>16–17 × 50–52 : 17 points</title></rect>
+<rect class="cell" x="530.35" y="164.28" width="29.02" height="14.64" fill="#404284" role="img" aria-label="16–17 × 52–54 : 13 points"><title>16–17 × 52–54 : 13 points</title></rect>
+<rect class="cell" x="530.35" y="150.14" width="29.02" height="14.64" fill="#462F7C" role="img" aria-label="16–17 × 54–56 : 6 points"><title>16–17 × 54–56 : 6 points</title></rect>
+<rect class="cell" x="530.35" y="136.00" width="29.02" height="14.64" fill="#462271" role="img" aria-label="16–17 × 56–58 : 3 points"><title>16–17 × 56–58 : 3 points</title></rect>
+<rect class="cell" x="558.87" y="192.55" width="29.02" height="14.64" fill="#45337D" role="img" aria-label="17–18 × 48–50 : 7 points"><title>17–18 × 48–50 : 7 points</title></rect>
+<rect class="cell" x="558.87" y="178.41" width="29.02" height="14.64" fill="#3F4485" role="img" aria-label="17–18 × 50–52 : 14 points"><title>17–18 × 50–52 : 14 points</title></rect>
+<rect class="cell" x="558.87" y="164.28" width="29.02" height="14.64" fill="#3C508A" role="img" aria-label="17–18 × 52–54 : 20 points"><title>17–18 × 52–54 : 20 points</title></rect>
+<rect class="cell" x="558.87" y="150.14" width="29.02" height="14.64" fill="#423B81" role="img" aria-label="17–18 × 54–56 : 10 points"><title>17–18 × 54–56 : 10 points</title></rect>
+<rect class="cell" x="558.87" y="136.00" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="17–18 × 56–58 : 2 points"><title>17–18 × 56–58 : 2 points</title></rect>
+<rect class="cell" x="587.39" y="206.69" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="18–19 × 46–48 : 2 points"><title>18–19 × 46–48 : 2 points</title></rect>
+<rect class="cell" x="587.39" y="192.55" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="18–19 × 48–50 : 2 points"><title>18–19 × 48–50 : 2 points</title></rect>
+<rect class="cell" x="587.39" y="178.41" width="29.02" height="14.64" fill="#414083" role="img" aria-label="18–19 × 50–52 : 12 points"><title>18–19 × 50–52 : 12 points</title></rect>
+<rect class="cell" x="587.39" y="164.28" width="29.02" height="14.64" fill="#404284" role="img" aria-label="18–19 × 52–54 : 13 points"><title>18–19 × 52–54 : 13 points</title></rect>
+<rect class="cell" x="587.39" y="150.14" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="18–19 × 54–56 : 2 points"><title>18–19 × 54–56 : 2 points</title></rect>
+<rect class="cell" x="615.91" y="192.55" width="29.02" height="14.64" fill="#451465" role="img" aria-label="19–20 × 48–50 : 1 point"><title>19–20 × 48–50 : 1 point</title></rect>
+<rect class="cell" x="615.91" y="178.41" width="29.02" height="14.64" fill="#472C7A" role="img" aria-label="19–20 × 50–52 : 5 points"><title>19–20 × 50–52 : 5 points</title></rect>
+<rect class="cell" x="615.91" y="164.28" width="29.02" height="14.64" fill="#44367F" role="img" aria-label="19–20 × 52–54 : 8 points"><title>19–20 × 52–54 : 8 points</title></rect>
+<rect class="cell" x="615.91" y="150.14" width="29.02" height="14.64" fill="#462271" role="img" aria-label="19–20 × 54–56 : 3 points"><title>19–20 × 54–56 : 3 points</title></rect>
+<rect class="cell" x="644.43" y="192.55" width="29.02" height="14.64" fill="#451465" role="img" aria-label="20–21 × 48–50 : 1 point"><title>20–21 × 48–50 : 1 point</title></rect>
+<rect class="cell" x="644.43" y="178.41" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="20–21 × 50–52 : 2 points"><title>20–21 × 50–52 : 2 points</title></rect>
+<rect class="cell" x="644.43" y="150.14" width="29.02" height="14.64" fill="#461C6C" role="img" aria-label="20–21 × 54–56 : 2 points"><title>20–21 × 54–56 : 2 points</title></rect>
+<rect class="cell" x="701.48" y="150.14" width="29.02" height="14.64" fill="#451465" role="img" aria-label="22–23 × 54–56 : 1 point"><title>22–23 × 54–56 : 1 point</title></rect>
 <text x="74.0" y="566.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">0</text>
 <text x="131.0" y="566.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2</text>
 <text x="188.1" y="566.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">4</text>
