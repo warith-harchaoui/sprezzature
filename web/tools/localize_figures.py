@@ -4,7 +4,8 @@
 Reads ``web/i18n/figures.fr.yaml`` (a flat ``"English": "Français"`` map) and
 writes a French version of every gallery figure into ``web/img/figures/fr/``
 by localising the exact gallery SVG the reader sees: substituting the text of
-each ``<text>/<tspan>/<title>/<desc>`` node through the map. Every figure in
+each ``<text>/<tspan>/<title>/<desc>`` node, and every ``aria-label``
+attribute, through the map. Every figure in
 the source repo (sprezzature-figures) is hand-authored SVG, so this is the
 only localisation path there is — there is no chart spec anywhere to
 re-render from. A handful of raster-only gallery assets
@@ -216,6 +217,12 @@ def gallery_ext(name: str) -> str | None:
 
 # <title>/<desc> nodes carry tooltips + alt text; translated as whole-node contents.
 TOOLTIP_RE = re.compile(r"(<(title|desc)\b[^>]*>)([^<]+)(</(?:title|desc)>)")
+# aria-label is read aloud by a screen reader and is the *only* text many
+# marks expose to one -- a focusable wedge, a panel hit-area, a bar. It is
+# an attribute, so no text-node pass can see it, and the French gallery was
+# shipping figures whose every label spoke English to the readers who most
+# depend on them. Localised through the same map as everything else.
+ARIA_RE = re.compile(r'(aria-label=")([^"]+)(")')
 # A <text> element may mix bare text with <tspan> children; every maximal run of
 # text between a ">" and the next "<" is a separately-rendered visible fragment, so
 # captions split across <tspan> (bold names, emphasised words) still fully localise.
@@ -396,7 +403,19 @@ def localize_hero(name: str) -> None:
         block = RUN.sub(run, block)
         return re.sub(r"<\x00(\d+)\x00>", lambda m: stash[int(m.group(1))], block)
 
+    def aria(m: re.Match) -> str:
+        """Same resolution as a tooltip, escaped for an attribute rather than a node."""
+        raw = m.group(2)
+        key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
+        resolved = TR.get(key) or by_pattern(key) or by_parts(key)
+        if resolved is None:
+            if is_human(key):
+                missing_hover.add(key)
+            return m.group(0)
+        return m.group(1) + html.escape(resolved, quote=True) + m.group(3)
+
     t = TOOLTIP_RE.sub(tip, t)
+    t = ARIA_RE.sub(aria, t)
     t = TEXT_BLOCK.sub(block_sub, t)
     t = _fit_canvas(t)  # grow the canvas if the localised text now overruns it
     t = _resize_tip_bubbles(t)  # re-fit hover-bubble cards to their new text
