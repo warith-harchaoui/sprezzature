@@ -416,6 +416,9 @@ Cohort retention : Who stays, by when they arrived.
 Permutation importance : What the model loses when a column is shuffled.
 ↓ Python + CSV + SVG kit (57 KB)
 
+SHAP waterfall : One prediction, taken apart.
+↓ Python + CSV + SVG kit (57 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
