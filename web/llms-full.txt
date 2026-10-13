@@ -133,7 +133,7 @@ Cartography
 
 Publication-grade Equal-Earth maps: layered
 situation maps with borders, named rivers and labels, and choropleths on a curated, colour-blind-safe
-palette.
+palette. Work in progress: illustrations of the method, not operational assessments.
 
 See the maps →
 
