@@ -159,6 +159,7 @@ $k: k$
 'India: 100 to 163': 'Inde : de 100 à 163'
 'India: 100 → 163': 'Inde : 100 → 163'
 'Infra cost': 'Coût d''infrastructure'
+'Iso-lines of PM2.5, µg/m³ over 78 scattered sensors, triangulated into 123 facets and filled in bands. 78 sensors · 123 triangles, 18 dropped for spanning more than 26% of the width, 1 peeled as a hull splinter · 5.8 to 33.7 µg/m³ · dashed where no sensor lies within 0.60 km, 2 times the median sensor spacing. 33% of the WHO 24-hour guideline line runs across ground no sensor is near enough to support. That is 4.24 km of 12.89, and it is drawn dashed.': 'Iso-lignes de PM2,5 en µg/m³ sur 78 capteurs épars, triangulés en 123 facettes et remplis en bandes. 78 capteurs · 123 triangles, 18 retirés pour enjamber plus de 26 % de la largeur, 1 pelé comme écharde de bord · de 5,8 à 33,7 µg/m³ · en tirets là où aucun capteur ne se trouve à moins de 0,60 km, deux fois l’espacement médian entre capteurs. 33 % de la ligne du seuil OMS sur 24 heures passe sur un terrain qu’aucun capteur n’étaye d’assez près : 4,24 km sur 12,89, tracés en tirets.'
 'Italy: 100 to 78': 'Italie : de 100 à 78'
 'Italy: 100 → 78': 'Italie : 100 → 78'
 'Jan 100 → Dec 100': 'janv. 100 → déc. 100'
@@ -989,8 +990,8 @@ Africa: Afrique
 Ahead of plan (surplus): Au-dessus du plan (excédent)
 Ahmedabad · 8.9 M: Ahmedabad · 8,9 M
 'Ahmedabad: 8.9 million': 'Ahmedabad : 8,9 millions'
-Airbag landing delivered: Airbag landing delivered
-Airmass: Airmass
+Airbag landing delivered: 'Atterrissage sous airbags ; a livré'
+Airmass: 'Masse d’air'
 Albania: Albania
 Albania (Africa): Albanie (Afrique)
 Albania (Americas): Albanie (Amériques)
@@ -1300,7 +1301,7 @@ Barolo — colour 0.58, flavanoid 1.73, proline 1.45: Barolo — couleur 0,58, f
 Barolo — colour 0.59, flavanoid 1.28, proline 1.48: Barolo — couleur 0,59, flavonoïdes 1,28, proline 1,48
 Barolo — colour 0.59, flavanoid 1.45, proline 1.49: Barolo — couleur 0,59, flavonoïdes 1,45, proline 1,49
 Barolo — colour 0.63, flavanoid 1.68, proline 1.35: Barolo — couleur 0,63, flavonoïdes 1,68, proline 1,35
-Began caching rock cores;: Began caching rock cores;
+Began caching rock cores;: 'A commencé à mettre des carottes de côté ;'
 Behind plan (shortfall): En dessous du plan (déficit)
 Beijing · 22.2 M: Beijing · 22,2 M
 'Beijing: 22.2 million': 'Beijing : 22,2 millions'
@@ -1440,7 +1441,7 @@ CHN: CHN
 CLUSTERS: GRAPPES
 COD: COD
 COL: COL
-COLD · NW gale: COLD · NW gale
+COLD · NW gale: 'FROID · coup de vent de NW'
 CORE: CŒUR
 ? CPU flame graph of one GET /api/checkout request (480 ms) - bar width is time spent; the widest tower is where to optimise first
 : Flame graph CPU d'une requête GET /api/checkout (480 ms) · la largeur de la barre est le temps passé ; la tour la plus large est où optimiser en premier
@@ -1599,8 +1600,8 @@ Cloud SQL: Cloud SQL
 'Cloud: 456 of 814 (56%)': 'Cloud : 456 sur 814 (56 %)'
 Clustering: Partitionnement
 Co-authorship across a lab this year — nodes ordered by group; illustrative data: Cosignatures dans un laboratoire cette année · nœuds ordonnés par groupe ; données illustratives
-Cold front: Cold front
-Cold sector: Cold sector
+Cold front: 'Front froid'
+Cold sector: 'Secteur froid'
 Colombia: Colombia
 Colombia (Africa): Colombie (Afrique)
 Colombia (Americas): Colombie (Amériques)
@@ -1924,7 +1925,7 @@ Each region counts people once · hover or tab to a set to bring it forward: Cha
 Each shaded region is the convex hull of one segment · hover or focus a dot to isolate its segment: Chaque zone ombrée est l'enveloppe convexe d'un segment · survolez ou ciblez un point pour isoler son segment
 'Each spoke: 0 at the centre to 100 at the rim (higher is better)': 'Chaque axe : 0 au centre, 100 au bord (plus c’est haut, mieux c’est)'
 Earth Return Orbiter: Earth Return Orbiter
-Earth.: Earth.
+Earth.: 'la Terre.'
 Earthquakes per hexagon: Séismes par hexagone
 Ease of use: Facilité d'usage
 East: Est
@@ -2117,12 +2118,12 @@ F1 0.8: F1 0,8
 FAMILY: FAMILLE
 FEATURE: FONCTION
 FIELD: DOMAINE
-FIRST LANDERS: FIRST LANDERS
+FIRST LANDERS: 'PREMIERS ATTERRISSEURS'
 FLYBYS & ORBITERS: FLYBYS & ORBITERS
 FRA: FRA
 FRANCE: FRANCE
 'FY-2023 operating income: 48.2M': 'Résultat d''exploitation 2023 : 48,2 M'
-Falkland Is.: Falkland Is.
+Falkland Is.: 'Îles Malouines'
 False positive rate: Taux de faux positifs
 Fast-charge time: Temps de charge rapide
 Fast-charge time (min): Temps de charge rapide (min)
@@ -2164,8 +2165,8 @@ Finland (Asia): Finlande (Asie)
 Finland (Europe): Finlande (Europe)
 Finland (Oceania): Finlande (Océanie)
 First: Première
-First close-up photos of: Premières photos rapprochées d'
-First fully successful: First fully successful
+First close-up photos of: 'Premières photos rapprochées de'
+First fully successful: 'Premier atterrissage pleinement'
 First seismometer on Mars;: Premier sismomètre sur Mars ;
 First spacecraft to orbit: Premier engin à orbiter
 'First → Female → Died: 4 people (0%)': 'Première → Femme → Décédé : 4 personnes (0 %)'
@@ -2341,7 +2342,7 @@ Fitted sale price (thousand $): Prix de vente ajusté (milliers de $)
 Floor area (m²): Surface (m²)
 ? Florence Nightingale’s coxcomb · British Army mortality in the East · annual deaths per 1,000 men, by cause · Apr 1854–Mar 1855
 : Diagramme polaire de Florence Nightingale · mortalité de l'armée britannique en Orient · décès annuels pour 1 000 hommes, par cause · avr. 1854-mars 1855
-Flown mission: Flown mission
+Flown mission: 'Mission réalisée'
 ? 'Force-directed (sfdp-style) layout of a synthetic research collaboration network: 318 researchers grouped into six labs, coloured by lab. Nodes are people, edges are co-authored papers, and node size grows with a person''s number of collaborators. The layout was precomputed in Python from a planted stochastic-block model — dense inside each lab, sparse across — so the six communities relax into six visible clusters. A thin web of 73 cross-lab co-authorships bridges the clusters, keeping the whole network a single connected component rather than six islands. Hover a legend swatch to isolate one lab and its bridges.'
 : 'Disposition à forces (style sfdp) d''un réseau de collaboration de recherche synthétique : 318 chercheurs regroupés en six laboratoires, colorés par laboratoire. Les nœuds sont des personnes, les arêtes des articles cosignés, et la taille du nœud croît avec le nombre de collaborateurs. La disposition a été précalculée en Python à partir d''un modèle à blocs stochastiques planté, dense au sein de chaque laboratoire, clairsemé entre eux, si bien que les six communautés se détendent en six grappes visibles. Une fine toile de 73 cosignatures inter-laboratoires relie les grappes, gardant le réseau en une seule composante connexe plutôt que six îlots. Survolez une pastille de la légende pour isoler un laboratoire et ses ponts.'
 ? 'Force-directed node-link diagram of a microservice call graph. Each node is a service, coloured by owning team and sized by how many other services call it. Edges join services that call each other. The Auth service is the largest node: nearly every checkout, order and profile path calls it, so a stall in Auth cascades across the whole store. Hover or focus any service to highlight only the services it talks to.'
@@ -2422,7 +2423,7 @@ Gabon (Americas): Gabon (Amériques)
 Gabon (Asia): Gabon (Asie)
 Gabon (Europe): Gabon (Europe)
 Gabon (Oceania): Gabon (Océanie)
-Gale crater.: Gale crater.
+Gale crater.: 'le cratère Gale.'
 Gambia: Gambia
 Gambia (Africa): Gambie (Afrique)
 Gambia (Americas): Gambie (Amériques)
@@ -2716,7 +2717,7 @@ Indonesia (Europe): Indonésie (Europe)
 Indonesia (Oceania): Indonésie (Océanie)
 Infra: Infra
 'Infrastructure efficiency: +3.7M': 'Efficacité de l''infrastructure : +3,7 M'
-Ingenuity flew the first: Ingenuity a réalisé le premier
+Ingenuity flew the first: 'Ingenuity a réalisé le premier'
 Ingestion: Ingestion
 Instruments (32): Instruments (32)
 ? 'Interactive 3D scatter plot: three well-separated point clouds, one per grape cultivar (Barolo, Grignolino, Barbera), positioned by colour intensity, flavanoid content and proline. Nearer points are larger and more opaque. Drag (mouse, touch or pen) to rotate the view, scroll or pinch to zoom, double-click or double-tap to reset, hover a point for its readings; the figure is shown still at a three-quarter angle when scripting is off.'
@@ -2969,7 +2970,7 @@ Los Angeles · 12.9 M: Los Angeles · 12,9 M
 'Los Angeles: 12.9 million': 'Los Angeles : 12,9 millions'
 'Los Angeles: 4 cyclists per 100 commuters': 'Los Angeles : 4 cyclistes pour 100 actifs'
 Low: Faible
-Lower band: Lower band
+Lower band: 'Bande inférieure'
 Luanda · 9.3 M: Luanda · 9,3 M
 'Luanda: 9.3 million': 'Luanda : 9,3 millions'
 Lund: Lund
@@ -3063,9 +3064,9 @@ Marketing: Marketing
 Marketing lead: Responsable marketing
 'Marketing lead: women $44.60/h vs men $50.10/h — gap $5.50 (11%)': 'Responsable marketing : femmes 44,60 $/h vs hommes 50,10 $/h — écart 5,50 $ (11 %)'
 Marketing — 12 people — Revenue: Marketing — 12 personnes — Revenu
-Mars aircraft.: Mars aircraft.
-Mars attempt.: Mars attempt.
-'Mars on a flyby: 21 grainy': 'Mars lors d''un survol : 21'
+Mars aircraft.: 'vol martien.'
+Mars attempt.: 'première tentative martienne.'
+'Mars on a flyby: 21 grainy': 'Mars lors d’un survol : 21 images'
 Mar–Apr: Mars–Avr.
 Mauritania: Mauritania
 Mauritania (Africa): Mauritanie (Afrique)
@@ -3818,7 +3819,7 @@ Product manager: Cheffe de produit
 Profiles: Profils
 'Profiles · Growth team — called by 3 service(s): Mobile BFF, Notifications, Web App; calls Auth': 'Profils · équipe Growth — appelé par 3 service(s) : BFF mobile, Notifications, Appli web ; appelle Auth'
 Project schedule: Planning du projet
-Public mission history · future dates approximate: Public mission history · future dates approximate
+Public mission history · future dates approximate: 'Historique public des missions · dates futures approximatives'
 Puerto Rico: Puerto Rico
 Puerto Rico (Africa): Porto Rico (Afrique)
 Puerto Rico (Americas): Porto Rico (Amériques)
@@ -3857,7 +3858,7 @@ RIBBON COLOUR = 90-DAY OUTCOME: COULEUR DU RUBAN = RÉSULTAT À 90 JOURS
 RIBBON COLOUR = OUTCOME: COULEUR DU RUBAN = ISSUE
 ROC curve — AUC 0.86: Courbe ROC · AUC 0,86
 ROMANIA: ROUMANIE
-ROVER AGE: ROVER AGE
+ROVER AGE: 'ÈRE DES ROVERS'
 RUS: RUS
 ? RadViz projection of 180 synthetic wheat kernels from three varieties (Kama, Rosa, Canadian), each described by 7 geometric measurements. The measurements are anchors equally spaced on a circle; every kernel sits at the value-weighted average of the anchors it scores high on, as if pulled by springs. The three coloured clouds pull apart toward different rim sectors, so the raw measurements carry the variety signal a classifier would use. Rosa pulls to size, Kama to Compactness, Canadian to Asymmetry — the raw features already carry the signal.
 : Projection RadViz de 180 grains de blé synthétiques de trois variétés (Kama, Rosa, Canadian), chacun décrit par 7 mesures géométriques. Les mesures sont des ancres équidistantes sur un cercle ; chaque grain se place à la moyenne pondérée par la valeur des ancres où il marque le plus, comme tiré par des ressorts. Les trois nuages colorés s'écartent vers des secteurs différents du bord, donc les mesures brutes portent le signal de variété qu'un classifieur utiliserait. Rosa tire vers la taille, Kama vers la compacité, Canadian vers l'asymétrie ; les variables brutes portent déjà le signal.
@@ -4031,7 +4032,7 @@ S: S
 'S&M headcount: -6.2M': 'Effectif commercial et marketing : -6,2 M'
 S. AMERICA: AMÉRIQUE DU S.
 S. Sudan: S. Sudan
-SAMPLE RETURN: SAMPLE RETURN
+SAMPLE RETURN: 'RETOUR D’ÉCHANTILLONS'
 SAU: SAU
 SD · 136: SD · 136
 SE: SE
@@ -4446,9 +4447,9 @@ Software engineer: Ingénieure logiciel
 'Software engineer: women $52.10/h vs men $60.30/h — gap $8.20 (14%)': 'Ingénieure logiciel : femmes 52,10 $/h vs hommes 60,30 $/h — écart 8,20 $ (14 %)'
 Soil moisture pools in the field's low hollow: L'humidité du sol s'accumule dans le creux bas du champ
 Soil texture as a ternary of sand, silt and clay: La texture du sol en diagramme ternaire de sable, limon et argile
-Sojourner, the first Mars: Sojourner, le premier
+Sojourner, the first Mars: 'Sojourner, le premier rover'
 Solid line = mean bias (-7.3 mmHg). Dashed lines = 95% limits of agreement (-15.3 to +0.7 mmHg).: Ligne pleine = biais moyen (-7,3 mmHg). Lignes pointillées = limites d'accord à 95 % (-15,3 à +0,7 mmHg).
-Solomon Is.: Solomon Is.
+Solomon Is.: 'Îles Salomon'
 Somalia: Somalia
 Somaliland: Somaliland
 Source: Source
@@ -4613,7 +4614,7 @@ Tanzania (Americas): Tanzanie (Amériques)
 Tanzania (Asia): Tanzanie (Asie)
 Tanzania (Europe): Tanzanie (Europe)
 Tanzania (Oceania): Tanzanie (Océanie)
-Target for the first Mars: Cible du premier
+Target for the first Mars: 'Cible du premier retour de roches'
 Team: Équipe
 Tehran · 9.6 M: Tehran · 9,6 M
 'Tehran: 9.6 million': 'Tehran : 9,6 millions'
@@ -4745,7 +4746,7 @@ Topology: Topology
 Topsoil samples by grain-size mix · sand + silt + clay = 100 % · illustrative: Échantillons de terre arable par mélange de calibres · sable + limon + argile = 100 % · illustratif
 Toronto · 6.6 M: Toronto · 6,6 M
 'Toronto: 6.6 million': 'Toronto : 6,6 millions'
-Touched and confirmed water: A touché et confirmé la présence d'eau
+Touched and confirmed water: 'A touché et confirmé la glace'
 Transform: Transformation
 Transformers: Transformeurs
 Transit: Transports
@@ -4785,7 +4786,7 @@ Turkmenistan (Americas): Turkménistan (Amériques)
 Turkmenistan (Asia): Turkménistan (Asie)
 Turkmenistan (Europe): Turkménistan (Europe)
 Turkmenistan (Oceania): Turkménistan (Océanie)
-Twin rovers found hard proof: Twin rovers found hard proof
+Twin rovers found hard proof: 'Deux rovers jumeaux ont prouvé'
 Two in five still commute by car: Deux personnes sur cinq vont au travail en voiture
 Two ways to build a multi-trillion economy: Deux façons de bâtir une économie de plusieurs milliers de milliards
 Two-variable choropleth with a 3x3 color key, Equal-Earth basemap.: Choroplèthe à deux variables avec une légende de couleurs 3×3, fond Equal Earth.
@@ -4847,7 +4848,7 @@ Up: Sur-exprimé
 ? 'UpSet plot. Top: a bar chart of intersection sizes, one bar per observed combination of reach channels, sorted largest first. Below each bar, a dot matrix marks which of the four channels (Email, Mobile app, Web app, SMS) that combination includes; dots in a column are joined by a line. Left: a bar chart of each channel''s total reach. The largest single pocket is users reachable only by Email (62k).'
 : 'Diagramme UpSet. En haut : un diagramme en barres des tailles d''intersections, une barre par combinaison observée de canaux, triées de la plus grande à la plus petite. Sous chaque barre, une matrice de points indique lesquels des quatre canaux (e-mail, appli mobile, appli web, SMS) la combinaison inclut ; les points d''une colonne sont reliés par une ligne. À gauche : un diagramme en barres de la portée totale de chaque canal. La plus grande poche est celle des utilisateurs joignables uniquement par e-mail (62k).'
 'Upgrade intent: 1,684 (40.0% conversion)': 'Intention de passer à l''offre supérieure : 1 684 (40,0 % de conversion)'
-Upper band: Upper band
+Upper band: 'Bande supérieure'
 'Upsell / expansion: +7.8M': 'Montée en gamme / expansion : +7,8 M'
 Uptown: Quartier haut
 Uruguay: Uruguay
@@ -4911,7 +4912,7 @@ W: W
 'W · < 5 kt: 1.7% of hours': 'O · < 5 kt : 1,7 % des heures'
 'W · ≥ 28 kt: 0.9% of hours': 'O · ≥ 28 kt : 0,9 % des heures'
 W. Sahara: W. Sahara
-WARM · SW flow: WARM · SW flow
+WARM · SW flow: 'CHAUD · flux de SW'
 WNW: WNW
 'WNW · 10–16 kt: 1.9% of hours': 'ONO · 10–16 kt : 1,9 % des heures'
 'WNW · 16–22 kt: 1.2% of hours': 'ONO · 16–22 kt : 1,2 % des heures'
@@ -4927,7 +4928,7 @@ WSW: WSW
 'WSW · < 5 kt: 1.9% of hours': 'OSO · < 5 kt : 1,9 % des heures'
 'WSW · ≥ 28 kt: 1.4% of hours': 'OSO · ≥ 28 kt : 1,4 % des heures'
 Walk: Marche
-Warm sector: Warm sector
+Warm sector: 'Secteur chaud'
 'Water heating: 18 % (18 squares)': 'Water heating : 18 % (18 carrés)'
 Wave height across a still pond, one second after a single drop: Hauteur des vagues sur un étang calme, une seconde après une goutte unique
 Wealth, longevity, and population: Richesse, longévité et population
@@ -5041,7 +5042,7 @@ aggregate: aggregate
 alpha: alpha
 analytics: analytique
 angle: angle
-another planet; mapped 85%: another planet; mapped 85%
+another planet; mapped 85%: 'une autre planète ; a cartographié'
 api: api
 api/: api/
 api/ — 5 modules, 2,610 lines: api/ — 5 modules, 2,610 lignes
@@ -5073,7 +5074,7 @@ beta: beta
 billing: billing
 bin: bac
 bin — neutral product words · mentioned in 108 reviews (4%): bac — mots produit neutres · mentionné dans 108 avis (4 %)
-biology tests.: biology tests.
+biology tests.: 'essais de biologie du sol.'
 bold: bold
 bottom: bottom
 bottom-left: bottom-left
@@ -5216,13 +5217,13 @@ filter — neutral product words · mentioned in 70 reviews (3%): filtre — mot
 flavanoid: flavonoïdes
 flimsy: fragile
 flimsy — what buyers complain about (−) · mentioned in 74 reviews (3%): fragile — ce dont les acheteurs se plaignent (−) · mentionné dans 74 avis (3 %)
-flowed.: flowed.
+flowed.: 'coulé.'
 flush: flush
-for launch.: for launch.
+for launch.: 'en vue du lancement.'
 force: force
 formula: formula
 fpr: fpr
-frames.: frames.
+frames.: 'granuleuses.'
 from: de
 g: g
 g0: g0
@@ -5270,7 +5271,7 @@ horizontal: horizontal
 hour: hour
 hours: hours
 hp: hp
-ice just under the polar: glace juste sous le sol
+ice just under the polar: 'd’eau juste sous le sol'
 id: id
 inc: inc
 invoice: invoice
@@ -5286,8 +5287,8 @@ kind: kind
 kitchen: cuisine
 kitchen — neutral product words · mentioned in 42 reviews (2%): cuisine — mots produit neutres · mentionné dans 42 avis (2 %)
 label: label
-landed, a first on its debut: a atterri, une première dès ses débuts
-landing; ran the first soil: ; a mené les premiers essais de sol
+landed, a first on its debut: 'a atterri, une première dès sa'
+landing; ran the first soil: 'réussi ; a mené les premiers'
 latency: latency
 lcx: lcx
 leaks: fuites
@@ -5315,7 +5316,7 @@ lx0: lx0
 lx1: lx1
 mag: mag
 map.: carte.
-marsquakes.: marsquakes.
+marsquakes.: 'séismes martiens.'
 max: max
 measure: mesure
 measured in $k: mesuré en k$
@@ -5369,13 +5370,13 @@ noisy — what buyers complain about (−) · mentioned in 428 reviews (18%): br
 nominal: nominal
 none: none
 normalize: normalize
-northwesterly, behind front: northwesterly, behind front
+northwesterly, behind front: 'de nord-ouest, derrière le front'
 of 145 for a majority: sur 145 pour une majorité
-of Mars.: of Mars.
+of Mars.: '85 % de Mars.'
 of incidents fall in the: des incidents tombent dans les
 of trips start in the: des trajets partent des
 of usable capacity: de la capacité utile
-one half barb: one half barb
+one half barb: 'une demi-barbule'
 open: open
 ord: ord
 order: order
@@ -5394,7 +5395,7 @@ path: path
 payments.py: payments.py
 pct: pct
 pctlabel: pctlabel
-pennant + full + half: pennant + full + half
+pennant + full + half: 'fanion + barbule + demi-barbule'
 per 100: pour 100
 percussive tap: frappe percussive
 period: period
@@ -5450,12 +5451,12 @@ retention — what buyers complain about (−) · mentioned in 94 reviews (4%): 
 retry: retry
 right: right
 rising tone: son montant
-rocks to reach a lab on: roches pour atteindre un labo sur
+rocks to reach a lab on: 'martiennes vers un labo'
 root: root
 round(100 * datum.segTotal / data('grand')[0].gt): round(100 * datum.segTotal / data('grand')[0].gt)
 round(100 * datum.value / datum.segTotal): round(100 * datum.value / datum.segTotal)
 routes: routes
-rover.: rover.
+rover.: 'martien.'
 row: row
 rowEnd: rowEnd
 rowStart: rowStart
@@ -5483,7 +5484,7 @@ scale('y', datum.rowStart / datum.segTotal): scale('y', datum.rowStart / datum.s
 scale('y', datum.y): scale('y', datum.y)
 scheduler: scheduler
 schemas: schemas
-sealed samples back toward: sealed samples back toward
+sealed samples back toward: 'échantillons scellés vers'
 seasonal normal: normale saisonnière
 secs: secs
 segTotal: segTotal
@@ -5514,7 +5515,7 @@ size — neutral product words · mentioned in 88 reviews (4%): taille — mots 
 sleep: sleep
 smooth: onctueux
 smooth — what buyers praise (+) · mentioned in 468 reviews (19%): onctueux — ce que les acheteurs saluent (+) · mentionné dans 468 avis (19 %)
-soil.: soil.
+soil.: 'polaire.'
 source: source
 southwesterly, ahead of front: de sud-ouest, en avant du front
 square: square
@@ -5546,7 +5547,7 @@ tests/test_models.py — 330 lines: tests/test_models.py — 330 lignes
 tests/test_payments.py — 520 lines: tests/test_payments.py — 520 lignes
 text: text
 than happens: qu'il n'en survient
-that liquid water once: que l'eau liquide a jadis
+that liquid water once: 'que l’eau liquide a jadis'
 that way.: là.
 the widest cable in the graph: le câble le plus large du graphe
 theoretical: theoretical
@@ -5611,7 +5612,7 @@ yelloworangered: yelloworangered
 yfocus: yfocus
 yhat: yhat
 ~s: ~s
-±2σ band: ±2σ band
+±2σ band: 'bande ±2σ'
 · AP 0.20: · AP 0,20
 · AP 0.93: · AP 0,93
 Île-de-France & North: Île-de-France & Nord
