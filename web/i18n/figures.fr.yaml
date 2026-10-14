@@ -6718,3 +6718,12 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'shallowest': 'le moins profond'
 'flat': 'plat'
 'steep': 'raide'
+
+# ── Contour triangulé (tricontour) ────────────────────────────────────────
+'A third of the guideline line is a guess, and is drawn as one': 'Un tiers de la ligne de la recommandation est une conjecture, et se lit comme telle'
+'PM2.5 across a city''s sensor network, triangulated and dashed where no sensor is near.': 'PM2,5 sur le réseau de capteurs d''une ville, triangulé et en pointillés là où aucun capteur n''est proche.'
+'PM2.5, µg/m³': 'PM2,5 en µg/m³'
+'WHO 24-hour guideline': 'recommandation 24 h de l''OMS'
+'no sensor within': 'aucun capteur à moins de'
+'east, km': 'est, km'
+'north, km': 'nord, km'
