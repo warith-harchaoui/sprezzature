@@ -446,6 +446,9 @@ Event raster : One tick per event, and which rows burst after the moment.
 3-D vector field : Where length alone cannot be trusted.
 ↓ Python + CSV + SVG kit (66 KB)
 
+Area funnel : Where the area is the quantity, not the height.
+↓ Python + CSV + SVG kit (59 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.

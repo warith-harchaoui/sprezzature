@@ -6639,3 +6639,15 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'most shortened': 'la plus raccourcie'
 'sqrt': 'racine'
 'A three-dimensional vector field of 124 arrows, each at its sample point, pointing the way the field points and both scaled and coloured by its magnitude. 124 of 124 samples drawn · camera at 22° elevation, -52° azimuth · length and colour are both the sqrt of magnitude, longest and warmest = 16.000; two channels, because perspective corrupts one of them. The field spans 0.272 to 16.000, a factor of 59. Perspective takes up to 89% off an arrow''s drawn length, and its correlation with magnitude is -0.05 — no pattern to correct by eye, which is why colour carries magnitude too.': 'Un champ de vecteurs en trois dimensions de 124 flèches, chacune à son point d''échantillonnage, pointant où pointe le champ et à la fois dimensionnée et colorée par son intensité. 124 échantillons sur 124 tracés · caméra à 22° d''élévation, -52° d''azimut · longueur et couleur suivent toutes deux la racine de l''intensité, la plus longue et la plus chaude = 16,000 ; deux canaux, parce que la perspective en corrompt un. Le champ s''étend de 0,272 à 16,000, un facteur 59. La perspective retire jusqu''à 89 % de la longueur tracée d''une flèche, et sa corrélation à l''intensité vaut -0,05 — aucun motif que l''œil puisse corriger, et c''est pourquoi la couleur porte aussi l''intensité.'
+
+# ── Entonnoir à aires (funnel-area) ───────────────────────────────────────
+'Two in three are lost entering payment; no other step loses more than a fifth': 'Deux sur trois se perdent à la saisie du paiement ; aucune autre étape n''en perd plus d''un cinquième'
+'Each band''s area is its count, so the eye reads the right quantity; the usual height-proportional version': 'L''aire de chaque bande est son compte, donc l''œil lit la bonne quantité ; la version habituelle, proportionnelle à la hauteur,'
+'draws the last stage ten percent too small.': 'dessine la dernière étape dix pour cent trop petite.'
+'carried': 'franchi'
+'Landed on the page': 'Arrivés sur la page'
+'Started signup': 'Inscription commencée'
+'Verified email': 'Courriel vérifié'
+'Entered payment': 'Paiement saisi'
+'Paid': 'Payé'
+'A funnel of 5 stages from Landed on the page at 41300 down to Paid at 8950. each band''s area is its count — the quantity the eye measures; sizing by height instead would draw the last stage 10% too small · 22% of 41300 reach the last stage. The worst step is Verified email to Entered payment, carrying 31%; the best is Landed on the page to Started signup at 94%.': 'Un entonnoir de 5 étapes, d''Arrivés sur la page à 41300 jusqu''à Payé à 8950. L''aire de chaque bande est son compte — la quantité que l''œil mesure ; dimensionner par la hauteur dessinerait la dernière étape 10 % trop petite · 22 % de 41300 atteignent la dernière étape. La pire étape va de Courriel vérifié à Paiement saisi, qui garde 31 % ; la meilleure va d''Arrivés sur la page à Inscription commencée, à 94 %.'
