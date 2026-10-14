@@ -431,6 +431,9 @@ Causal DAG : The graph, and what it says to adjust for.
 OHLC bars : The session as a bar, and what the axis closes up.
 ↓ Python + CSV + SVG kit (66 KB)
 
+Bump chart : Rank over time, and what rank throws away.
+↓ Python + CSV + SVG kit (61 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.

@@ -59,6 +59,53 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ## [Unreleased]
 
+### Changed
+
+- **`best-engine-ai-helper` is no longer presented as part of the suite.** It
+  belongs to the `ai-helpers` family, not to this one: it has its own repository,
+  its own release line on PyPI, and it serves projects that have nothing to do
+  with sprezzature. Folding it in cost it that audience and made this suite look
+  like it owned a runtime it merely calls.
+
+  It is still a dependency, and still named where dependencies are named — the
+  four Ollama-backed scripts import `best_engine_ai_helper.llm.chat`, and the six
+  `requirements-*.txt` declare it. What changed is everything that described it
+  as a component: the package tables in the README and the LISEZMOI, the
+  positioning paragraphs in LANDSCAPE and PAYSAGE, the ecosystem bullet and the
+  "Runtime & engine" card on both language sites, the schema.org ItemList that
+  counted it as an eighth sprezzature package, `llms.txt`, `llms-full.txt`, and
+  two reference documents.
+
+  Consequences worth knowing: the architecture section is now **two layers**, not
+  three — there is no "Layer 3: the local runtime". The films page carries **four**
+  films, not five; the `moteur-local` chapter was its own film, with its own logo,
+  and it goes with the package. Its production spec is preserved in
+  `.private/moteur-local-film-spec.md` for rebuilding in the other repository;
+  the encoded videos are left on disk.
+
+### Fixed
+
+- **The install snippet for that package pointed at git**, in both language
+  sites and in `llms-full.txt`, while the package had been on PyPI for several
+  releases. Removing the card removed the stale instruction with it.
+- **`narrate_post.py` imported a dependency nothing declared.** It imports
+  `best_engine_ai_helper.llm.chat` at module level, so neither narration engine
+  could be installed from its own `requirements-narrate-*.txt` and used. Both now
+  declare it. The three requirements files that did declare it floored at
+  `>=0.4.0`, three majors behind what the code is tested against; raised to `>=1.4`.
+- **The films page generator had drifted from the pages committed next to it.**
+  Regenerating it would have dropped five `og:` tags and shipped a French page
+  whose skip link read "Skip to content" — an untranslated accessibility landmark.
+  Both are now in the generator, per language.
+- **Unit tests were downloading a 270 MB model.** Since 1.4, every
+  `best_engine_ai_helper.llm.chat` call scans its prompt and response through an
+  NSFW classifier, local engines included. The tests mock `requests.post` — the
+  Ollama transport — so the scan fires before the mock is ever reached. CI never
+  saw it, because CI installs the dependency without the `[filtered]` extra and
+  falls back to a keyword heuristic; a developer machine with `transformers`
+  installed for some other project got the real model instead. An autouse
+  `no_content_scan` fixture keeps the scan out of tests that mock the transport.
+
 ## [1.3.9] (2026-10-02): the package page told readers to install v1.0.0
 
 ### Fixed
