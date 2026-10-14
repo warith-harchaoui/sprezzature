@@ -458,6 +458,9 @@ Cause and effect : Causes grouped, weighted, and marked for evidence.
 Table : Drawn so a column can actually be compared.
 ↓ Python + CSV + SVG kit (60 KB)
 
+Triangulated surface : Scattered points, with the mesh and the holes left visible.
+↓ Python + CSV + SVG kit (72 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.

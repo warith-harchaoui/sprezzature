@@ -6710,3 +6710,11 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Bretagne': 'Bretagne'
 'Normandie': 'Normandie'
 'A table of 8 rows and 5 columns: region, teams, revenue, churn, nps. sorted by revenue, highest first · each numeric column at one precision, read off its own spread · revenue carries its bar in the cell. 8 rows. Totals where a total means something: teams 3550, revenue 10701430. churn, nps do not add up, so no total is shown.': 'Un tableau de 8 lignes et 5 colonnes : région, équipes, revenu, attrition, nps. Trié par revenu, le plus haut d''abord · chaque colonne numérique à une seule précision, lue sur sa propre étendue · le revenu porte sa barre dans la cellule. 8 lignes. Totaux là où un total a un sens : équipes 3550, revenu 10701430. Attrition et nps ne s''additionnent pas, donc aucun total n''est affiché.'
+
+# ── Surface triangulée (trisurface) ───────────────────────────────────────
+'The unsurveyed shoal is left as a hole, not filled in as flat ground': 'Le haut-fond non relevé reste un trou, il n''est pas comblé en fond plat'
+'Depth soundings across a bay, triangulated, with the mesh and the sample points left visible.': 'Sondages de profondeur dans une baie, triangulés, le maillage et les points d''échantillonnage laissés visibles.'
+'deepest': 'le plus profond'
+'shallowest': 'le moins profond'
+'flat': 'plat'
+'steep': 'raide'
