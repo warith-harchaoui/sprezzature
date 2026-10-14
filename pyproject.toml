@@ -32,7 +32,7 @@ all = [
     "sprezzature-audio>=1.1.1",
     "sprezzature-cli-gui>=1.1.0",
     "sprezzature-ux-laws>=1.1.0",
-    "sprezzature-maps>=0.14.0",
+    "sprezzature-maps>=0.15.0",
 ]
 dev = ["pytest>=8.0", "ruff"]
 
