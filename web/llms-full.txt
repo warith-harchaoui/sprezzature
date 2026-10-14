@@ -461,6 +461,9 @@ Table : Drawn so a column can actually be compared.
 Triangulated surface : Scattered points, with the mesh and the holes left visible.
 ↓ Python + CSV + SVG kit (72 KB)
 
+Triangulated contour : Iso-lines over scattered samples, dashed where no sample is near.
+↓ Python + CSV + SVG kit (99 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
