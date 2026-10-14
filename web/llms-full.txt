@@ -449,6 +449,9 @@ Event raster : One tick per event, and which rows burst after the moment.
 Area funnel : Where the area is the quantity, not the height.
 ↓ Python + CSV + SVG kit (59 KB)
 
+Progress against pace : How far along, against how far along you should be.
+↓ Python + CSV + SVG kit (59 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.

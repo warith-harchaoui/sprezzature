@@ -6651,3 +6651,17 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Entered payment': 'Paiement saisi'
 'Paid': 'Payé'
 'A funnel of 5 stages from Landed on the page at 41300 down to Paid at 8950. each band''s area is its count — the quantity the eye measures; sizing by height instead would draw the last stage 10% too small · 22% of 41300 reach the last stage. The worst step is Verified email to Entered payment, carrying 31%; the best is Landed on the page to Started signup at 94%.': 'Un entonnoir de 5 étapes, d''Arrivés sur la page à 41300 jusqu''à Payé à 8950. L''aire de chaque bande est son compte — la quantité que l''œil mesure ; dimensionner par la hauteur dessinerait la dernière étape 10 % trop petite · 22 % de 41300 atteignent la dernière étape. La pire étape va de Courriel vérifié à Paiement saisi, qui garde 31 % ; la meilleure va d''Arrivés sur la page à Inscription commencée, à 94 %.'
+
+# ── Avancement contre allure (progress) ───────────────────────────────────
+'Two of the four scheduled goals are behind, the docs by a third of the year': 'Deux des quatre objectifs sur calendrier sont en retard, la doc d''un tiers de l''année'
+'Each bar is progress toward its target, with a rule where the goal should stand nine months into twelve.': 'Chaque barre est l''avancement vers sa cible, avec un repère là où l''objectif devrait se tenir au neuvième mois sur douze.'
+'expected by now': 'attendu à ce stade'
+'not on a schedule': 'pas sur un calendrier'
+'target': 'cible'
+'New paying teams': 'Nouvelles équipes payantes'
+'Docs pages rewritten': 'Pages de doc réécrites'
+'Support tickets closed': 'Tickets de support clos'
+'Partner integrations': 'Intégrations partenaires'
+'Uptime': 'Disponibilité'
+'Churn below 2%': 'Attrition sous 2 %'
+'Progress toward 6 goals, each a bar filled to what has been achieved with a rule marking where it should stand. 75% of the period has gone, so the rule on each bar is where it should stand · 2 of 6 goals are rates, not accumulations, and carry no pace rule. 2 of the 4 goals on a schedule are behind pace; the furthest is Docs pages rewritten, 34 points short.': 'L''avancement vers 6 objectifs, chacun une barre remplie de ce qui est fait avec un repère là où elle devrait se tenir. 75 % de la période est écoulée, donc le repère sur chaque barre est là où elle devrait se tenir · 2 objectifs sur 6 sont des taux, pas des accumulations, et ne portent pas de repère d''allure. 2 des 4 objectifs sur calendrier sont en retard sur l''allure ; le plus loin est Pages de doc réécrites, à 34 points.'
