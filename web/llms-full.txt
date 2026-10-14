@@ -437,6 +437,9 @@ Bump chart : Rank over time, and what rank throws away.
 Stem plot : A discrete signal, and where its floor is.
 ↓ Python + CSV + SVG kit (61 KB)
 
+Event raster : One tick per event, and which rows burst after the moment.
+↓ Python + CSV + SVG kit (64 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
