@@ -101,6 +101,13 @@ def _fit_canvas(svg: str) -> str:
         # came to be clipped while this fitter reported room to spare.
         family_a = re.search(r'font-family="([^"]*)"', attrs)
         mono = bool(family_a) and _MONO_HINT.search(family_a.group(1)) is not None
+        # A headline is bold, and bold Roboto is about 4% wider than the
+        # regular face the table is built from. Four percent of a 38px
+        # title is forty pixels, which is exactly how fourteen French
+        # headlines came to be painted past the right edge while this
+        # function reported room to spare.
+        weight_a = re.search(r'font-weight="(\w+)"', attrs)
+        bold = bool(weight_a) and weight_a.group(1) in ("600", "700", "800", "900", "bold")
         # Prefer per-tspan positions when present; else the whole visible text.
         tspans = re.findall(r'<tspan\b([^>]*)>([^<]*)</tspan>', inner)
         pieces = []
@@ -120,7 +127,7 @@ def _fit_canvas(svg: str) -> str:
             visible = re.sub(r"<[^>]+>", "", NESTED_TAG.sub("", inner))
             pieces.append((x, fs, visible, anchor))
         for px, pfs, txt, anc in pieces:
-            w = text_width(txt.strip(), pfs, mono=mono) * squeeze
+            w = text_width(txt.strip(), pfs, bold=bold, mono=mono) * squeeze
             right = px + w if anc == "start" else (px + w / 2 if anc == "middle" else px)
             left = px if anc == "start" else (px - w / 2 if anc == "middle" else px - w)
             max_right = max(max_right, right)
@@ -131,7 +138,10 @@ def _fit_canvas(svg: str) -> str:
     # missing-matrix lost the first nine characters of "Enregistrements,
     # par ordre d'arrivée" off the left of the canvas while this function,
     # looking only rightwards, reported nothing to do.
-    pad = max(max_right + 22.0 - vw, 22.0 - min_left)
+    # 22px left ten French headlines with their last stroke on the
+    # border -- whole, but touching. The margin is what separates a
+    # measurement that is right from a layout that looks right.
+    pad = max(max_right + 46.0 - vw, 46.0 - min_left)
     if pad <= 2.0:
         return svg
     pad = min(pad, 0.4 * vw)  # never balloon the canvas
@@ -395,12 +405,18 @@ def by_parts(text: str) -> str | None:
         # green". The same reassembly applies, and the same guard: every
         # piece must resolve, so a sentence with a comma in it is refused
         # rather than half-translated.
-        if ", " not in text:
+        # A path joined by arrows -- "Organic → Free trial → Churned" --
+        # is the same reassembly: the stages are already in the map, only
+        # the twenty combinations of them are not.
+        for joiner in (" → ", ", "):
+            if joiner in text:
+                break
+        else:
             return None
-        pieces = [piece(p) for p in text.split(", ")]
+        pieces = [piece(p) for p in text.split(joiner)]
         if any(p is None for p in pieces):
             return None
-        return ", ".join(p for p in pieces if p is not None)
+        return joiner.join(p for p in pieces if p is not None)
     head_fr = piece(head)
     if head_fr is None:
         return None
