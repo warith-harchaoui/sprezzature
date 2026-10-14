@@ -137,7 +137,6 @@ $k: k$
 'Brazil: 100 to 91': 'Brésil : de 100 à 91'
 'Brazil: 100 → 91': 'Brésil : 100 → 91'
 'CIFAR-10': 'CIFAR-10'
-'Change': 'Écart'
 'Coal': 'Charbon'
 'Coal: 35.5 percent': 'Charbon : 35,5 pour cent'
 'Commuters': 'Pendulaires'
@@ -202,7 +201,6 @@ $k: k$
 'Regularisation strength α': 'Force de régularisation α'
 'Revenue (k$)': 'Chiffre d''affaires (k$)'
 'Revenue up 80% over the year, trial conversion down a third': 'Chiffre d''affaires en hausse de 80 % sur l''année, conversion d''essai en baisse d''un tiers'
-'Revenue': 'Chiffre d''affaires'
 'STL-10': 'STL-10'
 'SVHN': 'SVHN'
 'Share of global generation by source, 2024': 'Part de la production mondiale par source, 2024'
@@ -1019,7 +1017,6 @@ All other causes: Toutes autres causes
 'All other causes: 12% of the year’s deaths': 'Toutes autres causes : 12 % des décès de l''année'
 Alpha: Alpha
 Americano: Americano
-Americas: Americas
 Amsterdam: Amsterdam
 'Amsterdam: 48 cyclists per 100 commuters': 'Amsterdam : 48 cyclistes pour 100 actifs'
 ? An alluvial diagram following 1,000 new sign-ups across three axes — acquisition channel, plan chosen, and 90-day outcome. Ribbon width is proportional to the number of users on that path; the Referral-to-Retained strand is the widest, and free-trial users churn far more than paying ones. Hover a ribbon to highlight one path.
@@ -1153,13 +1150,11 @@ Apr: Avr.
 Arc size ∝ a team's total reviews · ribbon width ∝ reviews exchanged · hover or focus a chord to trace it: Taille de l'arc ∝ total des relectures d'une équipe · largeur du ruban ∝ relectures échangées · survolez ou ciblez un accord pour le suivre
 Area: Aire
 Area-true proportional-symbol map, Equal-Earth basemap.: Carte en symboles proportionnels à l'aire exacte, fond Equal Earth.
-Argentina: Argentina
 Argentina (Africa): Argentine (Afrique)
 Argentina (Americas): Argentine (Amériques)
 Argentina (Asia): Argentine (Asie)
 Argentina (Europe): Argentine (Europe)
 Argentina (Oceania): Argentine (Océanie)
-Argentina — Countries: Argentina — Pays
 Arm: Bras
 Armenia: Armenia
 Armenia (Africa): Arménie (Afrique)
@@ -1204,13 +1199,11 @@ Australia (Americas): Australie (Amériques)
 Australia (Asia): Australie (Asie)
 Australia (Europe): Australie (Europe)
 Australia (Oceania): Australie (Océanie)
-Austria: Austria
 Austria (Africa): Autriche (Afrique)
 Austria (Americas): Autriche (Amériques)
 Austria (Asia): Autriche (Asie)
 Austria (Europe): Autriche (Europe)
 Austria (Oceania): Autriche (Océanie)
-Austria — Countries: Austria — Pays
 Auth: Auth
 Auth is a hidden single point of failure: Auth est un point de défaillance unique caché
 Auth · 7: Auth · 7
@@ -1324,13 +1317,11 @@ Belarus (Americas): Biélorussie (Amériques)
 Belarus (Asia): Biélorussie (Asie)
 Belarus (Europe): Biélorussie (Europe)
 Belarus (Oceania): Biélorussie (Océanie)
-Belgium: Belgium
 Belgium (Africa): Belgique (Afrique)
 Belgium (Americas): Belgique (Amériques)
 Belgium (Asia): Belgique (Asie)
 Belgium (Europe): Belgique (Europe)
 Belgium (Oceania): Belgique (Océanie)
-Belgium — Countries: Belgium — Pays
 Belize: Belize
 Below the line: Sous la ligne
 Benin: Benin
@@ -1394,13 +1385,11 @@ Botswana (Europe): Botswana (Europe)
 Botswana (Oceania): Botswana (Océanie)
 Bounced: A rebondi
 'Bounced: 3,100 visitors': 'A rebondi : 3,100 visiteurs'
-Brazil: Brésil
 Brazil (Africa): Brésil (Afrique)
 Brazil (Americas): Brésil (Amériques)
 Brazil (Asia): Brésil (Asie)
 Brazil (Europe): Brésil (Europe)
 Brazil (Oceania): Brésil (Océanie)
-Brazil — Countries: Brazil — Pays
 'Brazil: $10.4k per capita x 216M people = $2.2T total GDP': 'Brésil : 10,4k $ par habitant × 216M habitants = 2,2 T$ de PIB total'
 Breakfast cereal: Céréales du petit-déjeuner
 Breakfast cereal — Fresh & health: Céréales du petit-déjeuner — Frais & santé
@@ -1480,13 +1469,11 @@ Cameroon (Americas): Cameroun (Amériques)
 Cameroon (Asia): Cameroun (Asie)
 Cameroon (Europe): Cameroun (Europe)
 Cameroon (Oceania): Cameroun (Océanie)
-Canada: Canada
 Canada (Africa): Canada (Afrique)
 Canada (Americas): Canada (Amériques)
 Canada (Asia): Canada (Asie)
 Canada (Europe): Canada (Europe)
 Canada (Oceania): Canada (Océanie)
-Canada — Countries: Canada — Pays
 Canadian: Canadian
 Canadian kernel: Grain Canadian
 Cap Gris-Nez · frequency of wind by direction and speed · 8,760 hourly readings · illustrative: Cap Gris-Nez · fréquence du vent par direction et vitesse · 8 760 relevés horaires · illustratif
@@ -1561,21 +1548,17 @@ Child: Enfant
 'Child → Survived → Survived: 5 people (0%)': 'Enfant → Survécu → Survécu : 5 personnes (0 %)'
 'Child: 109 people': 'Enfant : 109 personnes'
 Children surviving to age 5 (% of births) →: Enfants survivant à 5 ans ( % des naissances) →
-Chile: Chile
 Chile (Africa): Chili (Afrique)
 Chile (Americas): Chili (Amériques)
 Chile (Asia): Chili (Asie)
 Chile (Europe): Chili (Europe)
 Chile (Oceania): Chili (Océanie)
-Chile — Countries: Chile — Pays
-China: Chine
 China (Africa): Chine (Afrique)
 China (Americas): Chine (Amériques)
 China (Asia): Chine (Asie)
 China (Europe): Chine (Europe)
 China (Oceania): Chine (Océanie)
 China -46: Chine −46
-China — Countries: China — Pays
 China's Zhurong rover: le rover chinois Zhurong
 'China: $12.6k per capita x 1.41B people = $17.8T total GDP': 'Chine : 12,6k $ par habitant × 1.41B habitants = 17,8 T$ de PIB total'
 Chinstrap: À jugulaire
@@ -1706,13 +1689,11 @@ Country: Country
 Crisps & snacks: Chips & snacks
 Crisps & snacks — Treats: Chips & snacks — Gourmandises
 Critical: Critique
-Croatia: Croatia
 Croatia (Africa): Croatie (Afrique)
 Croatia (Americas): Croatie (Amériques)
 Croatia (Asia): Croatie (Asie)
 Croatia (Europe): Croatie (Europe)
 Croatia (Oceania): Croatie (Océanie)
-Croatia — Countries: Croatia — Pays
 Cross-team pull-request reviews over one sprint (illustrative data): Relectures de pull requests entre équipes sur un sprint (données illustratives)
 Cuba: Cuba
 Cuba (Africa): Cuba (Afrique)
@@ -1972,13 +1953,11 @@ Ecuador (Americas): Équateur (Amériques)
 Ecuador (Asia): Équateur (Asie)
 Ecuador (Europe): Équateur (Europe)
 Ecuador (Oceania): Équateur (Océanie)
-Egypt: Egypt
 Egypt (Africa): Égypte (Afrique)
 Egypt (Americas): Égypte (Amériques)
 Egypt (Asia): Égypte (Asie)
 Egypt (Europe): Égypte (Europe)
 Egypt (Oceania): Égypte (Océanie)
-Egypt — Countries: Egypt — Pays
 El Salvador: El Salvador
 El Salvador (Africa): Salvador (Afrique)
 El Salvador (Americas): Salvador (Amériques)
@@ -2125,7 +2104,6 @@ Ethiopia (Americas): Éthiopie (Amériques)
 Ethiopia (Asia): Éthiopie (Asie)
 Ethiopia (Europe): Éthiopie (Europe)
 Ethiopia (Oceania): Éthiopie (Océanie)
-Europe: Europe
 Evening rush: Pointe du soir
 Event streams: Flux d'événements
 Events: Événements
@@ -2192,13 +2170,11 @@ Finance: Finance
 Finance — 9 people — Operations: Finance — 9 personnes — Operations
 Financial analyst: Analyste financière
 'Financial analyst: women $41.30/h vs men $47.80/h — gap $6.50 (14%)': 'Analyste financière : femmes 41,30 $/h vs hommes 47,80 $/h — écart 6,50 $ (14 %)'
-Finland: Finland
 Finland (Africa): Finlande (Afrique)
 Finland (Americas): Finlande (Amériques)
 Finland (Asia): Finlande (Asie)
 Finland (Europe): Finlande (Europe)
 Finland (Oceania): Finlande (Océanie)
-Finland — Countries: Finland — Pays
 First: Première
 First close-up photos of: Premières photos rapprochées d'
 First fully successful: First fully successful
@@ -2396,13 +2372,11 @@ Fournier 2021: Fournier 2021
 'Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null': 'Fournier 2021 : RC 1,12 (IC 95 % 0,71-1,77), poids 2 % · franchit la valeur nulle'
 Fox: Renard
 Fr. S. Antarctic Lands: Fr. S. Antarctic Lands
-France: France
 France (Africa): France (Afrique)
 France (Americas): France (Amériques)
 France (Asia): France (Asie)
 France (Europe): France (Europe)
 France (Oceania): France (Océanie)
-France — Countries: France — Pays
 'France: $44.5k per capita x 68M people = $3.0T total GDP': 'France : 44,5k $ par habitant × 68M habitants = 3,0 T$ de PIB total'
 Free plan: Offre gratuite
 'Free plan: 1,700 visitors': 'Offre gratuite : 1,700 visiteurs'
@@ -2490,21 +2464,17 @@ Georgia (Americas): Géorgie (Amériques)
 Georgia (Asia): Géorgie (Asie)
 Georgia (Europe): Géorgie (Europe)
 Georgia (Oceania): Géorgie (Océanie)
-Germany: Allemagne
 Germany (Africa): Allemagne (Afrique)
 Germany (Americas): Allemagne (Amériques)
 Germany (Asia): Allemagne (Asie)
 Germany (Europe): Allemagne (Europe)
 Germany (Oceania): Allemagne (Océanie)
-Germany — Countries: Germany — Pays
 'Germany: $52.7k per capita x 84M people = $4.4T total GDP': 'Allemagne : 52,7k $ par habitant × 84M habitants = 4,4 T$ de PIB total'
-Ghana: Ghana
 Ghana (Africa): Ghana (Afrique)
 Ghana (Americas): Ghana (Amériques)
 Ghana (Asia): Ghana (Asie)
 Ghana (Europe): Ghana (Europe)
 Ghana (Oceania): Ghana (Océanie)
-Ghana — Countries: Ghana — Pays
 Global exposure index, by country: Indice d'exposition mondial, par pays
 Global reach: Portée mondiale
 Go: Go
@@ -2530,13 +2500,11 @@ Great Plains: Grandes Plaines
 'Great Plains: 176k left, 143k arrived (net -33k)': 'Grandes Plaines : 176k partis, 143k arrivés (net -33k)'
 Great-circle flow map on an Equal-Earth basemap, line width by volume; synthetic illustrative data.: Carte de flux en orthodromies sur fond Equal Earth, épaisseur selon le volume ; données synthétiques illustratives.
 Great-circle links, width by volume · synthetic O-D data (illustrative only): Liaisons orthodromiques, épaisseur selon le volume · données origine-destination synthétiques (illustratives)
-Greece: Greece
 Greece (Africa): Grèce (Afrique)
 Greece (Americas): Grèce (Amériques)
 Greece (Asia): Grèce (Asie)
 Greece (Europe): Grèce (Europe)
 Greece (Oceania): Grèce (Océanie)
-Greece — Countries: Greece — Pays
 Green League: Ligue verte
 Green League (GRN) — 34 seats: Ligue verte (GRN) — 34 sièges
 Greenland: Greenland
@@ -2689,7 +2657,6 @@ Hong Kong · 7.6 M: Hong Kong · 7,6 M
 ? 'Horizon chart: one banded, folded area row per database node. Blue bands rise above each node''s daily-mean CPU, red bands fall below; deeper, taller colour means a bigger swing. db-01 shows a deep blue spike overnight from a batch job.'
 : 'Graphique d''horizon : une bande d''aire pliée par nœud de base de données. Les bandes bleues s''élèvent au-dessus de la moyenne quotidienne du CPU de chaque nœud, les bandes rouges passent en dessous ; une couleur plus foncée et plus haute signifie une variation plus forte. db-01 montre un pic bleu foncé pendant la nuit dû à un traitement par lot.'
 Hot: Chaud
-Hour: Heure
 Hour of day: Heure de la journée
 Hourly CPU utilisation vs. each node&#8217;s own daily mean, one horizon row per node: Utilisation CPU horaire face à la moyenne quotidienne de chaque nœud, une bande d'horizon par nœud
 Hourly CPU utilisation vs. each node’s own daily mean, one horizon row per node: Utilisation CPU horaire face à la moyenne quotidienne de chaque nœud, une bande d'horizon par nœud
@@ -2702,7 +2669,6 @@ How 100 city workers get to the office, one square = 1 person: Comment 100 actif
 How many users each combination of contact channels reaches: Combien d'utilisateurs chaque combinaison de canaux de contact atteint
 How to read a wind barb: Comment lire une barbule de vent
 How to read it: Comment le lire
-'Hung parliament: Social Democrats lead but fall 9 short of a majority': 'Parlement sans majorité : les Sociaux-démocrates mènent mais manquent 9 sièges'
 Hungary: Hungary
 Hungary (Africa): Hongrie (Afrique)
 Hungary (Americas): Hongrie (Amériques)
@@ -2722,13 +2688,11 @@ IT & Security: IT & Sécurité
 IT & Security — 11 people — Operations: IT & Sécurité — 11 personnes — Operations
 ITA: ITA
 ITALY: ITALIE
-Iceland: Iceland
 Iceland (Africa): Islande (Afrique)
 Iceland (Americas): Islande (Amériques)
 Iceland (Asia): Islande (Asie)
 Iceland (Europe): Islande (Europe)
 Iceland (Oceania): Islande (Océanie)
-Iceland — Countries: Iceland — Pays
 ? 'Icicle / flame graph of one GET /api/checkout request totalling 480 milliseconds. The root bar spans the full width; each row below splits its parent by time. The highlighted warm tower load_cart to fetch_user_orders to run_sql to wait_on_lock is the critical path: wait_on_lock alone is 176 ms, about 37 percent of the request, and run_sql as a whole is 214 ms, about 45 percent. Off-path calls (authenticate, render_response) are shown in muted grey.'
 : 'Graphique en stalactites / flame graph d''une requête GET /api/checkout totalisant 480 millisecondes. La barre racine occupe toute la largeur ; chaque ligne en dessous divise son parent par le temps. La tour chaude en surbrillance load_cart vers fetch_user_orders vers run_sql vers wait_on_lock est le chemin critique : wait_on_lock à lui seul fait 176 ms, environ 37 pour cent de la requête, et run_sql dans son ensemble fait 214 ms, environ 45 pour cent. Les appels hors chemin (authenticate, render_response) sont en gris atténué.'
 Illustrative 3D surface: Surface 3D illustrative
@@ -2752,13 +2716,11 @@ Independent pharmacy — nearest shop for 3.3% of the city · Independent: Indep
 Independent pharmacy — nearest shop for 3.5% of the city · Independent: Independent pharmacy — boutique la plus proche pour 3,5 % de la ville · Independent
 Independent pharmacy — nearest shop for 4.4% of the city · Independent: Independent pharmacy — boutique la plus proche pour 4,4 % de la ville · Independent
 Index — same class breaks across all panels: Indice · mêmes seuils de classes sur tous les panneaux
-India: Inde
 India (Africa): Inde (Afrique)
 India (Americas): Inde (Amériques)
 India (Asia): Inde (Asie)
 India (Europe): Inde (Europe)
 India (Oceania): Inde (Océanie)
-India — Countries: India — Pays
 'India: $2.6k per capita x 1.43B people = $3.7T total GDP': 'Inde : 2,6k $ par habitant × 1.43B habitants = 3,7 T$ de PIB total'
 Indonesia: Indonésie
 Indonesia (Africa): Indonésie (Afrique)
@@ -2796,13 +2758,11 @@ Iraq (Americas): Irak (Amériques)
 Iraq (Asia): Irak (Asie)
 Iraq (Europe): Irak (Europe)
 Iraq (Oceania): Irak (Océanie)
-Ireland: Ireland
 Ireland (Africa): Irlande (Afrique)
 Ireland (Americas): Irlande (Amériques)
 Ireland (Asia): Irlande (Asie)
 Ireland (Europe): Irlande (Europe)
 Ireland (Oceania): Irlande (Océanie)
-Ireland — Countries: Ireland — Pays
 Isolate the Animals family (34 words): Isoler la famille Animaux (34 mots)
 Isolate the Colours family (32 words): Isoler la famille Couleurs (32 mots)
 Isolate the Countries family (34 words): Isoler la famille Pays (34 mots)
@@ -2817,13 +2777,11 @@ Israel (Europe): Israël (Europe)
 Israel (Oceania): Israël (Océanie)
 Istanbul · 16.0 M: Istanbul · 16,0 M
 'Istanbul: 16.0 million': 'Istanbul : 16,0 millions'
-Italy: Italie
 Italy (Africa): Italie (Afrique)
 Italy (Americas): Italie (Amériques)
 Italy (Asia): Italie (Asie)
 Italy (Europe): Italie (Europe)
 Italy (Oceania): Italie (Océanie)
-Italy — Countries: Italy — Pays
 Item: Élément
 Ito: Ito
 'Ito & Okafor: 2 joint papers': 'Ito & Okafor : 2 articles communs'
@@ -2847,14 +2805,12 @@ Jan '55: janv. 55
 'Jan: actual $0.45M vs plan $0.43M — $18k ahead of plan': 'Janv. : réel 0,45 M$ vs plan 0,43 M$ — 18k au-dessus du plan'
 January 1855 was the deadliest month: Janvier 1855 fut le mois le plus meurtrier
 'January: median 4 °C (middle-half 2–5 °C)': 'Janvier : médiane 4 °C (moitié centrale 2-5 °C)'
-Japan: Japon
 Japan & Kuril arc: Japon & arc des Kouriles
 Japan (Africa): Japon (Afrique)
 Japan (Americas): Japon (Amériques)
 Japan (Asia): Japon (Asie)
 Japan (Europe): Japon (Europe)
 Japan (Oceania): Japon (Océanie)
-Japan — Countries: Japan — Pays
 'Japan: $33.9k per capita x 124M people = $4.2T total GDP': 'Japon : 33,9k $ par habitant × 124M habitants = 4,2 T$ de PIB total'
 Java: Java
 Java — 30.3% of developers · Enterprise & JVM: Java — 30,3 % des développeurs · Entreprise & JVM
@@ -2863,26 +2819,22 @@ JavaScript and Python still anchor the working web: JavaScript et Python ancrent
 JavaScript — 62.3% of developers · Web & scripting: JavaScript — 62,3 % des développeurs · Web & scripting
 Johannesburg · 6.2 M: Johannesburg · 6,2 M
 'Johannesburg: 6.2 million': 'Johannesburg : 6,2 millions'
-Jordan: Jordan
 Jordan (Africa): Jordanie (Afrique)
 Jordan (Americas): Jordanie (Amériques)
 Jordan (Asia): Jordanie (Asie)
 Jordan (Europe): Jordanie (Europe)
 Jordan (Oceania): Jordanie (Océanie)
-Jordan — Countries: Jordan — Pays
 Jul: Juil.
 'Jul 1854 · All other causes: 11 per 1,000': 'Juil. 1854 · Toutes autres causes : 11 pour 1 000'
 'Jul 1854 · Preventable disease: 23 per 1,000': 'Juil. 1854 · Maladie évitable : 23 pour 1 000'
 'Jul: actual $0.56M vs plan $0.59M — $30k behind plan': 'Juil. : réel 0,56 M$ vs plan 0,59 M$ — 30k en dessous du plan'
 Julia: Julia
 Julia — 1.7% of developers · Data & scientific: Julia — 1,7 % des développeurs · Données & scientifique
-July: Juillet
 'July: median 31 °C (middle-half 28–32 °C)': 'Juillet : médiane 31 °C (moitié centrale 28-32 °C)'
 Jun: Juin
 'Jun 1854 · All other causes: 8 per 1,000': 'Juin 1854 · Toutes autres causes : 8 pour 1 000'
 'Jun 1854 · Preventable disease: 18 per 1,000': 'Juin 1854 · Maladie évitable : 18 pour 1 000'
 'Jun: actual $0.55M vs plan $0.56M — $8k behind plan': 'Juin : réel 0,55 M$ vs plan 0,56 M$ — 8k en dessous du plan'
-June: Juin
 'June: median 28 °C (middle-half 26–30 °C)': 'Juin : médiane 28 °C (moitié centrale 26-30 °C)'
 KAZ: KAZ
 KEN: KEN
@@ -2899,13 +2851,11 @@ Kazakhstan (Americas): Kazakhstan (Amériques)
 Kazakhstan (Asia): Kazakhstan (Asie)
 Kazakhstan (Europe): Kazakhstan (Europe)
 Kazakhstan (Oceania): Kazakhstan (Océanie)
-Kenya: Kenya
 Kenya (Africa): Kenya (Afrique)
 Kenya (Americas): Kenya (Amériques)
 Kenya (Asia): Kenya (Asie)
 Kenya (Europe): Kenya (Europe)
 Kenya (Oceania): Kenya (Océanie)
-Kenya — Countries: Kenya — Pays
 Kernel length: Longueur du grain
 Kernel width: Largeur du grain
 Khartoum · 6.2 M: Khartoum · 6,2 M
@@ -2937,7 +2887,6 @@ L1: L1
 L2: L2
 L3: L3
 L4: L4
-LFP (iron phosphate): LFP (lithium-fer-phosphate)
 LIB · 41: LIB · 41
 Lagos: Lagos
 Lagos · 15.4 M: Lagos · 15,4 M
@@ -3270,7 +3219,6 @@ Meridian · Old Market — nearest shop for 2.4% of the city · Meridian: Meridi
 Metrics: Metrics
 Metrics · Infra — depended on by 1, depends on 0: Metrics · Infra — dépendu par 1, dépend de 0
 Metropolitan population: Population métropolitaine
-Mexico: Mexico
 Mexico (Africa): Mexique (Afrique)
 Mexico (Americas): Mexique (Amériques)
 Mexico (Asia): Mexique (Asie)
@@ -3279,7 +3227,6 @@ Mexico (Oceania): Mexique (Océanie)
 Mexico City: Mexico
 Mexico City · 22.3 M: Mexico · 22,3 M
 'Mexico City: 22.3 million': 'Mexico City : 22,3 millions'
-Mexico — Countries: Mexico — Pays
 Midwest: Midwest
 'Midwest → Great Plains: 44k people moved': 'Midwest → Grandes Plaines : 44k personnes déplacées'
 'Midwest → Mountain West: 96k people moved': 'Midwest → Ouest montagneux : 96k personnes déplacées'
@@ -3341,7 +3288,6 @@ Montenegro (Americas): Monténégro (Amériques)
 Montenegro (Asia): Monténégro (Asie)
 Montenegro (Europe): Monténégro (Europe)
 Montenegro (Oceania): Monténégro (Océanie)
-Month: Mois
 Monthly Temperature Range by City: Amplitude thermique mensuelle par ville
 Monthly churn: Attrition mensuelle
 'Monthly churn: 2.4 % — 120% of target (2 %)': 'Attrition mensuelle : 2,4 % · 120 % de la cible (2 %)'
@@ -3353,13 +3299,11 @@ Montreal: Montreal
 'Montreal: 50 kt from NW (320°)': 'Montreal : 50 kt de NO (320°)'
 Morning rush: Pointe du matin
 Morning trips (7-10 AM) per hexagonal bin across the metro service area · one hex ≈ 400 m · illustrative: Trajets du matin (7-10 h) par cellule hexagonale sur la zone de service métropolitaine · un hexagone ≈ 400 m · illustratif
-Morocco: Morocco
 Morocco (Africa): Maroc (Afrique)
 Morocco (Americas): Maroc (Amériques)
 Morocco (Asia): Maroc (Asie)
 Morocco (Europe): Maroc (Europe)
 Morocco (Oceania): Maroc (Océanie)
-Morocco — Countries: Morocco — Pays
 Moscow: Moscou
 Moscow · 12.7 M: Moscou · 12,7 M
 'Moscow: 12.7 million': 'Moscow : 12,7 millions'
@@ -3406,7 +3350,6 @@ NE: NE
 'NE · < 5 kt: 0.7% of hours': 'NE · < 5 kt : 0,7 % des heures'
 NGA: NGA
 NLD: NLD
-NMC-811 (high nickel): NMC-811 (riche en nickel)
 NNE: NNE
 'NNE · 10–16 kt: 0.5% of hours': 'NNE · 10–16 kt : 0,5 % des heures'
 'NNE · 16–22 kt: 0.2% of hours': 'NNE · 16–22 kt : 0,2 % des heures'
@@ -3451,13 +3394,11 @@ Nantucket: Nantucket
 National Right: Droite nationale
 National Right (NR) — 26 seats: Droite nationale (NR) — 26 sièges
 Nearest-pharmacy catchment areas across the city, coloured by chain (illustrative open-data layer): Zones de chalandise de la pharmacie la plus proche à travers la ville, colorées par enseigne (couche de données ouvertes illustrative)
-Nepal: Nepal
 Nepal (Africa): Népal (Afrique)
 Nepal (Americas): Népal (Amériques)
 Nepal (Asia): Népal (Asie)
 Nepal (Europe): Népal (Europe)
 Nepal (Oceania): Népal (Océanie)
-Nepal — Countries: Nepal — Pays
 Net change (−100 … +100) · gray = no data: Variation nette (−100 … +100) · gris = aucune donnée
 Net change by country · diverging scale centered at 0 · synthetic demo data: Variation nette par pays · échelle divergente centrée sur 0 · données de démonstration synthétiques
 Netherlands: Netherlands
@@ -3495,13 +3436,11 @@ Niger (Americas): Niger (Amériques)
 Niger (Asia): Niger (Asie)
 Niger (Europe): Niger (Europe)
 Niger (Oceania): Niger (Océanie)
-Nigeria: Nigeria
 Nigeria (Africa): Nigeria (Afrique)
 Nigeria (Americas): Nigeria (Amériques)
 Nigeria (Asia): Nigeria (Asie)
 Nigeria (Europe): Nigeria (Europe)
 Nigeria (Oceania): Nigeria (Océanie)
-Nigeria — Countries: Nigeria — Pays
 Night-time incidents (10 PM-4 AM) per 400 m grid cell across Riverbend · illustrative: Incidents nocturnes (22 h-4 h) par cellule de 400 m à travers Riverbend · illustratif
 Night-time incidents concentrate in the downtown core of Riverbend: Les incidents nocturnes se concentrent au centre-ville de Riverbend
 'Nightingale rose: preventable disease, not battle, killed most soldiers in the Crimean War': 'Rose de Nightingale : la maladie évitable, non le combat, a tué le plus de soldats pendant la guerre de Crimée'
@@ -3548,13 +3487,11 @@ Northeast: Nord-Est
 'Northeast → Pacific Coast: 22k people moved': 'Nord-Est → Côte Pacifique : 22k personnes déplacées'
 'Northeast → Southeast: 186k people moved': 'Nord-Est → Sud-Est : 186k personnes déplacées'
 'Northeast: 339k left, 156k arrived (net -183k)': 'Nord-Est : 339k partis, 156k arrivés (net -183k)'
-Norway: Norway
 Norway (Africa): Norvège (Afrique)
 Norway (Americas): Norvège (Amériques)
 Norway (Asia): Norvège (Asie)
 Norway (Europe): Norvège (Europe)
 Norway (Oceania): Norvège (Océanie)
-Norway — Countries: Norway — Pays
 Notifications: Notifications
 Notifications not arriving: Notifications non reçues
 'Notifications not arriving: 51 tickets (4.2% of the week, cumulative 92.6%)': 'Notifications non reçues : 51 tickets (4,2 % de la semaine, cumulé 92,6 %)'
@@ -3616,7 +3553,6 @@ Oct: Oct.
 'Oct 1854 · Preventable disease: 63 per 1,000': 'Oct. 1854 · Maladie évitable : 63 pour 1 000'
 'Oct 1854 · Wounds in battle: 3 per 1,000': 'Oct. 1854 · Blessures au combat : 3 pour 1 000'
 'Oct: actual $0.63M vs plan $0.67M — $34k behind plan': 'Oct. : réel 0,63 M$ vs plan 0,67 M$ — 34k en dessous du plan'
-October: Octobre
 'October: median 17 °C (middle-half 14–20 °C)': 'Octobre : médiane 17 °C (moitié centrale 14-20 °C)'
 Odds ratio for reaching BP target (log scale, higher is better): Rapport de cotes pour atteindre la cible tensionnelle (échelle log, plus c’est haut, mieux c’est)
 Off-peak hour: Heure creuse
@@ -3688,7 +3624,6 @@ Pacific Coast: Côte Pacifique
 'Pacific Coast: 399k left, 157k arrived (net -242k)': 'Côte Pacifique : 399k partis, 157k arrivés (net -242k)'
 ? 'Packed-bubble chart of programming languages. Each bubble is a language, labelled with its name and share, so it reads without relying on colour. Its area is the share of professional developers who report using it, and its colour marks the language family: web and scripting, data and scientific, systems, and enterprise / JVM. The web and scripting family (JavaScript, HTML/CSS, TypeScript) and the data family (Python, SQL) hold the largest bubbles, while the systems and enterprise families form smaller but distinct clusters. Hover or focus any bubble to lift its whole family and dim the rest.'
 : 'Diagramme à bulles compactées des langages de programmation. Chaque bulle est un langage, étiqueté avec son nom et sa part, pour se lire sans dépendre de la couleur. Son aire est la part des développeurs professionnels qui déclarent l''utiliser, et sa couleur marque la famille du langage : web et scripting, données et scientifique, systèmes, et entreprise / JVM. La famille web et scripting (JavaScript, HTML/CSS, TypeScript) et la famille données (Python, SQL) portent les plus grosses bulles, tandis que les familles systèmes et entreprise forment des grappes plus petites mais distinctes. Survolez ou ciblez une bulle pour faire ressortir toute sa famille et estomper le reste.'
-Paid: Payant
 Paid ads: Annonces payantes
 'Paid ads → Bounced: 900 visitors': 'Paid ads → Bounced : 900 visiteurs'
 'Paid ads → Browsed: 2,600 visitors': 'Paid ads → Browsed : 2,600 visiteurs'
@@ -3768,13 +3703,11 @@ Perfect model: Modèle parfait
 Perimeter: Périmètre
 Perseverance: Perseverance
 Perseverance's cached tubes: les tubes en réserve de Perseverance
-Peru: Peru
 Peru (Africa): Pérou (Afrique)
 Peru (Americas): Pérou (Amériques)
 Peru (Asia): Pérou (Asie)
 Peru (Europe): Pérou (Europe)
 Peru (Oceania): Pérou (Océanie)
-Peru — Countries: Peru — Pays
 Pet food: Aliments pour animaux
 Pet food — Household staples: Aliments pour animaux — Produits de base
 Petal length = % of hours: Longueur du pétale = % des heures
@@ -3804,13 +3737,11 @@ Platform reviews everyone's code and is rarely reviewed back: La plateforme reli
 Platform — 28 people — Product & Engineering: Plateforme — 28 personnes — Product & Engineering
 'Platform: 114 reviews in and out this sprint': 'Platform : 114 relectures entrantes et sortantes ce sprint'
 'Point size = predictions in bin:': 'Taille du point = prédictions dans la classe :'
-Poland: Poland
 Poland (Africa): Pologne (Afrique)
 Poland (Americas): Pologne (Amériques)
 Poland (Asia): Pologne (Asie)
 Poland (Europe): Pologne (Europe)
 Poland (Oceania): Pologne (Océanie)
-Poland — Countries: Poland — Pays
 ? Polar clock plot of bike-share departures by hour of day, running clockwise from midnight at the top. Departures are lowest overnight, rise to a sharp morning peak near 8 a.m., dip at midday, then climb to the day's tallest peak near 6 p.m. before falling into the night.
 : Diagramme polaire en horloge des départs de vélos en libre-service par heure, dans le sens horaire depuis minuit en haut. Les départs sont au plus bas la nuit, montent vers un pic net le matin vers 8 h, retombent à midi, puis grimpent vers le plus haut pic de la journée vers 18 h avant de retomber dans la nuit.
 ? Polar histogram of a year of hourly wind observations. Sixteen compass sectors each carry a petal whose length is the percent of hours the wind blew from that bearing, stacked and coloured by speed band from under 5 knots to 28 knots or more. The longest petals point WSW and west, where the strongest winds also concentrate.
@@ -3826,13 +3757,11 @@ Pop: Pop
 Population (M): Population (M)
 Population by age and sex: Population par âge et par sexe
 'Portland ME: 25 kt from SW (205°)': 'Portland ME : 25 kt de SO (205°)'
-Portugal: Portugal
 Portugal (Africa): Portugal (Afrique)
 Portugal (Americas): Portugal (Amériques)
 Portugal (Asia): Portugal (Asie)
 Portugal (Europe): Portugal (Europe)
 Portugal (Oceania): Portugal (Océanie)
-Portugal — Countries: Portugal — Pays
 Power: Puissance
 Power users: Utilisateurs intensifs
 Power users · $166/mo · 5.7 active days/week: Utilisateurs intensifs · 166 $/mois · 5,7 jours actifs/sem
@@ -3884,7 +3813,6 @@ Predicted probability of churn: Probabilité d'attrition prédite
 Predictions: Prédictions
 Preventable disease: Maladie évitable
 'Preventable disease: 83% of the year’s deaths': 'Maladie évitable : 83 % des décès de l''année'
-Price: Prix
 Private-label lines clustered by co-purchase similarity · illustrative data: Gammes de marque distributeur regroupées par similarité d'achat conjoint · données illustratives
 Pro tier: Niveau Pro
 Pro tier · median 150 ms: Niveau Pro · médiane 150 ms
@@ -4478,7 +4406,6 @@ Signed up: Inscrit
 'Signed up → Paid plan: 900 visitors': 'Signed up → Paid plan : 900 visiteurs'
 'Signed up: 3,100 visitors': 'Inscrit : 3,100 visiteurs'
 Significance: Significativité
-Silicon-anode (fast): Anode silicium (rapide)
 Silt: Limon
 Silt loam: Limon fin
 Silt loam — sand 13 %, silt 72 %, clay 15 %: Limon fin — sable 13 %, limon 72 %, argile 15 %
@@ -4580,13 +4507,11 @@ Southeast: Sud-Est
 Southgate: Southgate
 Sowing: Semis
 Sowing · October · 1 month (8% of the year): Semis · octobre · 1 mois (8 % de l'année)
-Spain: Spain
 Spain (Africa): Espagne (Afrique)
 Spain (Americas): Espagne (Amériques)
 Spain (Asia): Espagne (Asie)
 Spain (Europe): Espagne (Europe)
 Spain (Oceania): Espagne (Océanie)
-Spain — Countries: Spain — Pays
 Speaking time per participant · 40-minute round table · illustrative data: Temps de parole par participant · table ronde de 40 minutes · données illustratives
 Species: Espèce
 ? 'Spectrogram: a time-by-frequency heatmap of a short-time Fourier transform. A bright diagonal sweeps from low to high frequency (a rising tone), a solid band at the base is a steady bass drone, and three vertical streaks are percussive taps. Colour runs dark purple (quiet) to yellow (loud).'
@@ -4625,7 +4550,6 @@ Streaming is now the biggest slice of media revenue: Le streaming est désormais
 Studio: Studio
 Subscribed: Abonnement
 'Subscription revenue: +19.4M': 'Revenu d''abonnement : +19,4 M'
-Subscriptions: Abonnements
 Suburb: Périphérie
 Sudan: Sudan
 Sun: Dim
@@ -4646,13 +4570,11 @@ Suriname: Suriname
 Survival: Survie
 Survived: Survécu
 'Survived: 499 people': 'Survécu : 499 personnes'
-Sweden: Sweden
 Sweden (Africa): Suède (Afrique)
 Sweden (Americas): Suède (Amériques)
 Sweden (Asia): Suède (Asie)
 Sweden (Europe): Suède (Europe)
 Sweden (Oceania): Suède (Océanie)
-Sweden — Countries: Sweden — Pays
 Swift: Swift
 Swift — 5.1% of developers · Systems: Swift — 5,1 % des développeurs · Systèmes
 Switzerland: Switzerland
@@ -4721,13 +4643,11 @@ Temps de parole par intervenant · table ronde de 40 min · données illustrativ
 ? 'Ternary plot: an equilateral triangle whose corners are 100 % clay (top), 100 % sand (bottom-left) and 100 % silt (bottom-right). Each dot is one topsoil sample, positioned by its sand / silt / clay percentages, which always sum to 100. Samples cluster into three texture classes: Sandy loam, Silt loam, Clay. Sandy loam sits toward the sand corner, silt loam toward the silt corner, and clay near the top.'
 : 'Diagramme ternaire : un triangle équilatéral dont les coins sont 100 % argile (haut), 100 % sable (bas-gauche) et 100 % limon (bas-droite). Chaque point est un échantillon de terre arable, positionné par ses pourcentages de sable / limon / argile, dont la somme fait toujours 100. Les échantillons se regroupent en trois classes de texture : Limon sableux, Limon fin, Argile. Le limon sableux se place vers le coin du sable, le limon fin vers le coin du limon, et l''argile près du haut.'
 Texture class: Classe de texture
-Thailand: Thailand
 Thailand (Africa): Thaïlande (Afrique)
 Thailand (Americas): Thaïlande (Amériques)
 Thailand (Asia): Thaïlande (Asie)
 Thailand (Europe): Thaïlande (Europe)
 Thailand (Oceania): Thaïlande (Océanie)
-Thailand — Countries: Thailand — Pays
 That is where the course spends most weeks. Illustrative outline.: C'est là que le cours passe le plus de semaines. Plan illustratif.
 The Data Platform API, from the core outward: L'API de la plateforme de données, du cœur vers l'extérieur
 The Data team's cloud bill is running away from everyone else: La facture cloud de l'équipe Data s'envole loin devant les autres
@@ -4876,13 +4796,11 @@ Tunisia (Americas): Tunisie (Amériques)
 Tunisia (Asia): Tunisie (Asie)
 Tunisia (Europe): Tunisie (Europe)
 Tunisia (Oceania): Tunisie (Océanie)
-Turkey: Turkey
 Turkey (Africa): Turquie (Afrique)
 Turkey (Americas): Turquie (Amériques)
 Turkey (Asia): Turquie (Asie)
 Turkey (Europe): Turquie (Europe)
 Turkey (Oceania): Turquie (Océanie)
-Turkey — Countries: Turkey — Pays
 Turkmenistan: Turkmenistan
 Turkmenistan (Africa): Turkménistan (Afrique)
 Turkmenistan (Americas): Turkménistan (Amériques)
@@ -4987,13 +4905,11 @@ Venezuela (Americas): Venezuela (Amériques)
 Venezuela (Asia): Venezuela (Asie)
 Venezuela (Europe): Venezuela (Europe)
 Venezuela (Oceania): Venezuela (Océanie)
-Vietnam: Vietnam
 Vietnam (Africa): Vietnam (Afrique)
 Vietnam (Americas): Vietnam (Amériques)
 Vietnam (Asia): Vietnam (Asie)
 Vietnam (Europe): Vietnam (Europe)
 Vietnam (Oceania): Vietnam (Océanie)
-Vietnam — Countries: Vietnam — Pays
 Views: Views
 Views (Web UI) → Handlers (API): Views (Interface web) → Handlers (API)
 Views (Web UI) → Tokens (Auth): Views (Interface web) → Tokens (Auth)
@@ -5142,13 +5058,10 @@ above mean (deeper = bigger swing): au-dessus de la moyenne (plus foncé = varia
 abs(datum.r) > 0.6: abs(datum.r) > 0.6
 abs(datum.value): abs(datum.value)
 accel: accel
-accordion — Instruments: accordion — Instruments
 accounts: accounts
 actual: actual
-age: age
 aggregate: aggregate
 alpha: alpha
-amber — Colours: amber — Couleurs
 analytics: analytique
 angle: angle
 another planet; mapped 85%: another planet; mapped 85%
@@ -5161,56 +5074,32 @@ api/middleware.py — 340 lines: api/middleware.py — 340 lignes
 api/routes.py — 880 lines: api/routes.py — 880 lignes
 api/schemas.py — 640 lines: api/schemas.py — 640 lignes
 app-07 · 12:40 UTC · 1-minute average · illustrative reading: app-07 · 12:40 UTC · moyenne sur 1 minute · relevé illustratif
-apple — Fruits: apple — Fruits
 apply_coupons - 20 ms (4% of request, depth 3): apply_coupons — 20 ms (4 % de la requête, profondeur 3)
 apply_tax - 22 ms (5% of request, depth 3): apply_tax — 22 ms (5 % de la requête, profondeur 3)
 appl…: appl…
 app…: app…
-apricot — Fruits: apricot — Fruits
 arc: arc
-archery — Sports: archery — Sports
 area: area
 area = total GDP: aire = PIB total
 arm: arm
-auth: auth
 authenticate: authenticate
 authenticate - 46 ms (10% of request, depth 1): authenticate — 46 ms (10 % de la requête, profondeur 1)
-avocado — Fruits: avocado — Fruits
-azure — Colours: azure — Couleurs
 b: b
-badger — Animals: badger — Animaux
-badminton — Sports: badminton — Sports
-bagpipes — Instruments: bagpipes — Instruments
-banana — Fruits: banana — Fruits
 band width at its yearly low: largeur de bande à son minimum annuel
-banjo — Instruments: banjo — Instruments
 bar: bar
-baseball — Sports: baseball — Sports
-basketball: basketball
-basketball — Sports: basketball — Sports
 bass drone: bourdon de basse
-bassoon — Instruments: bassoon — Instruments
 batch: lot
 beans: grains
 beans — neutral product words · mentioned in 512 reviews (21%): grains — mots produit neutres · mentionné dans 512 avis (21 %)
-bear — Animals: bear — Animaux
-beaver — Animals: beaver — Animaux
-beige: beige
-beige — Colours: beige — Couleurs
 below mean: sous la moyenne
 beta: beta
 billing: billing
 bin: bac
 bin — neutral product words · mentioned in 108 reviews (4%): bac — mots produit neutres · mentionné dans 108 avis (4 %)
 biology tests.: biology tests.
-bison — Animals: bison — Animaux
-blackberry — Fruits: blackberry — Fruits
-blue — Colours: blue — Couleurs
-blueberry — Fruits: blueberry — Fruits
 bold: bold
 bottom: bottom
 bottom-left: bottom-left
-boxing — Sports: boxing — Sports
 boxplot: boxplot
 burr: meule
 burr — neutral product words · mentioned in 384 reviews (16%): meule — mots produit neutres · mentionné dans 384 avis (16 %)
@@ -5218,34 +5107,22 @@ busiest 10% of cells: 10 % de cellules les plus actives
 busiest 10% of hexes: 10 % d'hexagones les plus actifs
 c: c
 cache: cache
-camel — Animals: camel — Animaux
 car-sized nuclear lab in: labo nucléaire de la taille d'une voiture dans
 cars: cars
-cat — Animals: cat — Animaux
 cellH: cellH
 cellW: cellW
-cello — Instruments: cello — Instruments
 cells: cells
 center: center
-charcoal — Colours: charcoal — Couleurs
-cheetah — Animals: cheetah — Animaux
-cherry — Fruits: cherry — Fruits
 children: children
 circle: circle
-clarinet — Instruments: clarinet — Instruments
 class: class
 clean: propre
 clean — what buyers praise (+) · mentioned in 118 reviews (5%): propre — ce que les acheteurs saluent (+) · mentionné dans 118 avis (5 %)
-clementine — Fruits: clementine — Fruits
-climbing — Sports: climbing — Sports
 clockwise from the top. Each arc’s: dans le sens horaire depuis le haut. La longueur
 close: close
 close clears the upper band: la clôture franchit la bande supérieure
 clumps: agglomérats
 clumps — what buyers complain about (−) · mentioned in 168 reviews (7%): agglomérats — ce dont les acheteurs se plaignent (−) · mentionné dans 168 avis (7 %)
-cobalt — Colours: cobalt — Couleurs
-coconut: coconut
-coconut — Fruits: coconut — Fruits
 coffee: café
 coffee — neutral product words · mentioned in 198 reviews (8%): café — mots produit neutres · mentionné dans 198 avis (8 %)
 col: col
@@ -5265,7 +5142,6 @@ config: config
 consistent: régulier
 consistent — what buyers praise (+) · mentioned in 604 reviews (25%): régulier — ce que les acheteurs saluent (+) · mentionné dans 604 avis (25 %)
 contours: contours
-coral — Colours: coral — Couleurs
 core/: core/
 core/ — 4 modules, 1,110 lines: core/ — 4 modules, 1,110 lignes
 core/cache.py — 210 lines: core/cache.py — 210 lignes
@@ -5275,25 +5151,16 @@ core/logging.py — 240 lines: core/logging.py — 240 lignes
 cost: cost
 count: count
 countries: countries
-cow — Animals: cow — Animaux
-cranberry — Fruits: cranberry — Fruits
-cricket — Sports: cricket — Sports
-crimson — Colours: crimson — Couleurs
 cum: cum
 cumulative %: '% cumulé'
 cups: cups
-curling — Sports: curling — Sports
 cut @ 0.46 → 3 clusters: coupe à 0,46 → 3 grappes
 cuts the most (22) ·: coupe le plus (22) ·
 cx: cx
 cy: cy
-cyan — Colours: cyan — Couleurs
-cycling — Sports: cycling — Sports
-cymbal — Instruments: cymbal — Instruments
 d: d
 dB: dB
 data('grand')[0].gt: data('grand')[0].gt
-date — Fruits: date — Fruits
 datum.c/datum.n: datum.c/datum.n
 'datum.cellW > 26 && datum.cellH > 16 ? 1 : 0': 'datum.cellW > 26 && datum.cellH > 16 ? 1 : 0'
 datum.children: datum.children
@@ -5327,7 +5194,6 @@ db-06: db-06
 deadlier month. Hover a colour to isolate it.: mois plus meurtrier. Survolez une couleur pour l'isoler.
 dec: dec
 deeper tails: traînes plus profondes
-deer — Animals: deer — Animaux
 delta: delta
 density: density
 depth: depth
@@ -5337,23 +5203,14 @@ deseri…: deseri…
 dial: molette
 dial — neutral product words · mentioned in 164 reviews (7%): molette — mots produit neutres · mentionné dans 164 avis (7 %)
 disp: disp
-diving — Sports: diving — Sports
-dog — Animals: dog — Animaux
-donkey: donkey
-donkey — Animals: donkey — Animaux
 drink: drink
 drip-line seam: ligne de goutte-à-goutte
-drums — Instruments: drums — Instruments
 dry ridge: crête sèche
 duration: duration
 eSwatini: eSwatini
 each cell = 400 m: chaque cellule = 400 m
 easy: facile
 easy — what buyers praise (+) · mentioned in 356 reviews (15%): facile — ce que les acheteurs saluent (+) · mentionné dans 356 avis (15 %)
-elephant — Animals: elephant — Animaux
-email: email
-emerald — Colours: emerald — Couleurs
-end: end
 epsilon: epsilon
 equalEarth: equalEarth
 errors: errors
@@ -5374,14 +5231,9 @@ farther: plus loin
 fast: rapide
 fast — what buyers praise (+) · mentioned in 244 reviews (10%): rapide — ce que les acheteurs saluent (+) · mentionné dans 244 avis (10 %)
 favours telemonitoring →: en faveur de la télésurveillance →
-fencing — Sports: fencing — Sports
-ferret: ferret
-ferret — Animals: ferret — Animaux
 fetch_user_orders: fetch_user_orders
 fetch_user_orders - 232 ms (48% of request, depth 2): fetch_user_orders — 232 ms (48 % de la requête, profondeur 2)
-fiddle — Instruments: fiddle — Instruments
 fields: fields
-fig — Fruits: fig — Fruits
 filter: filtre
 filter — neutral product words · mentioned in 70 reviews (3%): filtre — mots produit neutres · mentionné dans 70 avis (3 %)
 flavanoid: flavonoïdes
@@ -5389,11 +5241,9 @@ flimsy: fragile
 flimsy — what buyers complain about (−) · mentioned in 74 reviews (3%): fragile — ce dont les acheteurs se plaignent (−) · mentionné dans 74 avis (3 %)
 flowed.: flowed.
 flush: flush
-flute — Instruments: flute — Instruments
 for launch.: for launch.
 force: force
 formula: formula
-fox — Animals: fox — Animaux
 fpr: fpr
 frames.: frames.
 from: de
@@ -5412,14 +5262,9 @@ gdp: gdp
 genome-wide significance · p = 5×10⁻⁸: significativité pangénomique · p = 5×10⁻⁸
 geopath: geopath
 geoshape: geoshape
-giraffe — Animals: giraffe — Animaux
 given vs received: données vs reçues
-goat — Animals: goat — Animaux
-golf — Sports: golf — Sports
 grand: grand
 grandTotal: grandTotal
-grape — Fruits: grape — Fruits
-green — Colours: green — Couleurs
 grey = off the hot path: gris = hors du chemin critique
 grid: grid
 grind: mouture
@@ -5428,19 +5273,9 @@ group: group
 growth without the carbon: la croissance sans le carbone
 gt: gt
 gtot: gtot
-guava — Fruits: guava — Fruits
-guitar — Instruments: guitar — Instruments
-gymnastics — Sports: gymnastics — Sports
 gzip: gzip
 gzip - 34 ms (7% of request, depth 2): gzip — 34 ms (7 % de la requête, profondeur 2)
 h: h
-hamster — Animals: hamster — Animaux
-handball — Sports: handball — Sports
-harmonica — Instruments: harmonica — Instruments
-harp: harp
-harp — Instruments: harp — Instruments
-hedgehog — Animals: hedgehog — Animaux
-height: height
 height + 15: height + 15
 height + 28: height + 28
 height / 2: height / 2
@@ -5451,59 +5286,42 @@ her 2 arcs are the sole cross-group links: ses 2 arcs sont les seuls liens entre
 hi: hi
 high: high
 higher spend (top-cap number = $ thousands): dépense plus élevée (nombre au sommet = milliers de $)
-hockey — Sports: hockey — Sports
 hood: hood
 hopper: trémie
 hopper — neutral product words · mentioned in 232 reviews (10%): trémie — mots produit neutres · mentionné dans 232 avis (10 %)
 horizontal: horizontal
-horse — Animals: horse — Animaux
 hour: hour
 hours: hours
 hp: hp
 ice just under the polar: glace juste sous le sol
 id: id
 inc: inc
-indigo — Colours: indigo — Couleurs
 invoice: invoice
 is cut off the most (30): est coupé le plus (30)
 isocontour: isocontour
 item: item
 its high-risk calls miss the diagonal: ses prédictions à haut risque ratent la diagonale
-ivory — Colours: ivory — Couleurs
 jams: bourrages
 jams — what buyers complain about (−) · mentioned in 112 reviews (5%): bourrages — ce dont les acheteurs se plaignent (−) · mentionné dans 112 avis (5 %)
 jitter: jitter
-judo — Sports: judo — Sports
-karate: karate
-karate — Sports: karate — Sports
-kazoo — Instruments: kazoo — Instruments
 kde2d: kde2d
-khaki — Colours: khaki — Couleurs
 kind: kind
 kitchen: cuisine
 kitchen — neutral product words · mentioned in 42 reviews (2%): cuisine — mots produit neutres · mentionné dans 42 avis (2 %)
-kiwi — Fruits: kiwi — Fruits
-koala — Animals: koala — Animaux
 label: label
 landed, a first on its debut: a atterri, une première dès ses débuts
 landing; ran the first soil: ; a mené les premiers essais de sol
 latency: latency
-lavender — Colours: lavender — Couleurs
 lcx: lcx
 leaks: fuites
 leaks — what buyers complain about (−) · mentioned in 58 reviews (2%): fuites — ce dont les acheteurs se plaignent (−) · mentionné dans 58 avis (2 %)
 leaves: leaves
 left: left
-lemon — Fruits: lemon — Fruits
 length is that stage’s share of the: de chaque arc est la part de ce stade dans l'
-leopard — Animals: leopard — Animaux
 lfc: lfc
 life: life
-lilac — Colours: lilac — Couleurs
-lime — Fruits: lime — Fruits
 line: line
 linear: linear
-lion — Animals: lion — Animaux
 lo: lo
 load_cart: load_cart
 load_cart - 300 ms (62% of request, depth 1): load_cart — 300 ms (62 % de la requête, profondeur 1)
@@ -5516,29 +5334,17 @@ love — what buyers praise (+) · mentioned in 132 reviews (5%): adoré — ce 
 low: low
 low-pressure centre: centre dépressionnaire
 lower: plus faible
-lute — Instruments: lute — Instruments
 lx0: lx0
 lx1: lx1
-lychee — Fruits: lychee — Fruits
 mag: mag
-magenta: magenta
-magenta — Colours: magenta — Couleurs
-mandolin — Instruments: mandolin — Instruments
-mango — Fruits: mango — Fruits
 map.: carte.
-marathon — Sports: marathon — Sports
-marimba — Instruments: marimba — Instruments
-maroon — Colours: maroon — Couleurs
 marsquakes.: marsquakes.
 max: max
-mean: mean
 measure: mesure
 measured in $k: mesuré en k$
 measured in %: mesuré en %
 measured in /wk: mesuré en /sem
 measured in ms: mesuré en ms
-melon: melon
-melon — Fruits: melon — Fruits
 mess: salissant
 mess — what buyers complain about (−) · mentioned in 214 reviews (9%): salissant — ce dont les acheteurs se plaignent (−) · mentionné dans 214 avis (9 %)
 middle: middle
@@ -5547,7 +5353,6 @@ middleware: middleware
 midsize: midsize
 migrations: migrations
 min: min
-mint — Colours: mint — Couleurs
 mode: mode
 models: models
 models/: models/
@@ -5559,12 +5364,10 @@ models/product.py — 400 lines: models/product.py — 400 lignes
 models/user.py — 720 lines: models/user.py — 720 lignes
 monotone: monotone
 month: month
-moose — Animals: moose — Animaux
 morning: matin
 morning — neutral product words · mentioned in 54 reviews (2%): matin — mots produit neutres · mentionné dans 54 avis (2 %)
 motor: moteur
 motor — neutral product words · mentioned in 142 reviews (6%): moteur — mots produit neutres · mentionné dans 142 avis (6 %)
-mouse — Animals: mouse — Animaux
 mpg: mpg
 mu: mu
 n: n
@@ -5573,7 +5376,6 @@ n/a: n.d.
 name: name
 nearer: plus près
 nearer points draw larger and darker: les points proches sont plus grands et plus foncés
-nectarine — Fruits: nectarine — Fruits
 neg: neg
 neglogp: neglogp
 net +263k: net +263k
@@ -5591,25 +5393,16 @@ nominal: nominal
 none: none
 normalize: normalize
 northwesterly, behind front: northwesterly, behind front
-oboe — Instruments: oboe — Instruments
 of 145 for a majority: sur 145 pour une majorité
 of Mars.: of Mars.
 of incidents fall in the: des incidents tombent dans les
 of trips start in the: des trajets partent des
 of usable capacity: de la capacité utile
-olive: olive
-olive — Colours: olive — Couleurs
-olive — Fruits: olive — Fruits
 one half barb: one half barb
 open: open
-orange: orange
-orange — Colours: orange — Couleurs
-orange — Fruits: orange — Fruits
 ord: ord
 order: order
 ordinal: ordinal
-organ — Instruments: organ — Instruments
-otter — Animals: otter — Animaux
 over the decade: sur la décennie
 p: p
 p95 API latency: Latence API p95
@@ -5617,35 +5410,22 @@ p95 API latency: Latence API p95
 p99: p99
 pad: pad
 pair, so one cell measurement tells the families apart. The diagonal shows each distribution. Illustrative.: paire, si bien qu'une seule mesure suffit à distinguer les familles. La diagonale montre chaque distribution. Illustratif.
-panda — Animals: panda — Animaux
-papaya — Fruits: papaya — Fruits
 parent: parent
 parent.name: parent.name
 partition: partition
-passionfruit — Fruits: passionfruit — Fruits
 path: path
-payments: payments
 payments.py: payments.py
 pct: pct
 pctlabel: pctlabel
-peach — Colours: peach — Couleurs
-peach — Fruits: peach — Fruits
-pear — Fruits: pear — Fruits
 pennant + full + half: pennant + full + half
 per 100: pour 100
 percussive tap: frappe percussive
 period: period
-piano — Instruments: piano — Instruments
-pig: pig
-pig — Animals: pig — Animaux
-pineapple — Fruits: pineapple — Fruits
 plastic: plastique
 plastic — what buyers complain about (−) · mentioned in 138 reviews (6%): plastique — ce dont les acheteurs se plaignent (−) · mentionné dans 138 avis (6 %)
 platform: platform
-plum — Fruits: plum — Fruits
 point: point
 points: points
-pomegranate — Fruits: pomegranate — Fruits
 pop: pop
 pos: pos
 post-frontal, 45–50 kt: post-frontal, 45–50 kt
@@ -5661,7 +5441,6 @@ pricey — what buyers complain about (−) · mentioned in 38 reviews (2%): che
 primary: primaire
 product: product
 proline: proline
-purple — Colours: purple — Couleurs
 px0: px0
 px1: px1
 py0: py0
@@ -5672,23 +5451,16 @@ quarter: quarter
 queue: queue
 quiet: silencieux
 quiet — what buyers praise (+) · mentioned in 812 reviews (34%): silencieux — ce que les acheteurs saluent (+) · mentionné dans 812 avis (34 %)
-quince — Fruits: quince — Fruits
 r: r
 r0: r0
 r1: r1
-rabbit — Animals: rabbit — Animaux
-raccoon — Animals: raccoon — Animaux
 random(): random()
 rank: rank
-raspberry — Fruits: raspberry — Fruits
 raw: raw
 recommend: recommandé
 recommend — what buyers praise (+) · mentioned in 152 reviews (6%): recommandé — ce que les acheteurs saluent (+) · mentionné dans 152 avis (6 %)
 recorded hundreds of: a enregistré des centaines de
-recorder — Instruments: recorder — Instruments
 rect: rect
-red — Colours: red — Couleurs
-region: region
 reliable: fiable
 reliable — what buyers praise (+) · mentioned in 96 reviews (4%): fiable — ce que les acheteurs saluent (+) · mentionné dans 96 avis (4 %)
 render_response: render_response
@@ -5711,10 +5483,7 @@ row: row
 rowEnd: rowEnd
 rowStart: rowStart
 row_number: row_number
-rowing — Sports: rowing — Sports
 rt: rt
-ruby — Colours: ruby — Couleurs
-rugby — Sports: rugby — Sports
 rule: rule
 run_sql: run_sql
 run_sql - 214 ms (45% of request, depth 3): run_sql — 214 ms (45 % de la requête, profondeur 3)
@@ -5726,13 +5495,7 @@ s2: s2
 s3: s3
 s4: s4
 s5: s5
-sailing: sailing
-sailing — Sports: sailing — Sports
-salmon — Colours: salmon — Couleurs
 sample: sample
-sapphire: sapphire
-sapphire — Colours: sapphire — Couleurs
-saxophone — Instruments: saxophone — Instruments
 says less churn: annonce moins d'attrition
 says more churn: annonce plus d'attrition
 scale('x', datum.colEnd) + datum.colPad: scale('x', datum.colEnd) + datum.colPad
@@ -5741,11 +5504,9 @@ scale('x', datum.x): scale('x', datum.x)
 scale('y', datum.rowEnd / datum.segTotal): scale('y', datum.rowEnd / datum.segTotal)
 scale('y', datum.rowStart / datum.segTotal): scale('y', datum.rowStart / datum.segTotal)
 scale('y', datum.y): scale('y', datum.y)
-scarlet — Colours: scarlet — Couleurs
 scheduler: scheduler
 schemas: schemas
 sealed samples back toward: sealed samples back toward
-search: search
 seasonal normal: normale saisonnière
 secs: secs
 segTotal: segTotal
@@ -5769,33 +5530,21 @@ setting: réglage
 setting — neutral product words · mentioned in 276 reviews (11%): réglage — mots produit neutres · mentionné dans 276 avis (11 %)
 sex: sex
 shade: shade
-share: share
 shared: shared
-sheep — Animals: sheep — Animaux
 sig: sig
-sitar — Instruments: sitar — Instruments
 size: taille
 size — neutral product words · mentioned in 88 reviews (4%): taille — mots produit neutres · mentionné dans 88 avis (4 %)
-skating — Sports: skating — Sports
-skiing — Sports: skiing — Sports
 sleep: sleep
 smooth: onctueux
 smooth — what buyers praise (+) · mentioned in 468 reviews (19%): onctueux — ce que les acheteurs saluent (+) · mentionné dans 468 avis (19 %)
-snowboarding — Sports: snowboarding — Sports
-soccer — Sports: soccer — Sports
 soil.: soil.
 source: source
 southwesterly, ahead of front: de sud-ouest, en avant du front
 square: square
 squarify: squarify
-squash: squash
-squash — Sports: squash — Sports
-squirrel — Animals: squirrel — Animaux
 stack: stack
 stage: stage
 standby: secours
-starfruit — Fruits: starfruit — Fruits
-start: start
 static: statique
 static — what buyers complain about (−) · mentioned in 296 reviews (12%): statique — ce dont les acheteurs se plaignent (−) · mentionné dans 296 avis (12 %)
 step-after: step-after
@@ -5804,21 +5553,13 @@ sturdy: robuste
 sturdy — what buyers praise (+) · mentioned in 288 reviews (12%): robuste — ce que les acheteurs saluent (+) · mentionné dans 288 avis (12 %)
 suggestive · p = 1×10⁻⁵: suggestif · p = 1×10⁻⁵
 sum: sum
-surfing — Sports: surfing — Sports
-swimming — Sports: swimming — Sports
 symbol: symbol
 t: t
 t (Fourier phase, −π to π): t (phase de Fourier, −π à π)
-tambourine — Instruments: tambourine — Instruments
-tangerine: tangerine
-tangerine — Fruits: tangerine — Fruits
-target: cible
 task: task
-teal — Colours: teal — Couleurs
 team: team
 teeth point the way it moves: les dents pointent le sens du déplacement
 temps total: temps total
-tennis — Sports: tennis — Sports
 test: test
 tests/: tests/
 tests/ — 4 modules, 1,420 lines: tests/ — 4 modules, 1,420 lignes
@@ -5833,8 +5574,6 @@ that way.: là.
 the widest cable in the graph: le câble le plus large du graphe
 theoretical: theoretical
 tick: tick
-tiger — Animals: tiger — Animaux
-timpani — Instruments: timpani — Instruments
 to home · 2 380 trips: vers la maison · 2 380 trajets
 to work · 2 240 trips: vers le travail · 2 240 trajets
 top: top
@@ -5847,17 +5586,8 @@ tpr: tpr
 tree: tree
 treemap: treemap
 triangle: triangle
-triathlon — Sports: triathlon — Sports
-trombone: trombone
-trombone — Instruments: trombone — Instruments
-trumpet: trumpet
-trumpet — Instruments: trumpet — Instruments
-tuba: tuba
-tuba — Instruments: tuba — Instruments
-turquoise — Colours: turquoise — Couleurs
 two full + one half: deux pleines + une demie
 type: type
-ukulele — Instruments: ukulele — Instruments
 user: user
 v: v
 value: abordable
@@ -5866,17 +5596,12 @@ variant: variant
 verify_jwt - 28 ms (6% of request, depth 2): verify_jwt — 28 ms (6 % de la requête, profondeur 2)
 verif…: verif…
 vertical: vertical
-viola — Instruments: viola — Instruments
-violet — Colours: violet — Couleurs
-violin — Instruments: violin — Instruments
 visits: visits
-volleyball — Sports: volleyball — Sports
 wait_on_lock: wait_on_lock
 wait_on_lock - 176 ms (37% of request, depth 4): wait_on_lock — 176 ms (37 % de la requête, profondeur 4)
 warm = critical path (deeper is hotter): chaud = chemin critique (plus profond = plus chaud)
 webhooks: webhooks
 week: week
-weight: weight
 wet hollow: creux humide
 white: white
 width: width
@@ -5886,13 +5611,11 @@ wind blew: le vent soufflait
 window: window
 wobble: instable
 wobble — what buyers complain about (−) · mentioned in 46 reviews (2%): instable — ce dont les acheteurs se plaignent (−) · mentionné dans 46 avis (2 %)
-wolf — Animals: wolf — Animaux
 workers/: workers/
 workers/ — 3 modules, 1,060 lines: workers/ — 3 modules, 1,060 lignes
 workers/email_queue.py — 380 lines: workers/email_queue.py — 380 lignes
 workers/retry.py — 220 lines: workers/retry.py — 220 lignes
 workers/scheduler.py — 460 lines: workers/scheduler.py — 460 lignes
-wrestling — Sports: wrestling — Sports
 wt: wt
 x: x
 x0: x0
@@ -5902,18 +5625,14 @@ x2 = bill depth: x2 = épaisseur du bec
 x3 = flipper length: x3 = longueur de la nageoire
 x4 = body mass: x4 = masse corporelle
 xfocus: xfocus
-xylophone — Instruments: xylophone — Instruments
 y: y
 y0: y0
 y1: y1
 year — before the crop races through spring: année · avant que la culture ne file au printemps
 year. Hover a stage to isolate it.: année. Survolez un stade pour l'isoler.
-yellow — Colours: yellow — Couleurs
 yelloworangered: yelloworangered
 yfocus: yfocus
 yhat: yhat
-zebra: zebra
-zebra — Animals: zebra — Animaux
 ~s: ~s
 ±2σ band: ±2σ band
 · AP 0.20: · AP 0,20
@@ -5997,7 +5716,6 @@ zebra — Animals: zebra — Animaux
 'normalised difference · peak = elbow': 'différence normalisée · sommet = coude'
 'steep gains': 'gains marqués'
 'Elbow · k = 4': 'Coude · k = 4'
-'One dot = one seat · dashed line marks the 145-seat majority · Social Democrats need 9 more seats or a coalition partner · hover a seat for its member; the party block lifts with it': 'Un point = un siège · la ligne pointillée marque la majorité de 145 sièges · les Sociaux-démocrates ont besoin de 9 sièges de plus ou d''un partenaire de coalition · survolez un siège pour voir son élu ; le bloc du parti se soulève avec lui'
 'k = 1: inertia 1,000': 'k = 1 : inertie 1 000'
 'k = 2: inertia 560': 'k = 2 : inertie 560'
 'k = 3: inertia 330': 'k = 3 : inertie 330'
@@ -6065,7 +5783,6 @@ zebra — Animals: zebra — Animaux
 '54% of orders': '54 % des commandes'
 'Share of online-store checkouts by device and payment method - illustrative quarter': 'Part des paiements en boutique en ligne par appareil et moyen de paiement · trimestre illustratif'
 'Marimekko mosaic: column widths are each device''s share of all online checkouts (Mobile widest at 54 percent), and each column stacks payment methods by their within-device share. On Mobile, Wallet is the tallest segment, overtaking Card.': 'Mosaïque de Marimekko : la largeur de chaque colonne est la part de l''appareil dans tous les paiements en ligne (Mobile le plus large à 54 pour cent), et chaque colonne empile les moyens de paiement selon leur part au sein de l''appareil. Sur Mobile, le Portefeuille est le segment le plus haut, dépassant la Carte.'
-'Heating & cooling eats a third of home power': 'Le chauffage et la climatisation consomment un tiers de l''électricité du foyer'
 'Share of annual household electricity use · one square = 1 % · illustrative': 'Part de la consommation électrique annuelle du foyer · un carré = 1 % · illustratif'
 '1. Heating & cooling': '1. Chauffage et climatisation'
 '2. Water heating': '2. Chauffe-eau'
@@ -6077,7 +5794,6 @@ zebra — Animals: zebra — Animaux
 'Distribution of hours slept': 'Distribution des heures de sommeil'
 'Distribution of reaction time': 'Distribution du temps de réaction'
 'Mean reaction time, ms (lower is better)': 'Temps de réaction moyen, ms (plus c’est bas, mieux c’est)'
-'Reaction-time test vs. hours slept, 120 volunteers — marginals show each distribution': 'Test de temps de réaction selon les heures de sommeil, 120 volontaires · les marges montrent chaque distribution'
 'fitted trend': 'tendance ajustée'
 'Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail. Illustrative data.': 'Graphique joint d''une étude du sommeil : un nuage central du temps de réaction moyen (vertical, millisecondes, plus c’est bas, mieux c’est) selon les heures de sommeil la nuit précédente (horizontal) pour 120 volontaires, avec une droite de tendance ajustée orientée vers le bas · plus de sommeil, réponses plus rapides. Un histogramme vert le long du rail supérieur montre que les heures de sommeil sont à peu près symétriques ; un histogramme violet le long du rail droit montre que le temps de réaction a une longue traîne lente vers le haut. Données illustratives.'
 'Daily-high temperature by month, one colour-coded lane each — Illustrative data': 'Température maximale quotidienne par mois, une bande colorée chacune · données illustratives'
@@ -6098,7 +5814,6 @@ zebra — Animals: zebra — Animaux
 'operating': 'Résultat'
 'income': 'd''exploitation'
 'Subscription': 'Revenus'
-'revenue': 'd''abonnement'
 'Professional': 'Services'
 'services': 'professionnels'
 'Upsell /': 'Ventes add. /'
@@ -6145,7 +5860,6 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Audit tooling': 'Outils d’audit'
 'Global R&D Investment by Region and Country — 2023': 'Investissement mondial en R&D par région et pays — 2023'
 'Total expenditure in billions of USD; arc length proportional to investment': 'Dépense totale en milliards de dollars ; longueur d’arc proportionnelle à l’investissement'
-'Asia Pacific': 'Asie-Pacifique'
 'Middle East & Africa': 'Moyen-Orient et Afrique'
 # --- visible FR labels batch (gallery completeness) ---
 '3D surface': 'Surface 3D'
@@ -6487,7 +6201,6 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'complete': 'complet'
 'missing': 'manquant'
 'patient': 'patient'
-'age': 'âge'
 'weight': 'poids'
 'height': 'taille'
 'referrer': 'adresseur'
@@ -6509,11 +6222,7 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'held-out data': 'données retenues'
 'two columns that move together each keep the other''s score up, and no permutation can see it': 'deux colonnes qui bougent ensemble se soutiennent mutuellement le score, et aucune permutation ne peut le voir'
 'contract_type': 'type_contrat'
-'tenure_months': 'anciennete_mois'
-'monthly_charge': 'facture_mensuelle'
-'support_tickets': 'tickets_support'
 'payment_method': 'moyen_paiement'
-'has_fibre': 'a_la_fibre'
 'paperless_billing': 'facture_dematerialisee'
 'signup_channel': 'canal_inscription'
 'customer_id_hash': 'hachage_id_client'
@@ -6737,3 +6446,274 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'max depth': 'profondeur max'
 'subsample': 'sous-échantillon'
 'filled at or above': 'pleines à partir de'
+
+# ── Projecteur de plongements (embedding_projector) ─────────────────
+'Animals': 'Animaux'
+'Colours': 'Couleurs'
+'Countries': 'Pays'
+'Fruits': 'Fruits'
+'Instruments': 'Instruments'
+'Sports': 'Sports'
+'accordion': 'accordéon'
+'amber': 'ambre'
+'apple': 'pomme'
+'apricot': 'abricot'
+'archery': 'tir à l''arc'
+'avocado': 'avocat'
+'azure': 'azur'
+'badger': 'blaireau'
+'badminton': 'badminton'
+'bagpipes': 'cornemuse'
+'banana': 'banane'
+'banjo': 'banjo'
+'baseball': 'baseball'
+'basketball': 'basket'
+'bassoon': 'basson'
+'bear': 'ours'
+'beaver': 'castor'
+'beige': 'beige'
+'bison': 'bison'
+'blackberry': 'mûre'
+'blue': 'bleu'
+'blueberry': 'myrtille'
+'boxing': 'boxe'
+'camel': 'chameau'
+'cat': 'chat'
+'cello': 'violoncelle'
+'charcoal': 'anthracite'
+'cheetah': 'guépard'
+'cherry': 'cerise'
+'clarinet': 'clarinette'
+'clementine': 'clémentine'
+'climbing': 'escalade'
+'cobalt': 'cobalt'
+'coconut': 'noix de coco'
+'coral': 'corail'
+'cow': 'vache'
+'cranberry': 'canneberge'
+'cricket': 'cricket'
+'crimson': 'cramoisi'
+'curling': 'curling'
+'cyan': 'cyan'
+'cycling': 'cyclisme'
+'cymbal': 'cymbale'
+'date': 'datte'
+'deer': 'cerf'
+'diving': 'plongeon'
+'dog': 'chien'
+'donkey': 'âne'
+'drums': 'batterie'
+'elephant': 'éléphant'
+'emerald': 'émeraude'
+'fencing': 'escrime'
+'ferret': 'furet'
+'fiddle': 'violon folk'
+'fig': 'figue'
+'flute': 'flûte'
+'fox': 'renard'
+'giraffe': 'girafe'
+'goat': 'chèvre'
+'golf': 'golf'
+'grape': 'raisin'
+'green': 'vert'
+'guava': 'goyave'
+'guitar': 'guitare'
+'gymnastics': 'gymnastique'
+'hamster': 'hamster'
+'handball': 'handball'
+'harmonica': 'harmonica'
+'harp': 'harpe'
+'hedgehog': 'hérisson'
+'hockey': 'hockey'
+'horse': 'cheval'
+'indigo': 'indigo'
+'ivory': 'ivoire'
+'judo': 'judo'
+'karate': 'karaté'
+'kazoo': 'kazoo'
+'khaki': 'kaki'
+'kiwi': 'kiwi'
+'koala': 'koala'
+'lavender': 'lavande'
+'lemon': 'citron'
+'leopard': 'léopard'
+'lilac': 'lilas'
+'lime': 'citron vert'
+'lion': 'lion'
+'lute': 'luth'
+'lychee': 'litchi'
+'magenta': 'magenta'
+'mandolin': 'mandoline'
+'mango': 'mangue'
+'marathon': 'marathon'
+'marimba': 'marimba'
+'maroon': 'bordeaux'
+'melon': 'melon'
+'mint': 'menthe'
+'moose': 'élan'
+'mouse': 'souris'
+'nearest': 'les plus proches'
+'nectarine': 'nectarine'
+'oboe': 'hautbois'
+'olive': 'olive'
+'orange': 'orange'
+'organ': 'orgue'
+'otter': 'loutre'
+'panda': 'panda'
+'papaya': 'papaye'
+'passionfruit': 'fruit de la passion'
+'peach': 'pêche'
+'pear': 'poire'
+'piano': 'piano'
+'pig': 'cochon'
+'pineapple': 'ananas'
+'plum': 'prune'
+'pomegranate': 'grenade'
+'purple': 'pourpre'
+'quince': 'coing'
+'rabbit': 'lapin'
+'raccoon': 'raton laveur'
+'raspberry': 'framboise'
+'recorder': 'flûte à bec'
+'red': 'rouge'
+'rowing': 'aviron'
+'ruby': 'rubis'
+'rugby': 'rugby'
+'sailing': 'voile'
+'salmon': 'saumon'
+'sapphire': 'saphir'
+'saxophone': 'saxophone'
+'scarlet': 'écarlate'
+'sheep': 'mouton'
+'sitar': 'sitar'
+'skating': 'patinage'
+'skiing': 'ski'
+'snowboarding': 'snowboard'
+'soccer': 'football'
+'squash': 'squash'
+'squirrel': 'écureuil'
+'starfruit': 'carambole'
+'surfing': 'surf'
+'swimming': 'natation'
+'tambourine': 'tambourin'
+'tangerine': 'mandarine'
+'teal': 'sarcelle'
+'tennis': 'tennis'
+'tiger': 'tigre'
+'timpani': 'timbales'
+'triathlon': 'triathlon'
+'trombone': 'trombone'
+'trumpet': 'trompette'
+'tuba': 'tuba'
+'turquoise': 'turquoise'
+'ukulele': 'ukulélé'
+'viola': 'alto'
+'violet': 'violet'
+'violin': 'violon'
+'volleyball': 'volley'
+'wolf': 'loup'
+'wrestling': 'lutte'
+'xylophone': 'xylophone'
+'yellow': 'jaune'
+'zebra': 'zèbre'
+
+# ── Pays (vocabulaire partagé) ──────────────────────────────────────
+'Argentina': 'Argentine'
+'Austria': 'Autriche'
+'Belgium': 'Belgique'
+'Brazil': 'Brésil'
+'Canada': 'Canada'
+'Chile': 'Chili'
+'China': 'Chine'
+'Croatia': 'Croatie'
+'Egypt': 'Égypte'
+'Finland': 'Finlande'
+'France': 'France'
+'Germany': 'Allemagne'
+'Ghana': 'Ghana'
+'Greece': 'Grèce'
+'Iceland': 'Islande'
+'India': 'Inde'
+'Ireland': 'Irlande'
+'Italy': 'Italie'
+'Japan': 'Japon'
+'Jordan': 'Jordanie'
+'Kenya': 'Kenya'
+'Mexico': 'Mexique'
+'Morocco': 'Maroc'
+'Nepal': 'Népal'
+'Nigeria': 'Nigeria'
+'Norway': 'Norvège'
+'Peru': 'Pérou'
+'Poland': 'Pologne'
+'Portugal': 'Portugal'
+'Spain': 'Espagne'
+'Sweden': 'Suède'
+'Thailand': 'Thaïlande'
+'Turkey': 'Turquie'
+'Vietnam': 'Viêt Nam'
+
+# ── P-P, Q-Q, régression, grand graphe ──────────────────────────────
+'Probability-probability (P-P) plot checking whether a fitted Normal distribution describes right-skewed customer session durations. The horizontal axis is the theoretical cumulative probability under the fitted Normal; the vertical axis is the empirical cumulative probability of the observed data; both run from 0 to 1. A dashed 45-degree reference line marks perfect agreement, ringed by a faint grey tolerance band. Instead of hugging the line the points bow into a smooth arc (traced by a red trend curve): in the lower-left they sit above the diagonal, where the Normal under-states the probability (blue); in the upper-right they sit below it, where the Normal over-states the probability (orange). That S-shaped departure is the classic sign that a symmetric Normal is the wrong shape for skewed data.': 'Diagramme probabilité-probabilité (P-P) qui vérifie si une loi normale ajustée décrit des durées de session étalées vers la droite. L''axe horizontal porte la probabilité cumulée théorique sous la normale ajustée, l''axe vertical la probabilité cumulée empirique des données observées, tous deux de 0 à 1. Une ligne de référence à 45 degrés en pointillés marque l''accord parfait, entourée d''une bande de tolérance gris pâle. Au lieu d''épouser la ligne, les points dessinent un arc régulier (suivi par une courbe de tendance rouge) : en bas à gauche ils sont au-dessus de la diagonale, là où la normale sous-estime la probabilité (bleu) ; en haut à droite ils sont en dessous, là où elle la surestime (orange). Cet écart en S est le signe classique qu''une normale symétrique est la mauvaise forme pour des données asymétriques.'
+'A Clear Positive Trend': 'Une tendance nettement positive'
+'OLS fit': 'Ajustement des moindres carrés'
+'Normal Q-Q Plot': 'Diagramme quantile-quantile normal'
+'Sample quantile': 'Quantile de l''échantillon'
+'Theoretical quantile': 'Quantile théorique'
+'Sorted sample vs. theoretical normal quantiles': 'Échantillon trié contre quantiles normaux théoriques'
+'Highlight the Bio-AI lab': 'Mettre en avant le labo bio-IA'
+'Highlight the Language lab': 'Mettre en avant le labo langage'
+'Highlight the Robotics lab': 'Mettre en avant le labo robotique'
+'Highlight the Systems lab': 'Mettre en avant le labo systèmes'
+'Highlight the Theory lab': 'Mettre en avant le labo théorie'
+'Highlight the Vision lab': 'Mettre en avant le labo vision'
+
+# ── Liens groupés, rose des vents, bulles, corrélations ─────────────
+'GDP per capita (thousands of dollars)': 'PIB par habitant (milliers de dollars)'
+'Life expectancy (years)': 'Espérance de vie (années)'
+'Synthetic sample · invented place names, not real countries': 'Échantillon synthétique · noms de lieux inventés, pas de vrais pays'
+'Feature Correlation': 'Corrélation des variables'
+'strong positive correlation': 'forte corrélation positive'
+'strong negative correlation': 'forte corrélation négative'
+'moderate positive correlation': 'corrélation positive modérée'
+'moderate negative correlation': 'corrélation négative modérée'
+
+# ── Matrice de corrélation (suite) ──────────────────────────────────
+'Pairwise Pearson correlation coefficient': 'Coefficient de corrélation de Pearson, deux à deux'
+
+# ── Carte de positionnement (landscape-positioning) ─────────────────
+'Adaptable': 'Adaptable'
+'Dynamic': 'Dynamique'
+'Nimble': 'Agile'
+'Robust': 'Solide'
+'Frontend tools': 'Outils front'
+'Frontend tools in the Quadrant': 'Les outils front dans le quadrant'
+'Alpine.js': 'Alpine.js'
+'Astro': 'Astro'
+'Claude vision': 'Claude vision'
+'D3.js': 'D3.js'
+'Deepgram': 'Deepgram'
+'Gradio': 'Gradio'
+'HTMX': 'HTMX'
+'Highcharts': 'Highcharts'
+'Hugo': 'Hugo'
+'LLaVA / MiniCPM-V': 'LLaVA / MiniCPM-V'
+'Looker': 'Looker'
+'MkDocs Material': 'MkDocs Material'
+'Pa11y': 'Pa11y'
+'Pico CSS': 'Pico CSS'
+'Plotly.js': 'Plotly.js'
+'Radix UI': 'Radix UI'
+'React': 'React'
+'Streamlit': 'Streamlit'
+'Svelte': 'Svelte'
+'Tailwind CSS': 'Tailwind CSS'
+'Tauri': 'Tauri'
+'TensorFlow Projector': 'TensorFlow Projector'
+'ThoughtSpot': 'ThoughtSpot'
+'Vega-Lite': 'Vega-Lite'
+'Vue': 'Vue'
+'axe-core': 'axe-core'
+'shadcn/ui': 'shadcn/ui'
+'sprezzature': 'sprezzature'
+'whisper.cpp': 'whisper.cpp'

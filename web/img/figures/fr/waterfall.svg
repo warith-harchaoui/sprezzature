@@ -36,7 +36,7 @@
 <rect id="bar-1" class="hit" tabindex="0" x="195.4" y="241.1" width="75.5" height="75.8" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Revenu d&#x27;abonnement : +19,4 M"/>
 <text x="233.2" y="235.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+19,4</text>
 <text x="233.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Revenus</text>
-<text x="233.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">d'abonnement</text>
+<text x="233.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">revenu</text>
 <rect id="bar-2" class="hit" tabindex="0" x="292.2" y="225.1" width="75.5" height="16.0" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Services professionnels : +4,1 M"/>
 <text x="330.0" y="219.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+4,1</text>
 <text x="330.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Services</text>
