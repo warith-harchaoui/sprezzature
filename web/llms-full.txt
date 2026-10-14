@@ -464,6 +464,9 @@ Triangulated surface : Scattered points, with the mesh and the holes left visibl
 Triangulated contour : Iso-lines over scattered samples, dashed where no sample is near.
 ↓ Python + CSV + SVG kit (99 KB)
 
+Voxels : Filled cells of a 3-D grid, counting the ones they hide.
+↓ Python + CSV + SVG kit (73 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
