@@ -6727,3 +6727,13 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'no sensor within': 'aucun capteur à moins de'
 'east, km': 'est, km'
 'north, km': 'nord, km'
+
+# ── Voxels (voxels) ───────────────────────────────────────────────────────
+'The best cell is against a wall, so the search stopped early': 'La meilleure cellule est contre une paroi, la recherche s''est donc arrêtée trop tôt'
+'A three-way grid search. Cells at or above the threshold are filled; the rest are left out.': 'Une recherche en grille sur trois axes. Les cellules au seuil ou au-dessus sont pleines, les autres sont écartées.'
+'Whatever is beyond that face was never tried, so the search bounds are part of the result.': 'Ce qui est au-delà de cette face n''a jamais été essayé, donc les bornes de la recherche font partie du résultat.'
+'auc': 'AUC'
+'learning rate': 'taux d''apprentissage'
+'max depth': 'profondeur max'
+'subsample': 'sous-échantillon'
+'filled at or above': 'pleines à partir de'
