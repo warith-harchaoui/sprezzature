@@ -335,13 +335,40 @@ _NUMBER_TOKEN = re.compile(
 )
 
 
+#: Words a rule captured and asked to have translated, but that the flat map
+#: does not know. Reported at the end of a run: a `{n:tr}` that finds nothing
+#: writes English, which is the failure this whole mechanism exists to prevent.
+untranslated_captures: set[str] = set()
+
+
+class _Captured(str):
+    """A captured group, which `{n:tr}` sends through the flat map.
+
+    A rule whose regex captures a *word* and whose template writes it back as
+    `{n}` ships English: the rule matched, so nothing counts it as missing, and
+    the English rides out inside an otherwise French sentence. Spell the group
+    `{n:tr}` instead and the word is looked up in `figures.fr.yaml` like any
+    other string, which keeps one table as the single source of truth for what
+    a term is called in French -- including the terms deliberately left alone,
+    which the map holds as identity entries.
+    """
+
+    def __format__(self, spec: str) -> str:
+        if spec != "tr":
+            return str.__format__(self, spec)
+        if self in TR:
+            return TR[self]
+        untranslated_captures.add(str(self))
+        return str(self)
+
+
 def by_pattern(run_text: str) -> str | None:
     """`run_text` rewritten by the first matching rule, or None if none match."""
     for pattern, template in _PATTERNS:
         m = pattern.fullmatch(run_text.strip())
         if m is None:
             continue
-        groups = [fr_numbers_in(g) if g is not None else "" for g in m.groups()]
+        groups = [_Captured(fr_numbers_in(g) if g is not None else "") for g in m.groups()]
         try:
             return template.format(*groups)
         except (IndexError, KeyError):
@@ -553,7 +580,23 @@ def main() -> int:
     # frames end in ".fr", and the hand-authored French landscape ends in
     # "-fr". Scanning them reports their own French as untranslated English
     # and buries the real backlog under a thousand false positives.
-    names = [n for n in names if not (n.endswith(".fr") or n.endswith("-fr"))]
+    already_french = [n for n in names if n.endswith(".fr") or n.endswith("-fr")]
+    names = [n for n in names if n not in set(already_french)]
+    # An already-French hero still has to *reach* the French gallery. Skipping
+    # it outright left `fr/` holding whatever copy happened to be there, and a
+    # later correction to the hero never arrived: the French landscape shipped
+    # for weeks with an English <desc> no scan of the heroes could see.
+    copied = 0
+    for name in already_french:
+        if only and name not in only:
+            continue
+        src = GALLERY / f"{name}.svg"
+        if not src.exists():
+            continue
+        dst = FR / f"{name}.svg"
+        dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+        _rasterise(dst, FR / f"{name}.png")
+        copied += 1
     done = 0
     for name in names:
         if only and name not in only:
@@ -570,12 +613,21 @@ def main() -> int:
         except Exception as exc:  # noqa: BLE001
             print(f"  FAIL {name}: {exc}")
     print(f"localised {done} figures -> {FR}")
+    if copied:
+        print(f"copied {copied} already-French figures across unchanged")
     if missing:
         print(f"\n{len(missing)} VISIBLE strings still UNTRANSLATED (add to {YAML.name}):")
         for s in sorted(missing):
             print(f"  {s!r}")
     if missing_hover:
         print(f"\n{len(missing_hover)} hover-tooltip strings still untranslated (lower priority).")
+    if untranslated_captures:
+        # A rule matched, so these count nowhere else -- and a rule that matches
+        # is exactly how English gets written into a French sentence unnoticed.
+        print(f"\n{len(untranslated_captures)} words a rule asked to translate "
+              f"are absent from {YAML.name} and were written in English:")
+        for s in sorted(untranslated_captures):
+            print(f"  {s!r}")
     return 0
 
 
