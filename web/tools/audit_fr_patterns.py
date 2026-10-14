@@ -18,7 +18,6 @@ Sortie non nulle s'il reste une règle qui recopie sans le dire.
 from __future__ import annotations
 
 import re
-import sys
 from pathlib import Path
 
 import yaml
