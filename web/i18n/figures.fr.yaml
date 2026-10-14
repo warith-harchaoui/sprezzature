@@ -6594,3 +6594,13 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'Quillon': 'Quillon'
 'Marram': 'Marram'
 'A bump chart of 6 competitors across 8 periods from 2024 Q1 to 2025 Q4, each a line at its rank with rank 1 at the top. 6 competitors ranked by share each period, highest first · a crossing between two within 0.60 is drawn thin: that order is a coin toss. Tessellate ends first where Northwind began, and the lead changed size with the name: 1.26 at 2024 Q1, 3.72 at 2025 Q4.': 'Un graphe de rangs de 6 concurrents sur 8 périodes, du 2024 T1 au 2025 T4, chacun une ligne à son rang avec le rang 1 en haut. 6 concurrents classés par part à chaque période, le plus haut d''abord · un croisement entre deux séparés de moins de 0,60 est tracé fin : cet ordre est un pile ou face. Tessellate finit premier là où Northwind a commencé, et l''avance a changé de taille avec le nom : 1,26 au 2024 T1, 3,72 au 2025 T4.'
+
+# ── Diagramme à tiges (stem) ──────────────────────────────────────────────
+'Two hours out of forty-eight carry 15% of the declines': 'Deux heures sur quarante-huit portent 15 % des refus'
+'Card declines per hour over two days, one stalk per hour, rooted at the mean rather than at zero.': 'Refus de carte par heure sur deux jours, une tige par heure, enracinée à la moyenne plutôt qu''à zéro.'
+'Hour': 'Heure'
+'Declines': 'Refus'
+'stalks rooted at zero': 'tiges enracinées à zéro'
+'beyond the threshold': 'au-delà du seuil'
+'mean': 'moyenne'
+'A stem plot of 48 samples from 0 to 47, each a stalk from the baseline to its value. stalks rooted at the mean of 19.12, not at zero. 2 of 48 samples sit more than 2 standard deviations from the baseline: 27, 28. They carry 15% of the total.': 'Un diagramme à tiges de 48 échantillons, de 0 à 47, chacun une tige de la ligne de base à sa valeur. Tiges enracinées à la moyenne de 19,12, pas à zéro. 2 échantillons sur 48 s''écartent de plus de 2 écarts types de la ligne de base : 27, 28. Ils portent 15 % du total.'
