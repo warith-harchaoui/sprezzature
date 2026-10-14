@@ -6628,3 +6628,14 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'start': 'départ'
 'end': 'arrivée'
 'A path of 1200 points through three dimensions, drawn in projection with each segment shaded by its distance from the camera and its shadow cast on the floor. camera at 24° elevation, -58° azimuth · near segments drawn darker and last · ranges: x -18.56 to 17.81, y -25.15 to 23.83, z 3.78 to 45.98. The path crosses its own projection 119 times over 1200 points, which is why the depth shading is not decoration.': 'Un chemin de 1200 points en trois dimensions, tracé en projection, chaque segment teinté par sa distance à la caméra et son ombre portée au sol. Caméra à 24° d''élévation, -58° d''azimut · les segments proches sont plus foncés et dessinés en dernier · étendues : x de -18,56 à 17,81, y de -25,15 à 23,83, z de 3,78 à 45,98. Le chemin recoupe sa propre projection 119 fois sur 1200 points, et c''est pourquoi la teinte de profondeur n''est pas une décoration.'
+
+# ── Champ de vecteurs en 3-D (quiver3d) ───────────────────────────────────
+'Perspective takes most of an arrow''s length, and strength does not predict which': 'La perspective prend l''essentiel de la longueur d''une flèche, et l''intensité ne dit pas laquelle'
+'An arrow at each sample, coloured by magnitude because perspective makes length alone unreliable.': 'Une flèche à chaque échantillon, colorée par l''intensité parce que la perspective rend la longueur seule peu fiable.'
+'strong': 'fort'
+'weak': 'faible'
+'strongest': 'la plus forte'
+'weakest': 'la plus faible'
+'most shortened': 'la plus raccourcie'
+'sqrt': 'racine'
+'A three-dimensional vector field of 124 arrows, each at its sample point, pointing the way the field points and both scaled and coloured by its magnitude. 124 of 124 samples drawn · camera at 22° elevation, -52° azimuth · length and colour are both the sqrt of magnitude, longest and warmest = 16.000; two channels, because perspective corrupts one of them. The field spans 0.272 to 16.000, a factor of 59. Perspective takes up to 89% off an arrow''s drawn length, and its correlation with magnitude is -0.05 — no pattern to correct by eye, which is why colour carries magnitude too.': 'Un champ de vecteurs en trois dimensions de 124 flèches, chacune à son point d''échantillonnage, pointant où pointe le champ et à la fois dimensionnée et colorée par son intensité. 124 échantillons sur 124 tracés · caméra à 22° d''élévation, -52° d''azimut · longueur et couleur suivent toutes deux la racine de l''intensité, la plus longue et la plus chaude = 16,000 ; deux canaux, parce que la perspective en corrompt un. Le champ s''étend de 0,272 à 16,000, un facteur 59. La perspective retire jusqu''à 89 % de la longueur tracée d''une flèche, et sa corrélation à l''intensité vaut -0,05 — aucun motif que l''œil puisse corriger, et c''est pourquoi la couleur porte aussi l''intensité.'

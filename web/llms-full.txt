@@ -443,6 +443,9 @@ Event raster : One tick per event, and which rows burst after the moment.
 3-D path : A trajectory, with depth you can read.
 ↓ Python + CSV + SVG kit (116 KB)
 
+3-D vector field : Where length alone cannot be trusted.
+↓ Python + CSV + SVG kit (66 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
