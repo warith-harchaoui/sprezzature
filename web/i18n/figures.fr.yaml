@@ -6620,3 +6620,11 @@ Tillering alone fills 4 of the 12 months,: Le tallage occupe à lui seul 4 des 1
 'email': 'courriel'
 'warehouse': 'entrepôt'
 'A raster of 319 events across 8 rows, each event a tick at the moment it happened. rows sorted by how soon they burst after the deploy, not by when they next fired · a burst is 4 or more events each within 2 of the last. 3 of 8 rows burst after the deploy: checkout after 2.0, payments after 3.6, auth after 7.3.': 'Une pluie de 319 événements sur 8 lignes, chaque événement un trait à l''instant où il s''est produit. Lignes triées par la rapidité de leur sursaut après le déploiement, pas par leur prochain tir · un sursaut, c''est 4 événements ou plus, chacun à moins de 2 du précédent. 3 lignes sur 8 sursautent après le déploiement : paiement-panier après 2,0, paiements après 3,6, authentification après 7,3.'
+
+# ── Chemin en 3-D (line3d) ────────────────────────────────────────────────
+'A path that crosses its own picture over a hundred times, and still reads': 'Un chemin qui recoupe sa propre image plus de cent fois, et qui se lit quand même'
+'The Lorenz attractor over thirty time units, shaded by distance from the camera with its shadow': 'L''attracteur de Lorenz sur trente unités de temps, teinté par la distance à la caméra, avec son ombre'
+'on the floor.': 'au sol.'
+'start': 'départ'
+'end': 'arrivée'
+'A path of 1200 points through three dimensions, drawn in projection with each segment shaded by its distance from the camera and its shadow cast on the floor. camera at 24° elevation, -58° azimuth · near segments drawn darker and last · ranges: x -18.56 to 17.81, y -25.15 to 23.83, z 3.78 to 45.98. The path crosses its own projection 119 times over 1200 points, which is why the depth shading is not decoration.': 'Un chemin de 1200 points en trois dimensions, tracé en projection, chaque segment teinté par sa distance à la caméra et son ombre portée au sol. Caméra à 24° d''élévation, -58° d''azimut · les segments proches sont plus foncés et dessinés en dernier · étendues : x de -18,56 à 17,81, y de -25,15 à 23,83, z de 3,78 à 45,98. Le chemin recoupe sa propre projection 119 fois sur 1200 points, et c''est pourquoi la teinte de profondeur n''est pas une décoration.'
