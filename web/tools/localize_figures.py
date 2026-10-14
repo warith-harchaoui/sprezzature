@@ -375,11 +375,32 @@ def by_parts(text: str) -> str | None:
         # alone it must also be *accepted* here, or a tooltip as ordinary as
         # "Active teams: 757" resolves its label, fails on its number, and
         # ships in English.
+        if not part:
+            # A list the figure truncated to fit ("nearest: a, b,") ends on
+            # an empty piece. Keeping it empty keeps the truncation visible,
+            # which is what the figure meant to show.
+            return ""
+        if part.endswith(","):
+            # The same truncation, with the comma stuck to the last word
+            # rather than standing alone. Translate the word, keep the
+            # comma: the trailing comma *is* the "and more" the figure
+            # could not fit.
+            inner = piece(part[:-1])
+            return None if inner is None else inner + ","
         return part if re.fullmatch(r"[-+]?\d+", part) else None
 
     head, sep, tail = text.partition(": ")
     if not sep:
-        return None
+        # No label, just a comma list -- "Argentina, Countries", "red, blue,
+        # green". The same reassembly applies, and the same guard: every
+        # piece must resolve, so a sentence with a comma in it is refused
+        # rather than half-translated.
+        if ", " not in text:
+            return None
+        pieces = [piece(p) for p in text.split(", ")]
+        if any(p is None for p in pieces):
+            return None
+        return ", ".join(p for p in pieces if p is not None)
     head_fr = piece(head)
     if head_fr is None:
         return None
@@ -512,7 +533,11 @@ def main() -> int:
         only = set(sys.argv[2].split(","))
     names = sorted({Path(p).stem for p in glob.glob(str(GALLERY / "*.svg"))}
                    | {Path(p).stem for p in glob.glob(str(GALLERY / "*.png"))})
-    names = [n for n in names if not n.endswith(".fr")]
+    # Already-French assets are not heroes to localise: the French Gapminder
+    # frames end in ".fr", and the hand-authored French landscape ends in
+    # "-fr". Scanning them reports their own French as untranslated English
+    # and buries the real backlog under a thousand false positives.
+    names = [n for n in names if not (n.endswith(".fr") or n.endswith("-fr"))]
     done = 0
     for name in names:
         if only and name not in only:

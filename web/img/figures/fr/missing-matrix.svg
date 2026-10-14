@@ -130,7 +130,7 @@
 <rect id="cell-58" class="cell hit" tabindex="0" role="img" aria-label="patient, enregistrements 1741 à 1770 : 0 % manquants" x="151.0" y="523.9" width="113.7" height="5.5" fill="transparent"><title>patient 1741-1770 : 0 %</title></rect>
 <rect x="151.0" y="529.0" width="113.7" height="5.5" fill="#007AFF" opacity="0.10"/>
 <rect id="cell-59" class="cell hit" tabindex="0" role="img" aria-label="patient, enregistrements 1771 à 1800 : 0 % manquants" x="151.0" y="529.0" width="113.7" height="5.5" fill="transparent"><title>patient 1771-1800 : 0 %</title></rect>
-<text x="323.5" y="204.0" font-size="12" font-weight="700" fill="#1D1D1F" text-anchor="middle">âge</text>
+<text x="323.5" y="204.0" font-size="12" font-weight="700" fill="#1D1D1F" text-anchor="middle">age</text>
 <text x="323.5" y="221.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2,1 %</text>
 <rect x="266.7" y="232.0" width="113.7" height="5.5" fill="#FF9500" opacity="0.11"/>
 <rect id="cell-60" class="cell hit" tabindex="0" role="img" aria-label="âge, enregistrements 1 à 30 : 3,3 % manquants" x="266.7" y="232.0" width="113.7" height="5.5" fill="transparent"><title>âge 1-30 : 3,3 %</title></rect>

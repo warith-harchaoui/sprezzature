@@ -52,6 +52,6 @@
 <text x="307.4" y="455.0" font-size="13" fill="#1D1D1F" text-anchor="middle">T2</text>
 <text x="469.6" y="455.0" font-size="13" fill="#1D1D1F" text-anchor="middle">T3</text>
 <text x="631.9" y="455.0" font-size="13" fill="#1D1D1F" text-anchor="middle">T4</text>
-<text x="388.5" y="479.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Quarter</text>
+<text x="388.5" y="479.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Trimestre</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </g></svg>

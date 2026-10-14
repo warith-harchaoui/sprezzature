@@ -39,7 +39,7 @@
 <text x="258.8" y="440.0" font-size="13" fill="#1D1D1F" text-anchor="middle">T2</text>
 <text x="391.2" y="440.0" font-size="13" fill="#1D1D1F" text-anchor="middle">T3</text>
 <text x="523.8" y="440.0" font-size="13" fill="#1D1D1F" text-anchor="middle">T4</text>
-<text x="325.0" y="462.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Quarter</text>
+<text x="325.0" y="462.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Trimestre</text>
 <g id="tip-0" class="tip"><rect x="61.2" y="257.5" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="70.2" y="279" font-size="12.5" font-weight="700" fill="#1D1D1F">New — Q1</text><text x="70.2" y="295" font-size="12.5" font-weight="400" fill="#6E6E73">55 % du chiffre d’affaires</text><text x="70.2" y="311" font-size="12.5" font-weight="400" fill="#6E6E73">n° 1 sur 3 segments</text></g>
 <g id="tip-1" class="tip"><rect x="61.2" y="176.5" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="70.2" y="198" font-size="12.5" font-weight="700" fill="#1D1D1F">Renewal — Q1</text><text x="70.2" y="214" font-size="12.5" font-weight="400" fill="#6E6E73">30 % du chiffre d’affaires</text><text x="70.2" y="230" font-size="12.5" font-weight="400" fill="#6E6E73">n° 2 sur 3 segments</text></g>
 <g id="tip-2" class="tip"><rect x="61.2" y="136" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="70.2" y="157.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Expansion — Q1</text><text x="70.2" y="173.5" font-size="12.5" font-weight="400" fill="#6E6E73">15 % du chiffre d’affaires</text><text x="70.2" y="189.5" font-size="12.5" font-weight="400" fill="#6E6E73">n° 3 sur 3 segments</text></g>
