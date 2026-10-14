@@ -452,6 +452,9 @@ Area funnel : Where the area is the quantity, not the height.
 Progress against pace : How far along, against how far along you should be.
 ↓ Python + CSV + SVG kit (59 KB)
 
+Cause and effect : Causes grouped, weighted, and marked for evidence.
+↓ Python + CSV + SVG kit (59 KB)
+
 ## Distributions
 
 The shape, spread and skew of one variable: histograms, boxes, densities.
