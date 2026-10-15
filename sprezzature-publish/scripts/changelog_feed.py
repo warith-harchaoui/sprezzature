@@ -108,11 +108,22 @@ def _drop_retired(lines: list[str]) -> list[str]:
 #: (``(2025)``) — a year alone isn't a stable enough date to sort or feed.
 _DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 
-#: Matches a release heading in any of the three styles documented above:
-#: ``[version]`` or ``vX.Y.Z`` or the bare word ``Unreleased``, followed
-#: by whatever the rest of the line holds (date, title).
+#: Matches a release heading in any of the styles documented above:
+#: ``[version]``, ``vX.Y.Z``, a bare dotted ``X.Y.Z``, or the word
+#: ``Unreleased``, followed by whatever the rest of the line holds.
+#:
+#: The bare-dotted alternative is not decoration. ``sprezzature-figures``
+#: has written ``## 2.6.0 (2026-10-15): …`` since 2.0.0, and without it the
+#: feed silently dropped that package's entire 2.x history -- it published
+#: 1.0.0, 1.0.1 and 1.1.0 and then nothing, for months, while the generator
+#: reported success. A heading style that does not match is indistinguishable
+#: from a package that stopped releasing.
+#:
+#: It requires ``major.minor`` at minimum rather than a lone digit, so a prose
+#: heading like ``## 3 things that changed`` is not read as a release.
 _HEADING_RE = re.compile(
-    r"^##\s+(?:\[(?P<bracket>[^\]]+)\]|v(?P<vprefix>\d[\w.\-]*)\b|(?P<bare>Unreleased)\b)"
+    r"^##\s+(?:\[(?P<bracket>[^\]]+)\]|v(?P<vprefix>\d[\w.\-]*)\b"
+    r"|(?P<plain>\d+\.\d[\w.\-]*)\b|(?P<bare>Unreleased)\b)"
     r"(?P<rest>.*)$"
 )
 
@@ -315,7 +326,10 @@ def parse_changelog(path: Path, package: str) -> list[ChangelogEntry]:
         m = _HEADING_RE.match(lines[idx])
         if not m:
             continue
-        version = (m.group("bracket") or m.group("vprefix") or m.group("bare") or "").strip()
+        version = (
+            m.group("bracket") or m.group("vprefix") or m.group("plain")
+            or m.group("bare") or ""
+        ).strip()
         rest = m.group("rest") or ""
         dates = _DATE_RE.findall(rest)
         if not dates:

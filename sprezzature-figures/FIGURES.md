@@ -36,7 +36,7 @@ python sprezzature-figures/scripts/ralph_eyeball_loop.py output.png --local
 
 ## Chart catalogue
 
-127 chart generators, one per row — every `make_*.py` in `scripts/`, and
+167 chart generators, one per row — every `make_*.py` in `scripts/`, and
 nothing else. The script name encodes the chart type: strip the `make_`
 prefix and replace hyphens and underscores with spaces.
 

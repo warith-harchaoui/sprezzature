@@ -22,7 +22,7 @@ compatibility: >-
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.3.9
+  version: 1.4.0
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
@@ -231,6 +231,57 @@ missing. The keys are listed in the section above.
 The gap in the audit column is real and deliberate: a second SVG auditor in
 this package would drift from the one in `sprezzature-figures` within a
 release. One auditor, two producers.
+
+## A plate bound for a journal page
+
+A plate is designed in arbitrary user units and printed in millimetres, and
+nothing joins the two by itself. Nature wants 90 mm for a single column and 180
+for a double; Elsevier publishes 90, 140 and 190; Science 57, 121 and 184. All
+three also set a floor for the type *inside* the figure — 5 to 7 pt — and all
+three say to build the figure at the width it will print at rather than scale it
+afterwards.
+
+So when the user says the figure is for a paper, a poster or a column, set
+`print_width`:
+
+```bash
+make-map situation_map --config region.yaml --print-width 90mm --out figure-1.pdf
+```
+
+Three things follow from that key, and an agent should expect all three:
+
+- **The root carries the physical width**, so the file lands at that size in a
+  layout instead of at whatever a consumer infers from its pixel dimensions.
+- **The plate measures its own smallest label against that width and says what
+  it will actually be.** The bundled Ukraine plate is 1,768 units wide and its
+  smallest label is 10.8 of them — dropped into a 90 mm column that label sets
+  at **1.6 pt**, a third of the floor any publisher accepts, and it renders
+  without complaint because a vector file always does. The warning is the
+  feature; relay it rather than swallowing it.
+- **The drop shadows come off.** An SVG filter is the one construct a vector
+  exporter cannot express — it rasterises the region the filter covers — and
+  the cost is per *mark*, not per plate. Paper has no hover state, so the
+  shadow buys nothing there and costs embedded bitmaps inside the exact format
+  the journal asked for because it has none. Geometry is untouched.
+
+Give `--out` a `.pdf` or `.eps` and the page is **drawn**, not photographed.
+That needs `rsvg-convert` from librsvg (`brew install librsvg`, `apt install
+librsvg2-bin`) — an optional *system* package, not a Python dependency. Without
+it the page is still written at the right physical size, with a warning saying
+it is a raster and naming what to install. **Do not treat that warning as
+noise**: a raster PDF satisfies the extension and nothing a journal wants, and
+nobody can tell the two apart until they zoom in, by which point the figure is
+in review.
+
+Pick `rsvg-convert` specifically, and do not substitute. Measured on this
+project's own plates: `cairosvg` ignores `paint-order` and comes back with
+**every place name erased**, because each label's white halo paints over the
+letters instead of under them; headless Chromium **printed the interactive
+layer panel into the figure** and fell back to Times for part of the type.
+
+A note for whoever compares two exports: the page is not byte-reproducible.
+The converter stamps a creation date, which the plate itself deliberately does
+not. The drawing is identical; the bytes are not.
 
 ## The five surfaces
 
