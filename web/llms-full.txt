@@ -277,7 +277,7 @@ Ask our tool:
 
 "render this diagram"
 
-Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The two animated Gapminder generators complete the 127-generator catalogue on the Hans ROSLING tribute .
+Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The five glyph maps sit on the maps page and the two animated Gapminder generators on the Hans ROSLING tribute ; with the 160 below, that is the whole 167-kind catalogue.
 
 FIGURES.md catalog
 Give a ⭐️ on GitHub
@@ -843,7 +843,7 @@ sprezzature-figures · sprezzature-maps
 
 ## Figures & maps 18 s
 
-127 chart kinds and three map generators, every line written as SVG directly. No plotting library sits underneath any of it, and the SVG is the deliverable rather than an export.
+167 chart kinds and three map generators, every line written as SVG directly. No plotting library sits underneath any of it, and the SVG is the deliverable rather than an export.
 
 Your browser cannot play this video.
 Download the MP4 .
@@ -1244,7 +1244,7 @@ Full install options (checksums, OpenCode + local Ollama, upgrades) →
 
 Each skill's scripts also ship as a standalone package, reachable five ways : a self-contained zip, a Python library, an HTTP API, MCP tools for an agent, or the skill itself. Same implementation behind all of them.
 
-sprezzature-figures : 127 chart types
+sprezzature-figures : 167 chart types
 
 sprezzature-colors : WCAG + CVD + Tailwind
 
@@ -1463,6 +1463,12 @@ Public-domain vector borders, vendored offline. Situation maps pick the tier aut
 Real elevation, not a flat hillshade
 Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with texture shading (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).
 
+Millimetres, not pixels
+Nature wants 90 mm for a single column, Science 57. Ask for one and the file lands at that size in a layout instead of at whatever a consumer infers — and the plate measures its own smallest label against that width and tells you what it will really be. Dropped into a 90 mm column, a label can set at 1.6 pt and render without complaint, because a vector file always does.
+
+PDF and EPS come out drawn, not photographed
+A raster inside a PDF wrapper satisfies the extension and nothing a journal wants, and nobody can tell until they zoom in. Vector export goes through rsvg-convert — an optional system package. Without it the page is still written at the right physical size, with a warning saying it is a raster and what to install.
+
 ## Real data: the last five French presidential runoffs
 
 The same carefully authored SVG map engine, on real data from the French Ministère de l'Intérieur: the winner's second-round vote share by département across the last five presidential elections, on one frozen blue scale so the panels compare. 2002 (the republican sprezzature against the far right) is near-uniform; 2012 (the closest) is the palest; 2017 and 2022 show the lighter départements where Marine Le Pen ran strongest.
@@ -1553,7 +1559,7 @@ The judgement that is not in the code: when to reach for a chart type, what make
 
 ## Where each surface actually exists
 
-Five ways in is the target, and most of it is now built. Every package with a library has an HTTP API and an MCP surface over it: the same functions, never a second copy. Six of the seven packages ship a runnable zip, 125 of them for the figure gallery and one each for the rest; audio is the one still without. The skills need no second version for OpenCode: both runtimes read the same SKILL.md .
+Five ways in is the target, and most of it is now built. Every package with a library has an HTTP API and an MCP surface over it: the same functions, never a second copy. Six of the seven packages ship a runnable zip: 160 for the figure gallery, twelve for the maps page, and one each for the rest; audio is the one still without. The skills need no second version for OpenCode: both runtimes read the same SKILL.md .
 
 Package
 Zip
@@ -1591,7 +1597,7 @@ sprezzature-figures
 
 ### Figures
 
-127 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
+167 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
 
 pip install sprezzature-figures
 Repository →

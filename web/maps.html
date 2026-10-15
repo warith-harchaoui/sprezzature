@@ -318,7 +318,15 @@
             <dt class="font-semibold">Real elevation, not a flat hillshade</dt>
             <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with <em>texture shading</em> (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel-by-pixel into each map's own projection (an exact analytic inverse for Lambert Conformal Conic; Newton-Raphson for the world choropleth's Equal Earth, which has no closed-form inverse).</dd>
           </div>
-        </dl>
+                  <div>
+            <dt class="font-semibold">Millimetres, not pixels</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Nature wants 90&nbsp;mm for a single column, Science 57. Ask for one and the file lands at that size in a layout instead of at whatever a consumer infers — and the plate measures its own smallest label against that width and tells you what it will really be. Dropped into a 90&nbsp;mm column, a label can set at 1.6&nbsp;pt and render without complaint, because a vector file always does.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">PDF and EPS come out drawn, not photographed</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">A raster inside a PDF wrapper satisfies the extension and nothing a journal wants, and nobody can tell until they zoom in. Vector export goes through <code class="font-mono text-[0.95em]">rsvg-convert</code> — an optional system package. Without it the page is still written at the right physical size, with a warning saying it is a raster and what to install.</dd>
+          </div>
+</dl>
       </div>
     </section>
     <section id="real-data" class="border-t border-neutral-200/70 dark:border-neutral-800">

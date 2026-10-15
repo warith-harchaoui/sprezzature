@@ -1,6 +1,6 @@
 # Figures — `sprezzature-figures`
 
-Turn a table (or a described situation) into a publication-quality figure: 126
+Turn a table (or a described situation) into a publication-quality figure: 167
 chart types, model-explainability plots (SHAP / Shapash / TimeSHAP / LIME),
 causal-effect estimates (DoWhy / EconML), TikZ / Mermaid diagrams, thematic
 maps, and areas-of-control situation maps for any region — every one

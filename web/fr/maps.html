@@ -380,7 +380,15 @@
             <dt class="font-semibold">Élévation réelle, pas un estompage plat</dt>
             <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Les cartes de situation calculent leur relief à partir d'une véritable élévation GMTED2010 : un estompage directionnel mélangé à un <em>texture shading</em> (Brown, 2010 : un laplacien d'ordre fractionnaire appliqué dans le domaine fréquentiel), qui fait ressortir crêtes et réseaux de drainage à toutes les échelles à la fois, puis reteinté chaud pour les hauteurs / froid pour les ombres au lieu d'un gris plat. Reprojeté pixel par pixel dans la projection propre à chaque carte (une inverse analytique exacte pour la conique conforme de Lambert ; Newton-Raphson pour l'Equal Earth de la choroplèthe mondiale, qui n'a pas d'inverse sous forme close).</dd>
           </div>
-        </dl>
+                  <div>
+            <dt class="font-semibold">Des millimètres, pas des pixels</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Nature demande 90&nbsp;mm pour une colonne simple, Science 57. Demandez-en une et le fichier se pose à cette taille dans une maquette au lieu de celle qu’un lecteur devine — et la planche mesure sa plus petite étiquette contre cette largeur pour dire ce qu’elle fera vraiment. Tombée dans une colonne de 90&nbsp;mm, une étiquette peut se composer à 1,6&nbsp;pt et s’afficher sans broncher, parce qu’un fichier vectoriel le fait toujours.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Le PDF et l’EPS sortent dessinés, pas photographiés</dt>
+            <dd class="mt-1 text-neutral-600 dark:text-neutral-300">Une image matricielle dans une enveloppe PDF satisfait l’extension et rien de ce qu’attend une revue, et personne ne s’en aperçoit avant d’avoir zoomé. L’export vectoriel passe par <code class="font-mono text-[0.95em]">rsvg-convert</code>, un paquet système optionnel. Sans lui, la page est quand même écrite à la bonne taille physique, avec un avertissement qui dit que c’est du matriciel et ce qu’il faut installer.</dd>
+          </div>
+</dl>
       </div>
     </section>
     <section id="real-data" class="border-t border-neutral-200/70 dark:border-neutral-800">

@@ -57,7 +57,7 @@ Adoption-side milestones (user-driven; not engineering work):
 - 5 real users: the only signal that says whether anything else on
   this list is worth doing.
 
-## [Unreleased]
+## [1.4.0] (2026-10-15): `sprezzature[all]` could not install, and every page undercounted the catalogue by forty
 
 ### Changed
 
@@ -85,6 +85,47 @@ Adoption-side milestones (user-driven; not engineering work):
 
 ### Fixed
 
+- **`pip install sprezzature[all]` could not resolve, for anyone.** The extra
+  floored `sprezzature-figures` at 2.5.0 and `sprezzature-maps` at 0.15.0.
+  Neither version was on PyPI — it held 2.4.0 and 0.12.0 — so the one command
+  that installs the whole suite failed at resolution, and had been failing
+  since those floors were written.
+
+  Every test in this repository was green throughout, and that is the
+  interesting part. `test_all_extra_is_the_suite` compares each floor against
+  the **sibling checkout** sitting next to this repo, which is exactly the
+  unpublished thing; its own docstring says it cannot check PyPI, because a
+  network call would make CI flaky. It was right about the trade and blind to
+  the consequence. The floors now name 2.6.0 and 0.18.0, both published in
+  this same pass, and `scripts/check_all_extra_resolves.py` is the release-time
+  half that asks PyPI — a script and not a test, for the reason the test gives.
+
+- **The release feed had been dropping a whole package for months.**
+  `changelog_feed.py` builds the site's Atom and RSS from every sibling
+  `CHANGELOG.md`, and the eight repositories write release headings in four
+  styles. It knew three. `sprezzature-figures` writes `## 2.6.0 (date): title`
+  and has since 2.0.0, so the feed carried its 1.0.0, 1.0.1 and 1.1.0 and then
+  nothing — while the generator printed a success line naming it among the
+  packages it had read. A heading style nobody parses is indistinguishable, in
+  the output and in the log, from a package that stopped releasing. Figures
+  goes from 3 entries to 10, the feed from 2026-09-14 to today, and
+  `tests/test_changelog_feed_reads_every_heading_style.py` asserts each
+  repository's newest heading is one the parser can read.
+
+- **The suite advertised a catalogue forty figures out of date, in four
+  different numbers.** `sprezzature-figures` reached 167 kinds; the prose here
+  had not moved. The two READMEs said 128, `docs/FIGURES.md` said 126, the
+  SKILL and its four references said 127, and the gallery page said 125 in its
+  meta description and 127 four lines further down, in the same file.
+
+  A single stale number is a fact that aged. Four disagreeing numbers mean
+  nobody could check any of them, because there was nothing to check them
+  against. Thirty-one claims across eighteen files are now read off the
+  package, the site states 160 in the gallery and 167 in the catalogue — which
+  differ on purpose, the glyph maps being on the maps page and the Gapminder
+  pair on the Hans ROSLING tribute — and `web/llms.txt`, `llms-full.txt` and
+  `sitemap.xml` were regenerated from the corrected pages.
+
 - **The install snippet for that package pointed at git**, in both language
   sites and in `llms-full.txt`, while the package had been on PyPI for several
   releases. Removing the card removed the stale instruction with it.
@@ -105,6 +146,27 @@ Adoption-side milestones (user-driven; not engineering work):
   falls back to a keyword heuristic; a developer machine with `transformers`
   installed for some other project got the real model instead. An autouse
   `no_content_scan` fixture keeps the scan out of tests that mock the transport.
+
+### Added
+
+- **A guard for the counts, and a command that fixes them.**
+  `tests/test_the_suite_quotes_the_real_catalogue_size.py` reads the real
+  catalogue off the `sprezzature-figures` checkout CI already clones, and the
+  real gallery size off the gallery page itself, then checks every claim
+  against the right one of the two. It also checks that the two language
+  galleries render the same figures, and that gallery plus maps page plus
+  tribute account for the whole catalogue with nothing invented and nothing
+  dropped. `scripts/bump_catalogue_count.py` rewrites all of it in one command,
+  the way `sprezzature-figures` has done for its own prose since 2.5.0.
+
+- **The maps skill documents the page a journal can use.** `print_width`,
+  what the physical width does to the smallest label, the drop shadows coming
+  off for print, and `--out plate.pdf` going through `rsvg-convert` — with the
+  measured reason not to substitute another converter, and the instruction not
+  to swallow the warning when librsvg is absent, since a raster PDF satisfies
+  the extension and nothing a journal wants. The same two points are now on
+  `web/maps.html` and `web/fr/maps.html`.
+
 
 ## [1.3.9] (2026-10-02): the package page told readers to install v1.0.0
 

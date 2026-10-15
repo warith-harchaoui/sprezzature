@@ -40,10 +40,10 @@ FILMS: list[dict[str, str | int]] = [
          en_title="Figures &amp; maps", fr_title="Figures et cartes",
          en_kicker="sprezzature-figures · sprezzature-maps",
          fr_kicker="sprezzature-figures · sprezzature-maps",
-         en_body="127 chart kinds and three map generators, every line written as "
+         en_body="167 chart kinds and three map generators, every line written as "
                  "SVG directly. No plotting library sits underneath any of it, "
                  "and the SVG is the deliverable rather than an export.",
-         fr_body="127 types de graphiques et trois générateurs de cartes, chaque "
+         fr_body="167 types de graphiques et trois générateurs de cartes, chaque "
                  "trait écrit directement en SVG. Aucune bibliothèque de tracé ne "
                  "se trouve dessous, et le SVG est le livrable plutôt qu'un export.",
          en_shows="six real figures from the gallery, then four real maps on a "
