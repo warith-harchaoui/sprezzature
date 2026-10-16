@@ -57,6 +57,71 @@ Adoption-side milestones (user-driven; not engineering work):
 - 5 real users: the only signal that says whether anything else on
   this list is worth doing.
 
+## [1.5.0] (2026-10-16): half the suite's release titles never reached the feed
+
+### Fixed
+
+- **46 of 109 release headings arrived in the feed with no title.**
+  `sprezzature-publish`'s `changelog_feed.py` required a closing parenthesis
+  before the colon, so it read `## 2.7.0 (2026-10-16): title` and missed
+  `## [0.18.0] - 2026-10-15: title` — the Keep a Changelog convention most of
+  this suite writes. 25 of the 46 were `sprezzature-maps` alone.
+
+  Not a silent failure but a loud one: with no title an entry falls back to
+  its body, so a feed reader showed raw Markdown as the headline, asterisks
+  and backticks included. The pattern now anchors on a closing parenthesis
+  **or** a date, so a colon inside the title cannot be mistaken for the
+  separator; the 17 headings that match neither genuinely carry no title and
+  are meant to fall through.
+
+  This is the second time this file lost something to a heading style nobody
+  had enumerated — the first dropped `sprezzature-figures`' entire 2.x
+  history. So the new guard does not test a sample: it walks the real
+  CHANGELOGs of all eight repositories and fails if a heading carrying a title
+  cannot be read.
+
+- **`scripts/check_all_extra_resolves.py` asked the endpoint that lags.** It
+  read `pypi.org/pypi/<package>/json`, cached separately from the simple index
+  and behind it: minutes after `sprezzature-figures` 2.7.0 was uploaded it
+  still answered `"latest": "2.6.0"` while `pip install` resolved 2.7.0 fine.
+  So the guard reported **NOT PUBLISHED for a published version**, at exactly
+  the moment it exists to be run — right after a release, before tagging this
+  package. It now reads the PEP 691 simple index, which is both the one that
+  keeps up and the one pip actually consults.
+
+  Two parsing bugs came with the move, since the simple index gives filenames
+  rather than versions: PEP 503/427 name normalisation, and numeric ordering —
+  `max()` over strings calls 0.7.0 newer than 0.18.0, and that is the "latest"
+  the script prints.
+
+### Changed
+
+- **`sprezzature[all]` floors move to `sprezzature-figures>=2.7.0` and
+  `sprezzature-maps>=0.19.0`.** Verified end to end rather than assumed: a
+  throwaway venv resolving this package's own `[all]` pulls exactly those two.
+
+### Added
+
+- **573 tests holding the site together**, where there were none. The
+  structural checks had been run by hand during the 2026-10-15 pass and
+  written down in a note, which is how a site rots: a link that stops
+  resolving, an `hreflang` pair that stops being reciprocal, a page that joins
+  the tree and never joins the sitemap — none of these break a build and all
+  are invisible until a reader finds them.
+
+  Sitemap and page tree checked as the same set in both directions; every
+  local reference resolved; canonical URLs; reciprocal `hreflang`; `lang` per
+  tree; gallery alt text; every referenced SVG parsing with a `viewBox`; and
+  the card each page presents when shared.
+
+- **`og:image:alt` on 34 of the 36 pages.** It was missing everywhere but the
+  two home pages, and it is the one part of the social block with **no
+  fallback** — `twitter:title` and its neighbours defer to their `og:`
+  equivalents, but a card image without it is announced as nothing at all to
+  someone reading a shared post with a screen reader. Seven distinct images
+  cover all 36 pages, so seven descriptions, written from looking at each
+  image rather than from the page titles around it, in both languages.
+
 ## [1.4.0] (2026-10-15): `sprezzature[all]` could not install, and every page undercounted the catalogue by forty
 
 ### Changed

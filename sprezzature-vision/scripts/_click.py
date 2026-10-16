@@ -43,7 +43,7 @@ from typing import Any
 
 import click
 
-SKILL_VERSION = "1.4.0"
+SKILL_VERSION = "1.5.0"
 
 
 #: Context settings shared by every sprezzature Click command. ``-h`` joins
