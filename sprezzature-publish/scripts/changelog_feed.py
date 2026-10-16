@@ -127,9 +127,24 @@ _HEADING_RE = re.compile(
     r"(?P<rest>.*)$"
 )
 
-#: A heading-line title follows the date, set off by "): " — e.g.
-#: ``(2026-07-29): Renamed `front` -> `sprezzature```.
-_TITLE_RE = re.compile(r"\):\s*(.+)$")
+#: A heading-line title follows the date, set off by a colon. The date may be
+#: parenthesised or not, which is the whole reason this is not just ``\):``:
+#:
+#:     ## 2.7.0 (2026-10-16): the wheel carries every face it offers
+#:     ## [0.18.0] - 2026-10-15: a page a journal can actually use
+#:
+#: Requiring the closing parenthesis matched the first and missed the second,
+#: and the second is the Keep a Changelog convention most of this suite
+#: writes: 46 of 109 release headings had no title in the feed, 25 of them in
+#: ``sprezzature-maps`` alone. The failure was not silence but something
+#: worse-looking -- with no title the entry falls back to its body, so readers
+#: got raw markdown as a headline, asterisks and backticks included.
+#:
+#: Anchored on a closing paren *or* a date so that a colon inside the title
+#: itself cannot be mistaken for the separator. The 17 headings that match
+#: neither genuinely carry no title -- ``## [1.0.0] - 2026-07-29`` and the
+#: like -- and are meant to fall through.
+_TITLE_RE = re.compile(r"(?:\)|\d{4}-\d{2}-\d{2})\s*:\s*(.+)$")
 
 #: Any subsequent ``## `` line ends the current entry's body.
 _NEXT_HEADING_RE = re.compile(r"^##\s")
@@ -174,7 +189,7 @@ def _clean_line(line: str) -> str:
     line = line.strip()
     for marker in ("- ", "* "):
         if line.startswith(marker):
-            line = line[len(marker):].strip()
+            line = line[len(marker) :].strip()
             break
     return line
 
@@ -319,7 +334,9 @@ def parse_changelog(path: Path, package: str) -> list[ChangelogEntry]:
 
     # Locate every heading line, then slice the body between consecutive
     # headings so each entry gets exactly the text under it.
-    heading_idx: list[int] = [i for i, line in enumerate(lines) if _NEXT_HEADING_RE.match(line)]
+    heading_idx: list[int] = [
+        i for i, line in enumerate(lines) if _NEXT_HEADING_RE.match(line)
+    ]
 
     entries: list[ChangelogEntry] = []
     for pos, idx in enumerate(heading_idx):
@@ -327,8 +344,11 @@ def parse_changelog(path: Path, package: str) -> list[ChangelogEntry]:
         if not m:
             continue
         version = (
-            m.group("bracket") or m.group("vprefix") or m.group("plain")
-            or m.group("bare") or ""
+            m.group("bracket")
+            or m.group("vprefix")
+            or m.group("plain")
+            or m.group("bare")
+            or ""
         ).strip()
         rest = m.group("rest") or ""
         dates = _DATE_RE.findall(rest)
@@ -346,14 +366,18 @@ def parse_changelog(path: Path, package: str) -> list[ChangelogEntry]:
         summary = _summary_text(logical_lines)
         entries.append(
             ChangelogEntry(
-                package=package, version=version, date_iso=date_iso,
-                title=title, summary=summary,
+                package=package,
+                version=version,
+                date_iso=date_iso,
+                title=title,
+                summary=summary,
             )
         )
     return entries
 
 
 # ── Feed assembly ─────────────────────────────────────────────────────────
+
 
 def github_changelog_url(package: str) -> str:
     """
@@ -407,7 +431,11 @@ def build_posts(
     for e in entries:
         rel = Path("changelog") / e.package / e.version
         key = rel.as_posix()
-        feed_title = f"{e.package} {e.version}: {e.title}" if e.title else f"{e.package} {e.version}"
+        feed_title = (
+            f"{e.package} {e.version}: {e.title}"
+            if e.title
+            else f"{e.package} {e.version}"
+        )
         updated_iso = f"{e.date_iso}T00:00:00Z"
         posts.append((rel, feed_title, updated_iso, e.summary))
         year = e.date_iso[:4]
@@ -422,32 +450,41 @@ def main() -> int:
     p = make_parser(
         prog="sprezzature-publish-changelog-feed",
         description="Build the sprezzature.ai Atom + RSS feed from every "
-                    "sprezzature-* package's CHANGELOG.md release notes.",
+        "sprezzature-* package's CHANGELOG.md release notes.",
         epilog="Examples:\n"
-               "  changelog_feed.py\n"
-               "  changelog_feed.py --repos-root .. --out ../web\n"
-               "  changelog_feed.py --rss-only\n",
+        "  changelog_feed.py\n"
+        "  changelog_feed.py --repos-root .. --out ../web\n"
+        "  changelog_feed.py --rss-only\n",
     )
-    default_root: Path = Path(__file__).resolve().parents[2]  # .../sprezzature (monorepo root)
+    default_root: Path = (
+        Path(__file__).resolve().parents[2]
+    )  # .../sprezzature (monorepo root)
     p.add_argument(
-        "--repos-root", type=Path, default=default_root.parent,
+        "--repos-root",
+        type=Path,
+        default=default_root.parent,
         help="Directory containing the sprezzature-* sibling repos "
-             f"(and, as one of them, sprezzature/). Default: {default_root.parent}",
+        f"(and, as one of them, sprezzature/). Default: {default_root.parent}",
     )
     p.add_argument(
-        "--out", type=Path, default=default_root / "web",
+        "--out",
+        type=Path,
+        default=default_root / "web",
         help=f"Output directory for feed.atom / feed.xml. Default: {default_root / 'web'}",
     )
     p.add_argument(
-        "--base-url", default="https://sprezzature.ai",
+        "--base-url",
+        default="https://sprezzature.ai",
         help="Absolute origin of the published site. Default: https://sprezzature.ai",
     )
     p.add_argument(
-        "--rss-only", action="store_true",
+        "--rss-only",
+        action="store_true",
         help="Only write feed.xml (RSS 2.0); skip feed.atom.",
     )
     p.add_argument(
-        "--atom-only", action="store_true",
+        "--atom-only",
+        action="store_true",
         help="Only write feed.atom (Atom 1.0); skip feed.xml.",
     )
     args = p.parse_args()
@@ -507,8 +544,10 @@ def main() -> int:
         rss_path.write_text(rss_body, encoding="utf-8")
         print(f"→ Wrote {rss_path} ({len(posts)} entries)")
 
-    print(f"→ {len(all_entries)} entries from {sum(1 for c in per_package_counts.values() if c)} "
-          f"of {len(PACKAGE_REPOS)} packages")
+    print(
+        f"→ {len(all_entries)} entries from {sum(1 for c in per_package_counts.values() if c)} "
+        f"of {len(PACKAGE_REPOS)} packages"
+    )
     for package, count in per_package_counts.items():
         print(f"    {package}: {count}")
 
