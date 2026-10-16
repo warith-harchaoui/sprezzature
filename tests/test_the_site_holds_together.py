@@ -132,14 +132,65 @@ def _local_references(page: Path) -> list[str]:
     return out
 
 
+#: Reference prefixes the repository deliberately does not track: the 177
+#: downloadable figure kits and the films, both built by tools in
+#: ``web/tools/`` and uploaded with the rest of the site. They exist on the
+#: machine that deploys and never in a fresh checkout, so a check that
+#: demanded them would pass locally and fail on CI -- which is exactly what
+#: the first version of this file did.
+#:
+#: Listed here rather than inferred, and held to what git actually tracks by
+#: the test below, so the exemption cannot quietly grow to cover a link that
+#: is simply broken.
+BUILT_NOT_COMMITTED = ("kits/", "video/")
+
+
+def test_the_untracked_prefixes_really_are_untracked() -> None:
+    """The exemption above is only legitimate while git agrees with it.
+
+    If one of these directories starts being committed, its files are in a
+    checkout and their references should be checked like any other. And if a
+    new prefix is ever added to the tuple to silence a failure, this is where
+    that shows up.
+    """
+    import subprocess
+
+    for prefix in BUILT_NOT_COMMITTED:
+        tracked = subprocess.run(
+            ["git", "ls-files", "--", str(WEB / prefix)],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert not tracked.stdout.strip(), (
+            f"web/{prefix} is tracked by git now; remove it from "
+            "BUILT_NOT_COMMITTED so its references are checked again"
+        )
+
+
 @pytest.mark.parametrize("page", ALL_PAGES, ids=lambda p: p.relative_to(WEB).as_posix())
 def test_every_local_reference_resolves(page: Path) -> None:
-    """A broken local link or a missing asset is a 404 the build never sees."""
+    """A broken local link or a missing asset is a 404 the build never sees.
+
+    References into :data:`BUILT_NOT_COMMITTED` are exempt because those
+    files are generated and uploaded rather than committed; everything else
+    must be on disk here and now.
+    """
     missing = []
     for path in _local_references(page):
         target = (
             (WEB / path.lstrip("/")) if path.startswith("/") else (page.parent / path)
         )
+        # Matched on the *resolved* path, not the written one: a French page
+        # reaches the films as `../video/...`, which no prefix on the raw
+        # string would catch.
+        resolved = target.resolve()
+        if any(
+            resolved.is_relative_to((WEB / prefix).resolve())
+            for prefix in BUILT_NOT_COMMITTED
+        ):
+            continue
         # A directory reference is served by its index.html.
         if target.is_dir():
             target = target / "index.html"
