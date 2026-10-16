@@ -64,6 +64,13 @@ import wave
 from pathlib import Path
 from typing import Any
 
+# Sibling module, loaded the way every script in this skill loads its
+# neighbours: the directory is on `sys.path` when a script runs from here.
+if str(Path(__file__).resolve().parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import _narrate  # noqa: E402
+
 
 # ── Module-level configuration ──────────────────────────────────────────────
 
@@ -218,11 +225,22 @@ def synthesise(
     final_path: Path = out_dir / "narration.wav"
 
     import numpy as np  # local
+
+    # See `_narrate.Timeline`: it applies `pause_before_ms`, which this loop
+    # used to ignore, and records where every segment lands in the audio.
+    timeline = _narrate.Timeline(SAMPLE_RATE_HZ)
     pieces: list[np.ndarray] = []
-    for seg in segments:
+    for index, seg in enumerate(segments):
         text: str = seg.get("text", "").strip()
         if not text:
             continue
+
+        # Skipped on the first piece: a "pause before" with nothing before it
+        # is just dead air at the head of the file.
+        if pieces:
+            lead = timeline.silence(seg.get("pause_before_ms", 0))
+            if lead > 0:
+                pieces.append(np.zeros(lead, dtype=np.int16))
         emotion: str = EMOTION_MAP.get(seg.get("emotion", "neutral"), "default")
         speed: float = {"slow": 0.85, "normal": 1.0, "fast": 1.15}.get(
             seg.get("pace", "normal"), 1.0,
@@ -246,13 +264,12 @@ def synthesise(
             tau=cfg.get("tau", 0.3),
             audio_np=audio_np,
         )
+        timeline.speech(len(morphed), index=index, text=text)
         pieces.append(morphed)
-        # Append silence for pause_after_ms.
-        pause_samples: int = int(
-            SAMPLE_RATE_HZ * float(seg.get("pause_after_ms", 0)) / 1000.0
-        )
-        if pause_samples > 0:
-            pieces.append(np.zeros(pause_samples, dtype=np.int16))
+
+        trail = timeline.silence(seg.get("pause_after_ms", 0))
+        if trail > 0:
+            pieces.append(np.zeros(trail, dtype=np.int16))
 
     if not pieces:
         raise RuntimeError("no non-empty segments to synthesise")
@@ -265,7 +282,27 @@ def synthesise(
         wf.writeframes(full.astype(np.int16).tobytes())
 
     duration_s: float = len(full) / float(SAMPLE_RATE_HZ)
-    return {"audio": str(final_path), "duration_seconds": duration_s}
+
+    # The cues cost nothing to keep -- the offsets were already computed to
+    # lay the audio out -- and they are what lets a page follow the reading.
+    # Written as WebVTT so a browser parses them through `<track>` with no
+    # code of ours, and so the file doubles as captions for the audio.
+    cues_path: Path = out_dir / "narration.vtt"
+    cues_path.write_text(_narrate.cues_to_vtt(timeline.cues), encoding="utf-8")
+
+    # The timeline counted exactly what was appended, so disagreeing with the
+    # file it describes means a piece was added behind its back.
+    if abs(timeline.total_seconds - duration_s) > 1e-6:
+        raise RuntimeError(
+            f"timeline says {timeline.total_seconds:.6f}s but the audio is "
+            f"{duration_s:.6f}s -- a piece was appended without being recorded"
+        )
+
+    return {
+        "audio": str(final_path),
+        "duration_seconds": duration_s,
+        "cues": str(cues_path),
+    }
 
 
 # ── CLI ────────────────────────────────────────────────────────────────────

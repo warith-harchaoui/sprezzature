@@ -63,6 +63,11 @@ PAUSE_BLOCKQUOTE_MS: int = 700
 
 #: Hard bounds the LLM-enriched values are clamped to. Defends against
 #: hallucinated 10-second pauses that would wreck pacing.
+#: Breath between two sentences of the same block. Shorter than the pause
+#: between blocks, because a paragraph read with paragraph-length gaps inside
+#: it sounds like a list of unrelated statements.
+PAUSE_SENTENCE_MS: int = 250
+
 PAUSE_MIN_MS: int = 0
 PAUSE_MAX_MS: int = 3000
 INTENSITY_MIN: float = 0.0
@@ -569,3 +574,315 @@ def write_manifest(
         json.dumps(rows, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+
+
+# ── Timeline: where each segment actually landed in the audio ──────────────
+
+
+@dataclass(frozen=True)
+class Cue:
+    """One narrated unit, with the slice of audio that speaks it.
+
+    ``index`` is the position in the **original** segment list, not in the
+    audio. The two differ: segments whose text is empty after cleaning are
+    skipped rather than synthesised, so counting emitted pieces drifts from
+    counting segments. Carrying the original index is what lets a page map a
+    cue back to the block it came from.
+    """
+
+    index: int
+    text: str
+    start_seconds: float
+    end_seconds: float
+
+
+class Timeline:
+    """Accumulates durations while an engine accumulates audio.
+
+    Two problems, one object.
+
+    The first is that ``pause_before_ms`` was computed by everything and
+    applied by nothing. ``extract_segments`` sets it from the structural
+    baselines, the Ollama pass is asked for it by name in
+    ``prompts/narration_emotion.yaml`` and clamps the answer in
+    :func:`merge_llm_hint` -- and then both engine wrappers appended silence
+    for ``pause_after_ms`` only. The silence that sets a heading apart from
+    what precedes it was computed, stored, and dropped. Both wrappers had
+    their own copy of the same loop, which is how one omission became two.
+
+    The second is that nothing recorded *where* each segment ended up, so a
+    page could play the narration but not follow it. The offsets are exact
+    and already known at concatenation time -- this just keeps them.
+
+    Deliberately numpy-free: it counts samples and the caller holds the
+    arrays, so ``_narrate`` stays importable with nothing but the standard
+    library (see the module docstring).
+
+    Examples
+    --------
+    >>> timeline = Timeline(1000)
+    >>> timeline.silence(500)
+    500
+    >>> timeline.speech(2000, index=0, text="Hello.")
+    >>> timeline.silence(250)
+    250
+    >>> [(c.start_seconds, c.end_seconds) for c in timeline.cues]
+    [(0.5, 2.5)]
+    >>> timeline.total_seconds
+    2.75
+    """
+
+    def __init__(self, sample_rate_hz: int) -> None:
+        self.sample_rate_hz = int(sample_rate_hz)
+        self._samples = 0
+        self._cues: list[Cue] = []
+
+    def silence(self, milliseconds: float) -> int:
+        """Advance the clock by `milliseconds`; return the sample count to append.
+
+        Returning the count rather than an array is what keeps this module
+        numpy-free. A caller that ignores the return value desynchronises the
+        timeline from its own audio, which is why both engines append exactly
+        what this hands back.
+        """
+        count = int(self.sample_rate_hz * max(0.0, float(milliseconds)) / 1000.0)
+        self._samples += count
+        return count
+
+    def speech(self, sample_count: int, *, index: int, text: str) -> None:
+        """Record that `sample_count` samples of audio speak `text`."""
+        start = self._samples / float(self.sample_rate_hz)
+        self._samples += int(sample_count)
+        end = self._samples / float(self.sample_rate_hz)
+        self._cues.append(Cue(index=index, text=text, start_seconds=start, end_seconds=end))
+
+    @property
+    def cues(self) -> list[Cue]:
+        """Every recorded cue, in playback order."""
+        return list(self._cues)
+
+    @property
+    def total_seconds(self) -> float:
+        """Length of the audio described so far, silences included."""
+        return self._samples / float(self.sample_rate_hz)
+
+
+def format_timestamp(seconds: float) -> str:
+    """``HH:MM:SS.mmm`` -- the only timestamp form WebVTT accepts.
+
+    Milliseconds are truncated rather than rounded, so a cue never claims to
+    start before the sample that actually starts it.
+    """
+    if seconds < 0:
+        seconds = 0.0
+    total_ms = int(seconds * 1000)
+    hours, remainder = divmod(total_ms, 3_600_000)
+    minutes, remainder = divmod(remainder, 60_000)
+    secs, millis = divmod(remainder, 1000)
+    return f"{hours:02d}:{minutes:02d}:{secs:02d}.{millis:03d}"
+
+
+def cues_to_vtt(cues: list[Cue]) -> str:
+    """Render cues as a WebVTT file.
+
+    WebVTT rather than a bespoke JSON for one reason: a browser parses it
+    natively through ``<track>``, firing ``cuechange`` without a line of
+    parsing code, and the same file doubles as captions for the audio
+    element. It is also the format ``sprezzature-audio`` already emits for
+    video, so a site has one caption format rather than two.
+
+    Each cue is given its segment index as a WebVTT *identifier* -- the line
+    before the timings -- which is what lets a page highlight the right block
+    without matching on text.
+    """
+    lines = ["WEBVTT", ""]
+    for cue in cues:
+        lines.append(str(cue.index))
+        lines.append(
+            f"{format_timestamp(cue.start_seconds)} --> {format_timestamp(cue.end_seconds)}"
+        )
+        # A blank line ends a cue, so a hard-wrapped payload would split it.
+        lines.append(" ".join(cue.text.split()))
+        lines.append("")
+    return "\n".join(lines)
+
+
+# ── Sentences ──────────────────────────────────────────────────────────────
+
+#: Tokens that end in a full stop without ending a sentence. Splitting on
+#: ``.`` alone turns "Dr. Rosling said so." into two sentences and the
+#: highlight jumps mid-phrase, which is worse than not highlighting at all.
+#:
+#: Bilingual on purpose: this suite writes English and French side by side,
+#: and the French list is not a translation of the English one -- ``M.`` is
+#: an abbreviation in French and a sentence end in English ("...the M.").
+#: Compared case-insensitively, matched on the token before the stop.
+_ABBREVIATIONS: frozenset[str] = frozenset(
+    {
+        # English
+        "mr", "mrs", "ms", "dr", "prof", "st", "jr", "sr", "vs", "etc",
+        "inc", "ltd", "co", "fig", "al", "e.g", "i.e", "cf", "no", "vol",
+        "ph.d", "approx", "dept", "est", "min", "max",
+        # French
+        "m", "mme", "mlle", "mm", "dr", "pr", "st", "ste", "av", "bd",
+        "env", "ex", "fig", "cf", "éd", "vol", "chap", "p", "pp", "art",
+        "réf", "tél", "pers", "sg", "env",
+    }
+)
+
+#: A sentence ends at one of these, possibly followed by a closing quote or
+#: bracket, and then whitespace. The lookahead for an opening character is
+#: what keeps "...end.  Next" together with its following capital rather
+#: than splitting on every stop it finds inside a number or an ellipsis.
+_SENTENCE_END = re.compile(
+    r"""
+    (?P<terminator>[.!?…]+)              # one or more terminators (… and ...)
+    (?P<closers>
+        (?:[ \u00a0\u202f]*["'”’»\)\]])*   # closing marks that belong to it
+    )
+    (?P<space>\s+)                       # the gap before whatever follows
+    """,
+    re.VERBOSE,
+)
+
+def _ends_an_abbreviation(text: str, stop: int) -> bool:
+    """Is the full stop at `stop` part of a token that is not a sentence end?"""
+    head = text[:stop]
+    # No check for decimals here, deliberately. A real decimal separator has
+    # a digit straight after it, and `_SENTENCE_END` requires whitespace, so
+    # "3.14" can never reach this function. An earlier version guarded
+    # against them anyway and paid for it: "Voir p. 12. Puis la suite." was
+    # left as one sentence, because the stop after "12" looked decimal.
+    # The token before the stop: letters, digits and interior dots, so
+    # "e.g" and "Ph.D" are recognised whole rather than by their last letter.
+    token = re.split(r"[\s(\[\"'“«]", head)[-1].lower().rstrip(".")
+    if not token:
+        return False
+    if token in _ABBREVIATIONS:
+        return True
+    # A single letter followed by a stop is an initial -- "J. R. R. Tolkien",
+    # "W. Harchaoui" -- and never the end of a sentence.
+    return len(token) == 1 and token.isalpha()
+
+
+def split_sentences(text: str) -> list[str]:
+    """Split a block of prose into sentences, for narration and highlighting.
+
+    Sentence granularity is the choice the read-along is built on: a
+    paragraph is too coarse to follow with the eye on anything longer than
+    three lines, and a word needs forced alignment against audio this
+    pipeline generated itself -- a statistical guess at something already
+    known exactly. A sentence is both precise enough to follow and exact by
+    construction, because each one is synthesised on its own and its length
+    is therefore measured rather than estimated.
+
+    Deliberately a small rule set rather than a model: it has to give the
+    same answer for the page and for the audio, run with no dependency, and
+    be inspectable when it gets one wrong. It handles terminators with their
+    trailing quotes, ellipses, decimals, initials, and the abbreviations in
+    :data:`_ABBREVIATIONS` for English and French.
+
+    Parameters
+    ----------
+    text : str
+        One block's text, already cleaned of markup by
+        :func:`extract_segments`.
+
+    Returns
+    -------
+    list of str
+        One entry per sentence, whitespace-collapsed, never empty strings.
+        Text with no terminator at all comes back as a single sentence.
+
+    Examples
+    --------
+    >>> split_sentences("One. Two! Three?")
+    ['One.', 'Two!', 'Three?']
+    >>> split_sentences("Dr. Rosling said so. Then he left.")
+    ['Dr. Rosling said so.', 'Then he left.']
+    >>> split_sentences("It cost 3.14 euros. Exactly.")
+    ['It cost 3.14 euros.', 'Exactly.']
+    >>> split_sentences("No terminator here")
+    ['No terminator here']
+    """
+    collapsed = " ".join(text.split())
+    if not collapsed:
+        return []
+
+    sentences: list[str] = []
+    start = 0
+    for match in _SENTENCE_END.finditer(collapsed):
+        stop = match.start("terminator")
+        # Only a lone full stop can be an abbreviation; "!" and "?" and any
+        # run of terminators always end the sentence.
+        if match.group("terminator") == "." and _ends_an_abbreviation(collapsed, stop):
+            continue
+        end = match.end("closers")
+        piece = collapsed[start:end].strip()
+        if piece:
+            sentences.append(piece)
+        start = match.end("space")
+
+    tail = collapsed[start:].strip()
+    if tail:
+        sentences.append(tail)
+    return sentences
+
+
+def explode_to_sentences(segments: list[Segment]) -> list[Segment]:
+    """One segment per sentence, so the audio can be followed sentence by sentence.
+
+    The read-along highlight is only as precise as the unit that gets its own
+    slice of audio. Synthesising a whole paragraph gives one timestamp for ten
+    lines; synthesising each sentence gives one per sentence, measured rather
+    than aligned, because each is generated on its own.
+
+    The block's pauses are redistributed rather than repeated, which is the
+    part that is easy to get wrong: a block's ``pause_before_ms`` belongs to
+    its **first** sentence only and its ``pause_after_ms`` to its **last**,
+    with :data:`PAUSE_SENTENCE_MS` between the rest. Copying the block's
+    pauses onto every sentence would put a heading-sized silence inside a
+    paragraph and make prose read like a list.
+
+    Everything else -- emotion, intensity, pace, kind, heading level -- is
+    inherited unchanged: those describe how the block sounds, and a sentence
+    does not change its mind halfway through a paragraph.
+
+    Parameters
+    ----------
+    segments : list of Segment
+        Blocks from :func:`extract_segments`, optionally enriched.
+
+    Returns
+    -------
+    list of Segment
+        One per sentence, in reading order. A block whose text holds no
+        sentence at all contributes nothing, so this can be shorter than its
+        input -- and the page must be built from *this* list, not from the
+        blocks, or the two stop agreeing about what cue 12 is.
+
+    Examples
+    --------
+    >>> blocks = extract_segments("One. Two.\\n\\nThree.")
+    >>> [s["text"] for s in explode_to_sentences(blocks)]
+    ['One.', 'Two.', 'Three.']
+    """
+    out: list[Segment] = []
+    for block in segments:
+        sentences = split_sentences(block.get("text", ""))
+        if not sentences:
+            continue
+        last = len(sentences) - 1
+        for position, sentence in enumerate(sentences):
+            piece: Segment = dict(block)  # type: ignore[assignment]
+            piece["text"] = sentence
+            piece["pause_before_ms"] = (
+                int(block.get("pause_before_ms", 0)) if position == 0 else 0
+            )
+            piece["pause_after_ms"] = (
+                int(block.get("pause_after_ms", 0))
+                if position == last
+                else PAUSE_SENTENCE_MS
+            )
+            out.append(piece)
+    return out

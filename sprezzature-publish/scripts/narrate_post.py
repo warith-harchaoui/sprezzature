@@ -95,6 +95,7 @@ from _narrate import (  # noqa: E402
     NarrationManifestEntry,
     Segment,
     apply_pronunciation,
+    explode_to_sentences,
     extract_segments,
     load_pronunciation,
     merge_llm_hint,
@@ -415,6 +416,18 @@ def main() -> int:
     if args.ai_hints_only:
         print(json.dumps(segments, indent=2, ensure_ascii=False))
         return 0
+
+    # Split into sentences only now, and the order is deliberate. The model
+    # judges emotion and pace from a whole block, where the context lives; a
+    # sentence shown alone loses the thread and gets flatter hints. And
+    # `--ai-hints-only` stays readable as blocks, which is what a human
+    # inspecting the hints wants to see.
+    #
+    # From here on, a "segment" is a sentence: it is the unit that gets its
+    # own slice of audio, and therefore the unit the page can follow. The
+    # HTML must be built from this same call, or cue 12 and span 12 stop
+    # being the same words.
+    segments = explode_to_sentences(segments)
 
     # Cache check — skip when nothing changed.
     manifest_path: Path = args.out_dir / "manifest.json"
