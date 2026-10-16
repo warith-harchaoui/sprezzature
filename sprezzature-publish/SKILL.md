@@ -113,6 +113,8 @@ Then run `sprezzature-accessibility/scripts/lint_a11y.py` over the output and `s
 ```text
 narrate_post.py            # one MP3 per Markdown post (opt-in)
 ↓
+md_to_html.py --readalong  # page follows the audio, sentence by sentence
+↓
 site_indexes.py            # re-run with --audio-manifest to inject
                            # <enclosure> rows → RSS feed = podcast feed
 ```
@@ -126,6 +128,14 @@ blog", "podcast feed from posts", "TTS this article". See
 top-of-article), engine matrix (OpenVoice v2 + ChatterboxTTS, both
 MIT for code AND weights), voice cloning ethics, and Schema.org /
 OpenGraph metadata.
+
+`md_to_html.py --readalong <narration-dir>` makes the page follow the
+audio: a span per sentence, highlighted on the browser's own
+`cuechange`, visual-only so it does not talk over a screen reader.
+It compares the cues the narration wrote against the rendered HTML and
+**fails the conversion** when they disagree, naming the sentence —
+a highlight that is off by one points a reader confidently at the wrong
+line. Same reference, section *Following the narration on the page*.
 
 ## When NOT to use this skill
 
@@ -152,6 +162,7 @@ OpenGraph metadata.
 | `scripts/plain_language.py` | `pip install -r scripts/requirements-plain-language.txt` + Ollama | Rewrites copy at a target grade; strips marketing voice |
 | `scripts/narrate_post.py` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `install_narrate.py` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
 | `scripts/narrate_openvoice.py` / `narrate_chatterbox.py` *(optional)* | as above | Engine wrappers invoked as subprocesses by `narrate_post.py`. |
+| `scripts/_readalong.py` *(optional)* | `pip install markdown` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `md_to_html.py --readalong`; refuses rather than mis-align. |
 | `scripts/pick_voice.py` *(optional)* | as above | Lists engine voices + generates per-voice demo clips so the designer chooses by listening. |
 | `scripts/install_narrate.py` *(optional)* | subprocess | Downloads OpenVoice v2 checkpoints + sets up the ChatterboxTTS voice library directory. |
 | `scripts/_lang.py`, `scripts/_ollama.py`, `scripts/_narrate.py` | (internal helpers) | Language detection + Ollama client + narration segment extractor shared by other scripts |

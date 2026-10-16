@@ -136,9 +136,14 @@ default narration hints per segment. The pipeline honors:
 | List item (last) | 800 ms pause after |
 | Blockquote | Wrapped with "Quote: ... End quote." + lower intensity |
 | Code fence | Skipped (sigil-heavy; rarely reads well) |
-| Image (`![alt](…)`) | Alt text only (URL dropped) |
+| Table | Skipped, for the reason code fences are: a row of pipes read aloud is noise |
+| Thematic break `---` | Skipped: a rule separates sections and holds no words |
+| HTML comment `<!-- … -->` | Skipped: addressed to whoever opens the file, not to a reader |
+| Image (`![alt](…)` or `<img alt=…>`) | Alt text only (URL dropped) — it is what a listener gets instead of the picture |
 | Link (`[text](…)`) | Link text only (URL dropped) |
-| Inline code `` `x` `` | Backticks stripped, content kept |
+| Autolink `<https://…>` | The address, which is what the page shows. `<mailto:a@b.c>` loses its scheme, as the page does |
+| Inline code `` `x` `` or ``` ``x`` ``` | Delimiters stripped, content kept — including any `*` or `<…>` inside, which the renderer keeps too |
+| Emphasis `**b**` `*i*` `_i_` `~~s~~` | Markers stripped, words kept. A voice saying "star star" is not reading the sentence |
 | Emoji `⚠️ 💡 🎉 🔥 …` | Emotion baseline set per emoji (see lookup table in `_narrate.EMOJI_EMOTION`) |
 | Frontmatter `narration.tone` | Project-wide baseline emotion |
 | Frontmatter `narration.pace` | Project-wide baseline pace |
@@ -180,6 +185,74 @@ python3 sprezzature-publish/scripts/narrate_post.py \
 This prints the segment list with merged hints and exits without
 invoking the TTS engine; useful for reviewing the LLM's calls when
 the narration sounds off.
+
+## Following the narration on the page (read-along)
+
+A narrated page can highlight each sentence as it is spoken. Pass the
+narration directory to the converter:
+
+```bash
+sprezzature-publish-md-to-html blog/post.md --out site/ \
+  --readalong out/audio/
+```
+
+The page gains an `<audio>` player, a `<track kind="metadata">` pointing
+at `narration.vtt`, a reading time beside the measured listening time,
+and a `<span class="ra-s" id="ra-N">` around every narrated sentence.
+`readalong.css` and `readalong.js` are copied next to the page. Pages
+with no recording in that directory are converted unchanged, which is
+the ordinary case.
+
+### Why it either works or refuses
+
+The audio and the page come from the same Markdown by two different
+routes: `extract_segments` cleans it for the engine, the `markdown`
+library renders it for the browser. Nothing makes those agree about
+what sentence twelve is, and a highlight that is wrong by one tells a
+reader with confidence to look at the wrong line.
+
+So the page is not numbered independently. The cues the narration
+actually wrote are compared, one by one, against the rendered HTML
+split by the *same* splitter. They match, or the conversion fails and
+names the first sentence that differs. There is no third outcome.
+
+That comparison is what turned up most of the skipped constructs in the
+table above: each was a case where the voice read a sigil aloud and
+nothing on the page corresponded to it.
+
+### What the browser does, and what it deliberately does not
+
+The cues are parsed by the browser from the `<track>` element, so there
+is no parser, no timer and no clock of ours to drift from the audio.
+`cuechange` moves one CSS class.
+
+The highlight is **visual only** — no live region, no `aria-current`.
+Read-along audio is not for screen-reader users: they already have
+speech, and a second voice over theirs is an obstacle. It serves
+dyslexic readers, readers using magnification, readers who are tired,
+and people reading in a second language. Announcing every sentence
+would make the page hostile to the first group for the benefit of the
+second.
+
+Consequently:
+
+- auto-scroll becomes *instant* under `prefers-reduced-motion` rather
+  than disappearing — smooth scrolling is the vestibular trigger, and
+  removing the scroll would leave a reader hunting for the highlight
+  they asked to follow;
+- the highlight is a tint **and** a left border, never colour alone
+  (WCAG 1.4.1);
+- every sentence is focusable and seeks on click, Enter or Space, and
+  the player keeps its native controls — no custom key handling.
+
+### Cues with nothing to highlight
+
+Some cues have no sentence on the page. A blockquote is spoken as
+"Quote: … End quote.", and "End quote." is never written; an image's
+alt text may be several sentences while the picture is one object. Both
+are handled by the highlight simply staying where it is — which is also
+why it no longer blinks off during the pauses the timeline puts between
+sentences.
 
 ## Project-wide pronunciation overrides
 

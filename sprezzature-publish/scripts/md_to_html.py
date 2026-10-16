@@ -53,7 +53,9 @@ Author
 from __future__ import annotations
 
 import html
+import os
 import re
+import shutil
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -67,6 +69,9 @@ from _argparse import make_parser  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lint_markdown import FENCE_RE, render_mermaid_block  # noqa: E402
 from _lang import detect_text_language  # noqa: E402
+import _narrate  # noqa: E402
+from _narrate import FRONTMATTER_RE  # noqa: E402
+import _readalong  # noqa: E402
 
 
 PAGE_TEMPLATE = """<!DOCTYPE html>
@@ -134,6 +139,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       }}
     }}
   </style>
+{readalong_head}
 </head>
 <body class="font-sans antialiased text-[16px] leading-relaxed">
 
@@ -277,8 +283,99 @@ def _replace_mermaid_blocks(text: str, src_path: Path, out_dir: Path) -> tuple[s
     return text, rendered, failed
 
 
+#: Wording for the player's label, per language -- the accessible name of the
+#: audio element. No default: a language this project has not been taught is
+#: worth seeing, not worth serving in English.
+_PLAYER_LABELS: dict[str, str] = {
+    "en": "Listen to this page",
+    "fr": "Écouter cette page",
+}
+
+#: Files that drive the highlight, copied next to the page. Linked rather
+#: than inlined so a reader's browser caches them once for a whole site.
+_READALONG_ASSETS: tuple[str, ...] = ("readalong.css", "readalong.js")
+
+
+def _readalong_sources(narration_dir: Path, stem: str) -> tuple[Path, Path] | None:
+    """The audio file and its cue file for one page, if a narration ran.
+
+    Returns ``None`` when there is nothing to attach, which is the ordinary
+    case: most pages of a site are not narrated, and a missing recording is
+    not an error.
+    """
+    cues = narration_dir / "narration.vtt"
+    if not cues.is_file():
+        return None
+    audio = next(
+        (
+            candidate
+            for suffix in _readalong.AUDIO_TYPES
+            for candidate in [narration_dir / f"{stem}{suffix}"]
+            if candidate.is_file()
+        ),
+        None,
+    )
+    return None if audio is None else (audio, cues)
+
+
+def _attach_readalong(body_html: str, *, src: Path, out_dir: Path, narration_dir: Path,
+                      lang: str) -> tuple[str, str]:
+    """Wrap the page's sentences and build its player.
+
+    Returns the body and the markup for the document head. Raises
+    :class:`_readalong.ReadAlongMismatch` rather than returning a page whose
+    highlight is off by one -- a read-along that points at the wrong line is
+    worse than a page with no audio at all.
+    """
+    found = _readalong_sources(narration_dir, src.stem)
+    if found is None:
+        return body_html, ""
+    audio, cues = found
+
+    label = _PLAYER_LABELS.get(lang)
+    if label is None:
+        raise _readalong.ReadAlongMismatch(
+            f"no read-along player wording for language {lang!r}; add it to "
+            "_PLAYER_LABELS rather than labelling a French page in English"
+        )
+
+    wrapped = _readalong.wrap_sentences(
+        body_html,
+        _readalong.parse_vtt(cues.read_text(encoding="utf-8")),
+        split=_narrate.split_sentences,
+        opening=_narrate.QUOTE_OPENING,
+        closing=_narrate.QUOTE_CLOSING,
+    )
+
+    # Paths are written relative to the page, so the whole output directory
+    # can be moved or served from a sub-path without rewriting a thing.
+    here = out_dir.resolve()
+
+    def rel(path: Path) -> str:
+        """`path` as the page's own HTML would reference it."""
+        return os.path.relpath(path.resolve(), here).replace(os.sep, "/")
+
+    for asset in _READALONG_ASSETS:
+        shutil.copyfile(_readalong.assets_dir() / asset, out_dir / asset)
+
+    player = _readalong.player_html(
+        audio_src=rel(audio), vtt_src=rel(cues), label=label, lang=lang,
+    )
+    meta = _readalong.reading_meta_html(
+        words=len(_readalong.page_words(body_html)),
+        spoken_seconds=_readalong.spoken_seconds(cues.read_text(encoding="utf-8")),
+        lang=lang,
+    )
+    head = (
+        '  <link rel="stylesheet" href="readalong.css">\n'
+        '  <script type="module" src="readalong.js"></script>'
+    )
+    return f"{player}\n{meta}\n{wrapped}", head
+
+
 def convert_one(src: Path, out_dir: Path, *, title: str, site_name: str,
-                lang: str, description: str, katex_base: str) -> Conversion:
+                lang: str, description: str, katex_base: str,
+                narration_dir: Path | None = None) -> Conversion:
     """Convert a single Markdown file to a styled standalone HTML page."""
     try:
         import markdown  # type: ignore
@@ -290,6 +387,12 @@ def convert_one(src: Path, out_dir: Path, *, title: str, site_name: str,
 
     out_dir.mkdir(parents=True, exist_ok=True)
     raw = src.read_text(encoding="utf-8")
+    # Frontmatter is metadata for the tool that reads the file, not prose for
+    # the reader. The Markdown library has no notion of it and renders it as
+    # a paragraph, so a converted SKILL.md opened with "name:
+    # sprezzature-publish description: >- Turn a folder of Markdown…" before
+    # its own title. The narration has always dropped it.
+    raw = FRONTMATTER_RE.sub("", raw, count=1)
     # Language: detect from the document rather than assuming English, matching
     # the rest of the project (sprezzature-vision / sprezzature-audio detect, never default
     # silently). ``--lang auto`` (the default) triggers detection per file.
@@ -311,12 +414,24 @@ def convert_one(src: Path, out_dir: Path, *, title: str, site_name: str,
         body_lines = [ln for ln in raw.splitlines() if ln.strip() and not ln.startswith("#")]
         description = (body_lines[0] if body_lines else "")[:160]
 
+    readalong_head = ""
+    if narration_dir is not None:
+        try:
+            body_html, readalong_head = _attach_readalong(
+                body_html, src=src, out_dir=out_dir,
+                narration_dir=narration_dir, lang=lang,
+            )
+        except _readalong.ReadAlongMismatch as mismatch:
+            return Conversion(src, out_dir / f"{src.stem}.html", False,
+                              f"read-along refused: {mismatch}")
+
     page = PAGE_TEMPLATE.format(
         lang=html.escape(lang),
         title=html.escape(title),
         description=html.escape(description),
         site_name=html.escape(site_name or title),
         katex_base=katex_base,
+        readalong_head=readalong_head,
         body=body_html,
     )
     dst = out_dir / f"{src.stem}.html"
@@ -357,6 +472,12 @@ def main() -> int:
         help="Base URL for KaTeX assets. Pass a local path for an offline build. "
              "Default: jsdelivr CDN.",
     )
+    p.add_argument(
+        "--readalong", type=Path, default=None, dest="narration_dir",
+        help="Directory holding a narration run (the audio plus narration.vtt). "
+             "Pages with a recording there get a player and a sentence-by-sentence "
+             "highlight; pages without one are converted unchanged.",
+    )
     args = p.parse_args()
 
     inputs = gather_inputs(args.target)
@@ -379,6 +500,7 @@ def main() -> int:
             title=args.title, site_name=args.site_name,
             lang=args.lang, description=args.description,
             katex_base=args.katex_base.rstrip("/") + "/",
+            narration_dir=args.narration_dir,
         )
         print(f"{result.src} → {result.dst}: {result.message}")
         if not result.ok:

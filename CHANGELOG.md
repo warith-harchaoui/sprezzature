@@ -57,6 +57,107 @@ Adoption-side milestones (user-driven; not engineering work):
 - 5 real users: the only signal that says whether anything else on
   this list is worth doing.
 
+## [Unreleased]
+
+*The narration read the punctuation out loud.* The headline sits here rather
+than on the heading: a dateless `Unreleased` section is skipped by
+`changelog_feed.py` on purpose, and a title on a heading the feed cannot read
+is exactly what the 1.5.0 guard below was written to catch.
+
+### Added
+
+- **A narrated page can now follow its own audio, sentence by sentence.**
+  `md_to_html.py --readalong <narration-dir>` wraps each narrated sentence in
+  a span, attaches the `<audio>` player with the narration's WebVTT as a
+  `<track kind="metadata">`, and shows a reading time beside the *measured*
+  listening time — estimated against exact, which is information rather than
+  an inconsistency.
+
+  The highlight moves on the browser's own `cuechange`: no parser, no timer,
+  no clock of ours to drift from the audio. It is **visual only** — no live
+  region, no `aria-current` — because read-along audio is not for
+  screen-reader users, who already have speech and do not need a second voice
+  over theirs. It serves dyslexic readers, readers using magnification,
+  readers who are tired, and people reading in a second language. Auto-scroll
+  becomes instant under `prefers-reduced-motion` rather than disappearing;
+  the highlight is a tint **and** a left border, never colour alone.
+
+  The page is not numbered independently. The cues the narration wrote are
+  compared against the rendered HTML split by the *same* splitter, and the
+  conversion **fails, naming the first sentence that differs**, rather than
+  wrapping what happens to line up — a highlight that is off by one points a
+  reader confidently at the wrong line.
+
+### Fixed
+
+That comparison is what found everything below. Each one was a voice reading
+a sigil aloud, and none of them was visible from either side on its own:
+the narration looked fine next to the Markdown, the page looked fine next to
+the narration, and only lining the two up showed the words that were missing
+from one and invented in the other.
+
+- **Emphasis markers were narrated.** `**bold**`, `*em*`, `_under_` and
+  `~~struck~~` reached the engine with their asterisks. Stripped now — and
+  stripped on the *whole* string, with code spans set aside and put back,
+  because emphasis legitimately spans a code span: cleaning each side of
+  ``` `qwen3-vl:8b` ``` separately left both halves of the `**` pair behind.
+
+- **A code span lost its contents to the HTML-tag rule.** "Run
+  `` `release.sh <version>` ``" was narrated as "run release dot s h", the
+  placeholder eaten as if it were a tag. Code spans are now protected from
+  that rule as well — the renderer keeps what they hold, so the narration
+  does too.
+
+- **Double-backtick code spans kept their outer delimiters.** The pattern
+  matched one backtick at a time, so ``` ``dialog.showModal()`` ``` consumed
+  the inner pair and read the outer two aloud. The delimiter is a *run*, as
+  Markdown defines it.
+
+- **Autolinks were deleted.** `<https://…/issues>` matched the HTML-tag
+  pattern whole, so "open an issue at `<https://…>` with the label security"
+  was narrated as "open an issue at with the label security" — a sentence
+  that has lost its point. The address is spoken now, because the page shows
+  it; `<mailto:a@b.c>` drops its scheme, because the page does.
+
+- **Tables were read as rows of pipes**, and **thematic breaks as "dash dash
+  dash"**, and **HTML comments in full**, starting with "less-than
+  exclamation mark". All three are skipped, for the reason code fences
+  already were.
+
+- **A list item that wrapped onto a second line lost its list.** The guard
+  compared the item count to the line count, which switched off the
+  continuation handling immediately above it: a wrapped item sent the whole
+  block to the prose branch, markers and all, and "1. Redistributions…" came
+  back as a sentence that said "1.". A block is a list when it *starts* as
+  one.
+
+- **Anything that wrapped across a continuation line was cleaned twice,
+  halfway.** Each line was cleaned on its own before being joined, so a bold
+  phrase broken over two lines kept its asterisks. Joined first now.
+
+- **A block beginning with a blank line was read as prose.** Every structural
+  test reads the block's first line, and a file whose frontmatter ended just
+  above had `""` there — so such a file narrated the `#` of its own title and
+  the `>` of its first quotation.
+
+- **An HTML `<img>`'s alt text was silent.** `![alt](src)` was narrated and
+  `<img alt="…">` was not, though both put a description where a listener
+  cannot see a picture.
+
+- **Converted pages showed their own frontmatter.** The Markdown library has
+  no notion of it, so a rendered `SKILL.md` opened with "name:
+  sprezzature-publish description: >- Turn a folder of Markdown…" above its
+  title. The page route now drops exactly what the narration drops.
+
+### Measured
+
+Over the 148 Markdown files in this repository, the two routes agreed on 16
+before this work and the read-along builds for **114** after it. Of the 34
+that refuse, 15 are pages whose *rendered HTML is already mis-nested* —
+python-markdown turns `**a *b* `c`**` into `<em>b<em>`, leaving tags
+unbalanced and the whole paragraph bold. The read-along did not cause that;
+it is the first thing that ever looked.
+
 ## [1.5.0] (2026-10-16): half the suite's release titles never reached the feed
 
 ### Fixed
