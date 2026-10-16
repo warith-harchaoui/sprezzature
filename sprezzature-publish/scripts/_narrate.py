@@ -164,15 +164,89 @@ class NarrationManifestEntry:
 
 # Patterns kept module-level so the regex compiler caches them across
 # repeated runs (a long blog post can have hundreds of segments).
-_FRONTMATTER_RE: re.Pattern[str] = re.compile(r"\A---\n(?P<yaml>.*?)\n---\n", re.S)
-_CODE_FENCE_RE: re.Pattern[str] = re.compile(r"^```.*?$.*?^```", re.M | re.S)
-_INLINE_CODE_RE: re.Pattern[str] = re.compile(r"`([^`]+)`")
+#: A leading YAML frontmatter block. Public because the page route has to
+#: drop exactly what the narration drops: anything else and the two stop
+#: agreeing about where the document starts.
+FRONTMATTER_RE: re.Pattern[str] = re.compile(r"\A---\n(?P<yaml>.*?)\n---\n", re.S)
+_CODE_FENCE_RE: re.Pattern[str] = re.compile(r"^ {0,3}```.*?$.*?^ {0,3}```", re.M | re.S)
+
+#: An HTML comment, including a multi-line one. The tag pattern cannot match
+#: those -- it stops at the first ``>`` and never spans lines -- so a
+#: commented-out note at the top of a file was read out in full, starting
+#: with "less-than exclamation mark".
+_HTML_COMMENT_RE: re.Pattern[str] = re.compile(r"<!--.*?-->", re.S)
+#: A code span. The delimiter is a *run* of backticks closed by a run of the
+#: same length, as Markdown defines it: ``dialog.showModal()`` is written
+#: with two on each side so the single ones inside survive. Matching one
+#: backtick at a time consumed the inner pair and left the outer two in the
+#: prose, which a voice then read out as "backtick".
+_INLINE_CODE_RE: re.Pattern[str] = re.compile(
+    r"(?P<fence>`+)(?P<code>.+?)(?P=fence)(?!`)", re.S
+)
 _IMAGE_RE: re.Pattern[str] = re.compile(r"!\[([^\]]*)\]\([^)]*\)")
 _LINK_RE: re.Pattern[str] = re.compile(r"\[([^\]]+)\]\([^)]+\)")
 _HTML_TAG_RE: re.Pattern[str] = re.compile(r"<[^>]+>")
+
+#: An ``<img>`` written as HTML rather than as ``![alt](src)``. Its alt text
+#: is kept for the same reason the Markdown form's is: it is what a listener
+#: gets instead of the picture. Unwrapped before tags are stripped, or the
+#: tag pattern takes the description with the tag -- which is how a gallery
+#: entry's logo was described on the page and silent in the audio.
+_HTML_IMG_RE: re.Pattern[str] = re.compile(
+    r'<img\b[^>]*?\balt\s*=\s*(?:"([^"]*)"|\'([^\']*)\')[^>]*>', re.I
+)
+
+#: A Markdown autolink -- ``<https://example.com>``, ``<mailto:a@b.c>`` or a
+#: bare ``<a@b.c>``. Unwrapped before tags are stripped, because the tag
+#: pattern would eat it whole and take the address with it: "open an issue at
+#: ``<https://…/issues>``" came back as "open an issue at", which is a
+#: sentence that has lost its point. The renderer shows the address, so the
+#: narration says it -- and it shows an e-mail address *without* its
+#: ``mailto:`` scheme, so the scheme is dropped here too rather than being
+#: spelled out to a listener who is not going to type it.
+_AUTOLINK_RE: re.Pattern[str] = re.compile(
+    r"<(?:mailto:)?((?:https?://[^<>\s]+)|(?:[^<>\s@]+@[^<>\s@]+\.[^<>\s@]+))>"
+)
+
+#: Emphasis markers, in the order they have to be removed: the two-character
+#: forms first, or the single-character rule would eat half of ``**bold**``.
+#:
+#: Each pattern requires a non-space just inside the markers, which is what
+#: Markdown itself requires, and the single-character forms refuse a word
+#: character on the outside -- that is what keeps ``snake_case`` whole and
+#: stops ``3 * 4`` from being read as emphasis. Strikethrough is included
+#: even though this project's renderer does not implement it (the tildes
+#: reach the page as text): they are markup either way, and a voice saying
+#: "tilde tilde" is not reading the sentence.
+_EMPHASIS_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\*\*(?=\S)(.+?)(?<=\S)\*\*", re.S),
+    re.compile(r"(?<![\w_])__(?=\S)(.+?)(?<=\S)__(?![\w_])", re.S),
+    re.compile(r"~~(?=\S)(.+?)(?<=\S)~~", re.S),
+    re.compile(r"(?<![\w*])\*(?=\S)([^*]+?)(?<=\S)\*(?![\w*])", re.S),
+    re.compile(r"(?<![\w_])_(?=\S)([^_]+?)(?<=\S)_(?![\w_])", re.S),
+)
 _HEADING_RE: re.Pattern[str] = re.compile(r"^(#{1,6})\s+(.+?)\s*#*\s*$")
 _LIST_ITEM_RE: re.Pattern[str] = re.compile(r"^\s*(?:[-*+]|\d+\.)\s+(.*)$")
 _BLOCKQUOTE_RE: re.Pattern[str] = re.compile(r"^>\s?(.*)$")
+
+#: A thematic break: three or more ``-``, ``*`` or ``_``, optionally spaced.
+#: It separates sections visually and holds no words, so narrating it makes
+#: the voice say "dash dash dash" where a reader sees a line.
+_THEMATIC_BREAK_RE: re.Pattern[str] = re.compile(r"^\s{0,3}([-*_])(?:\s*\1){2,}\s*$")
+
+#: A table row: a line whose content is bounded by pipes. A table is skipped
+#: for the reason code fences are -- it is sigil-heavy and rarely reads well
+#: -- and skipping it is also what keeps a narrated page followable: the
+#: renderer puts a table in ``<table>``, which the read-along does not treat
+#: as narrated prose either, so both sides pass over the same thing.
+_TABLE_ROW_RE: re.Pattern[str] = re.compile(r"^\s{0,3}\|.*\|\s*$")
+
+#: The words wrapped around a quoted block so a listener hears where it
+#: starts and ends. Named rather than inlined because the read-along has to
+#: see through them to match a cue to the sentence on the page, and a string
+#: spelled out in two modules is a string that drifts.
+QUOTE_OPENING: str = "Quote:"
+QUOTE_CLOSING: str = "End quote."
 
 #: Inline marker the author can drop in to override the LLM/structure
 #: hints for the segment that follows. ``[emotion: cheerful]`` until
@@ -182,12 +256,53 @@ _EMOTION_MARKER_RE: re.Pattern[str] = re.compile(
 )
 
 
+def _strip_emphasis(text: str) -> str:
+    """Remove emphasis markers, keeping the words they emphasise."""
+    for pattern in _EMPHASIS_RES:
+        text = pattern.sub(r"\1", text)
+    return text
+
+
 def _strip_inline(text: str) -> str:
-    """Clean a chunk of Markdown text to bare narratable prose."""
+    """Clean a chunk of Markdown text to bare narratable prose.
+
+    Code spans are set aside before emphasis and HTML tags are removed, and
+    put back afterwards. Both rules would otherwise damage them, and in both
+    cases the renderer keeps what they hold -- so the damage would also be
+    the one thing that makes the page and the narration disagree about the
+    sentence:
+
+    * ``a*b*c`` inside backticks is a pattern being read out, not an
+      emphasis on ``b``;
+    * ``<version>`` inside backticks is a placeholder a reader is meant to
+      hear, not a tag. Stripping it loses the word outright, which is how
+      "run ``release.sh <version>``" became "run release dot s h".
+
+    Masking rather than splitting, because emphasis legitimately *spans* a
+    code span -- ``**one model: `qwen3-vl:8b`**`` is one bold phrase -- and
+    stripping each side of the span on its own leaves both halves of the
+    ``**`` pair behind.
+    """
     text = _IMAGE_RE.sub(r"\1", text)         # keep alt text only
     text = _LINK_RE.sub(r"\1", text)          # keep link text only
-    text = _INLINE_CODE_RE.sub(r"\1", text)   # drop backticks
+    text = _AUTOLINK_RE.sub(r"\1", text)      # keep the address
+    text = _HTML_IMG_RE.sub(                  # keep an HTML image's alt text
+        lambda m: m.group(1) if m.group(1) is not None else (m.group(2) or ""), text
+    )
+    held: list[str] = []
+
+    def _hold(match: re.Match[str]) -> str:
+        held.append(match.group("code"))
+        # NUL cannot occur in Markdown prose, and it counts as neither a word
+        # character nor whitespace, so it does not disturb the lookarounds
+        # the emphasis patterns rely on.
+        return f"\x00{len(held) - 1}\x00"
+
+    text = _INLINE_CODE_RE.sub(_hold, text)   # drop backticks, keep content
     text = _HTML_TAG_RE.sub("", text)         # strip HTML tags
+    text = _strip_emphasis(text)
+    for index, content in enumerate(held):
+        text = text.replace(f"\x00{index}\x00", content)
     # Collapse whitespace introduced by the above substitutions.
     return re.sub(r"\s+", " ", text).strip()
 
@@ -197,7 +312,7 @@ def _parse_frontmatter(markdown: str) -> tuple[dict[str, Any], str]:
     Split frontmatter from body. Returns ``({}, markdown)`` when no
     frontmatter or PyYAML missing.
     """
-    m = _FRONTMATTER_RE.match(markdown)
+    m = FRONTMATTER_RE.match(markdown)
     if not m:
         return {}, markdown
     body: str = markdown[m.end():]
@@ -267,6 +382,10 @@ def extract_segments(markdown: str) -> list[Segment]:
     )
     # Drop code blocks entirely — sigil-heavy and rarely reads well.
     body = _CODE_FENCE_RE.sub("", body)
+    # And comments, which are addressed to whoever opens the file, not to a
+    # reader. Removed from the whole body rather than per block because a
+    # comment may span several of them.
+    body = _HTML_COMMENT_RE.sub("", body)
 
     segments: list[Segment] = []
     # The author marker stays in effect until reset or a new heading
@@ -276,7 +395,12 @@ def extract_segments(markdown: str) -> list[Segment]:
     # Walk paragraphs separated by blank lines. Each "paragraph" may
     # actually be a heading, a list, a blockquote, or prose.
     for block in re.split(r"\n\s*\n", body):
-        block = block.rstrip()
+        # Leading blank lines are dropped, not just trailing ones: a block
+        # that begins with one has ``""`` as its first line, and every test
+        # below reads that line. That is how a file whose frontmatter ended
+        # just above kept the ``#`` of its own title and the ``>`` of its
+        # first quotation -- both read out as prose.
+        block = block.strip("\n").rstrip()
         if not block:
             continue
 
@@ -294,9 +418,17 @@ def extract_segments(markdown: str) -> list[Segment]:
                 # Marker-only block (sets the mode for what follows).
                 continue
 
+        lines: list[str] = block.splitlines()
+        # Nothing to say about a horizontal rule, and a table read as a row
+        # of pipes is noise. Both are skipped for the reason code fences are.
+        if all(_THEMATIC_BREAK_RE.match(line) for line in lines):
+            continue
+        if sum(bool(_TABLE_ROW_RE.match(line)) for line in lines) >= 2:
+            continue
+
         # Heading? Resets the sticky author emotion — a new section
         # starts clean unless re-declared inside it.
-        first_line: str = block.splitlines()[0]
+        first_line: str = lines[0]
         heading_match = _HEADING_RE.match(first_line)
         if heading_match:
             level: int = len(heading_match.group(1))
@@ -333,7 +465,7 @@ def extract_segments(markdown: str) -> list[Segment]:
                 for l in block.splitlines()
             )
             inner = _strip_inline(inner)
-            quoted_text: str = f"Quote: {inner} End quote."
+            quoted_text: str = f"{QUOTE_OPENING} {inner} {QUOTE_CLOSING}"
             segments.append(make_segment(
                 quoted_text,
                 kind="blockquote",
@@ -346,15 +478,27 @@ def extract_segments(markdown: str) -> list[Segment]:
             continue
 
         # List? Each item is its own segment with a short pause.
+        # Collected raw and cleaned once per item at the end: an emphasis
+        # pair, a link or a code span may wrap across a continuation line,
+        # and cleaning each line on its own leaves half of the construct
+        # behind -- which is how "the **maximum local of the curve**" kept
+        # its asterisks when the phrase happened to break over two lines.
         list_items: list[str] = []
         for line in block.splitlines():
             li = _LIST_ITEM_RE.match(line)
             if li:
-                list_items.append(_strip_inline(li.group(1)))
+                list_items.append(li.group(1))
             elif list_items:
                 # Continuation line of the previous item.
-                list_items[-1] += " " + _strip_inline(line)
-        if list_items and len(list_items) == len(block.splitlines()):
+                list_items[-1] += " " + line.strip()
+        list_items = [_strip_inline(item) for item in list_items]
+        # The block is a list when it *starts* as one. Comparing the item
+        # count to the line count instead -- as this did -- switched the
+        # continuation handling directly above off again: a continuation
+        # line adds a line without adding an item, so any wrapped item sent
+        # the whole block to the prose branch, markers and all, and
+        # "1. Redistributions..." came back as a sentence reading "1.".
+        if list_items and _LIST_ITEM_RE.match(lines[0]):
             for i, item_text in enumerate(list_items):
                 segments.append(make_segment(
                     item_text,

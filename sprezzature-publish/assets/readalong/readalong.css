@@ -1,0 +1,91 @@
+/* readalong — the sentence highlight and its player.
+ *
+ * Every rule here is an accessibility decision, so each one says why.
+ */
+
+.ra-player {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  /* `currentColor` at low opacity rather than a fixed grey: the host page
+     may be light or dark and this component has no way to know which. */
+  background: color-mix(in srgb, currentColor 4%, transparent);
+}
+
+.ra-player p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.ra-player audio {
+  width: 100%;
+  /* Native controls, deliberately. A custom player is a keyboard trap
+     waiting to happen and would have to reimplement seeking, volume, speed
+     and their labels in every language the page speaks. */
+}
+
+.ra-meta {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* The highlight.
+ *
+ * A tint *and* a left border, never the tint alone: WCAG 1.4.1 forbids
+ * colour as the only means of conveying information, and a reader with
+ * low colour discrimination would otherwise see nothing move. */
+.ra-s {
+  border-left: 3px solid transparent;
+  margin-left: -3px;
+  padding-left: 3px;
+  /* Transitioning only `background-color` and not `border-color` would make
+     the border snap while the tint fades. */
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.ra-s.is-reading {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  border-left-color: currentColor;
+}
+
+/* Clickable to seek. `cursor: pointer` alone would be a lie to a keyboard
+   user, so the span is made focusable in the module and gets a focus ring
+   here -- the same one the host page uses, via `:focus-visible`. */
+.ra-s[tabindex] {
+  cursor: pointer;
+}
+
+.ra-s[tabindex]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The highlight still appears -- it is information, not decoration. What
+     goes is the fade, which is motion for its own sake. Auto-scroll is
+     suppressed in the module, where it can be turned off rather than merely
+     made instant. */
+  .ra-s {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .ra-s.is-reading {
+    background: color-mix(in srgb, currentColor 22%, transparent);
+  }
+}
+
+/* A browser without `color-mix` gets a highlight that still reads, rather
+   than a transparent background and an invisible cursor. */
+@supports not (background: color-mix(in srgb, currentColor 12%, transparent)) {
+  .ra-s.is-reading {
+    background: rgba(128, 128, 128, 0.22);
+  }
+
+  .ra-player {
+    background: rgba(128, 128, 128, 0.06);
+  }
+}
