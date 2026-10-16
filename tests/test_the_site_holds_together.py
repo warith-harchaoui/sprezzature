@@ -294,3 +294,75 @@ def test_every_referenced_svg_parses_and_scales(svg: Path) -> None:
         f"{svg.name}: root element is {root.tag}, not <svg>"
     )
     assert root.get("viewBox"), f"{svg.name}: no viewBox, so it cannot scale"
+
+
+# --------------------------------------------------------------------------
+# The card a page presents when it is shared
+# --------------------------------------------------------------------------
+
+_META_RE = re.compile(r'<meta\s+(?:property|name)="([^"]+)"\s+content="([^"]*)"')
+
+
+def _meta(page: Path) -> dict[str, str]:
+    return dict(_META_RE.findall(page.read_text(encoding="utf-8")))
+
+
+@pytest.mark.parametrize("page", ALL_PAGES, ids=lambda p: p.relative_to(WEB).as_posix())
+def test_each_page_presents_a_complete_card_when_shared(page: Path) -> None:
+    """A shared link is a page's first impression, and it is assembled from
+    tags no reader ever sees, so nothing on the page itself looks wrong when
+    one is missing."""
+    meta = _meta(page)
+    for key in (
+        "description",
+        "og:title",
+        "og:description",
+        "og:url",
+        "og:image",
+        "og:type",
+    ):
+        assert meta.get(key), f"{page.relative_to(WEB)}: {key} missing or empty"
+    assert meta["og:url"] == _url_for(page)
+
+
+@pytest.mark.parametrize("page", ALL_PAGES, ids=lambda p: p.relative_to(WEB).as_posix())
+def test_the_shared_card_image_describes_itself(page: Path) -> None:
+    """``og:image:alt`` is the card image's only accessible name.
+
+    Unlike the rest of the Twitter block -- where ``twitter:title`` and
+    friends fall back to their ``og:`` equivalents -- this one has no
+    fallback. Without it, someone reading a shared post with a screen reader
+    gets a picture announced as nothing at all. It was missing on 34 of these
+    36 pages.
+
+    The minimum length is there because the easy way to satisfy a check like
+    this is to paste the page title in, and a title is not a description of a
+    picture.
+    """
+    alt = _meta(page).get("og:image:alt")
+    assert alt, f"{page.relative_to(WEB)}: og:image:alt missing"
+    assert len(alt) >= 25, (
+        f"{page.relative_to(WEB)}: og:image:alt is too short to describe anything"
+    )
+
+
+def test_the_card_descriptions_are_written_in_the_page_language() -> None:
+    """A French page sharing an English card is the drift this catches.
+
+    Checked by looking for accented characters rather than by guessing at
+    vocabulary: every French description here carries at least one, and a copy
+    of the English text would carry none. Crude, and it fails in exactly the
+    direction that matters -- an English string pasted into a French page.
+    """
+    accented = re.compile(r"[àâçéèêëîïôûùüÿœæ]", re.IGNORECASE)
+    flat = []
+    for page in FR_PAGES:
+        meta = _meta(page)
+        for key in ("description", "og:description", "og:image:alt"):
+            value = meta.get(key, "")
+            # The logo's description is legitimately accent-free in French.
+            if value and "logo" not in value.lower() and not accented.search(value):
+                flat.append(f"{page.relative_to(WEB)}:{key}")
+    assert not flat, (
+        f"French pages with un-accented prose (English left in place?): {flat}"
+    )
