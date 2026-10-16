@@ -64,11 +64,33 @@
 
 @media (prefers-reduced-motion: reduce) {
   /* The highlight still appears -- it is information, not decoration. What
-     goes is the fade, which is motion for its own sake. Auto-scroll is
-     suppressed in the module, where it can be turned off rather than merely
-     made instant. */
+     goes is the fade, which is motion for its own sake. Auto-scroll is not
+     suppressed: the module makes it instant instead, because a jump is not
+     animation and removing the scroll would leave a reader hunting for the
+     highlight they asked to follow. */
   .ra-s {
     transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  /* Windows High Contrast replaces `background` and `border-color` with its
+     own, so the highlight disappeared exactly where it was needed most: this
+     feature exists for readers with low vision, and some of them are in
+     forced colours.
+
+     `Mark` / `MarkText` are the system colours for highlighted text, which is
+     precisely what this is -- not a selection (`Highlight`), not a link. They
+     are set on the element rather than switched off with
+     `forced-color-adjust: none`, so the reader's own palette still wins. */
+  .ra-s.is-reading {
+    background: Mark;
+    color: MarkText;
+    border-left-color: MarkText;
+  }
+
+  .ra-s[tabindex]:focus-visible {
+    outline-color: Highlight;
   }
 }
 
