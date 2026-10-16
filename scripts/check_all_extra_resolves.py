@@ -55,19 +55,71 @@ def _floors() -> list[tuple[str, str]]:
 
 
 def _published(package: str) -> tuple[set[str], str] | None:
-    """Every version PyPI holds for a package, plus the one it calls latest."""
+    """Every version PyPI holds for a package, plus the highest of them.
+
+    Reads the **simple index** (PEP 691 JSON), not ``/pypi/<pkg>/json``.
+
+    The difference is the whole point of this script. The two endpoints are
+    cached independently, and the legacy JSON one lags: minutes after
+    uploading sprezzature-figures 2.7.0 it still answered "latest 2.6.0" while
+    the simple index already listed both 2.7.0 files and `pip install` resolved
+    them. A guard that reports NOT PUBLISHED for a version that is published
+    is worse than no guard -- it would have argued for lowering a floor that
+    was fine, at exactly the moment the script is meant to be run.
+
+    The simple index is also the right authority on principle: it is what pip
+    actually reads, so agreeing with it is the question being asked.
+    """
+    request = urllib.request.Request(
+        f"https://pypi.org/simple/{package}/",
+        headers={"Accept": "application/vnd.pypi.simple.v1+json"},
+    )
     try:
-        with urllib.request.urlopen(
-            f"https://pypi.org/pypi/{package}/json", timeout=TIMEOUT
-        ) as response:
+        with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
             data = json.load(response)
     except urllib.error.HTTPError as exc:
         if exc.code == 404:
             return None
         raise
-    # A version key with an empty file list is a release whose files were all
-    # yanked or deleted: present in the index, not installable.
-    return {v for v, files in data["releases"].items() if files}, data["info"]["version"]
+
+    versions = {
+        version
+        for version in data.get("versions", [])
+        # A version with no un-yanked file is in the index but not installable.
+        if any(
+            _version_of(file["filename"], package) == version and not file.get("yanked")
+            for file in data.get("files", [])
+        )
+    }
+    if not versions:
+        return None
+    return versions, max(versions, key=_sort_key)
+
+
+def _version_of(filename: str, package: str) -> str:
+    """The version a distribution filename carries.
+
+    Both naming schemes normalise the project name the same way (PEP 503/427:
+    runs of ``-_.`` collapse to one separator), so the prefix is predictable;
+    what differs is the suffix. A wheel is
+    ``name-version-pythontag-abi-platform.whl``, an sdist ``name-version.tar.gz``.
+    """
+    normalised = re.sub(r"[-_.]+", "_", package).lower()
+    stem = filename
+    for suffix in (".tar.gz", ".zip", ".whl"):
+        if stem.endswith(suffix):
+            stem = stem[: -len(suffix)]
+            break
+    for prefix in (f"{normalised}-", f"{package}-"):
+        if stem.lower().startswith(prefix.lower()):
+            stem = stem[len(prefix) :]
+            break
+    return stem.split("-", 1)[0]
+
+
+def _sort_key(version: str) -> tuple[int, ...]:
+    """Numeric ordering, so 0.18.0 does not outrank 0.9.0 the way strings do."""
+    return tuple(int(part) for part in re.findall(r"\d+", version))
 
 
 def main() -> int:
@@ -87,7 +139,8 @@ def main() -> int:
 
     if stale:
         print(
-            "\n`pip install sprezzature[all]` cannot resolve:\n  " + "\n  ".join(stale)
+            "\n`pip install sprezzature[all]` cannot resolve:\n  "
+            + "\n  ".join(stale)
             + "\n\nPublish those versions first, or lower the floors to versions "
             "that exist. A floor naming a version only this machine has is the "
             "failure every test here is blind to.",
