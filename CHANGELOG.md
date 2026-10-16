@@ -80,7 +80,10 @@ is exactly what the 1.5.0 guard below was written to catch.
   over theirs. It serves dyslexic readers, readers using magnification,
   readers who are tired, and people reading in a second language. Auto-scroll
   becomes instant under `prefers-reduced-motion` rather than disappearing;
-  the highlight is a tint **and** a left border, never colour alone.
+  the highlight is a tint **and** a left border, never colour alone; and under
+  `forced-colors` it switches to the system `Mark` / `MarkText` pair, because
+  Windows High Contrast replaces `background` and `border-color` with its own
+  and the highlight was vanishing exactly where it was needed most.
 
   The page is not numbered independently. The cues the narration wrote are
   compared against the rendered HTML split by the *same* splitter, and the
