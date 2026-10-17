@@ -29,7 +29,7 @@ Exits 0 when every floor is published, 1 otherwise, naming what is missing.
 
 Author
 ------
-Warith HARCHAOUI <warith.harchaoui@gmail.com>
+Warith HARCHAOUI <warithmetics@deraison.ai>
 """
 
 from __future__ import annotations
