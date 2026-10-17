@@ -304,7 +304,7 @@ def pull_model(tag: str) -> None:
 
 
 @sprezzature_command(
-    "sprezzature-accessibility-install-alt-ai",
+    "sprezzature-vision-install",
     help=(
         "Install Ollama (Homebrew / official installer / winget), start its "
         "daemon, and pull the vision model used by `sprezzature a11y alt`.\n\n"
@@ -314,7 +314,7 @@ def pull_model(tag: str) -> None:
     ),
     epilog=(
         "Example:\n"
-        "  sprezzature-accessibility-install-alt-ai\n"
+        "  sprezzature-vision-install\n"
     ),
 )
 def _cli() -> int:

@@ -760,7 +760,7 @@ def describe(
 
 
 @sprezzature_command(
-    "sprezzature-accessibility-alt",
+    "sprezzature-vision-alt",
     help=(
         "Generate W3C-compliant alt text for an image via a local Ollama "
         "vision model. Matches the WAI image-purpose decision tree "
@@ -768,9 +768,9 @@ def describe(
     ),
     epilog=(
         "Examples:\n"
-        "  sprezzature-accessibility-alt --kind informative photo.jpg\n"
-        "  sprezzature-accessibility-alt --kind functional --context 'Submit form' icon.png\n"
-        "  sprezzature-accessibility-alt --kind complex --in docs/chart.md chart.png\n"
+        "  sprezzature-vision-alt --kind informative photo.jpg\n"
+        "  sprezzature-vision-alt --kind functional --context 'Submit form' icon.png\n"
+        "  sprezzature-vision-alt --kind complex --in docs/chart.md chart.png\n"
     ),
 )
 @click.argument("src")
