@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = "BSD-3-Clause"
 license-files = ["LICENSE.md"]
-authors = [{name = "Warith HARCHAOUI", email = "warith.harchaoui@gmail.com"}]
+authors = [{name = "Warith HARCHAOUI", email = "warithmetics@deraison.ai"}]
 keywords = ["skills", "claude", "opencode", "agent", "sprezzature"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

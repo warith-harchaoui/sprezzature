@@ -31,7 +31,7 @@ can hallucinate. That is a quality issue, not a security issue.
 Open a GitHub issue at
 <https://github.com/warith-harchaoui/sprezzature/issues> with the label
 `security`. If the report is sensitive, email
-<warith@deraison.ai> instead and the issue can be opened publicly
+<warithmetics@deraison.ai> instead and the issue can be opened publicly
 once a fix or workaround lands.
 
 There is no bounty program and no service-level agreement (SLA). The repo is maintained by one
