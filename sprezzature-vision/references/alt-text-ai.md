@@ -28,7 +28,7 @@ One command on every platform (the installer is in Python):
 
 ```bash
 pip install -r scripts/requirements-alt-text.txt
-python scripts/install_alt_ai.py
+sprezzature-vision-install
 ```
 
 The installer:
@@ -44,32 +44,32 @@ The installer:
 
 ```bash
 # informative (default)
-python scripts/alt_from_ollama.py ./public/hero.jpg
+sprezzature-vision-alt ./public/hero.jpg
 
 # language
-python scripts/alt_from_ollama.py --lang fr ./public/hero.jpg
+sprezzature-vision-alt --lang fr ./public/hero.jpg
 
 # functional — describe the destination/action, not the visual
-python scripts/alt_from_ollama.py --kind functional --context "Submit signup form" ./public/icons/check.png
+sprezzature-vision-alt --kind functional --context "Submit signup form" ./public/icons/check.png
 
 # text-in-image — return the readable text verbatim
-python scripts/alt_from_ollama.py --kind text ./public/quote-card.png
+sprezzature-vision-alt --kind text ./public/quote-card.png
 
 # complex (chart) — returns a SHORT summary; pair with a long description
-python scripts/alt_from_ollama.py --kind complex --context "Weekly active users" ./public/chart.png
+sprezzature-vision-alt --kind complex --context "Weekly active users" ./public/chart.png
 
 # complex AND long description — writes the Markdown long desc to chart.png.longdesc.md
-python scripts/alt_from_ollama.py --kind complex --longdesc --context "Weekly active users" ./public/chart.png
+sprezzature-vision-alt --kind complex --longdesc --context "Weekly active users" ./public/chart.png
 
 # Use the surrounding text of a Markdown / HTML document as BOTH context
 # and vocabulary. Highest-signal source for an embedded image.
-python scripts/alt_from_ollama.py --in blog/post.md ./blog/figures/hero.png
+sprezzature-vision-alt --in blog/post.md ./blog/figures/hero.png
 
 # Walk the project root for proper-noun vocabulary
-python scripts/alt_from_ollama.py --auto-project ./figures/diagram.png
+sprezzature-vision-alt --auto-project ./figures/diagram.png
 
 # decorative — no API call needed; the script returns empty
-python scripts/alt_from_ollama.py --kind decorative ./public/divider.svg
+sprezzature-vision-alt --kind decorative ./public/divider.svg
 ```
 
 Output: one line of alt text on stdout, hard-capped at 150 characters at a word boundary, **never** with a trailing `…`. Empty stdout for decorative.
@@ -77,7 +77,7 @@ Output: one line of alt text on stdout, hard-capped at 150 characters at a word 
 Python API:
 
 ```python
-from alt_from_ollama import describe
+from sprezzature_vision import describe
 alt = describe("public/hero.jpg", kind="informative", lang="fr", context="Careers page hero")
 ```
 
@@ -93,7 +93,7 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent / "sprezzature" / "scripts"))
-from alt_from_ollama import describe
+from sprezzature_vision import describe
 
 app = FastAPI()
 
@@ -159,7 +159,7 @@ Cache writes fail silently (`try/except OSError`): caching is opportunistic and 
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `Cannot reach Ollama at http://localhost:11434` | Daemon not running | `python scripts/install_alt_ai.py` (idempotent) or `ollama serve`. |
+| `Cannot reach Ollama at http://localhost:11434` | Daemon not running | `sprezzature-vision-install` (idempotent) or `ollama serve`. |
 | `Error: model not found` | Tag mistyped or installer skipped | Re-run installer, or `ollama pull qwen3-vl:8b` directly. |
 | Garbled or hallucinated text | Image very small / very large | The script downscales to 1024 px by default; raise quality of source or set `--resize 768`. |
 | Very slow first call | First inference loads weights | Subsequent calls are fast; keep the daemon up. |
@@ -170,8 +170,8 @@ The same Ollama setup powers `python sprezzature-publish/scripts/meta_from_ollam
 
 ## Checklist
 
-- [ ] `python scripts/install_alt_ai.py` ran and the model is in `ollama list`.
-- [ ] `python scripts/alt_from_ollama.py <test image>` returns a non-empty string.
+- [ ] `sprezzature-vision-install` ran and the model is in `ollama list`.
+- [ ] `sprezzature-vision-alt <test image>` returns a non-empty string.
 - [ ] Decorative images use `alt=""` alone (no `role="presentation"`, no `aria-hidden`).
 - [ ] Every AI-drafted `alt` carries `data-alt-source="ai"` until a human reviews it.
 - [ ] Complex images pair a short alt with a long description in `<figcaption>` / `aria-describedby`.

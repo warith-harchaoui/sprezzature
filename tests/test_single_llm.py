@@ -76,9 +76,9 @@ def test_no_mlx_tag(script: Path) -> None:
 def test_authorized_vlm_is_the_declared_default() -> None:
     """The Ollama-backed scripts that declare a default model use qwen3-vl:8b."""
     # These are the scripts with a hard-coded default model constant.
+    # sprezzature-vision's two declarers moved to its standalone repository,
+    # where the same assertion now lives beside the code it is about.
     declarers = [
-        REPO_ROOT / "sprezzature-vision" / "scripts" / "alt_from_ollama.py",
-        REPO_ROOT / "sprezzature-vision" / "scripts" / "install_alt_ai.py",
         REPO_ROOT / "sprezzature-publish" / "scripts" / "_ollama.py",
         REPO_ROOT / "sprezzature-publish" / "scripts" / "narrate_post.py",
     ]
@@ -94,8 +94,7 @@ def test_authorized_vlm_is_the_declared_default() -> None:
 #: ``--model`` in sprezzature-audio/captions is an ASR model, not the VLM, so it is
 #: intentionally NOT in this list.)
 LLM_SCRIPTS = [
-    REPO_ROOT / "sprezzature-vision" / "scripts" / "alt_from_ollama.py",
-    REPO_ROOT / "sprezzature-vision" / "scripts" / "install_alt_ai.py",
+    # sprezzature-vision's two are checked in its own repository now.
     REPO_ROOT / "sprezzature-publish" / "scripts" / "plain_language.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "meta_from_ollama.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "narrate_post.py",

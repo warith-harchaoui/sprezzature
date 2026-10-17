@@ -65,20 +65,20 @@ Install once (cross-platform):
 
 ```bash
 pip install -r sprezzature-vision/scripts/requirements-alt-text.txt
-python sprezzature-vision/scripts/install_alt_ai.py
+sprezzature-vision-install
 ```
 
 Generate alt for an image, per the W3C / WAI decision tree:
 
 ```bash
 # informative (default)
-python sprezzature-vision/scripts/alt_from_ollama.py ./public/hero.jpg
+sprezzature-vision-alt ./public/hero.jpg
 
 # functional (inside <a> or <button>)
-python sprezzature-vision/scripts/alt_from_ollama.py --kind functional --context "Submit form" ./public/icons/check.png
+sprezzature-vision-alt --kind functional --context "Submit form" ./public/icons/check.png
 
 # complex (chart, diagram) — pair with a long description in <figcaption>
-python sprezzature-vision/scripts/alt_from_ollama.py --kind complex --context "Weekly active users" ./public/chart.png
+sprezzature-vision-alt --kind complex --context "Weekly active users" ./public/chart.png
 ```
 
 Output is one line ≤ 150 characters at a word boundary (no trailing `…`). For decorative images, emit `alt=""` directly (the script returns empty when called with `--kind decorative`). Do **not** add `role="presentation"` or `aria-hidden="true"`; `alt=""` alone is the WAI-recommended signal.
