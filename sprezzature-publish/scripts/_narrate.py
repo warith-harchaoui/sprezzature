@@ -973,6 +973,119 @@ def split_sentences(text: str) -> list[str]:
     return sentences
 
 
+#: HTML tags that carry narrated text, mapped to what they are. Headings
+#: keep their level, which is what sets the length of the pause before them.
+BLOCK_KINDS: dict[str, tuple[str, int]] = {
+    "p": ("paragraph", 0),
+    "li": ("list_item", 0),
+    "blockquote": ("blockquote", 0),
+    "h1": ("heading", 1),
+    "h2": ("heading", 2),
+    "h3": ("heading", 3),
+    "h4": ("heading", 4),
+    "h5": ("heading", 5),
+    "h6": ("heading", 6),
+}
+
+
+def segments_from_blocks(
+    blocks: list[tuple[str, str, bool]],
+    *,
+    tone: str = DEFAULT_EMOTION,
+    pace: str = DEFAULT_PACE,
+) -> list[Segment]:
+    """Narration segments for a page that was never Markdown.
+
+    The structural hints -- how long a pause, which emotion, how emphatic a
+    quotation -- come from the page's own elements rather than from Markdown
+    syntax. An ``<h2>`` earns the same 1000 ms as a ``##`` because it *is*
+    the same thing; the syntax was never what mattered.
+
+    This is the better half of the bargain, not a fallback. The Markdown
+    route has two parsers that must be made to agree about what sentence
+    twelve is, and most of this module's bugs lived in that gap. Here the
+    blocks that become the audio are the very blocks that get the spans: one
+    parse, so there is nothing to reconcile.
+
+    Parameters
+    ----------
+    blocks : list of (tag, text, inside_quote)
+        In reading order, as ``_readalong.page_blocks`` produces them. The
+        tag decides the kind, the text is what the reader sees, and
+        ``inside_quote`` says whether a ``<blockquote>`` encloses it -- which
+        the tag cannot say, because quoted prose lives in a ``<p>`` *inside*
+        the quotation.
+    tone, pace : str
+        Baselines for the whole page, as frontmatter supplies on the Markdown
+        route.
+
+    Returns
+    -------
+    list of Segment
+        One per block, plus one closing segment per quotation. A block whose
+        text is empty contributes nothing.
+
+    Examples
+    --------
+    >>> blocks = [("h1", "A title", False), ("p", "Some prose.", False)]
+    >>> [(s["kind"], s["text"]) for s in segments_from_blocks(blocks)]
+    [('heading', 'A title'), ('paragraph', 'Some prose.')]
+    """
+    out: list[Segment] = []
+    for index, (tag, text, in_quote) in enumerate(blocks):
+        text = " ".join(text.split())
+        if not text:
+            continue
+        kind, level = BLOCK_KINDS.get(tag.lower(), ("paragraph", 0))
+
+        # A list item's pause depends on whether another follows it: the last
+        # of a run closes the list and earns a paragraph-length silence, the
+        # rest get just enough to mark the enumeration.
+        following = blocks[index + 1][0].lower() if index + 1 < len(blocks) else ""
+        if kind == "list_item":
+            after = PAUSE_LIST_ITEM_MS if following == "li" else PAUSE_PARAGRAPH_MS
+            before = 0
+        elif kind == "heading":
+            after = before = PAUSE_HEADING_MS.get(level, 500)
+        else:
+            after, before = PAUSE_PARAGRAPH_MS, 0
+
+        quoted_opens = in_quote and (index == 0 or not blocks[index - 1][2])
+        quoted_closes = in_quote and (
+            index + 1 == len(blocks) or not blocks[index + 1][2]
+        )
+        if in_quote:
+            before = after = PAUSE_BLOCKQUOTE_MS
+
+        out.append(make_segment(
+            f"{QUOTE_OPENING} {text}" if quoted_opens else text,
+            kind="blockquote" if in_quote else kind,
+            heading_level=level,
+            pause_before_ms=before,
+            pause_after_ms=0 if quoted_closes else after,
+            emotion=_emoji_emotion(text) or tone,
+            intensity=(
+                max(INTENSITY_MIN, DEFAULT_INTENSITY - 0.15) if in_quote
+                else DEFAULT_INTENSITY
+            ),
+            pace=pace,
+        ))
+        if quoted_closes:
+            # Said after the quotation rather than inside it, exactly as the
+            # Markdown route ends up once its single quoted segment is split
+            # into sentences.
+            out.append(make_segment(
+                QUOTE_CLOSING,
+                kind="blockquote",
+                pause_before_ms=0,
+                pause_after_ms=PAUSE_BLOCKQUOTE_MS,
+                emotion=tone,
+                intensity=max(INTENSITY_MIN, DEFAULT_INTENSITY - 0.15),
+                pace=pace,
+            ))
+    return out
+
+
 def explode_to_sentences(segments: list[Segment]) -> list[Segment]:
     """One segment per sentence, so the audio can be followed sentence by sentence.
 

@@ -75,7 +75,9 @@ Author
 from __future__ import annotations
 
 import html
+import os
 import re
+import shutil
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
 from pathlib import Path
@@ -87,10 +89,50 @@ NARRATED_BLOCKS: frozenset[str] = frozenset(
     {"p", "li", "blockquote", "h1", "h2", "h3", "h4", "h5", "h6"}
 )
 
-#: Subtrees the narration never saw, so neither does the page side. ``pre``
-#: holds fenced code; ``table`` is skipped for the same reason code is, and
-#: the two sides have to skip the *same* thing or every later index shifts.
-SKIPPED_SUBTREES: frozenset[str] = frozenset({"pre", "table"})
+#: Subtrees whose text is not read. ``pre`` holds code and ``table`` is
+#: skipped for the same reason; the rest is page furniture that exists on
+#: every hand-written page and on no Markdown one -- a reader asking to hear
+#: *this article* did not ask for the navigation, the cookie banner or the
+#: contents of a ``<style>`` block.
+SKIPPED_SUBTREES: frozenset[str] = frozenset(
+    {
+        "pre", "table",
+        "script", "style", "template", "noscript", "svg", "head", "title",
+        "nav", "footer", "aside", "form", "dialog", "select", "option",
+    }
+)
+
+def _matches(selector: str, tag: str, attrs: list[tuple[str, str | None]]) -> bool:
+    """Whether an element matches a one-step selector.
+
+    Three forms, which is all a scope needs: ``article`` (tag name),
+    ``#main`` (id) and ``.post-body`` (one class). Deliberately not a CSS
+    engine -- descendant combinators and attribute predicates would invite
+    the caller to express something this walker cannot honour, and the
+    failure would be a page narrated from the wrong element.
+    """
+    if selector.startswith("#"):
+        return any(name == "id" and value == selector[1:] for name, value in attrs)
+    if selector.startswith("."):
+        return any(
+            name == "class" and selector[1:] in (value or "").split()
+            for name, value in attrs
+        )
+    return tag == selector.lower()
+
+
+#: Attributes that take an element out of the reading. ``aria-hidden`` is the
+#: one that matters: it already hides the element from assistive technology,
+#: and narrating what a screen reader is told to ignore would have this
+#: feature contradict the page it is trying to help.
+def _is_hidden(attrs: list[tuple[str, str | None]]) -> bool:
+    """Whether an element is hidden from readers, by markup rather than CSS."""
+    for name, value in attrs:
+        if name == "hidden":
+            return True
+        if name == "aria-hidden" and (value or "").strip().lower() == "true":
+            return True
+    return False
 
 #: Class on every wrapped sentence. Short because it appears once per
 #: sentence and a long name is measurable page weight on a long post.
@@ -242,6 +284,12 @@ class _Block:
     open_raw: str = ""
     close_raw: str = ""
     pieces: list[_Piece] = field(default_factory=list)
+    #: Inside a ``<blockquote>``. Carried because the narration says where a
+    #: quotation starts and stops, and on a hand-written page the quoted text
+    #: lives in a ``<p>`` *inside* the ``<blockquote>`` rather than in the
+    #: element itself -- so the quotation is not visible from the block's own
+    #: tag.
+    in_quote: bool = False
 
     @property
     def visible(self) -> str:
@@ -264,8 +312,22 @@ class _PageWalker(HTMLParser):
     in the page's own source.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, scope: str | None = None) -> None:
         super().__init__(convert_charrefs=False)
+        #: Only blocks inside this element are narrated. ``None`` narrates the
+        #: whole document, which is right for a page this project rendered and
+        #: wrong for one it did not: a hand-written page carries a header, a
+        #: nav and a footer that a reader asking for *this article* did not
+        #: ask to hear.
+        self._scope = scope
+        self._scope_at: int | None = None
+        #: The pieces holding the start tags of the scope element and of
+        #: ``<body>``. Kept so a player can be placed at the top of the
+        #: article it belongs to: the pieces are mutable, so the injection
+        #: appends to one of them rather than hunting for a tag in the
+        #: rebuilt string.
+        self.scope_piece: _Piece | None = None
+        self.body_piece: _Piece | None = None
         #: The document itself, as pieces. Nested content hangs off
         #: ``_Piece.child`` rather than being flattened, so reading order
         #: survives into the rebuild.
@@ -276,6 +338,13 @@ class _PageWalker(HTMLParser):
         self._open: list[_Block] = []
         self._skip = 0
         self._depth = 0
+        #: ``<blockquote>`` nesting, so a paragraph knows it is quoted.
+        self._quoted = 0
+        #: Depth of the hidden subtree we are inside, if any. Tracked by the
+        #: whole element stack rather than a flag: ``aria-hidden`` on a
+        #: wrapper hides everything under it, not just its own text.
+        self._hidden_at: int | None = None
+        self._stack = 0
 
     def _emit(self, piece: _Piece) -> None:
         (self._open[-1].pieces if self._open else self.out).append(piece)
@@ -292,6 +361,25 @@ class _PageWalker(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         raw = self.get_starttag_text() or f"<{tag}>"
+        if tag not in VOID_ELEMENTS:
+            self._stack += 1
+            if self._hidden_at is None and _is_hidden(attrs):
+                self._hidden_at = self._stack
+        if tag == "blockquote":
+            self._quoted += 1
+        if (
+            self._scope is not None
+            and self._scope_at is None
+            and tag not in VOID_ELEMENTS
+            and _matches(self._scope, tag, attrs)
+        ):
+            self._scope_at = self._stack
+            self._raw(raw, atomic=True)
+            self.scope_piece = (self._open[-1].pieces if self._open else self.out)[-1]
+            return
+        if self._hidden_at is not None:
+            self._raw(raw, atomic=True)
+            return
         if tag in SKIPPED_SUBTREES:
             self._raw(raw, atomic=True)
             self._skip += 1
@@ -304,10 +392,11 @@ class _PageWalker(HTMLParser):
             self._raw(raw, html.unescape(alt), atomic=True)
             return
         if tag in NARRATED_BLOCKS:
-            block = _Block(tag, open_raw=raw)
+            block = _Block(tag, open_raw=raw, in_quote=self._quoted > 0)
             self._emit(_Piece("", child=block, atomic=True, depth=self._depth))
             self._open.append(block)
-            self.blocks.append(block)
+            if self._scope is None or self._scope_at is not None:
+                self.blocks.append(block)
             self._depth = 0
             return
         if tag in VOID_ELEMENTS:
@@ -317,6 +406,8 @@ class _PageWalker(HTMLParser):
             self._raw(raw, " " if tag == "br" else "", atomic=True)
             return
         self._raw(raw, atomic=True, after=self._depth + 1)
+        if tag == "body":
+            self.body_piece = (self._open[-1].pieces if self._open else self.out)[-1]
         self._depth += 1
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
@@ -329,6 +420,20 @@ class _PageWalker(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         raw = f"</{tag}>"
+        if tag == "blockquote":
+            self._quoted = max(0, self._quoted - 1)
+        if tag not in VOID_ELEMENTS:
+            leaving_hidden = self._hidden_at == self._stack
+            if self._scope_at == self._stack:
+                self._scope_at = None
+            self._stack = max(0, self._stack - 1)
+            if leaving_hidden:
+                self._hidden_at = None
+                self._raw(raw, atomic=True)
+                return
+        if self._hidden_at is not None:
+            self._raw(raw, atomic=True)
+            return
         if tag in SKIPPED_SUBTREES:
             self._skip = max(0, self._skip - 1)
             self._raw(raw, atomic=True)
@@ -347,7 +452,7 @@ class _PageWalker(HTMLParser):
         self._depth = max(0, self._depth - 1)
 
     def handle_data(self, data: str) -> None:
-        if self._skip:
+        if self._skip or self._hidden_at is not None:
             self._raw(data, atomic=True)
             return
         # Tildes are markup this renderer leaves behind; they are emitted as
@@ -373,20 +478,20 @@ class _PageWalker(HTMLParser):
         self._raw(f"<![{data}]>", atomic=True)
 
 
-def _walk(body_html: str) -> _PageWalker:
+def _walk(body_html: str, scope: str | None = None) -> _PageWalker:
     """Parse a rendered page into blocks and pieces."""
-    walker = _PageWalker()
+    walker = _PageWalker(scope)
     walker.feed(body_html)
     walker.close()
     return walker
 
 
-def page_blocks(body_html: str) -> list[_Block]:
+def page_blocks(body_html: str, *, scope: str | None = None) -> list[_Block]:
     """The narrated blocks of a rendered page that show words, in reading order."""
-    return [block for block in _walk(body_html).blocks if block.visible]
+    return [block for block in _walk(body_html, scope).blocks if block.visible]
 
 
-def page_sentences(body_html: str, *, split) -> list[str]:
+def page_sentences(body_html: str, *, split, scope: str | None = None) -> list[str]:
     """Every sentence the page shows, in reading order.
 
     Separate from :func:`wrap_sentences` so the agreement between a page and
@@ -395,7 +500,7 @@ def page_sentences(body_html: str, *, split) -> list[str]:
     """
     return [
         sentence
-        for block in page_blocks(body_html)
+        for block in page_blocks(body_html, scope=scope)
         for sentence in split(block.visible)
     ]
 
@@ -532,6 +637,73 @@ def _cut(piece: _Piece, needed: int) -> tuple[_Piece, _Piece | None, int]:
     )
 
 
+def _span_runs(taken: list[_Piece]) -> list[tuple[bool, list[_Piece]]] | None:
+    """Split a sentence's pieces into the runs a span can legally wrap.
+
+    Usually there is one run and it is the whole sentence, markup and all.
+    The exception is a sentence that crosses a boundary between elements. A
+    bibliography entry ends ``…</cite> <span class="note">Keeps a memory…``
+    with no full stop in between, so what a reader hears as one sentence runs
+    out of the citation and into the note; and ``A <em>sentence that. Ends</em>
+    here.`` puts one ``<em>`` across two of them. No single element can hold
+    either -- a span cannot close a tag it did not open -- so the sentence is
+    wrapped in *several*, which carry the same cue and light up together.
+
+    That is a capability, not a compromise: the spans still cover exactly the
+    sentence's own words, which is the whole promise. What is refused is a
+    split that would leave some of those words outside every span, because a
+    highlight that quietly drops half a sentence is the wrongness this module
+    exists to prevent.
+
+    Returns
+    -------
+    list of (bool, list of _Piece), or None
+        ``True`` for a run to wrap, ``False`` for pieces to emit untouched,
+        in document order. ``None`` when no split covers every word.
+    """
+    base = taken[0].depth
+    if (
+        taken[-1].after == base
+        and all(piece.depth >= base and piece.after >= base for piece in taken)
+    ):
+        # The ordinary case, and the one every Markdown page takes.
+        return [(True, taken)]
+
+    out: list[tuple[bool, list[_Piece]]] = []
+    pending = list(taken)
+    while pending:
+        # A tag shows no words, so it cannot decide the depth a span lives
+        # at: it is emitted exactly where the page already had it. Whitespace
+        # between two elements is skipped for the same reason -- a span around
+        # a space highlights nothing.
+        if _visible_count(pending[0].visible) == 0:
+            out.append((False, [pending.pop(0)]))
+            continue
+        current = pending[0].depth
+        # The longest prefix that never leaves the element the run starts in,
+        # trimmed back to where it closes everything it opened.
+        end = 1
+        while end < len(pending) and pending[end].depth >= current \
+                and pending[end].after >= current:
+            end += 1
+        run = pending[:end]
+        while run and run[-1].after != current:
+            run.pop()
+        if not run:
+            out.append((False, [pending.pop(0)]))
+            continue
+        out.append((True, run))
+        # Whatever was trimmed stays in `pending` and is reconsidered: it is
+        # the start of the next run, not something to drop.
+        del pending[:len(run)]
+
+    spilled = any(
+        not is_span and any(_visible_count(piece.visible) for piece in pieces)
+        for is_span, pieces in out
+    )
+    return None if spilled or not any(is_span for is_span, _ in out) else out
+
+
 def _wrap_block(block: _Block, per_sentence: list[list[VttCue]], wrapped: dict[int, str],
                 *, split) -> str:
     """Wrap one block's sentences, keeping the inline markup it already has."""
@@ -560,30 +732,52 @@ def _wrap_block(block: _Block, per_sentence: list[list[VttCue]], wrapped: dict[i
             continue
         # Swallow the tags that close what the sentence opened: a heading
         # that is entirely a link stops on the link text, one piece short of
-        # its own ``</a>``.
+        # its own ``</a>``. Kept only if it balances the run, because the next
+        # tag along may be an *opening* one, which would leave the span worse
+        # off than it started.
         opened_at = taken[0].depth
-        while taken[-1].after != opened_at and queue and queue[0].child is None \
-                and _visible_count(queue[0].visible) == 0:
-            taken.append(queue.pop(0))
         if taken[-1].after != opened_at:
+            held = len(taken)
+            while taken[-1].after != opened_at and queue and queue[0].child is None \
+                    and _visible_count(queue[0].visible) == 0:
+                taken.append(queue.pop(0))
+            if taken[-1].after != opened_at:
+                queue[:0] = taken[held:]
+                del taken[held:]
+        runs = _span_runs(taken)
+        if runs is None:
             raise ReadAlongMismatch(
                 f"the sentence {sentence!r} opens and closes at different inline-markup "
-                "depths, so a span around it would cross an element. Rephrase the source "
-                "so emphasis does not straddle the sentence boundary."
+                "depths, so a span around it would cross an element. Emphasis that "
+                "straddles a sentence boundary cannot be highlighted sentence by "
+                "sentence; rephrase the source, or narrow --scope to leave it out."
             )
         cue = cues[0]
-        out.append(
-            f'<span class="{SENTENCE_CLASS}" id="ra-{cue.index}" '
-            f'data-start="{cue.start_seconds:.3f}">'
-            + _render(taken, wrapped)
-            + "</span>"
-        )
+        # ``data-ra-cue`` is written only when the sentence needed more than
+        # one span, because it costs bytes on every sentence of every page and
+        # earns them on very few. The id stays on the first run: it is where
+        # the sentence starts, and what the player scrolls to.
+        spans = sum(1 for is_span, _ in runs if is_span)
+        marker = f' data-ra-cue="{cue.index}"' if spans > 1 else ""
+        first = True
+        for is_span, pieces in runs:
+            if not is_span:
+                out.append(_render(pieces, wrapped))
+                continue
+            identity = f' id="ra-{cue.index}"' if first else ""
+            out.append(
+                f'<span class="{SENTENCE_CLASS}"{identity}{marker} '
+                f'data-start="{cue.start_seconds:.3f}">'
+                + _render(pieces, wrapped)
+                + "</span>"
+            )
+            first = False
     out.append(_render(queue, wrapped))
     return "".join(out)
 
 
 def wrap_sentences(body_html: str, cues: list[VttCue], *, split,
-                   opening: str, closing: str) -> str:
+                   opening: str, closing: str, scope: str | None = None) -> str:
     """Wrap each narrated sentence in a span the highlight can find.
 
     Parameters
@@ -611,7 +805,7 @@ def wrap_sentences(body_html: str, cues: list[VttCue], *, split,
     ReadAlongMismatch
         If the page's sentences are not the narration's sentences.
     """
-    walker = _walk(body_html)
+    walker = _walk(body_html, scope)
     blocks = [block for block in walker.blocks if block.visible]
     assignments = align(blocks, cues, split=split, opening=opening, closing=closing)
 
@@ -623,14 +817,170 @@ def wrap_sentences(body_html: str, cues: list[VttCue], *, split,
     return _render(walker.out, wrapped)
 
 
-def page_words(body_html: str) -> list[str]:
+_HEAD_CLOSE = re.compile(r"</head\s*>", re.I)
+
+
+def inject_into_page(html: str, cues: list[VttCue], *, split, opening: str, closing: str,
+                     scope: str | None = None, head: str = "", player: str = "") -> str:
+    """Add a read-along to a page that already exists.
+
+    The counterpart to building a page from Markdown: here the document is
+    the input, and it comes back with its sentences wrapped, the stylesheet
+    and module in its ``<head>``, and the player at the top of the article.
+    Everything else is returned byte for byte -- the page is rebuilt from a
+    parse of itself, so a hand-written document keeps its own markup,
+    attribute order and entities.
+
+    This is the case the feature is for. A page that was never Markdown is a
+    page nobody can regenerate, which is exactly the page that most needs an
+    accessibility pass it can receive without being rewritten.
+
+    Parameters
+    ----------
+    html : str
+        The whole document.
+    cues : list of VttCue
+        What the narration said, in order.
+    split : callable
+        ``_narrate.split_sentences``.
+    opening, closing : str
+        ``_narrate.QUOTE_OPENING`` / ``QUOTE_CLOSING``.
+    scope : str, optional
+        ``article``, ``#id`` or ``.class`` -- the element to read. Without
+        it the whole document is read, header and footer included, which is
+        rarely what a reader asked for.
+    head : str
+        Markup for the document head, usually the stylesheet and module
+        links. Placed before ``</head>``, or at the very top when the input
+        is a fragment with no head at all.
+    player : str
+        The player markup, placed immediately after the scope element's
+        opening tag -- top of the article, which is this skill's placement
+        rule -- or after ``<body>`` when there is no scope.
+
+    Returns
+    -------
+    str
+        The page, with the read-along in it.
+    """
+    walker = _walk(html, scope)
+    blocks = [block for block in walker.blocks if block.visible]
+    assignments = align(blocks, cues, split=split, opening=opening, closing=closing)
+
+    wrapped: dict[int, str] = {}
+    for block, per_sentence in reversed(list(zip(blocks, assignments))):
+        wrapped[id(block)] = _wrap_block(block, per_sentence, wrapped, split=split)
+
+    if player:
+        anchor = walker.scope_piece or walker.body_piece
+        if anchor is None:
+            raise ReadAlongMismatch(
+                "nowhere to put the player: the page has no <body> and no element "
+                f"matching {scope!r}. Pass a scope that the page actually contains."
+            )
+        # Mutating the piece rather than the rebuilt string: the piece is the
+        # one place that is certainly this element's start tag, where a
+        # pattern over the output would have to guess among several.
+        anchor.raw += "\n" + player
+    out = _render(walker.out, wrapped)
+
+    if head:
+        if _HEAD_CLOSE.search(out):
+            out = _HEAD_CLOSE.sub(lambda m: head + "\n" + m.group(0), out, count=1)
+        else:
+            out = head + "\n" + out
+    return out
+
+
+# ── Wiring a page to a narration run ───────────────────────────────────────
+
+#: Wording for the player's label, which is the accessible name of the audio
+#: element. No default: a language this project has not been taught is worth
+#: seeing, not worth serving in English.
+PLAYER_LABELS: dict[str, str] = {
+    "en": "Listen to this page",
+    "fr": "Écouter cette page",
+}
+
+#: Files that drive the highlight, copied next to the page. Linked rather
+#: than inlined so a reader's browser caches them once for a whole site.
+ASSET_FILES: tuple[str, ...] = ("readalong.css", "readalong.js")
+
+
+def assets_dir() -> Path:
+    """Where the stylesheet and module that drive the highlight live."""
+    return Path(__file__).resolve().parent.parent / "assets" / "readalong"
+
+
+def player_label(lang: str) -> str:
+    """The player's accessible name in `lang`, or a refusal naming the gap."""
+    label = PLAYER_LABELS.get(lang)
+    if label is None:
+        raise ReadAlongMismatch(
+            f"no read-along player wording for language {lang!r}; add it to "
+            "PLAYER_LABELS rather than labelling a French page in English"
+        )
+    return label
+
+
+def narration_sources(narration_dir: Path, stem: str) -> tuple[Path, Path] | None:
+    """The audio file and cue file for one page, if a narration ran.
+
+    Returns ``None`` when there is nothing to attach, which is the ordinary
+    case: most pages of a site are not narrated, and a missing recording is
+    not an error.
+    """
+    cues = narration_dir / "narration.vtt"
+    if not cues.is_file():
+        return None
+    audio = next(
+        (
+            candidate
+            for suffix in AUDIO_TYPES
+            for candidate in [narration_dir / f"{stem}{suffix}"]
+            if candidate.is_file()
+        ),
+        None,
+    )
+    return None if audio is None else (audio, cues)
+
+
+def copy_assets(out_dir: Path) -> None:
+    """Put the stylesheet and module next to the page that links them."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for name in ASSET_FILES:
+        shutil.copyfile(assets_dir() / name, out_dir / name)
+
+
+def head_markup() -> str:
+    """The two links a read-along page needs in its document head."""
+    return (
+        '  <link rel="stylesheet" href="readalong.css">\n'
+        '  <script type="module" src="readalong.js"></script>'
+    )
+
+
+def href_from(path: Path, page_dir: Path) -> str:
+    """`path` as the page's own HTML would reference it.
+
+    Relative, so the output can be moved or served from a sub-path without a
+    single link being rewritten.
+    """
+    return os.path.relpath(path.resolve(), page_dir.resolve()).replace(os.sep, "/")
+
+
+def page_words(body_html: str, *, scope: str | None = None) -> list[str]:
     """The words the page shows, for a reading-time estimate.
 
     Counted from the same blocks the narration was built from, so the two
     figures on the page describe the same text: anything skipped by one --
     code, tables -- is skipped by both.
     """
-    return [word for block in page_blocks(body_html) for word in block.visible.split()]
+    return [
+        word
+        for block in page_blocks(body_html, scope=scope)
+        for word in block.visible.split()
+    ]
 
 
 def spoken_seconds(vtt_text: str) -> float:
@@ -677,11 +1027,6 @@ def player_html(*, audio_src: str, vtt_src: str, label: str, lang: str) -> str:
         "  </audio>\n"
         "</div>"
     )
-
-
-def assets_dir() -> Path:
-    """Where the stylesheet and module that drive the highlight live."""
-    return Path(__file__).resolve().parent.parent / "assets" / "readalong"
 
 
 #: Silent reading speed for prose, in words per minute. 200 is the low end of

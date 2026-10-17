@@ -47,7 +47,7 @@ function wire(root) {
   track.mode = 'hidden';
 
   const sentences = document.querySelectorAll('.ra-s');
-  let current = null;
+  let current = [];
 
   // The highlight is only ever *moved*, never cleared on the way past. Two
   // reasons, both of them things the narration does on purpose:
@@ -60,13 +60,23 @@ function wire(root) {
   //   inside the quotation, which is exactly where the highlight belongs.
   track.addEventListener('cuechange', () => {
     const cue = track.activeCues && track.activeCues[0];
-    if (!cue) return;
-    const next = document.getElementById(`ra-${cue.id}`);
-    if (!next || next === current) return;
-    if (current) current.classList.remove('is-reading');
-    next.classList.add('is-reading');
-    reveal(next);
-    current = next;
+    if (!cue || !/^\d+$/.test(cue.id)) return;
+    // The sentence is found by id, as it always was. Almost every sentence is
+    // one span and stops there.
+    const head = document.getElementById(`ra-${cue.id}`);
+    if (!head || head === current[0]) return;
+    // The exception: markup the page already had can close between two of a
+    // sentence's words -- a citation that ends mid sentence and hands over to
+    // a note -- and no element can close a tag it did not open. Such a
+    // sentence is several spans, marked with the cue they share, and they
+    // light up together so they read as the one sentence they are.
+    const next = head.dataset.raCue
+      ? Array.from(document.querySelectorAll(`[data-ra-cue="${cue.id}"]`))
+      : [head];
+    current.forEach((part) => part.classList.remove('is-reading'));
+    next.forEach((part) => part.classList.add('is-reading'));
+    reveal(next[0]);
+    current = Array.from(next);
   });
 
   // Click or keyboard on a sentence seeks the audio to it. `data-start` is
@@ -80,7 +90,10 @@ function wire(root) {
   };
 
   sentences.forEach((sentence) => {
-    sentence.tabIndex = 0;
+    // One tab stop per sentence, not per run: the later runs of a split
+    // sentence seek to the same place, so making each its own stop would pad
+    // the tab order with duplicates. They stay clickable.
+    sentence.tabIndex = sentence.id ? 0 : -1;
     sentence.addEventListener('click', () => seek(sentence));
     sentence.addEventListener('keydown', (event) => {
       if (event.key !== 'Enter' && event.key !== ' ') return;
@@ -92,8 +105,8 @@ function wire(root) {
   // Leaving the highlight behind when playback stops would say the reader is
   // still at a sentence they are not.
   audio.addEventListener('ended', () => {
-    if (current) current.classList.remove('is-reading');
-    current = null;
+    current.forEach((part) => part.classList.remove('is-reading'));
+    current = [];
   });
 }
 

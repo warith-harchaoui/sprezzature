@@ -238,12 +238,19 @@ class TestItRefusesRatherThanGuess:
         message = str(raised.value)
         assert "The second." in message and "Something else entirely." in message
 
-    def test_markup_that_straddles_a_sentence_boundary_is_refused(self):
-        """A span cannot cross an element, so this is named rather than emitted.
+    def test_markup_that_straddles_a_sentence_boundary_is_split_not_refused(self):
+        """One ``<em>``, two sentences, and no single span that fits either.
 
-        The page says ``A <em>sentence that. Ends</em> here.`` -- one
-        ``<em>`` holding the end of one sentence and the start of the next.
-        No valid span covers either one.
+        The page says ``A <em>sentence that. Ends</em> here.`` -- emphasis
+        holding the end of one sentence and the start of the next. This was
+        refused for as long as a sentence had to be one span; it is now
+        wrapped in two that carry the same cue and light up together.
+
+        The change is a capability, not a loosening. What the refusal
+        protected against was a highlight that points at the wrong words, and
+        the split points at exactly the right ones -- checked here by putting
+        the page back together from the spans alone. ``test_readalong_existing_page``
+        covers the case that forced it: a citation that ends mid-sentence.
         """
         body = "<p>A <em>sentence that. Ends</em> here.</p>"
         sentences = _readalong.page_sentences(body, split=_narrate.split_sentences)
@@ -251,11 +258,20 @@ class TestItRefusesRatherThanGuess:
             _readalong.VttCue(index=i, text=text, start_seconds=i, end_seconds=i + 1)
             for i, text in enumerate(sentences)
         ]
-        with pytest.raises(_readalong.ReadAlongMismatch, match="different inline-markup"):
-            _readalong.wrap_sentences(
-                body, cues, split=_narrate.split_sentences,
-                opening=_narrate.QUOTE_OPENING, closing=_narrate.QUOTE_CLOSING,
-            )
+        out = _readalong.wrap_sentences(
+            body, cues, split=_narrate.split_sentences,
+            opening=_narrate.QUOTE_OPENING, closing=_narrate.QUOTE_CLOSING,
+        )
+        # One id per sentence, several spans for the one that needed them.
+        assert len(SPAN_RE.findall(out)) == len(sentences)
+        assert out.count('class="ra-s"') > len(sentences)
+        # Every word is inside some span, and the emphasis is still emphasis.
+        inside = " ".join(
+            re.sub(r"<[^>]+>", "", match)
+            for match in re.findall(r'<span class="ra-s"[^>]*>(.*?)</span>', out, re.S)
+        )
+        assert " ".join(inside.split()) == "A sentence that. Ends here."
+        assert "<em>" in out and "</em>" in out
 
     def test_a_file_that_is_not_webvtt_is_rejected_on_sight(self):
         with pytest.raises(_readalong.ReadAlongMismatch, match="WEBVTT"):
@@ -265,7 +281,14 @@ class TestItRefusesRatherThanGuess:
 # ── Markup ─────────────────────────────────────────────────────────────────
 
 
-SPAN_RE = re.compile(r'<span class="ra-s" id="ra-\d+" data-start="[\d.]+">')
+#: The opening tag of a wrapped sentence. Matches the span that carries the
+#: *id*, so counting these counts sentences: a sentence that had to be split
+#: across several spans still has exactly one id, on the run it starts at.
+#: ``data-ra-cue`` is optional because it is written only when a sentence
+#: needed more than one span.
+SPAN_RE = re.compile(
+    r'<span class="ra-s" id="ra-\d+"(?: data-ra-cue="\d+")? data-start="[\d.]+">'
+)
 
 
 class TestWrapping:
