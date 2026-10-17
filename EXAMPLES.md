@@ -211,13 +211,13 @@ example ships in `sprezzature-cli-gui/assets/examples/cli-gui-demo/`.
 One-time install (pulls a local Ollama vision model):
 
 ```bash
-python3 sprezzature-vision/scripts/install_alt_ai.py
+sprezzature-vision-install
 ```
 
 Draft World Wide Web Consortium (W3C)-compliant alt text for an image (bilingual EN/FR by default):
 
 ```bash
-python3 sprezzature-vision/scripts/alt_from_ollama.py tests/fixtures/images/portrait.jpg
+sprezzature-vision-alt tests/fixtures/images/portrait.jpg
 ```
 
 Prints the drafted alt text to stdout. `--kind informative|decorative|functional|

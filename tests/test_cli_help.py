@@ -29,9 +29,9 @@ SCRIPTS = [
     REPO_ROOT / "sprezzature-publish" / "scripts" / "lint_markdown.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "md_to_html.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "readalong.py",
-    # sprezzature-vision
-    REPO_ROOT / "sprezzature-vision"  / "scripts" / "alt_from_ollama.py",
-    # sprezzature-ui
+    # sprezzature-vision's commands moved to its standalone repository;
+    # its own suite checks their --help there.
+# sprezzature-ui
     REPO_ROOT / "sprezzature-ui"      / "scripts" / "audit_i18n.py",
     REPO_ROOT / "sprezzature-ui"      / "scripts" / "i18n_make.py",
 ]

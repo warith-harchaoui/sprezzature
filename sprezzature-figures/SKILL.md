@@ -252,7 +252,7 @@ python -m sprezzature_figures_scripts.audit_figure ./causal/dag.svg
 python -m sprezzature_colors_scripts.simulate_cvd fig.png --grid
 
 # 6. Draft alt text for the surrounding page.
-python sprezzature-vision/scripts/alt_from_ollama.py --kind complex \
+sprezzature-vision-alt --kind complex \
     --context "Weekly conversion rate, higher is better" fig.png
 
 # 7. Static a11y lint on the page that hosts the figure.

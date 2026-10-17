@@ -18,7 +18,7 @@ description: >-
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Needs Python 3.10+ stdlib +
-  Pillow + requests (see ``scripts/requirements-alt-text.txt``) and a
+  Pillow + requests (``pip install 'sprezzature-vision[resize]'``) and a
   running local Ollama daemon with a vision-capable model. The
   ``install_alt_ai.py`` script installs Ollama (brew on macOS, official
   installer on Linux, winget on Windows) and pulls the default model on
@@ -29,6 +29,8 @@ metadata:
 ---
 
 # sprezzature-vision — local AI alt text for accessibility
+
+> The deterministic tools below now ship as the standalone package [`sprezzature-vision`](https://github.com/warith-harchaoui/sprezzature-vision) (`pip install sprezzature-vision`), invoked as `sprezzature-vision-alt` and `sprezzature-vision-install`, importable as `from sprezzature_vision import describe`, and reachable over HTTP or MCP. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 ## Audience and positioning
 
@@ -57,7 +59,7 @@ This skill is **make-only** in the sprezzature-* duality, by design:
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — draft accessible image text | `scripts/alt_from_ollama.py` + `scripts/install_alt_ai.py` | W3C-compliant alt text via local Ollama vision (the one authorized model, `qwen3-vl:8b`; no other model, no MLX). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. |
+| **Make** — draft accessible image text | `sprezzature-vision-alt` + `sprezzature-vision-install` | W3C-compliant alt text via local Ollama vision (the one authorized model, `qwen3-vl:8b`; no other model, no MLX). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. |
 | **Audit** — gate the presence of `alt=` | _(see `sprezzature-accessibility/scripts/lint_a11y.py`)_ | Static lint catches `<img>` without `alt` and `<img alt="">` on non-decorative images. |
 
 Pair with `sprezzature-accessibility` to close the loop: this skill drafts
@@ -76,15 +78,15 @@ worked examples. Treat the output as assistive, not authoritative.
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `scripts/alt_from_ollama.py` | W3C-compliant alt for informative / decorative / functional / text / complex / group purposes; per-purpose YAML prompt templates; surrounding-text + project-vocabulary biasing; on-disk cache | model-quality drafts; verify each draft before committing. Top-tier hosted vision (Claude vision, GPT-4o vision, Gemini) is more accurate. Decorative images get ``alt=""`` (no model call). |
-| `scripts/install_alt_ai.py` | Installs the Ollama daemon on the host (brew / official installer / winget) and pulls the default vision model. Idempotent; safe to re-run. | does not auto-update an already-installed daemon or model; does not enforce GPU drivers; does not start the daemon as a service on Linux. |
+| `sprezzature-vision-alt` | W3C-compliant alt for informative / decorative / functional / text / complex / group purposes; per-purpose YAML prompt templates; surrounding-text + project-vocabulary biasing; on-disk cache | model-quality drafts; verify each draft before committing. Top-tier hosted vision (Claude vision, GPT-4o vision, Gemini) is more accurate. Decorative images get ``alt=""`` (no model call). |
+| `sprezzature-vision-install` | Installs the Ollama daemon on the host (brew / official installer / winget) and pulls the default vision model. Idempotent; safe to re-run. | does not auto-update an already-installed daemon or model; does not enforce GPU drivers; does not start the daemon as a service on Linux. |
 
 ## Decision tree
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "alt text" / `<img>` with no `alt` / "describe this image" | `alt_from_ollama.py` | Match W3C image-purpose decision tree → `python scripts/alt_from_ollama.py [--kind informative\|decorative\|functional\|text\|complex\|group] [--lang fr] [--in DOC] [--vocab-from DIR] <src>`. Tag drafts with `data-alt-source="ai"`. |
-| "Ollama not installed" / "first-time setup" | `install_alt_ai.py` | `python scripts/install_alt_ai.py` — installs the daemon, pulls `qwen3-vl:8b`. |
+| "alt text" / `<img>` with no `alt` / "describe this image" | `alt_from_ollama.py` | Match W3C image-purpose decision tree → `sprezzature-vision-alt [--kind informative\|decorative\|functional\|text\|complex\|group] [--lang fr] [--in DOC] [--vocab-from DIR] <src>`. Tag drafts with `data-alt-source="ai"`. |
+| "Ollama not installed" / "first-time setup" | `install_alt_ai.py` | `sprezzature-vision-install` — installs the daemon, pulls `qwen3-vl:8b`. |
 
 ## W3C image-purpose mapping
 
@@ -126,7 +128,7 @@ When emitting an ``<img>`` whose source path appears in a Markdown or
 HTML doc, pass the doc as context:
 
 ```bash
-python scripts/alt_from_ollama.py --in <that-doc> <image>
+sprezzature-vision-alt --in <that-doc> <image>
 ```
 
 The surrounding text becomes both ``--context`` and the vocabulary
@@ -137,7 +139,7 @@ For a UI deliverable end-to-end:
 ```bash
 python sprezzature-accessibility/scripts/lint_a11y.py public/                       # static a11y gate
 python sprezzature-colors/scripts/audit_contrast.py --palette palette.json # WCAG ratios
-python sprezzature-vision/scripts/alt_from_ollama.py public/hero.jpg       # AI alt text
+sprezzature-vision-alt public/hero.jpg       # AI alt text
 ```
 
 ## When NOT to use this skill
@@ -160,10 +162,10 @@ python sprezzature-vision/scripts/alt_from_ollama.py public/hero.jpg       # AI 
 
 | Script | Install | Purpose |
 |---|---|---|
-| ``scripts/alt_from_ollama.py`` | ``pip install -r scripts/requirements-alt-text.txt`` + Ollama | W3C-compliant alt text via local vision model. |
-| ``scripts/install_alt_ai.py`` | stdlib only (shells out to brew / winget / official installer) | Installs Ollama + pulls the default vision model (``qwen3-vl:8b``). |
-| ``scripts/prompts/*.yaml`` | (data) | Per-purpose prompt templates (short / long × informative / functional / text / complex / group). |
-| ``scripts/_argparse.py``, ``scripts/_click.py``, ``scripts/_lang.py``, ``scripts/_prompts.py``, ``scripts/_vocab.py`` | (internal helpers) | Argparse / Click factory, language detection, YAML prompt loader, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
+| ``sprezzature-vision-alt`` | ``pip install -r scripts/requirements-alt-text.txt`` + Ollama | W3C-compliant alt text via local vision model. |
+| ``sprezzature-vision-install`` | stdlib only (shells out to brew / winget / official installer) | Installs Ollama + pulls the default vision model (``qwen3-vl:8b``). |
+| ``sprezzature_vision_scripts/prompts/*.yaml`` (in the package) | (data) | Per-purpose prompt templates (short / long × informative / functional / text / complex / group). |
+| ``_argparse.py``, ``_click.py``, ``_lang.py``, ``_prompts.py``, ``_vocab.py`` (in the package) | (internal helpers) | Argparse / Click factory, language detection, YAML prompt loader, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
 
 ## Companion skills
 

@@ -2,7 +2,9 @@
 test_prompts — regression tests for the YAML-backed prompts.
 
 Each Ollama-backed script delegates its prompt construction to a YAML
-file under <skill>/scripts/prompts/. These tests assert that:
+file under <skill>/scripts/prompts/. The alt-text prompts moved to the
+sprezzature-vision repository with the code that assembles them; what is
+left here is sprezzature-publish's half. These tests assert that:
 
 1. The YAML loader (`_prompts.load_prompt`) can read each file using
    the stdlib fallback (PyYAML is optional).
@@ -40,16 +42,6 @@ def _add_publish_scripts_to_path() -> None:
         ("sprezzature-publish", "latex_caption",           "Plain UTF-8 text"),
         ("sprezzature-publish", "plain_language_rewrite",  "Reply with the rewritten text only"),
         ("sprezzature-publish", "meta_tags_json",          "Return a single JSON object"),
-        # sprezzature-vision alt-text prompts (short + long)
-        ("sprezzature-vision",  "alt_short_default",       "Reply with the alt text only"),
-        ("sprezzature-vision",  "alt_short_informative",   "informative image"),
-        ("sprezzature-vision",  "alt_short_functional",    "action or destination"),
-        ("sprezzature-vision",  "alt_short_text",          "verbatim"),
-        ("sprezzature-vision",  "alt_short_complex",       "complex image"),
-        ("sprezzature-vision",  "alt_short_group",         "group of images"),
-        ("sprezzature-vision",  "alt_long_complex",        "Markdown"),
-        ("sprezzature-vision",  "alt_long_group",          "group of related images"),
-        ("sprezzature-vision",  "alt_long_default",        "long-form description"),
     ],
 )
 def test_prompt_yaml_loads(skill: str, name: str, must_contain: str) -> None:
@@ -112,55 +104,3 @@ def test_meta_build_prompt_omits_blocks_when_empty() -> None:
 
 
 # ── alt_from_ollama.prompt_for + long_prompt_for ───────────────────────────
-
-@pytest.mark.parametrize(
-    "kind, must_contain",
-    [
-        ("informative", "informative image"),
-        ("functional",  "link or button"),
-        ("text",        "verbatim"),
-        ("complex",     "complex image"),
-        ("group",       "group of images"),
-        ("decorative",  "Write alt text for this image"),  # falls through to default
-    ],
-)
-def test_alt_short_prompt_per_kind(kind: str, must_contain: str) -> None:
-    from alt_from_ollama import prompt_for  # type: ignore
-    out = prompt_for(kind=kind, lang="en", context="A dashboard tile")
-    assert "Write the alt text in English." in out
-    assert must_contain in out
-
-
-def test_alt_short_text_kind_skips_base_rules() -> None:
-    """The `text` purpose extracts verbatim text; generic rules don't apply."""
-    from alt_from_ollama import prompt_for  # type: ignore
-    out = prompt_for(kind="text", lang="en", context="")
-    # The "do not start with image of" rule belongs to the generic kinds.
-    assert "Do not start with 'image of'" not in out
-    assert "verbatim" in out
-
-
-@pytest.mark.parametrize(
-    "kind, must_contain",
-    [
-        ("complex", "chart type / diagram type"),
-        ("group",   "group of related images"),
-        ("other",   "long-form description"),  # falls through to default
-    ],
-)
-def test_alt_long_prompt_per_kind(kind: str, must_contain: str) -> None:
-    from alt_from_ollama import long_prompt_for  # type: ignore
-    out = long_prompt_for(kind=kind, lang="en", context="")
-    assert must_contain in out
-
-
-def test_alt_prompt_substitutes_context_when_supplied() -> None:
-    from alt_from_ollama import prompt_for  # type: ignore
-    out = prompt_for(kind="informative", lang="en", context="Hero image of the homepage")
-    assert "Page context: Hero image of the homepage." in out
-
-
-def test_alt_prompt_omits_context_block_when_empty() -> None:
-    from alt_from_ollama import prompt_for  # type: ignore
-    out = prompt_for(kind="informative", lang="en", context="")
-    assert "Page context:" not in out
