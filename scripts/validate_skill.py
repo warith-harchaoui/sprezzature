@@ -69,6 +69,9 @@ import yaml
 DESCRIPTION_MIN: int = 50
 DESCRIPTION_MAX: int = 1024
 
+#: Anthropic skill spec: the optional ``compatibility`` field is 1-500 chars.
+COMPATIBILITY_MAX: int = 500
+
 #: Frontmatter delimiter regex. Matches the canonical
 #: ``---\n<yaml>\n---\n`` shape; everything after the closing ``---``
 #: is treated as the Markdown body.
@@ -214,6 +217,73 @@ def validate_skill(skill_dir: Path) -> list[str]:
             f"(spec forbids it): "
             + ", ".join(str(p.relative_to(skill_dir)) for p in nested_readmes)
         )
+
+    # ── Check 11: no XML angle brackets in the frontmatter values ──────
+    # A *security* rule, not a style one, and the spec says why: "Frontmatter
+    # appears in Claude's system prompt. Malicious content could inject
+    # instructions." A `<` or `>` in a description is how a crafted skill
+    # smuggles something that reads as markup into that prompt.
+    #
+    # Read from the **parsed** mapping, never from the raw YAML. The first
+    # version of this check read the raw text and failed all ten skills on
+    # `description: >-` — the YAML block-scalar indicator, which is syntax
+    # and never reaches the system prompt. This repository had already paid
+    # for that confusion once, in the content gate that counted `>-` as three
+    # characters of description. What lands in the prompt is the value.
+    def _angles(value: Any, path: str = "") -> list[str]:
+        if isinstance(value, dict):
+            return [
+                hit
+                for key, sub in value.items()
+                for hit in _angles(sub, f"{path}.{key}" if path else str(key))
+            ]
+        if isinstance(value, list):
+            return [
+                hit
+                for i, sub in enumerate(value)
+                for hit in _angles(sub, f"{path}[{i}]")
+            ]
+        text = str(value)
+        return [path or "<root>"] if ("<" in text or ">" in text) else []
+
+    offending_fields = _angles(parsed)
+    if offending_fields:
+        errors.append(
+            f"{skill_name}: frontmatter value(s) contain XML angle brackets, "
+            f"which the spec forbids (frontmatter is injected into the "
+            f"system prompt): " + ", ".join(sorted(set(offending_fields)))
+        )
+
+    # ── Check 12: the name is kebab-case, and not a reserved one ───────
+    # Check 6 only asks that `name` match the folder. Both can be wrong
+    # together: a folder named Sprezzature_UI with a matching name passed
+    # every check above while breaking the spec's "kebab-case only, no
+    # spaces or capitals" rule outright.
+    if isinstance(name, str) and name.strip():
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name):
+            errors.append(
+                f"{skill_name}: name={name!r} is not kebab-case "
+                f"(lowercase letters, digits and single hyphens only)"
+            )
+        for reserved in ("claude", "anthropic"):
+            if reserved in name.lower():
+                errors.append(
+                    f"{skill_name}: name={name!r} contains the reserved "
+                    f"word {reserved!r}"
+                )
+
+    # ── Check 13: compatibility, when present, fits its budget ─────────
+    # Optional field; the spec gives it 1-500 characters. Unused across this
+    # suite today, which is exactly when a limit is worth writing down: the
+    # first skill to reach for it should not have to rediscover the number.
+    compatibility = parsed.get("compatibility")
+    if compatibility is not None:
+        text = " ".join(str(compatibility).split())
+        if not 1 <= len(text) <= COMPATIBILITY_MAX:
+            errors.append(
+                f"{skill_name}: compatibility must be 1-{COMPATIBILITY_MAX} "
+                f"chars ({len(text)})"
+            )
 
     return errors
 
