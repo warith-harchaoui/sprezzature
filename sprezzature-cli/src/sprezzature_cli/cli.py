@@ -9,7 +9,7 @@ cvd, site-indexes) zero-dep when invoked directly.
 Two skill layouts to support
 -----------------------------
 Some skills still carry their scripts inside this monorepo
-(``sprezzature-ui``, ``sprezzature-vision``, ``sprezzature-publish``): for
+(``sprezzature-ui``, ``sprezzature-accessibility``, ``sprezzature-publish``): for
 those, shelling out to ``<skill>/scripts/<script>.py`` is enough. Others
 (``sprezzature-accessibility``, ``sprezzature-audio``, ``sprezzature-colors``,
 and more over time) have had their scripts extracted to standalone pip
@@ -80,7 +80,7 @@ def _run_script(skill: str, script: str, extra: tuple[str, ...]) -> int:
     """Execute `python <skill>/scripts/<script>` with the extra args.
 
     Only correct for skills whose scripts still live in this monorepo
-    (``sprezzature-ui``, ``sprezzature-vision``, ``sprezzature-publish``).
+    (``sprezzature-ui``, ``sprezzature-accessibility``, ``sprezzature-publish``).
     For an extracted skill, use :func:`_run_tool` instead.
     """
     skill_root = _find_skill(skill)
@@ -259,9 +259,9 @@ def audio_install(ctx: click.Context) -> None:
 
 # ── vision ──────────────────────────────────────────────────────────────────
 
-@cli.group(context_settings=GROUP_CONTEXT_SETTINGS, help="Vision skill (sprezzature-vision): W3C-compliant alt text via a local vision model.")
+@cli.group(context_settings=GROUP_CONTEXT_SETTINGS, help="Vision skill (sprezzature-accessibility): W3C-compliant alt text via a local vision model.")
 def vision() -> None:
-    """sprezzature-vision — W3C-compliant alt text via a local Ollama vision model."""
+    """sprezzature-accessibility — W3C-compliant alt text via a local Ollama vision model."""
 
 
 @vision.command(name="alt", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -269,7 +269,7 @@ def vision() -> None:
 @click.pass_context
 def vision_alt(ctx: click.Context) -> None:
     """Draft W3C-compliant alt text via the local Ollama vision model."""
-    sys.exit(_run_script("sprezzature-vision", "alt_from_ollama.py", tuple(ctx.args)))
+    sys.exit(_run_script("sprezzature-accessibility", "alt_from_ollama.py", tuple(ctx.args)))
 
 
 @vision.command(name="install", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -277,7 +277,7 @@ def vision_alt(ctx: click.Context) -> None:
 @click.pass_context
 def vision_install(ctx: click.Context) -> None:
     """Install Ollama and pull the vision model used by ``sprezzature vision alt``."""
-    sys.exit(_run_script("sprezzature-vision", "install_alt_ai.py", tuple(ctx.args)))
+    sys.exit(_run_script("sprezzature-accessibility", "install_alt_ai.py", tuple(ctx.args)))
 
 
 # ── colors ──────────────────────────────────────────────────────────────────

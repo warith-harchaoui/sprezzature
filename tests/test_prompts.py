@@ -3,7 +3,7 @@ test_prompts — regression tests for the YAML-backed prompts.
 
 Each Ollama-backed script delegates its prompt construction to a YAML
 file under <skill>/scripts/prompts/. The alt-text prompts moved to the
-sprezzature-vision repository with the code that assembles them; what is
+sprezzature-accessibility repository with the code that assembles them; what is
 left here is sprezzature-publish's half. These tests assert that:
 
 1. The YAML loader (`_prompts.load_prompt`) can read each file using

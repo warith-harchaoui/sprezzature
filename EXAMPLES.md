@@ -206,18 +206,18 @@ The emitted HTML passes both the `sprezzature-ux-laws` and `sprezzature-accessib
 audits with zero findings (the emitter is its own customer). A runnable worked
 example ships in `sprezzature-cli-gui/assets/examples/cli-gui-demo/`.
 
-## sprezzature-vision `[ai]`: alt text via a local vision model
+## sprezzature-accessibility `[ai]`: alt text via a local vision model
 
 One-time install (pulls a local Ollama vision model):
 
 ```bash
-sprezzature-vision-install
+sprezzature-accessibility-install-alt
 ```
 
 Draft World Wide Web Consortium (W3C)-compliant alt text for an image (bilingual EN/FR by default):
 
 ```bash
-sprezzature-vision-alt tests/fixtures/images/portrait.jpg
+make-alt tests/fixtures/images/portrait.jpg
 ```
 
 Prints the drafted alt text to stdout. `--kind informative|decorative|functional|

@@ -13,9 +13,8 @@ A phrase list cannot generalise: the ways to ask for a chart, a colour or a capt
 | A screen to build: a page, a component, a form, a dashboard | **sprezzature-ui** | "build me a settings page", "I need a modal", "scaffold a landing page", "audit this UI", « une page pour… » |
 | A command-line tool somebody who will not type it needs to run | **sprezzature-cli-gui** | "my colleague keeps getting the flags wrong", "can non-technical people use this", « une interface pour l'équipe » |
 | Markdown that has to become a site somebody else can find | **sprezzature-publish** | "put this online", "why does this look bad when shared", "SEO", "favicons", "make it readable for a wider audience" |
-| HTML — usually HTML YOU JUST WROTE, before anyone asks | **sprezzature-accessibility** | "is this accessible", "missing alt", "unlabelled input", « vérifie l'accessibilité » |
+| HTML — usually HTML YOU JUST WROTE, before anyone asks; An image that needs words: alt text, a description, a caption | **sprezzature-accessibility** | "is this accessible", "missing alt", "unlabelled input", « vérifie l'accessibilité »; "describe this image", "draft alt text", "this img has no alt" |
 | A colour being chosen or judged — any colour, in any context | **sprezzature-colors** | "what colour should this be", "does this pass contrast", "is this colour-blind safe", « quelle couleur pour ce fond » |
-| An image that needs words: alt text, a description, a caption | **sprezzature-vision** | "describe this image", "draft alt text", "this img has no alt" |
 | Recorded speech somebody needs as text — or a question about that text | **sprezzature-audio** | "what did they say in this meeting", "who spoke when", "subtitles", « de quoi ils parlent dans cet enregistrement » |
 | An interface somebody is complaining about the FEEL of | **sprezzature-ux-laws** | "this page is overwhelming", "too many options", "I can never find the button", « c'est confus » |
 | Numbers you want somebody to SEE — or a picture of a chart that is hard to read | **sprezzature-figures** | "show me this data", "which region is biggest", "what does this look like", "a colleague sent me this graph", « fais-moi voir », « un visuel de ça » |
@@ -62,12 +61,14 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `podcast my blog` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `read-along` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `lint markdown` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `a11y lint` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `check this HTML for accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `WCAG compliance` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `missing alt` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `unlabelled input` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `fix accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
+| `a11y lint` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `check this HTML for accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `WCAG compliance` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `missing alt` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `write alt text` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `describe this image` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `unlabelled input` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
+| `fix accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `WCAG check` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `contrast audit` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `is my palette accessible` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
@@ -78,15 +79,6 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `Apple palette` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `palette to tailwind` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `color-blind safe` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `alt text` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `describe this image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `draft alt` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `image description` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `img has no alt` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `decorative image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `functional image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `figure / chart description` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `batch alt text` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `captions` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `transcribe video` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `transcribe audio` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
@@ -142,10 +134,9 @@ The phrase table only ever argues for firing. Ten siblings compete for every pro
 | **sprezzature-ui** | the thing to wrap is a command-line tool (sprezzature-cli-gui); the source is Markdown that must become a site (sprezzature-publish); or the HTML exists already and the question is whether it is accessible (sprezzature-accessibility), how it feels (sprezzature-ux-laws) or whether a colour passes (sprezzature-colors). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-cli-gui** | the screen has no CLI behind it (sprezzature-ui, whose stack rules this follows; install it alongside for the full design tokens). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-publish** | the page is built and the question is accessibility (sprezzature-accessibility), or the speech is recorded and needs transcribing rather than generating (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`. |
-| **sprezzature-accessibility** | the question is contrast or colour-blindness (sprezzature-colors), drafting the alt text itself (sprezzature-vision), captions for speech (sprezzature-audio), or how the interface feels (sprezzature-ux-laws). NOT a replacement for axe-core / Pa11y / Lighthouse: a runtime DOM audit catches what a static parser cannot. The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-accessibility** | the question is contrast or colour-blindness (sprezzature-colors), captions for speech (sprezzature-audio), or how the interface feels (sprezzature-ux-laws). NOT a replacement for axe-core / Pa11y / Lighthouse. The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-colors** | the markup has structural defects rather than a colour question (sprezzature-accessibility), or the colours belong to a chart being drawn (sprezzature-figures). The exhaustive trigger catalogue is in `references/triggers.md`. |
-| **sprezzature-vision** | the lint only has to notice that alt is missing (sprezzature-accessibility), or the words are for recorded speech (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`. |
-| **sprezzature-audio** | the voice is to be generated from text rather than transcribed (sprezzature-publish), or the words describe an image (sprezzature-vision). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-audio** | the voice is to be generated from text rather than transcribed (sprezzature-publish), or the words describe an image (sprezzature-accessibility). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-ux-laws** | the defect is mechanical accessibility (sprezzature-accessibility), contrast (sprezzature-colors), or the screen has yet to be built (sprezzature-ui). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-figures** | the numbers are attached to real PLACES (sprezzature-maps). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-maps** | the shape is schematic rather than geographic (hex map, spike map, binned grid, dot density over an outline), which live in sprezzature-figures. The exhaustive trigger catalogue is in `references/triggers.md`. |

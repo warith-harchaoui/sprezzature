@@ -56,7 +56,7 @@ For other work, use the companion skills:
 | Turn a folder of Markdown into a website + meta tags + favicons + site indexes | `sprezzature-publish` |
 | Static HTML a11y lint | `sprezzature-accessibility` |
 | WCAG contrast audit, CVD simulation, curated palette | `sprezzature-colors` |
-| W3C alt text via local Ollama vision | `sprezzature-vision` |
+| W3C alt text via local Ollama vision | `sprezzature-accessibility` |
 | WebVTT / SRT captions via local whisper.cpp | `sprezzature-audio` |
 | Apply / audit the canonical Laws of UX (Hick, Fitts, Miller, Jakob, Peak-End, …) on emitted HTML | `sprezzature-ux-laws` |
 | Screenshot a rendered page, look at it, and refine the markup (the Ralph Eyeball Loop) | `sprezzature-figures` (`sprezzature-figures/references/ralph-eyeball-loop.md`) |

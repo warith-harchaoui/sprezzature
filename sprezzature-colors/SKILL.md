@@ -224,7 +224,7 @@ scripts: every entry below runs as `python -m sprezzature_colors_scripts.<module
 | You also need… | Install |
 |---|---|
 | Static HTML a11y lint | `sprezzature-accessibility` |
-| AI alt text via local Ollama vision | `sprezzature-vision` |
+| AI alt text via local Ollama vision | `sprezzature-accessibility` |
 | Local WebVTT / SRT captions via whisper.cpp | `sprezzature-audio` |
 | Vanilla-JS + Tailwind UI generation | `sprezzature-ui` |
 | Wrap a CLI in a GUI | `sprezzature-cli-gui` |

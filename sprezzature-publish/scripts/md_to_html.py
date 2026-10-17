@@ -343,7 +343,7 @@ def convert_one(src: Path, out_dir: Path, *, title: str, site_name: str,
     # its own title. The narration has always dropped it.
     raw = FRONTMATTER_RE.sub("", raw, count=1)
     # Language: detect from the document rather than assuming English, matching
-    # the rest of the project (sprezzature-vision / sprezzature-audio detect, never default
+    # the rest of the project (sprezzature-accessibility / sprezzature-audio detect, never default
     # silently). ``--lang auto`` (the default) triggers detection per file.
     if lang in ("", "auto"):
         lang = detect_text_language(raw)

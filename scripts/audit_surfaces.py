@@ -313,7 +313,7 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     # Matched on imports, never on the bare word. `_uses(src, ("argparse",))`
     # was the first version and it was wrong in the way that matters: a module
     # whose docstring said "behaviour is identical to the prior argparse-driven
-    # main" counted as having an argparse command line. sprezzature-vision read
+    # main" counted as having an argparse command line. sprezzature-accessibility read
     # as holding both parsers while shipping only click.
     argparse_cli = any(
         _uses(src, ("import argparse", "from _argparse import", "make_parser("))
@@ -328,7 +328,7 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         notes.append("argparse command on PATH, click twin missing")
 
     # "Both parsers exist somewhere in the repo" is a weaker claim than the
-    # contract makes, and sprezzature-vision is how that showed: its click
+    # contract makes, and sprezzature-accessibility is how that showed: its click
     # command is the drafter and its argparse command is the *installer* --
     # two different tools, so the engine itself had one parser, not two. The
     # reference layout puts both over the same engine, in cli.py and

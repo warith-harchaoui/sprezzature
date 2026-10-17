@@ -193,6 +193,6 @@ modified in place.
 | Full UI design tokens, components, dark mode, dataviz | `sprezzature-ui` |
 | a11y lint (static HTML) | `sprezzature-accessibility` |
 | WCAG contrast audit, CVD simulation, curated palette | `sprezzature-colors` |
-| W3C alt text via local Ollama vision | `sprezzature-vision` |
+| W3C alt text via local Ollama vision | `sprezzature-accessibility` |
 | WebVTT / SRT captions via local whisper.cpp | `sprezzature-audio` |
 | Wrap a CLI in a GUI | `sprezzature-cli-gui` |

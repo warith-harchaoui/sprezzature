@@ -141,7 +141,7 @@ The four `<track>` kinds:
 `translate_captions.py` turns one caption file into **two tracks**: the
 native-language `captions` (what `captions_from_whisper.py` produced) plus a
 translated `subtitles` track in the language of the **surrounding text**, the
-same signal `sprezzature-vision` uses to pick the alt-text language. The translation
+same signal `sprezzature-accessibility` uses to pick the alt-text language. The translation
 runs on the already-produced `.vtt`/`.srt`, so it never touches audio and is
 decoupled from the caption backend.
 
