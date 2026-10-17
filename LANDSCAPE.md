@@ -41,7 +41,7 @@ Honest defaults for the categories where another tool wins outright:
 - **React / Vue / Svelte component-library workflow** → **[shadcn/ui](https://ui.shadcn.com)**. Same copy-paste philosophy as `sprezzature`, but framework-native, far larger audience, far more components. `sprezzature` deliberately refuses to emit framework code; if your team has picked React, fighting `sprezzature` is the wrong move.
 - **True zero-build story for content-driven sites** → **[HTMX](https://htmx.org) + a classless Cascading Style Sheets (CSS) framework (e.g. [Pico CSS](https://picocss.com), [Simple.css](https://simplecss.org))**. HTMX needs no build, classless CSS needs no build, the resulting HyperText Markup Language (HTML) is the smallest realistic deliverable. `sprezzature` claims "zero build" only on the prototype path (Tailwind Play CDN); HTMX + Pico is zero build in production too.
 - **Large versioned documentation sites (100+ pages, per-release views)** → **[MkDocs Material](https://squidfunk.github.io/mkdocs-material/), [Hugo](https://gohugo.io), [Astro](https://astro.build), or [Docusaurus](https://docusaurus.io)**. `sprezzature-publish` is sized for ≤ 30 pages.
-- **Hosted top-quality alt-text** → **Claude vision, GPT-4o (generative pre-trained transformer) vision, Gemini Vision**. `sprezzature-vision-alt` is the right pick when locality / cost / privacy matter; hosted models are noticeably better on the long tail.
+- **Hosted top-quality alt-text** → **Claude vision, GPT-4o (generative pre-trained transformer) vision, Gemini Vision**. `make-alt` is the right pick when locality / cost / privacy matter; hosted models are noticeably better on the long tail.
 - **Live captions, sub-real-time turnaround** → **Deepgram, AssemblyAI**.
 
 Most other categories: there is a better tool if you specialise. The matrices below name it explicitly.
@@ -371,7 +371,7 @@ Pair `scripts/lint_a11y.py` (static, in CI) with axe-core (runtime, in browser t
 
 | Helper | Run location | Model | Lang control | Cost / call | License | Skill alignment | Notes |
 |---|---|---|---|---|---|:---:|---|
-| **`sprezzature-vision-alt`** (used) | local CPU/graphics-processing-unit (GPU) | Qwen3-VL 8B (qwen3-vl:8b) via Ollama | `--lang` + project doc | $0 | BSD-3-Clause | ✓ | Offline, predictable. |
+| **`make-alt`** (used) | local CPU/graphics-processing-unit (GPU) | Qwen3-VL 8B (qwen3-vl:8b) via Ollama | `--lang` + project doc | $0 | BSD-3-Clause | ✓ | Offline, predictable. |
 | [Claude vision API](https://docs.claude.com/en/docs/build-with-claude/vision) | hosted | Claude | prompt | paid | proprietary | ~ | Top quality, hosted. |
 | [GPT-4o vision](https://platform.openai.com/docs/guides/vision) | hosted | OpenAI | prompt | paid | proprietary | ✗ | Top quality, hosted. |
 | [Gemini Vision](https://ai.google.dev/gemini-api/docs/vision) | hosted | Google | prompt | paid | proprietary | ✗ | Top quality, hosted. |

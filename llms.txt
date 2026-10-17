@@ -70,8 +70,8 @@ Every shipped skill carries a "Two modes — make and audit" section in its SKIL
 - [sprezzature-colors/scripts/simulate_cvd.py](sprezzature-colors/scripts/simulate_cvd.py): CVD image transforms.
 - [sprezzature-colors/scripts/_colors.py](sprezzature-colors/scripts/_colors.py): Shared color primitives (sRGB, WCAG, OKLab/OKLCH, CVD matrices, palette accessors, perceptual lighten/darken).
 - [sprezzature-colors/references/palette.csv](sprezzature-colors/references/palette.csv): Curated palette — one row per color, semantic projections (Base / Emotion / Concepts / Psychology±) as columns.
-- [sprezzature-vision/scripts/alt_from_ollama.py](sprezzature-vision/scripts/alt_from_ollama.py): W3C alt text via local Ollama vision (`qwen3-vl:8b`).
-- [sprezzature-vision/scripts/install_alt_ai.py](sprezzature-vision/scripts/install_alt_ai.py): Installs Ollama + pulls the vision model.
+- [sprezzature-accessibility/scripts/alt_from_ollama.py](sprezzature-accessibility/scripts/alt_from_ollama.py): W3C alt text via local Ollama vision (`qwen3-vl:8b`).
+- [sprezzature-accessibility/scripts/install_alt_ai.py](sprezzature-accessibility/scripts/install_alt_ai.py): Installs Ollama + pulls the vision model.
 - [sprezzature-audio/scripts/captions_from_whisper.py](sprezzature-audio/scripts/captions_from_whisper.py): WebVTT / SRT captions via pywhispercpp.
 - [sprezzature-audio/scripts/install_captions.py](sprezzature-audio/scripts/install_captions.py): Installs pywhispercpp + model.
 - [sprezzature-ux-laws/scripts/audit_laws_of_ux.py](sprezzature-ux-laws/scripts/audit_laws_of_ux.py): Static auditor for the canonical Laws of UX. Stdlib only; HTML-aware findings via JSON or stdout; exit codes for pre-commit / CI; `--only` / `--ignore` / `--strict`.

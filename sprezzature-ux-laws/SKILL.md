@@ -198,7 +198,7 @@ sprezzature_ux_laws_scripts.audit_laws_of_ux`.
 | Wrap a CLI in a GUI (argparse → web form) | `sprezzature-cli-gui` |
 | Markdown → website + meta + favicons + indexes | `sprezzature-publish` |
 | Data-viz / explainability / causality figures | `sprezzature-figures` |
-| W3C alt text via local Ollama vision | `sprezzature-vision` |
+| W3C alt text via local Ollama vision | `sprezzature-accessibility` |
 | Local WebVTT / SRT captions via whisper.cpp | `sprezzature-audio` |
 
 ## Attribution

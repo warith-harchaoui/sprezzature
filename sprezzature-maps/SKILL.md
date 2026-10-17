@@ -322,5 +322,5 @@ get the demo map.
 |---|---|
 | Charts, including the schematic place-shaped ones | `sprezzature-figures` |
 | Contrast audit and colour-vision simulation on the rendered plate | `sprezzature-colors` |
-| Alt text for the emitted SVG | `sprezzature-vision` |
+| Alt text for the emitted SVG | `sprezzature-accessibility` |
 | Static a11y lint on the page that embeds it | `sprezzature-accessibility` |

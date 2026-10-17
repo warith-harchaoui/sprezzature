@@ -1585,7 +1585,7 @@ sprezzature-ux-laws 1 kit ● yes ● yes ● yes ● yes ● yes
 
 sprezzature-ui — not yet — not yet — not yet — not yet ● yes ● yes
 
-sprezzature-vision — not yet — not yet — not yet — not yet ● yes ● yes
+sprezzature-accessibility — not yet — not yet — not yet — not yet ● yes ● yes
 
 sprezzature-publish — not yet — not yet — not yet — not yet ● yes ● yes
 
@@ -1898,7 +1898,7 @@ The 30 laws
 
 Source: https://sprezzature.ai/vision.html
 
-sprezzature-vision
+sprezzature-accessibility
 
 # Vision: alt text
 

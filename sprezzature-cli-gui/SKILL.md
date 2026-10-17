@@ -231,7 +231,7 @@ python server.py
 | Full UI design tokens (color, typography, components, dark mode) | `sprezzature-ui` |
 | a11y lint on the emitted HTML | `sprezzature-accessibility` |
 | WCAG contrast audit + CVD simulation on the emitted HTML | `sprezzature-colors` |
-| W3C alt text for the wrapping page's images (local Ollama vision) | `sprezzature-vision` |
+| W3C alt text for the wrapping page's images (local Ollama vision) | `sprezzature-accessibility` |
 | Captions for any embedded `<video>` / `<audio>` (local whisper.cpp) | `sprezzature-audio` |
 | Favicon / meta / docs site for the wrapping page | `sprezzature-publish` |
 | Screenshot the emitted GUI, look at it, and refine the markup (the Ralph Eyeball Loop) | `sprezzature-figures` (`sprezzature-figures/references/ralph-eyeball-loop.md`) |

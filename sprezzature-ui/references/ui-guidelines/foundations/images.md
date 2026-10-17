@@ -64,21 +64,21 @@ When the author has not supplied `alt`, the skill drafts it with a **local visio
 Install once (cross-platform):
 
 ```bash
-pip install -r sprezzature-vision/scripts/requirements-alt-text.txt
-sprezzature-vision-install
+pip install -r sprezzature-accessibility/scripts/requirements-alt-text.txt
+sprezzature-accessibility-install-alt
 ```
 
 Generate alt for an image, per the W3C / WAI decision tree:
 
 ```bash
 # informative (default)
-sprezzature-vision-alt ./public/hero.jpg
+make-alt ./public/hero.jpg
 
 # functional (inside <a> or <button>)
-sprezzature-vision-alt --kind functional --context "Submit form" ./public/icons/check.png
+make-alt --kind functional --context "Submit form" ./public/icons/check.png
 
 # complex (chart, diagram) — pair with a long description in <figcaption>
-sprezzature-vision-alt --kind complex --context "Weekly active users" ./public/chart.png
+make-alt --kind complex --context "Weekly active users" ./public/chart.png
 ```
 
 Output is one line ≤ 150 characters at a word boundary (no trailing `…`). For decorative images, emit `alt=""` directly (the script returns empty when called with `--kind decorative`). Do **not** add `role="presentation"` or `aria-hidden="true"`; `alt=""` alone is the WAI-recommended signal.

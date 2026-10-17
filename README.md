@@ -23,7 +23,7 @@ The skills:
 | **sprezzature-publish** | You ship docs sites, landing pages, meta-tags, favicons. | "turn these markdown files into a website", "meta tags", "favicons", "robots.txt", "sitemap", "llms.txt", "Atom feed", "plain language", "rewrite at grade 8". |
 | **sprezzature-accessibility** | You need static HyperText Markup Language (HTML) accessibility (a11y) lint. | "a11y lint", "check this HTML for accessibility", "static a11y check", "WCAG-friendly lint", "a11y pre-commit". |
 | **sprezzature-colors** | You audit contrast, simulate color blindness, or want a curated palette with perceptual lighten / darken. | "WCAG check", "contrast audit", "is my palette accessible", "colorblind preview", "deuteranope", "CVD", "OKLCH", "lighten this color". |
-| **sprezzature-vision** | You draft World Wide Web Consortium (W3C)-compliant alt text from images locally (no SaaS). | "alt text", "alt text for this image", "describe this image", "draft alt", "image description", "img has no alt". |
+| **sprezzature-accessibility** | You draft World Wide Web Consortium (W3C)-compliant alt text from images locally (no SaaS). | "alt text", "alt text for this image", "describe this image", "draft alt", "image description", "img has no alt". |
 | **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally (no SaaS). | "captions", "transcribe video", "transcribe audio", "WebVTT", "SRT", "subtitle file", "VTT", "caption track". |
 | **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
 | **sprezzature-figures** | You emit data-science figures (167 hand-authored Scalable Vector Graphics (SVG) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)) included), causal-effect estimates (DoWhy / EconML), or TikZ / Mermaid diagrams, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "DoWhy", "DAG", "audit this figure". |
@@ -149,9 +149,9 @@ when to load each skill and what is still on the roadmap.
 | **sprezzature-ui** | `references/` + `assets/components/`, generation playbook for HTML / Tailwind / dataviz | `scripts/validate.py`, `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
 | **sprezzature-cli-gui** | `scripts/cli_to_gui.py` (CLI → HTML emitter: argparse + Click + `--from-help` adapters) + `assets/examples/cli-gui-demo/` (worked scaffold) | Pair with `sprezzature-accessibility` + `sprezzature-ux-laws` on the emitted HTML (the emitter is its own customer; its output passes both gates with zero findings). |
 | **sprezzature-publish** | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate.py` | `lint_markdown.py` |
-| **sprezzature-accessibility** | _(none, see `sprezzature-ui` templates, `sprezzature-vision` for alt text, `sprezzature-audio` for captions)_ | `lint_a11y.py` (20 rules, stdlib only) |
+| **sprezzature-accessibility** | _(none, see `sprezzature-ui` templates, `sprezzature-accessibility` for alt text, `sprezzature-audio` for captions)_ | `lint_a11y.py` (20 rules, stdlib only) |
 | **sprezzature-colors** | `palette_to_tailwind.py` (comma-separated values (CSV) → tailwind.config.js), `accessibility_levels.py` (project the palette to `universal` / `high-contrast` / `monochrome` / a colour-vision-deficiency variant) | `audit_contrast.py`, `simulate_cvd.py` (mosaic + `--grayscale` luminance panel) |
-| **sprezzature-vision** | `alt_from_ollama.py` (W3C alt text via local Ollama) | _(presence of `alt=` checked by `sprezzature-accessibility`)_ |
+| **sprezzature-accessibility** | `alt_from_ollama.py` (W3C alt text via local Ollama) | _(presence of `alt=` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-audio** | `captions_from_whisper.py` (WebVTT / SRT via local whisper.cpp) | _(presence of `<track>` checked by `sprezzature-accessibility`)_ |
 | **sprezzature-ux-laws** | `references/laws-of-ux.md` (30-law Markdown playbook) | `audit_laws_of_ux.py` (Hick / Miller / Fitts / Jakob / Tesler / …) |
 | **sprezzature-figures** | `make_figure.py` (CSV → hand-authored SVG, 167 chart types), `explain_model.py` (SHAP / Shapash / TimeSHAP / LIME dispatcher), `causal_estimate.py` (DoWhy loop + EconML backends + directed acyclic graph (DAG) render), `render_diagram.py` (auto-routed TikZ / Mermaid / SVG → Portable Network Graphics (PNG) / SVG / Portable Document Format (PDF) for the Ralph Eyeball Loop; rendered catalog in `docs/FIGURES.md`), `ralph_eyeball_loop.py` (render → look → refine any visual from code, agent mode or `--local` offline vision), `install_figures.py` (tier installer). Every generator takes an `--accessibility` level (`universal` default is byte-for-byte identical) | `audit_figure.py` (pie-3d, rainbow-palette, chartjunk, radius-over-cap, unformatted-tick, iso-date-tick, role-img-missing, alt-missing) |
@@ -225,7 +225,7 @@ A snapshot of where each surface stands. The ten skill folders are stable; the o
 | `sprezzature-publish` (Markdown site, meta tags, favicons, indexes, plain language, audio narration) | Stable | 11 public scripts spanning the four core artifacts (favicons, meta, indexes, plain-language) + Markdown → HTML + Markdown linter + the audio-narration pipeline (narrate orchestrator, OpenVoice and Chatterbox engine wrappers, voice picker, install helper). Broad deterministic test coverage (favicons, site-indexes, meta, plain-language, lint, narrate); eval suite for meta + plain-language. |
 | `sprezzature-accessibility`: lint | Stable (renamed from `sprezzature-a11y` in 0.9.0) | 14-rule static a11y lint, stdlib only. Now narrowed to lint after the color / vision / audio splits. |
 | `sprezzature-colors`: contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable (new in 0.7.0) | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
-| `sprezzature-vision`: W3C alt text via local Ollama vision | Stable (new in 0.8.0) | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. Split out of `sprezzature-accessibility` for clearer scope. Wikipedia-fixture alt-text eval. |
+| `sprezzature-accessibility`: W3C alt text via local Ollama vision | Stable (new in 0.8.0) | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. Split out of `sprezzature-accessibility` for clearer scope. Wikipedia-fixture alt-text eval. |
 | `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** (split out in 0.9.0) | `captions_from_whisper.py` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md#roadmap). |
 | `LISEZMOI.md` (French README) | Stable | At structural parity with this README, same section ordering, content kept in lock-step on every release. |
 
@@ -242,7 +242,7 @@ What you give the agent and what comes back. Each row is a self-contained flow; 
 | A free-form ask ("primary button", "confirm dialog", "settings page") | "Build a `<component>`" | `sprezzature-ui` | Semantic HTML + Tailwind + minimal vanilla JS, focus ring, `dark:` peer, 44×44 hit area, `Escape` close on dialogs, reduced-motion guard. |
 | A data shape (CSV, JSON, a few rows) | "Chart this" / "Dashboard for X" | `sprezzature-ui` | Inline SVG + `<figure>` wrapper. House style, palette from `color-psychology.md`, polarity-tagged axes, `role="img"`. |
 | An existing HTML page or screenshot | "Audit this" / "WCAG check" / "Make it look less AI" | `sprezzature-ui` (anti-patterns, ergonomics) + `sprezzature-accessibility` (lint) + `sprezzature-colors` (contrast, CVD) | Findings against the 8 ergonomic criteria + anti-patterns catalogue; concrete diffs; pre-ship checklist run; `lint_a11y` + `audit_contrast` + `simulate_cvd` output. |
-| An image file (`*.png`, `*.jpg`, …) | "Alt text for this image" | `sprezzature-vision` | W3C-compliant alt text for the right purpose category (informative / decorative / functional / text / complex / group), in the page's language, tagged `data-alt-source="ai"`. |
+| An image file (`*.png`, `*.jpg`, …) | "Alt text for this image" | `sprezzature-accessibility` | W3C-compliant alt text for the right purpose category (informative / decorative / functional / text / complex / group), in the page's language, tagged `data-alt-source="ai"`. |
 | An audio or video file (`.mp4`, `.wav`, `.mp3`, …), **WiP** | "Captions / transcript" | `sprezzature-audio` *(work in progress)* | WebVTT / SRT / plain-text captions from local whisper.cpp, with project-vocab biasing. `<video>` + `<track kind="captions">` snippet. Script + tests ship today; per-language WER baselines and the vocab-biasing reference clip are still being collected; see [Status](#status). |
 | A logo (`logo.png` / `.svg`) | "Favicon set" / "PWA icons" | `sprezzature-publish` | `favicon.svg` + `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + a `head.html` snippet. |
 | A goal description or an HTML page | "Meta tags" / "SEO" / "OG card" / "GEO" / "llms.txt" / "AI Overview" | `sprezzature-publish` | **For search-engine optimization (SEO):** title + description + Open Graph (OG) + Twitter Card + Schema.org JSON for Linking Data (JSON-LD) (JSON on stdout): see [Google's three Search Essentials pillars](https://developers.google.com/search/docs/essentials) applied in `sprezzature-publish/references/seo-essentials.md`. **For generative-engine optimization (GEO)** (Generative Engine Optimization, AI Overview / Gemini / ChatGPT answer surfaces): `llms.txt` is emitted by `scripts/site_indexes.py` alongside `robots.txt` + `sitemap.xml` + Atom/really-simple-syndication (RSS), so the site ships an LLM-readable Markdown summary the moment any "turn this into a website" run completes. Same crawlers, same `robots.txt` permissions; no separate "AI" meta tag exists; anything claiming one is wrong. |
@@ -302,7 +302,7 @@ cp -r sprezzature-cli-gui       ~/.${RUNTIME}/skills/   # only if you wrap CLIs
 cp -r sprezzature-publish       ~/.${RUNTIME}/skills/   # only if you ship docs sites
 cp -r sprezzature-accessibility ~/.${RUNTIME}/skills/   # only if you need static a11y lint
 cp -r sprezzature-colors        ~/.${RUNTIME}/skills/   # only if you need WCAG contrast / CVD / palette
-cp -r sprezzature-vision        ~/.${RUNTIME}/skills/   # only if you need AI alt text (local Ollama)
+cp -r sprezzature-accessibility        ~/.${RUNTIME}/skills/   # only if you need AI alt text (local Ollama)
 cp -r sprezzature-audio         ~/.${RUNTIME}/skills/   # only if you need AI captions (local whisper.cpp)
 cp -r sprezzature-ux-laws       ~/.${RUNTIME}/skills/   # only if you want the Laws-of-UX audit + reference
 cp -r sprezzature-figures       ~/.${RUNTIME}/skills/   # only if you emit dataviz / SHAP / DoWhy figures
@@ -397,7 +397,7 @@ invent it. For UI work, alt text, captions, contrast audits,
 Laws-of-UX checks, the local path is genuinely usable today.
 
 The fit with this repo is direct: **three sprezzature-* skills already
-talk to a local Ollama daemon** for their AI surfaces: `sprezzature-vision`
+talk to a local Ollama daemon** for their AI surfaces: `sprezzature-accessibility`
 (alt text, `qwen3-vl:8b`), `sprezzature-publish/meta_from_ollama.py` (page
 meta), `sprezzature-publish/plain_language.py` (copy rewrite). When you
 run OpenCode against the same Ollama daemon, the whole loop,
@@ -454,7 +454,7 @@ opencode run "build me a primary CTA button" \
     -m local-ollama/qwen3-vl:8b
 
 # → ~/.opencode/skills/sprezzature-* load automatically per their frontmatter.
-# → The sprezzature-vision / sprezzature-publish Ollama-backed scripts hit the
+# → The sprezzature-accessibility / sprezzature-publish Ollama-backed scripts hit the
 #   same daemon for their per-script work.
 # → Cost: 0 tokens; nothing leaves the machine.
 ```

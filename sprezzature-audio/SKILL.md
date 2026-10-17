@@ -13,7 +13,7 @@ description: >-
   "transcribe audio", "WebVTT", "SRT", "subtitles", "diarization", "who spoke
   when", "identify speakers", "name the speakers". Not this one when: the
   voice is to be generated from text rather than transcribed
-  (sprezzature-publish), or the words describe an image (sprezzature-vision).
+  (sprezzature-publish), or the words describe an image (sprezzature-accessibility).
   The exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
@@ -230,7 +230,7 @@ column is the command that lands on `$PATH` once installed.
 | You also need… | Install |
 |---|---|
 | Static HTML a11y lint | ``sprezzature-accessibility`` |
-| W3C alt text via local Ollama vision | ``sprezzature-vision`` |
+| W3C alt text via local Ollama vision | ``sprezzature-accessibility`` |
 | WCAG contrast audit, CVD simulation, curated palette | ``sprezzature-colors`` |
 | Vanilla-JS + Tailwind UI generation | ``sprezzature-ui`` |
 | Wrap a CLI in a GUI | ``sprezzature-cli-gui`` |

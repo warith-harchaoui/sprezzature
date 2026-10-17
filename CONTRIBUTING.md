@@ -18,7 +18,7 @@ Pick the skill your change belongs to:
 | Markdown → website workflow, meta tags, favicons, site indexes, plain-language rewriter, i18n | `sprezzature-publish/` |
 | `lint_a11y.py` (static HyperText Markup Language (HTML) accessibility (a11y) lint) | `sprezzature-accessibility/` |
 | Web Content Accessibility Guidelines (WCAG) contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | `sprezzature-colors/` |
-| World Wide Web Consortium (W3C) alt text via local Ollama vision (`qwen3-vl:8b`) | `sprezzature-vision/` |
+| World Wide Web Consortium (W3C) alt text via local Ollama vision (`qwen3-vl:8b`) | `sprezzature-accessibility/` |
 | Local WebVTT / SubRip subtitle format (SRT) captions via whisper.cpp | `sprezzature-audio/` |
 
 Cross-skill changes (e.g. a stack rule that affects every skill) start in

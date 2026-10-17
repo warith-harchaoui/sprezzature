@@ -6,7 +6,7 @@ cleanup_local_skills
 Audit ``~/.claude/skills/`` and ``~/.opencode/skills/`` for orphan
 ``sprezzature-*`` folders left behind by past renames (notably the v0.9.0
 ``sprezzature-a11y`` → ``sprezzature-accessibility`` rename, the v0.7.0
-``sprezzature-colors`` split, the v0.8.0 ``sprezzature-vision`` split, the
+``sprezzature-colors`` split, the v0.8.0 ``sprezzature-accessibility`` split, the
 v0.9.0 ``sprezzature-audio`` split). Optionally remove them.
 
 What "orphan" means

@@ -41,7 +41,7 @@ Les choix par défaut, en toute honnêteté, quand un autre outil l'emporte nett
 - **Workflow bibliothèque de composants React / Vue / Svelte** → **[shadcn/ui](https://ui.shadcn.com)**. Même philosophie copier-coller que `sprezzature`, mais native au framework, avec un public bien plus large et bien plus de composants. `sprezzature` refuse délibérément d'émettre du code de framework ; si votre équipe a choisi React, aller contre `sprezzature` est une erreur.
 - **Vrai zéro-build pour les sites orientés contenu** → **[HTMX](https://htmx.org) + un framework CSS (feuilles de style en cascade) sans classes (ex. [Pico CSS](https://picocss.com), [Simple.css](https://simplecss.org))**. HTMX n'a pas besoin de build, le CSS sans classes non plus et le HTML (langage de balisage des pages web) résultant est le livrable le plus léger que l'on puisse raisonnablement viser. `sprezzature` ne revendique le « zéro build » que sur le chemin prototype (réseau de diffusion de contenu / CDN Tailwind Play) ; HTMX + Pico est zéro build aussi en production.
 - **Gros sites de documentation versionnés (100+ pages, vues par version)** → **[MkDocs Material](https://squidfunk.github.io/mkdocs-material/), [Hugo](https://gohugo.io), [Astro](https://astro.build) ou [Docusaurus](https://docusaurus.io)**. `sprezzature-publish` est dimensionné pour ≤ 30 pages.
-- **Alt-text hébergé de très haute qualité** → **Claude vision, GPT-4o vision, Gemini Vision**. `sprezzature-vision-alt` est le bon choix quand localité / coût / confidentialité comptent ; les modèles hébergés sont nettement meilleurs sur la longue traîne.
+- **Alt-text hébergé de très haute qualité** → **Claude vision, GPT-4o vision, Gemini Vision**. `make-alt` est le bon choix quand localité / coût / confidentialité comptent ; les modèles hébergés sont nettement meilleurs sur la longue traîne.
 - **Sous-titres en direct, latence sous le temps réel** → **Deepgram, AssemblyAI**.
 
 La plupart des autres catégories : il existe un meilleur outil si vous vous spécialisez. Les matrices ci-dessous le nomment explicitement.
@@ -375,7 +375,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 
 | Assistant | Lieu d'exécution | Modèle | Contrôle de langue | Coût / appel | Licence | Compatible sprezzature | Notes |
 |---|---|---|---|---|---|:---:|---|
-| **`sprezzature-vision-alt`** (utilisé) | CPU / processeur graphique (GPU) local | Qwen3-VL 8B (qwen3-vl:8b) via Ollama | `--lang` + doc projet | $0 | BSD-3-Clause | ✓ | Hors-ligne, prévisible. |
+| **`make-alt`** (utilisé) | CPU / processeur graphique (GPU) local | Qwen3-VL 8B (qwen3-vl:8b) via Ollama | `--lang` + doc projet | $0 | BSD-3-Clause | ✓ | Hors-ligne, prévisible. |
 | [Claude vision API](https://docs.claude.com/en/docs/build-with-claude/vision) | hébergé | Claude | prompt | payant | propriétaire | ~ | Qualité au top, hébergé. |
 | [GPT-4o vision](https://platform.openai.com/docs/guides/vision) | hébergé | OpenAI | prompt | payant | propriétaire | ✗ | Qualité au top, hébergé. |
 | [Gemini Vision](https://ai.google.dev/gemini-api/docs/vision) | hébergé | Google | prompt | payant | propriétaire | ✗ | Qualité au top, hébergé. |

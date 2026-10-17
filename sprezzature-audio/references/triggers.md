@@ -14,7 +14,7 @@ Said without naming a tool: "what did they say in this meeting", "who spoke when
 
 ## When it is not
 
-Not this one when: the voice is to be generated from text rather than transcribed (sprezzature-publish), or the words describe an image (sprezzature-vision). The exhaustive trigger catalogue is in `references/triggers.md`.
+Not this one when: the voice is to be generated from text rather than transcribed (sprezzature-publish), or the words describe an image (sprezzature-accessibility). The exhaustive trigger catalogue is in `references/triggers.md`.
 
 ## Every phrase that names this skill
 

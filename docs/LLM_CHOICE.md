@@ -17,7 +17,7 @@ images, so a single model covers every task that used to need two:
 
 | Task | Skill | Uses |
 |---|---|---|
-| Draft W3C alt text from an image | `sprezzature-vision` | vision + text |
+| Draft W3C alt text from an image | `sprezzature-accessibility` | vision + text |
 | Translate captions to a second track | `sprezzature-audio` | text |
 | Infer a speaker name from a transcript | `sprezzature-audio` | text |
 | Draft page metadata / narration hints | `sprezzature-publish` | text |

@@ -30,7 +30,6 @@ SKILL_NAMES: tuple[str, ...] = (
     "sprezzature-publish",
     "sprezzature-accessibility",
     "sprezzature-colors",
-    "sprezzature-vision",
     "sprezzature-audio",
     "sprezzature-ux-laws",
     "sprezzature-figures",

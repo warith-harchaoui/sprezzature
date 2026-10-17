@@ -13,11 +13,11 @@ Users who benefit beyond cognitive disabilities: second-language readers, anyone
 
 ## Install
 
-If you've already run `sprezzature-vision-install` for alt text, you're done; the same Ollama daemon and model serve the rewriter. If not:
+If you've already run `sprezzature-accessibility-install-alt` for alt text, you're done; the same Ollama daemon and model serve the rewriter. If not:
 
 ```bash
 pip install -r scripts/requirements-plain-language.txt
-sprezzature-vision-install
+sprezzature-accessibility-install-alt
 ```
 
 ## Run

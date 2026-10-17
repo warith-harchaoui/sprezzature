@@ -126,13 +126,13 @@ def test_every_audit_skill_has_a_hook() -> None:
     Every shipped skill with at least one audit-side script must
     appear in the manifest.
 
-    sprezzature-vision (make-only — alt-text drafting) and sprezzature-audio
+    sprezzature-accessibility (make-only — alt-text drafting) and sprezzature-audio
     (make-only — caption drafting) are exempt; their audit-side
     is covered indirectly by ``sprezzature-accessibility``'s presence-of-alt
     and presence-of-track rules.
     """
     audit_skills: set[str] = set(SHIPPED_SKILLS) - {
-        "sprezzature-vision", "sprezzature-audio",
+        "sprezzature-accessibility", "sprezzature-audio",
         # sprezzature-cli-gui currently has no audit-side script — its
         # emitter's output is exercised through sprezzature-ux-laws +
         # sprezzature-accessibility hooks above.
