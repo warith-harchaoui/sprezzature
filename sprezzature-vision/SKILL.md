@@ -1,21 +1,20 @@
 ---
 name: sprezzature-vision
 description: >-
-  W3C-compliant alt-text drafting via a local Ollama vision model: per-image
+  W3C-compliant alt-text drafting via a local Ollama vision model: a per-image
   decision tree for informative / decorative / functional / text / complex /
-  group purposes, output in any detected language (native-language phrasing
-  for common ones), surrounding- text and project-vocabulary biasing,
-  deterministic
-  on-disk cache so the same image + parameters never hit the model twice.
-  The one authorized model is ``qwen3-vl:8b`` (registry-standard, multimodal)
-  via Ollama, no other model, no MLX. For solo developers and small teams who
-  want accessibility content drafted locally with no SaaS cost or data
-  exfiltration. Drafts are starting points; verify before committing. Trigger
-  phrases: "alt text", "alt text for this image", "describe this image",
-  "draft alt", "image description", "img has no alt", "decorative image",
-  "functional image", "figure / chart description", "accessible images",
-  "batch alt text". Output is plain text / JSON on stdout suitable for
-  pre-commit and CI.
+  group purposes, output in the detected language with native phrasing,
+  surrounding-text and project-vocabulary biasing, and a deterministic on-disk
+  cache so the same image and parameters never hit the model twice. The one
+  authorized model is qwen3-vl:8b via Ollama, no other model and no MLX, so
+  nothing leaves the machine. Drafts are starting points; verify before
+  committing. Use it when you are holding an image that needs words. Trigger
+  phrases: "alt text", "describe this image", "draft alt", "image
+  description", "img has no alt", "decorative image", "functional image",
+  "figure / chart description", "batch alt text". Not this one when: the lint
+  only has to notice that alt is missing (sprezzature-accessibility), or the
+  words are for recorded speech (sprezzature-audio). The exhaustive trigger
+  catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Needs Python 3.10+ stdlib +

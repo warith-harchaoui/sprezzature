@@ -1,20 +1,20 @@
 ---
 name: sprezzature-colors
 description: >-
-  Color tooling for vanilla-JS + Tailwind output, both make and audit: WCAG
-  contrast audit with OKLCH-neighbour fix suggestions, color-vision-deficiency
-  (protanopia / deuteranopia / tritanopia) simulation on screenshots, a
-  curated Apple-inspired palette CSV with semantic projections (base, emotion,
-  concepts, psychology), perceptual lighten / darken on the OKLCH L axis, and
-  a Tailwind theme.extend.colors emitter that turns the canonical palette CSV
-  into a drop-in tailwind.config.js. Deterministic, no model, no network.
-  Trigger phrases: "WCAG check", "contrast audit", "is my palette accessible",
-  "colorblind preview", "deuteranope", "CVD", "lighten this color", "OKLCH",
-  "Apple palette", "emotion color", "palette to tailwind", "regenerate brand
-  tokens", "tailwind config from palette", "brand colors", "accessible color
-  pair", "color-blind safe", "protanopia / tritanopia", "generate palette".
-  Output is JSON / stdout / generated config / exit codes suitable for
-  pre-commit and CI.
+  Colour tooling for vanilla-JS + Tailwind output, make and audit alike: WCAG
+  contrast audit with OKLCH-neighbour fix suggestions,
+  colour-vision-deficiency (protanopia / deuteranopia / tritanopia) simulation
+  on screenshots, a curated Apple-inspired palette CSV with semantic
+  projections, perceptual lighten / darken on the OKLCH L axis, and a Tailwind
+  theme.extend.colors emitter that turns the canonical CSV into a drop-in
+  tailwind.config.js. Deterministic: no model, no network. Use it whenever a
+  colour is being chosen or judged, in any context. Trigger phrases: "WCAG
+  check", "contrast audit", "is my palette accessible", "colorblind preview",
+  "CVD", "lighten this color", "OKLCH", "Apple palette", "palette to
+  tailwind", "color-blind safe". Not this one when: the markup has structural
+  defects rather than a colour question (sprezzature-accessibility), or the
+  colours belong to a chart being drawn (sprezzature-figures). The exhaustive
+  trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Core scripts (audit_contrast,

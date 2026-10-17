@@ -1,19 +1,20 @@
 ---
 name: sprezzature-cli-gui
 description: >-
-  Wrap an existing command-line tool in a single-page vanilla-JavaScript +
-  Tailwind GUI. Trigger phrases: "wrap this CLI in a GUI", "build a UI for my
-  CLI", "argparse to GUI", "click to web UI", "GUI for my Python script",
-  "wrap my command-line tool", "web form for my script", "Typer / clap / cobra
-  to GUI", "GUI for my Go or Rust CLI", "frontend for a CLI", "streaming log
-  panel for a CLI". Reads the CLI's argument parser (argparse, click, clap,
-  commander, cobra), maps sub-commands and flags to forms / segmented controls
-  / file inputs / streaming log panels, and emits one index.html + app.js +
-  Tailwind config. For solo developers and small teams (Python / Node / Go /
-  Rust CLI authors, ML researchers, data scientists, DevOps / SRE) who need a
-  usable web UI without picking up React or learning Gradio's / Streamlit's
-  look. Output follows the sprezzature-ui stack rules; install sprezzature-ui alongside
-  for full design tokens.
+  Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind
+  GUI. Reads the CLI's own argument parser (argparse, click, Typer, clap,
+  commander, cobra) and maps sub-commands and flags to forms, segmented
+  controls, file inputs and streaming log panels, emitting one index.html +
+  app.js + Tailwind config. For CLI authors whose users will not type a flag:
+  ML researchers, data scientists, DevOps / SRE, anyone needing a web UI
+  without picking up React. Use it when you are holding a command-line tool
+  somebody who will not type it needs to run. Trigger phrases: "wrap this CLI
+  in a GUI", "build a UI for my CLI", "argparse to GUI", "click to web UI",
+  "GUI for my Python script", "web form for my script", "Typer / clap / cobra
+  to GUI", "GUI for my Go or Rust CLI", "streaming log panel for a CLI". Not
+  this one when: the screen has no CLI behind it (sprezzature-ui, whose stack
+  rules this follows; install it alongside for the full design tokens). The
+  exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Output is one-page HTML + ES

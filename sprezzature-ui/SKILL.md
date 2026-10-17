@@ -1,20 +1,20 @@
 ---
 name: sprezzature-ui
 description: >-
-  Generate vanilla JavaScript + Tailwind CSS UI code: components, pages,
-  forms, dialogs, dashboards; for solo developers and small teams shipping
-  internal tools without a designer. Default typography is the three-Roboto
-  rule (Roboto sans + Roboto Serif + Roboto Mono); honors user-specified fonts
-  and respects existing typefaces when auditing existing UI. Output is
-  semantic HTML + Tailwind utility classes + vanilla ES modules with dark-mode
-  peers, focus rings, reduced-motion guards. Use it for "build a UI", "create
-  a component", "design a page", "make a form / modal / button / nav",
-  "scaffold a landing", "build a web app", "audit this UI",
-  "dashboard / data table", "settings page", "i18n to YAML", "audit i18n".
-  Companion skills:
-  sprezzature-cli-gui (wrap a CLI in a GUI), sprezzature-publish (Markdown → website +
-  meta tags + favicons), sprezzature-accessibility (a11y lint), sprezzature-colors
-  (contrast audit, CVD), sprezzature-vision (alt text), sprezzature-audio (captions).
+  Generate vanilla JS + Tailwind CSS UI code: components, pages, forms,
+  dialogs, dashboards, for teams shipping internal tools without a designer.
+  Semantic HTML + Tailwind utilities + vanilla ES modules, with dark-mode
+  peers, focus rings and reduced-motion guards; default typography is the
+  three-Roboto rule (sans + serif + mono). Use it whenever you are holding a
+  screen to build. Trigger phrases: "build a UI", "create a component",
+  "design a page", "make a form / modal / button / nav", "scaffold a landing",
+  "build a web app", "audit this UI", "dashboard / data table", "settings
+  page", "i18n to YAML", "audit i18n". Not this one when: the thing to wrap is
+  a command-line tool (sprezzature-cli-gui); the source is Markdown that must
+  become a site (sprezzature-publish); or the HTML exists already and the
+  question is whether it is accessible (sprezzature-accessibility), how it
+  feels (sprezzature-ux-laws) or whether a colour passes (sprezzature-colors).
+  The exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. No Python runtime required to use

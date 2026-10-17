@@ -45,67 +45,40 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `argparse to GUI` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `click to web UI` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `GUI for my Python script` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
-| `wrap my command-line tool` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `web form for my script` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `Typer / clap / cobra to GUI` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `GUI for my Go or Rust CLI` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
-| `frontend for a CLI` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `streaming log panel for a CLI` | **sprezzature-cli-gui**: Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters). | Stable |
 | `markdown to website` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `meta tags` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `OG card` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `SEO` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `AI Overview` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `GEO` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `favicons` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `app icons` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `robots.txt` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `sitemap` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `llms.txt` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `llms-full.txt` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `Atom feed` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `RSS` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `plain language` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `rewrite at grade N` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `simplify this copy` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `narrate this post` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `podcast my blog` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `text to speech` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `schema.org JSON-LD` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `humans.txt` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
+| `read-along` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `lint markdown` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
-| `OpenVoice / Chatterbox TTS` | **sprezzature-publish**: Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite. | Stable |
 | `a11y lint` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
 | `check this HTML for accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `static a11y check` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `WCAG-friendly lint` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `a11y pre-commit` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
+| `WCAG compliance` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
 | `missing alt` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
 | `unlabelled input` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `WCAG compliance` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `ARIA / keyboard check` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
-| `letter-spacing` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
 | `fix accessibility` | **sprezzature-accessibility**: Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. | Stable |
 | `WCAG check` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `contrast audit` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `is my palette accessible` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `colorblind preview` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `deuteranope` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `CVD` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `lighten this color` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `OKLCH` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `Apple palette` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `emotion color` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `palette to tailwind` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `regenerate brand tokens` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `tailwind config from palette` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `brand colors` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `accessible color pair` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `color-blind safe` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `protanopia / tritanopia` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
-| `generate palette` | **sprezzature-colors**: WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter. | Stable |
 | `alt text` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `alt text for this image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `describe this image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `draft alt` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `image description` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
@@ -113,79 +86,69 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `decorative image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `functional image` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `figure / chart description` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
-| `accessible images` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `batch alt text` | **sprezzature-vision**: Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b). | Stable |
 | `captions` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `transcribe video` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `transcribe audio` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `WebVTT` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `SRT` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `subtitle file` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `VTT` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
+| `subtitles` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `diarization` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `who spoke when` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `Sortformer` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `TitaNet` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `identify speakers` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
 | `name the speakers` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `translate captions` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `translated subtitles` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `subtitles` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `who is who` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `I'm Alice` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `Hey Mary, ...` | **sprezzature-audio**: Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT. | Stable (WiP: caption WER baselines) |
-| `design this screen using Hick / Fitts / Miller` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
-| `what does Peak-End say here` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
-| `is this onboarding fighting the Paradox of the Active User` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `audit for Laws of UX` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
-| `is my nav too Hick-heavy` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
-| `check my form for Postel / Tesler` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `too many choices / options` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `cognitive load` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
+| `is my nav too Hick-heavy` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
+| `check my form for Postel / Tesler` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `Doherty threshold` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `reduce clutter` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
+| `this page is overwhelming` | **sprezzature-ux-laws**: Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers. | Stable |
 | `make a figure` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `chart this` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `plot this` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `draw a chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `heatmap` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `treemap` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `candlestick` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `choropleth` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `GPS map` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `situation map` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `sankey` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `mermaid diagram` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `no ascii art` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `ralph eyeball loop` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `SHAP plot` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `DAG` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `audit this figure` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `bell curve` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `funnel chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `sunburst` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `waterfall chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `P&L bridge` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
 | `redraw this chart` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `make this ugly chart better` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `rends ce graphique plus lisible` | **sprezzature-figures**: Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures. | Stable |
-| `situation` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
-| `map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `map this by country` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `colour the regions by score` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `which country is worst affected` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `break this down by region` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `where is this happening` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
-| `show me the spread across Europe` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `world map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `choropleth` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `thematic map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `areas of control` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `front line` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
-| `contested zones` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `who controls what` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `situation map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
-| `where did these incidents fall` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `une carte par departement` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `carte de situation` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+
+## When NOT to fire
+
+The phrase table only ever argues for firing. Ten siblings compete for every prompt, and the clause that argues *against* one is what keeps a contrast question away from the a11y linter and a hex map away from the cartographer. Each skill carries its own, in the same `description` an agent reads to choose — not only here.
+
+| Skill | Not this one when |
+|---|---|
+| **sprezzature-ui** | the thing to wrap is a command-line tool (sprezzature-cli-gui); the source is Markdown that must become a site (sprezzature-publish); or the HTML exists already and the question is whether it is accessible (sprezzature-accessibility), how it feels (sprezzature-ux-laws) or whether a colour passes (sprezzature-colors). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-cli-gui** | the screen has no CLI behind it (sprezzature-ui, whose stack rules this follows; install it alongside for the full design tokens). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-publish** | the page is built and the question is accessibility (sprezzature-accessibility), or the speech is recorded and needs transcribing rather than generating (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-accessibility** | the question is contrast or colour-blindness (sprezzature-colors), drafting the alt text itself (sprezzature-vision), captions for speech (sprezzature-audio), or how the interface feels (sprezzature-ux-laws). NOT a replacement for axe-core / Pa11y / Lighthouse: a runtime DOM audit catches what a static parser cannot. The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-colors** | the markup has structural defects rather than a colour question (sprezzature-accessibility), or the colours belong to a chart being drawn (sprezzature-figures). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-vision** | the lint only has to notice that alt is missing (sprezzature-accessibility), or the words are for recorded speech (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-audio** | the voice is to be generated from text rather than transcribed (sprezzature-publish), or the words describe an image (sprezzature-vision). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-ux-laws** | the defect is mechanical accessibility (sprezzature-accessibility), contrast (sprezzature-colors), or the screen has yet to be built (sprezzature-ui). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-figures** | the numbers are attached to real PLACES (sprezzature-maps). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-maps** | the shape is schematic rather than geographic (hex map, spike map, binned grid, dot density over an outline), which live in sprezzature-figures. The exhaustive trigger catalogue is in `references/triggers.md`. |
 
 ## How discovery works
 

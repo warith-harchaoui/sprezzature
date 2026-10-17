@@ -66,6 +66,85 @@ is exactly what the 1.5.0 guard below was written to catch.
 
 ### Added
 
+- **The read-along now applies to a page that was never Markdown.**
+  `readalong.py` takes a page as it is — hand-written, exported from a design
+  tool, live for three years — and gives it the same sentence-by-sentence
+  highlight. `narrate_post.py` reads HTML directly, and
+  `_narrate.segments_from_blocks` draws the structural hints from the page's
+  own elements: an `<h2>` earns the pause a `##` earns, because it is the
+  same thing.
+
+  This route is the better half of the bargain, not a fallback. The Markdown
+  route has *two* parsers that must be made to agree about what sentence
+  twelve is, and that gap is where almost every defect in this feature lived.
+  Here the blocks that become the audio are the blocks that get the spans:
+  one parse, nothing to reconcile. The comparison still runs, because the
+  page may have been edited since the recording — and then the honest answer
+  is that the recording is stale.
+
+  `--scope` (`article`, `#id`, `.class`) picks the element to read: a reader
+  who asked to hear *this article* did not ask for the navigation. A scope
+  matching nothing reads nothing, because narrating the cookie banner because
+  a selector was misspelt stays inaudible until it reaches a reader. Page
+  furniture (`script`, `style`, `nav`, `footer`, `aside`, `form`, `dialog`,
+  `svg`…) is never read, nor is anything carrying `hidden` or
+  `aria-hidden="true"`: narrating what assistive technology is told to ignore
+  would have the feature contradict the page it is helping. None of it is
+  removed — the page comes back byte for byte apart from its spans, head
+  links and player, `<?php ?>` prologue included, and the input file is never
+  modified in place.
+
+- **A sentence can now be highlighted across the markup it straddles.** A
+  page written for readers does not break where sentences break: a
+  bibliography entry ends `…</cite> <span class="note">Keeps a memory…` with
+  no full stop between, and `A <em>sentence that. Ends</em> here.` puts one
+  `<em>` across two sentences. A span cannot close a tag it did not open, so
+  these were refused — on exactly the pages this feature exists to serve.
+
+  Such a sentence is now carried by several spans sharing one `data-ra-cue`,
+  lit together, with the id on the first because that is where the sentence
+  starts. What is still refused is a split leaving some of the sentence's
+  words outside every span: a highlight that quietly stops mid-sentence is
+  the wrongness all of this exists to prevent. Measured on a real 549-sentence
+  export: no crossed tags, every cue placed, visible text unchanged.
+
+- **Every skill's description now says when *not* to fire, and what the user
+  is holding when it should.** Ten siblings compete for every prompt, and
+  nine of the ten argued only *for* themselves. The routing table existed,
+  but only in `TRIGGERS.md` — a file for humans, which no agent reads when it
+  has to choose. The clause that matters now lives in the `description`, the
+  one text read at decision time, and `TRIGGERS.md` projects it as a *When
+  NOT to fire* section rather than being its only home.
+
+  The 1024-char cap the Anthropic spec sets meant this was a rewrite at
+  constant budget, not an addition: a flat list of near-duplicate phrasings
+  bought little, since a phrase list cannot generalise and a user almost
+  never names the tool. Tests now refuse a description that loses its skip
+  clause, loses its routing, redirects to a skill that does not exist, or
+  redirects to itself.
+
+- **Each skill now ships its own exhaustive trigger catalogue**, at
+  `<skill>/references/triggers.md`, and its description points at it. This is
+  what makes the budget above affordable: the description carries routing, the
+  skip clause and the canonical phrases, while all 161 phrases — including the
+  forty the cap could not hold — live in a file that travels *inside* the
+  installed skill. The repo-root `TRIGGERS.md` is for a human comparing ten
+  skills at once; a folder on someone else's disk has no repo around it, so
+  the exhaustive list has to ship with the skill or it is unreachable exactly
+  where it would be used. One generator writes all eleven files, and a test
+  per skill refuses drift, an empty catalogue, or a description claiming a
+  phrase the catalogue does not list.
+
+### Fixed
+
+- **The `sprezzature-ui` content gate charged every skill three characters of
+  its description budget.** Its regex captured the YAML block-scalar
+  indicator (`>-`) as part of the value, so it reported 1025 where every
+  other reader saw 1022. Harmless while descriptions sat near 980; it became
+  a false failure the moment one approached the cap, and it disagreed with
+  `validate_skill.py` about the same file.
+
+
 - **A narrated page can now follow its own audio, sentence by sentence.**
   `md_to_html.py --readalong <narration-dir>` wraps each narrated sentence in
   a span, attaches the `<audio>` player with the narration's WebVTT as a

@@ -1,20 +1,20 @@
 ---
 name: sprezzature-maps
 description: >-
-  Real geography, three kinds: a choropleth on a true basemap and projection, a
-  layered areas-of-control "situation" plate, and an accumulation map where
-  point events draw the land themselves, no coastline drawn. The trigger is
-  data attached to PLACES, not the word "map": a column of countries, ISO
-  codes, states or départements is a map waiting to be drawn, and so is a list
-  of coordinates where something happened. Trigger
-  phrases: "map this by country", "colour the regions by score", "which country
-  is worst affected", "break this down by region", "where is this happening",
-  "show me the spread across Europe", "world map", "choropleth", "thematic map",
-  "areas of control", "front line", "contested zones", "who controls what",
-  "situation map", "where did these incidents fall", « une carte par
-  département », « carte de situation ». Schematic place-shaped charts — hex
-  map, spike map, binned grid, dot density over an outline — are NOT here; they
-  live in sprezzature-figures. Output is SVG (PNG / PDF on request).
+  Real geography, three kinds: a choropleth on a true basemap and projection,
+  a layered areas-of-control situation plate, and an accumulation map where
+  point events draw the land themselves with no coastline drawn. The trigger
+  is data attached to PLACES, not the word map: a column of countries, ISO
+  codes, states or departements is a map waiting to be drawn, and so is a list
+  of coordinates where something happened. Output is SVG (PNG / PDF on
+  request). Trigger phrases: "map this by country", "colour the regions by
+  score", "which country is worst affected", "break this down by region",
+  "where is this happening", "world map", "choropleth", "thematic map", "areas
+  of control", "front line", "who controls what", "situation map", "une carte
+  par departement", "carte de situation". Not this one when: the shape is
+  schematic rather than geographic (hex map, spike map, binned grid, dot
+  density over an outline), which live in sprezzature-figures. The exhaustive
+  trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Ships as the standalone

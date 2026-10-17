@@ -212,6 +212,258 @@ def _extract_triggers(description: str) -> list[str]:
     return out
 
 
+#: Marker that opens a description's skip clause. Written in every shipped
+#: SKILL.md so the half that says "not this one" lives where an agent will
+#: actually read it -- the frontmatter description -- rather than only here.
+SKIP_MARKER: str = "Not this one when:"
+
+
+def _extract_skip(description: str) -> str:
+    """
+    The clause naming the cases a skill should *not* answer.
+
+    Ten siblings compete for every prompt, and the phrase list only ever
+    argues for firing. The clause that argues against it is what keeps a
+    contrast question away from the a11y linter and a hex map away from the
+    cartographer. Returns an empty string when the marker is absent, which
+    the test treats as a failure rather than a default.
+    """
+    _, _, tail = description.partition(SKIP_MARKER)
+    return " ".join(tail.split()).strip()
+
+
+#: Every phrase that names a skill, exhaustively -- including the ones the
+#: 1024-char description cannot afford to carry. The description is what an
+#: agent reads to *choose*; this is what it reads once it has chosen, via
+#: each skill's ``references/triggers.md``. One source, two renderings, so
+#: the two cannot drift.
+CATALOGUE: dict[str, list[str]] = {
+    "sprezzature-ui": [
+        "build a UI",
+        "create a component",
+        "design a page",
+        "make a form / modal / button / nav",
+        "scaffold a landing",
+        "build a web app",
+        "audit this UI",
+        "dashboard / data table",
+        "settings page",
+        "i18n to YAML",
+        "audit i18n",
+    ],
+    "sprezzature-cli-gui": [
+        "wrap this CLI in a GUI",
+        "build a UI for my CLI",
+        "argparse to GUI",
+        "click to web UI",
+        "GUI for my Python script",
+        "wrap my command-line tool",
+        "web form for my script",
+        "Typer / clap / cobra to GUI",
+        "GUI for my Go or Rust CLI",
+        "frontend for a CLI",
+        "streaming log panel for a CLI",
+    ],
+    "sprezzature-publish": [
+        "markdown to website",
+        "meta tags",
+        "OG card",
+        "SEO",
+        "AI Overview",
+        "GEO",
+        "favicons",
+        "app icons",
+        "robots.txt",
+        "sitemap",
+        "llms.txt",
+        "llms-full.txt",
+        "Atom feed",
+        "RSS",
+        "plain language",
+        "rewrite at grade N",
+        "simplify this copy",
+        "narrate this post",
+        "podcast my blog",
+        "text to speech",
+        "schema.org JSON-LD",
+        "humans.txt",
+        "lint markdown",
+        "OpenVoice / Chatterbox TTS",
+        "read-along",
+    ],
+    "sprezzature-accessibility": [
+        "a11y lint",
+        "check this HTML for accessibility",
+        "static a11y check",
+        "WCAG-friendly lint",
+        "a11y pre-commit",
+        "missing alt",
+        "unlabelled input",
+        "WCAG compliance",
+        "ARIA / keyboard check",
+        "letter-spacing",
+        "fix accessibility",
+    ],
+    "sprezzature-colors": [
+        "WCAG check",
+        "contrast audit",
+        "is my palette accessible",
+        "colorblind preview",
+        "deuteranope",
+        "CVD",
+        "lighten this color",
+        "OKLCH",
+        "Apple palette",
+        "emotion color",
+        "palette to tailwind",
+        "regenerate brand tokens",
+        "tailwind config from palette",
+        "brand colors",
+        "accessible color pair",
+        "color-blind safe",
+        "protanopia / tritanopia",
+        "generate palette",
+    ],
+    "sprezzature-vision": [
+        "alt text",
+        "alt text for this image",
+        "describe this image",
+        "draft alt",
+        "image description",
+        "img has no alt",
+        "decorative image",
+        "functional image",
+        "figure / chart description",
+        "accessible images",
+        "batch alt text",
+    ],
+    "sprezzature-audio": [
+        "captions",
+        "transcribe video",
+        "transcribe audio",
+        "WebVTT",
+        "SRT",
+        "subtitle file",
+        "VTT",
+        "diarization",
+        "who spoke when",
+        "Sortformer",
+        "TitaNet",
+        "identify speakers",
+        "name the speakers",
+        "translate captions",
+        "translated subtitles",
+        "subtitles",
+        "who is who",
+        "I'm Alice",
+        "Hey Mary, ...",
+    ],
+    "sprezzature-ux-laws": [
+        "design this screen using Hick / Fitts / Miller",
+        "what does Peak-End say here",
+        "is this onboarding fighting the Paradox of the Active User",
+        "audit for Laws of UX",
+        "is my nav too Hick-heavy",
+        "check my form for Postel / Tesler",
+        "too many choices / options",
+        "cognitive load",
+        "Doherty threshold",
+        "reduce clutter",
+        "this page is overwhelming",
+    ],
+    "sprezzature-figures": [
+        "make a figure",
+        "chart this",
+        "plot this",
+        "draw a chart",
+        "heatmap",
+        "treemap",
+        "candlestick",
+        "choropleth",
+        "GPS map",
+        "situation map",
+        "sankey",
+        "mermaid diagram",
+        "no ascii art",
+        "ralph eyeball loop",
+        "SHAP plot",
+        "DAG",
+        "audit this figure",
+        "bell curve",
+        "funnel chart",
+        "sunburst",
+        "waterfall chart",
+        "P&L bridge",
+        "redraw this chart",
+        "make this ugly chart better",
+        "rends ce graphique plus lisible",
+    ],
+    "sprezzature-maps": [
+        "situation",
+        "map",
+        "map this by country",
+        "colour the regions by score",
+        "which country is worst affected",
+        "break this down by region",
+        "where is this happening",
+        "show me the spread across Europe",
+        "world map",
+        "choropleth",
+        "thematic map",
+        "areas of control",
+        "front line",
+        "contested zones",
+        "who controls what",
+        "situation map",
+        "where did these incidents fall",
+        "une carte par departement",
+        "carte de situation",
+    ],
+}
+
+def build_skill_reference(skill: str) -> str:
+    """
+    Render one skill's ``references/triggers.md``.
+
+    The description an agent reads to choose between ten siblings is capped
+    at 1024 characters by the Anthropic spec, which buys routing, a skip
+    clause and a handful of phrases -- not an exhaustive list. This file is
+    where the rest lives, and it is generated from the same source so the two
+    cannot say different things.
+    """
+    holding, phrasing = ROUTES[skill]
+    rows: list[str] = [
+        f"# Trigger catalogue — {skill}",
+        "",
+        "**Generated by `scripts/build_triggers.py`. Do not hand-edit.** A test "
+        "asserts this file equals the generated output, so a phrase added here "
+        "and nowhere else fails CI.",
+        "",
+        f"{WHAT_IT_DOES[skill]}",
+        "",
+        "## When this skill is the answer",
+        "",
+        f"**You are holding:** {holding}.",
+        "",
+        "A phrase list cannot generalise — the ways to ask are unbounded, and a "
+        "user almost never names the tool. What is bounded is the kind of thing "
+        "in front of them. Match that first; the phrases below confirm a match, "
+        "they do not make one.",
+        "",
+        f"Said without naming a tool: {phrasing}",
+        "",
+        "## When it is not",
+        "",
+        f"Not this one when: {_extract_skip(_description(skill))}",
+        "",
+        "## Every phrase that names this skill",
+        "",
+    ]
+    rows += [f"- `{phrase}`" for phrase in CATALOGUE[skill]]
+    rows.append("")
+    return "\n".join(rows) + "\n"
+
+
 def build() -> str:
     """
     Render the full TRIGGERS.md file from every shipped SKILL.md.
@@ -287,6 +539,22 @@ def build() -> str:
             )
 
     rows.append("")
+    rows.append("## When NOT to fire")
+    rows.append("")
+    rows.append(
+        "The phrase table only ever argues for firing. Ten siblings compete "
+        "for every prompt, and the clause that argues *against* one is what "
+        "keeps a contrast question away from the a11y linter and a hex map "
+        "away from the cartographer. Each skill carries its own, in the same "
+        "`description` an agent reads to choose — not only here."
+    )
+    rows.append("")
+    rows.append("| Skill | Not this one when |")
+    rows.append("|---|---|")
+    for skill in SHIPPED_SKILLS:
+        skip: str = _extract_skip(_description(skill))
+        rows.append(f"| **{skill}** | {skip.replace('|', chr(92) + '|')} |")
+    rows.append("")
     rows.append("## How discovery works")
     rows.append("")
     rows.append(
@@ -338,29 +606,40 @@ def main(argv: list[str] | None = None) -> int:
     )
     args: argparse.Namespace = parser.parse_args(argv)
 
-    generated: str = build()
+    # Repo-root index plus one catalogue per skill: the index is for a human
+    # scanning ten skills at once, the catalogue ships *inside* the skill, so
+    # an agent that has chosen can read the exhaustive list without the repo.
+    targets: dict[Path, str] = {OUTPUT: build()}
+    for skill in SHIPPED_SKILLS:
+        targets[REPO_ROOT / skill / "references" / "triggers.md"] = (
+            build_skill_reference(skill)
+        )
+
     if args.check:
-        if not OUTPUT.is_file():
+        drifted: list[Path] = [
+            path for path, generated in targets.items()
+            if not path.is_file() or path.read_text(encoding="utf-8") != generated
+        ]
+        if drifted:
+            for path in drifted:
+                print(
+                    f"{path.relative_to(REPO_ROOT)} is out of sync with the "
+                    f"SKILL.md descriptions.",
+                    file=sys.stderr,
+                )
             print(
-                f"TRIGGERS.md does not exist at {OUTPUT}. Run without "
-                f"--check to generate it.",
+                "Re-run scripts/build_triggers.py and commit the files "
+                "together.",
                 file=sys.stderr,
             )
             return 1
-        current: str = OUTPUT.read_text(encoding="utf-8")
-        if current != generated:
-            print(
-                "TRIGGERS.md is out of sync with the SKILL.md "
-                "descriptions. Re-run scripts/build_triggers.py and "
-                "commit both files together.",
-                file=sys.stderr,
-            )
-            return 1
-        print("TRIGGERS.md is in sync.")
+        print(f"{len(targets)} trigger files are in sync.")
         return 0
 
-    OUTPUT.write_text(generated, encoding="utf-8")
-    print(f"Wrote {OUTPUT} ({len(generated)} chars).", file=sys.stderr)
+    for path, generated in targets.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(generated, encoding="utf-8")
+    print(f"Wrote {len(targets)} trigger files.", file=sys.stderr)
     return 0
 
 

@@ -2,20 +2,19 @@
 name: sprezzature-accessibility
 description: >-
   Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output.
-  Twenty rules decidable from source: missing alt, unlabelled inputs,
-  button-without-text, clickable div (onclick), missing dialog close, lang
-  attribute, bad heading order, color-only state, motion-reduce guards,
-  tight letter-spacing, and more, without a browser or runtime DOM. For
-  solo developers and small teams who need a fast, deterministic,
-  CI-friendly gate before shipping; NOT a replacement for axe-core / Pa11y /
-  Lighthouse (runtime DOM audits catch what a static parser cannot). Color
-  contrast lives in the companion ``sprezzature-colors`` skill, AI alt-text
-  in ``sprezzature-vision``, AI captions in ``sprezzature-audio``. Trigger
-  phrases: "a11y lint", "check this HTML for accessibility", "static a11y
-  check", "WCAG-friendly lint", "a11y pre-commit", "missing alt", "unlabelled
-  input", "WCAG compliance", "ARIA / keyboard check", "letter-spacing",
-  "fix accessibility". Output is JSON / stdout / exit codes suitable for
-  pre-commit and CI.
+  Twenty rules decidable from source without a browser or runtime DOM: missing
+  alt, unlabelled inputs, button-without-text, clickable div, missing dialog
+  close, lang attribute, bad heading order, colour-only state, motion-reduce
+  guards. Output is JSON / exit codes for CI. Use it whenever you are holding
+  HTML, above all HTML you just wrote: the markup nobody checked is the markup
+  you wrote. Trigger phrases: "a11y lint", "check this HTML for
+  accessibility", "WCAG compliance", "missing alt", "unlabelled input", "fix
+  accessibility". Not this one when: the question is contrast or
+  colour-blindness (sprezzature-colors), drafting the alt text itself
+  (sprezzature-vision), captions for speech (sprezzature-audio), or how the
+  interface feels (sprezzature-ux-laws). NOT a replacement for axe-core /
+  Pa11y / Lighthouse: a runtime DOM audit catches what a static parser cannot.
+  The exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. The lint_a11y script needs
