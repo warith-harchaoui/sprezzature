@@ -217,10 +217,16 @@ desc_match = re.search(
     re.M | re.S,
 )
 
+#: A YAML block-scalar indicator: ``>``/``|`` with optional chomping and an
+#: explicit indent. It opens the value, it is not part of it -- counting it
+#: charged every skill three characters of its 1024-char budget and reported
+#: a length nothing else agreed with.
+BLOCK_SCALAR_RE = re.compile(r"^[>|][+-]?\d*\s*")
+
 if not desc_match:
     bad("SKILL.md frontmatter missing 'description:' field")
 else:
-    desc: str = " ".join(desc_match.group(1).split())
+    desc: str = " ".join(BLOCK_SCALAR_RE.sub("", desc_match.group(1)).split())
     if len(desc) < 50:
         bad(f"SKILL.md description too short ({len(desc)} chars; need ≥ 50)")
     elif len(desc) > 1024:

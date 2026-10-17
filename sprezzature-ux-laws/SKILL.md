@@ -2,19 +2,19 @@
 name: sprezzature-ux-laws
 description: >-
   Apply the canonical Laws of UX (Jon YABLONSKI, lawsofux.com) to vanilla-JS +
-  Tailwind work, both when making new UI ("design this screen using Hick /
-  Fitts / Miller", "what does Peak-End say here", "is this onboarding fighting
-  the Paradox of the Active User") AND when auditing existing HTML ("audit for
-  Laws of UX", "is my nav too Hick-heavy", "check my form for Postel /
-  Tesler", "too many choices / options", "cognitive load", "Doherty
-  threshold", "reduce clutter"). Reference covers 30 laws with trigger /
-  action / Tailwind hook. Static auditor scripts/audit_laws_of_ux.py flags the
-  mechanically-detectable subset (Hick, Miller, Fitts, Jakob, Tesler,
-  Aesthetic-Usability, Selective Attention, Choice Overload) with severity and
-  JSON output; Doherty is vocabulary, not a check. Pairs with companion skills sprezzature-ui (generation),
-  sprezzature-accessibility (a11y lint), sprezzature-publish (docs site), sprezzature-colors
-  (contrast). Output is HTML-aware findings via JSON or stdout, exit codes for
-  pre-commit / CI.
+  Tailwind work, both when designing a screen and when auditing one that
+  exists. The reference covers 30 laws with trigger / action / Tailwind hook;
+  audit_laws_of_ux.py flags the mechanically detectable subset (Hick, Miller,
+  Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice
+  Overload) with severity and JSON output, while Doherty is vocabulary rather
+  than a check. Use it when somebody is complaining about how an interface
+  FEELS, and on any interface you just authored. Trigger phrases: "audit for
+  Laws of UX", "too many choices / options", "cognitive load", "is my nav too
+  Hick-heavy", "check my form for Postel / Tesler", "Doherty threshold",
+  "reduce clutter", "this page is overwhelming". Not this one when: the defect
+  is mechanical accessibility (sprezzature-accessibility), contrast
+  (sprezzature-colors), or the screen has yet to be built (sprezzature-ui).
+  The exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. The auditor needs

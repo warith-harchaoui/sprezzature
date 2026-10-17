@@ -1,21 +1,20 @@
 ---
 name: sprezzature-figures
 description: >-
-  Figures, diagrams, and the Ralph Eyeball Loop for the sprezzature-* stack.
-  167 hand-authored, often interactive and animated SVG chart types, the
-  markup written directly (see FIGURES.md). Explainability
-  (SHAP/Shapash/LIME) and causal DAGs (DoWhy). TikZ + Mermaid via the Ralph
-  Eyeball Loop; never ASCII art. The loop reads any visual from code —
-  figure, Mermaid, TikZ, SVG, HTML page — as an agent or --local
-  (qwen3-vl:8b, offline). redraw() takes a picture of someone else's chart
-  and redraws it here, never inventing the numbers.
-  Trigger phrases: "make a figure", "chart this", "plot this", "draw a
-  chart", "heatmap", "treemap", "candlestick", "choropleth", "GPS map",
-  "situation map", "sankey", "mermaid diagram", "no ascii art", "ralph
-  eyeball loop", "SHAP plot", "DAG", "audit this figure", "bell curve",
-  "funnel chart", "sunburst", "waterfall chart", "P&L bridge", "redraw this
-  chart", "make this ugly chart better", "rends ce graphique plus lisible".
-  Output: SVG (PNG/PDF via render_diagram.py).
+  Figures, diagrams and the Ralph Eyeball Loop: 167 hand-authored, often
+  interactive and animated SVG chart types whose markup is written directly,
+  plus explainability (SHAP / Shapash / LIME) and causal DAGs (DoWhy). TikZ
+  and Mermaid go through the loop, which reads any visual from code (figure,
+  Mermaid, TikZ, SVG, a whole HTML page) as an agent or --local (qwen3-vl:8b,
+  offline). redraw() takes a picture of somebody else's chart and redraws it
+  here, never inventing the numbers. Never ASCII art. Use it when you are
+  holding numbers you want somebody to SEE, or a chart that is hard to read.
+  Trigger phrases: "make a figure", "chart this", "plot this", "heatmap",
+  "treemap", "sankey", "mermaid diagram", "no ascii art", "ralph eyeball
+  loop", "SHAP plot", "DAG", "waterfall chart", "redraw this chart". Output:
+  SVG (PNG/PDF via render_diagram.py). Not this one when: the numbers are
+  attached to real PLACES (sprezzature-maps). The exhaustive trigger catalogue
+  is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+; the static

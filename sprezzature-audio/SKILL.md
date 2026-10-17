@@ -2,19 +2,19 @@
 name: sprezzature-audio
 description: >-
   Local-AI captions, speaker diarization and speaker identification for video
-  / audio. Trigger phrases: "captions", "transcribe video", "transcribe
-  audio", "WebVTT", "SRT", "subtitle file", "VTT", "diarization", "who
-  spoke when", "Sortformer", "TitaNet", "identify speakers", "name the
-  speakers", "translate captions", "translated subtitles", "subtitles".
-  Generates W3C WebVTT / SRT / plain-text captions from a local whisper.cpp
-  build (vocal-helper), then adds "who spoke when" via NVIDIA NeMo Sortformer
-  and "who is who" via NeMo TitaNet embeddings (against reference clips) OR a
-  transcript-based rule + local Ollama pass that mines self-introductions
-  ("I'm Alice") and vocatives ("Hey Mary, ..."). Merger emits speaker-
-  labelled VTT with named voice cues. Project-vocab biasing on the caption
-  path. Bilingual EN/FR default, auto-detected from context. Runs on your machine;
-  never sends audio to a SaaS. Output is a captions / RTTM / speakers.json /
-  speaker-VTT file on disk + a ready-to-paste snippet on stdout.
+  and audio. W3C WebVTT / SRT / plain-text captions from a local whisper.cpp
+  build, then who spoke when via NVIDIA NeMo Sortformer and who is who via
+  NeMo TitaNet embeddings against reference clips, or a transcript rule plus a
+  local Ollama pass mining self-introductions and vocatives. Emits
+  speaker-labelled VTT with named voice cues; project-vocab biasing; bilingual
+  EN/FR, auto-detected. Runs on your machine and never sends audio to a SaaS.
+  Use it when you are holding recorded speech somebody needs as text, or a
+  question about that text. Trigger phrases: "captions", "transcribe video",
+  "transcribe audio", "WebVTT", "SRT", "subtitles", "diarization", "who spoke
+  when", "identify speakers", "name the speakers". Not this one when: the
+  voice is to be generated from text rather than transcribed
+  (sprezzature-publish), or the words describe an image (sprezzature-vision).
+  The exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+ stdlib +

@@ -1,20 +1,20 @@
 ---
 name: sprezzature-publish
 description: >-
-  Turn a folder of Markdown (README + docs/ + blog/) into a static site with
+  Turn a folder of Markdown (README + docs/ + blog/) into a static site:
   per-page meta tags (Open Graph + Twitter Card + Schema.org JSON-LD), a full
   favicon / app-icon / PWA-icon set from one logo, robots.txt + sitemap.xml +
-  llms.txt + llms-full.txt + Atom / RSS + humans.txt, plain-language rewrites, and MP3
-  narration via local OSS TTS. Trigger phrases: "markdown to website", "meta
-  tags", "OG card", "SEO", "AI Overview", "GEO", "favicons", "app icons",
-  "robots.txt", "sitemap", "llms.txt", "llms-full.txt", "Atom feed", "RSS",
-  "plain language", "rewrite at grade N", "simplify this copy",
-  "narrate this post", "podcast my blog", "text to speech",
-  "schema.org JSON-LD", "humans.txt", "lint markdown",
-  "OpenVoice / Chatterbox TTS". Applies Google's SEO + GEO (AI
-  Optimization) foundations to the emitted artifacts. For solo developers and
-  small teams shipping a site without an SSG. Output follows the sprezzature-ui
-  stack rules; install sprezzature-ui alongside for the full design tokens.
+  llms.txt + llms-full.txt + Atom / RSS + humans.txt, plain-language rewrites,
+  and MP3 narration via local OSS TTS with a sentence-by-sentence read-along
+  that also applies to an existing HTML page having no Markdown source. Use it
+  when you are holding writing that has to become a site somebody else can
+  find. Trigger phrases: "markdown to website", "meta tags", "SEO", "GEO",
+  "favicons", "sitemap", "llms.txt", "RSS", "plain language", "narrate this
+  post", "podcast my blog", "read-along", "lint markdown". Not this one when:
+  the page is built and the question is accessibility
+  (sprezzature-accessibility), or the speech is recorded and needs
+  transcribing rather than generating (sprezzature-audio). The exhaustive
+  trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Core scripts (favicons,
