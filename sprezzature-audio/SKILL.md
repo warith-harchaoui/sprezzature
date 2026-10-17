@@ -86,7 +86,8 @@ heavier **diarization + speaker ID** tier that layers on top.
 | **Make** — speaker identification via the **transcript itself** | `name_from_transcript.py` | Rule pass over self-introductions ("I'm Alice") + turn-initial / turn-final vocatives ("Hey Mary, ..."). Optional `--ollama` refinement via a local Ollama daemon, the same daemon `alt_from_ollama.py` uses. |
 | **Make** — merge captions + diarization | `caption_diarize.py` | Emits speaker-labelled VTT (`<v Name>` cues), SRT (`Name: text` prefix), or plain text with paragraph breaks per speaker turn. |
 | **Make** — translate captions → second track | `translate_captions.py` | Translates an existing `.vtt`/`.srt` into the **surrounding-text language** via the local Ollama model (`qwen3-vl:8b`) and prints a two-`<track>` snippet (native `captions` + translated `subtitles`). Captions-only, no audio. |
-| **Audit** — gate the presence of `<track>` | _(see `sprezzature-accessibility/scripts/lint_a11y.py`)_ | Static lint catches `<video>` / `<audio>` without a `<track kind="captions">` child. |
+| **Audit** — gate the presence of `<track>` _(borrowed, not shipped here)_ | _(see `sprezzature-accessibility-lint`)_ | Static lint catches `<video>` / `<audio>` without a `<track kind="captions">` child. |
+| **Audit** — _(none here — roadmap)_ | — | Whether a `<track>` exists is somebody else's question; whether the captions inside it are any good is this brick's, and nothing asks it. The rules are static and well defined: timings monotonic and non-overlapping, reading speed under the BBC/WCAG ceiling, line length and line count within the caption-rendering limits, no empty cue. A transcript can be fluent and still unreadable at speed. |
 
 Pair with `sprezzature-accessibility` to close the loop: this skill drafts
 the file; the a11y lint verifies a `<track>` element references it.
