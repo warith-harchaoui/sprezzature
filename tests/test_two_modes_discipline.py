@@ -139,3 +139,98 @@ def test_readme_matrix_marks_roadmap_gaps_honestly() -> None:
             f"README matrix row has a genuinely empty cell — mark it "
             f"(roadmap) or (none — ...) instead:\n  {row}"
         )
+
+
+# ── The declaration must be honest ─────────────────────────────────────────
+#
+# The tests above check that the section exists and names both sides. They
+# were satisfied by a row that reads
+#
+#     | **Audit** — gate the presence of <track> | _(see sprezzature-accessibility/scripts/lint_a11y.py)_ |
+#
+# which is a pointer at another brick's tool, not an audit this brick ships.
+# That is a legitimate thing to write — bricks should route rather than
+# duplicate — but it is not a brick holding both halves, and a reader
+# skimming the matrix cannot tell the two apart. These two tests make the
+# difference visible.
+
+
+def _two_modes_rows(skill: str) -> list[str]:
+    """The table rows of a skill's 'Two modes' section."""
+    body = _read(REPO_ROOT / skill / "SKILL.md")
+    match = RE_TWO_MODES_HEADER.search(body)
+    assert match is not None
+    section = body[match.end():].split("\n## ", 1)[0]
+    return [
+        line for line in section.splitlines()
+        if line.startswith("|") and "---" not in line
+    ]
+
+
+#: A row that hands the job to another brick rather than shipping a tool.
+RE_DELEGATES = re.compile(r"\(see\s+`?sprezzature-|Pair with\s+`?sprezzature-", re.I)
+
+#: A row that admits the half is not built yet.
+RE_GAP = re.compile(r"roadmap|none\s*[—–-]|\(none", re.I)
+
+
+@pytest.mark.parametrize("skill", SHIPPED_SKILLS)
+def test_every_cross_reference_names_a_brick_that_exists(skill: str) -> None:
+    """
+    A row may route to a sibling, but not to one that is gone.
+
+    When `sprezzature-vision` merged into `sprezzature-accessibility`, four
+    other skills still pointed readers at it by name. A pointer at a brick
+    nobody can install is worse than no pointer: it sends someone looking for
+    a package that does not exist.
+    """
+    for row in _two_modes_rows(skill):
+        for named in re.findall(r"sprezzature-[a-z0-9-]+", row):
+            named = named.rstrip("-")
+            # A console script is a brick name plus a suffix:
+            # `sprezzature-accessibility-lint` is the lint command, not a
+            # tenth brick. The first version of this test flagged both, which
+            # is a guard someone switches off rather than fixes. So the
+            # question is whether some shipped brick is a prefix of what was
+            # written, not whether the whole token is a brick.
+            assert any(
+                named == brick or named.startswith(brick + "-")
+                for brick in SHIPPED_SKILLS
+            ), (
+                f"{skill}'s 'Two modes' table points at {named!r}, which "
+                f"belongs to no brick in SKILLS.txt"
+            )
+
+
+@pytest.mark.parametrize("skill", SHIPPED_SKILLS)
+def test_a_brick_whose_only_audit_is_someone_elses_says_so(skill: str) -> None:
+    """
+    Delegating every audit row is allowed; pretending it is your own is not.
+
+    The house philosophy is make **and** audit. A brick that only makes is a
+    real state of affairs — `sprezzature-maps` says so in as many words, with
+    `_(none here — see sprezzature-figures)_`, and that honesty is the point.
+    What this refuses is the middle case: an Audit row that looks like a
+    shipped tool and turns out, on reading, to be a pointer at a sibling.
+    """
+    audit_rows = [
+        row for row in _two_modes_rows(skill)
+        if re.search(r"\|\s*\*\*Audit\*\*", row)
+    ]
+    assert audit_rows, f"{skill}: no Audit row at all"
+
+    own = [
+        row for row in audit_rows
+        if not RE_DELEGATES.search(row) and not RE_GAP.search(row)
+    ]
+    if own:
+        return
+    # Every audit row delegates or is empty: the row must say so plainly, so
+    # the matrix does not read as "both halves shipped".
+    assert any(RE_GAP.search(row) for row in audit_rows), (
+        f"{skill} ships no audit of its own — every Audit row points at "
+        f"another brick. That is allowed, but the row has to say so: mark it "
+        f"`(roadmap)` or `_(none here — see <brick>)_` the way "
+        f"sprezzature-maps does, so the matrix is not read as both halves "
+        f"shipped."
+    )

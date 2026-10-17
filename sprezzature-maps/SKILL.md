@@ -227,6 +227,7 @@ missing. The keys are listed in the section above.
 | **Make** — a choropleth on real geography | `make-map choropleth` | Territories shaded by a value, Equal Earth, OKLCH ramp, relief. |
 | **Make** — an areas-of-control plate | `make-map situation_map` | Layered situation map for any region from one YAML config. |
 | **Audit** | _(none here — see `sprezzature-figures`' `audit_figure.py`)_ | The rendered SVG is a figure like any other, so the data-viz auditor and the colour-vision accessibility levels apply to it unchanged. Run them there rather than duplicating a second auditor here. |
+| **Audit** — _(none here — roadmap)_ | — | The figure auditor reads the SVG as a chart. What it cannot ask is whether the *map* is honest: that the classification method is named on the plate, that the legend carries its class breaks, that the projection is stated, and that the data vintage is visible. Those are map-specific, and this brick already learned once that an unnamed classification is a measurement trap. |
 
 The gap in the audit column is real and deliberate: a second SVG auditor in
 this package would drift from the one in `sprezzature-figures` within a
