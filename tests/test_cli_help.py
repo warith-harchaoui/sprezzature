@@ -28,6 +28,7 @@ SCRIPTS = [
     REPO_ROOT / "sprezzature-publish" / "scripts" / "plain_language.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "lint_markdown.py",
     REPO_ROOT / "sprezzature-publish" / "scripts" / "md_to_html.py",
+    REPO_ROOT / "sprezzature-publish" / "scripts" / "readalong.py",
     # sprezzature-vision
     REPO_ROOT / "sprezzature-vision"  / "scripts" / "alt_from_ollama.py",
     # sprezzature-ui

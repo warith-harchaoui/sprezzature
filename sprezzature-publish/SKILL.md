@@ -137,6 +137,24 @@ It compares the cues the narration wrote against the rendered HTML and
 a highlight that is off by one points a reader confidently at the wrong
 line. Same reference, section *Following the narration on the page*.
 
+**A page that was never Markdown** — hand-written, exported from a design
+tool, live for three years — takes `readalong.py` instead. Both
+`narrate_post.py` and `readalong.py` read the HTML directly, so the
+structural hints come from the page's own elements: an `<h2>` earns the
+pause a `##` earns, because it is the same thing.
+
+```text
+narrate_post.py page.html --scope article --out-dir audio/
+readalong.py    page.html --narration audio/ --scope article --out built/
+```
+
+`--scope` (`article`, `#id`, `.class`) is what makes this usable on a real
+page: a reader who asked to hear *this article* did not ask for the
+navigation. Without it the whole document is read, header and footer
+included. Anything already hidden from assistive technology — `hidden`,
+`aria-hidden="true"` — is left unspoken, and the input page is never
+modified in place.
+
 ## When NOT to use this skill
 
 - Versioned docs (semantic versioning, side-by-side per-release docs) → Hugo / MkDocs Material / Docusaurus.
@@ -162,7 +180,8 @@ line. Same reference, section *Following the narration on the page*.
 | `scripts/plain_language.py` | `pip install -r scripts/requirements-plain-language.txt` + Ollama | Rewrites copy at a target grade; strips marketing voice |
 | `scripts/narrate_post.py` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `install_narrate.py` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
 | `scripts/narrate_openvoice.py` / `narrate_chatterbox.py` *(optional)* | as above | Engine wrappers invoked as subprocesses by `narrate_post.py`. |
-| `scripts/_readalong.py` *(optional)* | `pip install markdown` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `md_to_html.py --readalong`; refuses rather than mis-align. |
+| `scripts/_readalong.py` *(optional)* | `pip install markdown` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `md_to_html.py --readalong` and `readalong.py`; refuses rather than mis-align. |
+| `scripts/readalong.py` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
 | `scripts/pick_voice.py` *(optional)* | as above | Lists engine voices + generates per-voice demo clips so the designer chooses by listening. |
 | `scripts/install_narrate.py` *(optional)* | subprocess | Downloads OpenVoice v2 checkpoints + sets up the ChatterboxTTS voice library directory. |
 | `scripts/_lang.py`, `scripts/_ollama.py`, `scripts/_narrate.py` | (internal helpers) | Language detection + Ollama client + narration segment extractor shared by other scripts |

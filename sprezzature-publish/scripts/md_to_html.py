@@ -53,9 +53,7 @@ Author
 from __future__ import annotations
 
 import html
-import os
 import re
-import shutil
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -283,41 +281,6 @@ def _replace_mermaid_blocks(text: str, src_path: Path, out_dir: Path) -> tuple[s
     return text, rendered, failed
 
 
-#: Wording for the player's label, per language -- the accessible name of the
-#: audio element. No default: a language this project has not been taught is
-#: worth seeing, not worth serving in English.
-_PLAYER_LABELS: dict[str, str] = {
-    "en": "Listen to this page",
-    "fr": "Écouter cette page",
-}
-
-#: Files that drive the highlight, copied next to the page. Linked rather
-#: than inlined so a reader's browser caches them once for a whole site.
-_READALONG_ASSETS: tuple[str, ...] = ("readalong.css", "readalong.js")
-
-
-def _readalong_sources(narration_dir: Path, stem: str) -> tuple[Path, Path] | None:
-    """The audio file and its cue file for one page, if a narration ran.
-
-    Returns ``None`` when there is nothing to attach, which is the ordinary
-    case: most pages of a site are not narrated, and a missing recording is
-    not an error.
-    """
-    cues = narration_dir / "narration.vtt"
-    if not cues.is_file():
-        return None
-    audio = next(
-        (
-            candidate
-            for suffix in _readalong.AUDIO_TYPES
-            for candidate in [narration_dir / f"{stem}{suffix}"]
-            if candidate.is_file()
-        ),
-        None,
-    )
-    return None if audio is None else (audio, cues)
-
-
 def _attach_readalong(body_html: str, *, src: Path, out_dir: Path, narration_dir: Path,
                       lang: str) -> tuple[str, str]:
     """Wrap the page's sentences and build its player.
@@ -326,18 +289,16 @@ def _attach_readalong(body_html: str, *, src: Path, out_dir: Path, narration_dir
     :class:`_readalong.ReadAlongMismatch` rather than returning a page whose
     highlight is off by one -- a read-along that points at the wrong line is
     worse than a page with no audio at all.
+
+    The pieces are the ones ``readalong.py`` uses on a page this project did
+    not render; only the assembly differs, because here the document does not
+    exist yet.
     """
-    found = _readalong_sources(narration_dir, src.stem)
+    found = _readalong.narration_sources(narration_dir, src.stem)
     if found is None:
         return body_html, ""
     audio, cues = found
-
-    label = _PLAYER_LABELS.get(lang)
-    if label is None:
-        raise _readalong.ReadAlongMismatch(
-            f"no read-along player wording for language {lang!r}; add it to "
-            "_PLAYER_LABELS rather than labelling a French page in English"
-        )
+    label = _readalong.player_label(lang)
 
     wrapped = _readalong.wrap_sentences(
         body_html,
@@ -346,31 +307,19 @@ def _attach_readalong(body_html: str, *, src: Path, out_dir: Path, narration_dir
         opening=_narrate.QUOTE_OPENING,
         closing=_narrate.QUOTE_CLOSING,
     )
-
-    # Paths are written relative to the page, so the whole output directory
-    # can be moved or served from a sub-path without rewriting a thing.
-    here = out_dir.resolve()
-
-    def rel(path: Path) -> str:
-        """`path` as the page's own HTML would reference it."""
-        return os.path.relpath(path.resolve(), here).replace(os.sep, "/")
-
-    for asset in _READALONG_ASSETS:
-        shutil.copyfile(_readalong.assets_dir() / asset, out_dir / asset)
+    _readalong.copy_assets(out_dir)
 
     player = _readalong.player_html(
-        audio_src=rel(audio), vtt_src=rel(cues), label=label, lang=lang,
+        audio_src=_readalong.href_from(audio, out_dir),
+        vtt_src=_readalong.href_from(cues, out_dir),
+        label=label, lang=lang,
     )
     meta = _readalong.reading_meta_html(
         words=len(_readalong.page_words(body_html)),
         spoken_seconds=_readalong.spoken_seconds(cues.read_text(encoding="utf-8")),
         lang=lang,
     )
-    head = (
-        '  <link rel="stylesheet" href="readalong.css">\n'
-        '  <script type="module" src="readalong.js"></script>'
-    )
-    return f"{player}\n{meta}\n{wrapped}", head
+    return f"{player}\n{meta}\n{wrapped}", _readalong.head_markup()
 
 
 def convert_one(src: Path, out_dir: Path, *, title: str, site_name: str,

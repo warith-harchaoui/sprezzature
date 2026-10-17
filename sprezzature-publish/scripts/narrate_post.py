@@ -90,6 +90,7 @@ from best_engine_ai_helper.llm import chat as _llm_chat
 
 # Local helpers — pure-Python, no heavy ML deps.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _readalong  # noqa: E402
 from _narrate import (  # noqa: E402
     LLM_SYSTEM_PROMPT,
     NarrationManifestEntry,
@@ -100,6 +101,7 @@ from _narrate import (  # noqa: E402
     load_pronunciation,
     merge_llm_hint,
     read_manifest,
+    segments_from_blocks,
     segments_to_text,
     source_sha256,
     write_manifest,
@@ -107,6 +109,10 @@ from _narrate import (  # noqa: E402
 
 
 # ── Module-level configuration ──────────────────────────────────────────────
+
+#: Suffixes read as HTML rather than Markdown. A page already rendered has
+#: its structure in its elements, so it needs no Markdown twin to be narrated.
+HTML_SUFFIXES: frozenset[str] = frozenset({".html", ".htm", ".xhtml", ".php"})
 
 #: Engines we know how to dispatch to. Both wrappers ship in this
 #: folder and are invoked as subprocesses so their heavy ML imports
@@ -345,7 +351,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "post",
         type=Path,
-        help="Path to the Markdown post to narrate.",
+        help="Path to the post to narrate: Markdown, or an HTML page.",
+    )
+    parser.add_argument(
+        "--scope",
+        default=None,
+        help="HTML input only: the element to read, as 'article', '#id' or "
+             "'.class'. Without it the whole document is read — header, nav "
+             "and footer included, which is rarely what a reader asked for.",
     )
     parser.add_argument(
         "--engine",
@@ -397,8 +410,20 @@ def main() -> int:
         print(f"FAIL post not found: {args.post}", file=sys.stderr)
         return 1
 
-    markdown: str = args.post.read_text(encoding="utf-8")
-    segments: list[Segment] = extract_segments(markdown)
+    source: str = args.post.read_text(encoding="utf-8")
+    if args.post.suffix.lower() in HTML_SUFFIXES:
+        # A page that was never Markdown is a page nobody can regenerate,
+        # which is precisely the page that most needs an accessibility pass
+        # it can receive without being rewritten. The structural hints come
+        # from the page's own elements — an <h2> earns the same pause as a
+        # '##' because it is the same thing.
+        blocks = [
+            (block.tag, block.visible, block.in_quote)
+            for block in _readalong.page_blocks(source, scope=args.scope)
+        ]
+        segments: list[Segment] = segments_from_blocks(blocks)
+    else:
+        segments = extract_segments(source)
     if not segments:
         print(f"FAIL post is empty (no narrate-able segments): {args.post}",
               file=sys.stderr)

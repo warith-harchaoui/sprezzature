@@ -254,6 +254,78 @@ are handled by the highlight simply staying where it is — which is also
 why it no longer blinks off during the pauses the timeline puts between
 sentences.
 
+### A page that was never Markdown
+
+The case above is the easy one: both sides come from a source you still
+have. The case that matters more is a page nobody can regenerate — a
+hand-written file, a template exported from a design tool, a post that
+has been live for three years. None of them has a Markdown twin, and
+none should have to be rewritten to gain an accessibility feature.
+
+```bash
+sprezzature-publish-narrate-post page.html --scope article --out-dir audio/
+sprezzature-publish-readalong    page.html --narration audio/ \
+  --scope article --out built/
+```
+
+Both commands read the HTML directly. The structural hints come from the
+page's own elements — an `<h2>` earns the same 1000 ms a `##` earns,
+because it *is* the same thing; the syntax was never what mattered.
+
+This route is the better half of the bargain, not a fallback. The
+Markdown route has two parsers that must be made to agree about what
+sentence twelve is, and most of this module's bugs lived in that gap.
+Here the blocks that become the audio are the very blocks that get the
+spans: one parse, nothing to reconcile. The comparison still runs,
+because the page may have been edited since the recording — and then
+the honest answer is that the recording is stale.
+
+The page comes back byte for byte apart from its spans, head links and
+player: it is rebuilt from a parse of itself, so its own markup,
+attribute order, entities and any `<?php ?>` prologue survive untouched.
+The input file is never modified in place — a page that is live
+somewhere is not a draft.
+
+#### `--scope`, and why it is not optional in practice
+
+A real page carries a header, a navigation bar and a footer. A reader
+who asked to hear *this article* did not ask for the navigation. Pass
+`article`, `#post` or `.entry-content` — one element, three selector
+forms, deliberately not a CSS engine — and only that element is read.
+Without it the whole document is, which is right for a page this project
+rendered and wrong for almost any page it did not. A scope that matches
+nothing reads **nothing**: narrating the navigation because a selector
+was misspelt is the one outcome worse than narrating silence, because
+the mistake stays inaudible until a reader hears the cookie banner.
+
+Never read, with or without a scope: `script`, `style`, `template`,
+`noscript`, `svg`, `nav`, `footer`, `aside`, `form`, `dialog`, `select`
+— plus `pre` and `table`, skipped for the same reason as on the Markdown
+route. Anything carrying `hidden` or `aria-hidden="true"` is left
+unspoken too: narrating what assistive technology is told to ignore
+would have this feature contradict the page it is trying to help. None
+of it is *removed* — it is still the reader's page.
+
+#### One sentence, sometimes several spans
+
+A page written for readers does not break where sentences break. A
+bibliography entry ends `…</cite> <span class="note">Keeps a memory…`
+with no full stop in between, so what a reader hears as one sentence
+runs out of the citation and into the note; `A <em>sentence that.
+Ends</em> here.` puts one `<em>` across two of them. No single element
+can wrap either — a span cannot close a tag it did not open.
+
+Such a sentence is wrapped in **several** spans carrying the same
+`data-ra-cue`, which light up together. The id stays on the first: it is
+where the sentence starts and what the player scrolls to. The attribute
+is written only when a sentence actually needed splitting, because it
+costs bytes on every sentence of every page and earns them on very few.
+
+What is still refused is a split that would leave some of the
+sentence's words outside every span. The spans must cover exactly the
+sentence, which is the whole promise; a highlight that quietly stops
+mid-sentence is the wrongness this feature exists to prevent.
+
 ## Project-wide pronunciation overrides
 
 Drop a `pronunciation.yaml` next to the post or at the project root:
