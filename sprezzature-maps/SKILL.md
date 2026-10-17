@@ -226,8 +226,7 @@ missing. The keys are listed in the section above.
 |---|---|---|
 | **Make** — a choropleth on real geography | `make-map choropleth` | Territories shaded by a value, Equal Earth, OKLCH ramp, relief. |
 | **Make** — an areas-of-control plate | `make-map situation_map` | Layered situation map for any region from one YAML config. |
-| **Audit** | _(none here — see `sprezzature-figures`' `audit_figure.py`)_ | The rendered SVG is a figure like any other, so the data-viz auditor and the colour-vision accessibility levels apply to it unchanged. Run them there rather than duplicating a second auditor here. |
-| **Audit** — _(none here — roadmap)_ | — | The figure auditor reads the SVG as a chart. What it cannot ask is whether the *map* is honest: that the classification method is named on the plate, that the legend carries its class breaks, that the projection is stated, and that the data vintage is visible. Those are map-specific, and this brick already learned once that an unnamed classification is a measurement trap. |
+| **Audit** — does the plate say how it was made | `make-map audit <plate.svg\|dir>` (argparse) / `sprezzature-maps audit …` (click) | Six static rules the figure auditor cannot ask because they are map questions: a classed legend that never names its method (quantile, equal interval and natural breaks put the same numbers in different colours and tell different stories), class breaks missing from the key, no-data drawn but never named so absent reads as low, no vintage **and** no statement that the plate is a schematic, no title, no accessible name. Saying "synthetic illustrative values" counts as provenance — and counts for more than a date would, since stamping a vintage on invented data would be a fabrication. |
 
 The gap in the audit column is real and deliberate: a second SVG auditor in
 this package would drift from the one in `sprezzature-figures` within a
