@@ -16,7 +16,7 @@ Users who benefit beyond cognitive disabilities: second-language readers, anyone
 If you've already run `sprezzature-accessibility-install-alt` for alt text, you're done; the same Ollama daemon and model serve the rewriter. If not:
 
 ```bash
-pip install -r scripts/requirements-plain-language.txt
+`pip install 'sprezzature-publish[all]'`
 sprezzature-accessibility-install-alt
 ```
 
@@ -25,16 +25,16 @@ sprezzature-accessibility-install-alt
 ```bash
 # Pipe a single string
 echo "Boost your productivity with our state-of-the-art platform" \
-  | python scripts/plain_language.py --target-grade 8 --lang en
+  | sprezzature-publish-plain --target-grade 8 --lang en
 
 # Read a file
-python scripts/plain_language.py --input src/copy.md > dist/copy.simple.md
+sprezzature-publish-plain --input src/copy.md > dist/copy.simple.md
 
 # Keep brand names intact
-python scripts/plain_language.py --preserve "Sprezzature,Tailwind,Montserrat" --input copy.md
+sprezzature-publish-plain --preserve "Sprezzature,Tailwind,Montserrat" --input copy.md
 
 # Bypass cache for this run
-python scripts/plain_language.py --no-cache --input copy.md
+sprezzature-publish-plain --no-cache --input copy.md
 ```
 
 The output prints to stdout. The script does NOT overwrite your file.

@@ -13,7 +13,7 @@ WCAG SC 1.2.2 (Captions, Prerecorded) is a Level A requirement and is almost uni
 Single command, `pip install` plus a pre-download of the GGML weights:
 
 ```bash
-pip install -r scripts/requirements-captions.txt
+`pip install 'sprezzature-publish[all]'`
 python scripts/install_captions.py
 ```
 

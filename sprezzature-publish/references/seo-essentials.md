@@ -22,9 +22,9 @@ Cite these sources when a user pushes back on a recommendation. **No other sourc
 
 The bare minimum Google needs to show a page in results. "Most sites pass the technical requirements without even realizing it." `sprezzature-publish` artifacts that map directly:
 
-- **Crawlable URLs.** `scripts/site_indexes.py` emits `sitemap.xml` (sitemaps.org 0.9) listing every page, and `robots.txt` permitting Googlebot (and AI Overview crawlers; see below) by default.
+- **Crawlable URLs.** `sprezzature-publish-indexes` emits `sitemap.xml` (sitemaps.org 0.9) listing every page, and `robots.txt` permitting Googlebot (and AI Overview crawlers; see below) by default.
 - **No accidental blocking.** The default `robots.txt` allows the canonical crawler list. If a project needs to gate staging surfaces, the script accepts a `--user-agent-block` flag rather than asking the user to hand-roll the file.
-- **Valid HTML.** Pages from `scripts/md_to_html.py` are W3C-valid semantic HTML emitted from the same shell `sprezzature-ui` enforces (real `<h1>`–`<h6>`, `<button>`, `<a href>`, `<dialog>`, `<form>`).
+- **Valid HTML.** Pages from `sprezzature-publish-html` are W3C-valid semantic HTML emitted from the same shell `sprezzature-ui` enforces (real `<h1>`–`<h6>`, `<button>`, `<a href>`, `<dialog>`, `<form>`).
 - **HTTPS.** Out of scope for the skill (hosting concern); flag the requirement in the project README so the operator doesn't forget.
 
 ### 2. Spam policies
@@ -32,8 +32,8 @@ The bare minimum Google needs to show a page in results. "Most sites pass the te
 Behaviors that get a page (or whole site) ranked lower or omitted. `sprezzature-publish` already refuses or warns on the ones we can detect at emit time:
 
 - **No cloaking.** The skill emits one HTML body per URL, never a different document for Googlebot vs. browser. If a future contributor proposes user-agent-keyed templating in `md_to_html.py`, refuse it on this basis.
-- **No auto-generated low-value content.** `scripts/plain_language.py` rewrites for clarity, it does **not** spin or paraphrase to inflate page count. The eval suite (`tests/eval/test_plain_language_eval.py`) gates on semantic preservation, not surface variation.
-- **No keyword stuffing.** `scripts/meta_from_ollama.py` produces single-sentence descriptions ~120–155 chars (see `references/meta-tags.md`); the validator rejects descriptions over 1024 chars or with marketing-voice phrases.
+- **No auto-generated low-value content.** `sprezzature-publish-plain` rewrites for clarity, it does **not** spin or paraphrase to inflate page count. The eval suite (`tests/eval/test_plain_language_eval.py`) gates on semantic preservation, not surface variation.
+- **No keyword stuffing.** `sprezzature-publish-meta` produces single-sentence descriptions ~120–155 chars (see `references/meta-tags.md`); the validator rejects descriptions over 1024 chars or with marketing-voice phrases.
 - **No hidden text / links.** Forbidden by `sprezzature-ui`'s hard rule against inline `style="…"` and by the a11y lint catching `display:none` on text intended for readers.
 - **No link schemes / private blog networks.** Out of scope for the skill; the skill emits one site, not a network. Flag it in CONTRIBUTING-style guidance when a user asks the agent to "build a backlink network".
 
@@ -56,7 +56,7 @@ Each row maps Google's practice to the sprezzature-publish artifact + the script
 
 `sprezzature-publish` already ships the GEO artifact most agents look for:
 
-- **`llms.txt`**: a Markdown summary of the site at `/llms.txt`, emitted by `scripts/site_indexes.py` alongside `robots.txt` + `sitemap.xml` + Atom/RSS. The convention is community-driven (<https://llmstxt.org/>), not a Google standard, but multiple LLM agents look for it before falling back to crawling HTML. The skill emits it on every "turn this into a website" run; no opt-in flag, no extra step.
+- **`llms.txt`**: a Markdown summary of the site at `/llms.txt`, emitted by `sprezzature-publish-indexes` alongside `robots.txt` + `sitemap.xml` + Atom/RSS. The convention is community-driven (<https://llmstxt.org/>), not a Google standard, but multiple LLM agents look for it before falling back to crawling HTML. The skill emits it on every "turn this into a website" run; no opt-in flag, no extra step.
 
 What does **not** change between SEO and GEO:
 
@@ -78,7 +78,7 @@ From the [AI Optimization Guide](https://developers.google.com/search/docs/funda
 The differences are small and concrete:
 
 - **No new meta tag for AI.** There is no `<meta name="ai-content">`, no `<meta name="ai-overview-priority">`. Anything claiming such a tag is wrong; refuse to emit it and cite the page above.
-- **`llms.txt` is community-driven, not a Google standard.** `scripts/site_indexes.py` emits it because the convention exists (<https://llmstxt.org/>), but Google does not require or read it specifically. Treat it as "a Markdown summary of the site for LLM consumers", not as a ranking signal.
+- **`llms.txt` is community-driven, not a Google standard.** `sprezzature-publish-indexes` emits it because the convention exists (<https://llmstxt.org/>), but Google does not require or read it specifically. Treat it as "a Markdown summary of the site for LLM consumers", not as a ranking signal.
 - **Same crawlers.** AI Overview answers are drawn from the same index Google Search uses. Allowing Googlebot in `robots.txt` is sufficient; there is no separate "Gemini-Bot" entry. (If Google publishes additional user agents in the future, update this file with the citation.)
 - **Quality over markup.** Google's guide explicitly calls out that "people-first" content (unique POV, organized for the reader, real expertise) matters more than any technical optimization. The skill cannot write that content; it can keep the plumbing honest so good content isn't penalized by sloppy markup.
 

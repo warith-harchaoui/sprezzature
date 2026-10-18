@@ -19,14 +19,14 @@ hosted rendering. The pipeline is reproducible.
 ## Quick start
 
 ```bash
-pip install -r scripts/requirements-lint-md.txt
-python scripts/lint_markdown.py docs/
+`pip install 'sprezzature-publish[all]'`
+sprezzature-publish-lint docs/
 
 # Render every Mermaid block to a PNG sibling and insert a fallback <img>:
-python scripts/lint_markdown.py --render-mermaid --fix docs/
+sprezzature-publish-lint --render-mermaid --fix docs/
 
 # Add AI suggestions (Mermaid label improvements + LaTeX captions):
-python scripts/lint_markdown.py --ai --ai-lang en docs/intro.md
+sprezzature-publish-lint --ai --ai-lang en docs/intro.md
 ```
 
 Via the unified driver: `sprezzature publish lint-md docs/ --render-mermaid`.
@@ -122,7 +122,7 @@ The script ships two prompts. They are intentionally:
 3. An explicit output contract: JSON array for the Mermaid task; one sentence (no quotes, no prefix) for the LaTeX caption. Both are parsed strictly; a model that drifts off-contract returns an empty result and the script reports nothing for that block.
 4. Zero-shot. No in-context examples; both tasks are common enough in the model's training distribution that examples cost tokens without lifting quality.
 
-See `scripts/lint_markdown.py` → `PROMPT_MERMAID_LABELS` and
+See `sprezzature-publish-lint` → `PROMPT_MERMAID_LABELS` and
 `PROMPT_LATEX_CAPTION` for the verbatim prompts.
 
 ## CI integration
@@ -130,8 +130,8 @@ See `scripts/lint_markdown.py` → `PROMPT_MERMAID_LABELS` and
 ```yaml
 - name: Lint Markdown
   run: |
-    pip install -r sprezzature-publish/scripts/requirements-lint-md.txt
-    python sprezzature-publish/scripts/lint_markdown.py docs/
+    `pip install 'sprezzature-publish[all]'`
+    sprezzature-publish-lint docs/
 ```
 
 Add `--render-mermaid --fix` if you want CI to commit the rendered PNGs;

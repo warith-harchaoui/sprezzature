@@ -6,29 +6,21 @@
 #     - repo: https://github.com/warith-harchaoui/sprezzature
 #       rev: v0.16.0
 #       hooks:
+#         - id: sprezzature-ui-validate-skill
+#
+# The hooks for the extracted bricks ship with those bricks: see
+# sprezzature-accessibility, sprezzature-ux-laws, sprezzature-publish and
+# the rest, each of which carries its own .pre-commit-hooks.yaml now.
+# What is left here is the two gates that are about this repository: the
+# SKILL.md spec validator and the TRIGGERS generator.
 #         - id: sprezzature-accessibility-lint
 #         - id: sprezzature-ux-laws-audit
-#         - id: sprezzature-publish-lint-markdown
 #         - id: sprezzature-ui-validate-skill
 #
 # Every hook is stdlib-only. The two color hooks
 # (``sprezzature-colors-contrast`` and ``sprezzature-colors-cvd``) need Pillow;
 # they declare it via ``additional_dependencies`` so pre-commit
 # installs into its own isolated env.
-
-- id: sprezzature-publish-lint-markdown
-  name: sprezzature-publish — Markdown lint (heading order, code-fence languages, local links, LaTeX, Mermaid)
-  description: >-
-    Lints Markdown files for heading order (MD001), trailing
-    whitespace (MD009), code-fence languages (MD040), image alt text
-    (MD045), local link freshness (MD050), LaTeX balance and Mermaid
-    block syntax. Add --fix in your hook args for the safe
-    auto-repairs (trailing whitespace strip + Mermaid PNG insertions).
-  entry: python sprezzature-publish/scripts/lint_markdown.py
-  language: python
-  language_version: python3
-  files: '\.(md|mdx|mermaid|mmd)$'
-  types: [file]
 
 - id: sprezzature-ui-validate-skill
   name: sprezzature-ui — SKILL.md spec gate

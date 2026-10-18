@@ -20,19 +20,19 @@ Generate the standard set of site-index files for a project's web output, respec
 
 ```bash
 # Bare minimum: a project root + the public origin
-python scripts/site_indexes.py --root . --base-url https://example.com
+sprezzature-publish-indexes --root . --base-url https://example.com
 
 # Project with a blog folder under posts/
-python scripts/site_indexes.py --root . --base-url https://example.com --feed-from posts
+sprezzature-publish-indexes --root . --base-url https://example.com --feed-from posts
 
 # Force RSS 2.0 for clients that haven't moved past 2002
-python scripts/site_indexes.py --root . --base-url https://example.com --feed-from posts --rss
+sprezzature-publish-indexes --root . --base-url https://example.com --feed-from posts --rss
 
 # Ship a humans.txt explicitly
-python scripts/site_indexes.py --root . --base-url https://example.com --humans
+sprezzature-publish-indexes --root . --base-url https://example.com --humans
 
 # Override the output directory (default: --root)
-python scripts/site_indexes.py --root . --base-url https://example.com --out public
+sprezzature-publish-indexes --root . --base-url https://example.com --out public
 ```
 
 The script walks the project root looking for `.html` files at the root and inside the conventional output directories (`public/`, `dist/`, `site/`, `_site/`, `build/`, `out/`) plus `.md` files at the root and under `docs/`. Each becomes a sitemap entry and an `llms.txt` bullet.
@@ -49,13 +49,13 @@ Three rules keep it from bloating (the failure mode where a full-text file drags
 
 ```bash
 # Default: emit llms-full.txt alongside llms.txt
-python scripts/site_indexes.py --root . --base-url https://example.com
+sprezzature-publish-indexes --root . --base-url https://example.com
 
 # Cap the corpus at 128 KB (drops lowest-priority pages, names them)
-python scripts/site_indexes.py --root . --base-url https://example.com --llms-full-max-kb 128
+sprezzature-publish-indexes --root . --base-url https://example.com --llms-full-max-kb 128
 
 # Skip it entirely
-python scripts/site_indexes.py --root . --base-url https://example.com --no-llms-full
+sprezzature-publish-indexes --root . --base-url https://example.com --no-llms-full
 ```
 
 A generated `llms-full.txt` is only as fresh as its last run: regenerate it in the same CI step as the rest of the site, since a stale full-text corpus feeds an agent confidently wrong content.
