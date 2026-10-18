@@ -96,31 +96,44 @@ def _sibling_version(package: str) -> str | None:
     return match.group(1) if match else None
 
 
-def test_floors_name_the_current_release_of_each_sibling() -> None:
-    """
-    A floor that lags a correction installs the uncorrected package forever.
+def test_no_floor_names_a_version_that_exists_nowhere() -> None:
+    """A floor **ahead** of the checkout names a version nobody can install.
 
+    This test used to assert the opposite — that each floor *equals* the
+    sibling checkout — and the two rules fought. A checkout is a working tree,
+    not a release: during development it runs ahead of PyPI, and demanding the
+    floor keep up with it pushes the floor past what is published, which is
+    exactly the failure `scripts/check_all_extra_resolves.py` exists to catch.
+    The suite could not be green and installable at the same time.
+
+    So the halves are split by what each can actually know. Offline, here: a
+    floor must not exceed the highest version in existence on this machine.
+    Against PyPI, in that script: a floor must be published, and must not lag
+    the release people are being handed.
+
+    The original defect is still covered, and covered better.
     `sprezzature-accessibility` shipped 1.0.1 and 1.0.2 to fix a rule count its
-    own documentation got wrong, and `sprezzature[all]` kept floor 1.0.0 — so
-    the one command that installs the whole suite kept handing people the
-    version with the wrong docs. The floor has to move with the release.
+    own documentation got wrong while `sprezzature[all]` kept floor 1.0.0, so
+    the one command that installs the suite kept handing people the version
+    with the wrong docs. A floor lagging a *published* correction is a
+    question about PyPI, and it is asked there.
 
-    Skipped when the sibling checkouts are absent, which is the normal state on
-    CI: this is a check for the machine that cuts the release.
+    Skipped per package when the sibling checkout is absent, the normal state
+    on CI.
     """
-    stale: list[str] = []
+    impossible: list[str] = []
     for name, raw in _all_extra().items():
         current = _sibling_version(name)
         if current is None:
             continue
         floor = re.search(r">=\s*([\d.]+)", raw)
         assert floor, f"{name} has no floor to compare"
-        if tuple(map(int, floor.group(1).split("."))) < tuple(map(int, current.split("."))):
-            stale.append(f"{name}: floor {floor.group(1)} < checkout {current}")
+        if tuple(map(int, floor.group(1).split("."))) > tuple(map(int, current.split("."))):
+            impossible.append(f"{name}: floor {floor.group(1)} > checkout {current}")
 
-    assert not stale, (
-        "the `all` extra floors a package below the release sitting next to it:\n  "
-        + "\n  ".join(stale)
+    assert not impossible, (
+        "the `all` extra floors a package above anything that exists, even "
+        "locally:\n  " + "\n  ".join(impossible)
     )
 
 
