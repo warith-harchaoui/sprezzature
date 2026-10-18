@@ -50,6 +50,12 @@ CANONICAL: dict[str, str] = {
     "_click.py": "sprezzature-audio/scripts/_click.py",
     "_lang.py": "sprezzature-audio/scripts/_lang.py",
     "_vocab.py": "sprezzature-audio/scripts/_vocab.py",
+    # WebVTT. sprezzature-audio owns timed text in both directions — it
+    # transcribes sound into cues and narration turns text back into them —
+    # so the format lives there and travels from there. Before this, the
+    # suite had four writers of one format and two readers of it, each
+    # rounding its own timestamps.
+    "_vtt.py": "sprezzature-audio/scripts/_vtt.py",
 }
 
 #: Shared helpers duplicated across skills, in reporting order.
