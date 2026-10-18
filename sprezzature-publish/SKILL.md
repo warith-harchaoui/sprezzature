@@ -30,6 +30,8 @@ metadata:
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language
 
+> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through either front door, `make-site <tool>` (argparse) and `sprezzature-publish <tool>` (click). Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP or MCP. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+
 ## Audience and positioning
 
 Solo developers and small teams shipping:
@@ -48,7 +50,7 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 | "turn these markdown files into a website" | Static HTML per `.md` + sticky top nav + sidebar TOC for `docs/` + dark-mode peer + favicons + meta tags + robots / sitemap / llms.txt / llms-full.txt / Atom feed |
 | "meta tags" / "SEO" / "OG card" / "Twitter card" / "JSON-LD" | Title + description + Open Graph + Twitter + Schema.org `@type`, JSON on stdout |
 | "SEO" / "AI search" / "AI Overview" / "discoverability" / "is this advice true?" | Google's three pillars + AI Optimization foundations applied to the artifacts this skill emits; see `references/seo-essentials.md` |
-| "GEO" / "Generative Engine Optimization" / "llms.txt" / "make my site readable by ChatGPT / Gemini / Perplexity" | `scripts/site_indexes.py` already emits `llms.txt` (a Markdown index of the site) plus `llms-full.txt` (the full-text corpus, Markdown sources only) alongside `robots.txt` + `sitemap.xml`. GEO and SEO share crawlers; same `robots.txt` permits both. There is **no separate "AI" meta tag**: refuse to emit one and cite `references/seo-essentials.md`. |
+| "GEO" / "Generative Engine Optimization" / "llms.txt" / "make my site readable by ChatGPT / Gemini / Perplexity" | `sprezzature-publish-indexes` already emits `llms.txt` (a Markdown index of the site) plus `llms-full.txt` (the full-text corpus, Markdown sources only) alongside `robots.txt` + `sitemap.xml`. GEO and SEO share crawlers; same `robots.txt` permits both. There is **no separate "AI" meta tag**: refuse to emit one and cite `references/seo-essentials.md`. |
 | "favicons" / "app icons" / "PWA icons" | `favicon.svg` + `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + `head.html` snippet |
 | "robots.txt" / "sitemap.xml" / "llms.txt" / "llms-full.txt" / "feed" / "Atom" / "RSS" / "humans.txt" | All from a single command; auto-detects a blog folder for the feed |
 | "plain language" / "simplify this copy" / "rewrite at grade N" | Same meaning, marketing voice stripped, output length ≤ 1.1× original |
@@ -81,9 +83,9 @@ When the user points to a Markdown-only project and asks for a website:
    - Sidebar (lg:) with section tree on `docs/**` pages.
    - Bottom tab bar (mobile) when ≤ 5 top-level destinations.
 5. **Convert Markdown to HTML**. Prefer a build-step tool (Pandoc, `markdown-it`, `python-markdown`) so the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
-6. **Wire meta tags per page** using `references/meta-tags.md` and (optional) `python scripts/meta_from_ollama.py path/to/page.html`.
-7. **Generate the favicon set** from the project's logo: `python scripts/favicons.py logo.png --out public --name "Project name"`. Drop the produced `head.html` snippet into the layout template.
-8. **Emit indexes**: `python scripts/site_indexes.py --root . --base-url https://example.com [--feed-from posts]` — produces robots.txt + sitemap.xml + llms.txt + llms-full.txt + optional Atom feed.
+6. **Wire meta tags per page** using `references/meta-tags.md` and (optional) `sprezzature-publish-meta path/to/page.html`.
+7. **Generate the favicon set** from the project's logo: `sprezzature-publish-icons logo.png --out public --name "Project name"`. Drop the produced `head.html` snippet into the layout template.
+8. **Emit indexes**: `sprezzature-publish-indexes --root . --base-url https://example.com [--feed-from posts]` — produces robots.txt + sitemap.xml + llms.txt + llms-full.txt + optional Atom feed.
 9. **Emit pages + assets**. One `index.html` per page, one shared `app.js` (theme switcher, search if needed), one `styles.css` (Tailwind directives + the three Roboto families per the three-Roboto rule). Include the favicon set under `public/`. Add a small `README.md` to the output root explaining the build.
 
 Output is static HTML + CSS + a small `app.js`. For a small project (≤ 30 pages, prototype-grade) the Tailwind Play CDN keeps the deliverable build-free and it drops into GitHub Pages / Netlify / S3 / Nginx as-is. For anything you treat as production, run the Tailwind CLI / Vite build step from `sprezzature-ui/references/stack-tailwind.md` over the emitted HTML before deploying; the class names are stable, so the same files survive the swap.
@@ -174,17 +176,17 @@ modified in place.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `scripts/favicons.py` | `pip install -r scripts/requirements-favicons.txt` | Full favicon / PWA icon set + manifest + head snippet from a single logo |
-| `scripts/meta_from_ollama.py` | `pip install -r scripts/requirements-meta-tags.txt` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
-| `scripts/site_indexes.py` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
-| `scripts/plain_language.py` | `pip install -r scripts/requirements-plain-language.txt` + Ollama | Rewrites copy at a target grade; strips marketing voice |
-| `scripts/narrate_post.py` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
+| `sprezzature-publish-icons` | `pip install 'sprezzature-publish[all]'` | Full favicon / PWA icon set + manifest + head snippet from a single logo |
+| `sprezzature-publish-meta` | `pip install 'sprezzature-publish[all]'` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
+| `sprezzature-publish-indexes` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
+| `sprezzature-publish-plain` | `pip install 'sprezzature-publish[all]'` + Ollama | Rewrites copy at a target grade; strips marketing voice |
+| `sprezzature-publish-narrate` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
 | _(the voices)_ | `pip install sprezzature-audio` | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, invoked as subprocesses by `narrate_post.py`. They live in `sprezzature-audio` with the rest of the sound modality; a reader who only wants Markdown rendered should not install a speech stack to get it. |
-| `scripts/_readalong.py` *(optional)* | `pip install markdown` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `md_to_html.py --readalong` and `readalong.py`; refuses rather than mis-align. |
-| `scripts/readalong.py` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
+| _(the read-along wiring, in the package)_ | `pip install 'sprezzature-publish[html]'` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `sprezzature-publish-html --readalong` and `sprezzature-publish-readalong`; refuses rather than mis-align. |
+| `sprezzature-publish-readalong` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
 | _(voice chooser)_ | `pip install sprezzature-audio` | `sprezzature-audio-voice` lists engine voices and generates per-voice demo clips, so the designer chooses by listening. |
 | _(voice installer)_ | `pip install sprezzature-audio` | `sprezzature-audio-install-voice` downloads OpenVoice v2 checkpoints and sets up the ChatterboxTTS voice library. |
-| `scripts/_lang.py`, `scripts/_ollama.py`, `scripts/_narrate.py` | (internal helpers) | Language detection + Ollama client + narration segment extractor shared by other scripts |
+| _(internal helpers, in the package)_ | — | Language detection + Ollama client + narration segment extractor shared by other scripts |
 
 ## Companion skills
 

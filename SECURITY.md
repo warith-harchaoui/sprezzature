@@ -65,7 +65,7 @@ line*. These are intended for use against trusted local code only.
   invocation, `shlex.split` parsed args, 10 s timeout, stderr +
   stdout captured). Only point it at binaries you trust.
 
-- **`sprezzature-publish/scripts/meta_from_ollama.py`** and
+- **`sprezzature-publish-meta`** and
   **`…/plain_language.py`** speak to a *local* Ollama daemon on
   `localhost:11434`. They never send content over the public
   internet, but they do hand the document to a model running on the

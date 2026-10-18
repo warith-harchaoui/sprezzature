@@ -21,14 +21,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 SCRIPTS = [
-    # sprezzature-publish
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "favicons.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "meta_from_ollama.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "site_indexes.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "plain_language.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "lint_markdown.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "md_to_html.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "readalong.py",
+    # sprezzature-publish's commands moved to its standalone repository;
+    # its own suite checks their --help there.
     # sprezzature-accessibility's commands moved to its standalone repository;
     # its own suite checks their --help there.
 # sprezzature-ui

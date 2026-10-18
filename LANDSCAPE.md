@@ -408,7 +408,7 @@ Pair `scripts/lint_a11y.py` (static, in CI) with axe-core (runtime, in browser t
 
 | Tool | Outputs | Stack | Build step | SSG-agnostic | License | Skill alignment | Notes |
 |---|---|---|:---:|:---:|---|:---:|---|
-| **`scripts/site_indexes.py`** (used) | robots.txt, sitemap.xml, llms.txt, Atom/Really Simple Syndication (RSS), humans.txt | Python stdlib | ✗ | ✓ | BSD-3-Clause | ✓ | One-shot, no deps. |
+| **`sprezzature-publish-indexes`** (used) | robots.txt, sitemap.xml, llms.txt, Atom/Really Simple Syndication (RSS), humans.txt | Python stdlib | ✗ | ✓ | BSD-3-Clause | ✓ | One-shot, no deps. |
 | [sitemap npm](https://www.npmjs.com/package/sitemap) | sitemap | Node | ✓ | ✓ | MIT | ~ | One-purpose. |
 | [python-sitemap](https://github.com/c4software/python-sitemap) | sitemap | Python | ✗ | ✓ | MIT | ~ | One-purpose. |
 | [feedgen](https://feedgen.kiesow.be/) | Atom/RSS | Python | ✗ | ✓ | LGPL | ~ | Feeds only. |
@@ -427,9 +427,9 @@ Pair `scripts/lint_a11y.py` (static, in CI) with axe-core (runtime, in browser t
 | **[Google Search Essentials](https://developers.google.com/search/docs/essentials)** (the three pillars) | Technical requirements + spam policies + key best practices | ✓ | The canonical source for what Google reads. Adapted in `sprezzature-publish/references/seo-essentials.md` to the artifacts the skill emits. |
 | **[Google AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)** | What changes (and what doesn't) for AI Overview / generative search | ✓ | Same foundations as Search Essentials. No new meta tag for AI; same `robots.txt`. |
 | **[Google "Third-party SEO"](https://developers.google.com/search/docs/fundamentals/third-party-seo)** | How to recognize legitimate vs. questionable advice and tools | ✓ | Surfaces "no Google-approved badges, no ranking guarantees", useful when a user pastes blog-post advice. |
-| **[llmstxt.org](https://llmstxt.org/)** | Community convention for an LLM-readable site summary at `/llms.txt` | ✓ | Already emitted by `scripts/site_indexes.py`; this is the GEO artifact most agents look for. |
+| **[llmstxt.org](https://llmstxt.org/)** | Community convention for an LLM-readable site summary at `/llms.txt` | ✓ | Already emitted by `sprezzature-publish-indexes`; this is the GEO artifact most agents look for. |
 | [Bing Webmaster Guidelines](https://www.bing.com/webmasters/help/webmasters-guidelines) | Bing-specific quirks | ~ | Mostly aligned with Google; consult for divergences. |
-| [Schema.org](https://schema.org/) | Structured-data vocabulary | ✓ | Emitted by `scripts/meta_from_ollama.py` as JSON for Linking Data (JSON-LD). |
+| [Schema.org](https://schema.org/) | Structured-data vocabulary | ✓ | Emitted by `sprezzature-publish-meta` as JSON for Linking Data (JSON-LD). |
 | SEO-tool blogs (SEMrush, Ahrefs, Moz, Search Engine Land, Search Engine Journal) | Editorial commentary, ranking-factor theories | ~ | Useful for community signals; treat any "Google does X" claim as a hypothesis until verified against Google's docs. Never override Google's official guidance. |
 | "Google-approved" / "AI-optimized" SaaS tools | Variable | ✗ | Google does not evaluate or approve third-party tools (per the third-party-SEO page). Treat the badge as a marketing signal, not a technical one. |
 

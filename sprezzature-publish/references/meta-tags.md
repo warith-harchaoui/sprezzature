@@ -157,7 +157,7 @@ When the page exists in several languages, declare each variant. See `i18n.md` f
 <meta name="mobile-web-app-capable" content="yes">
 ```
 
-The favicon set, theme-color, and manifest are produced by `scripts/favicons.py` (see `ui-guidelines/foundations/app-icons.md`).
+The favicon set, theme-color, and manifest are produced by `sprezzature-publish-icons` (see `ui-guidelines/foundations/app-icons.md`).
 
 ## What NOT to set
 
@@ -179,7 +179,7 @@ When the user gives the skill a goal ("a marketing page for X") or actual page c
 6. **Theme-color**: light and dark hex from the skill's color tokens, matching the page's primary surface.
 7. **Canonical**: absolute URL of this page.
 
-A local AI helper for the description and `og:image:alt` is `scripts/meta_from_ollama.py` (see `references/alt-text-ai.md` for the install path; same Ollama setup).
+A local AI helper for the description and `og:image:alt` is `sprezzature-publish-meta` (see `references/alt-text-ai.md` for the install path; same Ollama setup).
 
 ## Checklist (before any page ships)
 

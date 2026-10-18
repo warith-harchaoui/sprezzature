@@ -27,7 +27,7 @@ baseline for long-form text. The cases where this earns its keep:
 
 ```bash
 # 1. Install one engine (both are MIT for code AND weights)
-pip install -r sprezzature-publish/scripts/requirements-narrate-chatterbox.txt
+`pip install 'sprezzature-publish[all]'`
 python3 sprezzature-publish/scripts/install_narrate.py --engine chatterbox
 
 # 2. Pick a built-in voice (or skip to clone a custom voice below)
@@ -35,7 +35,7 @@ python3 sprezzature-publish/scripts/pick_voice.py --engine chatterbox --sample
 # Listen to out/voice-samples/chatterbox/*.wav, decide.
 
 # 3. Narrate a post
-python3 sprezzature-publish/scripts/narrate_post.py \
+sprezzature-publish-narrate \
     --engine chatterbox \
     --voice default \
     posts/2026-06-21-hello.md
@@ -60,7 +60,7 @@ arecord -d 20 -f cd -r 24000 -c 1 my-voice.wav   # Linux
 # Or: any QuickTime / Voice Memos / Audacity export to WAV.
 
 # 2. Pass it as --voice-sample to narrate_post.py
-python3 sprezzature-publish/scripts/narrate_post.py \
+sprezzature-publish-narrate \
     --engine chatterbox \
     --voice-sample my-voice.wav \
     posts/2026-06-21-hello.md
@@ -177,7 +177,7 @@ structural defaults; the pipeline never crashes on a missing daemon.
 **Inspect the enriched plan before committing GPU time:**
 
 ```bash
-python3 sprezzature-publish/scripts/narrate_post.py \
+sprezzature-publish-narrate \
     --ai-hints --ai-hints-only \
     posts/2026-06-21-hello.md | jq
 ```

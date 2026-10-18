@@ -28,8 +28,8 @@
 The skill ships a Pillow-based generator. From a single logo PNG (or SVG + `--raster` fallback):
 
 ```bash
-pip install -r sprezzature-publish/scripts/requirements-favicons.txt
-python sprezzature-publish/scripts/favicons.py path/to/logo.png \
+`pip install 'sprezzature-publish[all]'`
+sprezzature-publish-icons path/to/logo.png \
        --out public \
        --name "Site name" --short-name "Site" \
        --bg "#FFFFFF" \

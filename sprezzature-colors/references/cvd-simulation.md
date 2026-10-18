@@ -11,7 +11,7 @@ The simulation is qualitative: a real viewer's experience varies with severity a
 ## Install
 
 ```bash
-pip install -r scripts/requirements-cvd.txt
+`pip install 'sprezzature-publish[all]'`
 ```
 
 Pillow is the only dependency.

@@ -158,21 +158,21 @@ Lint a Markdown file (heading sentinel, trailing whitespace, fenced-code
 language); `--fix` applies the safe rewrites:
 
 ```bash
-python3 sprezzature-publish/scripts/lint_markdown.py tests/fixtures/public/gettysburg.md
+sprezzature-publish-lint tests/fixtures/public/gettysburg.md
 ```
 
 A clean file prints nothing and exits `0`. Generate a full favicon / app-icon /
 progressive-web-app (PWA) icon set from one logo (needs Pillow):
 
 ```bash
-python3 sprezzature-publish/scripts/favicons.py logo.png --out public --name "My Project"
+sprezzature-publish-icons logo.png --out public --name "My Project"
 ```
 
 Emit `robots.txt` + `sitemap.xml` + `llms.txt` + optional Atom feed for a docs
 tree:
 
 ```bash
-python3 sprezzature-publish/scripts/site_indexes.py --root . --base-url https://example.com --feed-from posts
+sprezzature-publish-indexes --root . --base-url https://example.com --feed-from posts
 ```
 
 Narration (`narrate_post.py`) and meta-tag drafting (`meta_from_ollama.py`) are

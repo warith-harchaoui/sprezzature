@@ -79,9 +79,7 @@ def test_authorized_vlm_is_the_declared_default() -> None:
     # sprezzature-accessibility's two declarers moved to its standalone repository,
     # where the same assertion now lives beside the code it is about.
     declarers = [
-        REPO_ROOT / "sprezzature-publish" / "scripts" / "_ollama.py",
-        REPO_ROOT / "sprezzature-publish" / "scripts" / "narrate_post.py",
-    ]
+            ]
     for script in declarers:
         text = script.read_text(encoding="utf-8")
         assert '"qwen3-vl:' in text, (
@@ -95,9 +93,6 @@ def test_authorized_vlm_is_the_declared_default() -> None:
 #: intentionally NOT in this list.)
 LLM_SCRIPTS = [
     # sprezzature-accessibility's two are checked in its own repository now.
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "plain_language.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "meta_from_ollama.py",
-    REPO_ROOT / "sprezzature-publish" / "scripts" / "narrate_post.py",
 ]
 
 #: An option-definition literal that would expose the LLM model on the command

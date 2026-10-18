@@ -49,7 +49,7 @@ Before `sprezzature-cli`, users ran each script directly:
 
 ```bash
 python sprezzature-accessibility/scripts/lint_a11y.py public/
-python sprezzature-publish/scripts/favicons.py logo.png --out public
+sprezzature-publish-icons logo.png --out public
 ```
 
 That works, but it leaks the skill layout and there's no single `--help`
