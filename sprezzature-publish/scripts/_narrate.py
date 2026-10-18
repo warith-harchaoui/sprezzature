@@ -613,6 +613,7 @@ def apply_pronunciation(
 import sys as _sys  # noqa: E402
 
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _vtt  # noqa: E402
 from _prompts import load_prompt as _load_prompt  # noqa: E402
 
 LLM_SYSTEM_PROMPT: str = _load_prompt(
@@ -812,18 +813,8 @@ class Timeline:
 
 
 def format_timestamp(seconds: float) -> str:
-    """``HH:MM:SS.mmm`` -- the only timestamp form WebVTT accepts.
-
-    Milliseconds are truncated rather than rounded, so a cue never claims to
-    start before the sample that actually starts it.
-    """
-    if seconds < 0:
-        seconds = 0.0
-    total_ms = int(seconds * 1000)
-    hours, remainder = divmod(total_ms, 3_600_000)
-    minutes, remainder = divmod(remainder, 60_000)
-    secs, millis = divmod(remainder, 1000)
-    return f"{hours:02d}:{minutes:02d}:{secs:02d}.{millis:03d}"
+    """Format seconds as a WebVTT ``HH:MM:SS.mmm`` timestamp."""
+    return _vtt.format_timestamp(seconds)
 
 
 def cues_to_vtt(cues: list[Cue]) -> str:
@@ -833,22 +824,25 @@ def cues_to_vtt(cues: list[Cue]) -> str:
     natively through ``<track>``, firing ``cuechange`` without a line of
     parsing code, and the same file doubles as captions for the audio
     element. It is also the format ``sprezzature-audio`` already emits for
-    video, so a site has one caption format rather than two.
+    video, so a site has one caption format rather than two — which is now
+    literally true: both go through ``_vtt``, the shared writer.
 
     Each cue is given its segment index as a WebVTT *identifier* -- the line
     before the timings -- which is what lets a page highlight the right block
     without matching on text.
+
+    The text is collapsed onto one line before writing: a blank line ends a
+    cue, so a hard-wrapped payload would split one cue into two.
     """
-    lines = ["WEBVTT", ""]
-    for cue in cues:
-        lines.append(str(cue.index))
-        lines.append(
-            f"{format_timestamp(cue.start_seconds)} --> {format_timestamp(cue.end_seconds)}"
-        )
-        # A blank line ends a cue, so a hard-wrapped payload would split it.
-        lines.append(" ".join(cue.text.split()))
-        lines.append("")
-    return "\n".join(lines)
+    return _vtt.write_vtt([
+        _vtt.Cue(
+            start=cue.start_seconds,
+            end=cue.end_seconds,
+            text=cue.text,
+            identifier=str(cue.index),
+        ).collapsed()
+        for cue in cues
+    ])
 
 
 # ── Sentences ──────────────────────────────────────────────────────────────
