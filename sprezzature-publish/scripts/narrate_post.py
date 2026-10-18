@@ -75,6 +75,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import importlib.util
 import subprocess
 import sys
 import time
@@ -220,10 +221,29 @@ def enrich_with_llm(
 
 # ── Engine dispatch ────────────────────────────────────────────────────────
 
-def _engine_script_path(engine: str) -> Path:
-    """Resolve the wrapper script for the chosen engine."""
-    here: Path = Path(__file__).resolve().parent
-    return here / f"narrate_{engine}.py"
+def _engine_command(engine: str, python: str = sys.executable) -> list[str] | None:
+    """Resolve how to invoke the chosen engine, or ``None`` if it is absent.
+
+    The voices live in ``sprezzature-audio`` now, and they belong there:
+    captions turn sound into timed text, narration turns text into timed
+    sound, and one package owns that modality in both directions. This one
+    owns the document and the page. A reader who wants Markdown rendered
+    should not install a speech stack to get it.
+
+    Resolution order, and both halves matter. ``python -m`` against the
+    installed package is the normal path. The sibling checkout is the
+    fallback, because this repository is developed next to that one and a
+    contributor who has not pip-installed it should still be able to narrate
+    a post.
+    """
+    module = f"sprezzature_audio_scripts.narrate_{engine}"
+    if importlib.util.find_spec(module) is not None:
+        return [python, "-m", module]
+    sibling = (
+        Path(__file__).resolve().parents[3]
+        / "sprezzature-audio" / "scripts" / f"narrate_{engine}.py"
+    )
+    return [python, str(sibling)] if sibling.is_file() else None
 
 
 def _engine_is_available(engine: str, python: str = sys.executable) -> bool:
@@ -234,12 +254,12 @@ def _engine_is_available(engine: str, python: str = sys.executable) -> bool:
     module and exits 0 / 1 accordingly. We invoke it as a subprocess
     so the import never enters the orchestrator's address space.
     """
-    script = _engine_script_path(engine)
-    if not script.is_file():
+    command = _engine_command(engine, python)
+    if command is None:
         return False
     try:
         proc = subprocess.run(
-            [python, str(script), "--check"],
+            command + ["--check"],
             capture_output=True,
             text=True,
             timeout=30,
@@ -293,9 +313,13 @@ def run_engine(
         When the engine wrapper exits non-zero. The wrapper's stderr
         is included in the message for debuggability.
     """
-    script = _engine_script_path(engine)
-    if not script.is_file():
-        raise RuntimeError(f"unknown engine: {engine}")
+    command = _engine_command(engine)
+    if command is None:
+        raise RuntimeError(
+            f"engine {engine!r} is not reachable. The voices ship with "
+            f"sprezzature-audio: pip install 'sprezzature-audio[narrate]', "
+            f"then sprezzature-audio-install-voice --engine {engine}"
+        )
 
     out_dir.mkdir(parents=True, exist_ok=True)
     segments_file: Path = out_dir / ".segments.json"
@@ -305,7 +329,7 @@ def run_engine(
     )
 
     cmd: list[str] = [
-        python, str(script),
+        *command,
         "--segments", str(segments_file),
         "--out-dir", str(out_dir),
     ]

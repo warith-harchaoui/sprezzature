@@ -17,7 +17,9 @@ pure-Python parts:
 * ``_narrate.read_manifest`` / ``write_manifest`` — round-trip + soft
   failure on corrupt input.
 * ``_narrate.merge_llm_hint`` — clamping + key preservation.
-* ``narrate_chatterbox.emotion_to_exaggeration`` — emotion + intensity
+* the voices moved to ``sprezzature-audio``; what they borrowed from this
+  module — the clock and the cue — moved with them, and the tests that
+  read their source moved to that package too
   → engine dial in [0, 2].
 * ``site_indexes.load_audio_manifest`` — narration manifest → feed
   enclosure mapping.
@@ -37,7 +39,6 @@ from pathlib import Path
 import pytest
 
 import _narrate
-import narrate_chatterbox
 import site_indexes
 
 
@@ -285,31 +286,6 @@ class TestMergeLLMHint:
 # ── chatterbox emotion → exaggeration mapping ──────────────────────────────
 
 
-class TestChatterboxEmotionMap:
-    def test_neutral_at_half_intensity_is_base(self):
-        v = narrate_chatterbox.emotion_to_exaggeration("neutral", 0.5)
-        assert v == pytest.approx(0.5)
-
-    def test_cheerful_intensity_dial(self):
-        low = narrate_chatterbox.emotion_to_exaggeration("cheerful", 0.0)
-        mid = narrate_chatterbox.emotion_to_exaggeration("cheerful", 0.5)
-        high = narrate_chatterbox.emotion_to_exaggeration("cheerful", 1.0)
-        assert low < mid < high
-        assert 0.0 <= low <= 2.0
-        assert 0.0 <= high <= 2.0
-
-    def test_unknown_emotion_falls_back_to_neutral(self):
-        v = narrate_chatterbox.emotion_to_exaggeration("nope", 0.5)
-        assert v == pytest.approx(0.5)
-
-    def test_extreme_intensity_clamped(self):
-        v = narrate_chatterbox.emotion_to_exaggeration("angry", 999.0)
-        assert 0.0 <= v <= 2.0
-
-
-# ── site_indexes audio enclosure ───────────────────────────────────────────
-
-
 class TestSiteIndexesAudio:
     def test_load_audio_manifest_missing_file(self, tmp_path: Path):
         assert site_indexes.load_audio_manifest(tmp_path / "nope.json") == {}
@@ -547,64 +523,6 @@ class TestWebVTT:
         assert _narrate.cues_to_vtt([]).startswith("WEBVTT")
 
 
-class TestBothEnginesShareOneClock:
-    """The defect was not in a function; it was in two copies of a loop.
-
-    ``pause_before_ms`` went missing from ``narrate_chatterbox`` and
-    ``narrate_openvoice`` identically, because each carried its own
-    hand-rolled conversion from milliseconds to samples. No unit test of a
-    pure function could see that: the value was read correctly, clamped
-    correctly, stored correctly, and then not used.
-
-    So these read the wrappers' source. Crude, and the right shape for
-    "nothing calls this" -- which is invisible to every test that calls it.
-    """
-
-    ENGINES = ("narrate_chatterbox", "narrate_openvoice")
-
-    def _source(self, name: str) -> str:
-        import importlib
-
-        return Path(importlib.import_module(name).__file__).read_text(encoding="utf-8")
-
-    #: The call that actually spends the pause, not a mention of its name. The
-    #: first draft of this test asserted `"pause_before_ms" in source` and was
-    #: satisfied by the comment *explaining* the fix -- it stayed green with
-    #: the fix itself deleted, which is the exact failure mode it was written
-    #: to prevent.
-    SPENDS = 'timeline.silence(seg.get("{key}", 0))'
-
-    @pytest.mark.parametrize("engine", ENGINES)
-    def test_the_engine_spends_the_pause_before_a_segment(self, engine):
-        assert self.SPENDS.format(key="pause_before_ms") in self._source(engine), (
-            f"{engine} never spends pause_before_ms; the silence that sets a "
-            "heading apart from what precedes it is computed and dropped"
-        )
-
-    @pytest.mark.parametrize("engine", ENGINES)
-    def test_the_engine_spends_the_pause_after_a_segment(self, engine):
-        assert self.SPENDS.format(key="pause_after_ms") in self._source(engine)
-
-    @pytest.mark.parametrize("engine", ENGINES)
-    def test_no_engine_converts_milliseconds_to_samples_by_hand(self, engine):
-        """One clock, or the two drift again.
-
-        Both wrappers used to spell the conversion out inline. That is what
-        made the omission duplicable, and what would make the next one
-        duplicable too, so the arithmetic now lives in `_narrate.Timeline`
-        and nowhere else.
-        """
-        source = self._source(engine)
-        assert "/ 1000.0" not in source, (
-            f"{engine} converts milliseconds to samples itself; use "
-            "_narrate.Timeline so both engines share one clock"
-        )
-        assert "_narrate.Timeline(" in source
-
-    @pytest.mark.parametrize("engine", ENGINES)
-    def test_the_engine_writes_cues_beside_its_audio(self, engine):
-        source = self._source(engine)
-        assert "cues_to_vtt" in source and "narration.vtt" in source
 
 
 # ── Sentences: the unit the read-along follows ────────────────────────────
@@ -773,3 +691,66 @@ class TestExplodeToSentences:
         before = [dict(b) for b in blocks]
         _narrate.explode_to_sentences(blocks)
         assert [dict(b) for b in blocks] == before
+
+
+class TestTheVoicesLiveNextDoor:
+    """The seam left behind when the voices moved to ``sprezzature-audio``.
+
+    Captions turn sound into timed text and narration turns text into timed
+    sound; one package owns that modality in both directions, and this one
+    owns the document and the page. What stayed here is the orchestrator,
+    and what it has to get right is finding an engine it no longer ships.
+
+    The failure this guards against is specific: a path that resolved when
+    the wrappers sat in the same folder, and silently stops resolving once
+    they do not. A narration that cannot find its voice must say so, not
+    return a command that fails later with a stranger message.
+    """
+
+    def test_an_installed_engine_resolves_to_a_module_invocation(self):
+        """`python -m` against the installed package is the normal path."""
+        import narrate_post
+
+        command = narrate_post._engine_command("openvoice")
+        assert command is not None
+        assert command[1:] == ["-m", "sprezzature_audio_scripts.narrate_openvoice"]
+
+    def test_an_unknown_engine_resolves_to_nothing(self):
+        """Not an exception, and not a command that fails later."""
+        import narrate_post
+
+        assert narrate_post._engine_command("harmonica") is None
+
+    def test_this_package_no_longer_ships_a_voice(self):
+        """
+        The move has to be complete, or both copies drift.
+
+        Two engine wrappers once carried the same hand-rolled loop, and one
+        omission became two. A leftover copy here would be the same shape of
+        mistake with a folder boundary added.
+        """
+        here = Path(__file__).resolve().parent.parent / "sprezzature-publish" / "scripts"
+        left_behind = sorted(
+            p.name for p in here.glob("*.py")
+            if p.stem in {"narrate_openvoice", "narrate_chatterbox", "pick_voice", "install_narrate"}
+        )
+        assert left_behind == [], (
+            f"{left_behind} should have moved to sprezzature-audio with the "
+            f"rest of the sound modality"
+        )
+
+    def test_the_orchestrator_names_the_install_command_when_it_cannot_find_one(self):
+        """
+        A missing engine is a thing the reader can fix, if they are told how.
+
+        The message has to name the package and the command, because the
+        reader's mental model is "narration is part of publish" and the
+        answer is in a different package now.
+        """
+        import inspect
+
+        import narrate_post
+
+        source = inspect.getsource(narrate_post)
+        assert "sprezzature-audio[narrate]" in source
+        assert "sprezzature-audio-install-voice" in source

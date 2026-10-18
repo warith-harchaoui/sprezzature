@@ -59,7 +59,7 @@ Ten make-side scripts paired with one audit-side gate.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — generate site artifacts | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate.py`, `install_narrate.py` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional MP3 narration. |
+| **Make** — generate site artifacts | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate_post.py`, `readalong.py` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
 | **Audit** — gate the emitted Markdown | `lint_markdown.py` | Markdown lint with project-aware rules (heading order, fenced-code language, link freshness). |
 
 Pair the emitted HTML with `sprezzature-accessibility/scripts/lint_a11y.py`
@@ -178,12 +178,12 @@ modified in place.
 | `scripts/meta_from_ollama.py` | `pip install -r scripts/requirements-meta-tags.txt` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
 | `scripts/site_indexes.py` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
 | `scripts/plain_language.py` | `pip install -r scripts/requirements-plain-language.txt` + Ollama | Rewrites copy at a target grade; strips marketing voice |
-| `scripts/narrate_post.py` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `install_narrate.py` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
-| `scripts/narrate_openvoice.py` / `narrate_chatterbox.py` *(optional)* | as above | Engine wrappers invoked as subprocesses by `narrate_post.py`. |
+| `scripts/narrate_post.py` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
+| _(the voices)_ | `pip install sprezzature-audio` | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, invoked as subprocesses by `narrate_post.py`. They live in `sprezzature-audio` with the rest of the sound modality; a reader who only wants Markdown rendered should not install a speech stack to get it. |
 | `scripts/_readalong.py` *(optional)* | `pip install markdown` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `md_to_html.py --readalong` and `readalong.py`; refuses rather than mis-align. |
 | `scripts/readalong.py` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
-| `scripts/pick_voice.py` *(optional)* | as above | Lists engine voices + generates per-voice demo clips so the designer chooses by listening. |
-| `scripts/install_narrate.py` *(optional)* | subprocess | Downloads OpenVoice v2 checkpoints + sets up the ChatterboxTTS voice library directory. |
+| _(voice chooser)_ | `pip install sprezzature-audio` | `sprezzature-audio-voice` lists engine voices and generates per-voice demo clips, so the designer chooses by listening. |
+| _(voice installer)_ | `pip install sprezzature-audio` | `sprezzature-audio-install-voice` downloads OpenVoice v2 checkpoints and sets up the ChatterboxTTS voice library. |
 | `scripts/_lang.py`, `scripts/_ollama.py`, `scripts/_narrate.py` | (internal helpers) | Language detection + Ollama client + narration segment extractor shared by other scripts |
 
 ## Companion skills
