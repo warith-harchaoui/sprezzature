@@ -3,9 +3,17 @@
 check_all_extra_resolves — do the ``all`` extra's floors exist on PyPI?
 
 ``tests/test_all_extra_is_the_suite.py`` checks the half that is decidable
-offline: that the extra names the suite exactly, and that each floor matches
-the sibling checkout sitting next to this repository. It says so in its own
-docstring, and it is right to: a network call in CI would make the build flaky.
+offline: that the extra names the suite exactly, that every requirement has a
+floor, and that no floor names a version which exists nowhere — not even in
+the sibling checkout. It stops there on purpose: a network call in CI would
+make the build flaky.
+
+That test used to assert something stronger, that each floor *equalled* the
+sibling checkout, and the two checks fought. A checkout is a working tree and
+not a release: during development it runs ahead of PyPI, so demanding the
+floor keep up with it pushed the floor past what is published — the exact
+failure this script reports. The repository could not be green and
+installable at once. The halves are now split by what each can know.
 
 But that leaves a gap, and the gap has opened twice. A floor can name a version
 that exists **only on a laptop**. ``sprezzature[all]`` then fails to resolve for
@@ -24,6 +32,15 @@ Usage
 ::
 
     python scripts/check_all_extra_resolves.py
+
+Two questions, because a floor can be wrong in both directions. **Ahead** of
+PyPI, it fails to resolve and nobody can install the suite — that is an error.
+**Behind** PyPI, it resolves and quietly hands people an older package than
+the one that was released; `sprezzature-accessibility` shipped 1.0.1 and 1.0.2
+to fix a rule count its own documentation got wrong while the extra kept floor
+1.0.0, so the one command that installs the suite kept handing out the version
+with the wrong docs. That is a warning rather than an error: it installs, and
+whether to raise the floor is a release decision.
 
 Exits 0 when every floor is published, 1 otherwise, naming what is missing.
 
@@ -124,6 +141,7 @@ def _sort_key(version: str) -> tuple[int, ...]:
 
 def main() -> int:
     stale: list[str] = []
+    lagging: list[str] = []
     for package, floor in _floors():
         found = _published(package)
         if found is None:
@@ -131,11 +149,27 @@ def main() -> int:
             print(f"!!  {package:28s} floor {floor:9s} NOT ON PYPI")
             continue
         versions, latest = found
-        if floor in versions:
-            print(f"ok  {package:28s} floor {floor:9s} latest {latest}")
-        else:
+        if floor not in versions:
             stale.append(f"{package}: floor {floor} is not published (latest {latest})")
             print(f"!!  {package:28s} floor {floor:9s} NOT PUBLISHED (latest {latest})")
+            continue
+        if _sort_key(floor) < _sort_key(latest):
+            # Installable, and older than what was released. Worth saying out
+            # loud: this is how a correction ships and nobody receives it.
+            lagging.append(f"{package}: floor {floor}, released {latest}")
+            print(f"~   {package:28s} floor {floor:9s} BEHIND  (latest {latest})")
+            continue
+        print(f"ok  {package:28s} floor {floor:9s} latest {latest}")
+
+    if lagging:
+        print(
+            "\nthese floors resolve, and hand people an older package than the "
+            "one released:\n  "
+            + "\n  ".join(lagging)
+            + "\n\nRaise them unless the newer release is deliberately not "
+            "required. Not an error: the suite installs either way.",
+            file=sys.stderr,
+        )
 
     if stale:
         print(
