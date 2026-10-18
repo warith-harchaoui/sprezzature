@@ -95,19 +95,20 @@ TIMEOUT = 15
 #: it" stop looking alike in the output. An exemption without a reason is
 #: refused by the test suite — the point is to force the thought, not to
 #: provide an escape hatch.
-EXEMPTIONS: dict[tuple[str, str], str] = {
-    ("sprezzature-ui", "api"): (
-        "Narrow on purpose. Three deterministic tools (validate, audit_i18n, "
-        "i18n_make) are engine-able and get routes. Writing a component is "
-        "the model's work guided by SKILL.md; no HTTP route can carry it, and "
-        "pretending otherwise would be the forced surface this file exists to "
-        "prevent."
-    ),
-    ("sprezzature-ui", "mcp"): (
-        "Same narrowing as the API it republishes: the three deterministic "
-        "tools, not the generation."
-    ),
-}
+EXEMPTIONS: dict[tuple[str, str], str] = {}
+
+#: Nothing is exempt today, and that is worth a note rather than an empty
+#: dict with no explanation.
+#:
+#: ``sprezzature-ui`` was the one entry here: its API was declared exempt
+#: because writing a component is the model's work and no route can carry it.
+#: The brick now ships a narrow API anyway — one route over the i18n audit,
+#: which *is* engine-able — so the exemption became a lie in the useful
+#: direction and was removed. The narrowness is still the point, and it is
+#: stated in that package's own module docstring where a reader meets it.
+#:
+#: The table stays because the next brick may genuinely owe nothing on some
+#: surface, and saying so out loud is better than a silent gap.
 
 #: Why compose is owed by *every* brick that ships a Dockerfile, with no
 #: exceptions and no "only when there is a second container":

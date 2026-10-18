@@ -140,10 +140,18 @@ with `SKILL.md` for the same brick living here, in the monorepo.
 ## Declaring an exemption
 
 Not every brick owes every surface, and forcing one is its own kind of damage.
-`sprezzature-ui` is the live case: three of its tools (`validate`,
-`audit_i18n`, `i18n_make`) are deterministic and get routes, but *writing a
-component* is the model's work guided by `SKILL.md`, and no HTTP route can
-carry it.
+
+`sprezzature-ui` was the live case, and it is worth recording how it
+resolved. Its API was declared exempt because *writing a component* is the
+model's work guided by `SKILL.md` and no HTTP route can carry it. That
+reasoning was right about the generation half and wrong about the rest: the
+i18n audit **is** engine-able — source in, findings out — so the brick now
+ships one route rather than none. The exemption became a lie in the useful
+direction and was removed.
+
+The lesson is not "exemptions are bad". It is that an exemption covers a
+*surface*, and a brick is rarely all generation or all engine. Ask which
+half is which before writing one down.
 
 So exemptions are allowed, and they are **declared with their reason** in
 `EXEMPTIONS` in `scripts/audit_surfaces.py`. The reason is required —
