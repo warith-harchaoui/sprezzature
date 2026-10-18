@@ -164,7 +164,7 @@ reste en feuille de route.
 
 | *Skill* | Make (générer) | Audit (porte) |
 |---|---|---|
-| **sprezzature-ui** | `references/` + `assets/components/` : guide de génération HTML / Tailwind / visualisation de données | `scripts/validate.py`, `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
+| **sprezzature-ui** | `references/` + `assets/components/` : guide de génération HTML / Tailwind / visualisation de données | `scripts/validate_content.py`, `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
 | **sprezzature-cli-gui** | `scripts/cli_to_gui.py` (émetteur CLI → HTML, adaptateurs argparse + Click + `--from-help`) + `assets/examples/cli-gui-demo/` (ossature exécutable) | Accouplez `sprezzature-accessibility` + `sprezzature-ux-laws` sur le HTML produit (l'émetteur est son propre client ; sa sortie passe les deux audits avec zéro constat). |
 | **sprezzature-publish** | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate.py` | `lint_markdown.py` |
 | **sprezzature-accessibility** | _(rien : voir `sprezzature-ui` pour les templates, `sprezzature-accessibility` pour les alt, `sprezzature-audio` pour les sous-titres)_ | `lint_a11y.py` (20 règles, stdlib seul) |
@@ -272,7 +272,7 @@ carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur
   contexte** via `langdetect` ; pas de langue par défaut configurée ;
   passez `--lang` pour en forcer une. Pour les chaînes d'interface et
   les prompts traduisibles, utilisez un seul catalogue
-  `locales/i18n.yaml` (voir `sprezzature-ui/scripts/i18n_make.py` et
+  `locales/i18n.yaml` (voir `sprezzature-ui-i18n-make` et
   `sprezzature-publish/references/i18n.md`).
 - **L'i18n vit dans du format de configuration YAML, jamais dans du JS.** Les chaînes
   traduisibles (libellés d'interface **et** prompts LLM) vivent dans

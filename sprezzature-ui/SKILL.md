@@ -19,7 +19,8 @@ license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. No Python runtime required to use
   the skill itself (output is HTML + CSS + vanilla JS). Optional validator
-  scripts/validate.py needs Python 3.10+ stdlib + PyYAML. Network access not
+  The i18n tools need Python 3.10+ stdlib; the catalogue half needs PyYAML.
+  Network access not
   required.
 metadata:
   author: Warith HARCHAOUI
@@ -27,6 +28,8 @@ metadata:
 ---
 
 # sprezzature-ui — vanilla JS + Tailwind UI generation
+
+> The two deterministic tools below now ship as the standalone package [`sprezzature-ui`](https://github.com/warith-harchaoui/sprezzature-ui) (`pip install sprezzature-ui`), invoked as `sprezzature-ui-i18n-audit` and `sprezzature-ui-i18n-make`, or through either front door — `make-ui <tool>` (argparse) and `sprezzature-ui <tool>` (click). The generation half is this file: writing an interface is the model's work, and no command or route can carry it. The `scripts/` folder has moved out. The pre-ship content gate stayed in the monorepo — it validates a skill folder *here* rather than anything in a user's project — and now lives beside the other repository-level validators.
 
 ## Audience
 
@@ -69,8 +72,8 @@ This skill ships both halves of the sprezzature-* loop:
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — generate UI | `references/` + `assets/components/*.html` + `assets/starter-page.html` + `assets/fonts/` + `scripts/i18n_make.py` | Generation playbook: token map, decision tree below, copy-and-adapt component shapes, three-Roboto webfonts. `i18n_make.py` scaffolds + compiles `locales/i18n.yaml` (GUI strings **and** prompts) and emits a vanilla-JS loader. |
-| **Audit** — gate before ship | `scripts/validate.py` + `scripts/audit_i18n.py` + `references/checklist.md` + `references/anti-patterns.md` + `references/ergonomics-criteria.md` | Skill-spec validator (stdlib only); pre-ship quality gate; eight-criteria ergonomic review; anti-pattern refusal list. `audit_i18n.py` flags GUI translations embedded in JS/HTML and LLM prompts inlined in Python (they belong in `locales/i18n.yaml`). |
+| **Make** — generate UI | `references/` + `assets/components/*.html` + `assets/starter-page.html` + `assets/fonts/` + `sprezzature-ui-i18n-make` | Generation playbook: token map, decision tree below, copy-and-adapt component shapes, three-Roboto webfonts. `sprezzature-ui-i18n-make` scaffolds + compiles `locales/i18n.yaml` (GUI strings **and** prompts) and emits a vanilla-JS loader. |
+| **Audit** — gate before ship | the monorepo's content gate + `sprezzature-ui-i18n-audit` + `references/checklist.md` + `references/anti-patterns.md` + `references/ergonomics-criteria.md` | Skill-spec validator (stdlib only); pre-ship quality gate; eight-criteria ergonomic review; anti-pattern refusal list. `sprezzature-ui-i18n-audit` flags GUI translations embedded in JS/HTML and LLM prompts inlined in Python (they belong in `locales/i18n.yaml`). |
 
 Pair with `sprezzature-ux-laws` for canonical-law audits and `sprezzature-colors`
 for contrast / CVD audits on the emitted output.
@@ -84,9 +87,9 @@ Never hardcode a UI string in JavaScript, never inline a prompt in Python.
 
 ```bash
 # make: scaffold locales/i18n.yaml, compile to locales/i18n.json, emit i18n.js
-python scripts/i18n_make.py --dir .
+sprezzature-ui-i18n-make --dir .
 # audit: flag any string/prompt living in code instead of the catalog
-python scripts/audit_i18n.py src/          # I18N001 (JS dict) / I18N002 (py prompt)
+sprezzature-ui-i18n-audit src/          # I18N001 (JS dict) / I18N002 (py prompt)
 ```
 
 In the browser: `import { initI18n, t } from "./locales/i18n.js"; await
@@ -102,7 +105,7 @@ the catalog (as the other skills load `prompts/*.yaml` via `_prompts`).
 5. **Both color schemes.** Every styled element gets a `dark:` peer.
 6. **Accessibility is shipping-required.** See `references/ui-guidelines/foundations/accessibility.md`.
 7. **No raw hex** in markup: use semantic Tailwind tokens (`bg-brand-blue`, `text-label-primary`). **Curated default — user colors win** (mirror of rule 3, but for palette): when generating fresh output and no palette has been specified, use the 8 saturated brand hues from `sprezzature-colors/references/palette.csv` (regenerable with `python sprezzature-colors/scripts/palette_to_tailwind.py`). **The default does NOT apply when:** (a) **auditing an existing UI**: respect the project's tokens; do not propose a CSV swap; (b) **the user names colors** ("our brand is #8B5CF6", "use Material's primary"), use those; (c) **the project already has a `tailwind.config.js`** with brand tokens, leave them alone unless asked. Either way, rule 7's "no raw hex in markup" still holds: add the user's color to the config as a token, then reference the token.
-8. **Bilingual-ready copy** (EN/FR by default). The output language of the AI-backed scripts is **auto-detected from the input/context text** via `langdetect`; there is no configured default language. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui/scripts/i18n_make.py` and `sprezzature-publish/references/i18n.md`).
+8. **Bilingual-ready copy** (EN/FR by default). The output language of the AI-backed scripts is **auto-detected from the input/context text** via `langdetect`; there is no configured default language. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui-i18n-make` and `sprezzature-publish/references/i18n.md`).
 9. **No third-party trademarks** in defaults (logos, product names, OS branding). Use generic, neutral language.
 
 ## Build vs prototype
@@ -220,4 +223,4 @@ Load these only when needed.
 
 ## Scripts
 
-- `scripts/validate.py` — pre-ship quality gate. Stdlib only. Checks SKILL.md frontmatter, forbidden framework imports, marketing phrases, reference path resolution. Exit non-zero on any failure.
+- the monorepo's pre-ship content gate — Stdlib only. Checks SKILL.md frontmatter, forbidden framework imports, marketing phrases, reference path resolution. Exit non-zero on any failure.

@@ -118,4 +118,4 @@ label, a marker shape, or a stroke style.
 - [ ] Citation of the WCAG SC or WAI-ARIA section in this doc.
 - [ ] Implementation in `lint_a11y.py`, registered in `ALL_RULES`.
 - [ ] Smoke test on at least one positive fixture and one negative.
-- [ ] Validator green (`python sprezzature-ui/scripts/validate.py`).
+- [ ] Validator green (`python scripts/validate_content.py`).

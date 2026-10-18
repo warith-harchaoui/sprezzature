@@ -74,7 +74,7 @@ installed to type-check the code's own annotations.
 - **No emojis in shipped files** (SKILL.md, references, scripts). The
   README header may use flag emojis for the language switcher only.
 - **No marketing-voice phrases** in SKILL.md or references. The
-  validator (`sprezzature-ui/scripts/validate.py`) catches the worst
+  validator (`scripts/validate_content.py`) catches the worst
   offenders.
 - **Hard rules are hard.** If a change weakens rule 1–9 in any
   SKILL.md, document the reason in the PR description and update

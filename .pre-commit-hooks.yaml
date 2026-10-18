@@ -54,16 +54,3 @@
   additional_dependencies:
     - PyYAML>=6
 
-- id: sprezzature-ui-i18n-audit
-  name: sprezzature-ui — i18n-in-code audit (GUI strings + prompts must live in locales/i18n.yaml)
-  description: >-
-    Flags GUI translation dictionaries embedded in JS/HTML (I18N001) and
-    LLM prompts inlined in Python (I18N002). Both belong in one
-    per-project locales/i18n.yaml catalog (scaffold + compile it with
-    sprezzature-ui/scripts/i18n_make.py). Stdlib only; exits non-zero on any
-    finding. JS-family + Python files.
-  entry: python sprezzature-ui/scripts/audit_i18n.py
-  language: python
-  language_version: python3
-  files: '\.(m?js|cjs|jsx|tsx?|html?|py)$'
-  types: [file]

@@ -13,7 +13,7 @@ Then:
 sprezzature --help                    # discoverable sub-commands across all six wired skills
 sprezzature --version
 
-sprezzature ui validate               # → python sprezzature-ui/scripts/validate.py
+sprezzature ui validate               # → python scripts/validate_content.py
 
 sprezzature accessibility lint public/  # → python sprezzature-accessibility/scripts/lint_a11y.py public/
 sprezzature colors contrast --palette palette.json

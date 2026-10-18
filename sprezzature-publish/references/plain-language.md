@@ -100,6 +100,6 @@ simple = rewrite(
 - [ ] `--lang` matches the source language.
 - [ ] Brand names and identifiers in `--preserve`.
 - [ ] Output length close to source (≤ 1.1×).
-- [ ] No buzzwords in the output (`python sprezzature-ui/scripts/validate.py` will catch them if the file is committed).
+- [ ] No buzzwords in the output (`python scripts/validate_content.py` will catch them if the file is committed).
 - [ ] Numbers and names preserved verbatim.
 - [ ] Cache hit on second run (≤ 100 ms).

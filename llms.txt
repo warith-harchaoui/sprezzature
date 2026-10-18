@@ -60,7 +60,7 @@ Every shipped skill carries a "Two modes — make and audit" section in its SKIL
 
 ## Scripts (Python, cross-platform)
 
-- [sprezzature-ui/scripts/validate.py](sprezzature-ui/scripts/validate.py): Pre-ship quality gate. Stdlib only.
+- [scripts/validate_content.py](scripts/validate_content.py): Pre-ship quality gate. Stdlib only.
 - [sprezzature-publish/scripts/favicons.py](sprezzature-publish/scripts/favicons.py): Favicon / PWA / Apple-touch / maskable icon set + manifest + head snippet.
 - [sprezzature-publish/scripts/meta_from_ollama.py](sprezzature-publish/scripts/meta_from_ollama.py): Drafts page meta tags from a goal or HTML page.
 - [sprezzature-publish/scripts/site_indexes.py](sprezzature-publish/scripts/site_indexes.py): robots, sitemap, llms.txt, feed, humans.
