@@ -363,6 +363,29 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         and any(cmd.endswith("-mcp") for cmd in scripts)
     )
 
+    # The MCP server takes its host and port from the environment, and those
+    # two names have to say *this* brick. `mcp.py` is the file most often
+    # started as a copy of a sibling's, and the prefix is the one line a copy
+    # is never caught on: the server still starts, still binds 127.0.0.1:8000,
+    # the tests still pass. What breaks is silent in both directions --
+    # SPREZZATURE_<BRICK>_PORT does nothing here, and one setting meant for the
+    # brick this file was copied from moves this server too. sprezzature-ui and
+    # sprezzature-publish both shipped accessibility's two names, so a single
+    # SPREZZATURE_ACCESSIBILITY_PORT moved three servers at once.
+    own = "SPREZZATURE_" + brick.removeprefix("sprezzature-").upper().replace("-", "_")
+    foreign = sorted(
+        {
+            name
+            for name in re.findall(r"SPREZZATURE_[A-Z_]+_(?:HOST|PORT)", mcp_src)
+            if not name.startswith(own + "_")
+        }
+    )
+    if foreign:
+        notes.append(
+            "mcp.py reads " + ", ".join(foreign) + " -- another brick's "
+            f"environment, so {own}_HOST and {own}_PORT do nothing here"
+        )
+
     # Containers: how the API ships.
     docker = (repo / "Dockerfile").is_file()
     compose = any(

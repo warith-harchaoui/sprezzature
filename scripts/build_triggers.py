@@ -88,7 +88,7 @@ WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-publish": "Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite.",
     "sprezzature-accessibility": 'Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b).',
     "sprezzature-colors": "WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter.",
-    "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT.",
+    "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT — and reads written text aloud through Kokoro, OpenVoice or Chatterbox, timed track included.",
     "sprezzature-ux-laws": "Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers.",
     "sprezzature-figures": "Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures.",
     "sprezzature-maps": "Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap.",
@@ -138,9 +138,10 @@ ROUTES: dict[str, tuple[str, str]] = {
         'colour-blind safe", « quelle couleur pour ce fond »',
     ),
     "sprezzature-audio": (
-        "Recorded speech somebody needs as text — or a question about that text",
+        "Recorded speech somebody needs as text, a question about that "
+        "text — or written text somebody needs as speech",
         '"what did they say in this meeting", "who spoke when", "subtitles", '
-        '« de quoi ils parlent dans cet enregistrement »',
+        '"read this aloud", « de quoi ils parlent dans cet enregistrement »',
     ),
     "sprezzature-maps": (
         "Numbers attached to PLACES — a column of countries, regions, states, "
@@ -349,6 +350,13 @@ CATALOGUE: dict[str, list[str]] = {
         "who is who",
         "I'm Alice",
         "Hey Mary, ...",
+        "text to speech",
+        "TTS",
+        "narrate",
+        "read this aloud",
+        "synthesise a voice",
+        "which voice",
+        "Kokoro",
     ],
     "sprezzature-ux-laws": [
         "design this screen using Hick / Fitts / Miller",

@@ -1,20 +1,20 @@
 ---
 name: sprezzature-audio
 description: >-
-  Local-AI captions, speaker diarization and speaker identification for video
-  and audio. W3C WebVTT / SRT / plain-text captions from a local whisper.cpp
-  build, then who spoke when via NVIDIA NeMo Sortformer and who is who via
-  NeMo TitaNet embeddings against reference clips, or a transcript rule plus a
-  local Ollama pass mining self-introductions and vocatives. Emits
-  speaker-labelled VTT with named voice cues; project-vocab biasing; bilingual
-  EN/FR, auto-detected. Runs on your machine and never sends audio to a SaaS.
-  Use it when you are holding recorded speech somebody needs as text, or a
-  question about that text. Trigger phrases: "captions", "transcribe video",
-  "transcribe audio", "WebVTT", "SRT", "subtitles", "diarization", "who spoke
-  when", "identify speakers", "name the speakers". Not this one when: the
-  voice is to be generated from text rather than transcribed
-  (sprezzature-publish), or the words describe an image (sprezzature-accessibility).
-  The exhaustive trigger catalogue is in `references/triggers.md`.
+  Local-AI speech both ways: captions out of recorded speech, narration out
+  of written text. WebVTT / SRT captions from a local whisper.cpp build; who
+  spoke when via NeMo Sortformer; who is who via NeMo TitaNet embeddings;
+  speaker-labelled VTT with named voice cues. The other way: Kokoro (the
+  default, no torch), OpenVoice and Chatterbox, each writing the timed track
+  beside the audio. Runs on your machine, never sends audio to a SaaS. Use
+  it when you are holding recorded speech somebody needs as text, or text
+  somebody needs as speech. Trigger phrases: "captions", "transcribe video",
+  "WebVTT", "SRT", "subtitles", "diarization", "who spoke when", "identify
+  speakers", "text to speech", "TTS", "narrate", "read this aloud", "which
+  voice". Not this one when: the job is to wire a narration into a page —
+  player, read-along highlighting, the site (sprezzature-publish, which
+  calls this one for the voice) — or the words describe an image
+  (sprezzature-accessibility). The catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+ stdlib +
@@ -85,7 +85,7 @@ heavier **diarization + speaker ID** tier that layers on top.
 | **Make** — speaker identification via **reference clips** | `identify_from_titanet.py` | NeMo TitaNet 192-D speaker embeddings + cosine matching against a directory of known WAVs (filename stem = display name). |
 | **Make** — speaker identification via the **transcript itself** | `name_from_transcript.py` | Rule pass over self-introductions ("I'm Alice") + turn-initial / turn-final vocatives ("Hey Mary, ..."). Optional `--ollama` refinement via a local Ollama daemon, the same daemon `alt_from_ollama.py` uses. |
 | **Make** — merge captions + diarization | `caption_diarize.py` | Emits speaker-labelled VTT (`<v Name>` cues), SRT (`Name: text` prefix), or plain text with paragraph breaks per speaker turn. |
-| **Make** — text into speech, the other direction | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, `sprezzature-audio-voice`, `sprezzature-audio-install-voice` | Captions make sound readable; narration makes text audible. Same modality, opposite direction, same timed-text track beside the wav — so one brick owns both rather than a site generator owning half. OpenVoice v2 clones a voice from a short sample; Chatterbox renders from a voice library and takes emotion hints. `sprezzature-publish` orchestrates the document and invokes these as subprocesses, so their heavy imports never enter its graph. Behind the `[narrate]` extra: transcribing a recording must not require torch. |
+| **Make** — text into speech, the other direction | `sprezzature-audio-narrate-kokoro` *(default)*, `-narrate-openvoice` / `-narrate-chatterbox`, `sprezzature-audio-voice`, `sprezzature-audio-install-voice` | Captions make sound readable; narration makes text audible. Same modality, opposite direction, same timed-text track beside the wav — so one brick owns both rather than a site generator owning half. **Kokoro** is the default since 1.3.0: 82 M parameters through ONNX, no torch at all, Apache-2.0 in code *and* weights, 54 voices across nine languages, and the voice follows the detected language of the text rather than a flag. OpenVoice v2 clones a voice from a short sample; Chatterbox renders from a voice library and takes emotion hints — both pull torch, which is why they moved to their own extras. `sprezzature-publish` orchestrates the document and invokes these as subprocesses, so their heavy imports never enter its graph. Behind the `[narrate]` extra: transcribing a recording must not require torch, and reading a page aloud must not require Whisper. |
 | **Make** — translate captions → second track | `translate_captions.py` | Translates an existing `.vtt`/`.srt` into the **surrounding-text language** via the local Ollama model (`qwen3-vl:8b`) and prints a two-`<track>` snippet (native `captions` + translated `subtitles`). Captions-only, no audio. |
 | **Audit** — gate the presence of `<track>` _(borrowed, not shipped here)_ | _(see `sprezzature-accessibility-lint`)_ | Static lint catches `<video>` / `<audio>` without a `<track kind="captions">` child. |
 | **Audit** — can the captions be read at the speed they go by | `sprezzature-audio-audit <track.vtt\|.srt>` | Whether a `<track>` exists is somebody else's question; whether what is inside it is usable is this brick's. Eight static rules: overlapping or reversed cues, empty cues, reading speed, minimum and maximum duration, line width, line count. Defaults follow the Netflix Timed Text Style Guide (17 cps, 5/6 s, 7 s, 42 characters) and the two-line convention BBC and Netflix share — each one a flag, because a children's programme and a dense technical talk do not share a reading speed. Exit 1 on any finding. |
@@ -116,6 +116,10 @@ the file; the a11y lint verifies a `<track>` element references it.
 | "name the speakers from the transcript" / "vocative naming" / "self-introduction" | `name_from_transcript.py` | `sprezzature-audio-name <stem>.speakers.vtt [--ollama]`. Rule pass over EN + FR self-introductions and vocatives; `--ollama` calls the local daemon `alt_from_ollama.py` uses for a JSON-formatted refinement. |
 | "speaker VTT" / "labelled captions" / "merge captions with diarization" | `caption_diarize.py` | `sprezzature-audio-pipeline --captions <stem>.vtt --diarization <stem>.diarization.json --speakers <stem>.speakers.json --out <stem>.speakers.vtt`. Output has `<v Name>` voice cues. |
 | "translate captions" / "translated subtitles" / "two-track captions" / "subtitles in another language" | `translate_captions.py` | `sprezzature-audio-translate <stem>.vtt [--lang fr] [--in page.html] [--media clip.mp4]`. Target language = `--lang` else detected from the surrounding text (`--in` / `--context`). Writes `<stem>.<lang>.vtt` and prints a `<track kind="captions"> + <track kind="subtitles">` snippet. Needs a local Ollama daemon (`qwen3-vl:8b`). |
+| "narrate" / "read this aloud" / "text to speech" / "TTS" | `narrate_kokoro.py` | `sprezzature-audio-install-voice --engine kokoro` then `sprezzature-audio-narrate-kokoro --segments <segments.json> --out-dir <dir>`. The default engine: no torch, Apache-2.0 weights. Leave `--voice` empty and the language of the text picks the voice. For a whole page — player, read-along highlighting, the site — go through `sprezzature-publish-narrate`, which calls this. |
+| "clone this voice" / "voice sample" / "sound like me" | `narrate_openvoice.py` / `narrate_chatterbox.py` | `sprezzature-audio-narrate-openvoice` (clones from a short sample) or `sprezzature-audio-narrate-chatterbox` (voice library + emotion hints). Both pull torch, behind `[narrate-openvoice]` / `[narrate-chatterbox]`. Kokoro refuses `--voice-sample` outright and names these two. |
+| "which voice" / "pick a voice" / "this voice is flat" | `pick_voice.py` | `sprezzature-audio-voice --engine kokoro [--sample]`. Lists the voices and measures the pitch span of each in semitones, which is what separates a reading voice from a flat one — a long document is an expensive thing to re-narrate. |
+| "how good is this transcript" / "WER" / "DER" / "is it faster" | `benchmark_stt.py` | `sprezzature-audio-benchmark --reference truth.vtt --hypothesis whisper.vtt`. Word error rate with its substitution / deletion / insertion split, diarization error rate on 10 ms frames with the standard 250 ms collar, and real-time factor. |
 | "Whisper not installed" / "first-time setup" (captions only) | `install_captions.py` | `python -m sprezzature_audio_scripts.install_captions`: pip-installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML model so the captioner runs offline. |
 | "NeMo not installed" / "first-time setup" (diarization) | `install_diarize.py` | `python -m sprezzature_audio_scripts.install_diarize`: pip-installs `nemo_toolkit[asr]` and pre-downloads Sortformer + TitaNet weights. Add `--only sortformer` / `--only titanet` to prefetch just one. |
 
