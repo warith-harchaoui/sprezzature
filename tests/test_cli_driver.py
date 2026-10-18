@@ -102,14 +102,31 @@ def test_run_tool_prefers_console_script_on_path(
     assert rc == 0
 
 
-def test_run_tool_falls_back_to_in_repo_script(monkeypatch: pytest.MonkeyPatch) -> None:
-    """No console script on $PATH, but the in-repo scripts/ still has the file: use it."""
-    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(REPO_ROOT))
+def test_run_tool_falls_back_to_in_repo_script(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """No console script on $PATH, but a skill folder still ships the file.
+
+    This used to point at ``sprezzature-ui/scripts/validate.py``, the last
+    real in-repo script. Every brick is extracted now, so no skill folder in
+    this repository ships one — the fallback has no subject left here.
+
+    It is kept, and tested against a skill folder built in ``tmp_path``,
+    because the mechanism is still correct and a future skill may ship
+    scripts again. Deleting it would be removing a working path on the
+    grounds that today nothing uses it; testing it against a fixture says
+    the same thing out loud without that risk.
+    """
+    skill = tmp_path / "sprezzature-demo" / "scripts"
+    skill.mkdir(parents=True)
+    (skill / "demo.py").write_text(
+        "import sys\nprint('ok')\nsys.exit(0)\n", encoding="utf-8"
+    )
+    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
     monkeypatch.setattr(driver.shutil, "which", lambda name: None)
-    # sprezzature-ui is not an extracted skill: its scripts/validate.py is real.
     rc = driver._run_tool(
-        "sprezzature-ui", "validate.py", ("--help",),
-        console_script="sprezzature-ui-validate",  # deliberately bogus; must not resolve
+        "sprezzature-demo", "demo.py", ("--help",),
+        console_script="sprezzature-demo-nope",  # deliberately bogus
         module=None,
     )
     assert rc == 0

@@ -12,7 +12,7 @@ What this runs
    shipped skill (the nine ``sprezzature-*`` folders). This is the cross-skill
    foundation: if a SKILL.md has invalid YAML, the runtime silently
    rejects it.
-2. Content-quality gate (``sprezzature-ui/scripts/validate.py``). This adds
+2. Content-quality gate (``scripts/validate_content.py``). This adds
    sprezzature-ui-specific checks the cross-skill module deliberately stays
    out of: forbidden framework imports, trademarked platform terms,
    LLM-marketing voice, etc.
@@ -95,7 +95,7 @@ def stage_sprezzature_ui_content() -> int:
     """
     print("\n[2/2] sprezzature-ui content quality gate", flush=True)
     sys.stdout.flush()  # ensure header appears before subprocess output
-    script: Path = REPO_ROOT / "sprezzature-ui" / "scripts" / "validate.py"
+    script: Path = REPO_ROOT / "scripts" / "validate_content.py"
     proc = subprocess.run(
         [sys.executable, str(script)],
         check=False,

@@ -58,7 +58,16 @@ from pathlib import Path
 
 #: Root of the skill folder (``sprezzature-ui/`` in this repo since the 0.2.0
 #: split). The validator walks this tree exclusively.
-SKILL_ROOT: Path = Path(__file__).resolve().parent.parent
+# Which skill folder to check. This used to live inside
+# ``sprezzature-ui/scripts/`` and infer its subject from its own location,
+# which stopped being possible when that folder emptied: the tools moved to
+# the standalone package and this gate did not, because it validates a skill
+# folder in *this* repository rather than anything in a user's project.
+SKILL_ROOT: Path = (
+    Path(sys.argv[1]).resolve()
+    if len(sys.argv) > 1
+    else Path(__file__).resolve().parent.parent / "sprezzature-ui"
+)
 
 #: Running failure count. Incremented by :func:`bad`; non-zero at end → exit 1.
 FAIL: int = 0

@@ -25,9 +25,8 @@ SCRIPTS = [
     # its own suite checks their --help there.
     # sprezzature-accessibility's commands moved to its standalone repository;
     # its own suite checks their --help there.
-# sprezzature-ui
-    REPO_ROOT / "sprezzature-ui"      / "scripts" / "audit_i18n.py",
-    REPO_ROOT / "sprezzature-ui"      / "scripts" / "i18n_make.py",
+    # sprezzature-ui's commands moved to its standalone repository;
+    # its own suite checks their --help there.
 ]
 
 

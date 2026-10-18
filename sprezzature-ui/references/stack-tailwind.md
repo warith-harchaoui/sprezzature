@@ -48,7 +48,7 @@ which of the three families a surface uses.
 **Always self-host.** No Google Fonts CDN in production. The jsDelivr
 `gh` proxy is acceptable for a prototype with a self-hosted fallback;
 production builds should ship the WOFF2 files alongside the HTML. Run
-the validator (`sprezzature-ui/scripts/validate.py`) after any typography
+the validator (`scripts/validate_content.py`) after any typography
 change. It does not check the family itself but it catches the
 forbidden raw-hex / framework-import regressions a font swap can
 accidentally introduce.

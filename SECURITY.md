@@ -111,7 +111,7 @@ are stdlib + a single optional dependency (the SDK or the daemon).
 - **Trust model, short version.** This repo ships text and Python
   scripts you can read top-to-bottom in under an hour. Read what you
   install. The validators (`scripts/validate_all.py`,
-  `sprezzature-ui/scripts/validate.py`) and the deterministic test suite
+  `scripts/validate_content.py`) and the deterministic test suite
   (`pytest`) run with stdlib + PyYAML only and never touch the
   network; running them locally is a cheap way to confirm an install
   is what it claims to be.
