@@ -137,6 +137,16 @@ sprezzature-maps/
 
 with `SKILL.md` for the same brick living here, in the monorepo.
 
+**After extracting a brick, run `python scripts/sync_helpers.py`.** The
+shared helpers (`_argparse.py`, `_click.py`, `_lang.py`, `_vocab.py`,
+`_vtt.py`) are copied into every repository on purpose, and an extraction
+takes a snapshot of them at whatever moment the copy happens. `_vtt.py` drifted
+exactly that way: the new repo was seeded before a sync reached the monorepo's
+copy, and the source folder emptied immediately after — so the drift was born
+at the one moment nothing could see it. Everything stayed internally
+consistent and the suite stayed green; it surfaced hours later, as a missing
+attribute, in something unrelated.
+
 ## Declaring an exemption
 
 Not every brick owes every surface, and forcing one is its own kind of damage.
