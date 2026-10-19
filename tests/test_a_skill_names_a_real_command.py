@@ -44,10 +44,17 @@ SIBLINGS = REPO_ROOT.parent
 #: that it is on the PATH.
 _INVOKED_RE = re.compile(r"invoked as (.+?)\.\s", re.S)
 
-#: Each backticked run of a command name inside that sentence. A name with a
-#: space in it is a sub-command (``make-site <tool>``) — the console script is
-#: the first word.
-_NAME_RE = re.compile(r"`([a-z][a-z0-9-]*)(?:[^`]*)`")
+#: Each backticked run inside that sentence whose first word looks like a
+#: **console script**, which in this suite means one of exactly two naming
+#: conventions: ``make-…`` or ``sprezzature-…``. The first word only, because
+#: a sentence writes the invocation as ``make-site <tool>``.
+#:
+#: Narrowed from "every backticked lowercase word". That version read the
+#: sub-command names a sentence lists — ``lint``, ``alt``, ``text-spacing`` —
+#: as console-script claims and failed on a skill that was telling the truth.
+#: A sub-command named in prose is not a promise that it is on the PATH; the
+#: promise is about the command you type first.
+_NAME_RE = re.compile(r"`((?:make|sprezzature)-[a-z0-9-]*)(?:[^`]*)`")
 
 _SCRIPTS_SECTION_RE = re.compile(
     r"^\[project\.scripts\]\s*$(.*?)(?=^\[|\Z)", re.M | re.S

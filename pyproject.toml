@@ -32,7 +32,11 @@ all = [
     # this repository's own SKILL.md tells an agent the tools are "invoked as
     # `sprezzature-colors …`". The floor is what makes that sentence true.
     "sprezzature-colors>=1.1.0",
-    "sprezzature-accessibility>=1.1.1",
+    # 1.2.0 for the same reason as colors and ux-laws: before it,
+    # `sprezzature-accessibility` was not a command — only
+    # `sprezzature-accessibility-lint` and its siblings were — while this
+    # repository's SKILL.md named it. The floor is what makes that true.
+    "sprezzature-accessibility>=1.2.0",
     "sprezzature-audio>=1.4.0",
     "sprezzature-cli-gui>=1.2.0",
     # 1.2.0 for the same reason: `sprezzature-ux-laws` itself only became a
