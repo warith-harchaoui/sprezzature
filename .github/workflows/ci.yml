@@ -1,9 +1,8 @@
 name: ci
 
 # Runs the deterministic test suite + validator on every push to main and
-# every PR. The eval suite (tests/eval/, opt-in via `pytest -m eval`) needs
-# a running Ollama daemon and is **not** executed here — we only verify
-# collection so a syntax error in an eval test fails CI loudly.
+# every PR. There is no eval suite in this repository any more: those tests
+# went to the bricks they belong to when the monorepo was split.
 
 # `on` is quoted because PyYAML's 1.1 mode parses bare `on:` as boolean True;
 # GitHub's own parser handles either form. Quoting keeps `yaml.safe_load`
@@ -80,8 +79,8 @@ jobs:
           # in-process imports and the subprocess ``--help`` smoke tests,
           # as in production.
           # Per-skill runtime deps so the Ollama-backed scripts import
-          # cleanly during collection (they don't call the daemon — that's
-          # gated by the `eval` marker). The two narration engines are
+          # cleanly during collection (they don't call the daemon; the tests
+          # that would are in the bricks). The two narration engines are
           # skipped on purpose: ``narrate_openvoice.py`` and
           # ``narrate_chatterbox.py`` lazy-import their backend via
           # ``importlib`` inside functions, so neither is needed for
@@ -150,8 +149,15 @@ jobs:
         # here even if pytest somehow does not.
         run: python scripts/validate_all.py
 
-      - name: Collect eval suite (do not run)
-        # The eval marker is deselected in pytest.ini; `--collect-only` plus
-        # explicit `-m eval` proves the files import even though the suite
-        # itself is opt-in.
-        run: python -m pytest -m eval --collect-only -q
+      # The eval suite used to live here, and this step proved its files still
+      # imported — a real check, since `-m eval` is deselected by default and
+      # a syntax error in one of those files would otherwise surface months
+      # later. The four eval modules left with their bricks when the monorepo
+      # was split; `tests/eval/` stayed behind as an empty shell, and
+      # `pytest -m eval` then returned exit 5 ("no tests collected"), which
+      # this step read as a failure. CI was red on that alone.
+      #
+      # The check did not disappear: it moved to the two repositories that
+      # have eval tests now, sprezzature-accessibility (5) and
+      # sprezzature-publish (2), in their pre-push hooks. A guard belongs
+      # where it can see the thing.
