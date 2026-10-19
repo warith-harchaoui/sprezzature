@@ -214,6 +214,96 @@ def _package_dirs(pyproject: str) -> dict[str, str]:
     return dict(pairs)
 
 
+def _share_an_engine(sources: dict[str, str]) -> bool:
+    """Whether the click front door is built on the argparse one.
+
+    The contract is "two parsers, one engine". The mechanical trace of that is
+    an import: the click module names something the argparse module defines.
+    A click command that imports nothing from its argparse twin is a second
+    implementation, and the two are free to drift — which is the whole failure
+    the twin was introduced to prevent.
+
+    Both sides are identified by what they import rather than by filename,
+    because this suite spells the pair three different ways:
+    ``cli.py``/``cli_click.py``, ``make_figure.py``/``cli.py``, and an auditor
+    in ``scripts/`` beside ``cli_click.py``. Demanding the filenames turned
+    this into a note telling a human to go and look, every run, forever.
+    """
+    defined: set[str] = set()
+    click_sources: list[str] = []
+    for src in sources.values():
+        if _uses(src, ("import argparse", "from _argparse import", "make_parser(")):
+            defined |= _module_names_in(src)
+        if _uses(src, ("import click", "from click", "sprezzature_command(")):
+            click_sources.append(src)
+    if not click_sources or not defined:
+        return False
+    return any(_imported_names(src) & defined for src in click_sources)
+
+
+def _module_names_in(src: str) -> set[str]:
+    """Top-level names a module defines.
+
+    Parsed rather than grepped: a name mentioned in a docstring is not a name
+    the module exports, and the first version of the surrounding check was
+    wrong in exactly that way about ``argparse``.
+
+    ``AnnAssign`` is handled as well as ``Assign``, which the first version
+    was not — and that is the whole catalogue in this suite, since every
+    front-door table is written ``TOOLS: dict[str, ...] = {...}``. The check
+    reported five repositories as having two unrelated tools because of it.
+    """
+    import ast
+
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:  # pragma: no cover - unparseable source
+        return set()
+    names: set[str] = set()
+    for node in tree.body:
+        if isinstance(node, ast.FunctionDef | ast.AsyncFunctionDef | ast.ClassDef):
+            names.add(node.name)
+        elif isinstance(node, ast.Assign):
+            names.update(t.id for t in node.targets if isinstance(t, ast.Name))
+        elif isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name):
+            names.add(node.target.id)
+    return names
+
+
+def _imported_names(src: str) -> set[str]:
+    """Every name a module imports, however deep the import sits.
+
+    Not top-level only: a guarded front door puts its real imports inside the
+    ``else`` branch of a ``try: import click``, so a top-level walk sees
+    nothing and the check would call a correct module a second tool.
+
+    Both the original name and the local alias are kept. ``from ...auditor
+    import main as _audit`` binds ``_audit`` locally, but the name that says
+    *which function was reached* is ``main`` — and matching on the alias alone
+    reported sprezzature-ux-laws, sprezzature-cli-gui and sprezzature-maps as
+    two unrelated tools when each is one engine behind two parsers.
+    """
+    import ast
+
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:  # pragma: no cover - unparseable source
+        return set()
+    names: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom):
+            for alias in node.names:
+                names.add(alias.name)
+                if alias.asname:
+                    names.add(alias.asname)
+        elif isinstance(node, ast.Import):
+            for alias in node.names:
+                names.add(alias.name.split(".")[0])
+                if alias.asname:
+                    names.add(alias.asname)
+    return names
+
+
 def _target_source(repo: Path, pyproject: str, target: str) -> str:
     """Source of the module a ``[project.scripts]`` target names.
 
@@ -280,9 +370,7 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
             "containers": {c: None for c in CONTAINERS},
             "publication": publication,
             "standalone": False,
-            "missing": (["skill"] if not skill else [])
-            + ["repo"]
-            + publication_gaps,
+            "missing": (["skill"] if not skill else []) + ["repo"] + publication_gaps,
             "notes": ["no sibling checkout — surfaces undecidable here"],
         }
 
@@ -330,20 +418,26 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
 
     # "Both parsers exist somewhere in the repo" is a weaker claim than the
     # contract makes, and sprezzature-accessibility is how that showed: its click
-    # command is the drafter and its argparse command is the *installer* --
-    # two different tools, so the engine itself had one parser, not two. The
-    # reference layout puts both over the same engine, in cli.py and
-    # cli_click.py, which is also the only version of this that a script can
-    # check without guessing which command is the important one.
-    if cli and not (
-        _uses(_read(package / "cli.py"), ("argparse",))
-        and _uses(
-            _read(package / "cli_click.py"), ("import click", "from click")
-        )
-    ):
+    # command was the drafter and its argparse command the *installer* --
+    # two different tools, so the engine itself had one parser, not two.
+    #
+    # The first version of this check demanded the reference *filenames*,
+    # cli.py + cli_click.py, and printed "check they are not two different
+    # tools" for anything else. That is a note, not a check: it asks a human
+    # to go and look, every run, forever. It fired on sprezzature-figures
+    # (make_figure.py + cli.py) and sprezzature-ux-laws (an auditor in
+    # scripts/ + cli_click.py), both of which are one engine behind two
+    # parsers -- exactly what the contract asks for, spelled differently.
+    #
+    # So check the property rather than the spelling: there must be an import
+    # edge from the click side to the argparse side, or both must reach a
+    # third module. Two front doors that never mention each other are two
+    # tools, whatever they are called.
+    if cli and not _share_an_engine(sources):
         notes.append(
-            "both parsers reach PATH, but not as cli.py + cli_click.py over "
-            "the same engine -- check they are not two different tools"
+            "both parsers reach PATH, but neither click module imports the "
+            "argparse one -- they look like two different tools, not two "
+            "doors onto one"
         )
     for command, source in sources.items():
         if not source:
@@ -401,12 +495,16 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     # install has it and the command cannot fail. Guarding it would be
     # defending against something that does not happen, which is its own kind
     # of noise.
-    base_requires_click = any(
-        requirement.strip().strip('"\'').lower().startswith("click")
-        for requirement in re.findall(
-            r"^dependencies\s*=\s*\[(.*?)\]", pyproject, re.M | re.S
-        )[0].split(",")
-    ) if re.search(r"^dependencies\s*=\s*\[", pyproject, re.M) else False
+    base_requires_click = (
+        any(
+            requirement.strip().strip("\"'").lower().startswith("click")
+            for requirement in re.findall(
+                r"^dependencies\s*=\s*\[(.*?)\]", pyproject, re.M | re.S
+            )[0].split(",")
+        )
+        if re.search(r"^dependencies\s*=\s*\[", pyproject, re.M)
+        else False
+    )
 
     if not base_requires_click:
         for command in on_path:
@@ -428,13 +526,16 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     docker = (repo / "Dockerfile").is_file()
     compose = any(
         (repo / name).is_file()
-        for name in ("docker-compose.yml", "docker-compose.yaml", "compose.yaml", "compose.yml")
+        for name in (
+            "docker-compose.yml",
+            "docker-compose.yaml",
+            "compose.yaml",
+            "compose.yml",
+        )
     )
 
     if not standalone:
-        notes.append(
-            "no .git here: the files are in place but nobody can clone them"
-        )
+        notes.append("no .git here: the files are in place but nobody can clone them")
 
     held = {
         "library": library,
@@ -444,9 +545,7 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         "skill": skill,
     }
     missing = [
-        name
-        for name, ok in held.items()
-        if not ok and (brick, name) not in EXEMPTIONS
+        name for name, ok in held.items() if not ok and (brick, name) not in EXEMPTIONS
     ]
     if api and not docker:
         missing.append("docker")
@@ -499,9 +598,7 @@ _COLUMNS: tuple[tuple[str, str], ...] = (
 def _table(reports: list[dict[str, Any]]) -> str:
     """The whole audit as a fixed-width table."""
     width = max(len(r["brick"]) for r in reports)
-    head = f"{'brick':<{width}}  " + "".join(
-        f"{short:^6}" for _, short in _COLUMNS
-    )
+    head = f"{'brick':<{width}}  " + "".join(f"{short:^6}" for _, short in _COLUMNS)
     lines = [head, "-" * len(head)]
     for report in reports:
         cells = ""
@@ -580,7 +677,9 @@ def main(argv: list[str] | None = None) -> int:
         if gaps:
             print()
             for report in gaps:
-                print(f"  gap   {report['brick']}: missing {', '.join(report['missing'])}")
+                print(
+                    f"  gap   {report['brick']}: missing {', '.join(report['missing'])}"
+                )
 
     return 1 if any(r["missing"] for r in reports) else 0
 
