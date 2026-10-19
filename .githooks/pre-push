@@ -22,7 +22,16 @@ python3 -m pytest -q || { echo "[pre-push] pytest failed - push aborted."; exit 
 echo "[pre-push] skill validation..."
 python3 scripts/validate_all.py || { echo "[pre-push] skill validation failed - push aborted."; exit 1; }
 
-echo "[pre-push] eval suite collects..."
-python3 -m pytest -m eval --collect-only -q || { echo "[pre-push] eval suite collects failed - push aborted."; exit 1; }
+# The eval suite used to live here and this step checked that it still
+# collected — a real risk, since `-m eval` is excluded from the default run,
+# so a syntax error in one of those files is invisible until someone asks for
+# them by name. The four eval modules left with their bricks during the
+# monorepo split; `tests/eval/` stayed behind as an empty shell with a
+# conftest still describing modules that were gone, and `pytest -m eval`
+# returned exit 5 ("no tests collected"), which this step read as a failure.
+#
+# The check did not disappear: it moved to the two repositories that actually
+# have eval tests now, `sprezzature-accessibility` (6) and
+# `sprezzature-publish` (2). A guard belongs where it can see the thing.
 
 echo "[pre-push] all green - pushing."
