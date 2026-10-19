@@ -5,8 +5,9 @@
     document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Vision — alt text — Sprezzature</title>
-  <meta name="description" content="W3C-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b.">
+  <meta name="robots" content="noindex, follow">
+  <title>Vision is part of Accessibility now — Sprezzature</title>
+  <meta name="description" content="sprezzature-vision merged into sprezzature-accessibility on 17 October 2026: the lint that finds missing alt text and the drafter that writes it were two halves of one job.">
   <link rel="canonical" href="https://sprezzature.ai/vision.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/vision.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/vision.html">
@@ -103,61 +104,30 @@
       </ul>
     </div>
   </header>
-  <main id="main">
-    <section class="mx-auto max-w-4xl px-5 py-14">
-      <p class="font-mono text-sm text-brand-linktext">sprezzature-vision</p>
-      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Vision: alt text</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">World Wide Web Consortium (W3C)-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b. Nothing leaves the machine.</p>
-      <p class="mt-3 inline-block rounded-lg border border-brand-orange/40 bg-brand-orange/10 px-3 py-1.5 text-sm text-neutral-700 dark:text-neutral-200"><strong>Work in progress:</strong> every output is a draft requiring human review, not finished alt text.</p>
-      <div class="mt-6 flex flex-wrap gap-3 text-sm">
-        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-vision/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (the agent spec)</a>
-        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Give a ⭐️ on GitHub</a>
-      </div>
-    </section>
-    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
-      <div class="mx-auto grid max-w-4xl gap-8 px-5 py-12 sm:grid-cols-2">
-        <div>
-          <h2 class="text-lg font-bold">Makes</h2>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>Alt-text drafts for informative / decorative / functional / text / complex / group images</li>
-          <li>Output in any detected language, native phrasing for common ones</li>
-          <li>Surrounding-text and project-vocabulary biasing</li>
-          <li>A deterministic on-disk cache: same image never hits the model twice</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-lg font-bold">Audits</h2>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>Flags images with no alt</li>
-          <li>Drafts are starting points; verify before committing</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
-      <div class="mx-auto max-w-4xl px-5 py-12">
-        <h2 class="text-lg font-bold">Say one of these</h2>
-        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">The skill triggers itself on phrasing like this, no command to memorize.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">alt text</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">describe this image</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">draft alt</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">image description</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">img has no alt</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">decorative image</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">figure / chart description</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">batch alt text</code>
-        </div>
-      </div>
-    </section>
-    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
-      <div class="mx-auto max-w-4xl px-5 py-12">
-        <h2 class="text-lg font-bold">Reference library</h2>
-        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">The knowledge the skill draws on: read them straight from the repo.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-vision/references/alt-text-ai.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Alt-text with AI</a>
-        </div>
-      </div>
+    <main id="main">
+    <section class="mx-auto max-w-3xl px-5 py-16">
+      <p class="text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Merged</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight">Vision is part of Accessibility now</h1>
+      <p class="mt-6 text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+        On 17&nbsp;October&nbsp;2026 <code>sprezzature-vision</code> stopped being its own
+        brick. Everything it did — drafting W3C-compliant alt text with a local vision
+        model, the per-image decision tree, the on-disk cache — moved into
+        <a class="underline decoration-neutral-400 underline-offset-4" href="accessibility.html">sprezzature-accessibility</a>.
+      </p>
+      <p class="mt-5 leading-relaxed text-neutral-700 dark:text-neutral-300">
+        The reason is that they were two halves of one job and nobody wanted only one of
+        them. The lint says a page is missing alt text; the drafter writes it. Keeping
+        them apart meant two installs, two skills competing for the same prompts, and a
+        drafter that could not see the page it was describing — which matters, because the
+        W3C decision tree asks what an image is <em>doing</em> on the page, a question
+        about the page and not about the pixels.
+      </p>
+      <p class="mt-5 leading-relaxed text-neutral-700 dark:text-neutral-300">
+        This page stays so the link you followed does not break.
+      </p>
+      <p class="mt-8">
+        <a class="inline-block rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white dark:bg-white dark:text-neutral-900" href="accessibility.html">Go to Accessibility</a>
+      </p>
     </section>
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">

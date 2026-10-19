@@ -1894,11 +1894,24 @@ The 30 laws
 
 ---
 
-# Vision — alt text — Sprezzature
+# Vision is part of Accessibility now — Sprezzature
 
 Source: https://sprezzature.ai/vision.html
 
-sprezzature-accessibility
+On 17 October 2026 sprezzature-vision stopped being its own brick. Everything
+it did — drafting W3C-compliant alt text with a local vision model, the
+per-image decision tree, the on-disk cache — moved into
+sprezzature-accessibility.
+
+They were two halves of one job and nobody wanted only one of them: the lint
+says a page is missing alt text, the drafter writes it. Keeping them apart
+meant two installs, two skills competing for the same prompts, and a drafter
+that could not see the page it was describing — which matters, because the
+W3C decision tree asks what an image is *doing* on the page, a question about
+the page and not about the pixels.
+
+Install sprezzature-accessibility with the [alt] extra. There is no
+sprezzature-vision package to install.
 
 # Vision: alt text
 

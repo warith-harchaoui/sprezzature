@@ -5,8 +5,9 @@
     document.documentElement.setAttribute('data-color-mode',s==='corporate'?'corporate':'academic');})();</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Vision — texte alternatif — Sprezzature</title>
-  <meta name="description" content="Rédaction d'alt-text conforme W3C via un modèle de vision Ollama local: arbre de décision par image, sortie dans toute langue détectée, cache disque déterministe. Le seul modèle est qwen3-vl:8b.">
+  <meta name="robots" content="noindex, follow">
+  <title>Vision fait partie d’Accessibility — Sprezzature</title>
+  <meta name="description" content="sprezzature-vision a fusionné dans sprezzature-accessibility le 17 octobre 2026 : le lint qui trouve les textes alternatifs manquants et le rédacteur qui les écrit étaient deux moitiés d’un même travail.">
   <link rel="canonical" href="https://sprezzature.ai/fr/vision.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/vision.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/vision.html">
@@ -101,61 +102,31 @@
       </ul>
     </div>
   </header>
-  <main id="main">
-    <section class="mx-auto max-w-4xl px-5 py-14">
-      <p class="font-mono text-sm text-brand-linktext">sprezzature-vision</p>
-      <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Vision : texte alternatif</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Rédaction de texte alternatif conforme au World Wide Web Consortium (W3C) via un modèle de vision Ollama local : arbre de décision par image, sortie dans toute langue détectée, mise en cache disque déterministe. Le seul modèle est qwen3-vl:8b. Rien ne quitte la machine.</p>
-      <p class="mt-3 inline-block rounded-lg border border-brand-orange/40 bg-brand-orange/10 px-3 py-1.5 text-sm text-neutral-700 dark:text-neutral-200"><strong>En cours de développement :</strong> chaque sortie est un brouillon à relire, pas un texte alternatif définitif.</p>
-      <div class="mt-6 flex flex-wrap gap-3 text-sm">
-        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-vision/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (la spec agent)</a>
-        <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur GitHub</a>
-      </div>
-    </section>
-    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
-      <div class="mx-auto grid max-w-4xl gap-8 px-5 py-12 sm:grid-cols-2">
-        <div>
-          <h2 class="text-lg font-bold">Produit</h2>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>Brouillons d'alt pour images informatives / décoratives / fonctionnelles / texte / complexes / groupe</li>
-          <li>Sortie dans toute langue détectée, tournures natives pour les plus courantes</li>
-          <li>Biais par le texte environnant et le vocabulaire du projet</li>
-          <li>Un cache disque déterministe : la même image ne repasse jamais au modèle</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-lg font-bold">Audite</h2>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>Signale les images sans alt</li>
-          <li>Les brouillons sont des points de départ; vérifiez avant de valider (commit)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
-      <div class="mx-auto max-w-4xl px-5 py-12">
-        <h2 class="text-lg font-bold">Dites l'une de ces phrases</h2>
-        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">La <em>skill</em> se déclenche sur une formulation de ce type, sans commande à mémoriser.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">texte alternatif</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">décris cette image</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">brouillon d'alt</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">description d'image</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">img sans alt</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">image décorative</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">description de figure / graphique</code>
-        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">alt en lot</code>
-        </div>
-      </div>
-    </section>
-    <section class="border-t border-neutral-200/70 dark:border-neutral-800">
-      <div class="mx-auto max-w-4xl px-5 py-12">
-        <h2 class="text-lg font-bold">Bibliothèque de références</h2>
-        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Les connaissances sur lesquelles la <em>skill</em> s'appuie : à lire directement dans le repo.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-        <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-vision/references/alt-text-ai.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Texte alternatif par IA</a>
-        </div>
-      </div>
+    <main id="main">
+    <section class="mx-auto max-w-3xl px-5 py-16">
+      <p class="text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Fusionné</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight">Vision fait maintenant partie d’Accessibility</h1>
+      <p class="mt-6 text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+        Le 17&nbsp;octobre&nbsp;2026, <code>sprezzature-vision</code> a cessé d’être une
+        brique à part. Tout ce qu’elle faisait — rédiger des textes alternatifs conformes
+        au W3C avec un modèle de vision local, l’arbre de décision par image, le cache sur
+        disque — a rejoint
+        <a class="underline decoration-neutral-400 underline-offset-4" href="accessibility.html">sprezzature-accessibility</a>.
+      </p>
+      <p class="mt-5 leading-relaxed text-neutral-700 dark:text-neutral-300">
+        La raison : c’étaient deux moitiés d’un même travail, et personne n’en voulait une
+        seule. Le lint dit qu’une page manque de texte alternatif ; le rédacteur l’écrit.
+        Les garder séparées, c’était deux installations, deux skills se disputant les mêmes
+        prompts, et un rédacteur incapable de voir la page qu’il décrivait — ce qui compte,
+        puisque l’arbre de décision du W3C demande ce qu’une image <em>fait</em> sur la
+        page : une question sur la page, pas sur les pixels.
+      </p>
+      <p class="mt-5 leading-relaxed text-neutral-700 dark:text-neutral-300">
+        Cette page reste en place pour que le lien que vous avez suivi ne casse pas.
+      </p>
+      <p class="mt-8">
+        <a class="inline-block rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white dark:bg-white dark:text-neutral-900" href="accessibility.html">Aller à Accessibility</a>
+      </p>
     </section>
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
