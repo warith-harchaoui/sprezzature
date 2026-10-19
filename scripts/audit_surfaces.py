@@ -386,6 +386,44 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
             f"environment, so {own}_HOST and {own}_PORT do nothing here"
         )
 
+    # Every command a bare `pip install` puts on PATH must be able to say
+    # something useful when it cannot start.
+    #
+    # Click is an extra in most of these bricks — the argparse twin needs
+    # nothing, which is the whole reason both ship — so the Click commands
+    # install and then fail. Unguarded, what they print is
+    # `ModuleNotFoundError: No module named 'click'`: a traceback about a
+    # third-party package the reader never asked for, for a command their own
+    # install had just created. figures and maps had guarded theirs from the
+    # start; accessibility had not, and it took a bare-venv install to see it,
+    # because a developer machine always has click.
+    # Skipped entirely where click is a *base* dependency: there, a bare
+    # install has it and the command cannot fail. Guarding it would be
+    # defending against something that does not happen, which is its own kind
+    # of noise.
+    base_requires_click = any(
+        requirement.strip().strip('"\'').lower().startswith("click")
+        for requirement in re.findall(
+            r"^dependencies\s*=\s*\[(.*?)\]", pyproject, re.M | re.S
+        )[0].split(",")
+    ) if re.search(r"^dependencies\s*=\s*\[", pyproject, re.M) else False
+
+    if not base_requires_click:
+        for command in on_path:
+            source = sources.get(command, "")
+            if not _uses(source, ("import click", "from click")):
+                continue
+            # The guard has to be around the import, not merely present in the
+            # file: a `try:` three hundred lines below protects nothing.
+            before = source.split("import click")[0][-300:]
+            if "try:" not in before:
+                notes.append(
+                    f"`{command}` imports click unguarded, and click is an "
+                    f"extra here: on a bare install it answers a "
+                    f"ModuleNotFoundError about a package the reader never "
+                    f"asked for"
+                )
+
     # Containers: how the API ships.
     docker = (repo / "Dockerfile").is_file()
     compose = any(
