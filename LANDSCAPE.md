@@ -106,12 +106,32 @@ as the reference row), the ten criteria project onto a 2-D **positioning map**:
 
 The horizontal axis contrasts **Mature** (left: established maturity and ecosystem) with **Simple**
 (right: immediate to pick up); the vertical contrasts **Adaptable** (top: restyleable and lightweight)
-with **Interactive** (bottom: interactive end-user exploration): together ~55% of what separates these
-approaches. `sprezzature` anchors the top-right; **Looker** sits diametrically opposite (a hosted,
-heavyweight, proprietary BI platform); **Tailwind CSS** reaches furthest toward Adaptable and **Pico CSS**
-furthest toward Simple. The scores live in a **gitignored** comma-separated-values (CSV) file
-(`.private/landscape/landscape-en.csv`); regenerate the map with
-`standpoint .private/landscape/landscape-en.csv -r sprezzature -o out --model qwen3-vl:8b`.
+with **Interactive** (bottom: interactive end-user exploration). `sprezzature` anchors the top-right;
+**Looker** sits diametrically opposite (a hosted, heavyweight, proprietary BI platform); **Tailwind CSS**
+reaches furthest toward Adaptable and **Pico CSS** furthest toward Simple.
+
+Those two names per axis are a local model's words; the loadings behind them are the
+check. Horizontally, ecosystem (−0.59) and maturity (−0.55) against ease (+0.37) — being
+established versus being immediate. Vertically, restyleable (+0.54), lightweight (+0.45)
+and accessibility (+0.39) against interactive (−0.31) — something you shape versus
+something you operate.
+
+**Together the two axes carry 52.9 %** of what separates these approaches. Just over half:
+with ten criteria across twenty-nine tools, the map is a first orientation and the tables
+are the evidence. The scores are
+[`assets/landscape.csv`](assets/landscape.csv) — generated from the table above by
+`scripts/landscape_to_csv.py`, so the two cannot drift. To redraw it:
+
+```sh
+standpoint assets/landscape.csv -r "sprezzature (the skills)" -o out
+```
+
+The **positions** come back identical — the geometry is correlation PCA with no model in
+it, and two runs were diffed to check. The **pole names** do not: they are written by
+whichever local model is configured, and the evidence is this page — the figure above
+says *Mature / Simple* where a run today says *Robust / Nimble*, from the same numbers.
+That is why the loadings are quoted above, and why the figure is kept as rendered rather
+than redrawn on every build.
 
 The per-category matrices below keep the columns that only make sense within one category.
 
