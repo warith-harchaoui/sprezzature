@@ -26,7 +26,7 @@ metadata:
   version: 1.6.0
 ---
 
-> The deterministic tools below now ship as the standalone package [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility) (`pip install`), invoked as `sprezzature-accessibility …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+> The deterministic tools below now ship as the standalone package [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility) (`pip install`), invoked as `sprezzature-accessibility-lint`, `sprezzature-accessibility-text-spacing`, and — behind the `[alt]` extra — `make-alt` (argparse) with its click twin `sprezzature-accessibility-alt`. There is no single `sprezzature-accessibility` command: unlike its siblings this package ships no unified front door, and this sentence used to promise one. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 # sprezzature-accessibility — static HTML a11y lint
 

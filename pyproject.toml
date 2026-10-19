@@ -27,11 +27,18 @@ dependencies = []
 # The tools the skills call. Each installs on its own; this pulls the lot.
 all = [
     "sprezzature-figures>=2.7.0",
-    "sprezzature-colors>=1.0.1",
+    # 1.1.0, not 1.0.1: before it, `sprezzature-colors` was not a command —
+    # only `sprezzature-colors-contrast` and its three siblings were — and
+    # this repository's own SKILL.md tells an agent the tools are "invoked as
+    # `sprezzature-colors …`". The floor is what makes that sentence true.
+    "sprezzature-colors>=1.1.0",
     "sprezzature-accessibility>=1.1.1",
     "sprezzature-audio>=1.4.0",
     "sprezzature-cli-gui>=1.2.0",
-    "sprezzature-ux-laws>=1.1.0",
+    # 1.2.0 for the same reason: `sprezzature-ux-laws` itself only became a
+    # command there (1.1.0 installed `sprezzature-ux-laws-audit` alone), and
+    # it is the version that first exposed a library surface at all.
+    "sprezzature-ux-laws>=1.2.0",
     "sprezzature-maps>=1.0.0",
     # The last two to reach PyPI, on 2026-10-19. Until then `all` installed
     # eight ninths of the suite under a name that promised all of it — the
