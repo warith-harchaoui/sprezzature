@@ -89,20 +89,41 @@ def _sitemap_urls() -> set[str]:
     return {element.text or "" for element in root.findall(".//sm:loc", namespace)}
 
 
+def _is_noindex(page: Path) -> bool:
+    """Whether this page asks not to be indexed."""
+    head = page.read_text(encoding="utf-8", errors="replace")[:4000]
+    return 'name="robots"' in head and "noindex" in head
+
+
 def test_the_sitemap_lists_every_page_and_only_pages() -> None:
-    """Both directions, because they fail differently.
+    """Three directions, because they fail three different ways.
 
     A page missing from the sitemap is invisible to crawlers. A sitemap entry
     with no page behind it is a 404 served to every crawler that trusts the
     file -- and the sitemap is precisely the document that asks to be trusted.
+
+    And a ``noindex`` page listed in the sitemap is a contradiction: the file
+    asks a crawler to come, and the page tells it to leave. That third case
+    arrived with the merge notices left where `sprezzature-vision` used to be
+    -- pages that must stay reachable, so an old link does not break, and must
+    stay out of the index, because they describe a brick that no longer
+    exists.
     """
     listed = _sitemap_urls()
-    expected = {_url_for(page) for page in ALL_PAGES}
+    indexable = {page for page in ALL_PAGES if not _is_noindex(page)}
+    hidden = {page for page in ALL_PAGES if _is_noindex(page)}
+
+    expected = {_url_for(page) for page in indexable}
     assert listed - expected == set(), (
         f"sitemap lists URLs with no page: {sorted(listed - expected)}"
     )
     assert expected - listed == set(), (
         f"pages missing from the sitemap: {sorted(expected - listed)}"
+    )
+    contradictory = {_url_for(page) for page in hidden} & listed
+    assert contradictory == set(), (
+        f"noindex pages listed in the sitemap: {sorted(contradictory)} -- the "
+        f"file asks a crawler to come and the page tells it to leave"
     )
 
 
