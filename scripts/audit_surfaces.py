@@ -304,6 +304,64 @@ def _imported_names(src: str) -> set[str]:
     return names
 
 
+def _base_distributions(pyproject: str) -> set[str]:
+    """Distribution names a plain ``pip install`` brings in.
+
+    The declared ones only, never their transitive closure: a check that
+    accepted whatever a dependency happened to pull today would pass until
+    that dependency dropped something.
+    """
+    block = re.search(r"^dependencies\s*=\s*\[(.*?)^\]", pyproject, re.M | re.S)
+    if not block:
+        return set()
+    return {
+        name.lower().replace("-", "_")
+        for name in re.findall(
+            r'^\s*"([A-Za-z0-9][A-Za-z0-9._-]*)', block.group(1), re.M
+        )
+    }
+
+
+def _unguarded_third_party(module_path: Path, base: set[str]) -> list[str]:
+    """Module-level imports a bare install would not satisfy.
+
+    Three things are *not* reported, each for its own reason:
+
+    - imports inside a ``try``/``except ImportError``, which is the documented
+      way to need something optional;
+    - imports nested in a function, which happen when the function is called —
+      after the command has started and printed its help;
+    - a bare name matching a ``.py`` file beside this one, which is a sibling
+      module. These scripts put their own directory on ``sys.path`` so each
+      can also run on its own out of a downloaded zip, and the first version
+      of this check read every one of them as a missing dependency — forty
+      false reports across nine repositories.
+    """
+    import ast
+    import sys
+
+    try:
+        tree = ast.parse(module_path.read_text(encoding="utf-8"))
+    except (OSError, SyntaxError):  # pragma: no cover - unreadable source
+        return []
+
+    imported: set[str] = set()
+    for node in tree.body:  # top level only: a `try` body is not tree.body
+        if isinstance(node, ast.Import):
+            imported |= {alias.name.split(".")[0] for alias in node.names}
+        elif isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
+            imported.add(node.module.split(".")[0])
+
+    siblings = {f.stem for f in module_path.parent.glob("*.py")}
+    return sorted(
+        name
+        for name in imported
+        if name not in sys.stdlib_module_names
+        and name.lower().replace("-", "_") not in base
+        and name not in siblings
+    )
+
+
 def _target_source(repo: Path, pyproject: str, target: str) -> str:
     """Source of the module a ``[project.scripts]`` target names.
 
@@ -314,6 +372,17 @@ def _target_source(repo: Path, pyproject: str, target: str) -> str:
     script, which the audit then reports as a missing command line rather than
     crashing on.
     """
+    path = _target_path(repo, pyproject, target)
+    return _read(path) if path else ""
+
+
+def _target_path(repo: Path, pyproject: str, target: str) -> Path | None:
+    """Where a ``[project.scripts]`` target's module sits, or ``None``.
+
+    The path and not just the text, because deciding whether a bare-name
+    import is a sibling module or a third-party package means looking at what
+    is in the same folder.
+    """
     module = target.split(":")[0]
     head, _, tail = module.partition(".")
     mapping = _package_dirs(pyproject)
@@ -322,8 +391,8 @@ def _target_source(repo: Path, pyproject: str, target: str) -> str:
     for base in (repo, repo / "src"):
         candidate = base / relative
         if candidate.is_file():
-            return _read(candidate)
-    return ""
+            return candidate
+    return None
 
 
 def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
@@ -442,6 +511,35 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     for command, source in sources.items():
         if not source:
             notes.append(f"console script `{command}` points at no file on disk")
+
+    # A command that cannot start is not a command line.
+    #
+    # `discussion-helper` shipped this: its headline console script imported
+    # click at module level, and click was declared nowhere — not a
+    # dependency, not an extra. `pip install` put a name on the PATH that
+    # answered a traceback about a package the reader had never heard of.
+    # A checkout cannot see it, because click is always already there.
+    #
+    # The rule: a module a console script names may import, at module level,
+    # only the standard library, this package's declared base dependencies,
+    # and its own siblings. Anything heavier belongs behind an extra *and*
+    # behind a `try: ... except ImportError:` that names the extra.
+    base_dists = _base_distributions(pyproject) | {
+        repo.name.replace("-", "_"),
+        repo.name.replace("-", "_") + "_scripts",
+    }
+    for command, target in on_path.items():
+        module_path = _target_path(repo, pyproject, target)
+        if module_path is None:
+            continue
+        stranded = _unguarded_third_party(module_path, base_dists)
+        if stranded:
+            notes.append(
+                f"`{command}` imports {stranded} at module level and "
+                f"pyproject declares none of them as a base dependency -- "
+                f"a bare `pip install` puts it on PATH and it answers a "
+                f"traceback"
+            )
 
     # 3. HTTP API — a FastAPI app, declared behind its own extra.
     api_src = _read(package / "api.py")
