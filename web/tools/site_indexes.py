@@ -20,6 +20,7 @@ Author
 ------
 `Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
+
 from __future__ import annotations
 
 import re
@@ -34,23 +35,89 @@ BASE_URL = "https://sprezzature.ai"
 # Section, in llms.txt display order -> the EN filenames it groups.
 _SECTIONS: list[tuple[str, list[str]]] = [
     ("Home", ["index.html"]),
-    ("Skills", [
-        "ui.html", "cli.html", "publish.html", "accessibility.html",
-        "colors.html", "vision.html", "audio.html", "ux-laws.html", "figures.html",
-    ]),
-    ("Case studies", [
-        "case-studies.html", "hans-rosling.html", "maps.html",
-        "financial-markets.html", "financial-markets-adverse.html",
-    ]),
+    (
+        "Skills",
+        [
+            "ui.html",
+            "cli.html",
+            "publish.html",
+            "accessibility.html",
+            "colors.html",
+            "vision.html",
+            "audio.html",
+            "ux-laws.html",
+            "figures.html",
+        ],
+    ),
+    (
+        "Case studies",
+        [
+            "case-studies.html",
+            "hans-rosling.html",
+            "maps.html",
+            "financial-markets.html",
+            "financial-markets-adverse.html",
+        ],
+    ),
     ("Reference", ["packages.html", "ralph-eyeball-loop.html"]),
     ("Films", ["films.html"]),
 ]
 
 
+#: A page that tells robots not to index it. `vision.html` is the case that
+#: made this matter: when `sprezzature-vision` was folded into
+#: `sprezzature-accessibility`, its page stayed as a noindexed notice pointing
+#: readers at the new home. Listing it in the sitemap says "please index this"
+#: to the same crawler the page tells to go away — and the two had been
+#: disagreeing since the merge, because this discovery walked the filesystem
+#: and never read what it found.
+_NOINDEX = "noindex"
+
+
+def _is_indexable(page: Path) -> bool:
+    """Whether this page asks to be indexed at all."""
+    try:
+        head = page.read_text(encoding="utf-8", errors="replace")[:4000]
+    except OSError:  # pragma: no cover - unreadable file
+        return True
+    return _NOINDEX not in head
+
+
+#: Written-out numbers, because the tagline is prose.
+_WORDS = {
+    8: "Eight",
+    9: "Nine",
+    10: "Ten",
+    11: "Eleven",
+    12: "Twelve",
+}
+
+
+def _skill_count_word() -> str:
+    """How many skills the home page actually lists, spelled out.
+
+    Hard-coded until 2026-10-19, which is how `llms.txt` came to tell a model
+    there were ten skills on a site showing nine: `sprezzature-vision` had
+    been folded into `sprezzature-accessibility` and the card was gone, but
+    this sentence — a third place the number lived — had not moved. The home
+    page's `SKILLS` array is the only thing that decides how many there are,
+    so it is what gets counted.
+    """
+    home = (WEB / "index.html").read_text(encoding="utf-8")
+    count = len(re.findall(r"^      \['sprezzature", home, re.M))
+    return _WORDS.get(count, str(count))
+
+
 def _discover() -> tuple[list[Path], list[Path]]:
-    """Return ``(en_pages, fr_pages)``, each sorted, ``head.html`` excluded."""
-    en = sorted(p for p in WEB.glob("*.html") if p.name != "head.html")
-    fr = sorted((WEB / "fr").glob("*.html"))
+    """Return ``(en_pages, fr_pages)``, each sorted.
+
+    ``head.html`` is a fragment, not a page. Noindexed pages are excluded for
+    the reason given above :data:`_NOINDEX`.
+    """
+    en = sorted(
+        p for p in WEB.glob("*.html") if p.name != "head.html" and _is_indexable(p)
+    )
+    fr = sorted(p for p in (WEB / "fr").glob("*.html") if _is_indexable(p))
     return en, fr
 
 
@@ -67,7 +134,11 @@ def _git_lastmod(page: Path) -> str:
     try:
         out = subprocess.run(
             ["git", "log", "-1", "--format=%cs", "--", str(page)],
-            cwd=WEB, capture_output=True, text=True, timeout=5, check=False,
+            cwd=WEB,
+            capture_output=True,
+            text=True,
+            timeout=5,
+            check=False,
         ).stdout.strip()
         if out:
             return out
@@ -91,10 +162,14 @@ def _read_desc(page: Path) -> str:
 
 
 def render_sitemap(en: list[Path], fr: list[Path]) -> str:
-    lines = ['<?xml version="1.0" encoding="utf-8"?>',
-             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    lines = [
+        '<?xml version="1.0" encoding="utf-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
     for page in en + fr:
-        lines.append(f"  <url><loc>{_url_for(page)}</loc><lastmod>{_git_lastmod(page)}</lastmod></url>")
+        lines.append(
+            f"  <url><loc>{_url_for(page)}</loc><lastmod>{_git_lastmod(page)}</lastmod></url>"
+        )
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
 
@@ -105,10 +180,10 @@ def render_llms_txt(en: list[Path]) -> str:
     lines = [
         "# Sprezzature",
         "",
-        "> Ten Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, "
-        "publishing, accessibility, colors, alt text, captions, Laws of UX, "
-        "data-science figures, and maps. Each skill both makes artifacts and "
-        "audits them.",
+        f"> {_skill_count_word()} Claude / OpenCode skills for one frontend "
+        "stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, "
+        "Laws of UX, data-science figures, and maps. Each skill both makes "
+        "artifacts and audits them.",
         "",
     ]
     for heading, names in _SECTIONS:
@@ -120,7 +195,9 @@ def render_llms_txt(en: list[Path]) -> str:
         for name in entries:
             page = by_name[name]
             seen.add(name)
-            lines.append(f"- [{_read_title(page)}]({_url_for(page)}): {_read_desc(page)}")
+            lines.append(
+                f"- [{_read_title(page)}]({_url_for(page)}): {_read_desc(page)}"
+            )
         lines.append("")
     # Anything not bucketed above still gets listed, so a new page is never silently dropped.
     leftovers = [p for p in en if p.name not in seen]
@@ -128,12 +205,16 @@ def render_llms_txt(en: list[Path]) -> str:
         lines.append("## Other")
         lines.append("")
         for page in leftovers:
-            lines.append(f"- [{_read_title(page)}]({_url_for(page)}): {_read_desc(page)}")
+            lines.append(
+                f"- [{_read_title(page)}]({_url_for(page)}): {_read_desc(page)}"
+            )
         lines.append("")
     lines.append("## French (Français)")
     lines.append("")
-    lines.append("Every page above has a French translation at the same path under `/fr/` "
-                  "(e.g. `/fr/figures.html`), declared via `hreflang` on each page.")
+    lines.append(
+        "Every page above has a French translation at the same path under `/fr/` "
+        "(e.g. `/fr/figures.html`), declared via `hreflang` on each page."
+    )
     lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
@@ -169,6 +250,7 @@ def _html_to_text(html: str) -> str:
     body = re.sub(r"</(p|li|figcaption|section|div|tr)>", "\n", body, flags=re.I)
     body = _TAG_RE.sub(" ", body)
     import html as _htmlmod
+
     body = _htmlmod.unescape(body)
     body = _WS_RE.sub(" ", body)
     body = "\n".join(line.strip() for line in body.splitlines())
@@ -176,7 +258,9 @@ def _html_to_text(html: str) -> str:
     return body.strip()
 
 
-def render_llms_full(en: list[Path], max_bytes: int = 200 * 1024) -> tuple[str, list[str]]:
+def render_llms_full(
+    en: list[Path], max_bytes: int = 200 * 1024
+) -> tuple[str, list[str]]:
     """Full-text corpus of the EN pages (canonical language; FR is a translation
     of the same content, so it is not duplicated here -- see llms.txt's French
     section for the `/fr/` link pattern instead). Returns ``(text, dropped)``.
@@ -208,7 +292,9 @@ def render_llms_full(en: list[Path], max_bytes: int = 200 * 1024) -> tuple[str, 
 def main() -> int:
     en, fr = _discover()
     (WEB / "sitemap.xml").write_text(render_sitemap(en, fr), encoding="utf-8")
-    print(f"-> wrote sitemap.xml ({len(en) + len(fr)} URLs: {len(en)} en + {len(fr)} fr)")
+    print(
+        f"-> wrote sitemap.xml ({len(en) + len(fr)} URLs: {len(en)} en + {len(fr)} fr)"
+    )
 
     (WEB / "llms.txt").write_text(render_llms_txt(en), encoding="utf-8")
     print(f"-> wrote llms.txt ({len(en)} en pages indexed)")
@@ -216,7 +302,10 @@ def main() -> int:
     full_text, dropped = render_llms_full(en)
     (WEB / "llms-full.txt").write_text(full_text, encoding="utf-8")
     kb = len(full_text.encode("utf-8")) / 1024
-    print(f"-> wrote llms-full.txt ({kb:.0f} KB)" + (f" -- dropped: {', '.join(dropped)}" if dropped else ""))
+    print(
+        f"-> wrote llms-full.txt ({kb:.0f} KB)"
+        + (f" -- dropped: {', '.join(dropped)}" if dropped else "")
+    )
 
     humans = WEB / "humans.txt"
     if humans.is_file():

@@ -12,12 +12,14 @@ sprezzature-accessibility
 
 # Accessibility
 
-Pre-commit static HyperText Markup Language (HTML) accessibility lint for vanilla-JavaScript (JS) + Tailwind output: fifteen rules decidable from source, no browser, no runtime Document Object Model (DOM).
+Two halves of one job: audit what a page gets wrong about accessibility — twenty rules decidable from the HyperText Markup Language (HTML) source alone, no browser, no runtime Document Object Model (DOM) — and make the content it is missing, drafting alt text with a local vision model.
 
 SKILL.md (the agent spec)
 Give a ⭐️ on GitHub
 
 ## Makes
+
+Alt text for an image, drafted by a local Ollama vision model along the World Wide Web Consortium (W3C) image-purpose decision tree — informative, decorative, functional, text, complex, group — in any language, cached on disk
 
 JavaScript Object Notation (JSON) / stdout / exit codes for pre-commit and continuous integration (CI)
 
@@ -31,7 +33,9 @@ Missing dialog close, lang attribute, heading order
 
 Color-only state, motion-reduce guards, tight letter-spacing on running text
 
-A fast, deterministic gate (fifteen rules total), not a replacement for axe-core / Pa11y / Lighthouse
+Captions, track language and media controls on <video> and <audio>
+
+A fast, deterministic gate (twenty rules, six with a mechanical fixer), not a replacement for axe-core / Pa11y / Lighthouse
 
 ## Say one of these
 
@@ -50,7 +54,7 @@ fix accessibility
 
 The knowledge the skill draws on: read them straight from the repo.
 
-The fifteen rules
+The twenty rules
 
 ---
 
@@ -837,7 +841,7 @@ A sentence can be proofread by reading it back. A chart cannot. So the suite ren
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: the shipped bar-grouped.svg , the ten skills, and the two gates the model has to pass.
+What it shows: the shipped bar-grouped.svg , the nine skills, and the two gates the model has to pass.
 
 sprezzature-figures · sprezzature-maps
 
@@ -1178,7 +1182,7 @@ Follow a country
 
 ---
 
-# Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind
+# Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind
 
 Source: https://sprezzature.ai/
 
@@ -1189,7 +1193,7 @@ Create and audit figures, visualizations for app and web content
 faithful to a standard of accessibility, chromatic rigor, and usability.
 
 Explore
-the ten skills
+the nine skills
 See
 the gallery
 Give a ⭐️ on GitHub
@@ -1258,7 +1262,7 @@ sprezzature-ux-laws : Laws of UX audit
 
 sprezzature-maps : choropleth + situation
 
-## The ten skills
+## The nine skills
 
 ## A taste of what it renders
 
@@ -1521,11 +1525,11 @@ standalone packages
 
 Every tool here is one implementation reached five different ways. Which way you want depends on what you are doing: sending a colleague a single file, importing a function, calling it from another language, handing it to an agent. None of those should require a different tool.
 
-Each package is BSD-3-Clause, local-first, and independently versioned. All eight are published on PyPI, so a plain pip install is enough.
+Each package is BSD-3-Clause, local-first, and independently versioned. All nine are published on PyPI, so a plain pip install is enough.
 
-## Five ways in
+## Six ways in
 
-The rule is that these are surfaces , never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant.
+The rule is that these are surfaces , never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant. Five of these six are the contract every package holds — library, command line, HTTP, agent tools, skill. The zip kit is a way of delivering one, not a sixth implementation.
 
 zip
 
@@ -1538,6 +1542,12 @@ library
 ### Python functions
 
 Import them and call them. Typed, documented, and free of any plotting or charting dependency: the SVG is written directly, so the only thing you install is the thing you asked for.
+
+cli
+
+### Two command lines over one engine
+
+Every package ships an argparse front door and a Click twin — make-a11y and sprezzature-accessibility , make-colors and sprezzature-colors , and so on. argparse because it is in the standard library and therefore always there; Click because the people using it expect it. Where a package has several tools the two doors read one catalogue, so neither can offer a command the other is missing. Where Click is not already needed it is an optional extra and the import is guarded: a package whose audit runs on the standard library alone stays that way.
 
 api
 
@@ -1564,32 +1574,31 @@ Five ways in is the target, and most of it is now built. Every package with a li
 Package
 Zip
 Library
+CLI
 API
 MCP
 Claude skill
 OpenCode skill
 
-sprezzature-figures 125 kits ● yes ● yes ● yes ● yes ● yes
+sprezzature-figures 125 kits ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-maps 1 kit ● yes ● yes ● yes ● yes ● yes
+sprezzature-maps 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-colors 1 kit ● yes ● yes ● yes ● yes ● yes
+sprezzature-colors 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-accessibility 1 kit ● yes ● yes ● yes ● yes ● yes
+sprezzature-accessibility 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-audio — not yet ● yes ● yes ● yes ● yes ● yes
+sprezzature-audio — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-cli-gui 1 kit ● yes ● yes ● yes ● yes ● yes
+sprezzature-cli-gui 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-ux-laws 1 kit ● yes ● yes ● yes ● yes ● yes
+sprezzature-ux-laws 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-ui — not yet — not yet — not yet — not yet ● yes ● yes
+sprezzature-ui — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-accessibility — not yet — not yet — not yet — not yet ● yes ● yes
+sprezzature-publish — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
-sprezzature-publish — not yet — not yet — not yet — not yet ● yes ● yes
-
-The last three rows are skills with no standalone package: they describe judgement rather than wrap a tool, so there is nothing to pip install .
+Every row is on PyPI, and pip install 'sprezzature[all]' installs all nine. sprezzature-ui and sprezzature-publish were the last two to get there, on 19 October 2026; until then the extra named nine and listed seven.
 
 ## Deterministic tools
 
@@ -1654,6 +1663,24 @@ sprezzature-audio
 Local captions (whisper.cpp), speaker diarization and who-is-who, narration and translation. ML backends are optional extras.
 
 pip install sprezzature-audio
+Repository →
+
+sprezzature-publish
+
+### Publish
+
+A folder of Markdown becomes a site somebody can find: pages, meta tags, favicons, the indexes crawlers and language models look for — and a narrated track with a read-along that highlights the sentence being spoken.
+
+pip install sprezzature-publish
+Repository →
+
+sprezzature-ui
+
+### UI
+
+The deterministic half of a frontend skill: find the strings that belong in a translation catalogue, and scaffold the catalogue they belong in. Writing the interface is the model's work.
+
+pip install sprezzature-ui
 Repository →
 
 Looking for the agent skills instead? The SKILL.md layer ships together as the skills bundle on the Getting started section.
@@ -1891,68 +1918,3 @@ reduce clutter
 The knowledge the skill draws on: read them straight from the repo.
 
 The 30 laws
-
----
-
-# Vision is part of Accessibility now — Sprezzature
-
-Source: https://sprezzature.ai/vision.html
-
-On 17 October 2026 sprezzature-vision stopped being its own brick. Everything
-it did — drafting W3C-compliant alt text with a local vision model, the
-per-image decision tree, the on-disk cache — moved into
-sprezzature-accessibility.
-
-They were two halves of one job and nobody wanted only one of them: the lint
-says a page is missing alt text, the drafter writes it. Keeping them apart
-meant two installs, two skills competing for the same prompts, and a drafter
-that could not see the page it was describing — which matters, because the
-W3C decision tree asks what an image is *doing* on the page, a question about
-the page and not about the pixels.
-
-Install sprezzature-accessibility with the [alt] extra. There is no
-sprezzature-vision package to install.
-
-# Vision: alt text
-
-World Wide Web Consortium (W3C)-compliant alt-text drafting via a local Ollama vision model: a per-image decision tree, output in any detected language, deterministic on-disk cache. The one model is qwen3-vl:8b. Nothing leaves the machine.
-
-Work in progress: every output is a draft requiring human review, not finished alt text.
-
-SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
-
-## Makes
-
-Alt-text drafts for informative / decorative / functional / text / complex / group images
-
-Output in any detected language, native phrasing for common ones
-
-Surrounding-text and project-vocabulary biasing
-
-A deterministic on-disk cache: same image never hits the model twice
-
-## Audits
-
-Flags images with no alt
-
-Drafts are starting points; verify before committing
-
-## Say one of these
-
-The skill triggers itself on phrasing like this, no command to memorize.
-
-alt text
-describe this image
-draft alt
-image description
-img has no alt
-decorative image
-figure / chart description
-batch alt text
-
-## Reference library
-
-The knowledge the skill draws on: read them straight from the repo.
-
-Alt-text with AI

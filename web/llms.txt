@@ -1,17 +1,17 @@
 # Sprezzature
 
-> Ten Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
+> Nine Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
 
 ## Home
 
-- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, alt text, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
+- [Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
 
 ## Skills
 
 - [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI, components, pages, forms, dialogs, dashboards, for solo devs shipping internal tools without a designer.
 - [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.
 - [Publishing — Sprezzature](https://sprezzature.ai/publish.html): Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local narration.
-- [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: fifteen rules decidable from source, no browser, no runtime DOM.
+- [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: twenty rules decidable from source, no browser, no runtime DOM.
 - [Colors — Sprezzature](https://sprezzature.ai/colors.html): Color tooling for vanilla-JS and Tailwind: WCAG contrast checking with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter
 - [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions, speaker diarization and speaker identification for video / audio. WebVTT / SRT from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via speaker embeddings.
 - [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the canonical Laws of UX (Jon YABLONSKI) to vanilla-JS + Tailwind: both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger, action, Tailwind hook.
