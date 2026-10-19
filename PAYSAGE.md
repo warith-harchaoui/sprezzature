@@ -106,12 +106,35 @@ en ligne de référence), les dix critères se projettent sur une **carte de pos
 
 L'axe horizontal oppose **Stabilité** (à gauche : maturité et écosystème installés) et **Simplicité**
 (à droite : prise en main immédiate) ; l'axe vertical oppose **Flexibilité** (en haut : restylable et
-léger) et **Interactivité** (en bas : exploration interactive pour l'utilisateur final) : ensemble ~55 %
-de ce qui distingue ces approches. `sprezzature` ancre le coin haut-droite ; **Looker** est à l'opposé
-exact (plateforme BI hébergée, lourde et propriétaire) ; **Tailwind CSS** va le plus loin vers
-« Flexibilité » et **Pico CSS** le plus loin vers « Simplicité ». Les notes vivent dans un fichier de
-valeurs séparées par des virgules (CSV) **exclu du dépôt Git** (`.private/landscape/landscape-fr.csv`) ;
-on régénère la carte avec `standpoint .private/landscape/landscape-fr.csv -r sprezzature -o out --model qwen3-vl:8b`.
+léger) et **Interactivité** (en bas : exploration interactive pour l'utilisateur final).
+`sprezzature` ancre le coin haut-droite ; **Looker** est à l'opposé exact (plateforme BI hébergée,
+lourde et propriétaire) ; **Tailwind CSS** va le plus loin vers « Flexibilité » et **Pico CSS** le
+plus loin vers « Simplicité ».
+
+Ces deux noms par axe sont les mots d'un modèle local ; les charges derrière eux sont la
+vérification. À l'horizontale, écosystème (−0,59) et maturité (−0,55) contre facilité
+(+0,37) — être installé contre être immédiat. À la verticale, personnalisable (+0,54),
+léger (+0,45) et accessibilité (+0,39) contre interactif (−0,31) — une chose qu'on
+façonne contre une chose qu'on pilote.
+
+**Ensemble, les deux axes portent 52,9 %** de ce qui distingue ces approches. Un peu plus
+de la moitié : avec dix critères sur vingt-neuf outils, la carte est une première
+orientation et les tables sont la preuve. Les notes sont dans
+[`assets/paysage.csv`](assets/paysage.csv) — produit depuis la table ci-dessus par
+`scripts/landscape_to_csv.py`, pour que les deux ne puissent pas diverger. Pour la
+redessiner :
+
+```sh
+standpoint assets/paysage.csv -r "sprezzature (les *skills*)" -o out
+```
+
+Les **positions** reviennent identiques : la géométrie est une ACP sur corrélations, sans
+modèle dedans, et deux exécutions ont été comparées pour le vérifier. Les **noms des
+pôles**, non : ils sont écrits par le modèle local configuré, et la preuve est cette page
+même — la figure ci-dessus dit *Stabilité / Simplicité* là où une exécution d'aujourd'hui
+dit *Robustesse / Agilité*, à partir des mêmes chiffres. C'est pourquoi les charges sont
+citées plus haut, et pourquoi la figure est conservée telle que rendue plutôt que
+redessinée à chaque construction.
 
 Les matrices par catégorie ci-dessous conservent les colonnes qui n'ont de sens qu'au sein d'une seule catégorie.
 
