@@ -240,6 +240,53 @@ python-markdown turns `**a *b* `c`**` into `<em>b<em>`, leaving tags
 unbalanced and the whole paragraph bold. The read-along did not cause that;
 it is the first thing that ever looked.
 
+## [1.6.0] — 2026-10-19
+
+**`sprezzature[all]` finally installs all of it.**
+
+The extra named nine packages' worth of suite and listed seven. The two
+missing — `sprezzature-publish` and `sprezzature-ui` — were absent on purpose:
+neither was on PyPI, and a floor naming a version that exists only on one
+laptop breaks the install for everybody while every test stays green. The
+omission was documented, which made it defensible and not correct.
+
+Both are published now, so the extra says what its name says.
+
+### Changed
+
+- **`all` carries the whole suite**: `sprezzature-publish>=1.2.0` and
+  `sprezzature-ui>=1.0.0` join it.
+- **Four floors raised to what is published**: accessibility 1.1.1, audio
+  1.4.0, cli-gui 1.2.0, maps 1.0.0. A floor that lags a release installs the
+  uncorrected package forever — and `check_all_extra_resolves.py` now says so
+  out loud rather than only checking that the floor exists.
+
+### Fixed
+
+- **The two floor checks contradicted each other**, and the contradiction
+  appeared during ordinary development. The offline test demanded each floor
+  *equal* the sibling checkout; the release script demands each floor be
+  *published*. A checkout runs ahead of PyPI, so following one broke the
+  other, and the repository could not be green and installable at the same
+  time. They are now split by what each can know: offline, a floor must not
+  exceed what exists even locally; against PyPI, it must be published and must
+  not lag the release.
+
+### Added
+
+- **The surface audit asks whether a Click command is guarded.** Click is an
+  extra in most bricks — the argparse twin needs nothing — so an unguarded
+  import leaves a command on `PATH` that answers `ModuleNotFoundError` about a
+  package the reader never asked for. Invisible from a developer machine,
+  which always has click; it took a bare virtualenv to see it. Repos where
+  click is a *base* dependency are skipped, because there the case cannot
+  happen.
+- **The audit also checks the MCP server names its own brick.** `mcp.py` is
+  the file most often started as a copy of a sibling's, and the environment
+  prefix is the one line a copy is never caught on: the server still starts,
+  still binds, the tests still pass. `ui` and `publish` both read
+  `accessibility`'s two variables, so a single setting moved three servers.
+
 ## [1.5.0] (2026-10-16): half the suite's release titles never reached the feed
 
 ### Fixed

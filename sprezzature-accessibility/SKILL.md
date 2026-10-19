@@ -23,7 +23,7 @@ compatibility: >-
   text needs the [alt] extra and a local Ollama.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.5.0
+  version: 1.6.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility) (`pip install`), invoked as `sprezzature-accessibility …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.

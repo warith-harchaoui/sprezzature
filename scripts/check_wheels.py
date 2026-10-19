@@ -61,6 +61,13 @@ PACKAGES: dict[str, str] = {
     "sprezzature-cli-gui": "sprezzature_cli_gui",
     "sprezzature-ux-laws": "sprezzature_ux_laws",
     "sprezzature-maps": "sprezzature_maps",
+    # The last two to reach PyPI, on 2026-10-19. They were absent here for
+    # the same reason they were absent from the `all` extra — nothing to
+    # build a wheel *against* while they were unpublished — and leaving them
+    # out once published would mean the one script that checks a wheel really
+    # works skips two ninths of the suite.
+    "sprezzature-publish": "sprezzature_publish",
+    "sprezzature-ui": "sprezzature_ui",
 }
 
 #: Imported with the [api,mcp] extras: the two surfaces that broke silently.

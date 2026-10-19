@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sprezzature"
-version = "1.5.0"
+version = "1.6.0"
 description = "The sprezzature skills: what an agent reads to know when to reach for the tools, and how the house does things."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -28,11 +28,17 @@ dependencies = []
 all = [
     "sprezzature-figures>=2.7.0",
     "sprezzature-colors>=1.0.1",
-    "sprezzature-accessibility>=1.1.0",
-    "sprezzature-audio>=1.1.1",
-    "sprezzature-cli-gui>=1.1.0",
+    "sprezzature-accessibility>=1.1.1",
+    "sprezzature-audio>=1.4.0",
+    "sprezzature-cli-gui>=1.2.0",
     "sprezzature-ux-laws>=1.1.0",
-    "sprezzature-maps>=0.19.0",
+    "sprezzature-maps>=1.0.0",
+    # The last two to reach PyPI, on 2026-10-19. Until then `all` installed
+    # eight ninths of the suite under a name that promised all of it — the
+    # omission was deliberate and documented, which made it defensible and
+    # not correct.
+    "sprezzature-publish>=1.2.0",
+    "sprezzature-ui>=1.0.0",
 ]
 dev = ["pytest>=8.0", "ruff"]
 
@@ -44,7 +50,7 @@ Repository = "https://github.com/warith-harchaoui/sprezzature"
 sprezzature-skills = "sprezzature.cli:main"
 
 [tool.setuptools]
-packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_vision", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures", "sprezzature.skills.sprezzature_maps"]
+packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures", "sprezzature.skills.sprezzature_maps"]
 
 [tool.setuptools.package-dir]
 "sprezzature.skills.sprezzature_ui" = "sprezzature-ui"
@@ -52,7 +58,6 @@ packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.ski
 "sprezzature.skills.sprezzature_publish" = "sprezzature-publish"
 "sprezzature.skills.sprezzature_accessibility" = "sprezzature-accessibility"
 "sprezzature.skills.sprezzature_colors" = "sprezzature-colors"
-"sprezzature.skills.sprezzature_vision" = "sprezzature-vision"
 "sprezzature.skills.sprezzature_audio" = "sprezzature-audio"
 "sprezzature.skills.sprezzature_ux_laws" = "sprezzature-ux-laws"
 "sprezzature.skills.sprezzature_figures" = "sprezzature-figures"
@@ -64,7 +69,6 @@ packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.ski
 "sprezzature.skills.sprezzature_publish" = ["**/*"]
 "sprezzature.skills.sprezzature_accessibility" = ["**/*"]
 "sprezzature.skills.sprezzature_colors" = ["**/*"]
-"sprezzature.skills.sprezzature_vision" = ["**/*"]
 "sprezzature.skills.sprezzature_audio" = ["**/*"]
 "sprezzature.skills.sprezzature_ux_laws" = ["**/*"]
 "sprezzature.skills.sprezzature_figures" = ["**/*"]
