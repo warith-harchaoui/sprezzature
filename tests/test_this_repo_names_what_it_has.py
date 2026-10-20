@@ -1,10 +1,10 @@
 """
 A path this repository's own configuration names has to be there.
 
-Three files tell a machine what to install and what to run: the GitHub
-workflows, the pre-commit manifest, and ``requirements-dev.txt``. Between them
-they named four paths that had left with the bricks when the monorepo was
-split, and nothing said so:
+Four things tell a machine what to install, what to run, and what to read: the
+GitHub workflows, the pre-commit manifest, ``requirements-dev.txt``, and
+``llms.txt``. Between them they named twenty-three paths that had left with the
+bricks when the monorepo was split, and nothing said so:
 
 * ``ci.yml`` looped over two folders' ``requirements-*.txt`` — one of them
   ``sprezzature-vision``, a brick that merged into ``sprezzature-accessibility``
@@ -16,7 +16,10 @@ split, and nothing said so:
   no clone has had for weeks;
 * three of its own packages existed for ``tests/eval/``, which the split left
   behind as an empty directory. CI installed them on every job of every push to
-  run nothing.
+  run nothing;
+* ``llms.txt`` — the index a model reads first — linked eighteen scripts at
+  paths inside the skill folders, from before each brick took its code to its
+  own package, and a Montserrat font directory the three-Roboto rule replaced.
 
 So the two shapes of the same defect: a *missing* path, which reads as "the
 step did nothing because there was nothing to do", and an *empty* directory,
@@ -47,6 +50,13 @@ CONFIGURATION: tuple[str, ...] = (
     ".github/workflows/*.yml",
     ".pre-commit-hooks.yaml",
     "requirements-dev.txt",
+    # The index a model reads first, and the one where this went furthest:
+    # nineteen of its links pointed at files the bundle no longer contained —
+    # eighteen scripts that had moved into their bricks' own packages, and a
+    # Montserrat font directory the three-Roboto rule replaced. A dead link in
+    # a human README is an annoyance; here it is an instruction to open a file
+    # that is not there.
+    "llms.txt",
 )
 
 #: Repository-relative path, by its first segment. Anchored on the directories

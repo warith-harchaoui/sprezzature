@@ -112,7 +112,7 @@ Run before deploying any site emitted by `sprezzature-publish`:
 - [ ] Each page has a canonical URL (`<link rel="canonical">`); even on single-language sites, this prevents duplicate-content surprises.
 - [ ] Multi-language sites: `<link rel="alternate" hreflang="…">` between language variants (`references/i18n.md`).
 - [ ] Every `<img>` has purposeful alt text per the W3C decision tree (`sprezzature-accessibility/references/alt-text-ai.md`).
-- [ ] Every `<video>` has captions (`sprezzature-audio/scripts/captions_from_whisper.py` for the WebVTT track) and a transcript link.
+- [ ] Every `<video>` has captions (`sprezzature-audio-captions` for the WebVTT track) and a transcript link.
 - [ ] Schema.org JSON-LD present where appropriate (`Article`, `BreadcrumbList`, `WebSite`, `Organization`, `Person`, `AudioObject` for narrated posts).
 - [ ] No `<meta name="keywords">`, no `<meta http-equiv="refresh">` for navigation, no "AI-approved" badges.
 - [ ] `lint_markdown.py` and `sprezzature-accessibility/lint_a11y.py` both pass.

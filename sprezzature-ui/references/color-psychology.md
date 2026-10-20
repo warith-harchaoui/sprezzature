@@ -8,7 +8,7 @@ table form, with the same rows in the same order. To regenerate the
 Tailwind `theme.extend.colors` block from the CSV run:
 
 ```bash
-python sprezzature-colors/scripts/palette_to_tailwind.py --emit theme
+sprezzature-colors-palette-to-tailwind --emit theme
 ```
 
 If a row drifts between this file and the CSV, the **CSV wins** and

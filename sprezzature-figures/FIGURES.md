@@ -9,8 +9,8 @@ Loop quality gate before it is considered done.
 ### From the command line
 
 ```sh
-python sprezzature-figures/scripts/make_bar.py --out output.png
-python sprezzature-figures/scripts/make_bar.py --out output.png --title "My title"
+make-figure bar --out output.png
+make-figure bar --out output.png --title "My title"
 ```
 
 ### As a library
@@ -28,10 +28,10 @@ path = mod.make_bar(mod.DEMO_DATA, out=Path("output.png"), title="My chart")
 
 ```sh
 # Agent mode (Claude reads the PNG):
-python sprezzature-figures/scripts/ralph_eyeball_loop.py output.png
+python -m sprezzature_figures_scripts.ralph_eyeball_loop output.png
 
 # Local mode (qwen3-vl via Ollama, fully offline):
-python sprezzature-figures/scripts/ralph_eyeball_loop.py output.png --local
+python -m sprezzature_figures_scripts.ralph_eyeball_loop output.png --local
 ```
 
 ## Chart catalogue
@@ -191,7 +191,7 @@ Every generator is a valid input to the loop. Pass the output file directly:
 
 ```sh
 # Render, critique with Ollama vision, apply fixes, repeat until verdict.
-python sprezzature-figures/scripts/ralph_eyeball_loop.py web/img/figures/waterfall.png --local
+python -m sprezzature_figures_scripts.ralph_eyeball_loop web/img/figures/waterfall.png --local
 ```
 
 The loop reads the PNG, asks the vision model to critique layout, contrast,

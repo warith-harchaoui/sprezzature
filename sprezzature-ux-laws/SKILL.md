@@ -108,7 +108,7 @@ attention). Judge those by rendering and looking, via the
 [Ralph Eyeball Loop](../sprezzature-figures/references/ralph-eyeball-loop.md):
 
 - **Make.** After emitting a screen, render it to a PNG
-  (`sprezzature-figures/scripts/ralph_eyeball_loop.py page.html`), look at it, and ask
+  (`python -m sprezzature_figures_scripts.ralph_eyeball_loop page.html`), look at it, and ask
   the laws out loud: is the primary action the most prominent thing? are tap
   targets comfortable? is any group past ~7 items? Fix the source and re-render
   until it holds.

@@ -31,7 +31,7 @@ This file is written by the author of `sprezzature`. The "Skill alignment" colum
 Three concrete categories where the `sprezzature-*` skills together do something no other listed tool does in skill form:
 
 1. **Command-line-interface (CLI) → graphical-user-interface (GUI) mock-ups from `tool --help`.** `sprezzature-cli-gui` scaffolds a vanilla-JS + Tailwind GUI from a Python / Node / Go CLI's argument parser, in skill form, with no runtime framework. No other listed tool does this as a Claude / OpenCode skill: Gradio / Streamlit / Gooey produce a runtime UI you cannot easily restyle and are not skills.
-2. **Pre-ship accessibility (a11y) gates in continuous integration (CI) without a headless browser.** `sprezzature-accessibility/scripts/lint_a11y.py` is a single-file, stdlib-only Python lint that runs in milliseconds in any minimal CI container. axe-core / Pa11y / Lighthouse are the right answer for runtime audits (and you should run both), but neither runs without a browser, and that is a real cost in a pre-commit hook.
+2. **Pre-ship accessibility (a11y) gates in continuous integration (CI) without a headless browser.** `sprezzature-accessibility-lint` is a single-file, stdlib-only Python lint that runs in milliseconds in any minimal CI container. axe-core / Pa11y / Lighthouse are the right answer for runtime audits (and you should run both), but neither runs without a browser, and that is a real cost in a pre-commit hook.
 3. **Bilingual EN/FR (or EN/DE, EN/ES, EN/JA) documentation sites where typography and tone parity matter.** `sprezzature-publish` + `sprezzature-ui`'s plain-language rewriter + `i18n.md` route together. No single static-site generator (SSG) ships this combination.
 
 ## Where to pick something else
@@ -366,7 +366,7 @@ Roboto families as WOFF2 with bundled OFL licenses).
 
 Pair `scripts/lint_a11y.py` (static, in CI) with axe-core (runtime, in browser tests).
 
-**Pick `sprezzature-accessibility/scripts/lint_a11y.py`** as a fast pre-commit gate that runs in a stdlib-only CI container: exit 1 on any finding. **Pick axe-core or Pa11y** for the dynamic checks: dynamic ARIA state, focus traps after `dialog.showModal()`, color contrast after a runtime theme switch, name/role/value after portal mounts. **Pick Lighthouse** when the a11y audit must come with the performance / search-engine-optimization (SEO) audit in the same report. The honest framing: a green static lint does not mean WCAG-compliant; it means the static rules pass.
+**Pick `sprezzature-accessibility-lint`** as a fast pre-commit gate that runs in a stdlib-only CI container: exit 1 on any finding. **Pick axe-core or Pa11y** for the dynamic checks: dynamic ARIA state, focus traps after `dialog.showModal()`, color contrast after a runtime theme switch, name/role/value after portal mounts. **Pick Lighthouse** when the a11y audit must come with the performance / search-engine-optimization (SEO) audit in the same report. The honest framing: a green static lint does not mean WCAG-compliant; it means the static rules pass.
 
 ---
 
@@ -374,8 +374,8 @@ Pair `scripts/lint_a11y.py` (static, in CI) with axe-core (runtime, in browser t
 
 | Tool | Form | Live preview | CI-friendly | License | Skill alignment | Notes |
 |---|---|:---:|:---:|---|:---:|---|
-| **`sprezzature-colors/scripts/audit_contrast.py`** (used) | CLI + OKLCH fix suggester | ✗ | ✓ | BSD-3-Clause | ✓ | Walks every label/surface pair. |
-| **`sprezzature-colors/scripts/simulate_cvd.py`** (used) | CLI image transform | ✗ | ✓ | BSD-3-Clause | ✓ | Protanopia / deuteranopia / tritanopia. |
+| **`sprezzature-colors-contrast`** (used) | CLI + OKLCH fix suggester | ✗ | ✓ | BSD-3-Clause | ✓ | Walks every label/surface pair. |
+| **`sprezzature-colors-cvd`** (used) | CLI image transform | ✗ | ✓ | BSD-3-Clause | ✓ | Protanopia / deuteranopia / tritanopia. |
 | [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) | hosted page | ✗ | ✗ | free | ~ | Canonical reference. |
 | [Stark](https://www.getstark.co) | Figma / Sketch plugin | ✓ | ✗ | freemium | ✗ | Designer workflow. |
 | [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) | macOS overlay | ✓ | ✗ | free | ~ | Live color-vision-deficiency (CVD) preview. |

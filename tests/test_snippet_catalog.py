@@ -11,9 +11,9 @@ the auditors.
 The tests parametrise over every ``.html`` file in the catalog,
 running each through:
 
-* ``sprezzature-ux-laws/scripts/audit_laws_of_ux.py`` — must return zero
+* ``sprezzature-ux-laws-audit`` — must return zero
   findings.
-* ``sprezzature-accessibility/scripts/lint_a11y.py`` — must return zero
+* ``sprezzature-accessibility-lint`` — must return zero
   findings.
 
 Plus a structural test: every snippet must be referenced from

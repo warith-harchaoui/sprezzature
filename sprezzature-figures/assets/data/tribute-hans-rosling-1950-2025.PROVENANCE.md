@@ -82,8 +82,8 @@ have no World Bank counterpart and stand on the sources documented above.
 ## Reproduce
 
 ```bash
-python sprezzature-figures/scripts/gather_gapminder.py   # re-download + re-crunch this CSV
-python sprezzature-figures/scripts/make_gapminder.py     # rebuild the animated SVG
+python -m sprezzature_figures_scripts.gather_gapminder   # re-download + re-crunch this CSV
+make-figure gapminder                                    # rebuild the animated SVG
 ```
 
 `make_gapminder.py` reads only this vendored CSV (offline); `gather_gapminder.py`

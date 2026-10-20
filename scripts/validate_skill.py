@@ -27,7 +27,7 @@ parsers (PyYAML, ruamel) and the Anthropic skill spec require:
 
 Higher-level / content-quality checks (forbidden framework imports,
 trademarked terms, LLM-marketing phrases, INDEX.md path resolution)
-stay in ``sprezzature-ui/scripts/validate.py`` because they're specific to
+stay in ``scripts/validate_content.py`` because they're specific to
 the sprezzature-ui skill. This module is the cross-skill foundation.
 
 Usage

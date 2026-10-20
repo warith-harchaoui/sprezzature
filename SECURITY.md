@@ -54,7 +54,7 @@ that addresses the problem so users can act on the same information.
 A handful of scripts execute *code the user names on the command
 line*. These are intended for use against trusted local code only.
 
-- **`sprezzature-cli-gui/scripts/cli_to_gui.py`** loads the user's named
+- **`sprezzature-cli-gui`** loads the user's named
   parser-factory by importing the target module. If the target's
   top-level (or its factory) has side effects (opens files, prints
   to a daemon socket, mutates the environment): those run at GUI

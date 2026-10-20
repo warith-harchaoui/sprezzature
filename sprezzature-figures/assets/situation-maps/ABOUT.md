@@ -36,11 +36,16 @@ layers (zones, forces, events, labels).
 
 ## Run
 
+The generator is not in this package. Situation maps are geography, and
+geography went to `sprezzature-maps` with the choropleths and the relief —
+`shapely` and `pyproj` are base dependencies there rather than an extra
+tier here. The YAML configs stayed beside the examples they describe.
+
 ```bash
-pip install -r sprezzature-figures/scripts/requirements-dataviz.txt   # shapely + pyproj
-python sprezzature-figures/scripts/make_situation_map.py \
+pip install sprezzature-maps          # shapely + pyproj come with it
+make-map situation_map \
     --config sprezzature-figures/assets/situation-maps/ukraine.yaml \
-    --out /tmp/ukraine.svg --render
+    --out /tmp/ukraine.svg
 ```
 
 ### Bundled examples
@@ -66,8 +71,8 @@ control polygons live in the open there, sourced in the comments, so anyone can
 read how each map was drawn and refine it:
 
 ```bash
-python sprezzature-figures/scripts/build_situation_examples.py           # all
-python sprezzature-figures/scripts/build_situation_examples.py ukraine    # just one
+python -m sprezzature_maps_scripts.build_situation_examples           # all
+python -m sprezzature_maps_scripts.build_situation_examples ukraine   # just one
 ```
 
 ### A-posteriori layer exports
