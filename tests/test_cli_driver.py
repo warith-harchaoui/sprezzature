@@ -35,11 +35,18 @@ def test_candidate_bases_honours_env(monkeypatch: pytest.MonkeyPatch, tmp_path: 
 
 
 def test_find_skill_resolves_in_repo(monkeypatch: pytest.MonkeyPatch) -> None:
-    """A real skill folder resolves when the repo root is on the search path."""
+    """A real skill folder resolves when the repo root is on the search path.
+
+    What identifies the folder is its ``SKILL.md``. This asserted a
+    ``scripts/`` directory until 2026-10-20, and passed only on machines where
+    an untracked ``__pycache__`` was still answering ``is_dir()`` — on a clean
+    checkout, and so in CI, no skill folder has a ``scripts/`` any more and the
+    driver resolved none of the nine.
+    """
     monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(REPO_ROOT))
     found = driver._find_skill("sprezzature-ui")
     assert found is not None
-    assert (found / "scripts").is_dir()
+    assert (found / "SKILL.md").is_file()
 
 
 def test_find_skill_missing_returns_none(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
@@ -48,18 +55,11 @@ def test_find_skill_missing_returns_none(monkeypatch: pytest.MonkeyPatch, tmp_pa
     assert driver._find_skill("sprezzature-does-not-exist") is None
 
 
-def test_run_script_missing_skill_exits_2(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
-    """Routing to an absent skill returns exit code 2, cleanly."""
-    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
-    rc = driver._run_script("sprezzature-nope", "whatever.py", ())
-    assert rc == 2
-
-
-def test_run_script_missing_file_exits_2(monkeypatch: pytest.MonkeyPatch) -> None:
-    """A present skill but absent script also returns 2."""
-    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(REPO_ROOT))
-    rc = driver._run_script("sprezzature-ui", "no_such_script.py", ())
-    assert rc == 2
+# ``_run_script`` had two tests here, for its clean exit 2 on a missing skill
+# and on a missing file. It is gone: it shelled straight to
+# ``<skill>/scripts/<file>.py``, which no brick ships any more, so its nine
+# remaining callers could only fail. They go through ``_run_tool`` now, whose
+# own exit-2 contract is covered below.
 
 
 def test_version_flag_reports_package_version() -> None:
@@ -75,14 +75,13 @@ def test_version_flag_reports_package_version() -> None:
 
 # ── _run_tool: the extracted-skill dispatch (regression, see CHANGELOG) ────
 #
-# Six skills (accessibility, audio, colors, cli-gui, ux-laws, figures) had
-# their scripts/ extracted to standalone pip packages; their local
-# scripts/ folder is now just __pycache__/. `_run_tool` is what makes
-# `sprezzature accessibility lint` etc. keep working: it tries the
-# standalone package's console script, then the pre-extraction in-repo
-# path, then `python -m <module>`, before giving up with an actionable
-# message. These tests exercise the resolution order without depending on
-# any of those packages actually being installed.
+# All nine bricks have their scripts in standalone pip packages now, and no
+# skill folder here carries a scripts/ folder at all. `_run_tool` is what makes
+# `sprezzature accessibility lint` etc. keep working: it tries the standalone
+# package's console script, then the pre-split in-repo path, then
+# `python -m <module>`, before giving up with an actionable message. These
+# tests exercise the resolution order without depending on any of those
+# packages actually being installed.
 
 
 def test_run_tool_prefers_console_script_on_path(
