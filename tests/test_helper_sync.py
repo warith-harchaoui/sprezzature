@@ -1,16 +1,26 @@
 """
-test_helper_sync — the per-skill shared helpers must not drift.
+test_helper_sync — the duplicated shared helpers must not drift.
 
-Each skill is self-contained: the shared helpers are duplicated verbatim into
-every ``sprezzature-*/scripts/`` so a skill installs and runs on its own. That
-duplication is only safe if the copies stay in lockstep — this test makes any
-drift a red build.
+Five small helpers (``_argparse.py``, ``_click.py``, ``_lang.py``,
+``_vocab.py``, ``_vtt.py``) are copied into every brick on purpose: a skill has
+to install and run on its own, including from a downloaded zip with nothing but
+the standard library, so it cannot import a shared package from a sibling. That
+duplication is a deliberate exception to "don't repeat yourself", and it is only
+safe while the copies stay identical.
 
-Every shared helper is **byte-identical** across all its copies: they carry no
-skill-specific text (the module docstrings were made skill-neutral in v0.26.1),
-so the strongest, simplest guarantee applies. (``_lang.py`` also has a
-byte-identical guard in ``test_bodytext.py``; keeping it here too is harmless
-belt-and-suspenders.)
+Why this used to check nothing
+------------------------------
+It globbed ``sprezzature-*/scripts/<helper>`` **in this repository** and skipped
+when it found fewer than two copies. After the split it finds none, so all four
+cases skipped — with an honest reason that named the right tool,
+``scripts/sync_helpers.py``, and left out that nothing runs it. Helper drift is
+silent by nature: every copy keeps working, and the bug is that two of them now
+disagree. The one check that catches it ran nowhere.
+
+So it runs the real thing: ``sync_helpers.py`` against the sibling checkouts,
+which returns non-zero on drift and prints which copies disagree and with what.
+``SKILL_VERSION`` is the one line that legitimately differs — each brick sets it
+to its own release — and the script already ignores it when comparing.
 
 Author
 ------
@@ -19,40 +29,76 @@ Project maintainers.
 
 from __future__ import annotations
 
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 
+from skills_manifest import SHIPPED_SKILLS
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SIBLINGS = REPO_ROOT.parent
+SYNC = REPO_ROOT / "scripts" / "sync_helpers.py"
 
-#: Shared helpers duplicated across skills — every copy must match to the byte.
-SHARED_HELPERS = ("_argparse.py", "_click.py", "_lang.py", "_vocab.py")
+
+def _checkouts() -> list[str]:
+    """The bricks checked out beside this repository."""
+    return [b for b in SHIPPED_SKILLS if (SIBLINGS / b / "pyproject.toml").is_file()]
 
 
-@pytest.mark.parametrize("helper", SHARED_HELPERS)
-def test_helper_copies_are_byte_identical(helper: str) -> None:
-    """Every copy of a shared helper must be byte-for-byte identical.
+def test_the_sync_script_is_there() -> None:
+    """It is the only thing that can answer the question below."""
+    assert SYNC.is_file(), f"{SYNC} is missing; helper drift is unchecked"
 
-    Fails the moment one copy is edited without propagating the exact bytes to
-    the others. The helpers are intentionally skill-neutral, so there is no
-    legitimate per-copy difference — not even in a docstring.
+
+def test_no_shared_helper_has_drifted() -> None:
+    """One canonical copy, propagated; any disagreement is a red build.
+
+    Runs the reporter rather than re-implementing it: the comparison has a
+    subtlety — ``SKILL_VERSION`` differs per brick on purpose — and two
+    implementations of that rule would drift from each other the way the helpers
+    themselves are being guarded against.
     """
-    copies = sorted(REPO_ROOT.glob(f"sprezzature-*/scripts/{helper}"))
-    if len(copies) < 2:
+    checkouts = _checkouts()
+    if not checkouts:
         pytest.skip(
-            f"{helper}: {len(copies)} copy left in the monorepo; the other copies "
-            f"now live in the standalone skill repos, so there is nothing to "
-            f"cross-check here. What looks across the sibling checkouts is "
-            f"scripts/sync_helpers.py, which also repairs the drift it finds."
+            "no brick is checked out beside this repository; "
+            "run scripts/fetch_siblings.sh to check the helpers for drift"
         )
+    proc = subprocess.run(
+        [sys.executable, str(SYNC), "--home", str(SIBLINGS)],
+        capture_output=True,
+        text=True,
+    )
+    assert proc.returncode == 0, (
+        f"a shared helper has drifted across the {len(checkouts)} bricks here. "
+        f"Edit the canonical copy named below, then propagate with "
+        f"`python3 scripts/sync_helpers.py --apply`:\n{proc.stdout}\n{proc.stderr}"
+    )
 
-    canonical = copies[0].read_bytes()
-    drifted = [
-        str(p.relative_to(REPO_ROOT))
-        for p in copies[1:]
-        if p.read_bytes() != canonical
+
+def test_the_report_actually_compared_something() -> None:
+    """A run that found one copy of everything would pass and mean nothing.
+
+    ``sync_helpers.py`` prints "N copy — nothing to compare" for a helper it
+    cannot cross-check, and exits 0 — correct for the script, useless as a gate.
+    This is the same vacuity the file had before: the check present, the subject
+    absent, the result green.
+    """
+    if not _checkouts():
+        pytest.skip("no brick is checked out beside this repository")
+    proc = subprocess.run(
+        [sys.executable, str(SYNC), "--home", str(SIBLINGS)],
+        capture_output=True,
+        text=True,
+    )
+    uncompared = [
+        line.strip()
+        for line in proc.stdout.splitlines()
+        if "nothing to compare" in line
     ]
-    assert not drifted, (
-        f"{helper} copies drifted from {copies[0].relative_to(REPO_ROOT)}: {drifted}. "
-        "Edit one, then propagate the exact bytes to every copy."
+    assert not uncompared, (
+        "sync_helpers.py could not cross-check these, so their copies are "
+        "unguarded:\n  " + "\n  ".join(uncompared)
     )
