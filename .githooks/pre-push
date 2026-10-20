@@ -3,12 +3,37 @@
 # state never reaches CI. The steps mirror this repository's own workflow, in
 # the same order, so "the hook passed" and "CI will pass" mean the same thing.
 #
+# That sentence was false until 2026-10-20, and in the expensive direction. A
+# dozen guards read the sibling brick checkouts — whether a skill names a
+# console script its brick installs, whether the driver routes to commands that
+# exist — and skip when a sibling is absent. The hook ran them all, because
+# this machine has the nine side by side; CI cloned one, so 57 cases skipped
+# there and a skip reads like a pass. CI fetches all nine now
+# (scripts/fetch_siblings.sh). The remaining asymmetry is the other way round,
+# and it is the reason for the count below: a clone with no siblings runs a
+# weaker gate than CI, and should be told so rather than discovering it in a
+# red build.
+#
 # One-time setup per clone (the repo config already does it here):
 #   git config core.hooksPath .githooks
 # Bypass, rare and deliberate only:
 #   git push --no-verify
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
+
+# How much of the cross-brick half this run can actually check.
+bricks=0
+while IFS= read -r line; do
+    line="$(echo "$line" | tr -d '[:space:]')"
+    case "$line" in ''|'#'*) continue ;; esac
+    [[ -f "../$line/pyproject.toml" ]] && bricks=$((bricks + 1))
+done < SKILLS.txt
+expected=$(grep -cvE '^\s*(#|$)' SKILLS.txt)
+if [[ "$bricks" -lt "$expected" ]]; then
+    echo "[pre-push] $bricks/$expected sibling bricks here — the cross-brick guards"
+    echo "[pre-push] will skip for the rest. CI fetches all of them, so it checks"
+    echo "[pre-push] more than this run does: scripts/fetch_siblings.sh"
+fi
 
 echo "[pre-push] ruff..."
 ruff check . || { echo "[pre-push] ruff failed - push aborted."; exit 1; }

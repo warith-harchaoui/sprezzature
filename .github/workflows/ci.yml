@@ -51,17 +51,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # tests/test_release_packaging.py runs scripts/release.sh, which builds
-      # each skill through package_skill.py — and that refuses to package
-      # sprezzature-figures without the generators, which live in their own
-      # repository since the split. Cloned as a sibling, which is where the
-      # packager looks, so CI exercises the real release path rather than a
-      # weakened one.
-      - name: Fetch the extracted generators
-        run: |
-          git clone --depth 1 \
-            https://github.com/warith-harchaoui/sprezzature-figures.git \
-            "$(dirname "$GITHUB_WORKSPACE")/sprezzature-figures"
+      # Several guards can only be written here, because this is the only
+      # place that sees all nine bricks at once — that a skill's "invoked as"
+      # sentence names a console script the brick installs, that the
+      # `sprezzature` driver routes to commands the bricks declare, that a
+      # requirements-dev.txt is one the brick's own workflow reads. Until this
+      # step fetched more than one sibling they ran nowhere but a developer's
+      # machine: 57 cases skipped here, and a skip reads like a pass.
+      #
+      # Only `sprezzature-figures` was cloned, and in full: 112 MB, for the
+      # release test, which packages the extracted generators and their faces
+      # and refuses to ship "documentation with nothing behind it". The script
+      # below fetches all nine with `--filter=blob:none` and a sparse checkout
+      # of the paths the guards read, which is 24 MB for the nine — a fifth
+      # of what one full clone of figures costs, and it leaves out the 370 MB
+      # of elevation rasters in sprezzature-maps that nothing here reads.
+      - name: Fetch the sibling bricks
+        run: scripts/fetch_siblings.sh
 
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
