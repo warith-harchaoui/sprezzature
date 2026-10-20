@@ -1,19 +1,32 @@
 """
-test_single_llm — enforce the one-authorized-model rule.
+test_single_llm — enforce the one-authorized-model rule, where the code is.
 
 House rule (absolute): the ONLY model the sprezzature skills use is ``qwen3-vl:8b``
 (Qwen3-VL 8B, Q4_K_M) via Ollama. No other model tag, no MLX, anywhere in the
-skill scripts — forever. This test makes that machine-checkable, the same way
-the repo gates skill-spec conformance and Claude-trailer-free commits.
+skill code — forever. This test makes that machine-checkable, the same way the
+repo gates skill-spec conformance and Claude-trailer-free commits.
 
 ``qwen3-vl:8b`` is a vision-language model (VLM) that handles both text
 generation (captions, alt text, narration, translation) and image understanding
 (Ralph Eyeball Loop visual critique). It is the single model for all tasks —
 see docs/LLM_CHOICE.md for the rationale and sources.
 
-Scope: every ``sprezzature-*/scripts/*.py``. Not a VLM / LLM (allowed, unchecked):
-whisper.cpp (captions), NeMo Sortformer/TitaNet (diarization), SHAP/DoWhy
-(figures) — those are ASR / diarization / stats models, not the Ollama VLM.
+Why this file had stopped checking anything
+-------------------------------------------
+It globbed ``sprezzature-*/scripts/*.py`` **in this repository**. Every brick
+took its code to its own package during the split, so that glob matches nothing
+and the three parametrised tests collected zero cases each — "got empty
+parameter set", which pytest reports as a skip and a reader takes for a pass. A
+rule described as holding "forever" was enforced over an empty set for weeks.
+
+The code is in the sibling checkouts, which is where this now looks: 418 files
+across the nine bricks, their ``scripts/``, their package and their ``src/``.
+``scripts/fetch_siblings.sh`` is what puts them there, in CI and in a clone that
+has only this repository.
+
+Scope: Python that ships. Not a VLM / LLM (allowed, unchecked): whisper.cpp
+(captions), NeMo Sortformer / TitaNet (diarization), SHAP / DoWhy (figures) —
+those are ASR / diarization / stats models, not the Ollama VLM.
 
 Author
 ------
@@ -27,16 +40,13 @@ from pathlib import Path
 
 import pytest
 
+from skills_manifest import SHIPPED_SKILLS
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SIBLINGS = REPO_ROOT.parent
 
-#: Every shipped skill's Python scripts.
-SCRIPTS = sorted(
-    p for p in REPO_ROOT.glob("sprezzature-*/scripts/*.py")
-    if "__pycache__" not in p.parts
-)
-
-#: Model families that are NOT the one authorized VLM. Any literal mention in a
-#: skill script is a violation. ``qwen3-vl:8b`` is deliberately absent — it is
+#: Model families that are NOT the one authorized VLM. Any literal mention in
+#: shipped code is a violation. ``qwen3-vl:8b`` is deliberately absent — it is
 #: the only allowed tag. The negative lookahead ``(?!3-vl)`` allows ``qwen3-vl``
 #: while banning every other Qwen variant (qwen2.5, qwen2.5vl, qwen3:8b,
 #: qwen2.5-coder, …). Covers every model previously pulled or considered.
@@ -51,89 +61,132 @@ FORBIDDEN_MODEL = re.compile(
 #: an actual ``…-mlx`` tag is not.
 MLX_TAG = re.compile(r"[\w.]+:[\w.]*-mlx\b", re.IGNORECASE)
 
-
-@pytest.mark.parametrize("script", SCRIPTS, ids=lambda p: f"{p.parent.parent.name}/{p.name}")
-def test_no_forbidden_model_tag(script: Path) -> None:
-    """A skill script must not name any model tag other than qwen3-vl:8b."""
-    text = script.read_text(encoding="utf-8")
-    hits = sorted(set(FORBIDDEN_MODEL.findall(text)))
-    assert not hits, (
-        f"{script.relative_to(REPO_ROOT)} names non-authorized model tag(s) {hits}. "
-        "The one authorized VLM is qwen3-vl:8b via Ollama (see docs/LLM_CHOICE.md)."
-    )
-
-
-@pytest.mark.parametrize("script", SCRIPTS, ids=lambda p: f"{p.parent.parent.name}/{p.name}")
-def test_no_mlx_tag(script: Path) -> None:
-    """A skill script must not name an MLX model tag (``…-mlx``)."""
-    text = script.read_text(encoding="utf-8")
-    hits = sorted(set(MLX_TAG.findall(text)))
-    assert not hits, (
-        f"{script.relative_to(REPO_ROOT)} names an MLX tag {hits}. No MLX — qwen3-vl:8b only."
-    )
-
-
-def test_authorized_vlm_is_the_declared_default() -> None:
-    """The Ollama-backed scripts that declare a default model use qwen3-vl:8b."""
-    # These are the scripts with a hard-coded default model constant.
-    # sprezzature-accessibility's two declarers moved to its standalone repository,
-    # where the same assertion now lives beside the code it is about.
-    declarers = [
-            ]
-    for script in declarers:
-        text = script.read_text(encoding="utf-8")
-        assert '"qwen3-vl:' in text, (
-            f"{script.relative_to(REPO_ROOT)} must declare a qwen3-vl: tag as its default model."
-        )
-
-
-#: The Ollama VLM scripts. The model is fixed at qwen3-vl:8b for all of them —
-#: none may expose a user-facing switch to pick a different model. (whisper.cpp
-#: ``--model`` in sprezzature-audio/captions is an ASR model, not the VLM, so it is
-#: intentionally NOT in this list.)
-LLM_SCRIPTS = [
-    # sprezzature-accessibility's two are checked in its own repository now.
-]
+#: The VLM path: everything that reaches a model does so through this helper,
+#: which resolves tag and backend from ``SPREZZATURE_LLM_*``. Derived rather
+#: than listed, because a hand-kept list of "the Ollama scripts" is what went
+#: empty here — one entry at a time, each removal correct, the set silently
+#: reaching zero.
+VLM_ROUTE = re.compile(r"best_engine_ai_helper")
 
 #: An option-definition literal that would expose the LLM model on the command
-#: line — click ``@click.option("--model"...)`` or argparse
+#: line — Click ``@click.option("--model"...)`` or argparse
 #: ``add_argument("--model"...)`` / ``"--ai-hints-model"``. Prose mentions and
 #: internal ``model=`` kwargs are fine; a *defined CLI flag* is the violation.
-_MODEL_FLAG = re.compile(r'"--(?:model|ai-hints-model)"')
+MODEL_FLAG = re.compile(r'"--(?:model|ai-hints-model)"')
 
 
-@pytest.mark.parametrize("script", LLM_SCRIPTS, ids=lambda p: f"{p.parent.parent.name}/{p.name}")
-def test_vlm_model_is_not_user_selectable(script: Path) -> None:
-    """No VLM script may expose a ``--model`` (or ``--ai-hints-model``) CLI flag.
-
-    The one authorized VLM is qwen3-vl:8b, fixed — not a knob. ``OLLAMA_MODEL``
-    survives only as a bare test seam (env var, never a documented user option).
-    """
-    text = script.read_text(encoding="utf-8")
-    assert not _MODEL_FLAG.search(text), (
-        f"{script.relative_to(REPO_ROOT)} defines a user-facing model flag. "
-        "The VLM is fixed at qwen3-vl:8b — remove the --model / --ai-hints-model option."
+def _sources(brick: str) -> list[Path]:
+    """Python that `brick` ships: its scripts, its package, its ``src/``."""
+    root = SIBLINGS / brick
+    if not (root / "pyproject.toml").is_file():
+        return []
+    found = (
+        set(root.glob("scripts/**/*.py"))
+        | set(root.glob("sprezzature_*/**/*.py"))
+        | set(root.glob("src/**/*.py"))
+    )
+    return sorted(
+        p for p in found if "__pycache__" not in p.parts and "tests" not in p.parts
     )
 
 
-@pytest.mark.parametrize(
-    "skill_md",
-    sorted(REPO_ROOT.glob("sprezzature-*/SKILL.md")),
-    ids=lambda p: p.parent.name,
-)
-def test_skill_description_advertises_no_model_override(skill_md: Path) -> None:
-    """A skill's ``description:`` frontmatter must not advertise a model override.
+def _all_sources() -> list[Path]:
+    """Every brick's shipped Python, across the sibling checkouts."""
+    return [p for brick in SHIPPED_SKILLS for p in _sources(brick)]
 
-    The user-facing contract is one model, qwen3-vl:8b. A description that
-    dangles ``OLLAMA_MODEL`` / ``--model`` as an override contradicts the lock
-    and is the exact drift this gate prevents (see the v0.25.0 assessment).
+
+def test_there_is_code_to_scan() -> None:
+    """A rule enforced over an empty set is the failure mode this file had.
+
+    Skipped, loudly, when no brick is checked out beside this repository: that
+    is a bare clone, and the pre-push hook says how many it can see. What this
+    refuses is the other case — siblings present and the glob finding nothing,
+    which is what happens when a package layout changes on one side only.
     """
-    text = skill_md.read_text(encoding="utf-8")
-    # Isolate the YAML ``description:`` block (up to the next top-level key).
-    m = re.search(r"(?ms)^description:\s*>-?\n(.*?)^\w[\w-]*:", text)
-    description = m.group(1) if m else ""
-    for needle in ("OLLAMA_MODEL", "--model"):
-        assert needle not in description, (
-            f"{skill_md.relative_to(REPO_ROOT)} description advertises {needle!r}. "
-            "The model is fixed at qwen3-vl:8b — do not surface an override in the description."
+    checkouts = [
+        brick for brick in SHIPPED_SKILLS if (SIBLINGS / brick / "pyproject.toml").is_file()
+    ]
+    if not checkouts:
+        pytest.skip(
+            "no brick is checked out beside this repository; "
+            "run scripts/fetch_siblings.sh to enforce the model rule"
         )
+    empty = [brick for brick in checkouts if not _sources(brick)]
+    assert not empty, (
+        f"{empty} are checked out and ship no Python this test can find. Either "
+        f"the package layout moved or the globs above stopped matching; both "
+        f"make the model rule unenforced for those bricks."
+    )
+
+
+@pytest.mark.parametrize("brick", SHIPPED_SKILLS)
+def test_no_forbidden_model_tag(brick: str) -> None:
+    """Shipped code must not name any model tag other than qwen3-vl:8b."""
+    sources = _sources(brick)
+    if not sources:
+        pytest.skip(f"{brick} is not checked out beside this repository")
+    offences = [
+        f"{p.relative_to(SIBLINGS)}: {sorted(set(hits))}"
+        for p in sources
+        if (hits := FORBIDDEN_MODEL.findall(p.read_text(encoding="utf-8", errors="replace")))
+    ]
+    assert not offences, (
+        f"{brick} names non-authorized model tag(s). The one authorized VLM is "
+        f"qwen3-vl:8b via Ollama (see docs/LLM_CHOICE.md):\n  "
+        + "\n  ".join(offences)
+    )
+
+
+@pytest.mark.parametrize("brick", SHIPPED_SKILLS)
+def test_no_mlx_tag(brick: str) -> None:
+    """Shipped code must not name an MLX model tag (``…-mlx``)."""
+    sources = _sources(brick)
+    if not sources:
+        pytest.skip(f"{brick} is not checked out beside this repository")
+    offences = [
+        f"{p.relative_to(SIBLINGS)}: {sorted(set(hits))}"
+        for p in sources
+        if (hits := MLX_TAG.findall(p.read_text(encoding="utf-8", errors="replace")))
+    ]
+    assert not offences, (
+        f"{brick} names an MLX tag. No MLX — qwen3-vl:8b only:\n  "
+        + "\n  ".join(offences)
+    )
+
+
+def test_the_vlm_model_is_not_user_selectable() -> None:
+    """No file on the VLM path may expose a ``--model`` CLI flag.
+
+    The one authorized VLM is fixed — not a knob. ``SPREZZATURE_LLM_*`` survives
+    as a backend seam read by the helper, never as a documented user option.
+    """
+    sources = _all_sources()
+    if not sources:
+        pytest.skip("no brick is checked out beside this repository")
+    on_the_path = [
+        p for p in sources
+        if VLM_ROUTE.search(p.read_text(encoding="utf-8", errors="replace"))
+    ]
+    assert on_the_path, (
+        "nothing routes through best_engine_ai_helper any more. Either the LLM "
+        "path was renamed — in which case VLM_ROUTE above is now blind — or the "
+        "suite stopped calling a model at all."
+    )
+    offences = [
+        str(p.relative_to(SIBLINGS))
+        for p in on_the_path
+        if MODEL_FLAG.search(p.read_text(encoding="utf-8", errors="replace"))
+    ]
+    assert not offences, (
+        f"{offences} define a user-facing model flag. The VLM is fixed at "
+        f"qwen3-vl:8b — remove the --model / --ai-hints-model option."
+    )
+
+
+# ``test_authorized_vlm_is_the_declared_default`` stood here, over a list of the
+# scripts that hard-coded a default model constant. Nothing declares one now:
+# the tag and the backend are resolved inside best_engine_ai_helper from
+# ``SPREZZATURE_LLM_*``, which is why `test_the_vlm_model_is_not_user_selectable`
+# above asks its question of the files that reach the helper rather than of the
+# files that used to name a model. Deleted rather than kept over an empty list —
+# that is the shape this whole file was in.
