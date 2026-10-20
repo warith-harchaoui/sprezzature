@@ -90,7 +90,12 @@ def test_the_palette_levels_are_the_suite_s_own():
     """
     assert figure_cli.LEVELS[0] == "universal", "the capture shows 'universal' selected"
 
-    src = pathlib.Path.home() / "sprezzature-colors/scripts/accessibility_levels.py"
+    # Beside this checkout, not under `$HOME`: the two differ on every
+    # machine but this one, so the comparison skipped everywhere else.
+    src = (
+        pathlib.Path(__file__).resolve().parent.parent.parent
+        / "sprezzature-colors/scripts/accessibility_levels.py"
+    )
     if not src.exists():
         pytest.skip("sprezzature-colors checkout absent")
     ns: dict = {}

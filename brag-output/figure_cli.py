@@ -50,7 +50,13 @@ def catalog() -> pathlib.Path | None:
             return p
     except ImportError:
         pass
-    for p in (pathlib.Path.home() / "sprezzature-figures/sprezzature_figures/catalog/figures.json",
+    # Beside this checkout first: that is where every sibling-reading guard
+    # looks (`REPO_ROOT.parent`), where `scripts/fetch_siblings.sh` puts them,
+    # and where CI has them. `$HOME` was the only place tried until
+    # 2026-10-20, which is true of this machine and of no runner, so the
+    # catalogue read as "not reachable" in CI and the count check skipped.
+    for p in (REPO.parent / "sprezzature-figures/sprezzature_figures/catalog/figures.json",
+              pathlib.Path.home() / "sprezzature-figures/sprezzature_figures/catalog/figures.json",
               REPO / "sprezzature-figures/catalog/figures.json"):
         if p.exists():
             return p
