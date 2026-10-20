@@ -86,15 +86,49 @@ Translatable strings (GUI labels and LLM prompts) share one concern
 Never hardcode a UI string in JavaScript, never inline a prompt in Python.
 
 ```bash
-# make: scaffold locales/i18n.yaml, compile to locales/i18n.json, emit i18n.js
+# make: scaffold, compile to locales/i18n.json, emit i18n.js + i18n_prompts.py
 sprezzature-ui-i18n-make --dir .
 # audit: flag any string/prompt living in code instead of the catalog
 sprezzature-ui-i18n-audit src/          # I18N001 (JS dict) / I18N002 (py prompt)
+# extract: move what it found into the catalog, and say what to call instead
+sprezzature-ui-i18n-audit --fix src/
 ```
 
+**A counting message maps a locale to CLDR plural categories**, not to a
+string, and the runtime picks one with `Intl.PluralRules` — so French gets its
+own boundaries (`0` is `one` there and `other` in English) and Arabic its six
+forms. `{name}` placeholders are filled from the params. Never `if (n === 1)`;
+see `sprezzature-publish/references/i18n.md`.
+
+```yaml
+results.count:
+  en: {one: "{count} result",   other: "{count} results"}
+  fr: {one: "{count} résultat", other: "{count} résultats"}
+```
+
+**A prompt is not a label**, so every `prompts:` entry declares the one locale
+it was engineered and tested in:
+
+```yaml
+summarize.system:
+  validated: en
+  en: "Summarise the input in three bullet points."
+  fr: "Résumez l'entrée en trois puces."
+```
+
+A locale with no entry resolves to the **validated** text — never to the first
+declared locale, and never to the message id, which as a prompt would hand the
+model the string `summarize.system`. A locale that *has* an entry gets it, and
+the caller is told it is not the validated one. Nothing is translated at call
+time: a machine translation of a prompt is a behavioural change nobody
+measured. `sprezzature-ui`'s `tests/eval/test_prompt_locale_eval.py` measures
+it — the French prompt above answered *in English* on two of three inputs,
+three bullets and no error, which is the failure the rule exists to prevent.
+
 In the browser: `import { initI18n, t } from "./locales/i18n.js"; await
-initI18n(); el.textContent = t("action.save");`. In Python, load prompts from
-the catalog (as the other skills load `prompts/*.yaml` via `_prompts`).
+initI18n(); el.textContent = t("results.count", {count: n});`. In Python:
+`from locales.i18n_prompts import prompt; p = prompt("summarize.system",
+locale)` — check `p.validated_locale_used` before you trust it.
 
 ## Hard rules
 
