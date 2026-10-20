@@ -8,7 +8,7 @@ honoured), and passes both the `sprezzature-ux-laws` static auditor and the
 `sprezzature-accessibility` lint with zero findings.
 
 The catalog is the make-side counterpart to
-`sprezzature-ux-laws/scripts/audit_laws_of_ux.py`'s `--fix` mode: the
+`sprezzature-ux-laws-audit`'s `--fix` mode: the
 auditor repairs what the agent emits; this catalog gives the agent
 shapes worth emitting in the first place.
 
@@ -30,8 +30,8 @@ shapes worth emitting in the first place.
    strings to the user's domain. Each snippet already carries the
    required dark-mode peers and focus rings — do not strip them.
 2. **At audit time.** Run the emitted page through
-   `python sprezzature-ux-laws/scripts/audit_laws_of_ux.py <page>` and
-   `python sprezzature-accessibility/scripts/lint_a11y.py <page>` to
+   `sprezzature-ux-laws-audit <page>` and
+   `sprezzature-accessibility-lint <page>` to
    confirm the adaptation did not regress what the source guaranteed.
 3. **As a refusal target.** When a user asks for a UI pattern that
    the catalog already names, refuse to invent a one-off — start

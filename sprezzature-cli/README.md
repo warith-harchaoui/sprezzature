@@ -13,9 +13,9 @@ Then:
 sprezzature --help                    # discoverable sub-commands across all six wired skills
 sprezzature --version
 
-sprezzature ui validate               # → python scripts/validate_content.py
+sprezzature ui i18n-audit src/        # → sprezzature-ui-i18n-audit src/
 
-sprezzature accessibility lint public/  # → python sprezzature-accessibility/scripts/lint_a11y.py public/
+sprezzature accessibility lint public/  # → sprezzature-accessibility-lint public/
 sprezzature colors contrast --palette palette.json
 sprezzature colors cvd screenshot.png
 sprezzature vision alt photo.jpg --kind informative --lang en
@@ -48,7 +48,7 @@ install instructions.
 Before `sprezzature-cli`, users ran each script directly:
 
 ```bash
-python sprezzature-accessibility/scripts/lint_a11y.py public/
+sprezzature-accessibility-lint public/
 sprezzature-publish-icons logo.png --out public
 ```
 

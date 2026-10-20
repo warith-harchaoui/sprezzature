@@ -60,7 +60,7 @@ into the fullscreen element so it stays visible.)
 
 You can proofread a sentence by reading it back. You cannot do that with a
 chart: whether it is right lives in the pixels, not the source. So
-`sprezzature-figures/scripts/ralph_eyeball_loop.py` renders any visual-from-code
+`ralph_eyeball_loop` renders any visual-from-code
 artifact to a PNG with a deterministic tool (a TikZ figure, a Mermaid
 diagram, a whole web page, a carefully drawn SVG), and then something
 actually looks at it. By default that is the agent itself, the same one
@@ -76,7 +76,7 @@ diagrams too.
 Color is never the only channel that carries meaning, so a figure still
 reads in grayscale or for a colorblind viewer. Diverging data uses a
 blue-to-red ramp, which survives red-green color-vision deficiency (CVD).
-These are not claims taken on faith: `sprezzature-colors/scripts/simulate_cvd.py`
+These are not claims taken on faith: `sprezzature-colors-cvd`
 re-renders any image as a protanope, deuteranope, or tritanope sees it
 (Machado et al. 2009 matrices) so you can check, and `sprezzature-accessibility`
 lints the static HyperText Markup Language (HTML) for the accessibility

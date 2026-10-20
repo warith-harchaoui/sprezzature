@@ -60,7 +60,7 @@ accidentally introduce.
 > time with:
 >
 > ```bash
-> python sprezzature-colors/scripts/palette_to_tailwind.py --emit theme
+> sprezzature-colors-palette-to-tailwind --emit theme
 > ```
 >
 > The emitter produces the eight saturated brand hues with their

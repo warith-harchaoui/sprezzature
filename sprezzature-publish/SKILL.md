@@ -64,9 +64,9 @@ Ten make-side scripts paired with one audit-side gate.
 | **Make** — generate site artifacts | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate_post.py`, `readalong.py` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
 | **Audit** — gate the emitted Markdown | `lint_markdown.py` | Markdown lint with project-aware rules (heading order, fenced-code language, link freshness). |
 
-Pair the emitted HTML with `sprezzature-accessibility/scripts/lint_a11y.py`
-(a11y) and `sprezzature-colors/scripts/audit_contrast.py` (contrast) to
-complete the audit side end-to-end.
+Pair the emitted HTML with `sprezzature-accessibility-lint` (a11y) and
+`sprezzature-colors-contrast` (contrast) to complete the audit side
+end-to-end.
 
 ## Markdown → website workflow
 
@@ -108,7 +108,7 @@ site_indexes.py    # robots, sitemap, llms.txt, llms-full.txt, feed
 plain_language.py  # optional: simplify draft copy
 ```
 
-Then run `sprezzature-accessibility/scripts/lint_a11y.py` over the output and `sprezzature-colors/scripts/audit_contrast.py` over the palette before declaring "done".
+Then run `sprezzature-accessibility-lint` over the output and `sprezzature-colors-contrast` over the palette before declaring "done".
 
 **Optional editorial step** — audio narration per post:
 

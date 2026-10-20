@@ -64,9 +64,9 @@ externe la reloge dans l'élément plein écran pour qu'elle reste visible.)
 
 On relit une phrase pour la corriger. Impossible de faire pareil avec un
 graphique : sa justesse est dans les pixels, pas dans le code. Alors
-`sprezzature-figures/scripts/ralph_eyeball_loop.py` rend n'importe quel artefact
+`ralph_eyeball_loop` rend n'importe quel artefact
 visuel-issu-du-code en PNG avec un outil déterministe (une figure TikZ,
-une figure TikZ, un diagramme Mermaid, une page web entière, un SVG dessiné
+un diagramme Mermaid, une page web entière, un SVG dessiné
 avec soin), puis quelqu'un le regarde vraiment. Par défaut c'est l'agent
 lui-même, celui qui a écrit le code ; entièrement hors ligne, un VLM local
 optionnel fait la critique. Il attrape ce qu'un contrôle de code ne verra
@@ -83,7 +83,7 @@ figure se lit encore en niveaux de gris ou pour un lecteur daltonien. Les
 données divergentes emploient un dégradé du bleu au rouge, qui résiste à la
 déficience de la vision des couleurs (DVC) rouge-vert. Ce ne sont pas des
 affirmations prises pour argent comptant :
-`sprezzature-colors/scripts/simulate_cvd.py` re-rend n'importe quelle image telle
+`sprezzature-colors-cvd` re-rend n'importe quelle image telle
 que la voit un protanope, un deutéranope ou un tritanope (matrices de
 Machado et al. 2009) pour qu'on vérifie ; `sprezzature-accessibility` passe au
 crible le *HyperText Markup Language* (HTML) statique pour les fautes

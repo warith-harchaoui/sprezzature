@@ -3,7 +3,7 @@
  *
  * Honest demo, not a mode the reader must pick: it applies a live SVG
  * feColorMatrix filter (Machado et al. 2009, the same matrices as
- * sprezzature-colors/scripts/simulate_cvd.py) to every gallery figure, so a viewer
+ * sprezzature-colors-cvd) to every gallery figure, so a viewer
  * can SEE what a colour-blind reader sees of the DEFAULT figure. The point is
  * that the default holds up. Choice is remembered in localStorage.
  *

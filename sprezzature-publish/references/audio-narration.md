@@ -17,7 +17,7 @@ baseline for long-form text. The cases where this earns its keep:
 - A WCAG 2.x requirement. SC 1.2.x covers text-for-media (captions,
   transcripts), not media-for-text.
 - A replacement for `<track>` elements on audio/video. The
-  captions pipeline (`sprezzature-audio/scripts/captions_from_whisper.py`)
+  captions pipeline (`sprezzature-audio-captions`)
   is the WCAG-mandated direction.
 - A substitute for human-narrated content where the author's voice
   matters editorially (memoir, opinion, performance writing: record
@@ -28,10 +28,10 @@ baseline for long-form text. The cases where this earns its keep:
 ```bash
 # 1. Install one engine (both are MIT for code AND weights)
 `pip install 'sprezzature-publish[all]'`
-python3 sprezzature-publish/scripts/install_narrate.py --engine chatterbox
+sprezzature-audio-install-voice --engine chatterbox
 
 # 2. Pick a built-in voice (or skip to clone a custom voice below)
-python3 sprezzature-publish/scripts/pick_voice.py --engine chatterbox --sample
+sprezzature-audio-voice --engine chatterbox --sample
 # Listen to out/voice-samples/chatterbox/*.wav, decide.
 
 # 3. Narrate a post
@@ -101,25 +101,25 @@ has inconsistent name: expected 'openvoice', but metadata has 'myshell-openvoice
 ERROR: No matching distribution found for openvoice (unavailable)
 ```
 
-The pinned requirement in
-`sprezzature-publish/scripts/requirements-narrate-openvoice.txt` still uses
+The pin lives with the engine, which is in `sprezzature-audio` now:
+`scripts/requirements-narrate-openvoice.txt` there, and it still uses
 the old name. Two workable fixes locally:
 
-1. **Pin a pre-rename commit.** Replace `@main` in the requirements
-   file with a commit SHA from before the rename (any commit on the
-   `main` branch tagged `v2.x.x` works). This is the reproducible
-   path; the SECURITY.md "Supply-chain notes" line about pinning
-   minor versions applies here too.
-2. **Use the upstream package name.** Edit the requirements file
-   line to `myshell-openvoice @ git+…@main`. Pip then accepts the
-   install. The import path inside `narrate_openvoice.py` (`import
-   openvoice` / `from openvoice import ...`) is unchanged.
+1. **Pin a pre-rename commit.** Replace `@main` in that file with a
+   commit SHA from before the rename (any commit on the `main` branch
+   tagged `v2.x.x` works). This is the reproducible path; the
+   SECURITY.md "Supply-chain notes" line about pinning minor versions
+   applies here too.
+2. **Use the upstream package name.** Edit the line to
+   `myshell-openvoice @ git+…@main`. Pip then accepts the install. The
+   import path inside the engine (`import openvoice` / `from openvoice
+   import ...`) is unchanged.
 
-The skill's `install_narrate.py` script does **not** call pip; it
-only downloads the v2 checkpoint files into the expected layout, so
-it's unaffected. The pip-install step is on you (or your
-requirements pin) until the OpenVoice maintainers republish under a
-stable name.
+`sprezzature-audio-install-voice --engine openvoice` does **not** call
+pip for the library; it checks that `openvoice` imports and downloads
+the v2 checkpoints into the expected layout, so it is unaffected. The
+pip-install step is on you (or your pin) until the OpenVoice
+maintainers republish under a stable name.
 
 ## Hints derived from structure
 
@@ -472,13 +472,14 @@ emotion→engine-dial mapping). Engine wrappers are smoke-tested via
 the orchestrator's mock-subprocess path; actual synthesis is a local
 developer / production task.
 
-Concretely, `.github/workflows/ci.yml` installs every per-skill
-`requirements-*.txt` so the Ollama-backed scripts import cleanly
-during collection, **except**
-`requirements-narrate-openvoice.txt` and
-`requirements-narrate-chatterbox.txt`, which are skipped explicitly.
-Both engine wrappers use `importlib` for lazy imports inside the
+Concretely, no CI job installs the engine tiers. It does not need to:
+both engine wrappers use `importlib` for lazy imports inside the
 synthesis path, so collection succeeds without the heavy ML
-dependencies. Skipping them also avoids the upstream OpenVoice
-package-rename trap (see "Installation gotcha" above) blocking
-unrelated CI runs.
+dependencies. That also keeps the upstream OpenVoice package-rename
+trap (see "Installation gotcha" above) out of unrelated CI runs.
+
+This paragraph used to describe a loop in the monorepo's
+`.github/workflows/ci.yml` that installed every per-skill
+requirements file and skipped those two by name. The loop is gone,
+along with the skill folders' requirements files: each brick's own
+repository decides what its CI installs now.

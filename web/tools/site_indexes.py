@@ -2,7 +2,7 @@
 """
 site_indexes — regenerate sitemap.xml, llms.txt and llms-full.txt for web/.
 
-sprezzature-publish/scripts/site_indexes.py is Markdown/SSG-oriented (its
+`sprezzature-publish-indexes` is Markdown/SSG-oriented (its
 page discovery walks ``public/``, ``dist/``, ``build/`` … but not ``fr/``,
 and its full-text corpus is built from Markdown sources only). This site is
 hand-authored static HTML with an ``fr/`` translation tree, so this script

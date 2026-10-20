@@ -14,12 +14,12 @@
 #                contrast, above-the-fold content, dark mode
 #   3. refine  — edit the HTML/CSS
 #   4. repeat  — until satisfied at both desktop and mobile sizes
-#   5. gate    — run lint_a11y.py on the file before committing
+#   5. gate    — run sprezzature-accessibility-lint on the file before committing
 #
 # Example full loop:
 #   scripts/render_web.sh web/index.html .private/screenshots/home-desktop.png
 #   scripts/render_web.sh web/index.html .private/screenshots/home-mobile.png 375 812
-#   python3 sprezzature-accessibility/scripts/lint_a11y.py web/index.html
+#   sprezzature-accessibility-lint web/index.html
 set -euo pipefail
 
 SRC="${1:?Usage: $0 <html-file> [out.png] [width] [height]}"

@@ -2,7 +2,7 @@
 
 Two sibling series built on the **same entity set** as
 `tribute-hans-rosling-1950-2025.csv`, by
-`sprezzature-figures/scripts/gather_gapminder_variants.py`. They exist so the
+`python -m sprezzature_figures_scripts.gather_gapminder_variants`. They exist so the
 sibling bubble charts share the first tribute's countries, period-correct
 names, population sizes and region colours.
 

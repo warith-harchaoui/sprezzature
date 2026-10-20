@@ -31,7 +31,7 @@ Ce fichier est écrit par l'auteur de `sprezzature`. La colonne « Compatible s
 Trois catégories concrètes où les *skills* `sprezzature-*`, ensemble, font quelque chose qu'aucun autre outil listé ne fait sous forme de *skill* :
 
 1. **Maquettes d'interface en ligne de commande (CLI) → interface graphique (GUI) depuis `tool --help`.** `sprezzature-cli-gui` échafaude une GUI vanilla-JS + Tailwind depuis le parseur d'arguments d'un CLI Python / Node / Go, en *skill*, sans environnement d'exécution de framework. Aucun autre outil listé ne fait cela comme *skill* Claude / OpenCode : Gradio / Streamlit / Gooey produisent une interface utilisateur (UI) à l'exécution difficile à restyler et ne sont pas des *skills*.
-2. **Barrières d'accessibilité (a11y) avant expédition, en intégration continue (CI), sans navigateur sans interface graphique.** `sprezzature-accessibility/scripts/lint_a11y.py` est un lint Python d'un seul fichier, stdlib uniquement, qui tourne en millisecondes dans n'importe quel conteneur CI minimal. axe-core / Pa11y / Lighthouse sont la bonne réponse pour les audits à l'exécution (et vous devriez faire les deux), mais aucun ne tourne sans navigateur et c'est un coût réel dans un hook de pré-commit.
+2. **Barrières d'accessibilité (a11y) avant expédition, en intégration continue (CI), sans navigateur sans interface graphique.** `sprezzature-accessibility-lint` est un lint Python d'un seul fichier, stdlib uniquement, qui tourne en millisecondes dans n'importe quel conteneur CI minimal. axe-core / Pa11y / Lighthouse sont la bonne réponse pour les audits à l'exécution (et vous devriez faire les deux), mais aucun ne tourne sans navigateur et c'est un coût réel dans un hook de pré-commit.
 3. **Sites de documentation bilingues EN/FR (ou EN/DE, EN/ES, EN/JA)** où la parité typographique et de ton compte. `sprezzature-publish` + la réécriture en langage clair de `sprezzature-ui` + `i18n.md` s'articulent ensemble. Aucun générateur de site statique (SSG) seul ne livre cette combinaison.
 
 ## Où choisir autre chose
@@ -373,7 +373,7 @@ livre les trois familles Roboto en WOFF2 avec les licences OFL groupées).
 
 Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, dans les tests navigateur).
 
-**Choisir `sprezzature-accessibility/scripts/lint_a11y.py`** comme barrière de pré-commit rapide qui tourne dans un conteneur CI stdlib uniquement, avec exit 1 sur tout constat. **Choisir axe-core ou Pa11y** pour les vérifications dynamiques : état ARIA dynamique, pièges de focus après `dialog.showModal()`, contraste de couleur après un changement de thème à l'exécution, name/role/value après montage de portails. **Choisir Lighthouse** quand l'audit a11y doit venir avec l'audit performance / référencement naturel (SEO) dans le même rapport. Le cadrage honnête : un lint statique vert ne veut pas dire conforme aux règles WCAG : il veut dire que les règles statiques passent.
+**Choisir `sprezzature-accessibility-lint`** comme barrière de pré-commit rapide qui tourne dans un conteneur CI stdlib uniquement, avec exit 1 sur tout constat. **Choisir axe-core ou Pa11y** pour les vérifications dynamiques : état ARIA dynamique, pièges de focus après `dialog.showModal()`, contraste de couleur après un changement de thème à l'exécution, name/role/value après montage de portails. **Choisir Lighthouse** quand l'audit a11y doit venir avec l'audit performance / référencement naturel (SEO) dans le même rapport. Le cadrage honnête : un lint statique vert ne veut pas dire conforme aux règles WCAG : il veut dire que les règles statiques passent.
 
 ---
 
@@ -381,8 +381,8 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 
 | Outil | Forme | Aperçu live | Compatible CI | Licence | Compatible sprezzature | Notes |
 |---|---|:---:|:---:|---|:---:|---|
-| **`sprezzature-colors/scripts/audit_contrast.py`** (utilisé) | CLI + suggestion de correctif OKLCH | ✗ | ✓ | BSD-3-Clause | ✓ | Parcourt chaque paire label/surface. |
-| **`sprezzature-colors/scripts/simulate_cvd.py`** (utilisé) | transformation d'image CLI | ✗ | ✓ | BSD-3-Clause | ✓ | Protanopie / deutéranopie / tritanopie. |
+| **`sprezzature-colors-contrast`** (utilisé) | CLI + suggestion de correctif OKLCH | ✗ | ✓ | BSD-3-Clause | ✓ | Parcourt chaque paire label/surface. |
+| **`sprezzature-colors-cvd`** (utilisé) | transformation d'image CLI | ✗ | ✓ | BSD-3-Clause | ✓ | Protanopie / deutéranopie / tritanopie. |
 | [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) | page hébergée | ✗ | ✗ | gratuit | ~ | Référence canonique. |
 | [Stark](https://www.getstark.co) | plugin Figma / Sketch | ✓ | ✗ | freemium | ✗ | Flux de travail pour designers. |
 | [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) | surcouche macOS | ✓ | ✗ | gratuit | ~ | Aperçu de la déficience de la vision des couleurs (DVC), en temps réel. |
