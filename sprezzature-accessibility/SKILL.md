@@ -121,25 +121,24 @@ parsing, ``--format text`` for terminal review.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "a11y lint" / "check this HTML for accessibility" / "static a11y check" | `lint_a11y.py` | `sprezzature-accessibility-lint <file-or-dir>` (15 rules, exit 1 on any finding). Falls back to `python -m sprezzature_accessibility_scripts.lint_a11y` if the console script is not on `$PATH`. |
+| "a11y lint" / "check this HTML for accessibility" / "static a11y check" | `lint_a11y.py` | `sprezzature-accessibility-lint <file-or-dir>` (twenty rules, exit 1 on any finding). Falls back to `python -m sprezzature_accessibility_scripts.lint_a11y` if the console script is not on `$PATH`. |
 | "text spacing" / "letter-spacing" / "comfortable reading CSS" | `text_spacing_preset.py` | `sprezzature-accessibility-text-spacing <file-or-dir>` (emits the opt-in WCAG 1.4.12 CSS preset). Falls back to `python -m sprezzature_accessibility_scripts.text_spacing_preset`. |
-| "contrast audit" / "WCAG ratio" / "colorblind preview" | (see `sprezzature-colors`) | `python -m sprezzature_colors_scripts.audit_contrast [--palette p.json] [--fix]` and `python -m sprezzature_colors_scripts.simulate_cvd <image>` (the `sprezzature-colors` package ships no console script, only these importable modules). |
+| "contrast audit" / "WCAG ratio" / "colorblind preview" | (see `sprezzature-colors`) | `sprezzature-colors-contrast [--palette p.json] [--fix]` and `sprezzature-colors-cvd <image>`. |
 | "alt text" / `<img>` with no `alt` / "describe this image" | (see `sprezzature-accessibility`) | `make-alt [--kind informative\|decorative\|functional\|text\|complex\|group] [--lang fr] [--in DOC] [--vocab-from DIR] <src>`. |
-| "captions" / "transcribe video" / "transcribe audio" / "subtitle file" | (see `sprezzature-audio`) | `python -m sprezzature_audio_scripts.install_captions` then `sprezzature-audio-captions <audio-or-video> [--format vtt\|srt\|text] [--lang fr] [--vocab-from DIR] [--auto-project]`. |
+| "captions" / "transcribe video" / "transcribe audio" / "subtitle file" | (see `sprezzature-audio`) | `sprezzature-audio-install` then `sprezzature-audio-captions <audio-or-video> [--format vtt\|srt\|text] [--lang fr] [--vocab-from DIR] [--auto-project]`. |
 
 ## Tool composition
 
 For a UI deliverable end-to-end. Commands below assume the standalone
 packages are pip-installed (`pip install sprezzature-accessibility
-sprezzature-colors sprezzature-accessibility sprezzature-audio`); `sprezzature-colors`
-exposes no console script, so its two calls go through `python -m`:
+sprezzature-colors sprezzature-audio`):
 
 ```bash
-sprezzature-accessibility-lint public/                                        # static a11y gate
-python -m sprezzature_colors_scripts.audit_contrast --palette palette.json    # WCAG ratios
-python -m sprezzature_colors_scripts.simulate_cvd screenshot.png --grid       # CVD pass
-make-alt public/hero.jpg          # AI alt text
-sprezzature-audio-captions public/podcast.mp4                                 # AI captions
+sprezzature-accessibility-lint public/              # static a11y gate
+sprezzature-colors-contrast --palette palette.json  # WCAG ratios
+sprezzature-colors-cvd screenshot.png --grid        # CVD pass
+make-alt public/hero.jpg                            # AI alt text
+sprezzature-audio-captions public/podcast.mp4       # AI captions
 ```
 
 Then pair with a runtime audit (axe-core / Pa11y / Lighthouse) before
