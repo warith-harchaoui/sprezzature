@@ -3,24 +3,30 @@ cli — the `sprezzature` Click driver.
 
 Maps `sprezzature <skill> <action> [args ...]` to the right tool for the
 matching skill. Shells out via subprocess; never imports the target
-script. This keeps the stdlib-only scripts (validate, lint, contrast,
-cvd, site-indexes) zero-dep when invoked directly.
+script, so a stdlib-only tool stays zero-dep when invoked this way.
 
-Two skill layouts to support
------------------------------
-Some skills still carry their scripts inside this monorepo
-(``sprezzature-ui``, ``sprezzature-accessibility``, ``sprezzature-publish``): for
-those, shelling out to ``<skill>/scripts/<script>.py`` is enough. Others
-(``sprezzature-accessibility``, ``sprezzature-audio``, ``sprezzature-colors``,
-and more over time) have had their scripts extracted to standalone pip
-packages; the in-repo ``scripts/`` folder for those now only holds the
-SKILL.md's own agentic contract, no runnable code. ``_run_tool`` tries,
-in order: the standalone package's registered console script on
-``$PATH``, the in-repo ``scripts/<script>`` (if it still exists), then
-``python -m <module>`` against the standalone package's script module
-(importable once the package is pip-installed even without a
-console-script entry, e.g. ``sprezzature-colors``). A clean, actionable
-error replaces the previous "script not found" dead end when none apply.
+One layout, after the split
+---------------------------
+This used to describe two: the skills that still carried their scripts
+inside the monorepo, and the ones extracted into standalone pip packages.
+There is one left. Every brick is its own package now, so every
+sub-command goes through :func:`_run_tool`, which tries, in order: the
+package's registered console script on ``$PATH``; ``<skill>/scripts/<script>``
+inside a discovered skill folder, the pre-split layout, kept because a
+hand-built folder is a fair thing to point the driver at; then
+``python -m <module>`` against the package's script module, which works
+even where no console script is registered. When none resolve, the error
+names all three attempts and the ``pip install`` that would fix it.
+
+Three routes stopped at the second and third of those — two colour tools and
+the caption installer — because when they were written their bricks shipped no
+command for them. All three are registered now, so all three are named here.
+
+Nine sub-commands bypassed that and shelled straight to an in-repo file
+until 2026-10-20 — one per brick that had not yet moved when they were
+written. They had all moved. Every one of those commands exited 2 on any
+clean checkout, and the test that should have caught it was held up by an
+untracked ``__pycache__``.
 
 Author
 ------
@@ -63,42 +69,26 @@ def _candidate_bases() -> list[Path]:
 
 
 def _find_skill(skill_name: str) -> Optional[Path]:
-    """Return the absolute path to the skill folder, or None if missing."""
+    """Return the absolute path to the skill folder, or None if missing.
+
+    What makes a folder a skill is its ``SKILL.md`` — the contract an agent
+    reads. It used to be a ``scripts/`` directory, from when every skill
+    carried runnable code beside that contract. None do: the scripts left for
+    their own pip packages, and the only thing still answering ``is_dir()``
+    in those folders was a ``__pycache__`` nobody commits. So this resolved to
+    None for every shipped skill, on any clean checkout, and
+    ``sprezzature ui validate`` and eight sibling sub-commands exited 2 with
+    "skill not found".
+
+    ``scripts/`` still counts, with or without a contract file beside it: that
+    is the layout :func:`_run_tool` falls back to, and a folder built by hand
+    for a one-off tool is a fair thing to point the driver at.
+    """
     for base in _candidate_bases():
         candidate = base / skill_name
-        if (candidate / SCRIPTS_SUBDIR).is_dir():
-            return candidate
-        # Fallback: assume `base` *is* the repo root and `skill_name` lives
-        # directly inside it (the in-repo layout).
-        candidate = base / skill_name
-        if (candidate / "SKILL.md").is_file() and (candidate / SCRIPTS_SUBDIR).is_dir():
+        if (candidate / "SKILL.md").is_file() or (candidate / SCRIPTS_SUBDIR).is_dir():
             return candidate
     return None
-
-
-def _run_script(skill: str, script: str, extra: tuple[str, ...]) -> int:
-    """Execute `python <skill>/scripts/<script>` with the extra args.
-
-    Only correct for skills whose scripts still live in this monorepo
-    (``sprezzature-ui``, ``sprezzature-accessibility``, ``sprezzature-publish``).
-    For an extracted skill, use :func:`_run_tool` instead.
-    """
-    skill_root = _find_skill(skill)
-    if skill_root is None:
-        bases = "\n  ".join(str(b) for b in _candidate_bases())
-        click.echo(
-            f"sprezzature: skill {skill!r} not found.\n"
-            f"Searched (in order):\n  {bases}\n"
-            f"Set $SPREZZATURE_SKILLS_PATH or install the skill folder under one of these.",
-            err=True,
-        )
-        return 2
-    target = skill_root / SCRIPTS_SUBDIR / script
-    if not target.is_file():
-        click.echo(f"sprezzature: {script} not found inside {skill_root}.", err=True)
-        return 2
-    completed = subprocess.run([sys.executable, str(target), *extra])
-    return completed.returncode
 
 
 def _module_available(module: str) -> bool:
@@ -197,15 +187,41 @@ def cli() -> None:
 
 @cli.group(context_settings=GROUP_CONTEXT_SETTINGS, help="UI generation skill (sprezzature-ui).")
 def ui() -> None:
-    """sprezzature-ui — UI generation and pre-ship validation."""
+    """sprezzature-ui — UI generation, and the i18n tools that come with it.
+
+    ``sprezzature ui validate`` stood here, for the pre-ship content gate.
+    That gate never left the monorepo — it reads a *skill folder* in this
+    repository, not anything in a user's project — so a published driver
+    offering it was offering a command that cannot work from an install. It
+    lives beside the other repository-level validators, as
+    ``python scripts/validate_all.py`` in a checkout.
+
+    What `sprezzature-ui` does install are the two i18n tools below.
+    """
 
 
-@ui.command(name="validate", context_settings=CONTEXT_SETTINGS, add_help_option=False,
-            help="Run the sprezzature-ui pre-ship quality gate.")
+@ui.command(name="i18n-audit", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+            help="Audit a project for strings hard-coded in JS instead of the locale files.")
 @click.pass_context
-def ui_validate(ctx: click.Context) -> None:
-    """Run the sprezzature-ui pre-ship quality gate (delegates to ``validate.py``)."""
-    sys.exit(_run_script("sprezzature-ui", "validate.py", tuple(ctx.args)))
+def ui_i18n_audit(ctx: click.Context) -> None:
+    """Audit JS translation dicts and inline prompts for untranslated copy."""
+    sys.exit(_run_tool(
+        "sprezzature-ui", "audit_i18n.py", tuple(ctx.args),
+        console_script="sprezzature-ui-i18n-audit",
+        module="sprezzature_ui_scripts.audit_i18n",
+    ))
+
+
+@ui.command(name="i18n-make", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+            help="Scaffold or recompile locales/i18n.yaml and its JS loader.")
+@click.pass_context
+def ui_i18n_make(ctx: click.Context) -> None:
+    """Scaffold or recompile ``locales/i18n.yaml`` and the JS loader beside it."""
+    sys.exit(_run_tool(
+        "sprezzature-ui", "i18n_make.py", tuple(ctx.args),
+        console_script="sprezzature-ui-i18n-make",
+        module="sprezzature_ui_scripts.i18n_make",
+    ))
 
 
 # ── accessibility ───────────────────────────────────────────────────────────
@@ -253,6 +269,7 @@ def audio_install(ctx: click.Context) -> None:
     """Install pywhispercpp and download the caption model."""
     sys.exit(_run_tool(
         "sprezzature-audio", "install_captions.py", tuple(ctx.args),
+        console_script="sprezzature-audio-install",
         module="sprezzature_audio_scripts.install_captions",
     ))
 
@@ -269,7 +286,16 @@ def vision() -> None:
 @click.pass_context
 def vision_alt(ctx: click.Context) -> None:
     """Draft W3C-compliant alt text via the local Ollama vision model."""
-    sys.exit(_run_script("sprezzature-accessibility", "alt_from_ollama.py", tuple(ctx.args)))
+    # ``make-alt``, not ``sprezzature-accessibility-alt``: the brick ships both
+    # front doors on one table, and the argparse one needs no extra. Its Click
+    # twin imports Click at load, so on a bare ``pip install`` it is a command
+    # on $PATH that cannot start — and both steps below would then be spent on
+    # a tool the user does have, in a spelling that cannot run it.
+    sys.exit(_run_tool(
+        "sprezzature-accessibility", "alt_from_ollama.py", tuple(ctx.args),
+        console_script="make-alt",
+        module="sprezzature_accessibility.alt_cli",
+    ))
 
 
 @vision.command(name="install", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -277,7 +303,11 @@ def vision_alt(ctx: click.Context) -> None:
 @click.pass_context
 def vision_install(ctx: click.Context) -> None:
     """Install Ollama and pull the vision model used by ``sprezzature vision alt``."""
-    sys.exit(_run_script("sprezzature-accessibility", "install_alt_ai.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-accessibility", "install_alt_ai.py", tuple(ctx.args),
+        console_script="sprezzature-accessibility-install-alt",
+        module="sprezzature_accessibility_scripts.install_alt_ai",
+    ))
 
 
 # ── colors ──────────────────────────────────────────────────────────────────
@@ -294,6 +324,7 @@ def colors_contrast(ctx: click.Context) -> None:
     """Run the WCAG contrast audit with an OKLCH-neighbour fix hint."""
     sys.exit(_run_tool(
         "sprezzature-colors", "audit_contrast.py", tuple(ctx.args),
+        console_script="sprezzature-colors-contrast",
         module="sprezzature_colors_scripts.audit_contrast",
     ))
 
@@ -305,6 +336,7 @@ def colors_cvd(ctx: click.Context) -> None:
     """Render a screenshot under protanopia / deuteranopia / tritanopia."""
     sys.exit(_run_tool(
         "sprezzature-colors", "simulate_cvd.py", tuple(ctx.args),
+        console_script="sprezzature-colors-cvd",
         module="sprezzature_colors_scripts.simulate_cvd",
     ))
 
@@ -321,7 +353,11 @@ def publish() -> None:
 @click.pass_context
 def publish_favicons(ctx: click.Context) -> None:
     """Generate a favicon / PWA icon set + manifest from one logo."""
-    sys.exit(_run_script("sprezzature-publish", "favicons.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-publish", "favicons.py", tuple(ctx.args),
+        console_script="sprezzature-publish-icons",
+        module="sprezzature_publish_scripts.favicons",
+    ))
 
 
 @publish.command(name="meta", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -329,7 +365,11 @@ def publish_favicons(ctx: click.Context) -> None:
 @click.pass_context
 def publish_meta(ctx: click.Context) -> None:
     """Draft per-page meta tags (title, description, OG, Twitter, JSON-LD)."""
-    sys.exit(_run_script("sprezzature-publish", "meta_from_ollama.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-publish", "meta_from_ollama.py", tuple(ctx.args),
+        console_script="sprezzature-publish-meta",
+        module="sprezzature_publish_scripts.meta_from_ollama",
+    ))
 
 
 @publish.command(name="indexes", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -337,7 +377,11 @@ def publish_meta(ctx: click.Context) -> None:
 @click.pass_context
 def publish_indexes(ctx: click.Context) -> None:
     """Emit robots.txt + sitemap.xml + llms.txt + Atom/RSS + humans.txt."""
-    sys.exit(_run_script("sprezzature-publish", "site_indexes.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-publish", "site_indexes.py", tuple(ctx.args),
+        console_script="sprezzature-publish-indexes",
+        module="sprezzature_publish_scripts.site_indexes",
+    ))
 
 
 @publish.command(name="plain", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -345,7 +389,11 @@ def publish_indexes(ctx: click.Context) -> None:
 @click.pass_context
 def publish_plain(ctx: click.Context) -> None:
     """Rewrite UI copy in plain language at a target reading grade."""
-    sys.exit(_run_script("sprezzature-publish", "plain_language.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-publish", "plain_language.py", tuple(ctx.args),
+        console_script="sprezzature-publish-plain",
+        module="sprezzature_publish_scripts.plain_language",
+    ))
 
 
 @publish.command(name="lint-md", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -353,7 +401,11 @@ def publish_plain(ctx: click.Context) -> None:
 @click.pass_context
 def publish_lint_md(ctx: click.Context) -> None:
     """Lint Markdown — headings, alt text, links, LaTeX, Mermaid."""
-    sys.exit(_run_script("sprezzature-publish", "lint_markdown.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-publish", "lint_markdown.py", tuple(ctx.args),
+        console_script="sprezzature-publish-lint",
+        module="sprezzature_publish_scripts.lint_markdown",
+    ))
 
 
 @publish.command(name="md-to-html", context_settings=CONTEXT_SETTINGS, add_help_option=False,
@@ -361,4 +413,8 @@ def publish_lint_md(ctx: click.Context) -> None:
 @click.pass_context
 def publish_md_to_html(ctx: click.Context) -> None:
     """Convert Markdown to HTML (Mermaid PNG, KaTeX, Tailwind shell)."""
-    sys.exit(_run_script("sprezzature-publish", "md_to_html.py", tuple(ctx.args)))
+    sys.exit(_run_tool(
+        "sprezzature-publish", "md_to_html.py", tuple(ctx.args),
+        console_script="sprezzature-publish-html",
+        module="sprezzature_publish_scripts.md_to_html",
+    ))
