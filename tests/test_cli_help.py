@@ -19,14 +19,16 @@ monorepo keeps no copy of that helper.
 Running the commands is the bricks' job now — it needs their dependencies
 installed, which this repository deliberately does not do. What belongs here is
 the question only this repository can ask: **did the check arrive where it was
-sent?** The comments asserted a delegation; nothing verified it, and for four
-bricks it had not happened.
-
-The exemption list below is therefore two-sided. A brick outside it must
-exercise ``--help`` somewhere in its suite; a brick inside it must still be
-missing one — so the day somebody writes that test, this fails until the
-exemption is removed. An exemption that cannot expire is how a list like this
-rots into a TODO nobody reads.
+sent?** The comments asserted a delegation and nothing verified it, so for
+four bricks it had not happened: ui, colors, ux-laws and maps, eighteen
+registered commands between them and not one invoked by a test. They were
+listed here for an afternoon, in a two-sided exemption table — a brick outside
+it had to exercise ``--help``, a brick inside it had to still be missing one,
+so closing a gap forced its own exemption out. All four closed the same day,
+each with a ``tests/test_every_command_can_start.py`` beside the commands it
+runs, and the table went with them: a list of nothing needs no machinery, and
+parametrising over an empty one is the vacuity this whole file is about. If a
+new gap appears, the answer is the test, not a line here.
 
 Author
 ------
@@ -51,19 +53,6 @@ SIBLINGS = REPO_ROOT.parent
 #: ``parse_args`` alike, and which one they chose is not this test's business.
 _EXERCISES_HELP = re.compile(r"""["'](?:--help|-h)["']""")
 
-#: Bricks with no ``--help`` smoke test in their own suite, measured
-#: 2026-10-20. Every one of them registers console scripts, so every one of
-#: them can break the way described above without its suite noticing. Listed
-#: rather than fixed from here: the test belongs beside the commands it runs,
-#: in each brick's repository, where the dependencies to run them exist.
-KNOWN_GAPS: dict[str, str] = {
-    "sprezzature-ui": "registers 5 commands; no test invokes one",
-    "sprezzature-colors": "registers 7 commands; no test invokes one",
-    "sprezzature-ux-laws": "registers 3 commands; no test invokes one",
-    "sprezzature-maps": "registers 3 commands; no test invokes one",
-}
-
-
 def _suite(brick: str) -> list[Path] | None:
     """A brick's test files, or None when it is not checked out beside us."""
     root = SIBLINGS / brick
@@ -86,37 +75,16 @@ def _exercises_help(brick: str) -> bool | None:
     )
 
 
-def test_every_exemption_names_a_brick_that_ships() -> None:
-    """A gap listed for a brick that no longer exists hides nothing."""
-    unknown = sorted(set(KNOWN_GAPS) - set(SHIPPED_SKILLS))
-    assert not unknown, f"{unknown} are exempted here and not in SKILLS.txt"
-
-
 @pytest.mark.parametrize("brick", SHIPPED_SKILLS)
 def test_the_brick_runs_a_command_with_help_somewhere(brick: str) -> None:
     """Otherwise a command that cannot start is a command nothing starts."""
     found = _exercises_help(brick)
     if found is None:
         pytest.skip(f"{brick} is not checked out beside this repository")
-    if brick in KNOWN_GAPS:
-        pytest.skip(f"{brick}: {KNOWN_GAPS[brick]}")
     assert found, (
         f"{brick} registers console scripts and its suite never runs one with "
         f"--help. A command that dies at import — a missing extra, a renamed "
         f"entry point — exits non-zero before parsing anything, and nothing "
-        f"there would say so. Add the smoke test, or list the brick in "
-        f"KNOWN_GAPS here with a reason."
-    )
-
-
-@pytest.mark.parametrize("brick", sorted(KNOWN_GAPS))
-def test_a_closed_gap_leaves_the_exemption_list(brick: str) -> None:
-    """The half that makes the list above shrink instead of settling."""
-    found = _exercises_help(brick)
-    if found is None:
-        pytest.skip(f"{brick} is not checked out beside this repository")
-    assert not found, (
-        f"{brick} now exercises --help in its own suite. Remove it from "
-        f"KNOWN_GAPS: an exemption that outlives the gap it describes is a "
-        f"line of documentation that has started lying."
+        f"there would say so. The nine have one each; add it to {brick} too, "
+        f"beside the commands it runs."
     )
