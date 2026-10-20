@@ -58,16 +58,19 @@ def _collect() -> dict[str, str]:
         assert m, f"{skill_md.relative_to(REPO_ROOT)} has no metadata.version"
         sources[str(skill_md.relative_to(REPO_ROOT))] = m.group(1)
 
-    # Repo-root ``scripts/`` too, not just the per-skill copies: its
-    # _argparse.py is what ``cleanup_local_skills.py --version`` prints, and
-    # it sat at 1.0.1 through a 1.1.0 bump because this glob did not reach it.
-    for helper in sorted(REPO_ROOT.glob("sprezzature-*/scripts/_argparse.py")) + \
-            sorted(REPO_ROOT.glob("sprezzature-*/scripts/_click.py")) + \
-            sorted(REPO_ROOT.glob("scripts/_argparse.py")) + \
-            sorted(REPO_ROOT.glob("scripts/_click.py")):
-        m = _SKILL_VERSION_RE.search(helper.read_text(encoding="utf-8"))
-        if m:  # not every helper defines it; check the ones that do
-            sources[str(helper.relative_to(REPO_ROOT))] = m.group(1)
+    # Four globs over the shared helpers' ``SKILL_VERSION`` stood here. They
+    # match nothing: no copy of ``_argparse.py`` or ``_click.py`` is left in
+    # this repository, per-skill or at the root. A ``for`` over an empty glob
+    # does not even skip — it passes, having asserted nothing, which is worse
+    # than the vacuity pytest at least reports.
+    #
+    # And pointing them at the sibling checkouts would be wrong, not just
+    # bigger: ``scripts/sync_helpers.py`` is explicit that ``SKILL_VERSION`` is
+    # the one line that legitimately differs between copies, because each names
+    # the release of the brick it sits in. Those numbers are not this
+    # repository's version and must not be compared to it. What *is* checked,
+    # and now really runs, is that the copies agree on everything else:
+    # tests/test_helper_sync.py.
 
     for pyproject in (REPO_ROOT / "pyproject.toml",
                       REPO_ROOT / "sprezzature-cli" / "pyproject.toml"):
