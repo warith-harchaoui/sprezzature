@@ -3,16 +3,20 @@
 # Install:
 #   pip install -r requirements-dev.txt
 #
-# Runtime dependencies live in each sprezzature-*/scripts/requirements-*.txt; install
-# both for a full local environment:
-#   pip install -r requirements-dev.txt -r sprezzature/scripts/requirements.txt
+# That is the whole install. The second line used to point at a per-skill
+# runtime requirements file; no skill folder in this repository ships one any
+# more — the model-backed scripts left with their bricks — so the line named a
+# file nobody could install.
 
 # Fast deterministic test suite under tests/
 pytest>=8.0.0
 
-# Every LLM/VLM call across the surviving Ollama-backed skill scripts routes
-# through best_engine_ai_helper.llm.chat (SPREZZATURE_LLM_* env vars pick the
-# backend/model). Needed so the test suite can import those scripts.
+# tests/conftest.py imports best_engine_ai_helper.safety to neutralise the
+# NSFW scan that chat() has run on every call since 1.4: left alone it
+# downloads 270 MB of classifier into every test run. The LLM/VLM scripts that
+# called chat() themselves have left with their bricks, so this is now the one
+# consumer in this repository — and it is a test-time import, which is why the
+# dependency belongs here and not in pyproject.toml.
 best-engine-ai-helper>=1.4
 
 # Real YAML parser for SKILL.md frontmatter validation.
@@ -36,19 +40,12 @@ mypy>=1.8,<2.0
 types-PyYAML
 types-requests
 
-# Optional: LLM-output quality assertions under tests/eval/.
-# These tests need a running Ollama daemon and are marked with
-# ``@pytest.mark.eval`` so they are NOT collected in the default run.
-# Enable with: pytest -m eval
-#
-# Each eval test loads its own optional dependency via
-# ``pytest.importorskip`` so a missing package skips the test cleanly
-# rather than crashing the suite.
-deepeval>=1.0.0
-# textstat — Flesch-Kincaid grade scoring for plain-language eval.
-textstat>=0.7.0
-# jiwer — Word Error Rate for the captions eval.
-jiwer>=3.0.0
+# deepeval, textstat and jiwer stood here, for the LLM-output quality
+# assertions. Those tests left with their bricks when the monorepo was split —
+# they live in sprezzature-accessibility and sprezzature-publish now, and so do
+# the three dependencies. What stayed behind was an empty directory, an `eval`
+# marker pytest.ini no longer declares, and three packages CI installed on
+# every job of every push to run nothing at all.
 
 # scripts/check_wheels.py parses each package's pyproject.toml. `tomllib` is
 # stdlib only from 3.11 and this project supports 3.10.

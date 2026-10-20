@@ -69,66 +69,19 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: pip
 
-      - name: Install dev + per-skill requirements
+      - name: Install dev requirements + the driver
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-          # requirements-dev.txt already covers best-engine-ai-helper, the
-          # third-party LLM/VLM backend that the four Ollama-backed scripts
-          # import (best_engine_ai_helper.llm) at module load, for both
-          # in-process imports and the subprocess ``--help`` smoke tests,
-          # as in production.
-          # Per-skill runtime deps so the Ollama-backed scripts import
-          # cleanly during collection (they don't call the daemon; the tests
-          # that would are in the bricks). The two narration engines are
-          # skipped on purpose: ``narrate_openvoice.py`` and
-          # ``narrate_chatterbox.py`` lazy-import their backend via
-          # ``importlib`` inside functions, so neither is needed for
-          # collection. Installing them pulls torch + torchaudio (~2 GB)
-          # into every matrix job and — for OpenVoice — currently breaks
-          # CI because upstream's pyproject.toml package name was renamed
-          # to ``myshell-openvoice`` while the requirement still pins
-          # ``openvoice``. Smoke-testing the engines belongs in a
-          # dedicated optional job, not on every push.
-          # nullglob: an empty glob expands to nothing, not to the
-          # literal pattern. Without it CI fails noisily when a skill
-          # has no requirements file. The skill folders kept in the
-          # loop are the two skills that still ship model-backed Python
-          # scripts in the monorepo; the deterministic tools (figures,
-          # colors, accessibility, cli-gui, ux-laws, audio) moved to their
-          # own pip packages, and sprezzature-ui is stdlib-only.
-          shopt -s nullglob
-          for req in sprezzature-publish/scripts/requirements-*.txt \
-                     sprezzature-vision/scripts/requirements-*.txt; do
-            case "$(basename "$req")" in
-              requirements-narrate-openvoice.txt|requirements-narrate-chatterbox.txt)
-                echo "skipping optional narration engine: $req"
-                continue
-                ;;
-              requirements-diarize.txt)
-                # Diarization tier pulls nemo_toolkit[asr] (~2 GB, drags
-                # in torch) and no default-lane test imports the diarize
-                # scripts — they are not in test_cli_help.py's SCRIPTS.
-                # Same reasoning as the narration engines above: heavy
-                # optional backend, not needed for collection.
-                echo "skipping optional diarization tier: $req"
-                continue
-                ;;
-              requirements-captions.txt)
-                # Captions tier now routes through vocal-helper (the
-                # author's whisper.cpp over-layer), whose silero-vad dep
-                # drags in torch (~2 GB) — same weight class as the
-                # diarization / narration backends above. captions_from_whisper
-                # defers every heavy import (vocal_helper / audio_helper /
-                # numpy) behind the _pcm_from_wav / _run_whisper_stage seams,
-                # so it imports cleanly for collection and test_captions mocks
-                # those seams. No default-lane test needs the runtime deps.
-                echo "skipping optional captions tier: $req"
-                continue
-                ;;
-            esac
-            pip install -r "$req"
-          done
+          # That file is the whole runtime install for this repository now.
+          # A loop over the skills' own per-skill requirements files used to
+          # follow, for the ones that still shipped model-backed Python
+          # scripts. Publish and vision were the last two, and both left —
+          # publish to its own repository, vision merged into accessibility —
+          # so the loop matched nothing. `shopt -s nullglob` made that silent,
+          # and the step went on announcing an install it no longer did.
+          # tests/test_this_repo_names_what_it_has.py now fails on a workflow
+          # that names a path this repository does not have.
           # The driver itself — installs the `sprezzature` console script so
           # downstream tests can import it.
           pip install ./sprezzature-cli
@@ -149,15 +102,8 @@ jobs:
         # here even if pytest somehow does not.
         run: python scripts/validate_all.py
 
-      # The eval suite used to live here, and this step proved its files still
-      # imported — a real check, since `-m eval` is deselected by default and
-      # a syntax error in one of those files would otherwise surface months
-      # later. The four eval modules left with their bricks when the monorepo
-      # was split; `tests/eval/` stayed behind as an empty shell, and
-      # `pytest -m eval` then returned exit 5 ("no tests collected"), which
-      # this step read as a failure. CI was red on that alone.
-      #
-      # The check did not disappear: it moved to the two repositories that
-      # have eval tests now, sprezzature-accessibility (5) and
-      # sprezzature-publish (2), in their pre-push hooks. A guard belongs
-      # where it can see the thing.
+      # There is no eval step here any more. The four eval modules left with
+      # their bricks when the monorepo was split, and the check that they still
+      # imported went with them, into the pre-push hooks of the two repositories
+      # that have eval tests now: sprezzature-accessibility and
+      # sprezzature-publish. A guard belongs where it can see the thing.
