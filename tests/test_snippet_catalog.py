@@ -36,11 +36,18 @@ import pytest
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent
 SNIPPETS_DIR: Path = REPO_ROOT / "sprezzature-ui" / "assets" / "snippets"
 INDEX: Path = SNIPPETS_DIR / "INDEX.md"
+#: The two auditors, in the sibling checkouts where their code lives since the
+#: split. These pointed inside this repository, at paths emptied by that split,
+#: so the sixteen cases below skipped with "auditor moved to its standalone
+#: repo" — true, and the repo in question is right next door. Both are
+#: stdlib-only, which is what makes running them here free.
+#: ``scripts/fetch_siblings.sh`` is what puts them there.
+SIBLINGS: Path = REPO_ROOT.parent
 AUDIT_LAWS: Path = (
-    REPO_ROOT / "sprezzature-ux-laws" / "scripts" / "audit_laws_of_ux.py"
+    SIBLINGS / "sprezzature-ux-laws" / "scripts" / "audit_laws_of_ux.py"
 )
 LINT_A11Y: Path = (
-    REPO_ROOT / "sprezzature-accessibility" / "scripts" / "lint_a11y.py"
+    SIBLINGS / "sprezzature-accessibility" / "scripts" / "lint_a11y.py"
 )
 
 
@@ -69,7 +76,7 @@ def test_catalog_is_non_empty() -> None:
 
 @pytest.mark.skipif(
     not AUDIT_LAWS.is_file(),
-    reason="auditor moved to its standalone repo; run it there or with the pip package",
+    reason="sprezzature-ux-laws is not checked out beside this repository",
 )
 @pytest.mark.parametrize("snippet", _snippets(), ids=lambda p: p.name)
 def test_snippet_passes_laws_of_ux_audit(snippet: Path) -> None:
@@ -86,7 +93,7 @@ def test_snippet_passes_laws_of_ux_audit(snippet: Path) -> None:
 
 @pytest.mark.skipif(
     not LINT_A11Y.is_file(),
-    reason="auditor moved to its standalone repo; run it there or with the pip package",
+    reason="sprezzature-accessibility is not checked out beside this repository",
 )
 @pytest.mark.parametrize("snippet", _snippets(), ids=lambda p: p.name)
 def test_snippet_passes_accessibility_lint(snippet: Path) -> None:
