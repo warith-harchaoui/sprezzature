@@ -67,7 +67,7 @@ gates on the emitted HTML.
 |---|---|---|
 | **Make** — CLI → HTML (three adapters) | `cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command`), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
 | **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
-| **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
+| **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `sprezzature-ux-laws-audit` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
 | **Audit** — does the page still cover the CLI | `sprezzature-cli-gui-audit <spec> <page.html>` | This brick's own promise, checked: every sub-command and flag reachable, no field building an option the parser rejects, no choice quietly dropped, and a command line seeded with the name the tool is actually installed as. A page that lost a flag renders and behaves perfectly — the option is simply unreachable — so the disagreement has to be looked for. Exit 1 on any finding, so it gates a build. |
 
 ## Quick recipe — the one command
@@ -108,7 +108,7 @@ Then point the spec at `adapter.py:make_parser`.
 Verify the output passes both audit gates (zero findings):
 
 ```bash
-python3 -m sprezzature_ux_laws_scripts.audit_laws_of_ux path/to/index.html
+sprezzature-ux-laws-audit path/to/index.html
 sprezzature-accessibility-lint                           path/to/index.html
 ```
 

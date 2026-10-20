@@ -4,10 +4,10 @@ description: >-
   Apply the canonical Laws of UX (Jon YABLONSKI, lawsofux.com) to vanilla-JS +
   Tailwind work, both when designing a screen and when auditing one that
   exists. The reference covers 30 laws with trigger / action / Tailwind hook;
-  audit_laws_of_ux.py flags the mechanically detectable subset (Hick, Miller,
-  Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice
-  Overload) with severity and JSON output, while Doherty is vocabulary rather
-  than a check. Use it when somebody is complaining about how an interface
+  sprezzature-ux-laws-audit flags the mechanically detectable subset (Hick,
+  Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention,
+  Choice Overload) with severity and JSON output, while Doherty is vocabulary,
+  not a check. Use it when somebody is complaining about how an interface
   FEELS, and on any interface you just authored. Trigger phrases: "audit for
   Laws of UX", "too many choices / options", "cognitive load", "is my nav too
   Hick-heavy", "check my form for Postel / Tesler", "Doherty threshold",
@@ -70,11 +70,11 @@ of UX specifically:
 | "design / build / make this screen using Hick / Fitts / Miller / Jakob / Tesler / Peak-End" | make | Load `references/laws-of-ux.md`, jump to the relevant bucket, apply the **smallest concrete change** the law asks for. |
 | "what does the Laws of UX say about this onboarding flow" | make | Load reference, walk the **Time** + **Memory** buckets. |
 | "is this a dark pattern" | make | Stop here, hand to `sprezzature-ui/references/anti-patterns.md`. |
-| "audit this page / component / dir for Laws of UX" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux <file-or-dir>` |
-| "auto-fix the easy ones" / "make my UI pass the Laws of UX" | make | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --fix <file-or-dir>`. Applies the four mechanical fixers (Fitts / Aesthetic-Usability / Miller / Jakob) in place. Add `--dry-run` to preview. |
-| "fail the build on Hick / Jakob violations" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --only hick,jakob --strict <dir>` |
-| "JSON for CI" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --json <dir>` |
-| "false positive on Tesler / Miller" | audit | `python -m sprezzature_ux_laws_scripts.audit_laws_of_ux --ignore tesler,miller <dir>` |
+| "audit this page / component / dir for Laws of UX" | audit | `sprezzature-ux-laws-audit <file-or-dir>` |
+| "auto-fix the easy ones" / "make my UI pass the Laws of UX" | make | `sprezzature-ux-laws-audit --fix <file-or-dir>`. Applies the four mechanical fixers (Fitts / Aesthetic-Usability / Miller / Jakob) in place. Add `--dry-run` to preview. |
+| "fail the build on Hick / Jakob violations" | audit | `sprezzature-ux-laws-audit --only hick,jakob --strict <dir>` |
+| "JSON for CI" | audit | `sprezzature-ux-laws-audit --json <dir>` |
+| "false positive on Tesler / Miller" | audit | `sprezzature-ux-laws-audit --ignore tesler,miller <dir>` |
 
 ## Implemented audit checks
 
@@ -148,7 +148,7 @@ User: "Design a hero CTA for a settings page that respects Hick + Fitts."
 ### Audit — pre-commit on the components dir
 
 ```bash
-python -m sprezzature_ux_laws_scripts.audit_laws_of_ux \
+sprezzature-ux-laws-audit \
   --strict --json \
   sprezzature-ui/assets/components/ > .audit.json
 test -s .audit.json && jq length .audit.json
@@ -181,10 +181,11 @@ warnings pass and only fail on real errors (Hick, Jakob).
 
 Shipped by the standalone [`sprezzature-ux-laws`](https://github.com/warith-harchaoui/sprezzature-ux-laws)
 package (`pip install sprezzature-ux-laws`), not by this monorepo. It
-registers no console script, so it runs as `python -m
-sprezzature_ux_laws_scripts.audit_laws_of_ux`.
+registers `sprezzature-ux-laws-audit`; `python -m
+sprezzature_ux_laws_scripts.audit_laws_of_ux` is the same entry point for an
+install whose scripts directory is not on `$PATH`.
 
-- `audit_laws_of_ux.py`: Python 3.10+ stdlib-only static
+- `sprezzature-ux-laws-audit`: Python 3.10+ stdlib-only static
   auditor. Run `--help` for the full flag list (`--json`, `--strict`,
   `--only LAW1,LAW2`, `--ignore LAW1,LAW2`).
 

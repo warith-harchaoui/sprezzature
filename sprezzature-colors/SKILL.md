@@ -58,11 +58,11 @@ your brand. Loop a designer in for the final call.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py` | `python -m sprezzature_colors_scripts.audit_contrast [--palette p.json] [--target 4.5\|7\|3] [--fix]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. |
-| "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py` | `python -m sprezzature_colors_scripts.simulate_cvd <image> [--grid]`. Renders protanopia / deuteranopia / tritanopia. |
+| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py` | `sprezzature-colors-contrast [--palette p.json] [--target 4.5\|7\|3] [--fix]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. |
+| "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py` | `sprezzature-colors-cvd <image> [--grid]`. Renders protanopia / deuteranopia / tritanopia. |
 | "what's the hex for Red" / "give me an emotion color" / "Apple palette" | `_colors.py` accessors | `from sprezzature_colors_scripts._colors import name_to_hex, emotion_to_hex, concept_search, psychology_for, apple_palette` |
 | "lighten this color" / "darken" / "tint" / "shade" | `_colors.lighten` / `_colors.darken` | OKLCH L-axis shift; hue and chroma preserved (unlike a naïve RGB offset). |
-| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `python -m sprezzature_colors_scripts.palette_to_tailwind [--emit theme\|config] [--with-dark] [--include-neutrals] [--out tailwind.config.js]`. Emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
+| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `sprezzature-colors-palette-to-tailwind [--emit theme\|config] [--with-dark] [--include-neutrals] [--out tailwind.config.js]`. Emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
 
 ## The unified palette
 
@@ -174,13 +174,13 @@ For a UI deliverable end-to-end:
 
 ```bash
 # Generate the Tailwind config from the canonical palette.
-python -m sprezzature_colors_scripts.palette_to_tailwind \
+sprezzature-colors-palette-to-tailwind \
     --emit config --with-dark --out tailwind.config.js
 
 # Then audit the resulting palette.
-python -m sprezzature_colors_scripts.audit_contrast --palette palette.json --fix    # WCAG ratios
-python -m sprezzature_colors_scripts.simulate_cvd screenshot.png --grid             # CVD pass
-sprezzature-accessibility-lint public/                                              # static a11y gate
+sprezzature-colors-contrast --palette palette.json --fix  # WCAG ratios
+sprezzature-colors-cvd screenshot.png --grid              # CVD pass
+sprezzature-accessibility-lint public/                    # static a11y gate
 ```
 
 Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
@@ -208,9 +208,9 @@ Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
 
 Shipped by the standalone [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors)
 package (`pip install sprezzature-colors`, or `sprezzature-colors[cvd]`
-for the Pillow-backed CVD renderer). The package registers no console
-scripts: every entry below runs as `python -m sprezzature_colors_scripts.<module>`
-(module names drop the `.py` suffix).
+for the Pillow-backed CVD renderer). Each entry below is a console script
+the package registers; `python -m sprezzature_colors_scripts.<module>` reaches
+the same entry point when the scripts directory is not on `$PATH`.
 
 | Script | Install | Purpose |
 |---|---|---|

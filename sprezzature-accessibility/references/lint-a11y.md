@@ -13,7 +13,7 @@ pip install sprezzature-accessibility
 The linter itself is stdlib-only at runtime (Python 3.10+); the pip install just puts
 the `sprezzature-accessibility-lint` console script on `$PATH`. It also runs directly
 without installing, via `python scripts/lint_a11y.py` or
-`python -m sprezzature_accessibility_scripts.lint_a11y`.
+`sprezzature-accessibility-lint`.
 
 ## Run
 
@@ -94,12 +94,12 @@ Static markup can't tell whether colour is *load-bearing*: whether two series
 collapse to one hue for a red-green–blind reader, or a diverging +/− sign
 vanishes in grayscale. That needs the rendered pixels, so it lives one layer
 out from the linter, in the companion `sprezzature-colors` package's
-`simulate_cvd.py` (no console script; invoke as a module).
+`sprezzature-colors-cvd`.
 
 It reinforces the two existing sprezzature-figures steps rather than replacing them:
 
 - **make** (the Ralph Eyeball Loop): after the render step, run
-  `python -m sprezzature_colors_scripts.simulate_cvd render.png` to get a contact
+  `sprezzature-colors-cvd render.png` to get a contact
   sheet (grayscale + protanopia + deuteranopia + tritanopia) and *look*. The
   loop becomes **render → simulate → look**.
 - **audit** (`audit_figure.py`, static): the auditor flags rainbow ramps and

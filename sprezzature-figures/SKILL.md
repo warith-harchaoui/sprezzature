@@ -110,7 +110,7 @@ data-science figures:
 | "render this diagram" / "tikz to png" / "mermaid diagram" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / mermaid / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
 | user asks for a named charting library ("do this in <library>") | `make-figure` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 167 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
 | "audit this figure" / "is this chart misleading" | `audit_figure.py` | `python -m sprezzature_figures_scripts.audit_figure <path>`: accepts an SVG chart or an HTML file with `<figure>` blocks. |
-| "colorblind-safe palette on the figure" | `audit_figure.py` + `sprezzature-colors` | `python -m sprezzature_figures_scripts.audit_figure <path>` catches the pattern; run `python -m sprezzature_colors_scripts.simulate_cvd` on the rendered PNG for a preview. |
+| "colorblind-safe palette on the figure" | `audit_figure.py` + `sprezzature-colors` | `python -m sprezzature_figures_scripts.audit_figure <path>` catches the pattern; run `sprezzature-colors-cvd` on the rendered PNG for a preview. |
 | "first-time setup" / "install the data-viz stack" | `install_figures.py` | `python -m sprezzature_figures_scripts.install_figures --tier dataviz+explain+causal`: installs pinned versions of each tier. |
 
 ## The four figure tiers
@@ -249,7 +249,7 @@ python -m sprezzature_figures_scripts.audit_figure ./explain/
 python -m sprezzature_figures_scripts.audit_figure ./causal/dag.svg
 
 # 5. Preview colorblind rendering.
-python -m sprezzature_colors_scripts.simulate_cvd fig.png --grid
+sprezzature-colors-cvd fig.png --grid
 
 # 6. Draft alt text for the surrounding page.
 make-alt --kind complex \
