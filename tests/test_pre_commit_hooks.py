@@ -18,6 +18,13 @@ Covers:
 * The hook list covers every shipped skill that has at least one
   audit-side script (mirrors ``SKILLS.txt`` minus the make-only
   skills).
+* The folders a hook is told to check are the folders this repository
+  ships. Mentioning a skill somewhere in the manifest is not the same
+  as handing it to the validator: the list below named
+  ``sprezzature-vision``, gone since it merged into
+  ``sprezzature-accessibility``, and omitted ``sprezzature-maps``. The
+  gate therefore exited 1 on a missing folder for every consumer, and
+  had never once read the SKILL.md of a brick that was there.
 
 Author
 ------
@@ -150,4 +157,26 @@ def test_every_audit_skill_has_a_hook() -> None:
             f"Audit-side skill '{skill}' not referenced anywhere in "
             f".pre-commit-hooks.yaml. Either add a hook or extend "
             f"the exempt list with a justification."
+        )
+
+
+def test_the_folders_a_hook_checks_are_the_folders_this_repo_ships() -> None:
+    """``args`` is a list of skill folders, and SKILLS.txt is the one list.
+
+    Grepping the manifest for a skill name — which
+    :func:`test_every_audit_skill_has_a_hook` does — cannot see this: the name
+    can sit in a comment while the validator is handed a different set. Only
+    the arguments say what actually gets checked.
+    """
+    for hook in _hooks():
+        args = hook.get("args")
+        if not args:
+            continue
+        folders = [a for a in args if a.startswith("sprezzature-")]
+        if not folders:
+            continue
+        assert folders == list(SHIPPED_SKILLS), (
+            f"Hook '{hook['id']}' checks {folders}; SKILLS.txt ships "
+            f"{list(SHIPPED_SKILLS)}. A folder that is not there fails the "
+            f"gate for every consumer, and one that is missing is never read."
         )

@@ -36,7 +36,12 @@
   language_version: python3
   files: '/?SKILL\.md$'
   pass_filenames: false
-  args: [sprezzature-ui, sprezzature-cli-gui, sprezzature-publish, sprezzature-accessibility, sprezzature-colors, sprezzature-vision, sprezzature-audio, sprezzature-ux-laws, sprezzature-figures]
+  # Every folder SKILLS.txt names, in its order. Kept honest by
+  # tests/test_pre_commit_hooks.py: this list named sprezzature-vision,
+  # which merged into sprezzature-accessibility, and omitted
+  # sprezzature-maps — so the gate failed on a folder that was gone while
+  # never reading the SKILL.md of a brick that was there.
+  args: [sprezzature-ui, sprezzature-cli-gui, sprezzature-publish, sprezzature-accessibility, sprezzature-colors, sprezzature-audio, sprezzature-ux-laws, sprezzature-figures, sprezzature-maps]
 
 - id: sprezzature-triggers-sync
   name: sprezzature — TRIGGERS.md sync check
