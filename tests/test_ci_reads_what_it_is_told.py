@@ -13,7 +13,10 @@ a declaration and is not one. Either the workflow reads it, or it should not
 be there to be believed.
 
 Checked from this repository because it is the only place that can see all
-nine siblings at once; each of them can only see itself.
+nine siblings at once; each of them can only see itself. "At once" means on a
+machine that has them checked out — the pre-push hook, which runs this suite
+before anything reaches GitHub. CI clones one sibling on purpose (the figures
+generators, for the release test), so there it checks the one it can see.
 
 Author
 ------
@@ -40,6 +43,16 @@ def _bricks() -> list[Path]:
     )
 
 
+def _checkouts() -> list[Path]:
+    """Every ``sprezzature-*`` clone beside this repository.
+
+    Deliberately looser than :func:`_bricks` — it asks only "is there a clone
+    here" — so the two can be compared without either one knowing how many
+    siblings this particular machine happens to have.
+    """
+    return sorted(p for p in SIBLINGS.glob("sprezzature-*") if (p / ".git").exists())
+
+
 def _workflow_text(repo: Path) -> str:
     """Every workflow in one repository, concatenated."""
     return "\n".join(
@@ -48,10 +61,25 @@ def _workflow_text(repo: Path) -> str:
     )
 
 
-def test_there_are_bricks_to_check() -> None:
-    """A glob that stops matching would make the tests below vacuous."""
-    found = _bricks()
-    assert len(found) >= 8, [p.name for p in found]
+def test_no_sibling_clone_escapes_the_tests_below() -> None:
+    """A glob that stopped matching would make the tests below vacuous.
+
+    Not "are the nine siblings here": how many are checked out is a property
+    of the machine, not of this suite, and asserting a count red-lit CI — which
+    clones one sibling deliberately — while saying nothing about the glob. What
+    has to hold is that every clone that *is* beside this repository is one the
+    tests below look at. Rename a brick folder on one side only, or move a
+    ``pyproject.toml``, and :func:`_bricks` quietly shrinks: the parametrised
+    cases below would then vanish rather than fail, and a test that disappeared
+    reads exactly like a test that passed.
+    """
+    seen = {p.name for p in _bricks()}
+    missed = [p.name for p in _checkouts() if p.name not in seen]
+    assert not missed, (
+        f"{missed} sit beside this repository and nothing below looks at them. "
+        f"A brick is only seen here when it carries a pyproject.toml of its own "
+        f"and this repository ships a skill folder of the same name."
+    )
 
 
 @pytest.mark.parametrize("repo", _bricks(), ids=lambda p: p.name)
