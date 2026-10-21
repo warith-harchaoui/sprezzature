@@ -108,6 +108,24 @@ jobs:
         # here even if pytest somehow does not.
         run: python scripts/validate_all.py
 
+      - name: Audit the five surfaces across the nine bricks
+        # The live half of the five-surface contract. The offline half
+        # (tests/test_surfaces_contract.py) checks the contract is complete and
+        # that the detectors still detect; this one looks at what the nine
+        # bricks actually hold, which needs the siblings fetched above.
+        #
+        # It stayed off this workflow while CI cloned one sibling, and its own
+        # docstring said so. The fetch step brings all nine with the package
+        # directory the audit reads, so the reason is gone.
+        #
+        # `--require-checkouts` is the point of running it here: without the
+        # flag a brick with no checkout is reported as undecidable and does not
+        # fail, which is right on a laptop holding one clone and wrong here. A
+        # fetch that came back with eight of nine would otherwise print a column
+        # of `?` and exit 0 — a green job asserting the surfaces of a repository
+        # it never read.
+        run: python scripts/audit_surfaces.py --require-checkouts
+
       # There is no eval step here any more. The four eval modules left with
       # their bricks when the monorepo was split, and the check that they still
       # imported went with them, into the pre-push hooks of the two repositories

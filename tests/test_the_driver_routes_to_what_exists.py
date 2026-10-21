@@ -20,8 +20,9 @@ user. On a developer's machine they resolved a folder, because the
 
 What this asks, from the one place that can see the bricks at once: a name the
 driver routes to is a name the brick declares. Each case skips when its sibling
-is not checked out — CI clones one on purpose — and the pre-push hook is where
-all nine are present.
+is not checked out, which the pre-push hook and CI both avoid: the workflow runs
+``scripts/fetch_siblings.sh`` first. A skip here means a machine with fewer
+clones, not a gap nobody checks.
 
 Author
 ------

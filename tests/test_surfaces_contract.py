@@ -3,11 +3,17 @@ Tests for the five-surface contract — the offline half.
 
 ``scripts/audit_surfaces.py`` answers "which brick holds which surface right
 now", and it has to look at the **sibling repositories** next to this one to do
-it. CI has none of them, and neither does anyone who cloned a single repo. So
-the live audit stays a script, and what is tested here is the half that travels
-with the checkout: that the contract is complete, that every exemption carries
-its reason, and that the auditor's own detectors can tell a brick that holds a
+it. Anyone who cloned a single repo has none of them, so the live audit stays a
+script rather than a test, and what is tested here is the half that travels with
+the checkout: that the contract is complete, that every exemption carries its
+reason, and that the auditor's own detectors can tell a brick that holds a
 surface from one that does not.
+
+CI is no longer in that position — ``scripts/fetch_siblings.sh`` brings all
+nine — so the workflow runs the live audit too, with ``--require-checkouts``.
+The last two tests here hold that arrangement to its own terms: an absent clone
+is undecidable and must not fail a laptop, *and* must fail the one place that
+knows every clone should be there.
 
 That last part matters more than it looks. An auditor that answers "ok" to
 everything passes every test that only checks it runs. The detectors are
@@ -23,6 +29,7 @@ Author
 from __future__ import annotations
 
 import importlib.util
+import shlex
 import sys
 from pathlib import Path
 
@@ -246,3 +253,130 @@ def test_a_console_script_pointing_nowhere_is_reported(brick: Path) -> None:
     (brick / "sprezzature_demo" / "cli.py").unlink()
     report = AUDIT.audit("sprezzature-demo")
     assert any("points at no file" in note for note in report["notes"]), report
+
+
+# --------------------------------------------------------------------------
+# An absent clone and a missing surface are two different answers
+# --------------------------------------------------------------------------
+
+
+def test_no_checkout_is_undecidable_rather_than_a_gap(
+    brick: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """
+    The defect this pair of tests was written for.
+
+    The module docstring has always said that absence of a clone is not absence
+    of a surface and that the script "refuses to confuse the two". It confused
+    them: the no-checkout branch put ``"repo"`` into ``missing``, and ``main``
+    exits 1 on any ``missing`` at all. So ``python scripts/audit_surfaces.py``
+    exited 1 on every machine holding a single clone — the exact situation the
+    "why a script and not a test" paragraph exists to serve — and the one
+    column that said *undecidable* in the table said *missing* in the exit code.
+    """
+    monkeypatch.setattr(AUDIT, "SHIPPED_SKILLS", ["sprezzature-demo"])
+    for child in sorted(brick.rglob("*"), reverse=True):
+        child.rmdir() if child.is_dir() else child.unlink()
+    brick.rmdir()
+
+    report = AUDIT.audit("sprezzature-demo")
+    assert report["undecidable"] is True
+    assert report["missing"] == [], report
+    assert report["standalone"] is None, (
+        "standalone answers 'has a .git, so somebody else could clone it'; "
+        "with no checkout there is nothing to answer that about, and False "
+        "would print `--` where the honest cell is `?`"
+    )
+    assert AUDIT.main([]) == 0
+
+
+def test_require_checkouts_turns_an_absent_clone_into_a_failure(
+    brick: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """
+    The other half of the same refusal, and why the flag exists.
+
+    Reporting an absent clone as undecidable is right on a laptop and wrong in
+    CI, where ``scripts/fetch_siblings.sh`` has just been told to bring all
+    nine. A fetch that came back with eight would print a column of ``?`` and
+    exit 0 — a green job asserting the surfaces of a repository it never read,
+    which is the shape of every defect this suite was built after.
+    """
+    monkeypatch.setattr(AUDIT, "SHIPPED_SKILLS", ["sprezzature-demo"])
+    assert AUDIT.main(["--require-checkouts"]) == 0, "whole brick, flag on"
+
+    for child in sorted(brick.rglob("*"), reverse=True):
+        child.rmdir() if child.is_dir() else child.unlink()
+    brick.rmdir()
+
+    assert AUDIT.main([]) == 0, "no clone, no flag: undecidable"
+    assert AUDIT.main(["--require-checkouts"]) == 1, "no clone, flag: a failure"
+
+
+def test_a_missing_surface_fails_with_or_without_the_flag(
+    brick: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """
+    ``--require-checkouts`` widens what counts as a failure; it never narrows
+    it. A flag that had to be passed before a real gap was reported would make
+    every caller that forgot it green for the wrong reason.
+    """
+    monkeypatch.setattr(AUDIT, "SHIPPED_SKILLS", ["sprezzature-demo"])
+    (brick / "sprezzature_demo" / "api.py").unlink()
+    assert AUDIT.main([]) == 1
+    assert AUDIT.main(["--require-checkouts"]) == 1
+
+
+# --------------------------------------------------------------------------
+# The workflow runs the live half, in an order that can answer
+# --------------------------------------------------------------------------
+
+
+def test_ci_runs_the_live_audit_after_fetching_the_siblings() -> None:
+    """
+    Two ways to make this step a decoration, both checked here.
+
+    Run it *before* ``fetch_siblings.sh`` and it reports nine undecidable
+    bricks. Run it without ``--require-checkouts`` and it exits 0 whatever the
+    fetch brought back. Either way the job is green and nothing was audited,
+    which is indistinguishable from nine bricks holding every surface.
+
+    The flag is also checked against the parser rather than spelled twice: a
+    workflow naming an option the script does not have fails at argparse, on
+    every push, and this says so while the edit is still local.
+    """
+    import yaml
+
+    workflow = yaml.safe_load(
+        (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+    )
+    steps = [str(step.get("run", "")) for step in workflow["jobs"]["test"]["steps"]]
+
+    audit = [i for i, run in enumerate(steps) if "audit_surfaces.py" in run]
+    fetch = [i for i, run in enumerate(steps) if "fetch_siblings.sh" in run]
+    assert audit, (
+        "no CI step runs scripts/audit_surfaces.py. The live half of the "
+        "five-surface contract then runs on developer machines only, and the "
+        "offline half here cannot see what the bricks actually hold."
+    )
+    assert fetch, "no CI step fetches the siblings"
+    assert min(audit) > max(fetch), (
+        "the audit runs before the siblings are fetched, so it reports every "
+        "brick as undecidable and exits 0"
+    )
+    for i in audit:
+        assert "--require-checkouts" in steps[i], (
+            "the CI audit must pass --require-checkouts, or a fetch that came "
+            "back short leaves a column of `?` and a green job"
+        )
+
+    # Not spelled twice: the workflow's own argv goes through the script's own
+    # parser. An option the script does not have raises SystemExit here instead
+    # of failing every push. `--brick not-a-brick` is the cheap way to stop
+    # after parsing — it returns 2 without reading a single sibling.
+    for i in audit:
+        argv = shlex.split(steps[i])[2:]
+        assert AUDIT.main([*argv, "--brick", "not-a-brick"]) == 2, (
+            f"ci.yml runs `{steps[i].strip()}` and the script's parser did "
+            f"not accept those options"
+        )
