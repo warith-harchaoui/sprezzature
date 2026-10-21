@@ -20,6 +20,12 @@ The five, in the order a project usually grows them:
 `python scripts/audit_surfaces.py` reports which brick holds which, right now,
 from what is on disk. This file is the contract; that script is the state.
 
+It runs in CI too, as `--require-checkouts`, after `scripts/fetch_siblings.sh`
+brings the nine siblings in metadata-only. Without the flag a brick with no
+checkout is reported as undecidable and does not fail the run — right on a
+machine holding one clone, wrong in the one place that knows every clone
+should be there.
+
 ---
 
 ## 1. Library

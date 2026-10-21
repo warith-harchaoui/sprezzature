@@ -14,9 +14,10 @@ be there to be believed.
 
 Checked from this repository because it is the only place that can see all
 nine siblings at once; each of them can only see itself. "At once" means on a
-machine that has them checked out — the pre-push hook, which runs this suite
-before anything reaches GitHub. CI clones one sibling on purpose (the figures
-generators, for the release test), so there it checks the one it can see.
+machine that has them checked out — the pre-push hook, and CI too since
+``scripts/fetch_siblings.sh`` fetches all nine metadata-only. It used to clone
+one (the figures generators, for the release test), so eight of these cases
+skipped there and a skip reads like a pass.
 
 Author
 ------
@@ -65,8 +66,11 @@ def test_no_sibling_clone_escapes_the_tests_below() -> None:
     """A glob that stopped matching would make the tests below vacuous.
 
     Not "are the nine siblings here": how many are checked out is a property
-    of the machine, not of this suite, and asserting a count red-lit CI — which
-    clones one sibling deliberately — while saying nothing about the glob. What
+    of the machine, not of this suite, and asserting a count red-lit CI back
+    when it cloned one sibling deliberately — while saying nothing about the
+    glob. That is the question ``audit_surfaces.py --require-checkouts`` asks
+    in the workflow, where the count *is* known because the fetch step sets
+    it; it is not a question a test can ask of an arbitrary machine. What
     has to hold is that every clone that *is* beside this repository is one the
     tests below look at. Rename a brick folder on one side only, or move a
     ``pyproject.toml``, and :func:`_bricks` quietly shrinks: the parametrised

@@ -23,13 +23,17 @@ Claude:
 5. **skill** — ``SKILL.md`` in this monorepo, so Claude can reach the engine
    with the vocabulary of the problem rather than the vocabulary of the CLI.
 
-Why a script and not only a test: seven of the ten bricks live in **sibling
-repositories** next to this one, and a checkout of this repo alone cannot see
+Why a script and not only a test: every brick lives in a **sibling
+repository** next to this one, and a checkout of this repo alone cannot see
 them. A test that depended on them would be red on any machine that cloned one
-repository, and red in CI, which has none of them. So the offline half is
-``tests/test_surfaces_contract.py`` (the contract is complete and every
-exemption is justified), and this is the half that looks at what is actually
-on disk.
+repository. So the offline half is ``tests/test_surfaces_contract.py`` (the
+contract is complete and every exemption is justified), and this is the half
+that looks at what is actually on disk.
+
+CI used to have none of the siblings, which is why this stayed off the
+workflow. It has all nine now — ``scripts/fetch_siblings.sh`` fetches them
+metadata-only, including the package directory this audit reads — so the
+workflow runs it with ``--require-checkouts``.
 
 Usage
 -----
@@ -38,11 +42,15 @@ Usage
     python scripts/audit_surfaces.py              # table for every brick
     python scripts/audit_surfaces.py --brick maps # one brick
     python scripts/audit_surfaces.py --json       # machine-readable
+    python scripts/audit_surfaces.py --require-checkouts   # what CI runs
 
 Exits 0 when every brick present on disk holds every surface it owes, 1
-otherwise, naming what is missing. Bricks with no sibling checkout are
-reported and do not fail the run: absence of a clone is not absence of a
-surface, and the script refuses to confuse the two.
+otherwise, naming what is missing. A brick with no sibling checkout is
+reported and does not fail the run: absence of a clone is not absence of a
+surface, and the script refuses to confuse the two. ``--require-checkouts``
+is the other half of that refusal — where every sibling is *supposed* to be
+present, as in CI, a fetch that quietly brought back eight of nine must be a
+failure and not nine columns of ``?``.
 
 Author
 ------
@@ -432,14 +440,26 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         publication_gaps.append("pypi")
 
     if not repo.is_dir():
+        # Undecidable, not missing. ``missing`` used to carry ``"repo"`` here,
+        # which made the script exit 1 on any machine holding a single clone --
+        # the very situation the paragraph at the top of this file says it
+        # refuses to confuse with a missing surface. The two meanings are kept
+        # apart now: ``undecidable`` for "no clone to look at", ``missing``
+        # for what this machine can see and found wanting. ``--require-checkouts``
+        # is how a caller that expects all nine turns the first into the second.
+        #
+        # ``standalone`` is ``None`` and not ``False`` for the same reason: in
+        # the branch below it answers "has a .git, so somebody else could clone
+        # it", and there is nothing here to answer that about.
         return {
             "brick": brick,
             "repo": None,
             "surfaces": {s: None for s in SURFACES} | {"skill": skill},
             "containers": {c: None for c in CONTAINERS},
             "publication": publication,
-            "standalone": False,
-            "missing": (["skill"] if not skill else []) + ["repo"] + publication_gaps,
+            "standalone": None,
+            "undecidable": True,
+            "missing": (["skill"] if not skill else []) + publication_gaps,
             "notes": ["no sibling checkout — surfaces undecidable here"],
         }
 
@@ -662,6 +682,7 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         "containers": {"docker": docker, "compose": compose},
         "publication": publication,
         "standalone": standalone,
+        "undecidable": False,
         "missing": missing + ([] if standalone else ["repo"]) + publication_gaps,
         "notes": notes,
     }
@@ -736,6 +757,7 @@ def main(argv: list[str] | None = None) -> int:
             "  python scripts/audit_surfaces.py --brick sprezzature-maps\n"
             "  python scripts/audit_surfaces.py --pypi\n"
             "  python scripts/audit_surfaces.py --json\n"
+            "  python scripts/audit_surfaces.py --require-checkouts\n"
         ),
     )
     parser.add_argument(
@@ -753,6 +775,14 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="emit the full report as JSON instead of a table",
     )
+    parser.add_argument(
+        "--require-checkouts",
+        action="store_true",
+        help=(
+            "fail when a brick has no sibling checkout, instead of reporting "
+            "it as undecidable (what CI runs, after fetch_siblings.sh)"
+        ),
+    )
     args = parser.parse_args(argv)
 
     bricks = list(SHIPPED_SKILLS)
@@ -763,6 +793,8 @@ def main(argv: list[str] | None = None) -> int:
         bricks = [args.brick]
 
     reports = [audit(brick, check_pypi=args.pypi) for brick in bricks]
+
+    absent = [r for r in reports if r["undecidable"]]
 
     if args.json:
         print(json.dumps(reports, indent=2))
@@ -778,8 +810,23 @@ def main(argv: list[str] | None = None) -> int:
                 print(
                     f"  gap   {report['brick']}: missing {', '.join(report['missing'])}"
                 )
+        if absent and args.require_checkouts:
+            print()
+            print(
+                f"  error no sibling checkout for "
+                f"{', '.join(r['brick'] for r in absent)} -- "
+                f"--require-checkouts says every brick in SKILLS.txt must be "
+                f"here, so this is a fetch that came back short, not a "
+                f"machine with one clone"
+            )
 
-    return 1 if any(r["missing"] for r in reports) else 0
+    if any(r["missing"] for r in reports):
+        return 1
+    # A run that decided nothing is not a run that found nothing. Without this,
+    # a fetch step that failed for one brick leaves a column of `?` and an exit
+    # code of 0 -- a green CI job asserting the surfaces of a repository it
+    # never read.
+    return 1 if absent and args.require_checkouts else 0
 
 
 if __name__ == "__main__":
