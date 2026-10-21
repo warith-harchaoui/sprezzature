@@ -66,6 +66,29 @@ is exactly what the 1.5.0 guard below was written to catch.
 
 ### Added
 
+- **The nine bricks are held to one set of root documents, and to naming
+  only things that exist.** `tests/test_every_brick_carries_the_same_papers.py`.
+
+  Two defects found together. Seven bricks carry `CODING.md`,
+  `CONTRIBUTING.md`, `EXAMPLES.md` and `TRIGGERS.md`; `sprezzature-publish`
+  and `sprezzature-ui`, the two youngest, went out with none of the four and
+  nothing noticed for weeks. Nothing *could*: a brick's own suite checks
+  what that brick has, and a file absent from a repository is absent from
+  the list of files that repository tests. The question only exists here.
+
+  The second half is `TRIGGERS.md` itself, the file an agent reads to pick a
+  tool, so the one where a wrong name costs most. Every backticked command
+  name and every cell in an *MCP tool* column is now checked against the
+  `[project.scripts]` tables and the `operation_id`s of all nine packages,
+  across bricks, because these files route away from their own package as
+  often as towards it. On its first run it found
+  `sprezzature-accessibility/TRIGGERS.md` sending an agent to
+  `sprezzature-vision`, a package folded into accessibility days earlier.
+
+  Both halves skip per brick when a checkout is absent, and a companion test
+  fails a run that saw nothing, because a skip and a pass look alike in a
+  summary line.
+
 - **The read-along now applies to a page that was never Markdown.**
   `readalong.py` takes a page as it is — hand-written, exported from a design
   tool, live for three years — and gives it the same sentence-by-sentence
