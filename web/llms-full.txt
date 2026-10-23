@@ -1189,7 +1189,7 @@ Source: https://sprezzature.ai/
 # Sprezzature
 
 in the broadest sense
-Create and audit figures, visualizations for app and web content
+Create and audit figures, visualizations for app and web content,
 faithful to a standard of accessibility, chromatic rigor, and usability.
 
 Explore

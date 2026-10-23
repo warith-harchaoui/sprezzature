@@ -28,6 +28,7 @@ Warith HARCHAOUI <warithmetics@deraison.ai>
 
 from __future__ import annotations
 
+import html
 import re
 from pathlib import Path
 
@@ -107,6 +108,58 @@ def test_no_page_still_advertises_a_merged_away_brick(page: Path) -> None:
         f"{page.name} names sprezzature-vision, which has not existed as a "
         f"package since it was folded into sprezzature-accessibility"
     )
+
+
+def _head_of(title: str) -> str:
+    """A page title without its brand suffix, folded for comparison.
+
+    Every title on this site ends in an em dash and the project name. What
+    comes before it is what the page is about, and that is the half two tags
+    have to agree on.
+    """
+    return html.unescape(title).split("\u2014")[0].strip().lower()
+
+
+@pytest.mark.parametrize("page", _PAGES, ids=lambda p: str(p.relative_to(WEB)))
+def test_a_page_social_card_names_the_page(page: Path) -> None:
+    """The card a shared link unfurls names the same thing as the <title>.
+
+    `vision.html` is the defect this is shaped around, and it is the reason
+    this check has no exemption while the one above has one. The page was
+    rewritten into a merge notice -- new title, new body, `noindex`, canonical
+    in place -- and its `og:` pair kept the product copy: "Vision - alt text"
+    over a paragraph of prose about a local vision model drafting alt text in
+    any detected language, as a thing a reader could go and use. Anyone
+    sharing the URL shared a card advertising a package that had not existed
+    for six days. The page-wide skip above is exactly why nothing saw it: a
+    page exempted as "the notice itself" stops being read at all.
+
+    Titles only. An `og:description` is written to sell and a meta description
+    to inform, and holding them to the same words would be a check nobody
+    could keep green -- which is the kind that gets deleted.
+    """
+    text = page.read_text(encoding="utf-8", errors="replace")
+    title = re.search(r"<title>(.*?)</title>", text, re.S)
+    if title is None:
+        pytest.skip(f"{page.name} has no <title>")
+    for prop, pattern in (
+        ("og:title", r'<meta property="og:title" content="([^"]*)"'),
+        ("twitter:title", r'<meta name="twitter:title" content="([^"]*)"'),
+    ):
+        found = re.search(pattern, text)
+        if found is None:
+            continue
+        page_head, card_head = _head_of(title.group(1)), _head_of(found.group(1))
+        # Equality, not containment. The first version of this asked whether
+        # one head contained the other, and the stale card it was written for
+        # passed: "vision" is a substring of "vision is part of accessibility
+        # now". A rule that admits the defect it was shaped around is worse
+        # than no rule, because it is now also an argument that the defect is
+        # gone. All thirty-six pages agree exactly, so exactly is the rule.
+        assert page_head == card_head, (
+            f"{page.relative_to(WEB)}: <title> says {page_head!r} and {prop} "
+            f"says {card_head!r}. A shared link unfurls the second one."
+        )
 
 
 def test_the_sitemap_does_not_offer_a_noindexed_page() -> None:
