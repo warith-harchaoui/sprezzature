@@ -854,7 +854,7 @@ Download the MP4 .
 
 What it shows: six real figures from the gallery, then four real maps on a genuine geographic projection.
 
-accessibility · colors · vision · audio
+accessibility · colors · audio
 
 ## Accessibility 21 s
 

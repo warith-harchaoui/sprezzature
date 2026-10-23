@@ -33,9 +33,9 @@ FILMS: list[dict[str, str | int]] = [
                  "connu dans une image, et n'engage que le modèle qui attrape "
                  "les deux.",
          en_shows="the shipped <code class=\"font-mono text-sm\">bar-grouped.svg</code>, "
-                  "the ten skills, and the two gates the model has to pass",
+                  "the nine skills, and the two gates the model has to pass",
          fr_shows="le fichier livré <code class=\"font-mono text-sm\">bar-grouped.svg</code>, "
-                  "les dix skills, et les deux portes que le modèle doit franchir"),
+                  "les neuf skills, et les deux portes que le modèle doit franchir"),
     dict(slug="figures-et-cartes", secs=18,
          en_title="Figures &amp; maps", fr_title="Figures et cartes",
          en_kicker="sprezzature-figures · sprezzature-maps",
@@ -52,8 +52,8 @@ FILMS: list[dict[str, str | int]] = [
                   "une vraie projection géographique"),
     dict(slug="accessibilite", secs=21,
          en_title="Accessibility", fr_title="Accessibilité",
-         en_kicker="accessibility · colors · vision · audio",
-         fr_kicker="accessibility · colors · vision · audio",
+         en_kicker="accessibility · colors · audio",
+         fr_kicker="accessibility · colors · audio",
          en_body="A person with ordinary colour vision cannot see their own chart "
                  "the way a colour blind reader does, and no amount of care "
                  "changes that, because the information is not in their eye. The "
@@ -90,6 +90,7 @@ COPY: dict[str, dict[str, Any]] = {
     "en": dict(
         lang="en", vdir="video", jsdir="js", other="fr/films.html",
         og_locale="en_US", og_locale_alt="fr_FR", skip="Skip to content",
+        og_image_alt="A title card for the Ralph Eyeball Loop: a grouped bar chart of sales by region and quarter, drawn in grey on its left half and in colour on its right, beside the four steps of the loop — render, look, fix the source, again.",
         title="Four short films — Sprezzature",
         desc="Four short films about Sprezzature: one on the suite, three on what "
              "it is made of. Every figure, form and simulation in them is real "
@@ -120,6 +121,7 @@ COPY: dict[str, dict[str, Any]] = {
     "fr": dict(
         lang="fr", vdir="../video", jsdir="../js", other="../films.html",
         og_locale="fr_FR", og_locale_alt="en_US", skip="Aller au contenu",
+        og_image_alt="Une carte-titre de la Ralph Eyeball Loop : un histogramme groupé des ventes par région et par trimestre, dessiné en gris sur sa moitié gauche et en couleur sur sa droite, à côté des quatre étapes de la boucle — dessiner, regarder, corriger la source, recommencer.",
         title="Quatre courts films — Sprezzature",
         desc="Quatre courts films sur Sprezzature : un sur la suite, trois sur ce "
              "dont elle est faite. Chaque figure, formulaire et simulation qu'on y "
@@ -170,7 +172,17 @@ def player(film: dict[str, Any], c: dict[str, Any]) -> str:
           </video>'''
 
 
-def build(lang: str) -> None:
+def render(lang: str) -> str:
+    """The page, as text. Writing it is :func:`build`'s job, not this one's.
+
+    Split apart so a test can ask "does the file on disk still equal what this
+    generator produces" without the test having to write over the site to find
+    out. The two had drifted: the page said "the nine skills" and carried an
+    ``og:image:alt``; re-running the generator put "the ten" back and dropped
+    the alt, which turned two of this repository's own tests red. A generated
+    file that cannot be regenerated is a hand-written file with a misleading
+    header.
+    """
     c = COPY[lang]
     src = ROOT / ("fr/ralph-eyeball-loop.html" if lang == "fr" else "ralph-eyeball-loop.html")
     header = grab(src, "header")
@@ -214,6 +226,7 @@ def build(lang: str) -> None:
   <meta property="og:description" content="{c['desc']}">
   <meta property="og:url" content="{base}films.html">
   <meta property="og:image" content="https://sprezzature.ai/video/sprezzature.jpg">
+  <meta property="og:image:alt" content="{c['og_image_alt']}">
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:locale" content="{c['og_locale']}">
   <meta property="og:locale:alternate" content="{c['og_locale_alt']}">
@@ -301,9 +314,20 @@ def build(lang: str) -> None:
 </body>
 </html>
 '''
-    out = ROOT / ("fr/films.html" if lang == "fr" else "films.html")
-    out.write_text(html, encoding="utf-8")
+    return html
+
+
+def page_path(lang: str) -> pathlib.Path:
+    """Where :func:`render` output belongs."""
+    return ROOT / ("fr/films.html" if lang == "fr" else "films.html")
+
+
+def build(lang: str) -> pathlib.Path:
+    """Write the rendered page where it belongs, and say where that was."""
+    out = page_path(lang)
+    out.write_text(render(lang), encoding="utf-8")
     print(out)
+    return out
 
 
 if __name__ == "__main__":
