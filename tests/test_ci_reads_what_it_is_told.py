@@ -30,6 +30,7 @@ import re
 from pathlib import Path
 
 import pytest
+import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = REPO_ROOT.parent
@@ -99,6 +100,66 @@ def test_a_requirements_dev_file_is_one_ci_reads(repo: Path) -> None:
         f"{repo.name} ships a requirements-dev.txt that no workflow installs. "
         f"Anything added to it is invisible to CI — put test dependencies in "
         f'the `dev` extra instead, which `pip install -e ".[dev,...]"` reads.'
+    )
+
+
+#: Repositories whose workflows this file holds to the same two settings: the
+#: nine bricks and the hub, which pays for the same runners.
+def _every_repo() -> list[Path]:
+    return [REPO_ROOT, *_bricks()]
+
+
+def _workflows(repo: Path) -> list[Path]:
+    folder = repo / ".github" / "workflows"
+    return sorted(folder.glob("*.yml")) if folder.is_dir() else []
+
+
+@pytest.mark.parametrize("repo", _every_repo(), ids=lambda p: p.name)
+def test_every_job_has_a_ceiling(repo: Path) -> None:
+    """A hung job stops at a wall instead of running until GitHub's six hours.
+
+    Not a budget — the numbers are far above what any of these suites takes,
+    and `sprezzature-maps` is deliberately slow for reasons measured and
+    written down in its own workflow. It is the difference between a job that
+    fails and a job that is still "in progress" tomorrow. None of the ten had
+    one.
+    """
+    workflows = _workflows(repo)
+    if not workflows:
+        pytest.skip(f"{repo.name} has no workflows")
+    uncapped: list[str] = []
+    for workflow in workflows:
+        doc = yaml.safe_load(workflow.read_text(encoding="utf-8")) or {}
+        for name, job in (doc.get("jobs") or {}).items():
+            if not isinstance(job, dict) or "timeout-minutes" not in job:
+                uncapped.append(f"{workflow.name}:{name}")
+    assert not uncapped, (
+        f"{repo.name} has jobs with no timeout-minutes: {uncapped}. A job that "
+        f"hangs there runs for six hours before GitHub stops it."
+    )
+
+
+@pytest.mark.parametrize("repo", _every_repo(), ids=lambda p: p.name)
+def test_the_test_workflow_cancels_a_superseded_run(repo: Path) -> None:
+    """Two pushes a minute apart do not run two full matrices to the end.
+
+    Only the test workflow. A release or a publish workflow must never be
+    cancelled halfway by the next push, which is why those are left alone and
+    this check names `ci.yml` rather than looping over every file.
+    """
+    ci = repo / ".github" / "workflows" / "ci.yml"
+    if not ci.is_file():
+        pytest.skip(f"{repo.name} has no ci.yml")
+    doc = yaml.safe_load(ci.read_text(encoding="utf-8")) or {}
+    group = (doc.get("concurrency") or {}).get("group")
+    assert group, (
+        f"{repo.name}/ci.yml declares no concurrency group, so a push that "
+        f"follows another runs a second full matrix to the end for a commit "
+        f"nobody will look at."
+    )
+    assert (doc.get("concurrency") or {}).get("cancel-in-progress") is True, (
+        f"{repo.name}/ci.yml groups its runs and does not cancel them, which "
+        f"queues the superseded run instead of stopping it."
     )
 
 

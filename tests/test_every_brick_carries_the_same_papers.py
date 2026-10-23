@@ -206,6 +206,32 @@ def test_a_brick_routes_to_mcp_tools_that_exist(brick: str) -> None:
     )
 
 
+def test_ci_fetches_the_papers_this_file_asks_for() -> None:
+    """The list above and the fetch script's path list are one question.
+
+    ``scripts/fetch_siblings.sh`` brings a sibling in as a sparse checkout of
+    named paths. None of the ten documents above were among them, so on a
+    runner the checkout exists — no skip — and every one of those files is
+    missing: nine failures, in the one place a developer does not look until
+    the build is red.
+
+    It never showed, because the commit that added the check has not been
+    pushed. The two lists are kept together here rather than in a comment,
+    which is what they were relying on.
+    """
+    fetch = REPO_ROOT / "scripts" / "fetch_siblings.sh"
+    assert fetch.is_file(), fetch
+    block = re.search(r"^PATHS=\((.*?)^\)", fetch.read_text(encoding="utf-8"), re.M | re.S)
+    assert block, "fetch_siblings.sh no longer declares a PATHS array"
+    fetched = set(re.findall(r"'/([^']+)'", block.group(1)))
+    missing = [name for name in CANONICAL_PAPERS if name not in fetched]
+    assert not missing, (
+        f"the papers check asks for {missing} and fetch_siblings.sh does not "
+        f"bring them, so this file is red on CI and green everywhere else. "
+        f"Add the path there, or drop the name from CANONICAL_PAPERS."
+    )
+
+
 def test_this_run_saw_bricks_to_check() -> None:
     """A file that skipped everything reads exactly like a file that passed.
 

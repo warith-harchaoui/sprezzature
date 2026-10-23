@@ -13,6 +13,14 @@ name: ci
   pull_request:
     branches: [main]
 
+concurrency:
+  # Une poussée qui en suit une autre annule la première : sans ce groupe, deux
+  # commits à une minute d'intervalle font tourner deux matrices de trois
+  # versions de Python jusqu'au bout, et seul le second compte. Quatre dépôts
+  # de la suite l'avaient, six ne l'avaient pas.
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Lint / import-hygiene gate — the AUDIT half of the make/audit paradigm the
   # skills themselves ship (audit: `ruff check`; make: `ruff check --fix`).
@@ -21,6 +29,9 @@ jobs:
   # OKLab lightness `l` is intentional; implicit re-exports use `name as name`).
   lint:
     runs-on: ubuntu-latest
+    # Cran d'arrêt, pas budget : sans lui GitHub laisse courir un job pendu
+    # six heures. Aucun des dix dépôts n'en avait.
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -43,6 +54,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:

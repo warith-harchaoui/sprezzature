@@ -80,6 +80,26 @@ PATHS=(
     '/scripts/'
     '/src/'
     '/sprezzature_*/'
+    # The ten documents every brick is supposed to carry, because a guard here
+    # asserts they are all present — `test_every_brick_carries_the_same_papers`
+    # — and a guard that reads a file this script does not fetch fails on the
+    # runner and nowhere else. It was written on a machine holding nine real
+    # clones, where the question never came up. 717 KB for the nine, which is
+    # three per cent of what the fetch already costs.
+    #
+    # TRIGGERS.md earns its place twice over: the companion check that a
+    # brick's trigger tables name real console scripts *skips* when the file
+    # is absent, so without it that guard was not red here, it was silent.
+    '/README.md'
+    '/LISEZMOI.md'
+    '/CHANGELOG.md'
+    '/CODING.md'
+    '/CONTRIBUTING.md'
+    '/EXAMPLES.md'
+    '/TRIGGERS.md'
+    '/LANDSCAPE.md'
+    '/PAYSAGE.md'
+    '/LICENSE'
     # `scripts/package_skill.py` grafts the extracted figure generators and
     # their faces back into the figures tarball at packaging time, and refuses
     # to package without them — "documentation with nothing behind it". Only

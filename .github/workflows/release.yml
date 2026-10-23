@@ -16,6 +16,9 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    # Cran d'arrêt, pas budget : sans lui GitHub laisse courir un job pendu
+    # six heures. Aucun des dix dépôts n'en avait.
+    timeout-minutes: 30
     steps:
       - name: Checkout (full history for CHANGELOG)
         uses: actions/checkout@v4
