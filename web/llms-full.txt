@@ -1618,7 +1618,7 @@ sprezzature-maps
 Hand-authored SVG cartography split out of sprezzature-figures: an Equal Earth choropleth with an OKLCH ramp, and layered Lambert Conformal Conic situation maps, both with a real-elevation warm/cool relief.
 
 pip install sprezzature-maps
-Repository → ↓ Runnable kit (748 KB)
+Repository → ↓ Runnable kit (2163 KB)
 
 sprezzature-colors
 
@@ -1636,7 +1636,7 @@ sprezzature-accessibility
 A static HTML accessibility linter: source-decidable WCAG/WAI rules, no browser, no runtime DOM. A fast pre-commit gate.
 
 pip install sprezzature-accessibility
-Repository → ↓ Runnable kit (25 KB)
+Repository → ↓ Runnable kit (27 KB)
 
 sprezzature-cli-gui
 
@@ -1645,7 +1645,7 @@ sprezzature-cli-gui
 Auto-generate a single-file HTML GUI from any Python CLI: it introspects argparse, Click, or Typer, with no build step.
 
 pip install sprezzature-cli-gui
-Repository → ↓ Runnable kit (29 KB)
+Repository → ↓ Runnable kit (36 KB)
 
 sprezzature-ux-laws
 
@@ -1654,7 +1654,7 @@ sprezzature-ux-laws
 A static Laws-of-UX auditor for HTML: Hick, Miller, Fitts, Jakob, Tesler and more, decidable from source.
 
 pip install sprezzature-ux-laws
-Repository → ↓ Runnable kit (22 KB)
+Repository → ↓ Runnable kit (26 KB)
 
 sprezzature-audio
 
