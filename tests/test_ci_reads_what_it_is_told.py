@@ -32,6 +32,27 @@ from pathlib import Path
 import pytest
 import yaml
 
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10 — tomllib landed in 3.11
+    import tomli as tomllib
+
+
+def _extras(repo: Path) -> dict[str, list[str]]:
+    """A repository's ``[project.optional-dependencies]``, parsed as TOML.
+
+    Read with a parser rather than a regular expression that captured
+    everything between an extra's opening bracket and the first closing one,
+    which is how both checks below used to find an extra. That pattern stops
+    at the first ``]`` — including one inside a comment. Adding a dev
+    dependency to ``sprezzature-publish`` with a comment mentioning
+    ``[narrate]`` truncated the captured block before ``pytest`` and turned
+    the check red on a file that was correct.
+    """
+    table = tomllib.loads((repo / "pyproject.toml").read_text(encoding="utf-8"))
+    extras = table.get("project", {}).get("optional-dependencies", {})
+    return {name: [str(r) for r in reqs] for name, reqs in extras.items()}
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = REPO_ROOT.parent
 
@@ -186,18 +207,15 @@ def test_ci_installs_the_test_dependencies_somehow(repo: Path) -> None:
         pytest.skip(f"{repo.name}'s workflows do not run pytest")
 
     requirements = repo / "requirements-dev.txt"
-    pyproject = (repo / "pyproject.toml").read_text(encoding="utf-8")
+    declared = _extras(repo)
 
     routes: list[str] = []
     if "requirements-dev" in workflows and requirements.is_file():
         if "pytest" in requirements.read_text(encoding="utf-8"):
             routes.append("requirements-dev.txt")
-    for extras in re.findall(r'pip install -e "\.\[([^\]]+)\]"', workflows):
-        for extra in (name.strip() for name in extras.split(",")):
-            block = re.search(
-                rf"^{re.escape(extra)} = \[(.*?)\]", pyproject, re.M | re.S
-            )
-            if block and "pytest" in block.group(1):
+    for named in re.findall(r'pip install -e "\.\[([^\]]+)\]"', workflows):
+        for extra in (name.strip() for name in named.split(",")):
+            if any("pytest" in r for r in declared.get(extra, ())):
                 routes.append(f"the `{extra}` extra")
 
     assert routes, (
@@ -228,19 +246,16 @@ def test_the_test_client_has_its_backend_where_ci_looks(repo: Path) -> None:
         pytest.skip(f"{repo.name} does not use starlette's TestClient")
 
     workflows = _workflow_text(repo)
-    pyproject = (repo / "pyproject.toml").read_text(encoding="utf-8")
+    declared = _extras(repo)
     requirements = repo / "requirements-dev.txt"
 
     reachable = False
     if "requirements-dev" in workflows and requirements.is_file():
         reachable |= "httpx2" in requirements.read_text(encoding="utf-8")
     # `pip install -e ".[dev,...]"` — the extras named on the install line.
-    for extras in re.findall(r'pip install -e "\.\[([^\]]+)\]"', workflows):
-        for extra in (name.strip() for name in extras.split(",")):
-            block = re.search(
-                rf"^{re.escape(extra)} = \[(.*?)\]", pyproject, re.M | re.S
-            )
-            if block and "httpx2" in block.group(1):
+    for named in re.findall(r'pip install -e "\.\[([^\]]+)\]"', workflows):
+        for extra in (name.strip() for name in named.split(",")):
+            if any("httpx2" in r for r in declared.get(extra, ())):
                 reachable = True
 
     assert reachable, (
