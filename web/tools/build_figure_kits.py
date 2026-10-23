@@ -100,6 +100,13 @@ BUNDLED_HELPERS: tuple[str, ...] = (
     "_swarm",
     "_project3d",
     "_triangulate",
+    # The map projection. `hexbin-map` and `spike-map` import `equal_earth`
+    # from it, and without it in the bundle their kits died on an ImportError
+    # inside the zip a reader had just downloaded — the two gallery cards
+    # offering a download that cannot run. It depends on nothing but the
+    # standard library, and defines seven names, none of which collides with
+    # the eight modules above.
+    "_worldmap",
     "_interactive",
 )
 
@@ -494,6 +501,13 @@ def bundle_source(figures_repo: Path) -> str:
 
     for helper in BUNDLED_HELPERS:
         body = _inline((scripts / f"{helper}.py").read_text(encoding="utf-8"))
+        # A helper can read an asset too. `_worldmap` builds
+        # `Path(__file__).parent.parent / "assets" / "geo" / …`, which is right
+        # in the repository and points *above* a kit, where this file sits at
+        # the root. The generators have had this rewrite since the first kit;
+        # the bundle did not, because no bundled helper read an asset until
+        # the projection joined it.
+        body = _ASSETS_PATH.sub('Path(__file__).resolve().parent\n    / "assets"', body)
         parts.append(
             f"\n# {'─' * 74}\n"
             f"# from {helper}.py\n"
@@ -1612,7 +1626,11 @@ def build_kit(
     try:
         kit = staging / slug
         kit.mkdir()
-        for relative in kit_assets(source):
+        # The generator's own reads and the bundle's: a map generator asks for
+        # the country outline through the vendored projection, not in its own
+        # source, so scanning only the generator shipped a kit that ran and
+        # then died on a missing file.
+        for relative in dict.fromkeys(kit_assets(source) + kit_assets(bundle)):
             origin = scripts.parent / "assets" / relative
             if not origin.is_file():
                 return False, f"{slug}: missing asset {origin}"
