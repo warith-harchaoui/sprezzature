@@ -77,11 +77,28 @@ PAIRS: tuple[dict[str, object], ...] = (
 
 
 def _read(brick_relative: str) -> str | None:
-    """A file inside a sibling brick, or None when that brick is not here."""
+    """A file inside a sibling brick, or None when it cannot be read here."""
     path = SIBLINGS / brick_relative
     if not path.is_file():
         return None
     return path.read_text(encoding="utf-8")
+
+
+def _why_absent(brick_relative: str) -> str:
+    """Which of the two absences this is, in words.
+
+    "The brick is not checked out" was the only message, and it was wrong on
+    a runner: ``scripts/fetch_siblings.sh`` brought every brick and not their
+    ``references/``, so a pair skipped there with a reason that sent the
+    reader looking for a clone that was already present.
+    """
+    brick = brick_relative.split("/", 1)[0]
+    if not (SIBLINGS / brick).is_dir():
+        return f"{brick} is not checked out beside this repository"
+    return (
+        f"{brick} is here and {brick_relative} is not: a partial checkout that "
+        f"does not carry this path. Check scripts/fetch_siblings.sh."
+    )
 
 
 def _emitted(source: str, symbol: str) -> str | None:
@@ -116,7 +133,7 @@ def test_the_reference_still_teaches_it(pair: dict[str, object]) -> None:
     """
     text = _read(str(pair["reference"]))
     if text is None:
-        pytest.skip(f"{pair['reference']}'s brick is not checked out beside this repository")
+        pytest.skip(_why_absent(str(pair["reference"])))
     missing = [token for token in pair["teaches"] if token not in text]  # type: ignore[union-attr]
     assert not missing, (
         f"{pair['reference']} no longer mentions {missing}. Either the rule "
@@ -130,7 +147,7 @@ def test_the_emitted_runtime_can_obey_it(pair: dict[str, object]) -> None:
     """The half that was false: taught in one brick, impossible in another."""
     generator = _read(str(pair["runtime"]))
     if generator is None:
-        pytest.skip(f"{pair['runtime']}'s brick is not checked out beside this repository")
+        pytest.skip(_why_absent(str(pair["runtime"])))
     source = _emitted(generator, str(pair["symbol"]))
     assert source is not None, (
         f"{pair['runtime']} no longer holds a {pair['symbol']} literal, so there "

@@ -80,6 +80,13 @@ PATHS=(
     '/scripts/'
     '/src/'
     '/sprezzature_*/'
+    # The skills' reference documents. Guards here read them —
+    # `test_a_reference_teaches_what_the_runtime_can_do` pairs "this
+    # reference teaches X" with "the runtime another brick emits can do
+    # X" — and every such pair skipped on the runner for want of the
+    # folder, with a message blaming a missing clone that was there.
+    # 548 KB of Markdown for the nine.
+    '/references/'
     # The ten documents every brick is supposed to carry, because a guard here
     # asserts they are all present — `test_every_brick_carries_the_same_papers`
     # — and a guard that reads a file this script does not fetch fails on the
