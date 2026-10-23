@@ -19,6 +19,14 @@
     --brand-bluedark-rgb: 0 120 188;   /* #0078BC hover/dark variant */
     --brand-bluelight-rgb: 127 209 255; /* #7FD1FF light wash (used at low opacity) */
     --brand-navy-rgb: 0 60 93;         /* #003C5D deep ink accent */
+    /* Okabe & Ito Orange. Used only as a tint and a hairline border on the
+       "work in progress" callouts, never as text, so the AA question is the
+       neutral text sitting on the tint and not this value. It was missing
+       from the theme entirely while four pages asked for it: Tailwind emits
+       no rule for an undeclared colour, so `bg-brand-orange/10` and
+       `border-brand-orange/40` rendered a callout with no background and no
+       border at all, on audio and maps in both languages. */
+    --brand-orange-rgb: 230 159 0;     /* #E69F00 Okabe-Ito Orange */
     /* Text-only accent: same as brand-blue in light mode (5.19:1 on white). */
     --brand-linktext-rgb: 0 114 178;   /* #0072B2 */
   }
@@ -31,6 +39,7 @@
     --brand-bluedark-rgb: 0 114 236;   /* #0072EC (was #0A84FF) */
     --brand-bluelight-rgb: 204 228 255; /* #CCE4FF */
     --brand-navy-rgb: 10 77 160;       /* #0A4DA0 */
+    --brand-orange-rgb: 255 149 0;     /* #FF9500 Apple system orange */
     --brand-linktext-rgb: 0 111 243;   /* #006FF3, 4.6:1 on white */
   }
 

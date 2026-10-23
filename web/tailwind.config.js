@@ -26,6 +26,12 @@ module.exports = {
           bluedark: 'rgb(var(--brand-bluedark-rgb) / <alpha-value>)',
           bluelight: 'rgb(var(--brand-bluelight-rgb) / <alpha-value>)',
           navy: 'rgb(var(--brand-navy-rgb) / <alpha-value>)',
+          // Tint-and-border only, for the "work in progress" callouts. Four
+          // pages used `bg-brand-orange/10` and `border-brand-orange/40` while
+          // the theme declared no such colour, and Tailwind emits no rule for a
+          // colour it does not know: the callout rendered with no background
+          // and no border, on every one of them, in silence.
+          orange: 'rgb(var(--brand-orange-rgb) / <alpha-value>)',
           // Text-only accent (links, inline emphasis): same hue as brand-blue,
           // but with independent light/dark values so body text always clears
           // WCAG AA 4.5:1 against both the white and #0B0B0C page backgrounds.
