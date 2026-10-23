@@ -206,16 +206,16 @@
 <line x1="890.1" y1="316.3" x2="895.1" y2="316.3" stroke="#FF9500" stroke-width="1.8"/>
 <line x1="895.1" y1="360.6" x2="900.1" y2="360.6" stroke="#FF9500" stroke-width="1.8"/>
 <rect id="bar-45" class="bar hit" tabindex="0" role="img" aria-label="2026-05-04 : ouverture 145,87, plus haut 147,42, plus bas 140,95, clôture 142,20, en baisse" x="886.2" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-05-04 : 142,20</title></rect>
-<text x="94.9" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-03-02</text>
-<text x="183.8" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-03-09</text>
-<text x="272.7" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-03-16</text>
-<text x="361.6" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-03-23</text>
-<text x="450.5" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-03-30</text>
-<text x="539.5" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-04-06</text>
-<text x="628.4" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-04-13</text>
-<text x="717.3" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-04-20</text>
-<text x="806.2" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-04-27</text>
-<text x="895.1" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2026-05-04</text>
+<text x="94.9" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mars 2</text>
+<text x="183.8" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mars 9</text>
+<text x="272.7" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mars 16</text>
+<text x="361.6" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mars 23</text>
+<text x="450.5" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mars 30</text>
+<text x="539.5" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Avr. 6</text>
+<text x="628.4" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Avr. 13</text>
+<text x="717.3" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Avr. 20</text>
+<text x="806.2" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Avr. 27</text>
+<text x="895.1" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mai 4</text>
 <text x="495.0" y="554.0" font-size="12" fill="#6E6E73" text-anchor="middle">Séance</text>
 <text x="40" y="194.0" font-size="12" fill="#6E6E73">Prix</text>
 <g id="bartip-0" class="tip"><rect x="4" y="285.6" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="13" y="307.1" font-size="12.5" font-weight="700" fill="#1D1D1F">2026-03-02</text><text x="13" y="323.1" font-size="12.5" font-weight="400" fill="#6E6E73">ouverture 148,00 · clôture 148,02</text><text x="13" y="339.1" font-size="12.5" font-weight="400" fill="#6E6E73">plus bas 146,71 · plus haut 150,11</text></g>
