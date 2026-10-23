@@ -52,9 +52,9 @@ types-requests
 tomli; python_version < '3.11'
 # The kit builder runs each generator inside the staged kit, the way a reader
 # would, and fifteen of them compute their geometry with numpy — the map
-# projections, the 3-D surfaces, the triangulations. Without it,
-# `tests/test_a_kit_that_needs_an_asset_ships_it.py` fails on every runner
-# with "No module named 'numpy'" and passes on every developer machine, which
-# is the asymmetry this file exists to close. It is not a runtime dependency
-# of anything this repository ships: the kits pin their own copy.
+# projections, the 3-D surfaces, the triangulations. Declared so that a
+# machine able to build kits at all (one with `sprezzature-figures`, which
+# every generator imports for its fonts) does not then fall over on the
+# arithmetic. Not a runtime dependency of anything this repository ships: the
+# kits pin their own copy, `numpy==2.3.5`.
 numpy>=1.24
