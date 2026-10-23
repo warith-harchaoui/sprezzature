@@ -448,7 +448,7 @@ def publish_md_to_html(ctx: click.Context) -> None:
 
 
 @cli.command(name="figures", context_settings=CONTEXT_SETTINGS, add_help_option=False,
-             help="Figures skill (sprezzature-figures): 127 SVG chart kinds, audits, diagrams.")
+             help="Figures skill (sprezzature-figures): 167 SVG chart kinds, audits, diagrams.")
 @click.pass_context
 def figures(ctx: click.Context) -> None:
     """sprezzature-figures — every argument goes to its own command."""
