@@ -103,6 +103,51 @@ def test_a_requirements_dev_file_is_one_ci_reads(repo: Path) -> None:
 
 
 @pytest.mark.parametrize("repo", _bricks(), ids=lambda p: p.name)
+def test_ci_installs_the_test_dependencies_somehow(repo: Path) -> None:
+    """pytest reaches the runner by one of the two routes, and one is enough.
+
+    Seven bricks ship a ``requirements-dev.txt`` and name it on the install
+    line; ``sprezzature-publish`` and ``sprezzature-ui`` put the same packages
+    in a ``dev`` extra and install ``.[dev,...]``. Both work. The test above
+    asks only "is a shipped requirements-dev.txt one CI reads", so for those
+    two it skipped — and a skip reads exactly like a pass, which is how a
+    brick with *neither* route would look from here.
+
+    So this asks the question that actually matters, of all nine: whatever a
+    brick's CI installs, does pytest arrive? A workflow that runs the suite
+    without installing it fails loudly on the runner, but only after the push,
+    and only for whoever pushed.
+    """
+    workflows = _workflow_text(repo)
+    if not workflows:
+        pytest.skip(f"{repo.name} has no workflows")
+    if "pytest" not in workflows:
+        pytest.skip(f"{repo.name}'s workflows do not run pytest")
+
+    requirements = repo / "requirements-dev.txt"
+    pyproject = (repo / "pyproject.toml").read_text(encoding="utf-8")
+
+    routes: list[str] = []
+    if "requirements-dev" in workflows and requirements.is_file():
+        if "pytest" in requirements.read_text(encoding="utf-8"):
+            routes.append("requirements-dev.txt")
+    for extras in re.findall(r'pip install -e "\.\[([^\]]+)\]"', workflows):
+        for extra in (name.strip() for name in extras.split(",")):
+            block = re.search(
+                rf"^{re.escape(extra)} = \[(.*?)\]", pyproject, re.M | re.S
+            )
+            if block and "pytest" in block.group(1):
+                routes.append(f"the `{extra}` extra")
+
+    assert routes, (
+        f"{repo.name}'s CI runs pytest and nothing it installs declares "
+        f"pytest: no requirements-dev.txt on the install line, and no extra "
+        f"named there that carries it. The suite would only say so on the "
+        f"runner, after the push."
+    )
+
+
+@pytest.mark.parametrize("repo", _bricks(), ids=lambda p: p.name)
 def test_the_test_client_has_its_backend_where_ci_looks(repo: Path) -> None:
     """`httpx2` is the concrete case, and the one that went wrong.
 
