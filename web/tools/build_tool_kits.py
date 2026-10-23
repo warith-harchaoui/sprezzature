@@ -993,7 +993,16 @@ KITS: Dict[str, Dict[str, Any]] = {
         "sources": ["scripts/lint_a11y.py", "scripts/_argparse.py", "scripts/_lang.py"],
         # _lang.py guards `from langdetect import ...` behind a find_spec
         # check, and falls back to no detection when it is absent.
-        "optional": ["langdetect"],
+        #
+        # `fill_alt` is the `--fix-alt` branch, imported inside the `if` that
+        # serves it: drafting alt text needs a local vision model, which a
+        # kit promising "runs with nothing installed" cannot carry and does
+        # not claim to. Declared rather than detected — an earlier version of
+        # the checker treated every import inside an `if` as optional and
+        # shipped a kit that died on a bare machine, which is why this list
+        # is written by hand and each entry says what makes it reachable or
+        # not.
+        "optional": ["langdetect", "fill_alt"],
         "data": [],
         "sample": _SAMPLE_HTML,
         "run": lint_run(
@@ -1083,16 +1092,35 @@ KITS: Dict[str, Dict[str, Any]] = {
     },
     "maps": {
         "repo": "sprezzature-maps",
+        # The transitive closure of `make_choropleth`'s local imports, not a
+        # list somebody kept in their head. Six were here and the generator
+        # had grown to twelve: classification arrived in September, place
+        # labels, provenance, simplification and the text box with it, and the
+        # kit went on being built from the old six — so it failed to build at
+        # all, in both languages, and the gallery kept offering the zip from
+        # 12 September. Nothing noticed because nothing ran this builder.
         "sources": [
-            "scripts/make_choropleth.py", "scripts/_assets.py", "scripts/_geo_colors.py",
-            "scripts/_interactive.py", "scripts/_relief.py", "scripts/_render.py",
-            "scripts/_svg.py",
+            "scripts/make_choropleth.py", "scripts/_assets.py", "scripts/_classify.py",
+            "scripts/_geo_colors.py", "scripts/_interactive.py", "scripts/_places.py",
+            "scripts/_relief.py", "scripts/_render.py", "scripts/_sidecar.py",
+            "scripts/_simplify.py", "scripts/_svg.py", "scripts/_textbox.py",
+            "scripts/_topojson.py",
         ],
         # geo_dir() resolves to <lib>/../assets/geo, so the data sits at the
         # kit root and nothing needs patching.
+        # The outline, the shaded relief, and the elevation tier this kit's
+        # own render asks for. `sample_terrain_shade` picks a tier of the
+        # pyramid by render size and lands on 8 arc-minutes here (1.4 MB);
+        # the kit shipped `relief-lowres.png` alone and died on the missing
+        # tier the moment the choropleth started shading real terrain.
+        # Shipping the whole pyramid is not an option — it is the 370 MB this
+        # kit exists not to hand anybody.
         "data": [
             ("assets/geo/countries-110m.json", "assets/geo/countries-110m.json"),
             ("assets/geo/relief-lowres.png", "assets/geo/relief-lowres.png"),
+            ("assets/geo/elevation-8arcmin.png", "assets/geo/elevation-8arcmin.png"),
+            # Place labels, which arrived with `_places` in the same pass.
+            ("assets/geo/cities-50m.json", "assets/geo/cities-50m.json"),
         ],
         "pins": ["numpy==2.3.5", "Pillow==11.3.0"],
         # A distribution name is not an import name: pip installs "Pillow"
