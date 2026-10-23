@@ -19,10 +19,22 @@ Both halves are the same shape — the bundle was treated as code that cannot
 touch the disk — and neither is visible from the repository, where every path
 resolves and every import is on ``sys.path``.
 
-This checks the figures that read an asset, which is where the mechanism has
-anything to get wrong, and it checks them by **building**: the ``--check``
-mode runs the generator inside the staged kit, so an ImportError or a missing
-file fails here rather than in somebody's Downloads folder.
+Two halves, because they cost different things.
+
+The **static** half asks whether the bundle re-roots the asset paths it
+vendors. It is free, it runs everywhere, and it is the half that was wrong:
+``Path(__file__).parent.parent / "assets"`` is right in the repository, where
+the helpers live one level down in ``scripts/``, and wrong in a kit, where the
+bundle is the root.
+
+The **build** half runs the generator inside the staged kit, which is the only
+way to see an ImportError or a missing file before a reader does. It needs
+``sprezzature_figures`` importable: all 167 generators import
+``sprezzature_figures.fonts`` at module level, so no kit can be built without
+it. The hub's test lane does not install it — it is a large dependency for one
+check — so this half skips there and names what to run instead. It is the step
+that rebuilds the kits before they are uploaded, which is the moment it
+matters.
 
 Author
 ------
@@ -87,6 +99,13 @@ def _draws_a_map(source: str) -> bool:
 
 def test_every_kit_that_needs_an_asset_builds_and_runs() -> None:
     """``--check`` stages each kit and runs its generator inside it."""
+    if importlib.util.find_spec("sprezzature_figures") is None:
+        pytest.skip(
+            "sprezzature_figures is not installed, and every generator imports "
+            "its fonts module, so no kit can be staged. Run "
+            "`python3 web/tools/build_figure_kits.py --check` where the kits "
+            "are rebuilt."
+        )
     slugs = _figures_that_read_an_asset()
     assert slugs, (
         "no generator reads an asset, which cannot be right: the map figures "
