@@ -131,7 +131,11 @@ def _run_tool(
             completed = subprocess.run([found, *extra])
             return completed.returncode
 
-    skill_root = _find_skill(skill)
+    # `script=""` means the brick never had an in-repo script to fall back to:
+    # the four extracted bricks forwarded wholesale at the bottom of this file
+    # have a console script and a module and nothing else. Joining "" onto the
+    # scripts/ path would test the directory itself, which exists.
+    skill_root = _find_skill(skill) if script else None
     if skill_root is not None:
         target = skill_root / SCRIPTS_SUBDIR / script
         if target.is_file():
@@ -146,8 +150,8 @@ def _run_tool(
     click.echo(
         f"sprezzature: no working install found for {skill} → {script}.\n"
         f"Tried: {console_script or '(no console script)'} on $PATH, "
-        f"{skill}/scripts/{script} on $SPREZZATURE_SKILLS_PATH, "
-        f"and `python -m {module}`" + (" (not importable)." if module else ".") + "\n"
+        + (f"{skill}/scripts/{script} on $SPREZZATURE_SKILLS_PATH, " if script else "")
+        + f"and `python -m {module}`" + (" (not importable)." if module else ".") + "\n"
         f"Install the standalone package: {hint}",
         err=True,
     )
@@ -417,4 +421,75 @@ def publish_md_to_html(ctx: click.Context) -> None:
         "sprezzature-publish", "md_to_html.py", tuple(ctx.args),
         console_script="sprezzature-publish-html",
         module="sprezzature_publish_scripts.md_to_html",
+    ))
+
+
+# ── The four bricks whose own command is already the whole surface ──────────
+#
+# `figures`, `maps`, `cli-gui` and `ux-laws` were reachable through this driver
+# by no name at all. Nine bricks ship, five had a group here, and the package
+# description called itself "one entry point for the sprezzature skills" — a
+# sentence that was true of a bit more than half of them.
+#
+# They are forwarded wholesale rather than mirrored, and that is the difference
+# from the groups above. `sprezzature-figures`, `sprezzature-maps`,
+# `sprezzature-cli-gui` and `sprezzature-ux-laws` are each already a complete
+# sub-command tree of their own; re-declaring their commands here would put a
+# second copy of a surface in a place that cannot see when the first one
+# changes, which is the thing SURFACES.md exists to forbid. A pass-through has
+# one name to keep true — the console script — and the hub's
+# tests/test_the_driver_routes_to_what_exists.py checks it, from the
+# repository that sees every brick. `_run_tool` is called directly rather
+# than through a helper for the same reason: that guard reads literal
+# arguments out of the syntax tree, and a wrapper would hide them from it.
+#
+# `--help` therefore shows the brick's own help, not a Click stub: that is what
+# `add_help_option=False` plus `allow_extra_args` buys.
+
+
+@cli.command(name="figures", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+             help="Figures skill (sprezzature-figures): 127 SVG chart kinds, audits, diagrams.")
+@click.pass_context
+def figures(ctx: click.Context) -> None:
+    """sprezzature-figures — every argument goes to its own command."""
+    sys.exit(_run_tool(
+        "sprezzature-figures", "", tuple(ctx.args),
+        console_script="sprezzature-figures",
+        module="sprezzature_figures.cli",
+    ))
+
+
+@cli.command(name="maps", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+             help="Maps skill (sprezzature-maps): choropleths, situation plates, GPS traces.")
+@click.pass_context
+def maps(ctx: click.Context) -> None:
+    """sprezzature-maps — every argument goes to its own command."""
+    sys.exit(_run_tool(
+        "sprezzature-maps", "", tuple(ctx.args),
+        console_script="sprezzature-maps",
+        module="sprezzature_maps.cli_click",
+    ))
+
+
+@cli.command(name="cli-gui", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+             help="CLI-GUI skill (sprezzature-cli-gui): wrap a command-line tool in a web UI.")
+@click.pass_context
+def cli_gui(ctx: click.Context) -> None:
+    """sprezzature-cli-gui — every argument goes to its own command."""
+    sys.exit(_run_tool(
+        "sprezzature-cli-gui", "", tuple(ctx.args),
+        console_script="sprezzature-cli-gui",
+        module="sprezzature_cli_gui.cli",
+    ))
+
+
+@cli.command(name="ux-laws", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+             help="Laws of UX skill (sprezzature-ux-laws): the decidable fraction, from raw HTML.")
+@click.pass_context
+def ux_laws(ctx: click.Context) -> None:
+    """sprezzature-ux-laws — every argument goes to its own command."""
+    sys.exit(_run_tool(
+        "sprezzature-ux-laws", "", tuple(ctx.args),
+        console_script="sprezzature-ux-laws",
+        module="sprezzature_ux_laws.cli_click",
     ))

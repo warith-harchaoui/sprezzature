@@ -37,6 +37,8 @@ from pathlib import Path
 
 import pytest
 
+from skills_manifest import SHIPPED_SKILLS
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = REPO_ROOT.parent
 DRIVER = REPO_ROOT / "sprezzature-cli" / "src" / "sprezzature_cli" / "cli.py"
@@ -198,4 +200,30 @@ def test_a_route_names_the_command_its_brick_registers(
     assert console_script == registered, (
         f"{skill} registers {registered!r} for {module}; the driver routes "
         f"through {console_script!r}."
+    )
+
+
+def test_the_driver_names_every_brick_the_suite_ships() -> None:
+    """"One entry point for the skills" has to mean all of them.
+
+    Nine bricks ship and the driver reached five: ``figures``, ``maps``,
+    ``cli-gui`` and ``ux-laws`` were reachable through it by no name at all,
+    while its own package description called it "one entry point for the
+    sprezzature skills". Every test in this file asked whether the routes that
+    exist are honest, which they were; none asked whether a brick was missing,
+    and a brick that is missing has no route to be dishonest about.
+
+    The four were added as pass-throughs rather than as mirrored sub-commands:
+    each of those bricks already ships a complete command tree, and a second
+    copy of a surface, in a place that cannot see when the first one changes,
+    is what SURFACES.md exists to forbid.
+    """
+    routed = {skill for skill, _, _ in _routes()}
+    # `vision` routes into accessibility, which is where that work went in
+    # October; it is an alias, not a tenth brick.
+    missing = sorted(set(SHIPPED_SKILLS) - routed)
+    assert not missing, (
+        f"the sprezzature driver names no command for {missing}. A brick the "
+        f"driver cannot reach is one its users have to install and learn "
+        f"separately, which is the situation the driver exists to end."
     )
