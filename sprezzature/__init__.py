@@ -34,6 +34,7 @@ SKILL_NAMES: tuple[str, ...] = (
     "sprezzature-ux-laws",
     "sprezzature-figures",
     "sprezzature-maps",
+    "sprezzature-video",
 )
 
 

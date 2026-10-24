@@ -75,6 +75,7 @@ STATUS: dict[str, str] = {
     "sprezzature-ux-laws": "Stable",
     "sprezzature-figures": "Stable",
     "sprezzature-maps": "Stable",
+    "sprezzature-video": "Beta (the renderer seam is still out of band)",
 }
 
 
@@ -92,6 +93,7 @@ WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-ux-laws": "Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers.",
     "sprezzature-figures": "Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures.",
     "sprezzature-maps": "Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap.",
+    "sprezzature-video": "Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio.",
 }
 
 
@@ -126,6 +128,10 @@ ROUTES: dict[str, tuple[str, str]] = {
     "sprezzature-accessibility": (
         'HTML — usually HTML YOU JUST WROTE, before anyone asks; An image that needs words: alt text, a description, a caption',
         '"is this accessible", "missing alt", "unlabelled input", « vérifie l\'accessibilité »; "describe this image", "draft alt text", "this img has no alt"',
+    ),
+    "sprezzature-video": (
+        "A video that states a fact about a project — or a project that changed under a film already shipped",
+        '"make a launch video", "the demo video is out of date", "is this number still right", "re-cut the film", « refais la vidéo »',
     ),
     "sprezzature-ux-laws": (
         "An interface somebody is complaining about the FEEL of",
@@ -357,6 +363,16 @@ CATALOGUE: dict[str, list[str]] = {
         "synthesise a voice",
         "which voice",
         "Kokoro",
+    ],
+    "sprezzature-video": [
+        "make a launch video",
+        "the demo video is out of date",
+        "verify the claims in this video",
+        "re-cut the film",
+        "is this number still right",
+        "can we rebuild this video",
+        "captions for the film",
+        "poster frame",
     ],
     "sprezzature-ux-laws": [
         "design this screen using Hick / Fitts / Miller",

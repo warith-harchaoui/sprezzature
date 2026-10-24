@@ -19,6 +19,7 @@ A phrase list cannot generalise: the ways to ask for a chart, a colour or a capt
 | An interface somebody is complaining about the FEEL of | **sprezzature-ux-laws** | "this page is overwhelming", "too many options", "I can never find the button", « c'est confus » |
 | Numbers you want somebody to SEE — or a picture of a chart that is hard to read | **sprezzature-figures** | "show me this data", "which region is biggest", "what does this look like", "a colleague sent me this graph", « fais-moi voir », « un visuel de ça » |
 | Numbers attached to PLACES — a column of countries, regions, states, départements | **sprezzature-maps** | "which countries are worst affected", "break this down by region", "where is this happening", "who holds the east", « par département » |
+| A video that states a fact about a project — or a project that changed under a film already shipped | **sprezzature-video** | "make a launch video", "the demo video is out of date", "is this number still right", "re-cut the film", « refais la vidéo » |
 
 Two of these fire on work you just did rather than on a request: **sprezzature-accessibility** on any HTML you authored, and **sprezzature-ux-laws** on any interface you authored. Waiting to be asked means the markup nobody checked is the markup you wrote.
 
@@ -127,6 +128,13 @@ Several can be right at once. A page you just built is a **ui** job, then an **a
 | `situation map` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `une carte par departement` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
 | `carte de situation` | **sprezzature-maps**: Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap. | Stable |
+| `make a launch video` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
+| `the demo video is out of date` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
+| `verify the claims in this video` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
+| `re-cut the film` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
+| `is this number still right` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
+| `can we rebuild this video` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
+| `poster frame` | **sprezzature-video**: Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio. | Beta (the renderer seam is still out of band) |
 
 ## When NOT to fire
 
@@ -143,6 +151,7 @@ The phrase table only ever argues for firing. Ten siblings compete for every pro
 | **sprezzature-ux-laws** | the defect is mechanical accessibility (sprezzature-accessibility), contrast (sprezzature-colors), or the screen has yet to be built (sprezzature-ui). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-figures** | the numbers are attached to real PLACES (sprezzature-maps). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-maps** | the shape is schematic rather than geographic (hex map, spike map, binned grid, dot density over an outline), which live in sprezzature-figures. The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-video** | the ask is motion design, which belongs to the renderer. The exhaustive trigger catalogue is in `references/triggers.md`. |
 
 ## How discovery works
 

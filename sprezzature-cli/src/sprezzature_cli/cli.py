@@ -471,6 +471,18 @@ def maps(ctx: click.Context) -> None:
     ))
 
 
+@cli.command(name="video", context_settings=CONTEXT_SETTINGS, add_help_option=False,
+             help="Video skill (sprezzature-video): check what a film says against the code.")
+@click.pass_context
+def video(ctx: click.Context) -> None:
+    """sprezzature-video — every argument goes to its own command."""
+    sys.exit(_run_tool(
+        "sprezzature-video", "", tuple(ctx.args),
+        console_script="sprezzature-video",
+        module="sprezzature_video.cli_click",
+    ))
+
+
 @cli.command(name="cli-gui", context_settings=CONTEXT_SETTINGS, add_help_option=False,
              help="CLI-GUI skill (sprezzature-cli-gui): wrap a command-line tool in a web UI.")
 @click.pass_context

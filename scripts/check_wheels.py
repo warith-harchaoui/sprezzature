@@ -61,6 +61,7 @@ PACKAGES: dict[str, str] = {
     "sprezzature-cli-gui": "sprezzature_cli_gui",
     "sprezzature-ux-laws": "sprezzature_ux_laws",
     "sprezzature-maps": "sprezzature_maps",
+    "sprezzature-video": "sprezzature_video",
     # The last two to reach PyPI, on 2026-10-19. They were absent here for
     # the same reason they were absent from the `all` extra — nothing to
     # build a wheel *against* while they were unpublished — and leaving them
