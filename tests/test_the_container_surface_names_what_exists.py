@@ -31,10 +31,14 @@ Warith HARCHAOUI <warithmetics@deraison.ai>
 from __future__ import annotations
 
 import re
-import tomllib
 from pathlib import Path
 
 import pytest
+
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10 — tomllib landed in 3.11
+    import tomli as tomllib
 import yaml
 
 from skills_manifest import SHIPPED_SKILLS
