@@ -46,9 +46,21 @@ AddDefaultCharset utf-8
 # Compression. The server already gzips HTML, CSS and SVG; this states it
 # rather than relying on a host default that a migration could drop. The
 # feeds and the llms.txt files are text too, and were not covered.
+#
+# Both JavaScript types, and that is not belt-and-braces. Apache serves .js
+# as `text/javascript` -- the type recommended since 2022 -- so the
+# `application/javascript` line alone matched no file on this site and every
+# script went out uncompressed: 25.9 KB where gzip makes 10.7, on every page
+# that loads theme.js, nav.js and color-mode.js, which is all of them.
+#
+# The same omission was found and fixed on deraison.ai on 2 October, where it
+# was costing 196 KB a page. The lesson was written down there and never
+# carried here; the second type costs nothing and keeps working if a host's
+# MIME configuration ever changes back.
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
-    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE text/javascript application/javascript
+    AddOutputFilterByType DEFLATE application/json
     AddOutputFilterByType DEFLATE application/xml application/atom+xml application/rss+xml
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
