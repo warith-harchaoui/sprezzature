@@ -85,10 +85,15 @@ FILMS = {
                  wipe_at=7.09, wipe_dur=1.06, caption_at=8.40,
                  caption="If the story survives grey, it survives everyone."),
             dict(type="chips", start=11.6, dur=6.9, end=17.9,
-                 eyebrow="Ten skills · one loop",
+                 eyebrow="Nine skills · one loop",
                  items=["ui", "cli-gui", "publish", "accessibility", "colors",
-                        "vision", "audio", "ux-laws", "figures", "maps"],
-                 at=[12.02, 12.55, 13.11, 13.64, 14.20, 14.73, 15.29, 15.84,
+                        "audio", "ux-laws", "figures", "maps"],
+                 # Nine beats, not ten: `vision` was folded into `accessibility`
+                 # on 2026-10-17. The beat it used to take (14.73) is dropped
+                 # rather than the last one, so the closing chip still lands on
+                 # 16.93 where the `tile` cue is -- shortening the scene instead
+                 # would leave that cue firing on nothing.
+                 at=[12.02, 12.55, 13.11, 13.64, 14.20, 15.29, 15.84,
                      16.38, 16.93],
                  caption="one implementation, five ways in: CLI · library · "
                          "HTTP API · MCP · skill"),
@@ -97,7 +102,7 @@ FILMS = {
                  rows=[("Ralph Loop", "a known flaw seeded into a text"),
                        ("Ralph Eyeball Loop", "a known defect seeded into an image")],
                  at=[18.02, 18.56],
-                 caption="8 packages on PyPI · 960 tests · nothing has to leave "
+                 caption="10 packages on PyPI · 2030 tests · nothing has to leave "
                          "the machine"),
             dict(type="outro", start=21.9, dur=3.1, end=25.0, logo="logo-512.png",
                  mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
@@ -109,7 +114,7 @@ FILMS = {
         vo=[("figures-1", 0.80), ("figures-2", 4.40), ("figures-3", 10.90)],
         sfx=[("drop", 4.30), ("tile", 9.29), ("bell", 15.25)],
         scenes=group_scenes(
-            "127 kinds, every one hand‑authored.",
+            "167 kinds, every one hand‑authored.",
             dict(type="grid", eyebrow="sprezzature-figures",
                  images=["figures/sankey.svg", "figures/alluvial.svg",
                          "figures/chord.svg", "figures/calendar-heatmap.svg",
@@ -140,7 +145,7 @@ FILMS = {
                          ("04", "grayscale", "figures/cvd/04-grayscale.png", 8.74)],
                  ratio=1490 / 1010, wipe_dur=0.80, caption_at=9.83,
                  caption="If the story survives grey, it survives everyone."),
-            dict(type="chips", eyebrow="accessibility · colors · vision · audio",
+            dict(type="chips", eyebrow="accessibility · colors · audio",
                  items=["20 a11y rules", "WCAG contrast", "CVD simulation",
                         "OKLCH lighten / darken", "Tailwind export", "alt text",
                         "WebVTT / SRT", "diarization"],
