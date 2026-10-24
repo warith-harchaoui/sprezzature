@@ -39,6 +39,11 @@ WEB = REPO_ROOT / "web"
 
 #: Written-out numbers the site actually uses for counts.
 _WORDS = {
+    "five": 5,
+    "six": 6,
+    "seven": 7,
+    "cinq": 5,
+    "sept": 7,
     "eight": 8,
     "nine": 9,
     "ten": 10,
@@ -160,6 +165,60 @@ def test_a_page_social_card_names_the_page(page: Path) -> None:
             f"{page.relative_to(WEB)}: <title> says {page_head!r} and {prop} "
             f"says {card_head!r}. A shared link unfurls the second one."
         )
+
+
+#: The surface cards on ``packages.html``, in the order the page shows them.
+#: ``zip`` is a way of delivering a surface rather than one of the five the
+#: contract names, which is the distinction the section's own prose makes and
+#: the reason the two numbers on that page differ by one.
+_SURFACE_CARD = re.compile(
+    r'<p class="font-mono text-xs text-brand-linktext">'
+    r"(zip|library|biblioth\u00e8que|cli|api|mcp|skills)</p>"
+)
+
+
+@pytest.mark.parametrize("page", ["packages.html", "fr/packages.html"])
+def test_the_packages_page_counts_its_own_doors(page: str) -> None:
+    """Three statements of one fact: the lede, the heading, and the cards.
+
+    The lede said "reached five different ways" and listed four of them; the
+    heading two lines below said "Six ways in"; the section held six cards. A
+    reader who counts gets three answers in four lines, on the page whose
+    whole argument is that a surface and a re-implementation are different
+    things.
+
+    The cards decide, the way the home page's array decides there. Only the
+    two numbers that are *about the doors* are read: a count of anything else
+    on the page is somebody else's sentence.
+    """
+    text = (WEB / page).read_text(encoding="utf-8")
+    cards = len(_SURFACE_CARD.findall(text))
+    assert cards >= 5, f"{page} shows only {cards} surface cards"
+
+    # The lede's "reached N different ways" and the section heading's
+    # "N ways in" — not every number on the page. "Five surfaces is the
+    # contract", further down, is about the five the contract names, which is
+    # deliberately one fewer: the zip is a way of delivering a surface, not a
+    # surface. A regex that swept up both would demand the page contradict
+    # the distinction it is there to draw.
+    spoken = [
+        group
+        for found in re.findall(
+            r"reached (\w+) different ways|atteint de (\w+) fa\u00e7ons"
+            r'|<h2[^>]*>(\w+) ways in</h2>|<h2[^>]*>(\w+) portes',
+            text,
+            re.I,
+        )
+        for group in found
+        if group
+    ]
+    claims = {_WORDS[word.lower()] for word in spoken if word.lower() in _WORDS}
+    assert spoken, f"{page} states no number of ways in; the pattern stopped matching"
+    wrong = sorted(c for c in claims if c != cards)
+    assert not wrong, (
+        f"{page} tells the reader there are {wrong} ways in, and shows "
+        f"{cards} cards. The cards are what decide."
+    )
 
 
 def test_the_sitemap_does_not_offer_a_noindexed_page() -> None:
