@@ -106,7 +106,7 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">standalone packages</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Packages</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Every tool here is one implementation reached five different ways. Which way you want depends on what you are doing: sending a colleague a single file, importing a function, calling it from another language, handing it to an agent. None of those should require a different tool.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Every tool here is one implementation reached six different ways. Which one you want depends on what you are doing: sending a colleague a single file, importing a function, typing a command, calling it from another language, handing it to an agent, or letting Claude read the skill. None of those should require a different tool.</p>
       <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Each package is BSD-3-Clause, local-first, and independently versioned. All nine are published on PyPI, so a plain <code class="rounded bg-neutral-100 px-1 py-0.5 font-mono text-xs dark:bg-neutral-800">pip install</code> is enough.</p>
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Six ways in</h2>
@@ -154,7 +154,7 @@
 
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Where each surface actually exists</h2>
-      <p class="mt-3 text-neutral-600 dark:text-neutral-300">Five ways in is the target, and most of it is now built. Every package with a library has an HTTP API and an MCP surface over it: the same functions, never a second copy. Six of the seven packages ship a runnable zip: 160 for the figure gallery, twelve for the maps page, and one each for the rest; audio is the one still without. The skills need no second version for OpenCode: both runtimes read the same <code>SKILL.md</code>.</p>
+      <p class="mt-3 text-neutral-600 dark:text-neutral-300">Five surfaces is the contract, and all nine packages hold it. Every one has an HTTP API and an MCP surface over its library: the same functions, never a second copy. The zip is the sixth door and is not owed by the contract — five packages ship a toolbox kit (accessibility, cli-gui, colors, maps, ux-laws), figures ships one per figure instead (160 of them) and maps twelve plates besides its own; audio, publish and ui have none yet. The skills need no second version for OpenCode: both runtimes read the same <code>SKILL.md</code>.</p>
 
       <div class="mt-6 overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-800">
         <table class="w-full text-sm">

@@ -1523,7 +1523,7 @@ standalone packages
 
 # Packages
 
-Every tool here is one implementation reached five different ways. Which way you want depends on what you are doing: sending a colleague a single file, importing a function, calling it from another language, handing it to an agent. None of those should require a different tool.
+Every tool here is one implementation reached six different ways. Which one you want depends on what you are doing: sending a colleague a single file, importing a function, typing a command, calling it from another language, handing it to an agent, or letting Claude read the skill. None of those should require a different tool.
 
 Each package is BSD-3-Clause, local-first, and independently versioned. All nine are published on PyPI, so a plain pip install is enough.
 
@@ -1569,7 +1569,7 @@ The judgement that is not in the code: when to reach for a chart type, what make
 
 ## Where each surface actually exists
 
-Five ways in is the target, and most of it is now built. Every package with a library has an HTTP API and an MCP surface over it: the same functions, never a second copy. Six of the seven packages ship a runnable zip: 160 for the figure gallery, twelve for the maps page, and one each for the rest; audio is the one still without. The skills need no second version for OpenCode: both runtimes read the same SKILL.md .
+Five surfaces is the contract, and all nine packages hold it. Every one has an HTTP API and an MCP surface over its library: the same functions, never a second copy. The zip is the sixth door and is not owed by the contract — five packages ship a toolbox kit (accessibility, cli-gui, colors, maps, ux-laws), figures ships one per figure instead (160 of them) and maps twelve plates besides its own; audio, publish and ui have none yet. The skills need no second version for OpenCode: both runtimes read the same SKILL.md .
 
 Package
 Zip
