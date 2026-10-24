@@ -41,7 +41,7 @@
   # which merged into sprezzature-accessibility, and omitted
   # sprezzature-maps — so the gate failed on a folder that was gone while
   # never reading the SKILL.md of a brick that was there.
-  args: [sprezzature-ui, sprezzature-cli-gui, sprezzature-publish, sprezzature-accessibility, sprezzature-colors, sprezzature-audio, sprezzature-ux-laws, sprezzature-figures, sprezzature-maps]
+  args: [sprezzature-ui, sprezzature-cli-gui, sprezzature-publish, sprezzature-accessibility, sprezzature-colors, sprezzature-audio, sprezzature-ux-laws, sprezzature-figures, sprezzature-maps, sprezzature-video]
 
 - id: sprezzature-triggers-sync
   name: sprezzature — TRIGGERS.md sync check

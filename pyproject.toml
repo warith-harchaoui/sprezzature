@@ -44,6 +44,11 @@ all = [
     # it is the version that first exposed a library surface at all.
     "sprezzature-ux-laws>=1.2.0",
     "sprezzature-maps>=1.0.0",
+    # The tenth brick, published 2026-10-24. The floor is the release that
+    # first carries a command at all: 0.1.0 declared three entry points ahead
+    # of the modules behind them and installed three commands that died on
+    # import, so naming it here would have put that breakage inside `all`.
+    "sprezzature-video>=0.2.0",
     # The last two to reach PyPI, on 2026-10-19. Until then `all` installed
     # eight ninths of the suite under a name that promised all of it — the
     # omission was deliberate and documented, which made it defensible and
@@ -61,7 +66,7 @@ Repository = "https://github.com/warith-harchaoui/sprezzature"
 sprezzature-skills = "sprezzature.cli:main"
 
 [tool.setuptools]
-packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures", "sprezzature.skills.sprezzature_maps"]
+packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures", "sprezzature.skills.sprezzature_maps", "sprezzature.skills.sprezzature_video"]
 
 [tool.setuptools.package-dir]
 "sprezzature.skills.sprezzature_ui" = "sprezzature-ui"
@@ -73,6 +78,7 @@ packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.ski
 "sprezzature.skills.sprezzature_ux_laws" = "sprezzature-ux-laws"
 "sprezzature.skills.sprezzature_figures" = "sprezzature-figures"
 "sprezzature.skills.sprezzature_maps" = "sprezzature-maps"
+"sprezzature.skills.sprezzature_video" = "sprezzature-video"
 
 [tool.setuptools.package-data]
 "sprezzature.skills.sprezzature_ui" = ["**/*"]
@@ -84,6 +90,7 @@ packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.ski
 "sprezzature.skills.sprezzature_ux_laws" = ["**/*"]
 "sprezzature.skills.sprezzature_figures" = ["**/*"]
 "sprezzature.skills.sprezzature_maps" = ["**/*"]
+"sprezzature.skills.sprezzature_video" = ["**/*"]
 
 [tool.setuptools.exclude-package-data]
 # The rendered gallery is 74 MB of PNG and SVG that belongs on the website,
