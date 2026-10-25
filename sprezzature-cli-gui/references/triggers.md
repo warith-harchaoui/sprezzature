@@ -14,7 +14,7 @@ Said without naming a tool: "my colleague keeps getting the flags wrong", "can n
 
 ## When it is not
 
-Not this one when: the screen has no CLI behind it (sprezzature-ui, whose stack rules this follows; install it alongside for the full design tokens). The exhaustive trigger catalogue is in `references/triggers.md`.
+Not this one when: the screen has no CLI behind it (sprezzature-ui). The exhaustive trigger catalogue is in `references/triggers.md`.
 
 ## Every phrase that names this skill
 

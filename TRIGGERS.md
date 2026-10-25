@@ -143,7 +143,7 @@ The phrase table only ever argues for firing. Ten siblings compete for every pro
 | Skill | Not this one when |
 |---|---|
 | **sprezzature-ui** | the thing to wrap is a command-line tool (sprezzature-cli-gui); the source is Markdown that must become a site (sprezzature-publish); or the HTML exists already and the question is whether it is accessible (sprezzature-accessibility), how it feels (sprezzature-ux-laws) or whether a colour passes (sprezzature-colors). The exhaustive trigger catalogue is in `references/triggers.md`. |
-| **sprezzature-cli-gui** | the screen has no CLI behind it (sprezzature-ui, whose stack rules this follows; install it alongside for the full design tokens). The exhaustive trigger catalogue is in `references/triggers.md`. |
+| **sprezzature-cli-gui** | the screen has no CLI behind it (sprezzature-ui). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-publish** | the page is built and the question is accessibility (sprezzature-accessibility), or the speech is recorded and needs transcribing rather than generating (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-accessibility** | the question is contrast or colour-blindness (sprezzature-colors), captions for speech (sprezzature-audio), or how the interface feels (sprezzature-ux-laws). NOT a replacement for axe-core / Pa11y / Lighthouse. The exhaustive trigger catalogue is in `references/triggers.md`. |
 | **sprezzature-colors** | the markup has structural defects rather than a colour question (sprezzature-accessibility), or the colours belong to a chart being drawn (sprezzature-figures). The exhaustive trigger catalogue is in `references/triggers.md`. |
