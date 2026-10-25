@@ -467,7 +467,7 @@ def maps(ctx: click.Context) -> None:
     sys.exit(_run_tool(
         "sprezzature-maps", "", tuple(ctx.args),
         console_script="sprezzature-maps",
-        module="sprezzature_maps.cli_click",
+        module="sprezzature_maps.cli",
     ))
 
 
@@ -479,7 +479,7 @@ def video(ctx: click.Context) -> None:
     sys.exit(_run_tool(
         "sprezzature-video", "", tuple(ctx.args),
         console_script="sprezzature-video",
-        module="sprezzature_video.cli_click",
+        module="sprezzature_video.cli",
     ))
 
 
@@ -503,5 +503,5 @@ def ux_laws(ctx: click.Context) -> None:
     sys.exit(_run_tool(
         "sprezzature-ux-laws", "", tuple(ctx.args),
         console_script="sprezzature-ux-laws",
-        module="sprezzature_ux_laws.cli_click",
+        module="sprezzature_ux_laws.cli",
     ))
