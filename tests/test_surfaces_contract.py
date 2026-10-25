@@ -138,7 +138,7 @@ mcp = ["fastapi-mcp>=0.3"]
 
 [project.scripts]
 make-demo = "sprezzature_demo.cli:main"
-sprezzature-demo = "sprezzature_demo.cli_click:main"
+sprezzature-demo = "sprezzature_demo.cli:main"
 sprezzature-demo-mcp = "sprezzature_demo.mcp:main"
 
 [tool.setuptools.package-dir]
@@ -158,8 +158,7 @@ def _build_brick(root: Path) -> Path:
         '"""demo."""\n\nfrom .engine import run\n\n__all__ = ["run"]\n',
         encoding="utf-8",
     )
-    (package / "cli.py").write_text("import argparse\n", encoding="utf-8")
-    (package / "cli_click.py").write_text("import click\n", encoding="utf-8")
+    (package / "cli.py").write_text("import click\n", encoding="utf-8")
     (package / "api.py").write_text(
         "from fastapi import FastAPI\n\napp = FastAPI(title='demo')\n",
         encoding="utf-8",
@@ -196,7 +195,6 @@ def test_a_whole_brick_reports_no_gap(brick: Path) -> None:
 @pytest.mark.parametrize(
     ("removed", "surface"),
     [
-        ("sprezzature_demo/cli_click.py", "cli"),
         ("sprezzature_demo/api.py", "api"),
         ("sprezzature_demo/mcp.py", "mcp"),
         ("docker-compose.yml", "compose"),

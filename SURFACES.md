@@ -56,8 +56,20 @@ run `python scripts/audit_laws_of_ux.py` — a path that exists in a clone and
 not in a wheel — and `pip install sprezzature-ux-laws` put nothing on `PATH`
 but the MCP server.
 
-**Carried by** `sprezzature_<brick>/cli.py` (argparse) and
-`sprezzature_<brick>/cli_click.py` (click), both named in `[project.scripts]`.
+**Carried by** `sprezzature_<brick>/cli.py`, in click, named twice in
+`[project.scripts]`: the historical `make-<thing>` spelling and the suite-wide
+`sprezzature-<brick>` one, both pointing at the same callable.
+
+There were two parsers until 2026-10-25 — an argparse front door and a click
+twin that imported the argparse module's table. The pair cost every
+sub-command twice, forced a conditional `main` whose two definitions had to
+agree by hand (and a mypy suppression in every brick to tolerate it), and let
+a command go missing from one door with nothing to notice: `make-map density`
+existed in argparse and not in click. One door cannot drift from itself.
+
+click is a **base dependency**, not an extra. With argparse gone no parser
+ships with Python, so an optional click would mean an install whose own
+commands do not run.
 
 ## 3. HTTP API — and the container it ships in
 
@@ -130,8 +142,7 @@ a laptop.
 sprezzature-maps/
 ├── sprezzature_maps/
 │   ├── __init__.py        # 1. library — exports the engine
-│   ├── cli.py             # 2. command line, argparse  → make-map
-│   ├── cli_click.py       # 2. command line, click     → sprezzature-maps
+│   ├── cli.py             # 2. command line, click → make-map AND sprezzature-maps
 │   ├── api.py             # 3. FastAPI app
 │   └── mcp.py             # 4. fastapi-mcp over that app → sprezzature-maps-mcp
 ├── scripts/               #    packaged as sprezzature_maps_scripts

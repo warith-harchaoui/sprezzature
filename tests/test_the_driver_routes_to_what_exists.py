@@ -95,24 +95,33 @@ def _entry_point_modules(repo: Path) -> set[str]:
     )
 
 
-def _command_for_module(repo: Path, module: str) -> str | None:
-    """The command a brick registers for `module`, if it registers one."""
+def _commands_for_module(repo: Path, module: str) -> set[str]:
+    """
+    Every command a brick registers for `module`.
+
+    A set, not the first match: since the argparse front doors were removed on
+    2026-10-25 a brick registers **two** names for its one CLI module — the
+    historical `make-*` spelling and the suite-wide `sprezzature-*` one — and
+    returning whichever came first in the file made the driver look wrong for
+    routing through the other.
+    """
     pyproject = repo / "pyproject.toml"
     if not pyproject.is_file():
-        return None
+        return set()
     block = re.search(
         r"^\[project\.scripts\]\n(.*?)(?=^\[|\Z)",
         pyproject.read_text(encoding="utf-8"),
         re.M | re.S,
     )
     if block is None:
-        return None
-    for name, named_module in re.findall(
-        r'^([\w.-]+)\s*=\s*"([\w.]+):\w+"', block.group(1), re.M
-    ):
-        if named_module == module:
-            return name
-    return None
+        return set()
+    return {
+        name
+        for name, named_module in re.findall(
+            r'^([\w.-]+)\s*=\s*"([\w.]+):\w+"', block.group(1), re.M
+        )
+        if named_module == module
+    }
 
 
 def test_the_driver_still_routes_somewhere() -> None:
@@ -188,8 +197,8 @@ def test_a_route_names_the_command_its_brick_registers(
     repo = SIBLINGS / skill
     if not (repo / "pyproject.toml").is_file():
         pytest.skip(f"{skill} is not checked out beside this repository")
-    registered = _command_for_module(repo, module)
-    if registered is None:
+    registered = _commands_for_module(repo, module)
+    if not registered:
         assert console_script is None or console_script in (
             _declared_commands(repo) or set()
         ), (
@@ -197,7 +206,7 @@ def test_a_route_names_the_command_its_brick_registers(
             f"{console_script!r}, which it does not install either."
         )
         return
-    assert console_script == registered, (
+    assert console_script in registered, (
         f"{skill} registers {registered!r} for {module}; the driver routes "
         f"through {console_script!r}."
     )

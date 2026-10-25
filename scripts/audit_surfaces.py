@@ -10,10 +10,12 @@ Claude:
 
 1. **library** — ``import sprezzature_<brick>`` works, and the package's
    ``__init__`` exports the engine rather than hiding it behind a script.
-2. **command line** — an argparse command *and* its click twin, both on PATH
-   via ``[project.scripts]``. Not one or the other: a CLI installed by
-   ``pip install`` is the surface most people actually touch first, and the
-   two parsers suit different callers.
+2. **command line** — a click command on PATH via ``[project.scripts]``. A
+   CLI installed by ``pip install`` is the surface most people actually touch
+   first. Until 2026-10-25 the contract asked for an argparse command *and* a
+   click twin; the pair cost every sub-command twice, forced a conditional
+   ``main`` whose two definitions had to agree by hand, and let a command go
+   missing from one door (``make-map density``) with nothing to notice.
 3. **HTTP API** — ``api.py`` holding a FastAPI app, declared behind an ``api``
    extra, with a ``Dockerfile`` so it runs without a Python install at all —
    and a ``docker-compose.yml`` beside it, always, so the port, the volume,
@@ -493,41 +495,37 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     # whose docstring said "behaviour is identical to the prior argparse-driven
     # main" counted as having an argparse command line. sprezzature-accessibility read
     # as holding both parsers while shipping only click.
-    argparse_cli = any(
-        _uses(src, ("import argparse", "from _argparse import", "make_parser("))
-        for src in sources.values()
-    )
     click_cli = any(
         _uses(src, ("import click", "from click", "sprezzature_command("))
         for src in sources.values()
     )
-    cli = bool(on_path) and argparse_cli and click_cli
-    if argparse_cli and not click_cli:
-        notes.append("argparse command on PATH, click twin missing")
+    cli = bool(on_path) and click_cli
 
-    # "Both parsers exist somewhere in the repo" is a weaker claim than the
-    # contract makes, and sprezzature-accessibility is how that showed: its click
-    # command was the drafter and its argparse command the *installer* --
-    # two different tools, so the engine itself had one parser, not two.
-    #
-    # The first version of this check demanded the reference *filenames*,
-    # cli.py + cli_click.py, and printed "check they are not two different
-    # tools" for anything else. That is a note, not a check: it asks a human
-    # to go and look, every run, forever. It fired on sprezzature-figures
-    # (make_figure.py + cli.py) and sprezzature-ux-laws (an auditor in
-    # scripts/ + cli_click.py), both of which are one engine behind two
-    # parsers -- exactly what the contract asks for, spelled differently.
-    #
-    # So check the property rather than the spelling: there must be an import
-    # edge from the click side to the argparse side, or both must reach a
-    # third module. Two front doors that never mention each other are two
-    # tools, whatever they are called.
-    if cli and not _share_an_engine(sources):
+    # The old contract wanted both parsers and an import edge between them, so
+    # that two front doors could not drift into two tools. One front door
+    # cannot drift from itself, so that whole check is gone -- but the failure
+    # it guarded against is worth naming in its replacement: a brick that still
+    # ships an argparse umbrella has a second door nobody is maintaining.
+    # Only the umbrella counts. The per-tool console scripts
+    # (`sprezzature-colors-contrast` and friends) are the tools themselves and
+    # keep their own parsers on purpose; the surface this audits is the one
+    # front door, and that is the module a bare `sprezzature-<brick>` reaches.
+    umbrella = {
+        command: src
+        for command, src in sources.items()
+        if "_scripts." not in (on_path.get(command) or "")
+    }
+    argparse_cli = any(
+        _uses(src, ("import argparse", "from _argparse import", "make_parser("))
+        for src in umbrella.values()
+    )
+    if argparse_cli:
         notes.append(
-            "both parsers reach PATH, but neither click module imports the "
-            "argparse one -- they look like two different tools, not two "
-            "doors onto one"
+            "a console script still reaches an argparse parser; click is the "
+            "suite's only command line since 2026-10-25"
         )
+    if on_path and not click_cli:
+        notes.append("command on PATH, but no click parser behind it")
     for command, source in sources.items():
         if not source:
             notes.append(f"console script `{command}` points at no file on disk")
@@ -613,15 +611,17 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     # install has it and the command cannot fail. Guarding it would be
     # defending against something that does not happen, which is its own kind
     # of noise.
-    base_requires_click = (
-        any(
-            requirement.strip().strip("\"'").lower().startswith("click")
-            for requirement in re.findall(
-                r"^dependencies\s*=\s*\[(.*?)\]", pyproject, re.M | re.S
-            )[0].split(",")
+    # Comment lines are stripped before looking: splitting the dependency
+    # block on commas and testing each piece broke the moment a manifest put a
+    # `# why` line inside the list, which every brick now does -- the piece
+    # then starts with `#` and the requirement right under it is never seen.
+    _deps_block = re.search(r"^dependencies\s*=\s*\[(.*?)\]", pyproject, re.M | re.S)
+    base_requires_click = bool(
+        _deps_block
+        and re.search(
+            r'["\']click\b',
+            re.sub(r"#[^\n]*", "", _deps_block.group(1)),
         )
-        if re.search(r"^dependencies\s*=\s*\[", pyproject, re.M)
-        else False
     )
 
     if not base_requires_click:
