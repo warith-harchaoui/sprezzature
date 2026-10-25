@@ -2,18 +2,18 @@
 name: sprezzature-cli-gui
 description: >-
   Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind
-  GUI. Reads the CLI's own argument parser (argparse, click, Typer, clap,
-  commander, cobra) and maps sub-commands and flags to forms, segmented
-  controls, file inputs and streaming log panels, emitting one index.html +
-  app.js + Tailwind config. For CLI authors whose users will not type a flag:
-  ML researchers, data scientists, DevOps / SRE, anyone needing a web UI
-  without picking up React. Use it when you are holding a command-line tool
-  somebody who will not type it needs to run. Trigger phrases: "wrap this CLI
-  in a GUI", "build a UI for my CLI", "argparse to GUI", "click to web UI",
+  GUI. Walks the parser itself for Python CLIs — argparse, Click, Typer — and
+  parses `--help` in a subprocess for anything else, covering a Go or Rust
+  CLI (cobra, clap) at lower fidelity. Sub-commands and flags become
+  forms, segmented controls, file inputs and streaming log panels, emitted as
+  one index.html + app.js + Tailwind config. For CLI authors whose users will
+  not type a flag: researchers, data scientists, DevOps / SRE, anyone needing
+  a web UI without React. Use it when you are holding a command-line
+  tool somebody who will not type it needs to run. Trigger phrases: "wrap this
+  CLI in a GUI", "build a UI for my CLI", "argparse to GUI", "click to web UI",
   "GUI for my Python script", "web form for my script", "Typer / clap / cobra
   to GUI", "GUI for my Go or Rust CLI", "streaming log panel for a CLI". Not
-  this one when: the screen has no CLI behind it (sprezzature-ui, whose stack
-  rules this follows; install it alongside for the full design tokens). The
+  this one when: the screen has no CLI behind it (sprezzature-ui). The
   exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
@@ -65,7 +65,7 @@ gates on the emitted HTML.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — CLI → HTML (three adapters) | `cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command`), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
+| **Make** — CLI → HTML (three adapters) | `cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
 | **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
 | **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `sprezzature-ux-laws-audit` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
 | **Audit** — does the page still cover the CLI | `sprezzature-cli-gui-audit <spec> <page.html>` | This brick's own promise, checked: every sub-command and flag reachable, no field building an option the parser rejects, no choice quietly dropped, and a command line seeded with the name the tool is actually installed as. A page that lost a flag renders and behaves perfectly — the option is simply unreachable — so the disagreement has to be looked for. Exit 1 on any finding, so it gates a build. |
