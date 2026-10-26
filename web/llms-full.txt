@@ -955,7 +955,9 @@ What it shows: the two kinds of claim, the three provenance classes an asset can
 
 ## About these films
 
-They are narrated in English. Subtitles are available in English and in French: pick them in the player's caption menu.
+Each film exists twice, and the two do not mix: an English film is English throughout — on screen, in the voice, in the subtitles — and a French film is French throughout. This page serves the English cut; the French one is a click away.
+
+The voices come from the suite itself: sprezzature-audio through Kokoro, with a pronunciation lexicon so that WebVTT, RTTM, OKLCH and GMTED2010 are said the same way in every film and in both languages. The same call writes the subtitles, off the same timeline as the audio.
 
 Each one also exists vertical (1080×1920) and square (1080×1080). The versions here are the 1920×1080 cut.
 

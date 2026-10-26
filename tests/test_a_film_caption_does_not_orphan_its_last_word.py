@@ -176,22 +176,33 @@ def test_the_font_this_test_measures_with_is_here() -> None:
 
 
 def test_no_film_line_leaves_its_last_word_alone() -> None:
-    """Every row, caption and eyebrow in every minute-long film."""
+    """Every row, caption and eyebrow, in every cut of every minute-long film.
+
+    Both languages, because French is not a translation layer over an English
+    film — it is a cut of its own, with its own words in the same boxes, and
+    French runs longer than English for the same sentence. The first French
+    cut of the suite film put ``skill`` alone under ``bibliothèque, CLI, API
+    HTTP, outils MCP,`` where the English fitted on one line.
+    """
     pytest.importorskip("fontTools", reason="fontTools reads the advance widths")
     import build_films
+    import films_fr
 
     found: list[str] = []
-    for film, spec in build_films.FILMS.items():
+    for film, lang in build_films.cuts():
+        spec = build_films.FILMS[film]
         # The three eighteen-second group films predate one-film-per-brick and
         # are being retired; they are not re-cut, so they are not re-checked.
         if spec["duration"] < 30:
             continue
+        if lang != "en":
+            spec = films_fr.translate(spec)
         for i, scene in enumerate(spec["scenes"]):
             for text, place, where in _lines_of(scene):
                 tail = _widow(text, place)
                 if tail is not None:
-                    found.append(f"{film} scene {i} {where}: ...{tail!r} alone\n"
-                                 f"    {text!r}")
+                    found.append(f"{film}.{lang} scene {i} {where}: "
+                                 f"...{tail!r} alone\n    {text!r}")
     assert not found, (
         f"{len(found)} line(s) wrap and leave the last word alone:\n"
         + "\n".join(found)

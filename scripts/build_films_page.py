@@ -230,11 +230,20 @@ COPY: dict[str, dict[str, Any]] = {
              "are drawn on a real projection, the form was generated from the "
              "command that is installed, and the colour vision simulations came "
              "out of <code class=\"font-mono text-sm\">sprezzature-colors</code>.",
+        captions_label="English",
         shows_label="What it shows",
         note_h="About these films",
         note=[
-            "They are narrated in English. Subtitles are available in English and "
-            "in French: pick them in the player's caption menu.",
+            "Each film exists twice, and the two do not mix: an English film "
+            "is English throughout — on screen, in the voice, in the "
+            "subtitles — and a French film is French throughout. This page "
+            "serves the English cut; the French one is a click away.",
+            "The voices come from the suite itself: "
+            "<code class=\"font-mono text-sm\">sprezzature-audio</code> "
+            "through Kokoro, with a pronunciation lexicon so that WebVTT, "
+            "RTTM, OKLCH and GMTED2010 are said the same way in every film "
+            "and in both languages. The same call writes the subtitles, off "
+            "the same timeline as the audio.",
             "Each one also exists vertical (1080&times;1920) and square "
             "(1080&times;1080). The versions here are the 1920&times;1080 cut.",
             "They were built with the same discipline they describe. Every "
@@ -267,11 +276,21 @@ COPY: dict[str, dict[str, Any]] = {
              "commande réellement installée, et les simulations de vision des "
              "couleurs sortent de <code class=\"font-mono text-sm\">"
              "sprezzature-colors</code>.",
+        captions_label="Français",
         shows_label="Ce qu'on y voit",
         note_h="À propos de ces films",
         note=[
-            "Ils sont racontés en anglais. Les sous-titres existent en anglais et "
-            "en français : choisissez-les dans le menu des sous-titres du lecteur.",
+            "Chaque film existe deux fois, et les deux ne se mélangent pas : "
+            "un film anglais est anglais de bout en bout — à l'écran, dans "
+            "la voix, dans les sous-titres — et un film français est français "
+            "de bout en bout. Cette page sert la version française ; "
+            "l'anglaise est à un clic.",
+            "Les voix viennent de la suite elle-même : "
+            "<code class=\"font-mono text-sm\">sprezzature-audio</code> via "
+            "Kokoro, avec un lexique de prononciation pour que WebVTT, RTTM, "
+            "OKLCH et GMTED2010 se disent pareil dans tous les films et dans "
+            "les deux langues. Le même appel écrit les sous-titres, sur la "
+            "même timeline que l'audio.",
             "Chacun existe aussi en vertical (1080&times;1920) et en carré "
             "(1080&times;1080). Les versions ici sont le montage 1920&times;1080.",
             "Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque "
@@ -300,15 +319,28 @@ def grab(path: pathlib.Path, tag: str) -> str:
 
 
 def player(film: dict[str, Any], c: dict[str, Any]) -> str:
-    v, s = c["vdir"], film["slug"]
+    """The player for this page's cut of one film.
+
+    Each film exists twice since 2026-10-26, and the two do not mix. A French
+    film is French throughout: French on screen, French voice, French
+    subtitles. An English film is English throughout. One language per film,
+    end to end.
+
+    That rule is why there is one ``<track>`` here and not two. Offering both
+    looked generous — watch the French cut, read along in English — and it is
+    the wrong offer: the subtitles would then be a translation of the voice
+    rather than a transcript of it, disagreeing with every word on screen.
+    A caption track that does not say what the film says is worse than no
+    caption track, because a reader has no way to tell which one is wrong.
+    """
+    v, s, lang = c["vdir"], film["slug"], c["lang"]
     return f'''<video controls preload="none" width="1920" height="1080"
-            poster="{v}/{s}.jpg"
+            poster="{v}/{s}.{lang}.jpg"
             class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-            <source src="{v}/{s}.mp4" type="video/mp4">
-            <track kind="captions" src="{v}/{s}.en.vtt" srclang="en" label="English"{' default' if c['lang'] == 'en' else ''}>
-            <track kind="captions" src="{v}/{s}.fr.vtt" srclang="fr" label="Français"{' default' if c['lang'] == 'fr' else ''}>
+            <source src="{v}/{s}.{lang}.mp4" type="video/mp4">
+            <track kind="captions" src="{v}/{s}.{lang}.vtt" srclang="{lang}" label="{c['captions_label']}" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">{c["fallback"]}
-              <a class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="{v}/{s}.mp4">{c["download"]}</a>.</p>
+              <a class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="{v}/{s}.{lang}.mp4">{c["download"]}</a>.</p>
           </video>'''
 
 
@@ -365,14 +397,14 @@ def render(lang: str) -> str:
   <meta property="og:title" content="{c['title']}">
   <meta property="og:description" content="{c['desc']}">
   <meta property="og:url" content="{base}films.html">
-  <meta property="og:image" content="https://sprezzature.ai/video/sprezzature.jpg">
+  <meta property="og:image" content="https://sprezzature.ai/video/sprezzature.{c['lang']}.jpg">
   <meta property="og:image:alt" content="{c['og_image_alt']}">
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:locale" content="{c['og_locale']}">
   <meta property="og:locale:alternate" content="{c['og_locale_alt']}">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
-  <meta property="og:video" content="https://sprezzature.ai/video/sprezzature.mp4">
+  <meta property="og:video" content="https://sprezzature.ai/video/sprezzature.{c['lang']}.mp4">
   <meta property="og:video:type" content="video/mp4">
   <meta property="og:video:width" content="1920">
   <meta property="og:video:height" content="1080">
