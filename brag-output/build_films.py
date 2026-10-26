@@ -72,38 +72,46 @@ FILMS = {
     # ---------------------------------------------------------------- global
     "sprezzature": dict(
         duration=25.0,
-        vo=[("global-1", 0.90), ("global-2", 4.60), ("global-3", 12.10),
-            ("global-4", 18.30), ("global-5", 22.20)],
-        sfx=[("drop", 4.10), ("wipe", 7.09), ("tile", 16.93), ("bell", 22.10)],
+        vo=[("global-1", 0.90), ("global-2", 4.60), ("global-3", 10.40),
+            ("global-4", 16.80), ("global-5", 22.20)],
+        sfx=[("drop", 4.10), ("wipe", 12.55), ("tile", 16.93), ("bell", 22.10)],
+        # The arc, rewritten 2026-10-26. It used to open on "you can't proofread
+        # a chart" and spend a scene naming the nine skills -- a catalogue, and
+        # the least interesting thing about the suite. What every brick has in
+        # common is design know-how: rules somebody already wrote down, turned
+        # into something that runs. The film now says that, and builds to the
+        # outro line it always had -- "Make it. Audit it. Then look at it." --
+        # which was the thesis before the film was.
         scenes=[
             dict(type="claim", start=0.0, dur=4.8, end=4.0,
-                 line="You can’t proofread a chart."),
-            dict(type="loop", start=4.0, dur=8.5, end=11.8,
-                 eyebrow="The Ralph Eyeball Loop", steps=LOOP_STEPS,
+                 line="Design is know-how. Most of it is already written down."),
+            # The know-how, named. Every chip is a source somebody can go and
+            # read, which is the point: cited, not invented here.
+            dict(type="chips", start=4.0, dur=6.3, end=9.9,
+                 eyebrow="Written down, by somebody else",
+                 items=["30 Laws of UX", "WCAG contrast", "Machado 2009",
+                        "Gestalt", "Equal Earth", "W3C WebVTT", "Schema.org",
+                        "OKLCH"],
+                 at=[4.39, 4.91, 5.34, 6.00, 6.56, 7.09, 7.64, 8.19],
+                 caption="Yablonski, the W3C, a 2009 IEEE paper, a 2018 "
+                         "projection — read, then written into the tools"),
+            # The other half, and the one a reference cannot supply: a model
+            # that looks at the result. Kept from the old cut because it is the
+            # strongest thing in the film and it now has a reason to be here.
+            dict(type="loop", start=9.7, dur=7.2, end=16.5,
+                 eyebrow="The part no reference can do", steps=LOOP_STEPS,
                  fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
-                 ratio=745 / 505, step_at=[5.34, 5.84, 6.34, 6.84],
-                 wipe_at=7.09, wipe_dur=1.06, caption_at=8.40,
+                 ratio=745 / 505, step_at=[10.37, 10.93, 11.46, 12.02],
+                 wipe_at=12.55, wipe_dur=1.06, caption_at=14.20,
                  caption="If the story survives grey, it survives everyone."),
-            dict(type="chips", start=11.6, dur=6.9, end=17.9,
-                 eyebrow="Nine skills · one loop",
-                 items=["ui", "cli-gui", "publish", "accessibility", "colors",
-                        "audio", "ux-laws", "figures", "maps"],
-                 # Nine beats, not ten: `vision` was folded into `accessibility`
-                 # on 2026-10-17. The beat it used to take (14.73) is dropped
-                 # rather than the last one, so the closing chip still lands on
-                 # 16.93 where the `tile` cue is -- shortening the scene instead
-                 # would leave that cue firing on nothing.
-                 at=[12.02, 12.55, 13.11, 13.64, 14.20, 15.29, 15.84,
-                     16.38, 16.93],
-                 caption="one implementation, five ways in: CLI · library · "
-                         "HTTP API · MCP · skill"),
-            dict(type="panel", start=17.7, dur=5.0, end=22.1,
-                 eyebrow="The model has to pass too",
-                 rows=[("Ralph Loop", "a known flaw seeded into a text"),
-                       ("Ralph Eyeball Loop", "a known defect seeded into an image")],
-                 at=[18.02, 18.56],
-                 caption="10 packages on PyPI · 2030 tests · nothing has to leave "
-                         "the machine"),
+            # The payoff: one body of know-how, pointed both ways.
+            dict(type="panel", start=16.3, dur=5.8, end=22.1,
+                 eyebrow="The same rules, both directions",
+                 rows=[("Make", "a page, a figure, a map, a caption"),
+                       ("Audit", "the same rules, against what you made")],
+                 at=[16.93, 17.47],
+                 caption="167 chart kinds · 20 a11y rules · 30 laws of UX · "
+                         "nothing has to leave the machine"),
             dict(type="outro", start=21.9, dur=3.1, end=25.0, logo="logo-512.png",
                  mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
         ],

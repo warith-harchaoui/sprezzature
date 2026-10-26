@@ -17,15 +17,15 @@ import sys
 # start, duration, text. Durations are the measured lengths of _assets/vo-*.wav.
 FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     "sprezzature": {
-        "en": [(0.90, 3.093, "A sentence, you can read back. A picture, you cannot."),
-               (4.60, 3.499, "So Sprezzature renders what it drew, then actually looks at it."),
-               (12.10, 2.325, "Nine skills, one loop, five ways in."),
-               (18.30, 2.261, "It even auditions the model it hires."),
+        "en": [(0.90, 3.328, "Design is know-how. Most of it is already written down."),
+               (4.60, 4.245, "Thirty laws of UX. Contrast ratios. Cited, not guessed."),
+               (10.40, 3.733, "Then a model does what no reference can. It looks at what you made."),
+               (16.80, 2.283, "The same rules that build the thing audit it."),
                (22.20, 2.731, "Sprezzature. Make it, audit it, then look at it.")],
-        "fr": [(0.90, 3.093, "Une phrase, on peut la relire. Une image, non."),
-               (4.60, 3.499, "Alors Sprezzature dessine, puis regarde vraiment le résultat."),
-               (12.10, 2.325, "Neuf skills, une seule boucle, cinq portes d'entrée."),
-               (18.30, 2.261, "Il fait même passer une audition au modèle qu'il emploie."),
+        "fr": [(0.90, 3.328, "Le design est un savoir-faire. L'essentiel est déjà écrit."),
+               (4.60, 4.245, "Trente lois d'UX. Des rapports de contraste. Cités, pas devinés."),
+               (10.40, 3.733, "Puis un modèle fait ce qu'aucune référence ne peut : il regarde ce que vous avez fait."),
+               (16.80, 2.283, "Les mêmes règles qui fabriquent la chose l'auditent."),
                (22.20, 2.731, "Sprezzature. Fabriquer, auditer, puis regarder.")],
     },
     "figures-et-cartes": {
@@ -57,7 +57,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
 LINE_LIMIT = 58
 # Punctuation keeps its place on the left of a break; a connector word moves to
 # the right, so neither half of a split caption reads as a fragment.
-AFTER = (". ", ", ", " ; ")
+AFTER = (". ", ", ", " ; ", " : ", ": ", " — ")
 BEFORE = (" and ", " et ", " puis ", " then ", " so ", " alors ")
 
 
