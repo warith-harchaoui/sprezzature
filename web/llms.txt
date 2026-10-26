@@ -32,7 +32,7 @@
 
 ## Films
 
-- [Four short films — Sprezzature](https://sprezzature.ai/films.html): Four short films about Sprezzature: one on the suite, three on what it is made of. Every figure, form and simulation in them is real output from the tools themselves.
+- [Eleven short films — Sprezzature](https://sprezzature.ai/films.html): Eleven short films about Sprezzature: one on the suite, and one for each of its ten packages. Every figure, map, form and simulation in them is real output from the tools themselves.
 
 ## French (Français)
 

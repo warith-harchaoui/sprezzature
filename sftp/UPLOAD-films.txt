@@ -1,21 +1,28 @@
-# Files the films deploy touches, relative to web/, as of 2026-10-24.
+# Files the films deploy touches, relative to web/, as of 2026-10-26.
 #
 # web/video/ is not in git (see .gitignore), so a clone does not carry these
 # and `git status` will never remind anyone they are pending. This list is the
-# reminder. The three files of a film travel together: drop one .vtt and the
+# reminder. The four files of a film travel together: drop one .vtt and the
 # player loses its captions silently, and the page stops passing the project's
 # own accessibility lint.
 #
 # The host needs a video/ directory; fr/ already exists.
 # Once uploaded, two checks say whether it landed:
 #     curl -sI https://sprezzature.ai/video/sprezzature.mp4 | head -1   -> 200
-#     curl -s https://sprezzature.ai/films.html | grep -c '<track'      -> 8
+#     curl -s https://sprezzature.ai/films.html | grep -c '<track'      -> 22
 #
-# Four films, not five: `moteur-local` left the presentation on 2026-10-13
-# with best-engine, and its four files were removed from web/video on
-# 2026-10-24. They are still ON THE SERVER and only a delete there removes
-# them -- an upload cannot. Archived copies, which are the only ones left:
+# ELEVEN films, not four. One per brick plus the suite, re-cut at sixty
+# seconds on 2026-10-26. The three group films they replace --
+# figures-et-cartes, accessibilite, interface -- are STILL ON THE SERVER and
+# only a delete there removes them; an upload cannot. Archived copies:
+#     brag-output/_retired/group-films/
+#
+# `moteur-local` left the presentation on 2026-10-13 with best-engine, and is
+# in the same position: still on the server, archived in
 #     brag-output/_retired/moteur-local/
+#
+# Roughly 133 MB of MP4 in total, which is the whole reason this list exists
+# separately from the HTML: the pages are small and the films are not.
 
 accessibility.html
 audio.html
@@ -55,20 +62,48 @@ ralph-eyeball-loop.html
 sitemap.xml
 ui.html
 ux-laws.html
-video/accessibilite.en.vtt
-video/accessibilite.fr.vtt
-video/accessibilite.jpg
-video/accessibilite.mp4
-video/figures-et-cartes.en.vtt
-video/figures-et-cartes.fr.vtt
-video/figures-et-cartes.jpg
-video/figures-et-cartes.mp4
-video/interface.en.vtt
-video/interface.fr.vtt
-video/interface.jpg
-video/interface.mp4
+vision.html
+video/accessibility.en.vtt
+video/accessibility.fr.vtt
+video/accessibility.jpg
+video/accessibility.mp4
+video/audio.en.vtt
+video/audio.fr.vtt
+video/audio.jpg
+video/audio.mp4
+video/cli-gui.en.vtt
+video/cli-gui.fr.vtt
+video/cli-gui.jpg
+video/cli-gui.mp4
+video/colors.en.vtt
+video/colors.fr.vtt
+video/colors.jpg
+video/colors.mp4
+video/figures.en.vtt
+video/figures.fr.vtt
+video/figures.jpg
+video/figures.mp4
+video/maps.en.vtt
+video/maps.fr.vtt
+video/maps.jpg
+video/maps.mp4
+video/publish.en.vtt
+video/publish.fr.vtt
+video/publish.jpg
+video/publish.mp4
 video/sprezzature.en.vtt
 video/sprezzature.fr.vtt
 video/sprezzature.jpg
 video/sprezzature.mp4
-vision.html
+video/ui.en.vtt
+video/ui.fr.vtt
+video/ui.jpg
+video/ui.mp4
+video/ux-laws.en.vtt
+video/ux-laws.fr.vtt
+video/ux-laws.jpg
+video/ux-laws.mp4
+video/video.en.vtt
+video/video.fr.vtt
+video/video.jpg
+video/video.mp4

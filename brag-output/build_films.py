@@ -68,6 +68,21 @@ BEATS = [0.549, 1.106, 1.637, 2.181, 2.736, 3.288, 3.819, 4.368,
 OUTRO_LINE = "Make it. Audit it. Then look at it."
 
 
+def on_beat(*targets: float) -> list[float]:
+    """Snap each target to the nearest beat.
+
+    The four films written before the grid reached a minute carry their reveal
+    times as literals, hand-picked off the 42-beat grid. At eight scenes a film
+    that stops being honest work: a literal is only on the beat until somebody
+    nudges a scene by a tenth of a second, and nothing says it has drifted. So
+    the later specs name the moment they want and let the grid decide, which is
+    also how a reader checks them -- `on_beat(42.5)` is readable, `42.549` is
+    a number you have to go and look up.
+    """
+    return [min(BEATS, key=lambda b: abs(b - t)) for t in targets]
+
+
+
 # ---------------------------------------------------------------------------
 # Film specs. `at` values are global seconds and identical across formats.
 # ---------------------------------------------------------------------------
@@ -90,48 +105,69 @@ LOOP_STEPS = [("01", "render"), ("02", "look"), ("03", "fix the source"), ("04",
 FILMS = {
     # ---------------------------------------------------------------- global
     "sprezzature": dict(
-        duration=25.0,
-        vo=[("global-1", 0.90), ("global-2", 4.60), ("global-3", 10.40),
-            ("global-4", 16.80), ("global-5", 22.20)],
-        sfx=[("drop", 4.10), ("wipe", 12.55), ("tile", 16.93), ("bell", 22.10)],
-        # The arc, rewritten 2026-10-26. It used to open on "you can't proofread
-        # a chart" and spend a scene naming the nine skills -- a catalogue, and
-        # the least interesting thing about the suite. What every brick has in
-        # common is design know-how: rules somebody already wrote down, turned
-        # into something that runs. The film now says that, and builds to the
-        # outro line it always had -- "Make it. Audit it. Then look at it." --
-        # which was the thesis before the film was.
+        duration=60.0,
+        # The arc, rewritten 2026-10-26 and then grown to a minute. It used to
+        # open on "you can't proofread a chart" and spend a scene naming the
+        # nine skills -- a catalogue, and the least interesting thing about the
+        # suite. What every brick has in common is design know-how: rules
+        # somebody already wrote down, turned into something that runs, and
+        # pointed both ways. The film says that, and builds to the outro line
+        # it always had, which was the thesis before the film was.
+        # global-3 sits at 15.80, not the 15.00 the other nine films use:
+        # global-2 names four sources with two years in it and the voice
+        # takes 8.8 s to say them, which is 0.27 s past 15.00. Shortening it
+        # would have cost a date, and the dates are the credibility.
+        vo=[("global-1", 1.10), ("global-2", 6.50), ("global-3", 15.80),
+            ("global-4", 24.00), ("global-5", 32.50), ("global-6", 41.00),
+            ("global-7", 49.50), ("global-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=4.8, end=4.0,
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
                  line="Design is know-how. Most of it is already written down."),
             # The know-how, named. Every chip is a source somebody can go and
             # read, which is the point: cited, not invented here.
-            dict(type="chips", start=4.0, dur=6.3, end=9.9,
+            dict(type="chips", start=5.4, dur=9.1, end=14.4,
                  eyebrow="Written down, by somebody else",
                  items=["30 Laws of UX", "WCAG contrast", "Machado 2009",
                         "Gestalt", "Equal Earth", "W3C WebVTT", "Schema.org",
                         "OKLCH"],
-                 at=[4.39, 4.91, 5.34, 6.00, 6.56, 7.09, 7.64, 8.19],
+                 at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3, 9.8, 10.4),
                  caption="Yablonski, the W3C, a 2009 IEEE paper, a 2018 "
-                         "projection — read, then written into the tools"),
-            # The other half, and the one a reference cannot supply: a model
-            # that looks at the result. Kept from the old cut because it is the
-            # strongest thing in the film and it now has a reason to be here.
-            dict(type="loop", start=9.7, dur=7.2, end=16.5,
-                 eyebrow="The part no reference can do", steps=LOOP_STEPS,
-                 fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
-                 ratio=745 / 505, step_at=[10.37, 10.93, 11.46, 12.02],
-                 wipe_at=12.55, wipe_dur=1.06, caption_at=14.20,
-                 caption="If the story survives grey, it survives everyone."),
-            # The payoff: one body of know-how, pointed both ways.
-            dict(type="panel", start=16.3, dur=5.8, end=22.1,
+                         "projection \u2014 read, then written into the tools."),
+            # What that know-how turns into, which is the answer to "so what".
+            dict(type="grid", start=14.3, dur=9.2, end=23.4,
+                 eyebrow="Turned into something that runs",
+                 images=["figures/sankey.svg", "maps/situation-western-europe.png",
+                         "figures/calendar-heatmap.svg", "figures/corr-matrix.svg"],
+                 at=on_beat(15.8, 16.4, 16.9, 17.5),
+                 caption="A flow, a map, a calendar, a matrix \u2014 and the "
+                         "rule each one was checked against."),
+            dict(type="panel", start=23.3, dur=9.2, end=32.4,
                  eyebrow="The same rules, both directions",
-                 rows=[("Make", "a page, a figure, a map, a caption"),
+                 rows=[("Make", "a page, a figure, a map, a palette"),
                        ("Audit", "the same rules, against what you made")],
-                 at=[16.93, 17.47],
-                 caption="167 chart kinds · 20 a11y rules · 30 laws of UX · "
-                         "nothing has to leave the machine"),
-            dict(type="outro", start=21.9, dur=3.1, end=25.0, logo="logo-512.png",
+                 at=on_beat(24.5, 25.6),
+                 caption="167 chart kinds \u00b7 20 accessibility rules \u00b7 "
+                         "30 laws of UX \u00b7 nothing has to leave the machine."),
+            # The other half, and the one no reference can supply: a model that
+            # looks at the result. Sixteen seconds, because it is the strongest
+            # thing in the film.
+            dict(type="loop", start=32.3, dur=16.7, end=49.0,
+                 eyebrow="No reference does this", steps=LOOP_STEPS,
+                 fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
+                 ratio=745 / 505, step_at=on_beat(33.3, 34.4, 35.5, 36.6),
+                 wipe_at=38.7, wipe_dur=1.09, caption_at=43.6,
+                 caption="Qwen3-VL through Ollama writes the alt text, drafts "
+                         "the captions, and critiques the figure. One model, offline."),
+            dict(type="panel", start=48.9, dur=6.7, end=55.5,
+                 eyebrow="What that adds up to",
+                 rows=[("Ten packages", "ui, cli-gui, publish, accessibility, colors, audio, ux-laws, figures, maps, video"),
+                       ("Five surfaces each", "library, CLI, HTTP API, MCP tools, skill")],
+                 at=on_beat(49.6, 50.7),
+                 caption="One implementation underneath \u2014 deduplication "
+                         "that changes a single pixel is rejected."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
                  mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
     ),
@@ -148,14 +184,14 @@ FILMS = {
                  line="Light grey on white reads fine. To you, indoors."),
             dict(type="panel", start=4.9, dur=6.6, end=11.4,
                  eyebrow="The same button, two readers",
-                 rows=[("Low vision", "the text and the background are too close to separate"),
-                       ("Bright sunlight", "a phone screen loses the difference entirely")],
+                 rows=[("Low vision", "the text and the background are too close"),
+                       ("Bright sunlight", "a phone screen loses the difference")],
                  at=[5.46, 6.00],
                  caption="It reads fine to whoever picked the colour. That is the problem."),
             dict(type="claim", start=11.3, dur=5.4, end=16.3,
                  line="About one man in twelve sees red and green as the same bar."),
             dict(type="cvd", start=16.2, dur=12.0, end=28.1,
-                 eyebrow="So the simulator renders those eyes",
+                 eyebrow="Rendered for those eyes",
                  base="figures/cvd/00-original.png",
                  stages=[("01", "protanopia", "figures/cvd/01-protanopia.png", 18.03),
                          ("02", "deuteranopia", "figures/cvd/02-deuteranopia.png", 20.21),
@@ -170,12 +206,12 @@ FILMS = {
                  # Reveals end ~2.5 s before the scene does. The first cut put the
                  # last chip on screen 0.3 s before the cut -- read by nobody.
                  at=[29.28, 30.37, 31.46, 32.56, 33.64, 34.73, 35.81, 36.91],
-                 caption="The thresholds are the standard's. The matrices are a "
-                         "measured paper's. The lightness axis is Ottosson's."),
+                 caption="The thresholds are the standard's, the matrices a "
+                         "paper's, the lightness axis Ottosson's."),
             dict(type="panel", start=39.3, dur=10.3, end=49.4,
                  eyebrow="The same know-how, both directions",
-                 rows=[("Audit", "every text-on-background pair, and a fix that stays close"),
-                       ("Make", "the approved palette, emitted as a Tailwind config")],
+                 rows=[("Audit", "every text-on-background pair, and a fix"),
+                       ("Make", "the approved palette, as a Tailwind config")],
                  at=[41.46, 42.55],
                  caption="One source for the colours, instead of each project "
                          "copying hex codes."),
@@ -183,6 +219,335 @@ FILMS = {
                  line="Pure standard library. No network. No model."),
             dict(type="outro", start=55.5, dur=4.5, end=60.0, logo="logo-512.png",
                  mark="Sprezzature · colors", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ---------------------------------------------------------------- figures
+    "figures": dict(
+        duration=60.0,
+        vo=[("fig-1", 1.10), ("fig-2", 6.50), ("fig-3", 15.00), ("fig-4", 24.00),
+            ("fig-5", 32.50), ("fig-6", 41.00), ("fig-7", 49.50), ("fig-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="One hundred and sixty-seven kinds of chart. Every one hand-authored."),
+            dict(type="grid", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="No charting library underneath",
+                 images=["figures/sankey.svg", "figures/alluvial.svg",
+                         "figures/chord.svg", "figures/calendar-heatmap.svg",
+                         "figures/bellcurve.svg", "figures/circle-packing.svg"],
+                 at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3),
+                 caption="Each generator writes the SVG markup itself, so the "
+                         "shapes are not a library's defaults."),
+            # The category list is the honest answer to "167 of what?" -- and
+            # the two nobody ships are the ones that make the number credible.
+            dict(type="chips", start=14.3, dur=9.2, end=23.4,
+                 eyebrow="Fifty-two categories",
+                 items=["Comparison", "Distribution", "Flow", "Geospatial",
+                        "Hierarchy", "Matrix", "Meteorology", "Model evaluation"],
+                 at=on_beat(15.8, 16.4, 16.9, 17.5, 18.0, 18.6, 19.1, 19.6),
+                 caption="Wind roses and wind barbs. ROC curves, calibration "
+                         "plots, confusion matrices, Kaplan\u2013Meier."),
+            dict(type="grid", start=23.3, dur=9.2, end=32.4,
+                 eyebrow="The deliverable is the vector",
+                 images=["figures/corr-matrix.svg", "figures/clustermap.svg",
+                         "figures/candlestick.svg", "figures/map-flow.svg"],
+                 at=on_beat(24.5, 25.1, 25.6, 26.2),
+                 caption="Explicit width, height and a matching viewBox \u2014 "
+                         "the text stays selectable at any zoom."),
+            dict(type="claim", start=32.3, dur=9.2, end=41.4,
+                 line="A PNG is an export, for places that cannot take vector art."),
+            # The loop gets fourteen seconds here, where in the suite film it
+            # gets seven: this is the package it was built for.
+            dict(type="loop", start=41.3, dur=14.2, end=55.5,
+                 eyebrow="No reference does this", steps=LOOP_STEPS,
+                 fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
+                 ratio=745 / 505, step_at=on_beat(42.5, 43.6, 44.7, 45.8),
+                 wipe_at=47.5, wipe_dur=1.09, caption_at=51.3,
+                 caption="A model reads the figure, names what is wrong, and "
+                         "the source is what gets fixed. Nothing leaves the machine."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 figures", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ---------------------------------------------------------------- publish
+    "publish": dict(
+        duration=60.0,
+        vo=[("pub-1", 1.10), ("pub-2", 6.50), ("pub-3", 15.00), ("pub-4", 24.00),
+            ("pub-5", 32.50), ("pub-6", 41.00), ("pub-7", 49.50), ("pub-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="A document, becoming a site."),
+            dict(type="chips", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="Nine tools, one document",
+                 items=["lint", "html", "icons", "indexes", "meta", "plain",
+                        "changelog", "narrate", "readalong"],
+                 at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3, 9.8, 10.4, 10.9),
+                 caption="The linter is standard library only, runs in "
+                         "milliseconds, and fixes what has exactly one fix."),
+            dict(type="panel", start=14.3, dur=9.2, end=23.4,
+                 eyebrow="What a page owes its readers",
+                 rows=[("indexes", "robots.txt, sitemap.xml, Atom, humans.txt \u2014 and llms.txt, llms-full.txt"),
+                       ("meta", "Open Graph, Twitter Card, Schema.org")],
+                 at=on_beat(16.4, 17.5),
+                 caption="One logo becomes the favicon, the app icons, the PWA "
+                         "icons, and the <head> that points at them."),
+            dict(type="panel", start=23.3, dur=9.2, end=32.4,
+                 eyebrow="And what it rewrites",
+                 rows=[("plain", "the same page at a target reading grade, keeping the terms you name"),
+                       ("changelog", "a CHANGELOG becomes dated posts")],
+                 at=on_beat(24.5, 25.6),
+                 caption="Simpler language is not the same as a vaguer one. "
+                         "The nouns you chose survive the rewrite."),
+            dict(type="claim", start=32.3, dur=9.2, end=41.4,
+                 line="Then readalong binds the narration to the page."),
+            dict(type="panel", start=41.3, dur=7.8, end=49.0,
+                 eyebrow="Two packages, one reading",
+                 rows=[("The voice", "lives in sprezzature-audio")
+                       , ("This package", "never imports a model")],
+                 at=on_beat(42.5, 43.6),
+                 caption="A boundary drawn on purpose: the heavy imports stay "
+                         "out of the tool you run on every commit."),
+            dict(type="claim", start=48.9, dur=6.7, end=55.5,
+                 line="The sentence being spoken is the sentence lit up."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 publish", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ------------------------------------------------------------------ audio
+    "audio": dict(
+        duration=60.0,
+        vo=[("aud-1", 1.10), ("aud-2", 6.50), ("aud-3", 15.00), ("aud-4", 24.00),
+            ("aud-5", 32.50), ("aud-6", 41.00), ("aud-7", 49.50), ("aud-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="One modality, read in both directions."),
+            dict(type="panel", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="The two directions",
+                 rows=[("Captions", "sound becomes timed text"),
+                       ("Narration", "text becomes timed sound")],
+                 at=on_beat(6.5, 7.6),
+                 caption="The package's own framing, and the reason both live "
+                         "in one place instead of two."),
+            dict(type="chips", start=14.3, dur=9.2, end=23.4,
+                 eyebrow="The models, named",
+                 items=["whisper.cpp", "large-v3-turbo", "NeMo Sortformer",
+                        "TitaNet", "RTTM", "WebVTT", "Kokoro", "af_heart"],
+                 at=on_beat(15.8, 16.4, 16.9, 17.5, 18.0, 18.6, 19.1, 19.6),
+                 caption="Who spoke when, up to four speakers, in the format "
+                         "speech research already reads."),
+            dict(type="panel", start=23.3, dur=9.2, end=32.4,
+                 eyebrow="Narration lands as two files",
+                 rows=[("The WAV", "the voice itself, loudness-normalised"),
+                       ("The WebVTT", "the same words, timed \u2014 like a transcript")],
+                 at=on_beat(24.5, 25.6),
+                 caption="Which is what lets a page follow the reading, "
+                         "sentence by sentence, without a second pass."),
+            dict(type="claim", start=32.3, dur=9.2, end=41.4,
+                 line="And it audits its own output."),
+            dict(type="panel", start=41.3, dur=7.8, end=49.0,
+                 eyebrow="What audit_captions measures",
+                 rows=[("Per cue", "reading speed, line width, duration"),
+                       ("Across cues", "overlaps, and gaps that read as a dropout")],
+                 at=on_beat(42.5, 43.6),
+                 caption="Measured against the rates a reader can actually "
+                         "keep up with, not against a guess."),
+            dict(type="claim", start=48.9, dur=6.7, end=55.5,
+                 line="A caption track can be present and still be unreadable."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 audio", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ---------------------------------------------------------------- cli-gui
+    "cli-gui": dict(
+        duration=60.0,
+        vo=[("cli-1", 1.10), ("cli-2", 6.50), ("cli-3", 15.00), ("cli-4", 24.00),
+            ("cli-5", 32.50), ("cli-6", 41.00), ("cli-7", 49.50), ("cli-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="A tool nobody will type, wrapped in a page."),
+            # Two real captures of the generated page. They are the whole argument
+            # -- a form somebody can hand to a colleague.
+            #
+            # Not the shots the `interface` film used: those come back through
+            # `figure_cli.py`, a reconstruction of an argparse front door that
+            # was written for a shoot in September and thrown away. It still
+            # renders, and it still says "127 chart kinds" -- a number the
+            # catalogue passed months ago, sitting on screen in a film about
+            # auditing claims. These two are captured from
+            # `sprezzature_figures.cli:main`, the command that is actually
+            # installed, so the number cannot go stale without the command
+            # going stale with it.
+            dict(type="grid", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="Generated, not written",
+                 images=["shots/make-figure-list.png", "shots/make-figure-render.png"],
+                 at=on_beat(6.5, 7.6),
+                 caption="Flags become fields. Choices become a dropdown. "
+                         "Required stays required."),
+            dict(type="claim", start=14.3, dur=9.2, end=23.4,
+                 line="It does not read the help text. It reads the parser object."),
+            dict(type="panel", start=23.3, dur=9.2, end=32.4,
+                 eyebrow="Three adapters, one schema",
+                 rows=[("argparse, Click, Typer", "introspected: fields, defaults, types"),
+                       ("schema.py", "what every adapter produces, normalised")],
+                 at=on_beat(24.5, 25.6),
+                 caption="So the renderer never has to know which framework "
+                         "the command line was written in."),
+            dict(type="claim", start=32.3, dur=9.2, end=41.4,
+                 line="And when no parser object is reachable, it parses --help."),
+            dict(type="panel", start=41.3, dur=7.8, end=49.0,
+                 eyebrow="Which is how the rest get a form",
+                 rows=[("A subprocess", "runs --help and reads what it printed"),
+                       ("A Go or Rust CLI", "covered, without a line of Python in it")],
+                 at=on_beat(42.5, 43.6),
+                 caption="Less exact than introspection, and named as such "
+                         "rather than presented as the same thing."),
+            dict(type="claim", start=48.9, dur=6.7, end=55.5,
+                 line="The page is the deliverable. The command stays the command."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 cli-gui", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # --------------------------------------------------------------------- ui
+    "ui": dict(
+        duration=60.0,
+        vo=[("ui-1", 1.10), ("ui-2", 6.50), ("ui-3", 15.00), ("ui-4", 24.00),
+            ("ui-5", 32.50), ("ui-6", 41.00), ("ui-7", 49.50), ("ui-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="The smallest brick, on purpose."),
+            dict(type="panel", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="Two halves of one judgement",
+                 rows=[("In prose", "the three-Roboto rule, the tokens, what an interface has to respect"),
+                       ("In code", "the part a machine can carry out")],
+                 at=on_beat(6.5, 7.6),
+                 caption="Most of it stays prose, because most of it is a "
+                         "decision rather than a check."),
+            dict(type="claim", start=14.3, dur=9.2, end=23.4,
+                 line="A hardcoded sentence costs nothing the day it is written."),
+            dict(type="claim", start=23.3, dur=9.2, end=32.4,
+                 line="It costs a week the day somebody needs a second language."),
+            dict(type="panel", start=32.3, dur=9.2, end=41.4,
+                 eyebrow="Where that week actually goes",
+                 rows=[("Scattered", "JavaScript literals, HTML attributes, prompt templates in Python"),
+                       ("Extracted", "one catalogue, and a page that switches")],
+                 at=on_beat(33.3, 34.4),
+                 caption="The mechanised half, and the only one worth "
+                         "mechanising: finding every sentence you forgot."),
+            dict(type="chips", start=41.3, dur=7.8, end=49.0,
+                 eyebrow="And what ships with it",
+                 items=["9 components", "9 snippets", "6 font files",
+                        "a starter page", "design tokens", "theme toggle"],
+                 at=on_beat(42.5, 43.1, 43.6, 44.2, 44.7, 45.3),
+                 caption="Roboto, Roboto Serif, Roboto Mono \u2014 vendored, so a "
+                         "page never waits on a font server."),
+            dict(type="claim", start=48.9, dur=6.7, end=55.5,
+                 line="Taste is written down once, then it is somebody else's too."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 ui", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ------------------------------------------------------------------ video
+    # The tenth brick, and the one that made the other nine films. Its subject
+    # is the films themselves, which is why it can afford to be plain: every
+    # scene is a sentence about the thing the viewer is currently watching.
+    "video": dict(
+        duration=60.0,
+        vo=[("vid-1", 1.10), ("vid-2", 6.50), ("vid-3", 15.00), ("vid-4", 24.00),
+            ("vid-5", 32.50), ("vid-6", 41.00), ("vid-7", 49.50), ("vid-8", 55.80)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
+             ("tile", 42.55), ("bell", 55.67)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="A film is a claim with a soundtrack."),
+            dict(type="panel", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="Two kinds of claim",
+                 rows=[("Declared", "a sentence, and the code behind it"),
+                       ("Undeclared", "a number on screen that nothing sourced")],
+                 at=on_beat(6.5, 7.6),
+                 caption="The second kind is the dangerous one, because "
+                         "nobody wrote it down to be checked."),
+            dict(type="claim", start=14.3, dur=9.2, end=23.4,
+                 line="167. 52. 30. 20. Every one of those is checkable."),
+            # The provenance classes, which is the part that saves files.
+            dict(type="panel", start=23.3, dur=9.2, end=32.4,
+                 eyebrow="And the assets are ledgered",
+                 rows=[("TRACKED", "in git, restorable from the repository"),
+                       ("DERIVED", "rebuilt by a script that is in git"),
+                       ("SOLE", "the only copy there is")],
+                 at=on_beat(24.5, 25.1, 25.6),
+                 caption="Three classes, because exactly one of them cannot "
+                         "be got back."),
+            dict(type="claim", start=32.3, dur=9.2, end=41.4,
+                 line="A sole copy is the one a cleanup deletes without noticing."),
+            dict(type="panel", start=41.3, dur=7.8, end=49.0,
+                 eyebrow="Captions are measured, not guessed",
+                 rows=[("The duration", "read off the voice file itself"),
+                       ("The split", "at a sentence end, never mid-clause")],
+                 at=on_beat(42.5, 43.6),
+                 caption="A line that overruns the next one is a caption "
+                         "track nobody can follow."),
+            dict(type="claim", start=48.9, dur=6.7, end=55.5,
+                 line="Then a poster frame, and a loudness pass."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 video", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ------------------------------------------------------------------- maps
+    "maps": dict(
+        duration=60.0,
+        vo=[("maps-1", 1.10), ("maps-2", 6.50), ("maps-3", 15.00),
+            ("maps-4", 24.00), ("maps-5", 33.00), ("maps-6", 42.00),
+            ("maps-7", 49.50), ("maps-8", 55.80)],
+        sfx=[("drop", 5.46), ("tile", 16.38), ("tile", 24.57), ("tile", 33.65),
+             ("tile", 42.55), ("bell", 55.63)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="A column of countries is a map waiting to happen."),
+            # Situation plates only: of the three kinds this package draws,
+            # these are the ones worth a minute of somebody's attention. Four
+            # reference plates, where the geography is the whole point.
+            dict(type="grid", start=5.4, dur=9.1, end=14.4,
+                 eyebrow="Real coastlines, a real projection",
+                 images=["maps/situation-himalaya.png", "maps/situation-iberia.png",
+                         "maps/situation-switzerland.png", "maps/situation-western-europe.png"],
+                 at=[6.55, 7.64, 8.74, 9.83],
+                 caption="Eight kilometres of relief, the Meseta, the lakes, "
+                         "and the physical base the rest is drawn on."),
+            dict(type="panel", start=14.3, dur=9.2, end=23.4,
+                 eyebrow="The projection is a decision, not a default",
+                 rows=[("Equal Earth", "areas stay honest, published 2018"),
+                       ("Lambert conformal conic", "centred on the region you asked for")],
+                 at=[16.38, 17.47],
+                 caption="Every recipe for flattening the Earth distorts "
+                         "something. This one says which."),
+            # And two areas-of-control plates, which is what the kind is for.
+            dict(type="grid", start=23.3, dur=9.2, end=32.4,
+                 eyebrow="Who controls what",
+                 images=["maps/situation-ukraine.png", "maps/situation-syria.png"],
+                 at=[24.57, 25.66],
+                 caption="Zones by category, flashpoints, a contact line, and "
+                         "a scale bar in two units at once."),
+            dict(type="claim", start=32.3, dur=9.2, end=41.4,
+                 line="The density map draws no coastline at all."),
+            dict(type="panel", start=41.3, dur=7.8, end=49.0,
+                 eyebrow="And it still reads as land",
+                 rows=[("The land", "appears because events fell on it"),
+                       ("The sea", "stays dark because none did")],
+                 at=[42.55, 43.64],
+                 caption="The reader recognises the shape without being shown it."),
+            dict(type="claim", start=48.9, dur=6.7, end=55.5,
+                 line="Natural Earth, GMTED2010, TIGER/Line \u2014 every source named."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 maps", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
     ),
     # --------------------------------------------------------------- figures
@@ -204,6 +569,100 @@ FILMS = {
                  at=[10.93, 11.46, 12.02, 12.55],
                  caption="choropleth · situation · density, on a real projection"),
             "Figures & Maps"),
+    ),
+    # ----------------------------------------------------------------- ux-laws
+    "ux-laws": dict(
+        duration=60.0,
+        vo=[("uxlaws-1", 1.10), ("uxlaws-2", 6.00), ("uxlaws-3", 13.00),
+            ("uxlaws-4", 20.50), ("uxlaws-5", 30.00), ("uxlaws-6", 38.50),
+            ("uxlaws-7", 46.00), ("uxlaws-8", 55.80)],
+        sfx=[("drop", 5.46), ("tile", 14.20), ("tile", 21.85), ("wipe", 31.46),
+             ("tile", 39.08), ("bell", 55.63)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=5.5, end=5.0,
+                 line="Nobody says \u201cthat violates Hick\u2019s Law\u201d."),
+            dict(type="panel", start=4.9, dur=7.6, end=12.4,
+                 eyebrow="What they say instead",
+                 rows=[("\u201cThis page is overwhelming\u201d", "too many choices at once"),
+                       ("\u201cI can never find the button\u201d", "no hit area, no focus ring")],
+                 at=[5.46, 6.55],
+                 caption="A usability finding in plain clothes. The job is to "
+                         "locate it, name it, and make it fixable."),
+            dict(type="chips", start=12.3, dur=7.9, end=20.1,
+                 eyebrow="Thirty laws, curated by Jon Yablonski",
+                 items=["Hick", "Miller", "Fitts", "Jakob", "Tesler",
+                        "Choice overload", "Selective attention", "Aesthetic-Usability"],
+                 at=[13.11, 13.64, 14.20, 14.73, 15.29, 15.84, 16.38, 16.93],
+                 caption="Eight of the thirty are decidable from the source. "
+                         "Those eight are the ones the auditor checks."),
+            dict(type="panel", start=20.0, dur=9.5, end=29.4,
+                 eyebrow="What the auditor actually catches",
+                 rows=[("Fitts", "a control with no 44-pixel hit area"),
+                       ("Miller", "an unchunked digit run past seven"),
+                       ("Aesthetic-Usability", "an interactive element with no focus ring")],
+                 at=[21.85, 22.93, 24.02],
+                 caption="Mechanical, source-decidable, and fast enough for a "
+                         "pre-commit hook."),
+            dict(type="claim", start=29.3, dur=8.2, end=37.4,
+                 line="It does not judge whether the screen answers the right question."),
+            dict(type="panel", start=37.3, dur=8.4, end=45.6,
+                 eyebrow="The honest boundary",
+                 rows=[("The gate", "eight laws, exit 1, every commit"),
+                       ("The human", "whether the flow makes sense at all")],
+                 at=[39.08, 40.17],
+                 caption="A fast gate, not a substitute for design review. "
+                         "The repo says so itself."),
+            dict(type="claim", start=45.5, dur=10.1, end=55.5,
+                 line="Thirty laws you can read. Eight a machine can hold you to."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 ux-laws", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ----------------------------------------------------------- accessibility
+    "accessibility": dict(
+        duration=60.0,
+        vo=[("a11y-1", 1.10), ("a11y-2", 6.50), ("a11y-3", 14.50),
+            ("a11y-4", 23.00), ("a11y-5", 32.00), ("a11y-6", 41.00),
+            ("a11y-7", 48.50), ("a11y-8", 55.80)],
+        sfx=[("drop", 5.46), ("tile", 15.29), ("tile", 23.47), ("tile", 32.56),
+             ("tile", 41.46), ("bell", 55.63)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line="An unmuted autoplay masks a screen reader."),
+            dict(type="panel", start=5.4, dur=8.6, end=13.9,
+                 eyebrow="Three the source can prove on its own",
+                 rows=[("media-autoplay-sound", "WCAG 1.4.2 \u2014 it talks over the reader"),
+                       ("video-missing-captions", "WCAG 1.2.2 \u2014 audio with no captions"),
+                       ("media-missing-controls", "WCAG 2.1.1 \u2014 no keyboard controls")],
+                 at=[6.55, 7.64, 8.74],
+                 caption="No browser. No DOM. Just the markup, read carefully."),
+            dict(type="chips", start=13.8, dur=8.6, end=22.3,
+                 eyebrow="Twenty rules",
+                 items=["img-missing-alt", "input-missing-label", "div-onclick",
+                        "tabindex-positive", "heading-skip", "dialog-missing-close",
+                        "color-only-state", "motion-no-reduce-guard"],
+                 at=[15.29, 15.84, 16.38, 16.93, 17.47, 18.03, 18.58, 19.12],
+                 caption="Each one names the element, the line, and the rule it broke."),
+            dict(type="panel", start=22.2, dur=9.2, end=31.3,
+                 eyebrow="Six of the twenty repair themselves",
+                 rows=[("--fix", "lang detection, redundant aria, tabindex"),
+                       ("and the rest", "reported, never guessed at")],
+                 at=[23.47, 24.57],
+                 caption="A fix is only automatic where there is exactly one "
+                         "safe repair."),
+            dict(type="claim", start=31.2, dur=9.3, end=40.4,
+                 line="And the same rule, pointed the other way, writes the CSS."),
+            dict(type="panel", start=40.3, dur=7.8, end=48.0,
+                 eyebrow="Audit, then make",
+                 rows=[("The rule", "body text with tracking too tight to read"),
+                       ("The counterpart", "CSS at the WCAG 1.4.12 minimums")],
+                 at=[41.46, 42.55],
+                 caption="Ship the fix as a reader-facing toggle, not just a warning."),
+            dict(type="claim", start=47.9, dur=7.7, end=55.5,
+                 line="Standard library only. Exit 1 on any finding."),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 accessibility", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
     ),
     # ---------------------------------------------------------- accessibility
     "accessibilite": dict(
@@ -444,9 +903,24 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
 
     if t == "grid":
         n = len(sc["images"])
-        cols = (4 if f["split"] else 2) if n == 4 else f["grid6"]
+        # A pair gets two columns and a bigger tile. It used to fall through to
+        # the six-image case, which lays out three columns and fills two: the
+        # pair sat a column's width left of centre, with the empty third
+        # column as a margin nobody asked for, and each plate was capped at
+        # the width that keeps six of them apart. On the two areas-of-control
+        # maps that cap is the difference between reading the place names and
+        # not.
+        # `tile_cap`, not `cap`: `cap` is already the caption's HTML, built at
+        # the top of this function, and the first version of this branch bound
+        # the integer over it -- so the two maps grew, and the sentence under
+        # them rendered as the word "760".
+        if n <= 2:
+            cols, tile_cap = n, 760
+        else:
+            cols = (4 if f["split"] else 2) if n == 4 else f["grid6"]
+            tile_cap = 560
         rows = -(-n // cols)
-        tw = min((f["w"] - 2 * f["pad"] - (cols - 1) * 22) // cols, 560)
+        tw = min((f["w"] - 2 * f["pad"] - (cols - 1) * 22) // cols, tile_cap)
         th = int(tw * 0.75)
         # Reserve the eyebrow, the rule and a two-line caption, then let the
         # remaining height cap the tile. Without this the caption slides under
@@ -776,13 +1250,51 @@ def emit(film_key: str, spec: dict, fmt_key: str) -> pathlib.Path:
     return d
 
 
+# What a project directory holds besides `renders/`. Listed rather than
+# inferred so that a new generated file has to be added here on purpose.
+GENERATED = ("index.html", "package.json", "hyperframes.json", "assets")
+
+
+def clean(keep: set[pathlib.Path]) -> None:
+    """Clear the generated half of every project, and drop stale projects.
+
+    `main` used to `rmtree(FILMS_DIR)`, which also deleted every `renders/`
+    directory under it. That is thirty-seven seconds of GPU per film per
+    format thrown away for a one-line change to a caption -- and the cost does
+    not announce itself: the emit prints "42 projects" exactly as before, and
+    the loss only shows up later, as an ffmpeg error on a file that was there
+    an hour ago. A render is an expensive output of a cheap input, so it
+    outlives the input.
+    """
+    if not FILMS_DIR.exists():
+        return
+    for d in sorted(FILMS_DIR.iterdir()):
+        if not d.is_dir():
+            continue
+        if d not in keep:
+            shutil.rmtree(d)          # a film or format that no longer exists
+            continue
+        for name in GENERATED:
+            target = d / name
+            # The assets entry is a symlink; `is_dir` follows it and would
+            # send rmtree into the shared _assets tree. Check the link first.
+            if target.is_symlink() or target.is_file():
+                target.unlink()
+            elif target.is_dir():
+                shutil.rmtree(target)
+        comps = d / "compositions"
+        if comps.is_dir():
+            shutil.rmtree(comps)
+
+
 def main() -> None:
-    if FILMS_DIR.exists():
-        shutil.rmtree(FILMS_DIR)
+    wanted = {FILMS_DIR / f"{k}-{fmt}" for k in FILMS for fmt in FORMATS}
+    clean(wanted)
     built = [emit(k, s, fmt) for k, s in FILMS.items() for fmt in FORMATS]
     for p in built:
         print(p.relative_to(ROOT))
-    print(f"{len(built)} projects")
+    kept = sum(1 for d in FILMS_DIR.iterdir() if (d / "renders").is_dir())
+    print(f"{len(built)} projects ({kept} with renders kept)")
 
 
 if __name__ == "__main__":
