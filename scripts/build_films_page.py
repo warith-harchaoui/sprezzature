@@ -16,74 +16,203 @@ from typing import Any
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "web"
 
 FILMS: list[dict[str, str | int]] = [
-    dict(slug="sprezzature", secs=25,
+    # One film per brick, plus the suite. Re-cut at sixty seconds on
+    # 2026-10-26, replacing the four films of the first set -- a suite film and
+    # three that grouped bricks by theme. Grouping was the wrong axis: the
+    # `interface` film had to speak for ui, cli-gui, publish and ux-laws in
+    # eighteen seconds, so it said something general about all four and nothing
+    # particular about any. A brick gets a minute of its own, or it gets a
+    # sentence in somebody else's film.
+    dict(slug="sprezzature", secs=60,
          en_title="Sprezzature", fr_title="Sprezzature",
          en_kicker="the whole suite", fr_kicker="la suite entière",
-         en_body="A sentence can be proofread by reading it back. A chart cannot. "
-                 "So the suite renders the figure, looks at it, looks again with "
-                 "the colour taken away, and only then ships. The same discipline "
-                 "runs one level up: before it trusts a local model, it seeds a "
-                 "known flaw into a text and a known defect into an image, and "
-                 "hires only the model that catches both.",
-         fr_body="Une phrase se relit. Un graphique, non. La suite dessine donc la "
-                 "figure, la regarde, la regarde encore une fois la couleur "
-                 "retirée, et ne livre qu'ensuite. La même discipline vaut un "
-                 "étage plus haut : avant de faire confiance à un modèle local, "
-                 "elle sème un défaut connu dans un texte et un défaut visuel "
-                 "connu dans une image, et n'engage que le modèle qui attrape "
-                 "les deux.",
-         en_shows="the shipped <code class=\"font-mono text-sm\">bar-grouped.svg</code>, "
-                  "the nine skills, and the two gates the model has to pass",
-         fr_shows="le fichier livré <code class=\"font-mono text-sm\">bar-grouped.svg</code>, "
-                  "les neuf skills, et les deux portes que le modèle doit franchir"),
-    dict(slug="figures-et-cartes", secs=18,
-         en_title="Figures &amp; maps", fr_title="Figures et cartes",
-         en_kicker="sprezzature-figures · sprezzature-maps",
-         fr_kicker="sprezzature-figures · sprezzature-maps",
-         en_body="167 chart kinds and three map generators, every line written as "
-                 "SVG directly. No plotting library sits underneath any of it, "
-                 "and the SVG is the deliverable rather than an export.",
-         fr_body="167 types de graphiques et trois générateurs de cartes, chaque "
-                 "trait écrit directement en SVG. Aucune bibliothèque de tracé ne "
-                 "se trouve dessous, et le SVG est le livrable plutôt qu'un export.",
-         en_shows="six real figures from the gallery, then four real maps on a "
-                  "genuine geographic projection",
-         fr_shows="six vraies figures de la galerie, puis quatre vraies cartes sur "
-                  "une vraie projection géographique"),
-    dict(slug="accessibilite", secs=21,
+         en_body="Design is know-how, and most of it is already written down: "
+                 "thirty laws of UX, contrast ratios, a 2009 paper on colour "
+                 "vision, a projection from 2018. The suite is what happens when "
+                 "you point that know-how both ways — at making a thing, and at "
+                 "auditing it.",
+         fr_body="Le design est un savoir-faire, et l'essentiel est déjà écrit : "
+                 "trente lois d'UX, des rapports de contraste, un article de 2009 "
+                 "sur la vision des couleurs, une projection de 2018. La suite, "
+                 "c'est ce savoir-faire retourné dans les deux sens : pour "
+                 "fabriquer une chose, et pour l'auditer.",
+         en_shows="eight sources named, four real outputs, the Ralph Eyeball Loop "
+                  "running on a shipped figure, and what ten packages add up to",
+         fr_shows="huit sources nommées, quatre sorties réelles, la boucle Ralph "
+                  "sur une figure livrée, et ce que font dix paquets mis bout à bout"),
+    dict(slug="ui", secs=60,
+         en_title="UI", fr_title="UI",
+         en_kicker="sprezzature-ui", fr_kicker="sprezzature-ui",
+         en_body="The smallest brick, on purpose. Its job is the aesthetic "
+                 "judgement written in prose — the three-Roboto rule, the design "
+                 "tokens, what an interface has to respect — plus the one part of "
+                 "that judgement a machine can carry out.",
+         fr_body="La plus petite brique, exprès. Son travail, c'est le jugement "
+                 "esthétique écrit en prose — la règle des trois Roboto, les "
+                 "jetons de design, ce qu'une interface doit respecter — plus la "
+                 "seule part de ce jugement qu'une machine peut exécuter.",
+         en_shows="the best cost sentence in the suite, in two halves, and what "
+                  "the package ships: nine components, nine snippets, six font files",
+         fr_shows="la meilleure phrase sur le coût de toute la suite, en deux "
+                  "moitiés, et ce que le paquet livre : neuf composants, neuf "
+                  "extraits, six fichiers de fonte"),
+    dict(slug="cli-gui", secs=60,
+         en_title="CLI &rarr; GUI", fr_title="CLI &rarr; GUI",
+         en_kicker="sprezzature-cli-gui", fr_kicker="sprezzature-cli-gui",
+         en_body="A tool nobody will type, wrapped in a page. It does not read "
+                 "the help text — it reads the parser object, through argparse, "
+                 "Click or Typer, and falls back to running "
+                 "<code class=\"font-mono text-sm\">--help</code> only when there "
+                 "is no parser to reach.",
+         fr_body="Un outil que personne ne tapera, enveloppé dans une page. Il ne "
+                 "lit pas le texte d'aide : il lit l'objet analyseur, via "
+                 "argparse, Click ou Typer, et ne se rabat sur "
+                 "<code class=\"font-mono text-sm\">--help</code> que faute "
+                 "d'analyseur joignable.",
+         en_shows="two captures of the page it generates for "
+                  "<code class=\"font-mono text-sm\">make-figure</code>, taken "
+                  "from the command that is installed rather than from a mock-up",
+         fr_shows="deux captures de la page qu'il génère pour "
+                  "<code class=\"font-mono text-sm\">make-figure</code>, prises "
+                  "depuis la commande réellement installée, pas d'une maquette"),
+    dict(slug="publish", secs=60,
+         en_title="Publish", fr_title="Publier",
+         en_kicker="sprezzature-publish", fr_kicker="sprezzature-publish",
+         en_body="A document, becoming a site. Nine tools: a linter that runs on "
+                 "the standard library in milliseconds, favicons from one logo, "
+                 "the indexes a crawler and a language model both want, and "
+                 "readalong, which binds the narration to the page.",
+         fr_body="Un document, qui devient un site. Neuf outils : un linter qui "
+                 "tourne sur la bibliothèque standard en millisecondes, des "
+                 "favicons depuis un seul logo, les index qu'attendent un robot "
+                 "comme un modèle de langue, et readalong, qui lie la narration à "
+                 "la page.",
+         en_shows="all nine named, then the boundary the package keeps — the "
+                  "voices live in sprezzature-audio and are called as a subprocess",
+         fr_shows="les neuf nommés, puis la frontière que le paquet tient : les "
+                  "voix vivent dans sprezzature-audio et sont appelées en "
+                  "sous-processus"),
+    dict(slug="accessibility", secs=60,
          en_title="Accessibility", fr_title="Accessibilité",
-         en_kicker="accessibility · colors · audio",
-         fr_kicker="accessibility · colors · audio",
-         en_body="A person with ordinary colour vision cannot see their own chart "
-                 "the way a colour blind reader does, and no amount of care "
-                 "changes that, because the information is not in their eye. The "
-                 "simulator renders those other viewpoints so the loop can look "
-                 "through them.",
-         fr_body="Une personne qui voit normalement les couleurs ne peut pas voir "
-                 "son propre graphique comme le voit un lecteur daltonien, et "
-                 "aucun soin n'y change rien, parce que l'information n'est pas "
-                 "dans son oeil. Le simulateur dessine ces points de vue pour que "
-                 "la boucle puisse regarder à travers.",
+         en_kicker="sprezzature-accessibility", fr_kicker="sprezzature-accessibility",
+         en_body="An unmuted autoplay masks a screen reader, and the markup says "
+                 "so on its own. Twenty rules from WCAG, each naming the element, "
+                 "the line and the rule it broke; six of them repair themselves, "
+                 "where there is exactly one safe repair.",
+         fr_body="Une lecture automatique non muette couvre un lecteur d'écran, "
+                 "et le balisage le dit tout seul. Vingt règles issues des WCAG, "
+                 "chacune nommant l'élément, la ligne et la règle enfreinte ; six "
+                 "se réparent seules, là où il n'existe qu'une correction sûre.",
+         en_shows="three findings the source alone can prove, what "
+                  "<code class=\"font-mono text-sm\">--fix</code> is allowed to "
+                  "touch, and the same rule pointed the other way, writing the CSS",
+         fr_shows="trois constats que la source seule peut prouver, ce que "
+                  "<code class=\"font-mono text-sm\">--fix</code> a le droit de "
+                  "toucher, et la même règle retournée, qui écrit le CSS"),
+    dict(slug="colors", secs=60,
+         en_title="Colors", fr_title="Couleurs",
+         en_kicker="sprezzature-colors", fr_kicker="sprezzature-colors",
+         en_body="Light grey on white reads fine — to you, indoors. About one man "
+                 "in twelve sees red and green as the same bar, and no amount of "
+                 "care changes that, because the information is not in their eye.",
+         fr_body="Du gris clair sur blanc se lit très bien — pour vous, à "
+                 "l'intérieur. Environ un homme sur douze voit le rouge et le "
+                 "vert comme une seule barre, et aucun soin n'y change rien : "
+                 "l'information n'est pas dans son œil.",
          en_shows="all four simulations in turn, produced by the project's own "
-                  "<code class=\"font-mono text-sm\">simulate_cvd.py</code>: protanopia, "
-                  "deuteranopia, tritanopia, grayscale",
+                  "<code class=\"font-mono text-sm\">simulate_cvd.py</code> from "
+                  "the Machado matrices: protanopia, deuteranopia, tritanopia, "
+                  "grayscale",
          fr_shows="les quatre simulations l'une après l'autre, produites par le "
-                  "<code class=\"font-mono text-sm\">simulate_cvd.py</code> du projet : "
-                  "protanopie, deutéranopie, tritanopie, niveaux de gris"),
-    dict(slug="interface", secs=18,
-         en_title="Interface", fr_title="Interface",
-         en_kicker="ui · cli-gui · publish · ux-laws",
-         fr_kicker="ui · cli-gui · publish · ux-laws",
-         en_body="A command line is a wall for most people. Point this at an "
-                 "argparse, Click or Typer parser and every flag becomes a field, "
-                 "in one self-contained page.",
-         fr_body="Une ligne de commande est un mur pour la plupart des gens. "
-                 "Pointez ceci sur un analyseur argparse, Click ou Typer et chaque "
-                 "option devient un champ, dans une page autonome.",
-         en_shows="a page the tool actually generated from a real parser, scrolled "
-                  "end to end so every field is shown",
-         fr_shows="une page réellement produite par l'outil depuis un vrai "
-                  "analyseur, défilée de bout en bout pour montrer tous les champs"),
+                  "<code class=\"font-mono text-sm\">simulate_cvd.py</code> du "
+                  "projet à partir des matrices de Machado : protanopie, "
+                  "deutéranopie, tritanopie, niveaux de gris"),
+    dict(slug="audio", secs=60,
+         en_title="Audio", fr_title="Audio",
+         en_kicker="sprezzature-audio", fr_kicker="sprezzature-audio",
+         en_body="One modality, read in both directions. Captions turn sound into "
+                 "timed text; narration turns text into timed sound, landing as a "
+                 "WAV plus a WebVTT — exactly like a transcript does, which is "
+                 "what lets a page follow the reading sentence by sentence.",
+         fr_body="Une seule modalité, lue dans les deux sens. Les sous-titres "
+                 "font du son un texte minuté ; la narration fait du texte un son "
+                 "minuté, livré en WAV plus un WebVTT — exactement comme une "
+                 "transcription, ce qui permet à une page de suivre la lecture "
+                 "phrase après phrase.",
+         en_shows="the models named, the two files narration lands as, and what "
+                  "<code class=\"font-mono text-sm\">audit_captions</code> "
+                  "measures about a track that is present but unreadable",
+         fr_shows="les modèles nommés, les deux fichiers que produit la "
+                  "narration, et ce que mesure "
+                  "<code class=\"font-mono text-sm\">audit_captions</code> sur "
+                  "une piste présente mais illisible"),
+    dict(slug="ux-laws", secs=60,
+         en_title="Laws of UX", fr_title="Lois de l'UX",
+         en_kicker="sprezzature-ux-laws", fr_kicker="sprezzature-ux-laws",
+         en_body="Nobody says &ldquo;that violates Hick&rsquo;s Law&rdquo;. They "
+                 "say the page is overwhelming, or that they can never find the "
+                 "button. Thirty laws, curated by Jon YABLONSKI; eight of them a "
+                 "machine can decide from the markup alone.",
+         fr_body="Personne ne dit &laquo;&nbsp;ça viole la loi de Hick&nbsp;"
+                 "&raquo;. On dit que la page est écrasante, ou qu'on ne trouve "
+                 "jamais le bouton. Trente lois, réunies par Jon YABLONSKI ; huit "
+                 "qu'une machine peut trancher depuis le seul balisage.",
+         en_shows="the eight the auditor checks, three findings it can state "
+                  "exactly, and the boundary it does not cross — whether the "
+                  "screen answers the right question stays a human call",
+         fr_shows="les huit que l'auditeur vérifie, trois constats qu'il peut "
+                  "énoncer exactement, et la frontière qu'il ne franchit pas : "
+                  "savoir si l'écran répond à la bonne question reste humain"),
+    dict(slug="figures", secs=60,
+         en_title="Figures", fr_title="Figures",
+         en_kicker="sprezzature-figures", fr_kicker="sprezzature-figures",
+         en_body="167 kinds of chart across 52 categories, every one "
+                 "hand-authored. No charting library sits underneath any of it: "
+                 "each generator writes the SVG markup itself, and the vector is "
+                 "the deliverable rather than an export.",
+         fr_body="167 types de graphiques en 52 catégories, tous écrits à la "
+                 "main. Aucune bibliothèque de tracé en dessous : chaque "
+                 "générateur écrit le SVG lui-même, et le vectoriel est le "
+                 "livrable, pas un export.",
+         en_shows="ten real figures from the gallery, the categories nobody else "
+                  "ships, and the Ralph Eyeball Loop with fourteen seconds to "
+                  "show its work",
+         fr_shows="dix figures réelles de la galerie, les catégories que personne "
+                  "d'autre ne livre, et la boucle Ralph avec quatorze secondes "
+                  "pour se montrer"),
+    dict(slug="maps", secs=60,
+         en_title="Maps", fr_title="Cartes",
+         en_kicker="sprezzature-maps", fr_kicker="sprezzature-maps",
+         en_body="A column of countries is a map waiting to happen. Real "
+                 "coastlines, a real projection, eight kilometres of relief — and "
+                 "a choice about which distortion you are willing to accept, "
+                 "stated rather than defaulted to.",
+         fr_body="Une colonne de pays est une carte qui s'ignore. De vraies "
+                 "côtes, une vraie projection, huit kilomètres de relief — et un "
+                 "choix de distorsion assumé plutôt que subi.",
+         en_shows="six situation plates and nothing else — four reference, two "
+                  "areas-of-control — and the density map, which draws no "
+                  "coastline at all and still reads as land",
+         fr_shows="six planches de situation et rien d'autre — quatre de "
+                  "référence, deux de zones de contrôle — et la carte de densité, "
+                  "qui ne dessine aucune côte et se lit pourtant comme une terre"),
+    dict(slug="video", secs=60,
+         en_title="Video", fr_title="Vidéo",
+         en_kicker="sprezzature-video", fr_kicker="sprezzature-video",
+         en_body="The brick that made the other ten films, and the one that "
+                 "checks them. A film is a claim with a soundtrack: every number "
+                 "on screen is verified against the code that produces it, "
+                 "including the numbers nobody declared.",
+         fr_body="La brique qui a fabriqué les dix autres films, et celle qui les "
+                 "vérifie. Un film est une affirmation avec une bande-son : "
+                 "chaque nombre à l'écran est vérifié contre le code qui le "
+                 "produit, y compris ceux que personne n'a déclarés.",
+         en_shows="the two kinds of claim, the three provenance classes an asset "
+                  "can have, and why captions are measured off the voice file "
+                  "rather than guessed",
+         fr_shows="les deux sortes d'affirmation, les trois classes de provenance "
+                  "d'une ressource, et pourquoi les sous-titres sont mesurés sur "
+                  "le fichier de voix plutôt que devinés"),
 ]
 
 COPY: dict[str, dict[str, Any]] = {
@@ -91,16 +220,16 @@ COPY: dict[str, dict[str, Any]] = {
         lang="en", vdir="video", jsdir="js", other="fr/films.html",
         og_locale="en_US", og_locale_alt="fr_FR", skip="Skip to content",
         og_image_alt="A title card for the Ralph Eyeball Loop: a grouped bar chart of sales by region and quarter, drawn in grey on its left half and in colour on its right, beside the four steps of the loop — render, look, fix the source, again.",
-        title="Four short films — Sprezzature",
-        desc="Four short films about Sprezzature: one on the suite, three on what "
-             "it is made of. Every figure, form and simulation in them is real "
-             "output from the tools themselves.",
-        h1="Four short films",
-        lede="One on the suite, three on what it is made of. Nothing in them is a "
-             "mock-up: the figures are the shipped SVG files, the form was "
-             "generated by the tool from a real parser, and the colour vision "
-             "simulations came out of <code class=\"font-mono text-sm\">"
-             "sprezzature-colors</code>.",
+        title="Eleven short films — Sprezzature",
+        desc="Eleven short films about Sprezzature: one on the suite, and one for "
+             "each of its ten packages. Every figure, map, form and simulation "
+             "in them is real output from the tools themselves.",
+        h1="Eleven short films",
+        lede="One on the suite, and one for each of its ten packages. Nothing in "
+             "them is a mock-up: the figures are the shipped SVG files, the maps "
+             "are drawn on a real projection, the form was generated from the "
+             "command that is installed, and the colour vision simulations came "
+             "out of <code class=\"font-mono text-sm\">sprezzature-colors</code>.",
         shows_label="What it shows",
         note_h="About these films",
         note=[
@@ -108,11 +237,16 @@ COPY: dict[str, dict[str, Any]] = {
             "in French: pick them in the player's caption menu.",
             "Each one also exists vertical (1080&times;1920) and square "
             "(1080&times;1080). The versions here are the 1920&times;1080 cut.",
-            "They were built with the same discipline they describe. Every frame "
-            "was rendered to a still and looked at before the video was encoded, "
-            "which is how seven defects that passed the automated checks were "
-            "caught, including a caption sliding under a rule and a cropped chart "
-            "title.",
+            "They were built with the same discipline they describe. Every "
+            "scene was rendered to a still and looked at before the film was "
+            "encoded, which is how the sixty-second set was caught quoting a "
+            "catalogue size the package had outgrown months earlier — off a "
+            "screenshot taken in September — naming a font the package does not "
+            "ship, and counting twelve font files where there are six.",
+            "Two of those were typography rather than fact, and they now have a "
+            "test instead of an eye: it measures every line of film text in the "
+            "font the films are set in, and fails if one wraps and leaves its "
+            "last word standing alone.",
         ],
         fallback="Your browser cannot play this video.",
         download="Download the MP4",
@@ -122,15 +256,16 @@ COPY: dict[str, dict[str, Any]] = {
         lang="fr", vdir="../video", jsdir="../js", other="../films.html",
         og_locale="fr_FR", og_locale_alt="en_US", skip="Aller au contenu",
         og_image_alt="Une carte-titre de la Ralph Eyeball Loop : un histogramme groupé des ventes par région et par trimestre, dessiné en gris sur sa moitié gauche et en couleur sur sa droite, à côté des quatre étapes de la boucle — dessiner, regarder, corriger la source, recommencer.",
-        title="Quatre courts films — Sprezzature",
-        desc="Quatre courts films sur Sprezzature : un sur la suite, trois sur ce "
-             "dont elle est faite. Chaque figure, formulaire et simulation qu'on y "
-             "voit sort réellement des outils.",
-        h1="Quatre courts films",
-        lede="Un sur la suite, trois sur ce dont elle est faite. Rien n'y est une "
-             "maquette : les figures sont les fichiers SVG livrés, le formulaire a "
-             "été produit par l'outil depuis un vrai analyseur, et les simulations "
-             "de vision des couleurs sortent de <code class=\"font-mono text-sm\">"
+        title="Onze courts métrages — Sprezzature",
+        desc="Onze courts métrages sur Sprezzature : un sur la suite, et un par "
+             "paquet. Chaque figure, carte, formulaire et simulation qu'on y voit "
+             "sort réellement des outils.",
+        h1="Onze courts métrages",
+        lede="Un sur la suite, et un par paquet. Rien n'y est une maquette : les "
+             "figures sont les fichiers SVG livrés, les cartes sont tracées sur "
+             "une vraie projection, le formulaire a été produit depuis la "
+             "commande réellement installée, et les simulations de vision des "
+             "couleurs sortent de <code class=\"font-mono text-sm\">"
              "sprezzature-colors</code>.",
         shows_label="Ce qu'on y voit",
         note_h="À propos de ces films",
@@ -139,11 +274,16 @@ COPY: dict[str, dict[str, Any]] = {
             "en français : choisissez-les dans le menu des sous-titres du lecteur.",
             "Chacun existe aussi en vertical (1080&times;1920) et en carré "
             "(1080&times;1080). Les versions ici sont le montage 1920&times;1080.",
-            "Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque plan "
-            "a été rendu en image fixe et regardé avant l'encodage, ce qui a permis "
-            "d'attraper sept défauts que les contrôles automatiques laissaient "
-            "passer, dont une légende glissant sous un filet et un titre de "
-            "graphique recadré.",
+            "Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque "
+            "plan a été rendu en image fixe et regardé avant l'encodage, ce qui a "
+            "permis d'attraper la série d'une minute en train d'annoncer une "
+            "taille de catalogue dépassée depuis des mois — d'après une capture "
+            "de septembre —, de nommer une fonte que le paquet ne livre pas, et "
+            "de compter douze fichiers de fonte là où il y en a six.",
+            "Deux de ces défauts relevaient de la typographie plutôt que du "
+            "fait, et ils ont désormais un test plutôt qu'un œil : il mesure "
+            "chaque ligne de texte des films dans la fonte où ils sont composés, "
+            "et échoue si l'une se coupe en laissant son dernier mot seul.",
         ],
         fallback="Votre navigateur ne peut pas lire cette vidéo.",
         download="Télécharger le MP4",

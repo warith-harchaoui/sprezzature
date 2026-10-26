@@ -31,7 +31,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -94,7 +96,9 @@ TRACKED.update({f"figures/{n}.svg": f"web/img/figures/{n}.svg" for n in FIGURES}
 #    itself lives in make_captions.py, which git does track, so the script that
 #    writes the subtitles and the script that writes the voice cannot drift.
 # ---------------------------------------------------------------------------
-VO_PREFIX = {"sprezzature": "global", "colors": "colors", "figures-et-cartes": "figures",
+VO_PREFIX = {"sprezzature": "global", "colors": "colors", "ux-laws": "uxlaws", "figures": "fig",
+             "publish": "pub", "audio": "aud", "cli-gui": "cli", "ui": "ui", "video": "vid",
+             "accessibility": "a11y", "maps": "maps", "figures-et-cartes": "figures",
              "accessibilite": "access", "interface": "interface"}
 
 VOICE, SPEED = "af_heart", "0.95"
@@ -213,7 +217,103 @@ def restore_derived(dest: pathlib.Path, fix: bool) -> list[str]:
 
     notes += restore_cvd(dest, fix)
     notes += restore_shots(dest, fix)
+    notes += restore_make_figure_shots(dest, fix)
     return notes
+
+
+def restore_make_figure_shots(dest: pathlib.Path, fix: bool) -> list[str]:
+    """The two captures of the real `make-figure` form the `cli-gui` film shows.
+
+    Deliberately not `restore_shots`. That one rebuilds its page from
+    ``figure_cli.py``, a reconstruction of an argparse front door written for
+    a shoot in September and thrown away afterwards -- which is the right
+    thing for the `interface` film, whose captures it has to reproduce, and
+    the wrong thing for a film whose subject is introspecting the command that
+    is actually installed. The reconstruction also still says "127 chart
+    kinds": a number the catalogue passed months ago, which was sitting on
+    screen in a film about checking what you claim.
+
+    So these come from ``sprezzature_figures.cli:main`` through the installed
+    ``sprezzature-cli-gui``. The cost is that a capture is only as current as
+    the environment it was taken in; the benefit is that the number cannot go
+    stale on its own, because it is whatever the command prints today.
+
+    **Two captures, not two crops of one.** The first version shot the whole
+    page with every ``<details>`` forced open -- 1040x4969 -- and cut two
+    windows out of it. Both came out portrait, and the film lays them in a 4:3
+    tile: they fitted by height, shrank to 442px wide, and the form became
+    grey smudge. So each capture opens exactly one group and is taken at the
+    tile's own shape. Nothing is cropped, no pixel offset has to stay true to
+    a layout, and what the capture frames is what the scene shows.
+    """
+    wanted = {
+        # file                           group to open   what it has to show
+        "shots/make-figure-list.png":    ("list",   "a dropdown, a checkbox, the button"),
+        "shots/make-figure-render.png":  ("render", "a required field, and flags as fields"),
+    }
+    missing = [r for r in wanted if not (dest / r).exists()]
+    if not missing:
+        return []
+    gui = shutil.which("sprezzature-cli-gui")
+    if gui is None:
+        return ["  NO TOOL          shots/make-figure-*.png: sprezzature-cli-gui "
+                "is not on PATH (pip install sprezzature-cli-gui)"]
+    if importlib.util.find_spec("sprezzature_figures") is None:
+        return ["  NO TOOL          shots/make-figure-*.png: sprezzature-figures "
+                "is not importable, so there is no parser to introspect"]
+    if not fix:
+        return [f"  would capture    {r}  <- sprezzature_figures.cli:main, "
+                f"{wanted[r][0]} open" for r in missing]
+
+    work = dest / "shots/_make-figure.html"
+    work.parent.mkdir(parents=True, exist_ok=True)
+    done = subprocess.run([gui, "sprezzature_figures.cli:main", "--prog", "make-figure",
+                           "--title", "make-figure", "--out", str(work)],
+                          capture_output=True, text=True, check=False)
+    if done.returncode != 0 or not work.exists():
+        return [f"  GUI FAILED       {(done.stderr or done.stdout).strip()[:140]}"]
+    page = work.read_text()
+
+    # 1040x780 is the tile's 4:3 at a width where the help text is still
+    # legible once the frame scales it down.
+    W, H = 1040, 780
+    notes = []
+    for rel in sorted(missing):
+        group, _why = wanted[rel]
+        opened = _open_one_group(page, group)
+        if opened is None:
+            notes.append(f"  NO GROUP         {rel}: the page has no '{group}' group; "
+                         f"the command's subcommands have been renamed")
+            continue
+        work.write_text(opened)
+        err = chrome_png(work.resolve().as_uri(), dest / rel, W, H, full=False, scale=1)
+        notes.append(f"  CAPTURE FAILED   {rel} ({err})" if err
+                     else f"  captured         {rel}  <- {group} open")
+    work.unlink(missing_ok=True)
+    return notes
+
+
+def _open_one_group(page: str, group: str) -> str | None:
+    """Return *page* with only the ``<details>`` named *group* expanded.
+
+    Returns None when no group carries that name, which is the one failure
+    worth distinguishing: a capture of a page whose subcommand was renamed
+    would come back as six collapsed headings and look merely boring, rather
+    than wrong.
+    """
+    out, found = [], False
+    for i, part in enumerate(page.split('<details class="')):
+        if i == 0:
+            out.append(part)
+            continue
+        # The summary is the first text after the tag; the group name is the
+        # only word in it.
+        head = part[: part.find("</summary>") + 10] if "</summary>" in part else part[:400]
+        mine = re.search(r">\s*" + re.escape(group) + r"\s*<", head) is not None
+        if mine:
+            found = True
+        out.append(('<details open class="' if mine else '<details class="') + part)
+    return "".join(out) if found else None
 
 
 def chrome_png(url: str, out: pathlib.Path, w: int, h: int,
@@ -404,10 +504,12 @@ def main() -> None:
 
     have = sum(1 for f in dest.rglob("*")
            if f.is_file() and f.name != ".DS_Store" and not f.name.startswith("._"))
+    # The trailing `+ 2 + 2`: the two `interface` captures, and the two
+    # `make-figure` captures that replaced them for the cli-gui film.
     # The narration count is read, not typed: it was `17`, and adding a film
     # with nine lines made this self-check report 72/59 -- a wrong number in
     # the one line whose job is to say whether the tree is complete.
-    want = len(TRACKED) + len(narration()) + 1 + len(CVD) + 2 + len(SEED_ONLY)
+    want = len(TRACKED) + len(narration()) + 1 + len(CVD) + 2 + 2 + len(SEED_ONLY)
     print(f"{have}/{want} files present" + ("" if args.fix else "   (report only; pass --fix)"))
 
 
