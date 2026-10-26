@@ -62,11 +62,31 @@ TRACKED: dict[str, str] = {
     # When its work lands and web/img/maps/ is regenerated, these two change
     # with it and the four films stop matching the gallery they quote.
     "figures/situation-western-europe.png": "web/img/maps/situation-western-europe.png",
-    "maps/situation-western-europe.png": "web/img/maps/situation-western-europe.png",
-    "maps/situation-himalaya.png": "web/img/maps/situation-himalaya.png",
     "maps/choropleth-diverging.svg": "web/img/maps/choropleth-diverging.svg",
     "maps/choropleth-sequential.svg": "web/img/maps/choropleth-sequential.svg",
 }
+
+# The maps film shows situation plates and nothing else: of the three kinds the
+# package draws, these are the ones worth a minute of somebody's attention.
+# Six of the nine in the gallery, chosen by looking at all nine side by side --
+# four reference plates, where the geography is the whole point, and two
+# areas-of-control plates, which is what the kind is actually for.
+#
+# Left out, and why: `drc` is a 1300x2227 portrait plate that shrinks to
+# nothing in a landscape frame; `libya` reads flat next to the others; `sudan`
+# is good but says the same thing `ukraine` already says better.
+SITUATION_PLATES = (
+    "himalaya",        # eight kilometres of relief, and the rivers that leave it
+    "iberia",          # relief, the great rivers, and the Meseta
+    "switzerland",     # terrain, lakes and rivers, no thematic layer at all
+    "western-europe",  # the physical base the thematic maps are drawn on
+    "ukraine",         # areas of control, wide enough to read at speed
+    "syria",           # four actors, and a legend that has to carry them
+)
+TRACKED.update({
+    f"maps/situation-{n}.png": f"web/img/maps/situation-{n}.png"
+    for n in SITUATION_PLATES
+})
 TRACKED.update({f"figures/{n}.svg": f"web/img/figures/{n}.svg" for n in FIGURES})
 
 # ---------------------------------------------------------------------------
@@ -74,7 +94,7 @@ TRACKED.update({f"figures/{n}.svg": f"web/img/figures/{n}.svg" for n in FIGURES}
 #    itself lives in make_captions.py, which git does track, so the script that
 #    writes the subtitles and the script that writes the voice cannot drift.
 # ---------------------------------------------------------------------------
-VO_PREFIX = {"sprezzature": "global", "figures-et-cartes": "figures",
+VO_PREFIX = {"sprezzature": "global", "colors": "colors", "figures-et-cartes": "figures",
              "accessibilite": "access", "interface": "interface"}
 
 VOICE, SPEED = "af_heart", "0.95"
@@ -384,7 +404,10 @@ def main() -> None:
 
     have = sum(1 for f in dest.rglob("*")
            if f.is_file() and f.name != ".DS_Store" and not f.name.startswith("._"))
-    want = len(TRACKED) + 17 + 1 + len(CVD) + 2 + len(SEED_ONLY)
+    # The narration count is read, not typed: it was `17`, and adding a film
+    # with nine lines made this self-check report 72/59 -- a wrong number in
+    # the one line whose job is to say whether the tree is complete.
+    want = len(TRACKED) + len(narration()) + 1 + len(CVD) + 2 + len(SEED_ONLY)
     print(f"{have}/{want} files present" + ("" if args.fix else "   (report only; pass --fix)"))
 
 
