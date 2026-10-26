@@ -40,11 +40,30 @@ FORMATS = {
                       view=0.80),
 }
 
-# Beat grid of the bundled track, 109.96 BPM. Strong cues marked in the specs.
-BEATS = [0.56, 1.09, 1.64, 2.19, 2.73, 3.27, 3.82, 4.39, 4.91, 5.34, 6.00, 6.56,
-         7.09, 7.64, 8.19, 8.74, 9.29, 9.83, 10.37, 10.93, 11.46, 12.02, 12.55,
-         13.11, 13.64, 14.20, 14.73, 15.29, 15.84, 16.38, 16.93, 17.47, 18.02,
-         18.56, 19.10, 19.66, 20.19, 20.75, 21.28, 21.84, 22.37, 22.93]
+# Beat grid of the bundled track, 109.96 BPM.
+#
+# Extended from 42 beats (23 s) to 111 (60 s) on 2026-10-26, when the films
+# grew to a minute. Not extrapolated: `npx hyperframes beats` detected 483
+# onsets across the whole 117 s track -- at 243.9 BPM and flagged uncertain,
+# because it found subdivisions rather than the musical pulse. So the pulse is
+# walked at 60/109.96 and each step SNAPPED to the nearest detected onset
+# within 120 ms. Every one of the 111 found one, and the result agrees with
+# the original hand-measured 42 to a mean of 12 ms -- which is the check that
+# matters: a new grid has to put the known-good beats where they already were.
+BEATS = [0.549, 1.106, 1.637, 2.181, 2.736, 3.288, 3.819, 4.368,
+         4.912, 5.471, 5.995, 6.549, 7.088, 7.653, 8.181, 8.731,
+         9.28, 9.819, 10.368, 10.917, 11.461, 12.005, 12.549, 13.093,
+         13.643, 14.187, 14.731, 15.28, 15.819, 16.368, 16.912, 17.467,
+         18.005, 18.555, 19.099, 19.648, 20.187, 20.741, 21.28, 21.829,
+         22.368, 22.923, 23.461, 24.005, 24.549, 25.104, 25.643, 26.192,
+         26.741, 27.285, 27.824, 28.379, 28.923, 29.467, 30.005, 30.555,
+         31.099, 31.643, 32.187, 32.741, 33.28, 33.824, 34.368, 34.923,
+         35.461, 36.011, 36.555, 37.104, 37.643, 38.192, 38.736, 39.28,
+         39.824, 40.373, 40.917, 41.461, 42.005, 42.549, 43.163, 43.648,
+         44.187, 44.741, 45.285, 45.824, 46.368, 46.917, 47.467, 48.011,
+         48.56, 49.104, 49.648, 50.187, 50.741, 51.28, 51.829, 52.373,
+         52.943, 53.488, 54.034, 54.58, 55.125, 55.671, 56.217, 56.747,
+         57.308, 57.957, 58.395, 58.928, 59.451, 60.036, 60.539]
 
 OUTRO_LINE = "Make it. Audit it. Then look at it."
 
@@ -114,6 +133,56 @@ FILMS = {
                          "nothing has to leave the machine"),
             dict(type="outro", start=21.9, dur=3.1, end=25.0, logo="logo-512.png",
                  mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
+        ],
+    ),
+    # ------------------------------------------------------------------ colors
+    "colors": dict(
+        duration=60.0,
+        vo=[("colors-1", 1.10), ("colors-2", 5.50), ("colors-3", 11.50),
+            ("colors-4", 17.50), ("colors-5", 24.00), ("colors-6", 31.50),
+            ("colors-7", 41.00), ("colors-8", 49.50), ("colors-9", 55.80)],
+        sfx=[("drop", 5.46), ("wipe", 18.03), ("wipe", 21.85), ("tile", 31.46),
+             ("tile", 41.46), ("bell", 55.63)],
+        scenes=[
+            dict(type="claim", start=0.0, dur=5.5, end=5.0,
+                 line="Light grey on white reads fine. To you, indoors."),
+            dict(type="panel", start=4.9, dur=6.6, end=11.4,
+                 eyebrow="The same button, two readers",
+                 rows=[("Low vision", "the text and the background are too close to separate"),
+                       ("Bright sunlight", "a phone screen loses the difference entirely")],
+                 at=[5.46, 6.00],
+                 caption="It reads fine to whoever picked the colour. That is the problem."),
+            dict(type="claim", start=11.3, dur=5.4, end=16.3,
+                 line="About one man in twelve sees red and green as the same bar."),
+            dict(type="cvd", start=16.2, dur=12.0, end=28.1,
+                 eyebrow="So the simulator renders those eyes",
+                 base="figures/cvd/00-original.png",
+                 stages=[("01", "protanopia", "figures/cvd/01-protanopia.png", 18.03),
+                         ("02", "deuteranopia", "figures/cvd/02-deuteranopia.png", 20.21),
+                         ("03", "tritanopia", "figures/cvd/03-tritanopia.png", 22.39),
+                         ("04", "grayscale", "figures/cvd/04-grayscale.png", 24.57)],
+                 ratio=1490 / 1010, wipe_dur=0.80, caption_at=26.21,
+                 caption="If the story survives grey, it survives everyone."),
+            dict(type="chips", start=28.0, dur=11.5, end=39.4,
+                 eyebrow="None of this was invented here",
+                 items=["WCAG 2.x", "2.4-gamma luminance", "OKLab", "Ottosson 2020",
+                        "Machado 2009", "IEEE TVCG", "OKLCH", "CVD_MATRICES"],
+                 # Reveals end ~2.5 s before the scene does. The first cut put the
+                 # last chip on screen 0.3 s before the cut -- read by nobody.
+                 at=[29.28, 30.37, 31.46, 32.56, 33.64, 34.73, 35.81, 36.91],
+                 caption="The thresholds are the standard's. The matrices are a "
+                         "measured paper's. The lightness axis is Ottosson's."),
+            dict(type="panel", start=39.3, dur=10.3, end=49.4,
+                 eyebrow="The same know-how, both directions",
+                 rows=[("Audit", "every text-on-background pair, and a fix that stays close"),
+                       ("Make", "the approved palette, emitted as a Tailwind config")],
+                 at=[41.46, 42.55],
+                 caption="One source for the colours, instead of each project "
+                         "copying hex codes."),
+            dict(type="claim", start=49.3, dur=6.4, end=55.6,
+                 line="Pure standard library. No network. No model."),
+            dict(type="outro", start=55.5, dur=4.5, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature · colors", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
     ),
     # --------------------------------------------------------------- figures
