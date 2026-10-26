@@ -34,8 +34,11 @@ Warith HARCHAOUI <warithmetics@deraison.ai>
 from __future__ import annotations
 
 import copy
-import pathlib
+import sys
+from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 #: Strings that are identical in both cuts because they are not prose: rule
 #: ids, command names, voice ids, file formats, people, papers, products.
@@ -509,20 +512,37 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
     "shots/make-figure-render.png": "idem",
 }
 
-#: Where the asset tree lives, so a twin can be asked for by existence rather
-#: than by extension. The first version of this matched only ``.svg``, which
-#: was true of every French asset that existed that afternoon and silently
-#: false of every one that would arrive later: the day somebody renders the
-#: situation plates in French — PNGs — the films would have gone on showing
-#: the English ones, and nothing would have said so.
-_ASSETS = pathlib.Path(__file__).resolve().parent / "_assets"
+#: Which assets have a French twin is asked of the **ledger**, not of the
+#: asset cache. `_assets/` is gitignored: it is a working cache this machine
+#: happens to have filled, and a clean checkout has none of it. The first
+#: version of this keyed on `(_assets / twin).is_file()`, which made the
+#: French films depend on local state — they used French figures here and
+#: would have silently used English ones anywhere else, and the test that
+#: was supposed to catch exactly that passed locally and failed in CI.
+#:
+#: `restore_assets.TRACKED` is in git and says, for every asset, which
+#: tracked file it is a copy of. A French twin that is declared there exists
+#: for everybody; one that is merely sitting in somebody's cache does not.
+
+
+def _declared() -> frozenset[str]:
+    """Asset paths the ledger declares, cached after the first call."""
+    global _DECLARED
+    if _DECLARED is None:
+        import restore_assets
+
+        _DECLARED = frozenset(restore_assets.TRACKED)
+    return _DECLARED
+
+
+_DECLARED: frozenset[str] | None = None
 
 
 def localise_asset(src: str) -> str:
     """Where this asset's French twin would live. A pure path mapping.
 
-    Says nothing about whether the file is there; :func:`french_asset` is the
-    one that looks. Kept separate so a test can ask "does a twin exist for
+    Says nothing about whether it has been produced; :func:`french_asset` is
+    the one that asks. Kept separate so a test can ask "is there a twin for
     this?" without re-deriving the naming scheme.
     """
     for prefix, replacement in FRENCH_ASSET_DIRS.items():
@@ -532,14 +552,14 @@ def localise_asset(src: str) -> str:
 
 
 def french_asset(src: str) -> str:
-    """The French twin if it has been produced, otherwise the original.
+    """The French twin if the ledger declares one, otherwise the original.
 
-    Existence, not extension. Drop a French plate into
-    ``_assets/maps/fr/`` and the French films pick it up on the next build —
-    no edit here, and a test that fails until they do.
+    Declare a French plate in `restore_assets.TRACKED` and the French films
+    pick it up on the next build — no edit here, and a test that fails until
+    the stale "still English" line is removed.
     """
     twin = localise_asset(src)
-    return twin if twin != src and (_ASSETS / twin).is_file() else src
+    return twin if twin != src and twin in _declared() else src
 
 
 def translate(spec: dict[str, Any]) -> dict[str, Any]:

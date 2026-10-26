@@ -15,9 +15,12 @@ The half that *can* rot silently is the pictures. A figure, a map or a
 screenshot carries its own words — an axis label, a map title, a form field —
 and swapping the caption above it does nothing to those.
 
-Switching is automatic: ``films_fr.french_asset`` takes the French twin the
-moment one exists on disk, so "it exists and the film ignores it" is not a
-state this repository can reach. What it *can* reach is the opposite — a new
+Switching is automatic: ``films_fr.french_asset`` takes the French twin as
+soon as ``restore_assets.TRACKED`` declares one, so "it exists and the film
+ignores it" is not a state this repository can reach. The ledger and not the
+cache, because ``_assets/`` is gitignored — keying on what happens to be on
+this disk made the French films depend on local state, and made this very
+test pass here and fail in CI. What it *can* reach is the opposite — a new
 asset added to a film, with no French version, nobody noticing, and a picture
 full of English words sitting in a French film between two correct captions.
 
@@ -152,8 +155,12 @@ def test_every_asset_a_film_names_is_actually_there() -> None:
             for src in _assets_of(scene):
                 if not (ASSETS / src).is_file():
                     missing.append(f"{film}.{lang} scene {i}: {src}")
-    if missing and not ASSETS.is_dir():
-        pytest.skip("no _assets tree here; run brag-output/restore_assets.py --fix")
+    if not ASSETS.is_dir():
+        pytest.skip(
+            "no _assets cache here — it is gitignored, so a clean checkout "
+            "and CI have none of it. Run brag-output/restore_assets.py --fix "
+            "where the films are built. The two tests above need no cache."
+        )
     assert not missing, (
         "films name assets that are not in the tree:\n  " + "\n  ".join(missing)
     )
