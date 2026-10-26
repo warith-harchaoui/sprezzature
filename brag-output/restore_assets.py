@@ -91,17 +91,29 @@ TRACKED.update({
 })
 TRACKED.update({f"figures/{n}.svg": f"web/img/figures/{n}.svg" for n in FIGURES})
 
-# ---------------------------------------------------------------------------
-# B. Reproducible by a tool. Film key -> VO stem prefix; the narration text
-#    itself lives in make_captions.py, which git does track, so the script that
-#    writes the subtitles and the script that writes the voice cannot drift.
-# ---------------------------------------------------------------------------
-VO_PREFIX = {"sprezzature": "global", "colors": "colors", "ux-laws": "uxlaws", "figures": "fig",
-             "publish": "pub", "audio": "aud", "cli-gui": "cli", "ui": "ui", "video": "vid",
-             "accessibility": "a11y", "maps": "maps", "figures-et-cartes": "figures",
-             "accessibilite": "access", "interface": "interface"}
+# The same figures, in French. A French film is French throughout, and a
+# chart whose axis says "Quarter" under a caption that says "trimestre" is
+# the mixture that rule forbids. `web/tools/localize_figures.py` already
+# writes these for the gallery, from one `"English": "Français"` map — so the
+# films take the gallery's French rather than translating a second time.
+#
+# `bar-grouped-gray` is the same file as `bar-grouped` (the grey pass happens
+# at render time, in the composition), so its French twin is the French
+# `bar-grouped`.
+TRACKED.update({f"figures/fr/{n}.svg": f"web/img/figures/fr/{n}.svg" for n in FIGURES})
+TRACKED["figures/fr/bar-grouped-gray.svg"] = "web/img/figures/fr/bar-grouped.svg"
 
-VOICE, SPEED = "af_heart", "0.95"
+# ---------------------------------------------------------------------------
+# B. Reproducible by a tool. The narration text lives in make_captions.py,
+#    which git tracks, and `narrate_films.py` turns it into both the voice and
+#    the WebVTT in one call — so the script that writes the subtitles and the
+#    script that writes the voice are now the same script.
+#
+#    `VO_PREFIX` used to live here: a film key to a short stem, because every
+#    line was its own file (`vo-a11y-3.wav`) and the stems had to be unique and
+#    typable. A film's voice is one track now (`vo-accessibility.fr.wav`), so
+#    there is nothing left to abbreviate, and the table went with the scheme.
+# ---------------------------------------------------------------------------
 
 CVD = ("00-original.png", "01-protanopia.png", "02-deuteranopia.png",
        "03-tritanopia.png", "04-grayscale.png")
@@ -130,13 +142,22 @@ def sha(path: pathlib.Path) -> str:
 
 
 def narration() -> dict[str, str]:
-    """VO stem -> the English line it was synthesized from, read from make_captions."""
+    """VO stem -> the lines it speaks, for every cut that has a voice.
+
+    One entry per (film, language), not per line: the voice is a single track
+    now. The value is the whole reading joined, which is what makes a stale
+    WAV detectable — change a line in `make_captions.py` and this string
+    changes with it.
+    """
     sys.path.insert(0, str(ROOT))
     from make_captions import FILMS
 
-    return {f"{VO_PREFIX[film]}-{n}": text
-            for film, langs in FILMS.items()
-            for n, (_, _, text) in enumerate(langs["en"], 1)}
+    return {
+        f"{film}.{lang}": " ".join(text for _s, _d, text in langs[lang])
+        for film, langs in FILMS.items()
+        if len(langs["en"]) >= 8
+        for lang in ("en", "fr")
+    }
 
 
 def restore_tracked(dest: pathlib.Path, fix: bool) -> list[str]:
@@ -170,34 +191,39 @@ def restore_tracked(dest: pathlib.Path, fix: bool) -> list[str]:
 
 
 def restore_voice(dest: pathlib.Path, fix: bool) -> list[str]:
-    """Class B. Resynthesize the 17 lines with the same voice and speed.
+    """Class B. Re-narrate the films through the suite's own voice.
 
-    Kokoro is deterministic: on hyperframes 0.8.60 this returns the exact bytes
-    of the original WAVs, checked file by file, so make_captions.py's hard-coded
-    durations stay true and the subtitles do not need a pass. Treat that as
-    pinned to the version, not as a property of TTS — a model update can move
-    the output, and build_films.py re-measures with ffprobe at build time
-    (`vo_duration`) precisely so a shift cannot silently desync the films.
+    This used to call ``npx hyperframes tts`` once per line and keep one WAV
+    per line. Since 2026-10-26 a film's voice is a single track, produced by
+    ``narrate_films.py`` through ``sprezzature-audio`` — which also writes the
+    WebVTT, from the same timeline, with a pronunciation lexicon applied. The
+    two cannot disagree, which is the point.
+
+    Kokoro is deterministic, so a re-narration returns the same bytes for the
+    same text, voice and lexicon. Treat that as pinned to the versions and
+    not as a property of TTS: a model update, or an edit to ``lexicon.yaml``,
+    moves the audio *and* the cues together — which is exactly why they are
+    now produced together.
     """
+    import subprocess as sp
+
+    wanted = list(narration())
+    missing = [stem for stem in wanted if not (dest / f"vo-{stem}.wav").exists()]
+    if not missing:
+        return []
+    if not fix:
+        return [f"  would narrate    vo-{stem}.wav  <- narrate_films.py" for stem in missing]
+
     notes = []
-    for stem, text in narration().items():
-        out = dest / f"vo-{stem}.wav"
-        if out.exists():
-            continue
-        if not fix:
-            shown = text if len(text) <= 48 else text[:47] + "…"
-            notes.append(f"  would synthesize vo-{stem}.wav  \"{shown}\"")
-            continue
-        cmd = ["npx", "hyperframes", "tts", text, "--voice", VOICE,
-               "--speed", SPEED, "-o", str(out)]
-        done = subprocess.run(cmd, capture_output=True, text=True, check=False)
-        if done.returncode != 0 or not out.exists():
-            notes.append(f"  TTS FAILED       vo-{stem}.wav  ({done.stderr.strip()[:120]})")
+    for stem in missing:
+        film, _, lang = stem.rpartition(".")
+        done = sp.run([sys.executable, str(ROOT / "narrate_films.py"), film, "--lang", lang],
+                      capture_output=True, text=True, check=False)
+        if done.returncode != 0 or not (dest / f"vo-{stem}.wav").exists():
+            notes.append(f"  NARRATE FAILED   vo-{stem}.wav  "
+                         f"({(done.stderr or done.stdout).strip()[:120]})")
         else:
-            notes.append(f"  synthesized      vo-{stem}.wav")
-    if notes and fix:
-        notes.append("  check: `cmp` a resynthesized WAV against the archive before "
-                     + "trusting make_captions.py's durations — they are hard-coded")
+            notes.append(f"  narrated         vo-{stem}.wav (+ its WebVTT)")
     return notes
 
 

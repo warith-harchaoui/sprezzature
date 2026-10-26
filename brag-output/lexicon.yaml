@@ -1,0 +1,274 @@
+# Pronunciation lexicon for the films.
+# ------------------------------------
+# Read by `narrate_films.py` through `sprezzature-audio[narrate]`, which hands
+# it to `speaker-helper` (0.11 or later). Every line of every film is spoken
+# with this file applied, in both languages.
+#
+# Why it exists
+# -------------
+# These eleven films are a minute each of prose about a software suite, which
+# means they are full of words no text-to-speech engine can work out: WebVTT,
+# RTTM, OKLCH, GMTED2010, Qwen3-VL, SVG, WCAG. Left alone an engine spells
+# some of them, syllabifies others, and reads "2010" as a year in the middle
+# of a dataset name. Worse, it does so *differently* per engine and per
+# language, so the English and French cuts of the same film disagree about
+# how the suite's own vocabulary sounds.
+#
+# Stated here once, they come out the same way everywhere.
+#
+# Two tiers, and this file uses both
+# ----------------------------------
+# `ipa:` is exact and deterministic, and kokoro — the engine these films use —
+# takes phonemes directly, so it honours IPA verbatim at the phonemisation
+# step it already runs. That is the tier to prefer.
+#
+# `respelling:` is an orthographic rewrite for engines without phoneme input.
+# It is here for the entries where the right answer is "say the letters" and
+# an IPA string for a letter sequence would be long, unreadable, and no more
+# correct than the spelling it encodes.
+#
+# An entry with neither would be derived once by a local LLM. None is left
+# that way on purpose: a film is a claim, and a pronunciation nobody chose is
+# a claim nobody made. `llm: false` below refuses the fallback outright, so a
+# word added without a pronunciation fails loudly rather than being guessed.
+#
+# Getting the IPA
+# ---------------
+#     espeak-ng -v en-us -q --ipa=3 "vector graphic"
+#     espeak-ng -v fr    -q --ipa=3 "oh-k-l-c-h"
+#
+# brew install espeak-ng   (macOS)
+
+llm: false
+
+entries:
+  # ---------------------------------------------------------------- formats
+  # Said as letters in both languages. Respelling rather than IPA: the whole
+  # content of the decision is "spell it out", and that is exactly what a
+  # respelling says.
+  - word: "WebVTT"
+    language: en
+    respelling: "web V T T"
+  - word: "WebVTT"
+    language: fr
+    respelling: "web Vé Té Té"
+
+  - word: "RTTM"
+    language: en
+    respelling: "R T T M"
+  - word: "RTTM"
+    language: fr
+    respelling: "Èr Té Té Èm"
+
+  - word: "SVG"
+    language: en
+    respelling: "S V G"
+  - word: "SVG"
+    language: fr
+    respelling: "Èss Vé Gé"
+
+  - word: "PNG"
+    language: en
+    respelling: "P N G"
+  - word: "PNG"
+    language: fr
+    respelling: "Pé Èn Gé"
+
+  - word: "WAV"
+    language: en
+    respelling: "wav"
+  - word: "WAV"
+    language: fr
+    respelling: "wave"
+
+  - word: "JSON-LD"
+    language: "*"
+    respelling: "JSON L D"
+
+  # ------------------------------------------------------------- standards
+  # WCAG is said "wuh-cag" by the people who work with it, not spelled.
+  - word: "WCAG"
+    language: en
+    ipa: "ˈwʌkæɡ"
+  - word: "WCAG"
+    language: fr
+    respelling: "oué-cague"
+
+  - word: "ROC"
+    language: en
+    respelling: "R O C"
+  - word: "ROC"
+    language: fr
+    respelling: "Èr O Cé"
+
+  # The colour space. Four letters, not a word, in both languages.
+  - word: "OKLCH"
+    language: en
+    respelling: "O K L C H"
+  - word: "OKLCH"
+    language: fr
+    respelling: "O Ka Èl Cé Ache"
+
+  - word: "OKLab"
+    language: en
+    respelling: "O K lab"
+  - word: "OKLab"
+    language: fr
+    respelling: "O Ka lab"
+
+  # --------------------------------------------------------------- datasets
+  # The elevation dataset. The digits are a version, not a year: "G M T E D
+  # twenty-ten" is how it is said aloud, and left alone an engine reads the
+  # letters as a word and the digits as a date.
+  - word: "GMTED2010"
+    language: en
+    respelling: "G M T E D twenty ten"
+  - word: "GMTED2010"
+    language: fr
+    respelling: "Gé Èm Té Eu Dé deux mille dix"
+
+  - word: "TIGER/Line"
+    language: "*"
+    respelling: "TIGER Line"
+
+  # ---------------------------------------------------------------- models
+  # Qwen is a Chinese name; the engines reliably read it as "kwen" or spell
+  # it. "chwen" is the usual English approximation, and the version is said
+  # "three V L".
+  - word: "Qwen3-VL"
+    language: en
+    respelling: "chwen three V L"
+  - word: "Qwen3-VL"
+    language: fr
+    respelling: "tchouenne trois Vé Èl"
+
+  - word: "Ollama"
+    language: en
+    ipa: "oʊˈlɑːmə"
+  - word: "Ollama"
+    language: fr
+    respelling: "o-lama"
+
+  - word: "Kokoro"
+    language: "*"
+    respelling: "ko-ko-ro"
+
+  - word: "whisper.cpp"
+    language: en
+    respelling: "whisper C P P"
+  - word: "whisper.cpp"
+    language: fr
+    respelling: "whisper Cé Pé Pé"
+
+  - word: "large-v3-turbo"
+    language: en
+    respelling: "large V three turbo"
+  - word: "large-v3-turbo"
+    language: fr
+    respelling: "large Vé trois turbo"
+
+  - word: "NeMo"
+    language: "*"
+    respelling: "nee-mo"
+
+  - word: "Sortformer"
+    language: fr
+    respelling: "sort-formeur"
+
+  - word: "TitaNet"
+    language: en
+    ipa: "ˈtaɪtənɛt"
+  - word: "TitaNet"
+    language: fr
+    respelling: "tita-nette"
+
+  # ------------------------------------------------------------- the suite
+  # The suite's own name, which is Italian and which every engine anglicises
+  # or nasalises. It closes all twenty-two films; getting it wrong is the one
+  # mispronunciation a viewer would certainly notice.
+  - word: "Sprezzature"
+    language: en
+    ipa: "sprɛtsaˈtuːɹeɪ"
+  - word: "Sprezzature"
+    language: fr
+    ipa: "spʁɛtsatuʁe"
+
+  - word: "sprezzature.ai"
+    language: "*"
+    respelling: "Sprezzature dot A I"
+
+  - word: "readalong"
+    language: fr
+    respelling: "ride-along"
+
+  - word: "cli-gui"
+    language: en
+    respelling: "C L I G U I"
+  - word: "cli-gui"
+    language: fr
+    respelling: "Cé Èl I, Gé U I"
+
+  # ---------------------------------------------------------------- people
+  # A Polish surname, in a film that credits him by name. "ya-BLON-ski" is
+  # how he is introduced on his own talks.
+  - word: "Yablonski"
+    language: en
+    ipa: "jəˈblɑːnski"
+  - word: "Yablonski"
+    language: fr
+    respelling: "ya-blonn-ski"
+
+  - word: "Machado"
+    language: "*"
+    respelling: "ma-cha-do"
+
+  - word: "Ottosson"
+    language: fr
+    respelling: "oto-sonne"
+
+  - word: "Kyutai"
+    language: "*"
+    respelling: "kyou-taille"
+
+  # -------------------------------------------------------------- places
+  # The plateau, not the mountain range: "Meseta" is Spanish and the French
+  # engine nasalises the first vowel.
+  - word: "Meseta"
+    language: fr
+    respelling: "mé-sé-ta"
+
+  - word: "Equal Earth"
+    language: fr
+    respelling: "ikoual euhrth"
+
+  - word: "Natural Earth"
+    language: fr
+    respelling: "natcheural euhrth"
+
+  # --------------------------------------------------------------- tooling
+  - word: "argparse"
+    language: "*"
+    respelling: "arg-parse"
+
+  - word: "Tailwind"
+    language: fr
+    respelling: "teïl-ouinde"
+
+  - word: "viewBox"
+    language: en
+    respelling: "view box"
+  - word: "viewBox"
+    language: fr
+    respelling: "viou-boxe"
+
+  - word: "audit_captions"
+    language: "*"
+    respelling: "audit captions"
+
+  - word: "tabindex"
+    language: "*"
+    respelling: "tab index"
+
+  - word: "aria"
+    language: fr
+    respelling: "aria"

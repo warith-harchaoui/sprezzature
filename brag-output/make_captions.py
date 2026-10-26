@@ -11,7 +11,6 @@ Default out-dir is ../web/video.
 
 from __future__ import annotations
 
-import pathlib
 import sys
 
 # start, duration, text. Durations are the measured lengths of _assets/vo-*.wav.
@@ -216,30 +215,6 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
                 (49.50, 5.077, "Puis une image d'affiche, et une passe de sonie, pour que rien n'arrive plus fort que le reste."),
                 (55.80, 2.731, 'Sprezzature. Fabriquer, auditer, puis regarder.')],
     },
-    "figures-et-cartes": {
-        "en": [(0.80, 3.029, "Every figure is written as vector graphics directly."),
-               (4.40, 3.840, "A hundred and sixty-seven kinds. Maps on a real projection."),
-               (10.90, 2.219, "Rendered, looked at, fixed, then shipped.")],
-        "fr": [(0.80, 3.029, "Chaque figure est écrite directement en vectoriel."),
-               (4.40, 3.840, "Cent soixante-sept types. Des cartes sur une vraie projection."),
-               (10.90, 2.219, "Rendu, regardé, corrigé, puis livré.")],
-    },
-    "accessibilite": {
-        "en": [(0.80, 3.093, "You cannot see your chart the way a colour blind reader does."),
-               (4.40, 3.669, "So the simulator renders those eyes, and the loop looks through them."),
-               (13.60, 1.771, "And none of it leaves your machine.")],
-        "fr": [(0.80, 3.093, "Vous ne voyez pas votre graphique comme un lecteur daltonien."),
-               (4.40, 3.669, "Le simulateur dessine ces yeux-là, et la boucle regarde à travers."),
-               (13.60, 1.771, "Et rien de tout cela ne quitte votre machine.")],
-    },
-    "interface": {
-        "en": [(0.80, 2.709, "A command line is a wall. This builds the door."),
-               (4.40, 4.245, "Point it at argparse, Click or Typer. Every flag becomes a field."),
-               (10.90, 3.541, "Thirty laws of user experience, audited from the source.")],
-        "fr": [(0.80, 2.709, "Une ligne de commande est un mur. Ceci en fait une porte."),
-               (4.40, 4.245, "Pointez-le sur argparse, Click ou Typer. Chaque option devient un champ."),
-               (10.90, 3.541, "Trente lois d'expérience utilisateur, auditées depuis la source.")],
-    },
 }
 
 LINE_LIMIT = 58
@@ -289,18 +264,33 @@ def cues(lines):
     return out
 
 
-def main() -> None:
-    out = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "../web/video")
-    out.mkdir(parents=True, exist_ok=True)
-    for film, langs in FILMS.items():
-        for lang, lines in langs.items():
-            body = ["WEBVTT", ""]
-            for n, (a, b, text) in enumerate(cues(lines), 1):
-                body += [str(n), f"{stamp(a)} --> {stamp(b)}", text, ""]
-            path = out / f"{film}.{lang}.vtt"
-            path.write_text("\n".join(body), encoding="utf-8")
-            print(path)
+def main() -> int:
+    """Refuses to run, and says what replaced it.
+
+    This used to write every ``web/video/*.vtt`` from the table above: it
+    measured each line's WAV with ffprobe, split long lines at a list of
+    separators, and laid the cues out itself. Since 2026-10-26 the cues come
+    from ``narrate_films.py``, which asks ``sprezzature-audio`` for the
+    reading and gets the audio and the timed track back together — one
+    timeline, and a library that refuses a result whose timeline disagrees
+    with its own audio.
+
+    Left executable it would still work, and that is the danger: run after a
+    narration it would overwrite correct cues with cues derived from a
+    different arithmetic, and the only symptom would be captions drifting
+    from the voice. So it stops, and names its successor.
+
+    The table itself stays. It is the narration *text*, in both languages,
+    and it is what ``narrate_films.py`` reads.
+    """
+    sys.stderr.write(
+        "make_captions.py no longer writes the cues.\n"
+        "The voice and its WebVTT come from sprezzature-audio together:\n"
+        "    python3 narrate_films.py\n"
+        "This file is still the narration text, which that script reads.\n"
+    )
+    return 2
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

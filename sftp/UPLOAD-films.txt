@@ -2,26 +2,29 @@
 #
 # web/video/ is not in git (see .gitignore), so a clone does not carry these
 # and `git status` will never remind anyone they are pending. This list is the
-# reminder. The four files of a film travel together: drop one .vtt and the
-# player loses its captions silently, and the page stops passing the project's
-# own accessibility lint.
+# reminder. The three files of one cut travel together: drop the .vtt and the
+# player loses its captions silently, drop the .jpg and the page shows a black
+# rectangle until somebody presses play.
+#
+# ELEVEN films, TWO cuts each: one per brick plus the suite, in English and in
+# French. The two do not mix -- a French film is French on screen, in the
+# voice and in its subtitles, and an English film is English throughout. That
+# is why every name carries its language, and why there is no unsuffixed
+# `sprezzature.mp4` any more.
 #
 # The host needs a video/ directory; fr/ already exists.
 # Once uploaded, two checks say whether it landed:
-#     curl -sI https://sprezzature.ai/video/sprezzature.mp4 | head -1   -> 200
-#     curl -s https://sprezzature.ai/films.html | grep -c '<track'      -> 22
+#     curl -sI https://sprezzature.ai/video/sprezzature.fr.mp4 | head -1   -> 200
+#     curl -s https://sprezzature.ai/fr/films.html | grep -c '<track'      -> 11
 #
-# ELEVEN films, not four. One per brick plus the suite, re-cut at sixty
-# seconds on 2026-10-26. The three group films they replace --
-# figures-et-cartes, accessibilite, interface -- are STILL ON THE SERVER and
-# only a delete there removes them; an upload cannot. Archived copies:
-#     brag-output/_retired/group-films/
+# STILL ON THE SERVER and only removable by a delete there -- an upload cannot
+# do it. The four films these replaced, and the unsuffixed English names:
+#     figures-et-cartes.*  accessibilite.*  interface.*  moteur-local.*
+#     sprezzature.mp4  sprezzature.jpg  ui.mp4  ui.jpg  cli-gui.mp4 ...
+#     (every `<film>.mp4` and `<film>.jpg` without a language)
+# Archived copies: brag-output/_retired/
 #
-# `moteur-local` left the presentation on 2026-10-13 with best-engine, and is
-# in the same position: still on the server, archived in
-#     brag-output/_retired/moteur-local/
-#
-# Roughly 133 MB of MP4 in total, which is the whole reason this list exists
+# About 260 MB of MP4 in total, which is the whole reason this list exists
 # separately from the HTML: the pages are small and the films are not.
 
 accessibility.html
@@ -63,47 +66,69 @@ sitemap.xml
 ui.html
 ux-laws.html
 vision.html
+video/accessibility.en.jpg
+video/accessibility.en.mp4
 video/accessibility.en.vtt
+video/accessibility.fr.jpg
+video/accessibility.fr.mp4
 video/accessibility.fr.vtt
-video/accessibility.jpg
-video/accessibility.mp4
+video/audio.en.jpg
+video/audio.en.mp4
 video/audio.en.vtt
+video/audio.fr.jpg
+video/audio.fr.mp4
 video/audio.fr.vtt
-video/audio.jpg
-video/audio.mp4
+video/cli-gui.en.jpg
+video/cli-gui.en.mp4
 video/cli-gui.en.vtt
+video/cli-gui.fr.jpg
+video/cli-gui.fr.mp4
 video/cli-gui.fr.vtt
-video/cli-gui.jpg
-video/cli-gui.mp4
+video/colors.en.jpg
+video/colors.en.mp4
 video/colors.en.vtt
+video/colors.fr.jpg
+video/colors.fr.mp4
 video/colors.fr.vtt
-video/colors.jpg
-video/colors.mp4
+video/figures.en.jpg
+video/figures.en.mp4
 video/figures.en.vtt
+video/figures.fr.jpg
+video/figures.fr.mp4
 video/figures.fr.vtt
-video/figures.jpg
-video/figures.mp4
+video/maps.en.jpg
+video/maps.en.mp4
 video/maps.en.vtt
+video/maps.fr.jpg
+video/maps.fr.mp4
 video/maps.fr.vtt
-video/maps.jpg
-video/maps.mp4
+video/publish.en.jpg
+video/publish.en.mp4
 video/publish.en.vtt
+video/publish.fr.jpg
+video/publish.fr.mp4
 video/publish.fr.vtt
-video/publish.jpg
-video/publish.mp4
+video/sprezzature.en.jpg
+video/sprezzature.en.mp4
 video/sprezzature.en.vtt
+video/sprezzature.fr.jpg
+video/sprezzature.fr.mp4
 video/sprezzature.fr.vtt
-video/sprezzature.jpg
-video/sprezzature.mp4
+video/ui.en.jpg
+video/ui.en.mp4
 video/ui.en.vtt
+video/ui.fr.jpg
+video/ui.fr.mp4
 video/ui.fr.vtt
-video/ui.jpg
-video/ui.mp4
+video/ux-laws.en.jpg
+video/ux-laws.en.mp4
 video/ux-laws.en.vtt
+video/ux-laws.fr.jpg
+video/ux-laws.fr.mp4
 video/ux-laws.fr.vtt
-video/ux-laws.jpg
-video/ux-laws.mp4
+video/video.en.jpg
+video/video.en.mp4
 video/video.en.vtt
+video/video.fr.jpg
+video/video.fr.mp4
 video/video.fr.vtt
-video/video.jpg
-video/video.mp4

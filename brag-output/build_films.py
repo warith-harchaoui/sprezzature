@@ -13,6 +13,9 @@ from __future__ import annotations
 import json
 import pathlib
 import shutil
+
+import films_fr
+import make_captions
 import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -85,21 +88,19 @@ def on_beat(*targets: float) -> list[float]:
 
 # ---------------------------------------------------------------------------
 # Film specs. `at` values are global seconds and identical across formats.
+#
+# Eleven films, one per brick plus the suite, English and French. The four
+# that came before -- a suite film and three that grouped bricks by theme --
+# were removed on 2026-10-26 once their replacements were rendered and their
+# copies archived in `_retired/group-films/`. Grouping was the wrong axis:
+# `interface` had to speak for ui, cli-gui, publish and ux-laws in eighteen
+# seconds, so it said something general about four packages and something
+# particular about none. `group_scenes`, the shared four-beat shape those
+# three were built from, went with them.
+#
+# They are still ON THE SERVER. An upload does not remove a file; only a
+# delete there does. See sftp/UPLOAD-films.txt.
 # ---------------------------------------------------------------------------
-def group_scenes(claim, s2, s3, mark, logo="logo-512.png", grid=None):
-    """The shared four-beat shape. `grid` overrides it when a film needs more
-    room, as the accessibility one does for its four simulations."""
-    g = grid or [(0.0, 4.8, 4.0), (4.0, 7.4, 10.6), (10.4, 5.6, 15.4),
-                 (15.2, 3.1, 18.3)]
-    return [
-        dict(type="claim", start=g[0][0], dur=g[0][1], end=g[0][2], line=claim),
-        dict(s2, start=g[1][0], dur=g[1][1], end=g[1][2]),
-        dict(s3, start=g[2][0], dur=g[2][1], end=g[2][2]),
-        dict(type="outro", start=g[3][0], dur=g[3][1], end=g[3][2], logo=logo,
-             mark=mark, line=OUTRO_LINE, url="sprezzature.ai"),
-    ]
-
-
 LOOP_STEPS = [("01", "render"), ("02", "look"), ("03", "fix the source"), ("04", "again")]
 
 FILMS = {
@@ -550,26 +551,6 @@ FILMS = {
                  mark="Sprezzature \u00b7 maps", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
     ),
-    # --------------------------------------------------------------- figures
-    "figures-et-cartes": dict(
-        duration=18.3,
-        vo=[("figures-1", 0.80), ("figures-2", 4.40), ("figures-3", 10.90)],
-        sfx=[("drop", 4.30), ("tile", 9.29), ("bell", 15.25)],
-        scenes=group_scenes(
-            "167 kinds, every one hand‑authored.",
-            dict(type="grid", eyebrow="sprezzature-figures",
-                 images=["figures/sankey.svg", "figures/alluvial.svg",
-                         "figures/chord.svg", "figures/calendar-heatmap.svg",
-                         "figures/bellcurve.svg", "figures/circle-packing.svg"],
-                 at=[4.39, 4.91, 5.34, 6.00, 6.56, 7.09],
-                 caption="the SVG is the deliverable, never an export"),
-            dict(type="grid", eyebrow="sprezzature-maps",
-                 images=["maps/choropleth-sequential.svg", "maps/choropleth-diverging.svg",
-                         "maps/situation-western-europe.png", "maps/situation-himalaya.png"],
-                 at=[10.93, 11.46, 12.02, 12.55],
-                 caption="choropleth · situation · density, on a real projection"),
-            "Figures & Maps"),
-    ),
     # ----------------------------------------------------------------- ux-laws
     "ux-laws": dict(
         duration=60.0,
@@ -663,49 +644,6 @@ FILMS = {
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
                  mark="Sprezzature \u00b7 accessibility", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
-    ),
-    # ---------------------------------------------------------- accessibility
-    "accessibilite": dict(
-        duration=21.3,
-        vo=[("access-1", 0.80), ("access-2", 4.40), ("access-3", 13.60)],
-        sfx=[("drop", 4.10), ("wipe", 5.34), ("wipe", 8.74), ("bell", 18.25)],
-        scenes=group_scenes(
-            "Eyes you don’t have.",
-            dict(type="cvd", eyebrow="Colour vision simulation",
-                 # Rendered by the project's own simulate_cvd.py, Machado
-                 # matrices, from the shipped bar-grouped.svg.
-                 base="figures/cvd/00-original.png",
-                 stages=[("01", "protanopia", "figures/cvd/01-protanopia.png", 5.34),
-                         ("02", "deuteranopia", "figures/cvd/02-deuteranopia.png", 6.56),
-                         ("03", "tritanopia", "figures/cvd/03-tritanopia.png", 7.64),
-                         ("04", "grayscale", "figures/cvd/04-grayscale.png", 8.74)],
-                 ratio=1490 / 1010, wipe_dur=0.80, caption_at=9.83,
-                 caption="If the story survives grey, it survives everyone."),
-            dict(type="chips", eyebrow="accessibility · colors · audio",
-                 items=["20 a11y rules", "WCAG contrast", "CVD simulation",
-                        "OKLCH lighten / darken", "Tailwind export", "alt text",
-                        "WebVTT / SRT", "diarization"],
-                 at=[13.64, 14.20, 14.73, 15.29, 15.84, 16.38, 16.93, 17.47],
-                 caption="deterministic where it can be, local where it cannot"),
-            "Accessibility", grid=[(0.0, 4.8, 4.0), (4.0, 9.8, 13.2),
-                                   (13.0, 6.0, 18.4), (18.2, 3.1, 21.3)]),
-    ),
-    # ------------------------------------------------------------- interface
-    "interface": dict(
-        duration=18.3,
-        vo=[("interface-1", 0.80), ("interface-2", 4.40), ("interface-3", 10.90)],
-        sfx=[("drop", 4.20), ("tile", 12.55), ("bell", 15.25)],
-        scenes=group_scenes(
-            "A command line is a wall.",
-            dict(type="shot", eyebrow="sprezzature-cli-gui",
-                 src="shots/cli-gui-full.png", ratio=760 / 1040, at=4.39, scroll=True,
-                 caption="argparse, Click or Typer in. One self-contained page out."),
-            dict(type="chips", eyebrow="ui · publish · ux-laws",
-                 items=["three Roboto", "dark mode", "focus rings", "reduced motion",
-                        "meta tags", "favicons", "llms.txt", "30 Laws of UX"],
-                 at=[10.93, 11.46, 12.02, 12.55, 13.11, 13.64, 14.20, 14.73],
-                 caption="the same skill builds it and audits it"),
-            "Interface"),
     ),
 }
 
@@ -1105,8 +1043,54 @@ def vo_duration(name: str) -> float:
     return round(float(out), 3)
 
 
-def emit(film_key: str, spec: dict, fmt_key: str) -> pathlib.Path:
+#: The cuts of every film. English and French are equal citizens: the same
+#: spec, the same timing, the same beat grid, and `films_fr.translate` swaps
+#: the words on the way out.
+LANGS = ("en", "fr")
+
+
+def project_name(film_key: str, lang: str, fmt_key: str) -> str:
+    """Where one cut is emitted. English keeps its old directory name.
+
+    `sprezzature-landscape` rather than `sprezzature-en-landscape`, because
+    that path is in the deploy notes, in the upload list and in this
+    repository's own tests. A rename would have been tidier and would have
+    cost a morning of chasing it through files that have nothing to do with
+    language.
+    """
+    return f"{film_key}-{fmt_key}" if lang == "en" else f"{film_key}-{lang}-{fmt_key}"
+
+
+
+def voice_track(film_key: str, spec: dict, lang: str) -> list[tuple[str, float]]:
+    """The voice files this cut plays, as (stem, start) pairs.
+
+    One file, not one per line. The films used to lay out eight separate WAVs
+    at eight hard-coded times, each synthesised by its own shell call; since
+    2026-10-26 `narrate_films.py` asks `sprezzature-audio` for the whole
+    reading at once and gets back a single track plus the cues that describe
+    it. The pauses inside it are the library's, and the library refuses a
+    result whose timeline disagrees with its own audio — so the agreement
+    between what is heard and what is captioned is now proved rather than
+    reproduced by two pieces of arithmetic that happened to match.
+
+    The track starts at the first line's grid time, because the engine drops a
+    leading pause: a narration begins when it begins. That silence is the
+    film's to carry.
+
+    The three retired group films keep the old per-line shape; they are not
+    re-cut and not re-narrated.
+    """
+    lines = make_captions.FILMS.get(film_key, {}).get(lang)
+    if not lines or len(lines) < 8:
+        return list(spec["vo"])
+    return [(f"{film_key}.{lang}", lines[0][0])]
+
+
+def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.Path:
     f = FORMATS[fmt_key]
+    if lang != "en":
+        spec = films_fr.translate(spec)
     scenes, dur = spec["scenes"], spec["duration"]
 
     body = "\n".join(
@@ -1126,7 +1110,7 @@ def emit(film_key: str, spec: dict, fmt_key: str) -> pathlib.Path:
     audio = [f'<audio id="bgm" data-start="0" data-duration="{dur}" '
              f'data-track-index="10" data-volume="1" src="assets/music/{MUSIC}"></audio>']
     duck = []
-    for name, at in spec["vo"]:
+    for name, at in voice_track(film_key, spec, lang):
         d = vo_duration(name)
         audio.append(f'<audio id="vo-{name}" data-start="{at}" data-duration="{d}" '
                      f'data-track-index="11" data-volume="1" '
@@ -1229,7 +1213,7 @@ def emit(film_key: str, spec: dict, fmt_key: str) -> pathlib.Path:
 </body>
 </html>
 """
-    d = FILMS_DIR / f"{film_key}-{fmt_key}"
+    d = FILMS_DIR / project_name(film_key, lang, fmt_key)
     d.mkdir(parents=True, exist_ok=True)
     (d / "index.html").write_text(html, encoding="utf-8")
     (d / "hyperframes.json").write_text(json.dumps({
@@ -1239,7 +1223,7 @@ def emit(film_key: str, spec: dict, fmt_key: str) -> pathlib.Path:
         "media": {"autoProxy": True},
     }, indent=2) + "\n", encoding="utf-8")
     (d / "package.json").write_text(json.dumps({
-        "name": f"{film_key}-{fmt_key}", "private": True, "type": "module",
+        "name": project_name(film_key, lang, fmt_key), "private": True, "type": "module",
         "scripts": {"check": "npx --yes hyperframes@0.8.46 check",
                     "render": "npx --yes hyperframes@0.8.46 render"},
     }, indent=2) + "\n", encoding="utf-8")
@@ -1287,10 +1271,34 @@ def clean(keep: set[pathlib.Path]) -> None:
             shutil.rmtree(comps)
 
 
+def cuts() -> list[tuple[str, str]]:
+    """Every (film, language) that gets emitted.
+
+    The three eighteen-second group films are English-only: they were
+    replaced on 2026-10-26 by one film per brick and are kept only until the
+    copies on the server are deleted by hand. Giving them a French cut would
+    mean translating 60 strings nobody will ever watch, and — worse —
+    `films_fr` would then carry the vocabulary of three retired films
+    alongside the vocabulary of eleven live ones, with nothing saying which
+    was which.
+    """
+    return [
+        (k, lang)
+        for k, spec in FILMS.items()
+        for lang in (LANGS if spec["duration"] >= 30 else ("en",))
+    ]
+
+
 def main() -> None:
-    wanted = {FILMS_DIR / f"{k}-{fmt}" for k in FILMS for fmt in FORMATS}
+    pairs = cuts()
+    wanted = {
+        FILMS_DIR / project_name(k, lang, fmt)
+        for k, lang in pairs for fmt in FORMATS
+    }
     clean(wanted)
-    built = [emit(k, s, fmt) for k, s in FILMS.items() for fmt in FORMATS]
+    built = [
+        emit(k, FILMS[k], fmt, lang) for k, lang in pairs for fmt in FORMATS
+    ]
     for p in built:
         print(p.relative_to(ROOT))
     kept = sum(1 for d in FILMS_DIR.iterdir() if (d / "renders").is_dir())
