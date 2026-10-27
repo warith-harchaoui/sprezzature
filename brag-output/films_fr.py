@@ -490,6 +490,10 @@ FRENCH_ASSET_DIRS = {
 #: pick it up, and it fails again until the line is removed. The list can only
 #: shrink on purpose.
 ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
+    # `maps/density.svg` used to sit here. It left the list the way an entry
+    # is supposed to leave it: somebody produced the French twin, the ledger
+    # declared it, the films switched on the next build, and the test went
+    # red until this line was deleted.
     "maps/situation-himalaya.png":
         "titles and legend baked in by build_situation_examples.py in "
         "sprezzature-maps, which has no French mode",
@@ -531,7 +535,14 @@ def _declared() -> frozenset[str]:
     if _DECLARED is None:
         import restore_assets
 
-        _DECLARED = frozenset(restore_assets.TRACKED)
+        # Both ledgers. `TRACKED` holds copies of tracked files; `DERIVED_MAPS`
+        # holds the plates a generator produces, which is where the French
+        # density plate lives. Reading only the first left the French cut on
+        # the English plate while the French one sat in the tree, declared,
+        # one dictionary over.
+        _DECLARED = frozenset(restore_assets.TRACKED) | frozenset(
+            getattr(restore_assets, "DERIVED_MAPS", ())
+        )
     return _DECLARED
 
 

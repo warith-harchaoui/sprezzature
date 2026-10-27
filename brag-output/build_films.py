@@ -97,7 +97,9 @@ def L(en: str, fr: str) -> dict[str, str]:
 #:
 #: Listed rather than detected so the remaining work is visible. A film leaves
 #: this set by being rewritten, not by being edited.
-REWRITTEN = frozenset({"sprezzature", "colors"})
+REWRITTEN = frozenset({"sprezzature", "colors", "ux-laws", "maps",
+                       "figures", "publish", "audio", "cli-gui",
+                       "accessibility", "ui", "video"})
 
 
 def say(value: Any, lang: str, *, fallback: bool = False) -> Any:
@@ -328,233 +330,330 @@ FILMS = {
     # ---------------------------------------------------------------- figures
     "figures": dict(
         duration=60.0,
-        vo=[("fig-1", 1.10), ("fig-2", 6.50), ("fig-3", 15.00), ("fig-4", 24.00),
-            ("fig-5", 32.50), ("fig-6", 41.00), ("fig-7", 49.50), ("fig-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # Written 2026-10-27 after running the package rather than reading its
+        # feature table. The old cut opened on "167 kinds, every one
+        # hand-authored", which is a specification handed to somebody with no
+        # reason to want one.
+        #
+        # The secret sauce is `make-figure recommend`. Every kind declares the
+        # data roles it needs, so your columns either fill them or they do
+        # not: the right chart is computable rather than a matter of taste,
+        # deterministically, with no model anywhere near it. The catalogue is
+        # a filter your data runs through, not a menu you browse.
+        vo=[("figures.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 27.28), ("tile", 42.55),
+             ("bell", 55.67)],
         scenes=[
+            # PROBLEM
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="One hundred and sixty-seven kinds of chart. Every one hand-authored."),
-            dict(type="grid", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="No charting library underneath",
+                 line=L("You have a spreadsheet. Which chart is the right one?",
+                        "Vous avez un tableur. Quel graphique est le bon ?")),
+            dict(type="held", start=5.4, dur=9.1, end=14.4,
+                 line=L("Most people reach for the bar chart they reached for "
+                        "last time.",
+                        "La plupart des gens reprennent le graphique en barres "
+                        "de la dernière fois.")),
+            # SOLUTION
+            dict(type="grid", start=14.3, dur=12.9, end=27.2,
+                 eyebrow=L("167 kinds, each written by hand",
+                           "167 types, écrits un par un à la main"),
                  images=["figures/sankey.svg", "figures/alluvial.svg",
-                         "figures/chord.svg", "figures/calendar-heatmap.svg",
-                         "figures/bellcurve.svg", "figures/circle-packing.svg"],
-                 at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3),
-                 caption="Each generator writes the SVG markup itself, so the "
-                         "shapes are not a library's defaults."),
-            # The category list is the honest answer to "167 of what?" -- and
-            # the two nobody ships are the ones that make the number credible.
-            dict(type="chips", start=14.3, dur=9.2, end=23.4,
-                 eyebrow="Fifty-two categories",
-                 items=["Comparison", "Distribution", "Flow", "Geospatial",
-                        "Hierarchy", "Matrix", "Meteorology", "Model evaluation"],
-                 at=on_beat(15.8, 16.4, 16.9, 17.5, 18.0, 18.6, 19.1, 19.6),
-                 caption="Wind roses and wind barbs. ROC curves, calibration "
-                         "plots, confusion matrices, Kaplan\u2013Meier."),
-            dict(type="grid", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="The deliverable is the vector",
-                 images=["figures/corr-matrix.svg", "figures/clustermap.svg",
-                         "figures/candlestick.svg", "figures/map-flow.svg"],
-                 at=on_beat(24.5, 25.1, 25.6, 26.2),
-                 caption="Explicit width, height and a matching viewBox \u2014 "
-                         "the text stays selectable at any zoom."),
-            dict(type="claim", start=32.3, dur=9.2, end=41.4,
-                 line="A PNG is an export, for places that cannot take vector art."),
-            # The loop gets fourteen seconds here, where in the suite film it
-            # gets seven: this is the package it was built for.
-            dict(type="loop", start=41.3, dur=14.2, end=55.5,
-                 eyebrow="No reference does this", steps=LOOP_STEPS,
-                 fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
-                 ratio=745 / 505, step_at=on_beat(42.5, 43.6, 44.7, 45.8),
-                 wipe_at=47.5, wipe_dur=1.09, caption_at=51.3,
-                 caption="A model reads the figure, names what is wrong, and "
-                         "the source is what gets fixed. Nothing leaves the machine."),
+                         "figures/chord.svg", "figures/bellcurve.svg",
+                         "figures/circle-packing.svg", "figures/candlestick.svg"],
+                 at=on_beat(15.8, 16.4, 16.9, 17.5, 18.0, 18.6),
+                 caption=L("Every generator writes the SVG markup itself, so "
+                           "the shapes belong to nobody's charting library.",
+                           "Chaque générateur écrit le SVG lui-même : les "
+                           "formes n'appartiennent à la bibliothèque de "
+                           "personne.")),
+            # SECRET SAUCE
+            dict(type="claim", start=27.1, dur=8.3, end=35.3,
+                 line=L("Each one declares the data it needs.",
+                        "Chacun déclare les données qu'il lui faut.")),
+            dict(type="verify", start=35.2, dur=12.3, end=47.4,
+                 eyebrow=L("So your columns are the question",
+                           "Vos colonnes posent donc la question"),
+                 claims=[(L("region, quarter, units", "région, trimestre, unités"),
+                          L("3 columns", "3 colonnes")),
+                         # 61, measured: `make-figure recommend --data r.csv
+                         # --limit 500` on a three-column frame of region,
+                         # quarter, units. The first draft said 41, which
+                         # nobody had run.
+                         (L("kinds those columns can fill", "types qu'elles remplissent"),
+                          "61"),
+                         (L("ranked by readability", "classés par lisibilité"),
+                          L("best first", "le meilleur d'abord")),
+                         (L("models consulted", "modèles consultés"), "0")],
+                 at=[(36.6, 37.1), (38.2, 38.7), (39.8, 40.4), (41.5, 42.0)],
+                 caption=L("The same filter the studio shows as cards, run "
+                           "from the command line.",
+                           "Le même filtre que le studio affiche en cartes, "
+                           "depuis la ligne de commande.")),
+            dict(type="held", start=47.3, dur=8.2, end=55.5,
+                 line=L("The catalogue is a filter, not a menu.",
+                        "Le catalogue est un filtre, pas un menu.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 figures", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 figures", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ---------------------------------------------------------------- publish
     "publish": dict(
         duration=60.0,
-        vo=[("pub-1", 1.10), ("pub-2", 6.50), ("pub-3", 15.00), ("pub-4", 24.00),
-            ("pub-5", 32.50), ("pub-6", 41.00), ("pub-7", 49.50), ("pub-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # A pipeline film, written 2026-10-27 from `_readalong.py` rather than
+        # from the tool list. Its docstring holds the best sentence in the
+        # package: a read-along wrong by one sentence is worse than none,
+        # because it tells a reader with confidence to look at the wrong line.
+        #
+        # So the module refuses to number sentences independently. It takes
+        # the cues the narration actually produced, splits the rendered HTML
+        # with the same splitter, compares the two lists, and raises on the
+        # first divergence. "There is no third outcome where it wraps
+        # something and hopes."
+        vo=[("publish.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 30.00), ("tile", 42.55),
+             ("bell", 55.67)],
         scenes=[
+            # PROBLEM
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="A document, becoming a site."),
-            dict(type="chips", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="Nine tools, one document",
-                 items=["lint", "html", "icons", "indexes", "meta", "plain",
-                        "changelog", "narrate", "readalong"],
-                 at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3, 9.8, 10.4, 10.9),
-                 caption="The linter is standard library only, runs in "
-                         "milliseconds, and fixes what has exactly one fix."),
-            dict(type="panel", start=14.3, dur=9.2, end=23.4,
-                 eyebrow="What a page owes its readers",
-                 rows=[("indexes", "robots.txt, sitemap.xml, Atom, humans.txt \u2014 and llms.txt, llms-full.txt"),
-                       ("meta", "Open Graph, Twitter Card, Schema.org")],
-                 at=on_beat(16.4, 17.5),
-                 caption="One logo becomes the favicon, the app icons, the PWA "
-                         "icons, and the <head> that points at them."),
-            dict(type="panel", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="And what it rewrites",
-                 rows=[("plain", "the same page at a target reading grade, keeping the terms you name"),
-                       ("changelog", "a CHANGELOG becomes dated posts")],
-                 at=on_beat(24.5, 25.6),
-                 caption="Simpler language is not the same as a vaguer one. "
-                         "The nouns you chose survive the rewrite."),
-            dict(type="claim", start=32.3, dur=9.2, end=41.4,
-                 line="Then readalong binds the narration to the page."),
-            dict(type="panel", start=41.3, dur=7.8, end=49.0,
-                 eyebrow="Two packages, one reading",
-                 rows=[("The voice", "lives in sprezzature-audio")
-                       , ("This package", "never imports a model")],
-                 at=on_beat(42.5, 43.6),
-                 caption="A boundary drawn on purpose: the heavy imports stay "
-                         "out of the tool you run on every commit."),
-            dict(type="claim", start=48.9, dur=6.7, end=55.5,
-                 line="The sentence being spoken is the sentence lit up."),
+                 line=L("A page that reads itself aloud, highlighting as it goes.",
+                        "Une page qui se lit à voix haute en surlignant au "
+                        "passage.")),
+            dict(type="held", start=5.4, dur=9.1, end=14.4,
+                 line=L("One sentence out of step is worse than no "
+                        "highlighting at all.",
+                        "Une phrase de décalage vaut moins que pas de "
+                        "surlignage du tout.")),
+            # SOLUTION: the pipeline
+            dict(type="flow", start=14.3, dur=14.9, end=29.2,
+                 eyebrow=L("One document, nine tools", "Un document, neuf outils"),
+                 stages=[("lint", L("stdlib, milliseconds", "stdlib, millisecondes")),
+                         ("html", L("the page", "la page")),
+                         ("icons", L("one logo, every size", "un logo, toutes les tailles")),
+                         ("indexes", L("crawlers and models", "robots et modèles")),
+                         ("meta", L("cards, drafted locally", "cartes, rédigées en local")),
+                         ("narrate", L("the voice", "la voix")),
+                         ("readalong", L("the two, bound", "les deux, liés"))],
+                 at=on_beat(15.8, 17.0, 18.1, 19.2, 20.3, 21.4, 22.5),
+                 caption=L("The linter runs on the standard library alone, "
+                           "which is why it fits in a pre-commit hook.",
+                           "Le linter n'utilise que la bibliothèque standard : "
+                           "c'est pourquoi il tient dans un crochet de "
+                           "pré-commit.")),
+            # SECRET SAUCE
+            dict(type="claim", start=29.1, dur=8.3, end=37.3,
+                 line=L("The audio and the page leave the same Markdown by "
+                        "different roads.",
+                        "L'audio et la page quittent le même Markdown par "
+                        "deux routes.")),
+            dict(type="versus", start=37.2, dur=9.6, end=46.8,
+                 eyebrow=L("Two roads, no guarantee",
+                           "Deux routes, aucune garantie"),
+                 left=(L("The voice", "La voix"),
+                       L("sentences handed to the engine",
+                         "des phrases remises au moteur")),
+                 right=(L("The page", "La page"),
+                        L("blocks walked as a tree",
+                          "des blocs parcourus comme un arbre")),
+                 at=on_beat(38.2, 39.3),
+                 caption=L("A regular expression cannot see a code fence "
+                           "inside a list item. A tree walk can.",
+                           "Une expression régulière ne voit pas un bloc de "
+                           "code dans une puce. Un parcours d'arbre, oui.")),
+            dict(type="held", start=46.7, dur=8.8, end=55.5,
+                 line=L("They match, or it refuses. There is no third outcome.",
+                        "Les deux coïncident, ou bien ça refuse. Il n'y a pas "
+                        "de troisième issue.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 publish", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 publish", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ------------------------------------------------------------------ audio
     "audio": dict(
         duration=60.0,
-        vo=[("aud-1", 1.10), ("aud-2", 6.50), ("aud-3", 15.00), ("aud-4", 24.00),
-            ("aud-5", 32.50), ("aud-6", 41.00), ("aud-7", 49.50), ("aud-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # Five scenes, the fewest of any brick film, written 2026-10-27 from
+        # `audit_captions.py`. Its opening paragraph is the whole pitch: a
+        # perfectly accurate caption holding ninety characters for half a
+        # second is unreadable, and accuracy was the only thing anybody
+        # measured.
+        #
+        # The secret sauce is that the numbers already exist. Netflix's timed
+        # text style guide publishes 17 characters a second, 42 per line, a
+        # five-sixths of a second floor and a seven second ceiling; BBC and
+        # Netflix agree on two lines. Published, conventional, and unchecked.
+        vo=[("audio.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 32.19), ("bell", 55.67)],
         scenes=[
+            # PROBLEM
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="One modality, read in both directions."),
-            dict(type="panel", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="The two directions",
-                 rows=[("Captions", "sound becomes timed text"),
-                       ("Narration", "text becomes timed sound")],
-                 at=on_beat(6.5, 7.6),
-                 caption="The package's own framing, and the reason both live "
-                         "in one place instead of two."),
-            dict(type="chips", start=14.3, dur=9.2, end=23.4,
-                 eyebrow="The models, named",
-                 items=["whisper.cpp", "large-v3-turbo", "NeMo Sortformer",
-                        "TitaNet", "RTTM", "WebVTT", "Kokoro", "af_heart"],
-                 at=on_beat(15.8, 16.4, 16.9, 17.5, 18.0, 18.6, 19.1, 19.6),
-                 caption="Who spoke when, up to four speakers, in the format "
-                         "speech research already reads."),
-            dict(type="panel", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="Narration lands as two files",
-                 rows=[("The WAV", "the voice itself, loudness-normalised"),
-                       ("The WebVTT", "the same words, timed \u2014 like a transcript")],
-                 at=on_beat(24.5, 25.6),
-                 caption="Which is what lets a page follow the reading, "
-                         "sentence by sentence, without a second pass."),
-            dict(type="claim", start=32.3, dur=9.2, end=41.4,
-                 line="And it audits its own output."),
-            dict(type="panel", start=41.3, dur=7.8, end=49.0,
-                 eyebrow="What audit_captions measures",
-                 rows=[("Per cue", "reading speed, line width, duration"),
-                       ("Across cues", "overlaps, and gaps that read as a dropout")],
-                 at=on_beat(42.5, 43.6),
-                 caption="Measured against the rates a reader can actually "
-                         "keep up with, not against a guess."),
-            dict(type="claim", start=48.9, dur=6.7, end=55.5,
-                 line="A caption track can be present and still be unreadable."),
+                 line=L("Your video has captions. They are accurate.",
+                        "Votre vidéo a des sous-titres. Ils sont exacts.")),
+            dict(type="held", start=5.4, dur=9.6, end=15.0,
+                 line=L("Ninety characters, on screen for half a second.",
+                        "Quatre-vingt-dix caractères, affichés une "
+                        "demi-seconde.")),
+            # SOLUTION: the file itself, with the offending cue marked
+            dict(type="code", start=14.9, dur=16.1, end=31.0,
+                 eyebrow=L("The track, read as a file",
+                           "La piste, lue comme un fichier"),
+                 code=["WEBVTT", "",
+                       "00:00:12.100 --> 00:00:12.950",
+                       "Every threshold here is a flag rather than a law,",
+                       "because a children's programme and a dense talk",
+                       "justify different numbers entirely.", "",
+                       "00:00:12.900 --> 00:00:19.400",
+                       "And this one starts before that one ended."],
+                 mark=(4, 5, 6, 9),
+                 at=[15.8, 16.1, 16.6, 17.2, 17.7, 18.3, 18.6, 19.1, 19.7],
+                 flag=[(4, 22.0), (9, 25.5)],
+                 caption=L("A hundred and thirty characters in eight hundred "
+                           "milliseconds. Then a cue that starts too early.",
+                           "Cent trente caractères en huit cents "
+                           "millisecondes. Puis un sous-titre qui part trop "
+                           "tôt.")),
+            # SECRET SAUCE
+            dict(type="verify", start=30.9, dur=16.1, end=47.0,
+                 eyebrow=L("The numbers were published years ago",
+                           "Les chiffres sont publiés depuis des années"),
+                 claims=[(L("reading speed, characters a second",
+                            "vitesse de lecture, caractères par seconde"), "17"),
+                         (L("characters on one line", "caractères sur une ligne"), "42"),
+                         (L("shortest a cue may be", "durée minimale d'un sous-titre"),
+                          L("5/6 s", "5/6 s")),
+                         (L("longest before it has swallowed a sentence",
+                            "durée au-delà de laquelle il a avalé une phrase"),
+                          L("7 s", "7 s")),
+                         (L("lines, on which BBC and Netflix agree",
+                            "lignes, sur quoi la BBC et Netflix s'accordent"), "2")],
+                 at=[(32.2, 32.7), (33.8, 34.3), (35.5, 36.0),
+                     (37.1, 37.6), (38.7, 39.2)],
+                 caption=L("Conventions rather than laws, which is why each "
+                           "one is a flag with its source written next to it.",
+                           "Des conventions plutôt que des lois : chacune est "
+                           "donc un signalement, sa source écrite à côté.")),
+            dict(type="held", start=46.9, dur=8.6, end=55.5,
+                 line=L("Accuracy was the only thing anybody measured.",
+                        "L'exactitude était la seule chose qu'on mesurait.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 audio", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 audio", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ---------------------------------------------------------------- cli-gui
     "cli-gui": dict(
         duration=60.0,
-        vo=[("cli-1", 1.10), ("cli-2", 6.50), ("cli-3", 15.00), ("cli-4", 24.00),
-            ("cli-5", 32.50), ("cli-6", 41.00), ("cli-7", 49.50), ("cli-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # Written 2026-10-27 from `schema.py`, which holds two things the
+        # feature list does not.
+        #
+        # Three frameworks, two adapters: a Typer app is converted with
+        # typer's own `get_command` and then walked as Click, "because that is
+        # what it becomes; there is no third adapter". Writing a third would
+        # have been a second implementation of Click that drifts.
+        #
+        # And the trap that would make the page lie: a Click Group's name
+        # defaults to the decorated function's name, usually `main`, rather
+        # than the installed console script. Left alone, the page's Build
+        # command assembles a command line that does not exist.
+        vo=[("cli-gui.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 30.00), ("tile", 42.55),
+             ("bell", 55.67)],
         scenes=[
+            # PROBLEM
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="A tool nobody will type, wrapped in a page."),
-            # Two real captures of the generated page. They are the whole argument
-            # -- a form somebody can hand to a colleague.
-            #
-            # Not the shots the `interface` film used: those come back through
-            # `figure_cli.py`, a reconstruction of an argparse front door that
-            # was written for a shoot in September and thrown away. It still
-            # renders, and it still says "127 chart kinds" -- a number the
-            # catalogue passed months ago, sitting on screen in a film about
-            # auditing claims. These two are captured from
-            # `sprezzature_figures.cli:main`, the command that is actually
-            # installed, so the number cannot go stale without the command
-            # going stale with it.
-            dict(type="grid", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="Generated, not written",
+                 line=L("Your colleague needs this tool. They will not open a "
+                        "terminal.",
+                        "Votre collègue a besoin de cet outil. Il n'ouvrira "
+                        "pas de terminal.")),
+            # SOLUTION: the thing itself
+            dict(type="grid", start=5.4, dur=11.1, end=16.4,
+                 eyebrow=L("Generated from the command, not written",
+                           "Engendré depuis la commande, pas écrit"),
                  images=["shots/make-figure-list.png", "shots/make-figure-render.png"],
                  at=on_beat(6.5, 7.6),
-                 caption="Flags become fields. Choices become a dropdown. "
-                         "Required stays required."),
-            dict(type="claim", start=14.3, dur=9.2, end=23.4,
-                 line="It does not read the help text. It reads the parser object."),
-            dict(type="panel", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="Three adapters, one schema",
-                 rows=[("argparse, Click, Typer", "introspected: fields, defaults, types"),
-                       ("schema.py", "what every adapter produces, normalised")],
-                 at=on_beat(24.5, 25.6),
-                 caption="So the renderer never has to know which framework "
-                         "the command line was written in."),
-            dict(type="claim", start=32.3, dur=9.2, end=41.4,
-                 line="And when no parser object is reachable, it parses --help."),
-            dict(type="panel", start=41.3, dur=7.8, end=49.0,
-                 eyebrow="Which is how the rest get a form",
-                 rows=[("A subprocess", "runs --help and reads what it printed"),
-                       ("A Go or Rust CLI", "covered, without a line of Python in it")],
-                 at=on_beat(42.5, 43.6),
-                 caption="Less exact than introspection, and named as such "
-                         "rather than presented as the same thing."),
-            dict(type="claim", start=48.9, dur=6.7, end=55.5,
-                 line="The page is the deliverable. The command stays the command."),
+                 caption=L("Options become fields. Choices become a list. "
+                           "Required stays required.",
+                           "Les options deviennent des champs. Les choix, une "
+                           "liste. L'obligatoire reste obligatoire.")),
+            dict(type="claim", start=16.3, dur=8.2, end=24.4,
+                 line=L("It reads the parser object. The help text is a "
+                        "last resort.",
+                        "Il lit l'objet analyseur. Le texte d'aide est un "
+                        "pis-aller.")),
+            # SECRET SAUCE
+            dict(type="versus", start=24.3, dur=11.2, end=35.4,
+                 eyebrow=L("Three frameworks, two adapters",
+                           "Trois cadres, deux adaptateurs"),
+                 left=(L("argparse, Click", "argparse, Click"),
+                       L("walked directly, each in its own adapter",
+                         "parcourus directement, chacun son adaptateur")),
+                 right=("Typer",
+                        L("converted by typer itself, then walked as Click",
+                          "converti par typer lui-même, puis lu comme du Click")),
+                 at=on_beat(25.6, 26.7),
+                 caption=L("A third adapter would be a second implementation "
+                           "of Click, drifting from the first.",
+                           "Un troisième adaptateur serait une deuxième "
+                           "implémentation de Click, qui dériverait de la "
+                           "première.")),
+            dict(type="held", start=35.3, dur=10.2, end=45.5,
+                 line=L("A Click group is named after the function, not after "
+                        "the command.",
+                        "Un groupe Click porte le nom de la fonction, pas "
+                        "celui de la commande.")),
+            dict(type="claim", start=45.4, dur=10.1, end=55.5,
+                 line=L("Unasked, the page builds a command that does not exist.",
+                        "Faute de le dire, la page fabrique une commande "
+                        "qui n'existe pas.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 cli-gui", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 cli-gui", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # --------------------------------------------------------------------- ui
     "ui": dict(
         duration=60.0,
-        vo=[("ui-1", 1.10), ("ui-2", 6.50), ("ui-3", 15.00), ("ui-4", 24.00),
-            ("ui-5", 32.50), ("ui-6", 41.00), ("ui-7", 49.50), ("ui-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # The smallest package gets the fewest scenes. Written 2026-10-27 from
+        # `audit_i18n.py`, whose best idea is where it stops: `--fix` writes
+        # the string into the catalogue and refuses to rewrite the call site,
+        # for the reason `pybabel extract` gives. Only the author knows which
+        # id the call should use, and whether the surrounding code wants a
+        # plural or a placeholder. So it prints the line to paste, and
+        # anything it could not parse with certainty is reported as needing a
+        # hand rather than dropped in silence.
+        vo=[("ui.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 24.55), ("tile", 42.55), ("bell", 55.67)],
         scenes=[
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="The smallest brick, on purpose."),
-            dict(type="panel", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="Two halves of one judgement",
-                 rows=[("In prose", "the three-Roboto rule, the tokens, what an interface has to respect"),
-                       ("In code", "the part a machine can carry out")],
-                 at=on_beat(6.5, 7.6),
-                 caption="Most of it stays prose, because most of it is a "
-                         "decision rather than a check."),
-            dict(type="claim", start=14.3, dur=9.2, end=23.4,
-                 line="A hardcoded sentence costs nothing the day it is written."),
-            dict(type="claim", start=23.3, dur=9.2, end=32.4,
-                 line="It costs a week the day somebody needs a second language."),
-            dict(type="panel", start=32.3, dur=9.2, end=41.4,
-                 eyebrow="Where that week actually goes",
-                 rows=[("Scattered", "JavaScript literals, HTML attributes, prompt templates in Python"),
-                       ("Extracted", "one catalogue, and a page that switches")],
-                 at=on_beat(33.3, 34.4),
-                 caption="The mechanised half, and the only one worth "
-                         "mechanising: finding every sentence you forgot."),
-            dict(type="chips", start=41.3, dur=7.8, end=49.0,
-                 eyebrow="And what ships with it",
-                 items=["9 components", "9 snippets", "6 font files",
-                        "a starter page", "design tokens", "theme toggle"],
-                 at=on_beat(42.5, 43.1, 43.6, 44.2, 44.7, 45.3),
-                 caption="Roboto, Roboto Serif, Roboto Mono \u2014 vendored, so a "
-                         "page never waits on a font server."),
-            dict(type="claim", start=48.9, dur=6.7, end=55.5,
-                 line="Taste is written down once, then it is somebody else's too."),
+                 line=L("A sentence written straight into a template costs "
+                        "nothing today.",
+                        "Une phrase écrite en dur dans un gabarit ne coûte "
+                        "rien aujourd'hui.")),
+            dict(type="held", start=5.4, dur=11.1, end=16.4,
+                 line=L("It costs a week the day somebody needs a second "
+                        "language.",
+                        "Elle coûte une semaine le jour où il faut une "
+                        "deuxième langue.")),
+            dict(type="versus", start=16.3, dur=13.2, end=29.4,
+                 eyebrow=L("Two places a string hides",
+                           "Deux endroits où une phrase se cache"),
+                 left=("I18N001",
+                       L("a locale table buried in JavaScript",
+                         "une table de langues enfouie dans du JavaScript")),
+                 right=("I18N002",
+                        L("a model prompt inlined in Python",
+                          "un prompt de modèle écrit en dur en Python")),
+                 at=on_beat(17.5, 18.6),
+                 caption=L("A prompt is a translatable string. Almost nobody "
+                           "treats it as one.",
+                           "Un prompt est une chaîne traduisible. Presque "
+                           "personne ne le traite comme tel.")),
+            dict(type="held", start=29.3, dur=13.2, end=42.5,
+                 line=L("It moves the string, then stops.",
+                        "Il déplace la phrase, puis s'arrête.")),
+            dict(type="claim", start=42.4, dur=13.1, end=55.5,
+                 line=L("Only you know whether that line wants a plural.",
+                        "Vous seul savez si cette ligne réclame un pluriel.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
                  mark="Sprezzature \u00b7 ui", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
@@ -565,187 +664,269 @@ FILMS = {
     # scene is a sentence about the thing the viewer is currently watching.
     "video": dict(
         duration=60.0,
-        vo=[("vid-1", 1.10), ("vid-2", 6.50), ("vid-3", 15.00), ("vid-4", 24.00),
-            ("vid-5", 32.50), ("vid-6", 41.00), ("vid-7", 49.50), ("vid-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # The brick that made the other ten and checks them. Written
+        # 2026-10-27, and its problem statement is this repository's own
+        # history: "127 chart kinds" stayed on screen while the catalogue
+        # grew to 167, because nobody opens a generator to re-read its
+        # strings.
+        #
+        # The secret sauce is that the dangerous claim is the undeclared one.
+        # A declared claim gets checked against the code. A number that
+        # simply appears on screen has nothing to check it against, so the
+        # scan reads the composition and reports every number no claim
+        # accounts for.
+        vo=[("video.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 20.19), ("tile", 38.74), ("bell", 55.67)],
         scenes=[
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="A film is a claim with a soundtrack."),
-            dict(type="panel", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="Two kinds of claim",
-                 rows=[("Declared", "a sentence, and the code behind it"),
-                       ("Undeclared", "a number on screen that nothing sourced")],
-                 at=on_beat(6.5, 7.6),
-                 caption="The second kind is the dangerous one, because "
-                         "nobody wrote it down to be checked."),
-            dict(type="claim", start=14.3, dur=9.2, end=23.4,
-                 line="167. 52. 30. 20. Every one of those is checkable."),
-            # The provenance classes, which is the part that saves files.
-            dict(type="panel", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="And the assets are ledgered",
-                 rows=[("TRACKED", "in git, restorable from the repository"),
-                       ("DERIVED", "rebuilt by a script that is in git"),
-                       ("SOLE", "the only copy there is")],
-                 at=on_beat(24.5, 25.1, 25.6),
-                 caption="Three classes, because exactly one of them cannot "
-                         "be got back."),
-            dict(type="claim", start=32.3, dur=9.2, end=41.4,
-                 line="A sole copy is the one a cleanup deletes without noticing."),
-            dict(type="panel", start=41.3, dur=7.8, end=49.0,
-                 eyebrow="Captions are measured, not guessed",
-                 rows=[("The duration", "read off the voice file itself"),
-                       ("The split", "at a sentence end, never mid-clause")],
-                 at=on_beat(42.5, 43.6),
-                 caption="A line that overruns the next one is a caption "
-                         "track nobody can follow."),
-            dict(type="claim", start=48.9, dur=6.7, end=55.5,
-                 line="Then a poster frame, and a loudness pass."),
+                 line=L("A film asserts things at thirty frames a second.",
+                        "Un film affirme des choses trente fois par seconde.")),
+            dict(type="held", start=5.4, dur=13.1, end=18.4,
+                 line=L("This suite told viewers it had 127 chart kinds, for "
+                        "months after it had 167.",
+                        "Cette suite a annoncé 127 types de graphiques "
+                        "pendant des mois après en avoir eu 167.")),
+            dict(type="verify", start=18.3, dur=19.1, end=37.4,
+                 eyebrow=L("So the claims live beside the film",
+                           "Les affirmations vivent donc à côté du film"),
+                 claims=[(L("chart kinds, checked against the catalogue",
+                            "types de graphiques, vérifiés sur le catalogue"), "167"),
+                         (L("accessibility rules, checked against the linter",
+                            "règles d'accessibilité, vérifiées sur le linter"), "20"),
+                         (L("laws of UX, checked against the reference",
+                            "lois d'UX, vérifiées sur la référence"), "30"),
+                         (L("assets, checked against the ledger",
+                            "ressources, vérifiées sur l'inventaire"), "81")],
+                 at=[(19.7, 20.2), (21.3, 21.8), (22.9, 23.4), (24.5, 25.0)],
+                 caption=L("Each one names the file that would have to change "
+                           "for it to stop being true.",
+                           "Chacune nomme le fichier qui devrait changer pour "
+                           "qu'elle cesse d'être vraie.")),
+            dict(type="held", start=37.3, dur=18.2, end=55.5,
+                 line=L("The dangerous number is the one nobody declared.",
+                        "Le nombre dangereux est celui que personne n'a "
+                        "déclaré.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 video", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 video", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ------------------------------------------------------------------- maps
     "maps": dict(
         duration=60.0,
-        vo=[("maps-1", 1.10), ("maps-2", 6.50), ("maps-3", 15.00),
-            ("maps-4", 24.00), ("maps-5", 33.00), ("maps-6", 42.00),
-            ("maps-7", 49.50), ("maps-8", 55.80)],
-        sfx=[("drop", 5.46), ("tile", 16.38), ("tile", 24.57), ("tile", 33.65),
-             ("tile", 42.55), ("bell", 55.63)],
+        # No panels, no chips: six plates and a voice over them. Written
+        # 2026-10-27 after reading `make_density.py`, which turns out to hold
+        # the best sentence in the package.
+        #
+        # The secret sauce is the plate that draws no map. An accumulation
+        # field has no coastline, no border and no graticule: the land appears
+        # because events fell on it, the sea stays dark because none did, and
+        # a reader recognises the shape without being shown it. The first cut
+        # of this film said that in a caption over somebody else's map,
+        # because the French density plate did not exist. It does now.
+        vo=[("maps.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 26.19), ("wipe", 40.37),
+             ("bell", 55.67)],
         scenes=[
+            # PROBLEM
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="A column of countries is a map waiting to happen."),
-            # Situation plates only: of the three kinds this package draws,
-            # these are the ones worth a minute of somebody's attention. Four
-            # reference plates, where the geography is the whole point.
-            dict(type="grid", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="Real coastlines, a real projection",
+                 line=L("A column of countries hides where things happen.",
+                        "Une colonne de pays cache l'endroit où les choses "
+                        "arrivent.")),
+            # SOLUTION: real ground, four reference plates
+            dict(type="grid", start=5.4, dur=10.1, end=15.4,
+                 eyebrow=L("Real coastlines, a real projection",
+                           "De vraies côtes, une vraie projection"),
                  images=["maps/situation-himalaya.png", "maps/situation-iberia.png",
-                         "maps/situation-switzerland.png", "maps/situation-western-europe.png"],
-                 at=[6.55, 7.64, 8.74, 9.83],
-                 caption="Eight kilometres of relief, the Meseta, the lakes, "
-                         "and the physical base the rest is drawn on."),
-            dict(type="panel", start=14.3, dur=9.2, end=23.4,
-                 eyebrow="The projection is a decision, not a default",
-                 rows=[("Equal Earth", "areas stay honest, published 2018"),
-                       ("Lambert conformal conic", "centred on the region you asked for")],
-                 at=[16.38, 17.47],
-                 caption="Every recipe for flattening the Earth distorts "
-                         "something. This one says which."),
-            # And two areas-of-control plates, which is what the kind is for.
-            dict(type="grid", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="Who controls what",
+                         "maps/situation-switzerland.png",
+                         "maps/situation-western-europe.png"],
+                 at=on_beat(6.5, 7.1, 7.6, 8.2),
+                 caption=L("Eight kilometres of relief, the Meseta, the lakes: "
+                           "the ground a front has to sit on.",
+                           "Huit kilomètres de relief, la Meseta, les lacs : "
+                           "le sol sur lequel un front doit tenir.")),
+            # SOLUTION: what the form is actually for
+            dict(type="grid", start=15.3, dur=10.9, end=26.2,
+                 eyebrow=L("Who holds what, at what certainty",
+                           "Qui tient quoi, à quelle certitude"),
                  images=["maps/situation-ukraine.png", "maps/situation-syria.png"],
-                 at=[24.57, 25.66],
-                 caption="Zones by category, flashpoints, a contact line, and "
-                         "a scale bar in two units at once."),
-            dict(type="claim", start=32.3, dur=9.2, end=41.4,
-                 line="The density map draws no coastline at all."),
-            dict(type="panel", start=41.3, dur=7.8, end=49.0,
-                 eyebrow="And it still reads as land",
-                 rows=[("The land", "appears because events fell on it"),
-                       ("The sea", "stays dark because none did")],
-                 at=[42.55, 43.64],
-                 caption="The reader recognises the shape without being shown it."),
-            dict(type="claim", start=48.9, dur=6.7, end=55.5,
-                 line="Natural Earth, GMTED2010, TIGER/Line \u2014 every source named."),
+                 at=on_beat(16.4, 17.5),
+                 caption=L("Zones by category. Flashpoints drawn as rings, "
+                           "because their position is approximate.",
+                           "Des zones par catégorie. Des points chauds en "
+                           "anneaux, leur position étant approximative.")),
+            # SECRET SAUCE
+            dict(type="claim", start=26.1, dur=8.3, end=34.3,
+                 line=L("Then the plate that draws no map at all.",
+                        "Puis la planche qui ne dessine aucune carte.")),
+            dict(type="grid", start=34.2, dur=12.0, end=46.1,
+                 eyebrow=L("Drawn without a coastline",
+                           "Dessinée sans la moindre côte"),
+                 images=["maps/density.svg"],
+                 at=on_beat(35.5),
+                 caption=L("Every point is an event. The shape is what they "
+                           "add up to.",
+                           "Chaque point est un événement. La forme est ce "
+                           "qu'ils finissent par dessiner.")),
+            dict(type="held", start=46.0, dur=9.5, end=55.5,
+                 line=L("The land appears because events fell on it.",
+                        "La terre apparaît parce que des événements y sont "
+                        "tombés.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 maps", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 maps", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ----------------------------------------------------------------- ux-laws
     "ux-laws": dict(
         duration=60.0,
-        vo=[("uxlaws-1", 1.10), ("uxlaws-2", 6.00), ("uxlaws-3", 13.00),
-            ("uxlaws-4", 20.50), ("uxlaws-5", 30.00), ("uxlaws-6", 38.50),
-            ("uxlaws-7", 46.00), ("uxlaws-8", 55.80)],
-        sfx=[("drop", 5.46), ("tile", 14.20), ("tile", 21.85), ("wipe", 31.46),
-             ("tile", 39.08), ("bell", 55.63)],
+        # One sustained argument, no chip grid. Written 2026-10-27 after
+        # reading the auditor rather than its feature table.
+        #
+        # The secret sauce was in a docstring: Hick's Law measures the choices
+        # a person meets at one moment, so counting the links in a file gets
+        # it wrong twice. A responsive header holds two menus that never paint
+        # together, and a group collapses several controls into one decision.
+        # The README's table said "too many choices presented at once" and
+        # stopped there; the sentence is in both READMEs now.
+        vo=[("ux-laws.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("tile", 36.55),
+             ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=5.5, end=5.0,
-                 line="Nobody says \u201cthat violates Hick\u2019s Law\u201d."),
-            dict(type="panel", start=4.9, dur=7.6, end=12.4,
-                 eyebrow="What they say instead",
-                 rows=[("\u201cThis page is overwhelming\u201d", "too many choices at once"),
-                       ("\u201cI can never find the button\u201d", "no hit area, no focus ring")],
-                 at=[5.46, 6.55],
-                 caption="A usability finding in plain clothes. The job is to "
-                         "locate it, name it, and make it fixable."),
-            dict(type="chips", start=12.3, dur=7.9, end=20.1,
-                 eyebrow="Thirty laws, curated by Jon Yablonski",
-                 items=["Hick", "Miller", "Fitts", "Jakob", "Tesler",
-                        "Choice overload", "Selective attention", "Aesthetic-Usability"],
-                 at=[13.11, 13.64, 14.20, 14.73, 15.29, 15.84, 16.38, 16.93],
-                 caption="Eight of the thirty are decidable from the source. "
-                         "Those eight are the ones the auditor checks."),
-            dict(type="panel", start=20.0, dur=9.5, end=29.4,
-                 eyebrow="What the auditor actually catches",
-                 rows=[("Fitts", "a control with no 44-pixel hit area"),
-                       ("Miller", "an unchunked digit run past seven"),
-                       ("Aesthetic-Usability", "an interactive element with no focus ring")],
-                 at=[21.85, 22.93, 24.02],
-                 caption="Mechanical, source-decidable, and fast enough for a "
-                         "pre-commit hook."),
-            dict(type="claim", start=29.3, dur=8.2, end=37.4,
-                 line="It does not judge whether the screen answers the right question."),
-            dict(type="panel", start=37.3, dur=8.4, end=45.6,
-                 eyebrow="The honest boundary",
-                 rows=[("The gate", "eight laws, exit 1, every commit"),
-                       ("The human", "whether the flow makes sense at all")],
-                 at=[39.08, 40.17],
-                 caption="A fast gate, not a substitute for design review. "
-                         "The repo says so itself."),
-            dict(type="claim", start=45.5, dur=10.1, end=55.5,
-                 line="Thirty laws you can read. Eight a machine can hold you to."),
+            # PROBLEM
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line=L("They will tell you the page is overwhelming.",
+                        "On vous dira que la page est écrasante.")),
+            dict(type="versus", start=5.4, dur=9.1, end=14.4,
+                 eyebrow=L("What actually gets reported",
+                           "Ce qu'on vous remonte vraiment"),
+                 left=(L("What they say", "Ce qu'on vous dit"),
+                       L("“I can never find the button”",
+                         "« je ne trouve jamais le bouton »")),
+                 right=(L("What it is", "Ce que c'est"),
+                        L("too many choices at one moment",
+                          "trop de choix au même instant")),
+                 at=on_beat(6.5, 7.6),
+                 caption=L("Hick's Law is the one thing nobody will mention.",
+                           "La loi de Hick, elle, personne ne la citera.")),
+            # SOLUTION
+            dict(type="claim", start=14.3, dur=9.2, end=23.4,
+                 line=L("Thirty laws. Eight of them settle from the source.",
+                        "Trente lois. Huit se tranchent depuis la source.")),
+            # SECRET SAUCE, shown as the markup it reads
+            dict(type="code", start=23.3, dur=13.1, end=36.4,
+                 eyebrow=L("The same header, two menus",
+                           "Le même en-tête, deux menus"),
+                 code=['<nav class="flex items-center justify-between">',
+                       '  <div class="hidden sm:flex gap-4">',
+                       '    <a href="/skills">Skills</a>',
+                       '    <a href="/gallery">Gallery</a>',
+                       '    <a href="/packages">Packages</a>',
+                       '  </div>',
+                       '  <button class="sm:hidden">Menu</button>',
+                       '</nav>'],
+                 mark=(2, 7),
+                 at=[24.0, 24.5, 25.1, 25.6, 26.2, 26.7, 27.3, 27.8],
+                 flag=[(2, 29.5), (7, 31.1)],
+                 caption=L("One of these paints on a phone. The other paints "
+                           "on a desktop. A reader meets one of them.",
+                           "L'un s'affiche sur téléphone. L'autre sur "
+                           "ordinateur. Un lecteur n'en rencontre qu'un.")),
+            dict(type="held", start=36.3, dur=9.7, end=46.0,
+                 line=L("Adding them up charges the reader for choices no "
+                        "screen ever shows.",
+                        "Les additionner reproche au lecteur des choix "
+                        "qu'aucun écran ne lui montre.")),
+            dict(type="versus", start=45.9, dur=9.6, end=55.5,
+                 eyebrow=L("So it counts them apart",
+                           "Il les compte donc à part"),
+                 left=(L("Per breakpoint", "Par point de rupture"),
+                       L("the phone count, then the desktop count",
+                         "le compte du téléphone, puis celui du bureau")),
+                 right=(L("Per decision", "Par décision"),
+                        L("a block that collapses counts as one",
+                          "un bloc qui se replie compte pour un")),
+                 at=on_beat(47.0, 48.1),
+                 caption=L("It reports the worse of the two, naming which "
+                           "one it is.",
+                           "Il retient le pire des deux, en disant lequel.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 ux-laws", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 ux-laws", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ----------------------------------------------------------- accessibility
     "accessibility": dict(
         duration=60.0,
-        vo=[("a11y-1", 1.10), ("a11y-2", 6.50), ("a11y-3", 14.50),
-            ("a11y-4", 23.00), ("a11y-5", 32.00), ("a11y-6", 41.00),
-            ("a11y-7", 48.50), ("a11y-8", 55.80)],
-        sfx=[("drop", 5.46), ("tile", 15.29), ("tile", 23.47), ("tile", 32.56),
-             ("tile", 41.46), ("bell", 55.63)],
+        # Written 2026-10-27 from `lint_a11y.py`. Its autoplay rule carries
+        # the sharpest problem statement in the suite: unmuted sound that
+        # starts by itself masks a screen reader, so the user cannot hear the
+        # tool they are navigating with, and on many pages cannot find the
+        # control to stop it either. The trap closes on itself.
+        #
+        # The secret sauce is the restraint. Six of twenty rules repair
+        # themselves, and only six, because a fix is automatic solely where
+        # exactly one repair is safe. The other fourteen are reported and
+        # never guessed at. `fix_file` is idempotent by contract: a second
+        # run on a fixed file applies zero edits.
+        vo=[("accessibility.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 28.37), ("tile", 42.55),
+             ("bell", 55.67)],
         scenes=[
+            # PROBLEM
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="An unmuted autoplay masks a screen reader."),
-            dict(type="panel", start=5.4, dur=8.6, end=13.9,
-                 eyebrow="Three the source can prove on its own",
-                 rows=[("media-autoplay-sound", "WCAG 1.4.2 \u2014 it talks over the reader"),
-                       ("video-missing-captions", "WCAG 1.2.2 \u2014 audio with no captions"),
-                       ("media-missing-controls", "WCAG 2.1.1 \u2014 no keyboard controls")],
-                 at=[6.55, 7.64, 8.74],
-                 caption="No browser. No DOM. Just the markup, read carefully."),
-            dict(type="chips", start=13.8, dur=8.6, end=22.3,
-                 eyebrow="Twenty rules",
-                 items=["img-missing-alt", "input-missing-label", "div-onclick",
-                        "tabindex-positive", "heading-skip", "dialog-missing-close",
-                        "color-only-state", "motion-no-reduce-guard"],
-                 at=[15.29, 15.84, 16.38, 16.93, 17.47, 18.03, 18.58, 19.12],
-                 caption="Each one names the element, the line, and the rule it broke."),
-            dict(type="panel", start=22.2, dur=9.2, end=31.3,
-                 eyebrow="Six of the twenty repair themselves",
-                 rows=[("--fix", "lang detection, redundant aria, tabindex"),
-                       ("and the rest", "reported, never guessed at")],
-                 at=[23.47, 24.57],
-                 caption="A fix is only automatic where there is exactly one "
-                         "safe repair."),
-            dict(type="claim", start=31.2, dur=9.3, end=40.4,
-                 line="And the same rule, pointed the other way, writes the CSS."),
-            dict(type="panel", start=40.3, dur=7.8, end=48.0,
-                 eyebrow="Audit, then make",
-                 rows=[("The rule", "body text with tracking too tight to read"),
-                       ("The counterpart", "CSS at the WCAG 1.4.12 minimums")],
-                 at=[41.46, 42.55],
-                 caption="Ship the fix as a reader-facing toggle, not just a warning."),
-            dict(type="claim", start=47.9, dur=7.7, end=55.5,
-                 line="Standard library only. Exit 1 on any finding."),
+                 line=L("A video starts playing by itself, with sound.",
+                        "Une vidéo démarre toute seule, avec le son.")),
+            dict(type="held", start=5.4, dur=10.1, end=15.4,
+                 line=L("A blind reader now cannot hear the tool they would "
+                        "use to stop it.",
+                        "Un lecteur aveugle n'entend plus l'outil avec lequel "
+                        "il l'arrêterait.")),
+            # SOLUTION
+            dict(type="chips", start=15.3, dur=12.9, end=28.2,
+                 eyebrow=L("Twenty rules, from the markup alone",
+                           "Vingt règles, depuis le seul balisage"),
+                 items=["media-autoplay-sound", "video-missing-captions",
+                        "img-missing-alt", "input-missing-label",
+                        "div-onclick", "tabindex-positive",
+                        "heading-skip", "color-only-state"],
+                 at=on_beat(16.4, 17.0, 17.5, 18.1, 18.6, 19.2, 19.7, 20.3),
+                 caption=L("Each finding names the element, the line and the "
+                           "rule it broke. Standard library only.",
+                           "Chaque constat nomme l'élément, la ligne et la "
+                           "règle enfreinte. Bibliothèque standard seule.")),
+            # SECRET SAUCE
+            dict(type="verify", start=28.1, dur=14.3, end=42.4,
+                 eyebrow=L("What it will repair by itself",
+                           "Ce qu'il répare de lui-même"),
+                 claims=[(L("rules it checks", "règles vérifiées"), "20"),
+                         (L("rules it will fix", "règles qu'il corrige"), "6"),
+                         (L("rules it reports and leaves alone",
+                            "règles qu'il signale et laisse"), "14"),
+                         (L("edits a second run applies",
+                            "retouches à la seconde exécution"), "0")],
+                 at=[(29.5, 30.0), (31.1, 31.6), (32.7, 33.2), (34.4, 34.9)],
+                 caption=L("A repair is automatic only where exactly one "
+                           "repair is safe.",
+                           "Une réparation n'est automatique que là où il "
+                           "n'en existe qu'une de sûre.")),
+            dict(type="versus", start=42.3, dur=13.2, end=55.5,
+                 eyebrow=L("And the same rule, turned around",
+                           "Et la même règle, retournée"),
+                 left=(L("Reading it", "En lecture"),
+                       L("body text too tight to follow",
+                         "du texte courant trop serré pour suivre")),
+                 right=(L("Writing it", "En écriture"),
+                        L("the CSS that meets the minimum",
+                          "le CSS qui atteint le minimum")),
+                 at=on_beat(43.6, 44.7),
+                 caption=L("Audit and make are one rule, read in two "
+                           "directions.",
+                           "Auditer et fabriquer, c'est une seule règle lue "
+                           "dans deux sens.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 accessibility", line=OUTRO_LINE, url="sprezzature.ai"),
+                 mark="Sprezzature \u00b7 accessibility", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
 }
@@ -906,10 +1087,18 @@ def css(f: dict) -> str:
       width: {min(f['w'] - 2 * pad, 1280)}px; text-align: left; }}
     .code-line {{ display: flex; gap: {int(f['mono'] * .9)}px;
       border-radius: 6px; padding: 1px {int(f['mono'] * .4)}px; }}
-    .code-n {{ color: var(--line); min-width: {int(f['mono'] * 1.5)}px;
+    /* The gutter number is text, and the contrast checker treats it as
+       text: drawn in the hairline colour it came to 1.26:1 against paper,
+       where 3:1 is the floor. A line number nobody can read is also a line
+       number nobody can quote back at you. */
+    .code-n {{ color: #8a8a8a; min-width: {int(f['mono'] * 1.5)}px;
       text-align: right; }}
     .code-t {{ color: var(--ink); white-space: pre; }}
     .code-line.bad .code-t {{ color: var(--ink); font-weight: 600; }}
+    /* The gutter number is drawn in the rule colour, which disappears
+       against the flag. A flagged line is the one a viewer wants to
+       name, so its number is the one that has to stay readable. */
+    .code-line.bad .code-n {{ color: var(--ink-soft); font-weight: 600; }}
 
     /* verify: a claim, and the value it was checked against. */
     .verify {{ width: {min(f['w'] - 2 * pad, 1280)}px; }}

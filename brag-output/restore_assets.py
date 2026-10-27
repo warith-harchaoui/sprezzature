@@ -103,6 +103,15 @@ TRACKED.update({f"figures/{n}.svg": f"web/img/figures/{n}.svg" for n in FIGURES}
 TRACKED.update({f"figures/fr/{n}.svg": f"web/img/figures/fr/{n}.svg" for n in FIGURES})
 TRACKED["figures/fr/bar-grouped-gray.svg"] = "web/img/figures/fr/bar-grouped.svg"
 
+# The accumulation plate, in both languages, generated rather than copied:
+# `make_density.py --language` produces it, and until 2026-10-27 that flag was
+# accepted by every map generator and honoured by none. It is a DERIVED asset
+# for that reason, with the command that makes it written down next to it.
+DERIVED_MAPS = {
+    "maps/density.svg": ("en", "the field the maps film ends on"),
+    "maps/fr/density.svg": ("fr", "the same plate, in French"),
+}
+
 # ---------------------------------------------------------------------------
 # B. Reproducible by a tool. The narration text lives in make_captions.py,
 #    which git tracks, and `narrate_films.py` turns it into both the voice and
@@ -244,6 +253,42 @@ def restore_derived(dest: pathlib.Path, fix: bool) -> list[str]:
     notes += restore_cvd(dest, fix)
     notes += restore_shots(dest, fix)
     notes += restore_make_figure_shots(dest, fix)
+    notes += restore_density(dest, fix)
+    return notes
+
+
+def restore_density(dest: pathlib.Path, fix: bool) -> list[str]:
+    """The accumulation plate, from sprezzature-maps, per language.
+
+    Generated rather than copied out of the gallery: the gallery has no
+    French one, because `--language fr` was decoration across that whole
+    package until it was fixed. Regenerating here keeps the two cuts honest
+    without waiting for a gallery rebuild.
+    """
+    maps = pathlib.Path.home() / "sprezzature-maps"
+    missing = [rel for rel in DERIVED_MAPS if not (dest / rel).exists()]
+    if not missing:
+        return []
+    script = maps / "scripts" / "make_density.py"
+    if not script.exists():
+        return [f"  NO TOOL          {rel}: {script} absent" for rel in missing]
+    if not fix:
+        return [f"  would render     {rel}  <- make_density.py --language "
+                f"{DERIVED_MAPS[rel][0]}" for rel in missing]
+    notes = []
+    for rel in missing:
+        lang, why = DERIVED_MAPS[rel]
+        out = dest / rel
+        out.parent.mkdir(parents=True, exist_ok=True)
+        done = subprocess.run(
+            [sys.executable, str(script), "--language", lang, "--out", str(out)],
+            capture_output=True, text=True, check=False, cwd=str(maps),
+        )
+        if done.returncode != 0 or not out.exists():
+            notes.append(f"  RENDER FAILED    {rel} "
+                         f"({(done.stderr or done.stdout).strip()[:110]})")
+        else:
+            notes.append(f"  rendered         {rel}  ({why})")
     return notes
 
 
@@ -535,7 +580,8 @@ def main() -> None:
     # The narration count is read, not typed: it was `17`, and adding a film
     # with nine lines made this self-check report 72/59 -- a wrong number in
     # the one line whose job is to say whether the tree is complete.
-    want = len(TRACKED) + len(narration()) + 1 + len(CVD) + 2 + 2 + len(SEED_ONLY)
+    want = (len(TRACKED) + len(narration()) + 1 + len(CVD) + 2 + 2
+            + len(DERIVED_MAPS) + len(SEED_ONLY))
     print(f"{have}/{want} files present" + ("" if args.fix else "   (report only; pass --fix)"))
 
 
