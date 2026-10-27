@@ -129,21 +129,40 @@ def findings(text: str, lang: str) -> list[str]:
     return out
 
 
-def lines_of(spec: dict, lang: str) -> list[tuple[str, str]]:
+def lines_of(spec: dict, lang: str, film: str = "") -> list[tuple[str, str]]:
     """Every user-visible string of one film cut, with where it sits."""
     import build_films
 
-    resolved = build_films.in_language(spec, lang)
+    resolved = build_films.in_language(spec, lang, film)
     out: list[tuple[str, str]] = []
     for i, sc in enumerate(resolved["scenes"]):
         kind = sc["type"]
+        # `mark` carries the wordmark on an outro and a tuple of flagged line
+        # numbers on a `code` scene. Reading it blindly handed a tuple to a
+        # regular expression, which is the same collision that once rendered
+        # the word "760" where a caption belonged.
         for key in ("line", "caption", "eyebrow", "mark"):
-            if sc.get(key):
-                out.append((f"s{i} {kind}.{key}", sc[key]))
+            value = sc.get(key)
+            if isinstance(value, str) and value:
+                out.append((f"s{i} {kind}.{key}", value))
         for a, b in sc.get("rows", ()):
             out.append((f"s{i} {kind}.row", f"{a}: {b}"))
         for item in sc.get("items", ()):
             out.append((f"s{i} {kind}.chip", item))
+        # The scene types added for the rewrite. Without these the sweep
+        # walked straight past a `versus`, a `verify` and a `flow`, reporting
+        # zero findings on text it had never looked at.
+        for side in ("left", "right"):
+            if sc.get(side):
+                key, value = sc[side]
+                out.append((f"s{i} {kind}.{side}", f"{key}: {value}"))
+        for claim, value in sc.get("claims", ()):
+            out.append((f"s{i} {kind}.claim", f"{claim}: {value}"))
+        if kind == "flow":
+            for name, under in sc.get("stages", ()):
+                out.append((f"s{i} flow.stage", f"{name}: {under}"))
+        # A `code` scene shows source, which is not prose and is exempt: the
+        # markup it quotes is the markup a reader will meet.
     return out
 
 
@@ -166,7 +185,7 @@ def main() -> int:
             pairs = [(f"vo{n}", t) for n, (_s, _d, t)
                      in enumerate(make_captions.FILMS[film][lang], 1)]
         else:
-            pairs = lines_of(spec, lang)
+            pairs = lines_of(spec, lang, film)
         for where, text in pairs:
             for problem in findings(text, lang):
                 print(f"  {film}.{lang} {where}: {problem}\n      {text}")
