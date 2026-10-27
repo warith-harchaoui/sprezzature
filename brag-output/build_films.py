@@ -12,7 +12,9 @@ from __future__ import annotations
 
 import json
 import pathlib
+import copy
 import shutil
+from typing import Any
 
 import films_fr
 import make_captions
@@ -68,7 +70,77 @@ BEATS = [0.549, 1.106, 1.637, 2.181, 2.736, 3.288, 3.819, 4.368,
          52.943, 53.488, 54.034, 54.58, 55.125, 55.671, 56.217, 56.747,
          57.308, 57.957, 58.395, 58.928, 59.451, 60.036, 60.539]
 
-OUTRO_LINE = "Make it. Audit it. Then look at it."
+def L(en: str, fr: str) -> dict[str, str]:
+    """One line of film text, in both languages, written together.
+
+    The French used to live in a lookup table keyed on the English string,
+    and that table is what made the French bad. Filling in a blank next to
+    `"Turned into something that runs"` produces `"Transformé en quelque
+    chose qui tourne"` — English word order wearing French words — because
+    the unit of work is a fragment torn out of its sentence. Twenty-five
+    fragments per film, each translated alone, and the result reads like a
+    machine did it. One of them came out in the *passé simple*.
+
+    Written here, the two sit on adjacent lines inside the scene they belong
+    to, so composing the French is writing a line of a script with the rest
+    of the script visible. The two cuts say the same thing and are not
+    sentence-by-sentence equivalents, which is the whole point: good French
+    is not where good English lands.
+    """
+    return {"en": en, "fr": fr}
+
+
+#: Films whose text has been rewritten as L() pairs. The rest still carry
+#: plain English strings and fall back to the old lookup table, which is the
+#: thing being replaced: it translated each fragment alone, out of its
+#: sentence, and that is what made the French bad.
+#:
+#: Listed rather than detected so the remaining work is visible. A film leaves
+#: this set by being rewritten, not by being edited.
+REWRITTEN = frozenset({"sprezzature", "colors"})
+
+
+def say(value: Any, lang: str, *, fallback: bool = False) -> Any:
+    """Resolve an L() to one language; translate a bare string if asked.
+
+    `fallback` is the transitional path for films not yet rewritten. It keeps
+    their French cuts in French while the rewrite works through them one at a
+    time, instead of silently shipping eleven English films labelled fr.
+    """
+    if isinstance(value, dict) and "en" in value and "fr" in value:
+        return value[lang]
+    if isinstance(value, list):
+        return [say(v, lang, fallback=fallback) for v in value]
+    if isinstance(value, tuple):
+        return tuple(say(v, lang, fallback=fallback) for v in value)
+    if fallback and isinstance(value, str) and value.strip():
+        try:
+            return films_fr.tr(value)
+        except films_fr.Untranslated:
+            return value
+    return value
+
+
+def in_language(spec: dict, lang: str, film: str = "") -> dict:
+    """A copy of one film's spec with every L() resolved to *lang*."""
+    out = copy.deepcopy(spec)
+    legacy = lang != "en" and film not in REWRITTEN
+    TEXT = ("line", "caption", "eyebrow", "mark", "rows", "items", "steps")
+    for scene in out["scenes"]:
+        for key, value in list(scene.items()):
+            scene[key] = say(value, lang, fallback=legacy and key in TEXT)
+        if lang != "en":
+            if scene.get("images"):
+                scene["images"] = [films_fr.french_asset(i) for i in scene["images"]]
+            for key in ("fig", "gray", "base", "src"):
+                if scene.get(key):
+                    scene[key] = films_fr.french_asset(scene[key])
+    return out
+
+
+OUTRO_LINE = L("Make it. Audit it. Then look at it.",
+               "Fabriquez. Auditez. Puis regardez.")
+
 
 
 def on_beat(*targets: float) -> list[float]:
@@ -101,73 +173,78 @@ def on_beat(*targets: float) -> list[float]:
 # They are still ON THE SERVER. An upload does not remove a file; only a
 # delete there does. See sftp/UPLOAD-films.txt.
 # ---------------------------------------------------------------------------
-LOOP_STEPS = [("01", "render"), ("02", "look"), ("03", "fix the source"), ("04", "again")]
+LOOP_STEPS = [("01", L("render", "dessiner")),
+              ("02", L("look", "regarder")),
+              ("03", L("fix the source", "corriger la source")),
+              ("04", L("again", "recommencer"))]
 
 FILMS = {
     # ---------------------------------------------------------------- global
     "sprezzature": dict(
         duration=60.0,
-        # The arc, rewritten 2026-10-26 and then grown to a minute. It used to
-        # open on "you can't proofread a chart" and spend a scene naming the
-        # nine skills -- a catalogue, and the least interesting thing about the
-        # suite. What every brick has in common is design know-how: rules
-        # somebody already wrote down, turned into something that runs, and
-        # pointed both ways. The film says that, and builds to the outro line
-        # it always had, which was the thesis before the film was.
-        # global-3 sits at 15.80, not the 15.00 the other nine films use:
-        # global-2 names four sources with two years in it and the voice
-        # takes 8.8 s to say them, which is 0.27 s past 15.00. Shortening it
-        # would have cost a date, and the dates are the credibility.
-        vo=[("global-1", 1.10), ("global-2", 6.50), ("global-3", 15.80),
-            ("global-4", 24.00), ("global-5", 32.50), ("global-6", 41.00),
-            ("global-7", 49.50), ("global-8", 55.80)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 33.28),
-             ("tile", 42.55), ("bell", 55.67)],
+        # The thesis film, rewritten 2026-10-27 under the writing charters.
+        # It used to end on "Ten packages. Five surfaces each." -- a spec
+        # sheet, and the least interesting thing that had been on screen. It
+        # ends on what stays on your machine instead, which is the claim a
+        # viewer has no other way to hear.
+        vo=[("sprezzature.en", 1.10)],
+        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 38.74),
+             ("bell", 55.67)],
         scenes=[
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line="Design is know-how. Most of it is already written down."),
-            # The know-how, named. Every chip is a source somebody can go and
-            # read, which is the point: cited, not invented here.
+                 line=L("Most design decisions were settled long ago.",
+                        "La plupart des décisions de design sont tranchées "
+                        "depuis longtemps.")),
             dict(type="chips", start=5.4, dur=9.1, end=14.4,
-                 eyebrow="Written down, by somebody else",
-                 items=["30 Laws of UX", "WCAG contrast", "Machado 2009",
-                        "Gestalt", "Equal Earth", "W3C WebVTT", "Schema.org",
-                        "OKLCH"],
+                 eyebrow=L("Written down by other people",
+                           "Écrites par d'autres"),
+                 items=["30 Laws of UX", L("WCAG contrast", "contraste WCAG"),
+                        "Machado 2009", "Gestalt", "Equal Earth", "W3C WebVTT",
+                        "Schema.org", "OKLCH"],
                  at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3, 9.8, 10.4),
-                 caption="Yablonski, the W3C, a 2009 IEEE paper, a 2018 "
-                         "projection \u2014 read, then written into the tools."),
-            # What that know-how turns into, which is the answer to "so what".
+                 caption=L("Yablonski for the laws. The W3C for contrast. A "
+                           "2009 paper for what a colour-blind reader sees.",
+                           "Yablonski pour les lois. Le W3C pour le contraste. "
+                           "Un article de 2009 pour ce que voit un daltonien.")),
             dict(type="grid", start=14.3, dur=9.2, end=23.4,
-                 eyebrow="Turned into something that runs",
-                 images=["figures/sankey.svg", "maps/situation-western-europe.png",
-                         "figures/calendar-heatmap.svg", "figures/corr-matrix.svg"],
+                 eyebrow=L("What the rules produce", "Ce que les règles produisent"),
+                 images=["figures/corr-matrix.svg", "figures/calendar-heatmap.svg",
+                         "figures/map-flow.svg", "figures/choropleth.svg"],
                  at=on_beat(15.8, 16.4, 16.9, 17.5),
-                 caption="A flow, a map, a calendar, a matrix \u2014 and the "
-                         "rule each one was checked against."),
-            dict(type="panel", start=23.3, dur=9.2, end=32.4,
-                 eyebrow="The same rules, both directions",
-                 rows=[("Make", "a page, a figure, a map, a palette"),
-                       ("Audit", "the same rules, against what you made")],
+                 caption=L("A matrix, a calendar, a flow, a choropleth. Each "
+                           "one answered to the rule that governs it.",
+                           "Une matrice, un calendrier, un flux, un "
+                           "choroplèthe. Chacun confronté à la règle qui le "
+                           "gouverne.")),
+            dict(type="versus", start=23.3, dur=9.2, end=32.4,
+                 eyebrow=L("The same rules, aimed twice",
+                           "Les mêmes règles, braquées deux fois"),
+                 left=(L("Make", "Fabriquer"),
+                       L("a page, a figure, a map, a palette",
+                         "une page, une figure, une carte, une palette")),
+                 right=(L("Audit", "Auditer"),
+                        L("those rules, run over what shipped",
+                          "ces règles, passées sur ce qui est livré")),
                  at=on_beat(24.5, 25.6),
-                 caption="167 chart kinds \u00b7 20 accessibility rules \u00b7 "
-                         "30 laws of UX \u00b7 nothing has to leave the machine."),
-            # The other half, and the one no reference can supply: a model that
-            # looks at the result. Sixteen seconds, because it is the strongest
-            # thing in the film.
+                 caption=L("167 chart kinds. 20 accessibility rules. 30 laws "
+                           "of UX.",
+                           "167 types de graphiques. 20 règles "
+                           "d'accessibilité. 30 lois d'UX.")),
             dict(type="loop", start=32.3, dur=16.7, end=49.0,
-                 eyebrow="No reference does this", steps=LOOP_STEPS,
+                 eyebrow=L("The part no rule covers",
+                           "La part qu'aucune règle ne couvre"),
+                 steps=LOOP_STEPS,
                  fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
                  ratio=745 / 505, step_at=on_beat(33.3, 34.4, 35.5, 36.6),
                  wipe_at=38.7, wipe_dur=1.09, caption_at=43.6,
-                 caption="Qwen3-VL through Ollama writes the alt text, drafts "
-                         "the captions, and critiques the figure. One model, offline."),
-            dict(type="panel", start=48.9, dur=6.7, end=55.5,
-                 eyebrow="What that adds up to",
-                 rows=[("Ten packages", "ui, cli-gui, publish, accessibility, colors, audio, ux-laws, figures, maps, video"),
-                       ("Five surfaces each", "library, CLI, HTTP API, MCP tools, skill")],
-                 at=on_beat(49.6, 50.7),
-                 caption="One implementation underneath \u2014 deduplication "
-                         "that changes a single pixel is rejected."),
+                 caption=L("A vision model reads the chart back to you. It "
+                           "names what fails. The source is what gets fixed.",
+                           "Un modèle de vision vous relit le graphique. Il "
+                           "nomme ce qui cloche. C'est la source qu'on "
+                           "corrige.")),
+            dict(type="held", start=48.9, dur=6.7, end=55.5,
+                 line=L("It runs where you are. Nothing leaves the machine.",
+                        "Il tourne là où vous êtes. Rien n'en sort.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
                  mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
@@ -175,51 +252,77 @@ FILMS = {
     # ------------------------------------------------------------------ colors
     "colors": dict(
         duration=60.0,
-        vo=[("colors-1", 1.10), ("colors-2", 5.50), ("colors-3", 11.50),
-            ("colors-4", 17.50), ("colors-5", 24.00), ("colors-6", 31.50),
-            ("colors-7", 41.00), ("colors-8", 49.50), ("colors-9", 55.80)],
-        sfx=[("drop", 5.46), ("wipe", 18.03), ("wipe", 21.85), ("tile", 31.46),
-             ("tile", 41.46), ("bell", 55.63)],
+        # Rewritten 2026-10-27 after reading the package properly. The old cut
+        # showed four simulations in a row and called that an argument. The
+        # package has a better one and states it in a module docstring nobody
+        # watching a film will ever open: lightness is the only channel that
+        # no deficiency, no printer and no screen in sunlight takes away, and
+        # all three tools work on it. That is the film now, and the sentence
+        # has since been promoted into the README as well.
+        #
+        # Mostly picture: twenty-two seconds of the simulator, which is longer
+        # than any beat in the first set.
+        vo=[("colors.en", 1.10)],
+        sfx=[("drop", 5.47), ("wipe", 18.01), ("wipe", 21.83), ("tile", 41.46),
+             ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=5.5, end=5.0,
-                 line="Light grey on white reads fine. To you, indoors."),
-            dict(type="panel", start=4.9, dur=6.6, end=11.4,
-                 eyebrow="The same button, two readers",
-                 rows=[("Low vision", "the text and the background are too close"),
-                       ("Bright sunlight", "a phone screen loses the difference")],
-                 at=[5.46, 6.00],
-                 caption="It reads fine to whoever picked the colour. That is the problem."),
-            dict(type="claim", start=11.3, dur=5.4, end=16.3,
-                 line="About one man in twelve sees red and green as the same bar."),
-            dict(type="cvd", start=16.2, dur=12.0, end=28.1,
-                 eyebrow="Rendered for those eyes",
+            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+                 line=L("Light grey on white reads fine. To you, indoors.",
+                        "Du gris clair sur blanc se lit bien. Pour vous, à "
+                        "l'intérieur.")),
+            dict(type="versus", start=5.4, dur=9.1, end=14.4,
+                 eyebrow=L("The same button, two readers",
+                           "Le même bouton, deux lecteurs"),
+                 left=(L("Low vision", "Malvoyance"),
+                       L("the text and the background sit too close",
+                         "le texte et le fond sont trop proches")),
+                 right=(L("Bright sunlight", "Plein soleil"),
+                        L("a phone screen loses the difference",
+                          "un écran de téléphone perd la différence")),
+                 at=on_beat(6.5, 7.6),
+                 caption=L("It reads fine to whoever picked the colour. That "
+                           "is the problem.",
+                           "Ça se lit bien pour qui a choisi la couleur. "
+                           "C'est tout le problème.")),
+            dict(type="claim", start=14.3, dur=4.8, end=18.0,
+                 line=L("About one man in twelve sees red and green as one bar.",
+                        "Environ un homme sur douze voit le rouge et le vert "
+                        "comme une seule barre.")),
+            # Twenty-two seconds. The argument here is made by looking.
+            dict(type="cvd", start=17.9, dur=22.0, end=39.8,
+                 eyebrow=L("Rendered for those eyes", "Rendu pour ces yeux-là"),
                  base="figures/cvd/00-original.png",
-                 stages=[("01", "protanopia", "figures/cvd/01-protanopia.png", 18.03),
-                         ("02", "deuteranopia", "figures/cvd/02-deuteranopia.png", 20.21),
-                         ("03", "tritanopia", "figures/cvd/03-tritanopia.png", 22.39),
-                         ("04", "grayscale", "figures/cvd/04-grayscale.png", 24.57)],
-                 ratio=1490 / 1010, wipe_dur=0.80, caption_at=26.21,
-                 caption="If the story survives grey, it survives everyone."),
-            dict(type="chips", start=28.0, dur=11.5, end=39.4,
-                 eyebrow="None of this was invented here",
-                 items=["WCAG 2.x", "2.4-gamma luminance", "OKLab", "Ottosson 2020",
-                        "Machado 2009", "IEEE TVCG", "OKLCH", "CVD_MATRICES"],
-                 # Reveals end ~2.5 s before the scene does. The first cut put the
-                 # last chip on screen 0.3 s before the cut -- read by nobody.
-                 at=[29.28, 30.37, 31.46, 32.56, 33.64, 34.73, 35.81, 36.91],
-                 caption="The thresholds are the standard's, the matrices a "
-                         "paper's, the lightness axis Ottosson's."),
-            dict(type="panel", start=39.3, dur=10.3, end=49.4,
-                 eyebrow="The same know-how, both directions",
-                 rows=[("Audit", "every text-on-background pair, and a fix"),
-                       ("Make", "the approved palette, as a Tailwind config")],
-                 at=[41.46, 42.55],
-                 caption="One source for the colours, instead of each project "
-                         "copying hex codes."),
-            dict(type="claim", start=49.3, dur=6.4, end=55.6,
-                 line="Pure standard library. No network. No model."),
-            dict(type="outro", start=55.5, dur=4.5, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature · colors", line=OUTRO_LINE, url="sprezzature.ai"),
+                 stages=[("01", L("protanopia", "protanopie"),
+                          "figures/cvd/01-protanopia.png", 19.65),
+                         ("02", L("deuteranopia", "deutéranopie"),
+                          "figures/cvd/02-deuteranopia.png", 24.55),
+                         ("03", L("tritanopia", "tritanopie"),
+                          "figures/cvd/03-tritanopia.png", 29.47),
+                         ("04", L("grayscale", "niveaux de gris"),
+                          "figures/cvd/04-grayscale.png", 34.37)],
+                 ratio=1490 / 1010, wipe_dur=0.80, caption_at=36.55,
+                 caption=L("Measured transforms, from a 2009 paper. Not an "
+                           "impression of what it might look like.",
+                           "Des transformations mesurées, d'un article de "
+                           "2009. Pas une idée de ce que ça donnerait.")),
+            dict(type="held", start=39.7, dur=9.3, end=49.0,
+                 line=L("Lightness is the one channel nothing takes away.",
+                        "La clarté est le seul canal que rien ne retire.")),
+            dict(type="versus", start=48.9, dur=6.7, end=55.5,
+                 eyebrow=L("So that is the channel it moves",
+                           "C'est donc le canal qu'il déplace"),
+                 left=(L("Your hue", "Votre teinte"),
+                       L("held fixed, with the saturation",
+                         "figée, avec la saturation")),
+                 right=(L("Its lightness", "Sa clarté"),
+                        L("walked until the ratio clears",
+                          "parcourue jusqu'à ce que le rapport passe")),
+                 at=on_beat(49.6, 50.7),
+                 caption=L("Your brand blue stays your brand blue.",
+                           "Votre bleu de marque reste votre bleu de marque.")),
+            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 colors", line=OUTRO_LINE,
+                 url="sprezzature.ai"),
         ],
     ),
     # ---------------------------------------------------------------- figures
@@ -764,6 +867,63 @@ def css(f: dict) -> str:
     .pv {{ font-size: {f['h2']}px; font-weight: 400; color: var(--ink);
       line-height: 1.3; }}
 
+    /* held: one sentence, larger than a claim, for the films that have
+       fewer things to say and more time to say them. */
+    .held {{ font-family: "Roboto Serif"; font-size: {int(f['hero'] * .72)}px;
+      font-weight: 600; line-height: 1.22; letter-spacing: -.015em;
+      color: var(--ink); text-align: center; text-wrap: balance;
+      max-width: {int((f['w'] - 2 * pad) * .86)}px; margin: 0 auto; }}
+
+    /* flow: a document moving through stages and arriving as something. */
+    .flow {{ display: flex; align-items: stretch; justify-content: center;
+      flex-wrap: wrap; gap: {int(f['chip'] * .36)}px; }}
+    .flow-step {{ display: flex; flex-direction: column; gap: 4px;
+      border: 2px solid var(--line); border-radius: 14px;
+      background: var(--paper); padding: {int(f['chip'] * .5)}px
+      {int(f['chip'] * .66)}px; }}
+    .flow-name {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {int(f['chip'] * .92)}px; font-weight: 600; color: var(--blue); }}
+    .flow-under {{ font-size: {int(f['chip'] * .72)}px; color: var(--ink-soft); }}
+    .flow-arrow {{ align-self: center; font-size: {int(f['chip'] * 1.3)}px;
+      color: var(--line); line-height: 1; }}
+
+    /* versus: two halves of one idea, with the divider between them. */
+    .versus {{ display: flex; align-items: stretch; gap: {int(f['body'] * .9)}px;
+      width: {min(f['w'] - 2 * pad, 1280)}px; }}
+    .vs-half {{ flex: 1; display: flex; flex-direction: column; gap: 10px;
+      border: 2px solid var(--line); border-radius: 18px;
+      background: var(--paper); padding: {int(f['body'] * .8)}px; }}
+    .vs-key {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {f['mono']}px; font-weight: 600; color: var(--blue); }}
+    .vs-val {{ font-size: {int(f['h2'] * .86)}px; line-height: 1.3;
+      color: var(--ink); text-wrap: balance; }}
+    .vs-bar {{ width: 3px; background: var(--line); border-radius: 2px;
+      transform-origin: center; }}
+
+    /* code: the source a finding is about, with the line marked. */
+    .codecard {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {int(f['mono'] * .92)}px; line-height: 1.75;
+      width: {min(f['w'] - 2 * pad, 1280)}px; text-align: left; }}
+    .code-line {{ display: flex; gap: {int(f['mono'] * .9)}px;
+      border-radius: 6px; padding: 1px {int(f['mono'] * .4)}px; }}
+    .code-n {{ color: var(--line); min-width: {int(f['mono'] * 1.5)}px;
+      text-align: right; }}
+    .code-t {{ color: var(--ink); white-space: pre; }}
+    .code-line.bad .code-t {{ color: var(--ink); font-weight: 600; }}
+
+    /* verify: a claim, and the value it was checked against. */
+    .verify {{ width: {min(f['w'] - 2 * pad, 1280)}px; }}
+    .vrow {{ display: flex; align-items: baseline; gap: 14px;
+      padding: {int(f['body'] * .5)}px 0; border-bottom: 2px solid var(--line); }}
+    .vrow:last-child {{ border-bottom: 0; }}
+    .vclaim {{ font-size: {int(f['h2'] * .82)}px; color: var(--ink);
+      white-space: nowrap; }}
+    .vdots {{ flex: 1; border-bottom: 2px dotted var(--line);
+      transform: translateY(-.25em); }}
+    .vvalue {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {f['mono']}px; font-weight: 600; color: var(--blue);
+      white-space: nowrap; }}
+
     .shotcard img {{ display: block; border-radius: 8px; }}
     .viewport {{ position: relative; overflow: hidden; border-radius: 8px; }}
 
@@ -798,6 +958,72 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
     cap = (f'<p class="caption" id="s{i}-caption" '
            f'style="margin-top:{int(f["body"] * 1.05)}px">{esc(sc["caption"])}</p>'
            ) if sc.get("caption") and t not in ("loop", "cvd") else ""
+
+    if t == "held":
+        # One sentence, bigger than a claim, on screen long enough to read
+        # twice. The `ui` film is four of these and nothing else: the
+        # smallest package gets the fewest words, held longest.
+        return (f'<div class="stage"><div class="col">'
+                f'<h1 class="held" id="s{i}-held">{esc(sc["line"])}</h1>'
+                f'<div class="rule" id="s{i}-rule" style="width:96px;'
+                f'margin:{int(f["body"] * 1.4)}px auto 0"></div>'
+                f'</div></div>')
+
+    if t == "flow":
+        # Stages left to right, with an arrow between. A document moving
+        # through nine tools and arriving as a site is a sequence, so the
+        # scene is a sequence.
+        parts = []
+        for k, (name, under) in enumerate(sc["stages"], 1):
+            arrow = (f'<span class="flow-arrow" id="s{i}-a{k}">&rsaquo;</span>'
+                     if k > 1 else "")
+            parts.append(
+                f'{arrow}<div class="flow-step" id="s{i}-f{k}">'
+                f'<span class="flow-name">{esc(name)}</span>'
+                f'<span class="flow-under">{esc(under)}</span></div>')
+        return (f'<div class="stage"><div class="col">{head}'
+                f'<div class="flow">{"".join(parts)}</div>{cap}</div></div>')
+
+    if t == "versus":
+        # Two halves and a divider. Used where the subject is a pair:
+        # a command and the form it became, sound read in two directions.
+        left, right = sc["left"], sc["right"]
+        return (f'<div class="stage"><div class="col">{head}'
+                f'<div class="versus">'
+                f'<div class="vs-half" id="s{i}-vl">'
+                f'<p class="vs-key">{esc(left[0])}</p>'
+                f'<p class="vs-val">{esc(left[1])}</p></div>'
+                f'<div class="vs-bar" id="s{i}-vbar"></div>'
+                f'<div class="vs-half" id="s{i}-vr">'
+                f'<p class="vs-key">{esc(right[0])}</p>'
+                f'<p class="vs-val">{esc(right[1])}</p></div>'
+                f'</div>{cap}</div></div>')
+
+    if t == "code":
+        # Markup on screen with the offending lines marked. An accessibility
+        # finding is a statement about a line of source, so the film shows
+        # the line of source.
+        rows = "".join(
+            f'<div class="code-line{" bad" if n in sc.get("mark", ()) else ""}" '
+            f'id="s{i}-c{n}"><span class="code-n">{n}</span>'
+            f'<span class="code-t">{esc(line)}</span></div>'
+            for n, line in enumerate(sc["code"], 1))
+        return (f'<div class="stage"><div class="col">{head}'
+                f'<div class="card codecard" id="s{i}-code">{rows}</div>'
+                f'{cap}</div></div>')
+
+    if t == "verify":
+        # A claim and what it was checked against, the value arriving after
+        # the claim. The `video` film audits itself while it plays.
+        rows = "".join(
+            f'<div class="vrow" id="s{i}-v{k}">'
+            f'<span class="vclaim">{esc(claim)}</span>'
+            f'<span class="vdots"></span>'
+            f'<span class="vvalue" id="s{i}-vv{k}">{esc(value)}</span></div>'
+            for k, (claim, value) in enumerate(sc["claims"], 1))
+        return (f'<div class="stage"><div class="col">{head}'
+                f'<div class="card verify" id="s{i}-verify">{rows}</div>'
+                f'{cap}</div></div>')
 
     if t == "claim":
         return (f'<div class="stage"><div class="col">'
@@ -1033,6 +1259,45 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
                 out.append(f'tl.fromTo("#s{i}-page",{{y:0}},{{y:{-travel},'
                            f'duration:{span},ease:"power1.inOut"}},{begin:.2f});')
 
+    elif t == "held":
+        out.append(f'tl.fromTo("#s{i}-held",{{y:30,opacity:0}},'
+                   f'{{y:0,opacity:1,duration:1.0,ease:"power3.out"}},{s + .25:.2f});')
+        out.append(f'tl.fromTo("#s{i}-rule",{{scaleX:0}},'
+                   f'{{scaleX:1,duration:.7,ease:"expo.out"}},{s + .9:.2f});')
+
+    elif t == "flow":
+        for k, at in enumerate(sc["at"], 1):
+            if k > 1:
+                out.append(f'tl.fromTo("#s{i}-a{k}",{{opacity:0,x:-8}},'
+                           f'{{opacity:1,x:0,duration:.3,ease:"power2.out"}},{at - .12:.2f});')
+            out.append(f'tl.fromTo("#s{i}-f{k}",{{y:14,opacity:0}},'
+                       f'{{y:0,opacity:1,duration:.42,ease:"back.out(1.6)"}},{at:.2f});')
+
+    elif t == "versus":
+        a, b = sc["at"]
+        out.append(f'tl.fromTo("#s{i}-vl",{{x:-34,opacity:0}},'
+                   f'{{x:0,opacity:1,duration:.6,ease:"power3.out"}},{a:.2f});')
+        out.append(f'tl.fromTo("#s{i}-vbar",{{scaleY:0}},'
+                   f'{{scaleY:1,duration:.5,ease:"expo.out"}},{a + .2:.2f});')
+        out.append(f'tl.fromTo("#s{i}-vr",{{x:34,opacity:0}},'
+                   f'{{x:0,opacity:1,duration:.6,ease:"power3.out"}},{b:.2f});')
+
+    elif t == "code":
+        for n, at in enumerate(sc["at"], 1):
+            out.append(f'tl.fromTo("#s{i}-c{n}",{{opacity:0}},'
+                       f'{{opacity:1,duration:.22}},{at:.2f});')
+        for n, at in sc.get("flag", []):
+            out.append(f'tl.fromTo("#s{i}-c{n}",{{backgroundColor:"rgba(0,0,0,0)"}},'
+                       f'{{backgroundColor:"rgba(209,46,46,.12)",duration:.45,'
+                       f'ease:"power2.out"}},{at:.2f});')
+
+    elif t == "verify":
+        for k, (at_claim, at_value) in enumerate(sc["at"], 1):
+            out.append(f'tl.fromTo("#s{i}-v{k}",{{x:-20,opacity:0}},'
+                       f'{{x:0,opacity:1,duration:.45,ease:"power2.out"}},{at_claim:.2f});')
+            out.append(f'tl.fromTo("#s{i}-vv{k}",{{opacity:0,scale:.8}},'
+                       f'{{opacity:1,scale:1,duration:.35,ease:"back.out(2)"}},{at_value:.2f});')
+
     elif t == "outro":
         out.append(f'tl.fromTo("#logo",{{scale:.88,opacity:0}},'
                    f'{{scale:1,opacity:1,duration:.7,ease:"power3.out"}},{s + .2:.2f});')
@@ -1107,8 +1372,7 @@ def voice_track(film_key: str, spec: dict, lang: str) -> list[tuple[str, float]]
 
 def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.Path:
     f = FORMATS[fmt_key]
-    if lang != "en":
-        spec = films_fr.translate(spec)
+    spec = in_language(spec, lang, film_key)
     scenes, dur = spec["scenes"], spec["duration"]
 
     body = "\n".join(
