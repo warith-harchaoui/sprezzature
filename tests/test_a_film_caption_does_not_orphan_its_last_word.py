@@ -83,8 +83,23 @@ FONTS = {
     "mono": ROOT / "web/fonts/roboto-mono/Roboto-Mono-Variable.woff2",
 }
 
-# Pixels available, and the size the text is set at. Landscape only: it is the
-# format the site embeds, and the one every film is reviewed in.
+# Pixels available, and the size the text is set at.
+#
+# Landscape only, and that is now a decision rather than a shortcut. The same
+# caption that sits on one comfortable line at 1712px wraps three times in
+# portrait, where the column is 936px and the type is larger; measured across
+# both cuts of all eleven films, the social formats held 34 one-word last
+# lines against none in landscape. Shortening the text to satisfy all three
+# would have damaged the format the site embeds in order to tidy the two it
+# does not, so the social formats are handled where the problem is — the
+# stylesheet, with `text-wrap: balance` on `.caption`.
+#
+# That CSS is also why this test keeps a greedy wrapper while the renderer no
+# longer wraps greedily. Balancing can only improve a last line relative to
+# greedy, never worsen it: if the greedy model says a line does not widow,
+# the balanced render certainly does not. The model stays sound in the
+# direction that matters — no false negatives — and gains only the false
+# alarms the module docstring already declares acceptable.
 CARD, BORDER, PAD, GAP, KEY_MIN = 1280, 2, 22, 28, 380
 ROW_PX = CARD - 2 * BORDER - 2 * PAD - KEY_MIN - GAP          # 824
 COL_PX = 1920 - 2 * 104                                        # the stage column

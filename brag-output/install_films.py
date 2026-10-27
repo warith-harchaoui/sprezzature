@@ -17,8 +17,9 @@ each of them and is written down below.
 
 Usage
 -----
-    python3 install_films.py            # every film, both languages
-    python3 install_films.py maps       # one of them
+    python3 install_films.py                 # every film, both languages
+    python3 install_films.py maps            # one of them
+    python3 install_films.py --social        # plus the vertical/square cuts
 
 Author
 ------
@@ -55,6 +56,15 @@ POSTER_AT: dict[str, float] = {
 }
 
 LANGS = ("en", "fr")
+
+#: Where the vertical and square cuts are collected. The site serves only the
+#: landscape one, so these have nowhere to be installed *to* — and left in
+#: `films/<project>/renders/` they are 44 files under 44 directories, named
+#: after the minute they were encoded. Somebody about to post one needs
+#: `maps.fr.portrait.mp4`, not
+#: `maps-fr-portrait_2026-10-27_08-17-10.mp4` three levels down.
+SOCIAL = ROOT / "out" / "social"
+SOCIAL_FORMATS = ("portrait", "square")
 
 
 def newest_render(project: str) -> pathlib.Path | None:
@@ -103,9 +113,28 @@ def install(film: str, lang: str) -> list[str]:
     return []
 
 
+def collect_social(film: str) -> list[str]:
+    """Copy one film's vertical and square cuts out under readable names."""
+    problems: list[str] = []
+    SOCIAL.mkdir(parents=True, exist_ok=True)
+    for lang in LANGS:
+        for fmt in SOCIAL_FORMATS:
+            project = f"{film}-{fmt}" if lang == "en" else f"{film}-{lang}-{fmt}"
+            src = newest_render(project)
+            if src is None:
+                problems.append(f"  {film}.{lang}.{fmt}: {project} has no MP4")
+                continue
+            shutil.copy2(src, SOCIAL / f"{film}.{lang}.{fmt}.mp4")
+    return problems
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     parser.add_argument("films", nargs="*", help="Film keys; default is all of them.")
+    parser.add_argument(
+        "--social", action="store_true",
+        help="Also collect the vertical and square cuts into out/social/.",
+    )
     args = parser.parse_args()
 
     if shutil.which("sprezzature-video") is None:
@@ -120,11 +149,16 @@ def main() -> int:
     for film in wanted:
         for lang in LANGS:
             problems += install(film, lang)
+        if args.social:
+            problems += collect_social(film)
 
     if problems:
         sys.stderr.write("\n".join(problems) + "\n")
         return 1
     print(f"{len(wanted)} film(s) x {len(LANGS)} language(s) in {VIDEO}")
+    if args.social:
+        n = len(list(SOCIAL.glob("*.mp4")))
+        print(f"{n} vertical/square cut(s) in {SOCIAL}")
     return 0
 
 

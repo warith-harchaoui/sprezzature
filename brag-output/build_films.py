@@ -693,8 +693,18 @@ def css(f: dict) -> str:
       font-size: {f['eyebrow']}px; font-weight: 500; letter-spacing: .2em;
       color: var(--navy); text-transform: uppercase; text-align: center; }}
     .rule {{ height: 3px; background: var(--blue); transform-origin: center; }}
+    /* `text-wrap: balance` rather than shorter captions. The same sentence
+       that sits on one comfortable line in landscape wraps three times in
+       portrait, where the column is 936px instead of 1712 and the type is
+       larger: 34 captions across the two social formats ended on a one-word
+       line, against none in landscape. Shortening the text would have fixed
+       the social cuts by damaging the landscape one, which is the format the
+       site embeds -- a typographic problem deserves a typographic answer.
+       Chrome balances up to a handful of lines, which is all any of these
+       need. */
     .caption {{ font-size: {f['body']}px; font-weight: 400; line-height: 1.34;
-      color: var(--ink-soft); text-align: center; max-width: {f['w'] - 2 * pad}px; }}
+      color: var(--ink-soft); text-align: center; text-wrap: balance;
+      max-width: {f['w'] - 2 * pad}px; }}
 
     /* Scene 1: the claim */
     .claim {{ font-family: "Roboto Serif"; font-size: {f['hero']}px; font-weight: 600;
