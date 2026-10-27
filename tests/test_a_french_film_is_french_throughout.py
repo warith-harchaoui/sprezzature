@@ -98,7 +98,7 @@ def test_every_english_asset_in_a_french_cut_is_a_written_down_gap() -> None:
     for film, lang in build_films.cuts():
         if lang == "en":
             continue
-        spec = films_fr.translate(build_films.FILMS[film])
+        spec = build_films.in_language(build_films.FILMS[film], lang, film)
         for i, scene in enumerate(spec["scenes"]):
             for src in _assets_of(scene):
                 if "/fr/" in src:
@@ -132,7 +132,9 @@ def test_an_english_cut_never_reaches_for_a_french_asset() -> None:
     for film, lang in build_films.cuts():
         if lang != "en":
             continue
-        for i, scene in enumerate(build_films.FILMS[film]["scenes"]):
+        for i, scene in enumerate(
+            build_films.in_language(build_films.FILMS[film], lang, film)["scenes"]
+        ):
             for src in _assets_of(scene):
                 if "/fr/" in src:
                     wrong.append(f"{film}.en scene {i}: {src!r}")
@@ -144,13 +146,10 @@ def test_an_english_cut_never_reaches_for_a_french_asset() -> None:
 def test_every_asset_a_film_names_is_actually_there() -> None:
     """Both cuts, every scene. A missing asset is a render that dies at frame 1."""
     import build_films
-    import films_fr
 
     missing: list[str] = []
     for film, lang in build_films.cuts():
-        spec = build_films.FILMS[film]
-        if lang != "en":
-            spec = films_fr.translate(spec)
+        spec = build_films.in_language(build_films.FILMS[film], lang, film)
         for i, scene in enumerate(spec["scenes"]):
             for src in _assets_of(scene):
                 if not (ASSETS / src).is_file():

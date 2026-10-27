@@ -201,7 +201,6 @@ def test_no_film_line_leaves_its_last_word_alone() -> None:
     """
     pytest.importorskip("fontTools", reason="fontTools reads the advance widths")
     import build_films
-    import films_fr
 
     found: list[str] = []
     for film, lang in build_films.cuts():
@@ -210,8 +209,7 @@ def test_no_film_line_leaves_its_last_word_alone() -> None:
         # are being retired; they are not re-cut, so they are not re-checked.
         if spec["duration"] < 30:
             continue
-        if lang != "en":
-            spec = films_fr.translate(spec)
+        spec = build_films.in_language(spec, lang, film)
         for i, scene in enumerate(spec["scenes"]):
             for text, place, where in _lines_of(scene):
                 tail = _widow(text, place)

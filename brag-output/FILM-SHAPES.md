@@ -1,0 +1,89 @@
+# Eleven films, eleven shapes
+
+Written 2026-10-27, after watching the first set back. Two things were wrong
+with it and they had the same cause.
+
+**Every film ran the same eight beats** — claim, chips, panel, panel, claim,
+panel, claim, outro — because they were written in one sitting from one
+template. Watch two in a row and you have seen the format; watch four and the
+suite looks like a slide deck with a voice over it.
+
+**The French was a lookup table** keyed on the English strings, so each
+fragment was translated alone, out of its sentence. That is how you get
+*transformé en quelque chose qui tourne* and, in one caption, the *passé
+simple*. The French is composed now, next to the English, inside the scene it
+belongs to.
+
+So: one shape per film, chosen by what the film is about, and no two films
+sharing a hero image.
+
+---
+
+## The image allocation
+
+No picture appears in two films. The suite film is the exception it has to be
+— it is a montage of the others — so it was given the four that no brick film
+uses as its own.
+
+| Film | Pictures |
+|---|---|
+| sprezzature | `corr-matrix`, `calendar-heatmap`, `map-flow`, `choropleth` + the Ralph loop on `bar-grouped` |
+| figures | `sankey`, `alluvial`, `chord`, `bellcurve`, `circle-packing`, `candlestick`, `clustermap`, `kde2d-contour`, `surface3d` |
+| maps | the six situation plates, `choropleth-sequential`, `choropleth-diverging` |
+| colors | the five colour-vision frames |
+| cli-gui | the two `make-figure` captures |
+| publish, audio, ux-laws, ui, accessibility, video | none — these are films about text, and a stock photograph would be a lie |
+
+---
+
+## The shapes
+
+**sprezzature** — *the thesis.* Cold claim, the sources named, then sixteen
+seconds of the Ralph loop, which is the one thing in the suite that is not a
+rule. Ends on what nobody uploaded. Drops the "ten packages, five surfaces"
+panel: a spec sheet, and the least interesting thing that was on screen.
+
+**colors** — *mostly picture.* Opens on the failure, not on an explanation.
+Twenty-two seconds of the simulator running through four kinds of eye, which
+is longer than any beat in the old set. One line after it. The argument is
+made by looking.
+
+**maps** — *no panels at all.* Six plates and a voice over them. The only
+text is the one sentence a plate cannot say for itself.
+
+**ux-laws** — *one sustained argument.* No chip grid. It starts from what a
+user actually says, gets to the law behind it, and stops at the boundary —
+what a machine may and may not decide.
+
+**figures** — *a catalogue, shown not counted.* Two long grids with the
+pictures doing the work, and one beat on the thing that makes a hand-authored
+SVG different from an exported one.
+
+**publish** — *a pipeline.* A document moving left to right through the nine
+tools and arriving as a site. New scene type: `flow`.
+
+**audio** — *a symmetry.* Two columns, read in both directions, the same
+object on each side. The film is the shape of its subject.
+
+**cli-gui** — *before and after.* A command line on the left, the form it
+became on the right. New scene type: `versus`.
+
+**ui** — *the fewest words.* The smallest brick gets the smallest film: four
+held sentences, no grid, no panel. One idea, said slowly.
+
+**accessibility** — *source code on screen.* The markup that breaks the rule,
+with the line that does it marked. New scene type: `code`.
+
+**video** — *the film audits itself.* Claims appear and are checked against
+the code as the film plays. New scene type: `verify`.
+
+---
+
+## New scene types this needs
+
+- `flow` — labelled stages left to right, revealed in order (publish)
+- `versus` — two halves with a divider and a label each (cli-gui, audio)
+- `code` — a monospace block with chosen lines highlighted (accessibility)
+- `verify` — claims with a value appearing beside each (video)
+- `held` — one sentence, larger than `claim`, on screen long enough to read
+  twice (ui)
