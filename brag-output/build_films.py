@@ -863,7 +863,15 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
         # the integer over it -- so the two maps grew, and the sentence under
         # them rendered as the word "760".
         if n <= 2:
-            cols, tile_cap = n, 760
+            # A pair stacks in portrait and sits side by side everywhere else.
+            # Side by side in a 1080-wide frame gives each tile 457px, which
+            # is fine for a map and useless for a screenshot of a form: the
+            # cli-gui pair came out as two grey rectangles. Stacked they get
+            # the full 936, and portrait has the height to spare — it is the
+            # one format where vertical room is what there is most of.
+            tall = f["h"] > f["w"]
+            cols = 1 if (n == 2 and tall) else n
+            tile_cap = 960 if cols == 1 else 760
         else:
             cols = (4 if f["split"] else 2) if n == 4 else f["grid6"]
             tile_cap = 560

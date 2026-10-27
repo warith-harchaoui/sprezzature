@@ -26,6 +26,12 @@
 #
 # About 260 MB of MP4 in total, which is the whole reason this list exists
 # separately from the HTML: the pages are small and the films are not.
+#
+# The vertical and square cuts are NOT here and do not go on the server: the
+# site serves the landscape one, and those two exist for posting elsewhere.
+# `python3 brag-output/install_films.py --social` collects all 44 under
+# readable names in `brag-output/out/social/` (another 452 MB, also
+# gitignored).
 
 accessibility.html
 audio.html
