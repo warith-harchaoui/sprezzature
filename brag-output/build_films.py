@@ -192,59 +192,56 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line=L("Most design decisions were settled long ago.",
-                        "La plupart des décisions de design sont tranchées "
-                        "depuis longtemps.")),
+                 line=L("Nearly every design decision has already been made.",
+                        "Presque tout ce qu'on décide en design a déjà été "
+                        "décidé.")),
             dict(type="chips", start=5.4, dur=9.1, end=14.4,
-                 eyebrow=L("Written down by other people",
-                           "Écrites par d'autres"),
+                 eyebrow=L("Settled by other people", "Décidé par d'autres"),
                  items=["30 Laws of UX", L("WCAG contrast", "contraste WCAG"),
                         "Machado 2009", "Gestalt", "Equal Earth", "W3C WebVTT",
                         "Schema.org", "OKLCH"],
                  at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3, 9.8, 10.4),
-                 caption=L("Yablonski for the laws. The W3C for contrast. A "
-                           "2009 paper for what a colour-blind reader sees.",
-                           "Yablonski pour les lois. Le W3C pour le contraste. "
-                           "Un article de 2009 pour ce que voit un daltonien.")),
+                 caption=L("The laws of attention: Yablonski. Contrast: the "
+                           "W3C. What a colour-blind reader sees: a 2009 paper.",
+                           "Les lois de l'attention, c'est Yablonski. Le "
+                           "contraste, c'est le W3C. Ce que voit un daltonien, "
+                           "c'est un article de 2009.")),
             dict(type="grid", start=14.3, dur=9.2, end=23.4,
-                 eyebrow=L("What the rules produce", "Ce que les règles produisent"),
+                 eyebrow=L("What comes out of them", "Ce qui en sort"),
                  images=["figures/corr-matrix.svg", "figures/calendar-heatmap.svg",
                          "figures/map-flow.svg", "figures/choropleth.svg"],
                  at=on_beat(15.8, 16.4, 16.9, 17.5),
-                 caption=L("A matrix, a calendar, a flow, a choropleth. Each "
-                           "one answered to the rule that governs it.",
+                 caption=L("A matrix, a calendar, a flow, a choropleth. Every "
+                           "one of them had to answer to its rule.",
                            "Une matrice, un calendrier, un flux, un "
-                           "choroplèthe. Chacun confronté à la règle qui le "
-                           "gouverne.")),
+                           "choroplèthe. Chacun a dû passer sa règle.")),
             dict(type="versus", start=23.3, dur=9.2, end=32.4,
-                 eyebrow=L("The same rules, aimed twice",
-                           "Les mêmes règles, braquées deux fois"),
+                 eyebrow=L("The same rules, used twice",
+                           "Les mêmes règles, deux fois"),
                  left=(L("Make", "Fabriquer"),
                        L("a page, a figure, a map, a palette",
                          "une page, une figure, une carte, une palette")),
                  right=(L("Audit", "Auditer"),
-                        L("those rules, run over what shipped",
-                          "ces règles, passées sur ce qui est livré")),
+                        L("the same ones, over what is already live",
+                          "les mêmes, sur ce qui est déjà en ligne")),
                  at=on_beat(24.5, 25.6),
                  caption=L("167 chart kinds. 20 accessibility rules. 30 laws "
                            "of UX.",
                            "167 types de graphiques. 20 règles "
                            "d'accessibilité. 30 lois d'UX.")),
             dict(type="loop", start=32.3, dur=16.7, end=49.0,
-                 eyebrow=L("The part no rule covers",
-                           "La part qu'aucune règle ne couvre"),
+                 eyebrow=L("What no rule does", "Ce qu'aucune règle ne fait"),
                  steps=LOOP_STEPS,
                  fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
                  ratio=745 / 505, step_at=on_beat(33.3, 34.4, 35.5, 36.6),
                  wipe_at=38.7, wipe_dur=1.09, caption_at=43.6,
-                 caption=L("A vision model reads the chart back to you. It "
-                           "names what fails. The source is what gets fixed.",
-                           "Un modèle de vision vous relit le graphique. Il "
-                           "nomme ce qui cloche. C'est la source qu'on "
-                           "corrige.")),
+                 caption=L("A vision model looks at the chart and says what is "
+                           "wrong. The source is what you then fix.",
+                           "Un modèle de vision regarde le graphique et dit ce "
+                           "qui cloche. Ensuite, c'est la source qu'on corrige.")),
             dict(type="held", start=48.9, dur=6.7, end=55.5,
-                 line=L("It runs where you are. Nothing leaves the machine.",
-                        "Il tourne là où vous êtes. Rien n'en sort.")),
+                 line=L("Everything stays on your desk. Nothing travels.",
+                        "Tout reste sur votre poste. Rien ne part ailleurs.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
                  mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
         ],
@@ -267,27 +264,29 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             dict(type="claim", start=0.0, dur=6.0, end=5.5,
-                 line=L("Light grey on white reads fine. To you, indoors.",
-                        "Du gris clair sur blanc se lit bien. Pour vous, à "
-                        "l'intérieur.")),
+                 line=L("Light grey on white reads perfectly well. At your "
+                        "desk, indoors.",
+                        "Du gris clair sur du blanc, ça se lit très bien. Chez "
+                        "vous, à l'intérieur.")),
             dict(type="versus", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("The same button, two readers",
                            "Le même bouton, deux lecteurs"),
                  left=(L("Low vision", "Malvoyance"),
-                       L("the text and the background sit too close",
-                         "le texte et le fond sont trop proches")),
+                       L("the text and the background merge",
+                         "le texte et le fond se confondent")),
                  right=(L("Bright sunlight", "Plein soleil"),
-                        L("a phone screen loses the difference",
-                          "un écran de téléphone perd la différence")),
+                        L("the screen flattens the difference",
+                          "l'écran écrase la différence")),
                  at=on_beat(6.5, 7.6),
-                 caption=L("It reads fine to whoever picked the colour. That "
-                           "is the problem.",
-                           "Ça se lit bien pour qui a choisi la couleur. "
-                           "C'est tout le problème.")),
+                 caption=L("Whoever chose the colour can read it. That is the "
+                           "whole problem.",
+                           "Celui qui a choisi la couleur, lui, la lit très "
+                           "bien. C'est tout le problème.")),
             dict(type="claim", start=14.3, dur=4.8, end=18.0,
-                 line=L("About one man in twelve sees red and green as one bar.",
-                        "Environ un homme sur douze voit le rouge et le vert "
-                        "comme une seule barre.")),
+                 line=L("About one man in twelve does not separate red from "
+                        "green.",
+                        "Un homme sur douze environ ne sépare pas le rouge du "
+                        "vert.")),
             # Twenty-two seconds. The argument here is made by looking.
             dict(type="cvd", start=17.9, dur=22.0, end=39.8,
                  eyebrow=L("Rendered for those eyes", "Rendu pour ces yeux-là"),
@@ -301,25 +300,26 @@ FILMS = {
                          ("04", L("grayscale", "niveaux de gris"),
                           "figures/cvd/04-grayscale.png", 34.37)],
                  ratio=1490 / 1010, wipe_dur=0.80, caption_at=36.55,
-                 caption=L("Measured transforms, from a 2009 paper. Not an "
-                           "impression of what it might look like.",
-                           "Des transformations mesurées, d'un article de "
-                           "2009. Pas une idée de ce que ça donnerait.")),
+                 caption=L("The matrices come from a 2009 paper, measured on "
+                           "real observers.",
+                           "Les matrices viennent d'un article de 2009, "
+                           "mesurées sur de vrais observateurs.")),
             dict(type="held", start=39.7, dur=9.3, end=49.0,
-                 line=L("Lightness is the one channel nothing takes away.",
-                        "La clarté est le seul canal que rien ne retire.")),
+                 line=L("Hue goes. Saturation goes. Lightness holds.",
+                        "La teinte s'efface. La saturation s'efface. La "
+                        "clarté, elle, tient.")),
             dict(type="versus", start=48.9, dur=6.7, end=55.5,
-                 eyebrow=L("So that is the channel it moves",
-                           "C'est donc le canal qu'il déplace"),
-                 left=(L("Your hue", "Votre teinte"),
-                       L("held fixed, with the saturation",
-                         "figée, avec la saturation")),
+                 eyebrow=L("So that is what the audit works on",
+                           "C'est donc là-dessus que l'audit travaille"),
+                 left=(L("Your colour", "Votre couleur"),
+                       L("its hue and its saturation stay put",
+                         "sa teinte et sa saturation ne bougent pas")),
                  right=(L("Its lightness", "Sa clarté"),
-                        L("walked until the ratio clears",
-                          "parcourue jusqu'à ce que le rapport passe")),
+                        L("moves until the contrast clears",
+                          "varie jusqu'au seuil de contraste")),
                  at=on_beat(49.6, 50.7),
-                 caption=L("Your brand blue stays your brand blue.",
-                           "Votre bleu de marque reste votre bleu de marque.")),
+                 caption=L("Your blue stays your blue. It becomes legible.",
+                           "Votre bleu reste votre bleu. Il devient lisible.")),
             dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
                  mark="Sprezzature \u00b7 colors", line=OUTRO_LINE,
                  url="sprezzature.ai"),
@@ -964,7 +964,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
         # twice. The `ui` film is four of these and nothing else: the
         # smallest package gets the fewest words, held longest.
         return (f'<div class="stage"><div class="col">'
-                f'<h1 class="held" id="s{i}-held">{esc(sc["line"])}</h1>'
+                f'<h1 class="held" id="s{i}-line">{esc(sc["line"])}</h1>'
                 f'<div class="rule" id="s{i}-rule" style="width:96px;'
                 f'margin:{int(f["body"] * 1.4)}px auto 0"></div>'
                 f'</div></div>')
@@ -1179,11 +1179,17 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
         out.append(f'tl.fromTo("#s{i}-caption",{{y:16,opacity:0}},'
                    f'{{y:0,opacity:1,duration:.55,ease:"power2.out"}},{s + .7:.2f});')
 
-    if t == "claim":
-        out.append(f'tl.fromTo("#s{i}-line",{{y:30,opacity:0}},'
-                   f'{{y:0,opacity:1,duration:.55,ease:"power3.out"}},{s + .2:.2f});')
+    if t in ("claim", "held"):
+        # The first scene of a film starts on screen rather than arriving.
+        # Everywhere else the beat is worth the quarter second it costs.
+        opening = s < 0.01
+        lead = 0.0 if opening else s + .2
+        rise = 0.35 if opening else .55
+        out.append(f'tl.fromTo("#s{i}-line",{{y:{0 if opening else 30},opacity:{.35 if opening else 0}}},'
+                   f'{{y:0,opacity:1,duration:{rise},ease:"power3.out"}},{lead:.2f});')
         out.append(f'tl.fromTo("#s{i}-rule",{{scaleX:0,opacity:0}},'
-                   f'{{scaleX:1,opacity:1,duration:.7,ease:"expo.out"}},{s + .55:.2f});')
+                   f'{{scaleX:1,opacity:1,duration:.7,ease:"expo.out"}},'
+                   f'{(0.25 if opening else s + .55):.2f});')
 
     elif t == "loop":
         w = f["fig"]
@@ -1258,12 +1264,6 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
             if travel and span > 0.8:
                 out.append(f'tl.fromTo("#s{i}-page",{{y:0}},{{y:{-travel},'
                            f'duration:{span},ease:"power1.inOut"}},{begin:.2f});')
-
-    elif t == "held":
-        out.append(f'tl.fromTo("#s{i}-held",{{y:30,opacity:0}},'
-                   f'{{y:0,opacity:1,duration:1.0,ease:"power3.out"}},{s + .25:.2f});')
-        out.append(f'tl.fromTo("#s{i}-rule",{{scaleX:0}},'
-                   f'{{scaleX:1,duration:.7,ease:"expo.out"}},{s + .9:.2f});')
 
     elif t == "flow":
         for k, at in enumerate(sc["at"], 1):
@@ -1381,7 +1381,11 @@ def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.P
         f'<div class="inner" id="s{i}-inner">{scene_html(sc, f, i)}</div></section>'
         for i, sc in enumerate(scenes, 1))
 
-    rails_start = scenes[0]["end"]
+    # From frame one, not from the end of scene one. The rails carry the
+    # wordmark and the address, and holding them back left every film opening
+    # on an empty sheet while the first sentence faded up. A viewer who lands
+    # on a blank frame has already decided what kind of video this is.
+    rails_start = 0.0
     rails = (f'<div id="rails" class="clip" data-start="{rails_start}" '
              f'data-duration="{round(dur - rails_start, 2)}" data-track-index="90">'
              f'<div class="inner" id="rails-inner">'
