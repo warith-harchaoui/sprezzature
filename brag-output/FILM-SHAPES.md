@@ -19,6 +19,37 @@ sharing a hero image.
 
 ---
 
+## The spine: problem, solution, secret sauce
+
+Guy KAWASAKI's order, and every brick film follows it. A viewer who does not
+know the package needs the pain before the cure, and the cure before the
+clever part.
+
+**Problem.** Something concrete that goes wrong, stated as a fact about a
+reader rather than a gap in a feature list. "Light grey on white reads
+perfectly well. At your desk, indoors." The viewer has to recognise it.
+
+**Solution.** What the package does about it, shown rather than listed.
+
+**Secret sauce.** The non-obvious mechanism, the thing you would not guess
+and a competitor does not have. For `colors`: hue is what red-green blindness
+removes, saturation is what grey printing removes, lightness is what nothing
+removes, so all three tools work on lightness. That sentence sat in a module
+docstring until this rewrite found it.
+
+The spine is shared. The execution is not: each film has its own scene types,
+its own pictures and its own number of beats. A shared order is a way of
+being understood; a shared format is a way of being skipped.
+
+## No film opens on a blank frame
+
+Every film used to fade its first sentence up from an empty sheet while the
+wordmark waited for scene one to finish. A viewer who lands on a blank frame
+has already decided what kind of video this is. The first sentence is on
+screen at frame one, and the rails carry the wordmark from zero.
+
+---
+
 ## The image allocation
 
 No picture appears in two films. The suite film is the exception it has to be
