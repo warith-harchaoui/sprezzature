@@ -121,13 +121,16 @@
           <li>« Qui parle quand » via diarisation NVIDIA NeMo Sortformer</li>
           <li>« Qui est qui » via embeddings TitaNet ou une passe minée de la transcription</li>
           <li>VTT (format de sous-titres WebVTT) étiqueté par locuteur avec repères nommés ; EN/FR par défaut</li>
+          <li>La même modalité lue à l&rsquo;envers : une narration depuis du texte, qui arrive en WAV <em>et</em> en WebVTT sur une seule horloge, pour qu&rsquo;une page suive la lecture phrase à phrase</li>
+          <li>Des sous-titres traduits, par un modèle local</li>
           </ul>
         </div>
         <div>
           <h2 class="text-lg font-bold">Audite</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+          <li>Vitesse de lecture, largeur de ligne, durée et chevauchement des sous-titres, contre les seuils que publie Netflix : 17 caractères par seconde, 42 par ligne, 5/6 s au plus court, 7 s au plus long, deux lignes au maximum</li>
+          <li>Des drapeaux et non des lois : une émission pour enfants et une conférence dense ne justifient pas les mêmes chiffres</li>
           <li>Biais par vocabulaire de projet sur la piste sous-titres</li>
-          <li>Sous-titres traduits</li>
           </ul>
         </div>
       </div>
@@ -145,6 +148,8 @@
         <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">qui parle quand</code>
         <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">identifie les locuteurs</code>
         <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">traduis les sous-titres</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">ces sous-titres sont-ils lisibles</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">lis ce texte à voix haute</code>
         </div>
       </div>
     </section>

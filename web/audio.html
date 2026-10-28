@@ -123,13 +123,16 @@
           <li>"Who spoke when" via NVIDIA NeMo Sortformer diarization</li>
           <li>"Who is who" via TitaNet embeddings or a transcript-mined pass</li>
           <li>Speaker-labelled WebVTT caption format (VTT) with named voice cues; bilingual EN/FR default</li>
+          <li>The same modality read backwards: a narration from text, landing as a WAV <em>and</em> a WebVTT off one timeline, so a page can follow the reading sentence by sentence</li>
+          <li>Translated subtitles, through a local model</li>
           </ul>
         </div>
         <div>
           <h2 class="text-lg font-bold">Audits</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+          <li>Reading speed, line width, cue duration and overlap, against the thresholds Netflix publishes: 17 characters a second, 42 to a line, 5/6 s at the shortest, 7 s at the longest, two lines at most</li>
+          <li>Flags rather than laws, because a children&rsquo;s programme and a dense talk justify different numbers</li>
           <li>Project-vocab biasing on the caption path</li>
-          <li>Translated subtitles</li>
           </ul>
         </div>
       </div>
@@ -147,6 +150,8 @@
         <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">who spoke when</code>
         <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">identify speakers</code>
         <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">translate captions</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">are these subtitles readable</code>
+        <code class="rounded bg-neutral-100 px-2 py-1 text-sm dark:bg-neutral-800">narrate this text</code>
         </div>
       </div>
     </section>

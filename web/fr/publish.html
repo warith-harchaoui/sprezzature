@@ -141,6 +141,7 @@
             <li>Un jeu complet de favicons / icônes d'app / PWA depuis un logo, plus un webmanifest</li>
             <li>robots.txt, sitemap.xml, llms.txt, Atom / flux Really Simple Syndication (RSS), humans.txt</li>
             <li>Réécritures en langage clair et narration audio (MP3) via TTS libre (OSS) locale</li>
+          <li>Une lecture synchronisée liée à cette narration, qui surligne la phrase prononcée &mdash; et qui s&rsquo;applique aussi à une page HTML existante sans Markdown derrière</li>
           </ul>
         </div>
         <div>
@@ -148,6 +149,7 @@
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
             <li>Linter le Markdown et détecter les liens cassés avant publication</li>
             <li>Contrôles de lisibilité / niveau de lecture sur le texte</li>
+          <li>L&rsquo;audio et la page quittent le même Markdown par deux routes : les deux listes de phrases sont comparées et le premier écart refuse. Une lecture décalée d&rsquo;une phrase vaut moins que pas de surlignage : elle désigne la mauvaise ligne avec aplomb</li>
           </ul>
         </div>
       </div>

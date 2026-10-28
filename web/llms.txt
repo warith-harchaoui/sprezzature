@@ -8,7 +8,7 @@
 
 ## Skills
 
-- [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI, components, pages, forms, dialogs, dashboards, for solo devs shipping internal tools without a designer.
+- [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI, components, pages, forms, dialogs, dashboards, for teams shipping internal tools without a designer.
 - [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.
 - [Publishing — Sprezzature](https://sprezzature.ai/publish.html): Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local narration.
 - [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: twenty rules decidable from source, no browser, no runtime DOM.
@@ -22,7 +22,7 @@
 
 - [Case studies — Sprezzature](https://sprezzature.ai/case-studies.html): Three advanced examples with the Ralph Eyeball Loop: a tribute to Hans ROSLING's animation, publication-grade situation maps, and a systematic markets dashboard, all interactive.
 - [Tribute to Hans ROSLING — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated, interactive tribute to Hans ROSLING's health-and-wealth bubble chart: every country, one frame per year 1950 to 2025, in a single self-contained SVG with no JavaScript library. Real data, historical splits and merges.
-- [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph/cartogram thematic maps and real French election data.
+- [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph and cartogram maps borrowed from sprezzature-figures, over real French election data.
 - [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ, told in ten interactive SVG panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws. This favourable case shows +123% net return.
 - [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ, told in ten interactive SVG panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws. This adverse case shows -26% net return.
 
