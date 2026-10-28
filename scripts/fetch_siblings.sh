@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Fetch the nine brick repositories beside this one, metadata only.
+# Fetch the ten brick repositories beside this one, metadata only.
 #
 # Why this exists
 # ---------------
 # Several guards in tests/ can only be written from this repository, because it
-# is the only place that sees all nine bricks at once: that a skill's "invoked
+# is the only place that sees all ten bricks at once: that a skill's "invoked
 # as" sentence names a console script the brick installs; that the `sprezzature`
 # driver routes to commands the bricks declare; that a `requirements-dev.txt` is
 # one the brick's own workflow reads.
@@ -19,7 +19,7 @@
 # ---------------------
 # Content. `sprezzature-maps` tracks 370 MB and `sprezzature-figures` 112 MB —
 # elevation rasters, vector basemaps, fonts, example renders — none of which any
-# guard reads. Nine full clones on three matrix jobs would move around 1.5 GB per
+# guard reads. Ten full clones on three matrix jobs would move around 1.5 GB per
 # push to answer questions about `pyproject.toml`.
 #
 # So: `--filter=blob:none` fetches the commit and its trees but no file content,
@@ -85,13 +85,13 @@ PATHS=(
     # reference teaches X" with "the runtime another brick emits can do
     # X" — and every such pair skipped on the runner for want of the
     # folder, with a message blaming a missing clone that was there.
-    # 548 KB of Markdown for the nine.
+    # 548 KB of Markdown for the ten.
     '/references/'
     # The ten documents every brick is supposed to carry, because a guard here
     # asserts they are all present — `test_every_brick_carries_the_same_papers`
     # — and a guard that reads a file this script does not fetch fails on the
-    # runner and nowhere else. It was written on a machine holding nine real
-    # clones, where the question never came up. 717 KB for the nine, which is
+    # runner and nowhere else. It was written on a machine holding ten real
+    # clones, where the question never came up. 717 KB for the ten, which is
     # three per cent of what the fetch already costs.
     #
     # TRIGGERS.md earns its place twice over: the companion check that a

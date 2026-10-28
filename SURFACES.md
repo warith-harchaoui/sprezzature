@@ -12,7 +12,7 @@ The five, in the order a project usually grows them:
 | # | Surface | What it is | Who it is for |
 |---|---|---|---|
 | 1 | **Library** | `import sprezzature_<brick>` | another program |
-| 2 | **Command line** | an argparse command **and** its click twin, both on `PATH` | a human at a terminal |
+| 2 | **Command line** | one click command, on `PATH` under two names | a human at a terminal |
 | 3 | **HTTP API** | FastAPI app, shipped in a container | a service, a colleague's stack |
 | 4 | **MCP** | the same routes republished as agent tools | an agent |
 | 5 | **Skill** | `SKILL.md` in this monorepo | Claude |
@@ -21,7 +21,7 @@ The five, in the order a project usually grows them:
 from what is on disk. This file is the contract; that script is the state.
 
 It runs in CI too, as `--require-checkouts`, after `scripts/fetch_siblings.sh`
-brings the nine siblings in metadata-only. Without the flag a brick with no
+brings the ten siblings in metadata-only. Without the flag a brick with no
 checkout is reported as undecidable and does not fail the run — right on a
 machine holding one clone, wrong in the one place that knows every clone
 should be there.
@@ -44,9 +44,9 @@ surface that exports no callable is not a library surface.
 
 ## 2. Command line
 
-Both parsers, both installed. `argparse` because it is in the standard library
-and therefore always available; `click` because its sub-commands, types and
-`Choice` validation carry the richer shapes without hand-rolling them.
+One parser, installed under two names. `click`, because its sub-commands,
+types and `Choice` validation carry the richer shapes without hand-rolling
+them; one of it, because two doors drift.
 
 The measurement that matters is `[project.scripts]`, not the source tree. A
 parser living in a module that no console script names is reachable from a

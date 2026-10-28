@@ -28,7 +28,7 @@
 
 ## Reference
 
-- [Packages — Sprezzature](https://sprezzature.ai/packages.html): The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, colors, accessibility, CLI-to-GUI, Laws of UX, and audio.
+- [Packages — Sprezzature](https://sprezzature.ai/packages.html): The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, maps, colors, accessibility, CLI-to-GUI, Laws of UX, audio, publishing, UI i18n, and video claims.
 - [The Ralph Eyeball Loop — Sprezzature](https://sprezzature.ai/ralph-eyeball-loop.html): You can't proofread a chart by reading its code. The Ralph Eyeball Loop renders the thing, looks at it, and fixes what the eye catches, then does it again. How Sprezzature makes figures, diagrams and pages that hold up.
 
 ## Films
