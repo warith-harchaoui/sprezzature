@@ -190,12 +190,13 @@ FILMS: list[dict[str, str | int]] = [
          fr_body="Une colonne de pays est une carte qui s'ignore. De vraies "
                  "côtes, une vraie projection, huit kilomètres de relief — et un "
                  "choix de distorsion assumé plutôt que subi.",
-         en_shows="six situation plates and nothing else — four reference, two "
-                  "areas-of-control — and the density map, which draws no "
+         en_shows="two areas-of-control plates, with a ring where the source "
+                  "gave no exact position, and the density map, which draws no "
                   "coastline at all and still reads as land",
-         fr_shows="six planches de situation et rien d'autre — quatre de "
-                  "référence, deux de zones de contrôle — et la carte de densité, "
-                  "qui ne dessine aucune côte et se lit pourtant comme une terre"),
+         fr_shows="deux planches de zones de contrôle, avec un anneau là où la "
+                  "source n'a donné aucune position exacte, et la carte de "
+                  "densité, qui ne dessine aucune côte et se lit pourtant "
+                  "comme une terre"),
     dict(slug="video", secs=60,
          en_title="Video", fr_title="Vidéo",
          en_kicker="sprezzature-video", fr_kicker="sprezzature-video",
@@ -250,10 +251,11 @@ COPY: dict[str, dict[str, Any]] = {
             "the same sentence lands on the same second whichever you watch; "
             "only the layout moves. All of them are 4K.",
             "They follow Guy KAWASAKI\u2019s order, which is why the rail "
-            "above each frame says where you are: the problem first, then "
-            "what the package does about it, then the part you would not "
-            "guess \u2014 and the sources it rests on, named so you can go "
-            "and check them.",
+            "above each frame says where you are: what the thing is, then the "
+            "problem, then what the package does about it, then the part you "
+            "would not guess \u2014 and the sources it rests on, named so you "
+            "can go and check them. The first frame is already a finished one: "
+            "the name, one sentence, and where to find it.",
             "They were built with the same discipline they describe. Every "
             "scene was rendered to a still and looked at before the film was "
             "encoded, which is how the sixty-second set was caught quoting a "
@@ -311,10 +313,11 @@ COPY: dict[str, dict[str, Any]] = {
             "Tous sont en 4K.",
             "Ils suivent l\u2019ordre de Guy KAWASAKI, et c\u2019est "
             "pourquoi le bandeau au-dessus de l\u2019image dit où vous en "
-            "êtes : le problème d\u2019abord, puis ce que le paquet en fait, "
-            "puis la part qu\u2019on ne devinerait pas \u2014 avec les "
-            "sources sur lesquelles elle repose, nommées pour qu\u2019on "
-            "puisse aller les vérifier.",
+            "êtes : ce que c\u2019est, puis le problème, puis ce que le paquet "
+            "en fait, puis la part qu\u2019on ne devinerait pas \u2014 avec "
+            "les sources sur lesquelles elle repose, nommées pour qu\u2019on "
+            "puisse aller les vérifier. La première image est déjà une image "
+            "finie : le nom, une phrase, et où le trouver.",
             "Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque "
             "plan a été rendu en image fixe et regardé avant l'encodage, ce qui a "
             "permis d'attraper la série d'une minute en train d'annoncer une "
