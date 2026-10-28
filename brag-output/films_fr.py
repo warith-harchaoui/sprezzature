@@ -494,13 +494,15 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
     # is supposed to leave it: somebody produced the French twin, the ledger
     # declared it, the films switched on the next build, and the test went
     # red until this line was deleted.
-    "maps/situation-himalaya.png":
+    # Four of the six left on 2026-10-28, and not the way an entry is
+    # supposed to leave: the identity card took the maps film's opening slot,
+    # the two grids merged into one, and the himalaya / iberia / switzerland
+    # / western-europe plates simply stopped being in any film. The gap they
+    # named is still open in sprezzature-maps; it is just no longer this
+    # repository's gap to carry.
+    "maps/situation-ukraine.png":
         "titles and legend baked in by build_situation_examples.py in "
         "sprezzature-maps, which has no French mode",
-    "maps/situation-iberia.png": "idem",
-    "maps/situation-switzerland.png": "idem",
-    "maps/situation-western-europe.png": "idem",
-    "maps/situation-ukraine.png": "idem",
     "maps/situation-syria.png": "idem",
     "figures/cvd/00-original.png":
         "rendered from the English bar-grouped.svg by sprezzature-colors' "

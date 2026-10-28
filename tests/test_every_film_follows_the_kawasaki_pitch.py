@@ -1,5 +1,5 @@
 """
-Every film states the problem, then the solution, then the underlying magic.
+Every film says what it is, then the problem, the solution and the magic.
 
 Guy KAWASAKI's order, adopted 2026-10-27 for the whole set. A viewer who does
 not know the package needs the pain before the cure, and the cure before the
@@ -16,7 +16,7 @@ shared order that lives in comments is a shared order until the first person
 adds a scene in a hurry.
 
 So the order is declared. Each scene carries ``beat="problem"`` /
-``"solution"`` / ``"magic"`` / ``"cta"`` — Guy KAWASAKI's own words, and this file checks that the
+``"what"`` / ``"solution"`` / ``"magic"`` / ``"cta"``, and this file checks that the
 beats of a film run down that list without going back up. A scene added in
 the wrong place fails here, by name, before anything is rendered.
 
@@ -43,7 +43,7 @@ sys.path.insert(0, str(ROOT / "brag-output"))
 
 #: The beats, in the only order they may appear in. A film skips a beat at
 #: its peril but may not reverse one.
-SPINE = ("problem", "solution", "magic", "cta")
+SPINE = ("what", "problem", "solution", "magic", "cta")
 
 
 def _films() -> dict[str, dict]:
@@ -100,18 +100,19 @@ def test_the_beats_of_a_film_never_run_backwards() -> None:
 def test_every_film_opens_on_the_problem_and_lands_the_sauce() -> None:
     """The three beats a pitch cannot do without are all present.
 
-    ``cta`` is the closing ask and is not one of them — what it closes is
-    the pitch, not the argument. What a film may not do is open on its
-    solution, which is
+    ``what`` is the identity card, complete on frame zero: the package's
+    name, one line saying what it is, and where to find it. ``cta`` is the
+    closing ask. Neither is part of the argument, and both bracket it. What
+    a film may not do is open on its solution, which is
     the shape every one of these had before the rewrite: a package
     introducing itself to somebody who never said they had the problem.
     """
     bad: list[str] = []
     for film, spec in _films().items():
         beats = [s["beat"] for s in spec["scenes"]]
-        if beats[0] != "problem":
-            bad.append(f"{film} opens on {beats[0]!r}, not on the problem")
-        for want in ("solution", "magic"):
+        if beats[0] != "what":
+            bad.append(f"{film} opens on {beats[0]!r}, not on the identity card")
+        for want in ("problem", "solution", "magic"):
             if want not in beats:
                 bad.append(f"{film} never reaches the {want}")
     assert not bad, "\n  ".join(["", *bad])
