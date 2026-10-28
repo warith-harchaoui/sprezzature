@@ -148,6 +148,13 @@ def in_language(spec: dict, lang: str, film: str = "") -> dict:
 #: frame, with the current one lit. A pitch deck can label its slides and a
 #: film cannot, so the film labels the frame instead: at any second, somebody
 #: wondering where this is going can see the answer without rewinding.
+#: What the suite is, said before anything else in all eleven films: the
+#: first sentence of the narration, and the first line on the first frame. A
+#: viewer who lands on any one of them learns what the thing is before
+#: learning which part of it they are watching.
+TAGLINE = L("Sprezzature is an AI engine for Design",
+            "Sprezzature est un moteur d'IA pour le design")
+
 BEAT_LABEL = {
     "what":     L("What it is", "Ce que c'est"),
     "problem":  L("Problem", "Le problème"),
@@ -227,7 +234,7 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature",
                  line=L("Design know-how, written as code.",
                         "Le savoir-faire du design, écrit en code."),
                  url="sprezzature.ai"),
@@ -300,7 +307,7 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 colors",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 colors",
                  line=L("Colours everybody can read, proved rather than hoped.",
                         "Des couleurs que tout le monde peut lire, et la preuve avec."),
                  url="sprezzature.ai"),
@@ -379,7 +386,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 figures",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 figures",
                  line=L("167 chart kinds, every line of SVG written by hand.",
                         "167 types de graphiques, chaque trait de SVG écrit à la main."),
                  url="sprezzature.ai"),
@@ -450,7 +457,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 publish",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 publish",
                  line=L("A folder of Markdown becomes a site somebody can find.",
                         "Un dossier de Markdown devient un site qu'on trouve."),
                  url="sprezzature.ai"),
@@ -521,7 +528,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 audio",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 audio",
                  line=L("Speech, read both ways, on your own machine.",
                         "La parole, lue dans les deux sens, sur votre machine."),
                  url="sprezzature.ai"),
@@ -596,7 +603,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 cli-gui",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 cli-gui",
                  line=L("Your command line, as a form anybody can fill in.",
                         "Votre ligne de commande, en formulaire que tout le monde remplit."),
                  url="sprezzature.ai"),
@@ -669,7 +676,7 @@ FILMS = {
         sfx=[("drop", 5.47), ("tile", 24.55), ("tile", 42.55), ("bell", 55.67)],
         scenes=[
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 ui",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 ui",
                  line=L("Every sentence hardcoded in your source, found and filed.",
                         "Chaque phrase écrite en dur dans vos sources, trouvée et rangée."),
                  url="sprezzature.ai"),
@@ -723,7 +730,7 @@ FILMS = {
         sfx=[("drop", 5.47), ("tile", 20.19), ("tile", 38.74), ("bell", 55.67)],
         scenes=[
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 video",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 video",
                  line=L("A film that can be re-read, and checked against its code.",
                         "Un film qui se relit, et se vérifie sur son propre code."),
                  url="sprezzature.ai"),
@@ -775,7 +782,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 maps",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 maps",
                  line=L("Maps drawn on real ground, saying what they do not know.",
                         "Des cartes sur un vrai sol, qui disent ce qu'elles ignorent."),
                  url="sprezzature.ai"),
@@ -838,7 +845,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 ux-laws",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 ux-laws",
                  line=L("The laws of attention, checked against your own markup.",
                         "Les lois de l'attention, vérifiées sur votre balisage."),
                  url="sprezzature.ai"),
@@ -919,7 +926,7 @@ FILMS = {
         scenes=[
             # PROBLEM
             dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
-                 logo="logo-512.png", mark="Sprezzature \u00b7 accessibility",
+                 logo="logo-512.png", tagline=TAGLINE, mark="Sprezzature \u00b7 accessibility",
                  line=L("Twenty accessibility rules, decided by reading the HTML.",
                         "Vingt règles d'accessibilité, tranchées en lisant le HTML."),
                  url="sprezzature.ai"),
@@ -1166,6 +1173,10 @@ def css(f: dict) -> str:
        find it. The films used to open on their problem sentence alone --
        a good sentence, which tells a viewer who has just landed nothing
        about whose problem it is or what they are watching. */
+    #what-tag {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {int(f['eyebrow'] * .95)}px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--navy);
+      text-align: center; margin-bottom: {int(f['hero'] * .3)}px; }}
     #what-logo {{ display: block; width: {int(f['hero'] * 2.0)}px;
       height: {int(f['hero'] * 2.0)}px; object-fit: contain; }}
     #what-mark {{ font-family: "Roboto Serif"; font-size: {int(f['hero'] * .9)}px;
@@ -1458,6 +1469,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
         # the name, the sentence and the address, and it carries them whole
         # -- nothing in this scene fades in.
         return (f'<div class="stage"><div class="col">'
+                f'<p id="what-tag">{esc(sc["tagline"])}</p>'
                 f'<img id="what-logo" src="assets/{sc["logo"]}" alt="">'
                 f'<p id="what-mark">{esc(sc["mark"])}</p>'
                 f'<p id="what-line">{esc(sc["line"])}</p>'

@@ -147,3 +147,39 @@ def test_every_film_closes_on_an_ask_and_names_its_own_repository() -> None:
         if "sprezzature.ai" not in wheres:
             bad.append(f"{film} never names the site: {wheres}")
     assert not bad, "\n  ".join(["", *bad])
+
+
+def test_every_film_opens_on_the_same_sentence() -> None:
+    """"Sprezzature is an AI engine for Design", in all eleven, both languages.
+
+    A viewer arrives at one film, not at the set. Whichever one they land on
+    has to say what the whole thing is before it says which part of it they
+    are watching — otherwise the eleven films are eleven products.
+
+    Checked on screen *and* in the voice, because the two are written in
+    different files and either can lose it alone: the card is a scene in
+    ``build_films.FILMS``, the spoken line is the first entry in
+    ``make_captions.FILMS``.
+    """
+    import build_films
+    import make_captions
+
+    missing: list[str] = []
+    for film, lang in build_films.cuts():
+        spec = build_films.FILMS[film]
+        if spec["duration"] < 30:
+            continue
+        want = build_films.say(build_films.TAGLINE, lang)
+
+        card = spec["scenes"][0]
+        on_screen = build_films.say(card.get("tagline", ""), lang)
+        if on_screen != want:
+            missing.append(f"{film}.{lang}: the card says {on_screen!r}")
+
+        spoken = make_captions.FILMS[film][lang][0][2]
+        if not spoken.startswith(want):
+            missing.append(
+                f"{film}.{lang}: the first spoken line does not open on it "
+                f"({spoken[:60]!r}…)"
+            )
+    assert not missing, "\n  ".join(["", *missing])
