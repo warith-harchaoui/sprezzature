@@ -1,0 +1,98 @@
+# What the eleven films assert about the suite, and where each assertion is
+# checked.
+#
+# Read by `sprezzature-video verify`, the brick whose whole subject is this
+# failure: a number burned into a keyframe that nobody re-reads. The films said
+# "127 chart kinds" for months after the catalogue held 167, which is the story
+# the `video` film tells about itself.
+#
+# Until 2026-10-28 the suite owned that tool and never pointed it at its own
+# films. `pitch` ran in a test and `poster` in the installer; `verify`, `scan`,
+# `assets` and `prose` ran nowhere. The morning this file was written, the
+# `figures` film was found quoting a count measured on a CSV that existed on
+# one machine -- exactly what a declared claim prevents.
+#
+# Paths are relative to the directory holding this repository, so a claim can
+# reach into the brick that decides it. The methods are deliberately dull: a
+# claim must be checkable by somebody holding the clones, not by running the
+# suite.
+#
+# Not here, and why: the 64 kinds three columns fill (needs `recommend` to run;
+# `tests/test_the_film_counts_what_the_package_counts.py` re-measures it) and
+# the 81 assets (needs `restore_assets.py` to walk a tree git does not track;
+# the same test file's companion checks it).
+name: sprezzature-films
+
+claims:
+  - text: "167 chart kinds, every line of SVG written by hand."
+    value: 167
+    source:
+      path: sprezzature-figures/sprezzature_figures/catalog/figures.json
+      method: json_len
+
+  - text: "20 accessibility rules."
+    value: 20
+    source:
+      path: sprezzature-accessibility/scripts/lint_a11y.py
+      method: regex_count
+      # A literal newline, not ``^``: ``regex_count`` calls ``re.findall``
+      # with no flags, so an anchored pattern matches only at the start of
+      # the file and the count comes back 0 -- which reads as a claim that
+      # has drifted rather than a selector that cannot match.
+      selector: '\n    "[a-z-]+": check_'
+
+  - text: "Six of the twenty ship a mechanical fixer."
+    value: 6
+    source:
+      path: sprezzature-accessibility/scripts/lint_a11y.py
+      method: regex_count
+      selector: '\n    "[a-z-]+": _fix_'
+
+  - text: "Eight of them settle from the source alone."
+    value: 8
+    source:
+      path: sprezzature-ux-laws/scripts/audit_laws_of_ux.py
+      method: regex_count
+      selector: '\n    "[a-z-]+": \('
+
+  - text: "30 laws of UX, collected by Jon YABLONSKI."
+    value: "**30 laws**"
+    source:
+      path: sprezzature-ux-laws/references/laws-of-ux.md
+      method: literal
+      selector: "**30 laws**"
+
+  - text: "Seventeen characters a second."
+    value: "DEFAULT_CPS: float = 17.0"
+    source:
+      path: sprezzature-audio/scripts/audit_captions.py
+      method: literal
+      selector: "DEFAULT_CPS: float = 17.0"
+
+  - text: "Forty-two to a line."
+    value: "DEFAULT_LINE_CHARS: int = 42"
+    source:
+      path: sprezzature-audio/scripts/audit_captions.py
+      method: literal
+      selector: "DEFAULT_LINE_CHARS: int = 42"
+
+  - text: "Five sixths of a second at the shortest."
+    value: "DEFAULT_MIN_SECONDS: float = 5 / 6"
+    source:
+      path: sprezzature-audio/scripts/audit_captions.py
+      method: literal
+      selector: "DEFAULT_MIN_SECONDS: float = 5 / 6"
+
+  - text: "Seven at the longest."
+    value: "DEFAULT_MAX_SECONDS: float = 7.0"
+    source:
+      path: sprezzature-audio/scripts/audit_captions.py
+      method: literal
+      selector: "DEFAULT_MAX_SECONDS: float = 7.0"
+
+  - text: "Two lines at most."
+    value: "DEFAULT_MAX_LINES: int = 2"
+    source:
+      path: sprezzature-audio/scripts/audit_captions.py
+      method: literal
+      selector: "DEFAULT_MAX_LINES: int = 2"
