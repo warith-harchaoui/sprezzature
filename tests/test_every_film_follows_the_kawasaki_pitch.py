@@ -183,3 +183,28 @@ def test_every_film_opens_on_the_same_sentence() -> None:
                 f"({spoken[:60]!r}…)"
             )
     assert not missing, "\n  ".join(["", *missing])
+
+
+def test_the_closing_ask_is_also_spoken() -> None:
+    """The two asks are said out loud, not only printed.
+
+    The card above is checked in ``build_films``; the voice lives in
+    ``make_captions`` and can lose the ask on its own. A viewer watching on a
+    phone, held low, hears the minute more reliably than they read its last
+    four seconds, so the close has to survive in either channel alone.
+
+    Only the two nouns are checked. How the sentence is built is the
+    writer's: English asks in two clauses, French in two sentences.
+    """
+    import build_films
+    import make_captions
+
+    silent: list[str] = []
+    for film, lang in build_films.cuts():
+        if build_films.FILMS[film]["duration"] < 30:
+            continue
+        spoken = make_captions.FILMS[film][lang][-1][2]
+        for noun in ("GitHub", "sprezzature.ai"):
+            if noun not in spoken:
+                silent.append(f"{film}.{lang}: the last line never says {noun!r} ({spoken!r})")
+    assert not silent, "\n  ".join(["", *silent])
