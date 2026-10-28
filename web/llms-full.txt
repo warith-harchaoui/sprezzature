@@ -1711,6 +1711,8 @@ sprezzature-ui — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
 sprezzature-publish — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
+sprezzature-video no kit ● yes ● yes ● yes ● yes ● yes ● yes
+
 Every row is on PyPI, and pip install 'sprezzature[all]' installs all nine. sprezzature-ui and sprezzature-publish were the last two to get there, on 19 October 2026; until then the extra named nine and listed seven.
 
 ## Deterministic tools
@@ -1794,6 +1796,15 @@ sprezzature-ui
 The deterministic half of a frontend skill: find the strings that belong in a translation catalogue, and scaffold the catalogue they belong in. Writing the interface is the model's work.
 
 pip install sprezzature-ui
+Repository →
+
+sprezzature-video
+
+### Video claims
+
+Checks what a film says against the code it describes: declared claims verified, undeclared numbers caught, captions from the measured audio.
+
+pip install sprezzature-video
 Repository →
 
 Looking for the agent skills instead? The SKILL.md layer ships together as the skills bundle on the Getting started section.

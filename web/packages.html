@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Packages — Sprezzature</title>
-  <meta name="description" content="The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, colors, accessibility, CLI-to-GUI, Laws of UX, and audio.">
+  <meta name="description" content="The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, maps, colors, accessibility, CLI-to-GUI, Laws of UX, audio, publishing, UI i18n, and video claims.">
   <link rel="canonical" href="https://sprezzature.ai/packages.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/packages.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/packages.html">
@@ -61,7 +61,8 @@
           {"@type": "ListItem", "position": 4, "name": "sprezzature-accessibility", "url": "https://github.com/warith-harchaoui/sprezzature-accessibility"},
           {"@type": "ListItem", "position": 5, "name": "sprezzature-cli-gui", "url": "https://github.com/warith-harchaoui/sprezzature-cli-gui"},
           {"@type": "ListItem", "position": 6, "name": "sprezzature-ux-laws", "url": "https://github.com/warith-harchaoui/sprezzature-ux-laws"},
-          {"@type": "ListItem", "position": 7, "name": "sprezzature-audio", "url": "https://github.com/warith-harchaoui/sprezzature-audio"}
+          {"@type": "ListItem", "position": 7, "name": "sprezzature-audio", "url": "https://github.com/warith-harchaoui/sprezzature-audio"},
+          {"@type": "ListItem", "position": 8, "name": "sprezzature-video", "url": "https://github.com/warith-harchaoui/sprezzature-video"}
         ]
       }
     ]
@@ -180,6 +181,7 @@
             <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-ux-laws</td><td class="px-3 py-2 text-center">1 kit</td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
             <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-ui</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
             <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-publish</td><td class="px-3 py-2 text-center"><span aria-hidden="true">—</span><span class="sr-only">not yet</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
+            <tr><td class="px-3 py-2 font-mono text-xs">sprezzature-video</td><td class="px-3 py-2 text-center">no kit</td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td><td class="px-3 py-2 text-center"><span aria-hidden="true">●</span><span class="sr-only">yes</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -258,6 +260,14 @@
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">The deterministic half of a frontend skill: find the strings that belong in a translation catalogue, and scaffold the catalogue they belong in. Writing the interface is the model's work.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-ui</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-ui" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a>
+        </div>
+
+        <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+          <p class="font-mono text-xs text-brand-linktext">sprezzature-video</p>
+          <h3 class="mt-1 font-semibold">Video claims</h3>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Checks what a film says against the code it describes: declared claims verified, undeclared numbers caught, captions from the measured audio.</p>
+          <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-video</code></pre>
+          <a href="https://github.com/warith-harchaoui/sprezzature-video" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a>
         </div>
 
       </div>
