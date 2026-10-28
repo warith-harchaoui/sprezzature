@@ -14,18 +14,11 @@ Said without naming a tool: "put this online", "why does this look bad when shar
 
 ## When it is not
 
-Not this one when: the page is built and the question is accessibility (sprezzature-accessibility), or the speech is recorded and needs transcribing rather than generating (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`.
+Not this one when: the question is accessibility or alt text (sprezzature-accessibility), or the speech is recorded and needs transcribing rather than generating (sprezzature-audio). The exhaustive trigger catalogue is in `references/triggers.md`.
 
 ## Every phrase that names this skill
 
 - `markdown to website`
-- `audit my site`
-- `improve an existing site`
-- `check my meta tags`
-- `is my site SEO ready`
-- `why does my link preview look empty`
-- `my favicon does not show up`
-- `fix my sitemap`
 - `meta tags`
 - `OG card`
 - `SEO`
@@ -48,6 +41,13 @@ Not this one when: the page is built and the question is accessibility (sprezzat
 - `schema.org JSON-LD`
 - `humans.txt`
 - `lint markdown`
+- `audit my site`
+- `improve an existing site`
+- `check my meta tags`
+- `is my site SEO ready`
+- `why does my link preview look empty`
+- `my favicon does not show up`
+- `fix my sitemap`
 - `OpenVoice / Chatterbox TTS`
 - `read-along`
 
