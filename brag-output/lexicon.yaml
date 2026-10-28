@@ -272,3 +272,26 @@ entries:
   - word: "aria"
     language: fr
     respelling: "aria"
+
+  # ------------------------------------------- the sources the films now name
+  # Added 2026-10-27, when the magic beat of four films started citing where
+  # its numbers come from. Every one of these is an acronym an engine either
+  # spells letter by letter or, worse, tries to pronounce as a word.
+  - word: "ACLED"
+    language: "*"
+    respelling: "AK-led"
+  - word: "UCDP"
+    language: en
+    respelling: "U C D P"
+  - word: "UCDP"
+    language: fr
+    respelling: "u cé dé pé"
+  - word: "WAI-ARIA"
+    language: en
+    respelling: "way aria"
+  - word: "WAI-ARIA"
+    language: fr
+    respelling: "ouaï aria"
+  - word: "GitHub"
+    language: fr
+    respelling: "guit-heub"

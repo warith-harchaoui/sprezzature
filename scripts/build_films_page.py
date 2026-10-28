@@ -244,8 +244,16 @@ COPY: dict[str, dict[str, Any]] = {
             "RTTM, OKLCH and GMTED2010 are said the same way in every film "
             "and in both languages. The same call writes the subtitles, off "
             "the same timeline as the audio.",
-            "Each one also exists vertical (1080&times;1920) and square "
-            "(1080&times;1080). The versions here are the 1920&times;1080 cut.",
+            "Each film is cut three ways and all three are on this page: "
+            "wide for a screen, tall for a phone held upright, square for a "
+            "feed. Pick one above the player. The three are frame-synced, so "
+            "the same sentence lands on the same second whichever you watch; "
+            "only the layout moves. All of them are 4K.",
+            "They follow Guy KAWASAKI\u2019s order, which is why the rail "
+            "above each frame says where you are: the problem first, then "
+            "what the package does about it, then the part you would not "
+            "guess \u2014 and the sources it rests on, named so you can go "
+            "and check them.",
             "They were built with the same discipline they describe. Every "
             "scene was rendered to a still and looked at before the film was "
             "encoded, which is how the sixty-second set was caught quoting a "
@@ -260,6 +268,10 @@ COPY: dict[str, dict[str, Any]] = {
         fallback="Your browser cannot play this video.",
         download="Download the MP4",
         secs_word="s",
+        format_label="Pick a shape",
+        formats=[("landscape", "Landscape", "3840&times;2160"),
+                 ("portrait", "Portrait", "2160&times;3840"),
+                 ("square", "Square", "2160&times;2160")],
     ),
     "fr": dict(
         lang="fr", vdir="../video", jsdir="../js", other="../films.html",
@@ -291,8 +303,18 @@ COPY: dict[str, dict[str, Any]] = {
             "OKLCH et GMTED2010 se disent pareil dans tous les films et dans "
             "les deux langues. Le même appel écrit les sous-titres, sur la "
             "même timeline que l'audio.",
-            "Chacun existe aussi en vertical (1080&times;1920) et en carré "
-            "(1080&times;1080). Les versions ici sont le montage 1920&times;1080.",
+            "Chaque film est monté trois fois, et les trois sont sur cette "
+            "page : large pour un écran, haut pour un téléphone tenu debout, "
+            "carré pour un fil. Le choix est au-dessus du lecteur. Les trois "
+            "partagent la même horloge : la même phrase tombe à la même "
+            "seconde quel que soit le montage, seule la mise en page bouge. "
+            "Tous sont en 4K.",
+            "Ils suivent l\u2019ordre de Guy KAWASAKI, et c\u2019est "
+            "pourquoi le bandeau au-dessus de l\u2019image dit où vous en "
+            "êtes : le problème d\u2019abord, puis ce que le paquet en fait, "
+            "puis la part qu\u2019on ne devinerait pas \u2014 avec les "
+            "sources sur lesquelles elle repose, nommées pour qu\u2019on "
+            "puisse aller les vérifier.",
             "Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque "
             "plan a été rendu en image fixe et regardé avant l'encodage, ce qui a "
             "permis d'attraper la série d'une minute en train d'annoncer une "
@@ -307,6 +329,10 @@ COPY: dict[str, dict[str, Any]] = {
         fallback="Votre navigateur ne peut pas lire cette vidéo.",
         download="Télécharger le MP4",
         secs_word="s",
+        format_label="Choisissez un format",
+        formats=[("landscape", "Paysage", "3840&times;2160"),
+                 ("portrait", "Portrait", "2160&times;3840"),
+                 ("square", "Carré", "2160&times;2160")],
     ),
 }
 
@@ -334,9 +360,21 @@ def player(film: dict[str, Any], c: dict[str, Any]) -> str:
     caption track, because a reader has no way to tell which one is wrong.
     """
     v, s, lang = c["vdir"], film["slug"], c["lang"]
-    return f'''<video controls preload="none" width="1920" height="1080"
+    btns = "".join(
+        f'''<button type="button" data-format="{key}" aria-pressed="{str(key == "landscape").lower()}"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">{label}<span
+              class="opacity-60">{dims}</span></button>'''
+        for key, label, dims in c["formats"])
+    return f'''<div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="{c['format_label']}"
+            data-film-formats data-film="{s}" data-lang="{lang}" data-dir="{v}">{btns}</div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="{v}/{s}.{lang}.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="{v}/{s}.{lang}.mp4" type="video/mp4">
             <track kind="captions" src="{v}/{s}.{lang}.vtt" srclang="{lang}" label="{c['captions_label']}" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">{c["fallback"]}
@@ -402,16 +440,16 @@ def render(lang: str) -> str:
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:locale" content="{c['og_locale']}">
   <meta property="og:locale:alternate" content="{c['og_locale_alt']}">
-  <meta property="og:image:width" content="1920">
-  <meta property="og:image:height" content="1080">
+  <meta property="og:image:width" content="3840">
+  <meta property="og:image:height" content="2160">
   <meta property="og:video" content="https://sprezzature.ai/video/sprezzature.{c['lang']}.mp4">
   <meta property="og:video:type" content="video/mp4">
-  <meta property="og:video:width" content="1920">
-  <meta property="og:video:height" content="1080">
+  <meta property="og:video:width" content="3840">
+  <meta property="og:video:height" content="2160">
   <meta name="twitter:card" content="player">
   <meta name="twitter:title" content="{c['title']}">
   <meta name="twitter:description" content="{c['desc']}">
-  <meta name="twitter:image" content="https://sprezzature.ai/video/sprezzature.jpg">
+  <meta name="twitter:image" content="https://sprezzature.ai/video/sprezzature.{c['lang']}.jpg">
   <link rel="icon" href="{prefix}favicon.ico" sizes="any">
   <link rel="icon" href="{prefix}favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="{prefix}apple-touch-icon.png" sizes="180x180">
@@ -439,11 +477,11 @@ def render(lang: str) -> str:
         "@type": "VideoObject",
         "name": "Sprezzature",
         "description": "{c['desc']}",
-        "thumbnailUrl": "https://sprezzature.ai/video/sprezzature.jpg",
-        "contentUrl": "https://sprezzature.ai/video/sprezzature.mp4",
-        "duration": "PT25S",
-        "inLanguage": "en",
-        "uploadDate": "2026-09-18",
+        "thumbnailUrl": "https://sprezzature.ai/video/sprezzature.{c['lang']}.jpg",
+        "contentUrl": "https://sprezzature.ai/video/sprezzature.{c['lang']}.mp4",
+        "duration": "PT1M",
+        "inLanguage": "{c['lang']}",
+        "uploadDate": "2026-10-27",
         "author": {{"@type": "Person", "name": "Warith HARCHAOUI"}}
       }}
     ]
@@ -483,6 +521,7 @@ def render(lang: str) -> str:
   <script src="{c['jsdir']}/theme.js" defer></script>
   <script src="{c['jsdir']}/nav.js" defer></script>
   <script src="{c['jsdir']}/color-mode.js" defer></script>
+  <script src="{c['jsdir']}/film-format.js" defer></script>
 </body>
 </html>
 '''

@@ -19,11 +19,11 @@ sharing a hero image.
 
 ---
 
-## The spine: problem, solution, secret sauce
+## The spine: problem, solution, underlying magic, call to action
 
 Guy KAWASAKI's order, and every brick film follows it. A viewer who does not
-know the package needs the pain before the cure, and the cure before the
-clever part.
+know the package needs the pain before the cure, the cure before the clever
+part, and something to do at the end.
 
 **Problem.** Something concrete that goes wrong, stated as a fact about a
 reader rather than a gap in a feature list. "Light grey on white reads
@@ -31,11 +31,37 @@ perfectly well. At your desk, indoors." The viewer has to recognise it.
 
 **Solution.** What the package does about it, shown rather than listed.
 
-**Secret sauce.** The non-obvious mechanism, the thing you would not guess
-and a competitor does not have. For `colors`: hue is what red-green blindness
-removes, saturation is what grey printing removes, lightness is what nothing
-removes, so all three tools work on lightness. That sentence sat in a module
-docstring until this rewrite found it.
+**Underlying magic.** The non-obvious mechanism, the thing you would not
+guess and a competitor does not have — and, since 2026-10-28, the source it
+rests on, named. For `colors`: hue is what red-green blindness removes,
+saturation is what grey printing removes, lightness is what nothing removes,
+so all three tools work on lightness, and the matrices come out of Machado
+2009, measured on real observers. `maps` names ACLED and UCDP, which both
+record how well each coordinate is known while every other tool draws all of
+them as the same dot. `audio` names Netflix's timed text style guide, where
+seventeen characters a second and forty-two to a line come from. `figures`
+ends on the Ralph Eyeball Loop, the one thing in the suite that is not a
+rule. A mechanism without a source is a boast; with one it is something the
+viewer can go and check.
+
+**Call to action.** Two asks, in the order of what they cost: star the
+package on GitHub, then the suite at sprezzature.ai. The star points at the
+package the film is about — somebody who has just watched a minute on `maps`
+wants `sprezzature-maps`, and sending them to the monorepo is a redirect
+dressed up as a destination. The films used to end on "Make it. Audit it.
+Then look at it.", which is a motto, and a motto asks for nothing.
+
+### The spine is on screen
+
+A pitch deck labels its slides. A film cannot, so these label the frame: a
+rail above the picture carries PROBLEM · SOLUTION · UNDERLYING MAGIC · YOUR
+TURN for the whole minute, with the current one lit in blue. At any second a
+viewer wondering where this is going can see the answer without rewinding.
+
+It is a rail and not an eyebrow on purpose. Replacing each scene's own
+eyebrow with a beat label would have flattened eleven films into one
+template, and the sentence in a scene's eyebrow — "Who holds what, at what
+certainty" — carries more than the word "Solution" ever will.
 
 The spine is shared. The execution is not: each film has its own scene types,
 its own pictures and its own number of beats. A shared order is a way of
@@ -110,6 +136,22 @@ the code as the film plays. New scene type: `verify`.
 
 ---
 
+## Three canvases, 4K
+
+Each film is cut wide (3840×2160), tall (2160×3840) and square (2160×2160)
+off a single composition, and all three are on the site rather than only the
+wide one. The three are frame-synced: the same sentence lands on the same
+second whichever you watch, so the format switcher keeps the playhead where
+it was.
+
+4K goes through `--resolution <canvas>-4k`, which leaves the composition
+alone and raises Chrome's device pixel ratio. It also needs
+`--low-memory-mode`, and not for the reason the flag is named: the default
+path writes all 1800 frames to disk before encoding, which at 3840×2160 wants
+about 60 GB of scratch, and this machine has 32. Streaming encodes as it
+captures. The cost is wall clock — 3m19s a cut instead of 38s, so the set
+takes hours rather than minutes.
+
 ## New scene types this needs
 
 - `flow` — labelled stages left to right, revealed in order (publish)
@@ -118,3 +160,4 @@ the code as the film plays. New scene type: `verify`.
 - `verify` — claims with a value appearing beside each (video)
 - `held` — one sentence, larger than `claim`, on screen long enough to read
   twice (ui)
+- `cta` — the logo, the package name, and two things to do (all eleven)

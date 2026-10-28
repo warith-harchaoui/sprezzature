@@ -2,24 +2,36 @@
 """
 Put the rendered films where the site expects them, with their posters.
 
-Six files per film, and they travel together: ``<film>.en.mp4``,
-``<film>.fr.mp4``, a poster for each, and the two caption tracks the voices
-already wrote. Drop one ``.vtt`` and the player loses its captions silently;
-drop one ``.jpg`` and the page shows a black rectangle until somebody presses
-play. ``web/video/`` is gitignored, so nothing here is recoverable from a
-clone and ``git status`` will never mention it.
+Three canvases per film per language, and the pieces of one cut travel
+together: ``<film>.<lang>[.<format>].mp4``, a poster beside it, and the one
+caption track the language shares across all three. Drop a ``.vtt`` and the
+player loses its captions silently; drop a ``.jpg`` and the page shows a
+black rectangle until somebody presses play. ``web/video/`` is gitignored, so
+nothing here is recoverable from a clone and ``git status`` will never mention
+it.
 
-The posters are cut by ``sprezzature-video poster`` — the suite's own tool, on
-the suite's own films — at a time chosen per film rather than a shared one.
-0.0 s is a fade-in and 30.0 s is whatever happens to be on screen; what a
-poster wants is the moment the film is *about*, which is a different second in
-each of them and is written down below.
+Why landscape has no suffix
+---------------------------
+``sprezzature.en.mp4`` is the landscape cut and keeps that name, because the
+home page, the Open Graph tags, the sitemap and the feed all point at it by
+that name. Renaming it to ``.landscape.mp4`` would be a correctness change
+that breaks five files to gain a word. The other two carry their canvas:
+``sprezzature.en.portrait.mp4``, ``sprezzature.en.square.mp4``.
+
+The posters
+-----------
+Cut by ``sprezzature-video poster`` -- the suite's own tool, on the suite's
+own films -- at a time chosen per film rather than a shared one. 0.0 s is the
+opening sentence and 30.0 s is whatever happens to be on screen; what a poster
+wants is the moment the film is *about*, which is a different second in each
+of them and is written down below. The three canvases are frame-synced, so one
+second serves all three.
 
 Usage
 -----
-    python3 install_films.py                 # every film, both languages
+    python3 install_films.py                 # every film, language, canvas
     python3 install_films.py maps            # one of them
-    python3 install_films.py --social        # plus the vertical/square cuts
+    python3 install_films.py --only landscape
 
 Author
 ------
@@ -57,14 +69,10 @@ POSTER_AT: dict[str, float] = {
 
 LANGS = ("en", "fr")
 
-#: Where the vertical and square cuts are collected. The site serves only the
-#: landscape one, so these have nowhere to be installed *to* — and left in
-#: `films/<project>/renders/` they are 44 files under 44 directories, named
-#: after the minute they were encoded. Somebody about to post one needs
-#: `maps.fr.portrait.mp4`, not
-#: `maps-fr-portrait_2026-10-27_08-17-10.mp4` three levels down.
-SOCIAL = ROOT / "out" / "social"
-SOCIAL_FORMATS = ("portrait", "square")
+#: Canvas → the suffix it carries in web/video. Landscape's empty suffix is
+#: the whole reason this is a mapping and not a list.
+FORMATS: dict[str, str] = {"landscape": "", "portrait": ".portrait",
+                           "square": ".square"}
 
 
 def newest_render(project: str) -> pathlib.Path | None:
@@ -74,66 +82,61 @@ def newest_render(project: str) -> pathlib.Path | None:
     return mp4s[-1] if mp4s else None
 
 
-def project_for(film: str, lang: str) -> str:
-    """Mirrors ``build_films.project_name`` for the landscape cut."""
-    return f"{film}-landscape" if lang == "en" else f"{film}-{lang}-landscape"
+def project_for(film: str, lang: str, fmt: str) -> str:
+    """Mirrors ``build_films.project_name``."""
+    return f"{film}-{fmt}" if lang == "en" else f"{film}-{lang}-{fmt}"
 
 
-def install(film: str, lang: str) -> list[str]:
+def install(film: str, lang: str, fmt: str) -> list[str]:
     """Copy one cut and its poster into web/video. Returns problems."""
-    src = newest_render(project_for(film, lang))
+    project = project_for(film, lang, fmt)
+    src = newest_render(project)
     if src is None:
-        return [f"  {film}.{lang}: not rendered — {project_for(film, lang)} has no MP4"]
+        return [f"  {film}.{lang}.{fmt}: not rendered — {project} has no MP4"]
+
+    at = POSTER_AT.get(film)
+    if at is None:
+        return [f"  {film}: no poster time. Add one to POSTER_AT, by looking."]
 
     VIDEO.mkdir(parents=True, exist_ok=True)
-    mp4 = VIDEO / f"{film}.{lang}.mp4"
-    jpg = VIDEO / f"{film}.{lang}.jpg"
+    suffix = FORMATS[fmt]
+    mp4 = VIDEO / f"{film}.{lang}{suffix}.mp4"
+    jpg = VIDEO / f"{film}.{lang}{suffix}.jpg"
     vtt = VIDEO / f"{film}.{lang}.vtt"
     shutil.copy2(src, mp4)
 
+    # One caption track per language, shared by all three canvases: the three
+    # are the same film laid out differently, so a second copy could only ever
+    # be the first one going stale.
     if not vtt.is_file():
         return [
             f"  {film}.{lang}: {vtt.name} is missing. The cues come from the "
             f"narration — run `python3 narrate_films.py {film} --lang {lang}`."
         ]
 
-    at = POSTER_AT.get(film)
-    if at is None:
-        return [f"  {film}: no poster time. Add one to POSTER_AT, by looking."]
     done = subprocess.run(
         ["sprezzature-video", "poster", str(mp4), "--out", str(jpg), "--at", str(at)],
         capture_output=True, text=True, check=False,
     )
     if done.returncode != 0 or not jpg.is_file():
         return [
-            f"  {film}.{lang}: poster failed "
+            f"  {film}.{lang}.{fmt}: poster failed "
             f"({(done.stderr or done.stdout).strip()[:120]})"
         ]
-    print(f"  {film}.{lang}: {mp4.stat().st_size // 1_000_000} MB, poster at {at}s")
+    print(f"  {mp4.name}: {mp4.stat().st_size // 1_000_000} MB, poster at {at}s")
     return []
-
-
-def collect_social(film: str) -> list[str]:
-    """Copy one film's vertical and square cuts out under readable names."""
-    problems: list[str] = []
-    SOCIAL.mkdir(parents=True, exist_ok=True)
-    for lang in LANGS:
-        for fmt in SOCIAL_FORMATS:
-            project = f"{film}-{fmt}" if lang == "en" else f"{film}-{lang}-{fmt}"
-            src = newest_render(project)
-            if src is None:
-                problems.append(f"  {film}.{lang}.{fmt}: {project} has no MP4")
-                continue
-            shutil.copy2(src, SOCIAL / f"{film}.{lang}.{fmt}.mp4")
-    return problems
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     parser.add_argument("films", nargs="*", help="Film keys; default is all of them.")
     parser.add_argument(
-        "--social", action="store_true",
-        help="Also collect the vertical and square cuts into out/social/.",
+        "--only", action="append", choices=sorted(FORMATS),
+        help="Canvas to install; repeatable. Default: all three.",
+    )
+    parser.add_argument(
+        "--lang", action="append", choices=LANGS,
+        help="Language to install; repeatable. Default: both.",
     )
     args = parser.parse_args()
 
@@ -145,20 +148,21 @@ def main() -> int:
         return 2
 
     wanted = args.films or sorted(POSTER_AT)
+    formats = args.only or list(FORMATS)
+    langs = args.lang or list(LANGS)
+
     problems: list[str] = []
     for film in wanted:
-        for lang in LANGS:
-            problems += install(film, lang)
-        if args.social:
-            problems += collect_social(film)
+        for lang in langs:
+            for fmt in formats:
+                problems += install(film, lang, fmt)
 
     if problems:
         sys.stderr.write("\n".join(problems) + "\n")
         return 1
-    print(f"{len(wanted)} film(s) x {len(LANGS)} language(s) in {VIDEO}")
-    if args.social:
-        n = len(list(SOCIAL.glob("*.mp4")))
-        print(f"{n} vertical/square cut(s) in {SOCIAL}")
+    n = len(wanted) * len(langs) * len(formats)
+    mb = sum(f.stat().st_size for f in VIDEO.glob("*.mp4")) // 1_000_000
+    print(f"{n} cut(s) in {VIDEO} — {mb} MB of MP4 in total")
     return 0
 
 

@@ -1,20 +1,26 @@
-# Files the films deploy touches, relative to web/, as of 2026-10-26.
+# Files the films deploy touches, relative to web/, as of 2026-10-28.
 #
 # web/video/ is not in git (see .gitignore), so a clone does not carry these
 # and `git status` will never remind anyone they are pending. This list is the
-# reminder. The three files of one cut travel together: drop the .vtt and the
-# player loses its captions silently, drop the .jpg and the page shows a black
-# rectangle until somebody presses play.
+# reminder.
 #
-# ELEVEN films, TWO cuts each: one per brick plus the suite, in English and in
-# French. The two do not mix -- a French film is French on screen, in the
-# voice and in its subtitles, and an English film is English throughout. That
-# is why every name carries its language, and why there is no unsuffixed
+# ELEVEN films, TWO languages, THREE canvases, all of them 4K. The landscape
+# cut keeps the unsuffixed name because the home page, the Open Graph tags,
+# the sitemap and the feed all point at it that way; the other two carry
+# their canvas. So per film and language: three MP4s, three posters, and ONE
+# WebVTT -- the three canvases are the same minute laid out differently and
+# share their captions, because a second copy could only ever be the first
+# one going stale.
+#
+# The two do not mix. A French film is French on screen, in the voice and in
+# its subtitles; an English film is English throughout. That is why every
+# name carries its language, and why there is no unsuffixed
 # `sprezzature.mp4` any more.
 #
 # The host needs a video/ directory; fr/ already exists.
-# Once uploaded, two checks say whether it landed:
+# Once uploaded, three checks say whether it landed:
 #     curl -sI https://sprezzature.ai/video/sprezzature.fr.mp4 | head -1   -> 200
+#     curl -sI https://sprezzature.ai/video/maps.en.portrait.mp4 | head -1 -> 200
 #     curl -s https://sprezzature.ai/fr/films.html | grep -c '<track'      -> 11
 #
 # STILL ON THE SERVER and only removable by a delete there -- an upload cannot
@@ -24,14 +30,14 @@
 #     (every `<film>.mp4` and `<film>.jpg` without a language)
 # Archived copies: brag-output/_retired/
 #
-# About 260 MB of MP4 in total, which is the whole reason this list exists
-# separately from the HTML: the pages are small and the films are not.
+# ABOUT 1.5 GB of MP4 in total, up from 260 MB: three canvases instead of one,
+# and 3840x2160 instead of 1920x1080. That is the whole reason this list
+# exists separately from the HTML -- the pages are small and the films are
+# not, and a sync that treats them alike will sit there for an hour.
 #
-# The vertical and square cuts are NOT here and do not go on the server: the
-# site serves the landscape one, and those two exist for posting elsewhere.
-# `python3 brag-output/install_films.py --social` collects all 44 under
-# readable names in `brag-output/out/social/` (another 452 MB, also
-# gitignored).
+# `python3 brag-output/install_films.py` writes every one of these.
+# `--only landscape` puts back just the cut the old deploy carried.
+
 
 accessibility.html
 audio.html
@@ -72,69 +78,158 @@ sitemap.xml
 ui.html
 ux-laws.html
 vision.html
+
+video/accessibility.en.vtt
 video/accessibility.en.jpg
 video/accessibility.en.mp4
-video/accessibility.en.vtt
+video/accessibility.en.portrait.jpg
+video/accessibility.en.portrait.mp4
+video/accessibility.en.square.jpg
+video/accessibility.en.square.mp4
+video/accessibility.fr.vtt
 video/accessibility.fr.jpg
 video/accessibility.fr.mp4
-video/accessibility.fr.vtt
+video/accessibility.fr.portrait.jpg
+video/accessibility.fr.portrait.mp4
+video/accessibility.fr.square.jpg
+video/accessibility.fr.square.mp4
+video/audio.en.vtt
 video/audio.en.jpg
 video/audio.en.mp4
-video/audio.en.vtt
+video/audio.en.portrait.jpg
+video/audio.en.portrait.mp4
+video/audio.en.square.jpg
+video/audio.en.square.mp4
+video/audio.fr.vtt
 video/audio.fr.jpg
 video/audio.fr.mp4
-video/audio.fr.vtt
+video/audio.fr.portrait.jpg
+video/audio.fr.portrait.mp4
+video/audio.fr.square.jpg
+video/audio.fr.square.mp4
+video/cli-gui.en.vtt
 video/cli-gui.en.jpg
 video/cli-gui.en.mp4
-video/cli-gui.en.vtt
+video/cli-gui.en.portrait.jpg
+video/cli-gui.en.portrait.mp4
+video/cli-gui.en.square.jpg
+video/cli-gui.en.square.mp4
+video/cli-gui.fr.vtt
 video/cli-gui.fr.jpg
 video/cli-gui.fr.mp4
-video/cli-gui.fr.vtt
+video/cli-gui.fr.portrait.jpg
+video/cli-gui.fr.portrait.mp4
+video/cli-gui.fr.square.jpg
+video/cli-gui.fr.square.mp4
+video/colors.en.vtt
 video/colors.en.jpg
 video/colors.en.mp4
-video/colors.en.vtt
+video/colors.en.portrait.jpg
+video/colors.en.portrait.mp4
+video/colors.en.square.jpg
+video/colors.en.square.mp4
+video/colors.fr.vtt
 video/colors.fr.jpg
 video/colors.fr.mp4
-video/colors.fr.vtt
+video/colors.fr.portrait.jpg
+video/colors.fr.portrait.mp4
+video/colors.fr.square.jpg
+video/colors.fr.square.mp4
+video/figures.en.vtt
 video/figures.en.jpg
 video/figures.en.mp4
-video/figures.en.vtt
+video/figures.en.portrait.jpg
+video/figures.en.portrait.mp4
+video/figures.en.square.jpg
+video/figures.en.square.mp4
+video/figures.fr.vtt
 video/figures.fr.jpg
 video/figures.fr.mp4
-video/figures.fr.vtt
+video/figures.fr.portrait.jpg
+video/figures.fr.portrait.mp4
+video/figures.fr.square.jpg
+video/figures.fr.square.mp4
+video/maps.en.vtt
 video/maps.en.jpg
 video/maps.en.mp4
-video/maps.en.vtt
+video/maps.en.portrait.jpg
+video/maps.en.portrait.mp4
+video/maps.en.square.jpg
+video/maps.en.square.mp4
+video/maps.fr.vtt
 video/maps.fr.jpg
 video/maps.fr.mp4
-video/maps.fr.vtt
+video/maps.fr.portrait.jpg
+video/maps.fr.portrait.mp4
+video/maps.fr.square.jpg
+video/maps.fr.square.mp4
+video/publish.en.vtt
 video/publish.en.jpg
 video/publish.en.mp4
-video/publish.en.vtt
+video/publish.en.portrait.jpg
+video/publish.en.portrait.mp4
+video/publish.en.square.jpg
+video/publish.en.square.mp4
+video/publish.fr.vtt
 video/publish.fr.jpg
 video/publish.fr.mp4
-video/publish.fr.vtt
+video/publish.fr.portrait.jpg
+video/publish.fr.portrait.mp4
+video/publish.fr.square.jpg
+video/publish.fr.square.mp4
+video/sprezzature.en.vtt
 video/sprezzature.en.jpg
 video/sprezzature.en.mp4
-video/sprezzature.en.vtt
+video/sprezzature.en.portrait.jpg
+video/sprezzature.en.portrait.mp4
+video/sprezzature.en.square.jpg
+video/sprezzature.en.square.mp4
+video/sprezzature.fr.vtt
 video/sprezzature.fr.jpg
 video/sprezzature.fr.mp4
-video/sprezzature.fr.vtt
+video/sprezzature.fr.portrait.jpg
+video/sprezzature.fr.portrait.mp4
+video/sprezzature.fr.square.jpg
+video/sprezzature.fr.square.mp4
+video/ui.en.vtt
 video/ui.en.jpg
 video/ui.en.mp4
-video/ui.en.vtt
+video/ui.en.portrait.jpg
+video/ui.en.portrait.mp4
+video/ui.en.square.jpg
+video/ui.en.square.mp4
+video/ui.fr.vtt
 video/ui.fr.jpg
 video/ui.fr.mp4
-video/ui.fr.vtt
+video/ui.fr.portrait.jpg
+video/ui.fr.portrait.mp4
+video/ui.fr.square.jpg
+video/ui.fr.square.mp4
+video/ux-laws.en.vtt
 video/ux-laws.en.jpg
 video/ux-laws.en.mp4
-video/ux-laws.en.vtt
+video/ux-laws.en.portrait.jpg
+video/ux-laws.en.portrait.mp4
+video/ux-laws.en.square.jpg
+video/ux-laws.en.square.mp4
+video/ux-laws.fr.vtt
 video/ux-laws.fr.jpg
 video/ux-laws.fr.mp4
-video/ux-laws.fr.vtt
+video/ux-laws.fr.portrait.jpg
+video/ux-laws.fr.portrait.mp4
+video/ux-laws.fr.square.jpg
+video/ux-laws.fr.square.mp4
+video/video.en.vtt
 video/video.en.jpg
 video/video.en.mp4
-video/video.en.vtt
+video/video.en.portrait.jpg
+video/video.en.portrait.mp4
+video/video.en.square.jpg
+video/video.en.square.mp4
+video/video.fr.vtt
 video/video.fr.jpg
 video/video.fr.mp4
-video/video.fr.vtt
+video/video.fr.portrait.jpg
+video/video.fr.portrait.mp4
+video/video.fr.square.jpg
+video/video.fr.square.mp4
