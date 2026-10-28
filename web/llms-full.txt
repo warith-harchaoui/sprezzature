@@ -182,7 +182,11 @@ Sub-commands and flags mapped to forms, segmented controls, file inputs
 
 A streaming log panel for long-running runs
 
-Reads argparse, click/Typer, clap, commander, cobra
+Imports and walks the parser object itself for argparse, Click and Typer — a Typer app is converted by typer and then walked as Click, because that is what it already is
+
+For clap, commander and cobra: --from-help runs the tool’s own --help and reads the text. Works on any CLI at all, and lower fidelity, because help text says less than a parser knows
+
+A Click group takes its name from the decorated function, which is almost never the command you installed. Unasked, the page would build a command line that does not exist
 
 ## Audits
 

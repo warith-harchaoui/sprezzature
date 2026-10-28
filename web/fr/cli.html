@@ -118,7 +118,9 @@
           <li>Un index.html + app.js + config Tailwind qui emballe votre CLI</li>
           <li>Sous-commandes et options mappées en formulaires, contrôles segmentés, champs fichier</li>
           <li>Un panneau de logs en flux pour les exécutions longues</li>
-          <li>Lit argparse, click/Typer, clap, commander, cobra</li>
+          <li>Importe et parcourt l&rsquo;objet analyseur lui-même pour argparse, Click et Typer &mdash; une application Typer est convertie par typer puis lue comme du Click, puisque c&rsquo;est déjà ce qu&rsquo;elle est</li>
+          <li>Pour clap, commander et cobra : <code>--from-help</code> exécute le <code>--help</code> de l&rsquo;outil et en lit le texte. Marche sur n&rsquo;importe quelle commande, et avec moins de finesse, parce qu&rsquo;un texte d&rsquo;aide en dit moins qu&rsquo;un analyseur</li>
+          <li>Un groupe Click porte le nom de la fonction décorée, qui n&rsquo;est presque jamais la commande installée. Faute de le préciser, la page fabriquerait une ligne de commande qui n&rsquo;existe pas</li>
           </ul>
         </div>
         <div>
