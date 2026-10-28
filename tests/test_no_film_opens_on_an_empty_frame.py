@@ -39,6 +39,8 @@ import re
 import sys
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "brag-output"))
 
@@ -52,6 +54,42 @@ TWEEN = re.compile(
 #: Close enough to frame zero that the first frame shows the from-state. One
 #: frame at 30 fps is 33 ms.
 FIRST_FRAME = 0.02
+
+
+#: Stand-in length for a narration track that is not on this machine, in
+#: seconds. Close to the real ones (the films run just under a minute), and
+#: only ever used where the real file is absent.
+NOMINAL_VO_SECONDS: float = 58.4
+
+
+@pytest.fixture(autouse=True)
+def _vo_durations_without_the_audio(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Let these guards run on a machine with no narration tracks.
+
+    The tracks are gitignored on purpose — tens of megabytes of WAV — so CI
+    has none of them, and `compose` needs a length per track to lay out the
+    timeline. Before this, all three guards failed in CI, and for the wrong
+    reason twice over: first on `ffprobe` not being installed, and behind
+    that on files no clone has.
+
+    What they check does not depend on the number. A tween that starts at
+    time zero either names a transparent from-state or does not; voice
+    length moves what comes *after* it. So the real duration is used wherever
+    the file exists — the machine that builds the films tests the real
+    timeline — and :data:`NOMINAL_VO_SECONDS` stands in where it does not.
+    """
+    import build_films
+
+    real = build_films.vo_duration
+
+    def measured_or_nominal(name: str) -> float:
+        """Real length when the track is here; a stated stand-in when not."""
+        try:
+            return real(name)
+        except FileNotFoundError:
+            return NOMINAL_VO_SECONDS
+
+    monkeypatch.setattr(build_films, "vo_duration", measured_or_nominal)
 
 
 def _transparent(from_state: str) -> str | None:
@@ -75,7 +113,7 @@ def test_nothing_fades_up_from_nothing_on_the_first_frame() -> None:
     for film, lang in build_films.cuts():
         spec = build_films.FILMS[film]
         if spec["duration"] < 30:
-            continue        # the retired eighteen-second group cuts
+            continue  # the retired eighteen-second group cuts
         for fmt in build_films.FORMATS:
             html = build_films.compose(film, spec, fmt, lang)
             for m in TWEEN.finditer(html):
