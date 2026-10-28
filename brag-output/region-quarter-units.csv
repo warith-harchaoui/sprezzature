@@ -1,0 +1,17 @@
+region,quarter,units
+North,Q1,120
+North,Q2,138
+North,Q3,151
+North,Q4,144
+South,Q1,90
+South,Q2,105
+South,Q3,98
+South,Q4,112
+East,Q1,77
+East,Q2,81
+East,Q3,93
+East,Q4,88
+West,Q1,64
+West,Q2,70
+West,Q3,75
+West,Q4,82
