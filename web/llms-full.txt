@@ -972,7 +972,7 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: six situation plates and nothing else — four reference, two areas-of-control — and the density map, which draws no coastline at all and still reads as land.
+What it shows: two areas-of-control plates, with a ring where the source gave no exact position, and the density map, which draws no coastline at all and still reads as land.
 
 sprezzature-video
 
@@ -995,7 +995,7 @@ The voices come from the suite itself: sprezzature-audio through Kokoro, with a 
 
 Each film is cut three ways and all three are on this page: wide for a screen, tall for a phone held upright, square for a feed. Pick one above the player. The three are frame-synced, so the same sentence lands on the same second whichever you watch; only the layout moves. All of them are 4K.
 
-They follow Guy KAWASAKI’s order, which is why the rail above each frame says where you are: the problem first, then what the package does about it, then the part you would not guess — and the sources it rests on, named so you can go and check them.
+They follow Guy KAWASAKI’s order, which is why the rail above each frame says where you are: what the thing is, then the problem, then what the package does about it, then the part you would not guess — and the sources it rests on, named so you can go and check them. The first frame is already a finished one: the name, one sentence, and where to find it.
 
 They were built with the same discipline they describe. Every scene was rendered to a still and looked at before the film was encoded, which is how the sixty-second set was caught quoting a catalogue size the package had outgrown months earlier — off a screenshot taken in September — naming a font the package does not ship, and counting twelve font files where there are six.
 
