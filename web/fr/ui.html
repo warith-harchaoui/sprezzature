@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Génération d'UI — Sprezzature</title>
-  <meta name="description" content="UI vanilla JavaScript + Tailwind, composants, pages, formulaires, dialogues, tableaux de bord, pour les développeurs solo qui livrent des outils internes sans designer.">
+  <meta name="description" content="UI vanilla JavaScript + Tailwind, composants, pages, formulaires, dialogues, tableaux de bord, pour les équipes qui livrent des outils internes sans designer.">
   <link rel="canonical" href="https://sprezzature.ai/fr/ui.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/ui.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/ui.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Génération d'UI — Sprezzature">
-  <meta property="og:description" content="UI vanilla JavaScript + Tailwind, composants, pages, formulaires, dialogues, tableaux de bord, pour les développeurs solo qui livrent des outils internes sans designer.">
+  <meta property="og:description" content="UI vanilla JavaScript + Tailwind, composants, pages, formulaires, dialogues, tableaux de bord, pour les équipes qui livrent des outils internes sans designer.">
   <meta property="og:url" content="https://sprezzature.ai/fr/ui.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="Le logo du projet Sprezzature.">
@@ -41,7 +41,7 @@
       {
         "@type": "WebPage",
         "name": "Génération d'UI — Sprezzature",
-        "description": "Composants, pages, formulaires, dialogues et tableaux de bord vanilla JavaScript et Tailwind pour les développeurs solo qui livrent des outils internes sans designer.",
+        "description": "Composants, pages, formulaires, dialogues et tableaux de bord vanilla JavaScript et Tailwind pour les équipes qui livrent des outils internes sans designer.",
         "url": "https://sprezzature.ai/fr/ui.html",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -105,7 +105,7 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">sprezzature-ui</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Génération d'interface utilisateur (UI)</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">UI vanilla JavaScript (JS) + Tailwind : composants, pages, formulaires, dialogues, tableaux de bord, pour les développeurs solo qui livrent des outils internes sans designer.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">UI vanilla JavaScript (JS) + Tailwind : composants, pages, formulaires, dialogues, tableaux de bord, pour les équipes qui livrent des outils internes sans designer.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (la spec agent)</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐️ sur GitHub</a>
@@ -119,14 +119,15 @@
           <li>HTML (langage de balisage des pages web) sémantique + Tailwind : formulaires, modales, navigation, tableaux de bord, tables de données, réglages, états vides, squelettes</li>
           <li>Variantes en mode sombre, anneaux de focus, garde-fous d'animation réduite par défaut</li>
           <li>La règle des trois Roboto (sans + serif + mono), en respectant toute police que vous nommez</li>
-          <li>i18n extrait dans un seul fichier de configuration YAML partagé entre interface graphique (GUI) et prompts</li>
+          <li>i18n extrait dans un seul fichier de configuration YAML partagé entre interface graphique (GUI) et prompts &mdash; un prompt de modèle est une chaîne traduisible, ce que presque personne ne reconnaît</li>
           </ul>
         </div>
         <div>
           <h2 class="text-lg font-bold">Audite</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
           <li>Auditer une UI existante selon les conventions de sprezzature-ui et d'ergonomie</li>
-          <li>Auditer la couverture i18n et repérer les chaînes non traduites</li>
+          <li>Auditer la couverture i18n et repérer les chaînes non traduites : traductions enfouies dans du JavaScript et du HTML, prompts écrits en dur en Python</li>
+          <li>La correction écrit chaque chaîne dans le catalogue, puis s&rsquo;arrête. Elle ne réécrira pas votre appel &mdash; vous seul savez si cette ligne réclame un pluriel ou une variable &mdash; donc elle imprime la ligne à coller, et signale ce qu&rsquo;elle n&rsquo;a pas su analyser avec certitude</li>
           </ul>
         </div>
       </div>

@@ -83,11 +83,17 @@ World Wide Web Consortium (W3C) WebVTT / SRT / plain-text captions from a local 
 
 Speaker-labelled WebVTT caption format (VTT) with named voice cues; bilingual EN/FR default
 
+The same modality read backwards: a narration from text, landing as a WAV and a WebVTT off one timeline, so a page can follow the reading sentence by sentence
+
+Translated subtitles, through a local model
+
 ## Audits
 
-Project-vocab biasing on the caption path
+Reading speed, line width, cue duration and overlap, against the thresholds Netflix publishes: 17 characters a second, 42 to a line, 5/6 s at the shortest, 7 s at the longest, two lines at most
 
-Translated subtitles
+Flags rather than laws, because a children’s programme and a dense talk justify different numbers
+
+Project-vocab biasing on the caption path
 
 ## Say one of these
 
@@ -101,6 +107,8 @@ diarization
 who spoke when
 identify speakers
 translate captions
+are these subtitles readable
+narrate this text
 
 ## Reference library
 
@@ -1815,11 +1823,15 @@ robots.txt, sitemap.xml, llms.txt, Atom / Really Simple Syndication (RSS), human
 
 Plain-language rewrites and audio (MP3) narration via local open-source (OSS) TTS
 
+A read-along bound to that narration, highlighting the sentence being spoken — and it applies to an existing HTML page with no Markdown behind it
+
 ## Audits
 
 Lint Markdown and catch broken links before publishing
 
 Readability / grade-level checks on the copy
+
+The audio and the page leave the same Markdown by different roads, so the two sentence lists are compared and the first divergence raises. A read-along one sentence out of step is worse than none: it points at the wrong line, with confidence
 
 ## Say one of these
 
@@ -1925,7 +1937,7 @@ sprezzature-ui
 
 # user interface (UI) generation
 
-Vanilla JavaScript (JS) + Tailwind UI: components, pages, forms, dialogs, dashboards, for solo devs shipping internal tools without a designer.
+Vanilla JavaScript (JS) + Tailwind UI: components, pages, forms, dialogs, dashboards, for teams shipping internal tools without a designer.
 
 SKILL.md (the agent spec)
 Give a ⭐️ on GitHub
@@ -1938,13 +1950,15 @@ Dark-mode peers, focus rings, reduced-motion guards on by default
 
 The three-Roboto type rule (sans + serif + mono), honoring any font you name
 
-i18n extracted to a single YAML configuration format shared by graphical user interface (GUI) and prompts
+i18n extracted to a single YAML configuration format shared by graphical user interface (GUI) and prompts — a model prompt is a translatable string, which almost nobody treats as one
 
 ## Audits
 
 Audit existing UI against the stack + ergonomics rules
 
-Audit i18n coverage and surface untranslated strings
+Audit i18n coverage and surface untranslated strings: translations embedded in JavaScript and HTML, prompts inlined in Python
+
+The fix writes each string into the catalogue and stops there. It will not rewrite your call site — only you know whether that line wants a plural or a placeholder — so it prints the line to paste, and says which ones it could not parse with certainty
 
 ## Say one of these
 
