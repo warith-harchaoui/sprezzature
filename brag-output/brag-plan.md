@@ -172,7 +172,7 @@ puis tenues en bloc. Aucune phrase n'est retirée avant d'avoir été lue.
 
 ## 6. Ce que la boucle de l'oeil a attrapé sur ces films
 
-Les quinze projets passent `npx hyperframes check` avec zéro erreur. Les
+Les soixante-six projets passent `npx hyperframes check` avec zéro erreur. Les
 défauts ci-dessous ont survécu à ce filtre et ne sont sortis qu'en regardant
 les images, ce qui est exactement la thèse du produit.
 
@@ -205,29 +205,44 @@ les images, ce qui est exactement la thèse du produit.
 
 ## 7. Fabrication
 
-`build_films.py` produit les quinze projets depuis un seul spec. Les actifs sont
-partagés par lien symbolique vers `_assets/`, donc les 6,8 Mo de polices, de
-figures, de musique et de voix ne sont copiés nulle part.
+`build_films.py` produit les soixante-six projets depuis onze specs : onze
+films, deux langues, trois toiles. Les actifs sont partagés par lien
+symbolique vers `_assets/`, donc les polices, figures, musique et voix ne sont
+copiées nulle part.
 
 ```bash
-python3 build_films.py           # écrit films/<film>-<format>/
-cd films/<film>-<format>
-npx hyperframes check            # la seule barrière avant rendu
-npx hyperframes render --quality looks --output ../../out/<film>-<format>.mp4
+python3 build_films.py           # écrit films/<film>[-<lang>]-<format>/
+./render_films.sh                # ce qui est périmé, un à la fois
+JOBS=2 ./render_films.sh maps    # deux à la fois, un seul film
 ```
+
+`render_films.sh` rend en 4K (`--resolution <toile>-4k`) et impose
+`--low-memory-mode`, qui n'est pas une affaire de mémoire vive mais de disque :
+le chemin par défaut écrit les 1800 images avant d'encoder, soit ~60 Go de
+brouillon en 3840×2160. Il saute un projet dont le MP4 le plus récent est plus
+jeune que son `index.html` — un rendu est une sortie chère d'une entrée bon
+marché, donc il survit à son entrée — et vérifie ensuite durée **et** taille
+d'image, parce qu'un contrôle qui ne distingue pas la nouvelle sortie de
+l'ancienne n'est pas un contrôle.
 
 ---
 
 ## 8. Publication sur le site
 
-Les cinq montages paysage sont dans `web/video/`, avec leur affiche et des
-sous-titres WebVTT dans les deux langues. Les versions verticale et carrée
-restent dans `brag-output/out/` : ce sont des formats de réseaux sociaux, pas
-des formats de page.
+Les trois toiles sont servies, toutes en 4K, et la page des films laisse
+choisir : large pour un écran, haute pour un téléphone, carrée pour un fil. Le
+montage paysage garde son nom sans suffixe (`maps.en.mp4`) parce que la page
+d'accueil, les balises Open Graph, le sitemap et le flux le désignent ainsi ;
+les deux autres portent leur toile (`maps.en.portrait.mp4`).
+
+`python3 install_films.py` écrit tout cela, affiche comprise. Une seule piste
+WebVTT par langue, partagée par les trois toiles : ce sont la même minute mise
+en page autrement, et une seconde copie ne pourrait que vieillir.
 
 | Ce qui a changé | Où |
 |---|---|
-| Cinq MP4, cinq affiches, dix fichiers de sous-titres | `web/video/` |
+| 66 MP4, 66 affiches, 22 fichiers de sous-titres (~1,5 Go) | `web/video/` |
+| Sélecteur de format, sans framework | `web/js/film-format.js` |
 | Nouvelle page, deux langues | `web/films.html`, `web/fr/films.html` |
 | Générateur de la page | `scripts/build_films_page.py` |
 | Générateur des sous-titres | `brag-output/make_captions.py` |
