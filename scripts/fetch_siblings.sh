@@ -28,10 +28,12 @@
 # plus the package directory, which `scripts/audit_surfaces.py` needs to answer
 # "does this brick expose a library surface".
 #
-# Deliberately NOT fetched: `assets/`. That is where the weight is, and nothing
-# that looks across the bricks reads it. A sibling fetched this way is therefore
-# a partial checkout — complete for what the guards ask, and not a place to run
-# a brick's own suite.
+# Deliberately NOT fetched: `assets/`, bar three named text files. That folder
+# is where the weight is, and almost nothing that looks across the bricks reads
+# it. The exceptions are the how-it-works figure each README opens on and the
+# specification it is drawn from, listed in PATHS below with the guard that
+# reads them. A sibling fetched this way is therefore a partial checkout —
+# complete for what the guards ask, and not a place to run a brick's own suite.
 #
 # Usage
 # -----
@@ -117,6 +119,15 @@ PATHS=(
     # `sprezzature-ui` and nothing anywhere else.
     '/assets/fonts/**/*.woff2'
     '/assets/fonts/**/*.txt'
+    # The how-it-works figure each brick's README and LISEZMOI open on, and the
+    # specification it is drawn from. `tests/test_every_brick_opens_on_a_figure.py`
+    # reads all three: it checks that every string in the specification is
+    # actually drawn in the committed SVG, which is the only thing that catches
+    # a specification edited without a redraw. Three small text files per brick,
+    # about 25 KB for the ten, and the one part of `assets/` anything here reads.
+    '/assets/how-it-works.yaml'
+    '/assets/how-it-works.svg'
+    '/assets/comment-ca-marche.svg'
 )
 
 for brick in "${BRICKS[@]}"; do

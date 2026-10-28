@@ -32,6 +32,10 @@ The skills:
 The companion skills inherit the sprezzature-ui stack rules. Install only the
 ones you need.
 
+## How it works
+
+![Flow diagram. At the top, a sentence typed to an agent feeds two lanes. The left lane is the agent layer, this repository: it matches the sentence to a skill through a declared vocabulary and reads that skill's reference documents rather than a memory, handing back one contract. The right lane is the tool layer, ten standalone packages: each is installed on its own and published through five surfaces, a library, a command line, an HTTP API, an agent tool surface and a skill. Both meet in one outcome, an artifact that was made and then audited by a gate that exits non-zero.](https://raw.githubusercontent.com/warith-harchaoui/sprezzature/main/assets/how-it-works.svg)
+
 ## Two-layer architecture
 
 As of 2026-07-29, sprezzature is organised in two layers with distinct release cycles.
