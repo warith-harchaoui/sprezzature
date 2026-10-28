@@ -17,7 +17,7 @@ import sys
 FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     "sprezzature": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Ten packages, and nothing leaves your machine.'),
-                (6.50, 3.0, 'Nearly every design decision has already been made. By Yablonski, by the W3C, by a 2009 paper.'),
+                (7.088, 3.0, 'Nearly every design decision has already been made. By Yablonski, by the W3C, by a 2009 paper.'),
                 (15.00, 3.0, 'All of it published years ago. Your tools have never heard of it.'),
                 (24.00, 3.0, 'Here it is as code, for what you are building and for what is already live.'),
                 (32.50, 3.0, 'What no rule does is look at the result.'),
@@ -55,7 +55,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "ux-laws": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Ux-laws reads your page against the laws of attention.'),
-                (6.50, 3.0, 'They will tell you the page is overwhelming, that they can never find the button. Nobody will ever say Hick’s Law.'),
+                (7.653, 3.0, 'They will tell you the page is overwhelming, that they can never find the button. Nobody will ever say Hick’s Law.'),
                 (15.00, 3.0, 'Thirty laws, collected by Jon Yablonski. Eight of them settle from the source alone.'),
                 (24.00, 3.0, 'The auditor reads the markup itself, with no browser and no rendering, in milliseconds.'),
                 (30.00, 3.0, 'And counting the links in a menu is not enough.'),
@@ -73,7 +73,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "accessibility": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Accessibility decides twenty rules from your HTML.'),
-                (6.50, 3.0, 'A video starts playing by itself, with sound. A blind reader now cannot hear the screen reader they would use to stop it.'),
+                (8.181, 3.0, 'A video starts playing by itself, with sound. A blind reader now cannot hear the screen reader they would use to stop it.'),
                 (16.50, 3.0, 'Twenty rules out of WCAG and WAI-ARIA answer that from the markup alone.'),
                 (23.00, 3.0, 'Each finding names the element, the line and the rule it broke. No browser, no rendering.'),
                 (29.50, 3.0, 'Six of the twenty repair themselves. Only six.'),
@@ -109,7 +109,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "figures": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Figures draws the chart your columns ask for.'),
-                (6.50, 3.0, 'You have a spreadsheet and no idea which chart fits, so you reach for the bar chart you reached for last time.'),
+                (7.653, 3.0, 'You have a spreadsheet and no idea which chart fits, so you reach for the bar chart you reached for last time.'),
                 (15.00, 3.0, 'There are 167 kinds here. Every one of them was written by hand.'),
                 (22.00, 3.0, 'Each generator writes the SVG itself, with no charting library underneath.'),
                 (28.00, 3.0, 'And each one declares the data roles it needs.'),
@@ -127,7 +127,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "publish": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Publish turns a folder of Markdown into a site.'),
-                (6.50, 3.0, 'It will even read the page aloud and highlight as it goes. One sentence out of step is worse than no highlighting at all.'),
+                (7.653, 3.0, 'It will even read the page aloud and highlight as it goes. One sentence out of step is worse than no highlighting at all.'),
                 (16.00, 3.0, 'Nine tools turn one document into a site. The linter runs on the standard library alone.'),
                 (24.00, 3.0, 'Favicons from a single logo. The indexes a crawler wants, plus the two files a language model reads.'),
                 (30.60, 3.0, 'Then the hard part. The audio and the page leave the same Markdown by different roads.'),
@@ -163,7 +163,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "cli-gui": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Cli-gui turns a command line into a form.'),
-                (6.50, 3.0, 'Your colleague needs this tool. They will not open a terminal.'),
+                (8.181, 3.0, 'Your colleague needs this tool. They will not open a terminal.'),
                 (17.00, 3.0, 'So the command generates its own page, and it reads the parser object to do it. Options become fields, choices a list.'),
                 (26.00, 3.0, 'Three frameworks, two adapters. A Typer app is converted by typer and then walked as Click, because that is what it already is.'),
                 (36.00, 3.0, 'And one detail decides whether the page tells the truth.'),
@@ -181,7 +181,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "ui": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. UI finds the sentences hardcoded in your source.'),
-                (6.50, 3.0, 'One written straight into a template costs nothing today. It costs a week the day somebody needs a second language.'),
+                (7.653, 3.0, 'One written straight into a template costs nothing today. It costs a week the day somebody needs a second language.'),
                 (17.50, 3.0, 'One catalogue holds them all. An audit finds every string that belongs in it.'),
                 (25.00, 3.0, 'Including the prompts. A model prompt is a translatable string, which almost nobody treats as one.'),
                 (33.00, 3.0, 'The fix writes each string into the catalogue. Then it stops.'),
@@ -199,7 +199,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
     },
     "video": {
         "en": [(1.10, 3.0, 'Sprezzature is an AI engine for Design. Video checks what a film says against the code.'),
-                (6.50, 3.0, 'A film asserts things at thirty frames a second, and burns them into pixels where nothing reads them again.'),
+                (7.088, 3.0, 'A film asserts things at thirty frames a second, and burns them into pixels where nothing reads them again.'),
                 (19.00, 3.0, 'So every claim now lives in a file beside the film, naming what would have to change for it to stop being true.'),
                 (30.00, 3.0, '167 against the catalogue. Twenty against the linter. Thirty against the reference.'),
                 (38.00, 3.0, 'And then the harder half.'),
