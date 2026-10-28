@@ -22,16 +22,16 @@
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:image:width" content="1920">
-  <meta property="og:image:height" content="1080">
+  <meta property="og:image:width" content="3840">
+  <meta property="og:image:height" content="2160">
   <meta property="og:video" content="https://sprezzature.ai/video/sprezzature.fr.mp4">
   <meta property="og:video:type" content="video/mp4">
-  <meta property="og:video:width" content="1920">
-  <meta property="og:video:height" content="1080">
+  <meta property="og:video:width" content="3840">
+  <meta property="og:video:height" content="2160">
   <meta name="twitter:card" content="player">
   <meta name="twitter:title" content="Onze courts métrages — Sprezzature">
   <meta name="twitter:description" content="Onze courts métrages sur Sprezzature : un sur la suite, et un par paquet. Chaque figure, carte, formulaire et simulation qu'on y voit sort réellement des outils.">
-  <meta name="twitter:image" content="https://sprezzature.ai/video/sprezzature.jpg">
+  <meta name="twitter:image" content="https://sprezzature.ai/video/sprezzature.fr.jpg">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
@@ -59,11 +59,11 @@
         "@type": "VideoObject",
         "name": "Sprezzature",
         "description": "Onze courts métrages sur Sprezzature : un sur la suite, et un par paquet. Chaque figure, carte, formulaire et simulation qu'on y voit sort réellement des outils.",
-        "thumbnailUrl": "https://sprezzature.ai/video/sprezzature.jpg",
-        "contentUrl": "https://sprezzature.ai/video/sprezzature.mp4",
-        "duration": "PT25S",
-        "inLanguage": "en",
-        "uploadDate": "2026-09-18",
+        "thumbnailUrl": "https://sprezzature.ai/video/sprezzature.fr.jpg",
+        "contentUrl": "https://sprezzature.ai/video/sprezzature.fr.mp4",
+        "duration": "PT1M",
+        "inLanguage": "fr",
+        "uploadDate": "2026-10-27",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI"}
       }
     ]
@@ -132,9 +132,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Le design est un savoir-faire, et l'essentiel est déjà écrit : trente lois d'UX, des rapports de contraste, un article de 2009 sur la vision des couleurs, une projection de 2018. La suite, c'est ce savoir-faire retourné dans les deux sens : pour fabriquer une chose, et pour l'auditer.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="sprezzature" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/sprezzature.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/sprezzature.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/sprezzature.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -149,9 +170,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">La plus petite brique, exprès. Son travail, c'est le jugement esthétique écrit en prose — la règle des trois Roboto, les jetons de design, ce qu'une interface doit respecter — plus la seule part de ce jugement qu'une machine peut exécuter.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="ui" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/ui.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/ui.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/ui.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -166,9 +208,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Un outil que personne ne tapera, enveloppé dans une page. Il ne lit pas le texte d'aide : il lit l'objet analyseur, via argparse, Click ou Typer, et ne se rabat sur <code class="font-mono text-sm">--help</code> que faute d'analyseur joignable.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="cli-gui" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/cli-gui.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/cli-gui.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/cli-gui.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -183,9 +246,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Un document, qui devient un site. Neuf outils : un linter qui tourne sur la bibliothèque standard en millisecondes, des favicons depuis un seul logo, les index qu'attendent un robot comme un modèle de langue, et readalong, qui lie la narration à la page.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="publish" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/publish.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/publish.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/publish.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -200,9 +284,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Une lecture automatique non muette couvre un lecteur d'écran, et le balisage le dit tout seul. Vingt règles issues des WCAG, chacune nommant l'élément, la ligne et la règle enfreinte ; six se réparent seules, là où il n'existe qu'une correction sûre.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="accessibility" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/accessibility.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/accessibility.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/accessibility.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -217,9 +322,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Du gris clair sur blanc se lit très bien — pour vous, à l'intérieur. Environ un homme sur douze voit le rouge et le vert comme une seule barre, et aucun soin n'y change rien : l'information n'est pas dans son œil.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="colors" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/colors.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/colors.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/colors.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -234,9 +360,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Une seule modalité, lue dans les deux sens. Les sous-titres font du son un texte minuté ; la narration fait du texte un son minuté, livré en WAV plus un WebVTT — exactement comme une transcription, ce qui permet à une page de suivre la lecture phrase après phrase.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="audio" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/audio.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/audio.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/audio.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -251,9 +398,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Personne ne dit &laquo;&nbsp;ça viole la loi de Hick&nbsp;&raquo;. On dit que la page est écrasante, ou qu'on ne trouve jamais le bouton. Trente lois, réunies par Jon YABLONSKI ; huit qu'une machine peut trancher depuis le seul balisage.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="ux-laws" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/ux-laws.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/ux-laws.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/ux-laws.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -268,9 +436,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">167 types de graphiques en 52 catégories, tous écrits à la main. Aucune bibliothèque de tracé en dessous : chaque générateur écrit le SVG lui-même, et le vectoriel est le livrable, pas un export.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="figures" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/figures.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/figures.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/figures.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -285,9 +474,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">Une colonne de pays est une carte qui s'ignore. De vraies côtes, une vraie projection, huit kilomètres de relief — et un choix de distorsion assumé plutôt que subi.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="maps" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/maps.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/maps.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/maps.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -302,9 +512,30 @@
         <span class="ml-2 font-mono text-base font-normal text-neutral-500 dark:text-neutral-400">60&nbsp;s</span></h2>
       <p class="mt-3 text-neutral-600 dark:text-neutral-300">La brique qui a fabriqué les dix autres films, et celle qui les vérifie. Un film est une affirmation avec une bande-son : chaque nombre à l'écran est vérifié contre le code qui le produit, y compris ceux que personne n'a déclarés.</p>
       <div class="mt-6">
-          <video controls preload="none" width="1920" height="1080"
+          <div class="mb-3 flex flex-wrap items-center gap-1" role="group" aria-label="Choisissez un format"
+            data-film-formats data-film="video" data-lang="fr" data-dir="../video"><button type="button" data-format="landscape" aria-pressed="true"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Paysage<span
+              class="opacity-60">3840&times;2160</span></button><button type="button" data-format="portrait" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Portrait<span
+              class="opacity-60">2160&times;3840</span></button><button type="button" data-format="square" aria-pressed="false"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-mono text-xs
+                     uppercase tracking-wide text-neutral-600 hover:bg-neutral-100
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue
+                     aria-pressed:bg-brand-blue aria-pressed:text-white
+                     dark:text-neutral-300 dark:hover:bg-neutral-800">Carré<span
+              class="opacity-60">2160&times;2160</span></button></div>
+          <video controls preload="none" width="3840" height="2160"
+            data-film-player
             poster="../video/video.fr.jpg"
-            class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+            class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="../video/video.fr.mp4" type="video/mp4">
             <track kind="captions" src="../video/video.fr.vtt" srclang="fr" label="Français" default>
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Votre navigateur ne peut pas lire cette vidéo.
@@ -320,7 +551,8 @@
         <ul class="mt-4 space-y-3 text-neutral-600 dark:text-neutral-300" role="list">
         <li>Chaque film existe deux fois, et les deux ne se mélangent pas : un film anglais est anglais de bout en bout — à l'écran, dans la voix, dans les sous-titres — et un film français est français de bout en bout. Cette page sert la version française ; l'anglaise est à un clic.</li>
         <li>Les voix viennent de la suite elle-même : <code class="font-mono text-sm">sprezzature-audio</code> via Kokoro, avec un lexique de prononciation pour que WebVTT, RTTM, OKLCH et GMTED2010 se disent pareil dans tous les films et dans les deux langues. Le même appel écrit les sous-titres, sur la même timeline que l'audio.</li>
-        <li>Chacun existe aussi en vertical (1080&times;1920) et en carré (1080&times;1080). Les versions ici sont le montage 1920&times;1080.</li>
+        <li>Chaque film est monté trois fois, et les trois sont sur cette page : large pour un écran, haut pour un téléphone tenu debout, carré pour un fil. Le choix est au-dessus du lecteur. Les trois partagent la même horloge : la même phrase tombe à la même seconde quel que soit le montage, seule la mise en page bouge. Tous sont en 4K.</li>
+        <li>Ils suivent l’ordre de Guy KAWASAKI, et c’est pourquoi le bandeau au-dessus de l’image dit où vous en êtes : le problème d’abord, puis ce que le paquet en fait, puis la part qu’on ne devinerait pas — avec les sources sur lesquelles elle repose, nommées pour qu’on puisse aller les vérifier.</li>
         <li>Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque plan a été rendu en image fixe et regardé avant l'encodage, ce qui a permis d'attraper la série d'une minute en train d'annoncer une taille de catalogue dépassée depuis des mois — d'après une capture de septembre —, de nommer une fonte que le paquet ne livre pas, et de compter douze fichiers de fonte là où il y en a six.</li>
         <li>Deux de ces défauts relevaient de la typographie plutôt que du fait, et ils ont désormais un test plutôt qu'un œil : il mesure chaque ligne de texte des films dans la fonte où ils sont composés, et échoue si l'une se coupe en laissant son dernier mot seul.</li>
         </ul>
@@ -337,5 +569,6 @@
   <script src="../js/theme.js" defer></script>
   <script src="../js/nav.js" defer></script>
   <script src="../js/color-mode.js" defer></script>
+  <script src="../js/film-format.js" defer></script>
 </body>
 </html>

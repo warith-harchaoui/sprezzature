@@ -140,8 +140,40 @@ def in_language(spec: dict, lang: str, film: str = "") -> dict:
     return out
 
 
-OUTRO_LINE = L("Make it. Audit it. Then look at it.",
-               "Fabriquez. Auditez. Puis regardez.")
+#: Guy KAWASAKI's pitch, in the order he puts it in and in his words. A
+#: viewer who does not know the package needs the pain before the cure, the
+#: cure before the clever part, and something to do at the end.
+#:
+#: The labels are on screen for the whole minute, in the rail above the
+#: frame, with the current one lit. A pitch deck can label its slides and a
+#: film cannot, so the film labels the frame instead: at any second, somebody
+#: wondering where this is going can see the answer without rewinding.
+BEAT_LABEL = {
+    "problem":  L("Problem", "Le problème"),
+    "solution": L("Solution", "La solution"),
+    "magic":    L("Underlying magic", "La mécanique"),
+    "cta":      L("Your turn", "À vous"),
+}
+BEAT_ORDER = ("problem", "solution", "magic", "cta")
+
+#: The ask. Two of them, in the order of what they cost: a star is one click
+#: from where the viewer already is, the site is a visit.
+#:
+#: The star points at the package the film is about, not at the hub. Somebody
+#: who has just watched a minute on `maps` wants `sprezzature-maps`, and
+#: sending them to the monorepo instead is a redirect dressed up as a
+#: destination. The suite film is the one whose subject *is* the hub.
+GITHUB = "github.com/warith-harchaoui"
+
+
+def cta_for(film_key: str) -> list[tuple[str, dict, str]]:
+    """The two asks that close one film."""
+    repo = "sprezzature" if film_key == "sprezzature" else f"sprezzature-{film_key}"
+    return [
+        ("\u2605", L("Star it on GitHub", "Mettez une étoile sur GitHub"),
+         f"{GITHUB}/{repo}"),
+        ("\u2192", L("The whole suite", "Toute la suite"), "sprezzature.ai"),
+    ]
 
 
 
@@ -193,11 +225,11 @@ FILMS = {
         sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 38.74),
              ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("Nearly every design decision has already been made.",
                         "Presque tout ce qu'on décide en design a déjà été "
                         "décidé.")),
-            dict(type="chips", start=5.4, dur=9.1, end=14.4,
+            dict(type="chips", beat="problem", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("Settled by other people", "Décidé par d'autres"),
                  items=["30 Laws of UX", L("WCAG contrast", "contraste WCAG"),
                         "Machado 2009", "Gestalt", "Equal Earth", "W3C WebVTT",
@@ -208,7 +240,7 @@ FILMS = {
                            "Les lois de l'attention, c'est Yablonski. Le "
                            "contraste, c'est le W3C. Ce que voit un daltonien, "
                            "c'est un article de 2009.")),
-            dict(type="grid", start=14.3, dur=9.2, end=23.4,
+            dict(type="grid", beat="solution", start=14.3, dur=9.2, end=23.4,
                  eyebrow=L("What comes out of them", "Ce qui en sort"),
                  images=["figures/corr-matrix.svg", "figures/calendar-heatmap.svg",
                          "figures/map-flow.svg", "figures/choropleth.svg"],
@@ -217,7 +249,7 @@ FILMS = {
                            "one of them had to answer to its rule.",
                            "Une matrice, un calendrier, un flux, un "
                            "choroplèthe. Chacun a dû passer sa règle.")),
-            dict(type="versus", start=23.3, dur=9.2, end=32.4,
+            dict(type="versus", beat="solution", start=23.3, dur=9.2, end=32.4,
                  eyebrow=L("The same rules, used twice",
                            "Les mêmes règles, deux fois"),
                  left=(L("Make", "Fabriquer"),
@@ -231,7 +263,7 @@ FILMS = {
                            "of UX.",
                            "167 types de graphiques. 20 règles "
                            "d'accessibilité. 30 lois d'UX.")),
-            dict(type="loop", start=32.3, dur=16.7, end=49.0,
+            dict(type="loop", beat="magic", start=32.3, dur=16.7, end=49.0,
                  eyebrow=L("What no rule does", "Ce qu'aucune règle ne fait"),
                  steps=LOOP_STEPS,
                  fig="figures/bar-grouped.svg", gray="figures/bar-grouped-gray.svg",
@@ -241,11 +273,11 @@ FILMS = {
                            "wrong. The source is what you then fix.",
                            "Un modèle de vision regarde le graphique et dit ce "
                            "qui cloche. Ensuite, c'est la source qu'on corrige.")),
-            dict(type="held", start=48.9, dur=6.7, end=55.5,
+            dict(type="held", beat="magic", start=48.9, dur=6.7, end=55.5,
                  line=L("Everything stays on your desk. Nothing travels.",
                         "Tout reste sur votre poste. Rien ne part ailleurs.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature", line=OUTRO_LINE, url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature", actions=cta_for("sprezzature")),
         ],
     ),
     # ------------------------------------------------------------------ colors
@@ -265,12 +297,12 @@ FILMS = {
         sfx=[("drop", 5.47), ("wipe", 18.01), ("wipe", 21.83), ("tile", 41.46),
              ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("Light grey on white reads perfectly well. At your "
                         "desk, indoors.",
                         "Du gris clair sur du blanc, ça se lit très bien. Chez "
                         "vous, à l'intérieur.")),
-            dict(type="versus", start=5.4, dur=9.1, end=14.4,
+            dict(type="versus", beat="problem", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("The same button, two readers",
                            "Le même bouton, deux lecteurs"),
                  left=(L("Low vision", "Malvoyance"),
@@ -284,13 +316,13 @@ FILMS = {
                            "whole problem.",
                            "Celui qui a choisi la couleur, lui, la lit très "
                            "bien. C'est tout le problème.")),
-            dict(type="claim", start=14.3, dur=4.8, end=18.0,
+            dict(type="claim", beat="problem", start=14.3, dur=4.8, end=18.0,
                  line=L("About one man in twelve does not separate red from "
                         "green.",
                         "Un homme sur douze environ ne sépare pas le rouge du "
                         "vert.")),
             # Twenty-two seconds. The argument here is made by looking.
-            dict(type="cvd", start=17.9, dur=22.0, end=39.8,
+            dict(type="cvd", beat="solution", start=17.9, dur=22.0, end=39.8,
                  eyebrow=L("Rendered for those eyes", "Rendu pour ces yeux-là"),
                  base="figures/cvd/00-original.png",
                  stages=[("01", L("protanopia", "protanopie"),
@@ -306,11 +338,11 @@ FILMS = {
                            "real observers.",
                            "Les matrices viennent d'un article de 2009, "
                            "mesurées sur de vrais observateurs.")),
-            dict(type="held", start=39.7, dur=9.3, end=49.0,
+            dict(type="held", beat="magic", start=39.7, dur=9.3, end=49.0,
                  line=L("Hue goes. Saturation goes. Lightness holds.",
                         "La teinte s'efface. La saturation s'efface. La "
                         "clarté, elle, tient.")),
-            dict(type="versus", start=48.9, dur=6.7, end=55.5,
+            dict(type="versus", beat="magic", start=48.9, dur=6.7, end=55.5,
                  eyebrow=L("So that is what the audit works on",
                            "C'est donc là-dessus que l'audit travaille"),
                  left=(L("Your colour", "Votre couleur"),
@@ -322,9 +354,8 @@ FILMS = {
                  at=on_beat(49.6, 50.7),
                  caption=L("Your blue stays your blue. It becomes legible.",
                            "Votre bleu reste votre bleu. Il devient lisible.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 colors", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 colors", actions=cta_for("colors")),
         ],
     ),
     # ---------------------------------------------------------------- figures
@@ -345,16 +376,16 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("You have a spreadsheet. Which chart is the right one?",
                         "Vous avez un tableur. Quel graphique est le bon ?")),
-            dict(type="held", start=5.4, dur=9.1, end=14.4,
+            dict(type="held", beat="problem", start=5.4, dur=9.1, end=14.4,
                  line=L("Most people reach for the bar chart they reached for "
                         "last time.",
                         "La plupart des gens reprennent le graphique en barres "
                         "de la dernière fois.")),
             # SOLUTION
-            dict(type="grid", start=14.3, dur=12.9, end=27.2,
+            dict(type="grid", beat="solution", start=14.3, dur=12.9, end=27.2,
                  eyebrow=L("167 kinds, each written by hand",
                            "167 types, écrits un par un à la main"),
                  images=["figures/sankey.svg", "figures/alluvial.svg",
@@ -367,10 +398,10 @@ FILMS = {
                            "formes n'appartiennent à la bibliothèque de "
                            "personne.")),
             # SECRET SAUCE
-            dict(type="claim", start=27.1, dur=8.3, end=35.3,
+            dict(type="claim", beat="magic", start=27.1, dur=8.3, end=35.3,
                  line=L("Each one declares the data it needs.",
                         "Chacun déclare les données qu'il lui faut.")),
-            dict(type="verify", start=35.2, dur=12.3, end=47.4,
+            dict(type="verify", beat="magic", start=35.2, dur=12.3, end=47.4,
                  eyebrow=L("So your columns are the question",
                            "Vos colonnes posent donc la question"),
                  claims=[(L("region, quarter, units", "région, trimestre, unités"),
@@ -389,12 +420,11 @@ FILMS = {
                            "from the command line.",
                            "Le même filtre que le studio affiche en cartes, "
                            "depuis la ligne de commande.")),
-            dict(type="held", start=47.3, dur=8.2, end=55.5,
+            dict(type="held", beat="magic", start=47.3, dur=8.2, end=55.5,
                  line=L("The catalogue is a filter, not a menu.",
                         "Le catalogue est un filtre, pas un menu.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 figures", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 figures", actions=cta_for("figures")),
         ],
     ),
     # ---------------------------------------------------------------- publish
@@ -415,17 +445,17 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("A page that reads itself aloud, highlighting as it goes.",
                         "Une page qui se lit à voix haute en surlignant au "
                         "passage.")),
-            dict(type="held", start=5.4, dur=9.1, end=14.4,
+            dict(type="held", beat="problem", start=5.4, dur=9.1, end=14.4,
                  line=L("One sentence out of step is worse than no "
                         "highlighting at all.",
                         "Une phrase de décalage vaut moins que pas de "
                         "surlignage du tout.")),
             # SOLUTION: the pipeline
-            dict(type="flow", start=14.3, dur=14.9, end=29.2,
+            dict(type="flow", beat="solution", start=14.3, dur=14.9, end=29.2,
                  eyebrow=L("One document, nine tools", "Un document, neuf outils"),
                  stages=[("lint", L("stdlib, milliseconds", "stdlib, millisecondes")),
                          ("html", L("the page", "la page")),
@@ -441,12 +471,12 @@ FILMS = {
                            "c'est pourquoi il tient dans un crochet de "
                            "pré-commit.")),
             # SECRET SAUCE
-            dict(type="claim", start=29.1, dur=8.3, end=37.3,
+            dict(type="claim", beat="magic", start=29.1, dur=8.3, end=37.3,
                  line=L("The audio and the page leave the same Markdown by "
                         "different roads.",
                         "L'audio et la page quittent le même Markdown par "
                         "deux routes.")),
-            dict(type="versus", start=37.2, dur=9.6, end=46.8,
+            dict(type="versus", beat="magic", start=37.2, dur=9.6, end=46.8,
                  eyebrow=L("Two roads, no guarantee",
                            "Deux routes, aucune garantie"),
                  left=(L("The voice", "La voix"),
@@ -460,13 +490,12 @@ FILMS = {
                            "inside a list item. A tree walk can.",
                            "Une expression régulière ne voit pas un bloc de "
                            "code dans une puce. Un parcours d'arbre, oui.")),
-            dict(type="held", start=46.7, dur=8.8, end=55.5,
+            dict(type="held", beat="magic", start=46.7, dur=8.8, end=55.5,
                  line=L("They match, or it refuses. There is no third outcome.",
                         "Les deux coïncident, ou bien ça refuse. Il n'y a pas "
                         "de troisième issue.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 publish", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 publish", actions=cta_for("publish")),
         ],
     ),
     # ------------------------------------------------------------------ audio
@@ -486,15 +515,15 @@ FILMS = {
         sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 32.19), ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("Your video has captions. They are accurate.",
                         "Votre vidéo a des sous-titres. Ils sont exacts.")),
-            dict(type="held", start=5.4, dur=9.6, end=15.0,
+            dict(type="held", beat="problem", start=5.4, dur=9.6, end=15.0,
                  line=L("Ninety characters, on screen for half a second.",
                         "Quatre-vingt-dix caractères, affichés une "
                         "demi-seconde.")),
             # SOLUTION: the file itself, with the offending cue marked
-            dict(type="code", start=14.9, dur=16.1, end=31.0,
+            dict(type="code", beat="solution", start=14.9, dur=16.1, end=31.0,
                  eyebrow=L("The track, read as a file",
                            "La piste, lue comme un fichier"),
                  code=["WEBVTT", "",
@@ -513,9 +542,9 @@ FILMS = {
                            "millisecondes. Puis un sous-titre qui part trop "
                            "tôt.")),
             # SECRET SAUCE
-            dict(type="verify", start=30.9, dur=16.1, end=47.0,
-                 eyebrow=L("The numbers were published years ago",
-                           "Les chiffres sont publiés depuis des années"),
+            dict(type="verify", beat="magic", start=30.9, dur=16.1, end=47.0,
+                 eyebrow=L("Netflix's timed text style guide",
+                           "Le guide de sous-titrage de Netflix"),
                  claims=[(L("reading speed, characters a second",
                             "vitesse de lecture, caractères par seconde"), "17"),
                          (L("characters on one line", "caractères sur une ligne"), "42"),
@@ -532,12 +561,11 @@ FILMS = {
                            "one is a flag with its source written next to it.",
                            "Des conventions plutôt que des lois : chacune est "
                            "donc un signalement, sa source écrite à côté.")),
-            dict(type="held", start=46.9, dur=8.6, end=55.5,
+            dict(type="held", beat="magic", start=46.9, dur=8.6, end=55.5,
                  line=L("Accuracy was the only thing anybody measured.",
                         "L'exactitude était la seule chose qu'on mesurait.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 audio", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 audio", actions=cta_for("audio")),
         ],
     ),
     # ---------------------------------------------------------------- cli-gui
@@ -560,13 +588,13 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("Your colleague needs this tool. They will not open a "
                         "terminal.",
                         "Votre collègue a besoin de cet outil. Il n'ouvrira "
                         "pas de terminal.")),
             # SOLUTION: the thing itself
-            dict(type="grid", start=5.4, dur=11.1, end=16.4,
+            dict(type="grid", beat="solution", start=5.4, dur=11.1, end=16.4,
                  eyebrow=L("Generated from the command, not written",
                            "Engendré depuis la commande, pas écrit"),
                  images=["shots/make-figure-list.png", "shots/make-figure-render.png"],
@@ -575,13 +603,13 @@ FILMS = {
                            "Required stays required.",
                            "Les options deviennent des champs. Les choix, une "
                            "liste. L'obligatoire reste obligatoire.")),
-            dict(type="claim", start=16.3, dur=8.2, end=24.4,
+            dict(type="claim", beat="solution", start=16.3, dur=8.2, end=24.4,
                  line=L("It reads the parser object. The help text is a "
                         "last resort.",
                         "Il lit l'objet analyseur. Le texte d'aide est un "
                         "pis-aller.")),
             # SECRET SAUCE
-            dict(type="versus", start=24.3, dur=11.2, end=35.4,
+            dict(type="versus", beat="magic", start=24.3, dur=11.2, end=35.4,
                  eyebrow=L("Three frameworks, two adapters",
                            "Trois cadres, deux adaptateurs"),
                  left=(L("argparse, Click", "argparse, Click"),
@@ -596,18 +624,17 @@ FILMS = {
                            "Un troisième adaptateur serait une deuxième "
                            "implémentation de Click, qui dériverait de la "
                            "première.")),
-            dict(type="held", start=35.3, dur=10.2, end=45.5,
+            dict(type="held", beat="magic", start=35.3, dur=10.2, end=45.5,
                  line=L("A Click group is named after the function, not after "
                         "the command.",
                         "Un groupe Click porte le nom de la fonction, pas "
                         "celui de la commande.")),
-            dict(type="claim", start=45.4, dur=10.1, end=55.5,
+            dict(type="claim", beat="magic", start=45.4, dur=10.1, end=55.5,
                  line=L("Unasked, the page builds a command that does not exist.",
                         "Faute de le dire, la page fabrique une commande "
                         "qui n'existe pas.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 cli-gui", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 cli-gui", actions=cta_for("cli-gui")),
         ],
     ),
     # --------------------------------------------------------------------- ui
@@ -624,17 +651,17 @@ FILMS = {
         vo=[("ui.en", 1.10)],
         sfx=[("drop", 5.47), ("tile", 24.55), ("tile", 42.55), ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("A sentence written straight into a template costs "
                         "nothing today.",
                         "Une phrase écrite en dur dans un gabarit ne coûte "
                         "rien aujourd'hui.")),
-            dict(type="held", start=5.4, dur=11.1, end=16.4,
+            dict(type="held", beat="problem", start=5.4, dur=11.1, end=16.4,
                  line=L("It costs a week the day somebody needs a second "
                         "language.",
                         "Elle coûte une semaine le jour où il faut une "
                         "deuxième langue.")),
-            dict(type="versus", start=16.3, dur=13.2, end=29.4,
+            dict(type="versus", beat="solution", start=16.3, dur=13.2, end=29.4,
                  eyebrow=L("Two places a string hides",
                            "Deux endroits où une phrase se cache"),
                  left=("I18N001",
@@ -648,14 +675,14 @@ FILMS = {
                            "treats it as one.",
                            "Un prompt est une chaîne traduisible. Presque "
                            "personne ne le traite comme tel.")),
-            dict(type="held", start=29.3, dur=13.2, end=42.5,
+            dict(type="held", beat="magic", start=29.3, dur=13.2, end=42.5,
                  line=L("It moves the string, then stops.",
                         "Il déplace la phrase, puis s'arrête.")),
-            dict(type="claim", start=42.4, dur=13.1, end=55.5,
+            dict(type="claim", beat="magic", start=42.4, dur=13.1, end=55.5,
                  line=L("Only you know whether that line wants a plural.",
                         "Vous seul savez si cette ligne réclame un pluriel.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 ui", line=OUTRO_LINE, url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 ui", actions=cta_for("ui")),
         ],
     ),
     # ------------------------------------------------------------------ video
@@ -678,15 +705,15 @@ FILMS = {
         vo=[("video.en", 1.10)],
         sfx=[("drop", 5.47), ("tile", 20.19), ("tile", 38.74), ("bell", 55.67)],
         scenes=[
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("A film asserts things at thirty frames a second.",
                         "Un film affirme des choses trente fois par seconde.")),
-            dict(type="held", start=5.4, dur=13.1, end=18.4,
+            dict(type="held", beat="problem", start=5.4, dur=13.1, end=18.4,
                  line=L("This suite told viewers it had 127 chart kinds, for "
                         "months after it had 167.",
                         "Cette suite a annoncé 127 types de graphiques "
                         "pendant des mois après en avoir eu 167.")),
-            dict(type="verify", start=18.3, dur=19.1, end=37.4,
+            dict(type="verify", beat="solution", start=18.3, dur=19.1, end=37.4,
                  eyebrow=L("So the claims live beside the film",
                            "Les affirmations vivent donc à côté du film"),
                  claims=[(L("chart kinds, checked against the catalogue",
@@ -702,13 +729,12 @@ FILMS = {
                            "for it to stop being true.",
                            "Chacune nomme le fichier qui devrait changer pour "
                            "qu'elle cesse d'être vraie.")),
-            dict(type="held", start=37.3, dur=18.2, end=55.5,
+            dict(type="held", beat="magic", start=37.3, dur=18.2, end=55.5,
                  line=L("The dangerous number is the one nobody declared.",
                         "Le nombre dangereux est celui que personne n'a "
                         "déclaré.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 video", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 video", actions=cta_for("video")),
         ],
     ),
     # ------------------------------------------------------------------- maps
@@ -729,12 +755,12 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("A column of countries hides where things happen.",
                         "Une colonne de pays cache l'endroit où les choses "
                         "arrivent.")),
             # SOLUTION: real ground, four reference plates
-            dict(type="grid", start=5.4, dur=10.1, end=15.4,
+            dict(type="grid", beat="solution", start=5.4, dur=10.1, end=15.4,
                  eyebrow=L("Real coastlines, a real projection",
                            "De vraies côtes, une vraie projection"),
                  images=["maps/situation-himalaya.png", "maps/situation-iberia.png",
@@ -746,20 +772,21 @@ FILMS = {
                            "Huit kilomètres de relief, la Meseta, les lacs : "
                            "le sol sur lequel un front doit tenir.")),
             # SOLUTION: what the form is actually for
-            dict(type="grid", start=15.3, dur=10.9, end=26.2,
+            dict(type="grid", beat="solution", start=15.3, dur=10.9, end=26.2,
                  eyebrow=L("Who holds what, at what certainty",
                            "Qui tient quoi, à quelle certitude"),
                  images=["maps/situation-ukraine.png", "maps/situation-syria.png"],
                  at=on_beat(16.4, 17.5),
-                 caption=L("Zones by category. Flashpoints drawn as rings, "
-                           "because their position is approximate.",
-                           "Des zones par catégorie. Des points chauds en "
-                           "anneaux, leur position étant approximative.")),
+                 caption=L("ACLED and UCDP both record how sure a coordinate "
+                           "is. A ring is a position the source never gave.",
+                           "ACLED et UCDP notent tous deux ce qu'une coordonnée "
+                           "a de sûr. Un anneau, c'est une position que la "
+                           "source n'a jamais donnée.")),
             # SECRET SAUCE
-            dict(type="claim", start=26.1, dur=8.3, end=34.3,
+            dict(type="claim", beat="magic", start=26.1, dur=8.3, end=34.3,
                  line=L("Then the plate that draws no map at all.",
                         "Puis la planche qui ne dessine aucune carte.")),
-            dict(type="grid", start=34.2, dur=12.0, end=46.1,
+            dict(type="grid", beat="magic", start=34.2, dur=12.0, end=46.1,
                  eyebrow=L("Drawn without a coastline",
                            "Dessinée sans la moindre côte"),
                  images=["maps/density.svg"],
@@ -768,13 +795,12 @@ FILMS = {
                            "add up to.",
                            "Chaque point est un événement. La forme est ce "
                            "qu'ils finissent par dessiner.")),
-            dict(type="held", start=46.0, dur=9.5, end=55.5,
+            dict(type="held", beat="magic", start=46.0, dur=9.5, end=55.5,
                  line=L("The land appears because events fell on it.",
                         "La terre apparaît parce que des événements y sont "
                         "tombés.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 maps", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 maps", actions=cta_for("maps")),
         ],
     ),
     # ----------------------------------------------------------------- ux-laws
@@ -794,10 +820,10 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("They will tell you the page is overwhelming.",
                         "On vous dira que la page est écrasante.")),
-            dict(type="versus", start=5.4, dur=9.1, end=14.4,
+            dict(type="versus", beat="problem", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("What actually gets reported",
                            "Ce qu'on vous remonte vraiment"),
                  left=(L("What they say", "Ce qu'on vous dit"),
@@ -810,11 +836,11 @@ FILMS = {
                  caption=L("Hick's Law is the one thing nobody will mention.",
                            "La loi de Hick, elle, personne ne la citera.")),
             # SOLUTION
-            dict(type="claim", start=14.3, dur=9.2, end=23.4,
+            dict(type="claim", beat="solution", start=14.3, dur=9.2, end=23.4,
                  line=L("Thirty laws. Eight of them settle from the source.",
                         "Trente lois. Huit se tranchent depuis la source.")),
             # SECRET SAUCE, shown as the markup it reads
-            dict(type="code", start=23.3, dur=13.1, end=36.4,
+            dict(type="code", beat="magic", start=23.3, dur=13.1, end=36.4,
                  eyebrow=L("The same header, two menus",
                            "Le même en-tête, deux menus"),
                  code=['<nav class="flex items-center justify-between">',
@@ -832,12 +858,12 @@ FILMS = {
                            "on a desktop. A reader meets one of them.",
                            "L'un s'affiche sur téléphone. L'autre sur "
                            "ordinateur. Un lecteur n'en rencontre qu'un.")),
-            dict(type="held", start=36.3, dur=9.7, end=46.0,
+            dict(type="held", beat="magic", start=36.3, dur=9.7, end=46.0,
                  line=L("Adding them up charges the reader for choices no "
                         "screen ever shows.",
                         "Les additionner reproche au lecteur des choix "
                         "qu'aucun écran ne lui montre.")),
-            dict(type="versus", start=45.9, dur=9.6, end=55.5,
+            dict(type="versus", beat="magic", start=45.9, dur=9.6, end=55.5,
                  eyebrow=L("So it counts them apart",
                            "Il les compte donc à part"),
                  left=(L("Per breakpoint", "Par point de rupture"),
@@ -850,9 +876,8 @@ FILMS = {
                  caption=L("It reports the worse of the two, naming which "
                            "one it is.",
                            "Il retient le pire des deux, en disant lequel.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 ux-laws", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 ux-laws", actions=cta_for("ux-laws")),
         ],
     ),
     # ----------------------------------------------------------- accessibility
@@ -874,18 +899,18 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", start=0.0, dur=6.0, end=5.5,
+            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
                  line=L("A video starts playing by itself, with sound.",
                         "Une vidéo démarre toute seule, avec le son.")),
-            dict(type="held", start=5.4, dur=10.1, end=15.4,
+            dict(type="held", beat="problem", start=5.4, dur=10.1, end=15.4,
                  line=L("A blind reader now cannot hear the tool they would "
                         "use to stop it.",
                         "Un lecteur aveugle n'entend plus l'outil avec lequel "
                         "il l'arrêterait.")),
             # SOLUTION
-            dict(type="chips", start=15.3, dur=12.9, end=28.2,
-                 eyebrow=L("Twenty rules, from the markup alone",
-                           "Vingt règles, depuis le seul balisage"),
+            dict(type="chips", beat="solution", start=15.3, dur=12.9, end=28.2,
+                 eyebrow=L("Twenty rules out of WCAG and WAI-ARIA",
+                           "Vingt règles tirées de WCAG et WAI-ARIA"),
                  items=["media-autoplay-sound", "video-missing-captions",
                         "img-missing-alt", "input-missing-label",
                         "div-onclick", "tabindex-positive",
@@ -896,7 +921,7 @@ FILMS = {
                            "Chaque constat nomme l'élément, la ligne et la "
                            "règle enfreinte. Bibliothèque standard seule.")),
             # SECRET SAUCE
-            dict(type="verify", start=28.1, dur=14.3, end=42.4,
+            dict(type="verify", beat="magic", start=28.1, dur=14.3, end=42.4,
                  eyebrow=L("What it will repair by itself",
                            "Ce qu'il répare de lui-même"),
                  claims=[(L("rules it checks", "règles vérifiées"), "20"),
@@ -910,7 +935,7 @@ FILMS = {
                            "repair is safe.",
                            "Une réparation n'est automatique que là où il "
                            "n'en existe qu'une de sûre.")),
-            dict(type="versus", start=42.3, dur=13.2, end=55.5,
+            dict(type="versus", beat="magic", start=42.3, dur=13.2, end=55.5,
                  eyebrow=L("And the same rule, turned around",
                            "Et la même règle, retournée"),
                  left=(L("Reading it", "En lecture"),
@@ -924,9 +949,8 @@ FILMS = {
                            "directions.",
                            "Auditer et fabriquer, c'est une seule règle lue "
                            "dans deux sens.")),
-            dict(type="outro", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
-                 mark="Sprezzature \u00b7 accessibility", line=OUTRO_LINE,
-                 url="sprezzature.ai"),
+            dict(type="cta", beat="cta", start=55.4, dur=4.6, end=60.0, logo="logo-512.png",
+                 mark="Sprezzature \u00b7 accessibility", actions=cta_for("accessibility")),
         ],
     ),
 }
@@ -1115,6 +1139,48 @@ def css(f: dict) -> str:
 
     .shotcard img {{ display: block; border-radius: 8px; }}
     .viewport {{ position: relative; overflow: hidden; border-radius: 8px; }}
+
+    /* The call to action. Two things to do, each one a verb and the place
+       it happens, because "sprezzature.ai" alone is an address and not an
+       instruction. The glyph is a column of its own so the two verbs start
+       on the same vertical line whatever the canvas. */
+    .cta {{ display: flex; align-items: baseline; gap: {int(f['body'] * .5)}px;
+      margin-top: {int(f['hero'] * .26)}px; }}
+    .cta-glyph {{ font-size: {int(f['h2'] * .9)}px; color: var(--blue);
+      line-height: 1; width: {int(f['h2'] * 1.1)}px; text-align: center; }}
+    .cta-text {{ display: flex; flex-direction: column; }}
+    .cta-do {{ font-size: {f['h2']}px; font-weight: 600; color: var(--ink);
+      letter-spacing: -.01em; }}
+    .cta-at {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {int(f['eyebrow'] * .92)}px; font-weight: 500;
+      letter-spacing: .04em; color: var(--blue);
+      margin-top: {int(f['body'] * .22)}px; }}
+
+    /* Where the film is in its own argument, carried the whole minute. Guy
+       KAWASAKI's deck labels its slides; a film cannot, so it labels the
+       frame instead. Faint enough to ignore, present enough that a viewer
+       who wonders "where is this going" can see the answer without
+       rewinding. */
+    /* Inline with the wordmark on a wide canvas, on a row of its own on a
+       tall one. Portrait is 1080 across and the French labels run about 690
+       of it: centred on the same line, they drove straight through
+       "Sprezzature" on the left and "sprezzature.ai" on the right. The
+       English labels are shorter and fitted, which is how a layout bug ships
+       in one language and not the other. */
+    #beats {{ position: absolute; top: {int(pad * (.5 if f['w'] > f['h'] else 1.75))}px;
+      left: 50%;
+      transform: translateX(-50%); display: flex; align-items: center;
+      gap: {int(f['eyebrow'] * .52)}px; white-space: nowrap;
+      font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {int(f['eyebrow'] * .68)}px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase; }}
+    /* Grey enough to stay out of the way of the sentence, dark enough to be
+       read on purpose. The first version used `--line`, the hairline colour,
+       which on this paper is all but invisible: the label was there and
+       nobody could have told. */
+    #beats span {{ color: #a3a3a3; }}
+    #beats i {{ font-style: normal; color: #d4d4d4;
+      font-size: {int(f['eyebrow'] * .6)}px; }}
 
     #logo {{ display: block; width: {int(f['hero'] * 2.0)}px;
       height: {int(f['hero'] * 2.0)}px; object-fit: contain; }}
@@ -1345,12 +1411,21 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
                 f'style="width:{iw}px;height:{ih}px;object-fit:contain"></div>'
                 f'{cap}</div></div>')
 
-    if t == "outro":
+    if t == "cta":
+        # Kawasaki's last slide is the ask, and the film used to end on a
+        # motto: "Make it. Audit it. Then look at it." Pretty, and it
+        # requests nothing — a viewer who liked the minute had nowhere to
+        # put that. Two asks now, in the order of what they cost: a star is
+        # one click from where the viewer already is, the site is a visit.
+        acts = "".join(
+            f'<div class="cta" id="cta{k}"><span class="cta-glyph">{glyph}</span>'
+            f'<span class="cta-text"><span class="cta-do">{esc(doing)}</span>'
+            f'<span class="cta-at">{esc(where)}</span></span></div>'
+            for k, (glyph, doing, where) in enumerate(sc["actions"], 1))
         return (f'<div class="stage"><div class="col">'
                 f'<img id="logo" src="assets/{sc["logo"]}" alt="">'
                 f'<p id="mark">{esc(sc["mark"])}</p>'
-                f'<p id="oline">{esc(sc["line"])}</p>'
-                f'<p id="ourl">{esc(sc["url"])}</p></div></div>')
+                f'{acts}</div></div>')
 
     raise ValueError(t)
 
@@ -1369,16 +1444,26 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
                    f'{{y:0,opacity:1,duration:.55,ease:"power2.out"}},{s + .7:.2f});')
 
     if t in ("claim", "held"):
-        # The first scene of a film starts on screen rather than arriving.
-        # Everywhere else the beat is worth the quarter second it costs.
+        # The first scene of a film is already finished at frame zero. Not
+        # faded up from nothing, and not faded up from a third either: an
+        # opening that starts at 35% renders as grey text on a sheet with no
+        # wordmark on it, which is what frame zero of every film used to be.
+        # Frame zero is not a frame nobody sees -- it is the poster a player
+        # falls back to, the still a scrubber shows, and the thumbnail a
+        # platform picks when nobody gave it one. It has to look like a frame
+        # of the film.
+        #
+        # So the opening sentence is at full strength from the first frame and
+        # does not move. The motion in the first half second is the rule
+        # drawing itself under the line, which is motion that does not make
+        # the frame look unfinished.
         opening = s < 0.01
-        lead = 0.0 if opening else s + .2
-        rise = 0.35 if opening else .55
-        out.append(f'tl.fromTo("#s{i}-line",{{y:{0 if opening else 30},opacity:{.35 if opening else 0}}},'
-                   f'{{y:0,opacity:1,duration:{rise},ease:"power3.out"}},{lead:.2f});')
-        out.append(f'tl.fromTo("#s{i}-rule",{{scaleX:0,opacity:0}},'
+        if not opening:
+            out.append(f'tl.fromTo("#s{i}-line",{{y:30,opacity:0}},'
+                       f'{{y:0,opacity:1,duration:.55,ease:"power3.out"}},{s + .2:.2f});')
+        out.append(f'tl.fromTo("#s{i}-rule",{{scaleX:0,opacity:{1 if opening else 0}}},'
                    f'{{scaleX:1,opacity:1,duration:.7,ease:"expo.out"}},'
-                   f'{(0.25 if opening else s + .55):.2f});')
+                   f'{(0.0 if opening else s + .55):.2f});')
 
     elif t == "loop":
         w = f["fig"]
@@ -1487,15 +1572,17 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
             out.append(f'tl.fromTo("#s{i}-vv{k}",{{opacity:0,scale:.8}},'
                        f'{{opacity:1,scale:1,duration:.35,ease:"back.out(2)"}},{at_value:.2f});')
 
-    elif t == "outro":
+    elif t == "cta":
         out.append(f'tl.fromTo("#logo",{{scale:.88,opacity:0}},'
                    f'{{scale:1,opacity:1,duration:.7,ease:"power3.out"}},{s + .2:.2f});')
         out.append(f'tl.fromTo("#mark",{{y:24,opacity:0}},'
                    f'{{y:0,opacity:1,duration:.6,ease:"power3.out"}},{s + .45:.2f});')
-        out.append(f'tl.fromTo("#oline",{{y:18,opacity:0}},'
-                   f'{{y:0,opacity:1,duration:.6,ease:"power2.out"}},{s + .75:.2f});')
-        out.append(f'tl.fromTo("#ourl",{{opacity:0}},'
-                   f'{{opacity:1,duration:.55,ease:"power1.out"}},{s + 1.05:.2f});')
+        # The asks arrive in reading order and stay. Whatever is on screen at
+        # the last frame is what a viewer who paused there has to act on.
+        for k in range(1, len(sc["actions"]) + 1):
+            out.append(f'tl.fromTo("#cta{k}",{{y:18,opacity:0}},'
+                       f'{{y:0,opacity:1,duration:.55,ease:"power2.out"}},'
+                       f'{s + .75 + (k - 1) * .35:.2f});')
     return out
 
 
@@ -1559,7 +1646,14 @@ def voice_track(film_key: str, spec: dict, lang: str) -> list[tuple[str, float]]
     return [(f"{film_key}.{lang}", lines[0][0])]
 
 
-def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.Path:
+def compose(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> str:
+    """One film, one canvas, one language, as a page of HTML.
+
+    Split out of :func:`emit` so a test can read the timeline this generator
+    produces without the test having to write sixty-six project directories
+    to find out what is in them. What the first frame looks like is decided
+    here, in the tweens, and nowhere else.
+    """
     f = FORMATS[fmt_key]
     spec = in_language(spec, lang, film_key)
     scenes, dur = spec["scenes"], spec["duration"]
@@ -1575,10 +1669,14 @@ def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.P
     # on an empty sheet while the first sentence faded up. A viewer who lands
     # on a blank frame has already decided what kind of video this is.
     rails_start = 0.0
+    beats = "<i>\u00b7</i>".join(
+        f'<span id="beat-{b}">{esc(say(BEAT_LABEL[b], lang))}</span>'
+        for b in BEAT_ORDER)
     rails = (f'<div id="rails" class="clip" data-start="{rails_start}" '
              f'data-duration="{round(dur - rails_start, 2)}" data-track-index="90">'
              f'<div class="inner" id="rails-inner">'
              f'<p id="rail-l">Sprezzature</p><p id="rail-r">sprezzature.ai</p>'
+             f'<div id="beats">{beats}</div>'
              f'<div id="rail-line"></div></div></div>')
 
     # Audio. Voice on its own lane; each overlapping SFX gets its own index.
@@ -1619,10 +1717,29 @@ def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.P
                           f'ease:"power1.inOut"}},{sc["end"]:.2f});')
         js += scene_js(sc, i, f)
 
-    js.append(f'tl.fromTo("#rails-inner",{{opacity:0}},{{opacity:1,duration:.6,'
-              f'ease:"power1.inOut"}},{rails_start:.2f});')
+    # The wordmark and the address are on screen at frame zero, not fading
+    # towards it. `fromTo({opacity:0}, ...)` at t=0 reads as "from frame one"
+    # and is not: it puts the rails at exactly zero on the frame a viewer is
+    # most likely to see as a still. Only the hairline under them is drawn,
+    # and a hairline growing is not an empty frame.
     js.append(f'tl.fromTo("#rail-line",{{scaleX:0}},{{scaleX:1,duration:1.1,'
-              f'ease:"expo.out"}},{rails_start + .2:.2f});')
+              f'ease:"expo.out"}},{rails_start:.2f});')
+
+    # Light the beat the film is currently in, and put the previous one out.
+    # Driven off the scenes themselves rather than a second table, so a scene
+    # that moves takes its label with it. `set` and not a tween: a label that
+    # cross-fades reads as two beats being true at once.
+    lit = None
+    for sc in scenes:
+        if sc["beat"] == lit:
+            continue
+        at = max(0.0, sc["start"])
+        if lit is not None:
+            js.append(f'tl.set("#beat-{lit}",{{color:"#a3a3a3",fontWeight:500}},'
+                      f'{at:.2f});')
+        js.append(f'tl.set("#beat-{sc["beat"]}",{{color:"{BLUE}",fontWeight:700}},'
+                  f'{at:.2f});')
+        lit = sc["beat"]
 
     html = f"""<!doctype html>
 <html lang="en">
@@ -1688,6 +1805,12 @@ def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.P
 </body>
 </html>
 """
+    return html
+
+
+def emit(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> pathlib.Path:
+    """Write one project directory, and return it."""
+    html = compose(film_key, spec, fmt_key, lang)
     d = FILMS_DIR / project_name(film_key, lang, fmt_key)
     d.mkdir(parents=True, exist_ok=True)
     (d / "index.html").write_text(html, encoding="utf-8")

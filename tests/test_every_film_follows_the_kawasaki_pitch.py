@@ -1,0 +1,148 @@
+"""
+Every film states the problem, then the solution, then the underlying magic.
+
+Guy KAWASAKI's order, adopted 2026-10-27 for the whole set. A viewer who does
+not know the package needs the pain before the cure, and the cure before the
+clever part. Lead with the mechanism and the first twenty seconds are spent on
+a person who has not yet been told why they should care.
+
+Why this is a test and not a comment
+------------------------------------
+It was a comment first. Seven of the eleven films carried a ``# PROBLEM`` /
+``# SOLUTION`` / ``# SECRET SAUCE`` banner through their scene list and four
+did not, and nothing said whether those four were exceptions or oversights —
+the only way to find out was to read seventy scenes and judge each one. A
+shared order that lives in comments is a shared order until the first person
+adds a scene in a hurry.
+
+So the order is declared. Each scene carries ``beat="problem"`` /
+``"solution"`` / ``"magic"`` / ``"cta"`` — Guy KAWASAKI's own words, and this file checks that the
+beats of a film run down that list without going back up. A scene added in
+the wrong place fails here, by name, before anything is rendered.
+
+What is deliberately *not* checked
+----------------------------------
+How long each beat lasts, how many scenes it gets, or which scene types it
+uses. ``colors`` spends fourteen seconds on the problem and twenty-two on one
+picture; ``cli-gui`` is in the solution by the sixth second. That variety is
+the point: a shared order is a way of being understood, a shared format is a
+way of being skipped. The spine is checked, the execution is not.
+
+Author
+------
+Warith HARCHAOUI <warithmetics@deraison.ai>
+"""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "brag-output"))
+
+#: The beats, in the only order they may appear in. A film skips a beat at
+#: its peril but may not reverse one.
+SPINE = ("problem", "solution", "magic", "cta")
+
+
+def _films() -> dict[str, dict]:
+    """The minute-long films, which are the ones that carry a spine.
+
+    The eighteen-second group cuts predate one-film-per-brick. They are kept
+    only until the copies on the server are deleted by hand, and giving them
+    a spine would be writing a pitch for a film nobody will watch again.
+    """
+    import build_films
+
+    return {k: v for k, v in build_films.FILMS.items() if v["duration"] >= 30}
+
+
+def test_every_scene_declares_which_beat_it_belongs_to() -> None:
+    """No scene is left to be classified by whoever reads it next."""
+    missing = [
+        f"{film} scene {i} ({scene['type']}, {scene['start']}s)"
+        for film, spec in _films().items()
+        for i, scene in enumerate(spec["scenes"])
+        if scene.get("beat") not in SPINE
+    ]
+    assert not missing, (
+        f"{len(missing)} scene(s) carry no beat, or one that is not "
+        f"{SPINE}:\n  " + "\n  ".join(missing)
+    )
+
+
+def test_the_beats_of_a_film_never_run_backwards() -> None:
+    """problem → solution → sauce → close, and never the other way.
+
+    The failure this catches is not someone writing a film upside down. It is
+    a scene inserted where there was room on the beat grid rather than where
+    it belongs in the argument — a second problem statement dropped in after
+    the solution, which reads to a viewer as the film changing its mind.
+    """
+    wrong: list[str] = []
+    for film, spec in _films().items():
+        rank = -1
+        for i, scene in enumerate(spec["scenes"]):
+            got = SPINE.index(scene["beat"])
+            if got < rank:
+                wrong.append(
+                    f"{film} scene {i} ({scene['type']}, {scene['start']}s) is "
+                    f"{scene['beat']!r} after {SPINE[rank]!r}"
+                )
+            rank = max(rank, got)
+    assert not wrong, (
+        "the spine runs backwards in "
+        f"{len(wrong)} place(s):\n  " + "\n  ".join(wrong)
+    )
+
+
+def test_every_film_opens_on_the_problem_and_lands_the_sauce() -> None:
+    """The three beats a pitch cannot do without are all present.
+
+    ``cta`` is the closing ask and is not one of them — what it closes is
+    the pitch, not the argument. What a film may not do is open on its
+    solution, which is
+    the shape every one of these had before the rewrite: a package
+    introducing itself to somebody who never said they had the problem.
+    """
+    bad: list[str] = []
+    for film, spec in _films().items():
+        beats = [s["beat"] for s in spec["scenes"]]
+        if beats[0] != "problem":
+            bad.append(f"{film} opens on {beats[0]!r}, not on the problem")
+        for want in ("solution", "magic"):
+            if want not in beats:
+                bad.append(f"{film} never reaches the {want}")
+    assert not bad, "\n  ".join(["", *bad])
+
+
+def test_every_film_closes_on_an_ask_and_names_its_own_repository() -> None:
+    """The last slide is Kawasaki's, and it asks for something.
+
+    The films closed on "Make it. Audit it. Then look at it." until
+    2026-10-28 — a motto, which is a thing to admire rather than a thing to
+    do. A viewer who liked the minute had nowhere to put that.
+
+    Two asks now, and the star points at the package the film is about. The
+    failure this guards is the lazy one: pointing all eleven at the monorepo
+    because that is what the constant already said. Somebody who has just
+    watched a minute on ``maps`` wants ``sprezzature-maps``; sending them to
+    the hub is a redirect dressed up as a destination.
+    """
+    import build_films
+
+    bad: list[str] = []
+    for film, spec in _films().items():
+        close = spec["scenes"][-1]
+        if close["type"] != "cta":
+            bad.append(f"{film} ends on a {close['type']!r} scene, not an ask")
+            continue
+        wheres = [where for _glyph, _doing, where in close["actions"]]
+        repo = "sprezzature" if film == "sprezzature" else f"sprezzature-{film}"
+        want = f"{build_films.GITHUB}/{repo}"
+        if want not in wheres:
+            bad.append(f"{film} does not send anyone to {want}: {wheres}")
+        if "sprezzature.ai" not in wheres:
+            bad.append(f"{film} never names the site: {wheres}")
+    assert not bad, "\n  ".join(["", *bad])
