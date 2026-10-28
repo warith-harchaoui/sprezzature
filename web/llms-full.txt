@@ -169,18 +169,20 @@ sprezzature-cli-gui
 
 # command-line interface (CLI) → graphical user interface (GUI)
 
-Wrap an existing command-line tool in a single-page vanilla-JavaScript (JS) + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.
+Wrap an existing command-line tool in a single-page vanilla-JavaScript (JS) + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.
 
 SKILL.md (the agent spec)
 Give a ⭐️ on GitHub
 
 ## Makes
 
-One index.html + app.js + Tailwind config wrapping your CLI
+One self-contained HTML file wrapping your CLI: the markup, the Tailwind config and the script that builds the command line, all inline
 
 Sub-commands and flags mapped to forms, segmented controls, file inputs
 
-A streaming log panel for long-running runs
+The exact command line, assembled in the visitor’s own browser and never run there. Copy it, or wire it to a Tauri invoke, a FastAPI endpoint, a shell
+
+For a bespoke wrapper the agent spec goes further than the one command: host wiring, and a streaming log panel for the commands that take a while
 
 Imports and walks the parser object itself for argparse, Click and Typer — a Typer app is converted by typer and then walked as Click, because that is what it already is
 
@@ -189,6 +191,8 @@ For clap, commander and cobra: --from-help runs the tool’s own --help and read
 A Click group takes its name from the decorated function, which is almost never the command you installed. Unasked, the page would build a command line that does not exist
 
 ## Audits
+
+sprezzature-cli-gui-audit reads the parser and the page back together: every sub-command and flag reachable, no field building an option the parser rejects, no choice quietly dropped, and a command line seeded with the name the tool is installed as. Exit 1 on any finding, so it gates a build
 
 Follows the sprezzature-ui stack rules: install sprezzature-ui alongside for the full design tokens
 

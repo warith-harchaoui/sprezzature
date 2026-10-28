@@ -9,7 +9,7 @@
 ## Skills
 
 - [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI, components, pages, forms, dialogs, dashboards, for teams shipping internal tools without a designer.
-- [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.
+- [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.
 - [Publishing — Sprezzature](https://sprezzature.ai/publish.html): Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local narration.
 - [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: twenty rules decidable from source, no browser, no runtime DOM.
 - [Colors — Sprezzature](https://sprezzature.ai/colors.html): Color tooling for vanilla-JS and Tailwind: WCAG contrast checking with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter

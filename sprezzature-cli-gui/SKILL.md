@@ -1,20 +1,21 @@
 ---
 name: sprezzature-cli-gui
 description: >-
-  Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind
-  GUI. Walks the parser itself for Python CLIs — argparse, Click, Typer — and
-  parses `--help` in a subprocess for anything else, covering a Go or Rust
-  CLI (cobra, clap) at lower fidelity. Sub-commands and flags become
-  forms, segmented controls, file inputs and streaming log panels, emitted as
-  one index.html + app.js + Tailwind config. For CLI authors whose users will
-  not type a flag: researchers, data scientists, DevOps / SRE, anyone needing
-  a web UI without React. Use it when you are holding a command-line
-  tool somebody who will not type it needs to run. Trigger phrases: "wrap this
-  CLI in a GUI", "build a UI for my CLI", "argparse to GUI", "click to web UI",
-  "GUI for my Python script", "web form for my script", "Typer / clap / cobra
-  to GUI", "GUI for my Go or Rust CLI", "streaming log panel for a CLI". Not
-  this one when: the screen has no CLI behind it (sprezzature-ui). The
-  exhaustive trigger catalogue is in `references/triggers.md`.
+  Wrap an existing command-line tool in a single-page vanilla-JS +
+  Tailwind GUI. Walks the parser itself for Python CLIs — argparse, Click,
+  Typer — and parses `--help` in a subprocess for anything else, covering
+  a Go or Rust CLI (cobra, clap) at lower fidelity. Sub-commands and flags
+  become forms, segmented controls and file inputs, emitted as one
+  self-contained HTML file that builds the exact command line. For CLI
+  authors whose users will not type a flag: researchers, data scientists,
+  DevOps / SRE, anyone needing a web UI without React. Use it when you are
+  holding a command-line tool somebody who will not type it needs to run.
+  Trigger phrases: "wrap this CLI in a GUI", "build a UI for my CLI",
+  "argparse to GUI", "click to web UI", "GUI for my Python script", "web
+  form for my script", "Typer / clap / cobra to GUI", "GUI for my Go or
+  Rust CLI", "streaming log panel for a CLI". Not this one when: the
+  screen has no CLI behind it (sprezzature-ui). The exhaustive trigger
+  catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Output is one-page HTML + ES
