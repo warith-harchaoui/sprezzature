@@ -417,12 +417,18 @@ FILMS = {
                            "Vos colonnes posent donc la question"),
                  claims=[(L("region, quarter, units", "région, trimestre, unités"),
                           L("3 columns", "3 colonnes")),
-                         # 61, measured: `make-figure recommend --data r.csv
-                         # --limit 500` on a three-column frame of region,
-                         # quarter, units. The first draft said 41, which
-                         # nobody had run.
+                         # 64, measured: `make-figure recommend --data
+                         # brag-output/region-quarter-units.csv --limit 500`.
+                         # The first draft said 41, which nobody had run; the
+                         # second said 61, measured on an `r.csv` that was
+                         # never committed, so nobody could run it either. The
+                         # count moves with the frame -- six rows of the same
+                         # three columns answer 62 -- so the frame is in the
+                         # repository now and
+                         # `test_the_film_counts_what_the_package_counts`
+                         # re-measures it.
                          (L("kinds those columns can fill", "types qu'elles remplissent"),
-                          "61"),
+                          "64"),
                          (L("ranked by readability", "classés par lisibilité"),
                           L("best first", "le meilleur d'abord")),
                          (L("models consulted", "modèles consultés"), "0")],
