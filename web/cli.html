@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CLI → GUI — Sprezzature</title>
-  <meta name="description" content="Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.">
+  <meta name="description" content="Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.">
   <link rel="canonical" href="https://sprezzature.ai/cli.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/cli.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/cli.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="CLI → GUI — Sprezzature">
-  <meta property="og:description" content="Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.">
+  <meta property="og:description" content="Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.">
   <meta property="og:url" content="https://sprezzature.ai/cli.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="The Sprezzature project logo.">
@@ -44,7 +44,7 @@
       {
         "@type": "WebPage",
         "name": "CLI to GUI — Sprezzature",
-        "description": "Wrap an existing command-line tool in a single-page vanilla-JS and Tailwind GUI: read the arg parser, emit forms, file inputs, and a streaming log panel.",
+        "description": "Wrap an existing command-line tool in a single-page vanilla-JS and Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.",
         "url": "https://sprezzature.ai/cli.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -53,7 +53,7 @@
         "@type": "SoftwareApplication",
         "name": "sprezzature-cli-gui",
         "applicationCategory": "DeveloperApplication",
-        "description": "Reads the argparse or Click definition of any Python CLI and emits a single-page vanilla-JS + Tailwind browser GUI with matching forms, file inputs, and a streaming log panel.",
+        "description": "Walks the argparse, Click or Typer parser of a Python CLI, or reads any tool's own --help, and emits one self-contained vanilla-JS + Tailwind page whose form assembles the exact command line. A second command audits that page against the parser it came from.",
         "url": "https://sprezzature.ai/cli.html",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature-cli-gui",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -62,9 +62,9 @@
         "@type": "HowTo",
         "name": "How to wrap a CLI tool in a browser GUI with sprezzature-cli-gui",
         "step": [
-          {"@type": "HowToStep", "position": 1, "text": "Point the skill at your Python script: 'wrap my-tool.py in a GUI'. The skill reads the argparse or Click definition."},
-          {"@type": "HowToStep", "position": 2, "text": "The agent emits a single-page HTML file with a form for each argument, file inputs where needed, and a streaming log panel."},
-          {"@type": "HowToStep", "position": 3, "text": "Open the HTML file in a browser. Submit the form to run the CLI and see live output in the log panel."}
+          {"@type": "HowToStep", "position": 1, "text": "Point the skill at your Python script: 'wrap my-tool.py in a GUI'. The skill imports and walks the argparse, Click or Typer parser, or reads the tool's own --help when it cannot."},
+          {"@type": "HowToStep", "position": 2, "text": "The agent emits one self-contained HTML file: a form for each argument, file inputs where needed, with the markup, the Tailwind config and the script all inline."},
+          {"@type": "HowToStep", "position": 3, "text": "Open the file in a browser and press Build command. The exact command line appears, ready to copy, or to hand to a host that runs it: a Tauri invoke, a FastAPI endpoint, a shell."}
         ]
       }
     ]
@@ -106,7 +106,7 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">sprezzature-cli-gui</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">command-line interface (CLI) → graphical user interface (GUI)</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Wrap an existing command-line tool in a single-page vanilla-JavaScript (JS) + Tailwind GUI: read the arg parser, emit forms, file inputs and a streaming log panel.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Wrap an existing command-line tool in a single-page vanilla-JavaScript (JS) + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-cli-gui/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (the agent spec)</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Give a ⭐️ on GitHub</a>
@@ -117,9 +117,10 @@
         <div>
           <h2 class="text-lg font-bold">Makes</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>One index.html + app.js + Tailwind config wrapping your CLI</li>
+          <li>One self-contained HTML file wrapping your CLI: the markup, the Tailwind config and the script that builds the command line, all inline</li>
           <li>Sub-commands and flags mapped to forms, segmented controls, file inputs</li>
-          <li>A streaming log panel for long-running runs</li>
+          <li>The exact command line, assembled in the visitor&rsquo;s own browser and never run there. Copy it, or wire it to a Tauri <code>invoke</code>, a FastAPI endpoint, a shell</li>
+          <li>For a bespoke wrapper the agent spec goes further than the one command: host wiring, and a streaming log panel for the commands that take a while</li>
           <li>Imports and walks the parser object itself for argparse, Click and Typer &mdash; a Typer app is converted by typer and then walked as Click, because that is what it already is</li>
           <li>For clap, commander and cobra: <code>--from-help</code> runs the tool&rsquo;s own <code>--help</code> and reads the text. Works on any CLI at all, and lower fidelity, because help text says less than a parser knows</li>
           <li>A Click group takes its name from the decorated function, which is almost never the command you installed. Unasked, the page would build a command line that does not exist</li>
@@ -128,6 +129,7 @@
         <div>
           <h2 class="text-lg font-bold">Audits</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
+          <li><code>sprezzature-cli-gui-audit</code> reads the parser and the page back together: every sub-command and flag reachable, no field building an option the parser rejects, no choice quietly dropped, and a command line seeded with the name the tool is installed as. Exit 1 on any finding, so it gates a build</li>
           <li>Follows the sprezzature-ui stack rules: install sprezzature-ui alongside for the full design tokens</li>
           <li>Hardening guidance for shipping the wrapper safely</li>
           </ul>
