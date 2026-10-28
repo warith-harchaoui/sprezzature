@@ -120,7 +120,9 @@
           <li>One index.html + app.js + Tailwind config wrapping your CLI</li>
           <li>Sub-commands and flags mapped to forms, segmented controls, file inputs</li>
           <li>A streaming log panel for long-running runs</li>
-          <li>Reads argparse, click/Typer, clap, commander, cobra</li>
+          <li>Imports and walks the parser object itself for argparse, Click and Typer &mdash; a Typer app is converted by typer and then walked as Click, because that is what it already is</li>
+          <li>For clap, commander and cobra: <code>--from-help</code> runs the tool&rsquo;s own <code>--help</code> and reads the text. Works on any CLI at all, and lower fidelity, because help text says less than a parser knows</li>
+          <li>A Click group takes its name from the decorated function, which is almost never the command you installed. Unasked, the page would build a command line that does not exist</li>
           </ul>
         </div>
         <div>
