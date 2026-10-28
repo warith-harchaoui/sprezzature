@@ -1,20 +1,21 @@
 ---
 name: sprezzature-publish
 description: >-
-  Turn a folder of Markdown (README + docs/ + blog/) into a static site:
-  per-page meta tags (Open Graph + Twitter Card + Schema.org JSON-LD), a full
-  favicon / app-icon / PWA-icon set from one logo, robots.txt + sitemap.xml +
-  llms.txt + llms-full.txt + Atom / RSS + humans.txt, plain-language rewrites,
-  and MP3 narration via local OSS TTS with a sentence-by-sentence read-along
-  that also applies to an existing HTML page having no Markdown source. Use it
-  when you are holding writing that has to become a site somebody else can
-  find. Trigger phrases: "markdown to website", "meta tags", "SEO", "GEO",
-  "favicons", "sitemap", "llms.txt", "RSS", "plain language", "narrate this
-  post", "podcast my blog", "read-along", "lint markdown". Not this one when:
-  the page is built and the question is accessibility
-  (sprezzature-accessibility), or the speech is recorded and needs
-  transcribing rather than generating (sprezzature-audio). The exhaustive
-  trigger catalogue is in `references/triggers.md`.
+  Turn a folder of Markdown into a static site: per-page meta tags (Open
+  Graph + Twitter Card + Schema.org JSON-LD), a favicon / app-icon / PWA set
+  from one logo, robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom
+  / RSS + humans.txt, plain-language rewrites, and MP3 narration via local
+  OSS TTS with a sentence-by-sentence read-along. Also audits a site that
+  already exists — HTML, no Markdown needed — and repairs with --fix what
+  can be derived rather than invented. Use it when you are holding writing
+  that has to become a findable site, or a site that has to get better.
+  Trigger phrases: "markdown to website", "meta tags", "SEO", "GEO",
+  "favicons", "sitemap", "llms.txt", "RSS", "audit my site", "plain
+  language", "narrate this post", "read-along". Not this one when: the
+  question is accessibility or alt text (sprezzature-accessibility), or the
+  speech is recorded and needs transcribing rather than generating
+  (sprezzature-audio). The exhaustive trigger catalogue is in
+  `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Core scripts (favicons,
@@ -57,12 +58,15 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 
 ## Two modes: make and audit
 
-Ten make-side scripts paired with one audit-side gate.
+Make-side scripts paired with two audit-side tools — one before the render,
+one after it. The second is the one that serves a site that **already
+exists**, which has no Markdown to go back to.
 
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make** — generate site artifacts | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate_post.py`, `readalong.py` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
-| **Audit** — gate the emitted Markdown | `lint_markdown.py` | Markdown lint with project-aware rules (heading order, fenced-code language, link freshness). |
+| **Audit — before** — gate the source | `lint_markdown.py` | Markdown lint with project-aware rules (heading order, fenced-code language, link freshness). `--fix` strips trailing whitespace. |
+| **Audit — after** — read what was emitted, and repair it | `audit_site.py` | `sprezzature-publish-audit <dir\|page\|url>`. Head meta, Open Graph, Twitter Card, JSON-LD, icon and manifest links, `robots.txt`, `sitemap.xml`, `llms.txt`, feed, icon set on disk. **No Markdown source required** — this is the tool for a site somebody else built. `--fix` writes back only what is *derived*: canonical from `--base-url`, `og:*` / `twitter:*` mirrored from the page's own title and description, the icon links from the `head.html` `favicons` wrote, and `robots.txt` / `sitemap.xml` regenerated through `site_indexes`. The wording of a title, the choice of an `og:image`, a JSON-LD body: reported with the command that drafts them, never written. A URL is reported, never repaired. |
 
 Pair the emitted HTML with `sprezzature-accessibility-lint` (a11y) and
 `sprezzature-colors-contrast` (contrast) to complete the audit side
@@ -165,6 +169,7 @@ modified in place.
 
 ## References
 
+- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG HTML, RFC 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the three rules that have **no** spec behind them and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
 - `references/meta-tags.md` — `<meta>` tags per W3C / WHATWG + Open Graph + Twitter Cards + Schema.org JSON-LD.
 - `references/site-indexes.md` — robots.txt, sitemap.xml, llms.txt, llms-full.txt, Atom / RSS, humans.txt.
 - `references/seo-essentials.md` — Google's three Search Essentials pillars + the AI Optimization Guide's foundations, applied concretely to the artifacts this skill emits. Use it when the user asks about SEO / AI search / "is this third-party advice true?".
@@ -179,6 +184,7 @@ modified in place.
 | `sprezzature-publish-icons` | `pip install 'sprezzature-publish[all]'` | Full favicon / PWA icon set + manifest + head snippet from a single logo |
 | `sprezzature-publish-meta` | `pip install 'sprezzature-publish[all]'` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
 | `sprezzature-publish-indexes` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
+| `sprezzature-publish-audit` | stdlib only | Audits an **emitted** site — directory, single page or live URL — and repairs with `--fix` what can be derived. The entry point for "improve this existing site". |
 | `sprezzature-publish-plain` | `pip install 'sprezzature-publish[all]'` + Ollama | Rewrites copy at a target grade; strips marketing voice |
 | `sprezzature-publish-narrate` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
 | _(the voices)_ | `pip install sprezzature-audio` | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, invoked as subprocesses by `narrate_post.py`. They live in `sprezzature-audio` with the rest of the sound modality; a reader who only wants Markdown rendered should not install a speech stack to get it. |

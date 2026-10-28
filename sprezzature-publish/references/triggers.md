@@ -19,6 +19,13 @@ Not this one when: the page is built and the question is accessibility (sprezzat
 ## Every phrase that names this skill
 
 - `markdown to website`
+- `audit my site`
+- `improve an existing site`
+- `check my meta tags`
+- `is my site SEO ready`
+- `why does my link preview look empty`
+- `my favicon does not show up`
+- `fix my sitemap`
 - `meta tags`
 - `OG card`
 - `SEO`
