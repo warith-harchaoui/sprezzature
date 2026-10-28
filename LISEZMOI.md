@@ -43,6 +43,10 @@ Les dix *skills* :
 Les *skills* compagnons héritent des règles de pile de `sprezzature-ui`.
 N'installez que ceux dont vous avez besoin.
 
+## Comment ça marche
+
+![Schéma de flux. En haut, une phrase adressée à un agent alimente deux voies. La voie de gauche est la couche agent, ce dépôt : elle rapproche la phrase d'une compétence par un vocabulaire déclaré et lit les documents de référence de cette compétence plutôt qu'un souvenir, puis rend un contrat. La voie de droite est la couche outils, dix paquets autonomes : chacun s'installe seul et se publie par cinq surfaces, une bibliothèque, une ligne de commande, une interface HTTP, une surface d'outils pour agent et une compétence. Les deux se rejoignent en un seul résultat, un artefact fabriqué puis contrôlé par une barrière qui sort avec un code non nul.](https://raw.githubusercontent.com/warith-harchaoui/sprezzature/main/assets/comment-ca-marche.svg)
+
 ## Architecture à deux couches
 
 Depuis le 2026-07-29, sprezzature s'organise en deux couches aux cycles de release distincts.

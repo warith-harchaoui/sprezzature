@@ -1,0 +1,88 @@
+# How the suite works, as drawn in README.md and LISEZMOI.md.
+#
+# Same renderer as the ten bricks, scripts/make_brick_diagram.py, and the same
+# two-lane shape, so a reader who has seen one figure reads this one without
+# being taught again.
+#
+# Redraw after any edit:
+#   python scripts/make_brick_diagram.py sprezzature
+package: sprezzature
+
+en:
+  title: How sprezzature works
+  subtitle: Ten engines, each published through five surfaces, and the skills that know when to reach for them.
+  alt: >-
+    Flow diagram. At the top, a sentence typed to an agent feeds two lanes. The
+    left lane is the agent layer, this repository: it matches the sentence to a
+    skill through a declared vocabulary and reads that skill's reference documents
+    rather than a memory, handing back one contract. The right lane is the tool
+    layer, ten standalone packages: each is installed on its own and published
+    through five surfaces, a library, a command line, an HTTP API, an agent tool
+    surface and a skill. Both meet in one outcome, an artifact that was made and
+    then audited by a gate that exits non-zero.
+  input:
+    label: A sentence you type to Claude or OpenCode
+    note: "\"make this page accessible\", \"chart this CSV\", \"wrap this command line in a form\", \"map this by country\""
+  lanes:
+    - title: "The agent layer: this repository"
+      steps:
+        - label: Match the sentence to a skill
+          note: "each skill declares the vocabulary that should reach it, and TRIGGERS.md is that table, generated from the ten descriptions rather than written beside them."
+        - label: Read the reference, not a memory
+          note: "the rules live in references/ as text the model reads at the moment it needs them. That is what lets a smaller local model follow a script instead of inventing one."
+      result:
+        label: One skill, and its contract
+        note: the same folder serves Claude Code and OpenCode, so a runtime choice is not a rewrite
+    - title: "The tool layer: ten standalone packages"
+      steps:
+        - label: Install only what you need
+          note: "pip install sprezzature-colors on its own, or the whole suite under one name. Each package releases on its own schedule."
+        - label: Five surfaces over one engine
+          note: "a library, a command line, an HTTP API in a container, the same routes republished as agent tools, and a skill. The engine is written once and the five are thin wrappers, because a surface holding logic of its own gives the engine a second version of the truth."
+      result:
+        label: A deterministic tool
+        note: "the same input gives the same artifact, byte for byte. That is the half a model cannot be asked to reproduce from memory."
+  outcome:
+    label: Something made, and then audited
+    note: "Every skill pairs a generator with an auditor that exits non-zero on findings, which is what makes it a gate rather than a suggestion. Where a model is needed, alt text, plain-language rewrites, captions, it runs on your own machine."
+  footer: The skills define the contract between the agent and the packages. Everything that can be decided without a model is decided without one.
+
+fr:
+  title: Comment fonctionne sprezzature
+  subtitle: Dix moteurs, chacun publié par cinq surfaces, et les compétences qui savent quand y recourir.
+  alt: >-
+    Schéma de flux. En haut, une phrase adressée à un agent alimente deux voies.
+    La voie de gauche est la couche agent, ce dépôt : elle rapproche la phrase
+    d'une compétence par un vocabulaire déclaré et lit les documents de référence
+    de cette compétence plutôt qu'un souvenir, puis rend un contrat. La voie de
+    droite est la couche outils, dix paquets autonomes : chacun s'installe seul et
+    se publie par cinq surfaces, une bibliothèque, une ligne de commande, une
+    interface HTTP, une surface d'outils pour agent et une compétence. Les deux se
+    rejoignent en un seul résultat, un artefact fabriqué puis contrôlé par une
+    barrière qui sort avec un code non nul.
+  input:
+    label: Une phrase que vous tapez à Claude ou à OpenCode
+    note: "« rends cette page accessible », « trace ce CSV », « mets un formulaire sur cette ligne de commande », « fais-en une carte par pays »"
+  lanes:
+    - title: "La couche agent : ce dépôt"
+      steps:
+        - label: Rapprocher la phrase d'une compétence
+          note: "chaque compétence déclare le vocabulaire qui doit lui parvenir, et TRIGGERS.md est cette table, engendrée depuis les dix descriptions plutôt qu'écrite à côté d'elles."
+        - label: Lire la référence, pas un souvenir
+          note: "les règles vivent dans references/, en texte que le modèle lit au moment où il en a besoin. C'est ce qui permet à un petit modèle local de suivre un script au lieu d'en inventer un."
+      result:
+        label: Une compétence, et son contrat
+        note: le même dossier sert Claude Code et OpenCode, donc changer d'exécution n'est pas réécrire
+    - title: "La couche outils : dix paquets autonomes"
+      steps:
+        - label: N'installer que ce qui sert
+          note: "pip install sprezzature-colors tout seul, ou la suite entière sous un seul nom. Chaque paquet sort à son propre rythme."
+        - label: Cinq surfaces sur un seul moteur
+          note: "une bibliothèque, une ligne de commande, une interface HTTP en conteneur, les mêmes routes republiées en outils d'agent, et une compétence. Le moteur est écrit une fois et les cinq sont de fines enveloppes, parce qu'une surface qui garde sa propre logique donne au moteur une deuxième version de la vérité."
+      result:
+        label: Un outil déterministe
+        note: "la même entrée donne le même artefact, octet pour octet. C'est la moitié qu'on ne peut pas demander à un modèle de reproduire de mémoire."
+  outcome:
+    label: Quelque chose de fabriqué, puis de contrôlé
+    note: "Chaque compétence associe un générateur à un contrôleur qui sort avec un code non nul dès qu'il trouve quelque chose, ce qui en fait une barrière et non une suggestion. Là où un modèle est nécessaire, texte alternatif, réécriture en langue claire, sous-titres, il tourne sur votre machine."
+  footer: Les compétences définissent le contrat entre l'agent et les paquets. Tout ce qui peut se décider sans modèle se décide sans modèle.
