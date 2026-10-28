@@ -1166,6 +1166,8 @@ def css(f: dict) -> str:
        find it. The films used to open on their problem sentence alone --
        a good sentence, which tells a viewer who has just landed nothing
        about whose problem it is or what they are watching. */
+    #what-logo {{ display: block; width: {int(f['hero'] * 2.0)}px;
+      height: {int(f['hero'] * 2.0)}px; object-fit: contain; }}
     #what-mark {{ font-family: "Roboto Serif"; font-size: {int(f['hero'] * .9)}px;
       font-weight: 600; letter-spacing: -.02em; color: var(--ink);
       text-align: center; }}
@@ -1456,7 +1458,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
         # the name, the sentence and the address, and it carries them whole
         # -- nothing in this scene fades in.
         return (f'<div class="stage"><div class="col">'
-                f'<img id="logo" src="assets/{sc["logo"]}" alt="">'
+                f'<img id="what-logo" src="assets/{sc["logo"]}" alt="">'
                 f'<p id="what-mark">{esc(sc["mark"])}</p>'
                 f'<p id="what-line">{esc(sc["line"])}</p>'
                 f'<p id="what-url">{esc(sc["url"])}</p></div></div>')

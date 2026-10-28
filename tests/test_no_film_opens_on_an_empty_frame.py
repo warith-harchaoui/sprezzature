@@ -114,3 +114,38 @@ def test_the_wordmark_is_on_screen_before_the_first_scene_ends() -> None:
             if float(m.group(1)) > FIRST_FRAME:
                 late.append(f"{film}.{lang}.{fmt}: rails open at {m.group(1)}s")
     assert not late, "\n  ".join(["the wordmark arrives late:", *late])
+
+
+def test_no_two_scenes_share_an_element_id() -> None:
+    """A duplicate id lets one scene's tween reach into another's markup.
+
+    GSAP renders a ``fromTo`` start state when the tween is *created*, not
+    when the timeline reaches it. So a tween placed at 55.4s still applies
+    its from-state at frame zero, and ``fromTo("#logo", {opacity: 0}, ...)``
+    resolves ``#logo`` to the first one in the document.
+
+    That is how the identity card shipped without its logo on 2026-10-28:
+    the card and the closing ask both used ``id="logo"``, the card's came
+    first, and the ask's tween held it at opacity zero for fifty-five
+    seconds. The ask looked perfect, which is the part that made it hard to
+    see — six renders went by.
+    """
+    import build_films
+
+    clashes: list[str] = []
+    for film, lang in build_films.cuts():
+        spec = build_films.FILMS[film]
+        if spec["duration"] < 30:
+            continue
+        for fmt in build_films.FORMATS:
+            html = build_films.compose(film, spec, fmt, lang)
+            seen: dict[str, int] = {}
+            for name in re.findall(r'\bid="([^"]+)"', html):
+                seen[name] = seen.get(name, 0) + 1
+            for name, n in sorted(seen.items()):
+                if n > 1:
+                    clashes.append(f"{film}.{lang}.{fmt}: id={name!r} appears {n}x")
+    assert not clashes, (
+        f"{len(clashes)} duplicate element id(s); a tween on one reaches the "
+        f"other:\n  " + "\n  ".join(clashes)
+    )
