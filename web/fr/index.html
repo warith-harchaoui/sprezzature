@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Sprezzature — neuf skills Claude / OpenCode pour vanilla JS + Tailwind</title>
+  <title>Sprezzature — dix skills Claude / OpenCode pour vanilla JS + Tailwind</title>
   <meta name="description"
-    content="Sprezzature, ce sont neuf skills Claude / OpenCode pour une même stack sprezzature : UI, CLI-vers-GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures data-science et cartes. Chaque skill produit des artefacts et les audite.">
+    content="Sprezzature, ce sont dix skills Claude / OpenCode pour une même stack sprezzature : UI, CLI-vers-GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures data-science, cartes, et les affirmations d'un film. Chaque skill produit des artefacts et les audite.">
   <link rel="canonical" href="https://sprezzature.ai/fr/">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/">
@@ -23,7 +23,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sprezzature">
-  <meta property="og:title" content="Sprezzature — neuf skills Claude / OpenCode">
+  <meta property="og:title" content="Sprezzature — dix skills Claude / OpenCode">
   <meta property="og:description"
     content="Un design system local pour une seule stack sprezzature : UI, CLI→GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX et figures. Produire et auditer.">
   <meta property="og:url" content="https://sprezzature.ai/fr/">
@@ -35,7 +35,7 @@
   <meta property="og:image:alt" content="Le logo du projet Sprezzature.">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sprezzature — neuf skills Claude / OpenCode">
+  <meta name="twitter:title" content="Sprezzature — dix skills Claude / OpenCode">
   <meta name="twitter:description"
     content="Skills pour une stack sprezzature : UI, CLI→GUI, publication, a11y, couleurs, sous-titres, Lois de l'UX et figures.">
   <meta name="twitter:image" content="https://sprezzature.ai/img/logo.png">
@@ -62,14 +62,14 @@
         "@type": "WebSite",
         "name": "Sprezzature",
         "url": "https://sprezzature.ai/fr/",
-        "description": "Neuf skills Claude / OpenCode pour une pile frontend unique : UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures de science des données et cartes.",
+        "description": "Dix skills Claude / OpenCode pour une pile frontend unique : UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures de science des données, cartes, et les affirmations d'un film.",
         "inLanguage": "fr",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
       },
       {
         "@type": "SoftwareSourceCode",
         "name": "Sprezzature",
-        "description": "Un système de design livré sous forme de neuf skills Claude / OpenCode. Chaque skill fabrique des artefacts et les audite contre des règles explicites : UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures.",
+        "description": "Un système de design livré sous forme de dix skills Claude / OpenCode. Chaque skill fabrique des artefacts et les audite contre des règles explicites : UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures, et les affirmations d'un film.",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "programmingLanguage": ["Python", "JavaScript", "HTML"],
         "license": "https://spdx.org/licenses/BSD-3-Clause.html",
@@ -83,7 +83,7 @@
             "name": "Qu'est-ce que Sprezzature ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sprezzature est un ensemble de neuf skills pour Claude Code et OpenCode. Chaque skill couvre une partie d'une pile frontend (génération d'UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures de science des données, cartes) et fabrique l'artefact tout en l'auditant contre des règles explicites."
+              "text": "Sprezzature est un ensemble de dix skills pour Claude Code et OpenCode. Chaque skill couvre une partie d'une pile frontend (génération d'UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures de science des données, cartes, affirmations d'un film) et fabrique l'artefact tout en l'auditant contre des règles explicites."
             }
           },
           {
@@ -419,6 +419,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-ux-laws', "Lois de l'expérience utilisateur (UX)", 'Trente lois plus un auditeur des violations détectables: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
       ['sprezzature-figures', 'Figures', '167 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
       ['sprezzature-maps', 'Cartes', 'Choroplèthes et cartes de situation sur une vraie projection géographique ; les cartes schématiques restent dans figures. En cours. Des illustrations de la méthode, pas des appréciations opérationnelles.', 'maps.html'],
+      ['sprezzature-video', "Affirmations d'un film", "Vérifie ce qu'un film affirme sur le code dont il parle : les affirmations déclarées vérifiées, les nombres non déclarés attrapés, et la question de savoir si le film peut être refabriqué depuis un clone.", 'video.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `

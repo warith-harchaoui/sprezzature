@@ -47,6 +47,7 @@ _SECTIONS: list[tuple[str, list[str]]] = [
             "audio.html",
             "ux-laws.html",
             "figures.html",
+            "video.html",
         ],
     ),
     (

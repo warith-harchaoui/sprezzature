@@ -1,10 +1,10 @@
 # Sprezzature
 
-> Nine Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
+> Ten Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
 
 ## Home
 
-- [Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
+- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes. Each skill both makes artifacts and audits them.
 
 ## Skills
 
@@ -16,6 +16,7 @@
 - [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions, speaker diarization and speaker identification for video / audio. WebVTT / SRT from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via speaker embeddings.
 - [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the canonical Laws of UX (Jon YABLONSKI) to vanilla-JS + Tailwind: both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger, action, Tailwind hook.
 - [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: 160 hand-authored SVG chart types, all from fake data on a curated palette.
+- [Video claims — Sprezzature](https://sprezzature.ai/video.html): Check what a project video says against the project itself. A film burns its claims into pixels where nothing re-reads them, so a count stays on screen long after the catalogue behind it has grown.
 
 ## Case studies
 

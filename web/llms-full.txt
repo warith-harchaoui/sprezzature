@@ -838,6 +838,8 @@ the whole suite
 
 Design is know-how, and most of it is already written down: thirty laws of UX, contrast ratios, a 2009 paper on colour vision, a projection from 2018. The suite is what happens when you point that know-how both ways — at making a thing, and at auditing it.
 
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
+
 Your browser cannot play this video.
 Download the MP4 .
 
@@ -848,6 +850,8 @@ sprezzature-ui
 ## UI 60 s
 
 The smallest brick, on purpose. Its job is the aesthetic judgement written in prose — the three-Roboto rule, the design tokens, what an interface has to respect — plus the one part of that judgement a machine can carry out.
+
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
 Your browser cannot play this video.
 Download the MP4 .
@@ -860,6 +864,8 @@ sprezzature-cli-gui
 
 A tool nobody will type, wrapped in a page. It does not read the help text — it reads the parser object, through argparse, Click or Typer, and falls back to running --help only when there is no parser to reach.
 
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
+
 Your browser cannot play this video.
 Download the MP4 .
 
@@ -870,6 +876,8 @@ sprezzature-publish
 ## Publish 60 s
 
 A document, becoming a site. Nine tools: a linter that runs on the standard library in milliseconds, favicons from one logo, the indexes a crawler and a language model both want, and readalong, which binds the narration to the page.
+
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
 Your browser cannot play this video.
 Download the MP4 .
@@ -882,6 +890,8 @@ sprezzature-accessibility
 
 An unmuted autoplay masks a screen reader, and the markup says so on its own. Twenty rules from WCAG, each naming the element, the line and the rule it broke; six of them repair themselves, where there is exactly one safe repair.
 
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
+
 Your browser cannot play this video.
 Download the MP4 .
 
@@ -892,6 +902,8 @@ sprezzature-colors
 ## Colors 60 s
 
 Light grey on white reads fine — to you, indoors. About one man in twelve sees red and green as the same bar, and no amount of care changes that, because the information is not in their eye.
+
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
 Your browser cannot play this video.
 Download the MP4 .
@@ -904,6 +916,8 @@ sprezzature-audio
 
 One modality, read in both directions. Captions turn sound into timed text; narration turns text into timed sound, landing as a WAV plus a WebVTT — exactly like a transcript does, which is what lets a page follow the reading sentence by sentence.
 
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
+
 Your browser cannot play this video.
 Download the MP4 .
 
@@ -914,6 +928,8 @@ sprezzature-ux-laws
 ## Laws of UX 60 s
 
 Nobody says “that violates Hick’s Law”. They say the page is overwhelming, or that they can never find the button. Thirty laws, curated by Jon YABLONSKI; eight of them a machine can decide from the markup alone.
+
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
 Your browser cannot play this video.
 Download the MP4 .
@@ -926,6 +942,8 @@ sprezzature-figures
 
 167 kinds of chart across 52 categories, every one hand-authored. No charting library sits underneath any of it: each generator writes the SVG markup itself, and the vector is the deliverable rather than an export.
 
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
+
 Your browser cannot play this video.
 Download the MP4 .
 
@@ -936,6 +954,8 @@ sprezzature-maps
 ## Maps 60 s
 
 A column of countries is a map waiting to happen. Real coastlines, a real projection, eight kilometres of relief — and a choice about which distortion you are willing to accept, stated rather than defaulted to.
+
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
 Your browser cannot play this video.
 Download the MP4 .
@@ -948,6 +968,8 @@ sprezzature-video
 
 The brick that made the other ten films, and the one that checks them. A film is a claim with a soundtrack: every number on screen is verified against the code that produces it, including the numbers nobody declared.
 
+Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
+
 Your browser cannot play this video.
 Download the MP4 .
 
@@ -959,7 +981,9 @@ Each film exists twice, and the two do not mix: an English film is English throu
 
 The voices come from the suite itself: sprezzature-audio through Kokoro, with a pronunciation lexicon so that WebVTT, RTTM, OKLCH and GMTED2010 are said the same way in every film and in both languages. The same call writes the subtitles, off the same timeline as the audio.
 
-Each one also exists vertical (1080×1920) and square (1080×1080). The versions here are the 1920×1080 cut.
+Each film is cut three ways and all three are on this page: wide for a screen, tall for a phone held upright, square for a feed. Pick one above the player. The three are frame-synced, so the same sentence lands on the same second whichever you watch; only the layout moves. All of them are 4K.
+
+They follow Guy KAWASAKI’s order, which is why the rail above each frame says where you are: the problem first, then what the package does about it, then the part you would not guess — and the sources it rests on, named so you can go and check them.
 
 They were built with the same discipline they describe. Every scene was rendered to a still and looked at before the film was encoded, which is how the sixty-second set was caught quoting a catalogue size the package had outgrown months earlier — off a screenshot taken in September — naming a font the package does not ship, and counting twelve font files where there are six.
 
@@ -1263,7 +1287,7 @@ Follow a country
 
 ---
 
-# Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind
+# Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind
 
 Source: https://sprezzature.ai/
 
@@ -1274,22 +1298,22 @@ Create and audit figures, visualizations for app and web content,
 faithful to a standard of accessibility, chromatic rigor, and usability.
 
 Explore
-the nine skills
+the ten skills
 See
 the gallery
 Give a ⭐️ on GitHub
 
-## Twenty-five seconds
+## One minute
 
 What the suite does, and the one thing nothing
-else does: it refuses to trust a figure it has not looked at. Narrated in English, subtitled in English
-and French.
+else does: it refuses to trust a figure it has not looked at. English throughout — on screen,
+in the voice, in the subtitles.
 
 Your browser cannot play this video.
 Download the MP4 .
 
-Four
-more films, one per part of the suite →
+Ten
+more films, one per package →
 
 ## Getting started
 
@@ -1343,7 +1367,7 @@ sprezzature-ux-laws : Laws of UX audit
 
 sprezzature-maps : choropleth + situation
 
-## The nine skills
+## The ten skills
 
 ## A taste of what it renders
 
@@ -1999,3 +2023,57 @@ reduce clutter
 The knowledge the skill draws on: read them straight from the repo.
 
 The 30 laws
+
+---
+
+# Video claims — Sprezzature
+
+Source: https://sprezzature.ai/video.html
+
+sprezzature-video
+
+# Video claims
+
+A README gets re-read. A number burned into a keyframe does not. This package holds a film’s assertions against the code they describe, in both directions, and answers whether the film can be rendered again at all from a clean clone.
+
+SKILL.md (the agent spec)
+Give a ⭐️ on GitHub
+
+## Makes
+
+WebVTT from the narration script and the measured length of each audio file, not from a transcript and not typed by hand
+
+A poster baked as frame zero, because Slack, X and Discord regenerate their thumbnail server-side from the first frame whatever a poster= attribute says
+
+Loudness normalised across a series, so one film is not louder than the next
+
+## Audits
+
+verify — every declared claim against the file that would have to change for it to stop being true
+
+scan — every number visible on screen that no claim accounts for, because the dangerous claim is the undeclared one
+
+pitch — problem, then solution, then underlying magic, in Guy KAWASAKI’s order, with a feature list refused where an insight belongs
+
+assets — can this film be rendered again from a clone? Tracked, derived, or exists in exactly one place
+
+prose — the on-screen writing against the project’s charter, one finding per line
+
+## Say one of these
+
+The skill triggers itself on phrasing like this, no command to memorize.
+
+make a launch video
+the demo video is out of date
+verify the claims in this video
+re-cut the film
+is this number still right
+can we rebuild this video
+poster frame
+
+## Reference library
+
+The knowledge the skill draws on: read them straight from the repo.
+
+Where it stops
+Every trigger phrase

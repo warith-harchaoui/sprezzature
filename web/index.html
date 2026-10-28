@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Sprezzature — nine Claude / OpenCode skills for vanilla JS + Tailwind</title>
+  <title>Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind</title>
   <meta name="description"
-    content="Sprezzature is nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.">
+    content="Sprezzature is ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes. Each skill both makes artifacts and audits them.">
   <link rel="canonical" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/">
@@ -30,7 +30,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sprezzature">
-  <meta property="og:title" content="Sprezzature — nine Claude / OpenCode skills">
+  <meta property="og:title" content="Sprezzature — ten Claude / OpenCode skills">
   <meta property="og:description"
     content="A design system for one frontend stack: UI, CLI→GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Make and audit.">
   <meta property="og:url" content="https://sprezzature.ai/">
@@ -43,7 +43,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sprezzature — nine Claude / OpenCode skills">
+  <meta name="twitter:title" content="Sprezzature — ten Claude / OpenCode skills">
   <meta name="twitter:description"
     content="Skills for one frontend stack: UI, CLI→GUI, publishing, a11y, colors, captions, Laws of UX, and figures.">
   <meta name="twitter:image" content="https://sprezzature.ai/img/logo.png">
@@ -71,7 +71,7 @@
         "@type": "WebSite",
         "name": "Sprezzature",
         "url": "https://sprezzature.ai/",
-        "description": "Nine Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps.",
+        "description": "Ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps.",
         "inLanguage": "en",
         "author": { "@type": "Person", "name": "Warith HARCHAOUI",
           "url": "https://www.linkedin.com/in/warith-harchaoui/" }
@@ -79,7 +79,7 @@
       {
         "@type": "SoftwareSourceCode",
         "name": "Sprezzature",
-        "description": "A design system as nine Claude / OpenCode skills. Each skill both makes artifacts and audits them against explicit rules: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, figures.",
+        "description": "A design system as ten Claude / OpenCode skills. Each skill both makes artifacts and audits them against explicit rules: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, figures, and the claims a film makes.",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
         "programmingLanguage": ["Python", "JavaScript", "HTML"],
         "license": "https://spdx.org/licenses/BSD-3-Clause.html",
@@ -94,7 +94,7 @@
             "name": "What is Sprezzature?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sprezzature is a set of nine skills for Claude Code and OpenCode. Each skill covers one part of a frontend stack (UI generation, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps) and both makes the artifact and audits it against explicit rules."
+              "text": "Sprezzature is a set of ten skills for Claude Code and OpenCode. Each skill covers one part of a frontend stack (UI generation, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes) and both makes the artifact and audits it against explicit rules."
             }
           },
           {
@@ -204,7 +204,7 @@
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a href="#skills"
             class="rounded-xl bg-brand-blue px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-brand-bluedark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-blue motion-safe:hover:-translate-y-0.5 min-h-11">Explore
-            the nine skills</a>
+            the ten skills</a>
           <a href="figures.html"
             class="rounded-xl border border-neutral-300 px-5 py-2.5 font-medium hover:border-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 min-h-11">See
             the gallery</a>
@@ -289,7 +289,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
 
     <!-- Skills -->
     <section id="skills" class="mx-auto max-w-6xl px-5 py-16">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The nine skills</h2>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The ten skills</h2>
       <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
         <!-- cards injected below -->
       </ul>
@@ -440,6 +440,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-ux-laws', 'Laws of user experience (UX)', 'Thirty laws plus an auditor for detectable violations: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
       ['sprezzature-figures', 'Figures', '167 hand-authored SVG chart types and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
       ['sprezzature-maps', 'Maps', 'Choropleths and areas-of-control situation plates on a real geographic projection; schematic place-shaped charts stay in figures. Work in progress. Illustrations of the method, not operational assessments.', 'maps.html'],
+      ['sprezzature-video', 'Video claims', 'Checks what a film says against the code it describes: declared claims verified, undeclared numbers caught, and whether the film can be rendered again from a clone.', 'video.html'],
     ];
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `

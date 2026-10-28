@@ -149,12 +149,13 @@ def in_language(spec: dict, lang: str, film: str = "") -> dict:
 #: film cannot, so the film labels the frame instead: at any second, somebody
 #: wondering where this is going can see the answer without rewinding.
 BEAT_LABEL = {
+    "what":     L("What it is", "Ce que c'est"),
     "problem":  L("Problem", "Le problème"),
     "solution": L("Solution", "La solution"),
     "magic":    L("Underlying magic", "La mécanique"),
     "cta":      L("Your turn", "À vous"),
 }
-BEAT_ORDER = ("problem", "solution", "magic", "cta")
+BEAT_ORDER = ("what", "problem", "solution", "magic", "cta")
 
 #: The ask. Two of them, in the order of what they cost: a star is one click
 #: from where the viewer already is, the site is a visit.
@@ -225,10 +226,11 @@ FILMS = {
         sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 24.55), ("wipe", 38.74),
              ("bell", 55.67)],
         scenes=[
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("Nearly every design decision has already been made.",
-                        "Presque tout ce qu'on décide en design a déjà été "
-                        "décidé.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature",
+                 line=L("Design know-how, written as code.",
+                        "Le savoir-faire du design, écrit en code."),
+                 url="sprezzature.ai"),
             dict(type="chips", beat="problem", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("Settled by other people", "Décidé par d'autres"),
                  items=["30 Laws of UX", L("WCAG contrast", "contraste WCAG"),
@@ -297,11 +299,11 @@ FILMS = {
         sfx=[("drop", 5.47), ("wipe", 18.01), ("wipe", 21.83), ("tile", 41.46),
              ("bell", 55.67)],
         scenes=[
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("Light grey on white reads perfectly well. At your "
-                        "desk, indoors.",
-                        "Du gris clair sur du blanc, ça se lit très bien. Chez "
-                        "vous, à l'intérieur.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 colors",
+                 line=L("Colours everybody can read, proved rather than hoped.",
+                        "Des couleurs que tout le monde peut lire, et la preuve avec."),
+                 url="sprezzature.ai"),
             dict(type="versus", beat="problem", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("The same button, two readers",
                            "Le même bouton, deux lecteurs"),
@@ -376,9 +378,11 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("You have a spreadsheet. Which chart is the right one?",
-                        "Vous avez un tableur. Quel graphique est le bon ?")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 figures",
+                 line=L("167 chart kinds, every line of SVG written by hand.",
+                        "167 types de graphiques, chaque trait de SVG écrit à la main."),
+                 url="sprezzature.ai"),
             dict(type="held", beat="problem", start=5.4, dur=9.1, end=14.4,
                  line=L("Most people reach for the bar chart they reached for "
                         "last time.",
@@ -445,10 +449,11 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("A page that reads itself aloud, highlighting as it goes.",
-                        "Une page qui se lit à voix haute en surlignant au "
-                        "passage.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 publish",
+                 line=L("A folder of Markdown becomes a site somebody can find.",
+                        "Un dossier de Markdown devient un site qu'on trouve."),
+                 url="sprezzature.ai"),
             dict(type="held", beat="problem", start=5.4, dur=9.1, end=14.4,
                  line=L("One sentence out of step is worse than no "
                         "highlighting at all.",
@@ -515,9 +520,11 @@ FILMS = {
         sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 32.19), ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("Your video has captions. They are accurate.",
-                        "Votre vidéo a des sous-titres. Ils sont exacts.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 audio",
+                 line=L("Speech, read both ways, on your own machine.",
+                        "La parole, lue dans les deux sens, sur votre machine."),
+                 url="sprezzature.ai"),
             dict(type="held", beat="problem", start=5.4, dur=9.6, end=15.0,
                  line=L("Ninety characters, on screen for half a second.",
                         "Quatre-vingt-dix caractères, affichés une "
@@ -588,30 +595,40 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 cli-gui",
+                 line=L("Your command line, as a form anybody can fill in.",
+                        "Votre ligne de commande, en formulaire que tout le monde remplit."),
+                 url="sprezzature.ai"),
+            # PROBLEM
+            dict(type="held", beat="problem", start=5.4, dur=11.1, end=16.4,
                  line=L("Your colleague needs this tool. They will not open a "
                         "terminal.",
                         "Votre collègue a besoin de cet outil. Il n'ouvrira "
                         "pas de terminal.")),
-            # SOLUTION: the thing itself
-            dict(type="grid", beat="solution", start=5.4, dur=11.1, end=16.4,
+            # SOLUTION: the thing itself. The claim that used to sit here --
+            # "it reads the parser object, the help text is a last resort" --
+            # is said by the voice over these two captures instead, because
+            # the captures are the better argument and the slot is now one
+            # scene shorter.
+            dict(type="grid", beat="solution", start=16.3, dur=8.2, end=24.4,
                  eyebrow=L("Generated from the command, not written",
                            "Engendré depuis la commande, pas écrit"),
                  images=["shots/make-figure-list.png", "shots/make-figure-render.png"],
-                 at=on_beat(6.5, 7.6),
+                 at=on_beat(17.5, 18.6),
                  caption=L("Options become fields. Choices become a list. "
                            "Required stays required.",
                            "Les options deviennent des champs. Les choix, une "
                            "liste. L'obligatoire reste obligatoire.")),
-            dict(type="claim", beat="solution", start=16.3, dur=8.2, end=24.4,
-                 line=L("It reads the parser object. The help text is a "
-                        "last resort.",
-                        "Il lit l'objet analyseur. Le texte d'aide est un "
-                        "pis-aller.")),
             # SECRET SAUCE
             dict(type="versus", beat="magic", start=24.3, dur=11.2, end=35.4,
-                 eyebrow=L("Three frameworks, two adapters",
-                           "Trois cadres, deux adaptateurs"),
+                 # Counting the parts was an inventory, and the suite's own
+                 # pitch checker said so: "Three frameworks, two adapters" is
+                 # the same shape as "Ten packages. Five surfaces each.", the
+                 # line that checker was written against. The insight is why
+                 # there are two and not three.
+                 eyebrow=L("A Typer app is already Click",
+                           "Une application Typer est déjà du Click"),
                  left=(L("argparse, Click", "argparse, Click"),
                        L("walked directly, each in its own adapter",
                          "parcourus directement, chacun son adaptateur")),
@@ -651,11 +668,11 @@ FILMS = {
         vo=[("ui.en", 1.10)],
         sfx=[("drop", 5.47), ("tile", 24.55), ("tile", 42.55), ("bell", 55.67)],
         scenes=[
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("A sentence written straight into a template costs "
-                        "nothing today.",
-                        "Une phrase écrite en dur dans un gabarit ne coûte "
-                        "rien aujourd'hui.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 ui",
+                 line=L("Every sentence hardcoded in your source, found and filed.",
+                        "Chaque phrase écrite en dur dans vos sources, trouvée et rangée."),
+                 url="sprezzature.ai"),
             dict(type="held", beat="problem", start=5.4, dur=11.1, end=16.4,
                  line=L("It costs a week the day somebody needs a second "
                         "language.",
@@ -705,9 +722,11 @@ FILMS = {
         vo=[("video.en", 1.10)],
         sfx=[("drop", 5.47), ("tile", 20.19), ("tile", 38.74), ("bell", 55.67)],
         scenes=[
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("A film asserts things at thirty frames a second.",
-                        "Un film affirme des choses trente fois par seconde.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 video",
+                 line=L("A film that can be re-read, and checked against its code.",
+                        "Un film qui se relit, et se vérifie sur son propre code."),
+                 url="sprezzature.ai"),
             dict(type="held", beat="problem", start=5.4, dur=13.1, end=18.4,
                  line=L("This suite told viewers it had 127 chart kinds, for "
                         "months after it had 167.",
@@ -755,23 +774,21 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 maps",
+                 line=L("Maps drawn on real ground, saying what they do not know.",
+                        "Des cartes sur un vrai sol, qui disent ce qu'elles ignorent."),
+                 url="sprezzature.ai"),
+            # PROBLEM
+            dict(type="held", beat="problem", start=5.4, dur=10.1, end=15.4,
                  line=L("A column of countries hides where things happen.",
                         "Une colonne de pays cache l'endroit où les choses "
                         "arrivent.")),
-            # SOLUTION: real ground, four reference plates
-            dict(type="grid", beat="solution", start=5.4, dur=10.1, end=15.4,
-                 eyebrow=L("Real coastlines, a real projection",
-                           "De vraies côtes, une vraie projection"),
-                 images=["maps/situation-himalaya.png", "maps/situation-iberia.png",
-                         "maps/situation-switzerland.png",
-                         "maps/situation-western-europe.png"],
-                 at=on_beat(6.5, 7.1, 7.6, 8.2),
-                 caption=L("Eight kilometres of relief, the Meseta, the lakes: "
-                           "the ground a front has to sit on.",
-                           "Huit kilomètres de relief, la Meseta, les lacs : "
-                           "le sol sur lequel un front doit tenir.")),
-            # SOLUTION: what the form is actually for
+            # SOLUTION: real ground, and what the plates are actually for.
+            # Two grids were merged into one when the identity card took the
+            # opening slot: six plates in ten seconds was always more than a
+            # viewer could look at, and the four reference plates were the
+            # ones saying the least.
             dict(type="grid", beat="solution", start=15.3, dur=10.9, end=26.2,
                  eyebrow=L("Who holds what, at what certainty",
                            "Qui tient quoi, à quelle certitude"),
@@ -820,9 +837,11 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("They will tell you the page is overwhelming.",
-                        "On vous dira que la page est écrasante.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 ux-laws",
+                 line=L("The laws of attention, checked against your own markup.",
+                        "Les lois de l'attention, vérifiées sur votre balisage."),
+                 url="sprezzature.ai"),
             dict(type="versus", beat="problem", start=5.4, dur=9.1, end=14.4,
                  eyebrow=L("What actually gets reported",
                            "Ce qu'on vous remonte vraiment"),
@@ -899,9 +918,11 @@ FILMS = {
              ("bell", 55.67)],
         scenes=[
             # PROBLEM
-            dict(type="claim", beat="problem", start=0.0, dur=6.0, end=5.5,
-                 line=L("A video starts playing by itself, with sound.",
-                        "Une vidéo démarre toute seule, avec le son.")),
+            dict(type="what", beat="what", start=0.0, dur=6.0, end=5.5,
+                 logo="logo-512.png", mark="Sprezzature \u00b7 accessibility",
+                 line=L("Twenty accessibility rules, decided by reading the HTML.",
+                        "Vingt règles d'accessibilité, tranchées en lisant le HTML."),
+                 url="sprezzature.ai"),
             dict(type="held", beat="problem", start=5.4, dur=10.1, end=15.4,
                  line=L("A blind reader now cannot hear the tool they would "
                         "use to stop it.",
@@ -1139,6 +1160,23 @@ def css(f: dict) -> str:
 
     .shotcard img {{ display: block; border-radius: 8px; }}
     .viewport {{ position: relative; overflow: hidden; border-radius: 8px; }}
+
+    /* The identity card that opens every film, and is finished at frame
+       zero: the package's name, one line saying what it is, and where to
+       find it. The films used to open on their problem sentence alone --
+       a good sentence, which tells a viewer who has just landed nothing
+       about whose problem it is or what they are watching. */
+    #what-mark {{ font-family: "Roboto Serif"; font-size: {int(f['hero'] * .9)}px;
+      font-weight: 600; letter-spacing: -.02em; color: var(--ink);
+      text-align: center; }}
+    #what-line {{ font-size: {int(f['h2'] * 1.05)}px; color: var(--ink-soft);
+      text-align: center; text-wrap: balance;
+      max-width: {int(f['w'] * (.74 if f['w'] > f['h'] else .92))}px;
+      margin-top: {int(f['hero'] * .3)}px; }}
+    #what-url {{ font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: {int(f['eyebrow'] * 1.02)}px; font-weight: 500;
+      letter-spacing: .06em; color: var(--blue);
+      margin-top: {int(f['hero'] * .34)}px; }}
 
     /* The call to action. Two things to do, each one a verb and the place
        it happens, because "sprezzature.ai" alone is an address and not an
@@ -1411,6 +1449,18 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
                 f'style="width:{iw}px;height:{ih}px;object-fit:contain"></div>'
                 f'{cap}</div></div>')
 
+    if t == "what":
+        # Frame zero of a film is the frame most often seen on its own: the
+        # poster a player falls back to, the still a scrubber lands on, the
+        # thumbnail a platform grabs when nobody gave it one. So it carries
+        # the name, the sentence and the address, and it carries them whole
+        # -- nothing in this scene fades in.
+        return (f'<div class="stage"><div class="col">'
+                f'<img id="logo" src="assets/{sc["logo"]}" alt="">'
+                f'<p id="what-mark">{esc(sc["mark"])}</p>'
+                f'<p id="what-line">{esc(sc["line"])}</p>'
+                f'<p id="what-url">{esc(sc["url"])}</p></div></div>')
+
     if t == "cta":
         # Kawasaki's last slide is the ask, and the film used to end on a
         # motto: "Make it. Audit it. Then look at it." Pretty, and it
@@ -1571,6 +1621,12 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
                        f'{{x:0,opacity:1,duration:.45,ease:"power2.out"}},{at_claim:.2f});')
             out.append(f'tl.fromTo("#s{i}-vv{k}",{{opacity:0,scale:.8}},'
                        f'{{opacity:1,scale:1,duration:.35,ease:"back.out(2)"}},{at_value:.2f});')
+
+    elif t == "what":
+        # Nothing. The card is complete on the first frame and holds until
+        # the scene crossfades out, which is the whole point of it. The only
+        # motion under it is the audio-reactive wash behind.
+        pass
 
     elif t == "cta":
         out.append(f'tl.fromTo("#logo",{{scale:.88,opacity:0}},'
