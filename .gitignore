@@ -118,3 +118,18 @@ brag-output/_retired/
 # the twelve generated HyperFrames projects. build_films.py rewrites both.
 brag-output/_assets/
 brag-output/films/
+
+# The per-film working files eleven agents wrote on 2026-10-29: one entry of
+# `build_films.FILMS` and one of `make_captions.FILMS` each, plus the prose
+# explaining them. `splice_film.py` puts them back into the two modules that
+# own them, so what matters here is committed and these are the scaffolding.
+#
+# Ignored rather than deleted: they carry the commands that rebuild the shots
+# each film needs, and those are worth having beside the next rewrite. They
+# are fragments, not modules, so ruff reads them as 80 syntax errors.
+brag-output/notes/
+
+# The read-along working tree: a half-hour narration cached between runs of
+# restore_assets.py, kept beside _assets/ rather than inside it so the
+# completeness count stays honest.
+brag-output/_readalong-work/

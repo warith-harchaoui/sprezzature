@@ -35,25 +35,27 @@ claims:
     source:
       path: sprezzature-accessibility/scripts/lint_a11y.py
       method: regex_count
-      # A literal newline, not ``^``: ``regex_count`` calls ``re.findall``
-      # with no flags, so an anchored pattern matches only at the start of
-      # the file and the count comes back 0 -- which reads as a claim that
-      # has drifted rather than a selector that cannot match.
-      selector: '\n    "[a-z-]+": check_'
+      # ``^`` means start of line: `regex_count` reads the file with
+      # ``re.MULTILINE``. It did not until 2026-10-28, and an anchored
+      # selector therefore matched only at the start of the file and counted
+      # 0 -- which arrives as "the film says 20, the code says 0", the exact
+      # sentence a genuinely stale claim produces. The workaround here was a
+      # literal newline in the pattern; the fix is in the brick.
+      selector: '^    "[a-z-]+": check_'
 
   - text: "Six of the twenty ship a mechanical fixer."
     value: 6
     source:
       path: sprezzature-accessibility/scripts/lint_a11y.py
       method: regex_count
-      selector: '\n    "[a-z-]+": _fix_'
+      selector: '^    "[a-z-]+": _fix_'
 
   - text: "Eight of them settle from the source alone."
     value: 8
     source:
       path: sprezzature-ux-laws/scripts/audit_laws_of_ux.py
       method: regex_count
-      selector: '\n    "[a-z-]+": \('
+      selector: '^    "[a-z-]+": \('
 
   - text: "30 laws of UX, collected by Jon YABLONSKI."
     value: "**30 laws**"

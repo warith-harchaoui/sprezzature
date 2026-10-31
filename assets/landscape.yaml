@@ -1,0 +1,611 @@
+meta:
+  reference: sprezzature (the skills)
+  rotation_deg: 86.666
+  explained_variance_ratio:
+  - 0.2822
+  - 0.2632
+  cumulative_variance: 0.5454
+  n_approaches: 31
+  attributes:
+  - Local-first
+  - Lightweight
+  - Restyleable
+  - Accessibility
+  - Maturity
+  - Skill-native
+  - Interactive
+  - Free/Open
+  - Ease
+  - Ecosystem
+  lower_is_better: []
+  imputed_cells: []
+axes:
+  axis_1:
+    name: Robustness ↔ Nimble
+    pole_left: Robustness
+    pole_right: Nimble
+    loadings:
+      Local-first: -0.1913
+      Lightweight: 0.1798
+      Restyleable: -0.1558
+      Accessibility: -0.0666
+      Maturity: -0.5541
+      Skill-native: 0.3058
+      Interactive: -0.0235
+      Free/Open: -0.124
+      Ease: 0.4498
+      Ecosystem: -0.5325
+  axis_2:
+    name: Dynamic ↔ Adaptable
+    pole_bottom: Dynamic
+    pole_top: Adaptable
+    loadings:
+      Local-first: 0.4366
+      Lightweight: 0.4751
+      Restyleable: 0.4157
+      Accessibility: 0.3278
+      Maturity: -0.0666
+      Skill-native: 0.1796
+      Interactive: -0.2889
+      Free/Open: 0.4244
+      Ease: 0.0278
+      Ecosystem: -0.0493
+approaches:
+- name: sprezzature (the skills)
+  coordinates:
+    axis_1: 3.4649
+    axis_2: 3.0249
+  role: best
+  color: '#FF3B30'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 5.0
+    Restyleable: 5.0
+    Accessibility: 5.0
+    Maturity: 2.0
+    Skill-native: 5.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 4.0
+    Ecosystem: 2.0
+  imputed_attributes: []
+- name: React
+  coordinates:
+    axis_1: -3.0928
+    axis_2: -0.6301
+  role: competitor
+  color: '#CF6F8F'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 1.0
+    Restyleable: 3.0
+    Accessibility: 2.0
+    Maturity: 5.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 2.0
+    Ecosystem: 5.0
+  imputed_attributes: []
+- name: Vue
+  coordinates:
+    axis_1: -1.9594
+    axis_2: 0.2423
+  role: competitor
+  color: '#BB6595'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 2.0
+    Restyleable: 3.0
+    Accessibility: 3.0
+    Maturity: 5.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Svelte
+  coordinates:
+    axis_1: 0.0181
+    axis_2: 1.2281
+  role: competitor
+  color: '#22B494'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 3.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 4.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: HTMX
+  coordinates:
+    axis_1: 0.4244
+    axis_2: 2.2622
+  role: competitor
+  color: '#509C5A'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 4.0
+    Accessibility: 4.0
+    Maturity: 3.0
+    Skill-native: 1.0
+    Interactive: 3.0
+    Free/Open: 5.0
+    Ease: 4.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: Alpine.js
+  coordinates:
+    axis_1: 0.6454
+    axis_2: 1.5012
+  role: competitor
+  color: '#89BA66'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 3.0
+    Accessibility: 3.0
+    Maturity: 3.0
+    Skill-native: 1.0
+    Interactive: 3.0
+    Free/Open: 5.0
+    Ease: 4.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: Tailwind CSS
+  coordinates:
+    axis_1: -1.6967
+    axis_2: 3.0249
+  role: top
+  color: '#AF52DE'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 5.0
+    Accessibility: 4.0
+    Maturity: 5.0
+    Skill-native: 2.0
+    Interactive: 1.0
+    Free/Open: 5.0
+    Ease: 4.0
+    Ecosystem: 5.0
+  imputed_attributes: []
+- name: Pico CSS
+  coordinates:
+    axis_1: 1.9561
+    axis_2: 2.3867
+  role: competitor
+  color: '#94A948'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 5.0
+    Restyleable: 2.0
+    Accessibility: 4.0
+    Maturity: 3.0
+    Skill-native: 1.0
+    Interactive: 1.0
+    Free/Open: 5.0
+    Ease: 5.0
+    Ecosystem: 2.0
+  imputed_attributes: []
+- name: shadcn/ui
+  coordinates:
+    axis_1: -1.4124
+    axis_2: 1.4912
+  role: competitor
+  color: '#AF9CF3'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 3.0
+    Restyleable: 4.0
+    Accessibility: 4.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Radix UI
+  coordinates:
+    axis_1: -1.3437
+    axis_2: 1.4793
+  role: competitor
+  color: '#9196EC'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 3.0
+    Restyleable: 3.0
+    Accessibility: 5.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Vega-Lite
+  coordinates:
+    axis_1: -0.5546
+    axis_2: 1.7528
+  role: competitor
+  color: '#13C0B4'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 3.0
+    Restyleable: 4.0
+    Accessibility: 4.0
+    Maturity: 4.0
+    Skill-native: 2.0
+    Interactive: 4.0
+    Free/Open: 5.0
+    Ease: 4.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: D3.js
+  coordinates:
+    axis_1: -3.4649
+    axis_2: 1.5329
+  role: competitor
+  color: '#B76CAB'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 5.0
+    Accessibility: 3.0
+    Maturity: 5.0
+    Skill-native: 1.0
+    Interactive: 5.0
+    Free/Open: 5.0
+    Ease: 1.0
+    Ecosystem: 5.0
+  imputed_attributes: []
+- name: Plotly.js
+  coordinates:
+    axis_1: -1.298
+    axis_2: -0.9545
+  role: competitor
+  color: '#F38E83'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 1.0
+    Restyleable: 2.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 5.0
+    Free/Open: 4.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Gradio
+  coordinates:
+    axis_1: 0.6605
+    axis_2: -0.905
+  role: competitor
+  color: '#C18F2D'
+  attributes:
+    Local-first: 4.0
+    Lightweight: 2.0
+    Restyleable: 1.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 4.0
+    Ease: 5.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: Streamlit
+  coordinates:
+    axis_1: 0.0687
+    axis_2: -0.9597
+  role: competitor
+  color: '#E6A053'
+  attributes:
+    Local-first: 4.0
+    Lightweight: 2.0
+    Restyleable: 1.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 4.0
+    Free/Open: 4.0
+    Ease: 5.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Tauri
+  coordinates:
+    axis_1: 0.0398
+    axis_2: 1.8592
+  role: competitor
+  color: '#3EAB79'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 4.0
+    Accessibility: 3.0
+    Maturity: 3.0
+    Skill-native: 1.0
+    Interactive: 3.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: Hugo
+  coordinates:
+    axis_1: -1.1469
+    axis_2: 1.9308
+  role: competitor
+  color: '#5592DA'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 4.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 2.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Astro
+  coordinates:
+    axis_1: -1.3962
+    axis_2: 1.691
+  role: competitor
+  color: '#7393E3'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 3.0
+    Restyleable: 4.0
+    Accessibility: 4.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 3.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: MkDocs Material
+  coordinates:
+    axis_1: -0.5387
+    axis_2: 1.678
+  role: competitor
+  color: '#3AD7DF'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 3.0
+    Accessibility: 4.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 2.0
+    Free/Open: 4.0
+    Ease: 4.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: axe-core
+  coordinates:
+    axis_1: -2.2623
+    axis_2: 2.0956
+  role: competitor
+  color: '#B68DDF'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 4.0
+    Restyleable: 3.0
+    Accessibility: 5.0
+    Maturity: 5.0
+    Skill-native: 1.0
+    Interactive: 1.0
+    Free/Open: 4.0
+    Ease: 3.0
+    Ecosystem: 5.0
+  imputed_attributes: []
+- name: Pa11y
+  coordinates:
+    axis_1: -0.7031
+    axis_2: 2.1334
+  role: competitor
+  color: '#00A0BA'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 3.0
+    Restyleable: 3.0
+    Accessibility: 5.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 1.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: Claude vision
+  coordinates:
+    axis_1: -1.2176
+    axis_2: -0.6287
+  role: competitor
+  color: '#FF9AA5'
+  attributes:
+    Local-first: 1.0
+    Lightweight: 3.0
+    Restyleable: 3.0
+    Accessibility: 4.0
+    Maturity: 5.0
+    Skill-native: 2.0
+    Interactive: 2.0
+    Free/Open: 1.0
+    Ease: 3.0
+    Ecosystem: 5.0
+  imputed_attributes: []
+- name: Claude Dashboards
+  coordinates:
+    axis_1: 2.8931
+    axis_2: -1.6022
+  role: competitor
+  color: '#CBC761'
+  attributes:
+    Local-first: 1.0
+    Lightweight: 3.0
+    Restyleable: 2.0
+    Accessibility: 3.0
+    Maturity: 2.0
+    Skill-native: 2.0
+    Interactive: 5.0
+    Free/Open: 1.0
+    Ease: 5.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: Claude Motion
+  coordinates:
+    axis_1: 3.4649
+    axis_2: -0.9363
+  role: right
+  color: '#007AFF'
+  attributes:
+    Local-first: 1.0
+    Lightweight: 3.0
+    Restyleable: 3.0
+    Accessibility: 2.0
+    Maturity: 2.0
+    Skill-native: 2.0
+    Interactive: 2.0
+    Free/Open: 1.0
+    Ease: 5.0
+    Ecosystem: 2.0
+  imputed_attributes: []
+- name: LLaVA / MiniCPM-V
+  coordinates:
+    axis_1: -0.5574
+    axis_2: 1.0146
+  role: competitor
+  color: '#67C4FF'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 2.0
+    Restyleable: 3.0
+    Accessibility: 3.0
+    Maturity: 3.0
+    Skill-native: 1.0
+    Interactive: 1.0
+    Free/Open: 5.0
+    Ease: 2.0
+    Ecosystem: 3.0
+  imputed_attributes: []
+- name: whisper.cpp
+  coordinates:
+    axis_1: -0.8289
+    axis_2: 2.1587
+  role: competitor
+  color: '#4AC5F3'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 5.0
+    Restyleable: 3.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 1.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Deepgram
+  coordinates:
+    axis_1: -0.4118
+    axis_2: -0.7336
+  role: competitor
+  color: '#E68867'
+  attributes:
+    Local-first: 1.0
+    Lightweight: 3.0
+    Restyleable: 3.0
+    Accessibility: 4.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 2.0
+    Free/Open: 1.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Looker
+  coordinates:
+    axis_1: -1.6252
+    axis_2: -3.0249
+  role: worst
+  color: '#A52A2A'
+  attributes:
+    Local-first: 1.0
+    Lightweight: 1.0
+    Restyleable: 2.0
+    Accessibility: 3.0
+    Maturity: 5.0
+    Skill-native: 1.0
+    Interactive: 5.0
+    Free/Open: 1.0
+    Ease: 2.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: ThoughtSpot
+  coordinates:
+    axis_1: -0.6805
+    axis_2: -2.6329
+  role: competitor
+  color: '#F6A168'
+  attributes:
+    Local-first: 2.0
+    Lightweight: 1.0
+    Restyleable: 2.0
+    Accessibility: 3.0
+    Maturity: 4.0
+    Skill-native: 1.0
+    Interactive: 5.0
+    Free/Open: 1.0
+    Ease: 3.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: Highcharts
+  coordinates:
+    axis_1: -1.4191
+    axis_2: 0.8129
+  role: competitor
+  color: '#D698E4'
+  attributes:
+    Local-first: 5.0
+    Lightweight: 3.0
+    Restyleable: 4.0
+    Accessibility: 5.0
+    Maturity: 5.0
+    Skill-native: 1.0
+    Interactive: 5.0
+    Free/Open: 2.0
+    Ease: 4.0
+    Ecosystem: 4.0
+  imputed_attributes: []
+- name: TensorFlow Embedding Projector
+  coordinates:
+    axis_1: 1.0801
+    axis_2: -0.724
+  role: competitor
+  color: '#DFC25D'
+  attributes:
+    Local-first: 4.0
+    Lightweight: 3.0
+    Restyleable: 1.0
+    Accessibility: 2.0
+    Maturity: 3.0
+    Skill-native: 1.0
+    Interactive: 5.0
+    Free/Open: 5.0
+    Ease: 3.0
+    Ecosystem: 2.0
+  imputed_attributes: []

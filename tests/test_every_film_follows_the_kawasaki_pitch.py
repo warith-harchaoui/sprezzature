@@ -1,5 +1,5 @@
 """
-Every film says what it is, then the problem, the solution and the magic.
+Every film says what it is, the problem, the solution, the sauce, an example.
 
 Guy KAWASAKI's order, adopted 2026-10-27 for the whole set. A viewer who does
 not know the package needs the pain before the cure, and the cure before the
@@ -15,10 +15,14 @@ the only way to find out was to read seventy scenes and judge each one. A
 shared order that lives in comments is a shared order until the first person
 adds a scene in a hurry.
 
-So the order is declared. Each scene carries ``beat="problem"`` /
-``"what"`` / ``"solution"`` / ``"magic"`` / ``"cta"``, and this file checks that the
-beats of a film run down that list without going back up. A scene added in
-the wrong place fails here, by name, before anything is rendered.
+So the order is declared. Each scene carries a ``beat=``, and this file checks
+that the beats of a film run down ``build_films.BEAT_ORDER`` without going
+back up. A scene added in the wrong place fails here, by name, before anything
+is rendered.
+
+The list is read rather than repeated, and that is not tidiness. It was
+repeated here until 2026-10-29, the films gained a sixth beat, and the copy
+raised ``ValueError`` on all eleven of them while every film was correct.
 
 What is deliberately *not* checked
 ----------------------------------
@@ -41,9 +45,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "brag-output"))
 
-#: The beats, in the only order they may appear in. A film skips a beat at
-#: its peril but may not reverse one.
-SPINE = ("what", "problem", "solution", "magic", "cta")
+def _spine() -> tuple[str, ...]:
+    """The beats, in order, asked of the module that declares them.
+
+    This was a literal here, ``("what", "problem", "solution", "magic",
+    "cta")``, and on 2026-10-29 the films gained a sixth beat: the finest
+    example the package can show, between the mechanism and the ask. The
+    literal did not know it, so ``SPINE.index(scene["beat"])`` raised
+    ``ValueError`` on every rewritten film, and the exception named the beat
+    rather than the disagreement.
+
+    A guard with its own copy of the thing it guards is the defect this suite
+    keeps turning up one layer down: the tool exists, and the caller keeps a
+    second opinion that drifts. ``build_films.BEAT_ORDER`` is the declaration;
+    this reads it, so the next beat somebody adds arrives here on its own.
+
+    What is still checked is what a shared constant cannot settle: that every
+    scene declares a beat, and that the beats never run backwards.
+    """
+    import build_films
+
+    return tuple(build_films.BEAT_ORDER)
 
 
 def _films() -> dict[str, dict]:
@@ -60,15 +82,16 @@ def _films() -> dict[str, dict]:
 
 def test_every_scene_declares_which_beat_it_belongs_to() -> None:
     """No scene is left to be classified by whoever reads it next."""
+    spine = _spine()
     missing = [
         f"{film} scene {i} ({scene['type']}, {scene['start']}s)"
         for film, spec in _films().items()
         for i, scene in enumerate(spec["scenes"])
-        if scene.get("beat") not in SPINE
+        if scene.get("beat") not in spine
     ]
     assert not missing, (
         f"{len(missing)} scene(s) carry no beat, or one that is not "
-        f"{SPINE}:\n  " + "\n  ".join(missing)
+        f"{spine}:\n  " + "\n  ".join(missing)
     )
 
 
@@ -80,15 +103,21 @@ def test_the_beats_of_a_film_never_run_backwards() -> None:
     it belongs in the argument — a second problem statement dropped in after
     the solution, which reads to a viewer as the film changing its mind.
     """
+    spine = _spine()
     wrong: list[str] = []
     for film, spec in _films().items():
         rank = -1
         for i, scene in enumerate(spec["scenes"]):
-            got = SPINE.index(scene["beat"])
+            # The companion test above refuses a scene whose beat is not in
+            # the spine, so an unknown beat is reported there rather than
+            # raising a ValueError here with no film named.
+            if scene.get("beat") not in spine:
+                continue
+            got = spine.index(scene["beat"])
             if got < rank:
                 wrong.append(
                     f"{film} scene {i} ({scene['type']}, {scene['start']}s) is "
-                    f"{scene['beat']!r} after {SPINE[rank]!r}"
+                    f"{scene['beat']!r} after {spine[rank]!r}"
                 )
             rank = max(rank, got)
     assert not wrong, (
@@ -195,16 +224,42 @@ def test_the_closing_ask_is_also_spoken() -> None:
 
     Only the two nouns are checked. How the sentence is built is the
     writer's: English asks in two clauses, French in two sentences.
+
+    The closing *block*, not the last line
+    --------------------------------------
+    This read ``[-1]`` until 2026-10-29, which was right while the ask was the
+    last thing said. The format gained a punchline after it, so the last line
+    became "Make it, audit it, take a look at it." and the ask moved one line
+    up. The guard then failed every rewritten film while the films were
+    correct, which is the worse direction for a guard to fail in: it asks
+    somebody to repair work that is already right.
+
+    So it reads the lines that fall inside the closing scene, whichever they
+    are. That is what the docstring above always meant by "the close", and it
+    survives the next thing somebody puts after the ask.
     """
     import build_films
     import make_captions
 
     silent: list[str] = []
     for film, lang in build_films.cuts():
-        if build_films.FILMS[film]["duration"] < 30:
+        spec = build_films.FILMS[film]
+        if spec["duration"] < 30:
             continue
-        spoken = make_captions.FILMS[film][lang][-1][2]
+        closing = [sc for sc in spec["scenes"] if sc.get("beat") == "cta"]
+        assert closing, f"{film}: no closing scene, so there is no ask to check"
+        opens_at = closing[0]["start"]
+        spoken = " ".join(
+            text for start, _dur, text in make_captions.FILMS[film][lang]
+            if start >= opens_at
+        )
+        assert spoken.strip(), (
+            f"{film}.{lang}: the closing scene opens at {opens_at}s and no "
+            f"narration line starts inside it, so the close is silent"
+        )
         for noun in ("GitHub", "sprezzature.ai"):
             if noun not in spoken:
-                silent.append(f"{film}.{lang}: the last line never says {noun!r} ({spoken!r})")
+                silent.append(
+                    f"{film}.{lang}: the close never says {noun!r} ({spoken!r})"
+                )
     assert not silent, "\n  ".join(["", *silent])

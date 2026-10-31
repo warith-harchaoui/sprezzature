@@ -1,0 +1,611 @@
+meta:
+  reference: sprezzature (les *skills*)
+  rotation_deg: 86.666
+  explained_variance_ratio:
+  - 0.2822
+  - 0.2632
+  cumulative_variance: 0.5454
+  n_approaches: 31
+  attributes:
+  - Local-first
+  - Léger
+  - Personnalisable
+  - Accessibilité
+  - Maturité
+  - Intégré
+  - Interactif
+  - Libre
+  - Facilité
+  - Écosystème
+  lower_is_better: []
+  imputed_cells: []
+axes:
+  axis_1:
+    name: Stabilité ↔ Simplicité
+    pole_left: Stabilité
+    pole_right: Simplicité
+    loadings:
+      Local-first: -0.1913
+      Léger: 0.1798
+      Personnalisable: -0.1558
+      Accessibilité: -0.0666
+      Maturité: -0.5541
+      Intégré: 0.3058
+      Interactif: -0.0235
+      Libre: -0.124
+      Facilité: 0.4498
+      Écosystème: -0.5325
+  axis_2:
+    name: Dynamisme ↔ Flexibilité
+    pole_bottom: Dynamisme
+    pole_top: Flexibilité
+    loadings:
+      Local-first: 0.4366
+      Léger: 0.4751
+      Personnalisable: 0.4157
+      Accessibilité: 0.3278
+      Maturité: -0.0666
+      Intégré: 0.1796
+      Interactif: -0.2889
+      Libre: 0.4244
+      Facilité: 0.0278
+      Écosystème: -0.0493
+approaches:
+- name: sprezzature (les *skills*)
+  coordinates:
+    axis_1: 3.4649
+    axis_2: 3.0249
+  role: best
+  color: '#FF3B30'
+  attributes:
+    Local-first: 5.0
+    Léger: 5.0
+    Personnalisable: 5.0
+    Accessibilité: 5.0
+    Maturité: 2.0
+    Intégré: 5.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 4.0
+    Écosystème: 2.0
+  imputed_attributes: []
+- name: React
+  coordinates:
+    axis_1: -3.0928
+    axis_2: -0.6301
+  role: competitor
+  color: '#CF6F8F'
+  attributes:
+    Local-first: 5.0
+    Léger: 1.0
+    Personnalisable: 3.0
+    Accessibilité: 2.0
+    Maturité: 5.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 2.0
+    Écosystème: 5.0
+  imputed_attributes: []
+- name: Vue
+  coordinates:
+    axis_1: -1.9594
+    axis_2: 0.2423
+  role: competitor
+  color: '#BB6595'
+  attributes:
+    Local-first: 5.0
+    Léger: 2.0
+    Personnalisable: 3.0
+    Accessibilité: 3.0
+    Maturité: 5.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Svelte
+  coordinates:
+    axis_1: 0.0181
+    axis_2: 1.2281
+  role: competitor
+  color: '#22B494'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 3.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 4.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: HTMX
+  coordinates:
+    axis_1: 0.4244
+    axis_2: 2.2622
+  role: competitor
+  color: '#509C5A'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 4.0
+    Accessibilité: 4.0
+    Maturité: 3.0
+    Intégré: 1.0
+    Interactif: 3.0
+    Libre: 5.0
+    Facilité: 4.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: Alpine.js
+  coordinates:
+    axis_1: 0.6454
+    axis_2: 1.5012
+  role: competitor
+  color: '#89BA66'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 3.0
+    Accessibilité: 3.0
+    Maturité: 3.0
+    Intégré: 1.0
+    Interactif: 3.0
+    Libre: 5.0
+    Facilité: 4.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: Tailwind CSS
+  coordinates:
+    axis_1: -1.6967
+    axis_2: 3.0249
+  role: top
+  color: '#AF52DE'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 5.0
+    Accessibilité: 4.0
+    Maturité: 5.0
+    Intégré: 2.0
+    Interactif: 1.0
+    Libre: 5.0
+    Facilité: 4.0
+    Écosystème: 5.0
+  imputed_attributes: []
+- name: Pico CSS
+  coordinates:
+    axis_1: 1.9561
+    axis_2: 2.3867
+  role: competitor
+  color: '#94A948'
+  attributes:
+    Local-first: 5.0
+    Léger: 5.0
+    Personnalisable: 2.0
+    Accessibilité: 4.0
+    Maturité: 3.0
+    Intégré: 1.0
+    Interactif: 1.0
+    Libre: 5.0
+    Facilité: 5.0
+    Écosystème: 2.0
+  imputed_attributes: []
+- name: shadcn/ui
+  coordinates:
+    axis_1: -1.4124
+    axis_2: 1.4912
+  role: competitor
+  color: '#AF9CF3'
+  attributes:
+    Local-first: 5.0
+    Léger: 3.0
+    Personnalisable: 4.0
+    Accessibilité: 4.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Radix UI
+  coordinates:
+    axis_1: -1.3437
+    axis_2: 1.4793
+  role: competitor
+  color: '#9196EC'
+  attributes:
+    Local-first: 5.0
+    Léger: 3.0
+    Personnalisable: 3.0
+    Accessibilité: 5.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Vega-Lite
+  coordinates:
+    axis_1: -0.5546
+    axis_2: 1.7528
+  role: competitor
+  color: '#13C0B4'
+  attributes:
+    Local-first: 5.0
+    Léger: 3.0
+    Personnalisable: 4.0
+    Accessibilité: 4.0
+    Maturité: 4.0
+    Intégré: 2.0
+    Interactif: 4.0
+    Libre: 5.0
+    Facilité: 4.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: D3.js
+  coordinates:
+    axis_1: -3.4649
+    axis_2: 1.5329
+  role: competitor
+  color: '#B76CAB'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 5.0
+    Accessibilité: 3.0
+    Maturité: 5.0
+    Intégré: 1.0
+    Interactif: 5.0
+    Libre: 5.0
+    Facilité: 1.0
+    Écosystème: 5.0
+  imputed_attributes: []
+- name: Plotly.js
+  coordinates:
+    axis_1: -1.298
+    axis_2: -0.9545
+  role: competitor
+  color: '#F38E83'
+  attributes:
+    Local-first: 5.0
+    Léger: 1.0
+    Personnalisable: 2.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 5.0
+    Libre: 4.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Gradio
+  coordinates:
+    axis_1: 0.6605
+    axis_2: -0.905
+  role: competitor
+  color: '#C18F2D'
+  attributes:
+    Local-first: 4.0
+    Léger: 2.0
+    Personnalisable: 1.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 4.0
+    Facilité: 5.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: Streamlit
+  coordinates:
+    axis_1: 0.0687
+    axis_2: -0.9597
+  role: competitor
+  color: '#E6A053'
+  attributes:
+    Local-first: 4.0
+    Léger: 2.0
+    Personnalisable: 1.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 4.0
+    Libre: 4.0
+    Facilité: 5.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Tauri
+  coordinates:
+    axis_1: 0.0398
+    axis_2: 1.8592
+  role: competitor
+  color: '#3EAB79'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 4.0
+    Accessibilité: 3.0
+    Maturité: 3.0
+    Intégré: 1.0
+    Interactif: 3.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: Hugo
+  coordinates:
+    axis_1: -1.1469
+    axis_2: 1.9308
+  role: competitor
+  color: '#5592DA'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 4.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 2.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Astro
+  coordinates:
+    axis_1: -1.3962
+    axis_2: 1.691
+  role: competitor
+  color: '#7393E3'
+  attributes:
+    Local-first: 5.0
+    Léger: 3.0
+    Personnalisable: 4.0
+    Accessibilité: 4.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 3.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: MkDocs Material
+  coordinates:
+    axis_1: -0.5387
+    axis_2: 1.678
+  role: competitor
+  color: '#3AD7DF'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 3.0
+    Accessibilité: 4.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 2.0
+    Libre: 4.0
+    Facilité: 4.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: axe-core
+  coordinates:
+    axis_1: -2.2623
+    axis_2: 2.0956
+  role: competitor
+  color: '#B68DDF'
+  attributes:
+    Local-first: 5.0
+    Léger: 4.0
+    Personnalisable: 3.0
+    Accessibilité: 5.0
+    Maturité: 5.0
+    Intégré: 1.0
+    Interactif: 1.0
+    Libre: 4.0
+    Facilité: 3.0
+    Écosystème: 5.0
+  imputed_attributes: []
+- name: Pa11y
+  coordinates:
+    axis_1: -0.7031
+    axis_2: 2.1334
+  role: competitor
+  color: '#00A0BA'
+  attributes:
+    Local-first: 5.0
+    Léger: 3.0
+    Personnalisable: 3.0
+    Accessibilité: 5.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 1.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: Claude vision
+  coordinates:
+    axis_1: -1.2176
+    axis_2: -0.6287
+  role: competitor
+  color: '#FF9AA5'
+  attributes:
+    Local-first: 1.0
+    Léger: 3.0
+    Personnalisable: 3.0
+    Accessibilité: 4.0
+    Maturité: 5.0
+    Intégré: 2.0
+    Interactif: 2.0
+    Libre: 1.0
+    Facilité: 3.0
+    Écosystème: 5.0
+  imputed_attributes: []
+- name: Claude Dashboards
+  coordinates:
+    axis_1: 2.8931
+    axis_2: -1.6022
+  role: competitor
+  color: '#CBC761'
+  attributes:
+    Local-first: 1.0
+    Léger: 3.0
+    Personnalisable: 2.0
+    Accessibilité: 3.0
+    Maturité: 2.0
+    Intégré: 2.0
+    Interactif: 5.0
+    Libre: 1.0
+    Facilité: 5.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: Claude Motion
+  coordinates:
+    axis_1: 3.4649
+    axis_2: -0.9363
+  role: right
+  color: '#007AFF'
+  attributes:
+    Local-first: 1.0
+    Léger: 3.0
+    Personnalisable: 3.0
+    Accessibilité: 2.0
+    Maturité: 2.0
+    Intégré: 2.0
+    Interactif: 2.0
+    Libre: 1.0
+    Facilité: 5.0
+    Écosystème: 2.0
+  imputed_attributes: []
+- name: LLaVA / MiniCPM-V
+  coordinates:
+    axis_1: -0.5574
+    axis_2: 1.0146
+  role: competitor
+  color: '#67C4FF'
+  attributes:
+    Local-first: 5.0
+    Léger: 2.0
+    Personnalisable: 3.0
+    Accessibilité: 3.0
+    Maturité: 3.0
+    Intégré: 1.0
+    Interactif: 1.0
+    Libre: 5.0
+    Facilité: 2.0
+    Écosystème: 3.0
+  imputed_attributes: []
+- name: whisper.cpp
+  coordinates:
+    axis_1: -0.8289
+    axis_2: 2.1587
+  role: competitor
+  color: '#4AC5F3'
+  attributes:
+    Local-first: 5.0
+    Léger: 5.0
+    Personnalisable: 3.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 1.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Deepgram
+  coordinates:
+    axis_1: -0.4118
+    axis_2: -0.7336
+  role: competitor
+  color: '#E68867'
+  attributes:
+    Local-first: 1.0
+    Léger: 3.0
+    Personnalisable: 3.0
+    Accessibilité: 4.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 2.0
+    Libre: 1.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Looker
+  coordinates:
+    axis_1: -1.6252
+    axis_2: -3.0249
+  role: worst
+  color: '#A52A2A'
+  attributes:
+    Local-first: 1.0
+    Léger: 1.0
+    Personnalisable: 2.0
+    Accessibilité: 3.0
+    Maturité: 5.0
+    Intégré: 1.0
+    Interactif: 5.0
+    Libre: 1.0
+    Facilité: 2.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: ThoughtSpot
+  coordinates:
+    axis_1: -0.6805
+    axis_2: -2.6329
+  role: competitor
+  color: '#F6A168'
+  attributes:
+    Local-first: 2.0
+    Léger: 1.0
+    Personnalisable: 2.0
+    Accessibilité: 3.0
+    Maturité: 4.0
+    Intégré: 1.0
+    Interactif: 5.0
+    Libre: 1.0
+    Facilité: 3.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: Highcharts
+  coordinates:
+    axis_1: -1.4191
+    axis_2: 0.8129
+  role: competitor
+  color: '#D698E4'
+  attributes:
+    Local-first: 5.0
+    Léger: 3.0
+    Personnalisable: 4.0
+    Accessibilité: 5.0
+    Maturité: 5.0
+    Intégré: 1.0
+    Interactif: 5.0
+    Libre: 2.0
+    Facilité: 4.0
+    Écosystème: 4.0
+  imputed_attributes: []
+- name: TensorFlow Embedding Projector
+  coordinates:
+    axis_1: 1.0801
+    axis_2: -0.724
+  role: competitor
+  color: '#DFC25D'
+  attributes:
+    Local-first: 4.0
+    Léger: 3.0
+    Personnalisable: 1.0
+    Accessibilité: 2.0
+    Maturité: 3.0
+    Intégré: 1.0
+    Interactif: 5.0
+    Libre: 5.0
+    Facilité: 3.0
+    Écosystème: 2.0
+  imputed_attributes: []

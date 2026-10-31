@@ -211,6 +211,7 @@
           <a href="https://github.com/warith-harchaoui/sprezzature"
             class="rounded-xl border border-neutral-300 px-5 py-2.5 font-medium hover:border-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 min-h-11">Give a ⭐️ on GitHub</a>
         </div>
+        <ul role="list" aria-label="The suite in four numbers" class="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4"><li><a href="packages.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">10</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">packages</span></a></li><li><a href="figures.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">167</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">chart types</span></a></li><li><a href="maps.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">14</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">map plates</span></a></li><li><span class="block px-3 py-2"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">0</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">accounts needed</span></span></li></ul>
       </div>
     </section>
 
@@ -226,7 +227,7 @@
             poster="video/sprezzature.en.jpg"
             class="w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="video/sprezzature.en.mp4" type="video/mp4">
-            <track kind="captions" src="video/sprezzature.en.vtt" srclang="en" label="English" default>
+            <track kind="captions" src="video/sprezzature.en.vtt" srclang="en" label="English">
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">Your browser cannot play this video.
               <a class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="video/sprezzature.en.mp4">Download the MP4</a>.</p>
           </video>
@@ -276,14 +277,8 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
     <section id="ecosystem" class="mx-auto max-w-6xl px-5 py-12">
       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The tool ecosystem</h2>
       <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Each skill's scripts also ship as a standalone package, reachable <a href="packages.html" class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">five ways</a>: a self-contained zip, a Python library, an HTTP API, MCP tools for an agent, or the skill itself. Same implementation behind all of them.</p>
-      <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm" role="list">
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-figures" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-figures</a>: 167 chart types</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-colors" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-colors</a>: WCAG + CVD + Tailwind</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-audio" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-audio</a>: speech-to-text, diarization</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-accessibility</a>: a11y lint</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-cli-gui</a>: CLI to GUI</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-ux-laws</a>: Laws of UX audit</li>
-        <li><a href="https://github.com/warith-harchaoui/sprezzature-maps" class="font-mono text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">sprezzature-maps</a>: choropleth + situation</li>
+      <ul id="ecosystem-list" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm" role="list">
+        <!-- derived from SKILLS below, so the two lists cannot disagree -->
       </ul>
     </section>
 
@@ -442,6 +437,29 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-maps', 'Maps', 'Choropleths and areas-of-control situation plates on a real geographic projection; schematic place-shaped charts stay in figures. Work in progress. Illustrations of the method, not operational assessments.', 'maps.html'],
       ['sprezzature-video', 'Video claims', 'Checks what a film says against the code it describes: declared claims verified, undeclared numbers caught, and whether the film can be rendered again from a clone.', 'video.html'],
     ];
+
+    // The ecosystem list is the same ten packages as the cards above, so it is
+    // built from the same array rather than typed a second time: the hand-kept
+    // copy had been missing sprezzature-ui, -publish and -video, and nothing
+    // on the page could notice.
+    const BLURB = {
+      "sprezzature-ui": "vanilla JS + Tailwind screens",
+      "sprezzature-cli-gui": "CLI to GUI",
+      "sprezzature-publish": "Markdown to a findable site",
+      "sprezzature-accessibility": "a11y lint, and the alt text",
+      "sprezzature-colors": "WCAG + CVD + Tailwind",
+      "sprezzature-audio": "speech to text, text to speech",
+      "sprezzature-ux-laws": "Laws of UX audit",
+      "sprezzature-figures": "167 chart types",
+      "sprezzature-maps": "choropleth + situation plates",
+      "sprezzature-video": "a film's claims, checked"
+    };
+    const ecosystemUl = document.querySelector('#ecosystem-list');
+    if (ecosystemUl) {
+      ecosystemUl.innerHTML = SKILLS.map(([id]) => `
+        <li><a href="https://github.com/warith-harchaoui/${id}" class="flex items-baseline gap-1.5 rounded px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"><span class="font-mono text-brand-linktext underline hover:no-underline">${id}</span><span class="text-neutral-600 dark:text-neutral-300">${BLURB[id] || ''}</span></a></li>`).join('');
+    }
+
     const skillsUl = document.querySelector('#skills ul');
     skillsUl.innerHTML = SKILLS.map(([id, title, desc, page]) => `
       <li>

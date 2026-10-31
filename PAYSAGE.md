@@ -86,6 +86,8 @@ livraison **en *skill***.
 | [axe-core](https://github.com/dequelabs/axe-core) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
 | [Pa11y](https://pa11y.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
 | [Claude vision](https://docs.claude.com/en/docs/build-with-claude/vision) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [Claude Dashboards](https://www.anthropic.com/news/claude-dashboards-and-motion) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Claude Motion](https://www.anthropic.com/news/claude-dashboards-and-motion) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
 | [LLaVA / MiniCPM-V](https://huggingface.co/docs/transformers/model_doc/llava) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ |
 | [whisper.cpp](https://github.com/ggml-org/whisper.cpp) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
 | [Deepgram](https://deepgram.com) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
@@ -139,6 +141,62 @@ redessinée à chaque construction.
 Les matrices par catégorie ci-dessous conservent les colonnes qui n'ont de sens qu'au sein d'une seule catégorie.
 
 ---
+
+![Trente et un outils positionnés sur deux axes dérivés de la table ci-dessus par analyse en composantes principales. L'axe horizontal va de Stabilité à gauche à Simplicité à droite ; l'axe vertical de Dynamisme en bas à Flexibilité en haut. sprezzature occupe le coin supérieur droit, par construction puisqu'il est la ligne de référence, avec Pico CSS et HTMX à côté. React, Vue et D3.js sont loin à gauche et haut : matures, restylables et locaux, mais rien chez eux n'est livré en skill. Looker et ThoughtSpot sont dans le coin opposé à la référence, en bas à gauche. Claude Dashboards et Claude Motion sont bas à droite, le coin hébergé, facile et vivant, avec Streamlit et Gradio entre eux et le centre.](assets/paysage.svg)
+
+Les deux axes portent ensemble environ 55 % de la table : lisez la carte comme un résumé
+et la table comme l'affirmation. Ce que l'axe horizontal trouve tout seul, c'est
+**maturité et écosystème contre facilité et livraison en *skill*** — les deux colonnes
+que `sprezzature` échange délibérément, ce qui est la forme honnête du marché. L'axe
+vertical trouve quelque chose que la prose ci-dessus n'avait pas nommé : **local, léger,
+libre et restylable en haut, hébergé et vivant en bas**. Tous les produits hébergés de la
+table — Looker, ThoughtSpot, Deepgram, Claude vision, Claude Dashboards, Claude Motion —
+sont sous la ligne, et tout ce qui s'installe avec `pip` est au-dessus. C'est une seule
+ligne, et c'est celle sur laquelle cette suite se tient.
+
+### Les voisins les plus proches sont désormais ceux d'Anthropic
+
+Le 8 octobre 2026, Anthropic a sorti [Claude Dashboards et Claude
+Motion](https://www.anthropic.com/news/claude-dashboards-and-motion) et fait sortir de
+bêta Claude Docs, Slides et Design. Deux d'entre eux tombent exactement sur le terrain de
+cette suite, et prétendre le contraire rendrait ce fichier inutile.
+
+**Claude Dashboards** branche un entrepôt de données — Redshift, BigQuery, ClickHouse,
+Databricks, Snowflake, Salesforce — et répond à une question en langue courante par un
+tableau de bord vivant qui se met à jour avec les données, chaque graphique montrant la
+requête qui le produit. **Claude Motion** écrit l'animation sous forme de code plutôt que
+de générer de la vidéo : textes, graphiques, formes et images placés et minutés par un
+programme, exportés en MP4, les éléments restant modifiables comme du code jusque-là. Les
+deux sont réservés aux offres payantes ; Motion aux offres Team et Enterprise.
+
+Ce que cela laisse à `sprezzature`, dit franchement :
+
+- **Si la question est « que se passe-t-il dans l'entrepôt en ce moment », Claude
+  Dashboards gagne, et de loin.** Cette suite dessine une figure à partir de lignes que
+  vous avez déjà. Elle n'a ni connecteur, ni rafraîchissement, ni endroit où se
+  connecter. `sprezzature-figures` se donne une étoile sur cinq en tableaux de bord dans
+  son propre LANDSCAPE, et c'est mérité.
+- **Si la sortie doit être un fichier qui vous appartient, cette suite gagne.** Un SVG sur
+  votre disque, un générateur installable par `pip`, et un dépôt que quelqu'un pourra
+  cloner dans cinq ans. Un artefact Claude vit dans un compte, sous une offre, derrière un
+  identifiant. C'est un autre produit, pas un moins bon, et la différence ne compte que
+  quand elle compte.
+- **Si la chose doit tourner sans aucun compte, il n'y a pas de match.** Chaque paquet
+  `sprezzature-*` tourne hors ligne contre un modèle local. Les deux surfaces Claude sont
+  hébergées par construction.
+- **Sur les films en particulier**, `sprezzature-video` fait une chose que Motion ne fait
+  pas : il relit les revendications d'un film et les confronte au code dont le film parle,
+  et il refuse de refabriquer une coupe quand le registre des ressources dit qu'un clone
+  ne saurait pas la reconstruire. Motion fabrique l'animation ; rien chez lui ne demande
+  si le nombre à l'écran sera encore vrai le mois prochain. C'est toute la raison d'être
+  de `sprezzature-video`.
+
+L'accord est plus grand que le désaccord, et il vaut la peine d'être dit : Motion écrit
+l'animation **comme du code**, sans modèle vidéo nulle part dans la chaîne. C'est
+exactement la position que cette suite tient sur les figures, les cartes et les films,
+prise indépendamment par la plus grosse équipe qui travaille le problème. C'est bon signe
+pour la position, et mauvais signe pour quiconque vend des images générées comme un
+document.
 
 ## Choix rapide
 

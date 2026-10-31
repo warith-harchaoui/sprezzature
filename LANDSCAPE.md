@@ -86,6 +86,8 @@ for light weight, restyleability, accessibility, and skill-native delivery.
 | [axe-core](https://github.com/dequelabs/axe-core) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
 | [Pa11y](https://pa11y.org) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
 | [Claude vision](https://docs.claude.com/en/docs/build-with-claude/vision) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+| [Claude Dashboards](https://www.anthropic.com/news/claude-dashboards-and-motion) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ |
+| [Claude Motion](https://www.anthropic.com/news/claude-dashboards-and-motion) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ |
 | [LLaVA / MiniCPM-V](https://huggingface.co/docs/transformers/model_doc/llava) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ |
 | [whisper.cpp](https://github.com/ggml-org/whisper.cpp) | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
 | [Deepgram](https://deepgram.com) | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
@@ -136,6 +138,57 @@ than redrawn on every build.
 The per-category matrices below keep the columns that only make sense within one category.
 
 ---
+
+![Thirty-one tools positioned on two axes derived from the table above by principal component analysis. The horizontal axis runs from Robustness on the left to Nimble on the right; the vertical from Dynamic at the bottom to Adaptable at the top. sprezzature sits in the top-right corner, by construction, since it is the reference row, with Pico CSS and HTMX beside it. React, Vue and D3.js are far left, high up: mature, restyleable and local, but nothing about them is skill-native. Looker and ThoughtSpot sit in the opposite corner from the reference, bottom left. Claude Dashboards and Claude Motion sit low on the right, the hosted, easy, live corner, with Streamlit and Gradio between them and the centre.](assets/landscape.svg)
+
+The two axes carry about 55 % of the table between them, so read the map as a summary
+and the table as the claim. What the horizontal axis finds on its own is **maturity and
+ecosystem against ease and skill-native delivery** — the two columns `sprezzature`
+deliberately trades between, which is the honest shape of the bargain. The vertical axis
+finds something the prose above had not named: **local, light, open and restyleable at the
+top, hosted and live at the bottom**. Every hosted product in the table — Looker,
+ThoughtSpot, Deepgram, Claude vision, Claude Dashboards, Claude Motion — is below the
+line, and everything you can `pip install` is above it. That is one line, and it is the
+line this suite is on.
+
+### The nearest neighbours are now Anthropic's own
+
+On 8 October 2026 Anthropic shipped [Claude Dashboards and Claude
+Motion](https://www.anthropic.com/news/claude-dashboards-and-motion) and took Claude Docs,
+Slides and Design out of beta. Two of those land squarely on this suite's ground, and
+pretending otherwise would make this file useless.
+
+**Claude Dashboards** connects a warehouse — Redshift, BigQuery, ClickHouse, Databricks,
+Snowflake, Salesforce — and answers a plain-language question with a live dashboard that
+updates as the data does, each chart showing the query underneath it. **Claude Motion**
+writes an animation as code rather than generating video: text, charts, shapes and images
+placed and timed by a program, exported to MP4, with the elements still editable as code
+until you do. Both are paid plans only; Motion is Team and Enterprise.
+
+Where that leaves `sprezzature`, stated plainly:
+
+- **If the question is "what is happening in the warehouse right now", Claude Dashboards
+  wins and it is not close.** This suite draws one figure from rows you already have. It
+  has no connectors, no refresh, and nowhere to log in. `sprezzature-figures` scores one
+  star on dashboards and business intelligence in its own LANDSCAPE and deserves it.
+- **If the output has to be a file you own, this suite wins.** An SVG on your disk, a
+  `pip`-installable generator, and a repository someone can clone in five years. A Claude
+  artifact lives in an account, under a plan, behind a login. That is a different product,
+  not a worse one, and the difference only matters when it matters.
+- **If the thing has to run with no account at all, there is no contest.** Every
+  `sprezzature-*` package runs offline against a local model. Both Claude surfaces are
+  hosted by construction.
+- **On the films specifically**, `sprezzature-video` does one thing Motion does not: it
+  reads the claims a film makes and checks them against the code the film is about, and
+  it refuses to re-render when the asset ledger says a clone could not rebuild the cut.
+  Motion makes the animation; nothing in it asks whether the number on screen is still
+  true next month. That is the whole reason `sprezzature-video` exists.
+
+The agreement is bigger than the disagreement, and it is worth saying: Motion writes the
+animation **as code**, with no video model anywhere in the chain. That is the same
+position this suite takes on figures, maps and films, taken independently by the largest
+team working on the problem. It is a good sign for the position and a bad one for anybody
+selling generated footage as a document.
 
 ## Quick pick
 

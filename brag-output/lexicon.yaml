@@ -16,16 +16,31 @@
 #
 # Stated here once, they come out the same way everywhere.
 #
-# Two tiers, and this file uses both
-# ----------------------------------
-# `ipa:` is exact and deterministic, and kokoro — the engine these films use —
-# takes phonemes directly, so it honours IPA verbatim at the phonemisation
-# step it already runs. That is the tier to prefer.
+# Two tiers, and every entry here carries the second
+# --------------------------------------------------
+# `ipa:` is exact and deterministic, and an engine with a phoneme input
+# honours it verbatim at the phonemisation step it already runs. That is the
+# tier to prefer, and it is the tier that silently does nothing the day the
+# engine changes.
 #
 # `respelling:` is an orthographic rewrite for engines without phoneme input.
-# It is here for the entries where the right answer is "say the letters" and
-# an IPA string for a letter sequence would be long, unreadable, and no more
-# correct than the spelling it encodes.
+# It is also the tier that always works, which is why no entry here is left
+# without one.
+#
+# That rule was written the day it was needed. These films are narrated with
+# whatever `speaker-helper` routes to, and on 2026-10-29 that became
+# chatterbox in both languages: Turbo for English, Multilingual for the rest.
+# Chatterbox tokenises *graphemes*, so it never sees an IPA string. Six
+# entries had phonemes and nothing else -- WCAG, Ollama, TitaNet, Yablonski,
+# and the suite's own name in both languages -- and with `llm: false` below
+# refusing to derive anything, each of them would have been read exactly as
+# written, with nothing reporting it. The word that closes all twenty-two
+# films is the one a viewer would certainly have noticed.
+#
+# So the rule, and it is a rule about engines rather than about this file:
+# `ipa:` is an optimisation for the engines that can use it, `respelling:` is
+# the floor. An entry with only the optimisation is a pronunciation that works
+# until somebody changes a voice.
 #
 # An entry with neither would be derived once by a local LLM. None is left
 # that way on purpose: a film is a claim, and a pronunciation nobody chose is
@@ -90,9 +105,22 @@ entries:
   - word: "WCAG"
     language: en
     ipa: "ˈwʌkæɡ"
+    respelling: "wuh-cag"
   - word: "WCAG"
     language: fr
     respelling: "oué-cague"
+
+  # Spelled out in both languages, which is how everybody says it. It was
+  # already spoken in the shipped `accessibility` track with no entry at all,
+  # so each engine guessed, and the two cuts of one film disagreed about four
+  # letters. Debt found on 2026-10-29 while reading the film back, not by a
+  # check: nothing refuses a word the lexicon does not know.
+  - word: "HTML"
+    language: en
+    respelling: "H T M L"
+  - word: "HTML"
+    language: fr
+    respelling: "ache té èm èl"
 
   - word: "ROC"
     language: en
@@ -145,6 +173,7 @@ entries:
   - word: "Ollama"
     language: en
     ipa: "oʊˈlɑːmə"
+    respelling: "oh-lah-muh"
   - word: "Ollama"
     language: fr
     respelling: "o-lama"
@@ -178,6 +207,7 @@ entries:
   - word: "TitaNet"
     language: en
     ipa: "ˈtaɪtənɛt"
+    respelling: "tie-tuh-net"
   - word: "TitaNet"
     language: fr
     respelling: "tita-nette"
@@ -189,9 +219,11 @@ entries:
   - word: "Sprezzature"
     language: en
     ipa: "sprɛtsaˈtuːɹeɪ"
+    respelling: "spret-sah-too-ray"
   - word: "Sprezzature"
     language: fr
     ipa: "spʁɛtsatuʁe"
+    respelling: "sprè-tsa-tou-ré"
 
   - word: "sprezzature.ai"
     language: "*"
@@ -214,6 +246,7 @@ entries:
   - word: "Yablonski"
     language: en
     ipa: "jəˈblɑːnski"
+    respelling: "yuh-blonn-skee"
   - word: "Yablonski"
     language: fr
     respelling: "ya-blonn-ski"
