@@ -112,9 +112,17 @@ def test_the_tracks_are_tracked_by_git() -> None:
         f"least {EXPECTED_TRACKS}. A clone cannot audit captions it does not "
         f"have, and that is how this guard's neighbour came to never run in CI."
     )
-    heavy = [name for name in listed if not name.endswith(".vtt")]
+    # The voice stamps are tracked too, and for the same reason: they are what
+    # `test_no_film_is_voiced_by_a_retired_engine.py` reads, and that guard was
+    # skipping on an empty directory until the tracks arrived.
+    heavy = [
+        name
+        for name in listed
+        if not name.endswith(".vtt") and not name.endswith(".voice.json")
+    ]
     assert not heavy, (
-        "web/video should carry the caption tracks and nothing else; git also "
+        "web/video should carry the caption tracks and their voice stamps and "
+        "nothing else; git also "
         f"tracks {', '.join(heavy[:5])}. The films and their posters are "
         "render output, 258 MB of it, and do not belong in a clone."
     )

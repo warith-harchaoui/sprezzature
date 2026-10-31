@@ -181,7 +181,7 @@ BUILT_NOT_COMMITTED = ("kits/", "video/")
 #: ``video/sprezzature.en.vttt`` does not end in ``.vtt``, so it fell straight
 #: back into the exemption and passed. Measured, not reasoned about: that
 #: sabotage went green before this was turned round.
-BUILT_EXTENSIONS = {"video/": (".mp4", ".jpg", ".json")}
+BUILT_EXTENSIONS = {"video/": (".mp4", ".jpg")}
 
 
 def test_the_untracked_prefixes_really_are_untracked() -> None:
