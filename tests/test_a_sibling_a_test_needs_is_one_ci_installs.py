@@ -141,3 +141,122 @@ def test_this_run_found_a_brick_that_reaches_across() -> None:
         f"no brick's tests name a sibling in a skip reason: {reaching}. Either "
         f"_SKIP_REASON stopped matching or the cross-package checks are gone."
     )
+
+
+# --------------------------------------------------------------------------
+# The same rule, turned on the repository that wrote it
+# --------------------------------------------------------------------------
+#
+# Everything above reads the *bricks'* suites. The hub's own tests were never
+# asked the question, and on 2026-10-31 three of them were answering it badly:
+# the caption auditor and the two guards beside it reach `sprezzature_audio`
+# through `pytest.importorskip`, nothing installed it on a runner, and all
+# three skipped there. The caption work of that day had just put 22 tracks and
+# their voice stamps into the clone so that the audit *could* run in CI — and
+# it still would not have.
+#
+# Two reasons this was invisible to the cases above. `_SKIP_REASON` matches
+# `pytest.skip(...)`, not `pytest.importorskip(...)`; and it matches a
+# distribution name with hyphens, where an import is spelled with underscores.
+#
+# The distinction the rule turns on is worth keeping straight, because the
+# broadened pattern first made it look as though five siblings were missing.
+# A test that skips on a sibling **checkout** — a file read by path, with the
+# skip reason naming `sprezzature-figures/scripts/...` — is served by
+# `scripts/fetch_siblings.sh` and needs no install. Only a skip on an
+# **importable package** needs pip. Measured: of the five, three were checkout
+# skips and were already fine in CI.
+
+#: A sibling the hub imports through ``pytest.importorskip``, spelled as a
+#: module. Converted to its distribution name by the test.
+_IMPORT_OR_SKIP = re.compile(
+    r"""pytest\.importorskip\(\s*["'](sprezzature_[a-z_]+)["']"""
+)
+
+#: Siblings whose install this repository declines, with the measurement that
+#: decided it and the guard that sleeps as a result.
+#:
+#: An exemption, not a silence: every entry names a cost and a consequence, and
+#: the test below fails if an entry stops being needed, so the list can only
+#: shrink by being correct. `sprezzature-audio` is deliberately absent from it —
+#: four packages and 13 MB in a clean venv, against three guards.
+_NOT_INSTALLED_ON_PURPOSE = {
+    "sprezzature-video": (
+        "21 packages and 161 MB in a clean venv, on three matrix jobs per "
+        "push, to wake one guard: "
+        "tests/test_every_film_pitches_in_the_voice_too.py"
+    ),
+}
+
+
+def _hub_imports_or_skips() -> set[str]:
+    """Siblings the hub's own tests reach through ``pytest.importorskip``."""
+    wanted: set[str] = set()
+    for module in (REPO_ROOT / "tests").rglob("*.py"):
+        body = module.read_text(encoding="utf-8", errors="replace")
+        for name in _IMPORT_OR_SKIP.findall(body):
+            distribution = name.replace("_", "-")
+            if distribution in SHIPPED_SKILLS:
+                wanted.add(distribution)
+    return wanted
+
+
+def _ci_installs() -> set[str]:
+    """Siblings a runner ends up with, read from what the workflow installs.
+
+    ``requirements-dev.txt`` is the whole runtime install for this repository
+    — the workflow's own comment says so — plus ``./sprezzature-cli`` for the
+    driver. Read from the file rather than from the environment: the question
+    is what a runner gets, and this machine has every brick installed as an
+    editable, which is exactly why the gap was invisible here.
+    """
+    text = (REPO_ROOT / "requirements-dev.txt").read_text(encoding="utf-8")
+    installed = set()
+    for line in text.splitlines():
+        line = line.split("#", 1)[0].strip()
+        found = re.match(r"(sprezzature-[a-z-]+)", line)
+        if found:
+            installed.add(found.group(1))
+    return installed | {"sprezzature-cli"}
+
+
+def test_a_sibling_the_hubs_own_tests_import_is_one_its_ci_installs() -> None:
+    """Nothing the hub's suite imports is absent from what a runner installs.
+
+    Except by name, in :data:`_NOT_INSTALLED_ON_PURPOSE`, with its price.
+    """
+    wanted = _hub_imports_or_skips()
+    assert wanted, (
+        "no hub test reaches a sibling through pytest.importorskip, which "
+        "either means the pattern stopped matching or the cross-package "
+        "guards left — and the second would be worth knowing too"
+    )
+    dormant = sorted(wanted - _ci_installs() - set(_NOT_INSTALLED_ON_PURPOSE))
+    assert not dormant, (
+        f"the hub's tests import {dormant} through pytest.importorskip and no "
+        f"runner installs it, so those cases are dormant in the one place they "
+        f"were written for. Add it to requirements-dev.txt, or name it in "
+        f"_NOT_INSTALLED_ON_PURPOSE with what it costs and what sleeps."
+    )
+
+
+def test_no_exemption_outlives_the_reason_for_it() -> None:
+    """An entry in the deferral list is still a sibling some test reaches for.
+
+    Without this the list is write-only. A guard that stops importing a brick
+    would leave its name here for ever, and the next reader would take the
+    exemption for a standing decision instead of a stale one.
+    """
+    wanted = _hub_imports_or_skips()
+    installed = _ci_installs()
+    stale = sorted(name for name in _NOT_INSTALLED_ON_PURPOSE if name not in wanted)
+    assert not stale, (
+        f"_NOT_INSTALLED_ON_PURPOSE names {stale}, which no hub test imports "
+        f"any more. Remove the entry rather than leaving a deferral nobody is "
+        f"deferring."
+    )
+    both = sorted(set(_NOT_INSTALLED_ON_PURPOSE) & installed)
+    assert not both, (
+        f"{both} is both declined in _NOT_INSTALLED_ON_PURPOSE and installed "
+        f"by requirements-dev.txt. One of the two is out of date."
+    )

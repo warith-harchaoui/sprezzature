@@ -42,8 +42,36 @@ best-engine-ai-helper>=1.4
 # `tests/test_no_film_is_voiced_by_a_retired_engine.py` reaches
 # `speaker_helper` through `pytest.importorskip`. Installing them would add 15
 # and 23 packages — numpy, scipy and soundfile among them — to every job of
-# every push, to wake one test that skips anyway on a `web/video` no clone has.
+# every push.
+#
+# Half of that reasoning expired on 2026-10-31 and is corrected here rather
+# than left standing. It used to end "to wake one test that skips anyway on a
+# `web/video` no clone has". The clone has `web/video` now — the 22 caption
+# tracks and their voice stamps are committed — so that test no longer skips
+# for want of a directory, only for want of `speaker_helper`. The remaining
+# argument is the 23 packages, which is a cost and not a reason, and it is a
+# decision rather than a fact: the guard it would wake is the one that catches
+# a track still carrying a voice the router no longer chooses.
 os-helper>=3.1.0
+
+# The caption auditor, and the only sibling whose absence silences a guard
+# written here rather than in a brick.
+#
+# `tests/test_the_films_captions_pass_the_suites_own_auditor.py` measures the
+# films' own WebVTT with `sprezzature_audio.audit_cues` — the same function the
+# command line calls — and `tests/test_a_caption_track_is_what_the_rule_emits.py`
+# re-emits each track through `sprezzature_audio.write_vtt` and compares the
+# bytes. Both reach it through `pytest.importorskip`, so without this line they
+# skip on a runner, and a skip reads exactly like a pass. That is the whole
+# defect the 2026-10-31 caption work was about, one layer up: the tracks came
+# into the clone so the audit could run in CI, and the audit would still not
+# have run.
+#
+# Measured in a clean venv rather than assumed, because the rest of this file
+# turns on install weight: `pip install sprezzature-audio==1.5.0` brings four
+# packages — click, langdetect, six and itself. The heavy half of that brick
+# (whisper.cpp, NeMo, the torch voices) is all in extras none of this asks for.
+sprezzature-audio>=1.5.0
 
 # Real YAML parser for SKILL.md frontmatter validation.
 # Used by scripts/validate_skill.py + tests/test_validate_skill.py;
