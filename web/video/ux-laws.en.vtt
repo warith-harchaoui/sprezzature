@@ -1,0 +1,88 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:08.020
+Sprezzature is an AI engine for Design.
+Ux-laws, the audit of the laws of UX.
+
+1
+00:00:08.219 --> 00:00:12.656
+They will say the page is overwhelming
+and they cannot find the button.
+
+2
+00:00:12.700 --> 00:00:16.980
+Nobody will ever say HICK's Law.
+Nobody knows its name.
+
+3
+00:00:17.600 --> 00:00:21.520
+You get the symptom and never the cause,
+published in 1952.
+
+4
+00:00:28.600 --> 00:00:32.240
+30 laws, collected by Jon YABLONSKI.
+
+5
+00:00:32.800 --> 00:00:35.400
+8 of them settle from the source alone.
+
+6
+00:00:36.800 --> 00:00:41.199
+No browser, no rendering:
+the median page takes 5 milliseconds.
+
+7
+00:00:41.600 --> 00:00:46.240
+Fast enough to live in a pre-commit hook,
+which is where a gate must live.
+
+8
+00:00:46.600 --> 00:00:50.287
+HICK's Law counts the choices
+a person meets at one moment.
+
+9
+00:00:52.600 --> 00:00:56.350
+A responsive header holds 2
+menus that never paint together.
+
+10
+00:00:57.400 --> 00:01:01.760
+Adding them up charges the reader
+for choices no screen ever shows.
+
+11
+00:01:03.600 --> 00:01:08.225
+So the auditor places each control
+and reports the worse count, naming it.
+
+12
+00:01:10.000 --> 00:01:13.840
+A block that collapses is one choice,
+whatever it holds.
+
+13
+00:01:17.800 --> 00:01:23.520
+40 links in one nav, or 7.
+One exits zero, the other exits one.
+
+14
+00:01:25.000 --> 00:01:29.080
+40 is a fact about the markup.
+Whether 40 is too many is not.
+
+15
+00:01:32.000 --> 00:01:35.440
+It is a fast gate,
+not a substitute for design review.
+
+16
+00:01:41.400 --> 00:01:46.360
+Go to sprezzature.ai,
+and drop a GitHub star if it deserves it.
+
+17
+00:01:49.600 --> 00:01:52.640
+Make it, audit it, take a look at it.

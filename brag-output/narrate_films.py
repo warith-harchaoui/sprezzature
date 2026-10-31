@@ -216,7 +216,9 @@ def _wav_seconds(path: pathlib.Path) -> float:
         return handle.getnframes() / handle.getframerate()
 
 
-def _assemble(clips: list[pathlib.Path], starts: list[float], dest: pathlib.Path) -> None:
+def _assemble(
+    clips: list[pathlib.Path], starts: list[float], dest: pathlib.Path
+) -> None:
     """Lay the spoken clips on one timeline, silence between them.
 
     ``starts`` are seconds from the beginning of the track, so the caller has
@@ -239,7 +241,9 @@ def _assemble(clips: list[pathlib.Path], starts: list[float], dest: pathlib.Path
             with wave.open(str(clip), "rb") as handle:
                 here = handle.getparams()
                 if (here.framerate, here.sampwidth, here.nchannels) != (
-                    params.framerate, params.sampwidth, params.nchannels
+                    params.framerate,
+                    params.sampwidth,
+                    params.nchannels,
                 ):
                     raise ValueError(
                         f"{clip.name} is {here.framerate}Hz/{here.sampwidth}B/"
@@ -365,23 +369,16 @@ def _vtt(texts: list[str], times: list[tuple[float, float]]) -> str:
     format, the identifiers are its segment indices, and a regex over its
     output would be a second implementation of a format this suite has
     deliberately reduced to one.
+
+    Both the wrapping and the cue timing live in `make_captions.timed_cues`,
+    which is also what re-emits an existing track. The writer is
+    `sprezzature-audio`, not `speaker-helper`: see that function for the
+    measurement that moved it, and for why a cue is allowed to hold the screen
+    into the pause after it.
     """
-    from speaker_helper import SpeechCue, cues_to_vtt
+    from make_captions import render_cues, timed_cues
 
-    from make_captions import wrap_cue
-
-    # Broken onto display lines here, at the 42-character budget the suite's
-    # own auditor enforces. The words and the timings are untouched: a newline
-    # inside a cue only tells the player where to break, instead of letting it
-    # choose. Until 2026-10-29 nothing wrapped at all on this path, the cue
-    # text was the script line as written, and all 22 shipped tracks failed
-    # `sprezzature-audio-audit` with 177 lines over budget.
-    return cues_to_vtt(
-        [
-            SpeechCue(index=i, text=wrap_cue(t), start_seconds=a, end_seconds=b)
-            for i, (t, (a, b)) in enumerate(zip(texts, times))
-        ]
-    )
+    return render_cues(timed_cues(texts, times))
 
 
 def main() -> int:
@@ -391,7 +388,9 @@ def main() -> int:
     )
     parser.add_argument("films", nargs="*", help="Film keys; default is all of them.")
     parser.add_argument(
-        "--lang", choices=("en", "fr"), action="append",
+        "--lang",
+        choices=("en", "fr"),
+        action="append",
         help="Language to narrate; repeatable. Default: both.",
     )
     args = parser.parse_args()

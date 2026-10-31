@@ -1,0 +1,90 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:08.099
+Sprezzature is an AI engine for Design.
+Cli-gui turns a command line into a form.
+
+1
+00:00:09.419 --> 00:00:14.419
+It reads your tool's own parser.
+One page, a field for every flag.
+
+2
+00:00:14.619 --> 00:00:18.494
+Your colleague needs this tool.
+They will not open a terminal.
+
+3
+00:00:18.659 --> 00:00:22.619
+Not that they cannot.
+7 flags in order is not an interface.
+
+4
+00:00:22.819 --> 00:00:26.900
+So you build the form by hand.
+Then the tool grows a flag.
+
+5
+00:00:29.200 --> 00:00:34.160
+So the command writes its own page.
+Options become fields, choices a list.
+
+6
+00:00:35.600 --> 00:00:40.360
+Required stays required.
+Every default is already in its box.
+
+7
+00:00:42.400 --> 00:00:46.212
+The page runs nothing.
+Your browser assembles the exact line.
+
+8
+00:00:50.800 --> 00:00:55.400
+It reads the parser your tool built.
+Not prose about that parser.
+
+9
+00:00:56.400 --> 00:01:01.212
+argparse and Click are walked directly;
+a Typer application is already Click.
+
+10
+00:01:02.000 --> 00:01:06.000
+What it cannot import,
+it reads off that tool's own help screen.
+
+11
+00:01:07.600 --> 00:01:11.320
+A page that silently drops a
+flag looks entirely correct.
+
+12
+00:01:13.200 --> 00:01:17.700
+So it checks the page against the parser.
+Each rule names what you lose.
+
+13
+00:01:21.000 --> 00:01:24.875
+This is docker. Written in Go,
+and not importable from Python.
+
+14
+00:01:27.000 --> 00:01:33.160
+Its help screen came out as 57 sections
+and 1,307 form fields, in one pass.
+
+15
+00:01:33.360 --> 00:01:36.840
+And git comes out empty.
+Its section titles are prose.
+
+16
+00:01:42.600 --> 00:01:47.320
+Go to sprezzature.ai,
+and drop a GitHub star if it deserves it.
+
+17
+00:01:49.600 --> 00:01:52.399
+Make it, audit it, take a look at it.
