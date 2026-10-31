@@ -315,7 +315,7 @@ sprezzature_figures_scripts.<module>`.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `render` / `recommend` / `redraw` / `check` cover the same ground with a Click interface plus a kind recommender and a render checker. **They all need the `[cli]` extra** — without it the command prints a one-line refusal naming it, which is recoverable but a wasted round-trip: reach for `pip install 'sprezzature-figures[cli]'` up front. |
+| `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `render` / `recommend` / `redraw` / `check` cover the same ground with a Click interface plus a kind recommender and a render checker. **No extra is needed for any of them**: click became a base dependency on 2026-10-25, when the argparse front door was dropped, so the base install carries the whole command line. Until then these commands refused with a one-line message naming a `[cli]` extra; that extra no longer exists, and asking pip for it gets a warning and nothing else. |
 | `explain_model.py` | `sprezzature-figures[explain]` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
 | `causal_estimate.py` | `sprezzature-figures[causal]` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
 | `audit_figure.py` | stdlib + PyYAML | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
