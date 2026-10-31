@@ -503,7 +503,11 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
     "maps/situation-ukraine.png":
         "titles and legend baked in by build_situation_examples.py in "
         "sprezzature-maps, which has no French mode",
-    "maps/situation-syria.png": "idem",
+    # `maps/situation-syria.png` left on 2026-10-30, the same way the four
+    # above it did: not because a French twin arrived, but because the
+    # rewrite to seven movements dropped the plate from the maps film. The
+    # gap is still open in sprezzature-maps, which still has no French mode;
+    # it is simply no longer a gap any film here walks into.
     "figures/cvd/00-original.png":
         "rendered from the English bar-grouped.svg by sprezzature-colors' "
         "simulate_cvd.py; a French set needs that script pointed at the "
@@ -516,6 +520,40 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
         "the form shows an English command's own --help; no localisation "
         "here makes a French make-figure",
     "shots/make-figure-render.png": "idem",
+
+    # --- 2026-10-29: the films gained a sixth beat, the finest example each
+    # package can show, and six of the eleven had carried no picture at all
+    # until then. Most of what it brought in is language-free; what is not is
+    # named with the gap it leaves.
+    "shots/alt-marie-curie.jpg":
+        "a photograph, and a public-domain one: it carries no language, so "
+        "there is nothing to localise and no French twin to produce",
+    "maps/situation-himalaya.png":
+        "titles and legend baked in by build_situation_examples.py in "
+        "sprezzature-maps, which has no French mode",
+    "maps/situation-iberia.png": "idem",
+    "maps/situation-switzerland.png": "idem",
+    "maps/choropleth-sequential.svg":
+        "the legend names its classification method in English, written by "
+        "sprezzature-maps; a French twin needs that label translated at the "
+        "source rather than here",
+    "figures/kde2d-contour.png":
+        "axis labels written by the generator in sprezzature-figures, which "
+        "takes no language",
+    "figures/surface3d.png": "idem",
+    "ux-laws/nav-forty.svg":
+        "the plate shows an English nav and the auditor's own English "
+        "finding; translating either would mean the picture no longer "
+        "matches what the tool printed",
+    "ux-laws/nav-seven.svg": "idem",
+    "shots/docker-run.png":
+        "the form is generated from docker's own --help, which is English; "
+        "a French one would mean a French docker",
+    "shots/ui-catalogue.png":
+        "the catalogue sprezzature-ui-i18n-make actually writes, and the "
+        "comments it writes are English; its *content* is already bilingual, "
+        "which is the point of the shot. A French twin needs the scaffolder "
+        "to emit its own header in French",
 }
 
 #: Which assets have a French twin is asked of the **ledger**, not of the
@@ -531,6 +569,31 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
 #: for everybody; one that is merely sitting in somebody's cache does not.
 
 
+#: Which of `restore_assets`' ledgers name assets a French cut may localise.
+#:
+#: Written out rather than discovered, because the two kinds of ledger are
+#: not distinguishable by shape: both map an asset path to a string. The
+#: difference is editorial — these hold plates that can have a French twin,
+#: and the one below holds files that cannot.
+LEDGERS_READ: tuple[str, ...] = (
+    "TRACKED",
+    "DERIVED_MAPS",
+    "DERIVED_SIBLINGS",
+    "READALONG",
+)
+
+#: And the ledgers deliberately not read, each with the reason. A new ledger
+#: in `restore_assets` has to land in one list or the other;
+#: `tests/test_every_asset_ledger_reaches_the_french_cut.py` fails until it
+#: does, which is the only thing standing between a French plate and a cut
+#: that silently shows the English one.
+LEDGERS_NOT_READ: dict[str, str] = {
+    "SEED_ONLY": "a licensed MP3, three sound effects, a pinned GSAP build and "
+    "two files derived from the MP3. None of them carries a word, so none of "
+    "them has a French twin to pick up.",
+}
+
+
 def _declared() -> frozenset[str]:
     """Asset paths the ledger declares, cached after the first call."""
     global _DECLARED
@@ -542,8 +605,19 @@ def _declared() -> frozenset[str]:
         # density plate lives. Reading only the first left the French cut on
         # the English plate while the French one sat in the tree, declared,
         # one dictionary over.
-        _DECLARED = frozenset(restore_assets.TRACKED) | frozenset(
-            getattr(restore_assets, "DERIVED_MAPS", ())
+        # `DERIVED_SIBLINGS` joined on 2026-10-29: the audio brick already
+        # ships its own diagram in both languages, so the French cut has a
+        # twin to pick up and needs no exemption. A ledger read short is how
+        # a French plate sits in the tree, declared, and never reaches the
+        # film.
+        # `READALONG` joined on 2026-10-30, and it is the fourth time this
+        # list has been the thing that was wrong. The lesson has stopped
+        # being about any one dictionary: every new ledger in
+        # `restore_assets` is a ledger this function has to be told about,
+        # and nothing fails when it is not. The French cut simply shows the
+        # English plate.
+        _DECLARED = frozenset(
+            path for name in LEDGERS_READ for path in getattr(restore_assets, name, ())
         )
     return _DECLARED
 

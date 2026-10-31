@@ -86,14 +86,29 @@ FORMATS = {
 
 # Beat grid of the bundled track, 109.96 BPM.
 #
-# Extended from 42 beats (23 s) to 111 (60 s) on 2026-10-26, when the films
-# grew to a minute. Not extrapolated: `npx hyperframes beats` detected 483
-# onsets across the whole 117 s track -- at 243.9 BPM and flagged uncertain,
-# because it found subdivisions rather than the musical pulse. So the pulse is
-# walked at 60/109.96 and each step SNAPPED to the nearest detected onset
-# within 120 ms. Every one of the 111 found one, and the result agrees with
-# the original hand-measured 42 to a mean of 12 ms -- which is the check that
-# matters: a new grid has to put the known-good beats where they already were.
+# Grown twice, the same way each time: 42 beats (23 s) hand-measured, then 111
+# (60 s) on 2026-10-26, then 215 (117 s) on 2026-10-29 when the films went to
+# the full length of the track. Not extrapolated: the pulse is walked at
+# 60/109.96 and each step SNAPPED to the nearest detected onset within 120 ms,
+# so a cut lands on the music rather than near it.
+#
+# The rule that governs every extension: A GROWN GRID DOES NOT MOVE THE BEATS
+# THAT WERE ALREADY THERE. The first 111 entries below are byte for byte the
+# ones the sixty-second films were cut against, and 96 of the 104 new ones sit
+# exactly on an onset in
+# `_assets/music/cues/<track>.music-cues.json` (207 detected beats, tempo
+# 109.96, duration 117.36).
+#
+# Rebuilding instead of extending was tried first and refused on the evidence.
+# The 2026-10-26 run read 483 onsets at 243.9 BPM, flagged uncertain because it
+# had found subdivisions rather than the pulse; the cues file on disk today
+# holds 207 at the pulse itself, and the committed grid coincides with only 5
+# of them. A fresh walk over today's onsets reproduces the committed grid to a
+# mean of 10 ms and moves 102 of its 111 entries. Ten milliseconds is inside a
+# frame at 30 fps and would have been defensible; moving a beat that eleven
+# films already point at is not, and the gain is nil. So the seam is at
+# 60.539 -> 61.103, a 0.564 s gap that sits inside the grid's own spacing
+# range (0.438 to 0.649).
 BEATS = [
     0.549,
     1.106,
@@ -206,7 +221,126 @@ BEATS = [
     59.451,
     60.036,
     60.539,
+    # ---- 2026-10-29: the films went to the whole track ----
+    61.103,
+    61.637,
+    62.195,
+    62.729,
+    63.286,
+    63.832,
+    64.377,
+    64.911,
+    65.469,
+    66.003,
+    66.56,
+    67.106,
+    67.651,
+    68.197,
+    68.743,
+    69.288,
+    69.834,
+    70.38,
+    70.925,
+    71.459,
+    72.017,
+    72.551,
+    73.108,
+    73.642,
+    74.199,
+    74.733,
+    75.291,
+    75.825,
+    76.382,
+    76.916,
+    77.473,
+    78.007,
+    78.565,
+    79.099,
+    79.656,
+    80.19,
+    80.747,
+    81.281,
+    81.839,
+    82.373,
+    82.93,
+    83.464,
+    84.01,
+    84.555,
+    85.101,
+    85.647,
+    86.204,
+    86.738,
+    87.295,
+    87.829,
+    88.375,
+    88.921,
+    89.466,
+    90.001,
+    90.558,
+    91.092,
+    91.649,
+    92.183,
+    92.74,
+    93.275,
+    93.832,
+    94.366,
+    94.923,
+    95.457,
+    96.014,
+    96.549,
+    97.106,
+    97.64,
+    98.197,
+    98.731,
+    99.288,
+    99.823,
+    100.38,
+    100.914,
+    101.471,
+    102.005,
+    102.562,
+    103.097,
+    103.654,
+    104.2,
+    104.745,
+    105.279,
+    105.837,
+    106.371,
+    106.928,
+    107.462,
+    108.019,
+    108.553,
+    109.111,
+    109.645,
+    110.202,
+    110.736,
+    111.293,
+    111.827,
+    112.326,
+    112.919,
+    113.465,
+    114.011,
+    114.557,
+    115.103,
+    115.649,
+    116.195,
+    116.741,
+    117.287,
 ]
+
+
+#: How long every film runs, and the one number a layout cannot negotiate.
+#:
+#: 117 s, which is not a round number and is not meant to be: it is the length
+#: of the bundled track, 117.36 s, less the few hundred milliseconds it takes
+#: the last beat to decay. A film that ends with its music needs no loop, no
+#: fade and no silence to fill, and the grid above already reaches that far.
+#:
+#: It was 60 s until 2026-10-29. Sixty seconds held four beats comfortably and
+#: the pitch now has seven, so the extra minute is not room to say more about
+#: the same things: it is what the two new beats cost, the finest example the
+#: package can show and the line the film ends on.
+DURATION_S = 117.0
 
 
 def L(en: str, fr: str) -> dict[str, str]:
@@ -312,10 +446,22 @@ BEAT_LABEL = {
     "what": L("What it is", "Ce que c'est"),
     "problem": L("Problem", "Le problème"),
     "solution": L("Solution", "La solution"),
-    "magic": L("Underlying magic", "La mécanique"),
+    "magic": L("Secret sauce", "La recette"),
+    "example": L("At its best", "Son plus bel exemple"),
     "cta": L("Your turn", "À vous"),
 }
-BEAT_ORDER = ("what", "problem", "solution", "magic", "cta")
+
+#: The spine, in the order a viewer needs it. Six labels on the rail for the
+#: whole film, with the current one lit.
+#:
+#: `example` joined on 2026-10-29 and it is the beat that changes the films
+#: most, because six of the eleven had no picture at all. The reason given in
+#: `FILM-SHAPES.md` was sound as far as it went: these are films about text,
+#: and a stock photograph would be a lie. The conclusion did not follow. This
+#: suite makes pictures for a living, so a film about `audio` can show its own
+#: cue track and a film about `publish` the icon set it just generated. A
+#: picture the package itself produced is not an illustration, it is evidence.
+BEAT_ORDER = ("what", "problem", "solution", "magic", "example", "cta")
 
 #: The ask. Two of them, in the order of what they cost: a star is one click
 #: from where the viewer already is, the site is a visit.
@@ -324,6 +470,20 @@ BEAT_ORDER = ("what", "problem", "solution", "magic", "cta")
 #: who has just watched a minute on `maps` wants `sprezzature-maps`, and
 #: sending them to the monorepo instead is a redirect dressed up as a
 #: destination. The suite film is the one whose subject *is* the hub.
+#: The last thing said, in every film.
+#:
+#: It is the suite's old motto, brought back on 2026-10-29 with its position
+#: corrected rather than its words. It closed the films until 2026-10-28 and
+#: was dropped for a reason worth keeping: "Pretty, and it requests nothing, a
+#: viewer who liked the minute had nowhere to put that." That objection was
+#: about where the line sat, not about the line. The ask comes first now and
+#: the motto lands after it, so the viewer is given something to do while they
+#: are still here, and something to repeat once they have gone.
+PUNCHLINE = L(
+    "Make it, audit it, take a look at it.",
+    "Faites, auditez et regardez !",
+)
+
 GITHUB = "github.com/warith-harchaoui"
 
 
@@ -331,12 +491,12 @@ def cta_for(film_key: str) -> list[tuple[str, dict, str]]:
     """The two asks that close one film."""
     repo = "sprezzature" if film_key == "sprezzature" else f"sprezzature-{film_key}"
     return [
+        ("\u2192", L("Go and look", "Allez voir"), "sprezzature.ai"),
         (
             "\u2605",
-            L("Star it on GitHub", "Mettez une étoile sur GitHub"),
+            L("Drop a star, if it deserves it", "Une étoile, si ça le mérite"),
             f"{GITHUB}/{repo}",
         ),
-        ("\u2192", L("The whole suite", "Toute la suite"), "sprezzature.ai"),
     ]
 
 
@@ -379,27 +539,24 @@ LOOP_STEPS = [
 FILMS = {
     # ---------------------------------------------------------------- global
     "sprezzature": dict(
-        duration=60.0,
-        # The thesis film, rewritten 2026-10-27 under the writing charters.
-        # It used to end on "Ten packages. Five surfaces each." -- a spec
-        # sheet, and the least interesting thing that had been on screen. It
-        # ends on what stays on your machine instead, which is the claim a
-        # viewer has no other way to hear.
+        duration=DURATION_S,
         vo=[("sprezzature.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 24.55),
-            ("wipe", 38.74),
-            ("bell", 55.67),
+            ("drop", 5.471),
+            ("tile", 12.005),
+            ("tile", 29.467),
+            ("wipe", 57.308),
+            ("tile", 74.199),
+            ("bell", 104.745),
         ],
         scenes=[
+            # ----------------------------------------------------------- what
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=10.5,
+                end=10.4,
                 logo="logo-512.png",
                 tagline=TAGLINE,
                 mark="Sprezzature",
@@ -409,59 +566,42 @@ FILMS = {
                 ),
                 url="sprezzature.ai",
             ),
+            # -------------------------------------------------------- problem
+            # Eight labels, one every one and a half seconds, each one a decision
+            # somebody else settled and published. The chips are the evidence the
+            # claim rests on, so they fall while the voice names four of them.
             dict(
                 type="chips",
                 beat="problem",
-                start=5.4,
-                dur=9.1,
-                end=14.4,
+                start=10.3,
+                dur=18.3,
+                end=28.5,
                 eyebrow=L("Settled by other people", "Décidé par d'autres"),
                 items=[
-                    "30 Laws of UX",
-                    L("WCAG contrast", "contraste WCAG"),
-                    "Machado 2009",
+                    L("30 laws of UX, YABLONSKI", "30 lois d'UX, YABLONSKI"),
+                    L("WCAG contrast, the W3C", "contraste WCAG, le W3C"),
+                    "MACHADO 2009",
+                    L("Equal Earth, 2018", "Equal Earth, 2018"),
                     "Gestalt",
-                    "Equal Earth",
-                    "W3C WebVTT",
+                    L("Netflix timed text", "sous-titrage Netflix"),
                     "Schema.org",
-                    "OKLCH",
+                    "OKLCH, OTTOSSON",
                 ],
-                at=on_beat(6.5, 7.1, 7.6, 8.2, 8.7, 9.3, 9.8, 10.4),
+                at=on_beat(12.2, 13.9, 15.6, 17.3, 19.0, 20.7, 22.4, 24.1),
                 caption=L(
-                    "The laws of attention: Yablonski. Contrast: the "
-                    "W3C. What a colour-blind reader sees: a 2009 paper.",
-                    "Les lois de l'attention, c'est Yablonski. Le "
-                    "contraste, c'est le W3C. Ce que voit un daltonien, "
-                    "c'est un article de 2009.",
+                    "The laws of attention: Jon YABLONSKI. Contrast: the W3C. "
+                    "Colour blindness: MACHADO, OLIVEIRA and FERNANDES, 2009.",
+                    "Les lois de l'attention, c'est Jon YABLONSKI. Le contraste, "
+                    "le W3C. Le daltonisme, MACHADO, OLIVEIRA et FERNANDES, 2009.",
                 ),
             ),
-            dict(
-                type="grid",
-                beat="solution",
-                start=14.3,
-                dur=9.2,
-                end=23.4,
-                eyebrow=L("What comes out of them", "Ce qui en sort"),
-                images=[
-                    "figures/corr-matrix.svg",
-                    "figures/calendar-heatmap.svg",
-                    "figures/map-flow.svg",
-                    "figures/choropleth.svg",
-                ],
-                at=on_beat(15.8, 16.4, 16.9, 17.5),
-                caption=L(
-                    "A matrix, a calendar, a flow, a choropleth. Every "
-                    "one of them had to answer to its rule.",
-                    "Une matrice, un calendrier, un flux, un "
-                    "choroplèthe. Chacun a dû passer sa règle.",
-                ),
-            ),
+            # ------------------------------------------------------- solution
             dict(
                 type="versus",
                 beat="solution",
-                start=23.3,
-                dur=9.2,
-                end=32.4,
+                start=28.4,
+                dur=13.2,
+                end=41.5,
                 eyebrow=L("The same rules, used twice", "Les mêmes règles, deux fois"),
                 left=(
                     L("Make", "Fabriquer"),
@@ -477,102 +617,207 @@ FILMS = {
                         "les mêmes, sur ce qui est déjà en ligne",
                     ),
                 ),
-                at=on_beat(24.5, 25.6),
+                at=on_beat(29.6, 30.7),
                 caption=L(
-                    "167 chart kinds. 20 accessibility rules. 30 laws of UX.",
-                    "167 types de graphiques. 20 règles d'accessibilité. 30 lois d'UX.",
+                    "167 chart kinds in 68 categories. 20 accessibility rules, "
+                    "6 of them self-repairing. 30 laws of UX, 8 settled from the "
+                    "source alone.",
+                    "167 types de graphiques en 68 catégories. 20 règles "
+                    "d'accessibilité, 6 réparables. 30 lois d'UX, 8 tranchées "
+                    "depuis la source seule.",
                 ),
             ),
+            # The question the solution leaves open, held long enough to be felt
+            # before the magic beat answers it.
+            dict(
+                type="claim",
+                beat="solution",
+                start=41.4,
+                dur=6.7,
+                end=48.0,
+                line=L(
+                    "A rule reads the file. Something has to read the picture.",
+                    "Une règle lit le fichier. Reste à regarder l'image.",
+                ),
+            ),
+            # ---------------------------------------------------------- magic
+            # Eighteen seconds, the longest beat in the film, because the loop is
+            # the only thing here that no published rule covers.
             dict(
                 type="loop",
                 beat="magic",
-                start=32.3,
-                dur=16.7,
-                end=49.0,
+                start=47.9,
+                dur=18.6,
+                end=66.5,
                 eyebrow=L("What no rule does", "Ce qu'aucune règle ne fait"),
                 steps=LOOP_STEPS,
                 fig="figures/bar-grouped.svg",
                 gray="figures/bar-grouped-gray.svg",
                 ratio=745 / 505,
-                step_at=on_beat(33.3, 34.4, 35.5, 36.6),
-                wipe_at=38.7,
+                step_at=on_beat(49.0, 50.1, 51.2, 52.3),
+                wipe_at=57.308,
                 wipe_dur=1.09,
-                caption_at=43.6,
+                caption_at=61.5,
                 caption=L(
-                    "A vision model looks at the chart and says what is "
-                    "wrong. The source is what you then fix.",
-                    "Un modèle de vision regarde le graphique et dit ce "
-                    "qui cloche. Ensuite, c'est la source qu'on corrige.",
+                    "The Ralph Eyeball Loop: the model edits the plan, never the "
+                    "rendered image.",
+                    "La boucle Ralph Eyeball : le modèle change le plan, jamais "
+                    "l'image rendue.",
                 ),
             ),
+            # The clause the loop exists for, on its own frame. The narration says
+            # it once at 53 s; this is the sentence a viewer carries out of the
+            # magic beat, and it is the half the first cut of this film stopped
+            # short of.
             dict(
                 type="held",
                 beat="magic",
-                start=48.9,
+                start=66.4,
                 dur=6.7,
-                end=55.5,
+                end=73.0,
+                line=L(
+                    "What you fix is the source, never the picture.",
+                    "Ce qu'on corrige, c'est la source, jamais l'image.",
+                ),
+            ),
+            # -------------------------------------------------------- example
+            # The montage, and the four pictures `FILM-SHAPES.md` reserves for
+            # this film. One tile per kind of question: a correlation, a calendar,
+            # a flow between places, a value per country.
+            dict(
+                type="grid",
+                beat="example",
+                start=72.9,
+                dur=13.2,
+                end=86.0,
+                eyebrow=L("What those rules draw", "Ce que ces règles dessinent"),
+                images=[
+                    "figures/corr-matrix.svg",
+                    "figures/calendar-heatmap.svg",
+                    "figures/map-flow.svg",
+                    "figures/choropleth.svg",
+                ],
+                at=on_beat(74.4, 76.1, 77.8, 79.5),
+                caption=L(
+                    "A matrix, a calendar, a migration flow, a choropleth: "
+                    "4 of 167 kinds, each one hand-written SVG.",
+                    "Une matrice, un calendrier, un flux migratoire, un "
+                    "choroplèthe. 4 types sur 167, écrits à la main.",
+                ),
+            ),
+            # Then the film chooses one and holds it, which is the whole argument
+            # of the beat: the suite's own output, large enough to read, with the
+            # published source of the thing a viewer is looking at named under it.
+            dict(
+                type="shot",
+                beat="example",
+                start=85.9,
+                dur=12.2,
+                end=98.0,
+                eyebrow=L("10 corridors, one projection", "10 corridors, une projection"),
+                src="figures/map-flow.svg",
+                ratio=1480 / 1030,
+                at=on_beat(87.0)[0],
+                caption=L(
+                    "Equal Earth, by ŠAVRIČ, PATTERSON and JENNY, 2018. "
+                    "Line width is how many people moved.",
+                    "Equal Earth, une projection publiée par ŠAVRIČ, "
+                    "PATTERSON et JENNY en 2018. L'épaisseur du trait est "
+                    "le nombre de personnes qui sont parties.",
+                ),
+            ),
+            # ------------------------------------------------------------ cta
+            # What the film ends on, and the claim a viewer has no other way to
+            # hear. It replaced "Ten packages. Five surfaces each." on 2026-10-27,
+            # which was a spec sheet and the least interesting thing on screen.
+            dict(
+                type="held",
+                beat="cta",
+                start=97.9,
+                dur=7.2,
+                end=105.0,
                 line=L(
                     "Everything stays on your desk. Nothing travels.",
-                    "Tout reste sur votre poste. Rien ne part ailleurs.",
+                    "Tout reste sur votre poste. Rien ne circule.",
                 ),
             ),
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=104.9,
+                dur=12.1,
+                end=DURATION_S,
                 logo="logo-512.png",
                 mark="Sprezzature",
                 actions=cta_for("sprezzature"),
+                punchline=PUNCHLINE,
+                punch_at=111.293,
             ),
         ],
     ),
     # ------------------------------------------------------------------ colors
     "colors": dict(
-        duration=60.0,
-        # Rewritten 2026-10-27 after reading the package properly. The old cut
-        # showed four simulations in a row and called that an argument. The
-        # package has a better one and states it in a module docstring nobody
-        # watching a film will ever open: lightness is the only channel that
-        # no deficiency, no printer and no screen in sunlight takes away, and
-        # all three tools work on it. That is the film now, and the sentence
-        # has since been promoted into the README as well.
-        #
-        # Mostly picture: twenty-two seconds of the simulator, which is longer
-        # than any beat in the first set.
+        duration=DURATION_S,
+        # Mostly picture. Twenty-three and a half seconds of the simulator in
+        # one unbroken take, which is longer than any beat anywhere in the
+        # set, and five short text scenes around it carrying the sentences a
+        # picture cannot say for itself.
         vo=[("colors.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("wipe", 18.01),
-            ("wipe", 21.83),
-            ("tile", 41.46),
-            ("bell", 55.67),
+            ("drop", on_beat(7.6)[0]),
+            ("wipe", on_beat(18.1)[0]),
+            ("tile", on_beat(28.6)[0]),
+            ("wipe", on_beat(52.6)[0]),
+            ("bell", on_beat(76.6)[0]),
         ],
         scenes=[
+            # ------------------------------------------------------ WHAT  0
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=8.0,
+                end=7.5,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 colors",
+                mark="Sprezzature · colors",
                 line=L(
                     "Colours everybody can read, proved rather than hoped.",
                     "Des couleurs que tout le monde peut lire, et la preuve avec.",
                 ),
                 url="sprezzature.ai",
             ),
+            # --------------------------------------------------- PROBLEM  7.4
+            # The failure first, and in the package's own words
+            # (`README.md:7`). It is the sentence `FILM-SHAPES.md` quotes as
+            # the shape a problem beat should have: a fact about a reader,
+            # not a gap in a feature list. Held long enough to be read twice,
+            # because the second reading is where "at your desk, indoors"
+            # stops being a detail and becomes the accusation.
+            dict(
+                type="held",
+                beat="problem",
+                start=7.4,
+                dur=10.7,
+                end=18.0,
+                line=L(
+                    "Light grey on white reads perfectly well. At your desk, indoors.",
+                    "Du gris clair sur du blanc se lit très bien. Chez vous, "
+                    "à l'intérieur.",
+                ),
+            ),
+            # The two readers who are not at that desk. Kept from the old cut
+            # unchanged: it is the one scene in the film where two halves is
+            # the right shape, because the two failures have nothing to do
+            # with each other and arrive at the same button.
             dict(
                 type="versus",
                 beat="problem",
-                start=5.4,
-                dur=9.1,
-                end=14.4,
+                start=17.9,
+                dur=10.7,
+                end=28.5,
                 eyebrow=L(
-                    "The same button, two readers", "Le même bouton, deux lecteurs"
+                    "The same button, 2 readers", "Le même bouton, 2 lecteurs"
                 ),
                 left=(
                     L("Low vision", "Malvoyance"),
@@ -588,221 +833,373 @@ FILMS = {
                         "l'écran écrase la différence",
                     ),
                 ),
-                at=on_beat(6.5, 7.6),
+                at=on_beat(18.9, 20.5),
                 caption=L(
                     "Whoever chose the colour can read it. That is the whole problem.",
-                    "Celui qui a choisi la couleur, lui, la lit très "
-                    "bien. C'est tout le problème.",
+                    "Celui qui a choisi la couleur, lui, la lit très bien. "
+                    "C'est tout le problème.",
                 ),
             ),
+            # -------------------------------------------------- SOLUTION  28.4
+            # The whole solution beat is one demonstration, and it is the
+            # package failing. Said flat, at claim size, with nothing else on
+            # the frame: four words a viewer can repeat.
             dict(
                 type="claim",
-                beat="problem",
-                start=14.3,
-                dur=4.8,
-                end=18.0,
+                beat="solution",
+                start=28.4,
+                dur=10.7,
+                end=39.0,
                 line=L(
-                    "About one man in twelve does not separate red from green.",
-                    "Un homme sur douze environ ne sépare pas le rouge du vert.",
+                    "It fails the palette it ships with.",
+                    "Il échoue sur la palette qu'il livre.",
                 ),
             ),
-            # Twenty-two seconds. The argument here is made by looking.
+            # The verdict, with the number that makes it concrete. 56 pairs
+            # because the default run checks only the pairs a rendered theme
+            # can actually put together -- light labels on light surfaces,
+            # dark on dark, brand accents on everything -- rather than the
+            # cross product. 1.51:1 is Apple's `brand-yellow` on white, and
+            # 4.5 is `WCAG_THRESHOLDS[("AA", "normal")]`.
+            dict(
+                type="versus",
+                beat="solution",
+                start=38.9,
+                dur=13.7,
+                end=52.5,
+                eyebrow=L(
+                    "Run with no arguments at all", "Lancé sans le moindre argument"
+                ),
+                left=(
+                    L("34 pass", "34 passent"),
+                    L(
+                        "every label and brand colour, on every surface",
+                        "chaque étiquette et chaque couleur de marque, sur chaque fond",
+                    ),
+                ),
+                right=(
+                    L("22 fail", "22 échouent"),
+                    L(
+                        "brand-yellow on white at 1.51:1, where text needs 4.5",
+                        "brand-yellow sur blanc à 1,51:1, quand le texte demande 4,5",
+                    ),
+                ),
+                at=on_beat(39.9, 43.9),
+                caption=L(
+                    "The process exits 1, so the build that called it stops.",
+                    "Le processus sort en code 1, et la compilation qui "
+                    "l'appelait s'arrête.",
+                ),
+            ),
+            # ----------------------------------------------------- MAGIC  52.4
+            # The sentence the whole package comes out of. It slept in a
+            # module docstring (`scripts/accessibility_levels.py:31`) before
+            # it reached the README, and it is seven words.
+            dict(
+                type="held",
+                beat="magic",
+                start=52.4,
+                dur=11.7,
+                end=64.0,
+                line=L(
+                    "Hue goes. Saturation goes. Lightness holds.",
+                    "La teinte s'efface. La saturation s'efface. La clarté tient.",
+                ),
+            ),
+            # The mechanism, which is a search nobody would guess and which
+            # is the difference between a corrector and a replacement: hue
+            # and chroma are frozen, the lightness axis is walked in 101 steps
+            # of one hundredth, and of the candidates that clear the
+            # threshold the one returned is the one whose lightness is
+            # NEAREST the original. The axis is named because a mechanism
+            # without a source is a boast.
+            dict(
+                type="versus",
+                beat="magic",
+                start=63.9,
+                dur=12.7,
+                end=76.5,
+                eyebrow=L(
+                    "The one axis the fix may move",
+                    "Le seul axe que la correction déplace",
+                ),
+                left=(
+                    L("Hue and chroma", "Teinte et chroma"),
+                    L(
+                        "held exactly where you put them",
+                        "tenus exactement là où vous les avez mis",
+                    ),
+                ),
+                right=(
+                    L("Lightness", "Clarté"),
+                    L(
+                        "walked one hundredth at a time, until the pair clears",
+                        "parcourue par centièmes, jusqu'à ce que la paire passe",
+                    ),
+                ),
+                at=on_beat(64.9, 68.9),
+                caption=L(
+                    "OKLCH, by Björn OTTOSSON, where a step of lightness "
+                    "looks like a step.",
+                    "OKLCH, de Björn OTTOSSON, où un pas de clarté se voit "
+                    "comme un pas.",
+                ),
+            ),
+            # --------------------------------------------- AT ITS BEST  76.4
+            # Twenty-three and a half seconds, one card, four wipes, and a
+            # voice that says what to notice rather than what is there. These
+            # are not an illustration: `simulate_cvd.py` produced them from
+            # the suite's own grouped bar chart, and the five files are
+            # already in `restore_assets.TRACKED` and already exempted in
+            # `films_fr.ENGLISH_IN_FRENCH_CUTS`.
+            #
+            # Each wipe hands the frame to the next pair of eyes without a
+            # cut, so what a viewer sees is one picture changing rather than
+            # five pictures in a row -- which is the whole reason this type
+            # exists and the reason it belongs to one film.
+            #
+            # The caption is the source and its limit in the same breath.
+            # MACHADO's matrices are tabulated at eleven severity steps and
+            # this package hard-codes 1.0, so what is on screen is complete
+            # dichromacy; most real colour vision deficiency is anomalous
+            # trichromacy, which is milder. Saying "measured on real
+            # observers" is true. Saying "exactly what this person sees"
+            # would not be, and the film does not say it.
             dict(
                 type="cvd",
-                beat="solution",
-                start=17.9,
-                dur=22.0,
-                end=39.8,
-                eyebrow=L("Rendered for those eyes", "Rendu pour ces yeux-là"),
+                beat="example",
+                start=76.4,
+                dur=23.7,
+                end=100.0,
+                eyebrow=L(
+                    "The same chart, 4 pairs of eyes",
+                    "Le même graphique, 4 regards",
+                ),
                 base="figures/cvd/00-original.png",
                 stages=[
                     (
                         "01",
                         L("protanopia", "protanopie"),
                         "figures/cvd/01-protanopia.png",
-                        19.65,
+                        on_beat(80.6)[0],
                     ),
                     (
                         "02",
                         L("deuteranopia", "deutéranopie"),
                         "figures/cvd/02-deuteranopia.png",
-                        24.55,
+                        on_beat(85.4)[0],
                     ),
                     (
                         "03",
                         L("tritanopia", "tritanopie"),
                         "figures/cvd/03-tritanopia.png",
-                        29.47,
+                        on_beat(90.2)[0],
                     ),
                     (
                         "04",
-                        L("grayscale", "niveaux de gris"),
+                        L("greyscale", "niveaux de gris"),
                         "figures/cvd/04-grayscale.png",
-                        34.37,
+                        on_beat(95.0)[0],
                     ),
                 ],
                 ratio=1490 / 1010,
                 wipe_dur=0.80,
-                caption_at=36.55,
+                caption_at=on_beat(96.6)[0],
                 caption=L(
-                    "The matrices come from a 2009 paper, measured on real observers.",
-                    "Les matrices viennent d'un article de 2009, "
-                    "mesurées sur de vrais observateurs.",
+                    "MACHADO, OLIVEIRA and FERNANDES, 2009. Full deficiency, "
+                    "which is the severe end.",
+                    "MACHADO, OLIVEIRA et FERNANDES, 2009. Déficience complète, "
+                    "le cas le plus sévère.",
                 ),
             ),
-            dict(
-                type="held",
-                beat="magic",
-                start=39.7,
-                dur=9.3,
-                end=49.0,
-                line=L(
-                    "Hue goes. Saturation goes. Lightness holds.",
-                    "La teinte s'efface. La saturation s'efface. La "
-                    "clarté, elle, tient.",
-                ),
-            ),
-            dict(
-                type="versus",
-                beat="magic",
-                start=48.9,
-                dur=6.7,
-                end=55.5,
-                eyebrow=L(
-                    "So that is what the audit works on",
-                    "C'est donc là-dessus que l'audit travaille",
-                ),
-                left=(
-                    L("Your colour", "Votre couleur"),
-                    L(
-                        "its hue and its saturation stay put",
-                        "sa teinte et sa saturation ne bougent pas",
-                    ),
-                ),
-                right=(
-                    L("Its lightness", "Sa clarté"),
-                    L(
-                        "moves until the contrast clears",
-                        "varie jusqu'au seuil de contraste",
-                    ),
-                ),
-                at=on_beat(49.6, 50.7),
-                caption=L(
-                    "Your blue stays your blue. It becomes legible.",
-                    "Votre bleu reste votre bleu. Il devient lisible.",
-                ),
-            ),
+            # ------------------------------------------------ YOUR TURN  99.9
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=99.9,
+                dur=17.1,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 colors",
+                mark="Sprezzature · colors",
                 actions=cta_for("colors"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(109.0)[0],
             ),
         ],
     ),
     # ---------------------------------------------------------------- figures
     "figures": dict(
-        duration=60.0,
-        # Written 2026-10-27 after running the package rather than reading its
-        # feature table. The old cut opened on "167 kinds, every one
-        # hand-authored", which is a specification handed to somebody with no
-        # reason to want one.
+        duration=DURATION_S,
+        # Rewritten 2026-10-29 from a fresh read of the package and of
+        # LANDSCAPE.md, for 117 seconds and the seven-beat pitch.
         #
-        # The secret sauce is `make-figure recommend`. Every kind declares the
-        # data roles it needs, so your columns either fill them or they do
-        # not: the right chart is computable rather than a matter of taste,
-        # deterministically, with no model anywhere near it. The catalogue is
-        # a filter your data runs through, not a menu you browse.
+        # The problem is two problems and the film says both, because the
+        # package answers both. You do not know which chart fits, and the
+        # assistant you asked instead never looked at what it drew. The
+        # first is answered deterministically, by the catalogue; the second
+        # is answered by the Ralph Eyeball Loop, which is the one thing in
+        # this suite that is not a rule.
+        #
+        # What is deliberately not promised: geospatial (choropleth and
+        # situation_map left for sprezzature-maps; the eleven map-shaped
+        # kinds that remain are marks in the shape of a country), animation
+        # (seven kinds of 167), dashboards (one star in its own landscape,
+        # assumed), and "no library" without its qualifier -- true of the
+        # drawing, not of the [dataviz] extra.
         vo=[("figures.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 27.28),
-            ("tile", 42.55),
-            ("bell", 55.67),
+            ("drop", on_beat(8.9)[0]),
+            ("tile", on_beat(28.9)[0]),
+            ("tile", on_beat(47.5)[0]),
+            ("tile", on_beat(77.5)[0]),
+            ("bell", on_beat(88.4)[0]),
         ],
         scenes=[
-            # PROBLEM
+            # WHAT
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=9.1,
+                end=9.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 figures",
+                mark="Sprezzature · figures",
+                # Declared in films.yaml and checked by
+                # `sprezzature-video verify` against figures.json. Keep the
+                # wording with the value.
                 line=L(
                     "167 chart kinds, every line of SVG written by hand.",
                     "167 types de graphiques, chaque trait de SVG écrit à la main.",
                 ),
                 url="sprezzature.ai",
             ),
+            # PROBLEM
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=9.1,
-                end=14.4,
+                start=8.9,
+                dur=9.2,
+                end=18.0,
                 line=L(
-                    "Most people reach for the bar chart they reached for last time.",
-                    "La plupart des gens reprennent le graphique en barres "
-                    "de la dernière fois.",
+                    "A spreadsheet, and no chart in it is obviously the right one.",
+                    "Un tableur, et aucun graphique ne s'impose vraiment.",
+                ),
+            ),
+            dict(
+                type="held",
+                beat="problem",
+                start=17.9,
+                dur=9.7,
+                end=27.5,
+                # The second problem, and the one the package is actually
+                # unusual for answering. render_checks.py names the three
+                # failures seen in production: overlapping tick labels, a
+                # leftover template title, a white panel on a dark page.
+                line=L(
+                    "The assistant drew it. Nothing in the chain ever looked.",
+                    "L'assistant l'a dessiné. Personne, ensuite, ne l'a regardé.",
                 ),
             ),
             # SOLUTION
             dict(
                 type="grid",
                 beat="solution",
-                start=14.3,
-                dur=12.9,
-                end=27.2,
+                start=27.4,
+                dur=11.7,
+                end=39.0,
                 eyebrow=L(
-                    "167 kinds, each written by hand",
-                    "167 types, écrits un par un à la main",
+                    "One name, your rows, a file back",
+                    "Un nom, vos lignes, un fichier en retour",
                 ),
                 images=[
                     "figures/sankey.svg",
                     "figures/alluvial.svg",
-                    "figures/chord.svg",
-                    "figures/bellcurve.svg",
                     "figures/circle-packing.svg",
-                    "figures/candlestick.svg",
+                    "figures/clustermap.svg",
                 ],
-                at=on_beat(15.8, 16.4, 16.9, 17.5, 18.0, 18.6),
+                at=on_beat(28.9, 30.0, 31.1, 32.2),
                 caption=L(
-                    "Every generator writes the SVG markup itself, so "
-                    "the shapes belong to nobody's charting library.",
-                    "Chaque générateur écrit le SVG lui-même : les "
-                    "formes n'appartiennent à la bibliothèque de "
-                    "personne.",
+                    "167 kinds in 68 categories, and the catalogue "
+                    "marks all 167 of them stable.",
+                    "167 types répartis en 68 catégories, et le "
+                    "catalogue les marque tous stables.",
+                ),
+            ),
+            dict(
+                # The beat FILM-SHAPES asks this film for: what separates a
+                # hand-authored SVG from an exported one. A contrast, so a
+                # versus; stated here, demonstrated at 87.4s on the hero.
+                type="versus",
+                beat="solution",
+                start=38.9,
+                dur=7.7,
+                end=46.5,
+                eyebrow=L(
+                    "Written line by line, not exported",
+                    "Écrit ligne à ligne, pas exporté",
+                ),
+                left=(
+                    L("exported", "exporté"),
+                    L("a picture of a chart", "une image de graphique"),
+                ),
+                right=(
+                    L("written", "écrit"),
+                    L("a document you can read", "un document qui se lit"),
+                ),
+                at=on_beat(39.8, 41.5),
+                # 144, measured: `grep -l 'svg_open(' scripts/make_*.py |
+                # wc -l` in sprezzature-figures. The docstring of
+                # scripts/_svg.py says "~46 generators" and the body of the
+                # same file says "nearly every generator"; the docstring is
+                # the stale one.
+                caption=L(
+                    "SVG is Scalable Vector Graphics, and it is text. "
+                    "144 of the 167 generators share one accessible root.",
+                    "SVG, pour Scalable Vector Graphics, c'est du texte : "
+                    "144 générateurs sur 167 en partagent la racine.",
+                ),
+            ),
+            dict(
+                type="grid",
+                beat="solution",
+                start=46.4,
+                dur=11.2,
+                end=57.5,
+                eyebrow=L(
+                    "Distributions, series, surfaces",
+                    "Distributions, séries, surfaces",
+                ),
+                images=[
+                    "figures/bellcurve.svg",
+                    "figures/candlestick.svg",
+                    "figures/kde2d-contour.png",
+                    "figures/surface3d.png",
+                ],
+                at=on_beat(47.5, 48.6, 49.7, 50.8),
+                caption=L(
+                    "A title, a description, a dark twin and a "
+                    "reduced-motion guard, inside the file.",
+                    "Un titre, une description, un jumeau sombre et un "
+                    "garde d'animation, dans le fichier.",
                 ),
             ),
             # SECRET SAUCE
             dict(
-                type="claim",
-                beat="magic",
-                start=27.1,
-                dur=8.3,
-                end=35.3,
-                line=L(
-                    "Each one declares the data it needs.",
-                    "Chacun déclare les données qu'il lui faut.",
-                ),
-            ),
-            dict(
+                # Kept as a `verify` deliberately:
+                # `test_the_film_counts_what_the_package_counts` reads this
+                # scene by type and reads the claim whose English label
+                # holds "fill". The count is re-measured there, from the
+                # committed frame region-quarter-units.csv, and both spoken
+                # cuts have to spell it.
                 type="verify",
                 beat="magic",
-                start=35.2,
-                dur=12.3,
-                end=47.4,
+                start=57.4,
+                dur=12.2,
+                end=69.5,
                 eyebrow=L(
-                    "So your columns are the question",
-                    "Vos colonnes posent donc la question",
+                    "Every kind declares the data roles it needs",
+                    "Chaque type déclare les rôles de données qu'il exige",
                 ),
                 claims=[
                     (
@@ -811,14 +1208,10 @@ FILMS = {
                     ),
                     # 64, measured: `make-figure recommend --data
                     # brag-output/region-quarter-units.csv --limit 500`.
-                    # The first draft said 41, which nobody had run; the
-                    # second said 61, measured on an `r.csv` that was
-                    # never committed, so nobody could run it either. The
-                    # count moves with the frame -- six rows of the same
-                    # three columns answer 62 -- so the frame is in the
-                    # repository now and
-                    # `test_the_film_counts_what_the_package_counts`
-                    # re-measures it.
+                    # The columns are on screen because the count moves with
+                    # them: the same three columns over six rows answer 62.
+                    # KAWASAKI.md still says sixty-one, measured on a CSV
+                    # that lived on one machine. That number is not used.
                     (
                         L("kinds those columns can fill", "types qu'elles remplissent"),
                         "64",
@@ -829,132 +1222,230 @@ FILMS = {
                     ),
                     (L("models consulted", "modèles consultés"), "0"),
                 ],
-                at=[(36.6, 37.1), (38.2, 38.7), (39.8, 40.4), (41.5, 42.0)],
+                at=[
+                    tuple(on_beat(58.4, 58.9)),
+                    tuple(on_beat(60.0, 60.5)),
+                    tuple(on_beat(61.6, 62.2)),
+                    tuple(on_beat(63.3, 63.8)),
+                ],
                 caption=L(
-                    "The same filter the studio shows as cards, run "
-                    "from the command line.",
-                    "Le même filtre que le studio affiche en cartes, "
-                    "depuis la ligne de commande.",
+                    "The ranking is a readable combination of signals, "
+                    "settled before any model sees the list.",
+                    "Le classement est une combinaison lisible de signaux, "
+                    "tranchée avant qu'un modèle voie la liste.",
                 ),
             ),
             dict(
-                type="held",
+                type="claim",
                 beat="magic",
-                start=47.3,
-                dur=8.2,
-                end=55.5,
+                start=69.4,
+                dur=7.2,
+                end=76.5,
                 line=L(
-                    "The catalogue is a filter, not a menu.",
-                    "Le catalogue est un filtre, pas un menu.",
+                    "A rule cannot look at what it drew.",
+                    "Une règle ne sait pas regarder ce qu'elle a dessiné.",
                 ),
             ),
+            dict(
+                # The recipe, and the only thing in the suite that is not a
+                # rule. `loop` belongs to the suite film and is not spread
+                # here; the steps are chips, and the mechanism is in the
+                # caption with its source named: which model, through what,
+                # and where it runs.
+                type="chips",
+                beat="magic",
+                start=76.4,
+                dur=11.2,
+                end=87.5,
+                eyebrow=L("The Ralph Eyeball Loop", "La boucle Ralph Eyeball"),
+                items=[
+                    L("render", "dessiner"),
+                    L("look", "regarder"),
+                    L("write the critique", "écrire la critique"),
+                    L("fix the source", "corriger la source"),
+                    L("render again", "recommencer"),
+                ],
+                at=on_beat(77.5, 78.6, 79.7, 80.7, 81.8),
+                caption=L(
+                    "The looking is qwen3-vl:8b through Ollama, offline. "
+                    "It edits the plan, never the picture.",
+                    "Celui qui regarde est qwen3-vl:8b via Ollama, hors "
+                    "ligne. Il modifie le plan, jamais l'image.",
+                ),
+            ),
+            # AT ITS BEST
+            dict(
+                # One figure, held. Not a contact sheet: the two grids have
+                # already shown breadth, and this beat is for the single
+                # most beautiful thing the package emits. 11 ribbons and 5
+                # arcs carry tabindex="0" and a <title>; the file also holds
+                # a <desc>, an embedded font, a dark peer and a
+                # reduced-motion guard. Measured on
+                # _assets/figures/chord.svg.
+                type="shot",
+                beat="example",
+                start=87.4,
+                dur=15.2,
+                end=102.5,
+                eyebrow=L("chord, one of the 167", "chord, un des 167"),
+                src="figures/chord.svg",
+                ratio=1080 / 1140,
+                at=on_beat(88.4)[0],
+                caption=L(
+                    "11 ribbons and 5 arcs, each one focusable, "
+                    "each carrying its own numbers in a title.",
+                    "11 rubans et 5 arcs, chacun atteignable au "
+                    "clavier, chacun portant ses chiffres dans un titre.",
+                ),
+            ),
+            # YOUR TURN
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=102.4,
+                dur=14.6,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 figures",
+                mark="Sprezzature · figures",
                 actions=cta_for("figures"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(110.2)[0],
             ),
         ],
     ),
     # ---------------------------------------------------------------- publish
     "publish": dict(
-        duration=60.0,
+        duration=DURATION_S,
         # A pipeline film, written 2026-10-27 from `_readalong.py` rather than
-        # from the tool list. Its docstring holds the best sentence in the
-        # package: a read-along wrong by one sentence is worse than none,
-        # because it tells a reader with confidence to look at the wrong line.
+        # from the tool list, and re-cut 2026-10-29 to the seven movements.
+        # Its docstring still holds the best sentence in the package: a
+        # read-along wrong by one sentence is worse than none, because it
+        # tells a reader with confidence to look at the wrong line.
         #
         # So the module refuses to number sentences independently. It takes
         # the cues the narration actually produced, splits the rendered HTML
         # with the same splitter, compares the two lists, and raises on the
         # first divergence. "There is no third outcome where it wraps
         # something and hopes."
+        #
+        # The example beat is the only place in the suite where that sentence
+        # can be seen rather than asserted, which is why it is worth the one
+        # asset this film needs and does not yet have.
         vo=[("publish.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 30.00),
-            ("tile", 42.55),
-            ("bell", 55.67),
+            ("drop", 10.917),
+            ("tile", 27.824),
+            ("tile", 44.187),
+            ("tile", 57.308),
+            ("tile", 75.825),
+            ("bell", 99.823),
         ],
         scenes=[
-            # PROBLEM
+            # WHAT -------------------------------------------------------- 0
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=11.0,
+                end=11.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 publish",
+                mark="Sprezzature · publish",
                 line=L(
                     "A folder of Markdown becomes a site somebody can find.",
                     "Un dossier de Markdown devient un site qu'on trouve.",
                 ),
                 url="sprezzature.ai",
             ),
+            # PROBLEM ---------------------------------------------------- 11
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=9.1,
-                end=14.4,
+                start=10.9,
+                dur=8.7,
+                end=19.6,
                 line=L(
                     "One sentence out of step is worse than no highlighting at all.",
                     "Une phrase de décalage vaut moins que pas de surlignage du tout.",
                 ),
             ),
-            # SOLUTION: the pipeline
+            dict(
+                type="claim",
+                beat="problem",
+                start=19.5,
+                dur=8.5,
+                end=28.0,
+                # `_readalong.py:7-9`. The word carrying the film is
+                # "confidence": a highlight that is merely absent is a missing
+                # feature, one that is wrong is an instruction to look at the
+                # wrong line.
+                line=L(
+                    "It points at the wrong line, with confidence.",
+                    "Il pointe la mauvaise ligne, avec assurance.",
+                ),
+            ),
+            # SOLUTION: the pipeline -------------------------------------- 28
             dict(
                 type="flow",
                 beat="solution",
-                start=14.3,
-                dur=14.9,
-                end=29.2,
-                eyebrow=L("One document, nine tools", "Un document, neuf outils"),
+                start=27.9,
+                dur=16.1,
+                end=44.0,
+                # Seven stages, and the eyebrow says seven of how many so the
+                # frame does not read as a complete inventory. The caption
+                # then says which ten: the repository's, not the wheel's.
+                eyebrow=L("7 of the 10 tools", "7 des 10 outils"),
                 stages=[
-                    ("lint", L("stdlib, milliseconds", "stdlib, millisecondes")),
-                    ("html", L("the page", "la page")),
-                    ("icons", L("one logo, every size", "un logo, toutes les tailles")),
-                    ("indexes", L("crawlers and models", "robots et modèles")),
-                    ("meta", L("cards, drafted locally", "cartes, rédigées en local")),
-                    ("narrate", L("the voice", "la voix")),
+                    ("lint", L("standard library only", "bibliothèque standard")),
+                    ("html", L("the pages", "les pages")),
+                    ("meta", L("cards for a link", "cartes de partage")),
+                    ("icons", L("1 logo, 11 files", "1 logo, 11 fichiers")),
+                    ("indexes", L("6, for crawlers", "6, pour les robots")),
+                    ("narrate", L("the voice, local", "la voix, en local")),
                     ("readalong", L("the two, bound", "les deux, liés")),
                 ],
-                at=on_beat(15.8, 17.0, 18.1, 19.2, 20.3, 21.4, 22.5),
+                at=on_beat(29.5, 31.1, 32.7, 34.4, 36.0, 37.6, 39.3),
                 caption=L(
-                    "The linter runs on the standard library alone, "
-                    "which is why it fits in a pre-commit hook.",
-                    "Le linter n'utilise que la bibliothèque standard : "
-                    "c'est pourquoi il tient dans un crochet de "
-                    "pré-commit.",
+                    "10 tools in the repository. 9 in the package you "
+                    "install today.",
+                    "10 outils dans le dépôt. 9 dans le paquet publié "
+                    "à ce jour.",
                 ),
             ),
-            # SECRET SAUCE
+            dict(
+                type="claim",
+                beat="solution",
+                start=43.9,
+                dur=6.1,
+                end=50.0,
+                # The second half of what the package is for, and the half
+                # nothing else in the suite does: a page a designer exported,
+                # or one live for three years, with no Markdown to go back to.
+                line=L(
+                    "A page with no Markdown behind it is read the same way.",
+                    "Une page sans Markdown derrière elle se lit de la même façon.",
+                ),
+            ),
+            # SECRET SAUCE ------------------------------------------------ 50
             dict(
                 type="claim",
                 beat="magic",
-                start=29.1,
-                dur=8.3,
-                end=37.3,
+                start=49.9,
+                dur=7.3,
+                end=57.2,
                 line=L(
                     "The audio and the page leave the same Markdown by "
                     "different roads.",
-                    "L'audio et la page quittent le même Markdown par deux routes.",
+                    "L'audio et la page quittent le même Markdown par 2 routes.",
                 ),
             ),
             dict(
                 type="versus",
                 beat="magic",
-                start=37.2,
-                dur=9.6,
-                end=46.8,
-                eyebrow=L("Two roads, no guarantee", "Deux routes, aucune garantie"),
+                start=57.1,
+                dur=9.9,
+                end=67.0,
+                eyebrow=L("2 roads, no guarantee", "2 routes, aucune garantie"),
                 left=(
                     L("The voice", "La voix"),
                     L(
@@ -966,7 +1457,7 @@ FILMS = {
                     L("The page", "La page"),
                     L("blocks walked as a tree", "des blocs parcourus comme un arbre"),
                 ),
-                at=on_beat(38.2, 39.3),
+                at=on_beat(58.4, 60.0),
                 caption=L(
                     "A regular expression cannot see a code fence "
                     "inside a list item. A tree walk can.",
@@ -977,109 +1468,193 @@ FILMS = {
             dict(
                 type="held",
                 beat="magic",
-                start=46.7,
-                dur=8.8,
-                end=55.5,
+                start=66.9,
+                dur=9.1,
+                end=76.0,
                 line=L(
                     "They match, or it refuses. There is no third outcome.",
                     "Les deux coïncident, ou bien ça refuse. Il n'y a pas "
                     "de troisième issue.",
                 ),
             ),
+            # AT ITS BEST ------------------------------------------------- 76
+            dict(
+                type="shot",
+                beat="example",
+                start=75.9,
+                dur=15.1,
+                end=91.0,
+                # The one thing this package makes that cannot be argued for
+                # in prose. `shots/readalong.png` is the package's own README,
+                # narrated by `narrate` and bound by `readalong`, paused on
+                # the sentence being spoken. The French cut takes
+                # `shots/fr/readalong.png`, the same page from `LISEZMOI.md`.
+                # Both are built by the command at the foot of this file.
+                #
+                # The caption is the source, and it is the one line of the
+                # film a viewer can go and check: the highlight is not timed
+                # here at all.
+                eyebrow=L(
+                    "Its own README, reading itself",
+                    "Son propre README, qui se lit",
+                ),
+                src="shots/readalong.png",
+                ratio=4 / 3,
+                at=on_beat(76.4)[0],
+                caption=L(
+                    "The browser parses the WebVTT cues and fires the events. "
+                    "Nothing here polls a clock.",
+                    "Le navigateur analyse les repères WebVTT et déclenche "
+                    "les événements. Rien n'interroge d'horloge.",
+                ),
+            ),
+            dict(
+                type="held",
+                beat="example",
+                start=90.9,
+                dur=9.1,
+                end=100.0,
+                line=L(
+                    "Not one line of synchronisation code was written.",
+                    "Pas une ligne de code de synchronisation n'a été écrite.",
+                ),
+            ),
+            # YOUR TURN -------------------------------------------------- 100
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=99.9,
+                dur=17.1,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 publish",
+                mark="Sprezzature · publish",
                 actions=cta_for("publish"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(107.0)[0],
             ),
         ],
     ),
     # ------------------------------------------------------------------ audio
     "audio": dict(
-        duration=60.0,
-        # Five scenes, the fewest of any brick film, written 2026-10-27 from
-        # `audit_captions.py`. Its opening paragraph is the whole pitch: a
-        # perfectly accurate caption holding ninety characters for half a
-        # second is unreadable, and accuracy was the only thing anybody
-        # measured.
-        #
-        # The secret sauce is that the numbers already exist. Netflix's timed
-        # text style guide publishes 17 characters a second, 42 per line, a
-        # five-sixths of a second floor and a seven second ceiling; BBC and
-        # Netflix agree on two lines. Published, conventional, and unchecked.
+        duration=DURATION_S,
+        # Nine scenes. The five-scene cut this replaces was written for a
+        # sixty-second film and still carried a `cta` with `dur=4.6` inside a
+        # 117-second shell.
         vo=[("audio.en", 1.10)],
-        sfx=[("drop", 5.47), ("tile", 16.37), ("tile", 32.19), ("bell", 55.67)],
+        sfx=[
+            ("drop", on_beat(5.5)[0]),
+            ("tile", on_beat(28.9)[0]),
+            ("tile", on_beat(51.9)[0]),
+            ("tile", on_beat(77.9)[0]),
+            ("bell", on_beat(100.9)[0]),
+        ],
         scenes=[
-            # PROBLEM
+            # ----------------------------------------------------------- WHAT
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=11.5,
+                end=11.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 audio",
+                mark="Sprezzature · audio",
                 line=L(
                     "Speech, read both ways, on your own machine.",
                     "La parole, lue dans les deux sens, sur votre machine.",
                 ),
                 url="sprezzature.ai",
             ),
+            # -------------------------------------------------------- PROBLEM
+            # The failure, in the direction everybody has met. The sentence is
+            # `scripts/audit_captions.py:7`, shortened to what fits a frame:
+            # "a perfectly accurate caption that holds 90 characters on screen
+            # for half a second is unreadable".
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=9.6,
-                end=15.0,
+                start=10.9,
+                dur=9.1,
+                end=20.0,
                 line=L(
-                    "Ninety characters, on screen for half a second.",
-                    "Quatre-vingt-dix caractères, affichés une demi-seconde.",
+                    "90 characters, on screen for half a second.",
+                    "90 caractères, affichés une demi-seconde.",
                 ),
             ),
-            # SOLUTION: the file itself, with the offending cue marked
+            # The same failure, turned around -- which is this film's shape
+            # arriving before its solution does. A narrated page that highlights
+            # the sentence being read is the other direction of one modality, and
+            # it fails the same way: not by being wrong, by being out of step.
             dict(
-                type="code",
-                beat="solution",
-                start=14.9,
-                dur=16.1,
-                end=31.0,
-                eyebrow=L(
-                    "The track, read as a file", "La piste, lue comme un fichier"
-                ),
-                code=[
-                    "WEBVTT",
-                    "",
-                    "00:00:12.100 --> 00:00:12.950",
-                    "Every threshold here is a flag rather than a law,",
-                    "because a children's programme and a dense talk",
-                    "justify different numbers entirely.",
-                    "",
-                    "00:00:12.900 --> 00:00:19.400",
-                    "And this one starts before that one ended.",
-                ],
-                mark=(4, 5, 6, 9),
-                at=[15.8, 16.1, 16.6, 17.2, 17.7, 18.3, 18.6, 19.1, 19.7],
-                flag=[(4, 22.0), (9, 25.5)],
-                caption=L(
-                    "A hundred and thirty characters in eight hundred "
-                    "milliseconds. Then a cue that starts too early.",
-                    "Cent trente caractères en huit cents "
-                    "millisecondes. Puis un sous-titre qui part trop "
-                    "tôt.",
+                type="claim",
+                beat="problem",
+                start=19.9,
+                dur=9.1,
+                end=29.0,
+                line=L(
+                    "A sentence out of step points at the wrong line, with confidence.",
+                    "Une phrase de retard désigne la mauvaise ligne, avec aplomb.",
                 ),
             ),
-            # SECRET SAUCE
+            # ------------------------------------------------------- SOLUTION
+            # The symmetry, side by side. Two lanes, and underneath each of them
+            # the same two files -- which is the whole claim, and the reason a
+            # page can follow a reading without a second alignment pass.
+            dict(
+                type="versus",
+                beat="solution",
+                start=28.9,
+                dur=15.1,
+                end=44.0,
+                eyebrow=L(
+                    "One modality, read in both directions",
+                    "Une modalité, lue dans les deux sens",
+                ),
+                left=(
+                    L("Sound into text", "Du son vers le texte"),
+                    L(
+                        "What was said, who said it, in which language.",
+                        "Ce qui a été dit, par qui, dans quelle langue.",
+                    ),
+                ),
+                right=(
+                    L("Text into sound", "Du texte vers le son"),
+                    L(
+                        "A WAV, and its WebVTT lying beside it.",
+                        "Un WAV, et son WebVTT posé juste à côté.",
+                    ),
+                ),
+                at=on_beat(30.0, 37.0),
+                caption=L(
+                    "Both lanes run here, and nothing is sent anywhere.",
+                    "Les deux voies tournent ici, et rien n'est envoyé ailleurs.",
+                ),
+            ),
+            dict(
+                type="claim",
+                beat="solution",
+                start=43.9,
+                dur=8.1,
+                end=52.0,
+                line=L(
+                    "The same timed track, whichever direction wrote it.",
+                    "La même piste minutée, quel que soit le sens qui l'a écrite.",
+                ),
+            ),
+            # ---------------------------------------------------------- MAGIC
+            # Five numbers, all five already declared in `films.yaml` and all
+            # five re-measured against `scripts/audit_captions.py` on 2026-10-29:
+            # DEFAULT_CPS 17.0, DEFAULT_LINE_CHARS 42, DEFAULT_MIN_SECONDS 5 / 6,
+            # DEFAULT_MAX_SECONDS 7.0, DEFAULT_MAX_LINES 2. Unchanged.
+            #
+            # They are the inventory. The caption and the scene after it are the
+            # insight, which is what this rewrite exists to put back.
             dict(
                 type="verify",
                 beat="magic",
-                start=30.9,
-                dur=16.1,
-                end=47.0,
+                start=51.9,
+                dur=18.1,
+                end=70.0,
                 eyebrow=L(
                     "Netflix's timed text style guide",
                     "Le guide de sous-titrage de Netflix",
@@ -1113,73 +1688,118 @@ FILMS = {
                     ),
                 ],
                 at=[
-                    (32.2, 32.7),
-                    (33.8, 34.3),
-                    (35.5, 36.0),
-                    (37.1, 37.6),
-                    (38.7, 39.2),
+                    on_beat(54.0, 54.6),
+                    on_beat(56.2, 56.8),
+                    on_beat(58.4, 59.0),
+                    on_beat(60.6, 61.2),
+                    on_beat(62.8, 63.4),
                 ],
                 caption=L(
-                    "Conventions rather than laws, which is why each "
-                    "one is a flag with its source written next to it.",
-                    "Des conventions plutôt que des lois : chacune est "
-                    "donc un signalement, sa source écrite à côté.",
+                    "A children's programme and a dense talk justify different numbers.",
+                    "Une émission pour enfants et une conférence dense "
+                    "n'appellent pas les mêmes.",
                 ),
             ),
+            # The sentence the old cut never reached. Not a callback: the thing
+            # that makes the five numbers worth a minute of anybody's attention.
             dict(
                 type="held",
                 beat="magic",
-                start=46.9,
-                dur=8.6,
-                end=55.5,
+                start=69.9,
+                dur=8.1,
+                end=78.0,
                 line=L(
-                    "Accuracy was the only thing anybody measured.",
-                    "L'exactitude était la seule chose qu'on mesurait.",
+                    "Conventions, not laws. Each one is a dial.",
+                    "Des conventions, pas des lois. Chacune est un réglage.",
                 ),
             ),
+            # -------------------------------------------------------- EXAMPLE
+            # The brick's own drawing, scrolled slowly from the two lanes down to
+            # the one gate they both end at. The eyebrow names the file so the
+            # viewer knows this is a figure in the repository rather than
+            # something the film drew for the occasion.
+            #
+            # The voice over it does not describe it. It says what to notice: the
+            # two lanes do not stay apart.
+            dict(
+                type="shot",
+                beat="example",
+                start=77.9,
+                dur=23.1,
+                end=101.0,
+                eyebrow=L(
+                    "assets/how-it-works.svg, in the repository",
+                    "assets/comment-ca-marche.svg, dans le dépôt",
+                ),
+                src="figures/audio-how-it-works.svg",
+                ratio=980 / 928,
+                scroll=True,
+                at=on_beat(78.6)[0],
+                caption=L(
+                    "2 lanes out of one input, and one gate at the bottom for both.",
+                    "2 voies depuis une seule entrée, et un seul contrôle en bas.",
+                ),
+            ),
+            # ------------------------------------------------------------ CTA
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=100.9,
+                dur=16.1,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 audio",
+                mark="Sprezzature · audio",
                 actions=cta_for("audio"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(108.0)[0],
             ),
         ],
     ),
     # ---------------------------------------------------------------- cli-gui
     "cli-gui": dict(
-        duration=60.0,
-        # Written 2026-10-27 from `schema.py`, which holds two things the
-        # feature list does not.
+        duration=DURATION_S,
+        # Shape: before and after. Two `versus` scenes carry the film, because
+        # the subject is a pair twice over -- a line you type against a page
+        # you click, and a parser read directly against a help screen read as
+        # text. The scene type is this film's own (`FILM-SHAPES.md`), so using
+        # it twice sharpens the identity rather than diluting it.
         #
-        # Three frameworks, two adapters: a Typer app is converted with
-        # typer's own `get_command` and then walked as Click, "because that is
-        # what it becomes; there is no third adapter". Writing a third would
-        # have been a second implementation of Click that drifts.
+        # Three things in the package that the feature list does not have, and
+        # that this cut is built around.
         #
-        # And the trap that would make the page lie: a Click Group's name
-        # defaults to the decorated function's name, usually `main`, rather
-        # than the installed console script. Left alone, the page's Build
-        # command assembles a command line that does not exist.
+        # A Typer app is converted with typer's own `get_command` and then
+        # walked as Click, "because that is what it becomes; there is no third
+        # adapter". A third one would be a second implementation of Click,
+        # free to drift from the first.
+        #
+        # The trap that makes the page lie: a Click Group's name defaults to
+        # the decorated function's name, usually `main`, rather than the
+        # installed console script. The package falls into it itself --
+        # `walk(load_parser_from_spec("sprezzature_cli_gui.cli:main"))["prog"]`
+        # answers `main`, measured 2026-10-29.
+        #
+        # And `audit.py`, the half nobody would think to build. Its opening
+        # docstring is the best sentence in the package and sits in a module
+        # no viewer will ever open, so the film puts it on screen:
+        # "A page that silently drops a flag looks entirely correct: the form
+        # renders, the fields work, the built command line is valid shell."
+        # (`sprezzature_cli_gui/audit.py:6-9`)
         vo=[("cli-gui.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 30.00),
-            ("tile", 42.55),
-            ("bell", 55.67),
+            ("drop", on_beat(10.9)[0]),
+            ("tile", on_beat(27.9)[0]),
+            ("tile", on_beat(49.9)[0]),
+            ("tile", on_beat(79.9)[0]),
+            ("bell", on_beat(100.9)[0]),
         ],
         scenes=[
-            # PROBLEM
+            # WHAT
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=11.1,
+                end=11.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
                 mark="Sprezzature \u00b7 cli-gui",
@@ -1193,32 +1813,54 @@ FILMS = {
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=11.1,
-                end=16.4,
+                start=10.9,
+                dur=10.2,
+                end=21.0,
                 line=L(
                     "Your colleague needs this tool. They will not open a terminal.",
                     "Votre collègue a besoin de cet outil. Il n'ouvrira "
                     "pas de terminal.",
                 ),
             ),
-            # SOLUTION: the thing itself. The claim that used to sit here --
-            # "it reads the parser object, the help text is a last resort" --
-            # is said by the voice over these two captures instead, because
-            # the captures are the better argument and the slot is now one
-            # scene shorter.
+            # PROBLEM, second half: the hand-built form, which is the thing
+            # `audit.py` exists to stop happening to a generated one.
             dict(
-                type="grid",
-                beat="solution",
-                start=16.3,
-                dur=8.2,
-                end=24.4,
-                eyebrow=L(
-                    "Generated from the command, not written",
-                    "Engendré depuis la commande, pas écrit",
+                type="claim",
+                beat="problem",
+                start=20.9,
+                dur=7.2,
+                end=28.0,
+                line=L(
+                    "So you build the form by hand. Then the tool grows a flag.",
+                    "Alors vous bricolez le formulaire. Puis l'outil gagne un drapeau.",
                 ),
-                images=["shots/make-figure-list.png", "shots/make-figure-render.png"],
-                at=on_beat(17.5, 18.6),
+            ),
+            # SOLUTION: the signature scene. A line on the left, the page it
+            # became on the right. `make-figure render bar` is a real
+            # invocation of the command the two captures below were taken
+            # from, so the left half and the right half are the same tool.
+            dict(
+                type="versus",
+                beat="solution",
+                start=27.9,
+                dur=12.2,
+                end=40.0,
+                eyebrow=L("Before, and after", "Avant, et après"),
+                left=(
+                    "$ make-figure render bar",
+                    L(
+                        "Typed from memory, in the order the tool wants it.",
+                        "Tapée de mémoire, dans l'ordre que l'outil attend.",
+                    ),
+                ),
+                right=(
+                    "make-figure.html",
+                    L(
+                        "One field per flag, with its default already in the box.",
+                        "Un champ par drapeau, sa valeur par défaut déjà dedans.",
+                    ),
+                ),
+                at=on_beat(29.2, 31.0),
                 caption=L(
                     "Options become fields. Choices become a list. "
                     "Required stays required.",
@@ -1226,134 +1868,304 @@ FILMS = {
                     "liste. L'obligatoire reste obligatoire.",
                 ),
             ),
-            # SECRET SAUCE
+            # SOLUTION: the two captures, which are the argument. Both are
+            # taken from `sprezzature_figures.cli:main` through the installed
+            # `sprezzature-cli-gui`, so what they show is whatever the command
+            # prints today rather than a page shot once in September.
+            dict(
+                type="grid",
+                beat="solution",
+                start=39.9,
+                dur=10.2,
+                end=50.0,
+                eyebrow=L(
+                    "Generated from the command, not written",
+                    "Engendré depuis la commande, pas écrit",
+                ),
+                images=["shots/make-figure-list.png", "shots/make-figure-render.png"],
+                at=on_beat(41.2, 42.8),
+                caption=L(
+                    "One HTML file. No server, no port, and not one line "
+                    "added to the tool.",
+                    "Un fichier HTML. Aucun serveur, aucun port, pas une "
+                    "ligne ajoutée à l'outil.",
+                ),
+            ),
+            # SECRET SAUCE, and its source named: the parser object the tool
+            # already built for itself. Counting the parts was an inventory,
+            # and the suite's own pitch checker said so -- "Three frameworks,
+            # two adapters" has the shape of "Ten packages. Five surfaces
+            # each.", the line that checker was written against. The insight
+            # is why there are two adapters and not three, so that is what the
+            # caption says.
             dict(
                 type="versus",
                 beat="magic",
-                start=24.3,
-                dur=11.2,
-                end=35.4,
-                # Counting the parts was an inventory, and the suite's own
-                # pitch checker said so: "Three frameworks, two adapters" is
-                # the same shape as "Ten packages. Five surfaces each.", the
-                # line that checker was written against. The insight is why
-                # there are two and not three.
+                start=49.9,
+                dur=14.2,
+                end=64.0,
                 eyebrow=L(
-                    "A Typer app is already Click",
-                    "Une application Typer est déjà du Click",
+                    "Read the parser, or read the help screen",
+                    "Lire l'analyseur, ou lire l'écran d'aide",
                 ),
                 left=(
-                    L("argparse, Click", "argparse, Click"),
+                    "argparse, Click, Typer",
                     L(
-                        "walked directly, each in its own adapter",
-                        "parcourus directement, chacun son adaptateur",
+                        "The parser object the tool already built, walked "
+                        "field by field.",
+                        "L'objet analyseur que l'outil a déjà construit, lu "
+                        "champ par champ.",
                     ),
                 ),
                 right=(
-                    "Typer",
+                    "--from-help",
                     L(
-                        "converted by typer itself, then walked as Click",
-                        "converti par typer lui-même, puis lu comme du Click",
+                        "The tool's own help screen, read as text. Lower "
+                        "fidelity, and it says so.",
+                        "L'écran d'aide de l'outil, lu comme du texte. Moins "
+                        "fidèle, et il le dit.",
                     ),
                 ),
-                at=on_beat(25.6, 26.7),
+                at=on_beat(51.2, 56.6),
                 caption=L(
-                    "A third adapter would be a second implementation "
-                    "of Click, drifting from the first.",
-                    "Un troisième adaptateur serait une deuxième "
-                    "implémentation de Click, qui dériverait de la "
-                    "première.",
+                    "A Typer application is already Click once you ask it, "
+                    "so there is no third adapter.",
+                    "Une application Typer est déjà du Click dès qu'on le "
+                    "lui demande : pas de troisième adaptateur.",
                 ),
             ),
+            # SECRET SAUCE: the sentence from `audit.py:6-9`, which is the
+            # whole reason the package ships an auditor at all.
             dict(
                 type="held",
                 beat="magic",
-                start=35.3,
-                dur=10.2,
-                end=45.5,
+                start=63.9,
+                dur=8.2,
+                end=72.0,
                 line=L(
-                    "A Click group is named after the function, not after the command.",
-                    "Un groupe Click porte le nom de la fonction, pas "
-                    "celui de la commande.",
+                    "A page that silently drops a flag looks entirely correct.",
+                    "Une page qui laisse tomber un drapeau en silence a l'air "
+                    "parfaitement correcte.",
                 ),
             ),
+            # SECRET SAUCE: and what the auditor does about it. Five rules,
+            # recounted 2026-10-29:
+            #   grep -o 'rule="[a-z-]*"' sprezzature_cli_gui/audit.py | sort -u
+            #   -> choice-dropped, field-has-no-flag, flag-not-in-page,
+            #      prog-mismatch, prog-missing
+            # Each message names the consequence rather than the difference,
+            # which `tests/test_the_page_still_covers_the_cli.py` enforces.
             dict(
                 type="claim",
                 beat="magic",
-                start=45.4,
-                dur=10.1,
-                end=55.5,
+                start=71.9,
+                dur=8.2,
+                end=80.0,
                 line=L(
-                    "Unasked, the page builds a command that does not exist.",
-                    "Faute de le dire, la page fabrique une commande qui n'existe pas.",
+                    "5 rules, and each one names what the user loses.",
+                    "5 règles, et chacune nomme ce que l'utilisateur perd.",
                 ),
             ),
+            # AT ITS BEST. The page `docker` becomes, scrolling. Not a
+            # terminal shot: this is the package's own output, and its size is
+            # the argument -- `docker` is Go, nothing here can import a line
+            # of it, and it still came out as 57 sections and 1,307 fields.
+            #
+            # Measured 2026-10-29 from a clone, both numbers in one command:
+            #
+            #   python -c "
+            #   from sprezzature_cli_gui.adapters.help_text import walk_from_help
+            #   from sprezzature_cli_gui.renderer import render_html
+            #   t = walk_from_help('docker')
+            #   print(len(t['sub_commands']), render_html(t).count('data-cli-flag='))"
+            #   # 57 1307
+            #
+            # The capture, which needs docker on PATH, playwright, and a
+            # network for the Tailwind Play CDN the emitted page loads:
+            #
+            #   sprezzature-cli-gui --from-help docker --out docker.html
+            #   python - <<'PY'
+            #   import pathlib
+            #   from playwright.sync_api import sync_playwright
+            #   url = pathlib.Path("docker.html").resolve().as_uri()
+            #   W, H = 1040, 4400
+            #   with sync_playwright() as p:
+            #       b = p.chromium.launch()
+            #       pg = b.new_page(viewport={"width": W, "height": H},
+            #                       device_scale_factor=1)
+            #       pg.goto(url); pg.wait_for_timeout(2500)
+            #       pg.evaluate("""() => {
+            #         [...document.querySelectorAll('details')]
+            #           .filter(d => !d.parentElement.closest('details'))
+            #           .forEach(d => d.open =
+            #             d.querySelector('summary').textContent.trim() === 'run');
+            #       }""")
+            #       pg.wait_for_timeout(800)
+            #       pg.screenshot(path="_assets/shots/docker-run.png")
+            #       b.close()
+            #   PY
+            #
+            # 4400px and not the whole 6650px collapsed page, and not the
+            # 65558px with every group open: the scroll speed is the image
+            # height divided by the scene, and at 4400 a field stays on screen
+            # about 2.8 s in landscape, 4.7 s in portrait. The whole page would
+            # be a smear, and the collapsed one is 57 grey bars with no fields
+            # in them at all. One group open is what makes it a wall of flags.
+            dict(
+                type="shot",
+                beat="example",
+                start=79.9,
+                dur=21.2,
+                end=101.0,
+                eyebrow=L(
+                    "docker, which is written in Go and cannot be imported",
+                    "docker, écrit en Go et impossible à importer",
+                ),
+                src="shots/docker-run.png",
+                ratio=1040 / 4400,
+                scroll=True,
+                at=on_beat(80.6)[0],
+                caption=L(
+                    "57 sub-commands and 1,307 form fields, read off its "
+                    "help screen in one pass.",
+                    "57 sous-commandes et 1 307 champs, lus sur son écran "
+                    "d'aide en une seule passe.",
+                ),
+            ),
+            # YOUR TURN
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=100.9,
+                dur=16.2,
+                end=DURATION_S,
                 logo="logo-512.png",
                 mark="Sprezzature \u00b7 cli-gui",
                 actions=cta_for("cli-gui"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(109.0)[0],
             ),
         ],
     ),
     # --------------------------------------------------------------------- ui
     "ui": dict(
-        duration=60.0,
-        # The smallest package gets the fewest scenes. Written 2026-10-27 from
-        # `audit_i18n.py`, whose best idea is where it stops: `--fix` writes
-        # the string into the catalogue and refuses to rewrite the call site,
-        # for the reason `pybabel extract` gives. Only the author knows which
-        # id the call should use, and whether the surrounding code wants a
-        # plural or a placeholder. So it prints the line to paste, and
-        # anything it could not parse with certainty is reported as needing a
-        # hand rather than dropped in silence.
+        duration=DURATION_S,
+        # The smallest package, and the one whose pitch is easiest to get
+        # wrong in either direction. Rewritten 2026-10-29 from
+        # `notes/ui.md`, which read the repository rather than the feature
+        # list.
+        #
+        # The difficulty is that the brick has two storeys of different
+        # natures. The Python half is deterministic: it walks a tree, finds
+        # strings that belong in a catalogue, scaffolds the catalogue,
+        # compiles it and emits the two loaders that read it. The other half,
+        # writing the interface, is prose a model reads -- 64 reference files,
+        # 4772 lines, and no command behind any of it. A film that promises
+        # "an interface" and ships a string scanner lies; a film that only
+        # dares say "it finds strings" undersells the larger half. So the
+        # word the whole film hangs on is HALF, said on the first frame and
+        # again over the last picture, because it names the other storey
+        # instead of hiding it.
+        #
+        # Two things KAWASAKI.md says about this brick are not said here, on
+        # the evidence in `notes/ui.md`:
+        #
+        #   * "anything it could not parse with certainty is reported as
+        #     needing a hand rather than dropped in silence" -- false today.
+        #     On the commonest catalogue shape `extract_js()` returns zero
+        #     entries and zero notes while the audit still flags the lines
+        #     (`scripts/audit_i18n.py:363-366`), so `--fix` says "1 string(s)
+        #     moved" meaning "1 of the ones I could read". The film shows the
+        #     part that holds: it writes the catalogue and stops at the call
+        #     site.
+        #   * "it finds the sentences hardcoded in your source" -- too wide.
+        #     It finds two named shapes, and the `versus` scene names both
+        #     rather than claiming the class.
+        #
+        # The secret sauce is the one mechanism in this brick that exists
+        # nowhere else in the landscape read for LANDSCAPE.md: a prompt
+        # declares the single locale it was engineered and tested in, and a
+        # missing translation resolves to that text rather than to the first
+        # declared locale or to the message id. Its source is named in the
+        # voice and it is not a borrowed one: the package measured it, in
+        # `tests/eval/test_prompt_locale_eval.py`, with a local model over
+        # both locales. The film states the method and never the score, for
+        # the reason the note gives -- the score is the output of a
+        # non-deterministic local model and moves with the machine.
         vo=[("ui.en", 1.10)],
-        sfx=[("drop", 5.47), ("tile", 24.55), ("tile", 42.55), ("bell", 55.67)],
+        sfx=[
+            ("drop", 10.92),
+            ("tile", 28.92),
+            ("tile", 51.28),
+            ("tile", 79.10),
+            ("bell", 100.38),
+        ],
         scenes=[
+            # WHAT ------------------------------------------------------- 0-11
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=11.5,
+                end=11.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
                 mark="Sprezzature \u00b7 ui",
+                # Both storeys on the first frame, in that order, because
+                # frame zero is the poster and the thumbnail. The viewer is
+                # told what the model does before being told what the command
+                # does, so nothing later has to walk a promise back.
                 line=L(
-                    "Every sentence hardcoded in your source, found and filed.",
-                    "Chaque phrase écrite en dur dans vos sources, trouvée et rangée.",
+                    "The model writes your screen. A command files its sentences.",
+                    "Le modèle écrit votre écran. Une commande en range les phrases.",
                 ),
                 url="sprezzature.ai",
             ),
+            # PROBLEM --------------------------------------------------- 11-29
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=11.1,
-                end=16.4,
+                start=10.9,
+                dur=9.2,
+                end=20.0,
+                # The best cost sentence in the suite, kept word for word from
+                # `README.md:33-35`. It was already the line this film held.
                 line=L(
                     "It costs a week the day somebody needs a second language.",
                     "Elle coûte une semaine le jour où il faut une deuxième langue.",
                 ),
             ),
             dict(
+                type="claim",
+                beat="problem",
+                start=19.9,
+                dur=9.2,
+                end=29.0,
+                # The second pile, and the reason it is a different problem.
+                # From `tests/eval/test_prompt_locale_eval.py:4-7`, the best
+                # formulation of the mechanism and the one nobody will ever
+                # open the file to read.
+                line=L(
+                    "You see a missing label. A missing prompt, the model answers anyway.",
+                    "Un libellé absent se voit. Un prompt absent, le modèle répond quand même.",
+                ),
+            ),
+            # SOLUTION ---------------------------------------------- 29-51.5
+            dict(
                 type="versus",
                 beat="solution",
-                start=16.3,
-                dur=13.2,
-                end=29.4,
+                start=28.9,
+                dur=12.7,
+                end=41.5,
                 eyebrow=L(
-                    "Two places a string hides", "Deux endroits où une phrase se cache"
+                    "2 shapes a sentence hides in",
+                    "2 formes où une phrase se cache",
                 ),
                 left=(
                     "I18N001",
                     L(
-                        "a locale table buried in JavaScript",
-                        "une table de langues enfouie dans du JavaScript",
+                        "a locale table living in JavaScript",
+                        "une table de langues qui vit dans le JavaScript",
                     ),
                 ),
                 right=(
@@ -1363,45 +2175,109 @@ FILMS = {
                         "un prompt de modèle écrit en dur en Python",
                     ),
                 ),
-                at=on_beat(17.5, 18.6),
+                at=on_beat(30.4, 32.2),
+                # The honesty that keeps the film from overclaiming, on screen
+                # rather than in a footnote. `eslint-plugin-i18next` does the
+                # wide job and LANDSCAPE.md says so; this one is narrow on
+                # purpose and that is what makes it standard library only, and
+                # therefore cheap enough to run on every commit.
                 caption=L(
-                    "A prompt is a translatable string. Almost nobody "
-                    "treats it as one.",
-                    "Un prompt est une chaîne traduisible. Presque "
-                    "personne ne le traite comme tel.",
+                    "2 shapes, not every literal. Precise on purpose, "
+                    "and cheap enough for every commit.",
+                    "2 formes, pas toute chaîne. Précis exprès, "
+                    "et assez léger pour chaque commit.",
+                ),
+            ),
+            dict(
+                type="held",
+                beat="solution",
+                start=41.4,
+                dur=10.2,
+                end=51.5,
+                # Where `--fix` stops, which is the whole of the make half's
+                # manners. `pybabel extract` stops in the same place and for
+                # the same reason, named in the voice over this scene.
+                line=L(
+                    "It writes the catalogue, and leaves your call site alone.",
+                    "Il écrit le catalogue, et ne touche pas à votre appel.",
+                ),
+            ),
+            # SECRET SAUCE ------------------------------------------- 51.5-79
+            dict(
+                type="claim",
+                beat="magic",
+                start=51.4,
+                dur=13.2,
+                end=64.5,
+                # `scripts/i18n_make.py:59-61`, compressed: a reordered clause
+                # or a softened imperative moves what the model does, so a
+                # prompt is not a label and cannot be treated like one.
+                line=L(
+                    "A prompt is not a label. It has one language it was tested in.",
+                    "Un prompt n'est pas un libellé. Il a la langue où il a été éprouvé.",
                 ),
             ),
             dict(
                 type="held",
                 beat="magic",
-                start=29.3,
-                dur=13.2,
-                end=42.5,
+                start=64.4,
+                dur=14.7,
+                end=79.0,
+                # The longest hold in the film, on the sentence the film
+                # exists to leave behind. The resolution rule in full is three
+                # lines: en -> en, fr -> fr with validated_locale_used False,
+                # de -> en with it True. Reproduced on 2026-10-29 against the
+                # emitted `locales/i18n_prompts.py`.
                 line=L(
-                    "It moves the string, then stops.",
-                    "Il déplace la phrase, puis s'arrête.",
+                    "A missing translation falls back to the tested language, and says so.",
+                    "Une traduction absente retombe sur la langue éprouvée, et le dit.",
                 ),
             ),
+            # AT ITS BEST ----------------------------------------- 79-100.5
             dict(
-                type="claim",
-                beat="magic",
-                start=42.4,
-                dur=13.1,
-                end=55.5,
-                line=L(
-                    "Only you know whether that line wants a plural.",
-                    "Vous seul savez si cette ligne réclame un pluriel.",
+                type="shot",
+                beat="example",
+                start=78.9,
+                dur=21.7,
+                end=100.5,
+                # The finest thing this brick makes, and it is a file. It is
+                # the only place in the package where both natures of string
+                # sit in one frame, which is the film's whole argument shown
+                # instead of argued: interface labels under `gui:`, model
+                # prompts under `prompts:`, and the second kind carrying a key
+                # the first never needs. The slow scroll ends on
+                # `validated: en`, so the picture arrives at the point at the
+                # same moment the voice does.
+                #
+                # 41 lines, counted on the file the command writes, not quoted
+                # from anywhere. The scroll shows roughly half the file at a
+                # time in landscape, nearly all of it in portrait.
+                eyebrow=L(
+                    "locales/i18n.yaml, written by one command",
+                    "locales/i18n.yaml, écrit par une seule commande",
+                ),
+                src="shots/ui-catalogue.png",
+                ratio=1240 / 1560,
+                scroll=True,
+                at=on_beat(79.8)[0],
+                caption=L(
+                    "Labels under gui, prompts under prompts, "
+                    "and one key only the second kind needs.",
+                    "Les libellés sous gui, les prompts sous prompts, "
+                    "et une clé que seuls les seconds portent.",
                 ),
             ),
+            # YOUR TURN ------------------------------------------- 100.4-117
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=100.4,
+                dur=16.6,
+                end=DURATION_S,
                 logo="logo-512.png",
                 mark="Sprezzature \u00b7 ui",
                 actions=cta_for("ui"),
+                punchline=PUNCHLINE,
             ),
         ],
     ),
@@ -1410,90 +2286,146 @@ FILMS = {
     # is the films themselves, which is why it can afford to be plain: every
     # scene is a sentence about the thing the viewer is currently watching.
     "video": dict(
-        duration=60.0,
-        # The brick that made the other ten and checks them. Written
-        # 2026-10-27, and its problem statement is this repository's own
-        # history: "127 chart kinds" stayed on screen while the catalogue
-        # grew to 167, because nobody opens a generator to re-read its
-        # strings.
+        duration=DURATION_S,
+        # The brick that checks the other ten, and the film that lies most
+        # easily, because it is about the thing that catches lying films.
         #
-        # The secret sauce is that the dangerous claim is the undeclared one.
-        # A declared claim gets checked against the code. A number that
-        # simply appears on screen has nothing to check it against, so the
-        # scan reads the composition and reports every number no claim
-        # accounts for.
+        # Its shape is the one `FILM-SHAPES.md` gave it on 2026-10-27: the
+        # film audits itself while it plays. That shape is kept and doubled,
+        # because the package checks in two directions and now so does the
+        # film. The solution beat is `verify` pointed at the code -- declared
+        # claims, read back out of the files that decide them. The example
+        # beat is `verify` pointed at THIS COMPOSITION -- `scan`, with its
+        # real verdict, finding a number the film cannot account for.
+        #
+        # Three things this film deliberately does not say, each from
+        # `notes/video.md` section 7:
+        #
+        #   * that the renderer sits behind a seam. `sprezzature_video/
+        #     renderers/` is an empty directory with no `__init__.py`. It is
+        #     an architectural intention, not a module, so it is off screen
+        #     and out of the voice.
+        #   * that the suite verifies its own films. It verifies the DECLARED
+        #     claims, since 2026-10-28. `scan`, `assets` and `prose` are
+        #     wired nowhere. The example beat shows `scan` being run, which
+        #     is honest: run, by somebody, on purpose.
+        #   * that the shipped captions hold the budget. They do not, and
+        #     that is the `audio` film's number to carry, not this one's.
         vo=[("video.en", 1.10)],
-        sfx=[("drop", 5.47), ("tile", 20.19), ("tile", 38.74), ("bell", 55.67)],
+        sfx=[
+            ("drop", on_beat(9.7)[0]),
+            ("tile", on_beat(29.9)[0]),
+            ("tile", on_beat(66.8)[0]),
+            ("bell", on_beat(87.8)[0]),
+        ],
         scenes=[
+            # ------------------------------------------------------ WHAT
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=9.7,
+                end=9.6,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 video",
+                mark="Sprezzature · video",
                 line=L(
-                    "A film that can be re-read, and checked against its code.",
-                    "Un film qui se relit, et se vérifie sur son propre code.",
+                    "What a film says, checked against the code it describes.",
+                    "Ce qu'un film affirme, vérifié sur le code qu'il décrit.",
                 ),
                 url="sprezzature.ai",
             ),
+            # --------------------------------------------------- PROBLEM
+            # The repository's own history, and the only number on screen
+            # that `scan` cannot account for. It is here on purpose and the
+            # example beat says so out loud.
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=13.1,
-                end=18.4,
+                start=9.5,
+                dur=9.2,
+                end=18.6,
                 line=L(
                     "This suite told viewers it had 127 chart kinds, for "
                     "months after it had 167.",
-                    "Cette suite a annoncé 127 types de graphiques "
-                    "pendant des mois après en avoir eu 167.",
+                    "Cette suite a annoncé 127 types de graphiques des mois "
+                    "après en avoir eu 167.",
                 ),
             ),
             dict(
+                type="claim",
+                beat="problem",
+                start=18.5,
+                dur=8.6,
+                end=27.0,
+                line=L(
+                    "The film is the one artefact that lives outside the code.",
+                    "Le film est le seul objet de la suite qui vit hors du code.",
+                ),
+            ),
+            # -------------------------------------------------- SOLUTION
+            # Direction one: declared claims, read back out of the files
+            # that decide them. All four hold today -- `sprezzature-video
+            # verify brag-output/films.yaml --root ~` answers 10/10, run
+            # 2026-10-29.
+            #
+            # The fourth row used to be "assets, checked against the ledger
+            # 81" and it is gone, which is the single biggest change here.
+            # 81 is true (`python3 restore_assets.py` answers 81/81 today)
+            # and it is UNDECLARABLE: it comes from walking a tree git does
+            # not track, so none of the five dull methods can read it, which
+            # is exactly what the header of `films.yaml` says. Its guard in
+            # the hub skipped in every clone, so the largest number in the
+            # film was protected only on the author's machine. A number the
+            # spec cannot hold is a number this film of all films may not
+            # show. The row that replaced it is a declared claim with an
+            # integer value, like the other three.
+            dict(
                 type="verify",
                 beat="solution",
-                start=18.3,
-                dur=19.1,
-                end=37.4,
+                start=26.9,
+                dur=23.2,
+                end=50.0,
                 eyebrow=L(
-                    "So the claims live beside the film",
-                    "Les affirmations vivent donc à côté du film",
+                    "What the code says today",
+                    "Ce que le code dit aujourd'hui",
                 ),
                 claims=[
                     (
                         L(
-                            "chart kinds, checked against the catalogue",
-                            "types de graphiques, vérifiés sur le catalogue",
+                            "chart kinds, in the catalogue",
+                            "types de graphiques, au catalogue",
                         ),
                         "167",
                     ),
                     (
                         L(
-                            "accessibility rules, checked against the linter",
-                            "règles d'accessibilité, vérifiées sur le linter",
+                            "accessibility rules, in the linter",
+                            "règles d'accessibilité, au linter",
                         ),
                         "20",
                     ),
                     (
                         L(
-                            "laws of UX, checked against the reference",
-                            "lois d'UX, vérifiées sur la référence",
+                            "laws of UX, in the reference",
+                            "lois d'UX, dans la référence",
                         ),
                         "30",
                     ),
                     (
                         L(
-                            "assets, checked against the ledger",
-                            "ressources, vérifiées sur l'inventaire",
+                            "rules with a mechanical fixer",
+                            "règles avec un correcteur mécanique",
                         ),
-                        "81",
+                        "6",
                     ),
                 ],
-                at=[(19.7, 20.2), (21.3, 21.8), (22.9, 23.4), (24.5, 25.0)],
+                at=list(
+                    zip(
+                        on_beat(29.3, 32.6, 35.9, 39.2),
+                        on_beat(29.9, 33.2, 36.5, 39.8),
+                    )
+                ),
                 caption=L(
                     "Each one names the file that would have to change "
                     "for it to stop being true.",
@@ -1501,159 +2433,331 @@ FILMS = {
                     "qu'elle cesse d'être vraie.",
                 ),
             ),
+            # ----------------------------------------------- SECRET SAUCE
             dict(
                 type="held",
                 beat="magic",
-                start=37.3,
-                dur=18.2,
-                end=55.5,
+                start=49.9,
+                dur=11.2,
+                end=61.0,
                 line=L(
                     "The dangerous number is the one nobody declared.",
                     "Le nombre dangereux est celui que personne n'a déclaré.",
                 ),
             ),
+            # The source, named, as every magic beat has done since
+            # 2026-10-27. This one is not a paper: it is this repository's
+            # own git history, where "127" outlived the catalogue by months.
+            # `claims.py` lines 6 to 12 open on it, and it is the only source
+            # a viewer can check by cloning the thing they are watching.
+            dict(
+                type="versus",
+                beat="magic",
+                start=60.9,
+                dur=15.2,
+                end=76.0,
+                eyebrow=L(
+                    "This repository's own history",
+                    "L'historique de ce dépôt",
+                ),
+                left=(
+                    L("Declared", "Déclaré"),
+                    L(
+                        "names the file that decides it",
+                        "nomme le fichier qui le décide",
+                    ),
+                ),
+                right=(
+                    L("On screen only", "Seulement à l'écran"),
+                    L(
+                        "has nothing behind it at all",
+                        "n'a rien du tout derrière lui",
+                    ),
+                ),
+                at=on_beat(62.3, 66.8),
+                caption=L(
+                    "So the scan reads every number on screen. "
+                    "It reports what no claim covers.",
+                    "Le scan lit donc chaque nombre à l'écran. "
+                    "Il relève ce qu'aucune affirmation ne couvre.",
+                ),
+            ),
+            # ------------------------------------------------ AT ITS BEST
+            # Direction two, and the finest thing this package can show: its
+            # own verdict on the film you are watching. Reproduced, from a
+            # clone, in under a second:
+            #
+            #   cd ~/sprezzature && sprezzature-video scan \
+            #     brag-output/films/video-landscape/index.html \
+            #     --spec brag-output/films.yaml
+            #
+            # On the entry as written here it answers with 127, twice: the
+            # problem scene above, and row four of this card. Every other
+            # number in the film is accounted for -- 167 and 20 and 6 by
+            # value, 30 by the text of its claim.
+            #
+            # No picture was allocated to this film in `FILM-SHAPES.md` and
+            # none is taken: the finest output of a checker is a verdict,
+            # and a terminal screenshot would be a picture OF the verdict
+            # rather than the verdict. The `verify` card is the film's own
+            # typography, which is the same information and legible at 2160
+            # pixels tall.
+            dict(
+                type="verify",
+                beat="example",
+                start=75.9,
+                dur=17.2,
+                end=93.0,
+                eyebrow=L(
+                    "scan, pointed at this film",
+                    "scan, pointé sur ce film",
+                ),
+                claims=[
+                    (L("167 chart kinds", "167 types de graphiques"),
+                     L("declared", "déclaré")),
+                    (L("20 accessibility rules", "20 règles d'accessibilité"),
+                     L("declared", "déclaré")),
+                    (L("30 laws of UX", "30 lois d'UX"),
+                     L("declared", "déclaré")),
+                    (L("127, with nothing behind it", "127, sans rien derrière"),
+                     L("UNDECLARED", "NON DÉCLARÉ")),
+                ],
+                at=list(
+                    zip(
+                        on_beat(77.5, 80.5, 83.5, 87.0),
+                        on_beat(78.1, 81.1, 84.1, 87.8),
+                    )
+                ),
+                caption=L(
+                    "This film quotes that number on purpose. "
+                    "Quoting it is not declaring it.",
+                    "Ce film cite ce nombre exprès. "
+                    "Le citer n'est pas le déclarer.",
+                ),
+            ),
+            dict(
+                type="held",
+                beat="example",
+                start=92.9,
+                dur=8.2,
+                end=101.0,
+                line=L(
+                    "The only number it cannot declare is the one it is about.",
+                    "Le seul nombre qu'il ne peut pas déclarer est celui "
+                    "dont il parle.",
+                ),
+            ),
+            # ------------------------------------------------- YOUR TURN
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=100.9,
+                dur=16.1,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 video",
+                mark="Sprezzature · video",
                 actions=cta_for("video"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(107.3)[0],
             ),
         ],
     ),
     # ------------------------------------------------------------------- maps
     "maps": dict(
-        duration=60.0,
-        # No panels, no chips: six plates and a voice over them. Written
-        # 2026-10-27 after reading `make_density.py`, which turns out to hold
-        # the best sentence in the package.
-        #
-        # The secret sauce is the plate that draws no map. An accumulation
-        # field has no coastline, no border and no graticule: the land appears
-        # because events fell on it, the sea stays dark because none did, and
-        # a reader recognises the shape without being shown it. The first cut
-        # of this film said that in a caption over somebody else's map,
-        # because the French density plate did not exist. It does now.
+        duration=DURATION_S,
+        # Six plates and a voice over them, which is the shape this film has had
+        # since 2026-10-27 and the one worth keeping. What changed is which plate
+        # the argument rests on.
         vo=[("maps.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 26.19),
-            ("wipe", 40.37),
-            ("bell", 55.67),
+            ("drop", on_beat(6.9)[0]),
+            ("tile", on_beat(26.4)[0]),
+            ("tile", on_beat(46.4)[0]),
+            ("wipe", on_beat(53.9)[0]),
+            ("bell", on_beat(79.4)[0]),
         ],
         scenes=[
-            # PROBLEM
+            # ---------------------------------------------------------- WHAT
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=7.5,
+                end=7.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 maps",
+                mark="Sprezzature · maps",
                 line=L(
                     "Maps drawn on real ground, saying what they do not know.",
                     "Des cartes sur un vrai sol, qui disent ce qu'elles ignorent.",
                 ),
                 url="sprezzature.ai",
             ),
-            # PROBLEM
+            # ------------------------------------------------------- PROBLEM
+            # The failure is not that the file lacks the information. The file
+            # has it, writes it down beside every row, and the tool throws it
+            # away -- which is why the two problem scenes are in that order.
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=10.1,
-                end=15.4,
+                start=6.9,
+                dur=10.2,
+                end=17.0,
                 line=L(
-                    "A column of countries hides where things happen.",
-                    "Une colonne de pays cache l'endroit où les choses arrivent.",
+                    "Your file already says how sure each coordinate is.",
+                    "Votre fichier dit déjà ce qu'il sait de chaque coordonnée.",
                 ),
             ),
-            # SOLUTION: real ground, and what the plates are actually for.
-            # Two grids were merged into one when the identity card took the
-            # opening slot: six plates in ten seconds was always more than a
-            # viewer could look at, and the four reference plates were the
-            # ones saying the least.
+            dict(
+                type="claim",
+                beat="problem",
+                start=16.9,
+                dur=9.7,
+                end=26.5,
+                line=L(
+                    "Every tool draws them all as the same dot.",
+                    "Tous les outils les tracent du même point.",
+                ),
+            ),
+            # ------------------------------------------------------ SOLUTION
+            # Three generators, one scene each, in the order a reader meets
+            # them: the ground, the world, and the plate with no ground at all.
             dict(
                 type="grid",
                 beat="solution",
-                start=15.3,
-                dur=10.9,
-                end=26.2,
-                eyebrow=L(
-                    "Who holds what, at what certainty",
-                    "Qui tient quoi, à quelle certitude",
-                ),
-                images=["maps/situation-ukraine.png", "maps/situation-syria.png"],
-                at=on_beat(16.4, 17.5),
+                start=26.4,
+                dur=9.7,
+                end=36.0,
+                eyebrow=L("Real ground, under everything", "Un vrai sol, sous tout le reste"),
+                images=[
+                    "maps/situation-himalaya.png",
+                    "maps/situation-switzerland.png",
+                    "maps/situation-iberia.png",
+                ],
+                at=on_beat(27.6, 28.7, 29.8),
                 caption=L(
-                    "ACLED and UCDP both record how sure a coordinate "
-                    "is. A ring is a position the source never gave.",
-                    "ACLED et UCDP notent tous deux ce qu'une coordonnée "
-                    "a de sûr. Un anneau, c'est une position que la "
-                    "source n'a jamais donnée.",
-                ),
-            ),
-            # SECRET SAUCE
-            dict(
-                type="claim",
-                beat="magic",
-                start=26.1,
-                dur=8.3,
-                end=34.3,
-                line=L(
-                    "Then the plate that draws no map at all.",
-                    "Puis la planche qui ne dessine aucune carte.",
+                    "Natural Earth, GMTED2010, HydroRIVERS. All of it bundled.",
+                    "Natural Earth, GMTED2010, HydroRIVERS. Tout est embarqué.",
                 ),
             ),
             dict(
                 type="grid",
-                beat="magic",
-                start=34.2,
-                dur=12.0,
-                end=46.1,
-                eyebrow=L("Drawn without a coastline", "Dessinée sans la moindre côte"),
-                images=["maps/density.svg"],
-                at=on_beat(35.5),
+                beat="solution",
+                start=35.9,
+                dur=10.7,
+                end=46.5,
+                eyebrow=L("A world at the right size", "Un monde à la bonne taille"),
+                images=["maps/choropleth-sequential.svg"],
+                at=on_beat(37.0),
                 caption=L(
-                    "Every point is an event. The shape is what they add up to.",
-                    "Chaque point est un événement. La forme est ce "
-                    "qu'ils finissent par dessiner.",
+                    "Equal Earth: equal area, closed form, no iteration.",
+                    "Equal Earth : équivalente, en forme fermée, sans itération.",
                 ),
             ),
+            dict(
+                type="grid",
+                beat="solution",
+                start=46.4,
+                dur=7.7,
+                end=54.0,
+                eyebrow=L(
+                    "The plate that draws no map",
+                    "La planche qui ne dessine aucune carte",
+                ),
+                images=["maps/density.svg"],
+                at=on_beat(47.5),
+                caption=L(
+                    "No coastline, no border, no graticule.",
+                    "Ni côte, ni frontière, ni quadrillage.",
+                ),
+            ),
+            # --------------------------------------------------- SECRET SAUCE
+            # The mechanism, drawn rather than described. ACLED publishes
+            # `geo_precision` 1 to 3 and UCDP `where_prec` 1 to 7, and the two
+            # ends of that scale are two different marks here. Everything else in
+            # this space -- GeoPandas, Cartopy, QGIS, Datawrapper -- draws a 3 the
+            # way it draws a 1.
+            dict(
+                type="versus",
+                beat="magic",
+                start=53.9,
+                dur=13.2,
+                end=67.0,
+                eyebrow=L(
+                    "What the source wrote beside the coordinate",
+                    "Ce que la source a écrit à côté de la coordonnée",
+                ),
+                left=(
+                    L("geo_precision 1", "geo_precision 1"),
+                    L(
+                        "a named location, drawn as a filled disc",
+                        "un lieu nommé, dessiné en disque plein",
+                    ),
+                ),
+                right=(
+                    L("geo_precision 3", "geo_precision 3"),
+                    L(
+                        "a province pinned to its capital, drawn as a broken ring",
+                        "une province épinglée sur sa capitale, en anneau brisé",
+                    ),
+                ),
+                at=on_beat(55.0, 58.3),
+            ),
+            # The source, which is what separates a mechanism from a boast. The
+            # three labels are ACLED's own, copied out of its codebook into
+            # `_GEO_PRECISION` in `scripts/make_situation_map.py`.
             dict(
                 type="held",
                 beat="magic",
-                start=46.0,
-                dur=9.5,
-                end=55.5,
+                start=66.9,
+                dur=12.7,
+                end=79.5,
                 line=L(
-                    "The land appears because events fell on it.",
-                    "La terre apparaît parce que des événements y sont tombés.",
+                    "Those are ACLED's words, not ours.",
+                    "Ce sont les mots d'ACLED, pas les nôtres.",
                 ),
             ),
+            # ------------------------------------------------- AT ITS BEST
+            # Twenty seconds on one plate, large, with the voice saying what to
+            # notice rather than what is there. Every marker on it is a ring
+            # because every one of the six rows said "approximate", and the key
+            # prints that in words beside the colours it also explains.
+            dict(
+                type="shot",
+                beat="example",
+                start=79.4,
+                dur=20.2,
+                end=99.5,
+                eyebrow=L("6 markers, 6 rings", "6 marqueurs, 6 anneaux"),
+                src="maps/situation-ukraine.png",
+                ratio=1.34,
+                at=on_beat(81.0)[0],
+                caption=L(
+                    "Nothing here claims a position the source did not give.",
+                    "Rien ici n'affirme une position que la source n'a pas donnée.",
+                ),
+            ),
+            # ------------------------------------------------------------ CTA
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=99.4,
+                dur=17.6,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 maps",
+                mark="Sprezzature · maps",
                 actions=cta_for("maps"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(108.6)[0],
             ),
         ],
     ),
     # ----------------------------------------------------------------- ux-laws
     "ux-laws": dict(
-        duration=60.0,
+        duration=DURATION_S,
         # One sustained argument, no chip grid. Written 2026-10-27 after
-        # reading the auditor rather than its feature table.
+        # reading the auditor rather than its feature table, and re-cut to
+        # seven movements on 2026-10-29.
         #
         # The secret sauce was in a docstring: Hick's Law measures the choices
         # a person meets at one moment, so counting the links in a file gets
@@ -1661,22 +2765,30 @@ FILMS = {
         # together, and a group collapses several controls into one decision.
         # The README's table said "too many choices presented at once" and
         # stopped there; the sentence is in both READMEs now.
+        #
+        # The example beat is the argument's proof and not its illustration:
+        # the two plates carry the auditor's own output on two pages that
+        # differ in nothing but how many links their nav holds. The
+        # forty-link nav is wrapped in `hidden sm:flex`, which is why the
+        # finding says "on desktop" -- the same visibility resolution the
+        # magic beat is about, deciding a real case three scenes later.
         vo=[("ux-laws.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 24.55),
-            ("tile", 36.55),
-            ("bell", 55.67),
+            ("drop", on_beat(9.9)[0]),
+            ("tile", on_beat(45.6)[0]),
+            ("tile", on_beat(68.7)[0]),
+            ("tile", on_beat(78.0)[0]),
+            ("tile", on_beat(83.5)[0]),
+            ("bell", on_beat(100.5)[0]),
         ],
         scenes=[
-            # PROBLEM
+            # WHAT: the suite's sentence, then this brick's, on frame one.
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=10.0,
+                end=10.0,
                 logo="logo-512.png",
                 tagline=TAGLINE,
                 mark="Sprezzature \u00b7 ux-laws",
@@ -1686,12 +2798,13 @@ FILMS = {
                 ),
                 url="sprezzature.ai",
             ),
+            # PROBLEM: what reaches you, and what it was.
             dict(
                 type="versus",
                 beat="problem",
-                start=5.4,
-                dur=9.1,
-                end=14.4,
+                start=9.9,
+                dur=9.6,
+                end=19.5,
                 eyebrow=L(
                     "What actually gets reported", "Ce qu'on vous remonte vraiment"
                 ),
@@ -1709,32 +2822,54 @@ FILMS = {
                         "trop de choix au même instant",
                     ),
                 ),
-                at=on_beat(6.5, 7.6),
+                at=on_beat(11.0, 13.4),
                 caption=L(
-                    "Hick's Law is the one thing nobody will mention.",
-                    "La loi de Hick, elle, personne ne la citera.",
+                    "The law of HICK is the one thing nobody will mention.",
+                    "La loi de HICK, elle, personne ne la citera.",
                 ),
             ),
-            # SOLUTION
+            dict(
+                type="held",
+                beat="problem",
+                start=19.4,
+                dur=8.8,
+                end=28.2,
+                line=L(
+                    "The symptom reaches you. The cause was published in 1952.",
+                    "Le symptôme vous parvient. La cause est publiée depuis 1952.",
+                ),
+            ),
+            # SOLUTION: the set, then the share of it a text scan can settle.
             dict(
                 type="claim",
                 beat="solution",
-                start=14.3,
-                dur=9.2,
-                end=23.4,
+                start=28.1,
+                dur=8.6,
+                end=36.7,
                 line=L(
-                    "Thirty laws. Eight of them settle from the source.",
-                    "Trente lois. Huit se tranchent depuis la source.",
+                    "30 laws, collected by Jon YABLONSKI.",
+                    "30 lois, réunies par Jon YABLONSKI.",
                 ),
             ),
-            # SECRET SAUCE, shown as the markup it reads
+            dict(
+                type="held",
+                beat="solution",
+                start=36.6,
+                dur=9.0,
+                end=45.6,
+                line=L(
+                    "8 of them settle from the source alone.",
+                    "8 d'entre elles se tranchent depuis la source.",
+                ),
+            ),
+            # SECRET SAUCE, shown as the markup it reads.
             dict(
                 type="code",
                 beat="magic",
-                start=23.3,
-                dur=13.1,
-                end=36.4,
-                eyebrow=L("The same header, two menus", "Le même en-tête, deux menus"),
+                start=45.5,
+                dur=13.6,
+                end=59.1,
+                eyebrow=L("The same header, 2 menus", "Le même en-tête, 2 menus"),
                 code=[
                     '<nav class="flex items-center justify-between">',
                     '  <div class="hidden sm:flex gap-4">',
@@ -1746,8 +2881,8 @@ FILMS = {
                     "</nav>",
                 ],
                 mark=(2, 7),
-                at=[24.0, 24.5, 25.1, 25.6, 26.2, 26.7, 27.3, 27.8],
-                flag=[(2, 29.5), (7, 31.1)],
+                at=on_beat(46.2, 46.7, 47.3, 47.8, 48.4, 48.9, 49.5, 50.0),
+                flag=[(2, on_beat(52.5)[0]), (7, on_beat(54.2)[0])],
                 caption=L(
                     "One of these paints on a phone. The other paints "
                     "on a desktop. A reader meets one of them.",
@@ -1758,9 +2893,9 @@ FILMS = {
             dict(
                 type="held",
                 beat="magic",
-                start=36.3,
-                dur=9.7,
-                end=46.0,
+                start=59.0,
+                dur=8.6,
+                end=67.6,
                 line=L(
                     "Adding them up charges the reader for choices no "
                     "screen ever shows.",
@@ -1771,9 +2906,9 @@ FILMS = {
             dict(
                 type="versus",
                 beat="magic",
-                start=45.9,
-                dur=9.6,
-                end=55.5,
+                start=67.5,
+                dur=9.3,
+                end=76.8,
                 eyebrow=L("So it counts them apart", "Il les compte donc à part"),
                 left=(
                     L("Per breakpoint", "Par point de rupture"),
@@ -1789,86 +2924,186 @@ FILMS = {
                         "un bloc qui se replie compte pour un",
                     ),
                 ),
-                at=on_beat(47.0, 48.1),
+                at=on_beat(68.7, 70.9),
                 caption=L(
                     "It reports the worse of the two, naming which one it is.",
                     "Il retient le pire des deux, en disant lequel.",
                 ),
             ),
+            # AT ITS BEST: the law deciding a real case, and the gate closing.
+            # Two pages identical but for the size of one <nav>, each with the
+            # text the auditor actually printed on it.
+            dict(
+                type="grid",
+                beat="example",
+                start=76.7,
+                dur=15.2,
+                end=91.9,
+                eyebrow=L("The same check, twice", "Le même contrôle, deux fois"),
+                images=["ux-laws/nav-forty.svg", "ux-laws/nav-seven.svg"],
+                at=on_beat(78.0, 83.5),
+                caption=L(
+                    "40 exits 1. 7 exits 0. That is the whole gate.",
+                    "40 renvoie 1. 7 renvoie 0. Tout le verrou "
+                    "est là.",
+                ),
+            ),
+            # And where it stops. `README.md:118`, word for word, with the
+            # French of `LISEZMOI.md:129` beside it.
+            dict(
+                type="held",
+                beat="example",
+                start=91.8,
+                dur=8.8,
+                end=100.6,
+                line=L(
+                    "It is a fast gate, not a substitute for design review.",
+                    "C'est un verrou rapide, pas un substitut à une revue "
+                    "de design.",
+                ),
+            ),
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=100.5,
+                dur=16.5,
+                end=DURATION_S,
                 logo="logo-512.png",
                 mark="Sprezzature \u00b7 ux-laws",
                 actions=cta_for("ux-laws"),
+                punchline=PUNCHLINE,
             ),
         ],
     ),
     # ----------------------------------------------------------- accessibility
     "accessibility": dict(
-        duration=60.0,
-        # Written 2026-10-27 from `lint_a11y.py`. Its autoplay rule carries
-        # the sharpest problem statement in the suite: unmuted sound that
-        # starts by itself masks a screen reader, so the user cannot hear the
-        # tool they are navigating with, and on many pages cannot find the
-        # control to stop it either. The trap closes on itself.
+        duration=DURATION_S,
+        # Written 2026-10-27 from `lint_a11y.py`, rewritten 2026-10-29. Its
+        # autoplay rule carries the sharpest problem statement in the suite:
+        # unmuted sound that starts by itself masks a screen reader, so the user
+        # cannot hear the tool they are navigating with, and on many pages
+        # cannot find the control to stop it either. The trap closes on itself.
         #
         # The secret sauce is the restraint. Six of twenty rules repair
         # themselves, and only six, because a fix is automatic solely where
-        # exactly one repair is safe. The other fourteen are reported and
-        # never guessed at. `fix_file` is idempotent by contract: a second
-        # run on a fixed file applies zero edits.
+        # exactly one repair is safe. The other fourteen are reported and never
+        # guessed at -- `lint_a11y.py:977` says they "need a content decision the
+        # linter cannot make for the user", and `_is_focusable`'s docstring
+        # records the day that mattered: `aria-hidden-interactive` flagged
+        # seventeen correct pairs on one blog index, and an automatic repair
+        # would have made a screen reader announce every article twice.
+        #
+        # `--fix-alt` is the exception that proves it, and the reason it is
+        # allowed to call a model is that it has two inputs rather than one.
         vo=[("accessibility.en", 1.10)],
         sfx=[
-            ("drop", 5.47),
-            ("tile", 16.37),
-            ("tile", 28.37),
-            ("tile", 42.55),
-            ("bell", 55.67),
+            ("drop", on_beat(9.4)[0]),
+            ("tile", on_beat(30.9)[0]),
+            ("tile", on_beat(44.9)[0]),
+            ("tile", on_beat(53.9)[0]),
+            ("bell", on_beat(75.9)[0]),
         ],
         scenes=[
-            # PROBLEM
+            # ------------------------------------------------------------ WHAT
             dict(
                 type="what",
                 beat="what",
                 start=0.0,
-                dur=6.0,
-                end=5.5,
+                dur=10.0,
+                end=9.5,
                 logo="logo-512.png",
                 tagline=TAGLINE,
-                mark="Sprezzature \u00b7 accessibility",
+                mark="Sprezzature · accessibility",
                 line=L(
-                    "Twenty accessibility rules, decided by reading the HTML.",
-                    "Vingt règles d'accessibilité, tranchées en lisant le HTML.",
+                    "20 accessibility rules, decided by reading the HTML.",
+                    "20 règles d'accessibilité, tranchées en lisant le HTML.",
                 ),
                 url="sprezzature.ai",
             ),
+            # --------------------------------------------------------- PROBLEM
+            # The trap, stated as a fact about a reader. Not "unmuted autoplay
+            # is a WCAG 1.4.2 failure", which is a sentence for somebody who
+            # already agrees.
             dict(
                 type="held",
                 beat="problem",
-                start=5.4,
-                dur=10.1,
-                end=15.4,
+                start=9.4,
+                dur=10.3,
+                end=19.6,
                 line=L(
-                    "A blind reader now cannot hear the tool they would "
+                    "A blind reader cannot now hear the tool they would "
                     "use to stop it.",
                     "Un lecteur aveugle n'entend plus l'outil avec lequel "
                     "il l'arrêterait.",
                 ),
             ),
-            # SOLUTION
+            # And the second half of the problem, which is why a linter is
+            # needed at all: the markup is well formed. Validity and
+            # accessibility are different questions and only one of them has a
+            # validator everybody already runs.
+            dict(
+                type="claim",
+                beat="problem",
+                start=19.5,
+                dur=11.6,
+                end=31.0,
+                line=L(
+                    "No validator says a word about that page.",
+                    "Aucun validateur n'a rien à redire à cette page.",
+                ),
+            ),
+            # -------------------------------------------------------- SOLUTION
+            # The film's own shape, finally used: the source, with the lines
+            # that break a rule marked. Eight lines, six findings, and the
+            # gutter numbers are the ones `lint_a11y.py` prints.
+            #
+            # Flagged in the order a reader meets the damage rather than in file
+            # order: line 5 is three findings on its own (autoplay with sound,
+            # no controls, no caption track), then the image, then the div, and
+            # the missing `lang` on line 2 last because it is the cheapest.
+            dict(
+                type="code",
+                beat="solution",
+                start=30.9,
+                dur=14.2,
+                end=45.0,
+                eyebrow=L(
+                    "The page, and the lines that break a rule",
+                    "La page, et les lignes qui enfreignent une règle",
+                ),
+                code=[
+                    "<!doctype html>",
+                    "<html>",
+                    "<body>",
+                    "  <h1>Spring sale</h1>",
+                    '  <video src="promo.mp4" autoplay></video>',
+                    '  <img src="shoe.jpg">',
+                    '  <div onclick="buy()">Buy now</div>',
+                    "</body>",
+                ],
+                mark=(2, 5, 6, 7),
+                at=on_beat(31.8, 32.3, 32.9, 33.4, 34.0, 34.5, 35.1, 35.6),
+                flag=list(zip((5, 6, 7, 2), on_beat(37.6, 39.2, 40.7, 42.3))),
+                caption=L(
+                    "Every finding names the element, the line, and the "
+                    "rule it broke.",
+                    "Chaque constat nomme l'élément, la ligne et la règle "
+                    "enfreinte.",
+                ),
+            ),
+            # Kept from the 2026-10-27 cut, which got this scene right: eight of
+            # the twenty by name, falling one at a time. A rule id is the thing
+            # a viewer can go and look up, and `references/lint-rules.md` carries
+            # the WCAG or WAI-ARIA reference for each.
             dict(
                 type="chips",
                 beat="solution",
-                start=15.3,
-                dur=12.9,
-                end=28.2,
+                start=44.9,
+                dur=9.2,
+                end=54.0,
                 eyebrow=L(
-                    "Twenty rules out of WCAG and WAI-ARIA",
-                    "Vingt règles tirées de WCAG et WAI-ARIA",
+                    "20 rules out of WCAG and WAI-ARIA",
+                    "20 règles tirées de WCAG et WAI-ARIA",
                 ),
                 items=[
                     "media-autoplay-sound",
@@ -1880,21 +3115,23 @@ FILMS = {
                     "heading-skip",
                     "color-only-state",
                 ],
-                at=on_beat(16.4, 17.0, 17.5, 18.1, 18.6, 19.2, 19.7, 20.3),
+                at=on_beat(45.8, 46.3, 46.9, 47.4, 48.0, 48.5, 49.1, 49.6),
                 caption=L(
-                    "Each finding names the element, the line and the "
-                    "rule it broke. Standard library only.",
-                    "Chaque constat nomme l'élément, la ligne et la "
-                    "règle enfreinte. Bibliothèque standard seule.",
+                    "Standard library for the lint. One dependency, for "
+                    "the command line.",
+                    "Bibliothèque standard pour le linter. Une dépendance, "
+                    "pour la ligne de commande.",
                 ),
             ),
-            # SECRET SAUCE
+            # ---------------------------------------------------- SECRET SAUCE
+            # The restraint, counted. Twenty checked, six repaired, fourteen
+            # left alone, and a second pass that changes nothing.
             dict(
                 type="verify",
                 beat="magic",
-                start=28.1,
-                dur=14.3,
-                end=42.4,
+                start=53.9,
+                dur=12.7,
+                end=66.5,
                 eyebrow=L(
                     "What it will repair by itself", "Ce qu'il répare de lui-même"
                 ),
@@ -1916,51 +3153,142 @@ FILMS = {
                         "0",
                     ),
                 ],
-                at=[(29.5, 30.0), (31.1, 31.6), (32.7, 33.2), (34.4, 34.9)],
+                at=list(
+                    zip(
+                        on_beat(55.0, 56.6, 58.2, 59.9),
+                        on_beat(55.5, 57.1, 58.7, 60.4),
+                    )
+                ),
                 caption=L(
                     "A repair is automatic only where exactly one repair is safe.",
                     "Une réparation n'est automatique que là où il "
                     "n'en existe qu'une de sûre.",
                 ),
             ),
+            # The exception, and its mechanism: two inputs rather than one. The
+            # source is named in the voice -- the W3C alt decision tree sorts
+            # images by what they are *doing* on the page, which is a question
+            # about the page and not about the pixels, and `scripts/prompts/`
+            # holds one prompt per function. `_vocab.py:115` is where 400 lives.
             dict(
                 type="versus",
                 beat="magic",
-                start=42.3,
-                dur=13.2,
-                end=55.5,
+                start=66.4,
+                dur=9.7,
+                end=76.0,
                 eyebrow=L(
-                    "And the same rule, turned around", "Et la même règle, retournée"
+                    "The one exception, and it has 2 inputs",
+                    "La seule exception, et elle a 2 entrées",
                 ),
                 left=(
-                    L("Reading it", "En lecture"),
-                    L(
-                        "body text too tight to follow",
-                        "du texte courant trop serré pour suivre",
-                    ),
+                    L("The image", "L'image"),
+                    L("pixels, and nothing else", "des pixels, et rien d'autre"),
                 ),
                 right=(
-                    L("Writing it", "En écriture"),
+                    L("The page it sits in", "La page autour"),
                     L(
-                        "the CSS that meets the minimum",
-                        "le CSS qui atteint le minimum",
+                        "400 characters either side",
+                        "400 caractères de chaque côté",
                     ),
                 ),
-                at=on_beat(43.6, 44.7),
+                at=on_beat(67.5, 70.8),
                 caption=L(
-                    "Audit and make are one rule, read in two directions.",
-                    "Auditer et fabriquer, c'est une seule règle lue dans deux sens.",
+                    "The W3C tree asks what an image is doing, not what it shows.",
+                    "L'arbre du W3C demande ce qu'une image fait, pas ce "
+                    "qu'elle montre.",
                 ),
             ),
+            # ------------------------------------------------------ AT ITS BEST
+            # Thirteen seconds on the photograph, large, with the caption
+            # carrying the control: this same package, shown the pixels and
+            # nothing else, drafted a dark coat and a patterned shirt. The voice
+            # does not describe the picture; it says what to notice when the
+            # next scene arrives.
+            dict(
+                type="shot",
+                beat="example",
+                start=75.9,
+                dur=13.2,
+                end=89.0,
+                eyebrow=L(
+                    "An image with no alt attribute",
+                    "Une image sans texte alternatif",
+                ),
+                src="shots/alt-marie-curie.jpg",
+                ratio=0.736,
+                at=on_beat(77.2)[0],
+                caption=L(
+                    "Shown the pixels alone, the draft was: a dark coat "
+                    "over a patterned shirt.",
+                    "Sur les seuls pixels, le brouillon disait : un manteau "
+                    "sombre sur une chemise à motifs.",
+                ),
+            ),
+            # And the file afterwards. The same `code` card as the solution
+            # beat, so the film ends its argument where it started it: on a line
+            # of source. Lines 6 to 9 are the attribute the package wrote,
+            # verbatim, and nothing on them is in the photograph.
+            dict(
+                type="code",
+                beat="example",
+                start=88.9,
+                dur=11.7,
+                end=100.5,
+                eyebrow=L(
+                    "What it wrote into the file",
+                    "Ce qu'il a écrit dans le fichier",
+                ),
+                code=[
+                    L(
+                        "<h2>The Paris years</h2>",
+                        "<h2>Les années parisiennes</h2>",
+                    ),
+                    L(
+                        "<p>The Radium Institute she directed",
+                        "<p>L'Institut du radium qu'elle dirige",
+                    ),
+                    L(
+                        "   had opened on the rue Pierre-Curie.</p>",
+                        "   a ouvert rue Pierre-Curie.</p>",
+                    ),
+                    L("", ""),
+                    L('<img src="marie-curie.jpg"', '<img src="marie-curie.jpg"'),
+                    L(
+                        '  alt="Studio portrait of Marie',
+                        '  alt="Portrait de Marie Curie en',
+                    ),
+                    L(
+                        "       Skłodowska-Curie, Paris, 1920s.",
+                        "       studio des années 1920,",
+                    ),
+                    L(
+                        "       Director of Radium Institute,",
+                        "       dirigeant l'Institut du radium",
+                    ),
+                    L('       Nobel Prize winner.">', '       à Paris.">'),
+                ],
+                mark=(6, 7, 8, 9),
+                at=on_beat(89.8, 90.3, 90.9, 91.4, 92.0, 92.5, 93.1, 93.6, 94.2),
+                flag=list(zip((6, 7, 8, 9), on_beat(95.3, 95.8, 96.4, 96.9))),
+                caption=L(
+                    "Paris, the Institute and the decade are in the page, "
+                    "not in the photograph.",
+                    "Paris, l'Institut et la décennie sont dans la page, "
+                    "pas dans la photographie.",
+                ),
+            ),
+            # ------------------------------------------------------------- CTA
             dict(
                 type="cta",
                 beat="cta",
-                start=55.4,
-                dur=4.6,
-                end=60.0,
+                start=100.4,
+                dur=16.6,
+                end=DURATION_S,
                 logo="logo-512.png",
-                mark="Sprezzature \u00b7 accessibility",
+                mark="Sprezzature · accessibility",
                 actions=cta_for("accessibility"),
+                punchline=PUNCHLINE,
+                punch_at=on_beat(108.6)[0],
             ),
         ],
     ),
@@ -2235,6 +3563,10 @@ def css(f: dict) -> str:
     #mark {{ font-family: "Roboto Serif"; font-size: {int(f["hero"] * 0.84)}px;
       font-weight: 600; letter-spacing: -.02em; color: var(--ink);
       margin-top: {int(f["hero"] * 0.3)}px; text-align: center; }}
+    #punch {{ font-family: "Roboto Serif"; font-size: {int(f["h2"] * 1.12)}px;
+      font-weight: 600; color: var(--ink); text-align: center;
+      margin-top: {int(f["hero"] * 0.42)}px; max-width: {int(f["w"] * 0.78)}px;
+      line-height: 1.25; }}
     #oline {{ font-size: {f["h2"]}px; color: var(--ink-soft);
       margin-top: {int(f["hero"] * 0.22)}px; text-align: center; }}
     #ourl {{ font-family: "Roboto Mono", ui-monospace, monospace;
@@ -2550,7 +3882,8 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             f'<div class="stage"><div class="col">'
             f'<img id="logo" src="assets/{sc["logo"]}" alt="">'
             f'<p id="mark">{esc(sc["mark"])}</p>'
-            f"{acts}</div></div>"
+            f"{acts}"
+            f'<p id="punch">{esc(sc["punchline"])}</p></div></div>'
         )
 
     raise ValueError(t)
@@ -2789,6 +4122,14 @@ def scene_js(sc: dict, i: int, f: dict) -> list[str]:
                 f'{{y:0,opacity:1,duration:.55,ease:"power2.out"}},'
                 f"{s + 0.75 + (k - 1) * 0.35:.2f});"
             )
+        # The line lands after the asks, not with them: a viewer reads the two
+        # things to do, then gets the sentence to carry away. `punch_at` is a
+        # film-clock second, so it is on the grid like every other reveal.
+        out.append(
+            f'tl.fromTo("#punch",{{y:20,opacity:0}},'
+            f'{{y:0,opacity:1,duration:.75,ease:"power3.out"}},'
+            f'{sc.get("punch_at", s + sc["dur"] * 0.55):.2f});'
+        )
     return out
 
 

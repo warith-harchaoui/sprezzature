@@ -56,8 +56,15 @@ lengths already on disk, so it cannot drift from what the engine produced. It
 also halves the synthesis, which matters when the engine runs at an RTF of
 eight.
 
-What is still checked is what assembly cannot fix: a line longer than the gap
-before the next one, and a last line running past the film's sixty seconds.
+Where the lines land is then `sprezzature_video.timeline.lay_out`, and the
+grid in `make_captions` is a *request* rather than a constraint: a line starts
+at the later of the scene it was written for and the moment the line in front
+of it stops. Until 2026-10-28 an overrun was a refusal, and the refusal is
+what left fourteen cuts out of twenty-two carrying a voice older than their
+script for days — the build neither broke nor advanced. Now a line that
+overruns pushes the next one, the drift is printed, and the only thing still
+fatal is the one no layout absorbs: a script that does not fit in sixty
+seconds.
 
 The lead-in is not a pause
 --------------------------
@@ -96,6 +103,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 from make_captions import FILMS  # noqa: E402
 
+from sprezzature_video.timeline import lay_out  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent
 ASSETS = ROOT / "_assets"
 VIDEO = ROOT.parent / "web" / "video"
@@ -130,12 +139,37 @@ VOICES: dict[str, dict[str, str]] = {
 
 
 def voice_of(lang: str) -> tuple[str, str]:
-    """The engine and voice for one language, asked of `speaker-helper`.
+    """The engine and voice for one language, decided by `speaker-helper`.
 
     The router is consulted every time rather than once at import: which
     engine speaks a language is a fact about the installed `speaker-helper`,
     and reading it at call time is how an upgrade reaches these films without
     anyone editing this file. It reached them twice in one day.
+
+    Nothing is kept back from it
+    ----------------------------
+    Between 2026-10-28 and 2026-10-29 this function held one exception: a
+    language the router had not ratified kept the engine these films had been
+    narrated with, which in practice meant English stayed on kokoro while
+    French had moved to chatterbox. The exception is gone, and the reasoning
+    behind it was wrong twice over.
+
+    It was wrong about whose decision this is. `speaker-helper` is the brick
+    that arbitrates voices for this suite; a caller that keeps its own copy of
+    the answer is the exact defect this audit keeps turning up, and a
+    *conditional* copy is the worst version of it, because it agrees with the
+    router right up until the moment the two differ.
+
+    It was also wrong to reach for cost. The pinned engine ran near real time
+    and the routed one runs at a real-time factor between four and eight, so
+    the exception bought hours. Hours are not an argument. A film carries the
+    voice the suite chose, and what that costs to synthesise is not a reason
+    to ship a different one.
+
+    What the router answers today is chatterbox in both languages, ratified
+    for French and not yet for English, and the two are obeyed alike. The
+    variant is chatterbox's own call, made inside the backend from the
+    language: Turbo reads English, Multilingual reads the rest.
     """
     from speaker_helper import RouteRequest, route
 
@@ -143,10 +177,14 @@ def voice_of(lang: str) -> tuple[str, str]:
     return engine, VOICES.get(engine, {}).get(lang, "")
 
 
-#: How far a laid-out cue may sit from the grid time the film expects.
-#: Generous by audio standards and tight by film ones: a frame at 30 fps is
-#: 33 ms, so anything inside this is inside a frame.
-TOLERANCE_S = 0.030
+#: How long each of these films is, asked of the module that declares them.
+#:
+#: It was a literal here until 2026-10-29, and the literal was `60.0` on the
+#: morning the films went to 117 s. Two copies of one number is how a layout
+#: silently refuses a script that fits: everything in `lay_out` gives except
+#: the duration, so the wrong duration is the one error that cannot be
+#: absorbed. The number has one owner now, and this module reads it.
+from build_films import DURATION_S  # noqa: E402
 
 
 def _narrate(segments: list[dict], lang: str, out_dir: pathlib.Path) -> dict:
@@ -239,38 +277,34 @@ def narrate_film(film: str, lang: str, *, quiet: bool = False) -> list[str]:
             clips.append(pathlib.Path(report["audio"]))
 
         spoken = [_wav_seconds(clip) for clip in clips]
-        got = [(want, want + length) for want, length in zip(grid, spoken)]
 
-        # Every cue is on its mark by construction now, so the only thing left
-        # to check is whether the line fits in the room the film gives it.
-        problems: list[str] = []
-        for n, ((_start, end), _want) in enumerate(zip(got, grid), 1):
-            if n < len(grid) and end > grid[n] + TOLERANCE_S:
-                problems.append(
-                    f"  {film}.{lang} line {n}: runs to {end:.3f}s, over line "
-                    f"{n + 1} which starts at {grid[n]:.3f}s"
-                )
-        last_end = got[-1][1] if got else 0.0
-        if last_end > 60.0:
-            problems.append(
-                f"  {film}.{lang}: the last line ends at {last_end:.3f}s, past "
-                f"the film's 60 s"
-            )
-        if problems:
-            # The measured lengths, so a caller fixing the grid does not have
-            # to synthesise the film again to find out what it asked for.
-            problems.append(
+        # Where each line lands is arithmetic over lengths already on disk,
+        # done by the brick that owns films rather than here. The grid in
+        # `make_captions` is a *request* -- the scene each line was written
+        # for -- and `lay_out` honours it unless the line in front has not
+        # finished, in which case the line is pushed rather than the build
+        # refused. That refusal is what left fourteen cuts out of twenty-two
+        # carrying a voice older than their script: correct, and stuck.
+        layout = lay_out(grid, spoken, duration=DURATION_S, texts=texts)
+        if not layout.fits:
+            # The one failure no layout absorbs: a script too long for its
+            # film. Reported with the measured lengths, so a caller cutting
+            # words does not have to synthesise the film again to find out
+            # which line to cut.
+            return [f"  {film}.{lang}: {line}" for line in layout.report()] + [
                 f"  {film}.{lang} measured: "
                 + " ".join(f"{length:.3f}" for length in spoken)
-            )
-            return problems
+            ]
 
         ASSETS.mkdir(parents=True, exist_ok=True)
         VIDEO.mkdir(parents=True, exist_ok=True)
         wav = ASSETS / f"vo-{film}.{lang}.wav"
         vtt = VIDEO / f"{film}.{lang}.vtt"
-        _assemble(clips, [want - lead_in for want in grid], wav)
-        vtt.write_text(_vtt(texts, got), encoding="utf-8")
+        _assemble(clips, [start - lead_in for start in layout.starts], wav)
+        vtt.write_text(
+            _vtt(texts, [(line.start, line.end) for line in layout.lines]),
+            encoding="utf-8",
+        )
         _stamp(film, lang, len(texts))
         if not quiet:
             print(
@@ -278,6 +312,11 @@ def narrate_film(film: str, lang: str, *, quiet: bool = False) -> list[str]:
                 f"{_wav_seconds(wav):.3f}s of track, {voice_of(lang)[0]} "
                 f"-> {wav.name} + {vtt.name}"
             )
+            # Drift is a note, not a failure: a line that lands half a second
+            # after the picture it describes is worth eight fewer words next
+            # time, and is not worth refusing a four-hour narration over.
+            for line in layout.report():
+                print(f"    note: {line}")
     return []
 
 
@@ -329,9 +368,17 @@ def _vtt(texts: list[str], times: list[tuple[float, float]]) -> str:
     """
     from speaker_helper import SpeechCue, cues_to_vtt
 
+    from make_captions import wrap_cue
+
+    # Broken onto display lines here, at the 42-character budget the suite's
+    # own auditor enforces. The words and the timings are untouched: a newline
+    # inside a cue only tells the player where to break, instead of letting it
+    # choose. Until 2026-10-29 nothing wrapped at all on this path, the cue
+    # text was the script line as written, and all 22 shipped tracks failed
+    # `sprezzature-audio-audit` with 177 lines over budget.
     return cues_to_vtt(
         [
-            SpeechCue(index=i, text=t, start_seconds=a, end_seconds=b)
+            SpeechCue(index=i, text=wrap_cue(t), start_seconds=a, end_seconds=b)
             for i, (t, (a, b)) in enumerate(zip(texts, times))
         ]
     )
@@ -359,10 +406,11 @@ def main() -> int:
     wanted = args.films or [k for k, v in FILMS.items() if len(v["en"]) >= 8]
     langs = args.lang or ["en", "fr"]
 
-    # Asked per language, because they no longer share an engine: the router
-    # carries the owner's ratified choice for French and the films pin
-    # English. Checking only one of them would pass on a machine that can
-    # speak the other.
+    # Asked per language even though the router answers chatterbox for both
+    # today, because that is an answer and not a guarantee: the next version
+    # of speaker-helper may separate them again, and a check that ran once
+    # would pass on a machine able to speak only the language it happened to
+    # ask about.
     for lang in langs:
         engine, _voice = voice_of(lang)
         if sprezzature_audio.check_narration_install(engine) != 0:

@@ -37,13 +37,22 @@ a summary rather than a redrawing. A table of ``n`` options and ``p`` criteria
 holds at most ``min(n - 1, p)`` independent directions, so two axes throw away
 ``min(n - 1, p) - 2`` of them. This script requires that to be at least three.
 
-The threshold is not cosmetic. ``sprezzature-accessibility`` compares four
-tools, which leaves three directions; two axes then carry 99.4 % of the table
-— a number that looks like a strong result and is really just "we kept two of
-three". ``sprezzature-ux-laws`` compares three, leaving two, and ``standpoint``
-refuses it outright because with ``N/A`` read as a floor two of its columns
-become the same column. Those LANDSCAPEs keep their tables and get no map,
-which is the correct outcome rather than a gap.
+The threshold is not cosmetic, and the two documents that used to be named
+here as the examples are the proof of what it was really measuring. On
+2026-10-29 ``sprezzature-accessibility`` compared four tools across five
+criteria: two axes carried 99.4 % of that table, a number that reads as a
+strong result and is really just "we kept two of three". ``sprezzature-ux-laws``
+compared three, leaving two, and ``standpoint`` refused it outright, because
+with ``N/A`` read as a floor two of its columns had become the same column.
+
+Both now project, and nothing in this script changed. They compare 23 and 25
+tools, and the threshold was never telling them their tables were badly built:
+it was telling them the tables were too *small*, which is a fact about how
+much of the field had been looked at. A refusal to draw was the right answer
+to that, and the right repair was to go and read the field.
+
+A LANDSCAPE that still trips this check keeps its table and gets no map, which
+remains the correct outcome rather than a gap.
 
 **The reference row is this suite's own brick.** ``standpoint`` puts the first
 row top-right and orients everything else around it. That is a statement about

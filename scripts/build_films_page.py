@@ -252,16 +252,19 @@ COPY: dict[str, dict[str, Any]] = {
             "only the layout moves. All of them are 4K.",
             "They follow Guy KAWASAKI\u2019s order, which is why the rail "
             "above each frame says where you are: what the thing is, then the "
-            "problem, then what the package does about it, then the part you "
-            "would not guess \u2014 and the sources it rests on, named so you "
-            "can go and check them. The first frame is already a finished one: "
-            "the name, one sentence, and where to find it.",
+            "problem, then what the package does about it, then the secret "
+            "sauce (the part you would not guess, with the sources it rests "
+            "on, named so you can go and check them), then the finest thing "
+            "the package can show, and then your turn. The first frame is "
+            "already a finished one: the name, one sentence, and where to "
+            "find it. The last is the only ask, and one line to keep.",
             "They were built with the same discipline they describe. Every "
             "scene was rendered to a still and looked at before the film was "
-            "encoded, which is how the sixty-second set was caught quoting a "
-            "catalogue size the package had outgrown months earlier — off a "
-            "screenshot taken in September — naming a font the package does not "
-            "ship, and counting twelve font files where there are six.",
+            "encoded, which is how the sixty-second set that came before "
+            "this one was caught quoting a catalogue size the package had "
+            "outgrown months earlier, off a screenshot taken in September, "
+            "naming a font the package does not ship, and counting twelve "
+            "font files where there are six.",
             "Two of those were typography rather than fact, and they now have a "
             "test instead of an eye: it measures every line of film text in the "
             "font the films are set in, and fails if one wraps and leaves its "
@@ -314,16 +317,19 @@ COPY: dict[str, dict[str, Any]] = {
             "Ils suivent l\u2019ordre de Guy KAWASAKI, et c\u2019est "
             "pourquoi le bandeau au-dessus de l\u2019image dit où vous en "
             "êtes : ce que c\u2019est, puis le problème, puis ce que le paquet "
-            "en fait, puis la part qu\u2019on ne devinerait pas \u2014 avec "
-            "les sources sur lesquelles elle repose, nommées pour qu\u2019on "
-            "puisse aller les vérifier. La première image est déjà une image "
-            "finie : le nom, une phrase, et où le trouver.",
+            "en fait, puis la recette (la part qu\u2019on ne devinerait pas, "
+            "avec les sources sur lesquelles elle repose, nommées pour "
+            "qu\u2019on puisse aller les vérifier), puis ce que le paquet sait "
+            "faire de plus beau, et enfin à vous. La première image est déjà "
+            "une image finie : le nom, une phrase, et où le trouver. La "
+            "dernière ne demande qu\u2019une chose, et laisse une phrase.",
             "Ils ont été fabriqués avec la discipline qu'ils décrivent. Chaque "
             "plan a été rendu en image fixe et regardé avant l'encodage, ce qui a "
-            "permis d'attraper la série d'une minute en train d'annoncer une "
-            "taille de catalogue dépassée depuis des mois — d'après une capture "
-            "de septembre —, de nommer une fonte que le paquet ne livre pas, et "
-            "de compter douze fichiers de fonte là où il y en a six.",
+            "permis d'attraper la série d'une minute qui a précédé celle-ci "
+            "en train d'annoncer une taille de catalogue dépassée depuis des "
+            "mois, d'après une capture de septembre, de nommer une fonte que "
+            "le paquet ne livre pas, et de compter douze fichiers de fonte là "
+            "où il y en a six.",
             "Deux de ces défauts relevaient de la typographie plutôt que du "
             "fait, et ils ont désormais un test plutôt qu'un œil : il mesure "
             "chaque ligne de texte des films dans la fonte où ils sont composés, "
@@ -361,6 +367,27 @@ def player(film: dict[str, Any], c: dict[str, Any]) -> str:
     rather than a transcript of it, disagreeing with every word on screen.
     A caption track that does not say what the film says is worse than no
     caption track, because a reader has no way to tell which one is wrong.
+
+    Present, and off until asked for
+    --------------------------------
+    The track carries no ``default``. That attribute does not mean "this is
+    the track to use when the viewer asks for captions" — the browser reads it
+    as "show this one now", and the words appear over the picture whether or
+    not anybody wanted them.
+
+    For these films that is the wrong default twice over. Every one of them
+    already carries its sentence on screen, set in the film's own type at the
+    size it was composed for, so forced captions lay a second copy of the same
+    words over the first in the player's font. And a caption track is an
+    accommodation: whether to read instead of listen is the viewer's call,
+    made once in their own player, and a page that overrides it is making a
+    decision it has no standing to make.
+
+    What the attribute's absence costs is nothing. The track is still
+    declared, still named in the player's own subtitle menu, still announced
+    to assistive technology, and still the thing `sprezzature-audio` measured
+    against seventeen characters a second. One click away, rather than
+    unbidden.
     """
     v, s, lang = c["vdir"], film["slug"], c["lang"]
     btns = "".join(
@@ -379,7 +406,7 @@ def player(film: dict[str, Any], c: dict[str, Any]) -> str:
             poster="{v}/{s}.{lang}.jpg"
             class="mx-auto max-h-[80vh] w-full rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
             <source src="{v}/{s}.{lang}.mp4" type="video/mp4">
-            <track kind="captions" src="{v}/{s}.{lang}.vtt" srclang="{lang}" label="{c['captions_label']}" default>
+            <track kind="captions" src="{v}/{s}.{lang}.vtt" srclang="{lang}" label="{c['captions_label']}">
             <p class="p-4 text-sm text-neutral-600 dark:text-neutral-300">{c["fallback"]}
               <a class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="{v}/{s}.{lang}.mp4">{c["download"]}</a>.</p>
           </video>'''

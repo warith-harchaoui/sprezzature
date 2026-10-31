@@ -112,6 +112,28 @@ DERIVED_MAPS = {
     "maps/fr/density.svg": ("fr", "the same plate, in French"),
 }
 
+# Plates a sibling repository already ships, copied rather than generated.
+#
+# Added 2026-10-29 with the sixth beat, the finest example each package can
+# show. Six films had carried no picture at all, justified in FILM-SHAPES.md
+# as "films about text, and a stock photograph would be a lie" — true about
+# photographs, and the wrong conclusion for a suite that draws for a living.
+# A picture the package itself produced is evidence, not decoration.
+#
+# A class of its own because the source is outside this repository: the value
+# is the sibling path, so the file is restorable from clones without anybody
+# remembering which brick drew it, and a `--fix` can fetch it.
+DERIVED_SIBLINGS: dict[str, tuple[str, str]] = {
+    "figures/audio-how-it-works.svg": (
+        "sprezzature-audio/assets/how-it-works.svg",
+        "the two lanes of the audio brick, which is the shape of its film",
+    ),
+    "figures/fr/audio-how-it-works.svg": (
+        "sprezzature-audio/assets/comment-ca-marche.svg",
+        "the same plate, which that brick already ships in French",
+    ),
+}
+
 # ---------------------------------------------------------------------------
 # B. Reproducible by a tool. The narration text lives in make_captions.py,
 #    which git tracks, and `narrate_films.py` turns it into both the voice and
@@ -208,11 +230,18 @@ def restore_voice(dest: pathlib.Path, fix: bool) -> list[str]:
     WebVTT, from the same timeline, with a pronunciation lexicon applied. The
     two cannot disagree, which is the point.
 
-    Kokoro is deterministic, so a re-narration returns the same bytes for the
-    same text, voice and lexicon. Treat that as pinned to the versions and
-    not as a property of TTS: a model update, or an edit to ``lexicon.yaml``,
-    moves the audio *and* the cues together — which is exactly why they are
-    now produced together.
+    Which engine speaks is speaker-helper's decision, not this file's and
+    not the caller's: offline and free, its router answers chatterbox for
+    both languages, and it has done since 2026-10-29.
+
+    That costs determinism, and the line that used to stand here said the
+    opposite. Kokoro returned the same bytes for the same text, voice and
+    lexicon; chatterbox does not, so a restored WAV never byte-matches a
+    resynthesized one and nothing should be written that expects it to.
+    What still holds is the thing worth holding: the audio and the WebVTT
+    come out of one call, off one timeline, so the two cannot drift apart.
+    A seed archive therefore beats a re-narration — it is the same voice
+    twice, where this is merely the same words.
     """
     import subprocess as sp
 
@@ -503,6 +532,130 @@ def restore_shots(dest: pathlib.Path, fix: bool) -> list[str]:
     return notes
 
 
+#: The two read-along captures, and everything needed to say them in one
+#: place: which page is read, which language reads it, and the sentence the
+#: capture stops on. The phrase is the anchor rather than a timestamp
+#: because a re-narration moves every timestamp and moves no sentence --
+#: chatterbox is not deterministic, so "the frame at 0:35" is not a thing a
+#: clone can ask for twice.
+READALONG: dict[str, tuple[str, str, str]] = {
+    "shots/readalong.png": (
+        "README.md", "en", "sized for a site you can hold in your head"),
+    "shots/fr/readalong.png": (
+        "LISEZMOI.md", "fr", "taillé pour un site qu'on tient dans sa tête"),
+}
+
+
+def restore_readalong(dest: pathlib.Path, fix: bool) -> list[str]:
+    """Class B. The `publish` film's last frame: a page reading itself aloud.
+
+    Three commands deep, and all three live in sprezzature-publish: narrate
+    the Markdown, bind the narration to the page, then photograph the page
+    mid-sentence. The cost is the first one -- a README is around five
+    minutes of speech and chatterbox runs at an RTF between 4 and 8, so
+    budget half an hour per language and do not start two at once.
+
+    The working tree sits beside ``_assets/`` rather than inside it, for
+    two reasons: the completeness line at the end counts every file under
+    the target, and a half-hour narration is worth keeping across a run
+    rather than across a reboot -- which is what ``/tmp`` would have given.
+
+    Two things about the layout are load-bearing, and both failed silently
+    the first time. The narration has to sit *inside* the directory the
+    capture serves, because the hrefs are written relative to ``--out`` and
+    a narration kept one level up gives ``src="../narration.wav"``, which
+    ``http.server`` refuses as a traversal. And the page has to be served
+    over HTTP at all: from a ``file://`` origin the player is an ES module
+    the browser will not load and the ``<track>`` never fires. Neither
+    raises. The page simply comes up with a player that never plays, and
+    the capture waits for a highlight that cannot arrive.
+    """
+    missing = [rel for rel in READALONG if not (dest / rel).exists()]
+    if not missing:
+        return []
+    pkg = pathlib.Path.home() / "sprezzature-publish"
+    if not (pkg / "scripts/narrate_post.py").exists():
+        return [f"  NO TOOL          {rel}: {pkg} absent" for rel in sorted(missing)]
+    if not fix:
+        return [f"  would capture    {rel}  <- narrate_post.py + md_to_html.py"
+                f" --readalong + a frame of {READALONG[rel][0]}" for rel in sorted(missing)]
+
+    notes = []
+    for rel in sorted(missing):
+        page, lang, phrase = READALONG[rel]
+        work = dest.parent / "_readalong-work" / lang
+        work.mkdir(parents=True, exist_ok=True)
+        if not (work / "narration.vtt").exists():
+            said = subprocess.run(
+                [sys.executable, str(pkg / "scripts/narrate_post.py"), page,
+                 "--lang", lang, "--out-dir", str(work)],
+                cwd=pkg, capture_output=True, text=True, check=False)
+            if said.returncode != 0 or not (work / "narration.vtt").exists():
+                notes.append(f"  NARRATE FAILED   {rel} "
+                             f"({(said.stderr or said.stdout).strip()[:120]})")
+                continue
+        built = subprocess.run(
+            [sys.executable, str(pkg / "scripts/md_to_html.py"), page,
+             "--out", str(work), "--readalong", str(work)],
+            cwd=pkg, capture_output=True, text=True, check=False)
+        html = work / f"{pathlib.Path(page).stem}.html"
+        if built.returncode != 0 or not html.exists():
+            notes.append(f"  BIND FAILED      {rel} "
+                         f"({(built.stderr or built.stdout).strip()[:120]})")
+            continue
+        err = readalong_png(work, html.name, phrase, dest / rel)
+        notes.append(f"  CAPTURE FAILED   {rel} ({err})" if err else f"  captured         {rel}")
+    return notes
+
+
+def readalong_png(root: pathlib.Path, page_name: str, phrase: str,
+                  out: pathlib.Path) -> str | None:
+    """Photograph a read-along page on the sentence it is speaking.
+
+    Not :func:`chrome_png`: this one needs a server, a playing audio element
+    and a wait on the highlight. The audio is muted, run at 16x and never
+    seeked -- ``http.server`` answers no Range request, so a seek against it
+    fails in a way that reads like a bug in the player.
+    """
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return "playwright absent (pip install playwright && playwright install chromium)"
+    import functools
+    import http.server
+    import socketserver
+    import threading
+
+    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root))
+    httpd = socketserver.TCPServer(("127.0.0.1", 0), handler)
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    try:
+        with sync_playwright() as p:
+            b = p.chromium.launch(args=["--autoplay-policy=no-user-gesture-required"])
+            page = b.new_page(viewport={"width": 760, "height": 570}, device_scale_factor=2)
+            page.goto(f"http://127.0.0.1:{httpd.server_address[1]}/{page_name}")
+            page.wait_for_selector("[data-ra-ui]:not([hidden])", timeout=20000)
+            page.evaluate("async () => { const a ="
+                          " document.querySelector('[data-ra-audio]');"
+                          " a.muted = true; a.playbackRate = 16; await a.play(); }")
+            page.wait_for_function(
+                "p => { const el = document.querySelector('.ra-s.is-reading');"
+                "       return !!el && el.textContent.includes(p); }",
+                arg=phrase, timeout=120000)
+            page.evaluate("document.querySelector('[data-ra-audio]').pause()")
+            page.evaluate("document.querySelector('.ra-s.is-reading')"
+                          ".scrollIntoView({block: 'center'})")
+            page.wait_for_timeout(600)
+            out.parent.mkdir(parents=True, exist_ok=True)
+            page.screenshot(path=str(out))
+            b.close()
+    except Exception as exc:                                   # noqa: BLE001
+        return str(exc)[:140]
+    finally:
+        httpd.shutdown()
+    return None
+
+
 def restore_seed(dest: pathlib.Path, seed: pathlib.Path | None, fix: bool) -> list[str]:
     """Restore everything the archive holds that this tree lacks.
 
@@ -566,8 +719,9 @@ def main() -> None:
     for title, notes in (
         ("seed archive", restore_seed(dest, args.seed, args.fix)),
         ("A. copies of tracked files", restore_tracked(dest, args.fix)),
-        ("B. Kokoro narration", restore_voice(dest, args.fix)),
+        ("B. narration", restore_voice(dest, args.fix)),
         ("B. derived assets", restore_derived(dest, args.fix)),
+        ("B. read-along captures", restore_readalong(dest, args.fix)),
     ):
         print(title)
         print("\n".join(notes) if notes else "  all present")
@@ -581,7 +735,7 @@ def main() -> None:
     # with nine lines made this self-check report 72/59 -- a wrong number in
     # the one line whose job is to say whether the tree is complete.
     want = (len(TRACKED) + len(narration()) + 1 + len(CVD) + 2 + 2
-            + len(DERIVED_MAPS) + len(SEED_ONLY))
+            + len(READALONG) + len(DERIVED_MAPS) + len(SEED_ONLY))
     print(f"{have}/{want} files present" + ("" if args.fix else "   (report only; pass --fix)"))
 
 

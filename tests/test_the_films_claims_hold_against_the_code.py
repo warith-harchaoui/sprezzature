@@ -121,15 +121,34 @@ def test_the_asset_count_on_screen_is_the_ledger_total() -> None:
     """
     import build_films
 
-    scene = next(
-        s for s in build_films.FILMS["video"]["scenes"] if s["type"] == "verify"
-    )
-    on_screen = int(
-        next(
-            value for label, value in scene["claims"]
-            if isinstance(label, dict) and "asset" in label["en"]
-        )
-    )
+    # A film that no longer makes the claim is the state this test wants, not
+    # a failure and not an error.
+    #
+    # It read `next(...)` twice without a default until 2026-10-29, and on the
+    # day the `video` film was rewritten both raised `StopIteration`: the
+    # rewrite dropped the asset count and put something better on screen, a
+    # verify scene naming which claims are *declared* and pointing at the one
+    # that is not. The guard outlived its subject and reported that as a crash,
+    # which says nothing about whether anything is wrong.
+    #
+    # So the question is asked conditionally: *if* a number of assets is on
+    # screen, it has to be the ledger's. The count is deliberately not
+    # required, because requiring it would be this file deciding what the film
+    # says.
+    claims = [
+        claim
+        for scene in build_films.FILMS["video"]["scenes"]
+        if scene["type"] == "verify"
+        for claim in scene.get("claims", ())
+    ]
+    on_screen_values = [
+        value
+        for label, value in claims
+        if isinstance(label, dict) and "asset" in label["en"]
+    ]
+    if not on_screen_values:
+        return  # the film says nothing about how many assets there are
+    on_screen = int(on_screen_values[0])
 
     if not (BRAG / "_assets").is_dir():
         pytest.skip("brag-output/_assets is gitignored and absent from this clone")

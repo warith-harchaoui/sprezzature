@@ -50,35 +50,6 @@ sys.path.insert(0, str(BRAG))
 #: The columns the scene names, in the order it names them.
 COLUMNS = ("region", "quarter", "units")
 
-#: Enough of both languages to spell any count the catalogue can produce. The
-#: film says the number out loud, so a digit on the card has to become words
-#: twice, and the two spellings are where a correction gets dropped.
-_TENS = {
-    "en": {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty",
-           7: "seventy", 8: "eighty", 9: "ninety"},
-    "fr": {2: "vingt", 3: "trente", 4: "quarante", 5: "cinquante", 6: "soixante"},
-}
-_UNITS = {
-    "en": {1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
-           6: "six", 7: "seven", 8: "eight", 9: "nine"},
-    "fr": {1: "et un", 2: "deux", 3: "trois", 4: "quatre", 5: "cinq",
-           6: "six", 7: "sept", 8: "huit", 9: "neuf"},
-}
-
-
-def _spelled(number: int, lang: str) -> str:
-    """How the narration says ``number``. Two digits is all the film needs."""
-    tens, units = divmod(number, 10)
-    assert 2 <= tens <= 9, f"{number} is outside the range this guard spells"
-    word = _TENS[lang].get(tens)
-    assert word, f"no {lang} word for {tens * 10}"
-    if not units:
-        return word
-    return f"{word} {_UNITS[lang][units]}" if lang == "fr" and units == 1 else (
-        f"{word}-{_UNITS[lang][units]}"
-    )
-
-
 def _claimed() -> int:
     """The number printed on the card, read off the film spec."""
     import build_films
@@ -111,11 +82,19 @@ def test_the_card_and_both_voices_say_one_number() -> None:
     want = _claimed()
     missing: list[str] = []
     for lang in ("en", "fr"):
-        word = _spelled(want, lang)
         said = [text for _start, _dur, text in make_captions.FILMS["figures"][lang]]
-        if not any(word in line for line in said):
+        # The digits, not the words.
+        #
+        # This looked for the spelled form until 2026-10-29, when the films
+        # moved every counted quantity to digits: "64 types classés par
+        # lisibilité" rather than "soixante-quatre". The guard had the right
+        # question, "is the number on the card also spoken", and the wrong
+        # idea of what spoken text looks like, so it failed eleven correct
+        # films and named a spelling nobody wanted any more.
+        #
+        if not any(str(want) in line for line in said):
             missing.append(
-                f"{lang}: the card says {want}, and no spoken line says {word!r}"
+                f"{lang}: the card says {want}, and no spoken line says {want}"
             )
     assert not missing, "\n  ".join(["", *missing])
 

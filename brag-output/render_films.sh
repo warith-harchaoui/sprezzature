@@ -108,6 +108,19 @@ rc=$?
 # "66/66 usable". A measurement that cannot tell the new output from the old
 # one is not a check, it is a reassurance.
 echo "checking what came out"
+
+# How long a cut should be, asked of the module that declares the films
+# rather than written here. It was written here, as `59.*|60.*|6[01]`, and on
+# the morning the films went from 60 s to 117 s that pattern would have called
+# every correct render SHORT and every stale 60-second one fine. A length
+# check that carries its own idea of the length is a check that fails the day
+# the length is the thing that changed.
+WANT_SECS=$(cd .. && python3 -c 'import build_films; print(build_films.DURATION_S)' 2>/dev/null)
+if [ -z "$WANT_SECS" ]; then
+  echo "cannot read DURATION_S from build_films.py; refusing to check lengths against a guess"
+  exit 2
+fi
+
 bad=0
 for d in "${targets[@]}"; do
   newest=$(ls -t "$d"/renders/*.mp4 2>/dev/null | head -1)
@@ -115,10 +128,11 @@ for d in "${targets[@]}"; do
     echo "MISSING $d"; bad=$((bad + 1)); continue
   fi
   secs=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$newest" 2>/dev/null)
-  case "$secs" in
-    59.*|60.*|6[01]) : ;;
-    *) echo "SHORT   $d: ${secs:-unreadable}s — $newest"; bad=$((bad + 1)); continue ;;
-  esac
+  if [ -z "$secs" ] || ! awk -v got="$secs" -v want="$WANT_SECS" \
+       'BEGIN { exit !(got > want - 1.5 && got < want + 1.5) }'; then
+    echo "SHORT   $d: ${secs:-unreadable}s, expected ${WANT_SECS}s — $newest"
+    bad=$((bad + 1)); continue
+  fi
   size=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height \
            -of csv=p=0:s=x "$newest" 2>/dev/null)
   case "$d:$size" in

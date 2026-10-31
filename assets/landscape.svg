@@ -1,0 +1,621 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1384" height="1012" viewBox="0 0 1384 1012" role="img" aria-labelledby="sp-title sp-desc" font-family="Roboto, -apple-system, Helvetica, Arial, sans-serif"><title id="sp-title">Tools in the Quadrant</title><desc id="sp-desc">A 2D positioning map of 31 tools, Robustness to Nimble on the horizontal axis, Dynamic to Adaptable on the vertical axis.</desc><style>.sp-dot{cursor:pointer}.sp-dot:hover circle,.sp-dot:focus circle{stroke-width:2.4}.sp-dot:hover,.sp-dot:focus{filter:brightness(1.08);outline:none}</style><line x1="186.0" y1="517.0" x2="1084.4" y2="517.0" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><line x1="612.0" y1="931.4" x2="612.0" y2="102.6" stroke="#C7C7CC" stroke-width="1.2" stroke-dasharray="2,4"/><text data-pole="right" x="1164.0" y="524.0" font-size="20" font-style="italic" fill="#6E6E73" text-anchor="end">Nimble</text><text data-pole="left" x="60.0" y="524.0" font-size="20" font-style="italic" fill="#6E6E73" text-anchor="start">Robustness</text><text data-pole="top" x="612.0" y="68.4" font-size="20" font-style="italic" fill="#6E6E73" text-anchor="middle">Adaptable</text><text data-pole="bottom" x="612.0" y="977.4" font-size="20" font-style="italic" fill="#6E6E73" text-anchor="middle">Dynamic</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: sprezzature (the skills)
+Local-first: 5
+Lightweight: 5
+Restyleable: 5
+Accessibility: 5
+Maturity: 2
+Skill-native: 5
+Interactive: 4
+Free/Open: 5
+Ease: 4
+Ecosystem: 2"><circle cx="912.0" cy="275.5" r="6.48" fill="#FF3B30" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: sprezzature (the skills)
+Local-first: 5
+Lightweight: 5
+Restyleable: 5
+Accessibility: 5
+Maturity: 2
+Skill-native: 5
+Interactive: 4
+Free/Open: 5
+Ease: 4
+Ecosystem: 2</title></g><text x="899.5" y="280.1" font-size="13" fill="#1C1C1E" text-anchor="end">sprezzature (the skills)</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: React
+Local-first: 5
+Lightweight: 1
+Restyleable: 3
+Accessibility: 2
+Maturity: 5
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 2
+Ecosystem: 5"><circle cx="344.2" cy="567.3" r="6.48" fill="#CF6F8F" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: React
+Local-first: 5
+Lightweight: 1
+Restyleable: 3
+Accessibility: 2
+Maturity: 5
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 2
+Ecosystem: 5</title></g><text x="356.7" y="571.9" font-size="13" fill="#1C1C1E" text-anchor="start">React</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Vue
+Local-first: 5
+Lightweight: 2
+Restyleable: 3
+Accessibility: 3
+Maturity: 5
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 3
+Ecosystem: 4"><circle cx="442.3" cy="497.7" r="6.48" fill="#BB6595" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Vue
+Local-first: 5
+Lightweight: 2
+Restyleable: 3
+Accessibility: 3
+Maturity: 5
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 3
+Ecosystem: 4</title></g><text x="454.8" y="502.2" font-size="13" fill="#1C1C1E" text-anchor="start">Vue</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Svelte
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 4
+Ecosystem: 3"><circle cx="613.6" cy="419.0" r="6.48" fill="#22B494" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Svelte
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 4
+Ecosystem: 3</title></g><text x="633.9" y="460.7" font-size="13" fill="#1C1C1E" text-anchor="start">Svelte</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: HTMX
+Local-first: 5
+Lightweight: 4
+Restyleable: 4
+Accessibility: 4
+Maturity: 3
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 4
+Ecosystem: 3"><circle cx="648.7" cy="336.4" r="6.48" fill="#509C5A" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: HTMX
+Local-first: 5
+Lightweight: 4
+Restyleable: 4
+Accessibility: 4
+Maturity: 3
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 4
+Ecosystem: 3</title></g><text x="661.2" y="340.9" font-size="13" fill="#1C1C1E" text-anchor="start">HTMX</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Alpine.js
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 3
+Maturity: 3
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 4
+Ecosystem: 3"><circle cx="667.9" cy="397.1" r="6.48" fill="#89BA66" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Alpine.js
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 3
+Maturity: 3
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 4
+Ecosystem: 3</title></g><text x="680.4" y="401.7" font-size="13" fill="#1C1C1E" text-anchor="start">Alpine.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Tailwind CSS
+Local-first: 5
+Lightweight: 4
+Restyleable: 5
+Accessibility: 4
+Maturity: 5
+Skill-native: 2
+Interactive: 1
+Free/Open: 5
+Ease: 4
+Ecosystem: 5"><circle cx="465.1" cy="275.5" r="6.48" fill="#AF52DE" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Tailwind CSS
+Local-first: 5
+Lightweight: 4
+Restyleable: 5
+Accessibility: 4
+Maturity: 5
+Skill-native: 2
+Interactive: 1
+Free/Open: 5
+Ease: 4
+Ecosystem: 5</title></g><text x="477.6" y="280.1" font-size="13" fill="#1C1C1E" text-anchor="start">Tailwind CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Pico CSS
+Local-first: 5
+Lightweight: 5
+Restyleable: 2
+Accessibility: 4
+Maturity: 3
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 5
+Ecosystem: 2"><circle cx="781.4" cy="326.5" r="6.48" fill="#94A948" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Pico CSS
+Local-first: 5
+Lightweight: 5
+Restyleable: 2
+Accessibility: 4
+Maturity: 3
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 5
+Ecosystem: 2</title></g><text x="793.9" y="331.0" font-size="13" fill="#1C1C1E" text-anchor="start">Pico CSS</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: shadcn/ui
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 3
+Ecosystem: 4"><circle cx="489.7" cy="397.9" r="6.48" fill="#AF9CF3" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: shadcn/ui
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 3
+Ecosystem: 4</title></g><text x="477.2" y="431.9" font-size="13" fill="#1C1C1E" text-anchor="end">shadcn/ui</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Radix UI
+Local-first: 5
+Lightweight: 3
+Restyleable: 3
+Accessibility: 5
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 3
+Ecosystem: 4"><circle cx="495.7" cy="398.9" r="6.48" fill="#9196EC" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Radix UI
+Local-first: 5
+Lightweight: 3
+Restyleable: 3
+Accessibility: 5
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 5
+Ease: 3
+Ecosystem: 4</title></g><text x="459.8" y="456.2" font-size="13" fill="#1C1C1E" text-anchor="end">Radix UI</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Vega-Lite
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 4
+Maturity: 4
+Skill-native: 2
+Interactive: 4
+Free/Open: 5
+Ease: 4
+Ecosystem: 4"><circle cx="564.0" cy="377.1" r="6.48" fill="#13C0B4" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Vega-Lite
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 4
+Maturity: 4
+Skill-native: 2
+Interactive: 4
+Free/Open: 5
+Ease: 4
+Ecosystem: 4</title></g><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: D3.js
+Local-first: 5
+Lightweight: 4
+Restyleable: 5
+Accessibility: 3
+Maturity: 5
+Skill-native: 1
+Interactive: 5
+Free/Open: 5
+Ease: 1
+Ecosystem: 5"><circle cx="312.0" cy="394.6" r="6.48" fill="#B76CAB" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: D3.js
+Local-first: 5
+Lightweight: 4
+Restyleable: 5
+Accessibility: 3
+Maturity: 5
+Skill-native: 1
+Interactive: 5
+Free/Open: 5
+Ease: 1
+Ecosystem: 5</title></g><text x="324.5" y="399.2" font-size="13" fill="#1C1C1E" text-anchor="start">D3.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Plotly.js
+Local-first: 5
+Lightweight: 1
+Restyleable: 2
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 5
+Free/Open: 4
+Ease: 3
+Ecosystem: 4"><circle cx="499.6" cy="593.2" r="6.48" fill="#F38E83" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Plotly.js
+Local-first: 5
+Lightweight: 1
+Restyleable: 2
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 5
+Free/Open: 4
+Ease: 3
+Ecosystem: 4</title></g><text x="512.1" y="597.8" font-size="13" fill="#1C1C1E" text-anchor="start">Plotly.js</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Gradio
+Local-first: 4
+Lightweight: 2
+Restyleable: 1
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 4
+Ease: 5
+Ecosystem: 3"><circle cx="669.2" cy="589.2" r="6.48" fill="#C18F2D" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Gradio
+Local-first: 4
+Lightweight: 2
+Restyleable: 1
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 4
+Ease: 5
+Ecosystem: 3</title></g><text x="656.7" y="581.3" font-size="13" fill="#1C1C1E" text-anchor="end">Gradio</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Streamlit
+Local-first: 4
+Lightweight: 2
+Restyleable: 1
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 4
+Ease: 5
+Ecosystem: 4"><circle cx="617.9" cy="593.6" r="6.48" fill="#E6A053" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Streamlit
+Local-first: 4
+Lightweight: 2
+Restyleable: 1
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 4
+Free/Open: 4
+Ease: 5
+Ecosystem: 4</title></g><text x="630.4" y="627.6" font-size="13" fill="#1C1C1E" text-anchor="start">Streamlit</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Tauri
+Local-first: 5
+Lightweight: 4
+Restyleable: 4
+Accessibility: 3
+Maturity: 3
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 3
+Ecosystem: 3"><circle cx="615.4" cy="368.6" r="6.48" fill="#3EAB79" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Tauri
+Local-first: 5
+Lightweight: 4
+Restyleable: 4
+Accessibility: 3
+Maturity: 3
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 3
+Ecosystem: 3</title></g><text x="627.9" y="373.1" font-size="13" fill="#1C1C1E" text-anchor="start">Tauri</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Hugo
+Local-first: 5
+Lightweight: 4
+Restyleable: 4
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 2
+Free/Open: 5
+Ease: 3
+Ecosystem: 4"><circle cx="512.7" cy="362.9" r="6.48" fill="#5592DA" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Hugo
+Local-first: 5
+Lightweight: 4
+Restyleable: 4
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 2
+Free/Open: 5
+Ease: 3
+Ecosystem: 4</title></g><text x="525.2" y="396.8" font-size="13" fill="#1C1C1E" text-anchor="start">Hugo</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Astro
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 3
+Ecosystem: 4"><circle cx="491.1" cy="382.0" r="6.48" fill="#7393E3" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Astro
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 3
+Free/Open: 5
+Ease: 3
+Ecosystem: 4</title></g><text x="478.6" y="386.5" font-size="13" fill="#1C1C1E" text-anchor="end">Astro</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: MkDocs Material
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 2
+Free/Open: 4
+Ease: 4
+Ecosystem: 4"><circle cx="565.4" cy="383.0" r="6.48" fill="#3AD7DF" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: MkDocs Material
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 2
+Free/Open: 4
+Ease: 4
+Ecosystem: 4</title></g><text x="601.3" y="440.4" font-size="13" fill="#1C1C1E" text-anchor="start">MkDocs Material</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: axe-core
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 5
+Maturity: 5
+Skill-native: 1
+Interactive: 1
+Free/Open: 4
+Ease: 3
+Ecosystem: 5"><circle cx="416.1" cy="349.7" r="6.48" fill="#B68DDF" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: axe-core
+Local-first: 5
+Lightweight: 4
+Restyleable: 3
+Accessibility: 5
+Maturity: 5
+Skill-native: 1
+Interactive: 1
+Free/Open: 4
+Ease: 3
+Ecosystem: 5</title></g><text x="428.6" y="354.2" font-size="13" fill="#1C1C1E" text-anchor="start">axe-core</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Pa11y
+Local-first: 5
+Lightweight: 3
+Restyleable: 3
+Accessibility: 5
+Maturity: 4
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 3
+Ecosystem: 3"><circle cx="551.1" cy="346.7" r="6.48" fill="#00A0BA" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Pa11y
+Local-first: 5
+Lightweight: 3
+Restyleable: 3
+Accessibility: 5
+Maturity: 4
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 3
+Ecosystem: 3</title></g><text x="563.6" y="351.2" font-size="13" fill="#1C1C1E" text-anchor="start">Pa11y</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Claude vision
+Local-first: 1
+Lightweight: 3
+Restyleable: 3
+Accessibility: 4
+Maturity: 5
+Skill-native: 2
+Interactive: 2
+Free/Open: 1
+Ease: 3
+Ecosystem: 5"><circle cx="506.6" cy="567.2" r="6.48" fill="#FF9AA5" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Claude vision
+Local-first: 1
+Lightweight: 3
+Restyleable: 3
+Accessibility: 4
+Maturity: 5
+Skill-native: 2
+Interactive: 2
+Free/Open: 1
+Ease: 3
+Ecosystem: 5</title></g><text x="519.1" y="559.2" font-size="13" fill="#1C1C1E" text-anchor="start">Claude vision</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Claude Dashboards
+Local-first: 1
+Lightweight: 3
+Restyleable: 2
+Accessibility: 3
+Maturity: 2
+Skill-native: 2
+Interactive: 5
+Free/Open: 1
+Ease: 5
+Ecosystem: 3"><circle cx="862.5" cy="644.9" r="6.48" fill="#CBC761" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Claude Dashboards
+Local-first: 1
+Lightweight: 3
+Restyleable: 2
+Accessibility: 3
+Maturity: 2
+Skill-native: 2
+Interactive: 5
+Free/Open: 1
+Ease: 5
+Ecosystem: 3</title></g><text x="875.0" y="649.5" font-size="13" fill="#1C1C1E" text-anchor="start">Claude Dashboards</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Claude Motion
+Local-first: 1
+Lightweight: 3
+Restyleable: 3
+Accessibility: 2
+Maturity: 2
+Skill-native: 2
+Interactive: 2
+Free/Open: 1
+Ease: 5
+Ecosystem: 2"><circle cx="912.0" cy="591.8" r="6.48" fill="#007AFF" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Claude Motion
+Local-first: 1
+Lightweight: 3
+Restyleable: 3
+Accessibility: 2
+Maturity: 2
+Skill-native: 2
+Interactive: 2
+Free/Open: 1
+Ease: 5
+Ecosystem: 2</title></g><text x="899.5" y="596.3" font-size="13" fill="#1C1C1E" text-anchor="end">Claude Motion</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: LLaVA / MiniCPM-V
+Local-first: 5
+Lightweight: 2
+Restyleable: 3
+Accessibility: 3
+Maturity: 3
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 2
+Ecosystem: 3"><circle cx="563.7" cy="436.0" r="6.48" fill="#67C4FF" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: LLaVA / MiniCPM-V
+Local-first: 5
+Lightweight: 2
+Restyleable: 3
+Accessibility: 3
+Maturity: 3
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 2
+Ecosystem: 3</title></g><text x="591.8" y="485.5" font-size="13" fill="#1C1C1E" text-anchor="start">LLaVA / MiniCPM-V</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: whisper.cpp
+Local-first: 5
+Lightweight: 5
+Restyleable: 3
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 3
+Ecosystem: 4"><circle cx="540.2" cy="344.7" r="6.48" fill="#4AC5F3" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: whisper.cpp
+Local-first: 5
+Lightweight: 5
+Restyleable: 3
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 1
+Free/Open: 5
+Ease: 3
+Ecosystem: 4</title></g><text x="540.2" y="328.9" font-size="13" fill="#1C1C1E" text-anchor="middle">whisper.cpp</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Deepgram
+Local-first: 1
+Lightweight: 3
+Restyleable: 3
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 2
+Free/Open: 1
+Ease: 3
+Ecosystem: 4"><circle cx="576.3" cy="575.6" r="6.48" fill="#E68867" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Deepgram
+Local-first: 1
+Lightweight: 3
+Restyleable: 3
+Accessibility: 4
+Maturity: 4
+Skill-native: 1
+Interactive: 2
+Free/Open: 1
+Ease: 3
+Ecosystem: 4</title></g><text x="548.2" y="625.1" font-size="13" fill="#1C1C1E" text-anchor="end">Deepgram</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Looker
+Local-first: 1
+Lightweight: 1
+Restyleable: 2
+Accessibility: 3
+Maturity: 5
+Skill-native: 1
+Interactive: 5
+Free/Open: 1
+Ease: 2
+Ecosystem: 4"><circle cx="471.3" cy="758.5" r="6.48" fill="#A52A2A" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Looker
+Local-first: 1
+Lightweight: 1
+Restyleable: 2
+Accessibility: 3
+Maturity: 5
+Skill-native: 1
+Interactive: 5
+Free/Open: 1
+Ease: 2
+Ecosystem: 4</title></g><text x="483.8" y="763.0" font-size="13" fill="#1C1C1E" text-anchor="start">Looker</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: ThoughtSpot
+Local-first: 2
+Lightweight: 1
+Restyleable: 2
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 5
+Free/Open: 1
+Ease: 3
+Ecosystem: 4"><circle cx="553.1" cy="727.2" r="6.48" fill="#F6A168" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: ThoughtSpot
+Local-first: 2
+Lightweight: 1
+Restyleable: 2
+Accessibility: 3
+Maturity: 4
+Skill-native: 1
+Interactive: 5
+Free/Open: 1
+Ease: 3
+Ecosystem: 4</title></g><text x="565.6" y="731.8" font-size="13" fill="#1C1C1E" text-anchor="start">ThoughtSpot</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: Highcharts
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 5
+Maturity: 5
+Skill-native: 1
+Interactive: 5
+Free/Open: 2
+Ease: 4
+Ecosystem: 4"><circle cx="489.1" cy="452.1" r="6.48" fill="#D698E4" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: Highcharts
+Local-first: 5
+Lightweight: 3
+Restyleable: 4
+Accessibility: 5
+Maturity: 5
+Skill-native: 1
+Interactive: 5
+Free/Open: 2
+Ease: 4
+Ecosystem: 4</title></g><text x="501.6" y="486.0" font-size="13" fill="#1C1C1E" text-anchor="start">Highcharts</text><g class="sp-dot" tabindex="0" role="img" aria-label="Tools: TensorFlow Embedding Projector
+Local-first: 4
+Lightweight: 3
+Restyleable: 1
+Accessibility: 2
+Maturity: 3
+Skill-native: 1
+Interactive: 5
+Free/Open: 5
+Ease: 3
+Ecosystem: 2"><circle cx="705.5" cy="574.8" r="6.48" fill="#DFC25D" stroke="white" stroke-width="1" opacity="0.95"/><title>Tools: TensorFlow Embedding Projector
+Local-first: 4
+Lightweight: 3
+Restyleable: 1
+Accessibility: 2
+Maturity: 3
+Skill-native: 1
+Interactive: 5
+Free/Open: 5
+Ease: 3
+Ecosystem: 2</title></g><text x="718.0" y="566.9" font-size="13" fill="#1C1C1E" text-anchor="start">TensorFlow Embedding Projector</text><text x="1236.0" y="42.0" font-size="10" font-weight="700" fill="#1C1C1E">Tools</text><circle cx="1242.0" cy="58.5" r="6" fill="#FF3B30" opacity="0.95"/><text x="1254.0" y="62.0" font-size="10" fill="#1C1C1E">sprezzature (the skills)</text><circle cx="1242.0" cy="77.5" r="6" fill="#94A948" opacity="0.95"/><text x="1254.0" y="81.0" font-size="10" fill="#1C1C1E">Pico CSS</text><circle cx="1242.0" cy="96.5" r="6" fill="#509C5A" opacity="0.95"/><text x="1254.0" y="100.0" font-size="10" fill="#1C1C1E">HTMX</text><circle cx="1242.0" cy="115.5" r="6" fill="#00A0BA" opacity="0.95"/><text x="1254.0" y="119.0" font-size="10" fill="#1C1C1E">Pa11y</text><circle cx="1242.0" cy="134.5" r="6" fill="#4AC5F3" opacity="0.95"/><text x="1254.0" y="138.0" font-size="10" fill="#1C1C1E">whisper.cpp</text><circle cx="1242.0" cy="153.5" r="6" fill="#AF52DE" opacity="0.95"/><text x="1254.0" y="157.0" font-size="10" fill="#1C1C1E">Tailwind CSS</text><circle cx="1242.0" cy="172.5" r="6" fill="#3EAB79" opacity="0.95"/><text x="1254.0" y="176.0" font-size="10" fill="#1C1C1E">Tauri</text><circle cx="1242.0" cy="191.5" r="6" fill="#3AD7DF" opacity="0.95"/><text x="1254.0" y="195.0" font-size="10" fill="#1C1C1E">MkDocs Material</text><circle cx="1242.0" cy="210.5" r="6" fill="#13C0B4" opacity="0.95"/><text x="1254.0" y="214.0" font-size="10" fill="#1C1C1E">Vega-Lite</text><circle cx="1242.0" cy="229.5" r="6" fill="#5592DA" opacity="0.95"/><text x="1254.0" y="233.0" font-size="10" fill="#1C1C1E">Hugo</text><circle cx="1242.0" cy="248.5" r="6" fill="#7393E3" opacity="0.95"/><text x="1254.0" y="252.0" font-size="10" fill="#1C1C1E">Astro</text><circle cx="1242.0" cy="267.5" r="6" fill="#B68DDF" opacity="0.95"/><text x="1254.0" y="271.0" font-size="10" fill="#1C1C1E">axe-core</text><circle cx="1242.0" cy="286.5" r="6" fill="#89BA66" opacity="0.95"/><text x="1254.0" y="290.0" font-size="10" fill="#1C1C1E">Alpine.js</text><circle cx="1242.0" cy="305.5" r="6" fill="#22B494" opacity="0.95"/><text x="1254.0" y="309.0" font-size="10" fill="#1C1C1E">Svelte</text><circle cx="1242.0" cy="324.5" r="6" fill="#67C4FF" opacity="0.95"/><text x="1254.0" y="328.0" font-size="10" fill="#1C1C1E">LLaVA / MiniCPM-V</text><circle cx="1242.0" cy="343.5" r="6" fill="#9196EC" opacity="0.95"/><text x="1254.0" y="347.0" font-size="10" fill="#1C1C1E">Radix UI</text><circle cx="1242.0" cy="362.5" r="6" fill="#AF9CF3" opacity="0.95"/><text x="1254.0" y="366.0" font-size="10" fill="#1C1C1E">shadcn/ui</text><circle cx="1242.0" cy="381.5" r="6" fill="#B76CAB" opacity="0.95"/><text x="1254.0" y="385.0" font-size="10" fill="#1C1C1E">D3.js</text><circle cx="1242.0" cy="400.5" r="6" fill="#DFC25D" opacity="0.95"/><text x="1254.0" y="404.0" font-size="10" fill="#1C1C1E">TensorFlow Embedding Projector</text><circle cx="1242.0" cy="419.5" r="6" fill="#E68867" opacity="0.95"/><text x="1254.0" y="423.0" font-size="10" fill="#1C1C1E">Deepgram</text><circle cx="1242.0" cy="438.5" r="6" fill="#FF9AA5" opacity="0.95"/><text x="1254.0" y="442.0" font-size="10" fill="#1C1C1E">Claude vision</text><circle cx="1242.0" cy="457.5" r="6" fill="#D698E4" opacity="0.95"/><text x="1254.0" y="461.0" font-size="10" fill="#1C1C1E">Highcharts</text><circle cx="1242.0" cy="476.5" r="6" fill="#BB6595" opacity="0.95"/><text x="1254.0" y="480.0" font-size="10" fill="#1C1C1E">Vue</text><circle cx="1242.0" cy="495.5" r="6" fill="#CF6F8F" opacity="0.95"/><text x="1254.0" y="499.0" font-size="10" fill="#1C1C1E">React</text><circle cx="1242.0" cy="514.5" r="6" fill="#007AFF" opacity="0.95"/><text x="1254.0" y="518.0" font-size="10" fill="#1C1C1E">Claude Motion</text><circle cx="1242.0" cy="533.5" r="6" fill="#CBC761" opacity="0.95"/><text x="1254.0" y="537.0" font-size="10" fill="#1C1C1E">Claude Dashboards</text><circle cx="1242.0" cy="552.5" r="6" fill="#C18F2D" opacity="0.95"/><text x="1254.0" y="556.0" font-size="10" fill="#1C1C1E">Gradio</text><circle cx="1242.0" cy="571.5" r="6" fill="#E6A053" opacity="0.95"/><text x="1254.0" y="575.0" font-size="10" fill="#1C1C1E">Streamlit</text><circle cx="1242.0" cy="590.5" r="6" fill="#F6A168" opacity="0.95"/><text x="1254.0" y="594.0" font-size="10" fill="#1C1C1E">ThoughtSpot</text><circle cx="1242.0" cy="609.5" r="6" fill="#F38E83" opacity="0.95"/><text x="1254.0" y="613.0" font-size="10" fill="#1C1C1E">Plotly.js</text><circle cx="1242.0" cy="628.5" r="6" fill="#A52A2A" opacity="0.95"/><text x="1254.0" y="632.0" font-size="10" fill="#1C1C1E">Looker</text><text x="612.0" y="26" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">Tools in the Quadrant</text></svg>
