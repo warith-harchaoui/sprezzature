@@ -151,7 +151,11 @@ The **positions** come back identical — the geometry is correlation PCA with n
 two runs were diffed to check. The **pole names** do not: they are written by whichever local
 model is configured, and this page is its own evidence, since an earlier run of these same
 numbers said *Mature / Simple* where today's says *Robustness / Nimble*. That is why the loadings
-are quoted above and the words are not trusted. `--check` also marks this figure **not
+are quoted above and the words are not trusted. The French edition of this page is the same
+demonstration standing side by side rather than one run after another: its point cloud is
+**identical** to this one — the two were diffed coordinate by coordinate and match — under the
+names *Stabilité / Simplicité* and *Dynamisme / Flexibilité*, which are not translations of the
+English four but a second roll of the same dice. `--check` also marks this figure **not
 readable**: five label pairs risk overlapping, shadcn/ui, Radix UI and Astro in one knot,
 Vega-Lite with MkDocs Material, and Pa11y with whisper.cpp. The interactive SVG separates them on
 hover; the static PNG does not.

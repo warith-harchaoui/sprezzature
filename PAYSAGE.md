@@ -153,7 +153,11 @@ dedans, et deux exécutions ont été comparées pour le vérifier. Les **noms d
 sont écrits par le modèle local configuré, et la preuve est cette page même, puisqu'une exécution
 antérieure sur ces mêmes chiffres disait *Robustesse / Agilité* là où celle d'aujourd'hui dit
 *Stabilité / Simplicité*. C'est pourquoi les charges sont citées plus haut et pourquoi on ne se
-fie pas aux mots. `--check` marque aussi cette figure **non lisible** : cinq paires d'étiquettes
+fie pas aux mots. L'édition anglaise de cette page est la même démonstration posée à côté plutôt
+qu'une exécution après l'autre : son nuage de points est **identique** à celui-ci — les deux ont
+été comparés coordonnée par coordonnée et concordent — sous les noms *Robustness / Nimble* et
+*Dynamic / Adaptable*, qui ne sont pas la traduction des quatre mots français mais un second
+tirage des mêmes dés. `--check` marque aussi cette figure **non lisible** : cinq paires d'étiquettes
 risquent de se chevaucher, shadcn/ui, Radix UI et Astro en un seul nœud, Vega-Lite avec MkDocs
 Material, et Pa11y avec whisper.cpp. Le SVG interactif les sépare au survol ; le PNG statique,
 non.
