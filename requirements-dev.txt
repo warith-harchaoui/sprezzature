@@ -19,6 +19,32 @@ pytest>=8.0.0
 # dependency belongs here and not in pyproject.toml.
 best-engine-ai-helper>=1.4
 
+# Logging and the small filesystem primitives, for two scripts that already
+# import it: `web/tools/render_gallery.py` and `sftp/sync_web.py` both open on
+# a bare `import os_helper as osh` and call `init_logging` / `info` / `warning`
+# / `error` throughout. Neither guards the import, and nothing declared it —
+# so a fresh clone with this file installed got a ModuleNotFoundError from the
+# first line of the gallery renderer, and from the one script whose job is to
+# put the site online. Declaring what is already imported is the whole change.
+#
+# Here and not in pyproject.toml, deliberately. `[tool.setuptools] packages`
+# ships `sprezzature/` and the ten skill folders; `web/tools/` and `sftp/` are
+# in neither, so no installed copy of this package can reach these scripts. A
+# base dependency would instead pull os-helper's `>=3.10,<3.14` onto this
+# repository's own `requires-python = ">=3.10"`, which would then be a promise
+# of a Python the dependency excludes — the defect
+# `tests/test_no_brick_promises_a_python_its_dependencies_exclude.py` guards.
+# The CI matrix is 3.10 / 3.11 / 3.12, well inside that window.
+#
+# Its two siblings in these scripts are NOT here, and the difference is the
+# guard at the call site, not the weight: `sftp/sync_web.py` wraps
+# `import sftp_helper` in a try/except that prints the pip line, and
+# `tests/test_no_film_is_voiced_by_a_retired_engine.py` reaches
+# `speaker_helper` through `pytest.importorskip`. Installing them would add 15
+# and 23 packages — numpy, scipy and soundfile among them — to every job of
+# every push, to wake one test that skips anyway on a `web/video` no clone has.
+os-helper>=3.1.0
+
 # Real YAML parser for SKILL.md frontmatter validation.
 # Used by scripts/validate_skill.py + tests/test_validate_skill.py;
 # the regex-only frontmatter check is no longer trusted as the gate.
