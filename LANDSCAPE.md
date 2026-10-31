@@ -97,59 +97,64 @@ for light weight, restyleability, accessibility, and skill-native delivery.
 | [TensorFlow Embedding Projector](https://projector.tensorflow.org) | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ |
 
 **On locality:** `sprezzature` is **local-first**, as is most tooling that runs on your machine, though
-not every entrant here still is: the hosted business-intelligence (BI) platforms (Looker, ThoughtSpot) and the online
-artificial-intelligence (AI) services (Claude vision, Deepgram) are not. With those entrants the column
+not every entrant here still is: the hosted business-intelligence (BI) platforms (Looker, ThoughtSpot), the online
+artificial-intelligence (AI) services (Claude vision, Deepgram) and Anthropic's own two product surfaces
+(Claude Dashboards, Claude Motion) are not. With those entrants the column
 now **discriminates**, so it joins the map as a full criterion rather than sitting out as near-constant context.
 
 Fed as integers to [standpoint](https://github.com/warith-harchaoui/standpoint) (with `sprezzature`
 as the reference row), the ten criteria project onto a 2-D **positioning map**:
 
-![Competitive-positioning map of sprezzature against the alternatives: a 2-D scatter with sprezzature anchored top-right as the reference, Looker diametrically opposite, a horizontal Mature–Simple axis and a vertical Adaptable–Interactive axis.](sprezzature-figures/assets/figures-gallery/landscape-positioning.png)
+![Thirty-one tools positioned on two axes derived from the table above by principal component analysis. The horizontal axis runs from Robustness on the left to Nimble on the right; the vertical from Dynamic at the bottom to Adaptable at the top. sprezzature sits in the top-right corner, by construction, since it is the reference row, with Pico CSS and HTMX below and to its left along the adaptable edge, and Tailwind CSS at exactly the same height on the far side. D3.js and React are far left: mature and well-resourced, but nothing about them is skill-native. Looker is the lowest point on the map, with ThoughtSpot above it, both left of centre. Claude Dashboards and Claude Motion sit on the right but below the middle, the hosted, easy, live corner, with Streamlit and Gradio between them and the centre.](assets/landscape.svg)
 
-The horizontal axis contrasts **Mature** (left: established maturity and ecosystem) with **Simple**
-(right: immediate to pick up); the vertical contrasts **Adaptable** (top: restyleable and lightweight)
-with **Interactive** (bottom: interactive end-user exploration). `sprezzature` anchors the top-right;
-**Looker** sits diametrically opposite (a hosted, heavyweight, proprietary BI platform); **Tailwind CSS**
-reaches furthest toward Adaptable and **Pico CSS** furthest toward Simple.
+The horizontal axis contrasts **Robustness** (left: established maturity and a deep ecosystem)
+with **Nimble** (right: immediate to pick up, and delivered as a skill); the vertical contrasts
+**Dynamic** (bottom: something you operate) with **Adaptable** (top: light, open and
+restyleable). `sprezzature` anchors the top-right, by construction, because `standpoint` puts the
+reference row there — that is a convention of the drawing, not a claim about quality. **Looker**
+is the lowest point on the map, **Tailwind CSS** reaches the reference's own height on the
+adaptable edge, and **D3.js** holds the far left.
 
-Those two names per axis are a local model's words; the loadings behind them are the
-check. Horizontally, ecosystem (−0.59) and maturity (−0.55) against ease (+0.37) — being
-established versus being immediate. Vertically, restyleable (+0.54), lightweight (+0.45)
-and accessibility (+0.39) against interactive (−0.31) — something you shape versus
-something you operate.
+Those four words are a local model's; the loadings behind them are the check. Horizontally,
+maturity (−0.55) and ecosystem (−0.53) against ease (+0.45) and skill-native delivery (+0.31) —
+being established versus being immediate, which is exactly the bargain this suite makes on
+purpose. Vertically, lightweight (+0.48), local-first (+0.44), free and open (+0.42),
+restyleable (+0.42) and accessibility (+0.33) against interactive (−0.29) — something you shape
+versus something you operate.
 
-**Together the two axes carry 52.9 %** of what separates these approaches. Just over half:
-with ten criteria across twenty-nine tools, the map is a first orientation and the tables
-are the evidence. The scores are
-[`assets/landscape.csv`](assets/landscape.csv) — generated from the table above by
+**Together the two axes carry 54.5 % of what separates these approaches.** Just over half: with
+ten criteria across thirty-one tools, the map is a first orientation and the tables are the
+evidence. That percentage belongs to the **plane**, not to the horizontal and the vertical
+separately — `standpoint` names the axes it draws but reports variance per principal component
+(28.2 % and 26.3 %), and the drawn frame here is a rotation of 86.7°, which mixes the two. The
+cumulative figure is the sound one; a per-axis share would not be attributable. The loadings
+above are quoted from the oriented frame, so those do describe the horizontal and the vertical
+as drawn.
+
+What the vertical axis finds is worth stating carefully, because the obvious reading of it is
+wrong. **Every hosted entrant is below the line** — Looker, ThoughtSpot, Deepgram, Claude vision,
+Claude Dashboards and Claude Motion, with nothing hosted above it. The converse does not hold:
+React, Plotly.js, Streamlit, Gradio and the TensorFlow Embedding Projector are below it too, and
+all five run on your machine. So the bottom pole is not "hosted", it is *something you operate*,
+and being hosted is a sufficient way to get there rather than the only one. Hosting and
+heaviness travel together often enough to look like one line, and they are two.
+
+The scores are [`assets/landscape.csv`](assets/landscape.csv) — generated from the table above by
 `scripts/landscape_to_csv.py`, so the two cannot drift. To redraw it:
 
 ```sh
-standpoint assets/landscape.csv -r "sprezzature (the skills)" -o out
+python scripts/landscape_to_csv.py LANDSCAPE.md
+standpoint assets/landscape.csv --outdir assets --stem landscape --check
 ```
 
-The **positions** come back identical — the geometry is correlation PCA with no model in
-it, and two runs were diffed to check. The **pole names** do not: they are written by
-whichever local model is configured, and the evidence is this page — the figure above
-says *Mature / Simple* where a run today says *Robust / Nimble*, from the same numbers.
-That is why the loadings are quoted above, and why the figure is kept as rendered rather
-than redrawn on every build.
-
-The per-category matrices below keep the columns that only make sense within one category.
-
----
-
-![Thirty-one tools positioned on two axes derived from the table above by principal component analysis. The horizontal axis runs from Robustness on the left to Nimble on the right; the vertical from Dynamic at the bottom to Adaptable at the top. sprezzature sits in the top-right corner, by construction, since it is the reference row, with Pico CSS and HTMX beside it. React, Vue and D3.js are far left, high up: mature, restyleable and local, but nothing about them is skill-native. Looker and ThoughtSpot sit in the opposite corner from the reference, bottom left. Claude Dashboards and Claude Motion sit low on the right, the hosted, easy, live corner, with Streamlit and Gradio between them and the centre.](assets/landscape.svg)
-
-The two axes carry about 55 % of the table between them, so read the map as a summary
-and the table as the claim. What the horizontal axis finds on its own is **maturity and
-ecosystem against ease and skill-native delivery** — the two columns `sprezzature`
-deliberately trades between, which is the honest shape of the bargain. The vertical axis
-finds something the prose above had not named: **local, light, open and restyleable at the
-top, hosted and live at the bottom**. Every hosted product in the table — Looker,
-ThoughtSpot, Deepgram, Claude vision, Claude Dashboards, Claude Motion — is below the
-line, and everything you can `pip install` is above it. That is one line, and it is the
-line this suite is on.
+The **positions** come back identical — the geometry is correlation PCA with no model in it, and
+two runs were diffed to check. The **pole names** do not: they are written by whichever local
+model is configured, and this page is its own evidence, since an earlier run of these same
+numbers said *Mature / Simple* where today's says *Robustness / Nimble*. That is why the loadings
+are quoted above and the words are not trusted. `--check` also marks this figure **not
+readable**: five label pairs risk overlapping, shadcn/ui, Radix UI and Astro in one knot,
+Vega-Lite with MkDocs Material, and Pa11y with whisper.cpp. The interactive SVG separates them on
+hover; the static PNG does not.
 
 ### The nearest neighbours are now Anthropic's own
 
@@ -189,6 +194,8 @@ animation **as code**, with no video model anywhere in the chain. That is the sa
 position this suite takes on figures, maps and films, taken independently by the largest
 team working on the problem. It is a good sign for the position and a bad one for anybody
 selling generated footage as a document.
+
+The per-category matrices below keep the columns that only make sense within one category.
 
 ## Quick pick
 

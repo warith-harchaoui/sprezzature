@@ -98,61 +98,65 @@ livraison **en *skill***.
 
 **Sur la localité :** `sprezzature` fonctionne **local d'abord (local-first)**, comme la plupart des
 outils qui tournent sur votre machine, mais ce n'est plus vrai de tous les acteurs cités ici : les plateformes de *business intelligence* (BI)
-hébergées (Looker, ThoughtSpot) et les intelligences artificielles (IA) en ligne (Claude vision, Deepgram)
-ne le sont pas. Avec ces nouveaux venus, la colonne **discrimine désormais** et entre pleinement dans la carte.
+hébergées (Looker, ThoughtSpot), les intelligences artificielles (IA) en ligne (Claude vision, Deepgram)
+et les deux surfaces produit d'Anthropic elle-même (Claude Dashboards, Claude Motion) ne le sont pas. Avec ces nouveaux venus, la colonne **discrimine désormais** et entre pleinement dans la carte.
 
 Passés en entiers à [standpoint](https://github.com/warith-harchaoui/standpoint) (avec `sprezzature`
 en ligne de référence), les dix critères se projettent sur une **carte de positionnement** 2-D :
 
-![Carte de positionnement concurrentiel de sprezzature face aux alternatives : un nuage 2-D avec sprezzature ancré en haut à droite comme référence, Looker à l'opposé exact, un axe horizontal Stabilité–Simplicité et un axe vertical Flexibilité–Interactivité.](sprezzature-figures/assets/figures-gallery/landscape-positioning-fr.png)
+![Trente et un outils positionnés sur deux axes dérivés de la table ci-dessus par analyse en composantes principales. L'axe horizontal va de Stabilité à gauche à Simplicité à droite ; l'axe vertical de Dynamisme en bas à Flexibilité en haut. sprezzature occupe le coin supérieur droit, par construction puisqu'il est la ligne de référence, avec Pico CSS et HTMX en dessous et à sa gauche le long du bord flexible, et Tailwind CSS exactement à la même hauteur de l'autre côté. D3.js et React sont loin à gauche : matures et bien dotés, mais rien chez eux n'est livré en skill. Looker est le point le plus bas de la carte, ThoughtSpot au-dessus de lui, tous deux à gauche du centre. Claude Dashboards et Claude Motion sont à droite mais sous le milieu, le coin hébergé, facile et vivant, avec Streamlit et Gradio entre eux et le centre.](assets/paysage.svg)
 
-L'axe horizontal oppose **Stabilité** (à gauche : maturité et écosystème installés) et **Simplicité**
-(à droite : prise en main immédiate) ; l'axe vertical oppose **Flexibilité** (en haut : restylable et
-léger) et **Interactivité** (en bas : exploration interactive pour l'utilisateur final).
-`sprezzature` ancre le coin haut-droite ; **Looker** est à l'opposé exact (plateforme BI hébergée,
-lourde et propriétaire) ; **Tailwind CSS** va le plus loin vers « Flexibilité » et **Pico CSS** le
-plus loin vers « Simplicité ».
+L'axe horizontal oppose **Stabilité** (à gauche : maturité et écosystème installés) et
+**Simplicité** (à droite : prise en main immédiate, et livraison en *skill*) ; l'axe vertical
+oppose **Dynamisme** (en bas : une chose qu'on pilote) et **Flexibilité** (en haut : légère,
+libre et restylable). `sprezzature` ancre le coin haut-droite, par construction, parce que
+`standpoint` y place la ligne de référence — c'est une convention de dessin, pas une prétention
+de qualité. **Looker** est le point le plus bas de la carte, **Tailwind CSS** atteint la hauteur
+même de la référence sur le bord flexible, et **D3.js** tient l'extrême gauche.
 
-Ces deux noms par axe sont les mots d'un modèle local ; les charges derrière eux sont la
-vérification. À l'horizontale, écosystème (−0,59) et maturité (−0,55) contre facilité
-(+0,37) — être installé contre être immédiat. À la verticale, personnalisable (+0,54),
-léger (+0,45) et accessibilité (+0,39) contre interactif (−0,31) — une chose qu'on
-façonne contre une chose qu'on pilote.
+Ces quatre mots sont ceux d'un modèle local ; les charges derrière eux sont la vérification. À
+l'horizontale, maturité (−0,55) et écosystème (−0,53) contre facilité (+0,45) et intégration en
+*skill* (+0,31) — être installé contre être immédiat, ce qui est exactement le marché que cette
+suite passe exprès. À la verticale, léger (+0,48), local (+0,44), libre (+0,42), personnalisable
+(+0,42) et accessibilité (+0,33) contre interactif (−0,29) — une chose qu'on façonne contre une
+chose qu'on pilote.
 
-**Ensemble, les deux axes portent 52,9 %** de ce qui distingue ces approches. Un peu plus
-de la moitié : avec dix critères sur vingt-neuf outils, la carte est une première
-orientation et les tables sont la preuve. Les notes sont dans
-[`assets/paysage.csv`](assets/paysage.csv) — produit depuis la table ci-dessus par
-`scripts/landscape_to_csv.py`, pour que les deux ne puissent pas diverger. Pour la
+**Ensemble, les deux axes portent 54,5 %** de ce qui distingue ces approches. Un peu plus de la
+moitié : avec dix critères sur trente et un outils, la carte est une première orientation et les
+tables sont la preuve. Ce pourcentage appartient au **plan**, pas à l'horizontale et à la
+verticale séparément — `standpoint` nomme les axes qu'il dessine mais chiffre la variance par
+composante principale (28,2 % et 26,3 %), et le repère dessiné est ici une rotation de 86,7°,
+qui mélange les deux. Le cumul est le chiffre solide ; une part par axe ne serait pas
+attribuable. Les charges ci-dessus sont citées depuis le repère orienté, donc celles-là
+décrivent bien l'horizontale et la verticale telles qu'elles sont dessinées.
+
+Ce que trouve l'axe vertical mérite d'être énoncé avec soin, parce que la lecture évidente en est
+fausse. **Tout ce qui est hébergé est sous la ligne** — Looker, ThoughtSpot, Deepgram, Claude
+vision, Claude Dashboards et Claude Motion, et rien d'hébergé au-dessus. La réciproque est
+fausse : React, Plotly.js, Streamlit, Gradio et le projecteur d'embeddings TensorFlow sont aussi
+en dessous, et tous les cinq tournent sur votre machine. Le pôle du bas n'est donc pas
+« hébergé », c'est *une chose qu'on pilote*, et être hébergé est une façon suffisante d'y
+arriver, pas la seule. L'hébergement et la lourdeur voyagent assez souvent ensemble pour
+ressembler à une seule ligne, et ce sont deux lignes.
+
+Les notes sont dans [`assets/paysage.csv`](assets/paysage.csv) — produit depuis la table
+ci-dessus par `scripts/landscape_to_csv.py`, pour que les deux ne puissent pas diverger. Pour la
 redessiner :
 
 ```sh
-standpoint assets/paysage.csv -r "sprezzature (les *skills*)" -o out
+python scripts/landscape_to_csv.py PAYSAGE.md --out assets/paysage.csv
+standpoint assets/paysage.csv --outdir assets --stem paysage --check
 ```
 
-Les **positions** reviennent identiques : la géométrie est une ACP sur corrélations, sans
-modèle dedans, et deux exécutions ont été comparées pour le vérifier. Les **noms des
-pôles**, non : ils sont écrits par le modèle local configuré, et la preuve est cette page
-même — la figure ci-dessus dit *Stabilité / Simplicité* là où une exécution d'aujourd'hui
-dit *Robustesse / Agilité*, à partir des mêmes chiffres. C'est pourquoi les charges sont
-citées plus haut, et pourquoi la figure est conservée telle que rendue plutôt que
-redessinée à chaque construction.
-
-Les matrices par catégorie ci-dessous conservent les colonnes qui n'ont de sens qu'au sein d'une seule catégorie.
-
----
-
-![Trente et un outils positionnés sur deux axes dérivés de la table ci-dessus par analyse en composantes principales. L'axe horizontal va de Stabilité à gauche à Simplicité à droite ; l'axe vertical de Dynamisme en bas à Flexibilité en haut. sprezzature occupe le coin supérieur droit, par construction puisqu'il est la ligne de référence, avec Pico CSS et HTMX à côté. React, Vue et D3.js sont loin à gauche et haut : matures, restylables et locaux, mais rien chez eux n'est livré en skill. Looker et ThoughtSpot sont dans le coin opposé à la référence, en bas à gauche. Claude Dashboards et Claude Motion sont bas à droite, le coin hébergé, facile et vivant, avec Streamlit et Gradio entre eux et le centre.](assets/paysage.svg)
-
-Les deux axes portent ensemble environ 55 % de la table : lisez la carte comme un résumé
-et la table comme l'affirmation. Ce que l'axe horizontal trouve tout seul, c'est
-**maturité et écosystème contre facilité et livraison en *skill*** — les deux colonnes
-que `sprezzature` échange délibérément, ce qui est la forme honnête du marché. L'axe
-vertical trouve quelque chose que la prose ci-dessus n'avait pas nommé : **local, léger,
-libre et restylable en haut, hébergé et vivant en bas**. Tous les produits hébergés de la
-table — Looker, ThoughtSpot, Deepgram, Claude vision, Claude Dashboards, Claude Motion —
-sont sous la ligne, et tout ce qui s'installe avec `pip` est au-dessus. C'est une seule
-ligne, et c'est celle sur laquelle cette suite se tient.
+Les **positions** reviennent identiques : la géométrie est une ACP sur corrélations, sans modèle
+dedans, et deux exécutions ont été comparées pour le vérifier. Les **noms des pôles**, non : ils
+sont écrits par le modèle local configuré, et la preuve est cette page même, puisqu'une exécution
+antérieure sur ces mêmes chiffres disait *Robustesse / Agilité* là où celle d'aujourd'hui dit
+*Stabilité / Simplicité*. C'est pourquoi les charges sont citées plus haut et pourquoi on ne se
+fie pas aux mots. `--check` marque aussi cette figure **non lisible** : cinq paires d'étiquettes
+risquent de se chevaucher, shadcn/ui, Radix UI et Astro en un seul nœud, Vega-Lite avec MkDocs
+Material, et Pa11y avec whisper.cpp. Le SVG interactif les sépare au survol ; le PNG statique,
+non.
 
 ### Les voisins les plus proches sont désormais ceux d'Anthropic
 
@@ -197,6 +201,8 @@ exactement la position que cette suite tient sur les figures, les cartes et les 
 prise indépendamment par la plus grosse équipe qui travaille le problème. C'est bon signe
 pour la position, et mauvais signe pour quiconque vend des images générées comme un
 document.
+
+Les matrices par catégorie ci-dessous conservent les colonnes qui n'ont de sens qu'au sein d'une seule catégorie.
 
 ## Choix rapide
 
