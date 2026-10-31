@@ -1,0 +1,89 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:04.140
+Sprezzature est un moteur
+d'IA pour le design.
+
+1
+00:00:05.200 --> 00:00:09.800
+Audio lit la parole dans les deux sens :
+il transcrit, et il parle.
+
+2
+00:00:11.300 --> 00:00:14.340
+Vos sous-titres sont exacts.
+
+3
+00:00:14.600 --> 00:00:21.599
+90 caractères à l'écran,
+une demi-seconde. Personne ne lit ça.
+
+4
+00:00:37.240 --> 00:00:42.400
+Retournez-le. Une page qui se lit à
+voix haute surligne la mauvaise ligne.
+
+5
+00:00:42.600 --> 00:00:47.160
+Une modalité, lue dans les deux sens,
+et rien ne quitte votre machine.
+
+6
+00:00:47.360 --> 00:00:52.880
+Du son vers le texte. Ce qui a été dit,
+par qui, dans quelle langue.
+
+7
+00:00:53.080 --> 00:00:59.040
+Du texte vers le son : un WAV,
+et un WebVTT posé à côté.
+
+8
+00:00:59.240 --> 00:01:04.280
+La même piste minutée dans les deux cas,
+pour qu'une page suive la lecture.
+
+9
+00:01:04.480 --> 00:01:08.560
+Ces seuils ne sont pas des nombres
+que quelqu'un a trouvés jolis.
+
+10
+00:01:08.760 --> 00:01:13.640
+Ils ont un éditeur, nommé dans le code :
+le guide de sous-titrage de Netflix.
+
+11
+00:01:13.840 --> 00:01:19.400
+17 caractères par seconde au plus.
+42 par ligne, 2 lignes.
+
+12
+00:01:19.600 --> 00:01:23.480
+Des conventions, pas des lois :
+chacune est donc un réglage.
+
+13
+00:01:23.680 --> 00:01:28.280
+Voici tout le paquet sur une page.
+Descendez une voie, puis l'autre.
+
+14
+00:01:28.480 --> 00:01:33.000
+Elles ne restent pas séparées :
+les deux arrivent au même contrôle.
+
+15
+00:01:33.400 --> 00:01:39.400
+Narration ou transcription :
+un seul fichier, un seul contrôle.
+
+16
+00:01:41.600 --> 00:01:47.600
+Passez sur sprezzature.ai, et mettez
+une étoile GitHub si ça le mérite.
+
+17
+00:01:48.000 --> 00:01:51.960
+Faites, auditez et regardez !

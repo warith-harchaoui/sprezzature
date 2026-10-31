@@ -165,6 +165,24 @@ def _local_references(page: Path) -> list[str]:
 #: is simply broken.
 BUILT_NOT_COMMITTED = ("kits/", "video/")
 
+#: Inside a built prefix, the extensions that really are render output. A
+#: prefix absent from this map is exempt whole; everything else under a listed
+#: prefix must resolve like any other reference.
+#:
+#: ``web/video/`` stopped being untracked wholesale on 2026-10-31. The films
+#: and their posters are still 258 MB no clone carries, but the 22 WebVTT
+#: tracks are 88 KB of text and are now in the repository, because the suite
+#: ships the caption auditor and the guard on it could not run in CI while they
+#: were ignored.
+#:
+#: Written as "what is built" and not as "what is committed", which is the
+#: second attempt. Listing the committed extension instead -- ``.vtt`` -- reads
+#: the same and leaves a hole the size of a typo: a page pointing at
+#: ``video/sprezzature.en.vttt`` does not end in ``.vtt``, so it fell straight
+#: back into the exemption and passed. Measured, not reasoned about: that
+#: sabotage went green before this was turned round.
+BUILT_EXTENSIONS = {"video/": (".mp4", ".jpg", ".json")}
+
 
 def test_the_untracked_prefixes_really_are_untracked() -> None:
     """The exemption above is only legitimate while git agrees with it.
@@ -184,9 +202,18 @@ def test_the_untracked_prefixes_really_are_untracked() -> None:
             text=True,
             check=False,
         )
-        assert not tracked.stdout.strip(), (
-            f"web/{prefix} is tracked by git now; remove it from "
-            "BUILT_NOT_COMMITTED so its references are checked again"
+        built = BUILT_EXTENSIONS.get(prefix)
+        names = tracked.stdout.split()
+        # A prefix with no built extensions declared is exempt whole, so
+        # nothing under it may be tracked. Where they are declared, it is the
+        # *built* files that must stay out of git; the rest are expected in a
+        # clone, which is why their references are checked.
+        unexpected = names if built is None else [n for n in names if n.endswith(built)]
+        assert not unexpected, (
+            f"web/{prefix} tracks {len(unexpected)} file(s) that are render "
+            f"output ({', '.join(unexpected[:5])}); either stop committing "
+            f"them, or take their extension out of BUILT_EXTENSIONS so every "
+            f"reference to them is checked"
         )
 
 
@@ -207,10 +234,19 @@ def test_every_local_reference_resolves(page: Path) -> None:
         # reaches the films as `../video/...`, which no prefix on the raw
         # string would catch.
         resolved = target.resolve()
-        if any(
-            resolved.is_relative_to((WEB / prefix).resolve())
-            for prefix in BUILT_NOT_COMMITTED
-        ):
+        exempt = False
+        for prefix in BUILT_NOT_COMMITTED:
+            if not resolved.is_relative_to((WEB / prefix).resolve()):
+                continue
+            built = BUILT_EXTENSIONS.get(prefix)
+            # `built is None` exempts the prefix whole, the way both of these
+            # used to be. Otherwise only the render output is exempt, and a
+            # reference to anything else -- a caption track, or a misspelling
+            # of one -- is a 404 like any other and is checked below.
+            if built is None or resolved.name.endswith(built):
+                exempt = True
+                break
+        if exempt:
             continue
         # A directory reference is served by its index.html.
         if target.is_dir():

@@ -77,12 +77,24 @@ web/kits/**/*.zip
 
 # The films: render output, not source.
 #
-# Same reasoning as the gallery kits above, applied to the whole of web/video/
-# and brag-output/out/. An H.264 file is already compressed, so git cannot
-# delta it, and a re-render of an unchanged composition does not come out
+# Same reasoning as the gallery kits above, applied to brag-output/out/ and to
+# web/video/ with one exception. An H.264 file is already compressed, so git
+# cannot delta it, and a re-render of an unchanged composition does not come out
 # byte-identical. The posters are frames pulled straight out of those files, so
-# they are the same output wearing a different extension, and the WebVTT tracks
-# fall out of a generator that is itself tracked. None of it belongs in a clone.
+# they are the same output wearing a different extension. None of that belongs
+# in a clone: 258 MB of it.
+#
+# The WebVTT tracks are the exception, tracked since 2026-10-31, and the same
+# two sentences argue for them. They are 88 KB of text, which git deltas
+# exactly, and they do not fall out of a generator a clone can run: re-emitting
+# them means narrating the films again, a synthesis per line, and `chatterbox`
+# is not deterministic. The reason that decides it, though, is neither size nor
+# reproducibility. This suite SHIPS the caption auditor, and the `audio` film
+# puts its 42-character budget on screen as a number the project stands behind.
+# `tests/test_the_films_captions_pass_the_suites_own_auditor.py` is the thing
+# that checks the claim, and while these files were ignored it could not run in
+# CI at all — it failed on its own precondition, an empty directory. A guard
+# that never runs is not a guard. The tracks are now in the clone it reads.
 #
 # What stays tracked rebuilds the films from a clone AS FAR AS IT GOES, which is
 # not all the way: `python3 brag-output/restore_assets.py` audits the gap and
@@ -103,14 +115,18 @@ web/kits/**/*.zip
 #     npx hyperframes render --quality looks --low-memory-mode \
 #       --output ../../out/<film>-<format>.mp4
 #     ffmpeg -ss <t> -i out/<f>.mp4 -frames:v 1 -q:v 2 out/<f>.jpg
-#     python3 brag-output/make_captions.py          # the WebVTT tracks
+#     python3 brag-output/narrate_films.py          # the voice AND the WebVTT
+#     python3 brag-output/rewrite_cues.py           # cues only, no re-narration
 #     cp brag-output/out/<film>-landscape.{mp4,jpg} web/video/<film>.{mp4,jpg}
 # The poster timestamps and every other decision are recorded in
 # brag-output/brag-plan.md.
 #
 # They reach sprezzature.ai the way the kits do, by uploading web/ to the host.
 # sftp/UPLOAD-films.txt lists exactly which files that takes.
-web/video/
+# Contents, not the directory: git cannot re-include a file whose parent is
+# excluded, so `web/video/` as a rule would make the negation below dead.
+web/video/*
+!web/video/*.vtt
 brag-output/out/
 brag-output/_retired/
 

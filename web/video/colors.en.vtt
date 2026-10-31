@@ -1,0 +1,90 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:06.660
+Sprezzature is an AI engine for Design.
+Colors proves your colours can be read.
+
+1
+00:00:07.800 --> 00:00:11.840
+Light grey on white reads perfectly well.
+At your desk, indoors.
+
+2
+00:00:15.000 --> 00:00:19.000
+Whoever chose the colour can read it.
+That is the whole problem.
+
+3
+00:00:22.000 --> 00:00:25.800
+Red against green is the other half,
+for about 1 man in 12.
+
+4
+00:00:29.800 --> 00:00:34.112
+Run with no arguments, it audits
+the palette this package ships with.
+
+5
+00:00:35.600 --> 00:00:39.400
+56 pairs a real theme puts together.
+22 of them fail.
+
+6
+00:00:41.400 --> 00:00:47.360
+Brand yellow on white is 1.51 to 1,
+where plain text needs 4.5.
+
+7
+00:00:47.560 --> 00:00:51.060
+So it exits 1, and the build
+that called it stops there.
+
+8
+00:00:52.800 --> 00:00:56.737
+A colour has 3 parts,
+and only one of them survives everything.
+
+9
+00:00:58.600 --> 00:01:03.040
+Colour blindness takes the hue.
+Grey printing takes the saturation.
+
+10
+00:01:04.400 --> 00:01:08.760
+Nothing takes the lightness,
+so that is the axis the fix walks.
+
+11
+00:01:10.200 --> 00:01:16.480
+Along OKLCH, by Björn OTTOSSON,
+keeping the nearest colour that passes.
+
+12
+00:01:17.400 --> 00:01:20.800
+The same chart now,
+redrawn for each of those eyes.
+
+13
+00:01:23.000 --> 00:01:27.440
+Watch South and East. The hue between
+them goes, the bars stay apart.
+
+14
+00:01:29.600 --> 00:01:32.600
+Then no colour at all,
+and 3 regions still.
+
+15
+00:01:35.400 --> 00:01:40.400
+The matrices are MACHADO, 2009,
+measured on real observers.
+
+16
+00:01:40.600 --> 00:01:45.240
+Go to sprezzature.ai,
+and drop a GitHub star if it deserves it.
+
+17
+00:01:49.000 --> 00:01:51.920
+Make it, audit it, take a look at it.

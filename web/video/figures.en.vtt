@@ -1,0 +1,89 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:07.980
+Sprezzature is an AI engine for Design.
+Figures draws the chart your rows ask for.
+
+1
+00:00:09.400 --> 00:00:13.712
+A spreadsheet is open, and no chart
+in it is obviously the right one.
+
+2
+00:00:13.800 --> 00:00:17.362
+So you reach for the bar chart
+you reached for last time.
+
+3
+00:00:18.400 --> 00:00:23.025
+Ask an assistant instead. It writes
+plotting code, and an image comes out.
+
+4
+00:00:23.400 --> 00:00:28.560
+Nobody looks at that image. The labels
+collide, on a white panel, on a dark page.
+
+5
+00:00:28.759 --> 00:00:32.821
+Here you name the kind,
+hand over your rows, and get a file back.
+
+6
+00:00:33.200 --> 00:00:38.640
+167 kinds in 68 categories,
+and every one of them is marked stable.
+
+7
+00:00:40.200 --> 00:00:45.360
+Exported, a chart is a picture.
+Written line by line, it is a document.
+
+8
+00:00:48.600 --> 00:00:54.960
+144 of the 167 generators share one root:
+a title, a description, a dark twin.
+
+9
+00:00:58.600 --> 00:01:03.350
+Each kind declares the data roles it
+needs, so your columns do the choosing.
+
+10
+00:01:03.600 --> 00:01:08.320
+Region, quarter and units fill 64
+of the kinds, ranked by readability.
+
+11
+00:01:10.000 --> 00:01:14.920
+All of that is deterministic,
+and no model was consulted for any of it.
+
+12
+00:01:17.000 --> 00:01:21.875
+So the Ralph Eyeball Loop renders it,
+and a vision model looks at the picture.
+
+13
+00:01:22.000 --> 00:01:28.999
+Qwen3-VL through Ollama, offline. What
+it edits is the plan, never the picture.
+
+14
+00:01:29.560 --> 00:01:32.640
+16 parts of this one take keyboard focus.
+
+15
+00:01:33.000 --> 00:01:37.250
+Each one says its own numbers to a
+reader who cannot see the ribbon.
+
+16
+00:01:43.000 --> 00:01:47.640
+Go to sprezzature.ai,
+and drop a GitHub star if it deserves it.
+
+17
+00:01:49.600 --> 00:01:52.440
+Make it, audit it, take a look at it.

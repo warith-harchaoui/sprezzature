@@ -1,0 +1,94 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:04.220
+Sprezzature est un moteur
+d'IA pour le design.
+
+1
+00:00:06.600 --> 00:00:13.000
+Cli-gui fait d'une commande un formulaire,
+un champ par drapeau.
+
+2
+00:00:13.200 --> 00:00:17.640
+Votre collègue a besoin de cet outil.
+Il n'ouvrira pas de terminal.
+
+3
+00:00:17.840 --> 00:00:22.152
+Ce n'est pas qu'il ne sait pas.
+7 drapeaux ne sont pas une interface.
+
+4
+00:00:22.400 --> 00:00:27.200
+Alors vous bricolez le formulaire.
+Puis l'outil gagne un drapeau.
+
+5
+00:00:29.200 --> 00:00:34.680
+La commande engendre donc sa propre page.
+Les options deviennent des champs.
+
+6
+00:00:35.600 --> 00:00:41.200
+L'obligatoire reste obligatoire.
+Chaque défaut est déjà dans sa case.
+
+7
+00:00:42.400 --> 00:00:48.400
+La page n'exécute rien.
+Votre navigateur assemble la ligne exacte.
+
+8
+00:00:50.800 --> 00:00:55.080
+Elle lit l'analyseur de votre outil.
+Pas un texte qui le décrit.
+
+9
+00:00:56.400 --> 00:01:01.760
+argparse et Click sont lus directement.
+Une application Typer est déjà du Click.
+
+10
+00:01:02.000 --> 00:01:06.687
+Ce qu'elle ne peut pas importer,
+elle le lit sur l'écran d'aide de l'outil.
+
+11
+00:01:07.600 --> 00:01:13.160
+Une page qui laisse tomber un drapeau en
+silence a l'air parfaitement correcte.
+
+12
+00:01:13.360 --> 00:01:18.480
+Elle compare donc la page à l'analyseur.
+Chaque règle nomme ce qu'on perd.
+
+13
+00:01:21.000 --> 00:01:26.400
+Voici docker. Écrit en Go,
+et impossible à importer depuis Python.
+
+14
+00:01:27.000 --> 00:01:33.999
+Son écran d'aide a donné 57 sections
+et 1 307 champs, en une seule passe.
+
+15
+00:01:34.240 --> 00:01:39.000
+Et git ne donne rien.
+Ses titres de sections sont en prose.
+
+16
+00:01:42.000 --> 00:01:44.360
+Passez sur sprezzature.ai,
+
+17
+00:01:45.600 --> 00:01:49.320
+et mettez une étoile
+GitHub si ça le mérite.
+
+18
+00:01:49.800 --> 00:01:53.800
+Faites, auditez et regardez !

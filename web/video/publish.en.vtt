@@ -1,0 +1,90 @@
+WEBVTT
+
+0
+00:00:01.100 --> 00:00:07.580
+Sprezzature is an AI engine for Design.
+Publish turns Markdown into a site.
+
+1
+00:00:07.780 --> 00:00:12.180
+It will even read the page aloud,
+highlighting the sentence as it goes.
+
+2
+00:00:12.180 --> 00:00:16.055
+One sentence out of step is worse
+than no highlighting at all.
+
+3
+00:00:18.000 --> 00:00:21.437
+And it points at the wrong line,
+with total confidence.
+
+4
+00:00:29.000 --> 00:00:33.125
+10 tools carry a document from
+Markdown to a page people can find.
+
+5
+00:00:35.000 --> 00:00:38.720
+10 in the repository.
+9 in the package you install today.
+
+6
+00:00:44.200 --> 00:00:48.320
+A page with no Markdown behind
+it is read exactly the same way.
+
+7
+00:00:50.400 --> 00:00:54.650
+Then the hard part. The audio
+and the page leave by different roads.
+
+8
+00:00:56.600 --> 00:01:00.880
+Sentences go to the voice engine.
+Blocks are walked as a tree.
+
+9
+00:01:01.600 --> 00:01:05.600
+So the module refuses to number
+the sentences on its own side.
+
+10
+00:01:06.400 --> 00:01:10.462
+It takes the cues the narration wrote
+and compares the two lists.
+
+11
+00:01:11.600 --> 00:01:15.119
+They match, or it refuses.
+There is no third outcome.
+
+12
+00:01:17.400 --> 00:01:21.525
+This is the package's own documentation,
+narrated and bound by it.
+
+13
+00:01:22.800 --> 00:01:26.759
+Watch the highlight.
+The browser is doing that, not a script.
+
+14
+00:01:27.600 --> 00:01:31.679
+The cues are WebVTT,
+the timed-text format of the web.
+
+15
+00:01:33.400 --> 00:01:36.775
+Not one line of synchronisation
+code was written here.
+
+16
+00:01:40.900 --> 00:01:45.620
+Go to sprezzature.ai,
+and drop a GitHub star if it deserves it.
+
+17
+00:01:47.600 --> 00:01:50.440
+Make it, audit it, take a look at it.
