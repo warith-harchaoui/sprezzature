@@ -96,6 +96,14 @@ web/kits/**/*.zip
 # CI at all — it failed on its own precondition, an empty directory. A guard
 # that never runs is not a guard. The tracks are now in the clone it reads.
 #
+# The voice stamps go with them, for the same reason and because tracking the
+# captions alone broke a second guard the same way round. Nothing in a WAV or a
+# WebVTT says who read it, so `narrate_films.py` writes the engine, the voice and
+# the speaker-helper version beside each track, and
+# `tests/test_no_film_is_voiced_by_a_retired_engine.py` reads them — it had been
+# skipping on an empty directory, and the moment the tracks arrived it started
+# failing on 22 missing stamps instead. Two kilobytes of JSON.
+#
 # What stays tracked rebuilds the films from a clone AS FAR AS IT GOES, which is
 # not all the way: `python3 brag-output/restore_assets.py` audits the gap and
 # names it. Eleven files in brag-output/_assets/ exist nowhere else — a licensed
@@ -127,6 +135,7 @@ web/kits/**/*.zip
 # excluded, so `web/video/` as a rule would make the negation below dead.
 web/video/*
 !web/video/*.vtt
+!web/video/*.voice.json
 brag-output/out/
 brag-output/_retired/
 
