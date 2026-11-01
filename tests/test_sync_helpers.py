@@ -138,3 +138,77 @@ def test_it_changes_nothing_without_apply(tmp_path: Path) -> None:
     assert (a.read_bytes(), b.read_bytes()) == before
     assert module.main(["--home", str(tmp_path), "--apply"]) == 0
     assert b.read_bytes() == a.read_bytes()
+
+
+def _nested(home: Path, repo: str, relative: str, body: str) -> Path:
+    """A copy at an arbitrary depth, not under ``scripts/``."""
+    path = home / repo / relative
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(body, encoding="utf-8")
+    return path
+
+
+def test_two_files_of_one_name_in_a_repo_are_ambiguous(tmp_path: Path) -> None:
+    """The name, not the content, is what is wrong here.
+
+    ``find_copies`` searches by file name across a whole checkout, which is what
+    lets copies sit at different depths. The cost is that a name shared with an
+    unrelated file makes that file look like a copy.
+    """
+    module = _audit()
+    _nested(tmp_path, "sprezzature-a", "editor/assistant/_x.py", "canonical\n")
+    _nested(tmp_path, "sprezzature-a", "editor/ralph/_x.py", "unrelated\n")
+    clashes = module.ambiguous_copies("_x.py", tmp_path)
+    assert list(clashes) == ["sprezzature-a"]
+    assert len(clashes["sprezzature-a"]) == 2
+
+
+def test_one_copy_per_repo_is_not_ambiguous(tmp_path: Path) -> None:
+    """The ordinary case: many copies, one per checkout, at differing depths."""
+    module = _audit()
+    _nested(tmp_path, "sprezzature-a", "editor/assistant/_x.py", "same\n")
+    _nested(tmp_path, "sprezzature-b", "scripts/_x.py", "same\n")
+    assert module.ambiguous_copies("_x.py", tmp_path) == {}
+
+
+def test_apply_refuses_to_write_over_a_namesake(tmp_path: Path, monkeypatch) -> None:
+    """The whole point of the guard, and the reason it is not cosmetic.
+
+    With the check removed, this same call rewrites the unrelated file with the
+    canonical content *and returns 0* — measured on 2026-11-01. Propagation is
+    precisely the step whose diff nobody reads, so a silent overwrite there
+    survives review.
+    """
+    module = _audit()
+    _nested(tmp_path, "sprezzature-a", "editor/assistant/_x.py", "canonical\n")
+    namesake = _nested(tmp_path, "sprezzature-a", "editor/ralph/_x.py", "unrelated\n")
+    away = _nested(tmp_path, "sprezzature-b", "scripts/_x.py", "stale\n")
+
+    monkeypatch.setattr(module, "CANONICAL", {"_x.py": "sprezzature-a/editor/assistant/_x.py"})
+    monkeypatch.setattr(module, "SHARED_HELPERS", ("_x.py",))
+    code = module.main(["--apply", "--home", str(tmp_path)])
+
+    assert code != 0, "an ambiguous registration must fail the build, not warn"
+    assert namesake.read_text(encoding="utf-8") == "unrelated\n", "the namesake was overwritten"
+    assert away.read_text(encoding="utf-8") == "stale\n", (
+        "a refused helper must be left entirely alone, not partly propagated"
+    )
+
+
+def test_a_path_suffix_key_names_one_file(tmp_path: Path) -> None:
+    """The way out for a helper whose own name is not unique.
+
+    ``repair.py`` names two unrelated files in ``sprezzature-figures``; the two
+    path suffixes name one each. This is what lets package modules be shared
+    without renaming them.
+    """
+    module = _audit()
+    wanted = _nested(tmp_path, "sprezzature-a", "editor/assistant/repair.py", "shared\n")
+    _nested(tmp_path, "sprezzature-a", "editor/ralph/repair.py", "unrelated\n")
+    _nested(tmp_path, "sprezzature-b", "editor/assistant/repair.py", "shared\n")
+
+    assert module.ambiguous_copies("editor/assistant/repair.py", tmp_path) == {}
+    found = module.find_copies("editor/assistant/repair.py", tmp_path)
+    assert wanted in found
+    assert not any(p.parent.name == "ralph" for p in found), "the suffix caught a namesake"
+    assert len(found) == 2

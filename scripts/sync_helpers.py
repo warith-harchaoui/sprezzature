@@ -69,6 +69,33 @@ CANONICAL: dict[str, str] = {
     # six"), so the prose that explains the retry lives beside the test that
     # earned it.
     "_wallet.py": "sprezzature-audio/scripts/_wallet.py",
+    # the editor's model layer. Three files, 322 lines, with no knowledge of
+    # charts or of maps in them: a Protocol every caller depends on instead of a
+    # backend, the one wrapper over `best_engine_ai_helper.llm.chat()`, its
+    # single schema-repair attempt, and the scriptable fake that lets the whole
+    # suite test the model-facing paths with no model installed.
+    #
+    # Registered the day sprezzature-maps grew an editor of its own and needed
+    # exactly these three. They are keyed by path suffix, not by name, because
+    # `repair.py` names two different files in sprezzature-figures —
+    # `editor/assistant/` and `editor/ralph/` — and propagating by name would
+    # have written one over the other.
+    #
+    # Why duplicated rather than lifted into best-engine-ai-helper, which is
+    # where logic this generic belongs: `client.py` imports that package
+    # *lazily*, inside the call, so this layer — and every test of it — works
+    # with the package absent. Lifting it upstream would trade that property
+    # for a hard import, and would put the editor's schema handling behind a
+    # release of a repository outside this suite.
+    #
+    # sprezzature-figures is canonical: it is where the layer was written, and
+    # where the real-model tests (`tests/assistant/test_live_llm.py`) live.
+    "editor/assistant/client.py":
+        "sprezzature-figures/sprezzature_figures/editor/assistant/client.py",
+    "editor/assistant/repair.py":
+        "sprezzature-figures/sprezzature_figures/editor/assistant/repair.py",
+    "editor/assistant/fake_client.py":
+        "sprezzature-figures/sprezzature_figures/editor/assistant/fake_client.py",
 }
 
 #: Shared helpers duplicated across skills, in reporting order.
@@ -81,10 +108,20 @@ def find_copies(helper: str, home: Path) -> list[Path]:
     """
     Every copy of `helper`, across the monorepo and its sibling repositories.
 
+    A key is either a bare file name — ``"_argparse.py"``, which matches at any
+    depth — or a path suffix, ``"editor/assistant/client.py"``, which matches
+    only where those directories nest in that order. The suffix form exists for
+    helpers whose own name is not unique: ``repair.py`` names two different
+    files in ``sprezzature-figures``, under ``editor/assistant/`` and
+    ``editor/ralph/``, while each path suffix names exactly one. Prefer it for
+    anything inside a package, and keep the bare form for the skill helpers,
+    whose underscore names are unique by convention.
+
     Parameters
     ----------
     helper : str
-        File name, e.g. ``"_argparse.py"``.
+        File name or path suffix, e.g. ``"_argparse.py"`` or
+        ``"editor/assistant/client.py"``.
     home : pathlib.Path
         Directory holding the ``sprezzature*`` checkouts.
 
@@ -103,6 +140,60 @@ def find_copies(helper: str, home: Path) -> list[Path]:
                 continue
             out.append(path)
     return sorted(out)
+
+
+def ambiguous_copies(helper: str, home: Path) -> dict[str, list[Path]]:
+    """
+    Repositories where `helper` names more than one file.
+
+    :func:`find_copies` searches by file name, across a whole checkout. That is
+    what lets the script work at all — the copies sit at different depths — and
+    it is also its one sharp edge: a helper whose name is not unique suite-wide
+    would have an unrelated namesake found as though it were a copy, and
+    overwritten by ``--apply``.
+
+    The signal that says so is structural, and needs no knowledge of what the
+    files mean: a repository holds *one* copy of a shared helper, because one
+    copy is what being in step is about. Two files of that name inside a single
+    checkout therefore means the name is ambiguous, not that the repository is
+    doubly in step.
+
+    Measured against the registered helpers on 2026-11-01: all six have at most
+    one copy per repository, while ``repair.py`` — a name that came within an
+    inch of being registered, for the editor's shared model layer — has two in
+    ``sprezzature-figures``, under ``editor/assistant/`` and ``editor/ralph/``,
+    and they are different files. Registering it would have written one over
+    the other, in silence, and the propagation is exactly the step nobody reads
+    a diff of.
+
+    The cure for that particular case is a path-suffix key (see
+    :func:`find_copies`), which names one file by construction. This check stays
+    because the bare form stays too, for the skill helpers, and because nothing
+    stops a future suffix from being ambiguous as well.
+
+    Parameters
+    ----------
+    helper : str
+        File name, e.g. ``"_argparse.py"``.
+    home : pathlib.Path
+        Directory holding the ``sprezzature*`` checkouts.
+
+    Returns
+    -------
+    dict
+        Repository name to its several same-named files. Empty when the name is
+        unambiguous everywhere, which is the expected answer.
+
+    Examples
+    --------
+    >>> ambiguous_copies("_vtt.py", Path.home()) if Path.home().joinpath(
+    ...     "sprezzature-audio").is_dir() else {}
+    {}
+    """
+    by_repo: defaultdict[str, list[Path]] = defaultdict(list)
+    for path in find_copies(helper, home):
+        by_repo[path.relative_to(home).parts[0]].append(path)
+    return {repo: paths for repo, paths in sorted(by_repo.items()) if len(paths) > 1}
 
 
 def comparable(text: str) -> str:
@@ -171,7 +262,21 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     drifted: list[str] = []
+    ambiguous: list[str] = []
     for helper in SHARED_HELPERS:
+        clashes = ambiguous_copies(helper, args.home)
+        if clashes:
+            ambiguous.append(helper)
+            print(f"\n{helper}: the name is ambiguous — nothing written")
+            for repo, paths in clashes.items():
+                print(f"  {repo} holds {len(paths)} files of that name:")
+                for path in paths:
+                    print(f"                 {path.relative_to(args.home)}")
+            print("  A shared helper needs a name no other file in the suite uses. "
+                  "Rename it — the house convention is a leading underscore — or "
+                  "unregister it. Propagating would overwrite the namesake.")
+            continue
+
         copies = find_copies(helper, args.home)
         if len(copies) < 2:
             print(f"\n{helper}: {len(copies)} copy — nothing to compare")
@@ -217,14 +322,20 @@ def main(argv: list[str] | None = None) -> int:
                 path.write_text(rendered_for(canonical_text, path), encoding="utf-8")
                 print(f"  → wrote {path.relative_to(args.home)}")
 
+    if ambiguous:
+        print(f"\n{len(ambiguous)} helper(s) share a name with another file in the "
+              f"suite: {', '.join(ambiguous)}. Rename or unregister them; --apply "
+              "refuses to write over a namesake.")
     if drifted and args.apply:
         print(f"\n{len(drifted)} helper(s) brought back in step. "
               "Review the diff before committing.")
-        return 0
+        return 1 if ambiguous else 0
     if drifted:
         sources = ", ".join(CANONICAL[h] for h in drifted if h in CANONICAL)
         print(f"\n{len(drifted)} helper(s) have drifted. Edit {sources} "
               "and run this again with --apply.")
+        return 1
+    if ambiguous:
         return 1
     print("\nEvery shared helper is in step.")
     return 0

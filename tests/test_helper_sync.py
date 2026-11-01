@@ -102,3 +102,33 @@ def test_the_report_actually_compared_something() -> None:
         "sync_helpers.py could not cross-check these, so their copies are "
         "unguarded:\n  " + "\n  ".join(uncompared)
     )
+
+
+def test_no_registered_helper_shares_its_name() -> None:
+    """A shared helper's name must belong to it alone, across every checkout.
+
+    ``sync_helpers.py`` finds copies by file name, so a helper whose name also
+    belongs to an unrelated file would have that file propagated over. The
+    structural signal is one copy per checkout at most: two files of that name
+    inside a single repository means the name is ambiguous, not that the
+    repository is doubly in step.
+
+    This is a live check against the bricks beside this one, because the risk
+    arrives with a *future* registration — ``repair.py``, which exists twice in
+    ``sprezzature-figures`` with different contents, came within an inch of
+    being registered for the editor's shared model layer.
+    """
+    if not _checkouts():
+        pytest.skip("no brick is checked out beside this repository")
+    proc = subprocess.run(
+        [sys.executable, str(SYNC), "--home", str(SIBLINGS)],
+        capture_output=True,
+        text=True,
+    )
+    ambiguous = [
+        line.strip() for line in proc.stdout.splitlines() if "the name is ambiguous" in line
+    ]
+    assert not ambiguous, (
+        "these registered helpers share their name with another file in the suite, "
+        "so propagating them would overwrite it:\n  " + "\n  ".join(ambiguous)
+    )
