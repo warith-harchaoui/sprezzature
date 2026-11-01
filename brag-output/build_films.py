@@ -3468,9 +3468,15 @@ def css(f: dict) -> str:
     .col {{ display: flex; flex-direction: column; align-items: center;
             justify-content: center; width: 100%; }}
 
+    /* Balanced, not bound. Twelve eyebrows wrap across the three canvases and
+       all twelve ended on a line of two words or fewer — `UNE RÈGLE` under a
+       full line, which reads as a mistake. No-break spaces are the wrong tool
+       here: this is monospace at .2em tracking, so a bound pair is wide and
+       the gain is small, while balancing costs nothing and cannot overflow. */
     .eyebrow {{ font-family: "Roboto Mono", ui-monospace, monospace;
       font-size: {f["eyebrow"]}px; font-weight: 500; letter-spacing: .2em;
-      color: var(--navy); text-transform: uppercase; text-align: center; }}
+      color: var(--navy); text-transform: uppercase; text-align: center;
+      text-wrap: balance; }}
     .rule {{ height: 3px; background: var(--blue); transform-origin: center; }}
     /* `text-wrap: balance` rather than shorter captions. The same sentence
        that sits on one comfortable line in landscape wraps three times in
