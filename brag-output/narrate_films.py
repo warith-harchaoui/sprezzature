@@ -123,6 +123,12 @@ LEXICON = ROOT / "lexicon.yaml"
 #: matrix in every language: offline is chatterbox everywhere (Turbo for
 #: English, Multilingual elsewhere), streaming is kokoro.
 #:
+#: kyutai itself was dropped on 2026-11-01: `sprezzature-audio` 1.8.0 removed
+#: the wrapper, the console script and the `[narrate-kyutai]` extra. It stays
+#: in `speaker-helper`'s catalogue, where the engine list belongs, and the
+#: router never answered it -- swept over five conditions and five languages
+#: the answer was chatterbox everywhere it answered at all.
+#:
 #: So there is nothing left for a constant here to hold. A pinned engine in
 #: the suite's own films would be a second opinion about the suite's own
 #: voice, which is the shape of every defect this audit has turned up: the
