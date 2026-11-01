@@ -259,10 +259,6 @@ entries:
     language: fr
     respelling: "oto-sonne"
 
-  - word: "Kyutai"
-    language: "*"
-    respelling: "kyou-taille"
-
   # -------------------------------------------------------------- places
   # The plateau, not the mountain range: "Meseta" is Spanish and the French
   # engine nasalises the first vowel.
