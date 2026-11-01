@@ -87,6 +87,44 @@ def project_for(film: str, lang: str, fmt: str) -> str:
     return f"{film}-{fmt}" if lang == "en" else f"{film}-{lang}-{fmt}"
 
 
+def is_stale(project: str, render: pathlib.Path) -> bool:
+    """Whether *render* predates the page it was made from.
+
+    A render older than its ``index.html`` is the wrong film. Found the hard
+    way on 2026-11-01: ``build_films.py`` had just regenerated all sixty-six
+    pages with new line-breaking, the re-render was still running, and this
+    script cheerfully copied a cut from the day before — 42 MB of a film whose
+    text had since changed, reported as success.
+
+    ``render_films.sh`` already compares these two mtimes to decide what to
+    re-render. Nothing compared them here, which is the same check existing on
+    one side of a handoff and not the other.
+
+    A separate predicate rather than four lines inside :func:`install`, because
+    :func:`install` copies files and shells out to ``sprezzature-video`` for
+    the poster. A test of the *decision* should need neither, and the first
+    version of its test needed both — it passed here and failed on a runner
+    that has no ``sprezzature-video``.
+
+    Parameters
+    ----------
+    project : str
+        Directory name under ``films/``, e.g. ``maps-fr-portrait``.
+    render : pathlib.Path
+        The MP4 about to be installed.
+
+    Returns
+    -------
+    bool
+        False when there is no page to compare against: a project with no
+        ``index.html`` is a different problem, and this one should not claim it.
+    """
+    source = FILMS_DIR / project / "index.html"
+    if not source.is_file():
+        return False
+    return render.stat().st_mtime < source.stat().st_mtime
+
+
 def install(film: str, lang: str, fmt: str) -> list[str]:
     """Copy one cut and its poster into web/video. Returns problems."""
     project = project_for(film, lang, fmt)
@@ -94,17 +132,7 @@ def install(film: str, lang: str, fmt: str) -> list[str]:
     if src is None:
         return [f"  {film}.{lang}.{fmt}: not rendered — {project} has no MP4"]
 
-    # A render older than the page it was made from is the wrong film. Found
-    # the hard way on 2026-11-01: `build_films.py` had just regenerated all
-    # sixty-six `index.html` with new line-breaking, the re-render was still
-    # running, and this script cheerfully copied a cut from the day before —
-    # 42 MB of a film whose text had since changed. It reported success.
-    #
-    # `render_films.sh` already compares these two mtimes to decide what to
-    # re-render. Nothing compared them here, which is the same guard existing
-    # on one side of a handoff and not the other.
-    source = FILMS_DIR / project / "index.html"
-    if source.is_file() and src.stat().st_mtime < source.stat().st_mtime:
+    if is_stale(project, src):
         return [
             f"  {film}.{lang}.{fmt}: the newest render of {project} is older "
             f"than its index.html, so it is a cut of the previous text. "
