@@ -56,6 +56,19 @@ CANONICAL: dict[str, str] = {
     # suite had four writers of one format and two readers of it, each
     # rounding its own timestamps.
     "_vtt.py": "sprezzature-audio/scripts/_vtt.py",
+    # The memoizing wallet. Registered on 2026-11-01, after finding the two
+    # copies byte-identical at 311 lines with nothing comparing them — and
+    # after very nearly writing a third, divergent one in
+    # `sprezzature-accessibility`: a fixed backoff where this has a jittered
+    # one, and a raise where this degrades to the JSON ledger. Both wrong, and
+    # neither would have been caught.
+    #
+    # sprezzature-audio holds it for the same reason it holds the others, and
+    # for one more: its `tests/test_concurrent_runs_transcribe_once.py` is
+    # where the `SqliteLedger` creation race was measured ("two rounds in
+    # six"), so the prose that explains the retry lives beside the test that
+    # earned it.
+    "_wallet.py": "sprezzature-audio/scripts/_wallet.py",
 }
 
 #: Shared helpers duplicated across skills, in reporting order.
