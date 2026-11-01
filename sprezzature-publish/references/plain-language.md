@@ -16,7 +16,7 @@ Users who benefit beyond cognitive disabilities: second-language readers, anyone
 If you've already run `sprezzature-accessibility-install-alt` for alt text, you're done; the same Ollama daemon and model serve the rewriter. If not:
 
 ```bash
-`pip install 'sprezzature-publish[all]'`
+`pip install 'sprezzature-publish'`
 sprezzature-accessibility-install-alt
 ```
 

@@ -38,7 +38,7 @@
   ['dragleave','drop'].forEach(e => drop.addEventListener(e, () => drop.classList.remove('border-brand-blue','bg-brand-blue/5')));
   drop.addEventListener('drop', (ev) => {
     ev.preventDefault();
-    const file = ev.dataTransfer.files?.[0];
+    const file = ev.dataTransfer.files?.;
     if (file) handleFile(file);
   });
 </script>

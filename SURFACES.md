@@ -123,7 +123,7 @@ halves:
 
 - **its own name on PyPI**, so `pip install sprezzature-maps` works for someone
   who wants one brick;
-- **a floor in this repo's `all` extra**, so `pip install sprezzature[all]`
+- **a floor in this repo's base install**, so `pip install sprezzature`
   pulls the suite.
 
 Check the first with `python scripts/audit_surfaces.py --pypi`, which reads the

@@ -19,7 +19,7 @@ hosted rendering. The pipeline is reproducible.
 ## Quick start
 
 ```bash
-`pip install 'sprezzature-publish[all]'`
+`pip install 'sprezzature-publish'`
 sprezzature-publish-lint docs/
 
 # Render every Mermaid block to a PNG sibling and insert a fallback <img>:
@@ -130,7 +130,7 @@ See `sprezzature-publish-lint` → `PROMPT_MERMAID_LABELS` and
 ```yaml
 - name: Lint Markdown
   run: |
-    `pip install 'sprezzature-publish[all]'`
+    `pip install 'sprezzature-publish'`
     sprezzature-publish-lint docs/
 ```
 

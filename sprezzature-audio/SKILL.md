@@ -27,7 +27,7 @@ compatibility: >-
   inference after install.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-audio`](https://github.com/warith-harchaoui/sprezzature-audio) (`pip install`), invoked as `sprezzature-audio …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -221,14 +221,14 @@ column is the command that lands on `$PATH` once installed.
 
 | Script | Install | Console script | Purpose |
 |---|---|---|---|
-| ``captions_from_whisper.py`` *(WiP)* | ``sprezzature-audio[captions]`` + ``ffmpeg`` on PATH | ``sprezzature-audio-captions`` | WebVTT / SRT / plain-text captions via local whisper.cpp. Per-language WER baselines + vocab-biasing reference clip still being collected. |
-| ``install_captions.py`` | ``sprezzature-audio[captions]`` | (none; run as ``python -m sprezzature_audio_scripts.install_captions``) | Installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML caption model. |
-| ``diarize_from_nemo.py`` | ``sprezzature-audio[diarize]`` + Python 3.10+ | ``sprezzature-audio-diarize`` | Speaker diarization via NVIDIA NeMo **Sortformer** (``nvidia/diar_sortformer_4spk-v1``). Emits RTTM + turn JSON; caches on the extracted-audio hash. |
-| ``identify_from_titanet.py`` | ``sprezzature-audio[diarize]`` | ``sprezzature-audio-identify`` | Speaker identification via NeMo **TitaNet-Large** embeddings; cosine matching against a directory of reference clips (one WAV per known speaker). Writes ``speakers.json``. |
+| ``captions_from_whisper.py`` *(WiP)* | ``sprezzature-audio`` + ``ffmpeg`` on PATH | ``sprezzature-audio-captions`` | WebVTT / SRT / plain-text captions via local whisper.cpp. Per-language WER baselines + vocab-biasing reference clip still being collected. |
+| ``install_captions.py`` | ``sprezzature-audio`` | (none; run as ``python -m sprezzature_audio_scripts.install_captions``) | Installs ``vocal-helper`` (pulling ``pywhispercpp``) and pre-downloads a GGML caption model. |
+| ``diarize_from_nemo.py`` | ``sprezzature-audio`` + Python 3.10+ | ``sprezzature-audio-diarize`` | Speaker diarization via NVIDIA NeMo **Sortformer** (``nvidia/diar_sortformer_4spk-v1``). Emits RTTM + turn JSON; caches on the extracted-audio hash. |
+| ``identify_from_titanet.py`` | ``sprezzature-audio`` | ``sprezzature-audio-identify`` | Speaker identification via NeMo **TitaNet-Large** embeddings; cosine matching against a directory of reference clips (one WAV per known speaker). Writes ``speakers.json``. |
 | ``name_from_transcript.py`` | ``sprezzature-audio`` (core); optional local Ollama for the ``--ollama`` refinement | ``sprezzature-audio-name`` | Guesses speaker names from the diarized transcript itself: regex for self-introductions + vocatives, optional LLM refinement via the same daemon ``alt_from_ollama.py`` uses. |
 | ``caption_diarize.py`` | ``sprezzature-audio`` (core) | ``sprezzature-audio-pipeline`` | Merges captions + diarization + speakers.json → speaker-labelled WebVTT (``<v Name>`` cues), SRT, or plain text. |
-| ``translate_captions.py`` | ``sprezzature-audio[translate]``; a local Ollama daemon (``qwen3-vl:8b``) at runtime | ``sprezzature-audio-translate`` | Translates an existing ``.vtt``/``.srt`` into the surrounding-text language and emits a two-``<track>`` snippet (native ``captions`` + translated ``subtitles``). No audio dependency; decoupled from the caption backend. |
-| ``install_diarize.py`` | ``sprezzature-audio[diarize]`` | (none; run as ``python -m sprezzature_audio_scripts.install_diarize``) | Installs ``nemo_toolkit[asr]`` and pre-downloads Sortformer + TitaNet checkpoints so the diarization scripts run offline. |
+| ``translate_captions.py`` | ``sprezzature-audio``; a local Ollama daemon (``qwen3-vl:8b``) at runtime | ``sprezzature-audio-translate`` | Translates an existing ``.vtt``/``.srt`` into the surrounding-text language and emits a two-``<track>`` snippet (native ``captions`` + translated ``subtitles``). No audio dependency; decoupled from the caption backend. |
+| ``install_diarize.py`` | ``sprezzature-audio`` | (none; run as ``python -m sprezzature_audio_scripts.install_diarize``) | Installs ``nemo_toolkit[asr]`` and pre-downloads Sortformer + TitaNet checkpoints so the diarization scripts run offline. |
 | ``_argparse.py``, ``_click.py``, ``_lang.py``, ``_vocab.py`` | (internal helpers) | (none) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
 
 ## Companion skills

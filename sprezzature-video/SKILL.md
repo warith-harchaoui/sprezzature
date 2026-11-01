@@ -16,7 +16,7 @@ description: >-
   The exhaustive trigger catalogue is in `references/triggers.md`.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 # sprezzature-video

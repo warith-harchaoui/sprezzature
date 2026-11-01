@@ -1721,7 +1721,7 @@ sprezzature-publish — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
 sprezzature-video no kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-Every row is on PyPI, and pip install 'sprezzature[all]' installs all nine. sprezzature-ui and sprezzature-publish were the last two to get there, on 19 October 2026; until then the extra named nine and listed seven.
+Every row is on PyPI, and pip install 'sprezzature' installs all nine. sprezzature-ui and sprezzature-publish were the last two to get there, on 19 October 2026; until then the extra named nine and listed seven.
 
 ## Deterministic tools
 

@@ -40,7 +40,7 @@ ones you need.
 
 As of 2026-07-29, sprezzature is organised in two layers with distinct release cycles.
 
-**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and add the surfaces you want as extras — `[api]` for the FastAPI server, `[mcp]` for the MCP tools, `[cli]` where a richer command line exists:
+**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and each one arrives whole: the library, the command line, the FastAPI server and the MCP tool surface are all in the base install. There are no feature extras anywhere in the suite since 2026-11-01 — six of the bricks had a base of one dependency, so `pip install <brick>` installed almost nothing and knowing the right extra was a prerequisite for the package being useful:
 
 | Package | What it does |
 |---|---|

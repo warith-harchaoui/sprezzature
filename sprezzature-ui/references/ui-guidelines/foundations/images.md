@@ -64,7 +64,7 @@ When the author has not supplied `alt`, the skill drafts it with a **local visio
 Install once (cross-platform):
 
 ```bash
-pip install "sprezzature-accessibility[alt]"
+pip install "sprezzature-accessibility"
 sprezzature-accessibility-install-alt
 ```
 

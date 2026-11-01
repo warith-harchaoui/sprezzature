@@ -4,7 +4,7 @@ A test dependency declared where CI never looks is not declared.
 `starlette` 1.9.0 moved its TestClient onto `httpx2`, and nine repositories in
 this suite use that client. The fix went into `requirements-dev.txt` — correct
 for the four whose workflow ends in `-r requirements-dev.txt`, and inert for
-the four that install `pip install -e ".[dev,...]"` and never read the file.
+the four that install `pip install -e ".[dev]"` and never read the file.
 `speaker-helper` came back red on exactly the same error after being "fixed",
 which is how the gap showed.
 
@@ -120,7 +120,7 @@ def test_a_requirements_dev_file_is_one_ci_reads(repo: Path) -> None:
     assert "requirements-dev" in workflows, (
         f"{repo.name} ships a requirements-dev.txt that no workflow installs. "
         f"Anything added to it is invisible to CI — put test dependencies in "
-        f'the `dev` extra instead, which `pip install -e ".[dev,...]"` reads.'
+        f'the `dev` extra instead, which `pip install -e ".[dev]"` reads.'
     )
 
 
@@ -190,7 +190,7 @@ def test_ci_installs_the_test_dependencies_somehow(repo: Path) -> None:
 
     Seven bricks ship a ``requirements-dev.txt`` and name it on the install
     line; ``sprezzature-publish`` and ``sprezzature-ui`` put the same packages
-    in a ``dev`` extra and install ``.[dev,...]``. Both work. The test above
+    in a ``dev`` extra and install ``.[dev]``. Both work. The test above
     asks only "is a shipped requirements-dev.txt one CI reads", so for those
     two it skipped — and a skip reads exactly like a pass, which is how a
     brick with *neither* route would look from here.
@@ -252,7 +252,7 @@ def test_the_test_client_has_its_backend_where_ci_looks(repo: Path) -> None:
     reachable = False
     if "requirements-dev" in workflows and requirements.is_file():
         reachable |= "httpx2" in requirements.read_text(encoding="utf-8")
-    # `pip install -e ".[dev,...]"` — the extras named on the install line.
+    # `pip install -e ".[dev]"` — the extras named on the install line.
     for named in re.findall(r'pip install -e "\.\[([^\]]+)\]"', workflows):
         for extra in (name.strip() for name in named.split(",")):
             if any("httpx2" in r for r in declared.get(extra, ())):

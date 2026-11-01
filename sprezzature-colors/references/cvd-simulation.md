@@ -11,7 +11,7 @@ The simulation is qualitative: a real viewer's experience varies with severity a
 ## Install
 
 ```bash
-`pip install 'sprezzature-publish[all]'`
+`pip install 'sprezzature-publish'`
 ```
 
 Pillow is the only dependency.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-check_all_extra_resolves — do the ``all`` extra's floors exist on PyPI?
+check_all_extra_resolves — do the base install's floors exist on PyPI?
 
 ``tests/test_all_extra_is_the_suite.py`` checks the half that is decidable
 offline: that the extra names the suite exactly, that every requirement has a
@@ -16,7 +16,7 @@ failure this script reports. The repository could not be green and
 installable at once. The halves are now split by what each can know.
 
 But that leaves a gap, and the gap has opened twice. A floor can name a version
-that exists **only on a laptop**. ``sprezzature[all]`` then fails to resolve for
+that exists **only on a laptop**. ``sprezzature`` then fails to resolve for
 everyone, while every test in this repository stays green, because the sibling
 checkout the test compares against is exactly the unpublished thing. The last
 time, the extra floored ``sprezzature-figures`` at 2.5.0 and ``sprezzature-maps``
@@ -63,11 +63,18 @@ TIMEOUT = 30
 
 
 def _floors() -> list[tuple[str, str]]:
-    """Each requirement in the ``all`` extra, as ``(package, floor)``."""
+    """Each base requirement, as ``(package, floor)``.
+
+    Read from ``dependencies`` since 2026-11-01. It was the ``all`` extra until
+    then; the list did not move, it changed shelf. The script keeps its name
+    because the question it asks has not changed: can a reader install the
+    suite from the index, or does a floor name a version that exists only on a
+    laptop?
+    """
     text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    match = re.search(r"^all = \[(.*?)^\]", text, re.MULTILINE | re.DOTALL)
+    match = re.search(r"^dependencies = \[(.*?)^\]", text, re.MULTILINE | re.DOTALL)
     if not match:
-        sys.exit("error: pyproject.toml has no `all` extra")
+        sys.exit("error: pyproject.toml has no base dependencies")
     return re.findall(r'"([A-Za-z0-9_.-]+)\s*>=\s*([\d.]+)"', match.group(1))
 
 
@@ -173,7 +180,7 @@ def main() -> int:
 
     if stale:
         print(
-            "\n`pip install sprezzature[all]` cannot resolve:\n  "
+            "\n`pip install sprezzature` cannot resolve:\n  "
             + "\n  ".join(stale)
             + "\n\nPublish those versions first, or lower the floors to versions "
             "that exist. A floor naming a version only this machine has is the "
@@ -182,7 +189,7 @@ def main() -> int:
         )
         return 1
 
-    print("\nevery floor in the `all` extra resolves on PyPI")
+    print("\nevery floor in the base install resolves on PyPI")
     return 0
 
 

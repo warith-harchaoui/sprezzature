@@ -1,7 +1,7 @@
 """
-The ``all`` extra is a promise that ``pip install sprezzature[all]`` gives you
-every tool the skills call. It is a hand-written list, and it went wrong in
-both directions on the way to the first publication: it floored
+``pip install sprezzature`` is a promise that you get every tool the skills
+call. It is a hand-written list, and it went wrong in both directions on the
+way to the first publication: it floored
 ``sprezzature-figures`` at a release predating the ``redraw`` command its own
 skill documents, and it named two packages that were not on PyPI at all, so
 the extra could not resolve.
@@ -49,34 +49,40 @@ def _tool_packages() -> frozenset[str]:
 #: Every sibling tool package, read from that table.
 TOOL_PACKAGES = _tool_packages()
 
-_ALL_EXTRA_RE = re.compile(r"^all = \[(.*?)\]", re.MULTILINE | re.DOTALL)
+#: The base install. It was the base install until 2026-11-01, when every
+#: extra in the suite was folded into its package's base: a hub whose
+#: ``pip install`` gave nothing and whose nine bricks sat behind `[all]` was
+#: asking a reader to know the magic word before the meta-package meant
+#: anything. The list did not move -- it changed shelf -- so everything below
+#: still holds, and the one thing that had to change is where it is read from.
+_BASE_RE = re.compile(r"^dependencies = \[(.*?)^\]", re.MULTILINE | re.DOTALL)
 _REQUIREMENT_RE = re.compile(r'"([A-Za-z0-9_.-]+)\s*(?:[<>=!~]=?[^"]*)?"')
 
 
-def _all_extra() -> dict[str, str]:
-    """Map each requirement in the ``all`` extra to the raw string declaring it."""
+def _base_install() -> dict[str, str]:
+    """Map each base requirement to the raw string declaring it."""
     text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    match = _ALL_EXTRA_RE.search(text)
-    assert match, "pyproject.toml has no `all` extra"
+    match = _BASE_RE.search(text)
+    assert match, "pyproject.toml has no base dependencies"
     body = match.group(1)
     return {m.group(1): m.group(0) for m in _REQUIREMENT_RE.finditer(body)}
 
 
 def test_all_extra_names_every_tool_package() -> None:
     """A new tool package must join the extra, or `[all]` quietly omits it."""
-    missing = sorted(TOOL_PACKAGES - set(_all_extra()))
+    missing = sorted(TOOL_PACKAGES - set(_base_install()))
     assert not missing, (
-        "these suite packages are not in the `all` extra, so "
-        f"`pip install sprezzature[all]` would not install them: {missing}"
+        "these suite packages are not in the base install, so "
+        f"`pip install sprezzature` would not install them: {missing}"
     )
 
 
 def test_all_extra_names_nothing_else() -> None:
     """And nothing the suite does not publish — an extra that cannot resolve."""
-    extra = set(_all_extra())
+    extra = set(_base_install())
     unknown = sorted(extra - TOOL_PACKAGES)
     assert not unknown, (
-        f"the `all` extra requires {unknown}, which check_wheels.py does not "
+        f"the base install requires {unknown}, which check_wheels.py does not "
         "know how to build. Either add the repository to its PACKAGES table or "
         "drop the requirement: an extra naming a package nobody publishes "
         "fails to resolve at install time, not at build time."
@@ -113,7 +119,7 @@ def test_no_floor_names_a_version_that_exists_nowhere() -> None:
 
     The original defect is still covered, and covered better.
     `sprezzature-accessibility` shipped 1.0.1 and 1.0.2 to fix a rule count its
-    own documentation got wrong while `sprezzature[all]` kept floor 1.0.0, so
+    own documentation got wrong while `sprezzature` kept floor 1.0.0, so
     the one command that installs the suite kept handing people the version
     with the wrong docs. A floor lagging a *published* correction is a
     question about PyPI, and it is asked there.
@@ -122,7 +128,7 @@ def test_no_floor_names_a_version_that_exists_nowhere() -> None:
     on CI.
     """
     impossible: list[str] = []
-    for name, raw in _all_extra().items():
+    for name, raw in _base_install().items():
         current = _sibling_version(name)
         if current is None:
             continue
@@ -132,14 +138,14 @@ def test_no_floor_names_a_version_that_exists_nowhere() -> None:
             impossible.append(f"{name}: floor {floor.group(1)} > checkout {current}")
 
     assert not impossible, (
-        "the `all` extra floors a package above anything that exists, even "
+        "the base install floors a package above anything that exists, even "
         "locally:\n  " + "\n  ".join(impossible)
     )
 
 
 def test_every_requirement_carries_a_floor() -> None:
     """An unpinned requirement resolves to whatever is oldest-compatible."""
-    unfloored = sorted(name for name, raw in _all_extra().items() if ">=" not in raw)
+    unfloored = sorted(name for name, raw in _base_install().items() if ">=" not in raw)
     assert not unfloored, (
         f"no minimum version on {unfloored}. The extra floored "
         "sprezzature-figures at 2.0.0 while the skill it ships documented "
