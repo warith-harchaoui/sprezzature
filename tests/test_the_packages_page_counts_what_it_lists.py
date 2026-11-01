@@ -9,7 +9,7 @@ stale by 2026-10-28 without anything noticing:
   extra named ten requirements. ``sprezzature-video`` joined on 2026-10-24,
   was added to the table, to the schema and to the card deck, and the sentence
   introducing the table kept the old number.
-* **how many packages ``pip install 'sprezzature[all]'`` installs.** Same
+* **how many packages ``pip install 'sprezzature'`` installs.** Same
   number, same page, same drift.
 * **how many kits ``sprezzature-figures`` ships.** The cell said 125 while the
   paragraph four lines above said 160 and the gallery linked 160. Three
@@ -72,14 +72,17 @@ def _page(lang: str, name: str) -> str:
 
 
 def _all_extra() -> int:
-    """How many requirements ``sprezzature[all]`` names."""
+    """How many requirements ``sprezzature`` names."""
     try:
         import tomllib
     except ModuleNotFoundError:  # Python 3.10 — tomllib landed in 3.11
         import tomli as tomllib  # type: ignore[no-redef]
 
     table = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    return len(table["project"]["optional-dependencies"]["all"])
+    # The base install since 2026-11-01. It was the `all` extra until then;
+    # the list did not move, it changed shelf, so the count this page has to
+    # match is the same count read from one key over.
+    return len(table["project"]["dependencies"])
 
 
 @pytest.mark.parametrize("lang", ("en", "fr"))
@@ -101,12 +104,12 @@ def test_the_page_says_how_many_packages_its_own_table_lists(lang: str) -> None:
         )
 
 
-def test_the_table_lists_what_the_all_extra_installs() -> None:
+def test_the_table_lists_what_the_base_install_installs() -> None:
     """The page and ``pyproject.toml`` describe one suite, not two."""
     rows = len(_ROW_RE.findall(_page("en", "packages.html")))
     assert rows == _all_extra(), (
         f"the surfaces table lists {rows} packages; "
-        f"sprezzature[all] names {_all_extra()}"
+        f"sprezzature names {_all_extra()}"
     )
 
 

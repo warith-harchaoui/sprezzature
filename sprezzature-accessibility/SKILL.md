@@ -23,7 +23,7 @@ compatibility: >-
   text needs the [alt] extra and a local Ollama.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-accessibility`](https://github.com/warith-harchaoui/sprezzature-accessibility) (`pip install`), invoked as `sprezzature-accessibility <tool>` (click) or `make-a11y <tool>` (argparse) over the four tools — `lint`, `text-spacing`, `alt`, `install-alt` — each of which is also its own command (`sprezzature-accessibility-lint` and so on), which is what a script should call. Both front doors arrived in 1.2.0; before that this sentence named a command nothing installed. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.

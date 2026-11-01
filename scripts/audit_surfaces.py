@@ -86,7 +86,7 @@ CONTAINERS: tuple[str, ...] = ("docker", "compose")
 
 #: How a brick becomes installable by someone who is not us. Every brick owes
 #: both halves: its own name on PyPI, and a line in this repo's ``all`` extra
-#: so ``pip install sprezzature[all]`` pulls the suite. The second half is
+#: so ``pip install sprezzature`` pulls the suite. The second half is
 #: decidable from a checkout; the first needs the network, so it is opt-in
 #: behind ``--pypi`` and never runs in CI.
 PUBLICATION: tuple[str, ...] = ("all-extra", "pypi")

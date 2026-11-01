@@ -129,29 +129,58 @@ def test_every_offered_engine_has_a_default_voice() -> None:
     )
 
 
-def test_every_wrapper_has_an_extra_and_an_entry_point() -> None:
-    """A wrapper nobody can install, or install and not run, is not shipped."""
+def _audio_extras_section() -> str:
+    """The raw body of audio's ``[project.optional-dependencies]``."""
+    found = re.search(
+        r"^\[project\.optional-dependencies\]\s*$(.*?)(?=^\[|\Z)",
+        _audio_pyproject(),
+        re.M | re.S,
+    )
+    return found.group(1) if found else ""
+
+
+def test_every_wrapper_has_an_entry_point_and_a_followable_install_hint() -> None:
+    """A wrapper nobody can run, or whose advice cannot be followed, is not shipped.
+
+    The first half of this used to be "every wrapper has a `narrate-<engine>`
+    extra", because the install hint printed on failure named exactly that
+    extra and an extra that does not exist is a message nobody can follow.
+    `sprezzature-audio` 1.9.0 folded every engine into its base install, so
+    there is no extra to have -- and the *property* the assertion stood for is
+    still worth checking, so it is checked directly: every
+    `sprezzature-audio[...]` string in the adapter must name a real extra.
+    """
     pyproject = _audio_pyproject()
     shipped = _audio_wrappers()
 
-    extras = set(re.findall(r"^narrate-([a-z0-9-]+)\s*=", pyproject, re.M))
-    # `narrate` itself is kokoro's, spelled without a suffix; `narrate-kokoro`
-    # exists as an alias and both are accepted here.
-    extras.add("kokoro")
     scripts = set(
         re.findall(r"^sprezzature-audio-narrate-([a-z0-9-]+)\s*=", pyproject, re.M)
     )
-
-    no_extra = sorted(shipped - extras)
     no_script = sorted(shipped - scripts)
-    assert not no_extra, (
-        f"wrappers with no narrate-<engine> extra: {no_extra}. The install "
-        f"hint printed on failure names exactly that extra, so this is a "
-        f"message that cannot be followed."
-    )
     assert not no_script, (
         f"wrappers with no console script: {no_script}. The wheel carries the "
         f"code and leaves no way to run it."
+    )
+
+    declared = set(re.findall(r"^([a-z0-9._-]+)\s*=\s*\[", _audio_extras_section(), re.M))
+    adapter = (AUDIO / "scripts" / "_speaker.py").read_text(encoding="utf-8")
+    offered = set(re.findall(r"sprezzature-audio\[([a-z0-9,._-]+)\]", adapter))
+    # `sprezzature-audio[...]` is a documentation placeholder in that file's
+    # own comment about this very check, not advice to anybody. Excluded by
+    # name rather than by loosening the pattern: the first version of this
+    # assertion reported it as a real finding, which is what a measure does
+    # when nobody checks where it places a case already known to be good.
+    unfollowable = sorted(
+        name
+        for group in offered
+        for name in group.split(",")
+        if name != "..." and name not in declared
+    )
+    assert not unfollowable, (
+        f"the adapter's install hints offer {unfollowable}, which "
+        f"sprezzature-audio does not declare. pip answers an unknown extra "
+        f"with a warning and exit 0, so a reader who follows this installs "
+        f"nothing and is told nothing."
     )
 
 

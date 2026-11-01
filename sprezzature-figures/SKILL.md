@@ -26,7 +26,7 @@ compatibility: >-
   network needed once installed.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures) (`pip install`), invoked as `sprezzature-figures …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -316,8 +316,8 @@ sprezzature_figures_scripts.<module>`.
 | Script | Install | Purpose |
 |---|---|---|
 | `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `render` / `recommend` / `redraw` / `check` cover the same ground with a Click interface plus a kind recommender and a render checker. **No extra is needed for any of them**: click became a base dependency on 2026-10-25, when the argparse front door was dropped, so the base install carries the whole command line. Until then these commands refused with a one-line message naming a `[cli]` extra; that extra no longer exists, and asking pip for it gets a warning and nothing else. |
-| `explain_model.py` | `sprezzature-figures[explain]` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
-| `causal_estimate.py` | `sprezzature-figures[causal]` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
+| `explain_model.py` | `sprezzature-figures` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
+| `causal_estimate.py` | `sprezzature-figures` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
 | `audit_figure.py` | stdlib + PyYAML | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
 | `install_figures.py` | subprocess to project env manager | Idempotent installer for the three tiers (dataviz / explain / causal). Detects pip / uv / poetry / conda. |
 | `make_situation_map.py`, `build_situation_examples.py`, `make_choropleth.py` | *(moved out)* | Split into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package (`make-map` console script). No longer part of `sprezzature-figures`. |

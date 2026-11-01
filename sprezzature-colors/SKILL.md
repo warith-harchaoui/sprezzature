@@ -22,7 +22,7 @@ compatibility: >-
   No network or model required at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors) (`pip install`), invoked as `sprezzature-colors …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -207,7 +207,7 @@ Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
 ## Scripts
 
 Shipped by the standalone [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors)
-package (`pip install sprezzature-colors`, or `sprezzature-colors[cvd]`
+package (`pip install sprezzature-colors`, or `sprezzature-colors`
 for the Pillow-backed CVD renderer). Each entry below is a console script
 the package registers; `python -m sprezzature_colors_scripts.<module>` reaches
 the same entry point when the scripts directory is not on `$PATH`.
@@ -215,7 +215,7 @@ the same entry point when the scripts directory is not on `$PATH`.
 | Script | Install | Purpose |
 |---|---|---|
 | `audit_contrast.py` | stdlib only | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
-| `simulate_cvd.py` | `sprezzature-colors[cvd]` (Pillow) | Protanopia / deuteranopia / tritanopia rendering (Machado matrices). |
+| `simulate_cvd.py` | `sprezzature-colors` (Pillow) | Protanopia / deuteranopia / tritanopia rendering (Machado matrices). |
 | `_colors.py` | stdlib only | Shared color primitives: sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
 | `palette_to_tailwind.py` | stdlib only | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `audit_contrast.py`: closes the CSV → emitted-config loop so brand tokens cannot drift. |
 

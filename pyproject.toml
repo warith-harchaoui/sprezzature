@@ -4,10 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sprezzature"
-version = "1.6.0"
+version = "1.7.0"
 description = "The sprezzature skills: what an agent reads to know when to reach for the tools, and how the house does things."
 readme = "README.md"
-requires-python = ">=3.10"
+# `<3.14` since 2026-11-01, when the extras were folded into the base. The
+# ceiling is not this package's own: it arrives through base dependencies that
+# declare it at the versions named below. While they sat behind an extra the
+# base resolved on 3.14 and a reader who installed nothing optional was not
+# refused the interpreter; one `pip install` means the ceiling is the
+# package's, so the package declares it rather than handing out
+# `ERROR: Could not find a version that satisfies the requirement`.
+#
+# The hub's own guard dictated this edit, by name and with the fix:
+# tests/test_no_brick_promises_a_python_its_dependencies_exclude.py.
+requires-python = ">=3.10,<3.14"
 license = "BSD-3-Clause"
 license-files = ["LICENSE.md"]
 authors = [{name = "Warith HARCHAOUI", email = "warithmetics@deraison.ai"}]
@@ -21,41 +31,31 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Documentation",
 ]
-dependencies = []
+dependencies = [
 
-[project.optional-dependencies]
-# The tools the skills call. Each installs on its own; this pulls the lot.
-all = [
+    # ------------------------------------------------- une seule installation
+    # Folded in from the extras on 2026-11-01. The base was 0
+    # dependencies, so `pip install sprezzature` installed almost nothing and
+    # did almost nothing: choosing the right extra was a thing a reader had to
+    # know before the package could do its job. Across the suite that was 59
+    # extras over eleven repositories, six of them with a base of one.
+    #
+    # The surfaces are not features and they are not optional any more: the
+    # HTTP app and the MCP server are two of this package's five front doors,
+    # and a door you have to install separately is a door people do not find.
     "sprezzature-figures>=2.7.0",
-    # 1.1.0, not 1.0.1: before it, `sprezzature-colors` was not a command —
-    # only `sprezzature-colors-contrast` and its three siblings were — and
-    # this repository's own SKILL.md tells an agent the tools are "invoked as
-    # `sprezzature-colors …`". The floor is what makes that sentence true.
     "sprezzature-colors>=1.1.0",
-    # 1.2.0 for the same reason as colors and ux-laws: before it,
-    # `sprezzature-accessibility` was not a command — only
-    # `sprezzature-accessibility-lint` and its siblings were — while this
-    # repository's SKILL.md named it. The floor is what makes that true.
     "sprezzature-accessibility>=1.2.0",
     "sprezzature-audio>=1.4.0",
     "sprezzature-cli-gui>=1.2.0",
-    # 1.2.0 for the same reason: `sprezzature-ux-laws` itself only became a
-    # command there (1.1.0 installed `sprezzature-ux-laws-audit` alone), and
-    # it is the version that first exposed a library surface at all.
     "sprezzature-ux-laws>=1.2.0",
     "sprezzature-maps>=1.0.0",
-    # The tenth brick, published 2026-10-24. The floor is the release that
-    # first carries a command at all: 0.1.0 declared three entry points ahead
-    # of the modules behind them and installed three commands that died on
-    # import, so naming it here would have put that breakage inside `all`.
     "sprezzature-video>=0.2.0",
-    # The last two to reach PyPI, on 2026-10-19. Until then `all` installed
-    # eight ninths of the suite under a name that promised all of it — the
-    # omission was deliberate and documented, which made it defensible and
-    # not correct.
     "sprezzature-publish>=1.2.0",
     "sprezzature-ui>=1.0.0",
 ]
+
+[project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff"]
 
 [project.urls]

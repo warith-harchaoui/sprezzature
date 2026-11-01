@@ -26,7 +26,7 @@ compatibility: >-
   torch + torchaudio; installed only when explicitly opted into.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language
@@ -181,14 +181,14 @@ modified in place.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `sprezzature-publish-icons` | `pip install 'sprezzature-publish[all]'` | Full favicon / PWA icon set + manifest + head snippet from a single logo |
-| `sprezzature-publish-meta` | `pip install 'sprezzature-publish[all]'` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
+| `sprezzature-publish-icons` | `pip install 'sprezzature-publish'` | Full favicon / PWA icon set + manifest + head snippet from a single logo |
+| `sprezzature-publish-meta` | `pip install 'sprezzature-publish'` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
 | `sprezzature-publish-indexes` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
 | `sprezzature-publish-audit` | stdlib only | Audits an **emitted** site — directory, single page or live URL — and repairs with `--fix` what can be derived. The entry point for "improve this existing site". |
-| `sprezzature-publish-plain` | `pip install 'sprezzature-publish[all]'` + Ollama | Rewrites copy at a target grade; strips marketing voice |
+| `sprezzature-publish-plain` | `pip install 'sprezzature-publish'` + Ollama | Rewrites copy at a target grade; strips marketing voice |
 | `sprezzature-publish-narrate` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
 | _(the voices)_ | `pip install sprezzature-audio` | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, invoked as subprocesses by `narrate_post.py`. They live in `sprezzature-audio` with the rest of the sound modality; a reader who only wants Markdown rendered should not install a speech stack to get it. |
-| _(the read-along wiring, in the package)_ | `pip install 'sprezzature-publish[html]'` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `sprezzature-publish-html --readalong` and `sprezzature-publish-readalong`; refuses rather than mis-align. |
+| _(the read-along wiring, in the package)_ | `pip install 'sprezzature-publish'` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `sprezzature-publish-html --readalong` and `sprezzature-publish-readalong`; refuses rather than mis-align. |
 | `sprezzature-publish-readalong` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
 | _(voice chooser)_ | `pip install sprezzature-audio` | `sprezzature-audio-voice` lists engine voices and generates per-voice demo clips, so the designer chooses by listening. |
 | _(voice installer)_ | `pip install sprezzature-audio` | `sprezzature-audio-install-voice` downloads OpenVoice v2 checkpoints and sets up the ChatterboxTTS voice library. |

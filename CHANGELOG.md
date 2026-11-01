@@ -6,6 +6,43 @@ The project follows a loose [SemVer](https://semver.org/): major version
 bumps mean the on-disk skill layout changes (users have to re-copy folders
 into `~/.claude/skills/`).
 
+## [1.7.0] — 2026-11-01: one `pip install`
+
+### Changed — one `pip install`
+
+**Everything this package does now installs with it.** 2 extras became
+**one**, and it is not a feature: `[dev]` is the test toolchain.
+
+  **The nine bricks.** `pip install sprezzature` installed *nothing* — the base
+  was empty and the suite sat behind `[all]`, so the meta-package meant nothing
+  until a reader knew the magic word.
+
+  `requires-python` becomes `>=3.10,<3.14`: four of the bricks declare it.
+  `tests/test_all_extra_is_the_suite.py` now reads the base instead of the
+  extra; the list did not move, it changed shelf, so every check in it still
+  holds.
+
+Measured across the suite before touching anything: **59 extras over eleven
+repositories**, and **six bricks whose base was a single dependency** — so
+`pip install <brick>` installed almost nothing and did almost nothing, and
+choosing the right extra was a thing a reader had to know *before* the package
+could do its job. Here the base goes from **0** to **10**
+dependencies.
+
+All eleven unions were dry-run resolved in a clean venv before any manifest was
+edited, so this is a measured feasibility and not an optimistic one.
+
+### Fixed — the places that encoded the extras
+
+Install lines, error messages, docstrings, the `Dockerfile`, the CI workflow and
+the README/LISEZMOI install sections all named extras that no longer exist. pip
+treats an unknown extra as a **warning and exits 0**, so none of these would
+have failed loudly: they would have quietly installed nothing.
+
+The hub's `test_no_document_promises_an_extra_that_does_not_exist` found the
+cross-repository ones — a document in one brick naming another brick's extra —
+which no per-repository pass would have caught.
+
 ## Releases
 
 Each tagged release publishes one tarball per skill plus a bundle on
@@ -265,7 +302,7 @@ it is the first thing that ever looked.
 
 ## [1.6.0] — 2026-10-19
 
-**`sprezzature[all]` finally installs all of it.**
+**`sprezzature` finally installs all of it.**
 
 The extra named nine packages' worth of suite and listed seven. The two
 missing — `sprezzature-publish` and `sprezzature-ui` — were absent on purpose:
@@ -349,7 +386,7 @@ Both are published now, so the extra says what its name says.
 
 ### Changed
 
-- **`sprezzature[all]` floors move to `sprezzature-figures>=2.7.0` and
+- **`sprezzature` floors move to `sprezzature-figures>=2.7.0` and
   `sprezzature-maps>=0.19.0`.** Verified end to end rather than assumed: a
   throwaway venv resolving this package's own `[all]` pulls exactly those two.
 
@@ -375,7 +412,7 @@ Both are published now, so the extra says what its name says.
   cover all 36 pages, so seven descriptions, written from looking at each
   image rather than from the page titles around it, in both languages.
 
-## [1.4.0] (2026-10-15): `sprezzature[all]` could not install, and every page undercounted the catalogue by forty
+## [1.4.0] (2026-10-15): `sprezzature` could not install, and every page undercounted the catalogue by forty
 
 ### Changed
 
@@ -403,7 +440,7 @@ Both are published now, so the extra says what its name says.
 
 ### Fixed
 
-- **`pip install sprezzature[all]` could not resolve, for anyone.** The extra
+- **`pip install sprezzature` could not resolve, for anyone.** The extra
   floored `sprezzature-figures` at 2.5.0 and `sprezzature-maps` at 0.15.0.
   Neither version was on PyPI — it held 2.4.0 and 0.12.0 — so the one command
   that installs the whole suite failed at resolution, and had been failing
@@ -510,7 +547,7 @@ Both are published now, so the extra says what its name says.
 ### Fixed
 
 - **Every floor in the `all` extra named a version older than the release
-  sitting beside it.** `pip install sprezzature[all]` is the one command that
+  sitting beside it.** `pip install sprezzature` is the one command that
   installs the whole suite, and a floor that lags a correction installs the
   uncorrected package forever. `sprezzature-maps` was the worst of them, floored
   at 0.7.0 against a checkout at 0.12.0, five releases behind. The floors now
@@ -651,7 +688,7 @@ Both are published now, so the extra says what its name says.
 
 ### Fixed
 
-- **`sprezzature[all]` floored `sprezzature-accessibility` at 1.0.0** while
+- **`sprezzature` floored `sprezzature-accessibility` at 1.0.0** while
   1.0.1 and 1.0.2 were shipping to correct a rule count its own documentation
   got wrong. The one command that installs the whole suite kept handing people
   the version with the wrong docs, indefinitely — a floor is not a formality,
@@ -722,7 +759,7 @@ Both are published now, so the extra says what its name says.
   went red the moment a tenth skill shipped, for a reason that had nothing to
   do with validation. It counts from `SKILLS.txt` now, like every other
   consumer of the manifest.
-- **`sprezzature[all]` could not resolve.** The extra required
+- **`sprezzature` could not resolve.** The extra required
   `sprezzature-audio` and `sprezzature-maps`, neither of which was on PyPI, so
   the one command that installs the whole suite failed at resolution. Both are
   published now (audio 1.1.0, maps 0.2.0) and every requirement is floored at
@@ -786,7 +823,7 @@ Both are published now, so the extra says what its name says.
   its five reference documents, both READMEs and both philosophy pages quoted
   a size the catalogue outgrew. All of them now say 127, the number
   `list_kinds()` returns.
-- **`sprezzature[all]` floors `sprezzature-figures` at 2.2.0.** The skill
+- **`sprezzature` floors `sprezzature-figures` at 2.2.0.** The skill
   documents `redraw` and `recommend`, which 2.0.0 does not have — an extra
   that resolves to a version missing the commands its own skill tells an agent
   to run.

@@ -38,11 +38,11 @@ Override any model with `--model` or the matching env var:
 
 ```bash
 # Base captions tier (already installed if you use captions).
-`pip install 'sprezzature-publish[all]'`
+`pip install 'sprezzature-publish'`
 python scripts/install_captions.py
 
 # Add the diarization tier (heavy — installs NeMo + torch + friends).
-`pip install 'sprezzature-publish[all]'`
+`pip install 'sprezzature-publish'`
 python scripts/install_diarize.py
 ```
 

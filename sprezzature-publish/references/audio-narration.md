@@ -27,7 +27,7 @@ baseline for long-form text. The cases where this earns its keep:
 
 ```bash
 # 1. Install one engine (both are MIT for code AND weights)
-`pip install 'sprezzature-publish[all]'`
+`pip install 'sprezzature-publish'`
 sprezzature-audio-install-voice --engine chatterbox
 
 # 2. Pick a built-in voice (or skip to clone a custom voice below)

@@ -22,7 +22,7 @@ compatibility: >-
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
@@ -291,7 +291,7 @@ Every tool in this suite is reachable five ways, and maps is no exception.
 |---|---|
 | Library | `from sprezzature_maps import make_choropleth, make_density, make_situation_map` |
 | CLI | `make-map choropleth --out world.svg`, `make-map density`, `make-map situation_map` |
-| HTTP API | `POST /v1/choropleth`, `/v1/density`, `/v1/situation-map` (`pip install 'sprezzature-maps[api]'`) |
+| HTTP API | `POST /v1/choropleth`, `/v1/density`, `/v1/situation-map` (`pip install 'sprezzature-maps'`) |
 | MCP | `render_choropleth` / `render_density` / `render_situation_map` / `list_kinds`, derived from those routes (`[mcp]`) |
 | Skill | this file |
 
