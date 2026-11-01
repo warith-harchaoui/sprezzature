@@ -16,12 +16,14 @@ Claude:
    click twin; the pair cost every sub-command twice, forced a conditional
    ``main`` whose two definitions had to agree by hand, and let a command go
    missing from one door (``make-map density``) with nothing to notice.
-3. **HTTP API** — ``api.py`` holding a FastAPI app, declared behind an ``api``
+3. **HTTP API** — ``api.py`` holding a FastAPI app, whose dependency the
+   manifest declares — in the base since 2026-11-01, where it used to be an
    extra, with a ``Dockerfile`` so it runs without a Python install at all —
    and a ``docker-compose.yml`` beside it, always, so the port, the volume,
    the environment and the command are declared rather than reconstructed.
 4. **MCP** — ``mcp.py`` republishing those same routes as agent tools through
-   ``fastapi-mcp``, behind an ``mcp`` extra, with its own console script.
+   ``fastapi-mcp``, declared in the base since 2026-11-01, with its own
+   console script.
 5. **skill** — ``SKILL.md`` in this monorepo, so Claude can reach the engine
    with the vocabulary of the problem rather than the vocabulary of the CLI.
 
@@ -89,7 +91,7 @@ CONTAINERS: tuple[str, ...] = ("docker", "compose")
 #: so ``pip install sprezzature`` pulls the suite. The second half is
 #: decidable from a checkout; the first needs the network, so it is opt-in
 #: behind ``--pypi`` and never runs in CI.
-PUBLICATION: tuple[str, ...] = ("all-extra", "pypi")
+PUBLICATION: tuple[str, ...] = ("in-the-hub", "pypi")
 
 #: PyPI's simple index, not ``/pypi/<name>/json``. The two endpoints are cached
 #: independently and the legacy JSON one lags by minutes after an upload, which
@@ -132,10 +134,16 @@ EXEMPTIONS: dict[tuple[str, str], str] = {}
 COMPOSE_IS_OWED_WITH_DOCKER = True
 
 
-def _all_extra() -> set[str]:
-    """Package names floored in this repo's ``all`` extra."""
+def _in_the_hub() -> set[str]:
+    """Package names floored in this repo's base install.
+
+    It was the ``all`` extra until 2026-11-01. The list did not move, it
+    changed shelf: `pip install sprezzature` installed *nothing* while the nine
+    bricks sat behind `[all]`, so the meta-package meant nothing until a reader
+    knew the magic word.
+    """
     text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    match = re.search(r"^all = \[(.*?)^\]", text, re.M | re.S)
+    match = re.search(r"^dependencies = \[(.*?)^\]", text, re.M | re.S)
     if not match:
         return set()
     return set(re.findall(r'"([A-Za-z0-9_.\-]+)\s*>=', match.group(1)))
@@ -200,6 +208,42 @@ def _extras(pyproject: str) -> set[str]:
     if not match:
         return set()
     return set(re.findall(r"^\s*([\w.\-]+)\s*=\s*\[", match.group(1), re.M))
+
+
+def _declared(pyproject: str) -> set[str]:
+    """Every distribution this manifest names, in the base **or** in an extra.
+
+    Added on 2026-11-01. Until then this audit asked "is there an ``api``
+    extra?", which was a fine proxy while every surface sat behind one. The
+    extras were folded into the base install that day, and the proxy inverted:
+    it reported nine bricks as missing an HTTP surface they each ship and
+    serve. The question it was always standing for is whether the surface's
+    dependencies are **declared**, and that is what this answers.
+    """
+    def _leading_names(block: str) -> set[str]:
+        r"""Distribution names out of every quoted requirement in *block*.
+
+        Indifferent to layout. An earlier version anchored on ``^\s*"`` and so
+        read nothing out of ``api = ["fastapi>=0.115"]`` -- the one-line form
+        this repository's own test fixture uses, and the form six bricks write.
+        """
+        return {
+            m.group(1).lower()
+            for m in re.finditer(r'"\s*([A-Za-z0-9_.\-]+)[^"]*"', block)
+        }
+
+    names: set[str] = set()
+    base = re.search(
+        r"^dependencies\s*=\s*\[(.*?)(?:^\]|\]\s*$)", pyproject, re.M | re.S
+    )
+    if base:
+        names |= _leading_names(base.group(1))
+    extras = re.search(
+        r"\[project\.optional-dependencies\](.*?)(?=\n\[(?!tool)|\Z)", pyproject, re.S
+    )
+    if extras:
+        names |= _leading_names(extras.group(1))
+    return names
 
 
 def _uses(module: str, needles: tuple[str, ...]) -> bool:
@@ -434,10 +478,10 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     # something anyone else could clone. The audit should not let those two
     # states look alike.
     standalone = (repo / ".git").exists()
-    in_all = brick in _all_extra()
+    in_all = brick in _in_the_hub()
     published = _on_pypi(brick) if check_pypi else None
-    publication = {"all-extra": in_all, "pypi": published}
-    publication_gaps = ["all-extra"] if not in_all else []
+    publication = {"in-the-hub": in_all, "pypi": published}
+    publication_gaps = ["in-the-hub"] if not in_all else []
     if published is False:
         publication_gaps.append("pypi")
 
@@ -468,7 +512,7 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
     package = _package_dir(repo, brick)
     pyproject = _read(repo / "pyproject.toml")
     scripts = _console_scripts(pyproject)
-    extras = _extras(pyproject)
+    declared = _declared(pyproject)
     notes: list[str] = []
 
     # 1. library — the package imports, and __init__ exports something.
@@ -559,19 +603,23 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
                 f"traceback"
             )
 
-    # 3. HTTP API — a FastAPI app, declared behind its own extra.
+    # 3. HTTP API — a FastAPI app whose dependency the manifest declares.
+    #    Base or extra: since 2026-11-01 it is the base everywhere, and the
+    #    surface is no more optional than the library is.
     api_src = _read(package / "api.py")
-    api = "FastAPI(" in api_src and "api" in extras
-    if "FastAPI(" in api_src and "api" not in extras:
-        notes.append("api.py exists but no `api` extra declares its deps")
+    api = "FastAPI(" in api_src and "fastapi" in declared
+    if "FastAPI(" in api_src and "fastapi" not in declared:
+        notes.append("api.py exists but the manifest declares no fastapi")
 
     # 4. MCP — fastapi-mcp over those same routes, with its own command.
     mcp_src = _read(package / "mcp.py")
     mcp = (
         _uses(mcp_src, ("FastApiMCP", "fastapi_mcp"))
-        and "mcp" in extras
+        and "fastapi-mcp" in declared
         and any(cmd.endswith("-mcp") for cmd in scripts)
     )
+    if _uses(mcp_src, ("FastApiMCP", "fastapi_mcp")) and "fastapi-mcp" not in declared:
+        notes.append("mcp.py exists but the manifest declares no fastapi-mcp")
 
     # The MCP server takes its host and port from the environment, and those
     # two names have to say *this* brick. `mcp.py` is the file most often
@@ -709,7 +757,7 @@ _COLUMNS: tuple[tuple[str, str], ...] = (
     ("skill", "skil"),
     ("docker", "dock"),
     ("compose", "comp"),
-    ("all-extra", "all"),
+    ("in-the-hub", "hub"),
     ("pypi", "pypi"),
 )
 

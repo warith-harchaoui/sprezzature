@@ -71,7 +71,7 @@ def _page(lang: str, name: str) -> str:
     return where.read_text(encoding="utf-8")
 
 
-def _all_extra() -> int:
+def _in_the_hub() -> int:
     """How many requirements ``sprezzature`` names."""
     try:
         import tomllib
@@ -107,9 +107,9 @@ def test_the_page_says_how_many_packages_its_own_table_lists(lang: str) -> None:
 def test_the_table_lists_what_the_base_install_installs() -> None:
     """The page and ``pyproject.toml`` describe one suite, not two."""
     rows = len(_ROW_RE.findall(_page("en", "packages.html")))
-    assert rows == _all_extra(), (
+    assert rows == _in_the_hub(), (
         f"the surfaces table lists {rows} packages; "
-        f"sprezzature names {_all_extra()}"
+        f"sprezzature names {_in_the_hub()}"
     )
 
 

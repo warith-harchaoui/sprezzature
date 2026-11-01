@@ -180,7 +180,7 @@ def brick(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     (tmp_path / "monorepo" / "sprezzature-demo" / "SKILL.md").write_text(
         "# demo\n", encoding="utf-8"
     )
-    monkeypatch.setattr(AUDIT, "_all_extra", lambda: {"sprezzature-demo"})
+    monkeypatch.setattr(AUDIT, "_in_the_hub", lambda: {"sprezzature-demo"})
     return repo
 
 
