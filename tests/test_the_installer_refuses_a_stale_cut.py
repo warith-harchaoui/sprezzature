@@ -58,31 +58,60 @@ def _project(root: Path, name: str, *, render_age: float, source_age: float) -> 
     os.utime(source, (now - source_age, now - source_age))
 
 
-def test_a_render_older_than_its_page_is_refused(
+def test_a_render_older_than_its_page_is_stale(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     """The case that shipped a stale cut."""
     module = _installer(tmp_path, monkeypatch)
     _project(tmp_path, "accessibility-fr-portrait", render_age=86_400, source_age=60)
-    problems = module.install("accessibility", "fr", "portrait")
-    assert problems, "a cut older than its page was accepted"
-    assert "older than its index.html" in problems[0]
-    assert "render_films.sh" in problems[0], "the message does not say how to fix it"
+    render = module.newest_render("accessibility-fr-portrait")
+    assert render is not None
+    assert module.is_stale("accessibility-fr-portrait", render)
 
 
-def test_a_render_newer_than_its_page_passes_the_comparison(
+def test_a_render_newer_than_its_page_is_not(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    """Non-vacuity: the check must not refuse everything.
+    """Non-vacuity: the check must not refuse everything."""
+    module = _installer(tmp_path, monkeypatch)
+    _project(tmp_path, "accessibility-fr-portrait", render_age=60, source_age=86_400)
+    render = module.newest_render("accessibility-fr-portrait")
+    assert render is not None
+    assert not module.is_stale("accessibility-fr-portrait", render)
 
-    It stops at the *next* requirement rather than succeeding, because a real
-    install needs a poster time, a caption track and ``sprezzature-video``.
-    What matters is that the staleness message is not the one that comes back.
+
+def test_a_project_with_no_page_is_not_called_stale(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """A missing ``index.html`` is a different problem, and this check should
+    not claim it — a predicate that answers True for everything it cannot see
+    is a predicate nobody can trust."""
+    module = _installer(tmp_path, monkeypatch)
+    _project(tmp_path, "accessibility-fr-portrait", render_age=86_400, source_age=60)
+    (tmp_path / "accessibility-fr-portrait" / "index.html").unlink()
+    render = module.newest_render("accessibility-fr-portrait")
+    assert render is not None
+    assert not module.is_stale("accessibility-fr-portrait", render)
+
+
+def test_the_installer_actually_consults_the_check(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """A predicate nothing calls is the failure this repository makes most.
+
+    ``install`` is driven with the check forced to True, which makes it return
+    before it copies anything or shells out for a poster — so this needs
+    neither ``sprezzature-video`` nor a writable ``web/video``. The first
+    version of this file drove ``install`` for real, passed here, and failed on
+    a runner that has no ``sprezzature-video``.
     """
     module = _installer(tmp_path, monkeypatch)
     _project(tmp_path, "accessibility-fr-portrait", render_age=60, source_age=86_400)
+    monkeypatch.setattr(module, "is_stale", lambda project, render: True)
     problems = module.install("accessibility", "fr", "portrait")
-    assert not any("older than its index.html" in p for p in problems), problems
+    assert problems, "install ignored the staleness check"
+    assert "older than its index.html" in problems[0]
+    assert "render_films.sh" in problems[0], "the message does not say how to fix it"
 
 
 def test_a_missing_render_still_says_so(
