@@ -18,7 +18,7 @@ about what good looks like, it is sprezzature's.
 
 `sprezzature-audio` declares `narrate = ["speaker-helper[kokoro,detect]"]`, so
 Kokoro arrives through speaker-helper whichever door you knock on. **A
-sprezzature package wanting a voice depends on `sprezzature-audio[narrate]`,
+sprezzature package wanting a voice depends on `sprezzature-audio`,
 never on speaker-helper directly** — the espeak-ng loader can kill a process
 from C with no Python traceback, and that handling lives one layer down where
 it was learned.
