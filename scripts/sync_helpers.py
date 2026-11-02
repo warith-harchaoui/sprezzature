@@ -96,6 +96,22 @@ CANONICAL: dict[str, str] = {
         "sprezzature-figures/sprezzature_figures/editor/assistant/repair.py",
     "editor/assistant/fake_client.py":
         "sprezzature-figures/sprezzature_figures/editor/assistant/fake_client.py",
+    # The inherited-ceiling reader. A package may not promise a Python its
+    # dependencies cannot deliver, and `requires-python` is the promise a
+    # reader acts on. The check lived in two bricks out of eleven until
+    # 2026-11-02, and the single brick where an inherited ceiling actually bit
+    # — `sprezzature-accessibility`, claiming 3.14 over a `wallet-helper` that
+    # stops at 3.13 — was one of the nine without it.
+    #
+    # Shared rather than nine times rewritten, and shared *verbatim*: what
+    # differs per brick is the measured table, which stays in each brick's own
+    # test file. What must not differ is the reading — two cheaper ones were
+    # tried first and each produced a confident false accusation, and that
+    # reasoning is written into the file itself.
+    #
+    # `sprezzature-accessibility` is canonical: written there, and there is
+    # where the real defect was found.
+    "tests/_pywindow.py": "sprezzature-accessibility/tests/_pywindow.py",
 }
 
 #: Shared helpers duplicated across skills, in reporting order.
