@@ -58,7 +58,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12"]
+      # UNE SEULE version de Python sous la suite complete. La matrice en
+      # faisait tourner plusieurs, c'est-a-dire le meme travail multiplie par
+      # autant de coureurs pour attraper des differences de version que les
+      # tests ne regardent pas. Le plancher garde sa preuve : le job `floor`
+      # installe et importe le paquet sur la plus ancienne version promise,
+      # ce qui est la promesse faite a `pip install`, pour une fraction du
+      # cout.
+        python-version: ["3.12"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -143,3 +150,21 @@ jobs:
       # imported went with them, into the pre-push hooks of the two repositories
       # that have eval tests now: sprezzature-accessibility and
       # sprezzature-publish. A guard belongs where it can see the thing.
+
+  floor:
+    name: Plancher (3.10 installe et importe)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # `requires-python` est une promesse faite a qui lance `pip install` : sur
+    # cette version, le paquet s'installe et s'importe. Installer et importer,
+    # deliberement pas la suite de tests — les tests ont le droit d'employer des
+    # nouveautes de langage, et faire echouer le plancher la-dessus ferait
+    # echouer un job pour une raison etrangere a la promesse.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+      - run: pip install .
+      - run: python -c "import sprezzature"
