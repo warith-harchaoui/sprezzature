@@ -77,7 +77,7 @@ commoditised step in the chain and the least opinionated. If the request is
 "add a transition" or "animate this", it belongs to the renderer.
 
 It does not synthesize speech or write WebVTT by hand either: narration comes
-through `sprezzature-audio[narrate]`, and the VTT writer is that package's
+through `sprezzature-audio`, and the VTT writer is that package's
 single shared module. See `references/boundaries.md`.
 
 ## Neighbours
