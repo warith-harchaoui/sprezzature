@@ -79,8 +79,7 @@ def dependency_names(manifest: Path) -> list[str]:
     # they go before anything is read as a dependency.
     body = re.sub(r"#[^\n]*", "", block.group(1))
     return [
-        re.split(r"[<>=~\[; !]", m.group(1))[0].strip()
-        for m in re.finditer(r'"([^"]+)"', body)
+        re.split(r"[<>=~\[; !]", m.group(1))[0].strip() for m in re.finditer(r'"([^"]+)"', body)
     ]
 
 
@@ -99,9 +98,7 @@ def admits(specifier: str, version: str) -> bool:
     return SpecifierSet(specifier).contains(f"{version}.0")
 
 
-def overreach(
-    manifest: Path, measured: dict[str, tuple[str, ...]], version: str
-) -> list[str]:
+def overreach(manifest: Path, measured: dict[str, tuple[str, ...]], version: str) -> list[str]:
     """Dependencies that cannot be installed on a Python the manifest claims.
 
     Empty when the manifest does not claim that version — there is nothing to
