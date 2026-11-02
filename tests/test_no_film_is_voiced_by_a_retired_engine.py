@@ -59,6 +59,19 @@ def test_every_track_was_spoken_by_the_engine_the_router_names() -> None:
     if not VIDEO.is_dir():
         pytest.skip("web/video is gitignored and absent from this clone")
     pytest.importorskip("speaker_helper", reason="pip install speaker-helper")
+    # `narrate_films` imports `sprezzature_video`, which this repository's CI
+    # deliberately does not install — 21 packages and 161 MB per job, on three
+    # jobs, declared as a named exemption with its price.
+    #
+    # The import was unguarded and nothing noticed, because the line above
+    # skipped first: until 2026-11-02 the hub's CI resolved
+    # `sprezzature-audio` 1.5.0, whose base carried no `speaker-helper`.
+    # Publishing 1.9.0 — which folded narration into the base — pulled
+    # `speaker-helper` in, the skip stopped firing, and this test reached an
+    # import it had never reached. It had not been passing. It had been
+    # sleeping, and the run logs say so: 1.5.0 and no speaker_helper on the
+    # last green run, 1.9.0 and speaker_helper-0.14.1 on the first red one.
+    pytest.importorskip("sprezzature_video", reason="pip install sprezzature-video")
 
     import narrate_films
 
