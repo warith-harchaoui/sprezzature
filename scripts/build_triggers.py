@@ -453,6 +453,10 @@ CATALOGUE: dict[str, list[str]] = {
         "where did these incidents fall",
         "une carte par departement",
         "carte de situation",
+        "audit this map",
+        "is this map readable",
+        "carte de densité",
+        "where did the strikes land",
     ],
 }
 

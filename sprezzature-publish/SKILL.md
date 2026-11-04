@@ -30,7 +30,7 @@ metadata:
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language
 
-> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through either front door, `make-site <tool>` (argparse) and `sprezzature-publish <tool>` (click). Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP or MCP. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through the click front door, under two names that are one callable, `make-site <tool>` and `sprezzature-publish <tool>`. Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP or MCP. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 ## Audience and positioning
 

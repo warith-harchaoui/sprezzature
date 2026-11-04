@@ -123,10 +123,19 @@ def test_every_optional_entry_is_a_name_something_imports() -> None:
         repo = REPO_ROOT.parent / spec["repo"]
         if not repo.is_dir():
             continue
+        files = [repo / source for source in spec["sources"]]
+        # A kit built from a `package` ships that package's files, minus the
+        # excluded ones: read those too, or every optional entry of such a kit
+        # looks unused.
+        excluded = set(spec.get("package_exclude", []))
+        for package in spec.get("package", []):
+            files += [
+                path
+                for path in sorted((repo / package).rglob("*.py"))
+                if path.name not in excluded
+            ]
         body = "\n".join(
-            (repo / source).read_text(encoding="utf-8", errors="replace")
-            for source in spec["sources"]
-            if (repo / source).is_file()
+            path.read_text(encoding="utf-8", errors="replace") for path in files if path.is_file()
         )
         unused = [
             entry

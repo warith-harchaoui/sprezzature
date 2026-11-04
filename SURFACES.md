@@ -71,6 +71,15 @@ click is a **base dependency**, not an extra. With argparse gone no parser
 ships with Python, so an optional click would mean an install whose own
 commands do not run.
 
+The rule reached the per-tool commands on 2026-11-04. The groups had been
+click since 2026-10-25, but `sprezzature-<brick>-<tool>` and every
+`*-mcp` server still pointed at argparse `main`s in `scripts/`, which a grep
+of the package never saw. Every brick now carries a guard that runs each
+console script with `--help` and expects click's `Usage:`, and fails on an
+`argparse` import in its own modules. Two uses stay on purpose:
+sprezzature-cli-gui reads argparse parsers as its job, and the standalone
+per-chart generators of sprezzature-figures are scripts, not commands.
+
 ## 3. HTTP API — and the container it ships in
 
 A FastAPI app in `api.py`, with its dependencies behind an `api` extra so that
@@ -84,8 +93,14 @@ a container that starts and does the wrong thing. The compose file is where
 those four live as declared facts, so that `docker compose up` is the whole
 onboarding. One container is reason enough; a second only makes it worse.
 
-**Carried by** `sprezzature_<brick>/api.py`, the `api` extra, `Dockerfile`,
-`docker-compose.yml`.
+The image runs the brick's `-mcp` server, not `uvicorn <brick>.api:app`. The
+MCP endpoint is mounted when `mcp.py` is imported, so an image that served the
+API module alone answered every `/v1/...` route and had no `/mcp`: that was
+the case in all ten bricks until 2026-11-04. One process on port 8000 now
+serves both.
+
+**Carried by** `sprezzature_<brick>/api.py`, `Dockerfile`, `docker-compose.yml`
+(the base install carries FastAPI and uvicorn since 2026-11-01).
 
 ## 4. MCP
 
@@ -94,13 +109,15 @@ agent surface is not a second implementation — it is the same routes, named.
 This is the surface that lets someone describe the problem in their own words
 and have the engine answer.
 
-Two things make it real rather than nominal: an `mcp` extra that declares
-`fastapi-mcp` (pinned below `mcp 2.0`, which broke `FastApiMCP(...)`
+Two things make it real rather than nominal: `fastapi-mcp` in the base
+install (with `mcp` pinned below 2.0, which broke `FastApiMCP(...)`
 construction), and a `sprezzature-<brick>-mcp` console script, because an MCP
-server a host cannot spawn is not a server.
+server a host cannot spawn is not a server. The `description` passed to
+`FastApiMCP` is what a host reads first: two bricks served another brick's
+description until 2026-11-04.
 
-**Carried by** `sprezzature_<brick>/mcp.py`, the `mcp` extra, a `-mcp` console
-script.
+**Carried by** `sprezzature_<brick>/mcp.py`, a `-mcp` console script, the
+image's `CMD`.
 
 ## 5. Skill
 
