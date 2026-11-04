@@ -86,7 +86,7 @@ STATUS: dict[str, str] = {
 WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-ui": "Generates vanilla JS + Tailwind UI (components, pages, dataviz, audit).",
     "sprezzature-cli-gui": "Wraps an argparse / Click / any-CLI in a single-page HTML GUI (three adapters).",
-    "sprezzature-publish": "Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite.",
+    "sprezzature-publish": "Markdown → static site + meta tags + favicons + site indexes + plain-language rewrite; CTA-first SEO + GEO + AEO with a FAQ built from the site's own pages.",
     "sprezzature-accessibility": 'Static HTML a11y lint (20 rules, time-based media included) with `--fix` for the six safe mechanical repairs. Drafts W3C-compliant alt text via local Ollama vision (qwen3-vl:8b).',
     "sprezzature-colors": "WCAG contrast audit + CVD simulation + curated palette + Tailwind config emitter.",
     "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT — and reads written text aloud through Kokoro, OpenVoice or Chatterbox, timed track included.",
@@ -121,9 +121,11 @@ ROUTES: dict[str, tuple[str, str]] = {
         'this", « une interface pour l\'équipe »',
     ),
     "sprezzature-publish": (
-        "Markdown that has to become a site somebody else can find",
+        "Markdown that has to become a site somebody else can find — or a site whose "
+        "readers should do something: book, buy, install, sign up",
         '"put this online", "why does this look bad when shared", "SEO", "favicons", '
-        '"make it readable for a wider audience"',
+        '"make it readable for a wider audience", "nobody books a call", '
+        '"show up in ChatGPT answers", « mon site ne convertit pas »',
     ),
     "sprezzature-accessibility": (
         'HTML — usually HTML YOU JUST WROTE, before anyone asks; An image that needs words: alt text, a description, a caption',
@@ -271,6 +273,16 @@ CATALOGUE: dict[str, list[str]] = {
         "SEO",
         "AI Overview",
         "GEO",
+        "AEO",
+        "answer engine optimisation",
+        "write a FAQ",
+        "FAQPage",
+        "calls to action",
+        "CTA",
+        "ctas.yaml",
+        "my site does not convert",
+        "money pages",
+        "nosnippet",
         "favicons",
         "app icons",
         "robots.txt",

@@ -4,11 +4,11 @@ description: >-
   Apply the canonical Laws of UX (Jon YABLONSKI, lawsofux.com) to vanilla-JS +
   Tailwind work, both when designing a screen and when auditing one that
   exists. The reference covers 30 laws with trigger / action / Tailwind hook;
-  sprezzature-ux-laws-audit flags the mechanically detectable subset (Hick,
-  Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention,
-  Choice Overload) with severity and JSON output, while Doherty is vocabulary,
-  not a check. Use it when somebody is complaining about how an interface
-  FEELS, and on any interface you just authored. Trigger phrases: "audit for
+  the auditor (CLI, API, MCP audit_interface) flags the eight
+  source-decidable ones (Hick, Choice Overload, Miller, Jakob, Fitts,
+  Aesthetic-Usability, Selective Attention, Tesler); --fix repairs four.
+  Doherty is vocabulary, not a check. Use it when somebody is complaining
+  about how an interface FEELS, and on any interface you just authored. Trigger phrases: "audit for
   Laws of UX", "too many choices / options", "cognitive load", "is my nav too
   Hick-heavy", "check my form for Postel / Tesler", "Doherty threshold",
   "reduce clutter", "this page is overwhelming". Not this one when: the defect
@@ -17,9 +17,10 @@ description: >-
   The exhaustive trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
-  Runtime: Claude.ai, Claude Code, OpenCode. The auditor needs
-  Python 3.10+ stdlib only (html.parser, argparse, json). No network
-  access required. Reference is plain Markdown with no exec deps.
+  Runtime: Claude.ai, Claude Code, OpenCode. One `pip install
+  sprezzature-ux-laws` (Python 3.10+) brings every surface; the auditor
+  itself uses the standard library only (html.parser). No network access
+  required. Reference is plain Markdown with no exec deps.
 metadata:
   author: Warith HARCHAOUI
   version: 1.7.0
@@ -60,8 +61,8 @@ of UX specifically:
 | Mode | Tool | When to load |
 |---|---|---|
 | **Make** — pick the right law for a screen | `references/laws-of-ux.md` | At generation time. The reference is structured for in-conversation lookup: trigger → action → Tailwind hook. Load it once per design surface; pick ONE law to apply, not five. |
-| **Make** — auto-fix mechanically-fixable violations | `audit_laws_of_ux.py --fix` | Closes the audit↔make loop: every violation that can be repaired by a one-line text edit is fixed in place (Fitts adds `min-h-11`; Aesthetic-Usability adds `focus-visible:ring-2`; Miller chunks long digit runs with NBSP; Jakob rewrites `<div>` / `<span>` to `<button>`). Iterates until convergence; idempotent. |
-| **Audit** — fail the build on detectable violations | `audit_laws_of_ux.py` | Pre-commit, pre-merge, CI. Static parser, no browser, no network. Findings come as `error` or `warning`; exit non-zero only when an `error` is found unless `--strict` is set. |
+| **Make** — auto-fix mechanically-fixable violations | `sprezzature-ux-laws --fix` | Closes the audit↔make loop for four laws: Fitts adds `min-h-11`; Aesthetic-Usability adds `focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue`; Miller splits a long digit-bearing run into groups of four with non-breaking spaces (names such as `GMTED2010` are never touched); Jakob rewrites a one-line clickable `<div>` / `<span>` to `<button>`. Up to five passes; idempotent. A fixer only extends an existing `class` attribute. Diff the result before committing. |
+| **Audit** — fail the build on detectable violations | `sprezzature-ux-laws` / MCP `audit_interface` | Pre-commit, pre-merge, CI. Static parser, no browser, no network. Findings come as `error`, `warning` or `info`. Exit 1 when an `error` is found (any finding with `--strict`); exit 2 on an unknown law slug or a missing path. |
 
 ## Decision tree
 
@@ -70,7 +71,8 @@ of UX specifically:
 | "design / build / make this screen using Hick / Fitts / Miller / Jakob / Tesler / Peak-End" | make | Load `references/laws-of-ux.md`, jump to the relevant bucket, apply the **smallest concrete change** the law asks for. |
 | "what does the Laws of UX say about this onboarding flow" | make | Load reference, walk the **Time** + **Memory** buckets. |
 | "is this a dark pattern" | make | Stop here, hand to `sprezzature-ui/references/anti-patterns.md`. |
-| "audit this page / component / dir for Laws of UX" | audit | `sprezzature-ux-laws-audit <file-or-dir>` |
+| "audit this page / component / dir for Laws of UX" | audit | `sprezzature-ux-laws <file-or-dir>` (or `sprezzature-ux-laws-audit`, same flags); from an MCP host, `audit_interface` with the HTML |
+| "which laws can you check" | audit | MCP `list_laws` (`GET /v1/laws`): the eight slugs to pass to `--only` or `laws` |
 | "auto-fix the easy ones" / "make my UI pass the Laws of UX" | make | `sprezzature-ux-laws-audit --fix <file-or-dir>`. Applies the four mechanical fixers (Fitts / Aesthetic-Usability / Miller / Jakob) in place. Add `--dry-run` to preview. |
 | "fail the build on Hick / Jakob violations" | audit | `sprezzature-ux-laws-audit --only hick,jakob --strict <dir>` |
 | "JSON for CI" | audit | `sprezzature-ux-laws-audit --json <dir>` |
@@ -86,14 +88,14 @@ sprezzature-ui starter components.
 
 | Law | Severity | What the static parser flags | False positives to expect |
 |---|---|---|---|
-| Hick's Law | error | `<nav>` exposing > 7 top-level *logical* choices (radiogroups / tablists collapse to one) | Rich app shells with a documented "More" menu and a deliberate top-level surface area. |
-| Choice Overload | warning | A `<div>`/`<section>` with `pricing`/`plans` + `grid`/`flex` in its class list and > 4 direct column children | A genuine four-tier B2B price table where each tier is concrete; mark with `--ignore choice-overload`. |
-| Miller's Law | warning | A visible alphanumeric run ≥ 8 chars in body text | English words 8–12 chars are excluded; CSS class hashes in `class=""` attributes are stripped before scanning. |
+| Hick's Law | error | `<nav>` exposing > 7 top-level `<a>` / `<button>` choices on one screen, counted per breakpoint (phone or desktop, from the Tailwind display classes), with `<details>`, `<dialog>`, `<menu>` and `role` radiogroup / tablist / menubar / listbox / combobox each counting once | Rich app shells with a documented "More" menu and a deliberate top-level surface area. |
+| Choice Overload | warning | A `<div>`/`<section>` with `pricing`/`plans` + `grid`/`flex` in its class list and > 4 direct `<article>` / `<div>` children | A genuine five-tier B2B price table where each tier is concrete; mark with `--ignore choice-overload`. |
+| Miller's Law | warning | A visible run of ≥ 8 letters and digits containing at least one digit, outside `<script>` / `<style>` | Purely alphabetic words are excluded; `class`, `id`, `href`, `src` values are stripped before scanning; letters-then-digits names (`GMTED2010`, `LANDSAT8`) are skipped. |
 | Jakob's Law | error | `<div>` / `<span>` with `onclick=` / `role="button"` / `cursor-pointer` and no real interactive child | Wrappers that contain a real `<button>` / `<a>` are exempt. |
-| Fitts's Law | warning | Interactive element with no `min-h-11+` / `h-11+` / `size-11+` Tailwind class | Plain text links inside paragraphs (heuristically exempted). |
-| Aesthetic-Usability | warning | Interactive element without `focus-visible:ring-*` or `focus:ring-*` | Type=hidden inputs are exempted. |
-| Selective Attention | warning | `<span>` whose only signal is `text-red-*` / `text-green-*` and whose visible text is not a status word, with no icon child | Spans that contain a status word ("Failed", "OK", …) or an `<svg>`/`<img>` child are exempted. |
-| Tesler's Law | warning | `HH:MM` time string with no timezone token (`UTC`, `+02:00`, `Europe/Paris`, `Z`, named TZ) within 40 chars | Durations like "Took 14:30"; silence with `--ignore tesler`. |
+| Fitts's Law | warning | Interactive element with no `min-h-11+` / `h-11+` / `size-11+` Tailwind class (or `full` / `screen` / `auto`) | An `<a>` without `flex` / `inline-flex` / `block` / `btn` / `button` / `bg-*` / `border-*` is treated as a text link and skipped. On a page with fewer than two distinct Tailwind utilities: one `info` for the document instead. |
+| Aesthetic-Usability | warning | Interactive element without `focus-visible:ring-*` or `focus:ring-*` | Type=hidden inputs are exempted. Same Tailwind precondition and single `info` as Fitts. |
+| Selective Attention | warning | `<span>` coloured `text-red-*` / `text-green-*` / `text-amber-*` / `text-yellow-*` / `text-orange-*` whose visible text holds no status word, with no icon child | Spans that contain a status word ("Failed", "OK", …) or an `<svg>`/`<img>` child are exempted. |
+| Tesler's Law | warning | `HH:MM` time string with no timezone token (`UTC`, `+02:00`, `Europe/Paris`, `Z`, named TZ) within 40 chars | Times in a duration context (`duration`, `elapsed`, `remaining`, `data-ra-*`, a range input, `<progress>`, `<audio>`, `<video>`) are skipped; other durations ("Took 14:30") still fire. |
 | Doherty Threshold | — | Out of scope for static analysis. Use Lighthouse + a real device. | — |
 
 ## Visual laws need the Ralph Eyeball Loop
@@ -177,17 +179,19 @@ warnings pass and only fail on real errors (Hick, Jakob).
   playbook and an audit-time refusal list. Load it on demand; not
   preloaded.
 
-## Scripts
+## Surfaces
 
 Shipped by the standalone [`sprezzature-ux-laws`](https://github.com/warith-harchaoui/sprezzature-ux-laws)
-package (`pip install sprezzature-ux-laws`), not by this monorepo. It
-registers `sprezzature-ux-laws-audit`; `python -m
-sprezzature_ux_laws_scripts.audit_laws_of_ux` is the same entry point for an
-install whose scripts directory is not on `$PATH`.
+package, not by this monorepo. One `pip install sprezzature-ux-laws` brings
+all of them:
 
-- `sprezzature-ux-laws-audit`: Python 3.10+ stdlib-only static
-  auditor. Run `--help` for the full flag list (`--json`, `--strict`,
-  `--only LAW1,LAW2`, `--ignore LAW1,LAW2`).
+| Surface | Name | Notes |
+|---|---|---|
+| Library | `import sprezzature_ux_laws` | `audit_html`, `audit_file`, `fix_file`, `LAWS`, `LAW_REGISTRY`, `Finding` |
+| CLI | `sprezzature-ux-laws` (click), `sprezzature-ux-laws-audit` (per-tool script) | Same handler and flags: `--json`, `--strict`, `--only`, `--ignore`, `--fix`, `--dry-run` |
+| HTTP API | `uvicorn sprezzature_ux_laws.api:app` | `GET /health`, `GET /v1/laws`, `POST /v1/audit` (400 on an unknown law); Docker and compose in the repository |
+| MCP | `sprezzature-ux-laws-mcp` (endpoint `/mcp`) | Tools = `operation_id`s: `health`, `list_laws`, `audit_interface`. No tool writes files: `--fix` is CLI and library only |
+| Skill | this file | Routing rules in the package's `TRIGGERS.md` |
 
 ## Companion skills
 

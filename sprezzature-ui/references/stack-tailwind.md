@@ -48,10 +48,10 @@ which of the three families a surface uses.
 **Always self-host.** No Google Fonts CDN in production. The jsDelivr
 `gh` proxy is acceptable for a prototype with a self-hosted fallback;
 production builds should ship the WOFF2 files alongside the HTML. Run
-the validator (`scripts/validate_content.py`) after any typography
-change. It does not check the family itself but it catches the
-forbidden raw-hex / framework-import regressions a font swap can
-accidentally introduce.
+the suite's validator (`scripts/validate_content.py` in the sprezzature
+monorepo) after any typography change. It does not check the family
+itself, but it catches a forbidden framework import that a font swap
+can bring in by accident.
 
 ## Tailwind config (drop into `tailwind.config.js`)
 
@@ -60,7 +60,7 @@ accidentally introduce.
 > time with:
 >
 > ```bash
-> sprezzature-colors-palette-to-tailwind --emit theme
+> python sprezzature-colors/scripts/palette_to_tailwind.py --emit theme
 > ```
 >
 > The emitter produces the eight saturated brand hues with their

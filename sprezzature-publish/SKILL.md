@@ -1,20 +1,19 @@
 ---
 name: sprezzature-publish
 description: >-
-  Turn a folder of Markdown into a static site: per-page meta tags (Open
-  Graph + Twitter Card + Schema.org JSON-LD), a favicon / app-icon / PWA set
-  from one logo, robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom
-  / RSS + humans.txt, plain-language rewrites, and MP3 narration via local
-  OSS TTS with a sentence-by-sentence read-along. Also audits a site that
-  already exists — HTML, no Markdown needed — and repairs with --fix what
-  can be derived rather than invented. Use it when you are holding writing
-  that has to become a findable site, or a site that has to get better.
-  Trigger phrases: "markdown to website", "meta tags", "SEO", "GEO",
-  "favicons", "sitemap", "llms.txt", "RSS", "audit my site", "plain
-  language", "narrate this post", "read-along". Not this one when: the
-  question is accessibility or alt text (sprezzature-accessibility), or the
-  speech is recorded and needs transcribing rather than generating
-  (sprezzature-audio). The exhaustive trigger catalogue is in
+  Turn a folder of Markdown into a static site: meta tags (Open Graph,
+  Twitter Card, JSON-LD), a favicon / PWA set from one logo, robots.txt +
+  sitemap.xml + llms.txt + Atom / RSS, plain-language rewrites, local TTS
+  narration with a read-along. Audits a site that already exists (HTML, PHP,
+  no Markdown needed). SEO, GEO and AEO ordered by the call to action: asks
+  which CTA the site is for, builds the FAQ it lacks from its own pages, one
+  report with money pages first. Use it when you are holding writing that
+  has to become a findable site, or a site whose readers should book, buy or
+  install. Trigger phrases: "markdown to website", "meta tags", "SEO",
+  "GEO", "AEO", "write a FAQ", "favicons", "llms.txt", "audit my site",
+  "narrate this post". Not this one when: the question is accessibility or
+  alt text (sprezzature-accessibility), or the speech is recorded and needs
+  transcribing (sprezzature-audio). The exhaustive trigger catalogue is in
   `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
@@ -56,6 +55,35 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 | "robots.txt" / "sitemap.xml" / "llms.txt" / "llms-full.txt" / "feed" / "Atom" / "RSS" / "humans.txt" | All from a single command; auto-detects a blog folder for the feed |
 | "plain language" / "simplify this copy" / "rewrite at grade N" | Same meaning, marketing voice stripped, output length ≤ 1.1× original |
 
+## CTA first: ask before you run (SEO, GEO, AEO)
+
+When the request is about a site's readers doing something — "my site
+doesn't sell", "nobody books a call", "SEO", "GEO", "AEO", "write me a FAQ",
+"show up in ChatGPT answers" — the first step is a **question to the user**,
+not a command:
+
+1. Run `sprezzature-publish-cta <site> --no-ask --top 8` (or the MCP tool
+   `find_calls_to_action` with the pages) to see what the site already
+   links to. **Show the candidates and ask**: which one action is this site
+   for (book, buy, contact = *decide*; install, download, sign up =
+   *evaluate*; read = *learn*), which secondary ones, for whom, and the one
+   name of the organisation. Never pick for the user from the detection.
+2. Write the answer to `ctas.yaml` (`sprezzature-publish-cta <site> --write
+   ctas.yaml`, or by hand: `offer`, `organization`, `primary`,
+   `secondary`). Over MCP, send it as the `ctas` parameter.
+3. `sprezzature-publish-faq <site>` drafts the FAQ the site is missing:
+   every answer from a passage of the site, every number from that passage,
+   the rest in a gap report. It is a **draft**: show it, do not publish it.
+   `--audit --fix` rebuilds `FAQPage` markup from the visible FAQ.
+4. `sprezzature-publish-findable <site> --base-url …` is the one report,
+   money pages first, each finding tagged `seo` / `geo` / `aeo`.
+5. `sprezzature-publish-indexes … --offer "…" --cta "Label=URL"` so
+   `llms.txt` leads with the offer and the CTA's own URL.
+
+Never claim `FAQPage` markup ranks: Google stopped showing FAQ rich results
+on 2026-05-07. The FAQ is built for its visible text. How many CTAs compete
+on one screen is sprezzature-ux-laws (Hick), not this skill.
+
 ## Two modes: make and audit
 
 Make-side scripts paired with two audit-side tools — one before the render,
@@ -65,6 +93,7 @@ exists**, which has no Markdown to go back to.
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make** — generate site artifacts | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate_post.py`, `readalong.py` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
+| **Make + audit** — what the site is for | `cta.py`, `faq.py`, `findable.py` | Declared CTAs (`ctas.yaml`), the FAQ built from the site's own pages and its `FAQPage` markup, and the joint SEO + GEO + AEO report ordered by money pages. Reads HTML, PHP, Markdown, JSON and YAML. |
 | **Audit** — before the render, gate the source | `lint_markdown.py` | Markdown lint with project-aware rules (heading order, fenced-code language, link freshness). `--fix` strips trailing whitespace. |
 | **Audit** — after the render, read what was emitted and repair it | `audit_site.py` | `sprezzature-publish-audit <dir\|page\|url>`. Head meta, Open Graph, Twitter Card, JSON-LD, icon and manifest links, `robots.txt`, `sitemap.xml`, `llms.txt`, feed, icon set on disk. **No Markdown source required** — this is the tool for a site somebody else built. `--fix` writes back only what is *derived*: canonical from `--base-url`, `og:*` / `twitter:*` mirrored from the page's own title and description, the icon links from the `head.html` `favicons` wrote, and `robots.txt` / `sitemap.xml` regenerated through `site_indexes`. The wording of a title, the choice of an `og:image`, a JSON-LD body: reported with the command that drafts them, never written. A URL is reported, never repaired. |
 
@@ -185,6 +214,9 @@ modified in place.
 | `sprezzature-publish-meta` | `pip install 'sprezzature-publish'` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
 | `sprezzature-publish-indexes` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
 | `sprezzature-publish-audit` | stdlib only | Audits an **emitted** site — directory, single page or live URL — and repairs with `--fix` what can be derived. The entry point for "improve this existing site". |
+| `sprezzature-publish-cta` | `pip install 'sprezzature-publish'` | Detects the calls to action a site offers, asks which ones it is for, writes `ctas.yaml`, audits every page against it. Rules only. |
+| `sprezzature-publish-faq` | `pip install 'sprezzature-publish'` (+ Ollama for `--llm`) | Builds the FAQ a site lacks from its pages, grounded and gap-reported; audits and fixes `FAQPage` markup. |
+| `sprezzature-publish-findable` | `pip install 'sprezzature-publish'` | One SEO + GEO + AEO report, money pages first, `--fix` for the deterministic repairs. |
 | `sprezzature-publish-plain` | `pip install 'sprezzature-publish'` + Ollama | Rewrites copy at a target grade; strips marketing voice |
 | `sprezzature-publish-narrate` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
 | _(the voices)_ | `pip install sprezzature-audio` | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, invoked as subprocesses by `narrate_post.py`. They live in `sprezzature-audio` with the rest of the sound modality; a reader who only wants Markdown rendered should not install a speech stack to get it. |

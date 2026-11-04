@@ -4,11 +4,11 @@ description: >-
   Wrap an existing command-line tool in a single-page vanilla-JS +
   Tailwind GUI. Walks the parser itself for Python CLIs — argparse, Click,
   Typer — and parses `--help` in a subprocess for anything else, covering
-  a Go or Rust CLI (cobra, clap) at lower fidelity. Sub-commands and flags
-  become forms, segmented controls and file inputs, emitted as one
-  self-contained HTML file that builds the exact command line. For CLI
-  authors whose users will not type a flag: researchers, data scientists,
-  DevOps / SRE, anyone needing a web UI without React. Use it when you are
+  a Go or Rust CLI (cobra, clap) at lower fidelity. Sub-commands become
+  collapsible forms and flags become checkboxes, dropdowns, number and text
+  fields, in one self-contained HTML file that builds the exact command
+  line without running it. An audit says whether a page generated earlier
+  still covers the CLI. Use it when you are
   holding a command-line tool somebody who will not type it needs to run.
   Trigger phrases: "wrap this CLI in a GUI", "build a UI for my CLI",
   "argparse to GUI", "click to web UI", "GUI for my Python script", "web
@@ -18,11 +18,12 @@ description: >-
   catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
-  Runtime: Claude.ai, Claude Code, OpenCode. Output is one-page HTML + ES
-  modules + Tailwind that runs in any modern browser. Reads CLIs from any
-  argparse / Click / Typer / clap / commander / cobra source. Runnable demo
-  needs Python 3.10+ stdlib only; no third-party deps. Network access not
-  required.
+  Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+, one install:
+  `pip install sprezzature-cli-gui` (Click, Typer, FastAPI and the MCP
+  server included). Output is one HTML page that runs in any modern browser;
+  it loads Tailwind's Play build from cdn.tailwindcss.com for styling, and
+  the form works unstyled offline. The worked demo in assets/ needs only the
+  Python standard library.
 metadata:
   author: Warith HARCHAOUI
   version: 1.7.0
@@ -66,10 +67,22 @@ gates on the emitted HTML.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — CLI → HTML (three adapters) | `cli_to_gui.py` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (str / int / float / choice / bool / file), required marker, default values pre-filled, a "Build command" button that constructs the CLI line locally. Output passes both `sprezzature-ux-laws` audit and `sprezzature-accessibility` lint with zero findings. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
+| **Make** — CLI → HTML (three adapters) | `sprezzature-cli-gui` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (bool → checkbox, choice → dropdown, int / float → number input, file and str → text input), required marker, default values pre-filled, and a "Build command" button per form that constructs the CLI line locally from that form's fields. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
 | **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
-| **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `sprezzature-ux-laws-audit` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. The test suite asserts the output passes both gates. |
-| **Audit** — does the page still cover the CLI | `sprezzature-cli-gui-audit <spec> <page.html>` | This brick's own promise, checked: every sub-command and flag reachable, no field building an option the parser rejects, no choice quietly dropped, and a command line seeded with the name the tool is actually installed as. A page that lost a flag renders and behaves perfectly — the option is simply unreachable — so the disagreement has to be looked for. Exit 1 on any finding, so it gates a build. |
+| **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `sprezzature-ux-laws-audit` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. Measured on 2026-11-04 on a generated page: the accessibility lint reports 0 findings, the UX-laws audit 2 info-level notes it cannot decide from the classes. No test in the package asserts either gate. |
+| **Audit** — does the page still cover the CLI | `sprezzature-cli-gui-audit <spec> <page.html>` | This brick's own promise, checked by five rules: `flag-not-in-page` (an option with no field), `field-has-no-flag` (a field building an option the parser rejects), `choice-dropped`, `prog-missing` and `prog-mismatch` (the command line is not seeded with the installed name). A page that lost a flag renders and behaves perfectly — the option is simply unreachable — so the disagreement has to be looked for. `--format text|json`, `--prog`. Exit 1 on any finding, so it gates a build. |
+
+## Five surfaces
+
+| Surface | Entry point | Notes |
+|---|---|---|
+| Library | `from sprezzature_cli_gui import walk, render_html, audit, Finding` | `walk(obj, prog=None)` reads an argparse parser, a Click command or a Typer app in the caller's process. |
+| CLI | `sprezzature-cli-gui`, `sprezzature-cli-gui-audit` | Click commands; shell completion through `_SPREZZATURE_CLI_GUI_COMPLETE`. |
+| HTTP | `uvicorn sprezzature_cli_gui.api:app`, or `docker compose up` in the package repository | `GET /health`, `GET /v1/example`, `POST /v1/render` (tree in, HTML out), `POST /v1/audit` (`schema` + `page` in, findings out). |
+| MCP | `sprezzature-cli-gui-mcp [--host H] [--port P]` | Endpoint `/mcp`. Tools = `operation_id`: `health`, `get_example_schema`, `render_gui`, `audit_gui`. |
+| Skill | this file | Routing; the catalogue is in `references/triggers.md`. |
+
+The HTTP and MCP surfaces take a schema tree, never a `module:factory` spec: importing a module named by a remote caller would be remote code execution. To render over MCP, walk the parser locally (`sprezzature-cli-gui SPEC --json`) or call `get_example_schema` and copy its shape.
 
 ## Quick recipe — the one command
 
@@ -78,18 +91,23 @@ script. Don't re-derive the workflow if the user just wants the HTML.
 
 ```bash
 # Spec is "<file>.py:factory" or "pkg.mod:factory".
-# Factory is a zero-arg callable returning argparse.ArgumentParser
-# OR click.Command (auto-detected). `sprezzature-cli-gui` is the console
-# script the standalone package installs (pip install sprezzature-cli-gui).
+# Factory is a zero-arg callable returning argparse.ArgumentParser,
+# click.Command or typer.Typer (auto-detected); the spec may also name
+# such an object directly, which is then never called. `sprezzature-cli-gui`
+# is the console script the package installs (pip install sprezzature-cli-gui).
+# Options: --out PATH, --title TEXT, --prog TEXT (the installed command name,
+# when Click or Typer reports a function name), --json (the tree, no HTML).
 sprezzature-cli-gui <spec> --out path/to/index.html
 
 # Examples:
 sprezzature-cli-gui mycli/cli.py:make_parser --out dist/gui.html
 sprezzature-cli-gui mypkg.cli:cli            --out dist/gui.html
+sprezzature-cli-gui mypkg.cli:app --prog mytool --out dist/gui.html   # Typer app
 
 # For a non-Python CLI (clap / cobra / commander), or a Python CLI
-# whose factory cannot be imported: --from-help runs the binary
-# with --help and parses the output.
+# whose factory cannot be imported: --from-help runs the command
+# with --help appended and parses the output. Nothing falls back to
+# it on its own; pass the flag.
 sprezzature-cli-gui --from-help "mybin"        --out dist/gui.html
 sprezzature-cli-gui --from-help "cargo run --" --out dist/gui.html
 ```
@@ -106,7 +124,7 @@ def make_parser():
 
 Then point the spec at `adapter.py:make_parser`.
 
-Verify the output passes both audit gates (zero findings):
+Check the output with both audit gates:
 
 ```bash
 sprezzature-ux-laws-audit path/to/index.html

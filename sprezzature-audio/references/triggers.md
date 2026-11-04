@@ -14,7 +14,7 @@ Said without naming a tool: "what did they say in this meeting", "who spoke when
 
 ## When it is not
 
-Not this one when: the job is to wire a narration into a page — player, read-along highlighting, the site (sprezzature-publish, which calls this one for the voice) — or the words describe an image (sprezzature-accessibility). The catalogue is in `references/triggers.md`.
+Not this one when: the job is to wire a narration into a page (sprezzature-publish, which calls this one for the voice) or the words describe an image (sprezzature-accessibility). The catalogue is in `references/triggers.md`.
 
 ## Every phrase that names this skill
 

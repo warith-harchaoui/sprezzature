@@ -17,7 +17,7 @@ baseline for long-form text. The cases where this earns its keep:
 - A WCAG 2.x requirement. SC 1.2.x covers text-for-media (captions,
   transcripts), not media-for-text.
 - A replacement for `<track>` elements on audio/video. The
-  captions pipeline (`sprezzature-audio-captions`)
+  captions pipeline (`sprezzature-audio/scripts/captions_from_whisper.py`)
   is the WCAG-mandated direction.
 - A substitute for human-narrated content where the author's voice
   matters editorially (memoir, opinion, performance writing: record
@@ -26,23 +26,25 @@ baseline for long-form text. The cases where this earns its keep:
 ## Quick start
 
 ```bash
-# 1. Install one engine (both are MIT for code AND weights)
-`pip install 'sprezzature-publish'`
-sprezzature-audio-install-voice --engine chatterbox
+# 1. One install; the voices come with sprezzature-audio, a base dependency.
+pip install sprezzature-publish
+sprezzature-audio-install-voice --engine kokoro      # model files, once
 
-# 2. Pick a built-in voice (or skip to clone a custom voice below)
-sprezzature-audio-voice --engine chatterbox --sample
-# Listen to out/voice-samples/chatterbox/*.wav, decide.
+# 2. Listen before choosing (optional)
+sprezzature-audio-voice --engine kokoro --sample
 
-# 3. Narrate a post
-sprezzature-publish-narrate \
-    --engine chatterbox \
-    --voice default \
-    posts/2026-06-21-hello.md
+# 3. Narrate a post (Markdown, or an HTML page with --scope)
+sprezzature-publish-narrate posts/2026-06-21-hello.md --out-dir site/audio/
+sprezzature-publish-narrate page.html --scope article --audio-format mp3 --bitrate 64k
 
-# 4. The result + a sha256-keyed manifest land under
-#    out/audio/narration.wav + out/audio/manifest.json
+# 4. The audio, its timed track and a sha256-keyed manifest land in --out-dir.
 ```
+
+Leave `--engine` unset. The router in `speaker-helper` picks the engine from
+the language and the offline condition, which is where that decision
+belongs; naming one overrides it on purpose. `--voice` left empty lets each
+engine use its default (for Kokoro, the voice that speaks the detected
+language). `--lexicon words.yaml` fixes the words no engine can guess.
 
 ## Cloning your own voice
 
@@ -59,10 +61,8 @@ Illinois BIPA and similar laws).
 arecord -d 20 -f cd -r 24000 -c 1 my-voice.wav   # Linux
 # Or: any QuickTime / Voice Memos / Audacity export to WAV.
 
-# 2. Pass it as --voice-sample to narrate_post.py
-sprezzature-publish-narrate \
-    --engine chatterbox \
-    --voice-sample my-voice.wav \
+# 2. Pass it as --voice-sample
+sprezzature-publish-narrate --engine chatterbox --voice-sample my-voice.wav \
     posts/2026-06-21-hello.md
 ```
 
@@ -73,53 +73,18 @@ expressive output but is more sensitive to noise in the reference.
 
 ## Engine matrix
 
-| Engine | Code lic. | Weights lic. | Built-in voices | Clone | Strength |
-|---|---|---|---|---|---|
-| **OpenVoice v2** (MyShell) | MIT | MIT | 5+, multi-lang | Yes | Cross-lingual, preserves accent of the sample. |
-| **ChatterboxTTS** (Resemble) | MIT | MIT | 1 default, lib via WAV files | Yes | More expressive (continuous `exaggeration` dial). |
-| ~~F5-TTS~~ | MIT | **CC-BY-NC-4.0** | — | Yes | Excluded: non-commercial weights. |
-| ~~XTTS-v2~~ (Coqui) | MIT | **CPML non-commercial** | — | Yes | Excluded: non-commercial + project shut down 2024-01. |
-| ElevenLabs | proprietary | proprietary | many | Yes | API-only, paid. Not shipped; documented as a hook for those who accept SaaS. |
+| Engine | Code lic. | Weights lic. | Clone | Strength |
+|---|---|---|---|---|
+| **Kokoro** (82 M parameters) | Apache-2.0 | Apache-2.0 | No | The default: no torch, runs on ONNX, fast on a laptop CPU. |
+| **OpenVoice v2** (MyShell) | MIT | MIT | Yes | Cross-lingual, keeps the accent of the sample. |
+| **ChatterboxTTS** (Resemble) | MIT | MIT | Yes | More expressive (continuous `exaggeration` dial); not deterministic, so one synthesis per line. |
+| ~~F5-TTS~~ | MIT | **CC-BY-NC-4.0** | Yes | Excluded: non-commercial weights. |
+| ~~XTTS-v2~~ (Coqui) | MIT | **CPML non-commercial** | Yes | Excluded: non-commercial, project shut down 2024-01. |
 
-**Rule of thumb:** pick **OpenVoice v2** for multi-lingual content
-where you want the cloned voice to sound consistent across languages.
-Pick **ChatterboxTTS** for English-only content where expressiveness
-matters (essays with mood swings, opinion pieces). Both are
-acceptable defaults; the narration manifest records which one
-produced each clip so you can A/B.
-
-### Installation gotcha: OpenVoice package rename
-
-Between mid-2025 and mid-2026 the upstream `myshell-ai/OpenVoice`
-repo renamed the `pyproject.toml` package name from `openvoice` to
-`myshell-openvoice` without changing the import path. Modern pip
-rejects the mismatch:
-
-```text
-Requested myshell-openvoice from git+https://github.com/myshell-ai/OpenVoice.git@main
-has inconsistent name: expected 'openvoice', but metadata has 'myshell-openvoice'.
-ERROR: No matching distribution found for openvoice (unavailable)
-```
-
-The pin lives with the engine, which is in `sprezzature-audio` now:
-`scripts/requirements-narrate-openvoice.txt` there, and it still uses
-the old name. Two workable fixes locally:
-
-1. **Pin a pre-rename commit.** Replace `@main` in that file with a
-   commit SHA from before the rename (any commit on the `main` branch
-   tagged `v2.x.x` works). This is the reproducible path; the
-   SECURITY.md "Supply-chain notes" line about pinning minor versions
-   applies here too.
-2. **Use the upstream package name.** Edit the line to
-   `myshell-openvoice @ git+…@main`. Pip then accepts the install. The
-   import path inside the engine (`import openvoice` / `from openvoice
-   import ...`) is unchanged.
-
-`sprezzature-audio-install-voice --engine openvoice` does **not** call
-pip for the library; it checks that `openvoice` imports and downloads
-the v2 checkpoints into the expected layout, so it is unaffected. The
-pip-install step is on you (or your pin) until the OpenVoice
-maintainers republish under a stable name.
+The engines, their installation and their known traps live in
+`sprezzature-audio`; this package calls them as subprocesses so their
+imports never enter its graph. The manifest records which engine produced
+each clip.
 
 ## Hints derived from structure
 
@@ -253,6 +218,93 @@ alt text may be several sentences while the picture is one object. Both
 are handled by the highlight simply staying where it is — which is also
 why it no longer blinks off during the pauses the timeline puts between
 sentences.
+
+### Correcting a sentence after the page has a voice
+
+The timings live in the page, one `data-start` per sentence. Edit the
+prose and every sentence after the edit moves out from under its
+timestamp. There is no partial repair: re-record the article.
+
+`build` refuses to write markers over markers, so the order is fixed.
+
+```bash
+# 1. Take the read-along back out. The input is never modified in place.
+sprezzature-publish-readalong post.html --strip --out drafts/
+
+# 2. Edit drafts/post.html. Freeze the prose here — see below.
+
+# 3. Record and bind again.
+sprezzature-publish-narrate drafts/post.html --scope article --out-dir audio/
+sprezzature-publish-readalong drafts/post.html --narration audio/ \
+    --scope article --out built/
+```
+
+**Freeze the text before the first voice, not after the last one.** On one
+site, twelve articles produced nineteen recordings because corrections kept
+arriving once recording had started. Each late correction costs the whole
+article again: eight to twelve minutes of compute for four thousand words.
+
+`--strip` is the exact inverse of a build: stripping what `build` wrote
+returns the page byte for byte, which is what makes the loop safe to run
+more than once.
+
+### Checking a page that has already shipped
+
+`build` catches prose that moved *while* the voice was recording. It cannot
+catch the other order of events, and nothing else does either: a page edited
+*after* its player was written in. No exception is raised. The markers stay,
+their times stay, and every time now points at the wrong sentence — worse
+than no highlight, because it is confidently wrong.
+
+```bash
+sprezzature-publish-readalong built/post.html --narration audio/ --check
+```
+
+It reads only what shipped, and compares it to what shipped beside it: same
+number of markers as cues, same text, each `data-start` at the start of its
+own cue to the millisecond. Run it after any deploy that touched a narrated
+page. **File sizes say nothing about alignment**: two recordings of the same
+article differ by a few kilobytes whether they are aligned or not.
+
+Cues that legitimately carry no marker are named rather than tolerated
+loosely:
+
+```bash
+sprezzature-publish-readalong built/post.html --narration audio/ --check \
+    --tolerate "End quote."
+```
+
+A page of 430 sentences whose narration announces three block quotations has
+433 cues and 430 markers, and that is correct. Naming the three keeps the
+other 430 under strict equality.
+
+### Two paths that catch people out
+
+**`--href-base` is not optional when the output directory is not the serve
+directory.** Without it, the `<source>` path is computed from disk and comes
+out as `../../../../../../Users/you/...`. A fragment built into a site is
+exactly this case.
+
+**Delete the WAV before binding.** `narrate_post` writes a WAV; if both the
+WAV and an MP3 you encoded are present, the `<source>` points at the WAV, and
+a reader downloads thirty megabytes instead of five.
+
+```bash
+ffmpeg -i audio/narration.wav -codec:a libmp3lame -b:a 64k \
+    -ar 24000 -ac 1 audio/narration.mp3
+rm audio/narration.wav
+```
+
+64 kbit/s mono at 24 kHz is speech-shaped: a forty-minute article lands at
+about 19 MB, and nothing about a single voice reading prose benefits from
+more.
+
+**Pass every stylesheet the page's colours live in.** The player reads the
+page's own accent, paper and tint so it does not look bolted on. A page built
+from a fragment carries none of its own colours, and one site-wide sheet is
+usually not enough either — on deraison.ai, `styles.css` alone found no
+accent at all and picked the call-to-action yellow as its tint; adding the
+page's own `site.css` beside it gave the right three.
 
 ### A page that was never Markdown
 
@@ -464,22 +516,10 @@ that isn't yours:
 
 ## What CI does not do here
 
-The narration pipeline is **not exercised in CI** because it requires
-~1 GB of model weights and minutes of CPU/GPU per post. The
-deterministic tests cover the pure-Python parts (segment extraction,
-pronunciation overrides, manifest cache, RSS enclosure injection,
-emotion→engine-dial mapping). Engine wrappers are smoke-tested via
-the orchestrator's mock-subprocess path; actual synthesis is a local
-developer / production task.
-
-Concretely, no CI job installs the engine tiers. It does not need to:
-both engine wrappers use `importlib` for lazy imports inside the
-synthesis path, so collection succeeds without the heavy ML
-dependencies. That also keeps the upstream OpenVoice package-rename
-trap (see "Installation gotcha" above) out of unrelated CI runs.
-
-This paragraph used to describe a loop in the monorepo's
-`.github/workflows/ci.yml` that installed every per-skill
-requirements file and skipped those two by name. The loop is gone,
-along with the skill folders' requirements files: each brick's own
-repository decides what its CI installs now.
+Synthesis is **not exercised in CI**: it needs model weights and minutes of
+CPU per post. The deterministic tests cover the pure-Python parts (segment
+extraction, pronunciation overrides, manifest cache, feed enclosures,
+emotion to engine-dial mapping) and the orchestrator through a mocked
+subprocess. One guard checks that every engine the `speaker-helper` router
+can answer is one this package can invoke, so a catalogue that grows next
+door is noticed here. Actual synthesis is a local task.

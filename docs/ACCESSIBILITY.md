@@ -1,17 +1,19 @@
 # Accessibility lint — `sprezzature-accessibility`
 
-A fast, deterministic pre-commit gate for static HyperText Markup Language (HTML): fourteen source-decidable accessibility (a11y) rules (missing alt, unlabelled inputs, heading order, color-only state, motion guards). Not a browser audit: the continuous integration (CI)-friendly first line before axe-core / Lighthouse.
+A fast, deterministic pre-commit gate for static HyperText Markup Language (HTML): twenty source-decidable accessibility (a11y) rules (missing alt, unlabelled inputs, heading order, color-only state, motion guards, captions and controls on video and audio), six of them with a mechanical `--fix`. Not a browser audit: the continuous integration (CI)-friendly first line before axe-core / Lighthouse.
 
 ## Two layers, on purpose
 
 Accessibility checking has two complementary layers, and `sprezzature-accessibility`
 is deliberately only the first:
 
-1. **Static lint (this skill).** Fourteen rules decidable from the HTML source
+1. **Static lint (this skill).** Twenty rules decidable from the HTML source
    alone, with no browser and no rendered Document Object Model (DOM). Fast and
    deterministic, so it runs as a pre-commit and CI gate on every change. It
    catches structural defects: missing `alt`, unlabelled inputs, bad heading
-   order, a clickable `div`, a dialog with no close, color-only state.
+   order, a clickable `div`, a dialog with no close, color-only state, a
+   `<video>` with no caption track. The same package then drafts the missing
+   alt text (`--fix-alt`), see [`VISION.md`](VISION.md).
 
 2. **Browser audit (optional, separate).** A runtime pass with
    [axe-core](https://github.com/dequelabs/axe-core),

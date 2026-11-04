@@ -13,7 +13,7 @@ Always use ES modules. Drop the file at any URL and import directly.
 ```js
 // app.js
 import { mountDialog } from './ui/dialog.js';
-import { i18n }        from './i18n.js';
+import { initI18n, t } from './locales/i18n.js';
 
 mountDialog(document.querySelector('#confirm'));
 ```
@@ -34,7 +34,7 @@ src/
 │   ├── menu.js
 │   ├── theme.js
 │   └── form.js
-├── i18n.js
+├── locales/                    # i18n.yaml, its compiled i18n.json, the emitted i18n.js
 └── data/                       # static JSON or fetch wrappers
 ```
 
@@ -208,16 +208,16 @@ with no other state to wire.
 
 ## i18n (EN / FR)
 
+Strings live in `locales/i18n.yaml`, never in a JS object. `sprezzature-ui-i18n-make`
+scaffolds it, compiles `locales/i18n.json` and emits the `locales/i18n.js` loader.
+
 ```js
-// i18n.js
-const dict = {
-  en: { signIn: 'Sign in', delete: 'Delete', cancel: 'Cancel' },
-  fr: { signIn: 'Se connecter', delete: 'Supprimer', cancel: 'Annuler' },
-};
-const lang = (navigator.language || 'en').startsWith('fr') ? 'fr' : 'en';
-document.documentElement.lang = lang;
-export const t = (k) => dict[lang][k] ?? dict.en[k] ?? k;
+import { initI18n, t } from './locales/i18n.js';
+await initI18n();          // locale: <html lang>, else the catalogue's first locale
+document.querySelector('#save').textContent = t('action.save');
+el.textContent = t('results.count', { count: 3 });   // plural via Intl.PluralRules
 ```
+An object keyed by locale in JS is what `sprezzature-ui-i18n-audit` flags (I18N001).
 
 ## Accessibility helpers
 

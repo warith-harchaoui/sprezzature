@@ -19,7 +19,7 @@ hosted rendering. The pipeline is reproducible.
 ## Quick start
 
 ```bash
-`pip install 'sprezzature-publish'`
+pip install sprezzature-publish
 sprezzature-publish-lint docs/
 
 # Render every Mermaid block to a PNG sibling and insert a fallback <img>:
@@ -122,7 +122,7 @@ The script ships two prompts. They are intentionally:
 3. An explicit output contract: JSON array for the Mermaid task; one sentence (no quotes, no prefix) for the LaTeX caption. Both are parsed strictly; a model that drifts off-contract returns an empty result and the script reports nothing for that block.
 4. Zero-shot. No in-context examples; both tasks are common enough in the model's training distribution that examples cost tokens without lifting quality.
 
-See `sprezzature-publish-lint` → `PROMPT_MERMAID_LABELS` and
+See `scripts/lint_markdown.py` → `PROMPT_MERMAID_LABELS` and
 `PROMPT_LATEX_CAPTION` for the verbatim prompts.
 
 ## CI integration
@@ -130,7 +130,7 @@ See `sprezzature-publish-lint` → `PROMPT_MERMAID_LABELS` and
 ```yaml
 - name: Lint Markdown
   run: |
-    `pip install 'sprezzature-publish'`
+    pip install sprezzature-publish
     sprezzature-publish-lint docs/
 ```
 

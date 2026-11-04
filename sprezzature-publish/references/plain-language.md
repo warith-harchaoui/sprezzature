@@ -16,7 +16,7 @@ Users who benefit beyond cognitive disabilities: second-language readers, anyone
 If you've already run `sprezzature-accessibility-install-alt` for alt text, you're done; the same Ollama daemon and model serve the rewriter. If not:
 
 ```bash
-`pip install 'sprezzature-publish'`
+pip install sprezzature-publish
 sprezzature-accessibility-install-alt
 ```
 
@@ -31,7 +31,7 @@ echo "Boost your productivity with our state-of-the-art platform" \
 sprezzature-publish-plain --input src/copy.md > dist/copy.simple.md
 
 # Keep brand names intact
-sprezzature-publish-plain --preserve "Sprezzature,Tailwind,Montserrat" --input copy.md
+sprezzature-publish-plain --preserve "Sprezzature,Tailwind,Roboto" --input copy.md
 
 # Bypass cache for this run
 sprezzature-publish-plain --no-cache --input copy.md
@@ -100,6 +100,6 @@ simple = rewrite(
 - [ ] `--lang` matches the source language.
 - [ ] Brand names and identifiers in `--preserve`.
 - [ ] Output length close to source (≤ 1.1×).
-- [ ] No buzzwords in the output (`python scripts/validate_content.py` will catch them if the file is committed).
+- [ ] No buzzwords in the output (the hub's `scripts/validate_content.py` catches them once the file is committed there).
 - [ ] Numbers and names preserved verbatim.
 - [ ] Cache hit on second run (≤ 100 ms).

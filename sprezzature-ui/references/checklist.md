@@ -19,9 +19,9 @@ another brand.
   output look like *this* system; another team can substitute their tokens and
   keep the universal rules intact.
 
-The emitter is its own customer: every shipped template passes
-`sprezzature-accessibility` and the `sprezzature-ux-laws` audit with zero error-severity
-findings (enforced by `tests/test_dogfood_audits.py`).
+The emitter is its own customer: every shipped HTML file under `assets/` passes the
+`sprezzature-accessibility` lint with zero findings (`tests/test_the_shipped_markup.py`), and
+the snippets also pass `sprezzature-ux-laws-audit` (the monorepo's `tests/test_snippet_catalog.py`).
 
 ## Stack purity
 

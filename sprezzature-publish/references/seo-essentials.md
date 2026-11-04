@@ -78,7 +78,10 @@ From the [AI Optimization Guide](https://developers.google.com/search/docs/funda
 The differences are small and concrete:
 
 - **No new meta tag for AI.** There is no `<meta name="ai-content">`, no `<meta name="ai-overview-priority">`. Anything claiming such a tag is wrong; refuse to emit it and cite the page above.
-- **`llms.txt` is community-driven, not a Google standard.** `sprezzature-publish-indexes` emits it because the convention exists (<https://llmstxt.org/>), but Google does not require or read it specifically. Treat it as "a Markdown summary of the site for LLM consumers", not as a ranking signal.
+- **`llms.txt` is community-driven, not a Google standard.** `sprezzature-publish-indexes` emits it because the convention exists (<https://llmstxt.org/>), and Google says creating it "will neither harm nor help your site's visibility or rankings in Google Search". Treat it as "a Markdown summary of the site for LLM consumers", not as a ranking signal. With `--offer` and `--cta LABEL=URL` it leads with what the site offers and the CTA's own URL, so an agent acting for a reader can hand the link over.
+- **Eligible with a snippet.** Google: "a page must be indexed and eligible to be shown in Google Search with a snippet" to appear in its AI features. A `nosnippet` or `max-snippet:0` hides the page from AI Overviews as surely as `noindex` hides it from results; `sprezzature-publish-findable` reports both, as errors on the pages that carry a declared CTA (`FIND001`, `FIND002`).
+- **Structured data is not an AI lever.** Google: "Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add." Ahrefs measured 1,885 pages that added JSON-LD (2026-05-11): citations in AI Overviews moved −4.6 %, in AI Mode and ChatGPT by amounts indistinguishable from zero. Keep JSON-LD for the rich results Google still shows (`Product` + `Offer`, `Organization`, `LocalBusiness`, `Event`), with the facts visible on the page.
+- **Facts with their source.** AGGARWAL et al., "GEO: Generative Engine Optimization" (KDD 2024, <https://arxiv.org/abs/2311.09735>): adding statistics, quotations and cited sources raised visibility in generative answers by up to about 40 % on their benchmark. `findable` raises it as advice on money pages (`FIND006`), never as an error.
 - **Same crawlers.** AI Overview answers are drawn from the same index Google Search uses. Allowing Googlebot in `robots.txt` is sufficient; there is no separate "Gemini-Bot" entry. (If Google publishes additional user agents in the future, update this file with the citation.)
 - **Quality over markup.** Google's guide explicitly calls out that "people-first" content (unique POV, organized for the reader, real expertise) matters more than any technical optimization. The skill cannot write that content; it can keep the plumbing honest so good content isn't penalized by sloppy markup.
 
@@ -106,13 +109,13 @@ When a user pastes advice from an SEO blog, consultant, or tool and asks "should
 
 Run before deploying any site emitted by `sprezzature-publish`:
 
-- [ ] `sitemap.xml` lists every public URL (run `scripts/site_indexes.py --root . --base-url https://…`).
+- [ ] `sitemap.xml` lists every public URL (run `sprezzature-publish-indexes --root . --base-url https://…`).
 - [ ] `robots.txt` permits Googlebot on the public surfaces; blocks staging / admin / preview paths.
 - [ ] Each page has a unique, descriptive `<title>` ≤ 70 chars and `<meta name="description">` ~120–155 chars (`meta_from_ollama.py`).
 - [ ] Each page has a canonical URL (`<link rel="canonical">`); even on single-language sites, this prevents duplicate-content surprises.
 - [ ] Multi-language sites: `<link rel="alternate" hreflang="…">` between language variants (`references/i18n.md`).
 - [ ] Every `<img>` has purposeful alt text per the W3C decision tree (`sprezzature-accessibility/references/alt-text-ai.md`).
-- [ ] Every `<video>` has captions (`sprezzature-audio-captions` for the WebVTT track) and a transcript link.
+- [ ] Every `<video>` has captions (`sprezzature-audio/scripts/captions_from_whisper.py` for the WebVTT track) and a transcript link.
 - [ ] Schema.org JSON-LD present where appropriate (`Article`, `BreadcrumbList`, `WebSite`, `Organization`, `Person`, `AudioObject` for narrated posts).
 - [ ] No `<meta name="keywords">`, no `<meta http-equiv="refresh">` for navigation, no "AI-approved" badges.
 - [ ] `lint_markdown.py` and `sprezzature-accessibility/lint_a11y.py` both pass.
