@@ -18,10 +18,10 @@ description: >-
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. No Python runtime required to use
-  the skill itself (output is HTML + CSS + vanilla JS). Optional validator
-  The i18n tools need Python 3.10+ stdlib; the catalogue half needs PyYAML.
-  Network access not
-  required.
+  the skill itself (output is HTML + CSS + vanilla JS). The two i18n tools
+  ship as the `sprezzature-ui` package (`pip install sprezzature-ui`, Python
+  3.10+); the audit itself imports only the standard library. Network access
+  not required.
 metadata:
   author: Warith HARCHAOUI
   version: 1.7.0
@@ -29,7 +29,7 @@ metadata:
 
 # sprezzature-ui — vanilla JS + Tailwind UI generation
 
-> The two deterministic tools below now ship as the standalone package [`sprezzature-ui`](https://github.com/warith-harchaoui/sprezzature-ui) (`pip install sprezzature-ui`), invoked as `sprezzature-ui-i18n-audit` and `sprezzature-ui-i18n-make`, or through either front door — `make-ui <tool>` (argparse) and `sprezzature-ui <tool>` (click). The generation half is this file: writing an interface is the model's work, and no command or route can carry it. The `scripts/` folder has moved out. The pre-ship content gate stayed in the monorepo — it validates a skill folder *here* rather than anything in a user's project — and now lives beside the other repository-level validators.
+> The two deterministic tools below ship as the standalone package [`sprezzature-ui`](https://github.com/warith-harchaoui/sprezzature-ui) (`pip install sprezzature-ui`, one line, no extras), invoked as `sprezzature-ui-i18n-audit` and `sprezzature-ui-i18n-make`, or through the click front door under either name, `make-ui <tool>` or `sprezzature-ui <tool>` (`sprezzature-ui tools` lists them). The audit is also served over HTTP (`POST /v1/i18n-audit`, plus `GET /health`, from `sprezzature_ui.api:app` or the package's Docker image) and over MCP (`sprezzature-ui-mcp`, endpoint `/mcp`, tools `audit_i18n` and `health`). The make tool writes files, so it has no route and no MCP tool. The generation half is this file: writing an interface is the model's work, and no command or route can carry it. The `scripts/` folder has moved out. The pre-ship content gate stayed in the monorepo as `validate_content.py`, beside the other repository-level validators: it validates a skill folder *here* rather than anything in a user's project.
 
 ## Audience
 
@@ -73,7 +73,7 @@ This skill ships both halves of the sprezzature-* loop:
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make** — generate UI | `references/` + `assets/components/*.html` + `assets/starter-page.html` + `assets/fonts/` + `sprezzature-ui-i18n-make` | Generation playbook: token map, decision tree below, copy-and-adapt component shapes, three-Roboto webfonts. `sprezzature-ui-i18n-make` scaffolds + compiles `locales/i18n.yaml` (GUI strings **and** prompts) and emits a vanilla-JS loader. |
-| **Audit** — gate before ship | the monorepo's content gate + `sprezzature-ui-i18n-audit` + `references/checklist.md` + `references/anti-patterns.md` + `references/ergonomics-criteria.md` | Skill-spec validator (stdlib only); pre-ship quality gate; eight-criteria ergonomic review; anti-pattern refusal list. `sprezzature-ui-i18n-audit` flags GUI translations embedded in JS/HTML and LLM prompts inlined in Python (they belong in `locales/i18n.yaml`). |
+| **Audit** — gate before ship | `sprezzature-ui-i18n-audit` + `references/checklist.md` + `references/anti-patterns.md` + `references/ergonomics-criteria.md` | Pre-ship quality gate; eight-criteria ergonomic review; anti-pattern refusal list. `sprezzature-ui-i18n-audit` flags GUI translations embedded in JS/HTML (`I18N001`) and LLM prompts inlined in Python (`I18N002`); they belong in `locales/i18n.yaml`. |
 
 Pair with `sprezzature-ux-laws` for canonical-law audits and `sprezzature-colors`
 for contrast / CVD audits on the emitted output.
@@ -93,6 +93,13 @@ sprezzature-ui-i18n-audit src/          # I18N001 (JS dict) / I18N002 (py prompt
 # extract: move what it found into the catalog, and say what to call instead
 sprezzature-ui-i18n-audit --fix src/
 ```
+
+What the audit sees, and nothing more:
+
+- **`I18N001`** (`.js`, `.mjs`, `.cjs`, `.jsx`, `.ts`, `.tsx`, `.html`, `.htm`): a line declaring a table under a telltale name (`const i18n = {`, `translations`, `messages`, `locales`, `strings`, `dictionary`, `lang`, …), or an object literal with two or more locale keys (`{ en: …, fr: … }`).
+- **`I18N002`** (`.py`): a module-level or class-level constant whose name contains `PROMPT` or `INSTRUCTION`, assigned a string literal or an f-string. A prompt stored under another name is not seen.
+
+Exit 1 on any finding, `--json` for machine output. `--fix` writes the catalogue (`--catalog PATH` to change it), prints the call to paste, never rewrites the call site, and still exits 1. `sprezzature-ui-i18n-make` runs four steps by default (`--init`, `--compile`, `--emit-loader`, `--emit-python` run one each, `--dir` sets the project root), and the compile step refuses a prompt with no `validated:` locale. Report findings as evidence: "0 findings" means neither shape was found, not that the interface is ready.
 
 **A counting message maps a locale to CLDR plural categories**, not to a
 string, and the runtime picks one with `Intl.PluralRules` — so French gets its
@@ -139,7 +146,7 @@ locale)` — check `p.validated_locale_used` before you trust it.
 5. **Both color schemes.** Every styled element gets a `dark:` peer.
 6. **Accessibility is shipping-required.** See `references/ui-guidelines/foundations/accessibility.md`.
 7. **No raw hex** in markup: use semantic Tailwind tokens (`bg-brand-blue`, `text-label-primary`). **Curated default — user colors win** (mirror of rule 3, but for palette): when generating fresh output and no palette has been specified, use the 8 saturated brand hues from `sprezzature-colors/references/palette.csv` (regenerable with `sprezzature-colors-palette-to-tailwind`). **The default does NOT apply when:** (a) **auditing an existing UI**: respect the project's tokens; do not propose a CSV swap; (b) **the user names colors** ("our brand is #8B5CF6", "use Material's primary"), use those; (c) **the project already has a `tailwind.config.js`** with brand tokens, leave them alone unless asked. Either way, rule 7's "no raw hex in markup" still holds: add the user's color to the config as a token, then reference the token.
-8. **Bilingual-ready copy** (EN/FR by default). The output language of the AI-backed scripts is **auto-detected from the input/context text** via `langdetect`; there is no configured default language. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui-i18n-make` and `sprezzature-publish/references/i18n.md`).
+8. **Bilingual-ready copy** (EN/FR by default). This skill runs no model-backed script; write copy in the language of the request. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui-i18n-make` and `sprezzature-publish/references/i18n.md`).
 9. **No third-party trademarks** in defaults (logos, product names, OS branding). Use generic, neutral language.
 
 ## Build vs prototype
@@ -210,7 +217,7 @@ Run `references/checklist.md` before returning code. Short version:
 - [ ] No raw hex in markup.
 - [ ] Copy is sentence case, verb-first on buttons, no "OK"/"please".
 
-Pair with `sprezzature-accessibility` for `lint_a11y.py` and `sprezzature-colors` for `audit_contrast.py` / `simulate_cvd.py` runs.
+Pair with `sprezzature-accessibility` for `sprezzature-accessibility-lint` and `sprezzature-colors` for `sprezzature-colors-contrast` / `sprezzature-colors-cvd` runs.
 
 ## Examples
 
@@ -247,7 +254,7 @@ Load these only when needed.
 ## Assets
 
 - `assets/starter-page.html` — single-file bootstrap (Tailwind Play CDN, prototype-grade; swap to Tailwind CLI / Vite before shipping a real production site).
-- `assets/components/button.html`, `card.html`, `modal.html`, `form-field.html`, `nav.html` — component-shape primaries (one file per generic UI surface).
+- `assets/components/button.html`, `card.html`, `modal.html`, `form-field.html`, `nav.html`, `theme-toggle.html`, `figure-fullscreen.html` — component-shape primaries (one file per generic UI surface).
 - `assets/components/chart-bar.svg`, `chart-line.svg` — hand-authored SVG charts.
 - `assets/snippets/` — **law-keyed** snippet catalog (one file per mechanically-implementable Law of UX: Miller / Peak-End / Goal-Gradient / Doherty / Von Restorff / Jakob / Chunking / Zeigarnik). See `assets/snippets/INDEX.md` for the law ↔ snippet ↔ trigger-phrase mapping. Every snippet passes both `sprezzature-ux-laws` and `sprezzature-accessibility` auditors with zero findings; they are the make-side counterpart to `sprezzature-ux-laws-audit --fix`.
 - `assets/fonts/roboto/` — Roboto WOFF2 + OFL + `fonts.css` (sans). The `fonts.css` declares the `@font-face` blocks and also exposes the `--font-sans / --font-serif / --font-mono` custom properties and the base `html { font-family: var(--font-sans) }` / `code, pre, kbd, samp { font-family: var(--font-mono) }` wiring.
@@ -257,4 +264,5 @@ Load these only when needed.
 
 ## Scripts
 
-- the monorepo's pre-ship content gate — Stdlib only. Checks SKILL.md frontmatter, forbidden framework imports, marketing phrases, reference path resolution. Exit non-zero on any failure.
+- `sprezzature-ui-i18n-audit`, `sprezzature-ui-i18n-make` — the two i18n tools, from the `sprezzature-ui` package (see the i18n section above).
+- `validate_content.py`, in the monorepo's own scripts folder — the pre-ship content gate. Stdlib only. Checks SKILL.md frontmatter, forbidden framework imports, trademarked platform terms, marketing phrases, reference path resolution. Exit non-zero on any failure.

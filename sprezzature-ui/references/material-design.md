@@ -120,7 +120,7 @@ Material's mandates and the skill's: identical in spirit. Differences:
 ## Checklist
 
 - [ ] Material role mapped to a skill token; no raw Material hex.
-- [ ] Typeface from the skill's stack, not Roboto.
+- [ ] Typeface from the skill's stack (Roboto, Roboto Serif, Roboto Mono), not Roboto Flex.
 - [ ] Corner radius from the skill's set.
 - [ ] Elevation via surface colour, not shadow (except transient overlays).
 - [ ] Touch target ≥ 44 px (≥ 48 px if Material parity matters).

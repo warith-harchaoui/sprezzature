@@ -107,14 +107,25 @@ result is looked at through the Ralph Eyeball Loop, including the CVD and
 greyscale sheets. In other words, the shipped default is designed against the
 greyscale worst case by method, which is what the literature recommends.
 
-**The optional levels are the roadmap.** The clean way to expose them is the
-pattern already used for interactivity: an argument with a universal default and
-opt-in alternatives, for example an `accessibility` or `palette` switch offering
-`universal` (default), `deuteranopia`, `protanopia`, `tritanopia`,
-`high-contrast`, and `monochrome`. `sprezzature-colors` already holds the pieces this
-needs, the CVD matrices in `simulate_cvd.py` and the OKLCH lighten/darken and
-contrast audit in `audit_contrast.py`, so the levels can be generated and
-verified from one source rather than hand-maintained.
+**The optional levels are implemented.** `scripts/accessibility_levels.py`
+holds them as one pure function, `apply_level(palette, level, bg="#FFFFFF")`,
+which returns the same colour names with level-appropriate hex values. The
+six levels are `universal` (the default, returned unchanged),
+`high-contrast` (each hue darkened on the OKLCH lightness axis until it
+clears 7:1 against the background), `monochrome` (each colour becomes the
+grey of its own relative luminance), and `deuteranopia`, `protanopia` and
+`tritanopia` (colours ranked by their luminance under that deficiency's
+MACHADO matrix, then spread across a legible lightness band, hue and chroma
+kept). The maths is the shared one in `_colors.py`: OKLCH, WCAG contrast and
+the CVD matrices, with no Pillow needed.
+
+Two ways in. `sprezzature-colors-levels --level <level>` (or
+`sprezzature-colors levels`) prints each colour's name, hex and contrast
+against white, from the canonical `palette.csv` or a file given with `--csv`.
+`sprezzature-figures` calls `apply_level` through its own
+`_apply_accessibility_level`, so a figure can be re-coloured for one level
+without a single colour name changing; when this package is not present, the
+figure falls back to `universal` with a warning.
 
 ## Automatic from the operating system, or a simulation for review
 

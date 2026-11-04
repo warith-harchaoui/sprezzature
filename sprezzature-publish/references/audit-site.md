@@ -50,10 +50,38 @@ picture, see `seo-essentials.md`. For what to put in each tag, see
 | `SITE102` | `sitemap.xml` exists | [Sitemaps XML format 0.9](https://www.sitemaps.org/protocol.html) |
 | `SITE103` | every discovered page is listed | same; the sitemap is a *complete* index by design |
 | `SITE104` | no listed URL is gone | same. RFC 9309 and the sitemap protocol are both advisory: a stale entry is a warning, not an error. |
-| `SITE105` | `llms.txt` exists | [llmstxt.org](https://llmstxt.org/) — a proposal rather than a standards-body document, and said so here. It is the only artifact generative engines look for *by name*; nothing is lost by shipping it. |
+| `SITE105` | `llms.txt` exists | [llmstxt.org](https://llmstxt.org/) — a proposal rather than a standards-body document, and said so here. Agents other than Google's look for it by name; Google says it "will neither harm nor help" visibility in Search. Nothing is lost by shipping it. |
 | `SITE106` | a feed exists | [RFC 4287 — Atom 1.0](https://datatracker.ietf.org/doc/html/rfc4287) or [RSS 2.0](https://www.rssboard.org/rss-specification) |
 | `SITE110`, `SITE111` | the icon set on disk | [W3C Web App Manifest § icons](https://www.w3.org/TR/appmanifest/#icons-member) and Apple, above |
 | `SITE112` | `head.html` written and never pasted | **No spec — a house rule.** `sprezzature-publish-icons` writes a drop-in snippet; nothing made anyone paste it. This is the package's own commonest failure, so it gets its own rule. |
+
+---
+
+## The rules that need the calls to action
+
+Reported by `sprezzature-publish-cta`, `-faq` and `-findable`. They only
+make sense once the site has said what it is for (`ctas.yaml`), and the
+money pages they speak of are the pages that carry a declared CTA in their
+body, plus the page it lands on.
+
+| Rule | Checks | Authority |
+|---|---|---|
+| `CTA000` | some CTA is declared | **No spec, a house rule.** Nothing below can be judged without it, so its absence is said rather than guessed around. |
+| `CTA001` | each declared CTA appears on some page | **No spec.** A declared destination no page offers is a typo in `ctas.yaml` or a missing link on the site. |
+| `CTA002` | each page a reader lands on offers a declared CTA | **No spec.** On the calibration site every blog post offered only an e-mail address, never the booking link. Warning only. |
+| `FAQ001` | a FAQ answer states no number that no other page states | **No spec.** The suite's "do not invent facts" rule, applied to existing answers. Warning. |
+| `FAQ002` | `FAQPage` markup has a visible FAQ on the same page | [Google: structured data general guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) ("don't mark up content that is not visible to readers of the page"). |
+| `FAQ003` | the markup and the visible FAQ say the same thing | Same guidelines. `--fix` rebuilds the markup from the visible text, on `.html` pages only. |
+| `FAQ004` | one question marked up on one page | **No spec.** Repetition across pages is the doorway pattern of [Google's spam policies](https://developers.google.com/search/docs/essentials/spam-policies), in miniature. Warning. |
+| `FIND001` | no `nosnippet` / `max-snippet:0` | [Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features): a page must be "eligible to be shown in Google Search with a snippet". Error on a money page, warning elsewhere. |
+| `FIND002` | a money page is not `noindex` | [Google: robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag). |
+| `FIND003` | a money page is in `sitemap.xml` | [sitemaps.org 0.9](https://www.sitemaps.org/protocol.html). |
+| `FIND004` | a money page is its own canonical | [RFC 6596](https://datatracker.ietf.org/doc/html/rfc6596). |
+| `FIND005` | a money page has a FAQ | **No spec.** Answer engines quote self-contained answers; the questions between a reader and the CTA are best answered where the CTA is. Warning. |
+| `FIND006` | a money page states a number, a quotation or a cited source | AGGARWAL et al., "GEO: Generative Engine Optimization", KDD 2024 ([arXiv 2311.09735](https://arxiv.org/abs/2311.09735)). Advice only, never an error. |
+| `FIND007` | a page that names the offer links to a money page | [Google: crawlable links and anchor text](https://developers.google.com/search/docs/crawling-indexing/links-crawlable). Reported, never written by `--fix`. |
+| `FIND008` | `llms.txt` carries the primary CTA | [llmstxt.org](https://llmstxt.org/). **No ranking claim**: Google says the file neither helps nor harms. |
+| `FIND009` | one name for the organisation | [schema.org `Organization`](https://schema.org/Organization); engines attach answers to one entity. Warning. |
 
 ---
 

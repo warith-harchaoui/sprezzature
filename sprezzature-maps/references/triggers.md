@@ -14,7 +14,7 @@ Said without naming a tool: "which countries are worst affected", "break this do
 
 ## When it is not
 
-Not this one when: the shape is schematic rather than geographic (hex map, spike map, binned grid, dot density over an outline), which live in sprezzature-figures. The exhaustive trigger catalogue is in `references/triggers.md`.
+Not this one when: the shape is schematic (hex map, spike map, binned grid, dot density over an outline): sprezzature-figures. The exhaustive trigger catalogue is in `references/triggers.md`.
 
 ## Every phrase that names this skill
 

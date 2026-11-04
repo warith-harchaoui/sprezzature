@@ -3,24 +3,25 @@ name: sprezzature-figures
 description: >-
   Figures, diagrams and the Ralph Eyeball Loop: 167 hand-authored, often
   interactive and animated SVG chart types whose markup is written directly,
-  plus explainability (SHAP / Shapash / LIME) and causal DAGs (DoWhy). TikZ
-  and Mermaid go through the loop, which reads any visual from code (figure,
-  Mermaid, TikZ, SVG, a whole HTML page) as an agent or --local (qwen3-vl:8b,
-  offline). redraw() takes a picture of somebody else's chart and redraws it
-  here, never inventing the numbers. Never ASCII art. Use it when you are
-  holding numbers you want somebody to SEE, or a chart that is hard to read.
-  Trigger phrases: "make a figure", "chart this", "plot this", "heatmap",
-  "treemap", "sankey", "mermaid diagram", "no ascii art", "ralph eyeball
-  loop", "SHAP plot", "DAG", "waterfall chart", "redraw this chart". Output:
-  SVG (PNG/PDF via render_diagram.py). Not this one when: the numbers are
-  attached to real PLACES (sprezzature-maps). The exhaustive trigger catalogue
-  is in `references/triggers.md`.
+  plus explainability (SHAP / Shapash / LIME) and causal DAGs (DoWhy). check
+  finds overlapping labels in any SVG, with no model. The
+  loop reads any visual from code (figure, Mermaid, TikZ, a whole HTML page)
+  as an agent or --local (qwen3-vl:8b, offline). redraw() takes a picture of
+  somebody else's chart and redraws it here, never inventing the numbers.
+  Never ASCII art. Use it when you are holding numbers you want somebody to
+  SEE, or a chart that is hard to read. Trigger phrases: "make a figure",
+  "chart this", "plot this", "heatmap", "treemap", "sankey", "mermaid
+  diagram", "no ascii art", "ralph eyeball loop", "SHAP plot", "DAG",
+  "waterfall chart", "redraw this chart", "audit this figure". Output: SVG,
+  PNG, PDF, JPG or HTML. Not this one when: the numbers are attached to real
+  PLACES (sprezzature-maps). The exhaustive trigger catalogue is in
+  `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
-  Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+; the static
-  auditor needs only stdlib + PyYAML. Generators use the tiers in
-  ``requirements-*.txt`` (dataviz / explainability / causality),
-  installed on demand by ``install_figures.py``. The render_diagram.py
+  Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10 to 3.13; one
+  ``pip install sprezzature-figures`` carries the generators, the
+  explainability and causal stacks, the Studio, the HTTP API and the MCP
+  server. The static auditor needs only stdlib + PyYAML. The render_diagram.py
   renderer needs, per kind: tectonic/pdflatex + pdftoppm/magick (TikZ),
   mmdc (Mermaid), rsvg-convert/magick (SVG), all optional, fail loud. No
   network needed once installed.
@@ -29,7 +30,19 @@ metadata:
   version: 1.7.0
 ---
 
-> The deterministic tools below now ship as the standalone package [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures) (`pip install`), invoked as `sprezzature-figures …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+> The deterministic tools below now ship as the standalone package [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures) (one `pip install sprezzature-figures`, no feature extras), invoked as `sprezzature-figures …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+
+## Five surfaces
+
+| Surface | Entry point |
+|---|---|
+| Library | `from sprezzature_figures import make_figure, check_render, redraw, list_kinds, get_figure_definition` |
+| CLI (Click) | `sprezzature-figures` (also installed as `make-figure`, the same group): `list`, `render`, `describe`, `recommend`, `redraw`, `check` |
+| HTTP API (FastAPI), Docker, Compose | `uvicorn sprezzature_figures.api:app`, `docker compose up` |
+| MCP | `sprezzature-figures-mcp` (endpoint `/mcp`), eight tools named by `operation_id`: `health`, `list_kinds`, `get_kind`, `list_kind_options`, `recommend_figures`, `render_figure`, `redraw_figure`, `check_render` |
+| Skill | this file |
+
+Two numbers, both deliberate: the catalogue holds 167 kinds (`sprezzature-figures list`); the web gallery on sprezzature.ai shows 160 of them, because the five glyph maps sit on the maps page and the two Gapminder figures on the Hans ROSLING page.
 
 # sprezzature-figures: data-viz, explainability, and causality figures
 
@@ -70,22 +83,22 @@ data-science figures:
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — plot a dataset in the house style | `make-figure` (console script) / `sprezzature-figures render` | Renders one of the catalogue's chart kinds (`sprezzature-figures list` prints all of them, e.g. `treemap`, `funnel`, `waterfall`) from your own data (`--data file.csv`, columns bound with `--map role=column`) or its built-in demo data, in the same palette and typography as `sprezzature-ui`. `sprezzature-figures recommend --data file.csv` ranks which chart kinds your data can fill before you pick one. |
+| **Make** — plot a dataset in the house style | `sprezzature-figures render` (same as `make-figure render`) | Renders one of the catalogue's chart kinds (`sprezzature-figures list` prints all of them, e.g. `treemap`, `funnel`, `waterfall`) from your own data (`--data file.csv`, columns bound with `--map role=column`) or its built-in demo data, in the same palette and typography as `sprezzature-ui`. `sprezzature-figures recommend --data file.csv` ranks which chart kinds your data can fill before you pick one. |
 | **Make** — explain a fitted model | `explain_model.py` | Dispatches to SHAP / Shapash / TimeSHAP / LIME by model type (tree / linear / sequence / black-box). Writes summary + dependence + waterfall plots; drops a Shapash HTML report when `--report shapash`. |
 | **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (no external layout engine) + writes the effect table to JSON. |
-| **Make** — an areas-of-control situation map, or a choropleth on a real basemap | `sprezzature-maps` (standalone package, see note below) | `make_situation_map.py` and `build_situation_examples.py` no longer ship inside `sprezzature-figures`; they were split out into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package alongside `make_choropleth.py`, which draws on a real basemap and geographic projection (Natural Earth, auto-centred Lambert conformal conic). `pip install git+https://github.com/warith-harchaoui/sprezzature-maps`, then `make-map situation_map --config my-region.yaml --out region.svg` or `make-map choropleth --out world.svg`. `sprezzature-figures` keeps only the schematic, binned map kinds (`binned-grid-map`, `dotdensity`, `hexbin-map`, `hexmap`, `spike-map`), which plot points or grid cells, not real coastlines. |
+| **Make** — an areas-of-control situation map, or a choropleth on a real basemap | `sprezzature-maps` (standalone package, see note below) | `make_situation_map.py` and `build_situation_examples.py` no longer ship inside `sprezzature-figures`; they were split out into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package alongside `make_choropleth.py`, which draws on a real basemap and geographic projection (Natural Earth, auto-centred Lambert conformal conic). `pip install sprezzature-maps`, then `make-map situation-map --config my-region.yaml --out region.svg` or `make-map choropleth --out world.svg`. `sprezzature-figures` keeps only the schematic, binned map kinds (`binned-grid-map`, `dotdensity`, `hexbin-map`, `hexmap`, `spike-map`), which plot points or grid cells, not real coastlines. |
 | **Make** — somebody else's chart, from a picture of it | `sprezzature-figures redraw` | Takes a screenshot (PNG/JPEG/GIF/WebP/SVG) of an existing chart, has a vision model read what kind it is and what costs the reader effort, and draws it here. **Never invents numbers**: `data_origin` reports `your-data` (rows you passed), `read-from-image` (printed on the original and read back, approximate) or `demo` (nothing readable — the redesign on sample rows, captioned as such on the figure itself). Pass `--data` to get a figure worth publishing. |
 | **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, TikZ figure, Mermaid diagram, hand-authored SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
 | **Render** — diagram source → image (diagram surfaces only) | `render_diagram.py` | Rasterises a TikZ figure, a Mermaid diagram, or a raw SVG to PNG. Palette-themed from `sprezzature-colors`; background white / transparent / dark selectable. Called internally by `ralph_eyeball_loop.py`; use directly when you want the PNG without the assessment file. |
 | **Audit** — is the figure you just rendered legible, with no model at all | `sprezzature-figures check` | Reads the rendered SVG and reports what is decidable from the markup: labels colliding, text running off the canvas, a generator's demo chrome ("Region", "Quarterly figures") left over real data, a light card in the middle of a dark-mode figure, a title the generator dropped, a missing accessible title or description. Exit 1 on any finding. **Reach for this after every render whose result goes to someone other than you** — it is the eyeball loop's questions answered without a vision model, which is the only version available when you have none. It judges facts, never taste: an empty report does not mean the chart type suits the question. |
-| **Audit** — gate before ship | `audit_figure.py` | Static parser flags data-viz anti-patterns in an SVG chart or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present unless `--strict`. |
-| **Install** — one-shot setup of the tiered stack | `install_figures.py` | pip-installs the dataviz / explainability / causality tiers as requested. Idempotent; safe to re-run. Detects the active env manager (pip / uv / poetry / conda) and defers to it. |
+| **Audit** — gate before ship | `audit_figure.py` | Static parser flags data-viz anti-patterns in an SVG chart or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present, and on warnings too with `--strict`. |
+| **Install** — one-shot setup of the tiered stack | `install_figures.py` | Installs the pinned dataviz / explainability / causality tiers of `requirements-*.txt` as requested; the base install already carries those libraries, so this is for pinning, not for enabling. Idempotent. Detects the active env manager (uv / poetry / pixi / conda / pip) and defers to it. |
 
 ## Honest framing of what each tool covers
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `make-figure` / `sprezzature-figures render` | Chart kinds from a fixed, growing catalogue (`sprezzature-figures list [--status stable]`), each in the `sprezzature-ui` house style (rounded corners, no top/right spine, no rainbows, palette from `sprezzature-colors/references/palette.csv`); binds your own CSV/JSON/Parquet columns to the kind's roles via `--map role=column`, or falls back to built-in demo data. | Does not invent the right chart; the catalogue is closed-set (`sprezzature-figures list` shows what exists today), not an open x/y/kind combinator. For chart-type selection see `sprezzature-ui/references/dataviz-chart-selection.md`. Does not do map projections beyond what a given catalogue kind supports; for choropleths see `sprezzature-ui/references/dataviz-maps.md`. |
+| `sprezzature-figures render` | Chart kinds from a fixed, growing catalogue (`sprezzature-figures list [--status stable]`), each in the `sprezzature-ui` house style (rounded corners, no top/right spine, no rainbows, palette from `sprezzature-colors/references/palette.csv`); binds your own CSV / TSV / JSON / JSONL columns to the kind's roles via `--map role=column`, or falls back to built-in demo data. | Does not invent the right chart; the catalogue is closed-set (`sprezzature-figures list` shows what exists today), not an open x/y/kind combinator. For chart-type selection see `sprezzature-ui/references/dataviz-chart-selection.md`. Does not do map projections beyond what a given catalogue kind supports; for choropleths see `sprezzature-ui/references/dataviz-maps.md`. |
 | `sprezzature-figures redraw` | The **design** of a chart in a picture: which of the catalogue's kinds shows the same thing, the text printed on it, and what makes it harder to read than it needs to be. Chooses only from the catalogue — a kind outside the candidate list is a hard error, not a result. | The **data**. A chart drawn without data labels does not contain its numbers, and this refuses to estimate them from mark size: without `--data` you get the redesign on sample rows, and the figure says so. Read `data_origin` before sharing the output. A local 7B vision model takes ~90 s and reads fewer issues than a larger one. |
 | `explain_model.py` | Model-agnostic SHAP for tree / linear / kernel models (via `shap.Explainer`), Shapash HTML report for a full business-facing writeup, TimeSHAP for recurrent / attention-based time-series models, LIME as fallback for opaque classifiers. Writes summary plot + top-N dependence plots + one waterfall for the row with the largest absolute prediction. | Does not train models. Does not evaluate them; use `probabl-ai/skills/evaluate-ml-pipeline` or `scikit-learn`'s report utilities. Does not do counterfactual reasoning; see `alibi` or `DiCE`. |
 | `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no external layout engine); a JSON effect table for CI. | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
@@ -97,32 +110,32 @@ data-science figures:
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "chart this" / "plot the data" / "make a figure" / "dashboard tile" | `make-figure` / `sprezzature-figures render` | `sprezzature-figures list` to see the catalogue, then `make-figure <kind> --data <data.csv> [--map role=column ...] [--out fig.svg] [--title T]`. `<kind>` is a catalogue name (e.g. `bar`, `treemap`, `funnel`), not a free `--x/--y/--kind` combination. |
+| "chart this" / "plot the data" / "make a figure" / "dashboard tile" | `sprezzature-figures render` | `sprezzature-figures list` to see the catalogue, `sprezzature-figures describe <kind>` for its roles and options, then `sprezzature-figures render <kind> --data <data.csv> [--map role=column ...] [--out fig.svg] [--title T]`. `<kind>` is a catalogue name (e.g. `bar`, `treemap`, `funnel`), not a free `--x/--y/--kind` combination. |
 | "which chart fits my data" / "recommend a chart" | `sprezzature-figures recommend` | `sprezzature-figures recommend --data <data.csv> [--intent comparison\|trend\|distribution\|...] [--render out.svg]`: ranks catalogue kinds your data can fill, best first; `--render` also draws the top pick. |
 | "redraw this chart" / "make this ugly chart better" / "a colleague sent me this graph" / "rends ce graphique plus lisible" | `sprezzature-figures redraw` | `sprezzature-figures redraw <image.png> [--data rows.csv] [--kind <kind>] [--out fig.svg] [--language en|fr]`. Report back what `data_origin` says: if it is `demo`, tell the user the numbers are sample data and ask for theirs — do not let a mock-up be mistaken for their figure. |
 | "explain this model" / "SHAP plot" / "feature importance" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.csv [--engine auto\|shap\|shapash\|timeshap\|lime] [--out ./explain/]` |
 | "shapash report" / "give a stakeholder-facing explanation" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.csv --engine shapash --report shapash --out ./explain/`: writes a full HTML report. |
 | "timeshap" / "explain my LSTM / transformer sequence model" | `explain_model.py` | `python -m sprezzature_figures_scripts.explain_model --model seq_model.pkl --data X.npy --engine timeshap --sequence-cols "t_0,t_1,...,t_N" --out ./explain/` |
 | "causal effect" / "average treatment effect" / "DAG" / "DoWhy" | `causal_estimate.py` | `python -m sprezzature_figures_scripts.causal_estimate --data d.csv --treatment T --outcome Y --confounders "X1,X2,X3" --dag dag.gml [--estimator dml\|dr\|causal-forest\|linear] [--refute all\|placebo\|subset\|random-cause]` |
-| "situation map" / "areas of control" / "who controls what" / "conflict map" / "control map" | *(currently unavailable)* | The generator that used to serve this trigger has been removed from the standalone package (see the Two-modes table above). Tell the user the capability is not shipped today rather than attempting a workaround. |
-| "is this figure readable" / "check my chart" / "did the title make it" / "I have no vision model" | `sprezzature-figures check` | `sprezzature-figures check fig.svg [--dark] [--expect-title "..."] [--forbid "placeholder"]` (needs the `[cli]` extra; from Python it is `check_render`, which never does). Exit 1 on any finding, so it gates a commit. Pass `--expect-title` whenever you asked for a title: a generator that silently drops the parameter is the failure nothing else catches. |
+| "situation map" / "areas of control" / "who controls what" / "conflict map" / "control map" | `sprezzature-maps` | Not in this package: the situation map moved to [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`make-map situation-map --config region.yaml --out region.svg`). Route there. |
+| "is this figure readable" / "check my chart" / "did the title make it" / "I have no vision model" | `sprezzature-figures check` | `sprezzature-figures check fig.svg [--dark] [--expect-title "..."] [--forbid "placeholder"]`; from Python it is `check_render`, over HTTP `POST /check_render`, over MCP the `check_render` tool. Exit 1 on any finding, so it gates a commit. Pass `--expect-title` whenever you asked for a title: a generator that silently drops the parameter is the failure nothing else catches. |
 | "ralph eyeball loop" / "eyeball this" / "screenshot the page" / "render web page" / "look at the PNG" | `ralph_eyeball_loop.py` | `python -m sprezzature_figures_scripts.ralph_eyeball_loop <source> [--width 1440] [--height 900] [--bg white\|transparent\|dark]`: kind auto-detected from suffix (.html → Chrome headless; others → render_diagram.py). Assessment file at `.private/ralph-loop/assessment-<hash>.md`. |
 | "render this diagram" / "tikz to png" / "mermaid diagram" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / mermaid / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
-| user asks for a named charting library ("do this in <library>") | `make-figure` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 167 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
+| user asks for a named charting library ("do this in <library>") | `sprezzature-figures render` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 167 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
 | "audit this figure" / "is this chart misleading" | `audit_figure.py` | `python -m sprezzature_figures_scripts.audit_figure <path>`: accepts an SVG chart or an HTML file with `<figure>` blocks. |
 | "colorblind-safe palette on the figure" | `audit_figure.py` + `sprezzature-colors` | `python -m sprezzature_figures_scripts.audit_figure <path>` catches the pattern; run `sprezzature-colors-cvd` on the rendered PNG for a preview. |
 | "first-time setup" / "install the data-viz stack" | `install_figures.py` | `python -m sprezzature_figures_scripts.install_figures --tier dataviz+explain+causal`: installs pinned versions of each tier. |
 
-## The four figure tiers
+## The four figure tiers (pinning only)
 
 | Tier | Libraries | When to install | Key scripts |
 |---|---|---|---|
-| **dataviz** | `networkx`, `scikit-learn`, `pandas`, `pyyaml`, `shapely`, `pyproj` | Always; the base tier. Tables, geometry and models — nothing in it draws. | `make-figure`, `audit_figure.py` |
+| **dataviz** | `networkx`, `scikit-learn`, `pandas`, `pyyaml`, `shapely`, `pyproj` | Tables, geometry and models — nothing in it draws. | `sprezzature-figures`, `audit_figure.py` |
 | **explain** | `shap`, `shapash`, `timeshap`, `lime`, `scikit-learn` | You have a fitted model and want to explain it. | `explain_model.py` |
 | **causal** | `dowhy`, `econml` | You are estimating a causal effect from observational data. | `causal_estimate.py` |
 | **install-only** | `pip` / `uv` / `poetry` / `conda` (whichever the project uses) | First-time setup on a fresh machine. | `install_figures.py` |
 
-The tiers are **additive**. `install_figures.py --tier dataviz` installs
+All of these libraries are base dependencies since 2026-11-01, so `pip install sprezzature-figures` already carries every tier; `install_figures.py` only pins the versions listed in `requirements-*.txt`. The tiers are **additive**. `install_figures.py --tier dataviz` installs
 only the base plotting stack; `--tier dataviz+explain` adds SHAP /
 Shapash / TimeSHAP / LIME; `--tier dataviz+explain+causal` adds DoWhy /
 EconML. No tier contains a charting library: the catalogue, the
@@ -133,7 +146,7 @@ all.
 
 ## House style — figures that match `sprezzature-ui`
 
-Every figure `make-figure` emits inherits the sprezzature-* design tokens:
+Every figure `sprezzature-figures render` emits inherits the sprezzature-* design tokens:
 
 1. **Colors** from `sprezzature-colors/references/palette.csv`: no rainbows,
    no library defaults. Sequential → `viridis`; diverging → `RdBu_r`;
@@ -152,8 +165,8 @@ Every figure `make-figure` emits inherits the sprezzature-* design tokens:
    good direction: `(higher is better)` / `(lower is better)` /
    `(target = N)`, reinforced (never carried) by a semantic palette
    colour. Full mapping: `references/polarity-and-color.md`.
-6. **`role="img"` + `<figcaption>`** on every `<figure>`; alt text from
-   the chart title + polarity when `--alt-from-title` is set.
+6. **`role="img"` + `<figcaption>`** on every `<figure>`; `audit_figure.py`
+   flags a figure that lacks them.
 
 ## Explainability, causality, and auditor rules: see references
 
@@ -210,7 +223,7 @@ values.
 The canonical palette lives in `sprezzature-colors` (see
 `sprezzature-colors/references/palette.csv`); `sprezzature-figures` reads it at
 runtime when co-installed. When the user has not specified a
-palette, `make-figure` reaches for the curated set. Mirror of the
+palette, `sprezzature-figures render` reaches for the curated set. Mirror of the
 three-Roboto rule in `sprezzature-ui/SKILL.md`:
 
 - **Generation, no user palette specified:** use the curated CSV.
@@ -226,9 +239,9 @@ For a data-science deliverable end-to-end:
 
 ```bash
 # 1. Explore + plot in the house style. `line` needs the roles `month`
-#    (its ordinal/temporal axis) and `value`; `sprezzature-figures list`
-#    shows every kind's roles.
-make-figure line --data data.csv \
+#    (its ordinal/temporal axis) and `value`; `sprezzature-figures describe
+#    <kind>` shows any kind's roles.
+sprezzature-figures render line --data data.csv \
     --map month=date --map value=conversion_rate \
     --out fig.svg
 
@@ -306,22 +319,22 @@ sprezzature-accessibility-lint public/report.html
 
 Shipped by the standalone [`sprezzature-figures`](https://github.com/warith-harchaoui/sprezzature-figures)
 package (`pip install sprezzature-figures`), not by this monorepo. Two
-generations of tooling coexist there: the catalogue-driven `make-figure`
-/ `sprezzature-figures` console scripts (`sprezzature_figures/` package,
-always installed), and the older per-purpose `scripts/*.py` (explainability,
+generations of tooling coexist there: the console scripts
+`sprezzature-figures` / `make-figure` (one Click group),
+`sprezzature-figures-mcp` and `sprezzature-studio`, and the older per-purpose `scripts/*.py` (explainability,
 causality, audit, install), packaged as `sprezzature_figures_scripts` with
 no console-script entries of their own, so they run as `python -m
 sprezzature_figures_scripts.<module>`.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `make-figure` (console script) | `pip install sprezzature-figures` | Renders one catalogue chart kind from your data or its demo data. `sprezzature-figures list` / `render` / `recommend` / `redraw` / `check` cover the same ground with a Click interface plus a kind recommender and a render checker. **No extra is needed for any of them**: click became a base dependency on 2026-10-25, when the argparse front door was dropped, so the base install carries the whole command line. Until then these commands refused with a one-line message naming a `[cli]` extra; that extra no longer exists, and asking pip for it gets a warning and nothing else. |
+| `sprezzature-figures` / `make-figure` (console scripts, one Click group) | `pip install sprezzature-figures` | `list` / `describe` / `render` / `recommend` / `redraw` / `check`: the catalogue, one kind's roles and options, a render, a kind recommender, a redraw from a picture, and a render checker. **No extra is needed for any of them**: click became a base dependency on 2026-10-25, when the argparse front door was dropped, so the base install carries the whole command line. Until then these commands refused with a one-line message naming a `[cli]` extra; that extra no longer exists, and asking pip for it gets a warning and nothing else. |
 | `explain_model.py` | `sprezzature-figures` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
 | `causal_estimate.py` | `sprezzature-figures` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
 | `audit_figure.py` | stdlib + PyYAML | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
-| `install_figures.py` | subprocess to project env manager | Idempotent installer for the three tiers (dataviz / explain / causal). Detects pip / uv / poetry / conda. |
-| `make_situation_map.py`, `build_situation_examples.py`, `make_choropleth.py` | *(moved out)* | Split into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package (`make-map` console script). No longer part of `sprezzature-figures`. |
-| `_argparse.py`, `_click.py`, `_lang.py`, `_vocab.py` | (internal helpers) | Argparse / Click factory, language detection, project-vocab biasing. Duplicated per-skill so each skill stays self-contained. |
+| `install_figures.py` | subprocess to project env manager | Idempotent installer that pins the three tiers (dataviz / explain / causal). Detects uv / poetry / pixi / conda / pip. |
+| `make_situation_map.py`, `build_situation_examples.py`, `make_choropleth.py` | *(moved out)* | Split into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package (`make-map` / `sprezzature-maps` console scripts). No longer part of `sprezzature-figures`. |
+| `_argparse.py`, `_lang.py`, `_svg.py`, `_render.py`, `_interactive.py` | (internal helpers) | The scripts' argument parser factory, language detection, SVG primitives, rasterisation, the fullscreen control. |
 | `_style.py` | stdlib only | Shared style tokens (palette lookup, dark-mode CSS block, Roboto stack). Reads `sprezzature-colors/references/palette.csv` when co-installed. |
 
 ## Companion skills

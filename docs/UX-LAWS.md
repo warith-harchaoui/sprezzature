@@ -1,6 +1,8 @@
 # Laws of user experience (UX) — `sprezzature-ux-laws`
 
-A shared vocabulary for user interface (UI) decisions plus a pre-commit auditor that flags detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Doherty, Choice Overload). Thirty laws, each with a trigger / action / Tailwind hook.
+A shared vocabulary for user interface (UI) decisions plus a pre-commit auditor that flags the eight Laws-of-UX violations decidable from HTML source: Hick and Jakob as errors; Choice Overload, Miller, Fitts, Aesthetic-Usability, Selective Attention and Tesler as warnings. `--fix` repairs Fitts, Aesthetic-Usability, Miller and Jakob. The Doherty threshold is not checked: response time is not a fact about source. The reference holds thirty laws, each with a trigger / action / Tailwind hook.
+
+One `pip install sprezzature-ux-laws` brings the library, the commands `sprezzature-ux-laws` and `sprezzature-ux-laws-audit`, the HTTP API, and the MCP server `sprezzature-ux-laws-mcp` with the tools `health`, `list_laws` and `audit_interface`.
 
 This is the human landing page. It points to the three places that hold the
 detail; nothing is duplicated here.

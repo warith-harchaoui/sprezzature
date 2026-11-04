@@ -13,11 +13,12 @@ about what good looks like, it is sprezzature's.
 |---|---|
 | `speaker-engines` | Model weights, self-hosted; nothing fetched from Hugging Face at runtime. |
 | `speaker-helper` | **The engines**: Kokoro, OpenVoice, Chatterbox, Voicebox. espeak-ng handling, cloning, the evaluation gate. |
-| `sprezzature-audio` | "The sound modality in both directions" — drives speaker-helper, and owns the suite's single WebVTT module. |
+| `sprezzature-audio` | "The sound modality in both directions": drives speaker-helper. |
 | `sprezzature-publish`, `sprezzature-video` | Applying it: a narrated post, a film's narration track. |
 
-`sprezzature-audio` declares `narrate = ["speaker-helper[kokoro,detect]"]`, so
-Kokoro arrives through speaker-helper whichever door you knock on. **A
+`sprezzature-audio` carries speaker-helper (Kokoro, detection, Chatterbox,
+OpenVoice) in its base dependencies since 1.9.0, so Kokoro arrives through
+speaker-helper whichever door you knock on. **A
 sprezzature package wanting a voice depends on `sprezzature-audio`,
 never on speaker-helper directly** — the espeak-ng loader can kill a process
 from C with no Python traceback, and that handling lives one layer down where
@@ -30,7 +31,7 @@ diarize.
 
 | Layer | Owns |
 |---|---|
-| `video-helper` | ffmpeg primitives: frames, convert, compress, concat, overlay, mux, burn subtitles. |
+| `video-helper` | ffmpeg primitives: frames, convert, compress, concat, overlay, mux, burn subtitles; and since 2026-10-31 the suite's one WebVTT module, `video_helper.subtitles`. |
 | `capture-helper` | Frames out of the room rather than out of a file. |
 | `sprezzature-figures`, `-maps` | What appears inside the frame. |
 | `sprezzature-video` | What the film **is**: storyboard, claims, asset ledger, captions, poster, series. |

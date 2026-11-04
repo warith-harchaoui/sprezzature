@@ -1,6 +1,6 @@
 # A11y linter: `lint_a11y.py`
 
-Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it runs over HTML source. Catches **15 source-decidable WCAG / WAI-ARIA failures**.
+Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it runs over HTML source. Catches **20 source-decidable WCAG / WAI-ARIA failures**.
 
 **Not a replacement for axe-core, Pa11y, or Lighthouse.** Those run a real browser and catch the dynamic / runtime failures that no static parser can see: colour-only state after JS, focus order after a route change, name/role/value after ARIA mutation, contrast after a runtime theme switch, live-region announcement order. Use `lint_a11y.py` in pre-commit; use axe-core (or Pa11y, or Lighthouse) in your end-to-end suite. Run both.
 
@@ -10,10 +10,10 @@ Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it
 pip install sprezzature-accessibility
 ```
 
-The linter itself is stdlib-only at runtime (Python 3.10+); the pip install just puts
-the `sprezzature-accessibility-lint` console script on `$PATH`. It also runs directly
-without installing, via `python scripts/lint_a11y.py` or
-`sprezzature-accessibility-lint`.
+The lint imports only the standard library (plus `langdetect`, a base
+dependency, for `--fix`'s language guess); Python 3.10 to 3.13. The one
+`pip install` puts `sprezzature-accessibility-lint` on `$PATH`, with the rest of
+the package.
 
 ## Run
 
@@ -30,7 +30,7 @@ sprezzature-accessibility-lint --format json public/index.html
 # Skip a couple of rules
 sprezzature-accessibility-lint --ignore heading-skip,motion-no-reduce-guard public/
 
-# Auto-fix the mechanically-fixable rules (6 of the 15)
+# Auto-fix the mechanically-fixable rules (6 of the 20)
 sprezzature-accessibility-lint --fix --dry-run public/
 ```
 

@@ -37,6 +37,20 @@ sprezzature-publish-indexes --root . --base-url https://example.com --out public
 
 The script walks the project root looking for `.html` files at the root and inside the conventional output directories (`public/`, `dist/`, `site/`, `_site/`, `build/`, `out/`) plus `.md` files at the root and under `docs/`. Each becomes a sitemap entry and an `llms.txt` bullet.
 
+### Leading with the offer and the call to action
+
+`--offer "One sentence."` and `--cta "Label=URL"` (repeatable, primary
+first) make `llms.txt` open on what the site offers, then a `## Next step`
+section with each CTA's own URL, or its install command as code, before any
+page. The pages whose source carries a CTA URL come first in `llms.txt` and
+`llms-full.txt`. An agent acting for a reader can then hand over the link
+itself.
+
+```sh
+sprezzature-publish-indexes --root . --base-url https://example.com \
+  --offer "Local captions for teams." --cta "Book a demo=https://cal.com/acme/demo"
+```
+
 ### `llms-full.txt`: the full-text companion
 
 `llms.txt` is an *index* (H1 + blockquote + linked bullets); `llms-full.txt` is the *corpus*: the complete text of those pages concatenated so an agent ingests the whole site in one request instead of following each link. It is emitted by default; opt out with `--no-llms-full`.

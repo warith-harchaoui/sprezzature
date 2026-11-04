@@ -122,10 +122,20 @@ Common types to use, picked from the situation:
 | Person profile | `Person` |
 | Recipe | `Recipe` |
 | Event | `Event` |
-| FAQ page | `FAQPage` |
 | Local business | `LocalBusiness` (sub-typed) |
 
-Validate output with <https://search.google.com/test/rich-results>.
+Validate output with <https://search.google.com/test/rich-results>, for the
+types Google still shows a rich result for.
+
+**`FAQPage` is not a page kind any more.** Google stopped showing FAQ rich
+results on 2026-05-07 and removed their documentation on 2026-06-15
+(<https://developers.google.com/search/updates>); the Rich Results Test no
+longer checks it. The meta drafter does not offer it. When a page *shows* a
+FAQ, `sprezzature-publish-faq` builds the `FAQPage` block from the very text
+on the page, once per page, and its audit fails when the two disagree
+(`FAQ003`) or when the markup is all there is (`FAQ002`). Engines read the
+visible answers; the markup is a copy of them, and nothing here claims it
+ranks.
 
 ## Robots and indexing
 
@@ -157,7 +167,7 @@ When the page exists in several languages, declare each variant. See `i18n.md` f
 <meta name="mobile-web-app-capable" content="yes">
 ```
 
-The favicon set, theme-color, and manifest are produced by `sprezzature-publish-icons` (see `ui-guidelines/foundations/app-icons.md`).
+The favicon set, theme-color, and manifest are produced by `sprezzature-publish-icons` (see `references/site-indexes.md` for where they go).
 
 ## What NOT to set
 
@@ -179,7 +189,7 @@ When the user gives the skill a goal ("a marketing page for X") or actual page c
 6. **Theme-color**: light and dark hex from the skill's color tokens, matching the page's primary surface.
 7. **Canonical**: absolute URL of this page.
 
-A local AI helper for the description and `og:image:alt` is `sprezzature-publish-meta` (see `references/alt-text-ai.md` for the install path; same Ollama setup).
+A local AI helper for the description and `og:image:alt` is `sprezzature-publish-meta` (same local model setup as the alt text of `sprezzature-accessibility`, see its `references/alt-text-ai.md`).
 
 ## Checklist (before any page ships)
 

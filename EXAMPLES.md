@@ -26,7 +26,7 @@ findings or error (so the audits gate a commit).
 
 ## sprezzature-accessibility `[det]`: static accessibility (a11y) lint
 
-Lint a static HyperText Markup Language (HTML) file for the 14 source-decidable accessibility rules
+Lint a static HyperText Markup Language (HTML) file for the 20 source-decidable accessibility rules
 (missing `alt`, unlabelled inputs, `<div onclick>`, heading order, …):
 
 ```bash
@@ -146,11 +146,10 @@ python3 -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.
 python3 -m sprezzature_figures_scripts.causal_estimate --data d.csv --treatment T --outcome Y --confounders "X1,X2,X3" --dag dag.gml
 ```
 
-**Situation maps are currently unavailable.** `make_situation_map.py` and
-`build_situation_examples.py` (the areas-of-control plate generator this
-recipe used to show) have been removed from the standalone `sprezzature-figures`
-package; only stale compiled bytecode remains. Do not run the commands this
-recipe used to list here until the generator ships again.
+**Situation maps live in `sprezzature-maps`**, with choropleths and density
+maps: `pip install sprezzature-maps`, then `make-map --help`. Its own
+`EXAMPLES.md` carries the recipes:
+<https://github.com/warith-harchaoui/sprezzature-maps/blob/main/EXAMPLES.md>.
 
 ## sprezzature-publish `[det]`: Markdown → site, meta, favicons, indexes
 
