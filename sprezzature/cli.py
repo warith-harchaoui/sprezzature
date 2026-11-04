@@ -27,10 +27,11 @@ Author
 
 from __future__ import annotations
 
-import argparse
 import filecmp
 import shutil
 from pathlib import Path
+
+import click
 
 from . import SKILL_NAMES, __version__, skill_path, skills_path
 
@@ -97,34 +98,48 @@ def install(source: Path, target: Path) -> Path | None:
     return moved
 
 
-def main(argv: list[str] | None = None) -> int:
-    """Command-line entry point."""
-    parser = argparse.ArgumentParser(
-        prog="sprezzature-skills",
-        description="Report — or, with --install, refresh — the sprezzature "
-                    "skills an agent reads.",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="Reports by default. --install writes under your home directory, "
-               "which changes what every future agent session reads.",
-    )
-    parser.add_argument("--install", action="store_true",
-                        help="Copy the shipped skills into the agent's directory.")
-    parser.add_argument("--agent", default="claude", choices=sorted(AGENT_DIRS),
-                        help="Which agent's skills directory to use (default: %(default)s).")
-    parser.add_argument("--path", action="store_true",
-                        help="Print where pip installed the skills, and stop.")
-    parser.add_argument("-V", "--version", action="version",
-                        version=f"sprezzature-skills {__version__}")
-    args = parser.parse_args(argv)
+@click.command(
+    name="sprezzature-skills",
+    context_settings={"help_option_names": ["-h", "--help"]},
+    help="Report — or, with --install, refresh — the sprezzature skills an agent reads.",
+    epilog="Reports by default. --install writes under your home directory, "
+    "which changes what every future agent session reads.",
+)
+@click.option("--install", "do_install", is_flag=True,
+              help="Copy the shipped skills into the agent's directory.")
+@click.option("--agent", default="claude", show_default=True,
+              type=click.Choice(sorted(AGENT_DIRS)),
+              help="Which agent's skills directory to use.")
+@click.option("--path", "show_path", is_flag=True,
+              help="Print where pip installed the skills, and stop.")
+@click.version_option(__version__, "-V", "--version", prog_name="sprezzature-skills")
+def _cli(do_install: bool, agent: str, show_path: bool) -> int:
+    """Report, or refresh, the installed skills."""
+    return _run(do_install, agent, show_path)
 
+
+def main(argv: list[str] | None = None) -> int:
+    """Command-line entry point; returns the process exit code."""
+    try:
+        result = _cli.main(args=argv, prog_name="sprezzature-skills", standalone_mode=False)
+    except click.exceptions.UsageError as exc:
+        exc.show()
+        return 2
+    except click.exceptions.Exit as exc:
+        return exc.exit_code
+    return result if isinstance(result, int) else 0
+
+
+def _run(do_install: bool, agent: str, show_path: bool) -> int:
+    """The body of the command, with its options already parsed."""
     shipped = skills_path()
-    if args.path:
+    if show_path:
         print(shipped)
         return 0
 
-    target_dir = Path.home() / AGENT_DIRS[args.agent]
+    target_dir = Path.home() / AGENT_DIRS[agent]
     print(f"shipped: {shipped}")
-    print(f"{args.agent}:  {target_dir}\n")
+    print(f"{agent}:  {target_dir}\n")
 
     stale = 0
     for name in SKILL_NAMES:
@@ -139,14 +154,14 @@ def main(argv: list[str] | None = None) -> int:
         stale += 1
         head = diffs[0] if len(diffs) == 1 else f"{len(diffs)} files differ"
         print(f"  {name:28} {head}")
-        if args.install:
+        if do_install:
             moved = install(source, target_dir / name)
             where = f", previous copy at {moved}" if moved else ""
             print(f"  {'':28} → installed{where}")
 
     if not stale:
         print("\nEvery skill is in step.")
-    elif not args.install:
+    elif not do_install:
         print(f"\n{stale} skill(s) differ. Pass --install to refresh them.")
     return 0
 

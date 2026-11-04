@@ -990,7 +990,7 @@ def kit_page(
 KITS: Dict[str, Dict[str, Any]] = {
     "accessibility": {
         "repo": "sprezzature-accessibility",
-        "sources": ["scripts/lint_a11y.py", "scripts/_argparse.py", "scripts/_lang.py"],
+        "sources": ["scripts/lint_a11y.py", "scripts/_lang.py"],
         # _lang.py guards `from langdetect import ...` behind a find_spec
         # check, and falls back to no detection when it is absent.
         #
@@ -1002,7 +1002,14 @@ KITS: Dict[str, Dict[str, Any]] = {
         # shipped a kit that died on a bare machine, which is why this list
         # is written by hand and each entry says what makes it reachable or
         # not.
-        "optional": ["langdetect", "fill_alt"],
+        #
+        # `_click` and click are the command line, imported inside `main`:
+        # the kit calls `lint_html` as a library and never reaches them. Kits
+        # carry no click (Warith, 2026-11-04); the run under `python -I -S`
+        # below is what proves it, since it has no click to find.
+        # `_argparse.py` left the brick on 2026-11-04 with the last argparse
+        # command.
+        "optional": ["langdetect", "fill_alt", "_click", "click"],
         "data": [],
         "sample": _SAMPLE_HTML,
         "run": lint_run(
@@ -1036,7 +1043,10 @@ KITS: Dict[str, Dict[str, Any]] = {
     },
     "ux-laws": {
         "repo": "sprezzature-ux-laws",
-        "sources": ["scripts/audit_laws_of_ux.py", "scripts/_argparse.py"],
+        "sources": ["scripts/audit_laws_of_ux.py"],
+        # click and `_click` only build the command line, inside `main`; the kit
+        # calls `audit_html`. No click in a kit: `python -I -S` proves it.
+        "optional": ["_click", "click"],
         "data": [],
         "sample": _SAMPLE_HTML,
         "run": lint_run(
@@ -1073,7 +1083,14 @@ KITS: Dict[str, Dict[str, Any]] = {
         # file and calls the factory it names, which is fine on your own
         # machine and a liability in a folder people pass around. The kit's
         # parser is written in run.py, where a reader can see it.
-        "package_exclude": ["api.py", "mcp.py", "cli.py", "loader.py", "_argparse.py"],
+        "package_exclude": [
+            "api.py", "mcp.py", "cli.py", "audit_cli.py", "loader.py", "_argparse.py",
+        ],
+        # schema.walk reaches `typer` (and click, through its adapter) only for
+        # a Typer app or a Click command; the kit hands it an argparse parser.
+        # No click in a kit: the run under `python -I -S` proves both stay
+        # unreached.
+        "optional": ["typer", "click"],
         "data": [],
         "run": _CLI_RUN,
         "outputs": [("gui.html", "The parser, rendered as a web form")],
@@ -1131,7 +1148,7 @@ KITS: Dict[str, Dict[str, Any]] = {
         # and no font is embedded — the plate uses a system sans-serif,
         # which the README says. The isolated build-time run is what proves
         # these three are genuinely unreachable rather than merely hoped to be.
-        "optional": ["PIL", "resvg_py", "sprezzature_figures"],
+        "optional": ["PIL", "resvg_py", "sprezzature_figures", "click"],
         "run": _MAPS_RUN,
         "outputs": [("choropleth.svg", "A world choropleth on the Equal Earth projection")],
         "title": {
