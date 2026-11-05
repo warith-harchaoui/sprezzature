@@ -43,16 +43,16 @@ dependencies = [
     # The surfaces are not features and they are not optional any more: the
     # HTTP app and the MCP server are two of this package's five front doors,
     # and a door you have to install separately is a door people do not find.
-    "sprezzature-figures>=2.9.0",
-    "sprezzature-colors>=1.2.1",
-    "sprezzature-accessibility>=1.4.1",
-    "sprezzature-audio>=1.10.1",
-    "sprezzature-cli-gui>=1.5.0",
+    "sprezzature-figures>=2.9.1",
+    "sprezzature-colors>=1.2.2",
+    "sprezzature-accessibility>=1.4.2",
+    "sprezzature-audio>=1.10.2",
+    "sprezzature-cli-gui>=1.5.1",
     "sprezzature-ux-laws>=1.4.1",
-    "sprezzature-maps>=1.1.1",
-    "sprezzature-video>=0.4.1",
+    "sprezzature-maps>=1.1.2",
+    "sprezzature-video>=0.4.2",
     "sprezzature-publish>=1.4.1",
-    "sprezzature-ui>=1.2.0",
+    "sprezzature-ui>=1.2.1",
 ]
 
 [project.optional-dependencies]
