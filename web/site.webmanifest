@@ -1,0 +1,13 @@
+{
+  "name": "sprezzature",
+  "short_name": "sprezzature",
+  "description": "Ten open-source Python packages and agent skills that make and audit the craft around code.",
+  "start_url": "./",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "display": "standalone"
+}

@@ -162,6 +162,33 @@ def _read_desc(page: Path) -> str:
     return re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
 
 
+def _next_step() -> list[str]:
+    """The "Next step" section, from the calls to action in ``ctas.yaml``.
+
+    An agent answering for a reader reads llms.txt and nothing else; without
+    the call to action in it, the agent can describe the suite but cannot
+    hand the reader the link. ``sprezzature-publish-indexes --cta`` writes the
+    same section for a Markdown site; this site is hand-authored, so the
+    section is written here from the file `sprezzature-publish-findable`
+    already reads, primary first.
+    """
+    path = WEB / "ctas.yaml"
+    if not path.is_file():
+        return []
+    import yaml
+
+    plan = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    ctas = [plan.get("primary") or {}] + list(plan.get("secondary") or [])
+    lines = ["## Next step", ""]
+    for cta in ctas:
+        label, url = cta.get("label", ""), cta.get("url", "")
+        if not (label and url):
+            continue
+        full = url if url.startswith(("http://", "https://")) else BASE_URL + url
+        lines.append(f"- [{label}]({full})")
+    return lines + [""] if len(lines) > 2 else []
+
+
 def render_sitemap(en: list[Path], fr: list[Path]) -> str:
     lines = [
         '<?xml version="1.0" encoding="utf-8"?>',
@@ -181,12 +208,14 @@ def render_llms_txt(en: list[Path]) -> str:
     lines = [
         "# Sprezzature",
         "",
-        f"> {_skill_count_word()} Claude / OpenCode skills for one frontend "
-        "stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, "
-        "Laws of UX, data-science figures, and maps. Each skill both makes "
-        "artifacts and audits them.",
+        f"> {_skill_count_word()} open-source Python packages, each also a "
+        "Claude Code / OpenCode skill: UI, CLI-to-GUI, publishing, "
+        "accessibility, colours, captions and narration, Laws of UX, "
+        "data-science figures, maps, and the claims a film makes. Each one "
+        "both makes artifacts and audits them.",
         "",
     ]
+    lines += _next_step()
     for heading, names in _SECTIONS:
         entries = [n for n in names if n in by_name]
         if not entries:

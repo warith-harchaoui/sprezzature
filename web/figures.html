@@ -28,6 +28,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/roboto/fonts.css">
   <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
@@ -1377,6 +1378,102 @@
         </figure>
       </div>
     </dialog>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">How do I install sprezzature-figures?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-figures</code> (Python 3.10 to 3.13): one command installs the generators, the command line, the HTTP API, the MCP server and Sprezzature Studio, with no extras to choose. It is free and open source under the BSD 3-Clause licence, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures render bar --out check.svg</code> checks the install.</p>
+        <h3 class="mt-6 font-semibold">How many chart types does sprezzature-figures have?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-figures has 167 chart types in its catalogue, all marked stable, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures list</code> prints them. The gallery on this page shows 160 of them on purpose: the five glyph maps are on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="maps.html">maps page</a> and the two animated Gapminder figures on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="hans-rosling.html">Hans ROSLING page</a>.</p>
+        <h3 class="mt-6 font-semibold">Which file formats can sprezzature-figures export?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-figures writes SVG by default, self-contained with its fonts embedded, and the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--out</code> extension also picks <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.png</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.jpg</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.pdf</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.html</code>. PNG, JPEG and PDF are rasterised from that SVG inside Python, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--scale 3</code> upsamples them for high-density screens.</p>
+        <h3 class="mt-6 font-semibold">What is the Ralph Eyeball Loop?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">The Ralph Eyeball Loop is how sprezzature-figures looks at a figure before calling it done: it renders an SVG, an HTML page, a TikZ or a Mermaid source to PNG, writes an assessment, and you edit the source and run it again. By default the agent running it reads the picture; with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--local</code>, the vision model <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">qwen3-vl:8b</code> served by Ollama writes the critique offline. It is the script <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">scripts/ralph_eyeball_loop.py</code> in the repository, explained on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="ralph-eyeball-loop.html">its own page</a>.</p>
+        <h3 class="mt-6 font-semibold">Does sprezzature-figures send my data to a cloud service?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-figures renders, recommends and checks figures on your machine with no model and no account. The three steps that use a model (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">redraw</code>, the Studio chat and the eyeball loop's <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--local</code> mode) call one served by Ollama locally by default, through best-engine-ai-helper. Used as a skill, the agent itself follows its own provider's data policy.</p>
+        <h3 class="mt-6 font-semibold">What does sprezzature-figures need besides pip?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">redraw</code>, which rebuilds a chart from a screenshot without inventing its numbers, and the Studio chat need a model served by <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://ollama.com">Ollama</a>. The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, mermaid-cli, tectonic for TikZ, rsvg-convert), and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--check-tools</code> lists which ones you have.</p>
+        <h3 class="mt-6 font-semibold">Can I use sprezzature-figures without Claude Code, for example in CI?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-figures is also a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make_figure</code>), a command line, an HTTP API with a Docker image, and the MCP server <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code> for any MCP client; the Claude Code skill is one of five ways in. In CI, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures check figure.svg</code> exits 1 on any finding (labels printed over each other, text off the canvas, a dropped title), and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> prints them for a program.</p>
+        <h3 class="mt-6 font-semibold">How is sprezzature-figures different from matplotlib, Plotly or Vega-Lite?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you 167 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">LANDSCAPE.md</code> in the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-figures">repository</a> says.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I install sprezzature-figures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs the generators, the command line, the HTTP API, the MCP server and Sprezzature Studio, with no extras to choose. It is free and open source under the BSD 3-Clause licence, and sprezzature-figures render bar --out check.svg checks the install."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many chart types does sprezzature-figures have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-figures has 167 chart types in its catalogue, all marked stable, and sprezzature-figures list prints them. The gallery on this page shows 160 of them on purpose: the five glyph maps are on the maps page and the two animated Gapminder figures on the Hans ROSLING page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which file formats can sprezzature-figures export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-figures writes SVG by default, self-contained with its fonts embedded, and the --out extension also picks .png, .jpg, .pdf or .html. PNG, JPEG and PDF are rasterised from that SVG inside Python, and --scale 3 upsamples them for high-density screens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Ralph Eyeball Loop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Ralph Eyeball Loop is how sprezzature-figures looks at a figure before calling it done: it renders an SVG, an HTML page, a TikZ or a Mermaid source to PNG, writes an assessment, and you edit the source and run it again. By default the agent running it reads the picture; with --local, the vision model qwen3-vl:8b served by Ollama writes the critique offline. It is the script scripts/ralph_eyeball_loop.py in the repository, explained on its own page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sprezzature-figures send my data to a cloud service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: sprezzature-figures renders, recommends and checks figures on your machine with no model and no account. The three steps that use a model (redraw, the Studio chat and the eyeball loop's --local mode) call one served by Ollama locally by default, through best-engine-ai-helper. Used as a skill, the agent itself follows its own provider's data policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does sprezzature-figures need besides pip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. redraw, which rebuilds a chart from a screenshot without inventing its numbers, and the Studio chat need a model served by Ollama. The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, mermaid-cli, tectonic for TikZ, rsvg-convert), and --check-tools lists which ones you have."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use sprezzature-figures without Claude Code, for example in CI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-figures is also a Python library (make_figure), a command line, an HTTP API with a Docker image, and the MCP server sprezzature-figures-mcp for any MCP client; the Claude Code skill is one of five ways in. In CI, sprezzature-figures check figure.svg exits 1 on any finding (labels printed over each other, text off the canvas, a dropped title), and --format json prints them for a program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sprezzature-figures different from matplotlib, Plotly or Vega-Lite?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you 167 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as LANDSCAPE.md in the repository says."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

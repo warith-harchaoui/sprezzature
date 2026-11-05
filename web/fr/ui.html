@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Génération d'UI — Sprezzature</title>
-  <meta name="description" content="UI vanilla JavaScript + Tailwind, composants, pages, formulaires, dialogues, tableaux de bord, pour les équipes qui livrent des outils internes sans designer.">
+  <meta name="description" content="UI vanilla JavaScript + Tailwind : composants, pages, formulaires, dialogues et tableaux de bord pour les équipes qui livrent sans designer.">
   <link rel="canonical" href="https://sprezzature.ai/fr/ui.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/ui.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/ui.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Génération d'UI — Sprezzature">
-  <meta property="og:description" content="UI vanilla JavaScript + Tailwind, composants, pages, formulaires, dialogues, tableaux de bord, pour les équipes qui livrent des outils internes sans designer.">
+  <meta property="og:description" content="UI vanilla JavaScript + Tailwind : composants, pages, formulaires, dialogues et tableaux de bord pour les équipes qui livrent sans designer.">
   <meta property="og:url" content="https://sprezzature.ai/fr/ui.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="Le logo du projet Sprezzature.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts/roboto/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
@@ -171,6 +172,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Questions fréquentes</h2>
+        <h3 class="mt-6 font-semibold">Comment installer sprezzature-ui ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Lancez <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-ui</code> (Python 3.10 ou plus récent) : une seule installation apporte l'audit i18n, les outils de catalogue, la commande <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui</code>, l'API HTTP et le serveur MCP, sans option à choisir. La moitié qui écrit l'interface est la skill : <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> puis <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, ou <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> pour OpenCode.</p>
+        <h3 class="mt-6 font-semibold">Quel code sprezzature-ui produit-il ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui guide un agent pour écrire du HTML sémantique, des classes utilitaires Tailwind et des modules ES simples, sans React, Vue ni aucun autre framework à l'exécution. Variantes pour le mode sombre, anneaux de focus visibles et garde-fous de mouvement réduit sont actifs par défaut, et la typographie suit la règle des trois Roboto : Roboto, Roboto Serif et Roboto Mono, hébergées localement, sauf si vous nommez une autre fonte.</p>
+        <h3 class="mt-6 font-semibold">Peut-on utiliser sprezzature-ui sans Claude Code ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">En partie : les outils i18n de sprezzature-ui fonctionnent seuls, comme bibliothèque Python, ligne de commande, API HTTP avec image Docker et serveur MCP, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-mcp</code>. Écrire l'interface elle-même revient au modèle, guidé par la skill et par la prose de son dossier <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">references/</code> : cette moitié demande un agent comme Claude Code ou OpenCode.</p>
+        <h3 class="mt-6 font-semibold">Que vérifie l'audit de sprezzature-ui, et peut-il tourner en CI ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">L'audit de sprezzature-ui, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-audit</code>, signale les tables de traduction intégrées au JavaScript ou au HTML (règle <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">I18N001</code>) et les prompts de LLM écrits en dur dans du Python, en constantes dont le nom contient <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">PROMPT</code> ou <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">INSTRUCTION</code> (règle <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">I18N002</code>). Il sort avec le code 1 à la moindre trouvaille, de quoi faire échouer une CI ou servir de crochet pre-commit, déclaré dans le <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-ui">dépôt</a> ; il ne juge pas la qualité d'une traduction.</p>
+        <h3 class="mt-6 font-semibold">Comment sprezzature-ui gère-t-il les traductions en YAML ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui range toutes les chaînes à traduire, libellés d'interface comme prompts de modèle, dans un seul catalogue, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n.yaml</code>. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-make</code> le crée, le compile en <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n.json</code> et écrit deux chargeurs, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n.js</code> pour le navigateur et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n_prompts.py</code> pour Python ; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-audit --fix</code> déplace les chaînes trouvées dans le catalogue et affiche l'appel à coller, sans réécrire votre code.</p>
+        <h3 class="mt-6 font-semibold">sprezzature-ui envoie-t-il mon code dans le cloud ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Non : l'audit et les outils de catalogue de sprezzature-ui lisent vos fichiers en local, sans réseau ni modèle, donc sans Ollama ; l'audit n'importe que la bibliothèque standard de Python. Le code de l'interface est écrit par votre agent, qui suit la politique de données de son fournisseur.</p>
+        <h3 class="mt-6 font-semibold">Quelle différence entre sprezzature-ui et shadcn/ui, v0 ou Bootstrap ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">shadcn/ui fournit des composants React et Bootstrap une large bibliothèque de composants, alors que sprezzature-ui refuse tout framework à l'exécution et propose des règles écrites et quelques composants à copier. v0 construit une application à partir d'un prompt, dans un compte hébergé ; sprezzature-ui travaille avec l'agent que vous employez déjà et vérifie le résultat par des audits déterministes.</p>
+        <h3 class="mt-6 font-semibold">sprezzature-ui est-il gratuit ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui. sprezzature-ui est open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et son code est sur <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-ui">GitHub</a>.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment installer sprezzature-ui ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lancez pip install sprezzature-ui (Python 3.10 ou plus récent) : une seule installation apporte l'audit i18n, les outils de catalogue, la commande sprezzature-ui, l'API HTTP et le serveur MCP, sans option à choisir. La moitié qui écrit l'interface est la skill : pip install sprezzature puis sprezzature-skills --install, ou sprezzature-skills --install --agent opencode pour OpenCode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel code sprezzature-ui produit-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-ui guide un agent pour écrire du HTML sémantique, des classes utilitaires Tailwind et des modules ES simples, sans React, Vue ni aucun autre framework à l'exécution. Variantes pour le mode sombre, anneaux de focus visibles et garde-fous de mouvement réduit sont actifs par défaut, et la typographie suit la règle des trois Roboto : Roboto, Roboto Serif et Roboto Mono, hébergées localement, sauf si vous nommez une autre fonte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on utiliser sprezzature-ui sans Claude Code ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En partie : les outils i18n de sprezzature-ui fonctionnent seuls, comme bibliothèque Python, ligne de commande, API HTTP avec image Docker et serveur MCP, sprezzature-ui-mcp. Écrire l'interface elle-même revient au modèle, guidé par la skill et par la prose de son dossier references/ : cette moitié demande un agent comme Claude Code ou OpenCode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que vérifie l'audit de sprezzature-ui, et peut-il tourner en CI ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'audit de sprezzature-ui, sprezzature-ui-i18n-audit, signale les tables de traduction intégrées au JavaScript ou au HTML (règle I18N001) et les prompts de LLM écrits en dur dans du Python, en constantes dont le nom contient PROMPT ou INSTRUCTION (règle I18N002). Il sort avec le code 1 à la moindre trouvaille, de quoi faire échouer une CI ou servir de crochet pre-commit, déclaré dans le dépôt ; il ne juge pas la qualité d'une traduction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment sprezzature-ui gère-t-il les traductions en YAML ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-ui range toutes les chaînes à traduire, libellés d'interface comme prompts de modèle, dans un seul catalogue, locales/i18n.yaml. sprezzature-ui-i18n-make le crée, le compile en locales/i18n.json et écrit deux chargeurs, locales/i18n.js pour le navigateur et locales/i18n_prompts.py pour Python ; sprezzature-ui-i18n-audit --fix déplace les chaînes trouvées dans le catalogue et affiche l'appel à coller, sans réécrire votre code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature-ui envoie-t-il mon code dans le cloud ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non : l'audit et les outils de catalogue de sprezzature-ui lisent vos fichiers en local, sans réseau ni modèle, donc sans Ollama ; l'audit n'importe que la bibliothèque standard de Python. Le code de l'interface est écrit par votre agent, qui suit la politique de données de son fournisseur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre sprezzature-ui et shadcn/ui, v0 ou Bootstrap ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "shadcn/ui fournit des composants React et Bootstrap une large bibliothèque de composants, alors que sprezzature-ui refuse tout framework à l'exécution et propose des règles écrites et quelques composants à copier. v0 construit une application à partir d'un prompt, dans un compte hébergé ; sprezzature-ui travaille avec l'agent que vous employez déjà et vérifie le résultat par des audits déterministes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature-ui est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. sprezzature-ui est open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et son code est sur GitHub."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

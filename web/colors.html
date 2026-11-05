@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Colors — Sprezzature</title>
-  <meta name="description" content="Color tooling for vanilla-JS and Tailwind: WCAG contrast checking with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter">
+  <meta name="description" content="Colour tooling for Tailwind: WCAG contrast checks with OKLCH fixes, colour-vision-deficiency simulation, a curated palette and a config emitter.">
   <link rel="canonical" href="https://sprezzature.ai/colors.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/colors.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/colors.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Colors — Sprezzature">
-  <meta property="og:description" content="Color tooling for vanilla-JS and Tailwind: WCAG contrast checking with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter">
+  <meta property="og:description" content="Colour tooling for Tailwind: WCAG contrast checks with OKLCH fixes, colour-vision-deficiency simulation, a curated palette and a config emitter.">
   <meta property="og:url" content="https://sprezzature.ai/colors.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="The Sprezzature project logo.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/roboto/fonts.css">
   <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
@@ -161,6 +162,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">How do I install sprezzature-colors?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-colors</code> (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> (or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>).</p>
+        <h3 class="mt-6 font-semibold">What does sprezzature-colors do?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-colors has four tools: a WCAG contrast audit of a palette that suggests a passing colour for each failing pair, a simulation of how an image looks with protanopia, deuteranopia or tritanopia (plus a grayscale version), a remap of the palette to one of six accessibility levels, and an export of the palette as a Tailwind configuration. The front door is <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors</code>, and each tool is also its own command, such as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-contrast</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-cvd</code>.</p>
+        <h3 class="mt-6 font-semibold">Does sprezzature-colors check the colours of my web page?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-colors audits the colour pairs of a palette (a JSON file whose keys start with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">label-</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">brand-</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">surface-</code>), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS. Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse.</p>
+        <h3 class="mt-6 font-semibold">How is sprezzature-colors different from an online contrast checker?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-colors checks at once every pair of a palette that can appear together in a theme (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--all-pairs</code> for the full cross-product), at the ratio set with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--target</code>, where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI job.</p>
+        <h3 class="mt-6 font-semibold">Does sprezzature-colors send my files to a cloud service or use AI?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-colors is deterministic colour arithmetic that calls no AI model and never touches the network, so it needs no Ollama; and the simulation writes its images on your own disk, next to the source by default.</p>
+        <h3 class="mt-6 font-semibold">Can I run sprezzature-colors in CI?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-contrast --palette palette.json</code> exits 0 when every pair passes, 1 when one fails and 2 when the palette yields no pair to check, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> gives a report a CI job can parse. An HTTP API (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">POST /v1/contrast</code>) runs the same check for a pipeline written in another language.</p>
+        <h3 class="mt-6 font-semibold">Can I use sprezzature-colors without Claude Code?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-colors is a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_colors as sc</code>), a command line, an HTTP API with a Docker image, and an MCP server, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-mcp</code>, for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">/mcp</code>.</p>
+        <h3 class="mt-6 font-semibold">Is sprezzature-colors free?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-colors is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-colors">GitHub</a>.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I install sprezzature-colors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run pip install sprezzature-colors (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does sprezzature-colors do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-colors has four tools: a WCAG contrast audit of a palette that suggests a passing colour for each failing pair, a simulation of how an image looks with protanopia, deuteranopia or tritanopia (plus a grayscale version), a remap of the palette to one of six accessibility levels, and an export of the palette as a Tailwind configuration. The front door is sprezzature-colors, and each tool is also its own command, such as sprezzature-colors-contrast or sprezzature-colors-cvd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sprezzature-colors check the colours of my web page?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: sprezzature-colors audits the colour pairs of a palette (a JSON file whose keys start with label-, brand- or surface-), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS. Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sprezzature-colors different from an online contrast checker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-colors checks at once every pair of a palette that can appear together in a theme (--all-pairs for the full cross-product), at the ratio set with --target, where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI job."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sprezzature-colors send my files to a cloud service or use AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: sprezzature-colors is deterministic colour arithmetic that calls no AI model and never touches the network, so it needs no Ollama; and the simulation writes its images on your own disk, next to the source by default."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run sprezzature-colors in CI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-colors-contrast --palette palette.json exits 0 when every pair passes, 1 when one fails and 2 when the palette yields no pair to check, and --format json gives a report a CI job can parse. An HTTP API (POST /v1/contrast) runs the same check for a pipeline written in another language."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use sprezzature-colors without Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-colors is a Python library (import sprezzature_colors as sc), a command line, an HTTP API with a Docker image, and an MCP server, sprezzature-colors-mcp, for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and /mcp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is sprezzature-colors free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-colors is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

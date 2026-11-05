@@ -1,39 +1,46 @@
 # Sprezzature
 
-> Ten Claude / OpenCode skills for one frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Each skill both makes artifacts and audits them.
+> Ten open-source Python packages, each also a Claude Code / OpenCode skill: UI, CLI-to-GUI, publishing, accessibility, colours, captions and narration, Laws of UX, data-science figures, maps, and the claims a film makes. Each one both makes artifacts and audits them.
+
+## Next step
+
+- [Star sprezzature on GitHub](https://github.com/warith-harchaoui/sprezzature)
+- [Install all ten packages with pip install sprezzature](https://sprezzature.ai/packages.html)
+- [↓ Runnable accessibility kit (27 KB)](https://sprezzature.ai/kits/accessibility.zip)
+- [↓ Runnable CLI-to-GUI kit (36 KB)](https://sprezzature.ai/kits/cli-gui.zip)
 
 ## Home
 
-- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): Sprezzature is ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes. Each skill both makes artifacts and audits them.
+- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI, figures, maps, colours, captions and publishing.
 
 ## Skills
 
 - [UI generation — Sprezzature](https://sprezzature.ai/ui.html): Vanilla JavaScript + Tailwind UI, components, pages, forms, dialogs, dashboards, for teams shipping internal tools without a designer.
-- [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a single-page vanilla-JS + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.
-- [Publishing — Sprezzature](https://sprezzature.ai/publish.html): Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local narration.
-- [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: twenty rules decidable from source, no browser, no runtime DOM.
-- [Colors — Sprezzature](https://sprezzature.ai/colors.html): Color tooling for vanilla-JS and Tailwind: WCAG contrast checking with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter
-- [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions, speaker diarization and speaker identification for video / audio. WebVTT / SRT from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via speaker embeddings.
-- [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the canonical Laws of UX (Jon YABLONSKI) to vanilla-JS + Tailwind: both when making new UI and when auditing existing HTML. Reference covers 30 laws with trigger, action, Tailwind hook.
+- [CLI → GUI — Sprezzature](https://sprezzature.ai/cli.html): Wrap an existing command-line tool in a one-page vanilla-JS + Tailwind GUI: it reads the argument parser and builds the exact command line.
+- [Publishing — Sprezzature](https://sprezzature.ai/publish.html): Turn a folder of Markdown into a findable static site: meta tags, favicons, sitemap, llms.txt, feeds, FAQ markup, plain-language rewrites and narration.
+- [Accessibility — Sprezzature](https://sprezzature.ai/accessibility.html): Static HTML accessibility lint with twenty rules decidable from source, no browser needed, plus missing alt text drafted by a local vision model.
+- [Colors — Sprezzature](https://sprezzature.ai/colors.html): Colour tooling for Tailwind: WCAG contrast checks with OKLCH fixes, colour-vision-deficiency simulation, a curated palette and a config emitter.
+- [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions and narration: WebVTT / SRT from whisper.cpp, who spoke when with NeMo, speaker identification, and text-to-speech on your machine.
+- [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the 30 canonical Laws of UX (Jon YABLONSKI) to vanilla-JS + Tailwind, both when building new UI and when auditing HTML that already exists.
 - [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: 160 hand-authored SVG chart types, all from fake data on a curated palette.
-- [Video claims — Sprezzature](https://sprezzature.ai/video.html): Check what a project video says against the project itself. A film burns its claims into pixels where nothing re-reads them, so a count stays on screen long after the catalogue behind it has grown.
+- [Video claims — Sprezzature](https://sprezzature.ai/video.html): Check what a project video says against the project itself: claims on screen verified against the code, so a stale count never outlives its catalogue.
 
 ## Case studies
 
-- [Case studies — Sprezzature](https://sprezzature.ai/case-studies.html): Three advanced examples with the Ralph Eyeball Loop: a tribute to Hans ROSLING's animation, publication-grade situation maps, and a systematic markets dashboard, all interactive.
-- [Tribute to Hans ROSLING — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated, interactive tribute to Hans ROSLING's health-and-wealth bubble chart: every country, one frame per year 1950 to 2025, in a single self-contained SVG with no JavaScript library. Real data, historical splits and merges.
-- [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade cartography: an Equal Earth choropleth with an OKLCH ramp, layered Lambert Conformal Conic situation maps with real relief, plus glyph and cartogram maps borrowed from sprezzature-figures, over real French election data.
-- [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ, told in ten interactive SVG panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws. This favourable case shows +123% net return.
-- [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ, told in ten interactive SVG panels, colour-blind-safe, in market-finance colours. Favourable and adverse draws. This adverse case shows -26% net return.
+- [Case studies — Sprezzature](https://sprezzature.ai/case-studies.html): Three advanced Ralph Eyeball Loop examples: a tribute to Hans ROSLING's animation, publication-grade situation maps and a markets dashboard.
+- [Tribute to Hans ROSLING — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated tribute to Hans ROSLING's health-and-wealth bubble chart: every country, 1950 to 2025, in one self-contained SVG with no JavaScript library.
+- [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade maps: an Equal Earth choropleth on an OKLCH ramp, Lambert situation maps with real relief, and glyph maps over real French election data.
+- [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG panels. This favourable draw ends at +123% net return.
+- [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG panels. This adverse draw ends at -26% net return.
 
 ## Reference
 
-- [Packages — Sprezzature](https://sprezzature.ai/packages.html): The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, maps, colors, accessibility, CLI-to-GUI, Laws of UX, audio, publishing, UI i18n, and video claims.
-- [The Ralph Eyeball Loop — Sprezzature](https://sprezzature.ai/ralph-eyeball-loop.html): You can't proofread a chart by reading its code. The Ralph Eyeball Loop renders the thing, looks at it, and fixes what the eye catches, then does it again. How Sprezzature makes figures, diagrams and pages that hold up.
+- [Packages — Sprezzature](https://sprezzature.ai/packages.html): The ten sprezzature packages, each pip-installable with its own repo: figures, maps, colours, accessibility, CLI, UX laws, audio, publish, UI, video.
+- [The Ralph Eyeball Loop — Sprezzature](https://sprezzature.ai/ralph-eyeball-loop.html): You can't proofread a chart by reading its code. The Ralph Eyeball Loop renders it, looks at it, fixes what the eye catches, and goes round again.
 
 ## Films
 
-- [Eleven short films — Sprezzature](https://sprezzature.ai/films.html): Eleven short films about Sprezzature: one on the suite, and one for each of its ten packages. Every figure, map, form and simulation in them is real output from the tools themselves.
+- [Eleven short films — Sprezzature](https://sprezzature.ai/films.html): Eleven short films about sprezzature, one on the suite and one per package, where every figure, map and form on screen is real output of the tools.
 
 ## French (Français)
 

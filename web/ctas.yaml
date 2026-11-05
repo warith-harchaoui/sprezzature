@@ -1,0 +1,27 @@
+# ctas.yaml — what this site asks its readers to do.
+# Read by sprezzature-publish cta, faq and findable, and by
+# tools/site_indexes.py for the "Next step" section of llms.txt.
+# Stages: decide / evaluate / learn.
+
+offer: "Ten open-source skills and Python packages that make and audit the craft around code: interfaces, figures, maps, captions, narration, accessibility and publishing."
+organization: "sprezzature"
+
+primary:
+  label: "Star sprezzature on GitHub"
+  url: "https://github.com/warith-harchaoui/sprezzature"
+  audience: "developers and data scientists who ship interfaces, figures, maps, captions or documentation"
+  stage: evaluate
+
+secondary:
+  - label: "Install all ten packages with pip install sprezzature"
+    url: "/packages.html"
+    audience: "readers ready to try the suite on their own machine"
+    stage: decide
+  - label: "↓ Runnable accessibility kit (27 KB)"
+    url: "/kits/accessibility.zip"
+    audience: "readers evaluating the accessibility lint before installing"
+    stage: evaluate
+  - label: "↓ Runnable CLI-to-GUI kit (36 KB)"
+    url: "/kits/cli-gui.zip"
+    audience: "readers evaluating the CLI-to-GUI wrapper before installing"
+    stage: evaluate
