@@ -28,7 +28,7 @@ baseline for long-form text. The cases where this earns its keep:
 ```bash
 # 1. One install; the voices come with sprezzature-audio, a base dependency.
 pip install sprezzature-publish
-sprezzature-audio-install-voice --engine kokoro      # model files, once
+sprezzature-audio-install-voice --engine chatterbox  # model files, once
 
 # 2. Listen before choosing (optional)
 sprezzature-audio-voice --engine kokoro --sample
@@ -42,7 +42,8 @@ sprezzature-publish-narrate page.html --scope article --audio-format mp3 --bitra
 
 Leave `--engine` unset. The router in `speaker-helper` picks the engine from
 the language and the offline condition, which is where that decision
-belongs; naming one overrides it on purpose. `--voice` left empty lets each
+belongs; today it answers Chatterbox in English and in French, which is why
+step 1 installs that one. Naming `--engine` overrides it on purpose. `--voice` left empty lets each
 engine use its default (for Kokoro, the voice that speaks the detected
 language). `--lexicon words.yaml` fixes the words no engine can guess.
 
@@ -75,9 +76,9 @@ expressive output but is more sensitive to noise in the reference.
 
 | Engine | Code lic. | Weights lic. | Clone | Strength |
 |---|---|---|---|---|
-| **Kokoro** (82 M parameters) | Apache-2.0 | Apache-2.0 | No | The default: no torch, runs on ONNX, fast on a laptop CPU. |
+| **Kokoro** (82 M parameters) | Apache-2.0 | Apache-2.0 | No | The light one: no torch, runs on ONNX, fast on a laptop CPU. Taken with `--engine kokoro`. |
 | **OpenVoice v2** (MyShell) | MIT | MIT | Yes | Cross-lingual, keeps the accent of the sample. |
-| **ChatterboxTTS** (Resemble) | MIT | MIT | Yes | More expressive (continuous `exaggeration` dial); not deterministic, so one synthesis per line. |
+| **ChatterboxTTS** (Resemble) | MIT | MIT | Yes | The router's answer today, in English and in French. More expressive (continuous `exaggeration` dial); not deterministic, so one synthesis per line. |
 | ~~F5-TTS~~ | MIT | **CC-BY-NC-4.0** | Yes | Excluded: non-commercial weights. |
 | ~~XTTS-v2~~ (Coqui) | MIT | **CPML non-commercial** | Yes | Excluded: non-commercial, project shut down 2024-01. |
 

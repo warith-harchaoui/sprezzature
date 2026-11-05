@@ -11,7 +11,7 @@
 specification or the search engine's own documentation. Where no such
 document exists, the rule either says so out loud or does not exist. Three
 of the `SITE` rules are deliberately *not* backed by a spec (`SITE004`,
-`SITE016`, `SITE112`), and so are six of the rules that need the calls to
+`SITE016`, `SITE112`), and so are seven of the rules that need the calls to
 action; each one says which and why.
 
 For the wider "what makes a page indexable and helpful for AI search"
@@ -24,7 +24,7 @@ picture, see `seo-essentials.md`. For what to put in each tag, see
 
 | Rule | Checks | Authority |
 |---|---|---|
-| `SITE000` | a `<head>` exists | [WHATWG HTML § 4.2 Document metadata](https://html.spec.whatwg.org/multipage/semantics.html#document-metadata) |
+| `SITE000` | a `<head>` exists (an `.html` file with no doctype, `<html>` or `<body>` is an include fragment and is not audited) | [WHATWG HTML § 4.2 Document metadata](https://html.spec.whatwg.org/multipage/semantics.html#document-metadata) |
 | `SITE001` | `<html lang>` | [WHATWG HTML § the `lang` attribute](https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes); values per [BCP 47 / RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646) |
 | `SITE002` | `<title>` present | [WHATWG HTML § the `title` element](https://html.spec.whatwg.org/multipage/semantics.html#the-title-element) |
 | `SITE003` | `<meta name="description">` present | [WHATWG HTML § standard metadata names](https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names) |
@@ -49,8 +49,8 @@ picture, see `seo-essentials.md`. For what to put in each tag, see
 | `SITE100` | `robots.txt` exists | [RFC 9309 — Robots Exclusion Protocol](https://datatracker.ietf.org/doc/html/rfc9309) (IETF Proposed Standard, September 2022), and [Google: robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt). RFC 9309 fixes the location (`/robots.txt`, lowercase, top-level), the encoding (UTF-8) and the media type (`text/plain`). |
 | `SITE101` | `robots.txt` names the sitemap | [sitemaps.org § informing crawlers](https://www.sitemaps.org/protocol.html#informing) — the `Sitemap:` directive is the documented way to announce it without submitting it anywhere |
 | `SITE102` | `sitemap.xml` exists | [Sitemaps XML format 0.9](https://www.sitemaps.org/protocol.html) |
-| `SITE103` | every discovered page is listed | same; the sitemap is a *complete* index by design |
-| `SITE104` | no listed URL is gone | same. RFC 9309 and the sitemap protocol are both advisory: a stale entry is a warning, not an error. |
+| `SITE103` | every discovered page is listed, except a `noindex` page and an include fragment | same; the sitemap is a *complete* index by design, of what asks to be indexed |
+| `SITE104` | no listed URL is gone (read off the URL: `/fr/` is gone only if `fr/index.html` is) | same. RFC 9309 and the sitemap protocol are both advisory: a stale entry is a warning, not an error. |
 | `SITE105` | `llms.txt` exists | [llmstxt.org](https://llmstxt.org/) — a proposal rather than a standards-body document, and said so here. Agents other than Google's look for it by name; Google says it "will neither harm nor help" visibility in Search. Nothing is lost by shipping it. |
 | `SITE106` | a feed exists | [RFC 4287 — Atom 1.0](https://datatracker.ietf.org/doc/html/rfc4287) or [RSS 2.0](https://www.rssboard.org/rss-specification) |
 | `SITE110`, `SITE111` | the icon set on disk | [W3C Web App Manifest § icons](https://www.w3.org/TR/appmanifest/#icons-member) and Apple, above |
@@ -70,10 +70,11 @@ body, plus the page it lands on.
 | `CTA000` | some CTA is declared | **No spec, a house rule.** Nothing below can be judged without it, so its absence is said rather than guessed around. |
 | `CTA001` | each declared CTA appears on some page | **No spec.** A declared destination no page offers is a typo in `ctas.yaml` or a missing link on the site. |
 | `CTA002` | each page a reader lands on offers a declared CTA | **No spec.** On the calibration site every blog post offered only an e-mail address, never the booking link. Warning only. |
-| `FAQ001` | a FAQ answer states no number that no other page states | **No spec.** The suite's "do not invent facts" rule, applied to existing answers. Warning. |
+| `FAQ001` | a FAQ answer states no number that no other page states (a single digit and a standard's number, `ISO 3166`, are not claims; `3.10` is a version, not 310) | **No spec.** The suite's "do not invent facts" rule, applied to existing answers. Warning. |
 | `FAQ002` | `FAQPage` markup has a visible FAQ on the same page | [Google: structured data general guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) ("don't mark up content that is not visible to readers of the page"). |
 | `FAQ003` | the markup and the visible FAQ say the same thing | Same guidelines. `--fix` rebuilds the markup from the visible text, on `.html` pages only. |
 | `FAQ004` | one question marked up on one page | **No spec.** Repetition across pages is the doorway pattern of [Google's spam policies](https://developers.google.com/search/docs/essentials/spam-policies), in miniature. Warning. |
+| `FAQ005` | an answer is quotable alone: three sentences and 80 words at most, the organisation named in the first sentence | **No spec, a house rule.** It is the drafting prompt's own contract (`prompts/faq_answer.yaml`), applied to answers written by hand. Answer engines lift a sentence or a short passage; see `faq-aeo.md`. Warning. |
 | `FIND001` | no `nosnippet` / `max-snippet:0` | [Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features): a page must be "eligible to be shown in Google Search with a snippet". Error on a money page, warning elsewhere. |
 | `FIND002` | a money page is not `noindex` | [Google: robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag). |
 | `FIND003` | a money page is in `sitemap.xml` | [sitemaps.org 0.9](https://www.sitemaps.org/protocol.html). |
