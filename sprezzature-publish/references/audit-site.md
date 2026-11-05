@@ -10,8 +10,9 @@
 **The standing rule of this package:** a check earns its place by citing a
 specification or the search engine's own documentation. Where no such
 document exists, the rule either says so out loud or does not exist. Three
-rules below are deliberately *not* backed by a spec, and each one says which
-and why.
+of the `SITE` rules are deliberately *not* backed by a spec (`SITE004`,
+`SITE016`, `SITE112`), and so are six of the rules that need the calls to
+action; each one says which and why.
 
 For the wider "what makes a page indexable and helpful for AI search"
 picture, see `seo-essentials.md`. For what to put in each tag, see
@@ -135,6 +136,8 @@ draws around its `--ai` suggestions.
 | `twitter:title`, `twitter:description` | mirrored from Open Graph, which X documents as its fallback |
 | icon and manifest `<link>`s | the `head.html` `favicons` wrote, or the icon files present |
 | `theme-color` | `--theme-color`, only when given |
+| `og:image` | `--og-image`, only when given and the page has none |
+| `<html lang>` | `--lang`, only when given and the page has none |
 | `robots.txt`, `sitemap.xml` | regenerated through `site_indexes`, so there is one implementation of each |
 | folk GEO tags | **removed** |
 
@@ -142,7 +145,7 @@ draws around its `--ai` suggestions.
 |---|---|
 | the text of `<title>` | no document derives a sentence |
 | the text of `description` | same; `sprezzature-publish-meta` drafts it for review |
-| the choice of `og:image` | names a file nobody can infer |
+| the choice of `og:image`, without `--og-image` | names a file nobody can infer |
 | `og:image:alt` | a description of a picture — `sprezzature-publish-meta` drafts it |
 | the JSON-LD `@type` and body | a modelling decision |
 | the `llms.txt` summary | a paragraph a person writes |

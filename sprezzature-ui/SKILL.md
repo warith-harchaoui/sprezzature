@@ -24,7 +24,7 @@ compatibility: >-
   not required.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 # sprezzature-ui — vanilla JS + Tailwind UI generation
@@ -72,7 +72,7 @@ This skill ships both halves of the sprezzature-* loop:
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — generate UI | `references/` + `assets/components/*.html` + `assets/starter-page.html` + `assets/fonts/` + `sprezzature-ui-i18n-make` | Generation playbook: token map, decision tree below, copy-and-adapt component shapes, three-Roboto webfonts. `sprezzature-ui-i18n-make` scaffolds + compiles `locales/i18n.yaml` (GUI strings **and** prompts) and emits a vanilla-JS loader. |
+| **Make** — generate UI | `references/` + `assets/components/*.html` + `assets/starter-page.html` + `assets/fonts/` + `sprezzature-ui-i18n-make` | Generation playbook: token map, decision tree below, copy-and-adapt component shapes, three-Roboto webfonts. `sprezzature-ui-i18n-make` scaffolds + compiles `locales/i18n.yaml` (GUI strings **and** prompts) and emits two loaders: a vanilla-JS one for the browser and `i18n_prompts.py` for Python. |
 | **Audit** — gate before ship | `sprezzature-ui-i18n-audit` + `references/checklist.md` + `references/anti-patterns.md` + `references/ergonomics-criteria.md` | Pre-ship quality gate; eight-criteria ergonomic review; anti-pattern refusal list. `sprezzature-ui-i18n-audit` flags GUI translations embedded in JS/HTML (`I18N001`) and LLM prompts inlined in Python (`I18N002`); they belong in `locales/i18n.yaml`. |
 
 Pair with `sprezzature-ux-laws` for canonical-law audits and `sprezzature-colors`

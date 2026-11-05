@@ -31,7 +31,7 @@ Ce fichier est écrit par l'auteur de `sprezzature`. La colonne « Compatible s
 Trois catégories concrètes où les *skills* `sprezzature-*`, ensemble, font quelque chose qu'aucun autre outil listé ne fait sous forme de *skill* :
 
 1. **Maquettes d'interface en ligne de commande (CLI) → interface graphique (GUI) depuis `tool --help`.** `sprezzature-cli-gui` échafaude une GUI vanilla-JS + Tailwind depuis le parseur d'arguments d'un CLI Python / Node / Go, en *skill*, sans environnement d'exécution de framework. Aucun autre outil listé ne fait cela comme *skill* Claude / OpenCode : Gradio / Streamlit / Gooey produisent une interface utilisateur (UI) à l'exécution difficile à restyler et ne sont pas des *skills*.
-2. **Barrières d'accessibilité (a11y) avant expédition, en intégration continue (CI), sans navigateur sans interface graphique.** `sprezzature-accessibility-lint` est un lint Python d'un seul fichier, stdlib uniquement, qui tourne en millisecondes dans n'importe quel conteneur CI minimal. axe-core / Pa11y / Lighthouse sont la bonne réponse pour les audits à l'exécution (et vous devriez faire les deux), mais aucun ne tourne sans navigateur et c'est un coût réel dans un hook de pré-commit.
+2. **Barrières d'accessibilité (a11y) avant expédition, en intégration continue (CI), sans navigateur sans interface graphique.** `sprezzature-accessibility-lint` est un lint Python qui ne demande que la bibliothèque standard et click, qui tourne en millisecondes dans n'importe quel conteneur CI minimal. axe-core / Pa11y / Lighthouse sont la bonne réponse pour les audits à l'exécution (et vous devriez faire les deux), mais aucun ne tourne sans navigateur et c'est un coût réel dans un hook de pré-commit.
 3. **Sites de documentation bilingues EN/FR (ou EN/DE, EN/ES, EN/JA)** où la parité typographique et de ton compte. `sprezzature-publish` + la réécriture en langage clair de `sprezzature-ui` + `i18n.md` s'articulent ensemble. Aucun générateur de site statique (SSG) seul ne livre cette combinaison.
 
 ## Où choisir autre chose
@@ -224,7 +224,7 @@ Quel genre de travail faites-vous ? Trouvez la ligne et la recommandation honn�
 | Lint a11y en CI sans navigateur | `sprezzature-accessibility` | C'est une barrière de pré-commit. Pour les audits du modèle objet du document (DOM) à l'exécution (après JS, attributs d'accessibilité Accessible Rich Internet Applications (ARIA) dynamiques, ordre de focus après traitement asynchrone) : [axe-core](https://github.com/dequelabs/axe-core), [Pa11y](https://pa11y.org), Lighthouse. Faites les deux. |
 | Rédaction de texte alternatif en local uniquement | `sprezzature-accessibility` | Pour du texte alternatif hébergé de très haute qualité : [Claude vision](https://docs.claude.com/en/docs/build-with-claude/vision), [GPT-4o vision](https://platform.openai.com/docs/guides/vision), [Gemini Vision](https://ai.google.dev/gemini-api/docs/vision). L'hébergé est plus précis ; le local est gratuit et privé. |
 | Sous-titres locaux, adaptés au processeur (CPU) | `sprezzature-accessibility` | Pour des sous-titres en direct temps réel : [Deepgram](https://deepgram.com), [AssemblyAI](https://www.assemblyai.com). `sprezzature-accessibility` utilise whisper.cpp : rapide sur CPU, pas en direct. |
-| Appliquer / auditer les lois canoniques de l'expérience utilisateur (UX) (Hick, Fitts, Miller, Jakob, Tesler, Peak-End, …) sur le HTML émis | `sprezzature-ux-laws` | Pour la théorie au long cours et une typologie plus riche, lisez [Yablonski, *Laws of UX*, 2e éd.](https://lawsofux.com/book/) et le site [lawsofux.com](https://lawsofux.com/) lui-même ; le *skill* reformule l'ensemble sélectionné et livre un auditeur stdlib uniquement ; il ne remplace ni le matériau source ni les tests d'utilisabilité comportementaux. |
+| Appliquer / auditer les lois canoniques de l'expérience utilisateur (UX) (Hick, Fitts, Miller, Jakob, Tesler, Peak-End, …) sur le HTML émis | `sprezzature-ux-laws` | Pour la théorie au long cours et une typologie plus riche, lisez [Yablonski, *Laws of UX*, 2e éd.](https://lawsofux.com/book/) et le site [lawsofux.com](https://lawsofux.com/) lui-même ; le *skill* reformule l'ensemble sélectionné et livre un auditeur sans navigateur ; il ne remplace ni le matériau source ni les tests d'utilisabilité comportementaux. |
 | Page d'atterrissage marketing | aucun | Webflow, Framer ou une agence de design. `sprezzature` impose une base technique optimisée pour la clarté, pas pour la différenciation de marque. |
 | Identité visuelle sur mesure pour une app grand public | aucun | Engagez un designer. `sprezzature` utilise volontairement une seule famille de palette et deux polices. |
 
@@ -346,7 +346,7 @@ livre les trois familles Roboto en WOFF2 avec les licences OFL groupées).
 
 | Alternative | Forme | Workflow a11y | Mode sombre | Source | Compatible sprezzature | Notes |
 |---|---|---|---|---|:---:|---|
-| **Palettes `sprezzature`** (utilisées) | 4 palettes nommées + variables de design sémantiques | manuel + `audit_contrast.py` | de première classe | <https://deraison.ai/colors/> | ✓ | Choice / Emotion / Concept / Psychology. |
+| **Palettes `sprezzature`** (utilisées) | 4 palettes nommées + variables de design sémantiques | manuel + `sprezzature-colors-contrast` | de première classe | <https://deraison.ai/colors/> | ✓ | Choice / Emotion / Concept / Psychology. |
 | [Tailwind par défaut](https://tailwindcss.com/docs/customizing-colors) | échelles (slate, sky, …) | manuel | à basculer | maison | ~ | Look d'écosystème fort. |
 | [Radix Colors](https://www.radix-ui.com/colors) | échelles sémantiques à 12 pas | intention par pas (1=fond, 12=texte) | échelle sombre en miroir | maison | ~ | Meilleur pour les UI à états. |
 | [Open Color](https://yeun.github.io/open-color/) | palette à 13 pas | manuel | manuel | maison | ~ | Minimal. |
@@ -354,9 +354,9 @@ livre les trois familles Roboto en WOFF2 avec les licences OFL groupées).
 | [Apple system colors](https://developer.apple.com/design/human-interface-guidelines/color) | rôles sémantiques | conseils par rôle | de première classe | Apple Human Interface Guidelines (HIG) | ~ | Plusieurs variables de design de `sprezzature` en sont des reprises directes. |
 | [Spectrum (Adobe)](https://spectrum.adobe.com/page/color-system/) | sémantique + échelles | docs solides sur les règles WCAG pour l'accessibilité des contenus web | de première classe | Adobe | ✗ | Dans l'écosystème Adobe. |
 | [Carbon palettes](https://carbondesignsystem.com/elements/color/overview/) | sémantique + échelles | solides | de première classe | IBM | ✗ | Dans Carbon. |
-| [OKLCH](https://oklch.com) | espace colorimétrique perceptuel (clarté L, chroma C, teinte H), pas une palette | sous-tend la suggestion de correctif | N/A | spec | ✓ | Ce que `audit_contrast.py --fix` utilise. |
+| [OKLCH](https://oklch.com) | espace colorimétrique perceptuel (clarté L, chroma C, teinte H), pas une palette | sous-tend la suggestion de correctif | N/A | spec | ✓ | Ce que `sprezzature-colors-contrast --fix` utilise. |
 
-**Choisir les palettes de `sprezzature`** quand vous voulez un ensemble restreint et audité avec des variables de design sémantiques (`label-primary`, `surface-secondary`) et des paires de mode sombre prêtes. **Choisir Radix Colors** quand l'UI est à états et que vous voulez l'échelle à 12 pas par intention (fond → texte). **Choisir Material 3 Dynamic** quand le produit doit paraître natif sur Android. **Associez chaque choix à `audit_contrast.py`** avant d'expédier, car l'esthétique d'une palette ne révèle jamais à elle seule un échec de ratio 3:1.
+**Choisir les palettes de `sprezzature`** quand vous voulez un ensemble restreint et audité avec des variables de design sémantiques (`label-primary`, `surface-secondary`) et des paires de mode sombre prêtes. **Choisir Radix Colors** quand l'UI est à états et que vous voulez l'échelle à 12 pas par intention (fond → texte). **Choisir Material 3 Dynamic** quand le produit doit paraître natif sur Android. **Associez chaque choix à `sprezzature-colors-contrast`** avant d'expédier, car l'esthétique d'une palette ne révèle jamais à elle seule un échec de ratio 3:1.
 
 ---
 
@@ -430,7 +430,7 @@ livre les trois familles Roboto en WOFF2 avec les licences OFL groupées).
 
 | Outil | Couche | Navigateur requis | Stack | Règles | Licence | Compatible sprezzature | Notes |
 |---|---|:---:|---|---|---|:---:|---|
-| **`scripts/lint_a11y.py`** (utilisé) | source statique | ✗ | Python stdlib | 14 | BSD-3-Clause | ✓ | Barrière de pré-commit. |
+| **`sprezzature-accessibility-lint`** (utilisé) | source statique | ✗ | Python stdlib + click | 20 | BSD-3-Clause | ✓ | Barrière de pré-commit. |
 | [axe-core](https://github.com/dequelabs/axe-core) | DOM à l'exécution | ✓ | JS | 100+ | MPL-2 | ~ | Standard de l'industrie. |
 | [Pa11y](https://pa11y.org) | exécution + CI | ✓ | Node | enveloppe axe / HTML_CodeSniffer | LGPL | ~ | Tourne sans interface graphique. |
 | [Lighthouse](https://developer.chrome.com/docs/lighthouse) | exécution + perf | ✓ | Node | catégorie a11y + perf | Apache | ~ | Fourni avec les DevTools. |
@@ -439,9 +439,9 @@ livre les trois familles Roboto en WOFF2 avec les licences OFL groupées).
 | [HTMLHint](https://htmlhint.com) | source statique | ✗ | Node | HTML général | MIT | ~ | HTML général, pas centré WCAG. |
 | [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) | source statique | ✗ | Node | React | MIT | ✗ | JSX seul ; `sprezzature` n'émet pas de JSX. |
 
-Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, dans les tests navigateur).
+Associez `sprezzature-accessibility-lint` (statique, en CI) à axe-core (à l'exécution, dans les tests navigateur).
 
-**Choisir `sprezzature-accessibility-lint`** comme barrière de pré-commit rapide qui tourne dans un conteneur CI stdlib uniquement, avec exit 1 sur tout constat. **Choisir axe-core ou Pa11y** pour les vérifications dynamiques : état ARIA dynamique, pièges de focus après `dialog.showModal()`, contraste de couleur après un changement de thème à l'exécution, name/role/value après montage de portails. **Choisir Lighthouse** quand l'audit a11y doit venir avec l'audit performance / référencement naturel (SEO) dans le même rapport. Le cadrage honnête : un lint statique vert ne veut pas dire conforme aux règles WCAG : il veut dire que les règles statiques passent.
+**Choisir `sprezzature-accessibility-lint`** comme barrière de pré-commit rapide qui tourne dans un conteneur CI minimal (deux paquets : click et le lint), avec exit 1 sur tout constat. **Choisir axe-core ou Pa11y** pour les vérifications dynamiques : état ARIA dynamique, pièges de focus après `dialog.showModal()`, contraste de couleur après un changement de thème à l'exécution, name/role/value après montage de portails. **Choisir Lighthouse** quand l'audit a11y doit venir avec l'audit performance / référencement naturel (SEO) dans le même rapport. Le cadrage honnête : un lint statique vert ne veut pas dire conforme aux règles WCAG : il veut dire que les règles statiques passent.
 
 ---
 
@@ -458,7 +458,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 | [TPGi Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) | app desktop | ✓ | ✗ | gratuit | ~ | Basé sur une pipette. |
 | [axe DevTools color contrast](https://www.deque.com/axe/) | panneau DOM | ✓ | ~ | freemium | ~ | Se marie avec axe-core. |
 
-**Choisir `audit_contrast.py`** quand l'audit doit tourner en CI sur un JSON de palette, avec des suggestions optionnelles de correctif par voisin OKLCH. **Choisir `simulate_cvd.py`** pour rendre la surface telle que la voient les protanopes, deutéranopes et tritanopes, utile pour la revue par les parties prenantes. **Choisir Stark ou Sim Daltonism** pour la boucle de design en temps réel dans Figma ou sur le bureau. **Traiter la suggestion `--fix` comme un indice, pas un verdict** : un designer choisit toujours l'échantillon final.
+**Choisir `sprezzature-colors-contrast`** quand l'audit doit tourner en CI sur un JSON de palette, avec des suggestions optionnelles de correctif par voisin OKLCH. **Choisir `sprezzature-colors-cvd`** pour rendre la surface telle que la voient les protanopes, deutéranopes et tritanopes, utile pour la revue par les parties prenantes. **Choisir Stark ou Sim Daltonism** pour la boucle de design en temps réel dans Figma ou sur le bureau. **Traiter la suggestion `--fix` comme un indice, pas un verdict** : un designer choisit toujours l'échantillon final.
 
 ---
 
@@ -476,7 +476,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 | [Bootstrapping Language-Image Pre-training (BLIP) / LLaVA / MiniCPM-V](https://huggingface.co/docs/transformers/model_doc/llava) | GPU local | poids ouverts | prompt | $0 | varié | ~ | Alternatives auto-hébergées. |
 | [CapAlt](https://capalt.com), [AltGen](https://github.com/Mateo-Wallace/AltGen) | hébergé / plug-in FE | dépend | dépend | variable | variable | ✗ | Outils dédiés. |
 
-**Choisir `alt_from_ollama.py`** quand les images sont privées (captures internes, données clients, travail en cours), quand le hors-ligne est une exigence ou quand le coût par appel compte. **Choisir Claude vision, GPT-4o vision ou Gemini Vision** quand la qualité au top compte plus que la localité : les modèles hébergés sont nettement meilleurs sur la longue traîne des images inhabituelles. **Revoyez toujours le brouillon** avant de committer, quel que soit le camp choisi : le texte alternatif est un contrat écrit par un humain avec les utilisateurs de lecteurs d'écran.
+**Choisir `make-alt`** quand les images sont privées (captures internes, données clients, travail en cours), quand le hors-ligne est une exigence ou quand le coût par appel compte. **Choisir Claude vision, GPT-4o vision ou Gemini Vision** quand la qualité au top compte plus que la localité : les modèles hébergés sont nettement meilleurs sur la longue traîne des images inhabituelles. **Revoyez toujours le brouillon** avant de committer, quel que soit le camp choisi : le texte alternatif est un contrat écrit par un humain avec les utilisateurs de lecteurs d'écran.
 
 ---
 
@@ -484,7 +484,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 
 | Outil | Lieu d'exécution | Modèle | Vitesse (CPU, p95) | Direct | Biais de vocabulaire | Licence | Compatible sprezzature | Notes |
 |---|---|---|---|:---:|:---:|---|:---:|---|
-| **`scripts/captions_from_whisper.py`** (utilisé) | local | `large-v3-turbo` via pywhispercpp | rapide | ✗ | ✓ | BSD-3-Clause | ✓ | Choisit auto le vocabulaire depuis le projet. |
+| **`sprezzature-audio-captions`** (utilisé) | local | `large-v3-turbo` via pywhispercpp | rapide | ✗ | ✓ | BSD-3-Clause | ✓ | Choisit auto le vocabulaire depuis le projet. |
 | [OpenAI Whisper](https://github.com/openai/whisper) | local | plusieurs tailles | lent sur CPU | ✗ | ~ | MIT | ~ | Implémentation de référence. |
 | [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | local | CTranslate2 | 4–8× plus rapide | ✗ | ~ | MIT | ~ | Mêmes modèles, moteur plus rapide. |
 | [whisper.cpp](https://github.com/ggml-org/whisper.cpp) | local | GGML | le plus rapide en C++ | ✗ | ~ | MIT | ~ | Moteur sous pywhispercpp. |
@@ -495,7 +495,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 | [Otter](https://otter.ai) | hébergé | propriétaire | temps réel | ✓ | ~ | propriétaire | ✗ | Orienté grand public. |
 | [Aeneas](https://github.com/readbeyond/aeneas) | local | aligneur forcé | rapide | ✗ | N/A | AGPL | ~ | Aligne des transcriptions *existantes* : problème différent. |
 
-**Choisir `captions_from_whisper.py`** quand les fichiers source vivent sur disque, que le CPU seul est acceptable et que le workflow peut prendre quelques minutes par fichier. **Choisir Deepgram, AssemblyAI ou Rev.ai** pour des sous-titres en direct, une latence sous le temps réel ou des vocabulaires spécifiques au domaine réglés par le fournisseur. **Choisir Aeneas** quand vous avez déjà une transcription et n'avez qu'à l'aligner sur l'audio (l'alignement forcé est un problème différent de la transcription). **Associez sous-titres et texte alternatif** quand vous livrez de la vidéo : un `<track kind="captions">` sous-titré plus un `<track kind="descriptions">` est le minimum pour la parité avec les utilisateurs voyants.
+**Choisir `sprezzature-audio-captions`** quand les fichiers source vivent sur disque, que le CPU seul est acceptable et que le workflow peut prendre quelques minutes par fichier. **Choisir Deepgram, AssemblyAI ou Rev.ai** pour des sous-titres en direct, une latence sous le temps réel ou des vocabulaires spécifiques au domaine réglés par le fournisseur. **Choisir Aeneas** quand vous avez déjà une transcription et n'avez qu'à l'aligner sur l'audio (l'alignement forcé est un problème différent de la transcription). **Associez sous-titres et texte alternatif** quand vous livrez de la vidéo : un `<track kind="captions">` sous-titré plus un `<track kind="descriptions">` est le minimum pour la parité avec les utilisateurs voyants.
 
 ---
 
@@ -503,7 +503,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 
 | Outil | Sorties | Stack | Build | Agnostique au SSG | Licence | Compatible sprezzature | Notes |
 |---|---|---|:---:|:---:|---|:---:|---|
-| **`sprezzature-publish-indexes`** (utilisé) | robots.txt, sitemap.xml, llms.txt, Atom / flux RSS, humans.txt | Python stdlib | ✗ | ✓ | BSD-3-Clause | ✓ | En un coup, sans deps. |
+| **`sprezzature-publish-indexes`** (utilisé) | robots.txt, sitemap.xml, llms.txt, Atom / flux RSS, humans.txt | Python stdlib + click | ✗ | ✓ | BSD-3-Clause | ✓ | En un coup. |
 | [sitemap npm](https://www.npmjs.com/package/sitemap) | sitemap | Node | ✓ | ✓ | MIT | ~ | Mono-fonction. |
 | [python-sitemap](https://github.com/c4software/python-sitemap) | sitemap | Python | ✗ | ✓ | MIT | ~ | Mono-fonction. |
 | [feedgen](https://feedgen.kiesow.be/) | Atom/RSS | Python | ✗ | ✓ | LGPL | ~ | Flux seulement. |
@@ -511,7 +511,7 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 | Fonctions intégrées de SSG (Hugo, Jekyll, Astro, Eleventy) | sitemap + flux | varié | ✓ | ✗ | varié | ~ | Liés au SSG. |
 | [spec llmstxt.org](https://llmstxt.org) | le format lui-même | — | — | ✓ | spec | ✓ | Spec de format, pas de générateur par conception. |
 
-**Choisir `site_indexes.py`** quand vous voulez une seule commande stdlib uniquement qui émet robots.txt + sitemap.xml + llms.txt + flux Atom + humans.txt depuis n'importe quel répertoire de HTML. **Choisir les fonctions intégrées du SSG** (Hugo, Astro, Eleventy, MkDocs) quand vous utilisez déjà ce SSG : les générateurs en double sont déroutants pour le mainteneur suivant. **Choisir `feedgen` ou `feed npm`** quand vous ne voulez que le flux et voulez l'intégrer dans un build plus large. La ligne `llmstxt.org` est une spec, pas un générateur : il n'y a pas de SaaS à choisir.
+**Choisir `sprezzature-publish-indexes`** quand vous voulez une seule commande (bibliothèque standard plus click) qui émet robots.txt + sitemap.xml + llms.txt + flux Atom + humans.txt depuis n'importe quel répertoire de HTML. **Choisir les fonctions intégrées du SSG** (Hugo, Astro, Eleventy, MkDocs) quand vous utilisez déjà ce SSG : les générateurs en double sont déroutants pour le mainteneur suivant. **Choisir `feedgen` ou `feed npm`** quand vous ne voulez que le flux et voulez l'intégrer dans un build plus large. La ligne `llmstxt.org` est une spec, pas un générateur : il n'y a pas de SaaS à choisir.
 
 ---
 
@@ -552,5 +552,5 @@ Associez `scripts/lint_a11y.py` (statique, en CI) à axe-core (à l'exécution, 
 - [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) : la source de plusieurs ergonomies de `sprezzature`.
 - [Material Design 3](https://m3.material.io) : distillé dans `sprezzature/references/material-design.md`.
 - [WCAG 2.2](https://www.w3.org/TR/WCAG22/) : la base d'accessibilité que le *skill* vise.
-- [Initiative d'accessibilité web (WAI) Image Tutorial](https://www.w3.org/WAI/tutorials/images/) : l'arbre de décision de texte alternatif derrière `alt_from_ollama.py`.
+- [Initiative d'accessibilité web (WAI) Image Tutorial](https://www.w3.org/WAI/tutorials/images/) : l'arbre de décision de texte alternatif derrière `make-alt`.
 - [llmstxt.org](https://llmstxt.org) : la spec que suit le `llms.txt` à la racine du dépôt.

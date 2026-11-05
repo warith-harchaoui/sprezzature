@@ -50,7 +50,9 @@ _EXTRAS_IN_INSTALL = re.compile(r'pip install[^\n]*?"\.\[([^\]]+)\]"')
 _ASGI_APP = re.compile(r'"([\w.]+):app"')
 _EXPOSE = re.compile(r"^EXPOSE\s+(\d+)", re.M)
 _CMD_PORT = re.compile(r'--port[ ",]+(\d+)')
-_SUITE_COMMAND = re.compile(r"\b(?:sprezzature|make)-[a-z0-9-]+\b")
+#: Not after a ``/``: ``~/.cache/sprezzature-skill`` is a directory a comment
+#: names, not a command it asks anybody to run.
+_SUITE_COMMAND = re.compile(r"(?<!/)\b(?:sprezzature|make)-[a-z0-9-]+\b")
 #: ``.[${EXTRAS}]`` and friends: a build argument, not a name to check.
 _BUILD_ARG = re.compile(r"^\$\{?\w+\}?$")
 

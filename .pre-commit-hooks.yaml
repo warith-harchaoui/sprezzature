@@ -4,23 +4,23 @@
 #
 #   repos:
 #     - repo: https://github.com/warith-harchaoui/sprezzature
-#       rev: v0.16.0
+#       rev: v1.8.0
 #       hooks:
 #         - id: sprezzature-ui-validate-skill
+#         - id: sprezzature-triggers-sync
 #
-# The hooks for the extracted bricks ship with those bricks: see
-# sprezzature-accessibility, sprezzature-ux-laws, sprezzature-publish and
-# the rest, each of which carries its own .pre-commit-hooks.yaml now.
+# The hooks for the bricks ship with those bricks: sprezzature-publish
+# carries ``sprezzature-publish-lint`` and sprezzature-ui carries
+# ``sprezzature-ui-i18n-audit``, each in its own .pre-commit-hooks.yaml.
+# The other gates (``sprezzature-accessibility-lint``,
+# ``sprezzature-ux-laws-audit``, ``sprezzature-colors-contrast``, …) run as
+# ``repo: local`` hooks over the installed command.
 # What is left here is the two gates that are about this repository: the
 # SKILL.md spec validator and the TRIGGERS generator.
-#         - id: sprezzature-accessibility-lint
-#         - id: sprezzature-ux-laws-audit
-#         - id: sprezzature-ui-validate-skill
-#
-# Every hook is stdlib-only. The two color hooks
-# (``sprezzature-colors-contrast`` and ``sprezzature-colors-cvd``) need Pillow;
-# they declare it via ``additional_dependencies`` so pre-commit
-# installs into its own isolated env.
+
+# Both need PyYAML. pre-commit installs this repository into the hook's own
+# env, and the bricks it depends on bring PyYAML; the triggers hook also names
+# it in ``additional_dependencies``.
 
 - id: sprezzature-ui-validate-skill
   name: sprezzature-ui — SKILL.md spec gate

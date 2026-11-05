@@ -23,7 +23,7 @@ Cite these sources when a user pushes back on a recommendation. **No other sourc
 The bare minimum Google needs to show a page in results. "Most sites pass the technical requirements without even realizing it." `sprezzature-publish` artifacts that map directly:
 
 - **Crawlable URLs.** `sprezzature-publish-indexes` emits `sitemap.xml` (sitemaps.org 0.9) listing every page, and `robots.txt` permitting Googlebot (and AI Overview crawlers; see below) by default.
-- **No accidental blocking.** The default `robots.txt` allows the canonical crawler list. If a project needs to gate staging surfaces, the script accepts a `--user-agent-block` flag rather than asking the user to hand-roll the file.
+- **No accidental blocking.** The default `robots.txt` is `User-agent: *`, `Allow: /` and the `Sitemap:` line, nothing else. The script has no flag to block a crawler or a path: a project that needs to gate staging surfaces edits the emitted file, or keeps staging off the public host.
 - **Valid HTML.** Pages from `sprezzature-publish-html` are W3C-valid semantic HTML emitted from the same shell `sprezzature-ui` enforces (real `<h1>`–`<h6>`, `<button>`, `<a href>`, `<dialog>`, `<form>`).
 - **HTTPS.** Out of scope for the skill (hosting concern); flag the requirement in the project README so the operator doesn't forget.
 
@@ -33,7 +33,7 @@ Behaviors that get a page (or whole site) ranked lower or omitted. `sprezzature-
 
 - **No cloaking.** The skill emits one HTML body per URL, never a different document for Googlebot vs. browser. If a future contributor proposes user-agent-keyed templating in `md_to_html.py`, refuse it on this basis.
 - **No auto-generated low-value content.** `sprezzature-publish-plain` rewrites for clarity, it does **not** spin or paraphrase to inflate page count. The eval suite (`tests/eval/test_plain_language_eval.py`) gates on semantic preservation, not surface variation.
-- **No keyword stuffing.** `sprezzature-publish-meta` produces single-sentence descriptions ~120–155 chars (see `references/meta-tags.md`); the validator rejects descriptions over 1024 chars or with marketing-voice phrases.
+- **No keyword stuffing.** `sprezzature-publish-meta` produces single-sentence descriptions ~120–155 chars (see `references/meta-tags.md`); the length window and the ban on marketing voice are written into the prompt (`scripts/prompts/meta_tags_json.yaml`), and `sprezzature-publish-audit` reports a description outside 120–155 chars (`SITE004`).
 - **No hidden text / links.** Forbidden by `sprezzature-ui`'s hard rule against inline `style="…"` and by the a11y lint catching `display:none` on text intended for readers.
 - **No link schemes / private blog networks.** Out of scope for the skill; the skill emits one site, not a network. Flag it in CONTRIBUTING-style guidance when a user asks the agent to "build a backlink network".
 
@@ -44,11 +44,11 @@ Each row maps Google's practice to the sprezzature-publish artifact + the script
 | Google's practice                       | How `sprezzature-publish` already does it                                                                                                  |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Helpful, reliable, people-first content | `plain_language.py` rewrites at a target reading level, preserves meaning, strips marketing voice. Audience-fit is a content-author concern the skill surfaces but doesn't substitute for. |
-| Terms in titles / headings / alt / link text | `meta_from_ollama.py` proposes titles that match the page; `sprezzature-ui`'s semantic-HTML rule means real `<h1>`–`<h6>` carry the topic; `sprezzature-accessibility/alt_from_ollama.py` drafts purposeful alt text; `lint_markdown.py` forbids bare-URL link text ("click here"). |
-| Crawlable links                         | `lint_markdown.py` rejects empty / nonsense link targets. `site_indexes.py` `sitemap.xml` lists every page so depth-2 surfaces aren't lost. |
+| Terms in titles / headings / alt / link text | `meta_from_ollama.py` proposes titles that match the page; `sprezzature-ui`'s semantic-HTML rule means real `<h1>`–`<h6>` carry the topic; `sprezzature-accessibility-alt` drafts purposeful alt text; `lint_markdown.py` flags an empty image alt (`MD045`) for a person to confirm. |
+| Crawlable links                         | `lint_markdown.py` rejects a local link whose target is not on disk (`MD050`). `site_indexes.py` `sitemap.xml` lists every page so depth-2 surfaces aren't lost. |
 | Community engagement                    | Out of scope for the skill (you do it on Mastodon / LinkedIn / Bluesky / your newsletter). The skill emits Atom and RSS feeds so followers in those communities can subscribe without an algorithm. |
-| Media optimization                      | Images: `sprezzature-accessibility/alt_from_ollama.py` ships W3C-purpose-correct alt text. Videos: `sprezzature-accessibility/captions_from_whisper.py` ships WebVTT captions. Structured data: `meta_from_ollama.py` emits Schema.org JSON-LD per page. JavaScript: `sprezzature-ui`'s vanilla-JS rule keeps the runtime tiny and crawler-renderable. |
-| Feature enablement + control            | `meta_from_ollama.py` emits OpenGraph + Twitter Card + Schema.org so search and social previews render right; `robots.txt` supports per-path block patterns; `<meta name="robots" content="noindex">` is the per-page escape hatch when a single URL must not be indexed. |
+| Media optimization                      | Images: `sprezzature-accessibility-alt` drafts W3C-purpose-correct alt text. Videos: `sprezzature-audio-captions` writes WebVTT captions. Structured data: `meta_from_ollama.py` emits Schema.org JSON-LD per page. JavaScript: `sprezzature-ui`'s vanilla-JS rule keeps the runtime tiny and crawler-renderable. |
+| Feature enablement + control            | `meta_from_ollama.py` emits OpenGraph + Twitter Card + Schema.org so search and social previews render right; `robots.txt` advertises the sitemap and blocks nothing by default (add `Disallow:` lines by hand where a path must stay out); `<meta name="robots" content="noindex">` is the per-page escape hatch when a single URL must not be indexed. |
 
 ## GEO (Generative Engine Optimization): the AI-Overview vocabulary
 
@@ -92,7 +92,7 @@ The differences are small and concrete:
 - **`<meta name="keywords">`**: ignored by every major search engine since ~2009. Don't emit it. (Already documented in `references/meta-tags.md`.)
 - **`<meta http-equiv="refresh">`** for navigation: bad for accessibility and indexable as the wrong page. Use a server-side 301 redirect instead.
 - **"AI-approved" / "Google-approved" badges in the footer**: Google doesn't endorse third-party tools (<https://developers.google.com/search/docs/fundamentals/third-party-seo>). Refuse to emit such a badge.
-- **Doorway pages**: many near-identical pages targeting variations of the same query, with all of them funneling to one destination. The skill produces one page per `.md`; the `lint_markdown.py` linter catches near-duplicate titles within a posts directory.
+- **Doorway pages**: many near-identical pages targeting variations of the same query, with all of them funneling to one destination. The skill produces one page per `.md`. Nothing here detects near-duplicate pages: that is a review question for the author. The one doorway-shaped pattern checked is a FAQ question marked up on several pages (`FAQ004`).
 - **Hidden / cloaked content**: see "Spam policies" above.
 - **Auto-translated content without human review**: see `references/i18n.md`. Machine translation is a starting point, not a publish-ready output.
 
@@ -115,10 +115,10 @@ Run before deploying any site emitted by `sprezzature-publish`:
 - [ ] Each page has a canonical URL (`<link rel="canonical">`); even on single-language sites, this prevents duplicate-content surprises.
 - [ ] Multi-language sites: `<link rel="alternate" hreflang="…">` between language variants (`references/i18n.md`).
 - [ ] Every `<img>` has purposeful alt text per the W3C decision tree (`sprezzature-accessibility/references/alt-text-ai.md`).
-- [ ] Every `<video>` has captions (`sprezzature-audio/scripts/captions_from_whisper.py` for the WebVTT track) and a transcript link.
+- [ ] Every `<video>` has captions (`sprezzature-audio-captions` for the WebVTT track) and a transcript link.
 - [ ] Schema.org JSON-LD present where appropriate (`Article`, `BreadcrumbList`, `WebSite`, `Organization`, `Person`, `AudioObject` for narrated posts).
 - [ ] No `<meta name="keywords">`, no `<meta http-equiv="refresh">` for navigation, no "AI-approved" badges.
-- [ ] `lint_markdown.py` and `sprezzature-accessibility/lint_a11y.py` both pass.
+- [ ] `sprezzature-publish-lint` and `sprezzature-accessibility-lint` both pass, and `sprezzature-publish-findable` reports no error on a money page.
 - [ ] HTTPS is enforced at the host (operator's responsibility; flag in the project README).
 
 ## What this file does not cover

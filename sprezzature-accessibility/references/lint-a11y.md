@@ -1,8 +1,8 @@
-# A11y linter: `lint_a11y.py`
+# A11y linter: `sprezzature-accessibility-lint`
 
 Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it runs over HTML source. Catches **20 source-decidable WCAG / WAI-ARIA failures**.
 
-**Not a replacement for axe-core, Pa11y, or Lighthouse.** Those run a real browser and catch the dynamic / runtime failures that no static parser can see: colour-only state after JS, focus order after a route change, name/role/value after ARIA mutation, contrast after a runtime theme switch, live-region announcement order. Use `lint_a11y.py` in pre-commit; use axe-core (or Pa11y, or Lighthouse) in your end-to-end suite. Run both.
+**Not a replacement for axe-core, Pa11y, or Lighthouse.** Those run a real browser and catch the dynamic / runtime failures that no static parser can see: colour-only state after JS, focus order after a route change, name/role/value after ARIA mutation, contrast after a runtime theme switch, live-region announcement order. Use `sprezzature-accessibility-lint` in pre-commit; use axe-core (or Pa11y, or Lighthouse) in your end-to-end suite. Run both.
 
 ## Install
 
@@ -10,8 +10,8 @@ Static, no-DOM lint for CI and pre-commit hooks. No browser, no JS execution; it
 pip install sprezzature-accessibility
 ```
 
-The lint imports only the standard library (plus `langdetect`, a base
-dependency, for `--fix`'s language guess); Python 3.10 to 3.13. The one
+The lint imports only the standard library and click (plus `langdetect`, a
+base dependency, for `--fix`'s language guess); Python 3.10 to 3.13. The one
 `pip install` puts `sprezzature-accessibility-lint` on `$PATH`, with the rest of
 the package.
 
@@ -56,7 +56,16 @@ Each rule has a stable identifier so the `--ignore` flag and JSON output referen
 | `heading-skip` | Heading levels jump downward (e.g. `<h2>` followed by `<h4>`). | WCAG SC 1.3.1. |
 | `color-only-state` | Tailwind `*-red-*` / `*-green-*` token on an element with no text and no inline icon. State must not rely on color alone. | WCAG SC 1.4.1. |
 | `motion-no-reduce-guard` | `animate-{spin,ping,pulse,bounce}`, `transition-transform`, or `transition-all` without a `motion-reduce:` peer. | WCAG SC 2.3.3 / `prefers-reduced-motion`. |
-| `body-text-tracking-tight` | Tailwind `tracking-tight`/`tracking-tighter` (negative letter-spacing) on running body text (`p`, `li`, `dd`, `blockquote`, `td`, `figcaption`); headings, buttons, and nav labels are excluded. A static proxy for the intent of the SC, not a conformance test: it cannot verify a rendered page survives a user *widening* spacing without clipping. The make-side counterpart, `text_spacing_preset.py`, emits an opt-in CSS block at the WCAG 1.4.12 minimums for the same tag set. | WCAG SC 1.4.12 (proxy). |
+| `body-text-tracking-tight` | Tailwind `tracking-tight`/`tracking-tighter` (negative letter-spacing) on running body text (`p`, `li`, `dd`, `blockquote`, `td`, `figcaption`); headings, buttons, and nav labels are excluded. A static proxy for the intent of the SC, not a conformance test: it cannot verify a rendered page survives a user *widening* spacing without clipping. The make-side counterpart, `sprezzature-accessibility-text-spacing`, emits an opt-in CSS block at the WCAG 1.4.12 minimums for the same tag set. | WCAG SC 1.4.12 (proxy). |
+| `video-missing-captions` | `<video>` with no `<track kind="captions">` or `kind="subtitles"` (a `<track>` with no `kind` counts as subtitles). A decorative video, `muted` with no `controls`, is exempt. | WCAG SC 1.2.2. |
+| `audio-missing-transcript` | `<audio>` with neither a caption track nor an accessible name pointing at a transcript. | WCAG SC 1.2.1. |
+| `track-missing-srclang` | `<track>` with no `srclang`, so assistive technology cannot tell the captions' language. | Authoring practice (WCAG 1.2.4). |
+| `media-missing-controls` | `<video>` / `<audio>` with no `controls`: nothing to operate from the keyboard. Decorative video exempt. | WCAG SC 2.1.1. |
+| `media-autoplay-sound` | `autoplay` without `muted`: sound that starts by itself masks the screen reader. | WCAG SC 1.4.2. |
+
+The media rules see that a caption track is **declared**, never that its text
+is right or in sync; `sprezzature-audio` drafts the WebVTT the declaration
+points at.
 
 ## When a finding is wrong
 
@@ -81,9 +90,9 @@ The linter's exit code is also CI-friendly on its own; the JSON dump above is ju
 ## What this linter does *not* check
 
 - Live ARIA state (`aria-expanded`, `aria-selected` consistency): depends on JS behavior.
-- Color contrast: see the companion `sprezzature-colors` skill's `audit_contrast.py`.
+- Color contrast: see the companion `sprezzature-colors` skill's `sprezzature-colors-contrast`.
 - Focus order within a JS-built widget: needs runtime.
-- Captioned audio / video presence: `<track>` placement depends on the source's content.
+- Whether a declared caption track is correct or synchronised: only its presence is checked.
 - Form error association (`aria-describedby` between input and a sibling message): pattern is too varied for a static rule.
 
 For those, pair with axe-core in dev tools and manual testing with a screen reader.
@@ -102,7 +111,7 @@ It reinforces the two existing sprezzature-figures steps rather than replacing t
   `sprezzature-colors-cvd render.png` to get a contact
   sheet (grayscale + protanopia + deuteranopia + tritanopia) and *look*. The
   loop becomes **render → simulate → look**.
-- **audit** (`audit_figure.py`, static): the auditor flags rainbow ramps and
+- **audit** (the figure auditor, static): the auditor flags rainbow ramps and
   filters in the markup; the simulator catches what only shows in pixels. Same
   goal (colour is never the sole channel), two layers.
 
@@ -116,6 +125,6 @@ label, a marker shape, or a stroke style.
 
 - [ ] Stable identifier (kebab-case, suggestive of the violation).
 - [ ] Citation of the WCAG SC or WAI-ARIA section in this doc.
-- [ ] Implementation in `lint_a11y.py`, registered in `ALL_RULES`.
+- [ ] Implementation in the brick's `scripts/lint_a11y.py`, registered in `ALL_RULES`.
 - [ ] Smoke test on at least one positive fixture and one negative.
-- [ ] Validator green (`python scripts/validate_content.py`).
+- [ ] The brick's test suite green (`python3 -m pytest -q` in `sprezzature-accessibility`).

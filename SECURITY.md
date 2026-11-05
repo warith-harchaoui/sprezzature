@@ -7,21 +7,25 @@ norms, set out below.
 
 ## What "security" means here
 
-`sprezzature` is a collection of Claude skills plus stdlib-and-Pillow
-Python scripts. There is no service, no daemon, no network listener
-shipped by the repo itself. The realistic attack surface is:
+`sprezzature` is a collection of Claude skills, a `sprezzature-skills`
+command that copies them, and maintenance scripts. The repo itself ships no
+service, daemon or network listener. `pip install sprezzature` also installs
+the ten brick packages, and each of those carries an HTTP API and an MCP
+server (`<brick>-mcp`, and a Docker image that runs it); they listen only when
+you start them. The realistic attack surface is:
 
-- Scripts that execute as the user who invokes them. They read and
-  write files in the project directory and `~/.cache/sprezzature-skill/`.
-- Scripts that download model weights or call a local Ollama daemon
-  (`install_alt_ai.py`, `install_captions.py`,
-  `alt_from_ollama.py`, `meta_from_ollama.py`,
-  `plain_language.py`, `captions_from_whisper.py`). HTTPS to the
-  upstream registries (Hugging Face mirror, Ollama registry) and
-  loopback to `127.0.0.1:11434`.
-- Emitted HyperText Markup Language (HTML) / JavaScript (JS) that ships into the user's site. The skill bans
-  inline `<script>` and inline `<style>` for production output and
-  the `validate.py` gate refuses to pass with them present.
+- Commands that execute as the user who invokes them. They read and
+  write files in the project directory and the bricks' caches under
+  `~/.cache/`.
+- Commands that download model weights or call a local Ollama daemon
+  (`sprezzature-accessibility-install-alt`, `sprezzature-audio-install`,
+  `make-alt`, `sprezzature-publish-meta`, `sprezzature-publish-plain`,
+  `sprezzature-audio-captions`, …). HTTPS to the upstream registries
+  (Hugging Face mirror, Ollama registry) and loopback to `127.0.0.1:11434`.
+- The bricks' API and MCP servers, when started: they bind the address you
+  give them, with no authentication. Keep them on loopback or behind your own
+  proxy.
+- Emitted HyperText Markup Language (HTML) / JavaScript (JS) that ships into the user's site.
 
 Out of scope: model output. The skill calls a local model; the model
 can hallucinate. That is a quality issue, not a security issue.
@@ -66,25 +70,24 @@ line*. These are intended for use against trusted local code only.
   stdout captured). Only point it at binaries you trust.
 
 - **`sprezzature-publish-meta`** and
-  **`…/plain_language.py`** speak to a *local* Ollama daemon on
+  **`sprezzature-publish-plain`** speak to a *local* Ollama daemon on
   `localhost:11434`. They never send content over the public
   internet, but they do hand the document to a model running on the
   developer's machine. Do not run them against content you would
   not show to the local model.
 
-Neither path opens a network port; neither auto-updates itself; both
-are stdlib + a single optional dependency (the SDK or the daemon).
+Neither path opens a network port, and neither auto-updates itself.
 
 ## Supply-chain notes
 
-- The skill pins no minor versions for the Python dependencies it
-  declares (`requests`, `click`, `Pillow`, `numpy`). Pin yourself if
+- The `sprezzature` package declares floors, not pins, on the ten bricks,
+  and the bricks declare floors on their own dependencies. Pin yourself if
   you need reproducibility.
 - Bundled fonts ship under their own license (Roboto, Roboto Serif,
   Roboto Mono: all SIL Open Font License (OFL)). See `LICENSE.md` for the carve-out.
 - **Distribution channels.** Two supported install paths:
   1. **Tagged GitHub release** (recommended). Each release ships
-     per-skill tarballs, a four-skill bundle tarball, and a single
+     per-skill tarballs, a bundle tarball of every skill, and a single
      `SHA256SUMS` file built by `scripts/release.sh` and published by
      the `release.yml` workflow on every `v*.*.*` tag push. Users
      verify with `shasum -a 256 -c SHA256SUMS` (or `sha256sum -c`)

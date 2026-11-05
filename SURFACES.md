@@ -82,8 +82,8 @@ per-chart generators of sprezzature-figures are scripts, not commands.
 
 ## 3. HTTP API — and the container it ships in
 
-A FastAPI app in `api.py`, with its dependencies behind an `api` extra so that
-nobody installing the library pays for `uvicorn`.
+A FastAPI app in `api.py`. FastAPI and uvicorn are in the base install since
+2026-11-01, like every other dependency: no brick has a feature extra.
 
 Then **a `Dockerfile` and a `docker-compose.yml`, always together.** This is
 not a style preference. A Dockerfile alone is a recipe, not a way in: it leaves
@@ -99,8 +99,7 @@ API module alone answered every `/v1/...` route and had no `/mcp`: that was
 the case in all ten bricks until 2026-11-04. One process on port 8000 now
 serves both.
 
-**Carried by** `sprezzature_<brick>/api.py`, `Dockerfile`, `docker-compose.yml`
-(the base install carries FastAPI and uvicorn since 2026-11-01).
+**Carried by** `sprezzature_<brick>/api.py`, `Dockerfile`, `docker-compose.yml`.
 
 ## 4. MCP
 
@@ -161,11 +160,13 @@ sprezzature-maps/
 │   ├── __init__.py        # 1. library — exports the engine
 │   ├── cli.py             # 2. command line, click → make-map AND sprezzature-maps
 │   ├── api.py             # 3. FastAPI app
-│   └── mcp.py             # 4. fastapi-mcp over that app → sprezzature-maps-mcp
+│   ├── mcp.py             # 4. fastapi-mcp over that app → sprezzature-maps-mcp
+│   └── studio/            #    the model-backed Studio, sprezzature-maps-studio
 ├── scripts/               #    packaged as sprezzature_maps_scripts
-├── Dockerfile             # 3. runs the API without a Python install
+├── Dockerfile             # 3. runs sprezzature-maps-mcp: the API and /mcp on port 8000
 ├── docker-compose.yml     # 3. port, volume, environment, command — declared
-├── pyproject.toml         #    extras: cli, api, mcp, dev
+├── .dockerignore          #    keeps .git and .private/ out of the image
+├── pyproject.toml         #    one install, no feature extras; `dev` only
 └── tests/
 ```
 

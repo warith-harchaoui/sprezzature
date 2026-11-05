@@ -18,11 +18,11 @@ description: >-
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Ships as the standalone
-  `sprezzature-maps` package (Python 3.10+). The basemap is bundled Natural
+  `sprezzature-maps` package (Python 3.10 to 3.13). The basemap is bundled Natural
   Earth data — no network, no tile server, no API key at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 > The generators below ship as the standalone package [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`pip install sprezzature-maps`), invoked as `make-map …`. There is no `scripts/` folder in this monorepo; the SKILL.md here is the agentic contract.
@@ -46,7 +46,7 @@ is also the line an agent gets wrong.
 | The user wants… | Go to | Why |
 |---|---|---|
 | Territories shaded by a value, on real coastlines | **here** — `make-map choropleth` | the shape of the land carries meaning |
-| Who holds which ground, front lines, contested zones | **here** — `make-map situation_map` | same |
+| Who holds which ground, front lines, contested zones | **here** — `make-map situation-map` | same |
 | Where events *fell* — incidents, outages, strikes, sightings | **here** — `make-map density` | positions, not a value per territory |
 | A hex map, dot density, spike map, binned grid, cartogram | **`sprezzature-figures`** | those are layout conventions, not geography |
 
@@ -83,13 +83,18 @@ evidence.
 |---|---|---|
 | "map this by country" / "colour the regions by score" / "which country is highest" / « une carte par département » | `choropleth` | `make-map choropleth --data rows.json --out world.svg [--title "…"]`. Rows are `{"id": "<ISO-3166-1 numeric>", "value": <number>}` — `"840"` for the United States, `"124"` for Canada. Send nothing at all and you get the demo map, which is the fastest way to show someone the shape of the input before they commit real data to it. |
 | the values are skewed — income, density, counts, anything with a long tail | `choropleth` with `classes` | `make-map choropleth --classes 5 --method quantile`, or `{"classes": 5, "method": "jenks"}` on the route. Without it the ramp stretches min-to-max and most territories collapse into its bottom. See the section above for which method answers which question; the legend names whichever you pick. |
-| "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation_map --config region.yaml --out region.svg`. The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Western-Europe demo config runs with no arguments. |
+| "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation-map --config region.yaml --out region.svg` (`situation_map`, with the underscore, is the same command). The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Western-Europe demo config runs with no arguments. |
 | "where did these incidents fall" / a list of `[lon, lat]` events | `density` | `make-map density --points events.json --out where.svg [--bins 160]`. No coastline is drawn; say where the events came from in the caption (`caption` on the route or in the library). |
-| a country or a bounding box, and no region config yet | `situation_new` | `make-map situation_new --country Sudan --out sudan.yaml` (or `--bbox west,south,east,north`). The starter renders as it stands, furnished, with `confidence` on every commented zone. |
+| a country or a bounding box, and no region config yet | `situation_new` | `make-map situation-new --country Sudan --out sudan.yaml` (or `situation_new`; omit `--out` for stdout) (or `--bbox west,south,east,north`). The starter renders as it stands, furnished, with `confidence` on every commented zone. |
 | an ACLED or UCDP GED export | `acled_events` / `ucdp_events`, then `situation_map` | `cfg.update(acled_events("export.csv", derive_region=True))` in Python. The loaders keep each row's precision code on its mark; UCDP rows known only to the country are not drawn, and are counted on the plate. |
-| "can we publish this map" / a finished plate | `audit` | `make-map audit plate.svg` (or a folder, `--format json`). Exit 1 on any finding. See the audit section below. |
-| "is this readable" / "make it clearer" | `improve` | `make-map improve --kind choropleth --data rows.csv --out map.png`. Needs a local vision model; never changes the classification, the class count or the frame on its own. |
+| "can we publish this map" / a finished plate | `audit` | `make-map audit plate.svg` (or a folder, `--format json`). Exit 1 on any finding, 0 when clean, 2 when the target holds no SVG. See the audit section below. |
+| "is this readable" / "make it clearer" | `improve` | `make-map improve --kind choropleth --data rows.csv --out map.png` (`--out` is required and must be a `.png`). Needs a local vision model; never changes the classification, the class count or the frame on its own. |
 | "what kinds of map can you draw" | `list_kinds` | Three: `choropleth`, `density`, `situation_map`. Anything else map-shaped is in `sprezzature-figures`. |
+
+**Always pass `--out`.** Its extension picks the format: `.svg`, `.png`,
+`.jpg`, `.pdf`, `.eps` or `.html`. Without it, `choropleth`, `density` and
+`situation-map` write into the installed package's own folder of SVG
+examples, over the bundled example of that kind, and print the path.
 
 ## The situation map is configured, not flagged
 
@@ -232,7 +237,7 @@ missing. The keys are listed in the section above.
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make**, a choropleth on real geography | `make-map choropleth` | Territories shaded by a value, Equal Earth, OKLCH ramp, relief. |
-| **Make**, an areas-of-control plate | `make-map situation_map` | Layered situation map for any region from one YAML config. |
+| **Make**, an areas-of-control plate | `make-map situation-map` | Layered situation map for any region from one YAML config. |
 | **Make**, an accumulation map | `make-map density` | Point events binned to a field, with no coastline drawn. |
 | **Audit**, does the plate say how it was made | `make-map audit <plate.svg\|dir>` (`sprezzature-maps audit` is the same command) | Eleven static rules the figure auditor cannot ask, because they are map questions. On any plate: a classed legend that never names its method (`method-unnamed`), class breaks missing from the key (`breaks-missing`), no-data drawn but never named so absent reads as low (`no-data-hidden`), no vintage **and** no statement that the plate is a schematic (`no-provenance`), no title (`untitled`), no accessible name (`unlabelled`), a label that collides, runs off the plate or is set too small (`text-unreadable`). On a regional plate: no locator (`no-locator`), areas of control with no date (`undated-control`), every zone at one confidence (`evidence-unclassed`), a disputed boundary without its disclaimer (`disputed-unflagged`). Saying "synthetic illustrative values" counts as provenance, and counts for more than a date would, since stamping a vintage on invented data would be a fabrication. |
 | **Improve**, render, look, repair | `make-map improve` | Renders a PNG, reads it with a local vision model, applies one safe repair at a time, and prints for a person the ones that could change what the map says. |
@@ -255,7 +260,7 @@ So when the user says the figure is for a paper, a poster or a column, set
 
 ```bash
 # region.yaml carries:  print_width: "90mm"
-make-map situation_map --config region.yaml --out figure-1.pdf
+make-map situation-map --config region.yaml --out figure-1.pdf
 ```
 
 Three things follow from that key, and an agent should expect all three:
@@ -301,8 +306,8 @@ One `pip install sprezzature-maps` installs all of them; there are no extras.
 | Surface | How |
 |---|---|
 | Library | `from sprezzature_maps import make_choropleth, make_density, make_situation_map`, plus `acled_events`, `ucdp_events`, `classification_methods`, `article_sidecar`, `plate_provenance`, `replay_report` |
-| CLI | `make-map` (or `sprezzature-maps`): `list`, `choropleth`, `situation_map`, `situation_new`, `density`, `audit`, `improve` |
-| HTTP API | `GET /health`, `GET /v1/kinds`, `POST /v1/choropleth`, `POST /v1/situation-map`, `POST /v1/density` (`uvicorn sprezzature_maps.api:app`, or `docker compose up` in the package repository) |
+| CLI | `make-map` (or `sprezzature-maps`), a Click group: `list`, `choropleth`, `situation-map`, `situation-new` (each also answers to its underscore spelling), `density`, `audit`, `improve` |
+| HTTP API | `GET /health`, `GET /v1/kinds`, `POST /v1/choropleth`, `POST /v1/situation-map`, `POST /v1/density` (`uvicorn sprezzature_maps.api:app`, or `docker compose up` in the package repository, whose image runs `sprezzature-maps-mcp`: the API and `/mcp` on port 8000) |
 | MCP | `sprezzature-maps-mcp`, endpoint `/mcp`. Five tools named by the routes' `operation_id`: `health`, `list_kinds`, `render_choropleth`, `render_situation_map`, `render_density`. The audit, the starter and `improve` have no MCP tool: they work on files on the caller's disk |
 | Skill | this file |
 

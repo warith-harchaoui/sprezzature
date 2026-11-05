@@ -24,7 +24,7 @@ compatibility: >-
   local Ollama with qwen3-vl:8b (`sprezzature-accessibility-install-alt`).
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 > The tools below ship as the standalone package
@@ -103,8 +103,9 @@ required (the ids used by ``--ignore`` and the JSON output in parentheses):
     (``heading-skip``).
 13. A Tailwind red / green token with no icon or text carrying the same
     information (``color-only-state``, warning).
-14. ``animate-*`` or ``transition-transform`` without a ``motion-reduce:``
-    peer (``motion-no-reduce-guard``, warning).
+14. ``animate-spin`` / ``-ping`` / ``-pulse`` / ``-bounce``,
+    ``transition-transform`` or ``transition-all`` without a
+    ``motion-reduce:`` peer (``motion-no-reduce-guard``, warning).
 15. Negative letter-spacing (``tracking-tight`` / ``tracking-tighter``) on
     running body text (``body-text-tracking-tight``, warning, WCAG 1.4.12).
 16. ``<video>`` with sound and no captions or subtitles track

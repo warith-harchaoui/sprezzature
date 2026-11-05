@@ -6,6 +6,52 @@ The project follows a loose [SemVer](https://semver.org/): major version
 bumps mean the on-disk skill layout changes (users have to re-copy folders
 into `~/.claude/skills/`).
 
+## [1.8.0] — 2026-11-05: click partout, `/mcp` dans l'image
+
+### Changed
+
+**The suite floors move to the releases of 2026-11-05.** accessibility 1.4.1,
+audio 1.10.1, cli-gui 1.5.0, colors 1.2.1, figures 2.9.0, maps 1.1.1,
+publish 1.4.1, ui 1.2.0, ux-laws 1.4.1, video 0.4.1. What they carry:
+
+- **No shipped command parses with argparse any more.** The per-tool commands
+  and the `*-mcp` servers of the ten bricks are click, like their groups;
+  `sprezzature-skills` too. Each brick guards it: every console script answers
+  `--help` with a `Usage:` line, and no module imports argparse.
+- **The Docker images serve `/mcp`.** They ran the API alone; they now run the
+  MCP server, which serves the API and `/mcp` on the same port.
+- **`-V` reads the installed version**, not a constant left at 1.0.0.
+- **publish finds, drafts and audits calls to action**: `cta`, `faq` (answers
+  grounded in the site's own passages, every number sourced) and `findable`
+  (SEO / GEO / AEO rules tagged by goal).
+- **The toolbox kits never import click**, proven by running each under
+  `python -I -S`.
+- **Every brick's documentation re-read against its whole code** on
+  2026-11-05, and the bugs that reading found fixed: the built cli-gui page
+  inverted `store_false` flags and broke on a quote in the program name;
+  `figures render` without `--out` overwrote the committed example; audio's
+  `translate` checked one Ollama and called another; ux-laws `--fix` rewrote
+  untouched files and turned CRLF into LF; maps' `no-data-hidden` fired on a
+  sentence; the maps wheel left out its Studio; and standpoint's `-gui` and
+  `-mcp` started a server on `--help`.
+- **No image carries the git history or the private notes.** Eight bricks'
+  Dockerfiles copied their whole tree with no `.dockerignore`;
+  `test_an_image_carries_no_history_and_no_notes` now reads every sibling.
+
+### Docs
+
+- **The hub's documentation re-read against the code of the hub and the ten
+  bricks.** The READMEs name `pip install sprezzature` and `sprezzature-skills`,
+  list all ten bricks (video was missing, accessibility listed twice), drop the
+  `[api]` / `[mcp]` / `[cli]` extras LISEZMOI still offered, show the pre-commit
+  hooks that exist, and say which variable sets the model's address
+  (`BEST_LLM_BASE_URL`; `OLLAMA_URL` only for three commands). Script paths
+  became commands in the SKILL.md files, their references, EXAMPLES, LANDSCAPE,
+  SECURITY, CONTRIBUTING and llms.txt; nine publish references and the colors
+  CVD reference took the bricks' newer text; FIGURES.md lists all 167 kinds.
+
+All ten `SKILL.md` carry `metadata.version: 1.8.0`.
+
 ## [1.7.0] — 2026-11-01: one `pip install`
 
 ### Changed — one `pip install`

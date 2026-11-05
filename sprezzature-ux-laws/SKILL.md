@@ -23,7 +23,7 @@ compatibility: >-
   required. Reference is plain Markdown with no exec deps.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
   source: https://lawsofux.com/
 ---
 
@@ -61,7 +61,7 @@ of UX specifically:
 | Mode | Tool | When to load |
 |---|---|---|
 | **Make** — pick the right law for a screen | `references/laws-of-ux.md` | At generation time. The reference is structured for in-conversation lookup: trigger → action → Tailwind hook. Load it once per design surface; pick ONE law to apply, not five. |
-| **Make** — auto-fix mechanically-fixable violations | `sprezzature-ux-laws --fix` | Closes the audit↔make loop for four laws: Fitts adds `min-h-11`; Aesthetic-Usability adds `focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue`; Miller splits a long digit-bearing run into groups of four with non-breaking spaces (names such as `GMTED2010` are never touched); Jakob rewrites a one-line clickable `<div>` / `<span>` to `<button>`. Up to five passes; idempotent. A fixer only extends an existing `class` attribute. Diff the result before committing. |
+| **Make** — auto-fix mechanically-fixable violations | `sprezzature-ux-laws --fix` | Closes the audit↔make loop for four laws: Fitts adds `min-h-11`; Aesthetic-Usability adds `focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue`; Miller splits a long digit-bearing run into groups of four with non-breaking spaces (names such as `GMTED2010` are never touched); Jakob rewrites a one-line clickable `<div>` / `<span>` to `<button>`. Up to five passes; idempotent. A fixer only extends an existing `class` attribute. A file is written only when a fixer changed it, and keeps its line endings (a CRLF file stays CRLF). Diff the result before committing. |
 | **Audit** — fail the build on detectable violations | `sprezzature-ux-laws` / MCP `audit_interface` | Pre-commit, pre-merge, CI. Static parser, no browser, no network. Findings come as `error`, `warning` or `info`. Exit 1 when an `error` is found (any finding with `--strict`); exit 2 on an unknown law slug or a missing path. |
 
 ## Decision tree
@@ -71,7 +71,7 @@ of UX specifically:
 | "design / build / make this screen using Hick / Fitts / Miller / Jakob / Tesler / Peak-End" | make | Load `references/laws-of-ux.md`, jump to the relevant bucket, apply the **smallest concrete change** the law asks for. |
 | "what does the Laws of UX say about this onboarding flow" | make | Load reference, walk the **Time** + **Memory** buckets. |
 | "is this a dark pattern" | make | Stop here, hand to `sprezzature-ui/references/anti-patterns.md`. |
-| "audit this page / component / dir for Laws of UX" | audit | `sprezzature-ux-laws <file-or-dir>` (or `sprezzature-ux-laws-audit`, same flags); from an MCP host, `audit_interface` with the HTML |
+| "audit this page / component / dir for Laws of UX" | audit | `sprezzature-ux-laws <file-or-dir>` (or `sprezzature-ux-laws-audit`, same flags; a directory is searched recursively for `.html` and `.htm`, in any case); from an MCP host, `audit_interface` with the HTML |
 | "which laws can you check" | audit | MCP `list_laws` (`GET /v1/laws`): the eight slugs to pass to `--only` or `laws` |
 | "auto-fix the easy ones" / "make my UI pass the Laws of UX" | make | `sprezzature-ux-laws-audit --fix <file-or-dir>`. Applies the four mechanical fixers (Fitts / Aesthetic-Usability / Miller / Jakob) in place. Add `--dry-run` to preview. |
 | "fail the build on Hick / Jakob violations" | audit | `sprezzature-ux-laws-audit --only hick,jakob --strict <dir>` |
@@ -200,7 +200,7 @@ all of them:
 | Vanilla-JS + Tailwind UI generation (house style, tokens, components) | `sprezzature-ui` |
 | Static HTML a11y lint on the audited page | `sprezzature-accessibility` |
 | WCAG contrast audit + CVD simulation | `sprezzature-colors` |
-| Wrap a CLI in a GUI (argparse → web form) | `sprezzature-cli-gui` |
+| Wrap a CLI in a GUI (argparse, Click or Typer → web form) | `sprezzature-cli-gui` |
 | Markdown → website + meta + favicons + indexes | `sprezzature-publish` |
 | Data-viz / explainability / causality figures | `sprezzature-figures` |
 | W3C alt text via local Ollama vision | `sprezzature-accessibility` |

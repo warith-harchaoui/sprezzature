@@ -16,7 +16,7 @@ full flag surface.
   output is byte-stable. These are the audit gates and the make-from-data
   generators. Safe in CI and `pre-commit`.
 - **Local-AI** (`[ai]`): calls a **local** model (Ollama for vision/text, a local
-  whisper.cpp build for audio). Never a SaaS. Requires a one-time `install_*`
+  whisper.cpp build for audio). Never a SaaS. Requires a one-time `sprezzature-*-install*`
   step; output varies by model. Draft-quality: verify before shipping.
 
 Exit codes follow the usual convention: `0` = clean / success, non-zero =
@@ -51,7 +51,7 @@ Audit HTML for the mechanically-detectable Laws of UX (Hick, Miller, Fitts,
 Jakob, Tesler, Aesthetic-Usability, …), as JavaScript Object Notation (JSON):
 
 ```bash
-python3 -m sprezzature_ux_laws_scripts.audit_laws_of_ux tests/fixtures/html/landing.html --json
+sprezzature-ux-laws tests/fixtures/html/landing.html --json
 ```
 
 Expected output (shape):
@@ -78,32 +78,29 @@ Miller / Jakob) with an idempotent convergence loop; `--only hick,jakob` and
 Audit a palette for WCAG contrast (suggests OKLCH (the perceptual OKLCH color space)-neighbour fixes):
 
 ```bash
-python3 -m sprezzature_colors_scripts.audit_contrast --palette palette.json --target 4.5
+sprezzature-colors-contrast --palette palette.json --target 4.5
 ```
 
 Turn the canonical palette comma-separated-values (CSV) file into a drop-in `tailwind.config.js`:
 
 ```bash
-python3 -m sprezzature_colors_scripts.palette_to_tailwind --emit theme > tailwind.theme.js
+sprezzature-colors-palette-to-tailwind --emit theme > tailwind.theme.js
 ```
 
-Simulate colour-vision deficiency on a screenshot (writes protanopia /
-deuteranopia / tritanopia variants next to the input):
+Simulate colour-vision deficiency on an image (writes protanopia /
+deuteranopia / tritanopia PNG variants next to the input, or into `--out`):
 
 ```bash
-python3 -m sprezzature_colors_scripts.simulate_cvd tests/fixtures/images/chart-bar.png
+sprezzature-colors-cvd assets/landscape.png --out /tmp/cvd/
 ```
 
 All three are deterministic: no model, no network.
 
 ## sprezzature-figures `[det]`: figures, diagrams, and the Ralph Eyeball Loop
 
-**Known bug:** `make-figure` (below) currently fails on a normally
-pip-installed `sprezzature-figures` with "Registered module ... not
-found"; the chart-kind registry resolves generator paths against a
-development checkout layout, not the installed package layout. The
-other recipes in this section (`render_diagram`, `audit_figure`,
-`explain_model`, `causal_estimate`) are unaffected.
+The chart catalogue is on `PATH` (`make-figure`, also `sprezzature-figures`);
+the diagram, audit, explainability and causal tools below are modules of the
+same package, run with `python3 -m`.
 
 Every chart is hand-authored SVG: the generator computes the geometry and
 writes the markup itself, so the figure carries its own data, its own hover
@@ -137,11 +134,12 @@ python3 -m sprezzature_figures_scripts.audit_figure sprezzature-figures/assets/s
 Make a figure straight from a data file (a catalogue kind, not a free
 `--x/--y/--kind` combination: `sprezzature-figures list` shows what exists),
 or run the explainability / causal recipes (these use *your* files and need
-the tiers via `install_figures.py --tier dataviz+explain+causal`):
+the tiers via `python3 -m sprezzature_figures_scripts.install_figures --tier dataviz+explain+causal`):
 
 ```bash
 # `bar`'s roles are `region` (categorical) and `value` (numeric).
-make-figure bar --data data.csv --map region=category_col --map value=value_col --out chart.svg
+make-figure render bar --data data.csv --map region=category_col --map value=value_col --out chart.svg
+# without --out it writes bar.svg in the current directory
 python3 -m sprezzature_figures_scripts.explain_model --model model.pkl --data X.csv --engine shapash --report shapash --out ./explain/
 python3 -m sprezzature_figures_scripts.causal_estimate --data d.csv --treatment T --outcome Y --confounders "X1,X2,X3" --dag dag.gml
 ```
@@ -174,12 +172,12 @@ tree:
 sprezzature-publish-indexes --root . --base-url https://example.com --feed-from posts
 ```
 
-Narration (`narrate_post.py`) and meta-tag drafting (`meta_from_ollama.py`) are
-`[ai]` local-AI (see below).
+Narration (`sprezzature-publish-narrate`) and meta-tag drafting
+(`sprezzature-publish-meta`) are `[ai]` local-AI (see below).
 
 ## sprezzature-cli-gui `[det]`: wrap a command-line interface (CLI) in a graphical user interface (GUI)
 
-Introspect a Python CLI's argument parser (argparse **or** Click, auto-detected)
+Introspect a Python CLI's argument parser (argparse, Click or Typer, auto-detected)
 and emit a single-page vanilla-JavaScript (JS) + Tailwind GUI. Point `spec` at a zero-arg
 factory that returns the parser/command:
 
@@ -216,7 +214,7 @@ sprezzature-accessibility-install-alt
 Draft World Wide Web Consortium (W3C)-compliant alt text for an image (bilingual EN/FR by default):
 
 ```bash
-make-alt tests/fixtures/images/portrait.jpg
+make-alt assets/logo.png
 ```
 
 Prints the drafted alt text to stdout. `--kind informative|decorative|functional|
@@ -226,11 +224,11 @@ committing.
 
 ## sprezzature-audio `[ai]`: captions, diarization, speaker naming
 
-One-time install (pip-installs `vocal-helper` / whisper.cpp and pre-downloads a
-GGML model so it runs offline):
+One-time install (checks `vocal-helper` / whisper.cpp, installing it only if
+missing, and pre-downloads a GGML model so it runs offline):
 
 ```bash
-python3 -m sprezzature_audio_scripts.install_captions
+sprezzature-audio-install
 ```
 
 Transcribe audio/video to WebVTT / SubRip subtitle format (SRT) / plain text (local, never a SaaS):
@@ -239,7 +237,7 @@ Transcribe audio/video to WebVTT / SubRip subtitle format (SRT) / plain text (lo
 sprezzature-audio-captions interview.mp4 --format vtt
 ```
 
-Add "who spoke when" and "who is who" (needs `install_diarize.py` for the NeMo
+Add "who spoke when" and "who is who" (needs `sprezzature-audio-install-diarize` once, for the NeMo
 Sortformer + TitaNet weights):
 
 ```bash
@@ -283,9 +281,10 @@ python3 scripts/validate_content.py sprezzature-ui
 
 ```bash
 # make: scaffold locales/i18n.yaml (gui: + prompts:), compile to i18n.json,
-# emit the vanilla-JS loader (initI18n / t)
+# emit the vanilla-JS loader (initI18n / t) and the Python one for prompts
 sprezzature-ui-i18n-make --dir .
-# -> created ./locales/i18n.yaml  |  compiled ./locales/i18n.json  |  emitted ./locales/i18n.js
+# -> created locales/i18n.yaml  |  compiled locales/i18n.json
+#    emitted locales/i18n.js    |  emitted locales/i18n_prompts.py
 
 # audit: flag translations embedded in JS/HTML (I18N001) or prompts inlined
 # in Python (I18N002); they belong in the catalog. 0 = clean, 1 = findings.
@@ -299,10 +298,10 @@ await initI18n(); el.textContent = t("action.save");`.
 
 ## Running the whole audit sweep
 
-The deterministic audits are wired as `pre-commit` hooks (see
-`.pre-commit-hooks.yaml`) so they gate commits. To run the repo's own checks:
+The deterministic audits can run as `pre-commit` hooks so they gate commits
+(see the README's *Pre-commit hooks*). To run the repo's own checks:
 
 ```bash
-python3 scripts/validate_all.py     # spec + content gate on all 9 skills
-python3 -m pytest -q                 # full test suite (incl. tests/eval/ AI-eval layer)
+python3 scripts/validate_all.py     # spec + content gate on all 10 skills
+python3 -m pytest -q                 # full test suite (the AI-eval layer lives in the bricks)
 ```

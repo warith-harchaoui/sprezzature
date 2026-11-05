@@ -39,7 +39,7 @@ paragraph-pair seam check (section 10 of the English charter, section "Révision
 paires de paragraphes" in the French one).
 
 These files are the canonic sources. Keep them in sync with the upstream gists referenced
-in `BEST_AI.md` before each major release.
+in `CONTRIBUTING.md` (§ Prose standards) before each major release.
 
 ### 2. Distilled block: `writing_rules.yaml`
 
@@ -72,6 +72,7 @@ automatically enforces the charter.
 | `plain_language_rewrite.yaml` | `plain_language.py` | Plain-language rewrites at a target grade level |
 | `latex_caption.yaml` | `lint_markdown.py` | One-sentence screen-reader captions for LaTeX blocks |
 | `mermaid_labels.yaml` | `lint_markdown.py` | Label improvement suggestions for Mermaid diagrams |
+| `faq_answer.yaml` | `faq.py` | FAQ answers drafted from the site's own passages (`--llm`) |
 
 The `narration_emotion.yaml` prompt is a TTS annotation classifier, not a prose generator;
 it produces structured JSON, not human-readable text, so charter injection does not apply.
@@ -132,7 +133,7 @@ Run this checklist on a sample of generated text before publishing a new site:
 
 ## Automated audit (not yet built)
 
-The planned audit gate (see `todo.md` §Side-workstream) will apply a RAGAS-style
+The planned audit gate will apply a RAGAS-style
 claim-decompose pass to every generated field: each factual claim in the output is
 verified against the source document with forced-quote grounding. A claim the model
 cannot quote from the source is flagged as NOT_SUPPORTED.
@@ -142,5 +143,5 @@ Traffic-light routing:
 - Amber: charter violations only (no invented facts). Flag the field; offer a rewrite.
 - Red: unsupported factual claims. Strip the field and regenerate from source.
 
-This gate will run as a post-processing step in `build_site.py` once the prose
-Ralph loop is implemented.
+There is no such step today. The nearest thing that exists is narrower: `faq.py`
+discards a drafted answer that states a number no cited passage states.

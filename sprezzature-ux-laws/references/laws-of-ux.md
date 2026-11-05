@@ -156,8 +156,8 @@ For UX the takeaway is narrower than for protocol design:
 
 ## See also
 
-- `../scripts/audit_laws_of_ux.py` (installed as `sprezzature-ux-laws` and
-  `sprezzature-ux-laws-audit`): static auditor that flags the eight
+- `sprezzature-ux-laws` and `sprezzature-ux-laws-audit` (one handler, the
+  package's `scripts/audit_laws_of_ux.py`): static auditor that flags the eight
   mechanically-detectable violations (Hick, Miller, Fitts, Jakob, Tesler,
   Aesthetic-Usability, Selective Attention, Choice Overload). The Doherty
   Threshold is **not** among them and cannot be: response time is not a fact

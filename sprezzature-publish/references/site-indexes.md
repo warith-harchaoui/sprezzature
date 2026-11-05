@@ -1,20 +1,20 @@
 # Site indexes: `site_indexes.py`
 
-Generate the standard set of site-index files for a project's web output, respecting the canonical specs for each. One Python script, stdlib only.
+Generate the standard set of site-index files for a project's web output, respecting the canonical specs for each. One Python script, click and the standard library only.
 
 ## What it emits
 
 | File | Spec | When |
 |---|---|---|
 | `robots.txt` | [Google Search Central: robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt) | Always |
-<!-- For the rules each of these files enforces in the larger SEO context (Google's three Search Essentials pillars + the AI Optimization Guide's foundations), see `seo-essentials.md` in this folder. -->
-
 | `sitemap.xml` | [sitemaps.org 0.9](https://www.sitemaps.org/protocol.html) | Always |
 | `llms.txt` | [llmstxt.org](https://llmstxt.org/) | Always |
 | `llms-full.txt` | [llmstxt.org](https://llmstxt.org/) full-text convention | Always (skip with `--no-llms-full`) |
 | `feed.atom` | [Atom 1.0 (RFC 4287)](https://datatracker.ietf.org/doc/html/rfc4287) | When a blog directory is detected (`posts/`, `blog/`, `articles/`) |
 | `rss.xml` | [RSS 2.0](https://www.rssboard.org/rss-specification) | Same as Atom, but emitted instead when `--rss` is passed |
 | `humans.txt` | [humanstxt.org](https://humanstxt.org/Standard.html) | When `--humans` is passed OR an `AUTHORS` / `CREDITS` file exists at the root |
+
+<!-- For the rules each of these files enforces in the larger SEO context (Google's three Search Essentials pillars + the AI Optimization Guide's foundations), see `seo-essentials.md` in this folder. -->
 
 ## Run
 
@@ -108,7 +108,7 @@ The robots.txt's `Sitemap:` line is set automatically too.
                                   (icons + manifest)   (per-page meta)     (whole-site indexes)
 ```
 
-For pages with embedded images or video, alt text and captions are produced by `alt_from_ollama.py` and `captions_from_whisper.py` in the same pass.
+For pages with embedded images or video, alt text and captions belong to the neighbours: `sprezzature-accessibility-alt` (or `sprezzature-accessibility-lint --fix-alt`) drafts the alt text, `sprezzature-audio-captions` writes the WebVTT track.
 
 ## Checklist (before publishing the site)
 

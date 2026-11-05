@@ -17,7 +17,7 @@ baseline for long-form text. The cases where this earns its keep:
 - A WCAG 2.x requirement. SC 1.2.x covers text-for-media (captions,
   transcripts), not media-for-text.
 - A replacement for `<track>` elements on audio/video. The
-  captions pipeline (`sprezzature-audio/scripts/captions_from_whisper.py`)
+  captions pipeline (`sprezzature-audio-captions`, in sprezzature-audio)
   is the WCAG-mandated direction.
 - A substitute for human-narrated content where the author's voice
   matters editorially (memoir, opinion, performance writing: record
@@ -93,9 +93,10 @@ default narration hints per segment. The pipeline honors:
 
 | Markdown construct | Narration hint |
 |---|---|
-| `# H1` heading | 1500 ms pause before + after, announced as "Section: ..." |
+| `# H1` heading | 1500 ms pause |
 | `## H2` heading | 1000 ms pause |
-| `### H3+` heading | 700 ms pause |
+| `### H3` heading | 700 ms pause |
+| `#### H4` to `###### H6` | 500 ms pause |
 | Paragraph | 800 ms pause after |
 | List item (non-last) | 400 ms pause after |
 | List item (last) | 800 ms pause after |
@@ -118,8 +119,8 @@ default narration hints per segment. The pipeline honors:
 ## Hints enriched by a local LLM (opt-in)
 
 Pass `--ai-hints` to call the same local Ollama daemon
-`alt_from_ollama.py` and `meta_from_ollama.py` already use (default
-model: `qwen3-vl:8b`). The LLM classifies each segment in context
+`sprezzature-publish-meta` already uses (model: `qwen3-vl:8b`, or
+`OLLAMA_MODEL` when set). The LLM classifies each segment in context
 (prev / next segment, section title) and returns:
 
 ```json
@@ -157,7 +158,7 @@ A narrated page can highlight each sentence as it is spoken. Pass the
 narration directory to the converter:
 
 ```bash
-sprezzature-publish-md-to-html blog/post.md --out site/ \
+sprezzature-publish-html blog/post.md --out site/ \
   --readalong out/audio/
 ```
 
@@ -285,7 +286,9 @@ directory.** Without it, the `<source>` path is computed from disk and comes
 out as `../../../../../../Users/you/...`. A fragment built into a site is
 exactly this case.
 
-**Delete the WAV before binding.** `narrate_post` writes a WAV; if both the
+**Delete the WAV before binding.** `narrate_post` writes a WAV unless
+`--audio-format mp3` is passed (sprezzature-audio 1.7 and later, which the
+base install brings); if both the
 WAV and an MP3 you encoded are present, the `<source>` points at the WAV, and
 a reader downloads thirty megabytes instead of five.
 
@@ -315,8 +318,8 @@ has been live for three years. None of them has a Markdown twin, and
 none should have to be rewritten to gain an accessibility feature.
 
 ```bash
-sprezzature-publish-narrate-post page.html --scope article --out-dir audio/
-sprezzature-publish-readalong    page.html --narration audio/ \
+sprezzature-publish-narrate   page.html --scope article --out-dir audio/
+sprezzature-publish-readalong page.html --narration audio/ \
   --scope article --out built/
 ```
 
@@ -434,7 +437,7 @@ Always provide:
 
 ## RSS / Atom enclosure
 
-`site_indexes.py` injects `<enclosure>` rows into the feed when an
+`sprezzature-publish-indexes` injects `<enclosure>` rows into the feed when an
 audio manifest is supplied (`--audio-manifest out/audio/manifest.json`).
 That single addition turns the blog feed into a podcast feed any
 podcast app can subscribe to, with zero extra hosting.

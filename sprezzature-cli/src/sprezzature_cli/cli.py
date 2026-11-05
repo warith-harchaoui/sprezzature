@@ -119,8 +119,8 @@ def _run_tool(
        the pre-extraction, in-repo layout, still current for the skills
        that have not moved out.
     3. ``python -m <module>``: the standalone package's script module.
-       Works even for packages with no console-script entry (e.g.
-       ``sprezzature-colors``), as long as the package is pip-installed.
+       Works even where no console script is on ``$PATH``,
+       as long as the package is pip-installed.
 
     Returns the wrapped process's exit code, or 2 with an actionable
     message on stderr when none of the three resolve.

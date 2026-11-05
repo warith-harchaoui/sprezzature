@@ -9,17 +9,24 @@ are welcome on the same terms.
 
 ## Before you start
 
-Pick the skill your change belongs to:
+Pick the skill your change belongs to. This repository holds each skill's
+contract (`SKILL.md`, `references/`, `assets/`); the code a skill runs lives in
+the brick's own repository, `github.com/warith-harchaoui/sprezzature-<brick>`,
+and a change to a command, a rule or a flag belongs there.
 
 | Change touches… | Skill |
 |---|---|
 | user-interface (UI) generation, components, design tokens, color, dataviz, design system, anti-patterns, ergonomic criteria, ux psychology, Apple Human Interface Guidelines (HIG) references | `sprezzature-ui/` |
 | command-line-interface (CLI) → graphical-user-interface (GUI) workflow, the runnable demo, host adapters (Tauri / FastAPI / Express / stdlib server-sent events (SSE)) | `sprezzature-cli-gui/` |
 | Markdown → website workflow, meta tags, favicons, site indexes, plain-language rewriter, i18n | `sprezzature-publish/` |
-| `lint_a11y.py` (static HyperText Markup Language (HTML) accessibility (a11y) lint) | `sprezzature-accessibility/` |
+| `sprezzature-accessibility-lint` (static HyperText Markup Language (HTML) accessibility (a11y) lint) | `sprezzature-accessibility/` |
 | Web Content Accessibility Guidelines (WCAG) contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | `sprezzature-colors/` |
 | World Wide Web Consortium (W3C) alt text via local Ollama vision (`qwen3-vl:8b`) | `sprezzature-accessibility/` |
-| Local WebVTT / SubRip subtitle format (SRT) captions via whisper.cpp | `sprezzature-audio/` |
+| Local WebVTT / SubRip subtitle format (SRT) captions via whisper.cpp, diarization, narration (Kokoro, OpenVoice, Chatterbox) | `sprezzature-audio/` |
+| Laws of UX reference and auditor | `sprezzature-ux-laws/` |
+| Data-science figures, diagrams, the Ralph Eyeball Loop | `sprezzature-figures/` |
+| Choropleths and situation maps on a real basemap | `sprezzature-maps/` |
+| Checking what a project video says against the code | `sprezzature-video/` |
 
 Cross-skill changes (e.g. a stack rule that affects every skill) start in
 `sprezzature-ui/` since it is the source of truth for the shared rules, then
@@ -35,20 +42,22 @@ source .venv/bin/activate
 pip install -r requirements-dev.txt
 ```
 
-The deterministic gates (`validate.py`, `lint_a11y.py`,
-`audit_contrast.py`, `site_indexes.py`) are stdlib only. The
-Ollama-backed scripts need a running Ollama daemon and the relevant
-model; see each skill's `SKILL.md` for the install path.
+This repository's own gates (`scripts/validate_all.py`,
+`scripts/build_triggers.py --check`) need the standard library and PyYAML.
+Several tests read the sibling bricks' checkouts and skip when one is absent;
+`scripts/fetch_siblings.sh` clones them beside this one, as CI does. The
+Ollama-backed tools need a running Ollama daemon and the relevant model; see
+each skill's `SKILL.md` for the install path.
 
 ## Running tests
 
 ```bash
-pytest                  # default: fast, deterministic
-pytest -m eval          # opt-in deepeval LLM-quality tests (need Ollama)
+python3 -m pytest -q    # fast, deterministic, no model
 ```
 
-The default invocation skips the `eval` marker. Tests must pass before a
-pull request (PR) is merged.
+The LLM-quality tests (`pytest -m eval`, DeepEval, need Ollama) live in the
+bricks that call a model, sprezzature-accessibility and sprezzature-publish,
+not here. Tests must pass before a pull request (PR) is merged.
 
 ## Linting & types
 
@@ -89,7 +98,7 @@ installed to type-check the code's own annotations.
 
 ## What we ship
 
-- Reproducible: stdlib-only validators run in any CI container.
+- Reproducible: the validators need nothing heavier than PyYAML and run in any CI container.
 - Honest: scope and limitations are stated, not hidden.
 - Composable: each skill works on its own; companions are additive.
 - Bilingual-ready: text content is written so a future translator can
@@ -117,13 +126,14 @@ which fails a push whose commits carry an AI-attribution trailer.
 
 Two equivalent paths; pick one per release and don't mix them.
 
-- **Tag-only** (recommended). Bump the version in the four
-  `SKILL.md` frontmatters + `README.md` / `LISEZMOI.md` install
-  snippets + a new `CHANGELOG.md` section, commit, then
+- **Tag-only** (recommended). Bump the version in the ten
+  `SKILL.md` frontmatters, `pyproject.toml`, `sprezzature/__init__.py` and
+  `sprezzature-cli` (`tests/test_version_consistency.py` checks they agree),
+  add a new `CHANGELOG.md` section, commit, then
   `git tag -a v<version> -m "release v<version>" && git push origin
   main v<version>`. The `release.yml` workflow runs
   `scripts/release.sh` on the runner, publishes the GitHub release,
-  attaches the five tarballs + `SHA256SUMS`, and generates notes
+  attaches one tarball per skill, the bundle and `SHA256SUMS`, and generates notes
   from commits since the previous tag.
 
 - **Local-build, then tag-push**. Run `scripts/release.sh <version>`

@@ -12,7 +12,7 @@
 
 ## What this is
 
-`sprezzature` is a set of **Claude / OpenCode skills** with a curated design system for a front-end stack. It covers colors, accessibility, the user interface (UI), user experience (UX), audio, vision, and the path from the command-line interface (CLI) to the graphical user interface (GUI).
+`sprezzature` is a set of **Claude / OpenCode skills** with a curated design system for a front-end stack. It covers colors, accessibility (alt text included), the user interface (UI), user experience (UX), audio both ways, figures and maps, publishing, the videos that describe a project, and the path from the command-line interface (CLI) to the graphical user interface (GUI).
 
 The skills:
 
@@ -21,13 +21,13 @@ The skills:
 | **sprezzature-ui** | Always: it owns the stack rules and tokens. | "build a UI", "create a component", "design a page", "make a form / modal / button / nav", "dashboard", "audit this UI". |
 | **sprezzature-cli-gui** | You wrap CLI tools in web user interfaces (UIs). | "wrap this CLI in a GUI", "build a UI for my Python script", "argparse to web UI". |
 | **sprezzature-publish** | You ship docs sites, landing pages, meta-tags, favicons, or a site whose readers should book, buy or install. | "turn these markdown files into a website", "meta tags", "SEO", "GEO", "AEO", "write a FAQ", "favicons", "robots.txt", "sitemap", "llms.txt", "Atom feed", "plain language", "rewrite at grade 8". |
-| **sprezzature-accessibility** | You need static HyperText Markup Language (HTML) accessibility (a11y) lint. | "a11y lint", "check this HTML for accessibility", "static a11y check", "WCAG-friendly lint", "a11y pre-commit". |
+| **sprezzature-accessibility** | You need static HyperText Markup Language (HTML) accessibility (a11y) lint, or World Wide Web Consortium (W3C)-compliant alt text drafted from images locally (no SaaS). | "a11y lint", "check this HTML for accessibility", "WCAG compliance", "missing alt", "write alt text", "describe this image", "unlabelled input". |
 | **sprezzature-colors** | You audit contrast, simulate color blindness, or want a curated palette with perceptual lighten / darken. | "WCAG check", "contrast audit", "is my palette accessible", "colorblind preview", "deuteranope", "CVD", "OKLCH", "lighten this color". |
-| **sprezzature-accessibility** | You draft World Wide Web Consortium (W3C)-compliant alt text from images locally (no SaaS). | "alt text", "alt text for this image", "describe this image", "draft alt", "image description", "img has no alt". |
-| **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally (no SaaS). | "captions", "transcribe video", "transcribe audio", "WebVTT", "SRT", "subtitle file", "VTT", "caption track". |
+| **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally, or narrate text with a local voice (no SaaS). | "captions", "transcribe video", "WebVTT", "SRT", "subtitles", "who spoke when", "text to speech", "narrate", "read this aloud". |
 | **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
 | **sprezzature-figures** | You emit data-science figures (167 hand-authored Scalable Vector Graphics (SVG) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)) included), causal-effect estimates (DoWhy / EconML), or TikZ / Mermaid diagrams, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "DoWhy", "DAG", "audit this figure". |
 | **sprezzature-maps** | You have numbers attached to places and the shape of the land matters: a choropleth on a real basemap, or an areas-of-control situation plate for any region. Schematic place-shaped charts (hex map, dot density, spike map, binned grid) stay in **sprezzature-figures**. | "map this by country", "colour the regions by score", "which country is worst affected", "where is this happening", "world map", "choropleth", "areas of control", "front line", "situation map", « une carte par département ». |
+| **sprezzature-video** | A video states facts about a project (counts, commands, versions) and the project keeps changing under it. | "the demo video is out of date", "verify the claims in this video", "is this number still right", "can we rebuild this video", "poster frame". |
 
 The companion skills inherit the sprezzature-ui stack rules. Install only the
 ones you need.
@@ -40,21 +40,26 @@ ones you need.
 
 As of 2026-07-29, sprezzature is organised in two layers with distinct release cycles.
 
-**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and each one arrives whole: the library, the command line, the FastAPI server and the MCP tool surface are all in the base install. There are no feature extras anywhere in the suite since 2026-11-01 — six of the bricks had a base of one dependency, so `pip install <brick>` installed almost nothing and knowing the right extra was a prerequisite for the package being useful:
+**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and each one arrives whole: the library, the command line (Click), the FastAPI server and the MCP tool surface are all in the base install. Each brick's Docker image runs its `<brick>-mcp` server, which serves the HTTP API and `/mcp` on the same port. There are no feature extras anywhere in the suite since 2026-11-01 — six of the bricks had a base of one dependency, so `pip install <brick>` installed almost nothing and knowing the right extra was a prerequisite for the package being useful:
 
 | Package | What it does |
 |---|---|
 | `sprezzature-figures` | 167 chart types, SHAP, causal estimates, the Ralph Eyeball Loop |
 | `sprezzature-colors` | WCAG contrast auditing, CVD simulation, Tailwind palette export |
-| `sprezzature-accessibility` | Static a11y lint (20 rules, stdlib only) |
+| `sprezzature-accessibility` | Static a11y lint (20 rules, no browser) and W3C alt text drafted by a local vision model |
 | `sprezzature-cli-gui` | CLI argument parser to single-page GUI emitter |
 | `sprezzature-ux-laws` | Laws-of-UX audit (Hick, Fitts, Miller, Jakob, Tesler, …) |
-| `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation |
+| `sprezzature-audio` | Speech-to-text, diarization, speaker identification, caption translation; narration (Kokoro by default, OpenVoice, Chatterbox) |
 | `sprezzature-maps` | Choropleths and situation maps, in five modes, at newsroom quality |
+| `sprezzature-publish` | Markdown to site, meta tags, icons, indexes, plain language, narration and read-along, SEO / GEO / AEO |
+| `sprezzature-ui` | i18n catalogue make and audit (`locales/i18n.yaml`) beside the UI generation playbook |
+| `sprezzature-video` | Checks what a film says against the code, and whether it can be rendered again |
+
+`pip install sprezzature` installs all ten, and the skills with them.
 
 All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
-**Layer 2: the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages.
+**Layer 2: the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages. They ship on PyPI as the `sprezzature` package, whose `sprezzature-skills` command copies them where an agent reads them.
 
 > **What prompt activates what?** See [`TRIGGERS.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
@@ -64,6 +69,17 @@ All repos live under [github.com/warith-harchaoui/](https://github.com/warith-ha
 
 Sprezzature is a set of skills for **Claude Code** or **OpenCode**. Install the ones you
 want, then ask in plain English. The skill both **makes** the artifact and **audits** it.
+
+The shortest path installs the ten tool packages and the ten skills in one go:
+
+```bash
+pip install sprezzature
+sprezzature-skills             # reports which installed skills differ from the shipped ones
+sprezzature-skills --install   # copies them into ~/.claude/skills (--agent opencode for ~/.opencode/skills)
+```
+
+`--install` moves any previous copy aside rather than deleting it, and says where.
+To take only the skill folders, without the tools:
 
 ```bash
 # 1. Grab the latest release (resolved, so this never goes stale)
@@ -119,23 +135,25 @@ pptx, xlsx) and `example-skills` (artifacts, GIFs, MCP servers, design), are
 these traits set it apart:
 
 - **Make *and* audit.** Every skill pairs generation with a **deterministic
-  auditor** that exits non-zero on findings: six of them (`lint_a11y`,
-  `audit_contrast`, `audit_laws_of_ux`, `audit_figure`, `audit_i18n`,
-  `lint_markdown`). No official Anthropic skill ships a static lint gate as its
+  auditor** that exits non-zero on findings: `sprezzature-accessibility-lint`,
+  `sprezzature-colors-contrast`, `sprezzature-ux-laws`, `sprezzature-figures check`,
+  `sprezzature-ui-i18n-audit`, `sprezzature-publish-lint` and `-audit`,
+  `sprezzature-cli-gui-audit`, `make-map audit`, `make-film verify`. No official Anthropic skill ships a static lint gate as its
   purpose; here it's half the design.
-- **Continuous integration (CI) / pre-commit gates, not vibes.** The auditors emit JavaScript Object Notation (JSON) + exit codes and
-  ship as a [`.pre-commit-hooks.yaml`](https://github.com/warith-harchaoui/sprezzature/blob/main/.pre-commit-hooks.yaml) manifest; one
-  `repo:` block and they block commits, whoever (or whatever) wrote the code.
+- **Continuous integration (CI) / pre-commit gates, not vibes.** The auditors emit JavaScript Object Notation (JSON) + exit codes, so
+  a pre-commit hook or a CI step blocks the commit whoever (or whatever) wrote
+  the code; see [Pre-commit hooks](#pre-commit-hooks).
 - **AI that runs on your machine, zero SaaS egress.** Alt text runs on a local Ollama vision
-  model; captions / diarization on a local whisper.cpp build. Nothing leaves the
+  model; captions / diarization on a local whisper.cpp build and NeMo; narration on Kokoro. Nothing leaves the
   machine; the official skills are cloud-Claude-first.
 - **Deterministic generators.** palette → Tailwind config, CLI → GUI, favicon /
   progressive-web-app (PWA) icon sets, sitemaps / feeds, and `locales/i18n.yaml`: reproducible
   artifacts a model would not derive byte-for-byte.
-- **Hardened like a product, not a demo.** A real pytest suite + an AI-eval
-  layer (DeepEval), CI across Python 3.10–3.12, checksum-verified per-skill
-  release tarballs, and a spec-conformance validator, vs demonstration-grade
-  examples.
+- **Hardened like a product, not a demo.** A real pytest suite in every
+  repository, an AI-eval layer (DeepEval) in the bricks that call a model, CI on
+  Python 3.12 with an install-and-import check on the 3.10 floor,
+  checksum-verified per-skill release tarballs, and a spec-conformance
+  validator, vs demonstration-grade examples.
 - **Runtime-portable.** One skill folder serves both **Claude Code** and
   **OpenCode**; the AI paths target local models so a smaller OpenCode model
   follows a script instead of inventing one.
@@ -150,7 +168,7 @@ when to load each skill and what is still on the roadmap.
 
 | Skill | Make (generate) | Audit (gate) |
 |---|---|---|
-| **sprezzature-ui** | `references/` + `assets/components/`, generation playbook for HTML / Tailwind / dataviz | `scripts/validate_content.py`, `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
+| **sprezzature-ui** | `references/` + `assets/components/`, generation playbook for HTML / Tailwind / dataviz; `sprezzature-ui-i18n-make` (scaffolds and compiles `locales/i18n.yaml`) | `sprezzature-ui-i18n-audit` (I18N001, I18N002), `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
 | **sprezzature-cli-gui** | `sprezzature-cli-gui` (argparse, Click or Typer parser → one self-contained HTML form; `--from-help` reads a help text instead) + `assets/examples/cli-gui-demo/` (worked scaffold) | `sprezzature-cli-gui-audit` (five rules: does an earlier page still cover the CLI?); pair with `sprezzature-accessibility` + `sprezzature-ux-laws` on the emitted HTML |
 | **sprezzature-publish** | `sprezzature-publish-html`, `-icons`, `-indexes` (`--offer`, `--cta`), `-meta`, `-plain`, `-changelog`, `-narrate`, `-readalong`; `-cta` (asks which call to action the site is for, writes `ctas.yaml`), `-faq` (builds the FAQ a site lacks from its own pages) | `sprezzature-publish-lint` (the Markdown), `-audit` (an emitted site or a live URL), `-cta` and `-faq --audit` (pages against the declared CTAs, `FAQPage` against the visible FAQ), `-findable` (one SEO + GEO + AEO report, money pages first) |
 | **sprezzature-accessibility** | `--fix-alt` and `sprezzature-accessibility-alt` (W3C alt text drafted by a local vision model, in the page's language) | `sprezzature-accessibility-lint` (20 rules from the source, six with a safe `--fix`), `sprezzature-accessibility-text-spacing` |
@@ -219,18 +237,20 @@ recipes per skill (with expected output), see [`EXAMPLES.md`](https://github.com
 
 ## Status
 
-A snapshot of where each surface stands. The ten skill folders are stable; the only WiP area is **audio captions** (sprezzature-audio, video → text). The **audio narration** feature (sprezzature-publish, text → audio) is stable and clearly framed as optional editorial enhancement, not Web Content Accessibility Guidelines (WCAG) compliance.
+A snapshot of where each surface stands. The ten skill folders are stable; the only WiP area is **audio captions** (sprezzature-audio, video → text). **Narration** (text → audio: sprezzature-audio makes the voice, sprezzature-publish wires it into the page with a read-along) is stable and clearly framed as optional editorial enhancement, not Web Content Accessibility Guidelines (WCAG) compliance.
 
 | Area | Status | Notes |
 |---|---|---|
 | `sprezzature-ui` (stack rules, tokens, components, dataviz, checklist, i18n) | Stable | Stack rules documented; `scripts/validate_content.py` gates framework imports; the package ships `sprezzature-ui-i18n-audit` (I18N001, I18N002) and `-i18n-make`. |
-| `sprezzature-cli` (unified `sprezzature` driver, shell completion) | Stable | Click-based; leaf-command `--help` forwarding fixed in 0.3.0 (regression test in 0.3.1). |
+| `sprezzature-cli` (unified `sprezzature` driver, shell completion) | Stable | Click-based; routes to the ten bricks' own commands, and forwards `--help` to them. |
 | `sprezzature-cli-gui` (CLI → GUI flagship) | Stable (skill + runnable demo) | `assets/examples/cli-gui-demo/` runs end-to-end. Production hardening (auth, rate-limit, sandbox) deliberately left to the host. |
 | `sprezzature-publish` (Markdown site, meta tags, favicons, indexes, plain language, narration, SEO + GEO + AEO) | Stable | Thirteen tools: the site artifacts, the Markdown lint and site audit, narration and read-along, and since 1.4.0 `cta`, `faq` and `findable`, which order search, generative and answer engine work by the site's declared call to action. |
 | `sprezzature-accessibility`: lint | Stable | 20-rule static a11y lint from the source, six rules with a safe `--fix`. |
-| `sprezzature-colors`: contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable (new in 0.7.0) | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
-| `sprezzature-accessibility`: W3C alt text via local Ollama vision | Stable (new in 0.8.0) | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache. Split out of `sprezzature-accessibility` for clearer scope. Wikipedia-fixture alt-text eval. |
-| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** (split out in 0.9.0) | `captions_from_whisper.py` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md#roadmap). |
+| `sprezzature-colors`: contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
+| `sprezzature-accessibility`: W3C alt text via local Ollama vision | Stable | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache; `--fix-alt` writes it into the page. Was `sprezzature-vision` until it merged into `sprezzature-accessibility`. Wikipedia-fixture alt-text eval. |
+| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** | `sprezzature-audio-captions` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md#roadmap). |
+| `sprezzature-figures`, `-maps`, `-ux-laws` | Stable | figures 2.9.0 (167 chart types), maps 1.1.1, ux-laws 1.4.1. |
+| `sprezzature-video` (claims, scan, asset ledger, captions, poster) | Stable, pre-1.0 (0.4.1) | The surface may still move between minor versions. |
 | `LISEZMOI.md` (French README) | Stable | At structural parity with this README, same section ordering, content kept in lock-step on every release. |
 
 For the per-release detail (and what's planned next), see [`CHANGELOG.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md).
@@ -245,7 +265,7 @@ What you give the agent and what comes back. Each row is a self-contained flow; 
 | A folder of Markdown files (README, `docs/**`, blog posts) | "Turn these markdown files into a website" | `sprezzature-publish` | Static site: one HTML page per `.md`, sticky top bar, sidebar TOC for `docs/`, dark-mode peer, favicons, `<meta>` tags, `robots.txt` + `sitemap.xml` + `llms.txt` + Atom feed. |
 | A free-form ask ("primary button", "confirm dialog", "settings page") | "Build a `<component>`" | `sprezzature-ui` | Semantic HTML + Tailwind + minimal vanilla JS, focus ring, `dark:` peer, 44×44 hit area, `Escape` close on dialogs, reduced-motion guard. |
 | A data shape (CSV, JSON, a few rows) | "Chart this" / "Dashboard for X" | `sprezzature-ui` | Inline SVG + `<figure>` wrapper. House style, palette from `color-psychology.md`, polarity-tagged axes, `role="img"`. |
-| An existing HTML page or screenshot | "Audit this" / "WCAG check" / "Make it look less AI" | `sprezzature-ui` (anti-patterns, ergonomics) + `sprezzature-accessibility` (lint) + `sprezzature-colors` (contrast, CVD) | Findings against the 8 ergonomic criteria + anti-patterns catalogue; concrete diffs; pre-ship checklist run; `lint_a11y` + `audit_contrast` + `simulate_cvd` output. |
+| An existing HTML page or screenshot | "Audit this" / "WCAG check" / "Make it look less AI" | `sprezzature-ui` (anti-patterns, ergonomics) + `sprezzature-accessibility` (lint) + `sprezzature-colors` (contrast, CVD) | Findings against the 8 ergonomic criteria + anti-patterns catalogue; concrete diffs; pre-ship checklist run; `sprezzature-accessibility-lint` + `sprezzature-colors-contrast` + `sprezzature-colors-cvd` output. |
 | An image file (`*.png`, `*.jpg`, …) | "Alt text for this image" | `sprezzature-accessibility` | W3C-compliant alt text for the right purpose category (informative / decorative / functional / text / complex / group), in the page's language, tagged `data-alt-source="ai"`. |
 | An audio or video file (`.mp4`, `.wav`, `.mp3`, …), **WiP** | "Captions / transcript" | `sprezzature-audio` *(work in progress)* | WebVTT / SRT / plain-text captions from local whisper.cpp, with project-vocab biasing. `<video>` + `<track kind="captions">` snippet. Script + tests ship today; per-language WER baselines and the vocab-biasing reference clip are still being collected; see [Status](#status). |
 | A logo (`logo.png` / `.svg`) | "Favicon set" / "PWA icons" | `sprezzature-publish` | `favicon.svg` + `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + a `head.html` snippet. |
@@ -305,12 +325,13 @@ mkdir -p ~/.${RUNTIME}/skills
 cp -r sprezzature-ui            ~/.${RUNTIME}/skills/   # always
 cp -r sprezzature-cli-gui       ~/.${RUNTIME}/skills/   # only if you wrap CLIs
 cp -r sprezzature-publish       ~/.${RUNTIME}/skills/   # only if you ship docs sites
-cp -r sprezzature-accessibility ~/.${RUNTIME}/skills/   # only if you need static a11y lint
+cp -r sprezzature-accessibility ~/.${RUNTIME}/skills/   # only if you need static a11y lint or AI alt text
 cp -r sprezzature-colors        ~/.${RUNTIME}/skills/   # only if you need WCAG contrast / CVD / palette
-cp -r sprezzature-accessibility        ~/.${RUNTIME}/skills/   # only if you need AI alt text (local Ollama)
-cp -r sprezzature-audio         ~/.${RUNTIME}/skills/   # only if you need AI captions (local whisper.cpp)
+cp -r sprezzature-audio         ~/.${RUNTIME}/skills/   # only if you need captions or narration (local)
 cp -r sprezzature-ux-laws       ~/.${RUNTIME}/skills/   # only if you want the Laws-of-UX audit + reference
 cp -r sprezzature-figures       ~/.${RUNTIME}/skills/   # only if you emit dataviz / SHAP / DoWhy figures
+cp -r sprezzature-maps          ~/.${RUNTIME}/skills/   # only if your numbers are attached to places
+cp -r sprezzature-video         ~/.${RUNTIME}/skills/   # only if a video states facts about your project
 ```
 
 Install in **both** runtimes if you switch between them, the same
@@ -370,7 +391,7 @@ git clone https://github.com/warith-harchaoui/sprezzature.git
 cd sprezzature
 python3 -m pip install -r requirements-dev.txt   # PyYAML + pytest
 python3 -m pytest                                # full deterministic suite
-python3 scripts/validate_all.py                  # all 9 skills, YAML + content
+python3 scripts/validate_all.py                  # all 10 skills, YAML + content
 
 # Mirrors step 2 above:
 RUNTIME=claude   # or opencode
@@ -401,10 +422,11 @@ trigger phrases); the model mostly has to follow a script, not
 invent it. For UI work, alt text, captions, contrast audits,
 Laws-of-UX checks, the local path is genuinely usable today.
 
-The fit with this repo is direct: **three sprezzature-* skills already
+The fit with this repo is direct: **three sprezzature-* bricks already
 talk to a local Ollama daemon** for their AI surfaces: `sprezzature-accessibility`
-(alt text, `qwen3-vl:8b`), `sprezzature-publish/meta_from_ollama.py` (page
-meta), `sprezzature-publish/plain_language.py` (copy rewrite). When you
+(alt text, `make-alt`), `sprezzature-publish` (`-meta`, `-plain`, `-faq`,
+`-lint --ai`, `-narrate --ai-hints`) and `sprezzature-audio` (`-name`,
+`-translate`). When you
 run OpenCode against the same Ollama daemon, the whole loop,
 agent + skill-driven scripts, uses one local model. Zero
 external calls.
@@ -417,8 +439,8 @@ ollama pull qwen3-vl:8b  # the one model, used by the agent loop AND every skill
 
 One model handles the whole stack: it drives the OpenCode agent
 loop AND backs every sprezzature-* Ollama-backed script
-(`alt_from_ollama`, `meta_from_ollama`, `plain_language`,
-`narrate_post`). Same daemon, same tag, same answer for "which
+(`make-alt`, `sprezzature-publish-meta`, `-plain`, `-faq`,
+`sprezzature-audio-translate`, …). Same daemon, same tag, same answer for "which
 model is in play": `qwen3-vl:8b`.
 
 #### Wire OpenCode to the local Ollama daemon (one-time config)
@@ -485,14 +507,17 @@ MiniCPM, and the specialist OCR models, and all research sources are in
 #### Configure the skill scripts (same daemon, separate env vars)
 
 OpenCode drives the agent; the skill scripts that *also* talk to
-Ollama (alt text, meta tags, plain-language rewrites, audio
-narration) read their own env vars. There is **no overlap with
+Ollama (alt text, meta tags, plain-language rewrites, FAQ, caption
+translation) read their own env vars. There is **no overlap with
 `OPENCODE_MODEL`**; set both, both should agree on the daemon
-web address (URL), but the model tag can differ:
+web address (URL), but the model tag can differ. Every model call goes
+through [best-engine-ai-helper](https://github.com/warith-harchaoui/best-engine-ai-helper),
+which reads the daemon address itself:
 
 | Env var | Read by | What it does | Default |
 |---|---|---|---|
-| `OLLAMA_URL` | every Ollama-backed script | Daemon endpoint. Must match the URL OpenCode talks to. | `http://localhost:11434` |
+| `BEST_LLM_BASE_URL` | best-engine-ai-helper, so `make-alt`, `sprezzature-publish-meta`, `-plain`, `-faq` | Daemon endpoint. Must match the URL OpenCode talks to. | `http://localhost:11434` |
+| `OLLAMA_URL` | `sprezzature-audio-translate` and `-name` (as their `--url` default), `sprezzature-publish-lint --ai` | Daemon endpoint for these three. `make-alt`, `-meta` and `-plain` read it too, but only to name it in their error message. | `http://localhost:11434` |
 | `OLLAMA_MODEL` | every Ollama-backed script | Bare escape hatch (mainly for tests). The one authorized model is `qwen3-vl:8b`. | `qwen3-vl:8b` |
 | `OPENCODE_MODEL` | OpenCode itself | Agent-side model tag; set it to `qwen3-vl:8b`. | `qwen3-vl:8b` |
 
@@ -503,6 +528,7 @@ juggling, no MLX.
 
 ```bash
 # One daemon, one model, for everything.
+export BEST_LLM_BASE_URL=http://localhost:11434
 export OLLAMA_URL=http://localhost:11434
 export OPENCODE_MODEL=qwen3-vl:8b
 ```
@@ -528,42 +554,53 @@ note.
 
 ### Shell completion
 
-The `sprezzature` driver (and the four Click-migrated per-script CLIs:
-`alt_from_ollama.py`, `captions_from_whisper.py`, `meta_from_ollama.py`,
-`plain_language.py`) ship `bash` / `zsh` / `fish` completion for free
-via Click's `_<TOOL>_COMPLETE=<shell>_source` trick. See
+The `sprezzature` driver, `sprezzature-skills`, and every command the ten
+bricks install are Click, so they ship `bash` / `zsh` / `fish` completion for
+free via Click's `_<TOOL>_COMPLETE=<shell>_source` trick. See
 [`sprezzature-cli/README.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-cli/README.md#shell-completion) for the
-one-line setup per shell. The same env-var pattern works for any of
-the per-script CLIs invoked directly (e.g.
-`_ALT_FROM_OLLAMA_COMPLETE=zsh_source alt_from_ollama.py`).
+one-line setup per shell. The same env-var pattern works for any brick
+command invoked directly (e.g.
+`_SPREZZATURE_AUDIO_CAPTIONS_COMPLETE=zsh_source sprezzature-audio-captions`).
 
 ## Pre-commit hooks
 
-The repo ships a `.pre-commit-hooks.yaml` manifest, so any project
-can wire the sprezzature-* audit gates into [pre-commit](https://pre-commit.com/)
-with a single `repo:` block: no manual script paths, no install
-beyond `pre-commit install`.
+Three repositories ship a `.pre-commit-hooks.yaml` manifest, so a project wires
+those gates into [pre-commit](https://pre-commit.com/) with one `repo:` block
+each. The other auditors run as `repo: local` hooks over the installed command.
 
 ```yaml
-# .pre-commit-config.yaml: add the repo as one entry
+# .pre-commit-config.yaml
 repos:
+  - repo: https://github.com/warith-harchaoui/sprezzature-publish
+    rev: v1.4.1          # pin a tag; bump with renovate / dependabot
+    hooks:
+      - id: sprezzature-publish-lint        # the Markdown
+  - repo: https://github.com/warith-harchaoui/sprezzature-ui
+    rev: v1.2.0
+    hooks:
+      - id: sprezzature-ui-i18n-audit       # strings outside locales/i18n.yaml
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v1.0.0          # pin a tag; bump with renovate / dependabot
+    rev: v1.8.0
+    hooks:
+      - id: sprezzature-ui-validate-skill   # only if you ship skills yourself
+      - id: sprezzature-triggers-sync
+  - repo: local
     hooks:
       - id: sprezzature-accessibility-lint
-      - id: sprezzature-ux-laws-audit
-      - id: sprezzature-publish-lint-markdown
-      - id: sprezzature-ui-validate-skill   # only if you ship skills yourself
-      # Add --fix to any of the above as a hook arg to enable auto-repairs
-      # e.g. - id: sprezzature-ux-laws-audit
-      #        args: [--fix]
+        name: a11y lint
+        entry: sprezzature-accessibility-lint
+        language: system
+        files: '\.html?$'
+      - id: sprezzature-ux-laws
+        name: Laws of UX
+        entry: sprezzature-ux-laws
+        language: system
+        files: '\.html?$'
+        # args: [--fix] enables the four mechanical repairs
 ```
 
-The hooks are stdlib-only on the Python side (pre-commit installs
-each into its own isolated env). The two color hooks declare Pillow
-via `additional_dependencies`. Each hook respects the file-type
-filter pre-commit hands it (HTML for the a11y + Laws-of-UX hooks;
-Markdown for the publish hook).
+A `repo: local` hook runs the command from your own environment, so
+`pip install sprezzature-accessibility sprezzature-ux-laws` there first.
 
 ## CLI → GUI flagship
 

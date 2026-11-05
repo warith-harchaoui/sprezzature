@@ -8,13 +8,13 @@ transcript-based LLM pass) to the caption stream.
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Roboto, system-ui, sans-serif","lineColor":"#8E8E93"}}}%%
 flowchart TD
-    A[audio / video] --> CAP["captions_from_whisper.py<br/>WebVTT / SRT with the words"]
-    CAP --> DIA["diarize_from_nemo.py<br/>Sortformer → RTTM + turn JSON"]
-    DIA --> TIT["identify_from_titanet.py<br/>voice reference clips"]
-    DIA --> NAM["name_from_transcript.py<br/>vocatives + self-intro + optional Ollama"]
+    A[audio / video] --> CAP["sprezzature-audio-captions<br/>WebVTT / SRT with the words"]
+    CAP --> DIA["sprezzature-audio-diarize<br/>Sortformer → RTTM + turn JSON"]
+    DIA --> TIT["sprezzature-audio-identify<br/>voice reference clips"]
+    DIA --> NAM["sprezzature-audio-name<br/>vocatives + self-intro + optional Ollama"]
     TIT --> SPK["speakers.json<br/>speaker id → display name"]
     NAM --> SPK
-    SPK --> MRG["caption_diarize.py<br/>speaker-labelled VTT / SRT / TXT"]
+    SPK --> MRG["sprezzature-audio-pipeline<br/>speaker-labelled VTT / SRT / TXT"]
     classDef step fill:#CCE4FF,stroke:#007AFF,color:#1D1D1F;
     classDef data fill:#D4F5D9,stroke:#28CD41,color:#1D1D1F;
     class CAP,DIA,TIT,NAM,MRG step;
@@ -30,24 +30,23 @@ flowchart TD
 | **whisper.cpp** (via vocal-helper → pywhispercpp) | captions / transcript | `ggml-large-v3-turbo` |
 | **Qwen3-VL** (via Ollama, optional) | name inference from transcript | `qwen3-vl:8b` |
 
-Override any model with `--model` or the matching env var:
-`NEMO_DIAR_MODEL`, `NEMO_TITANET_MODEL`, `SPREZZATURE_WHISPER_MODEL`,
-`OLLAMA_MODEL` (the one model is `qwen3-vl:8b`).
+Override the NeMo checkpoints and the Whisper model with `--model`; the
+captioner also reads `SPREZZATURE_WHISPER_MODEL`. The naming model is fixed at
+`qwen3-vl:8b`, the one authorized LLM, and is not a flag.
 
 ## Install
 
 ```bash
-# Base captions tier (already installed if you use captions).
-`pip install 'sprezzature-publish'`
-python scripts/install_captions.py
-
-# Add the diarization tier (heavy — installs NeMo + torch + friends).
-`pip install 'sprezzature-publish'`
-python scripts/install_diarize.py
+# One install brings both tiers: NeMo, torch and friends are base
+# dependencies of sprezzature-audio, there is no extra to choose.
+pip install sprezzature-audio
+sprezzature-audio-install            # Whisper weights for the captions
+sprezzature-audio-install-diarize    # Sortformer + TitaNet checkpoints
 ```
 
-`install_diarize.py` runs `pip install nemo_toolkit[asr]` if the
-package is missing and pre-downloads both checkpoints so the first
+`sprezzature-audio-install-diarize` pip-installs `nemo_toolkit[asr]` only if
+it is missing (`--no-install` skips that) and pre-downloads both checkpoints
+(`--only` for one, `--no-download` to defer) so the first
 real run is not gated on a model fetch. Weights live under
 `~/.cache/sprezzature-skill/nemo/`; override with `SPREZZATURE_CACHE_DIR`.
 
@@ -57,13 +56,13 @@ real run is not gated on a model fetch. Weights live under
 
 ```bash
 # Sortformer on a video file: emits interview.rttm + interview.diarization.json
-python scripts/diarize_from_nemo.py interview.mp4
+sprezzature-audio-diarize interview.mp4
 
 # Cap the speaker count when you know there are two
-python scripts/diarize_from_nemo.py call.wav --max-speakers 2
+sprezzature-audio-diarize call.wav --max-speakers 2
 
 # Force CPU (Apple-silicon MPS is picked automatically otherwise)
-python scripts/diarize_from_nemo.py talk.wav --device cpu
+sprezzature-audio-diarize talk.wav --device cpu
 ```
 
 ### Identify with reference clips (TitaNet)
@@ -77,7 +76,7 @@ voices/
 ```
 
 ```bash
-python scripts/identify_from_titanet.py interview.diarization.json \
+sprezzature-audio-identify interview.diarization.json \
     --audio interview.wav \
     --refs ./voices/ \
     --out interview.speakers.json
@@ -97,20 +96,21 @@ detector:
   patterns (EN + FR) and turn-initial / turn-final vocatives. Each
   match carries a confidence score; the highest wins per speaker.
 * **LLM pass** (opt-in via `--ollama`): sends a compact JSON prompt
-  to a local Ollama daemon (same daemon `alt_from_ollama.py` uses).
+  to a local Ollama daemon through best-engine-ai-helper (`--url` or
+  `OLLAMA_URL` for the endpoint).
   Handles ambiguous cases the regex misses.
 
 ```bash
 # Rule pass only (offline)
-python scripts/name_from_transcript.py interview.speakers.vtt \
+sprezzature-audio-name interview.speakers.vtt \
     --out interview.speakers.json
 
 # Rule pass + local Ollama refinement
-python scripts/name_from_transcript.py interview.speakers.vtt --ollama \
+sprezzature-audio-name interview.speakers.vtt --ollama \
     --out interview.speakers.json
 
 # From an un-merged pair
-python scripts/name_from_transcript.py interview.vtt \
+sprezzature-audio-name interview.vtt \
     --diarization interview.diarization.json \
     --ollama --out interview.speakers.json
 ```
@@ -129,7 +129,7 @@ the same.
 ### Merge captions + diarization → speaker-labelled transcript
 
 ```bash
-python scripts/caption_diarize.py \
+sprezzature-audio-pipeline \
     --captions interview.vtt \
     --diarization interview.diarization.json \
     --speakers interview.speakers.json \

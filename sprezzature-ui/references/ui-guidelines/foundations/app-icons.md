@@ -28,7 +28,7 @@
 The skill ships a Pillow-based generator. From a single logo PNG (or SVG + `--raster` fallback):
 
 ```bash
-`pip install 'sprezzature-publish'`
+pip install sprezzature-publish
 sprezzature-publish-icons path/to/logo.png \
        --out public \
        --name "Site name" --short-name "Site" \
@@ -49,7 +49,7 @@ site.webmanifest
 head.html                <link> and <meta> tags ready to paste into <head>
 ```
 
-See `references/meta-tags.md` for the full meta-tag set this fits into.
+See `sprezzature-publish/references/meta-tags.md` for the full meta-tag set this fits into.
 
 ## HTML head boilerplate
 
