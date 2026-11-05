@@ -49,7 +49,7 @@ Each rule has a stable identifier so the `--ignore` flag and JSON output referen
 | `a-empty` | `<a>` with no text, no `aria-label`, no `title`, no inline image. | WCAG SC 2.4.4. |
 | `button-empty` | `<button>` with no text, no `aria-label`, no inline icon. | WCAG SC 4.1.2. |
 | `div-onclick` | `<div>` / `<span>` with `onclick` but no `role="button"` and no `tabindex`. | WCAG SC 2.1.1. |
-| `input-missing-label` | `<input>` not wrapped in a `<label>` and not referenced by a `<label for=>`. | WCAG SC 3.3.2. |
+| `input-missing-label` | `<input>` not wrapped in a `<label>`, not referenced by a `<label for=>`, and with no `aria-label`. Hidden, submit, button, reset and image inputs are exempt. | WCAG SC 3.3.2. |
 | `dialog-missing-close` | `<dialog>` without an obvious close affordance (a button with `value="cancel"`, `autofocus`, or accessible name "Close" / "Cancel" / "Fermer" / "Annuler" / "Schließen"). | WAI-ARIA modal pattern. |
 | `tabindex-positive` | `tabindex` ≥ 1, which breaks DOM tab order. | WAI-ARIA Authoring Practices. |
 | `aria-hidden-interactive` | `aria-hidden="true"` on a `<button>` / `<a>` / `<input>` / `<select>` / `<textarea>`, which removes the control from AT but leaves it focusable. | WAI-ARIA spec. |
