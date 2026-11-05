@@ -58,6 +58,6 @@ Not this one when: the question is accessibility or alt text (sprezzature-access
 - `why does my link preview look empty`
 - `my favicon does not show up`
 - `fix my sitemap`
-- `OpenVoice / Chatterbox TTS`
+- `Kokoro / Chatterbox / OpenVoice TTS`
 - `read-along`
 
