@@ -86,7 +86,7 @@ none of the above can quietly drift back.
 
 Anything genuinely three-dimensional, rendered as true 3-D geometry with a
 camera and depth sorting, is out of reach: the catalogue's `3d`-named kinds
-(`bar3d`, `scatter3d`, `surface3d`, `wireframe3d`) are 2-D projections drawn
+(`bar3d`, `line3d`, `quiver3d`, `scatter3d`, `surface3d`, `wireframe3d`) are 2-D projections drawn
 to look three-dimensional, not an actual 3-D scene graph, and the same holds
 for any future explainability or causality plot built the same way.
 

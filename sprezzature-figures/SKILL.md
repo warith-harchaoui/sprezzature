@@ -21,7 +21,7 @@ compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10 to 3.13; one
   ``pip install sprezzature-figures`` carries the generators, the
   explainability and causal stacks, the Studio, the HTTP API and the MCP
-  server. The static auditor needs only stdlib + PyYAML. The render_diagram.py
+  server. The static auditor needs only the standard library. The render_diagram.py
   renderer needs, per kind: tectonic/pdflatex + pdftoppm/magick (TikZ),
   mmdc (Mermaid), rsvg-convert/magick (SVG), all optional, fail loud. No
   network needed once installed.
@@ -143,7 +143,7 @@ only the base data stack (and is the default); `--tier dataviz+explain` adds SHA
 Shapash / TimeSHAP / LIME; `--tier dataviz+explain+causal` (or `--tier all`) adds DoWhy /
 EconML / pydot. `--manager` forces a package manager and `--dry-run` prints the command. No tier contains a charting library: the catalogue, the
 explainability plots, and the causal DAG/forest plot are all SVG authored
-directly. The auditor itself is stdlib + PyYAML, so you can run
+directly. The auditor itself is stdlib only, so you can run
 `audit_figure.py` on any SVG or HTML page without installing a tier at
 all.
 
@@ -339,7 +339,7 @@ sprezzature_figures_scripts.<module>`.
 | `sprezzature-figures` / `make-figure` (console scripts, one Click group) | `pip install sprezzature-figures` | `list` / `describe` / `render` / `recommend` / `redraw` / `check`: the catalogue, one kind's roles and options, a render, a kind recommender, a redraw from a picture, and a render checker. **No extra is needed for any of them**: click became a base dependency on 2026-10-25, when the argparse front door was dropped, so the base install carries the whole command line. Until then these commands refused with a one-line message naming a `[cli]` extra; that extra no longer exists, and asking pip for it gets a warning and nothing else. |
 | `explain_model.py` | `sprezzature-figures` | Model-agnostic explainability dispatcher: SHAP / Shapash / TimeSHAP / LIME. Auto-picks by model type; `--engine` overrides. |
 | `causal_estimate.py` | `sprezzature-figures` | DoWhy loop (model → identify → estimate → refute) with EconML backends. Renders DAG in sprezzature-* house style; writes `effect.json`. |
-| `audit_figure.py` | stdlib + PyYAML | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
+| `audit_figure.py` | stdlib only | Static auditor for SVG charts and HTML `<figure>` blocks. Deterministic; no model, no network. |
 | `install_figures.py` | subprocess to project env manager | Idempotent installer that pins the three tiers (dataviz / explain / causal). Detects uv / poetry / pixi / conda / pip. |
 | `make_situation_map.py`, `build_situation_examples.py`, `make_choropleth.py` | *(moved out)* | Split into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package (`make-map` / `sprezzature-maps` console scripts). No longer part of `sprezzature-figures`. |
 | `_argparse.py`, `_lang.py`, `_svg.py`, `_render.py`, `_interactive.py` | (internal helpers) | The scripts' argument parser factory, language detection, SVG primitives, rasterisation, the fullscreen control. |
