@@ -50,7 +50,7 @@ Solo developers and small teams who:
 - Need a **pre-commit gate** that fails fast on contrast regressions.
 - Want a curated starter palette rather than picking colors at random.
 - Want CVD (color-blindness) review without a browser extension or SaaS.
-- Need perceptual color shifts (lighten / darken / hue rotate) for
+- Need perceptual color shifts (lighten / darken) for
   generating tints and shades, not the naïve RGB offsets that wash
   saturated hues into pastels.
 
@@ -184,9 +184,11 @@ Both halves of the loop read it:
 - **Make:** `sprezzature-colors-palette-to-tailwind` emits the same hexes as a
   Tailwind `theme.extend.colors` block (or a complete
   `tailwind.config.js`). The block in
-  `sprezzature-ui/references/stack-tailwind.md` matches this output
-  exactly; running the command with no flags reproduces it. If they
-  ever drift, the CSV wins and the reference doc is regenerated.
+  `sprezzature-ui/references/stack-tailwind.md` is written by hand and
+  does not match this output: it carries Apple's own `dark` hexes, which
+  the CSV has no column for (`--with-dark` derives them on the OKLCH L
+  axis instead), and it predates the CSV's correction of the Turquoise
+  `light` tint. When the two disagree, the CSV wins.
 
 For a UI deliverable end-to-end:
 
