@@ -9,7 +9,7 @@ is how a chart ends up saying something its author did not mean.
 
 | Family | What it preserves | What it sacrifices | Where it lives |
 |---|---|---|---|
-| **Real geography** — choropleth, situation map | the shape of the land: coastlines, borders, relative position and distance under a stated projection | area is proportional to land, never to the thing being measured | `sprezzature-maps` |
+| **Real geography** — choropleth, situation map, density (accumulation) | the shape of the land: coastlines, borders, relative position and distance under a stated projection | area is proportional to land, never to the thing being measured | `sprezzature-maps` |
 | **Schematic** — hex map, binned grid, dot density, spike map | equal visual weight per unit, or one mark per event | the coastline; a viewer must already know the layout to read it | `sprezzature-figures` |
 | **Cartogram** — area distorted by the value | the quantity, made directly comparable by area | recognisability; a badly distorted map is unreadable to a non-expert | neither, today — say so rather than substituting a choropleth |
 
@@ -25,7 +25,9 @@ is how a chart ends up saying something its author did not mean.
   equally and their size does not — fifty US states, twenty arrondissements.
 - **Dot density** answers *"where are the events?"* It maps incidence, not
   rate, and it reads honestly at a glance where a choropleth of the same data
-  would not.
+  would not. Drawn as dots over an outline it is schematic
+  (`sprezzature-figures`); binned into a field on a real projection, with no
+  coastline drawn, it is `sprezzature-maps`' `density` kind.
 - **Cartogram** answers *"how much, compared between places?"* when area
   really is the right encoding.
 

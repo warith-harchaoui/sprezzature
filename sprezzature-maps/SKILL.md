@@ -83,7 +83,7 @@ evidence.
 |---|---|---|
 | "map this by country" / "colour the regions by score" / "which country is highest" / « une carte par département » | `choropleth` | `make-map choropleth --data rows.json --out world.svg [--title "…"]`. Rows are `{"id": "<ISO-3166-1 numeric>", "value": <number>}` — `"840"` for the United States, `"124"` for Canada. Send nothing at all and you get the demo map, which is the fastest way to show someone the shape of the input before they commit real data to it. |
 | the values are skewed — income, density, counts, anything with a long tail | `choropleth` with `classes` | `make-map choropleth --classes 5 --method quantile`, or `{"classes": 5, "method": "jenks"}` on the route. Without it the ramp stretches min-to-max and most territories collapse into its bottom. See the section above for which method answers which question; the legend names whichever you pick. |
-| "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation-map --config region.yaml --out region.svg` (`situation_map`, with the underscore, is the same command). The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Western-Europe demo config runs with no arguments. |
+| "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation-map --config region.yaml --out region.svg` (`situation_map`, with the underscore, is the same command). The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Europe demo config runs with no arguments. |
 | "where did these incidents fall" / a list of `[lon, lat]` events | `density` | `make-map density --points events.json --out where.svg [--bins 160]`. No coastline is drawn; say where the events came from in the caption (`caption` on the route or in the library). |
 | a country or a bounding box, and no region config yet | `situation_new` | `make-map situation-new --country Sudan --out sudan.yaml` (or `situation_new`; omit `--out` for stdout) (or `--bbox west,south,east,north`). The starter renders as it stands, furnished, with `confidence` on every commented zone. |
 | an ACLED or UCDP GED export | `acled_events` / `ucdp_events`, then `situation_map` | `cfg.update(acled_events("export.csv", derive_region=True))` in Python. The loaders keep each row's precision code on its mark; UCDP rows known only to the country are not drawn, and are counted on the plate. |
@@ -91,10 +91,11 @@ evidence.
 | "is this readable" / "make it clearer" | `improve` | `make-map improve --kind choropleth --data rows.csv --out map.png` (`--out` is required and must be a `.png`). Needs a local vision model; never changes the classification, the class count or the frame on its own. |
 | "what kinds of map can you draw" | `list_kinds` | Three: `choropleth`, `density`, `situation_map`. Anything else map-shaped is in `sprezzature-figures`. |
 
-**Always pass `--out`.** Its extension picks the format: `.svg`, `.png`,
+**Pass `--out`.** Its extension picks the format: `.svg`, `.png`,
 `.jpg`, `.pdf`, `.eps` or `.html`. Without it, `choropleth`, `density` and
-`situation-map` write into the installed package's own folder of SVG
-examples, over the bundled example of that kind, and print the path.
+`situation-map` write `choropleth.svg`, `density.svg` or `situation_map.svg`
+in the current directory and print the path; they never write over the
+package's own examples.
 
 ## The situation map is configured, not flagged
 
@@ -268,9 +269,9 @@ Three things follow from that key, and an agent should expect all three:
 - **The root carries the physical width**, so the file lands at that size in a
   layout instead of at whatever a consumer infers from its pixel dimensions.
 - **The plate measures its own smallest label against that width and says what
-  it will actually be.** The bundled Ukraine plate is 1,768 units wide and its
+  it will actually be.** The bundled Ukraine plate is 1,364 units wide and its
   smallest label is 10.8 of them — dropped into a 90 mm column that label sets
-  at **1.6 pt**, a third of the floor any publisher accepts, and it renders
+  at **2.0 pt**, a third of Elsevier's 6 pt minimum, and it renders
   without complaint because a vector file always does. The warning is the
   feature; relay it rather than swallowing it.
 - **The drop shadows come off.** An SVG filter is the one construct a vector
