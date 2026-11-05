@@ -1,6 +1,6 @@
 # Plain-language rewriter: `plain_language.py`
 
-Rewrite any UI copy at a target reading level using the same local Ollama model the skill uses for alt text. Keeps the meaning verbatim; strips jargon and marketing voice.
+Rewrite any UI copy at a target reading level with a local model, chosen for the machine by `best-engine-ai-helper` and served by Ollama. Keeps the meaning verbatim; strips jargon and marketing voice.
 
 ## Why it matters
 
@@ -9,15 +9,16 @@ Cognitive accessibility is the WCAG criterion almost nobody ships. The relevant 
 - WCAG SC 2.4.5 (Multiple ways).
 - WCAG Understanding 3.1.5: Reading Level.
 
-Users who benefit beyond cognitive disabilities: second-language readers, anyone reading under stress (medical sites, financial sites, government UIs), and screen-reader users whose focus is already split. The rewrite is cheap to add because the model runs locally and the same setup as `alt_from_ollama.py` is reused.
+Users who benefit beyond cognitive disabilities: second-language readers, anyone reading under stress (medical sites, financial sites, government UIs), and screen-reader users whose focus is already split. The rewrite is cheap to add because the model runs locally, and it is the same Ollama setup the meta tags and the FAQ drafts already use.
 
 ## Install
 
-If you've already run `sprezzature-accessibility-install-alt` for alt text, you're done; the same Ollama daemon and model serve the rewriter. If not:
+The rewriter is in the base install. It needs an Ollama daemon and a model; `best-engine-ai-helper`, a base dependency, picks and pulls the one this machine can run:
 
 ```bash
 pip install sprezzature-publish
-sprezzature-accessibility-install-alt
+ollama serve &
+best-engine-ai-helper pull
 ```
 
 ## Run
@@ -43,7 +44,7 @@ The output prints to stdout. The script does NOT overwrite your file.
 
 1. Preserve meaning EXACTLY: no added facts, no removed facts, no changed numbers / names.
 2. Use short sentences, common words, active voice.
-3. Strip marketing buzzwords. The script bans the same list of words the validator flags (`production-grade`, `non-negotiable`, `world-class`, `cutting-edge`, `seamlessly`, `leverages`, `boost`, `unleash`, `transform`, `revolutionize`, …).
+3. Strip marketing buzzwords. The prompt (`scripts/prompts/plain_language_rewrite.yaml`) bans a list of them (`production-grade`, `non-negotiable`, `world-class`, `cutting-edge`, `seamlessly`, `leverages`, `boost`, `unleash`, `transform`, `revolutionize`, …).
 4. Don't add headers or bullets that weren't in the source.
 5. Keep tokens listed in `--preserve` verbatim: brand names, code identifiers, API names.
 6. Output length stays within `1.1 × source length`; if the model overshoots, the script asks again once with a tighter constraint.
@@ -61,7 +62,7 @@ The output prints to stdout. The script does NOT overwrite your file.
 
 ## Multilingual
 
-The script honors `--lang` (or falls back to the detected system locale). The prompt is anchored in the target language so French in returns French out. The 10 languages with explicit prompt instructions are: en, fr, es, de, it, pt, nl, ar, ja, zh. Additional languages fall back to the English instruction (the model still tends to reply in the source language).
+The script honors `--lang`; without it, the language is detected from the text itself, and the system locale is only the fallback when detection fails. The prompt is anchored in the target language so French in returns French out. The 10 languages with explicit prompt instructions are: en, fr, es, de, it, pt, nl, ar, ja, zh. Additional languages fall back to the English instruction (the model still tends to reply in the source language).
 
 ## Cache
 
@@ -75,7 +76,7 @@ Same shape as the alt-text helper:
 ## Programmatic use
 
 ```python
-from plain_language import rewrite
+from sprezzature_publish import rewrite
 
 simple = rewrite(
     "Leverage our cutting-edge platform to boost your productivity",
@@ -89,7 +90,7 @@ simple = rewrite(
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Output longer than input × 1.5 | First retry didn't help; model is over-explaining | Lower the source's complexity or call with a tighter `--target-grade`. |
+| Output longer than input × 1.1 | The one retry didn't help, and the over-long rewrite was kept; model is over-explaining | Lower the source's complexity or call with a tighter `--target-grade`. |
 | Output stays nearly identical | Source is already plain | Expected; no action needed. |
 | Names get translated | `--preserve` not set | Add the names to `--preserve`. |
 | Wrong language out | `--lang` mismatched the source | Set `--lang` explicitly. |

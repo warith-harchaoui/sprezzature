@@ -193,7 +193,7 @@ See `stack-vanilla-js.md`'s theme-switcher pattern.
 - [ ] Hand-authored inline SVG, not a chart-library spec.
 - [ ] House tokens applied (`--chart-ink`, `--chart-ink-secondary`, `--chart-axis`, `--chart-mark` or the categorical sequence).
 - [ ] Rounded corners 10 px on marks and on the container.
-- [ ] Colors from the skill palette, validated against `dataviz/scripts/validate_palette.js`.
+- [ ] Colors from the skill palette, checked with `sprezzature-colors-contrast` and `sprezzature-colors-cvd`.
 - [ ] Dark-mode override wired (`currentColor` + Tailwind, or the CSS custom-property flip).
 - [ ] `role="img"` + `aria-label`, plus `<title>`/`<desc>` on the root `<svg>`.
 - [ ] Native `<title>` tooltip + `:hover`/`:focus` lift on every mark, `tabindex="0"` for keyboard reach.

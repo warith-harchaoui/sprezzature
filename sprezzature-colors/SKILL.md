@@ -24,7 +24,7 @@ compatibility: >-
   No network or model required at any point.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 > The deterministic tools below ship as the standalone package [`sprezzature-colors`](https://github.com/warith-harchaoui/sprezzature-colors) (`pip install sprezzature-colors`), invoked as `sprezzature-colors …` (also spelled `make-colors`) or one command per tool. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -55,7 +55,7 @@ Solo developers and small teams who:
   saturated hues into pastels.
 
 This skill is **not** a substitute for designer judgment. The
-auto-fix from `audit_contrast.py --fix` is a *starting point*: it walks
+auto-fix from `sprezzature-colors-contrast --fix` is a *starting point*: it walks
 the OKLCH lightness axis to find the nearest accessible neighbour, but
 it can't tell you whether the resulting tonal hierarchy still matches
 your brand. Loop a designer in for the final call.
@@ -64,21 +64,21 @@ your brand. Loop a designer in for the final call.
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `audit_contrast.py` | WCAG ratio violations on (label × surface) pairs; suggests nearest OKLCH-neighbour fix | does not verify brand identity or tonal hierarchy. The fix is a hint, not a final decision. |
-| `simulate_cvd.py` | how a surface looks to a protanope / deuteranope / tritanope (MACHADO et al. 2009 matrices, full severity), plus an optional grayscale render. Catches red/green pairing before ship. | does not test motion sensitivity, low-vision blur, or contrast sensitivity beyond color. |
-| `accessibility_levels.py` | the palette remapped to `universal`, `high-contrast` (7:1), `monochrome`, `deuteranopia`, `protanopia` or `tritanopia`, keeping every colour name | a level is an option for a known need, not a replacement for an accessible default. |
+| `sprezzature-colors-contrast` | WCAG ratio violations on (label × surface) pairs; suggests nearest OKLCH-neighbour fix | does not verify brand identity or tonal hierarchy. The fix is a hint, not a final decision. |
+| `sprezzature-colors-cvd` | how a surface looks to a protanope / deuteranope / tritanope (MACHADO et al. 2009 matrices, full severity), plus an optional grayscale render. Catches red/green pairing before ship. | does not test motion sensitivity, low-vision blur, or contrast sensitivity beyond color. |
+| `sprezzature-colors-levels` | the palette remapped to `universal`, `high-contrast` (7:1), `monochrome`, `deuteranopia`, `protanopia` or `tritanopia`, keeping every colour name | a level is an option for a known need, not a replacement for an accessible default. |
 | `_colors.py` | shared primitives: sRGB ↔ linear, hex parsing, alpha compositing, WCAG luminance / contrast, OKLab / OKLCH (Björn OTTOSSON), CVD matrices, perceptual `lighten` / `darken`, palette and psychology accessors | not a full-blown color library — no CMYK, no Lab D50, no gamut mapping beyond the OKLCH L axis search. |
 
 ## Decision tree
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `audit_contrast.py`; MCP `check_contrast` for single pairs | `sprezzature-colors-contrast [--palette p.json] [--target 4.5\|7\|3] [--fix] [--format json]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. Exit 0 all pass, 1 a pair fails, 2 no key matched `label-` / `brand-` against `surface-`. |
-| "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `simulate_cvd.py`; MCP `simulate_color_blindness` for colours | `sprezzature-colors-cvd <image> [--types prot,deut,trit] [--grid] [--grayscale] [--out PATH]`. Renders protanopia / deuteranopia / tritanopia. |
-| "high-contrast palette" / "a palette for deuteranopes" / "monochrome version" | `accessibility_levels.py` | `sprezzature-colors-levels --level <level> [--csv palette.csv]`. Prints name, hex and contrast against white per colour. |
+| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `sprezzature-colors-contrast`; MCP `check_contrast` for single pairs | `sprezzature-colors-contrast [--palette p.json] [--target 4.5\|7\|3] [--fix] [--format json]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. Exit 0 all pass, 1 a pair fails, 2 no key matched `label-` / `brand-` against `surface-`. |
+| "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `sprezzature-colors-cvd`; MCP `simulate_color_blindness` for colours | `sprezzature-colors-cvd <image> [--types prot,deut,trit] [--grid] [--grayscale] [--out PATH]`. Renders protanopia / deuteranopia / tritanopia, one `<stem>-<type>.png` each (always PNG, whatever the source's extension). |
+| "high-contrast palette" / "a palette for deuteranopes" / "monochrome version" | `sprezzature-colors-levels` | `sprezzature-colors-levels --level <level> [--csv palette.csv]`. Prints name, hex and contrast against white per colour. |
 | "what's the hex for Red" / "give me an emotion color" / "Apple palette" | library accessors; MCP `get_palette`, `search_concepts`, `get_color_psychology` | `import sprezzature_colors as sc`, then `sc.name_to_hex`, `sc.emotion_to_hex`, `sc.concept_search`, `sc.psychology_for`, `sc.apple_palette` |
 | "lighten this color" / "darken" / "tint" / "shade" | `sc.lighten` / `sc.darken`; MCP `adjust_lightness` | OKLCH L-axis shift; hue and chroma preserved (unlike a naïve RGB offset). |
-| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `palette_to_tailwind.py` | `sprezzature-colors-palette-to-tailwind [--emit theme\|config] [--with-dark] [--include-neutrals] [--theme corporate\|academic] [--out tailwind.config.js]`. `--theme academic` emits the Okabe-Ito colour-blind-safe set instead. Emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
+| "palette to tailwind" / "regenerate brand tokens" / "wire palette.csv into my Tailwind config" | `sprezzature-colors-palette-to-tailwind` | `sprezzature-colors-palette-to-tailwind [--emit theme\|config] [--with-dark] [--include-neutrals] [--theme corporate\|academic] [--out tailwind.config.js]`. `--theme academic` emits the Okabe-Ito colour-blind-safe set instead. Emits the canonical `brand: { ... }` block (or a complete config) from `references/palette.csv`. Single source of truth for brand colors across every sprezzature-* consumer. |
 
 ## The unified palette
 
@@ -137,10 +137,10 @@ emitter, two audit-side gates, all backed by the same CSV.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — emit Tailwind config from the curated palette | `palette_to_tailwind.py` | Render `references/palette.csv` as a `theme.extend.colors` block (default) or a complete `tailwind.config.js`. |
-| **Audit** — gate before ship | `audit_contrast.py`, `simulate_cvd.py` | WCAG ratio audit with **suggest-only** OKLCH-neighbour fix; CVD simulation (protanopia / deuteranopia / tritanopia). |
+| **Make** — emit Tailwind config from the curated palette | `sprezzature-colors-palette-to-tailwind` | Render `references/palette.csv` as a `theme.extend.colors` block (default) or a complete `tailwind.config.js`. |
+| **Audit** — gate before ship | `sprezzature-colors-contrast`, `sprezzature-colors-cvd` | WCAG ratio audit with **suggest-only** OKLCH-neighbour fix; CVD simulation (protanopia / deuteranopia / tritanopia). |
 
-**Note on `--fix` semantics.** Other sprezzature-* auditors (`audit_laws_of_ux --fix`, `lint_a11y --fix`, `lint_markdown --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA, chunking digits. `audit_contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
+**Note on `--fix` semantics.** Other sprezzature-* auditors (`sprezzature-ux-laws-audit --fix`, `sprezzature-accessibility-lint --fix`, `sprezzature-publish-lint --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA, chunking digits. `sprezzature-colors-contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
 
 The two halves agree on the source of truth; see the next section.
 
@@ -155,13 +155,13 @@ concepts, psychology), and OKLCH-derivable light/dark neighbours.
 Mirror of the three-Roboto rule in `sprezzature-ui/SKILL.md`:
 
 - **Generation, no user palette specified:** use the CSV's curated
-  set — `palette_to_tailwind.py` is the make-side primary.
+  set — `sprezzature-colors-palette-to-tailwind` is the make-side primary.
 - **User names colors or supplies a palette** ("our brand is
   #8B5CF6", "we already have a tailwind.config.js with our
   tokens"): use theirs. Do not propose the CSV swap.
 - **Audit mode (existing project with established colors):** respect
   the existing tokens; do not refactor the palette to the CSV
-  unless the user specifically asks. `audit_contrast.py` should
+  unless the user specifically asks. `sprezzature-colors-contrast` should
   flag contrast failures against the user's palette, not against
   ours.
 
@@ -177,15 +177,15 @@ emitter is just unused).
 live in the sprezzature-* ecosystem when the curated default is in play.
 Both halves of the loop read it:
 
-- **Audit:** `audit_contrast.py` walks the (label × surface) pairs that
+- **Audit:** `sprezzature-colors-contrast` walks the (label × surface) pairs that
   co-occur in a rendered theme by default (`--all-pairs` for the full
   cross-product) against the CSV's hexes and emits an OKLCH-neighbour
   fix when contrast fails.
-- **Make:** `palette_to_tailwind.py` emits the same hexes as a
+- **Make:** `sprezzature-colors-palette-to-tailwind` emits the same hexes as a
   Tailwind `theme.extend.colors` block (or a complete
   `tailwind.config.js`). The block in
   `sprezzature-ui/references/stack-tailwind.md` matches this output
-  exactly; running the script with no flags reproduces it. If they
+  exactly; running the command with no flags reproduces it. If they
   ever drift, the CSV wins and the reference doc is regenerated.
 
 For a UI deliverable end-to-end:
@@ -209,7 +209,7 @@ Pair with a runtime audit (axe-core / Pa11y / Lighthouse) before shipping.
   Tokens Studio): use those; this skill is a deterministic gate, not a
   pipeline.
 - You need print color (CMYK, Pantone matching): out of scope.
-- You need a designer-grade palette redesign. `audit_contrast.py --fix`
+- You need a designer-grade palette redesign. `sprezzature-colors-contrast --fix`
   is a hint, not a final decision. Loop a designer in.
 - You need automatic theming (light/dark generation from a single hue).
   The perceptual primitives are here, but a thoughtful theme is a design
@@ -232,11 +232,11 @@ sub-command of the `sprezzature-colors` front door.
 
 | Script | Install | Purpose |
 |---|---|---|
-| `audit_contrast.py` → `sprezzature-colors-contrast` | stdlib only | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
-| `simulate_cvd.py` → `sprezzature-colors-cvd` | Pillow (base install) | Protanopia / deuteranopia / tritanopia rendering (MACHADO matrices), optional grayscale. |
-| `accessibility_levels.py` → `sprezzature-colors-levels` | stdlib only | The palette at one of six accessibility levels, same names. |
+| `audit_contrast.py` → `sprezzature-colors-contrast` | click (base install) | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
+| `simulate_cvd.py` → `sprezzature-colors-cvd` | click + Pillow (base install) | Protanopia / deuteranopia / tritanopia rendering (MACHADO matrices), optional grayscale. |
+| `accessibility_levels.py` → `sprezzature-colors-levels` | click (base install) | The palette at one of six accessibility levels, same names. |
 | `_colors.py` | stdlib only | Shared color primitives: sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
-| `palette_to_tailwind.py` → `sprezzature-colors-palette-to-tailwind` | stdlib only | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `audit_contrast.py`: closes the CSV → emitted-config loop so brand tokens cannot drift. |
+| `palette_to_tailwind.py` → `sprezzature-colors-palette-to-tailwind` | click (base install) | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `sprezzature-colors-contrast`: closes the CSV → emitted-config loop so brand tokens cannot drift. |
 
 ## Companion skills
 

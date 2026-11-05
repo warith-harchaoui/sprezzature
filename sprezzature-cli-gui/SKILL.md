@@ -26,7 +26,7 @@ compatibility: >-
   Python standard library.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-cli-gui`](https://github.com/warith-harchaoui/sprezzature-cli-gui) (`pip install`), invoked as `sprezzature-cli-gui …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
@@ -67,7 +67,7 @@ gates on the emitted HTML.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — CLI → HTML (three adapters) | `sprezzature-cli-gui` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (bool → checkbox, choice → dropdown, int / float → number input, file and str → text input), required marker, default values pre-filled, and a "Build command" button per form that constructs the CLI line locally from that form's fields. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
+| **Make** — CLI → HTML (three adapters) | `sprezzature-cli-gui` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (bool → checkbox, choice → dropdown, int / float → number input, file and str → text input; a counter such as `-v` is a number input that repeats the flag; an on/off pair such as `--color/--no-color` starts at its default and writes the other spelling when changed, and a `store_false` flag is passed only when it is ticked), required marker, default values pre-filled, and a "Build command" button per form that constructs the CLI line locally from that form's fields. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
 | **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
 | **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `sprezzature-ux-laws-audit` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. Measured on 2026-11-04 on a generated page: the accessibility lint reports 0 findings, the UX-laws audit 2 info-level notes it cannot decide from the classes. No test in the package asserts either gate. |
 | **Audit** — does the page still cover the CLI | `sprezzature-cli-gui-audit <spec> <page.html>` | This brick's own promise, checked by five rules: `flag-not-in-page` (an option with no field), `field-has-no-flag` (a field building an option the parser rejects), `choice-dropped`, `prog-missing` and `prog-mismatch` (the command line is not seeded with the installed name). A page that lost a flag renders and behaves perfectly — the option is simply unreachable — so the disagreement has to be looked for. `--format text|json`, `--prog`. Exit 1 on any finding, so it gates a build. |
@@ -78,7 +78,7 @@ gates on the emitted HTML.
 |---|---|---|
 | Library | `from sprezzature_cli_gui import walk, render_html, audit, Finding` | `walk(obj, prog=None)` reads an argparse parser, a Click command or a Typer app in the caller's process. |
 | CLI | `sprezzature-cli-gui`, `sprezzature-cli-gui-audit` | Click commands; shell completion through `_SPREZZATURE_CLI_GUI_COMPLETE`. |
-| HTTP | `uvicorn sprezzature_cli_gui.api:app`, or `docker compose up` in the package repository | `GET /health`, `GET /v1/example`, `POST /v1/render` (tree in, HTML out), `POST /v1/audit` (`schema` + `page` in, findings out). |
+| HTTP | `uvicorn sprezzature_cli_gui.api:app`, or `docker compose up` in the package repository (the image runs `sprezzature-cli-gui-mcp`, so one container answers the routes and `/mcp` on port 8000) | `GET /health`, `GET /v1/example`, `POST /v1/render` (tree in, HTML out), `POST /v1/audit` (`schema` + `page` in, findings out). |
 | MCP | `sprezzature-cli-gui-mcp [--host H] [--port P]` | Endpoint `/mcp`. Tools = `operation_id`: `health`, `get_example_schema`, `render_gui`, `audit_gui`. |
 | Skill | this file | Routing; the catalogue is in `references/triggers.md`. |
 
@@ -225,7 +225,7 @@ all generate the introspectable `--help` the inventory step expects.
 
 ## Worked example
 
-`assets/examples/cli-gui-demo/` is a runnable, ~700-LOC demo of the whole workflow:
+`assets/examples/cli-gui-demo/` is a runnable, ~1,000-line demo of the whole workflow:
 
 - A mock CLI `imgconvert` with three sub-commands.
 - A Python stdlib HTTP + SSE proxy (`server.py`).

@@ -1,6 +1,6 @@
-# Contrast audit — `audit_contrast.py`
+# Contrast audit — `sprezzature-colors-contrast`
 
-Audit a palette's (foreground, background) pairs against the contrast-ratio thresholds published by the Web Content Accessibility Guidelines (WCAG, the reference standard for making web content usable by people with disabilities), and propose the nearest accessible alternative for failing pairs. The contrast ratio itself is a single number from 1 (identical brightness, unreadable) to 21 (pure black on pure white): the higher it is, the easier the two colors are to tell apart at a glance. Deterministic, stdlib-only, no model.
+Audit a palette's (foreground, background) pairs against the contrast-ratio thresholds published by the Web Content Accessibility Guidelines (WCAG, the reference standard for making web content usable by people with disabilities), and propose the nearest accessible alternative for failing pairs. The contrast ratio itself is a single number from 1 (identical brightness, unreadable) to 21 (pure black on pure white): the higher it is, the easier the two colors are to tell apart at a glance. Deterministic, no model; the arithmetic is standard library only.
 
 ## What this tool is — and isn't
 
@@ -22,26 +22,26 @@ Designers iterate on palettes by eye. An automated audit catches the pairs the e
 
 ## Run
 
-Installed, the command is `sprezzature-colors-contrast` (or `sprezzature-colors contrast`) and takes the same flags. From a source checkout:
+Installed, the command is `sprezzature-colors-contrast` (or `sprezzature-colors contrast`). From a source checkout of the package, `python scripts/audit_contrast.py` takes the same arguments.
 
 ```bash
 # Audit the skill's built-in palette at AA body (4.5:1)
-python scripts/audit_contrast.py
+sprezzature-colors-contrast
 
 # AAA threshold
-python scripts/audit_contrast.py --target 7
+sprezzature-colors-contrast --target 7
 
 # Large-text / UI threshold
-python scripts/audit_contrast.py --target 3
+sprezzature-colors-contrast --target 3
 
 # Audit an external palette and suggest fixes
-python scripts/audit_contrast.py --palette my-palette.json --fix
+sprezzature-colors-contrast --palette my-palette.json --fix
 
 # JSON output for CI
-python scripts/audit_contrast.py --format json
+sprezzature-colors-contrast --format json
 
 # Exhaustive cross-product, cross-theme pairs included
-python scripts/audit_contrast.py --all-pairs
+sprezzature-colors-contrast --all-pairs
 ```
 
 Exit code is `0` when every checked pair passes, `1` when any pair fails, `2` when the palette yields no pair to check. The exit code is the same regardless of `--fix`; the script reports the failures even when it suggests alternatives.

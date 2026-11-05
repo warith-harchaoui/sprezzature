@@ -59,12 +59,12 @@
 
 ## AI-drafted alt text
 
-When the author has not supplied `alt`, the skill drafts it with a **local vision model running on Ollama** (`qwen3-vl:8b`). Local-only: nothing leaves the machine. Runtime is Python 3.9+.
+When the author has not supplied `alt`, the skill drafts it with a **local vision model running on Ollama** (`qwen3-vl:8b`). Local-only: nothing leaves the machine. Runtime is Python 3.10 to 3.13.
 
 Install once (cross-platform):
 
 ```bash
-pip install "sprezzature-accessibility"
+pip install sprezzature-accessibility
 sprezzature-accessibility-install-alt
 ```
 
@@ -83,7 +83,7 @@ make-alt --kind complex --context "Weekly active users" ./public/chart.png
 
 Output is one line ≤ 150 characters at a word boundary (no trailing `…`). For decorative images, emit `alt=""` directly (the script returns empty when called with `--kind decorative`). Do **not** add `role="presentation"` or `aria-hidden="true"`; `alt=""` alone is the WAI-recommended signal.
 
-Full guidance (W3C decision tree, prompt rules, server-side proxy pattern for browser calls, review workflow, failure modes) in `references/alt-text-ai.md`.
+Full guidance (W3C decision tree, prompt rules, server-side proxy pattern for browser calls, review workflow, failure modes) in `sprezzature-accessibility/references/alt-text-ai.md`.
 
 ## Checklist
 

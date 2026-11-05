@@ -1,4 +1,4 @@
-# Color-blind simulation — `simulate_cvd.py`
+# Color-blind simulation — `sprezzature-colors-cvd`
 
 Render an image (a chart, a UI screenshot, an asset) as a color-blind viewer would see it. Three simulations are produced by default: protanopia, deuteranopia, tritanopia. Pillow + published transformation matrices. No model.
 
@@ -14,24 +14,24 @@ The simulation is qualitative: a real viewer's experience varies with severity a
 pip install sprezzature-colors
 ```
 
-Pillow, the one library this tool needs, is a base dependency. From a source checkout, `pip install -r requirements-cvd.txt` installs Pillow alone.
+Pillow, the image library the simulation needs, is a base dependency, like click for the command line. From a source checkout, `pip install -r requirements-cvd.txt` installs Pillow alone; the command also needs click.
 
 ## Run
 
-Installed, the command is `sprezzature-colors-cvd` (or `sprezzature-colors cvd`) and takes the same arguments. From a source checkout:
+Installed, the command is `sprezzature-colors-cvd` (or `sprezzature-colors cvd`). From a source checkout of the package, `python scripts/simulate_cvd.py` takes the same arguments.
 
 ```bash
 # Default: three sibling PNGs (one per CVD type)
-python scripts/simulate_cvd.py public/hero.png
+sprezzature-colors-cvd public/hero.png
 
 # Side-by-side mosaic for a design review
-python scripts/simulate_cvd.py public/hero.png --grid --out public/hero-cvd.png
+sprezzature-colors-cvd public/hero.png --grid --out public/hero-cvd.png
 
 # Subset (use shorthand: prot / deut / trit)
-python scripts/simulate_cvd.py public/hero.png --types prot,deut
+sprezzature-colors-cvd public/hero.png --types prot,deut
 
 # Add a relative-luminance grayscale version
-python scripts/simulate_cvd.py public/hero.png --grayscale
+sprezzature-colors-cvd public/hero.png --grayscale
 ```
 
 Output filenames:
@@ -40,9 +40,9 @@ Output filenames:
 |---|---|
 | Default | `<stem>-protanopia.png`, `<stem>-deuteranopia.png`, `<stem>-tritanopia.png` siblings of the source, or in the directory given to `--out`. |
 | `--grayscale` | Adds `<stem>-grayscale.png`, or a "Grayscale" panel in the mosaic. |
-| `--grid` | One mosaic at `<stem>-cvd-grid.png` (override with a file path in `--out`): the original and each variant, two per row. |
+| `--grid` | One mosaic at `<stem>-cvd-grid.png` (override with a file path in `--out`): the original and each variant, two per row, so 2×2 for the three types and three rows with `--grayscale`. |
 
-Every file is written as PNG. The per-type files keep the source's extension in their name, so `hero.jpg` gives `hero-protanopia.jpg` holding PNG data.
+Every file is written as PNG and named `.png`, whatever the source's extension: `hero.jpg` gives `hero-protanopia.png`.
 
 ## How to read the output
 

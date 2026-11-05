@@ -100,13 +100,13 @@ your actual data can fill, checked against each kind's declared
 `required_roles` (a kind needs, say, one categorical and one numeric
 column; your data either has columns that could fill those roles or it
 does not). The CLI also accepts `--intent
-comparison|trend|distribution|...` to narrow by declared analytical
-intent. As shipped, every one of the 167 catalogue entries has an empty
-`intents` list, the schema supports it, the field is not yet populated
-for any kind, so `--intent` filtering has nothing tagged to filter by
-today; treat the ranking as driven by data-shape fit (which roles your
-columns can satisfy), not by a curated intent match, until the catalogue
-entries are annotated. `sprezzature-figures recommend --render out.svg`
+comparison|trend|distribution|composition|relationship|flow|hierarchy|geography|model_evaluation`,
+which ranks first the kinds that serve that goal. The catalogue's own
+`intents` field is still empty for all 167 entries, so the match is made
+against each kind's `category` ("Comparison", "Time series", "Geospatial",
+…) by keyword, and once a goal is given it becomes the dominant term of the
+score; without one, the ranking is data-shape fit and readability alone
+(which roles your columns can satisfy), and many kinds tie. `sprezzature-figures recommend --render out.svg`
 draws the top-ranked pick directly, useful for a first pass, but the
 ranking answers "what can render from this data," not "what best answers
 your question," that second judgment is still yours.

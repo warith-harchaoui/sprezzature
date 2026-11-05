@@ -29,7 +29,8 @@ sprezzature-publish-lint --render-mermaid --fix docs/
 sprezzature-publish-lint --ai --ai-lang en docs/intro.md
 ```
 
-Via the unified driver: `sprezzature publish lint-md docs/ --render-mermaid`.
+Via the front door: `make-site lint docs/ --render-mermaid` (or
+`sprezzature-publish lint …`, the same command under its other name).
 
 ## Rules implemented
 
@@ -44,6 +45,7 @@ Via the unified driver: `sprezzature publish lint-md docs/ --render-mermaid`.
 | `MDX002` | warning | Multi-line display math without `\\` or an `align/gather` environment. |
 | `MDX003` | error | Inside `\begin{align}` / `aligned` / `gather`, a non-trailing line is missing `\\`. |
 | `MMD001` | error | A Mermaid block failed to render locally. |
+| `MD000` | warning | The file is not valid UTF-8, so it was skipped. |
 
 `MD001`, `MD050`, `MDX001`, `MDX003`, `MMD001` flip the exit code to `1`.
 The rest are informational.
@@ -52,9 +54,9 @@ The rest are informational.
 
 Two backends, tried in order:
 
-1. **Pure Python `mmdc`** (`pip install mmdc`). Embeds PhantomJS via
-   `phasma` (no Node, no npm, no Chromium). This is the recommended
-   path; install it from `scripts/requirements-lint-md.txt`.
+1. **Pure Python `mmdc`**. Embeds PhantomJS via `phasma` (no Node, no
+   npm, no Chromium). This is the recommended path, and a base
+   dependency of `sprezzature-publish`, so it is already installed.
 2. **Node `@mermaid-js/mermaid-cli`** (`npm install -g
    @mermaid-js/mermaid-cli`). Fallback if the pure-Python backend fails
    or is not installed. Heavier; pulls Chromium via Puppeteer.
@@ -80,8 +82,9 @@ disables Mermaid.js.
 - **Offline.** CI in an air-gapped environment, a flight, a
   cafe-without-wifi: none of these break the rendering pipeline.
 - **Accessibility.** The PNG sibling is the right surface for an
-  alt-text helper. See `make-alt`;
-  the rendered PNG can be passed to it directly.
+  alt-text helper. See `sprezzature-accessibility-alt` (or the lint's
+  `--fix-alt`) in sprezzature-accessibility; the rendered PNG can be
+  passed to it directly.
 
 ## LaTeX checks
 
@@ -109,9 +112,10 @@ also:
   for you to paste into a sibling `<figcaption>` or `aria-describedby`
   block.
 
-The AI step is **read-only**. The static rules alone can rewrite
-trailing whitespace and code-fence languages (under `--fix`); the AI
-step prints suggestions you apply by hand.
+The AI step is **read-only**. Under `--fix` the static half rewrites
+trailing whitespace (`MD009`) and, with `--render-mermaid`, inserts the
+PNG sibling references; nothing else is repaired. The AI step prints
+suggestions you apply by hand.
 
 ### Prompts
 
@@ -122,8 +126,9 @@ The script ships two prompts. They are intentionally:
 3. An explicit output contract: JSON array for the Mermaid task; one sentence (no quotes, no prefix) for the LaTeX caption. Both are parsed strictly; a model that drifts off-contract returns an empty result and the script reports nothing for that block.
 4. Zero-shot. No in-context examples; both tasks are common enough in the model's training distribution that examples cost tokens without lifting quality.
 
-See `scripts/lint_markdown.py` → `PROMPT_MERMAID_LABELS` and
-`PROMPT_LATEX_CAPTION` for the verbatim prompts.
+See `scripts/prompts/mermaid_labels.yaml` and
+`scripts/prompts/latex_caption.yaml` for the verbatim prompts, loaded by
+`scripts/_prompts.py`.
 
 ## CI integration
 

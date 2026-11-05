@@ -1,47 +1,56 @@
 # sprezzature-cli
 
-A thin top-level driver for six of the [`sprezzature`](https://github.com/warith-harchaoui/sprezzature) skills.
+A thin top-level driver for the ten [`sprezzature`](https://github.com/warith-harchaoui/sprezzature) bricks.
 
 ```bash
-pip install ./sprezzature-cli         # from the repo root, or
-pip install sprezzature-cli           # from PyPI when published
+pip install ./sprezzature-cli         # from the repo root
 ```
 
 Then:
 
 ```bash
-sprezzature --help                    # discoverable sub-commands across all six wired skills
+sprezzature --help                    # every sub-command, across the ten bricks
 sprezzature --version
 
 sprezzature ui i18n-audit src/        # → sprezzature-ui-i18n-audit src/
+sprezzature ui i18n-make              # → sprezzature-ui-i18n-make
 
 sprezzature accessibility lint public/  # → sprezzature-accessibility-lint public/
+sprezzature vision alt photo.jpg --kind informative --lang en   # → make-alt
 sprezzature colors contrast --palette palette.json
 sprezzature colors cvd screenshot.png
-sprezzature vision alt photo.jpg --kind informative --lang en
 sprezzature audio captions video.mp4 --format vtt
 
 sprezzature publish favicons logo.png --out public --name "Project"
 sprezzature publish meta page.html
 sprezzature publish indexes --root . --base-url https://example.com
 sprezzature publish plain --input copy.md
+sprezzature publish lint-md docs/
+sprezzature publish md-to-html README.md
+
+sprezzature figures …                 # → sprezzature-figures …
+sprezzature maps …                    # → sprezzature-maps …
+sprezzature video …                   # → sprezzature-video …
+sprezzature cli-gui …                 # → sprezzature-cli-gui …
+sprezzature ux-laws …                 # → sprezzature-ux-laws …
 ```
 
-The driver **shells out** to each existing script — it does not duplicate any
-logic. The validators (`validate`, `lint`, `contrast`, `cvd`, `indexes`) stay
-stdlib-only when invoked directly, even if `sprezzature-cli` itself depends on Click.
+The driver **shells out** to each brick's own command; it does not duplicate
+any logic. The last five forward every argument to the brick's front door,
+whose `--help` lists its tools.
 
-## How it finds the skills
+## How it finds a tool
 
-`sprezzature-cli` looks for each skill folder in this order:
+Each sub-command tries, in order:
 
-1. `$SPREZZATURE_SKILLS_PATH` (colon-separated list of parent directories).
-2. The current working directory (useful when running inside the repo).
-3. `~/.claude/skills/`.
-4. `~/.opencode/skills/`.
+1. the brick's console script on `$PATH` (`sprezzature-accessibility-lint`, …);
+2. `<skill>/scripts/<script>` inside a skill folder found on
+   `$SPREZZATURE_SKILLS_PATH` (colon-separated parent directories), the
+   current directory, `~/.claude/skills/` or `~/.opencode/skills/`: the
+   pre-split layout, kept for hand-built folders;
+3. `python -m <module>` against the brick's installed package.
 
-If a skill is missing, the relevant sub-command says so and points at the
-install instructions.
+When none resolves, it exits 2 and names the `pip install` that fixes it.
 
 ## Why this exists
 
@@ -76,20 +85,16 @@ echo 'source ~/.sprezzature-complete.zsh' >> ~/.zshrc
 _SPREZZATURE_COMPLETE=fish_source sprezzature > ~/.config/fish/completions/sprezzature.fish
 ```
 
-The same `_<TOOL>_COMPLETE=<shell>_source` trick works for the per-script
-CLIs that were migrated to Click — useful if you invoke them directly
-rather than through the `sprezzature` driver:
+The same `_<TOOL>_COMPLETE=<shell>_source` trick works for every brick's own
+command, since they are all Click:
 
 ```bash
-_ALT_FROM_OLLAMA_COMPLETE=zsh_source alt_from_ollama.py > ~/.alt-complete.zsh
-_CAPTIONS_FROM_WHISPER_COMPLETE=zsh_source captions_from_whisper.py > ~/.captions-complete.zsh
-_META_FROM_OLLAMA_COMPLETE=zsh_source meta_from_ollama.py > ~/.meta-complete.zsh
-_PLAIN_LANGUAGE_COMPLETE=zsh_source plain_language.py > ~/.plain-complete.zsh
+_SPREZZATURE_ACCESSIBILITY_ALT_COMPLETE=zsh_source sprezzature-accessibility-alt > ~/.alt-complete.zsh
+_SPREZZATURE_AUDIO_CAPTIONS_COMPLETE=zsh_source sprezzature-audio-captions > ~/.captions-complete.zsh
 ```
 
-These commands invoke the script with a special env var so Click prints
-the completion shell snippet to stdout — nothing is installed, modified,
-or downloaded.
+These commands print the completion snippet to stdout; nothing is installed,
+modified, or downloaded.
 
 ## License
 

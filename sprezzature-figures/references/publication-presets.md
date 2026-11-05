@@ -1,6 +1,6 @@
 # Publication presets: not implemented yet
 
-`SKILL.md`'s references list promises this file will document
+`SKILL.md`'s references list once promised this file would document
 "journal-ready presets (Nature single-column, Science two-column, PLOS
 full-width, IEEE transactions)." Searching the standalone
 `sprezzature-figures` package for anything matching that description,
@@ -31,16 +31,18 @@ on print-readiness without amounting to a journal preset:
   the font family a preset would need is already wired into the
   rendering path, only the preset's sizing and column-width logic around
   it is missing.
-- **Vector output at exact physical dimensions.** `render_diagram.py`
-  (documented in `references/ralph-eyeball-loop.md`) can already
-  rasterise a TikZ figure, a Mermaid diagram, or a hand-authored SVG
-  "at exact physical dimensions" by setting `width`/`height` in inches
-  times DPI and passing `--ppi`. That is a general mechanism for
-  print-accurate sizing, not a named journal preset, and it applies to the `render_diagram.py` path (diagram
-  surfaces you supply), not to the 167-kind `make-figure` catalogue,
-  which does not currently expose a DPI or physical-size argument at all
-  (see `references/figure-catalog.md` for what that catalogue actually
-  renders).
+- **Resolution, but not physical size.** `render_diagram.py`
+  (documented in `references/ralph-eyeball-loop.md`) rasterises a TikZ
+  figure, a Mermaid diagram, or a hand-authored SVG, and takes `--dpi`
+  (default 300) for the TikZ PDF-to-PNG step; it has no width or height
+  flag. The 167-kind catalogue takes `--scale N` on
+  `sprezzature-figures render`, which upsamples PNG, JPG or PDF output N
+  times for a hi-DPI screen or print (ignored for SVG and HTML). Neither
+  is a physical-size argument: nothing in this package sets a column
+  width in millimetres or a minimum type size at that width (see
+  `references/figure-catalog.md` for what the catalogue actually
+  renders). `sprezzature-maps` does, for its plates, through a
+  `print_width` key.
 
 ## What a real preset would need to specify, if built
 
@@ -56,8 +58,8 @@ codebase; stating specific values here without a citation to each
 journal's actual author guidelines would be exactly the kind of
 unverifiable claim this file's own writing rules forbid. If you need
 publication-accurate sizing today, get the target journal's current
-figure specification directly from its author guidelines and set
-`render_diagram.py`'s `width`/`height`/`--ppi` by hand; do not assume a
+figure specification directly from its author guidelines and size the
+SVG's own `width`/`height` by hand before rendering; do not assume a
 preset name here maps to correct numbers, because no such mapping has
 been built.
 

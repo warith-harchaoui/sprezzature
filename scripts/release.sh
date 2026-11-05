@@ -8,15 +8,11 @@
 #   scripts/release.sh 0.3.0                  # writes to dist/
 #   scripts/release.sh 0.0.0-test /tmp/r      # writes to /tmp/r/
 #
-# Output (in <out-dir>):
+# Output (in <out-dir>), one tarball per folder SKILLS.txt names:
 #   sprezzature-ui-<version>.tar.gz
 #   sprezzature-cli-gui-<version>.tar.gz
-#   sprezzature-publish-<version>.tar.gz
-#   sprezzature-accessibility-<version>.tar.gz
-#   sprezzature-colors-<version>.tar.gz
-#   sprezzature-vision-<version>.tar.gz
-#   sprezzature-audio-<version>.tar.gz
-#   sprezzature-ux-laws-<version>.tar.gz
+#   … (the ten skills, in SKILLS.txt order) …
+#   sprezzature-video-<version>.tar.gz
 #   sprezzature-skills-<version>.tar.gz        ← bundle of every skill
 #   SHA256SUMS                           ← one file, one line per artifact
 #

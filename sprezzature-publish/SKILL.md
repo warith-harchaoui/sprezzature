@@ -17,20 +17,20 @@ description: >-
   `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
-  Runtime: Claude.ai, Claude Code, OpenCode. Core scripts (favicons,
-  site_indexes, plain_language, meta_from_ollama, md_to_html, lint_markdown)
-  need Python 3.10+ with stdlib + Pillow + PyYAML; meta_from_ollama and
-  plain_language additionally need a running local Ollama daemon. Optional
-  audio narration (narrate_post + OpenVoice v2 or ChatterboxTTS) pulls
-  torch + torchaudio; installed only when explicitly opted into.
+  Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10 to 3.13. One
+  ``pip install sprezzature-publish`` brings every tool (Pillow, PyYAML,
+  markdown, click, FastAPI, fastapi-mcp, and sprezzature-audio for the voice:
+  Kokoro by default, Chatterbox and OpenVoice); no feature extras. meta,
+  plain, faq (unless ``--no-llm``), ``lint --ai`` and ``narrate --ai-hints``
+  also need a running local Ollama daemon.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language
 
-> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through the click front door, under two names that are one callable, `make-site <tool>` and `sprezzature-publish <tool>`. Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP or MCP. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through the click front door, under two names that are one callable, `make-site <tool>` and `sprezzature-publish <tool>`. Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP or MCP: `sprezzature-publish-mcp --port 8000` serves seven routes plus `GET /health` and, on the same port, `/mcp` with the same eight as tools (`lint_markdown`, `audit_site`, `render_markdown`, `rewrite_plainly`, `find_calls_to_action`, `build_faq`, `report_findability`, `health`); the Docker image runs that command. Icons, indexes, meta, narration, read-along and the changelog feed stay commands. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 ## Audience and positioning
 
@@ -86,16 +86,16 @@ on one screen is sprezzature-ux-laws (Hick), not this skill.
 
 ## Two modes: make and audit
 
-Make-side scripts paired with two audit-side tools — one before the render,
+Make-side commands paired with two audit-side tools — one before the render,
 one after it. The second is the one that serves a site that **already
 exists**, which has no Markdown to go back to.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — generate site artifacts | `favicons.py`, `meta_from_ollama.py`, `site_indexes.py`, `plain_language.py`, `md_to_html.py`, `narrate_post.py`, `readalong.py` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
-| **Make + audit** — what the site is for | `cta.py`, `faq.py`, `findable.py` | Declared CTAs (`ctas.yaml`), the FAQ built from the site's own pages and its `FAQPage` markup, and the joint SEO + GEO + AEO report ordered by money pages. Reads HTML, PHP, Markdown, JSON and YAML. |
-| **Audit** — before the render, gate the source | `lint_markdown.py` | Markdown lint with project-aware rules (heading order, fenced-code language, link freshness). `--fix` strips trailing whitespace. |
-| **Audit** — after the render, read what was emitted and repair it | `audit_site.py` | `sprezzature-publish-audit <dir\|page\|url>`. Head meta, Open Graph, Twitter Card, JSON-LD, icon and manifest links, `robots.txt`, `sitemap.xml`, `llms.txt`, feed, icon set on disk. **No Markdown source required** — this is the tool for a site somebody else built. `--fix` writes back only what is *derived*: canonical from `--base-url`, `og:*` / `twitter:*` mirrored from the page's own title and description, the icon links from the `head.html` `favicons` wrote, and `robots.txt` / `sitemap.xml` regenerated through `site_indexes`. The wording of a title, the choice of an `og:image`, a JSON-LD body: reported with the command that drafts them, never written. A URL is reported, never repaired. |
+| **Make** — generate site artifacts | `sprezzature-publish-icons`, `-meta`, `-indexes`, `-plain`, `-html`, `-narrate`, `-readalong`, `-changelog` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along, and one Atom + RSS feed from sibling repositories' `CHANGELOG.md`. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
+| **Make + audit** — what the site is for | `sprezzature-publish-cta`, `-faq`, `-findable` | Declared CTAs (`ctas.yaml`), the FAQ built from the site's own pages and its `FAQPage` markup, and the joint SEO + GEO + AEO report ordered by money pages. Reads HTML, PHP, Markdown, JSON and YAML. |
+| **Audit** — before the render, gate the source | `sprezzature-publish-lint` | Markdown lint with project-aware rules (heading order, fenced-code language, trailing whitespace, empty image alt, a local link whose target is not on disk). `--fix` strips trailing whitespace and, with `--render-mermaid`, inserts the rendered PNG references; nothing else. |
+| **Audit** — after the render, read what was emitted and repair it | `sprezzature-publish-audit` | `sprezzature-publish-audit <dir\|page\|url>`. Head meta, Open Graph, Twitter Card, JSON-LD, icon and manifest links, `robots.txt`, `sitemap.xml`, `llms.txt`, feed, icon set on disk. **No Markdown source required** — this is the tool for a site somebody else built. `--fix` writes back only what is *derived*: canonical from `--base-url`, `og:*` / `twitter:*` mirrored from the page's own title and description, the icon links from the `head.html` `favicons` wrote, `robots.txt` / `sitemap.xml` regenerated through `site_indexes`, and `og:image` / `<html lang>` only when `--og-image` / `--lang` are given and the page has none. The wording of a title, the choice of an `og:image` without `--og-image`, a JSON-LD body: reported with the command that drafts them, never written. A URL is reported, never repaired. |
 
 Pair the emitted HTML with `sprezzature-accessibility-lint` (a11y) and
 `sprezzature-colors-contrast` (contrast) to complete the audit side
@@ -115,7 +115,7 @@ When the user points to a Markdown-only project and asks for a website:
    - Sticky top bar with the project name on start, theme switcher on end.
    - Sidebar (lg:) with section tree on `docs/**` pages.
    - Bottom tab bar (mobile) when ≤ 5 top-level destinations.
-5. **Convert Markdown to HTML**. Prefer a build-step tool (Pandoc, `markdown-it`, `python-markdown`) so the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
+5. **Convert Markdown to HTML**. `sprezzature-publish-html <file-or-dir> --out site/` does it at build time (python-markdown, Mermaid rendered, KaTeX for math); any other build-step tool (Pandoc, `markdown-it`) is fine as long as the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
 6. **Wire meta tags per page** using `references/meta-tags.md` and (optional) `sprezzature-publish-meta path/to/page.html`.
 7. **Generate the favicon set** from the project's logo: `sprezzature-publish-icons logo.png --out public --name "Project name"`. Drop the produced `head.html` snippet into the layout template.
 8. **Emit indexes**: `sprezzature-publish-indexes --root . --base-url https://example.com [--feed-from posts]` — produces robots.txt + sitemap.xml + llms.txt + llms-full.txt + optional Atom feed.
@@ -132,13 +132,15 @@ Output follows the sprezzature-ui stack rules: vanilla JS, Tailwind, and the thr
 When emitting a whole website, compose the scripts in this order:
 
 ```text
-favicons.py        # icons + manifest
+sprezzature-publish-icons    # icons + manifest
 ↓
-meta_from_ollama.py  # per page: title, description, OG, JSON-LD
+sprezzature-publish-meta     # per page: title, description, OG, JSON-LD
 ↓
-site_indexes.py    # robots, sitemap, llms.txt, llms-full.txt, feed
+sprezzature-publish-indexes  # robots, sitemap, llms.txt, llms-full.txt, feed
 ↓
-plain_language.py  # optional: simplify draft copy
+sprezzature-publish-plain    # optional: simplify draft copy
+↓
+sprezzature-publish-audit    # read what was emitted; --fix what is derived
 ```
 
 Then run `sprezzature-accessibility-lint` over the output and `sprezzature-colors-contrast` over the palette before declaring "done".
@@ -146,12 +148,12 @@ Then run `sprezzature-accessibility-lint` over the output and `sprezzature-color
 **Optional editorial step** — audio narration per post:
 
 ```text
-narrate_post.py            # one MP3 per Markdown post (opt-in)
+sprezzature-publish-narrate             # one WAV per post (--audio-format mp3 for MP3)
 ↓
-md_to_html.py --readalong  # page follows the audio, sentence by sentence
+sprezzature-publish-html --readalong    # page follows the audio, sentence by sentence
 ↓
-site_indexes.py            # re-run with --audio-manifest to inject
-                           # <enclosure> rows → RSS feed = podcast feed
+sprezzature-publish-indexes             # re-run with --audio-manifest to inject
+                                        # <enclosure> rows → RSS feed = podcast feed
 ```
 
 The narration pipeline is **not WCAG-required** (screen readers cover
@@ -160,11 +162,12 @@ audience / podcast positioning / cognitive-accessibility alternative
 formats. Triggered by "narrate this post", "audio version of the
 blog", "podcast feed from posts", "TTS this article". See
 `references/audio-narration.md` for the placement rules (player
-top-of-article), engine matrix (OpenVoice v2 + ChatterboxTTS, both
-MIT for code AND weights), voice cloning ethics, and Schema.org /
+top-of-article), engine matrix (Kokoro by default, Apache-2.0; OpenVoice v2
+and ChatterboxTTS for cloning, both MIT for code AND weights; left unset,
+speaker-helper's router picks the engine), voice cloning ethics, and Schema.org /
 OpenGraph metadata.
 
-`md_to_html.py --readalong <narration-dir>` makes the page follow the
+`sprezzature-publish-html --readalong <narration-dir>` makes the page follow the
 audio: a span per sentence, highlighted on the browser's own
 `cuechange`, visual-only so it does not talk over a screen reader.
 It compares the cues the narration wrote against the rendered HTML and
@@ -173,14 +176,14 @@ a highlight that is off by one points a reader confidently at the wrong
 line. Same reference, section *Following the narration on the page*.
 
 **A page that was never Markdown** — hand-written, exported from a design
-tool, live for three years — takes `readalong.py` instead. Both
-`narrate_post.py` and `readalong.py` read the HTML directly, so the
+tool, live for three years — takes `sprezzature-publish-readalong` instead. Both
+`sprezzature-publish-narrate` and `sprezzature-publish-readalong` read the HTML directly, so the
 structural hints come from the page's own elements: an `<h2>` earns the
 pause a `##` earns, because it is the same thing.
 
 ```text
-narrate_post.py page.html --scope article --out-dir audio/
-readalong.py    page.html --narration audio/ --scope article --out built/
+sprezzature-publish-narrate   page.html --scope article --out-dir audio/
+sprezzature-publish-readalong page.html --narration audio/ --scope article --out built/
 ```
 
 `--scope` (`article`, `#id`, `.class`) is what makes this usable on a real
@@ -198,33 +201,43 @@ modified in place.
 
 ## References
 
-- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG HTML, RFC 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the three rules that have **no** spec behind them and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
+- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG HTML, RFC 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the rules that have **no** spec behind them (three `SITE` rules, six of the CTA-dependent ones) and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
 - `references/meta-tags.md` — `<meta>` tags per W3C / WHATWG + Open Graph + Twitter Cards + Schema.org JSON-LD.
 - `references/site-indexes.md` — robots.txt, sitemap.xml, llms.txt, llms-full.txt, Atom / RSS, humans.txt.
 - `references/seo-essentials.md` — Google's three Search Essentials pillars + the AI Optimization Guide's foundations, applied concretely to the artifacts this skill emits. Use it when the user asks about SEO / AI search / "is this third-party advice true?".
 - `references/plain-language.md` — rewrite copy at a target reading level; preserves meaning.
-- `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post into a narrated WAV/MP3 via OpenVoice v2 or ChatterboxTTS (both MIT for code AND weights). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM enrichment via the same local Ollama daemon already used for alt-text, voice cloning from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
+- `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post (or an existing HTML page) into a narrated WAV/MP3 via Kokoro (the default, Apache-2.0), OpenVoice v2 or ChatterboxTTS (both MIT for code AND weights). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM enrichment via the same local Ollama daemon already used for alt-text, voice cloning (OpenVoice, Chatterbox) from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
+- `references/lint-markdown.md` — every `sprezzature-publish-lint` rule (`MD000` to `MD050`), `--fix`, `--render-mermaid` and the read-only `--ai` pass.
+- `references/writing-standards.md` — the per-language writing charters and the prompt files that inject them.
 - `references/i18n.md` — multilingual frontend (URL strategy, `Intl.*`, plurals, RTL, persisted choice). Default language pair is configurable per project (EN/FR, EN/DE, EN/ES, EN/JA, …).
 
-## Scripts
+## Commands
 
-| Script | Install | Purpose |
+Every command below comes with the one `pip install sprezzature-publish`; there are no feature extras.
+
+| Command | Needs | Purpose |
 |---|---|---|
-| `sprezzature-publish-icons` | `pip install 'sprezzature-publish'` | Full favicon / PWA icon set + manifest + head snippet from a single logo |
-| `sprezzature-publish-meta` | `pip install 'sprezzature-publish'` + Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
-| `sprezzature-publish-indexes` | stdlib only | robots.txt + sitemap.xml + llms.txt + llms-full.txt + Atom / RSS + humans.txt |
-| `sprezzature-publish-audit` | stdlib only | Audits an **emitted** site — directory, single page or live URL — and repairs with `--fix` what can be derived. The entry point for "improve this existing site". |
-| `sprezzature-publish-cta` | `pip install 'sprezzature-publish'` | Detects the calls to action a site offers, asks which ones it is for, writes `ctas.yaml`, audits every page against it. Rules only. |
-| `sprezzature-publish-faq` | `pip install 'sprezzature-publish'` (+ Ollama for `--llm`) | Builds the FAQ a site lacks from its pages, grounded and gap-reported; audits and fixes `FAQPage` markup. |
-| `sprezzature-publish-findable` | `pip install 'sprezzature-publish'` | One SEO + GEO + AEO report, money pages first, `--fix` for the deterministic repairs. |
-| `sprezzature-publish-plain` | `pip install 'sprezzature-publish'` + Ollama | Rewrites copy at a target grade; strips marketing voice |
-| `sprezzature-publish-narrate` *(optional)* | `pip install -r scripts/requirements-narrate-{openvoice\|chatterbox}.txt` + `sprezzature-audio-install-voice` | Narrate a Markdown post via local OSS TTS. Engine-agnostic orchestrator; default off. Editorial enhancement, not WCAG-required. |
-| _(the voices)_ | `pip install sprezzature-audio` | `sprezzature-audio-narrate-openvoice` / `-chatterbox`, invoked as subprocesses by `narrate_post.py`. They live in `sprezzature-audio` with the rest of the sound modality; a reader who only wants Markdown rendered should not install a speech stack to get it. |
-| _(the read-along wiring, in the package)_ | `pip install 'sprezzature-publish'` | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `sprezzature-publish-html --readalong` and `sprezzature-publish-readalong`; refuses rather than mis-align. |
+| `sprezzature-publish-lint` | — (`--ai`: Ollama) | Lints Markdown before it renders; `--fix` for trailing whitespace, `--render-mermaid` for the diagram PNGs |
+| `sprezzature-publish-html` | — | Markdown → static HTML pages, Mermaid rendered; `--readalong <dir>` binds a narration |
+| `sprezzature-publish-icons` | — | Full favicon / PWA icon set + manifest + head snippet from a single logo |
+| `sprezzature-publish-meta` | Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
+| `sprezzature-publish-indexes` | — | robots.txt + sitemap.xml + llms.txt + llms-full.txt + an Atom feed (RSS 2.0 with `--rss`) + humans.txt (`--humans`) |
+| `sprezzature-publish-audit` | — | Audits an **emitted** site — directory, single page or live URL — and repairs with `--fix` what can be derived. The entry point for "improve this existing site". |
+| `sprezzature-publish-cta` | — | Detects the calls to action a site offers, asks which ones it is for, writes `ctas.yaml`, audits every page against it. Rules only. |
+| `sprezzature-publish-faq` | Ollama, unless `--no-llm` | Builds the FAQ a site lacks from its pages, grounded and gap-reported; `--audit --fix` checks and rewrites `FAQPage` markup. |
+| `sprezzature-publish-findable` | — | One SEO + GEO + AEO report, money pages first, `--fix` for the deterministic repairs. |
+| `sprezzature-publish-plain` | Ollama | Rewrites copy at a target grade (`--target-grade`, default 8); strips marketing voice |
+| `sprezzature-publish-changelog` | — | Every sibling repository's `CHANGELOG.md` → one dated Atom and RSS feed, a release per entry |
+| `sprezzature-publish-narrate` *(optional)* | the engine's model files, once: `sprezzature-audio-install-voice --engine kokoro` | Narrates a Markdown post or an HTML page via local OSS TTS, writing the timed track beside the audio. Engine left to speaker-helper's router unless `--engine` is given. Editorial enhancement, not WCAG-required. |
 | `sprezzature-publish-readalong` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
-| _(voice chooser)_ | `pip install sprezzature-audio` | `sprezzature-audio-voice` lists engine voices and generates per-voice demo clips, so the designer chooses by listening. |
-| _(voice installer)_ | `pip install sprezzature-audio` | `sprezzature-audio-install-voice` downloads OpenVoice v2 checkpoints and sets up the ChatterboxTTS voice library. |
+| `sprezzature-publish-mcp` | — | The seven HTTP routes + `/health` and the `/mcp` endpoint (eight tools) on one port |
+| _(the voices, from sprezzature-audio, a base dependency)_ | — | `sprezzature-audio-narrate-kokoro` / `-openvoice` / `-chatterbox`, invoked as subprocesses by the narration. They live in `sprezzature-audio` with the rest of the sound modality. |
+| _(the read-along wiring, in the package)_ | — | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `sprezzature-publish-html --readalong` and `sprezzature-publish-readalong`; refuses rather than mis-align. |
+| _(voice chooser)_ | — | `sprezzature-audio-voice` lists engine voices and generates per-voice demo clips, so the designer chooses by listening. |
+| _(voice installer)_ | — | `sprezzature-audio-install-voice --engine kokoro\|openvoice\|chatterbox\|all` fetches the model files (Kokoro's ONNX model, OpenVoice v2 checkpoints) and sets up the ChatterboxTTS voice library. |
 | _(internal helpers, in the package)_ | — | Language detection + Ollama client + narration segment extractor shared by other scripts |
+
+`make-site <tool>` and `sprezzature-publish <tool>` reach the same thirteen tools (`make-site tools` lists them).
 
 ## Companion skills
 

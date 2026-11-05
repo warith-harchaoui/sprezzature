@@ -116,8 +116,11 @@ ollama serve                 # start the daemon (keep running)
 ollama pull qwen3-vl:8b      # ~6.1 GB, Q4_K_M
 ```
 
-Every skill talks to `http://localhost:11434` by default (override with
-`OLLAMA_URL`). The model tag is fixed; there is intentionally **no `--model`
+Every skill talks to `http://localhost:11434` by default. The call goes
+through best-engine-ai-helper, which reads the address from
+`BEST_LLM_BASE_URL`; `sprezzature-audio-translate` and `-name` take it from
+`--url` (default `OLLAMA_URL`) instead, and `sprezzature-publish-lint --ai`
+from `OLLAMA_URL`. The model tag is fixed; there is intentionally **no `--model`
 CLI flag**, and `OLLAMA_MODEL` survives only as a bare test seam.
 
 ---

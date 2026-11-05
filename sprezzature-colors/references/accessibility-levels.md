@@ -142,7 +142,7 @@ never be selected automatically. It stays a generator output for whoever asks, p
 review tool, never something the page guesses.
 
 That review tool is the gallery's "See it for… / Voir pour…" control. It applies the
-same Machado matrices as `simulate_cvd.py`, live, as a Scalable Vector Graphics (SVG)
+same Machado matrices as `sprezzature-colors-cvd`, live, as a Scalable Vector Graphics (SVG)
 `feColorMatrix` filter over the *default* figures, so a sighted reader can see a figure
 the way a colour-blind reader does. The point it makes is that the default holds up. It
 simulates, it does not replace, and colour blindness never becomes a mode a reader has

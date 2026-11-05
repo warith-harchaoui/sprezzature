@@ -17,7 +17,7 @@ description: >-
   `references/triggers.md`.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 # sprezzature-video
@@ -49,7 +49,9 @@ Three triggers, and the second is the one people miss:
 
 ## How to use it
 
-Eight commands. Each exits 1 when the film fails the check, 2 on a wrong call.
+Eight commands. The checks (`verify`, `scan`, `assets`, `pitch`, `calque`, and
+`prose` under `--strict`) exit 1 when the film fails; every command exits 2 on
+a wrong call, and `poster` exits 2 when `ffmpeg` is missing.
 
 ```bash
 make-film verify film.yaml --root .                      # declared claims vs the code; exit 1 = lying
