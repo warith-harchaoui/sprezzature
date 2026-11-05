@@ -34,7 +34,7 @@ Each hue ships with a light tint for backgrounds, hover, selection.
 | Yellow | `#FFCC00` | Light Yellow | `#FFF5CC` |
 | Green | `#28CD41` | Light Green | `#D4F5D9` |
 | Blue | `#007AFF` | Light Blue | `#CCE4FF` |
-| Turquoise | `#79DBDC` | Light Turquoise | `#00FFEF` |
+| Turquoise | `#79DBDC` | Light Turquoise | `#C0E7E7` |
 | Purple | `#AF52DE` | Light Purple | `#EFDCF8` |
 | Pink | `#FF2D55` | Light Pink | `#FFD5DD` |
 
