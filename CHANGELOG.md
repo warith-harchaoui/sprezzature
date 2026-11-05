@@ -107,49 +107,35 @@ Release tarballs are produced by `scripts/release.sh <version>`.
 
 ## Roadmap
 
-Open threads carried through the 0.6.x string. Both remaining
-engineering items are paused on explicit user signal: do not restart
-without one. None of the recent 0.6.0–0.6.3 releases (typography
-overhaul, CI/release workflow fixes, Google SEO + GEO foundations,
-Anthropic skill-spec audit) changed their status; they all sit
-elsewhere in the codebase.
+Open threads. Both engineering items are paused on explicit user signal:
+do not restart without one.
 
 1. **Captions WER baselines + `vocab-biasing-clip.wav`.** User has
    deferred audio fixture work pending dataset acquisition (Common
    Voice 26.0 tarballs are 25–88 GB per language). When they signal:
    run `tests/fixtures/audio/extract_cv_subset.py` per language,
    commit MANIFEST + STATS + transcripts, publish median WER in
-   `sprezzature-a11y/references/captions-ai.md`.
+   `sprezzature-audio/references/captions-ai.md`.
 2. **Real end-to-end application example.** User has deferred. Scope
    pre-decided: wrap `md2star` (user's own CLI) with a Tauri shell
    that invokes it as a sidecar, not another mock SSE proxy. The
    `cli-gui-demo` stays as the scaffold reference; the Tauri example
    becomes the production reference.
 
-3. **Unified i18n make + audit.** GUI strings and LLM prompts share one
-   concern (language), so one per-project catalog, **`locales/i18n.yaml`**
-   (message id → per-locale text), serves both. **make**: `cli_to_gui` /
-   sprezzature-ui scaffolds emit and read `locales/i18n.yaml` instead of hardcoding
-   strings. **audit**: a static check flags any GUI string or prompt living
-   outside `locales/i18n.yaml` (a translation dict in `.js`/`.html` or a
-   prompt inlined in `.py`) with a "move to `locales/i18n.yaml`" finding (same
-   JSON + exit-code shape as the other auditors). Prompts already comply; the
-   GUI side is the build.
-
 Adoption-side milestones (user-driven; not engineering work):
 
-- Real Claude Code session against the four skills to verify trigger
+- Real Claude Code session against the ten skills to verify trigger
   phrasing fires on "wrap my CLI", "captions for this video", "audit
   my palette". Refine descriptions if under-triggers.
 - 5 real users: the only signal that says whether anything else on
   this list is worth doing.
 
-## [Unreleased]
+## Before 1.6.0: work recorded without a version
 
-*The narration read the punctuation out loud.* The headline sits here rather
-than on the heading: a dateless `Unreleased` section is skipped by
-`changelog_feed.py` on purpose, and a title on a heading the feed cannot read
-is exactly what the 1.5.0 guard below was written to catch.
+*The narration read the punctuation out loud.* Everything below shipped in
+1.6.0. It was headed `[Unreleased]` until 2026-11-05, three releases after the
+fact; a heading with no version is skipped by `changelog_feed.py`, which is
+why it never reached the feed and nothing flagged it.
 
 ### Added
 
