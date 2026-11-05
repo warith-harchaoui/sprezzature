@@ -20,7 +20,8 @@ compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10 to 3.13. One
   ``pip install sprezzature-publish`` brings every tool (Pillow, PyYAML,
   markdown, click, FastAPI, fastapi-mcp, and sprezzature-audio for the voice:
-  Kokoro by default, Chatterbox and OpenVoice); no feature extras. meta,
+  Chatterbox, Kokoro and OpenVoice, picked by speaker-helper's router); no
+  feature extras. meta,
   plain, faq (unless ``--no-llm``), ``lint --ai`` and ``narrate --ai-hints``
   also need a running local Ollama daemon.
 metadata:
@@ -47,7 +48,7 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 
 | Trigger phrase | Output |
 |---|---|
-| "turn these markdown files into a website" | Static HTML per `.md` + sticky top nav + sidebar TOC for `docs/` + dark-mode peer + favicons + meta tags + robots / sitemap / llms.txt / llms-full.txt / Atom feed |
+| "turn these markdown files into a website" | Static HTML per `.md` + sticky header + dark-mode peer (a sidebar for `docs/` is built by hand, workflow step 4) + favicons + meta tags + robots / sitemap / llms.txt / llms-full.txt / Atom feed |
 | "meta tags" / "SEO" / "OG card" / "Twitter card" / "JSON-LD" | Title + description + Open Graph + Twitter + Schema.org `@type`, JSON on stdout |
 | "SEO" / "AI search" / "AI Overview" / "discoverability" / "is this advice true?" | Google's three pillars + AI Optimization foundations applied to the artifacts this skill emits; see `references/seo-essentials.md` |
 | "GEO" / "Generative Engine Optimization" / "llms.txt" / "make my site readable by ChatGPT / Gemini / Perplexity" | `sprezzature-publish-indexes` already emits `llms.txt` (a Markdown index of the site) plus `llms-full.txt` (the full-text corpus, Markdown sources only) alongside `robots.txt` + `sitemap.xml`. GEO and SEO share crawlers; same `robots.txt` permits both. There is **no separate "AI" meta tag**: refuse to emit one and cite `references/seo-essentials.md`. |
@@ -162,9 +163,10 @@ audience / podcast positioning / cognitive-accessibility alternative
 formats. Triggered by "narrate this post", "audio version of the
 blog", "podcast feed from posts", "TTS this article". See
 `references/audio-narration.md` for the placement rules (player
-top-of-article), engine matrix (Kokoro by default, Apache-2.0; OpenVoice v2
-and ChatterboxTTS for cloning, both MIT for code AND weights; left unset,
-speaker-helper's router picks the engine), voice cloning ethics, and Schema.org /
+top-of-article), engine matrix (ChatterboxTTS and OpenVoice v2 for cloning,
+both MIT for code AND weights; Kokoro, Apache-2.0, the light one; left unset,
+speaker-helper's router picks the engine, Chatterbox today in English and
+French), voice cloning ethics, and Schema.org /
 OpenGraph metadata.
 
 `sprezzature-publish-html --readalong <narration-dir>` makes the page follow the
@@ -201,13 +203,14 @@ modified in place.
 
 ## References
 
-- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG HTML, RFC 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the rules that have **no** spec behind them (three `SITE` rules, six of the CTA-dependent ones) and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
+- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG HTML, RFC 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the rules that have **no** spec behind them (three `SITE` rules, seven of the CTA-dependent ones) and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
+- `references/faq-aeo.md` — one FAQ per money page, never the same question twice, the markup on the page it describes; the anatomy of an answer an engine can quote (`FAQ005`); the questions a services firm is asked.
 - `references/meta-tags.md` — `<meta>` tags per W3C / WHATWG + Open Graph + Twitter Cards + Schema.org JSON-LD.
 - `references/site-indexes.md` — robots.txt, sitemap.xml, llms.txt, llms-full.txt, Atom / RSS, humans.txt.
 - `references/seo-essentials.md` — Google's three Search Essentials pillars + the AI Optimization Guide's foundations, applied concretely to the artifacts this skill emits. Use it when the user asks about SEO / AI search / "is this third-party advice true?".
 - `references/plain-language.md` — rewrite copy at a target reading level; preserves meaning.
-- `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post (or an existing HTML page) into a narrated WAV/MP3 via Kokoro (the default, Apache-2.0), OpenVoice v2 or ChatterboxTTS (both MIT for code AND weights). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM enrichment via the same local Ollama daemon already used for alt-text, voice cloning (OpenVoice, Chatterbox) from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
-- `references/lint-markdown.md` — every `sprezzature-publish-lint` rule (`MD000` to `MD050`), `--fix`, `--render-mermaid` and the read-only `--ai` pass.
+- `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post (or an existing HTML page) into a narrated WAV/MP3 via ChatterboxTTS (the router's answer today), OpenVoice v2 (both MIT for code AND weights) or Kokoro (Apache-2.0). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM enrichment via the same local Ollama daemon already used for alt-text, voice cloning (OpenVoice, Chatterbox) from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
+- `references/lint-markdown.md` — every `sprezzature-publish-lint` rule (`MD000`–`MD050`, `MDX001`–`MDX003`, `MMD001`), `--fix`, `--render-mermaid` and the read-only `--ai` pass.
 - `references/writing-standards.md` — the per-language writing charters and the prompt files that inject them.
 - `references/i18n.md` — multilingual frontend (URL strategy, `Intl.*`, plurals, RTL, persisted choice). Default language pair is configurable per project (EN/FR, EN/DE, EN/ES, EN/JA, …).
 
@@ -228,7 +231,7 @@ Every command below comes with the one `pip install sprezzature-publish`; there 
 | `sprezzature-publish-findable` | — | One SEO + GEO + AEO report, money pages first, `--fix` for the deterministic repairs. |
 | `sprezzature-publish-plain` | Ollama | Rewrites copy at a target grade (`--target-grade`, default 8); strips marketing voice |
 | `sprezzature-publish-changelog` | — | Every sibling repository's `CHANGELOG.md` → one dated Atom and RSS feed, a release per entry |
-| `sprezzature-publish-narrate` *(optional)* | the engine's model files, once: `sprezzature-audio-install-voice --engine kokoro` | Narrates a Markdown post or an HTML page via local OSS TTS, writing the timed track beside the audio. Engine left to speaker-helper's router unless `--engine` is given. Editorial enhancement, not WCAG-required. |
+| `sprezzature-publish-narrate` *(optional)* | the engine's model files, once: `sprezzature-audio-install-voice --engine chatterbox` (the router's answer today) | Narrates a Markdown post or an HTML page via local OSS TTS, writing the timed track beside the audio. Engine left to speaker-helper's router unless `--engine` is given. Editorial enhancement, not WCAG-required. |
 | `sprezzature-publish-readalong` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
 | `sprezzature-publish-mcp` | — | The seven HTTP routes + `/health` and the `/mcp` endpoint (eight tools) on one port |
 | _(the voices, from sprezzature-audio, a base dependency)_ | — | `sprezzature-audio-narrate-kokoro` / `-openvoice` / `-chatterbox`, invoked as subprocesses by the narration. They live in `sprezzature-audio` with the rest of the sound modality. |

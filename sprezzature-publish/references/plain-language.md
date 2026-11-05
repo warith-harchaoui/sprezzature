@@ -1,6 +1,6 @@
 # Plain-language rewriter: `plain_language.py`
 
-Rewrite any UI copy at a target reading level with a local model, chosen for the machine by `best-engine-ai-helper` and served by Ollama. Keeps the meaning verbatim; strips jargon and marketing voice.
+Rewrite any UI copy at a target reading level with a local model, `qwen3-vl:8b`, called through `best-engine-ai-helper` and served by the Ollama at `OLLAMA_URL`. Keeps the meaning verbatim; strips jargon and marketing voice.
 
 ## Why it matters
 
@@ -13,12 +13,12 @@ Users who benefit beyond cognitive disabilities: second-language readers, anyone
 
 ## Install
 
-The rewriter is in the base install. It needs an Ollama daemon and a model; `best-engine-ai-helper`, a base dependency, picks and pulls the one this machine can run:
+The rewriter is in the base install. It needs an Ollama daemon and the one model every tool here asks for, `qwen3-vl:8b`:
 
 ```bash
 pip install sprezzature-publish
 ollama serve &
-best-engine-ai-helper pull
+ollama pull qwen3-vl:8b
 ```
 
 ## Run
