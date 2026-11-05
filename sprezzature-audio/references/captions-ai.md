@@ -162,15 +162,15 @@ How it stays faithful and correctly timed:
   re-attached to its **original cue's timestamps** 1:1. On a count mismatch the
   window is retried one cue at a time (which cannot misalign); an unrecoverable
   mismatch aborts loudly rather than shift subtitles.
-- **One model.** `qwen3-vl:8b` through best-engine-ai-helper (local Ollama by
-  default, `OLLAMA_URL` or `--url` for the endpoint), the one authorized LLM,
+- **One model.** `qwen3-vl:8b` through best-engine-ai-helper, on the Ollama
+  server named by `--url` (default `OLLAMA_URL`), the one authorized LLM,
   not selectable. Needs the daemon running (`ollama serve`, `ollama pull qwen3-vl:8b`).
 - **Draft.** Machine translation from an 8B model: verify before shipping.
 
 It prints the ready-to-paste two-`<track>` snippet (native `captions` +
 translated `subtitles`) so you can wire both at once.
 
-`meta-tags.md` covers the social-preview tags that pair with these surfaces.
+The social-preview tags that pair with these surfaces are `sprezzature-publish`'s, in its `references/meta-tags.md`.
 
 ## Failure modes
 

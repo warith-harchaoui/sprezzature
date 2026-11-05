@@ -5,7 +5,7 @@ description: >-
   of written text. WebVTT / SRT captions from a local whisper.cpp build; who
   spoke when via NeMo Sortformer; who is who via TitaNet or the transcript;
   speaker-labelled VTT, caption translation, readability audit, WER / DER.
-  The other way: Kokoro (the default), OpenVoice and Chatterbox, each
+  The other way: Kokoro, OpenVoice and Chatterbox, each
   writing the timed track beside the audio; speaker-helper's router picks
   the engine. Never sends audio away. Use it when you are holding
   recorded speech somebody needs as text, or text somebody needs as speech.
@@ -87,7 +87,7 @@ front door `sprezzature-audio` (alias `make-audio`).
 | **Make**: speaker identification via the **transcript itself** | `sprezzature-audio-name` (`name`) | Rule pass over self-introductions ("I'm Alice") and vocatives ("Hey Mary, ..."). Optional `--ollama` refinement through a local Ollama daemon. |
 | **Make**: merge captions + diarization | `sprezzature-audio-pipeline` (`pipeline`) | Speaker-labelled VTT (`<v Name>` cues), SRT (`Name: text` prefix), or plain text. Takes two files already on disk, no media. |
 | **Make**: translate captions → second track | `sprezzature-audio-translate` (`translate`) | Translates an existing `.vtt`/`.srt` into the **surrounding-text language** via the local model (`qwen3-vl:8b`) and prints a two-`<track>` snippet. Captions in, captions out, no audio. |
-| **Make**: text into speech | `sprezzature-audio-narrate-kokoro` (`narrate`, the default), `sprezzature-audio-narrate-openvoice`, `sprezzature-audio-narrate-chatterbox` | `--segments <json> --out-dir <dir>` → `narration.wav` (or `--audio-format mp3`) + `narration.vtt`, and a one-line JSON report on stdout. Kokoro: 54 voices across nine languages, ONNX. OpenVoice clones from a short `--voice-sample`; Chatterbox takes emotion hints. Leave `--voice` empty and the text's language picks the voice. |
+| **Make**: text into speech | `sprezzature-audio-narrate-kokoro` (`narrate`), `sprezzature-audio-narrate-openvoice`, `sprezzature-audio-narrate-chatterbox` | `--segments <json> --out-dir <dir>` → `narration.wav` (or `--audio-format mp3`) + `narration.vtt`, and a one-line JSON report on stdout. Kokoro: 54 voices across eight languages, ONNX. OpenVoice clones from a short `--voice-sample`; Chatterbox takes emotion hints. Leave `--voice` empty and the text's language picks the voice. |
 | **Make**: hear the voices first | `sprezzature-audio-voice` (`voice`) | Lists each engine's built-in voices; `--sample` writes one demo clip per voice; `--measure` ranks them by pitch movement. |
 | **Make**: prepare the machine | `sprezzature-audio-install`, `-install-diarize`, `-install-voice` | GGML Whisper weights; a NeMo check + Sortformer and TitaNet checkpoints; a narration engine's weights plus an espeak-ng check. |
 | **Audit**: can the captions be read at the speed they go by | `sprezzature-audio-audit` (`audit`) | Eight static rules: reversed, overlapping or empty cues, reading speed, minimum and maximum duration, line width, line count. Defaults follow the Netflix Timed Text Style Guide (17 cps, 5/6 s, 7 s, 42 characters) and the two-line convention BBC and Netflix share; each is a flag. Exit 1 on any finding. Standard library only. |
@@ -99,8 +99,9 @@ the file; the a11y lint verifies a `<track>` element references it.
 
 **Who picks the voice engine.** Neither this skill nor its caller.
 `speaker-helper`'s router decides; `sprezzature-publish` asks it and runs
-the matching wrapper. Run `narrate` (Kokoro) unless the user explicitly
-names another engine.
+the matching wrapper. When the user names no engine, ask the router
+(`speaker-helper --language <lang> route --condition offline`) and run the
+wrapper it names; `narrate` is Kokoro's front-door name, not a default.
 
 ## Honest framing of what the tool covers
 
@@ -179,9 +180,9 @@ The captioner defaults to ``large-v3-turbo``. Override it with:
 
 Diarization: ``nvidia/diar_sortformer_4spk-v1``. Identification:
 ``nvidia/speakerverification_en_titanet_large``. Translation and the
-naming pass: ``qwen3-vl:8b`` through best-engine-ai-helper (Ollama by
-default, ``OLLAMA_URL`` for the endpoint). Narration: Kokoro (default),
-OpenVoice, Chatterbox, through speaker-helper.
+naming pass: ``qwen3-vl:8b`` through best-engine-ai-helper, on the Ollama
+server named by ``--url`` (default ``OLLAMA_URL``). Narration: Kokoro,
+OpenVoice, Chatterbox, through speaker-helper, whose router picks the engine.
 
 ## Surfaces
 
@@ -251,7 +252,7 @@ toolchain.
 | ``translate_captions.py`` | ``sprezzature-audio-translate`` | ``translate`` | Translated second track + two-`<track>` snippet. |
 | ``audit_captions.py`` | ``sprezzature-audio-audit`` | ``audit`` | Caption readability audit, eight rules. |
 | ``benchmark_stt.py`` | ``sprezzature-audio-benchmark`` | ``benchmark`` | WER, DER, RTF. |
-| ``narrate_kokoro.py`` | ``sprezzature-audio-narrate-kokoro`` | ``narrate`` | Narration with Kokoro, the default. |
+| ``narrate_kokoro.py`` | ``sprezzature-audio-narrate-kokoro`` | ``narrate`` | Narration with Kokoro. |
 | ``narrate_openvoice.py`` | ``sprezzature-audio-narrate-openvoice`` | ``narrate-openvoice`` | Narration with OpenVoice (voice cloning). |
 | ``narrate_chatterbox.py`` | ``sprezzature-audio-narrate-chatterbox`` | ``narrate-chatterbox`` | Narration with Chatterbox. |
 | ``pick_voice.py`` | ``sprezzature-audio-voice`` | ``voice`` | List, sample and measure voices. |
@@ -260,8 +261,9 @@ toolchain.
 | ``install_narrate.py`` | ``sprezzature-audio-install-voice`` | ``install-voice`` | Pre-download a narration engine's weights; check espeak-ng. |
 
 Environment: ``SPREZZATURE_WHISPER_MODEL``, ``SPREZZATURE_CACHE_DIR``,
-``SPREZZATURE_NO_CACHE``, ``OLLAMA_URL``, ``SPREZZATURE_LLM_*`` (read by
-best-engine-ai-helper), ``SPREZZATURE_AUDIO_HOST`` /
+``SPREZZATURE_NO_CACHE``, ``OLLAMA_URL``, ``SPREZZATURE_LLM_TIMEOUT`` (read
+by best-engine-ai-helper; the backend, server and model are passed
+explicitly, so its other ``SPREZZATURE_LLM_*`` variables do not apply), ``SPREZZATURE_AUDIO_HOST`` /
 ``SPREZZATURE_AUDIO_PORT`` (the MCP server).
 
 ## Companion skills
