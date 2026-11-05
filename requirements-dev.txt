@@ -86,11 +86,22 @@ os-helper>=4.0.0,<5
 # into the clone so the audit could run in CI, and the audit would still not
 # have run.
 #
-# Measured in a clean venv rather than assumed, because the rest of this file
-# turns on install weight: `pip install sprezzature-audio==1.5.0` brings four
-# packages — click, langdetect, six and itself. The heavy half of that brick
-# (whisper.cpp, NeMo, the torch voices) is all in extras none of this asks for.
+# It was light when added (1.5.0 brought four packages). Since the suite went
+# to one `pip install` on 2026-11-01 the voices and NeMo are in its base, so
+# this line is now the heavy one, and kept: the guards are worth it.
 sprezzature-audio>=1.5.0
+
+# The film guards a release of the films is held to — their claims against the
+# code, the suite's own pitch checker, no retired voice engine — import
+# sprezzature-video and skipped on every runner without it. It adds almost
+# nothing to the line above, which it depends on.
+sprezzature-video>=0.4.2
+
+# The two film line-breaking guards measure advance widths in the site's own
+# WOFF2 faces. fontTools reads WOFF2 only with Brotli, hence the extra. Without
+# it the six checks skipped in CI ("could not import 'fontTools'") and failed
+# in any venv that had fontTools through matplotlib but no Brotli.
+fonttools[woff]>=4.40
 
 # Real YAML parser for SKILL.md frontmatter validation.
 # Used by scripts/validate_skill.py + tests/test_validate_skill.py;
