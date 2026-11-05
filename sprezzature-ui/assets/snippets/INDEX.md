@@ -56,5 +56,5 @@ hooks in the reference, not as snippets here.
 3. Run **both** auditors against it — zero findings is the
    acceptance bar.
 4. Add a row to this index with the law name and 2-4 trigger phrases.
-5. Add a test in `tests/test_snippet_catalog.py` so the dual-auditor
-   check runs in CI.
+5. Add a test in `tests/test_snippet_catalog.py` of the suite repository
+   (`sprezzature`) so the dual-auditor check runs in CI.

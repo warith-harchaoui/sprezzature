@@ -15,25 +15,27 @@ the catalogue simply not have what you need yet."
 ## The catalogue's own category groupings
 
 Every entry in `sprezzature_figures/catalog/figures.json` carries a
-`category` field. Grouped and counted, the seven largest categories are:
+`category` field. Grouped and counted, the eight largest of the 68
+categories are:
 
 | Category | Count | Kinds |
 |---|---|---|
-| Distribution | 17 | beeswarm, bellcurve, boxen, boxplot, clustermap, corr-matrix, dotplot, ecdf, errorbar, hexbin, histogram, kde1d, population-pyramid, ridgeline, rug, strip, violin |
-| Comparison | 9 | bar, bar-grouped, bar3d, bubble, difference-chart, lollipop, packed-bubble, radial-bar, variwide |
-| Model evaluation | 6 | calibration, confusion-matrix, gaussian-process, liftgain, prcurve, roc-curve |
+| Distribution | 18 | beeswarm, bellcurve, boxen, boxplot, clustermap, corr-matrix, dotplot, ecdf, errorbar, hexbin, histogram, kde1d, pointplot, population-pyramid, ridgeline, rug, strip, violin |
+| Model evaluation | 11 | ablation_matrix, calibration, confusion-matrix, gaussian-process, learning-curve, liftgain, loss-curve, prcurve, roc-curve, silhouette, validation-curve |
+| Comparison | 10 | bar, bar-grouped, bar3d, bubble, difference-chart, dual-axis, lollipop, packed-bubble, radial-bar, variwide |
+| Geospatial | 10 | binned-grid-map, dotdensity, hexbin-map, hexmap, map-bars, map-bubble, map-flow, map-pie, map-tilegrid, spike-map |
+| Composition | 6 | area, donut, pie, stacked-area, stacked-bar, waffle |
 | Hierarchy | 6 | circle-packing, icicle, org-chart, radial-tree, sunburst, tree |
+| Time series | 6 | calendar-heatmap, horizon, line, line-multi, sparkline, step |
 | Network | 5 | arcdiagram, dependency-wheel, edge-bundling, network, sfdp-largegraph |
-| Composition | 5 | area, donut, stacked-area, stacked-bar, waffle |
-| Geospatial | 5 | binned-grid-map, dotdensity, hexbin-map, hexmap, spike-map |
-| Time series | 5 | calendar-heatmap, horizon, line, line-multi, step |
 
-The remaining ~40 categories hold one to four kinds each, covering more
+The remaining 60 categories hold one to four kinds each, 40 of them a
+single kind, covering more
 specialized questions: model-diagnostic pairs (`qqplot`/`ppplot` for
 goodness of fit, `residual` for regression diagnostics), finance
 (`candlestick`, `bollinger`), genomics-flavored statistics (`manhattan`,
 `volcano`, `survival-km`), vector fields (`quiver`, `streamplot`), and
-several 3-D surfaces (`surface3d`, `wireframe3d`, `scatter3d`, `bar3d`).
+several 3-D kinds (`surface3d`, `wireframe3d`, `trisurface`, `scatter3d`).
 `sprezzature-figures list` is the authoritative, always-current source for
 the full set; the table above is a snapshot, not a promise that these
 counts stay fixed as the catalogue grows.

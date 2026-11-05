@@ -23,10 +23,10 @@ checked in the other.
 | Rule | Severity | Format(s) | What triggers it |
 |---|---|---|---|
 | `pie-3d` | error | SVG | A `transform="matrix(...)"` attribute containing `perspective`. |
-| `rainbow-palette` | error | SVG | The literal substrings `jet`, `hsv`, or `rainbow` appear anywhere in the file. A coarse text match, not a semantic one, so a filename or comment containing one of those words also triggers it. `viridis` and the other perceptually-uniform ramps are not in this set and pass clean. |
+| `rainbow-palette` | error | SVG | The words `jet`, `hsv`, or `rainbow` (whole words, any case) appear anywhere in the file. A coarse text match, not a semantic one, so a filename or comment containing one of those words also triggers it. `viridis` and the other perceptually-uniform ramps are not in this set and pass clean. |
 | `chartjunk` | warning | SVG | The file contains a `<filter>` element combined with `feDropShadow` or `feGaussianBlur`. |
-| `radius-over-cap` | warning | SVG | Any `rx="…"` attribute exceeds 16, the project's corner-radius cap (see the house style's corner policy). |
-| `unformatted-tick` | warning | SVG | At least three distinct tick labels are raw magnitudes of five digits or more (`200000` rather than `200k` or `200 000`), so a reader has to count zeros. Four-digit years are exempt. |
+| `radius-over-cap` | warning | SVG | An `rx="…"` attribute exceeds 16, the project's corner-radius cap (see the house style's corner policy). A `<rect>` whose `rx` is half its height, within a pixel, is a capsule (a pill, a legend chip) and passes; `rx` outside a `<rect>` has no height to compare and is read flat. |
+| `unformatted-tick` | warning | SVG | At least three distinct tick labels are raw magnitudes of five digits or more (`200000` rather than `200k` or `200 000`), so a reader has to count zeros. Four-digit years are exempt. Text inside `<title>`, `<desc>` and the hover bubbles (`<g class="tip">`) is not counted, here or in the next rule: it is read on demand, and full precision is its point. |
 | `iso-date-tick` | warning | SVG | Four or more tick labels are raw ISO dates (`2024-07-01`). A time axis reading that twenty-four times, rotated to fit, is machine output shown to a human. |
 | `role-img-missing` | error | HTML | A `<figure>` element whose `role` attribute is not `"img"` and which has no `<figcaption>` child. A figure that sets `role="img"`, or that has a caption, passes either way; the rule only fires when neither accessibility signal is present. |
 | `alt-missing` | error | HTML | An `<img>` element nested inside a `<figure>` block with no `alt` attribute at all. An empty `alt=""`, the correct markup for a purely decorative image, does **not** trigger this; only a missing attribute does. |
@@ -44,7 +44,7 @@ when any `error` finding exists, or when `--strict` is set and any
 
 ## Known false-positive shapes
 
-- **`rainbow-palette`** is a bare substring search across the whole file
+- **`rainbow-palette`** is a whole-word search across the whole file
   text, not a check that the substring actually names a colormap in use. An
   SVG whose `<title>` or embedded metadata happens to contain the word
   "rainbow" for an unrelated reason will trigger it.

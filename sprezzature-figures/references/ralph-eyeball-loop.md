@@ -90,9 +90,11 @@ blindly, the template itself says so in a heading comment.
 
 Keyed by an 8-character MD5 hash of the *resolved absolute path* of the
 source file, so the same source always maps to the same assessment slot
-across runs, even from a different working directory:
-`.private/ralph-loop/assessment-<hash>.md`, with rendered PNGs living
-alongside it at `.private/ralph-loop/<stem>-<hash>.png` (or wherever
+across runs: `.private/ralph-loop/assessment-<hash>.md`. From a clone that
+folder is the clone's own, whatever the working directory; installed from
+the wheel (`python -m sprezzature_figures_scripts.ralph_eyeball_loop`), it is
+under the directory the loop is run from, never inside `site-packages/`. The
+rendered PNGs live alongside it at `.private/ralph-loop/<stem>-<hash>.png` (or wherever
 `--out` points). The first run writes a header (source path, surface
 kind, hash, start timestamp) followed by iteration 1; every later run on
 the same source appends the next numbered iteration, found by counting
