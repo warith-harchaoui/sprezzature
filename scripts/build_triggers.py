@@ -92,7 +92,7 @@ WHAT_IT_DOES: dict[str, str] = {
     "sprezzature-audio": "Drafts WebVTT / SRT captions via whisper.cpp, adds speaker diarization (NeMo Sortformer), speaker ID (TitaNet or transcript-based rule + local Ollama), and speaker-labelled VTT — and reads written text aloud through Kokoro, OpenVoice or Chatterbox, timed track included.",
     "sprezzature-ux-laws": "Applies / audits the canonical Laws of UX (30 laws) with `--fix` for four mechanical fixers.",
     "sprezzature-figures": "Emits data-viz / SHAP / Shapash / TimeSHAP / LIME / DoWhy figures as hand-authored SVG + audits rendered SVG and HTML figures.",
-    "sprezzature-maps": "Draws a choropleth or an areas-of-control situation map on real geography — real coastlines, a real projection, a bundled basemap.",
+    "sprezzature-maps": "Draws a choropleth, a point-density map or an areas-of-control situation map with event positions on real geography — real coastlines, a real projection, a bundled basemap.",
     "sprezzature-video": "Checks what a project video SAYS against the project: declared claims against the code, numbers on screen against the declared claims, and whether the film can be rendered again from a clone. Captions from the narration script and the measured audio.",
 }
 
@@ -152,8 +152,8 @@ ROUTES: dict[str, tuple[str, str]] = {
         '"read this aloud", « de quoi ils parlent dans cet enregistrement »',
     ),
     "sprezzature-maps": (
-        "Numbers attached to PLACES — a column of countries, regions, states, "
-        "départements",
+        "Numbers or events attached to PLACES — a column of countries, regions, "
+        "states, départements, or points with coordinates",
         '"which countries are worst affected", "break this down by region", '
         '"where is this happening", "who holds the east", « par département »',
     ),
