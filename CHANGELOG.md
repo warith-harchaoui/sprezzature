@@ -10,9 +10,9 @@ into `~/.claude/skills/`).
 
 ### Changed
 
-**The suite floors move to the releases of 2026-11-05.** accessibility 1.4.1,
-audio 1.10.1, cli-gui 1.5.0, colors 1.2.1, figures 2.9.0, maps 1.1.1,
-publish 1.4.1, ui 1.2.0, ux-laws 1.4.1, video 0.4.1. What they carry:
+**The suite floors move to the releases of 2026-11-05.** accessibility 1.4.2,
+audio 1.10.2, cli-gui 1.5.1, colors 1.2.2, figures 2.9.1, maps 1.1.2,
+publish 1.4.1, ui 1.2.1, ux-laws 1.4.1, video 0.4.2. What they carry:
 
 - **No shipped command parses with argparse any more.** The per-tool commands
   and the `*-mcp` servers of the ten bricks are click, like their groups;
@@ -20,7 +20,8 @@ publish 1.4.1, ui 1.2.0, ux-laws 1.4.1, video 0.4.1. What they carry:
   `--help` with a `Usage:` line, and no module imports argparse.
 - **The Docker images serve `/mcp`.** They ran the API alone; they now run the
   MCP server, which serves the API and `/mcp` on the same port.
-- **`-V` reads the installed version**, not a constant left at 1.0.0.
+- **`-V` and `--version` read the installed version** on every front door
+  but publish's, which answers `--version` only until its next release.
 - **publish finds, drafts and audits calls to action**: `cta`, `faq` (answers
   grounded in the site's own passages, every number sourced) and `findable`
   (SEO / GEO / AEO rules tagged by goal).
@@ -33,7 +34,10 @@ publish 1.4.1, ui 1.2.0, ux-laws 1.4.1, video 0.4.1. What they carry:
   `translate` checked one Ollama and called another; ux-laws `--fix` rewrote
   untouched files and turned CRLF into LF; maps' `no-data-hidden` fired on a
   sentence; the maps wheel left out its Studio; and standpoint's `-gui` and
-  `-mcp` started a server on `--help`.
+  `-mcp` started a server on `--help`. A second reading of the hub against the
+  bricks found two more, fixed the same day: accessibility's alt drafter and
+  maps' `make-map` without `--out` (the drafter now calls the `OLLAMA_URL` it
+  names; maps writes `<kind>.svg` in the current directory).
 - **No image carries the git history or the private notes.** Eight bricks'
   Dockerfiles copied their whole tree with no `.dockerignore`;
   `test_an_image_carries_no_history_and_no_notes` now reads every sibling.
