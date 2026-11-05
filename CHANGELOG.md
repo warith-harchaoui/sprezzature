@@ -6,6 +6,20 @@ The project follows a loose [SemVer](https://semver.org/): major version
 bumps mean the on-disk skill layout changes (users have to re-copy folders
 into `~/.claude/skills/`).
 
+## [Unreleased]
+
+### Docs
+
+- **sprezzature-audio skill**: Kokoro has 54 voices in eight languages, not
+  nine; Kokoro is no longer called the default, and the agent is told to ask
+  `speaker-helper`'s router for the engine rather than run Kokoro unless told
+  otherwise. Only `SPREZZATURE_LLM_TIMEOUT` of best-engine-ai-helper's
+  variables applies to `translate` and `name`. `references/captions-ai.md`
+  points at publish's `meta-tags.md` instead of a file that is not there.
+- **sprezzature-ux-laws skill**: what Miller skips, and what `--fix` now
+  leaves alone (the same run inside a tag; the wrapper around a clickable
+  element).
+
 ## [1.8.0] — 2026-11-05: click partout, `/mcp` dans l'image
 
 ### Changed
