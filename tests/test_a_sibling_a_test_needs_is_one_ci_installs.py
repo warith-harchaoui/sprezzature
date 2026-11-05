@@ -180,13 +180,10 @@ _IMPORT_OR_SKIP = re.compile(
 #: the test below fails if an entry stops being needed, so the list can only
 #: shrink by being correct. `sprezzature-audio` is deliberately absent from it —
 #: four packages and 13 MB in a clean venv, against three guards.
-_NOT_INSTALLED_ON_PURPOSE = {
-    "sprezzature-video": (
-        "21 packages and 161 MB in a clean venv, on three matrix jobs per "
-        "push, to wake one guard: "
-        "tests/test_every_film_pitches_in_the_voice_too.py"
-    ),
-}
+#: Empty since 2026-11-05. sprezzature-video sat here at "21 packages and
+#: 161 MB to wake one guard"; once sprezzature-audio carried its voices in the
+#: base install, video added only itself on top of it, and it wakes four.
+_NOT_INSTALLED_ON_PURPOSE: dict[str, str] = {}
 
 
 def _hub_imports_or_skips() -> set[str]:
