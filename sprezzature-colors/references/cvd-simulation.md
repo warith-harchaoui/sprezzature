@@ -14,7 +14,7 @@ The simulation is qualitative: a real viewer's experience varies with severity a
 pip install sprezzature-colors
 ```
 
-Pillow, the image library the simulation needs, is a base dependency, like click for the command line. From a source checkout, `pip install -r requirements-cvd.txt` installs Pillow alone; the command also needs click.
+Pillow and click, the two libraries this tool needs, are base dependencies. From a source checkout, `pip install -r requirements-cvd.txt` installs those two alone.
 
 ## Run
 
