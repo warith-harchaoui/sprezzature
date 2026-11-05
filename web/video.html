@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Video claims — Sprezzature</title>
-  <meta name="description" content="Check what a project video says against the project itself. A film burns its claims into pixels where nothing re-reads them, so a count stays on screen long after the catalogue behind it has grown.">
+  <meta name="description" content="Check what a project video says against the project itself: claims on screen verified against the code, so a stale count never outlives its catalogue.">
   <link rel="canonical" href="https://sprezzature.ai/video.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/video.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/video.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Video claims — Sprezzature">
-  <meta property="og:description" content="Check what a project video says against the project itself. A film burns its claims into pixels where nothing re-reads them, so a count stays on screen long after the catalogue behind it has grown.">
+  <meta property="og:description" content="Check what a project video says against the project itself: claims on screen verified against the code, so a stale count never outlives its catalogue.">
   <meta property="og:url" content="https://sprezzature.ai/video.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="The Sprezzature project logo.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/roboto/fonts.css">
   <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
@@ -160,6 +161,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">How do I install sprezzature-video?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-video</code> (Python 3.10 to 3.13): the command line, the HTTP API and the MCP server install with it, with no extra to choose. The command is <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-video</code>, also spelled <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-film</code>.</p>
+        <h3 class="mt-6 font-semibold">What does sprezzature-video need besides pip?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-video needs only ffmpeg on <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">PATH</code>: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">poster</code> and the loudness functions call it, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">captions</code> measures each narration audio file through ffprobe, which ships with ffmpeg. It runs no model, needs no GPU and calls no network service; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">verify</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">scan</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">prose</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pitch</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">calque</code> read text files and nothing else.</p>
+        <h3 class="mt-6 font-semibold">What is a claim in sprezzature-video?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">In sprezzature-video, a claim is a fact a film states on screen, declared in the film's YAML spec as a pair: the text with its value, and the file in the project that decides it, read by one of five methods (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">json_len</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">json_key_len</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">regex_count</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">line_count</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">literal</code>). A missing source file fails the claim instead of skipping it, so a count that moves in the code fails the check instead of quietly ageing the film.</p>
+        <h3 class="mt-6 font-semibold">What do verify, scan, assets and captions check in sprezzature-video?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">In sprezzature-video, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">verify</code> checks every declared claim against its file, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">scan</code> lists the numbers visible in an HTML composition that no claim accounts for, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">assets</code>, the asset ledger, says whether each file the film renders from is tracked, derived or held in one place only, which decides whether a clone can render it again. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">captions</code> writes WebVTT from the narration script and the measured length of each audio file, without transcribing anything.</p>
+        <h3 class="mt-6 font-semibold">How is sprezzature-video different from linting a video script?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-video reads the project a film describes, not only its words: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">verify</code> fails a number on screen when the code behind it changes, even if the script never did. It lints the script too, with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">prose</code> (dashes, banned phrases, sentences opening on a negation, in English and French), and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">scan</code> catches what a lint cannot see, a number typed into a keyframe that nobody declared.</p>
+        <h3 class="mt-6 font-semibold">Can I use sprezzature-video without Claude Code?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-video is also a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_video</code>), a command line, an HTTP API with a Docker image, and an MCP server, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-video-mcp</code>, serving the API and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">/mcp</code> on one port. The HTTP and MCP surfaces cover <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">verify</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">scan</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">captions</code>; the skill comes from <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>.</p>
+        <h3 class="mt-6 font-semibold">Can I run sprezzature-video in CI?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: every sprezzature-video command exits 0 when the film is still honest, 1 when it is not (a claim that fails, a number nobody declared, an asset not in hand) and 2 on a wrong call or a missing ffmpeg, so <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-video verify film.yaml --root .</code> can fail a pull request. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-video prose script.txt --strict</code> is made for a pre-commit hook.</p>
+        <h3 class="mt-6 font-semibold">Is sprezzature-video free?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-video is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-video">GitHub</a>. It is still alpha, and it renders nothing itself: the films are made with Hyperframes, outside the package.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I install sprezzature-video?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run pip install sprezzature-video (Python 3.10 to 3.13): the command line, the HTTP API and the MCP server install with it, with no extra to choose. The command is sprezzature-video, also spelled make-film."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does sprezzature-video need besides pip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-video needs only ffmpeg on PATH: poster and the loudness functions call it, and captions measures each narration audio file through ffprobe, which ships with ffmpeg. It runs no model, needs no GPU and calls no network service; verify, scan, prose, pitch and calque read text files and nothing else."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a claim in sprezzature-video?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In sprezzature-video, a claim is a fact a film states on screen, declared in the film's YAML spec as a pair: the text with its value, and the file in the project that decides it, read by one of five methods (json_len, json_key_len, regex_count, line_count, literal). A missing source file fails the claim instead of skipping it, so a count that moves in the code fails the check instead of quietly ageing the film."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do verify, scan, assets and captions check in sprezzature-video?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In sprezzature-video, verify checks every declared claim against its file, scan lists the numbers visible in an HTML composition that no claim accounts for, and assets, the asset ledger, says whether each file the film renders from is tracked, derived or held in one place only, which decides whether a clone can render it again. captions writes WebVTT from the narration script and the measured length of each audio file, without transcribing anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sprezzature-video different from linting a video script?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-video reads the project a film describes, not only its words: verify fails a number on screen when the code behind it changes, even if the script never did. It lints the script too, with prose (dashes, banned phrases, sentences opening on a negation, in English and French), and scan catches what a lint cannot see, a number typed into a keyframe that nobody declared."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use sprezzature-video without Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-video is also a Python library (import sprezzature_video), a command line, an HTTP API with a Docker image, and an MCP server, sprezzature-video-mcp, serving the API and /mcp on one port. The HTTP and MCP surfaces cover verify, scan and captions; the skill comes from pip install sprezzature then sprezzature-skills --install, or sprezzature-skills --install --agent opencode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run sprezzature-video in CI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: every sprezzature-video command exits 0 when the film is still honest, 1 when it is not (a claim that fails, a number nobody declared, an asset not in hand) and 2 on a wrong call or a missing ffmpeg, so sprezzature-video verify film.yaml --root . can fail a pull request. sprezzature-video prose script.txt --strict is made for a pre-commit hook."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is sprezzature-video free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-video is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub. It is still alpha, and it renders nothing itself: the films are made with Hyperframes, outside the package."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

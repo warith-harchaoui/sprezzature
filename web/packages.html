@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Packages — Sprezzature</title>
-  <meta name="description" content="The deterministic tools behind the sprezzature skills, each a standalone pip-installable package with its own repository: figures, maps, colors, accessibility, CLI-to-GUI, Laws of UX, audio, publishing, UI i18n, and video claims.">
+  <meta name="description" content="The ten sprezzature packages, each pip-installable with its own repo: figures, maps, colours, accessibility, CLI, UX laws, audio, publish, UI, video.">
   <link rel="canonical" href="https://sprezzature.ai/packages.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/packages.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/packages.html">
@@ -30,6 +30,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/roboto/fonts.css">
   <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
@@ -185,7 +186,7 @@
           </tbody>
         </table>
       </div>
-      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Every row is on PyPI, and <code>pip install 'sprezzature[all]'</code> installs all ten. <code>sprezzature-ui</code> and <code>sprezzature-publish</code> were the last two to get there, on 19 October 2026; until then the extra named nine and listed seven.</p>
+      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Every row is on PyPI, and <code>pip install sprezzature</code>, with no extra to choose, installs all ten. <code>sprezzature-ui</code> and <code>sprezzature-publish</code> were the last two to get there, on 19 October 2026.</p>
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Deterministic tools</h2>
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -274,6 +275,72 @@
 
       <p class="mt-12 text-sm text-neutral-500 dark:text-neutral-400">Looking for the agent skills instead? The <code>SKILL.md</code> layer ships together as the skills bundle on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-brand-blue focus-visible:ring-2" href="index.html#getting-started">Getting started</a> section.</p>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">Do I have to install all ten sprezzature packages?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: each sprezzature package installs on its own, for example <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-colors</code>, with no extra to choose. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> is the shortcut that installs all ten at once, plus the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills</code> command.</p>
+        <h3 class="mt-6 font-semibold">How do I install the sprezzature skills for my agent?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Install the sprezzature hub with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code>, then run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> to copy the skills into <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">~/.claude/skills</code> for Claude Code, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> for OpenCode.</p>
+        <h3 class="mt-6 font-semibold">How do I update sprezzature?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Update every sprezzature package at once with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install --upgrade sprezzature</code>, then run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> again so the copies your agent reads match the installed packages.</p>
+        <h3 class="mt-6 font-semibold">Can I call a sprezzature package from an agent that is not Claude Code?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: every sprezzature package ships an MCP server, such as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code>, so any client that speaks the Model Context Protocol can call its tools. Each package also has a Python library, a command line and an HTTP API with a Docker image.</p>
+        <h3 class="mt-6 font-semibold">Where is the source code of each sprezzature package?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Each sprezzature package has its own repository on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui">GitHub</a>, linked from its row in the table on this page, under the BSD 3-Clause licence.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to install all ten sprezzature packages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: each sprezzature package installs on its own, for example pip install sprezzature-colors, with no extra to choose. pip install sprezzature is the shortcut that installs all ten at once, plus the sprezzature-skills command."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install the sprezzature skills for my agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Install the sprezzature hub with pip install sprezzature, then run sprezzature-skills --install to copy the skills into ~/.claude/skills for Claude Code, or sprezzature-skills --install --agent opencode for OpenCode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I update sprezzature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Update every sprezzature package at once with pip install --upgrade sprezzature, then run sprezzature-skills --install again so the copies your agent reads match the installed packages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I call a sprezzature package from an agent that is not Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: every sprezzature package ships an MCP server, such as sprezzature-figures-mcp, so any client that speaks the Model Context Protocol can call its tools. Each package also has a Python library, a command line and an HTTP API with a Docker image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the source code of each sprezzature package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each sprezzature package has its own repository on GitHub, linked from its row in the table on this page, under the BSD 3-Clause licence."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

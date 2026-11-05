@@ -56,6 +56,40 @@ The knowledge the skill draws on: read them straight from the repo.
 
 The twenty rules
 
+## Frequently asked questions
+
+### How do I install sprezzature-accessibility?
+
+Run pip install sprezzature-accessibility (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode ).
+
+### What does sprezzature-accessibility check?
+
+sprezzature-accessibility applies twenty rules decidable from the HTML source alone: missing alt text, unlabelled inputs, empty links and buttons, clickable div elements with no keyboard access, dialogs with no close, a missing lang , skipped heading levels, status shown by colour alone, animation with no reduced-motion guard, tight letter-spacing, and missing captions, transcripts or controls on video and audio. Six of the rules also have a mechanical repair, applied with --fix .
+
+### How is sprezzature-accessibility different from axe-core, Pa11y or Lighthouse?
+
+sprezzature-accessibility reads the HTML source without opening a browser, so it runs in milliseconds and gives the same answer every time, but it cannot see what only exists once a page renders: focus order, screen-reader timing, contrast against a real background. axe-core, Pa11y and Lighthouse drive a real browser and catch that layer; use this one as the fast first gate and one of them as the second pass, not as a replacement.
+
+### Can sprezzature-accessibility write the missing alt text?
+
+Yes: sprezzature-accessibility drafts the missing alt text with sprezzature-accessibility-lint --fix-alt public/ , from each image and the text around it on the same page, in the page's language or the one set by --alt-lang ; sprezzature-accessibility-alt photo.jpg does a single image. This half needs Ollama and the qwen3-vl:8b vision model, set up by sprezzature-accessibility-install-alt , while the linter needs no browser and no model. Each draft should be read by a person before it is committed.
+
+### Does sprezzature-accessibility send my pages or images to a cloud service?
+
+No: sprezzature-accessibility's linter keeps everything on your machine and calls no model at all; only the alt-text drafter ( --fix-alt , sprezzature-accessibility-alt ) calls a vision model, served by Ollama on your own machine unless you point OLLAMA_URL elsewhere. The HTTP API lints a string of HTML and never fetches a URL.
+
+### Can I run sprezzature-accessibility in CI or a pre-commit hook?
+
+Yes: sprezzature-accessibility-lint public/ lints every .html file under the folder and exits 1 on any finding, warnings included, and 0 on a clean run, with --format json for a CI parser and --ignore to skip named rules. For a hook, pip install --no-deps sprezzature-accessibility plus pip install click is enough to run the lint.
+
+### Can I use sprezzature-accessibility without Claude Code?
+
+Yes: sprezzature-accessibility is a Python library ( import sprezzature_accessibility ), a command line ( sprezzature-accessibility , one command per tool), an HTTP API with a Docker image, and an MCP server, sprezzature-accessibility-mcp , for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and /mcp .
+
+### Is sprezzature-accessibility free?
+
+Yes: sprezzature-accessibility is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
+
 ---
 
 # Audio — captions — Sprezzature
@@ -116,6 +150,40 @@ The knowledge the skill draws on: read them straight from the repo.
 
 Captions with AI
 Diarization
+
+## Frequently asked questions
+
+### How do I install sprezzature-audio?
+
+Run pip install sprezzature-audio (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration and the HTTP and MCP surfaces all come with it, with no extra to choose. The install includes torch, but import sprezzature_audio loads no model until a model-backed function is called.
+
+### What does sprezzature-audio need besides pip?
+
+sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with sprezzature-audio-install (Whisper), sprezzature-audio-install-diarize --no-install (NeMo Sortformer and TitaNet) and sprezzature-audio-install-voice (the voices). Translation and the optional name-guessing pass also need an Ollama server serving qwen3-vl:8b . The caption audit, the speaker merge and the WER and DER metrics need none of this.
+
+### Does sprezzature-audio send my audio to a cloud service?
+
+No: sprezzature-audio transcribes with whisper.cpp, finds and names speakers with NeMo models and synthesises voices on your own machine, with no API key. Translation and name guessing call the Ollama server named by --url , on localhost by default, and the only downloads are the model weights.
+
+### Which voices and languages does sprezzature-audio support?
+
+sprezzature-audio narrates with three engines from speaker-helper: Kokoro (54 built-in voices, in English, Spanish, French, Hindi, Italian, Japanese, Portuguese and Mandarin), Chatterbox, and OpenVoice, which clones a voice from a short sample. With no --voice , the language is detected from the text and a voice that speaks it is picked; a page narrated by sprezzature-publish gets the engine speaker-helper's router chooses, Chatterbox for an offline run. Captions cover the languages Whisper recognises, detected when --lang is empty.
+
+### Can I use sprezzature-audio without Claude Code?
+
+Yes: sprezzature-audio is also a Python library, fifteen commands behind the front door sprezzature-audio , an HTTP API with a Docker image, and an MCP server, sprezzature-audio-mcp , serving the API and /mcp on one port. The API and MCP tools cover the fast, model-free half (caption conversion, speaker merge, WER, DER); transcription and narration run as commands. The skill itself comes from pip install sprezzature then sprezzature-skills --install .
+
+### How is sprezzature-audio different from the Whisper API, pyannote or ElevenLabs?
+
+sprezzature-audio runs locally and works both ways, speech to timed text and text to timed speech, each landing beside a WebVTT, and it then audits the caption track for reading speed, width, duration and overlap. Hosted services such as ElevenLabs or the OpenAI audio API bill per use and receive your audio; pyannote has no ceiling on the number of speakers, whereas the Sortformer checkpoint used here is built for up to four.
+
+### Can I run sprezzature-audio in CI?
+
+Yes: sprezzature-audio-audit talk.vtt checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON with --format json and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them.
+
+### Is sprezzature-audio free?
+
+Yes: sprezzature-audio is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub . The models it runs are open weights downloaded to your machine, each under its own licence.
 
 ---
 
@@ -180,7 +248,7 @@ One self-contained HTML file wrapping your CLI: the markup, the Tailwind config 
 
 Sub-commands and flags mapped to forms, segmented controls, file inputs
 
-The exact command line, assembled in the visitor’s own browser and never run there. Copy it, or wire it to a Tauri invoke, a FastAPI endpoint, a shell
+The exact command line, assembled in the visitor’s own browser and never run there. Copy it, or wire it to a Tauri invoke , a FastAPI endpoint, a shell
 
 For a bespoke wrapper the agent spec goes further than the one command: host wiring, and a streaming log panel for the commands that take a while
 
@@ -215,6 +283,40 @@ streaming log panel
 The knowledge the skill draws on: read them straight from the repo.
 
 Hardening
+
+## Frequently asked questions
+
+### How do I install sprezzature-cli-gui?
+
+Run pip install sprezzature-cli-gui (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the --from-help reader, the audit, the HTTP API and the MCP server, with no extras to choose. For the agent skill, pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode for OpenCode.
+
+### Which command-line parsers can sprezzature-cli-gui read?
+
+sprezzature-cli-gui imports and walks argparse, Click and Typer parsers directly, so every sub-command, flag and choice comes from the parser itself. A tool written in anything else, such as Go's cobra or Rust's clap, goes through --from-help , which runs the tool's own --help and reads the text, at lower fidelity.
+
+### What does the GUI made by sprezzature-cli-gui contain?
+
+sprezzature-cli-gui writes one self-contained HTML page in plain JavaScript and Tailwind: a collapsible section per sub-command and a field per option (checkbox, dropdown, number or text). Pressing “Build command” assembles the exact command line in the browser; the page never runs it, so you copy it or wire it to a Tauri invoke or a server.
+
+### Does sprezzature-cli-gui send my code to a cloud service or need an AI model?
+
+No: sprezzature-cli-gui uses no model and no Ollama, and its command line imports your CLI on your own machine; the HTTP API and the MCP server only accept the parser tree, never a module to import. The one network call is the generated page's: it loads Tailwind from cdn.tailwindcss.com for styling, and its fields still work unstyled offline.
+
+### Can I use sprezzature-cli-gui without Claude Code?
+
+Yes: sprezzature-cli-gui is a Python library ( walk , render_html , audit ), a command line such as sprezzature-cli-gui my_pkg.cli:build_parser --out gui.html , an HTTP API with a Docker image, and an MCP server, sprezzature-cli-gui-mcp , for any MCP client. The agent skill is only one of those ways in.
+
+### How is sprezzature-cli-gui different from Gooey, Streamlit or Gradio?
+
+Gooey also reads your parser, but it runs the command in a wxPython desktop window, whereas sprezzature-cli-gui emits a static HTML file that builds the command line and runs nothing. Streamlit and Gradio read no parser at all: you write every widget yourself, which is the right trade when the interface is the product rather than a face on an existing command.
+
+### Can I run sprezzature-cli-gui in CI?
+
+Yes: sprezzature-cli-gui-audit mytool.cli:build_parser gui.html reads the parser and the page back together and exits 1 when the page has fallen behind the CLI, for instance a flag with no field, a field for an option the parser rejects, a dropped choice or the wrong program name. Add --format json for a machine-readable report.
+
+### Is sprezzature-cli-gui free?
+
+Yes. sprezzature-cli-gui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub .
 
 ---
 
@@ -267,6 +369,40 @@ Contrast audit
 CVD simulation
 The palette CSV
 
+## Frequently asked questions
+
+### How do I install sprezzature-colors?
+
+Run pip install sprezzature-colors (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode ).
+
+### What does sprezzature-colors do?
+
+sprezzature-colors has four tools: a WCAG contrast audit of a palette that suggests a passing colour for each failing pair, a simulation of how an image looks with protanopia, deuteranopia or tritanopia (plus a grayscale version), a remap of the palette to one of six accessibility levels, and an export of the palette as a Tailwind configuration. The front door is sprezzature-colors , and each tool is also its own command, such as sprezzature-colors-contrast or sprezzature-colors-cvd .
+
+### Does sprezzature-colors check the colours of my web page?
+
+No: sprezzature-colors audits the colour pairs of a palette (a JSON file whose keys start with label- , brand- or surface- ), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS. Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse.
+
+### How is sprezzature-colors different from an online contrast checker?
+
+sprezzature-colors checks at once every pair of a palette that can appear together in a theme ( --all-pairs for the full cross-product), at the ratio set with --target , where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI job.
+
+### Does sprezzature-colors send my files to a cloud service or use AI?
+
+No: sprezzature-colors is deterministic colour arithmetic that calls no AI model and never touches the network, so it needs no Ollama; and the simulation writes its images on your own disk, next to the source by default.
+
+### Can I run sprezzature-colors in CI?
+
+Yes: sprezzature-colors-contrast --palette palette.json exits 0 when every pair passes, 1 when one fails and 2 when the palette yields no pair to check, and --format json gives a report a CI job can parse. An HTTP API ( POST /v1/contrast ) runs the same check for a pipeline written in another language.
+
+### Can I use sprezzature-colors without Claude Code?
+
+Yes: sprezzature-colors is a Python library ( import sprezzature_colors as sc ), a command line, an HTTP API with a Docker image, and an MCP server, sprezzature-colors-mcp , for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and /mcp .
+
+### Is sprezzature-colors free?
+
+Yes: sprezzature-colors is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
+
 ---
 
 # Figures — Sprezzature
@@ -313,6 +449,8 @@ no colour (grayscale)
 Simulates the default figure through a reader's eyes (normal vision for zoom).
 
 Search figures
+
+All 160 Comparison 14 Time series 41 Distributions 17 Correlation 14 Matrices 7 Part-to-whole 13 Networks 15 Maps 10 Models 14 Gauges & 3-D 15
 
 ## Comparison & ranking
 
@@ -838,6 +976,40 @@ No figure matches. Try another term.
 
 ×
 
+## Frequently asked questions
+
+### How do I install sprezzature-figures?
+
+Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs the generators, the command line, the HTTP API, the MCP server and the editor, with no extras to choose. It is free and open source under the BSD 3-Clause licence, and sprezzature-figures render bar --out check.svg checks the install.
+
+### How many chart types does sprezzature-figures have?
+
+sprezzature-figures has 167 chart types in its catalogue, all marked stable, and sprezzature-figures list prints them. The gallery on this page shows 160 of them on purpose: the five glyph maps are on the maps page and the two animated Gapminder figures on the Hans ROSLING page .
+
+### Which file formats can sprezzature-figures export?
+
+sprezzature-figures writes SVG by default, self-contained with its fonts embedded, and the --out extension also picks .png , .jpg , .pdf or .html . PNG, JPEG and PDF are rasterised from that SVG inside Python, and --scale 3 upsamples them for high-density screens.
+
+### What is the Ralph Eyeball Loop?
+
+The Ralph Eyeball Loop is how sprezzature-figures looks at a figure before calling it done: it renders an SVG, an HTML page, a TikZ or a Mermaid source to PNG, writes an assessment, and you edit the source and run it again. By default the agent running it reads the picture; with --local , the vision model qwen3-vl:8b served by Ollama writes the critique offline. It is the script scripts/ralph_eyeball_loop.py in the repository, explained on its own page .
+
+### Does sprezzature-figures send my data to a cloud service?
+
+No: sprezzature-figures renders, recommends and checks figures on your machine with no model and no account. The three steps that use a model ( redraw , the editor chat and the eyeball loop's --local mode) call one served by Ollama locally by default, through best-engine-ai-helper. Used as a skill, the agent itself follows its own provider's data policy.
+
+### What does sprezzature-figures need besides pip?
+
+sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. redraw , which rebuilds a chart from a screenshot without inventing its numbers, and the editor chat need a model served by Ollama . The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, mermaid-cli, tectonic for TikZ, rsvg-convert), and --check-tools lists which ones you have.
+
+### Can I use sprezzature-figures without Claude Code, for example in CI?
+
+Yes: sprezzature-figures is also a Python library ( make_figure ), a command line, an HTTP API with a Docker image, and the MCP server sprezzature-figures-mcp for any MCP client; the Claude Code skill is one of five ways in. In CI, sprezzature-figures check figure.svg exits 1 on any finding (labels printed over each other, text off the canvas, a dropped title), and --format json prints them for a program.
+
+### How is sprezzature-figures different from matplotlib, Plotly or Vega-Lite?
+
+matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you 167 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as LANDSCAPE.md in the repository says.
+
 ---
 
 # Eleven short films — Sprezzature
@@ -999,9 +1171,9 @@ The voices come from the suite itself: sprezzature-audio through Kokoro, with a 
 
 Each film is cut three ways and all three are on this page: wide for a screen, tall for a phone held upright, square for a feed. Pick one above the player. The three are frame-synced, so the same sentence lands on the same second whichever you watch; only the layout moves. All of them are 4K.
 
-They follow Guy KAWASAKI’s order, which is why the rail above each frame says where you are: what the thing is, then the problem, then what the package does about it, then the part you would not guess — and the sources it rests on, named so you can go and check them. The first frame is already a finished one: the name, one sentence, and where to find it.
+They follow Guy KAWASAKI’s order, which is why the rail above each frame says where you are: what the thing is, then the problem, then what the package does about it, then the secret sauce (the part you would not guess, with the sources it rests on, named so you can go and check them), then the finest thing the package can show, and then your turn. The first frame is already a finished one: the name, one sentence, and where to find it. The last is the only ask, and one line to keep.
 
-They were built with the same discipline they describe. Every scene was rendered to a still and looked at before the film was encoded, which is how the sixty-second set was caught quoting a catalogue size the package had outgrown months earlier — off a screenshot taken in September — naming a font the package does not ship, and counting twelve font files where there are six.
+They were built with the same discipline they describe. Every scene was rendered to a still and looked at before the film was encoded, which is how the sixty-second set that came before this one was caught quoting a catalogue size the package had outgrown months earlier, off a screenshot taken in September, naming a font the package does not ship, and counting twelve font files where there are six.
 
 Two of those were typography rather than fact, and they now have a test instead of an eye: it measures every line of film text in the font the films are set in, and fails if one wraps and leaves its last word standing alone.
 
@@ -1319,6 +1491,11 @@ See
 the gallery
 Give a ⭐️ on GitHub
 
+10 packages
+167 chart types
+14 map plates
+0 accounts needed
+
 ## One minute
 
 What the suite does, and the one thing nothing
@@ -1368,20 +1545,6 @@ Full install options (checksums, OpenCode + local Ollama, upgrades) →
 ## The tool ecosystem
 
 Each skill's scripts also ship as a standalone package, reachable five ways : a self-contained zip, a Python library, an HTTP API, MCP tools for an agent, or the skill itself. Same implementation behind all of them.
-
-sprezzature-figures : 167 chart types
-
-sprezzature-colors : WCAG + CVD + Tailwind
-
-sprezzature-audio : speech-to-text, diarization
-
-sprezzature-accessibility : a11y lint
-
-sprezzature-cli-gui : CLI to GUI
-
-sprezzature-ux-laws : Laws of UX audit
-
-sprezzature-maps : choropleth + situation
 
 ## The ten skills
 
@@ -1463,6 +1626,40 @@ Guidelines ,
 Google Material Design and
 Laws of UX .
 
+## Frequently asked questions
+
+### What is sprezzature?
+
+sprezzature is a suite of ten open-source Python packages, each also an agent skill for Claude Code and OpenCode, that make and then audit the craft around code: interfaces, figures, maps, colours, accessibility, captions, narration, publishing, the laws of UX and the claims a film makes. Every artifact a tool makes is checked against explicit rules before it ships.
+
+### How do I install sprezzature?
+
+Run pip install sprezzature (Python 3.10 to 3.13): it installs all ten packages, with no extras to choose. Then sprezzature-skills --install copies the skills into ~/.claude/skills , or sprezzature-skills --install --agent opencode for OpenCode.
+
+### Do I need Claude Code or an AI agent to use it?
+
+No: every sprezzature package also works on its own as a Python library, a command line, an HTTP API with a Docker image, and an MCP server for any MCP client; the agent skill is one of five ways in. Each package has its own pip install , listed on the packages page .
+
+### Is sprezzature free?
+
+Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
+
+### Does my data leave my machine?
+
+Not unless you send it somewhere: sprezzature's tools run locally. The ones that use a model (alt text, plain-language rewrites, translation, the local eyeball check) call a model served by Ollama on your own machine, transcription runs whisper.cpp locally, and the voices are synthesised locally. When you use them as skills, the agent itself follows its own provider's data policy.
+
+### What does “make and audit” mean?
+
+Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with --fix .
+
+### Which AI agents does it work with?
+
+The sprezzature skills are written for Claude Code and OpenCode, and every package also runs an MCP server (for example sprezzature-figures-mcp ), so any agent that speaks the Model Context Protocol can call the same tools.
+
+### How do I report a problem or contribute?
+
+Report a sprezzature problem or propose a change by opening an issue or a pull request on GitHub ; each package lives in its own repository, linked from its page on this site. A star on the repository helps others find the suite.
+
 ---
 
 # Maps — Sprezzature
@@ -1473,11 +1670,74 @@ sprezzature · case studies
 
 # Maps
 
-Good-quality cartography, reproducible on data of your choice.
+Publication-grade plates for any region on Earth: real elevation, real borders, and a configuration file you can argue with.
 
 Work in progress: the generators are versioned and every map below is rebuilt from them in one command, but the cartographic judgement is still being revised plate by plate — label placement, relief strength and the confidence scale have all changed this month. Read these as illustrations of the method, not as operational assessments.
 
 ← All case studies
+
+## The plates
+
+A layered reference plate for any region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred Lambert Conformal Conic projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed in the region is. Put thematic layers on top of that plate and it becomes a geopolitics-desk product: classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, tapered axes of advance, and a floating legend.
+
+Every areas-of-control plate below is schematic, says so on its own face, and keeps its claim lines in readable Python rather than an opaque data file: a reader who disagrees can see exactly which coordinates to argue with. None of it is intelligence. The reference and chokepoint plates assert nothing beyond Natural Earth's own geography.
+
+Region
+All Europe Africa Middle East Asia-Pacific Americas
+
+Shows
+All Reference geography Areas of control Chokepoints & sea lanes
+
+Western Europe : the built-in reference demo, 50m borders, the Alps in full relief texture.
+↓ YAML + Python + PNG kit (247 KB)
+
+The Strait of Hormuz : the Gulf, the Zagros rising straight out of it, and thirty-nine kilometres of water.
+
+↓ YAML + Python + PNG kit (147 KB)
+
+The Caribbean : two oceans joined by seventy-seven kilometres of isthmus, and the sea the Antilles close off.
+
+↓ YAML + Python + PNG kit (136 KB)
+
+Himalaya : an all-land plate with no sea to contrast against, so relief carries the whole plate.
+↓ YAML + Python + PNG kit (222 KB)
+
+The Andes : one mountain wall, and the three climates it makes: Amazon, Altiplano, Atacama.
+
+↓ YAML + Python + PNG kit (205 KB)
+
+The Sahel : where the Sahara ends — and the river that runs the wrong way into it.
+
+↓ YAML + Python + PNG kit (167 KB)
+
+The South China Sea : the basin, the shelf and the reefs — and deliberately no claim line.
+
+↓ YAML + Python + PNG kit (278 KB)
+
+Iberia : Spain and Portugal, the clearest single example of the texture-shading relief technique.
+↓ YAML + Python + PNG kit (216 KB)
+
+Switzerland, zoomed : a small enough bbox switches to the 10m border tier automatically.
+↓ YAML + Python + PNG kit (211 KB)
+
+Ukraine : government, occupied and contested along an approximate 2024 contact line. The Kakhovka Reservoir is drawn as former: it drained after the dam breach of 6 June 2023.
+↓ YAML + Python + PNG kit (208 KB)
+
+Sudan : the war’s east–west partition in five classes, with the fighting in Kordofan. One assessed and one reported axis of advance, drawn differently.
+↓ YAML + Python + PNG kit (158 KB)
+
+Eastern DRC : who holds the Kivus. Goma and Bukavu face each other across Lake Kivu, which is why the lake has to be on the map at all.
+↓ YAML + Python + PNG kit (282 KB)
+
+Syria : a four-way split, an illustrative snapshot from around 2018.
+↓ YAML + Python + PNG kit (179 KB)
+
+Libya : loyalist, rebel and the contested oil crescent, around spring 2011.
+↓ YAML + Python + PNG kit (198 KB)
+
+No plate matches both filters yet. Clearing one of them brings the rest back.
+
+Every plate here is generated by sprezzature-maps , from the builders in scripts/build_situation_examples.py . The configuration behind each one is the kit on its card.
 
 ## Choropleth
 
@@ -1513,43 +1773,6 @@ Tile-grid cartogram : One equal tile per country, geographic layout.
 Diverging + annotated : Signed change, no-data gray, key countries labeled.
 
 Small multiples : One panel per year, class breaks frozen.
-
-## Situation maps
-
-A layered reference plate for any region: coastline, international frontiers, country labels, a bathymetry contour halo, dual-unit scale bar and north arrow, on an auto-centred Lambert Conformal Conic projection (conformal, so shapes and angles stay true at city/province scale). Borders switch automatically between Natural Earth's 50m and 10m tiers depending on how zoomed in the region is: a whole continent doesn't need 10m detail invisible at that scale, while a single country does. The same relief technique as the choropleth above (real elevation, texture-shaded, warm/cool duotone) carries every plate.
-
-Western Europe : the built-in reference demo, 50m borders, the Alps in full relief texture.
-↓ YAML + Python + PNG kit (225 KB)
-
-Iberia : Spain and Portugal, the clearest single example of the texture-shading relief technique.
-↓ YAML + Python + PNG kit (213 KB)
-
-Himalaya : an all-land plate with no sea to contrast against, so relief carries the whole plate.
-↓ YAML + Python + PNG kit (209 KB)
-
-Switzerland, zoomed : a small enough bbox switches to the 10m border tier automatically.
-↓ YAML + Python + PNG kit (208 KB)
-
-### Applied: areas of control
-
-The same reference plate becomes a geopolitics-desk product once thematic layers go on top: classed pastel fills with white boundary casing, letter-spaced place labels, flashpoint markers, tapered axes of advance, and a floating legend. Every plate below is schematic, says so on its own face, and keeps its claim lines in readable Python rather than an opaque data file: a reader who disagrees can see exactly which coordinates to argue with. None of it is intelligence.
-
-Ukraine : government, occupied and contested along an approximate 2024 contact line. The Kakhovka Reservoir is drawn as former: it drained after the dam breach of 6 June 2023.
-↓ YAML + Python + PNG kit (149 KB)
-
-Sudan : the war’s east–west partition in five classes, with the fighting in Kordofan. One assessed and one reported axis of advance, drawn differently.
-↓ YAML + Python + PNG kit (164 KB)
-
-Eastern DRC : who holds the Kivus. Goma and Bukavu face each other across Lake Kivu, which is why the lake has to be on the map at all.
-↓ YAML + Python + PNG kit (288 KB)
-
-Syria : a four-way split, an illustrative snapshot from around 2018.
-↓ YAML + Python + PNG kit (178 KB)
-
-Libya : loyalist, rebel and the contested oil crescent, around spring 2011.
-↓ YAML + Python + PNG kit (194 KB)
-
-Every plate here is generated by sprezzature-maps , from the builders in scripts/build_situation_examples.py .
 
 ## For conflict research: ACLED and UCDP, at the precision they record
 
@@ -1634,6 +1857,40 @@ Binned grid map : Square-bin aggregation over geography, cells coloured by count
 
 ×
 
+## Frequently asked questions
+
+### How do I install sprezzature-maps?
+
+Run pip install sprezzature-maps (Python 3.10 to 3.13): one command installs the three generators, the make-map command line, the HTTP API, the MCP server and the editor, and pulls in sprezzature-figures, whose font and rendering code it shares. It is free and open source under the BSD 3-Clause licence.
+
+### What kinds of maps can sprezzature-maps draw?
+
+sprezzature-maps draws three kinds of plate as SVG: a world choropleth on an Equal Earth projection, a situation_map that centres itself on any region with a Lambert conformal conic projection and layers zones, events and a two-unit scale bar, and a density map of where point events fell. make-map situation-new --country Moldova writes a starter configuration for a new regional plate.
+
+### Where does sprezzature-maps get its map data?
+
+sprezzature-maps ships its geography inside the package: Natural Earth borders, coastlines, lakes and rivers, GMTED2010 elevation for the relief, and administrative units for the United States, France, Germany, Italy and Switzerland. Your own numbers come as CSV, TSV or JSON rows (a world choropleth keys countries on ISO 3166-1 numeric codes), and acled_events and ucdp_events turn an ACLED or UCDP GED export into a situation-map layer.
+
+### How does the sprezzature-maps choropleth classify values?
+
+By default the sprezzature-maps choropleth stretches one colour ramp from the lowest value to the highest; --classes (2 to 12) cuts it into classes, and --method places the breaks by quantile , equal , jenks or headtail . The legend prints the breaks and names the method used, and a diverging ramp switches on by itself when the values change sign.
+
+### Does sprezzature-maps work offline?
+
+Yes: sprezzature-maps needs no tile server, no API key and no account, because the base maps and the elevation are bundled, and the finished SVG carries its own fonts. The only steps that use a model are make-map improve and the editor's repair loop, which call a vision model served by Ollama on your machine by default.
+
+### What does sprezzature-maps need besides pip?
+
+sprezzature-maps needs nothing more to render SVG, PNG or JPEG. A vector PDF or EPS uses the system tool rsvg-convert (librsvg); without it, the package writes a raster page and says so. make-map improve needs a local vision model, reached through best-engine-ai-helper and Ollama .
+
+### Can I use sprezzature-maps without Claude Code, for example in CI?
+
+Yes: sprezzature-maps is also a Python library, a command line ( make-map or sprezzature-maps ), an HTTP API with a Docker image, and the MCP server sprezzature-maps-mcp ; the Claude Code skill is one of five ways in. In CI, make-map audit reads finished plates against eleven rules (a named classification, printed breaks, a stated date, a title) and exits 1 on any finding, with --format json for a program.
+
+### How is sprezzature-maps different from Folium, kepler.gl or QGIS?
+
+Folium and kepler.gl make maps a reader pans and zooms over tiles or a GPU layer, and QGIS is a desktop GIS for analysing geography; sprezzature-maps draws one static, publication-ready plate as a self-contained SVG, and an audit that reads it back. If the geography still needs joining or buffering, or the map has to move, those tools are the better choice, as LANDSCAPE.md in the repository says.
+
 ---
 
 # Packages — Sprezzature
@@ -1690,7 +1947,7 @@ The judgement that is not in the code: when to reach for a chart type, what make
 
 ## Where each surface actually exists
 
-Five surfaces is the contract, and all nine packages hold it. Every one has an HTTP API and an MCP surface over its library: the same functions, never a second copy. The zip is the sixth door and is not owed by the contract — five packages ship a toolbox kit (accessibility, cli-gui, colors, maps, ux-laws), figures ships one per figure instead (160 of them) and maps twelve plates besides its own; audio, publish and ui have none yet. The skills need no second version for OpenCode: both runtimes read the same SKILL.md .
+Five surfaces is the contract, and all ten packages hold it. Every one has an HTTP API and an MCP surface over its library: the same functions, never a second copy. The zip is the sixth door and is not owed by the contract — five packages ship a toolbox kit (accessibility, cli-gui, colors, maps, ux-laws), figures ships one per figure instead (160 of them) and maps twelve plates besides its own; audio, publish and ui have none yet. The skills need no second version for OpenCode: both runtimes read the same SKILL.md .
 
 Package
 Zip
@@ -1701,7 +1958,7 @@ MCP
 Claude skill
 OpenCode skill
 
-sprezzature-figures 125 kits ● yes ● yes ● yes ● yes ● yes ● yes
+sprezzature-figures 160 kits ● yes ● yes ● yes ● yes ● yes ● yes
 
 sprezzature-maps 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 
@@ -1721,7 +1978,7 @@ sprezzature-publish — not yet ● yes ● yes ● yes ● yes ● yes ● yes
 
 sprezzature-video no kit ● yes ● yes ● yes ● yes ● yes ● yes
 
-Every row is on PyPI, and pip install 'sprezzature' installs all nine. sprezzature-ui and sprezzature-publish were the last two to get there, on 19 October 2026; until then the extra named nine and listed seven.
+Every row is on PyPI, and pip install sprezzature , with no extra to choose, installs all ten. sprezzature-ui and sprezzature-publish were the last two to get there, on 19 October 2026.
 
 ## Deterministic tools
 
@@ -1817,6 +2074,28 @@ Repository →
 
 Looking for the agent skills instead? The SKILL.md layer ships together as the skills bundle on the Getting started section.
 
+## Frequently asked questions
+
+### Do I have to install all ten sprezzature packages?
+
+No: each sprezzature package installs on its own, for example pip install sprezzature-colors , with no extra to choose. pip install sprezzature is the shortcut that installs all ten at once, plus the sprezzature-skills command.
+
+### How do I install the sprezzature skills for my agent?
+
+Install the sprezzature hub with pip install sprezzature , then run sprezzature-skills --install to copy the skills into ~/.claude/skills for Claude Code, or sprezzature-skills --install --agent opencode for OpenCode.
+
+### How do I update sprezzature?
+
+Update every sprezzature package at once with pip install --upgrade sprezzature , then run sprezzature-skills --install again so the copies your agent reads match the installed packages.
+
+### Can I call a sprezzature package from an agent that is not Claude Code?
+
+Yes: every sprezzature package ships an MCP server, such as sprezzature-figures-mcp , so any client that speaks the Model Context Protocol can call its tools. Each package also has a Python library, a command line and an HTTP API with a Docker image.
+
+### Where is the source code of each sprezzature package?
+
+Each sprezzature package has its own repository on GitHub , linked from its row in the table on this page, under the BSD 3-Clause licence.
+
 ---
 
 # Publishing — Sprezzature
@@ -1881,6 +2160,40 @@ Plain language
 Narration
 i18n
 Lint Markdown
+
+## Frequently asked questions
+
+### How do I install sprezzature-publish?
+
+Run pip install sprezzature-publish on Python 3.10 to 3.13: that one line installs all thirteen tools, the HTTP API and the MCP server, with no extras to choose. sprezzature-publish is free and open source under the BSD 3-Clause licence, with no account or API key.
+
+### What does sprezzature-publish need besides pip?
+
+sprezzature-publish needs Ollama running on your machine only for the tools that ask a local model: sprezzature-publish-meta , sprezzature-publish-plain , sprezzature-publish-faq (unless --no-llm ), sprezzature-publish-lint --ai and sprezzature-publish-narrate --ai-hints . Linting, rendering, icons, indexes, audits and the call-to-action check need no model. Narration needs its voice files once, fetched with sprezzature-audio-install-voice --engine kokoro .
+
+### Does sprezzature-publish send my content to a cloud service?
+
+No: sprezzature-publish runs locally. Meta tags, plain-language rewrites and FAQ answers are drafted by a model served by Ollama on your own machine, and narration is synthesised by a local open-source text-to-speech engine. Auditing a live URL reads that page and never writes to it.
+
+### Does sprezzature-publish handle SEO, GEO, AEO and llms.txt?
+
+Yes: sprezzature-publish covers all four, and sprezzature-publish-findable writes one report for search, generative and answer engines (SEO, GEO, AEO), money pages first, with --fix for the deterministic repairs. sprezzature-publish-indexes writes robots.txt , sitemap.xml , llms.txt , llms-full.txt , an Atom or RSS feed and humans.txt , and its --offer and --cta options put what the site is for at the top of llms.txt .
+
+### Can sprezzature-publish write an FAQ with FAQPage JSON-LD?
+
+Yes: sprezzature-publish drafts the FAQ a site is missing with sprezzature-publish-faq , from the site's own pages, ranking the questions by the calls to action declared in ctas.yaml and listing apart the ones the site cannot answer yet. sprezzature-publish-faq site/ --audit --fix rebuilds the FAQPage JSON-LD from the visible FAQ, and the tool never claims that markup makes a page rank.
+
+### Can sprezzature-publish narrate a blog post?
+
+Yes: sprezzature-publish reads a Markdown post, or an HTML page with --scope , aloud with a local voice through sprezzature-publish-narrate , and writes the timed track beside the WAV or MP3. sprezzature-publish-readalong then binds it to the page so the sentence being spoken is highlighted, and its --check catches a page edited after the recording. The voices come from sprezzature-audio , installed with it.
+
+### How is sprezzature-publish different from MkDocs, Hugo, Jekyll or Yoast?
+
+sprezzature-publish is sized for a README, a docs/ folder and a blog: for a hundred versioned pages or a team, MkDocs Material, Hugo or Astro are the better choice, as its own README says. Unlike an SEO plugin such as Yoast, which works inside one CMS, it builds pages and can also audit and repair the head of a site it did not build. It adds an icon set from one logo, llms.txt , a grounded FAQ and a narrated read-along.
+
+### Can I run sprezzature-publish in CI, without Claude Code?
+
+Yes: sprezzature-publish works without any agent, as a Python library, a command line, an HTTP API with a Docker image that runs sprezzature-publish-mcp , and an MCP server. In CI, sprezzature-publish-lint exits 1 on any error with only click and the standard library behind it, and sprezzature-publish-audit and sprezzature-publish-findable exit 1 on an error finding, with --format json for a machine to read.
 
 ---
 
@@ -2012,6 +2325,40 @@ Charts in SVG
 Color psychology
 Examples
 
+## Frequently asked questions
+
+### How do I install sprezzature-ui?
+
+Run pip install sprezzature-ui (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the sprezzature-ui command, the HTTP API and the MCP server, with no extras to choose. The interface-writing half is the skill: pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode for OpenCode.
+
+### What kind of code does sprezzature-ui produce?
+
+sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES modules, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface.
+
+### Can I use sprezzature-ui without Claude Code?
+
+Partly: sprezzature-ui's i18n tools run on their own as a Python library, a command line, an HTTP API with a Docker image and an MCP server, sprezzature-ui-mcp . Writing the interface itself is the model's job, guided by the skill and the prose in its references/ folder, so that half needs an agent such as Claude Code or OpenCode.
+
+### What does the sprezzature-ui audit check, and can it run in CI?
+
+sprezzature-ui's audit, sprezzature-ui-i18n-audit , flags translation tables embedded in JavaScript or HTML (rule I18N001 ) and LLM prompts inlined in Python as constants named like PROMPT or INSTRUCTION (rule I18N002 ). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the repository declares; it does not judge whether a translation is good.
+
+### How does sprezzature-ui handle translations in YAML?
+
+sprezzature-ui keeps every translatable string, interface labels and model prompts alike, in one catalogue, locales/i18n.yaml . sprezzature-ui-i18n-make scaffolds it, compiles it to locales/i18n.json and writes two loaders, locales/i18n.js for the browser and locales/i18n_prompts.py for Python; sprezzature-ui-i18n-audit --fix moves strings it finds into the catalogue and prints the call to paste, without rewriting your code.
+
+### Does sprezzature-ui send my code to a cloud service?
+
+No: sprezzature-ui's audit and catalogue tools read your files locally, with no network and no model, so Ollama is not needed; the audit imports only the Python standard library. The interface code itself is written by your agent, which follows its own provider's data policy.
+
+### How is sprezzature-ui different from shadcn/ui, v0 or Bootstrap?
+
+shadcn/ui hands you React components and Bootstrap ships a broad component library, while sprezzature-ui refuses any framework runtime and offers written rules plus a handful of components to copy. v0 builds an application from a prompt inside a hosted account; sprezzature-ui works with the agent you already run and checks the result with deterministic audits.
+
+### Is sprezzature-ui free?
+
+Yes. sprezzature-ui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub .
+
 ---
 
 # Laws of UX — Sprezzature
@@ -2056,6 +2403,40 @@ reduce clutter
 The knowledge the skill draws on: read them straight from the repo.
 
 The 30 laws
+
+## Frequently asked questions
+
+### How do I install sprezzature-ux-laws?
+
+Run pip install sprezzature-ux-laws on Python 3.10 or later: one install gives the library, both commands, the HTTP API and the MCP server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD 3-Clause licence.
+
+### Which Laws of UX does sprezzature-ux-laws check?
+
+sprezzature-ux-laws checks eight of the thirty laws on lawsofux.com, the ones a scan of the HTML source can decide: hick , choice-overload , miller , jakob , fitts , aesthetic-usability , selective-attention and tesler . Two of them, hick and jakob , are errors and the other six are warnings; --only and --ignore pick among them by slug.
+
+### What does sprezzature-ux-laws --fix change?
+
+sprezzature-ux-laws repairs four laws with --fix : it adds min-h-11 for Fitts, a focus-visible:ring-2 focus ring for aesthetic-usability, splits long codes into groups of four with non-breaking spaces for Miller, and rewrites a clickable div or span into a real button for Jakob. The other four need a design decision, not a text edit. --fix --dry-run previews the edits, and a second run on a repaired file applies none.
+
+### How does sprezzature-ux-laws count choices on a responsive menu?
+
+sprezzature-ux-laws counts what one screen shows, not every link in the file: it resolves each control's visibility from its Tailwind display classes and reports the worse of the phone count and the desktop count, so a desktop row and a hamburger menu are not added together. A details , a dialog , a menu or a group such as a tablist counts as one choice, and a nav with more than seven choices on one screen is a Hick's Law error.
+
+### Does sprezzature-ux-laws send my pages to a cloud service?
+
+No: sprezzature-ux-laws reads the raw HTML with Python's standard-library parser, with no browser, no network and no AI model, so it needs nothing besides pip. That keeps it deterministic and fast enough for a pre-commit hook.
+
+### How is sprezzature-ux-laws different from Lighthouse or a design review?
+
+sprezzature-ux-laws reads source only, so it catches the mechanical, source-decidable mistakes without a browser, but it cannot render a page or watch a person use it. Lighthouse with field data measures response time, the Doherty threshold this tool explicitly leaves out, and a design review or a session with real users is still what tells you whether a screen makes sense; this tool exists so the mechanical faults never reach that review.
+
+### Can I run sprezzature-ux-laws in CI?
+
+Yes: sprezzature-ux-laws exits 1 when sprezzature-ux-laws site/ finds at least one error, or any finding at all with --strict , and exits 2 on a usage error. --json prints one object per finding, with the law, severity, path, line, message and snippet, for a CI job to read.
+
+### Can I use sprezzature-ux-laws without Claude Code?
+
+Yes: sprezzature-ux-laws is a Python library ( audit_html , audit_file , fix_file ), a command line, an HTTP API with a Docker image that runs sprezzature-ux-laws-mcp , and an MCP server whose tools are health , list_laws and audit_interface . The agent skill that tells Claude Code or OpenCode when to apply the laws comes with pip install sprezzature , then sprezzature-skills --install .
 
 ---
 
@@ -2110,3 +2491,37 @@ The knowledge the skill draws on: read them straight from the repo.
 
 Where it stops
 Every trigger phrase
+
+## Frequently asked questions
+
+### How do I install sprezzature-video?
+
+Run pip install sprezzature-video (Python 3.10 to 3.13): the command line, the HTTP API and the MCP server install with it, with no extra to choose. The command is sprezzature-video , also spelled make-film .
+
+### What does sprezzature-video need besides pip?
+
+sprezzature-video needs only ffmpeg on PATH : poster and the loudness functions call it, and captions measures each narration audio file through ffprobe, which ships with ffmpeg. It runs no model, needs no GPU and calls no network service; verify , scan , prose , pitch and calque read text files and nothing else.
+
+### What is a claim in sprezzature-video?
+
+In sprezzature-video, a claim is a fact a film states on screen, declared in the film's YAML spec as a pair: the text with its value, and the file in the project that decides it, read by one of five methods ( json_len , json_key_len , regex_count , line_count , literal ). A missing source file fails the claim instead of skipping it, so a count that moves in the code fails the check instead of quietly ageing the film.
+
+### What do verify, scan, assets and captions check in sprezzature-video?
+
+In sprezzature-video, verify checks every declared claim against its file, scan lists the numbers visible in an HTML composition that no claim accounts for, and assets , the asset ledger, says whether each file the film renders from is tracked, derived or held in one place only, which decides whether a clone can render it again. captions writes WebVTT from the narration script and the measured length of each audio file, without transcribing anything.
+
+### How is sprezzature-video different from linting a video script?
+
+sprezzature-video reads the project a film describes, not only its words: verify fails a number on screen when the code behind it changes, even if the script never did. It lints the script too, with prose (dashes, banned phrases, sentences opening on a negation, in English and French), and scan catches what a lint cannot see, a number typed into a keyframe that nobody declared.
+
+### Can I use sprezzature-video without Claude Code?
+
+Yes: sprezzature-video is also a Python library ( import sprezzature_video ), a command line, an HTTP API with a Docker image, and an MCP server, sprezzature-video-mcp , serving the API and /mcp on one port. The HTTP and MCP surfaces cover verify , scan and captions ; the skill comes from pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode .
+
+### Can I run sprezzature-video in CI?
+
+Yes: every sprezzature-video command exits 0 when the film is still honest, 1 when it is not (a claim that fails, a number nobody declared, an asset not in hand) and 2 on a wrong call or a missing ffmpeg, so sprezzature-video verify film.yaml --root . can fail a pull request. sprezzature-video prose script.txt --strict is made for a pre-commit hook.
+
+### Is sprezzature-video free?
+
+Yes: sprezzature-video is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub . It is still alpha, and it renders nothing itself: the films are made with Hyperframes, outside the package.

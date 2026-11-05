@@ -9,7 +9,7 @@
 
   <title>Sprezzature — dix skills Claude / OpenCode pour vanilla JS + Tailwind</title>
   <meta name="description"
-    content="Sprezzature, ce sont dix skills Claude / OpenCode pour une même stack sprezzature : UI, CLI-vers-GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures data-science, cartes, et les affirmations d'un film. Chaque skill produit des artefacts et les audite.">
+    content="sprezzature : dix paquets Python open source et skills Claude Code / OpenCode qui créent et auditent interfaces, figures, cartes, couleurs et sous-titres.">
   <link rel="canonical" href="https://sprezzature.ai/fr/">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/">
@@ -25,7 +25,7 @@
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:title" content="Sprezzature — dix skills Claude / OpenCode">
   <meta property="og:description"
-    content="Un design system local pour une seule stack sprezzature : UI, CLI→GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX et figures. Produire et auditer.">
+    content="sprezzature : dix paquets Python open source et skills Claude Code / OpenCode qui créent et auditent interfaces, figures, cartes, couleurs et sous-titres.">
   <meta property="og:url" content="https://sprezzature.ai/fr/">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:locale" content="fr_FR">
@@ -44,6 +44,7 @@
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="../favicon-16.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="../site.webmanifest">
 
   <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts/roboto/fonts.css">
@@ -64,45 +65,28 @@
         "url": "https://sprezzature.ai/fr/",
         "description": "Dix skills Claude / OpenCode pour une pile frontend unique : UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures de science des données, cartes, et les affirmations d'un film.",
         "inLanguage": "fr",
-        "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
+        "author": {
+          "@type": "Person",
+          "name": "Warith HARCHAOUI",
+          "url": "https://www.linkedin.com/in/warith-harchaoui/"
+        }
       },
       {
         "@type": "SoftwareSourceCode",
         "name": "Sprezzature",
         "description": "Un système de design livré sous forme de dix skills Claude / OpenCode. Chaque skill fabrique des artefacts et les audite contre des règles explicites : UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures, et les affirmations d'un film.",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
-        "programmingLanguage": ["Python", "JavaScript", "HTML"],
+        "programmingLanguage": [
+          "Python",
+          "JavaScript",
+          "HTML"
+        ],
         "license": "https://spdx.org/licenses/BSD-3-Clause.html",
-        "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Qu'est-ce que Sprezzature ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sprezzature est un ensemble de dix skills pour Claude Code et OpenCode. Chaque skill couvre une partie d'une pile frontend (génération d'UI, CLI vers GUI, publication, accessibilité, couleurs, sous-titres, Lois de l'UX, figures de science des données, cartes, affirmations d'un film) et fabrique l'artefact tout en l'auditant contre des règles explicites."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Comment installer un skill Sprezzature ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Téléchargez la dernière archive depuis la page de releases GitHub, décompressez-la, et copiez les dossiers de skills souhaités dans ~/.claude/skills (pour Claude Code) ou ~/.opencode/skills (pour OpenCode). Aucune étape de compilation n'est requise."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Les skills Sprezzature fonctionnent-ils hors ligne ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La plupart des scripts sont déterministes et fonctionnent sans connexion réseau. Les étapes nécessitant un modèle (génération de texte alternatif, sous-titres, réécriture en langage simple) utilisent Ollama en local avec qwen3-vl:8b. Aucun appel à l'API Anthropic ni au cloud n'est requis pour ces étapes."
-            }
-          }
-        ]
+        "author": {
+          "@type": "Person",
+          "name": "Warith HARCHAOUI",
+          "url": "https://www.linkedin.com/in/warith-harchaoui/"
+        }
       }
     ]
   }
@@ -394,6 +378,102 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Questions fréquentes</h2>
+        <h3 class="mt-6 font-semibold">Qu'est-ce que sprezzature ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature est une suite de dix paquets Python open source, chacun aussi skill pour Claude Code et OpenCode, qui fabriquent puis auditent le soin autour du code : interfaces, figures, cartes, couleurs, accessibilité, sous-titres, narration, publication, lois de l'UX et ce qu'affirme un film. Tout ce qu'un outil fabrique est vérifié contre des règles écrites avant d'être livré.</p>
+        <h3 class="mt-6 font-semibold">Comment installer sprezzature ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Lancez <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> (Python 3.10 à 3.13) : il installe les dix paquets, sans option à choisir. Puis <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> copie les skills dans <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">~/.claude/skills</code>, ou <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> pour OpenCode.</p>
+        <h3 class="mt-6 font-semibold">Faut-il Claude Code ou un agent IA pour s'en servir ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Non : chaque paquet sprezzature fonctionne aussi seul, comme bibliothèque Python, ligne de commande, API HTTP avec image Docker et serveur MCP pour tout client MCP ; la skill pour agent n'est qu'une des cinq portes d'entrée. Chaque paquet a son propre <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install</code>, listé sur la <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="packages.html">page des paquets</a>.</p>
+        <h3 class="mt-6 font-semibold">sprezzature est-il gratuit ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui. Tous les paquets sont open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>.</p>
+        <h3 class="mt-6 font-semibold">Mes données quittent-elles ma machine ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Pas à moins de les envoyer vous-même ailleurs : les outils de sprezzature tournent en local. Ceux qui emploient un modèle (texte alternatif, réécriture en langage clair, traduction, relecture visuelle locale) appellent un modèle servi par Ollama sur votre machine, la transcription tourne avec whisper.cpp en local et les voix sont synthétisées en local. Quand vous les employez comme skills, l'agent lui-même suit la politique de données de son fournisseur.</p>
+        <h3 class="mt-6 font-semibold">Que veut dire « fabriquer et auditer » ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON et un code de sortie qu'une CI peut faire échouer. La plupart des audits appliquent aussi avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code> les réparations dont ils sont sûrs.</p>
+        <h3 class="mt-6 font-semibold">Avec quels agents IA fonctionne-t-il ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Les skills de sprezzature sont écrites pour Claude Code et OpenCode, et chaque paquet lance aussi un serveur MCP (par exemple <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code>) : tout agent qui parle le Model Context Protocol peut appeler les mêmes outils.</p>
+        <h3 class="mt-6 font-semibold">Comment signaler un problème ou contribuer ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Pour signaler un problème de sprezzature ou proposer une modification, ouvrez une issue ou une pull request sur <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a> ; chaque paquet vit dans son propre dépôt, lié depuis sa page sur ce site. Une étoile sur le dépôt aide d'autres personnes à trouver la suite.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que sprezzature ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature est une suite de dix paquets Python open source, chacun aussi skill pour Claude Code et OpenCode, qui fabriquent puis auditent le soin autour du code : interfaces, figures, cartes, couleurs, accessibilité, sous-titres, narration, publication, lois de l'UX et ce qu'affirme un film. Tout ce qu'un outil fabrique est vérifié contre des règles écrites avant d'être livré."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment installer sprezzature ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lancez pip install sprezzature (Python 3.10 à 3.13) : il installe les dix paquets, sans option à choisir. Puis sprezzature-skills --install copie les skills dans ~/.claude/skills, ou sprezzature-skills --install --agent opencode pour OpenCode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il Claude Code ou un agent IA pour s'en servir ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non : chaque paquet sprezzature fonctionne aussi seul, comme bibliothèque Python, ligne de commande, API HTTP avec image Docker et serveur MCP pour tout client MCP ; la skill pour agent n'est qu'une des cinq portes d'entrée. Chaque paquet a son propre pip install, listé sur la page des paquets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Tous les paquets sont open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur GitHub."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mes données quittent-elles ma machine ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pas à moins de les envoyer vous-même ailleurs : les outils de sprezzature tournent en local. Ceux qui emploient un modèle (texte alternatif, réécriture en langage clair, traduction, relecture visuelle locale) appellent un modèle servi par Ollama sur votre machine, la transcription tourne avec whisper.cpp en local et les voix sont synthétisées en local. Quand vous les employez comme skills, l'agent lui-même suit la politique de données de son fournisseur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que veut dire « fabriquer et auditer » ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON et un code de sortie qu'une CI peut faire échouer. La plupart des audits appliquent aussi avec --fix les réparations dont ils sont sûrs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Avec quels agents IA fonctionne-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les skills de sprezzature sont écrites pour Claude Code et OpenCode, et chaque paquet lance aussi un serveur MCP (par exemple sprezzature-figures-mcp) : tout agent qui parle le Model Context Protocol peut appeler les mêmes outils."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment signaler un problème ou contribuer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour signaler un problème de sprezzature ou proposer une modification, ouvrez une issue ou une pull request sur GitHub ; chaque paquet vit dans son propre dépôt, lié depuis sa page sur ce site. Une étoile sur le dépôt aide d'autres personnes à trouver la suite."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
 
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">

@@ -9,7 +9,7 @@
 
   <title>Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind</title>
   <meta name="description"
-    content="Sprezzature is ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes. Each skill both makes artifacts and audits them.">
+    content="sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI, figures, maps, colours, captions and publishing.">
   <link rel="canonical" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/">
@@ -32,7 +32,7 @@
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:title" content="Sprezzature — ten Claude / OpenCode skills">
   <meta property="og:description"
-    content="A design system for one frontend stack: UI, CLI→GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps. Make and audit.">
+    content="sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI, figures, maps, colours, captions and publishing.">
   <meta property="og:url" content="https://sprezzature.ai/">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:locale" content="en_US">
@@ -53,6 +53,7 @@
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
 
   <!-- Three-Roboto rule, self-hosted (no font CDN in production) -->
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -71,49 +72,30 @@
         "@type": "WebSite",
         "name": "Sprezzature",
         "url": "https://sprezzature.ai/",
-        "description": "Ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, and maps.",
+        "description": "Ten Claude / OpenCode skills for a single frontend stack: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes.",
         "inLanguage": "en",
-        "author": { "@type": "Person", "name": "Warith HARCHAOUI",
-          "url": "https://www.linkedin.com/in/warith-harchaoui/" }
+        "author": {
+          "@type": "Person",
+          "name": "Warith HARCHAOUI",
+          "url": "https://www.linkedin.com/in/warith-harchaoui/"
+        }
       },
       {
         "@type": "SoftwareSourceCode",
         "name": "Sprezzature",
         "description": "A design system as ten Claude / OpenCode skills. Each skill both makes artifacts and audits them against explicit rules: UI, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, figures, and the claims a film makes.",
         "codeRepository": "https://github.com/warith-harchaoui/sprezzature",
-        "programmingLanguage": ["Python", "JavaScript", "HTML"],
+        "programmingLanguage": [
+          "Python",
+          "JavaScript",
+          "HTML"
+        ],
         "license": "https://spdx.org/licenses/BSD-3-Clause.html",
-        "author": { "@type": "Person", "name": "Warith HARCHAOUI",
-          "url": "https://www.linkedin.com/in/warith-harchaoui/" }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is Sprezzature?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sprezzature is a set of ten skills for Claude Code and OpenCode. Each skill covers one part of a frontend stack (UI generation, CLI-to-GUI, publishing, accessibility, colors, captions, Laws of UX, data-science figures, maps, and the claims a film makes) and both makes the artifact and audits it against explicit rules."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I install a Sprezzature skill?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Download the latest release tarball from the GitHub releases page, unpack it, and copy the skill folders you need into ~/.claude/skills (for Claude Code) or ~/.opencode/skills (for OpenCode). No build step is required."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can the models run locally without a cloud API?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. The text, audio, and vision models used by Sprezzature can run locally via Ollama. Nothing has to leave the machine when local inference is configured."
-            }
-          }
-        ]
+        "author": {
+          "@type": "Person",
+          "name": "Warith HARCHAOUI",
+          "url": "https://www.linkedin.com/in/warith-harchaoui/"
+        }
       }
     ]
   }
@@ -415,6 +397,102 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">What is sprezzature?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature is a suite of ten open-source Python packages, each also an agent skill for Claude Code and OpenCode, that make and then audit the craft around code: interfaces, figures, maps, colours, accessibility, captions, narration, publishing, the laws of UX and the claims a film makes. Every artifact a tool makes is checked against explicit rules before it ships.</p>
+        <h3 class="mt-6 font-semibold">How do I install sprezzature?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> (Python 3.10 to 3.13): it installs all ten packages, with no extras to choose. Then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> copies the skills into <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">~/.claude/skills</code>, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> for OpenCode.</p>
+        <h3 class="mt-6 font-semibold">Do I need Claude Code or an AI agent to use it?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: every sprezzature package also works on its own as a Python library, a command line, an HTTP API with a Docker image, and an MCP server for any MCP client; the agent skill is one of five ways in. Each package has its own <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install</code>, listed on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="packages.html">packages page</a>.</p>
+        <h3 class="mt-6 font-semibold">Is sprezzature free?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>.</p>
+        <h3 class="mt-6 font-semibold">Does my data leave my machine?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Not unless you send it somewhere: sprezzature's tools run locally. The ones that use a model (alt text, plain-language rewrites, translation, the local eyeball check) call a model served by Ollama on your own machine, transcription runs whisper.cpp locally, and the voices are synthesised locally. When you use them as skills, the agent itself follows its own provider's data policy.</p>
+        <h3 class="mt-6 font-semibold">What does “make and audit” mean?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code>.</p>
+        <h3 class="mt-6 font-semibold">Which AI agents does it work with?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">The sprezzature skills are written for Claude Code and OpenCode, and every package also runs an MCP server (for example <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code>), so any agent that speaks the Model Context Protocol can call the same tools.</p>
+        <h3 class="mt-6 font-semibold">How do I report a problem or contribute?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Report a sprezzature problem or propose a change by opening an issue or a pull request on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>; each package lives in its own repository, linked from its page on this site. A star on the repository helps others find the suite.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is sprezzature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature is a suite of ten open-source Python packages, each also an agent skill for Claude Code and OpenCode, that make and then audit the craft around code: interfaces, figures, maps, colours, accessibility, captions, narration, publishing, the laws of UX and the claims a film makes. Every artifact a tool makes is checked against explicit rules before it ships."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install sprezzature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run pip install sprezzature (Python 3.10 to 3.13): it installs all ten packages, with no extras to choose. Then sprezzature-skills --install copies the skills into ~/.claude/skills, or sprezzature-skills --install --agent opencode for OpenCode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need Claude Code or an AI agent to use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: every sprezzature package also works on its own as a Python library, a command line, an HTTP API with a Docker image, and an MCP server for any MCP client; the agent skill is one of five ways in. Each package has its own pip install, listed on the packages page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is sprezzature free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my data leave my machine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not unless you send it somewhere: sprezzature's tools run locally. The ones that use a model (alt text, plain-language rewrites, translation, the local eyeball check) call a model served by Ollama on your own machine, transcription runs whisper.cpp locally, and the voices are synthesised locally. When you use them as skills, the agent itself follows its own provider's data policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does “make and audit” mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with --fix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI agents does it work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The sprezzature skills are written for Claude Code and OpenCode, and every package also runs an MCP server (for example sprezzature-figures-mcp), so any agent that speaks the Model Context Protocol can call the same tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I report a problem or contribute?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Report a sprezzature problem or propose a change by opening an issue or a pull request on GitHub; each package lives in its own repository, linked from its page on this site. A star on the repository helps others find the suite."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
 
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">

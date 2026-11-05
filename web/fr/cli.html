@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CLI → GUI — Sprezzature</title>
-  <meta name="description" content="Emballe un outil en ligne de commande dans une GUI vanilla-JS + Tailwind une page : lit le parseur d'arguments, émet des formulaires et des champs fichier, et fabrique la ligne de commande exacte">
+  <meta name="description" content="Emballe un outil en ligne de commande dans une GUI vanilla-JS + Tailwind d'une page : elle lit le parseur d'arguments et génère la commande exacte.">
   <link rel="canonical" href="https://sprezzature.ai/fr/cli.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/cli.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/cli.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="CLI → GUI — Sprezzature">
-  <meta property="og:description" content="Emballe un outil en ligne de commande dans une GUI vanilla-JS + Tailwind une page : lit le parseur d'arguments, émet des formulaires et des champs fichier, et fabrique la ligne de commande exacte">
+  <meta property="og:description" content="Emballe un outil en ligne de commande dans une GUI vanilla-JS + Tailwind d'une page : elle lit le parseur d'arguments et génère la commande exacte.">
   <meta property="og:url" content="https://sprezzature.ai/fr/cli.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="Le logo du projet Sprezzature.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts/roboto/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
@@ -158,6 +159,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Questions fréquentes</h2>
+        <h3 class="mt-6 font-semibold">Comment installer sprezzature-cli-gui ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Lancez <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-cli-gui</code> (Python 3.10 ou plus récent) : une seule installation apporte les lecteurs argparse, Click et Typer, le lecteur <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--from-help</code>, l'audit, l'API HTTP et le serveur MCP, sans option à choisir. Pour la skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> puis <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, ou <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> pour OpenCode.</p>
+        <h3 class="mt-6 font-semibold">Quels parseurs de ligne de commande sprezzature-cli-gui sait-il lire ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-cli-gui importe et parcourt directement les parseurs argparse, Click et Typer : chaque sous-commande, option et choix vient du parseur lui-même. Un outil écrit dans un autre langage, comme cobra en Go ou clap en Rust, passe par <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--from-help</code>, qui lance le <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--help</code> de l'outil et en lit le texte, avec moins de fidélité.</p>
+        <h3 class="mt-6 font-semibold">Que contient l'interface graphique produite par sprezzature-cli-gui ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-cli-gui écrit une seule page HTML autonome, en JavaScript simple et Tailwind : une section dépliable par sous-commande et un champ par option (case à cocher, liste, nombre ou texte). Le bouton « Build command » assemble la ligne de commande exacte dans le navigateur ; la page ne l'exécute jamais, à vous de la copier ou de la brancher sur un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">invoke</code> Tauri ou un serveur.</p>
+        <h3 class="mt-6 font-semibold">sprezzature-cli-gui envoie-t-il mon code dans le cloud ou a-t-il besoin d'un modèle d'IA ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Non : sprezzature-cli-gui n'emploie ni modèle ni Ollama, et sa ligne de commande importe votre CLI sur votre propre machine ; l'API HTTP et le serveur MCP n'acceptent que l'arbre du parseur, jamais un module à importer. Le seul accès réseau est celui de la page produite : elle charge Tailwind depuis <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">cdn.tailwindcss.com</code> pour le style, et ses champs marchent sans style hors ligne.</p>
+        <h3 class="mt-6 font-semibold">Peut-on utiliser sprezzature-cli-gui sans Claude Code ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui : sprezzature-cli-gui est une bibliothèque Python (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">walk</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">render_html</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">audit</code>), une ligne de commande comme <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-cli-gui my_pkg.cli:build_parser --out gui.html</code>, une API HTTP avec image Docker, et un serveur MCP, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-cli-gui-mcp</code>, pour tout client MCP. La skill pour agent n'est qu'une de ces portes d'entrée.</p>
+        <h3 class="mt-6 font-semibold">Quelle différence entre sprezzature-cli-gui et Gooey, Streamlit ou Gradio ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Gooey lit lui aussi votre parseur, mais il exécute la commande dans une fenêtre de bureau wxPython, alors que sprezzature-cli-gui produit un fichier HTML statique qui construit la ligne de commande sans rien exécuter. Streamlit et Gradio ne lisent aucun parseur : vous écrivez chaque widget vous-même, ce qui se justifie quand l'interface est le produit et non une façade posée sur une commande existante.</p>
+        <h3 class="mt-6 font-semibold">Peut-on lancer sprezzature-cli-gui en CI ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui : <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-cli-gui-audit mytool.cli:build_parser gui.html</code> relit ensemble le parseur et la page et sort avec le code 1 quand la page a pris du retard sur la CLI, par exemple une option sans champ, un champ pour une option que le parseur refuse, un choix perdu ou un mauvais nom de programme. Ajoutez <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> pour un rapport lisible par une machine.</p>
+        <h3 class="mt-6 font-semibold">sprezzature-cli-gui est-il gratuit ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui. sprezzature-cli-gui est open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et son code est sur <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-cli-gui">GitHub</a>.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment installer sprezzature-cli-gui ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lancez pip install sprezzature-cli-gui (Python 3.10 ou plus récent) : une seule installation apporte les lecteurs argparse, Click et Typer, le lecteur --from-help, l'audit, l'API HTTP et le serveur MCP, sans option à choisir. Pour la skill, pip install sprezzature puis sprezzature-skills --install, ou sprezzature-skills --install --agent opencode pour OpenCode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels parseurs de ligne de commande sprezzature-cli-gui sait-il lire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-cli-gui importe et parcourt directement les parseurs argparse, Click et Typer : chaque sous-commande, option et choix vient du parseur lui-même. Un outil écrit dans un autre langage, comme cobra en Go ou clap en Rust, passe par --from-help, qui lance le --help de l'outil et en lit le texte, avec moins de fidélité."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que contient l'interface graphique produite par sprezzature-cli-gui ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-cli-gui écrit une seule page HTML autonome, en JavaScript simple et Tailwind : une section dépliable par sous-commande et un champ par option (case à cocher, liste, nombre ou texte). Le bouton « Build command » assemble la ligne de commande exacte dans le navigateur ; la page ne l'exécute jamais, à vous de la copier ou de la brancher sur un invoke Tauri ou un serveur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature-cli-gui envoie-t-il mon code dans le cloud ou a-t-il besoin d'un modèle d'IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non : sprezzature-cli-gui n'emploie ni modèle ni Ollama, et sa ligne de commande importe votre CLI sur votre propre machine ; l'API HTTP et le serveur MCP n'acceptent que l'arbre du parseur, jamais un module à importer. Le seul accès réseau est celui de la page produite : elle charge Tailwind depuis cdn.tailwindcss.com pour le style, et ses champs marchent sans style hors ligne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on utiliser sprezzature-cli-gui sans Claude Code ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : sprezzature-cli-gui est une bibliothèque Python (walk, render_html, audit), une ligne de commande comme sprezzature-cli-gui my_pkg.cli:build_parser --out gui.html, une API HTTP avec image Docker, et un serveur MCP, sprezzature-cli-gui-mcp, pour tout client MCP. La skill pour agent n'est qu'une de ces portes d'entrée."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre sprezzature-cli-gui et Gooey, Streamlit ou Gradio ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gooey lit lui aussi votre parseur, mais il exécute la commande dans une fenêtre de bureau wxPython, alors que sprezzature-cli-gui produit un fichier HTML statique qui construit la ligne de commande sans rien exécuter. Streamlit et Gradio ne lisent aucun parseur : vous écrivez chaque widget vous-même, ce qui se justifie quand l'interface est le produit et non une façade posée sur une commande existante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on lancer sprezzature-cli-gui en CI ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : sprezzature-cli-gui-audit mytool.cli:build_parser gui.html relit ensemble le parseur et la page et sort avec le code 1 quand la page a pris du retard sur la CLI, par exemple une option sans champ, un champ pour une option que le parseur refuse, un choix perdu ou un mauvais nom de programme. Ajoutez --format json pour un rapport lisible par une machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature-cli-gui est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. sprezzature-cli-gui est open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et son code est sur GitHub."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

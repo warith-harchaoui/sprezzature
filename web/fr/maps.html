@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cartes — Sprezzature</title>
-  <meta name="description" content="Cartographie de qualité publication : une choroplèthe Equal Earth à rampe OKLCH, des cartes de situation en conique conforme de Lambert avec relief réel, plus des cartes thématiques à glyphes empruntées à sprezzature-figures, et des données réelles d'élections.">
+  <meta name="description" content="Cartes de qualité publication : choroplèthe Equal Earth en rampe OKLCH, cartes de situation Lambert avec relief réel, données réelles d'élections.">
   <link rel="canonical" href="https://sprezzature.ai/fr/maps.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/maps.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/maps.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Cartes — Sprezzature">
-  <meta property="og:description" content="Cartographie de qualité publication : une choroplèthe Equal Earth à rampe OKLCH, des cartes de situation en conique conforme de Lambert avec relief réel, plus des cartes thématiques à glyphes empruntées à sprezzature-figures, et des données réelles d'élections.">
+  <meta property="og:description" content="Cartes de qualité publication : choroplèthe Equal Earth en rampe OKLCH, cartes de situation Lambert avec relief réel, données réelles d'élections.">
   <meta property="og:url" content="https://sprezzature.ai/fr/maps.html">
   <meta property="og:image" content="https://sprezzature.ai/img/maps/choropleth-large.png">
   <meta property="og:image:alt" content="Un choroplèthe mondial intitulé « Global Exposure Index, by Country » : chaque pays teinté sur une échelle bleue séquentielle de 1 à 100 sur un fond gris chaud, avec une légende et une pastille « sans donnée » distincte. Valeurs illustratives synthétiques.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts/roboto/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
@@ -564,6 +565,102 @@
         </figure>
       </div>
     </dialog>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Questions fréquentes</h2>
+        <h3 class="mt-6 font-semibold">Comment installer sprezzature-maps ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Lancez <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-maps</code> (Python 3.10 à 3.13) : une seule commande installe les trois générateurs, la ligne de commande <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-map</code>, l'API HTTP, le serveur MCP et l'éditeur, et tire sprezzature-figures, dont il partage les polices et le code de rendu. Le paquet est gratuit et open source sous licence BSD 3-Clause.</p>
+        <h3 class="mt-6 font-semibold">Quels types de cartes sprezzature-maps dessine-t-il ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-maps dessine trois sortes de planches en SVG : un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">choropleth</code> du monde en projection Equal Earth, une <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">situation_map</code> qui se centre sur n'importe quelle région en projection conique conforme de Lambert et superpose zones, événements et échelle en deux unités, et une carte <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">density</code> des lieux où sont tombés des événements ponctuels. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-map situation-new --country Moldova</code> écrit une configuration de départ pour une nouvelle planche régionale.</p>
+        <h3 class="mt-6 font-semibold">D'où viennent les données cartographiques de sprezzature-maps ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-maps embarque sa géographie dans le paquet : frontières, côtes, lacs et fleuves de Natural Earth, altitudes GMTED2010 pour le relief, et unités administratives des États-Unis, de France, d'Allemagne, d'Italie et de Suisse. Vos propres nombres arrivent en lignes CSV, TSV ou JSON (un choroplèthe mondial repère les pays par leur code numérique ISO 3166-1), et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">acled_events</code> et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">ucdp_events</code> transforment un export ACLED ou UCDP GED en couche de carte de situation.</p>
+        <h3 class="mt-6 font-semibold">Comment le choroplèthe de sprezzature-maps classe-t-il les valeurs ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Par défaut, le choroplèthe de sprezzature-maps étire une rampe de couleur de la plus petite valeur à la plus grande ; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--classes</code> (de 2 à 12) la découpe en classes, et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--method</code> place les seuils par <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">quantile</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">equal</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">jenks</code> ou <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">headtail</code>. La légende imprime les seuils et nomme la méthode employée, et une rampe divergente s'active d'elle-même quand les valeurs changent de signe.</p>
+        <h3 class="mt-6 font-semibold">sprezzature-maps fonctionne-t-il hors ligne ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui : sprezzature-maps n'a besoin ni de serveur de tuiles, ni de clé d'API, ni de compte, car les fonds de carte et les altitudes sont embarqués, et le SVG final porte ses propres polices. Les seules étapes qui emploient un modèle sont <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-map improve</code> et la boucle de réparation de l'éditeur, qui appellent par défaut un modèle de vision servi par Ollama sur votre machine.</p>
+        <h3 class="mt-6 font-semibold">De quoi sprezzature-maps a-t-il besoin en plus de pip ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-maps n'a besoin de rien d'autre pour rendre du SVG, du PNG ou du JPEG. Un PDF ou un EPS vectoriel passe par l'outil système <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">rsvg-convert</code> (librsvg) ; sans lui, le paquet écrit une page matricielle et le signale. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-map improve</code> a besoin d'un modèle de vision local, atteint via best-engine-ai-helper et <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://ollama.com">Ollama</a>.</p>
+        <h3 class="mt-6 font-semibold">Peut-on utiliser sprezzature-maps sans Claude Code, par exemple en CI ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui : sprezzature-maps est aussi une bibliothèque Python, une ligne de commande (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-map</code> ou <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-maps</code>), une API HTTP avec image Docker et le serveur MCP <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-maps-mcp</code> ; la skill pour Claude Code n'est qu'une des cinq portes d'entrée. En CI, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make-map audit</code> relit les planches finies selon onze règles (classification nommée, seuils imprimés, date indiquée, titre) et sort avec le code 1 au moindre constat, avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> pour un programme.</p>
+        <h3 class="mt-6 font-semibold">En quoi sprezzature-maps diffère-t-il de Folium, kepler.gl ou QGIS ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Folium et kepler.gl font des cartes que le lecteur déplace et zoome sur des tuiles ou une couche GPU, et QGIS est un SIG de bureau pour analyser la géographie ; sprezzature-maps dessine une planche statique, prête à publier, en un SVG autonome, et un audit qui la relit. S'il reste des jointures ou des zones tampons à calculer, ou si la carte doit bouger, ces outils sont le meilleur choix, comme le dit <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">PAYSAGE.md</code> dans le <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-maps">dépôt</a>.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment installer sprezzature-maps ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lancez pip install sprezzature-maps (Python 3.10 à 3.13) : une seule commande installe les trois générateurs, la ligne de commande make-map, l'API HTTP, le serveur MCP et l'éditeur, et tire sprezzature-figures, dont il partage les polices et le code de rendu. Le paquet est gratuit et open source sous licence BSD 3-Clause."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels types de cartes sprezzature-maps dessine-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-maps dessine trois sortes de planches en SVG : un choropleth du monde en projection Equal Earth, une situation_map qui se centre sur n'importe quelle région en projection conique conforme de Lambert et superpose zones, événements et échelle en deux unités, et une carte density des lieux où sont tombés des événements ponctuels. make-map situation-new --country Moldova écrit une configuration de départ pour une nouvelle planche régionale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "D'où viennent les données cartographiques de sprezzature-maps ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-maps embarque sa géographie dans le paquet : frontières, côtes, lacs et fleuves de Natural Earth, altitudes GMTED2010 pour le relief, et unités administratives des États-Unis, de France, d'Allemagne, d'Italie et de Suisse. Vos propres nombres arrivent en lignes CSV, TSV ou JSON (un choroplèthe mondial repère les pays par leur code numérique ISO 3166-1), et acled_events et ucdp_events transforment un export ACLED ou UCDP GED en couche de carte de situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment le choroplèthe de sprezzature-maps classe-t-il les valeurs ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Par défaut, le choroplèthe de sprezzature-maps étire une rampe de couleur de la plus petite valeur à la plus grande ; --classes (de 2 à 12) la découpe en classes, et --method place les seuils par quantile, equal, jenks ou headtail. La légende imprime les seuils et nomme la méthode employée, et une rampe divergente s'active d'elle-même quand les valeurs changent de signe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature-maps fonctionne-t-il hors ligne ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : sprezzature-maps n'a besoin ni de serveur de tuiles, ni de clé d'API, ni de compte, car les fonds de carte et les altitudes sont embarqués, et le SVG final porte ses propres polices. Les seules étapes qui emploient un modèle sont make-map improve et la boucle de réparation de l'éditeur, qui appellent par défaut un modèle de vision servi par Ollama sur votre machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De quoi sprezzature-maps a-t-il besoin en plus de pip ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-maps n'a besoin de rien d'autre pour rendre du SVG, du PNG ou du JPEG. Un PDF ou un EPS vectoriel passe par l'outil système rsvg-convert (librsvg) ; sans lui, le paquet écrit une page matricielle et le signale. make-map improve a besoin d'un modèle de vision local, atteint via best-engine-ai-helper et Ollama."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on utiliser sprezzature-maps sans Claude Code, par exemple en CI ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : sprezzature-maps est aussi une bibliothèque Python, une ligne de commande (make-map ou sprezzature-maps), une API HTTP avec image Docker et le serveur MCP sprezzature-maps-mcp ; la skill pour Claude Code n'est qu'une des cinq portes d'entrée. En CI, make-map audit relit les planches finies selon onze règles (classification nommée, seuils imprimés, date indiquée, titre) et sort avec le code 1 au moindre constat, avec --format json pour un programme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En quoi sprezzature-maps diffère-t-il de Folium, kepler.gl ou QGIS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Folium et kepler.gl font des cartes que le lecteur déplace et zoome sur des tuiles ou une couche GPU, et QGIS est un SIG de bureau pour analyser la géographie ; sprezzature-maps dessine une planche statique, prête à publier, en un SVG autonome, et un audit qui la relit. S'il reste des jointures ou des zones tampons à calculer, ou si la carte doit bouger, ces outils sont le meilleur choix, comme le dit PAYSAGE.md dans le dépôt."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

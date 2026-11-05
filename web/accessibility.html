@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Accessibility — Sprezzature</title>
-  <meta name="description" content="Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: twenty rules decidable from source, no browser, no runtime DOM.">
+  <meta name="description" content="Static HTML accessibility lint with twenty rules decidable from source, no browser needed, plus missing alt text drafted by a local vision model.">
   <link rel="canonical" href="https://sprezzature.ai/accessibility.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/accessibility.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/accessibility.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Accessibility — Sprezzature">
-  <meta property="og:description" content="Pre-commit static HTML accessibility lint for vanilla-JS + Tailwind output: twenty rules decidable from source, no browser, no runtime DOM.">
+  <meta property="og:description" content="Static HTML accessibility lint with twenty rules decidable from source, no browser needed, plus missing alt text drafted by a local vision model.">
   <meta property="og:url" content="https://sprezzature.ai/accessibility.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="The Sprezzature project logo.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/roboto/fonts.css">
   <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
@@ -160,6 +161,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">How do I install sprezzature-accessibility?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-accessibility</code> (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> (or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>).</p>
+        <h3 class="mt-6 font-semibold">What does sprezzature-accessibility check?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-accessibility applies twenty rules decidable from the HTML source alone: missing alt text, unlabelled inputs, empty links and buttons, clickable div elements with no keyboard access, dialogs with no close, a missing <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">lang</code>, skipped heading levels, status shown by colour alone, animation with no reduced-motion guard, tight letter-spacing, and missing captions, transcripts or controls on video and audio. Six of the rules also have a mechanical repair, applied with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code>.</p>
+        <h3 class="mt-6 font-semibold">How is sprezzature-accessibility different from axe-core, Pa11y or Lighthouse?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-accessibility reads the HTML source without opening a browser, so it runs in milliseconds and gives the same answer every time, but it cannot see what only exists once a page renders: focus order, screen-reader timing, contrast against a real background. axe-core, Pa11y and Lighthouse drive a real browser and catch that layer; use this one as the fast first gate and one of them as the second pass, not as a replacement.</p>
+        <h3 class="mt-6 font-semibold">Can sprezzature-accessibility write the missing alt text?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-accessibility drafts the missing alt text with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-lint --fix-alt public/</code>, from each image and the text around it on the same page, in the page's language or the one set by <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--alt-lang</code>; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-alt photo.jpg</code> does a single image. This half needs Ollama and the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">qwen3-vl:8b</code> vision model, set up by <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-install-alt</code>, while the linter needs no browser and no model. Each draft should be read by a person before it is committed.</p>
+        <h3 class="mt-6 font-semibold">Does sprezzature-accessibility send my pages or images to a cloud service?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-accessibility's linter keeps everything on your machine and calls no model at all; only the alt-text drafter (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix-alt</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-alt</code>) calls a vision model, served by Ollama on your own machine unless you point <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">OLLAMA_URL</code> elsewhere. The HTTP API lints a string of HTML and never fetches a URL.</p>
+        <h3 class="mt-6 font-semibold">Can I run sprezzature-accessibility in CI or a pre-commit hook?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-lint public/</code> lints every <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.html</code> file under the folder and exits 1 on any finding, warnings included, and 0 on a clean run, with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> for a CI parser and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--ignore</code> to skip named rules. For a hook, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install --no-deps sprezzature-accessibility</code> plus <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install click</code> is enough to run the lint.</p>
+        <h3 class="mt-6 font-semibold">Can I use sprezzature-accessibility without Claude Code?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-accessibility is a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_accessibility</code>), a command line (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility</code>, one command per tool), an HTTP API with a Docker image, and an MCP server, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-mcp</code>, for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">/mcp</code>.</p>
+        <h3 class="mt-6 font-semibold">Is sprezzature-accessibility free?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-accessibility is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-accessibility">GitHub</a>.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I install sprezzature-accessibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run pip install sprezzature-accessibility (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does sprezzature-accessibility check?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-accessibility applies twenty rules decidable from the HTML source alone: missing alt text, unlabelled inputs, empty links and buttons, clickable div elements with no keyboard access, dialogs with no close, a missing lang, skipped heading levels, status shown by colour alone, animation with no reduced-motion guard, tight letter-spacing, and missing captions, transcripts or controls on video and audio. Six of the rules also have a mechanical repair, applied with --fix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sprezzature-accessibility different from axe-core, Pa11y or Lighthouse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-accessibility reads the HTML source without opening a browser, so it runs in milliseconds and gives the same answer every time, but it cannot see what only exists once a page renders: focus order, screen-reader timing, contrast against a real background. axe-core, Pa11y and Lighthouse drive a real browser and catch that layer; use this one as the fast first gate and one of them as the second pass, not as a replacement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can sprezzature-accessibility write the missing alt text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-accessibility drafts the missing alt text with sprezzature-accessibility-lint --fix-alt public/, from each image and the text around it on the same page, in the page's language or the one set by --alt-lang; sprezzature-accessibility-alt photo.jpg does a single image. This half needs Ollama and the qwen3-vl:8b vision model, set up by sprezzature-accessibility-install-alt, while the linter needs no browser and no model. Each draft should be read by a person before it is committed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sprezzature-accessibility send my pages or images to a cloud service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: sprezzature-accessibility's linter keeps everything on your machine and calls no model at all; only the alt-text drafter (--fix-alt, sprezzature-accessibility-alt) calls a vision model, served by Ollama on your own machine unless you point OLLAMA_URL elsewhere. The HTTP API lints a string of HTML and never fetches a URL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run sprezzature-accessibility in CI or a pre-commit hook?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-accessibility-lint public/ lints every .html file under the folder and exits 1 on any finding, warnings included, and 0 on a clean run, with --format json for a CI parser and --ignore to skip named rules. For a hook, pip install --no-deps sprezzature-accessibility plus pip install click is enough to run the lint."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use sprezzature-accessibility without Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-accessibility is a Python library (import sprezzature_accessibility), a command line (sprezzature-accessibility, one command per tool), an HTTP API with a Docker image, and an MCP server, sprezzature-accessibility-mcp, for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and /mcp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is sprezzature-accessibility free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-accessibility is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

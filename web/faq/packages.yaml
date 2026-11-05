@@ -1,0 +1,22 @@
+en:
+- q: Do I have to install all ten sprezzature packages?
+  a: 'No: each sprezzature package installs on its own, for example `pip install sprezzature-colors`, with no extra to choose. `pip install sprezzature` is the shortcut that installs all ten at once, plus the `sprezzature-skills` command.'
+- q: How do I install the sprezzature skills for my agent?
+  a: Install the sprezzature hub with `pip install sprezzature`, then run `sprezzature-skills --install` to copy the skills into `~/.claude/skills` for Claude Code, or `sprezzature-skills --install --agent opencode` for OpenCode.
+- q: How do I update sprezzature?
+  a: Update every sprezzature package at once with `pip install --upgrade sprezzature`, then run `sprezzature-skills --install` again so the copies your agent reads match the installed packages.
+- q: Can I call a sprezzature package from an agent that is not Claude Code?
+  a: 'Yes: every sprezzature package ships an MCP server, such as `sprezzature-figures-mcp`, so any client that speaks the Model Context Protocol can call its tools. Each package also has a Python library, a command line and an HTTP API with a Docker image.'
+- q: Where is the source code of each sprezzature package?
+  a: Each sprezzature package has its own repository on [GitHub](https://github.com/warith-harchaoui), linked from its row in the table on this page, under the BSD 3-Clause licence.
+fr:
+- q: Faut-il installer les dix paquets sprezzature ?
+  a: 'Non : chaque paquet sprezzature s''installe seul, par exemple `pip install sprezzature-colors`, sans option à choisir. `pip install sprezzature` est le raccourci qui installe les dix d''un coup, avec la commande `sprezzature-skills`.'
+- q: Comment installer les skills sprezzature pour mon agent ?
+  a: Installez le hub sprezzature avec `pip install sprezzature`, puis lancez `sprezzature-skills --install` pour copier les skills dans `~/.claude/skills` pour Claude Code, ou `sprezzature-skills --install --agent opencode` pour OpenCode.
+- q: Comment mettre à jour sprezzature ?
+  a: Mettez à jour tous les paquets sprezzature d'un coup avec `pip install --upgrade sprezzature`, puis relancez `sprezzature-skills --install` pour que les copies lues par votre agent suivent les paquets installés.
+- q: Peut-on appeler un paquet sprezzature depuis un autre agent que Claude Code ?
+  a: 'Oui : chaque paquet sprezzature fournit un serveur MCP, par exemple `sprezzature-figures-mcp`, que tout client du Model Context Protocol peut appeler. Chaque paquet a aussi une bibliothèque Python, une ligne de commande et une API HTTP avec image Docker.'
+- q: Où est le code source de chaque paquet sprezzature ?
+  a: Chaque paquet sprezzature a son propre dépôt sur [GitHub](https://github.com/warith-harchaoui), lié depuis sa ligne dans le tableau de cette page, sous licence BSD 3-Clause.

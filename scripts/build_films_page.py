@@ -222,9 +222,9 @@ COPY: dict[str, dict[str, Any]] = {
         og_locale="en_US", og_locale_alt="fr_FR", skip="Skip to content",
         og_image_alt="A title card for the Ralph Eyeball Loop: a grouped bar chart of sales by region and quarter, drawn in grey on its left half and in colour on its right, beside the four steps of the loop — render, look, fix the source, again.",
         title="Eleven short films — Sprezzature",
-        desc="Eleven short films about Sprezzature: one on the suite, and one for "
-             "each of its ten packages. Every figure, map, form and simulation "
-             "in them is real output from the tools themselves.",
+        desc="Eleven short films about sprezzature, one on the suite and one per "
+             "package, where every figure, map and form on screen is real output "
+             "of the tools.",
         h1="Eleven short films",
         lede="One on the suite, and one for each of its ten packages. Nothing in "
              "them is a mock-up: the figures are the shipped SVG files, the maps "
@@ -283,9 +283,9 @@ COPY: dict[str, dict[str, Any]] = {
         og_locale="fr_FR", og_locale_alt="en_US", skip="Aller au contenu",
         og_image_alt="Une carte-titre de la Ralph Eyeball Loop : un histogramme groupé des ventes par région et par trimestre, dessiné en gris sur sa moitié gauche et en couleur sur sa droite, à côté des quatre étapes de la boucle — dessiner, regarder, corriger la source, recommencer.",
         title="Onze courts métrages — Sprezzature",
-        desc="Onze courts métrages sur Sprezzature : un sur la suite, et un par "
-             "paquet. Chaque figure, carte, formulaire et simulation qu'on y voit "
-             "sort réellement des outils.",
+        desc="Onze courts métrages sur sprezzature, un sur la suite et un par "
+             "paquet : chaque figure, carte et formulaire à l'écran sort "
+             "réellement des outils.",
         h1="Onze courts métrages",
         lede="Un sur la suite, et un par paquet. Rien n'y est une maquette : les "
              "figures sont les fichiers SVG livrés, les cartes sont tracées sur "
@@ -483,6 +483,7 @@ def render(lang: str) -> str:
   <link rel="icon" href="{prefix}favicon.ico" sizes="any">
   <link rel="icon" href="{prefix}favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="{prefix}apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="{prefix}site.webmanifest">
   <link rel="preload" href="{prefix}fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{prefix}fonts/roboto/fonts.css">
   <link rel="stylesheet" href="{prefix}fonts/roboto-serif/fonts.css">

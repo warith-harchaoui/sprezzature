@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Lois de l'UX — Sprezzature</title>
-  <meta name="description" content="Applique les Lois de l'UX canoniques (Jon YABLONSKI) au vanilla-JS + Tailwind : à la création d'UI comme à l'audit de HTML existant. La référence couvre 30 lois avec déclencheur, action, hook Tailwind.">
+  <meta name="description" content="Applique les 30 Lois de l'UX canoniques (Jon YABLONSKI) au vanilla-JS + Tailwind, à la création d'interface comme à l'audit de HTML existant.">
   <link rel="canonical" href="https://sprezzature.ai/fr/ux-laws.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/ux-laws.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/ux-laws.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Lois de l'UX — Sprezzature">
-  <meta property="og:description" content="Applique les Lois de l'UX canoniques (Jon YABLONSKI) au vanilla-JS + Tailwind : à la création d'UI comme à l'audit de HTML existant. La référence couvre 30 lois avec déclencheur, action, hook Tailwind.">
+  <meta property="og:description" content="Applique les 30 Lois de l'UX canoniques (Jon YABLONSKI) au vanilla-JS + Tailwind, à la création d'interface comme à l'audit de HTML existant.">
   <meta property="og:url" content="https://sprezzature.ai/fr/ux-laws.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="Le logo du projet Sprezzature.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="preload" href="../fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts/roboto/fonts.css">
   <link rel="stylesheet" href="../fonts/roboto-serif/fonts.css">
@@ -153,6 +154,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Questions fréquentes</h2>
+        <h3 class="mt-6 font-semibold">Comment installer sprezzature-ux-laws ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Lancez <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-ux-laws</code> sous Python 3.10 ou plus récent : une seule installation donne la bibliothèque, les deux commandes, l'API HTTP et le serveur MCP, sans option à choisir. sprezzature-ux-laws est gratuit et open source sous licence BSD 3-Clause.</p>
+        <h3 class="mt-6 font-semibold">Quelles lois de l'UX sprezzature-ux-laws vérifie-t-il ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ux-laws vérifie huit des trente lois de lawsofux.com, celles qu'une lecture du code HTML peut trancher : <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">hick</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">choice-overload</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">miller</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">jakob</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">fitts</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">aesthetic-usability</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">selective-attention</code> et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">tesler</code>. Deux d'entre elles, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">hick</code> et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">jakob</code>, sont des erreurs et les six autres des avertissements ; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--only</code> et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--ignore</code> choisissent parmi elles par leur nom.</p>
+        <h3 class="mt-6 font-semibold">Que change sprezzature-ux-laws --fix ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ux-laws répare quatre lois avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code> : il ajoute <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">min-h-11</code> pour Fitts, un anneau de focus <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">focus-visible:ring-2</code> pour l'effet esthétique-utilisabilité, découpe les longs codes en groupes de quatre séparés par des espaces insécables pour Miller, et réécrit un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">div</code> ou un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">span</code> cliquable en vrai <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">button</code> pour Jakob. Les quatre autres demandent une décision de conception, pas une retouche du texte. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix --dry-run</code> montre les modifications d'avance, et un second passage sur un fichier réparé n'en applique aucune.</p>
+        <h3 class="mt-6 font-semibold">Comment sprezzature-ux-laws compte-t-il les choix d'un menu responsive ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ux-laws compte ce qu'un écran montre, pas les liens du fichier : il lit la visibilité de chaque contrôle dans ses classes d'affichage Tailwind et retient le pire du compte mobile et du compte bureau, si bien qu'une rangée de bureau et un menu hamburger ne s'additionnent pas. Un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">details</code>, un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">dialog</code>, un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">menu</code> ou un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">tablist</code> compte pour un seul choix, et plus de sept choix dans un <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">nav</code> sur un même écran font une erreur de Hick.</p>
+        <h3 class="mt-6 font-semibold">sprezzature-ux-laws envoie-t-il mes pages dans le cloud ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Non : sprezzature-ux-laws lit le HTML brut avec l'analyseur de la bibliothèque standard de Python, sans navigateur, sans réseau et sans modèle d'IA, et n'a donc besoin de rien d'autre que pip. C'est ce qui le garde déterministe et assez rapide pour un hook pre-commit.</p>
+        <h3 class="mt-6 font-semibold">En quoi sprezzature-ux-laws diffère-t-il de Lighthouse ou d'une revue de design ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ux-laws ne lit que le code source : il attrape les fautes mécaniques sans navigateur, mais ne peut ni afficher une page ni regarder quelqu'un s'en servir. Lighthouse et les données de terrain mesurent le temps de réponse, le seuil de Doherty qu'il laisse explicitement de côté, et seule une revue de design ou une séance avec de vrais utilisateurs dit si un écran a du sens ; il sert à ce que les fautes mécaniques n'y arrivent jamais.</p>
+        <h3 class="mt-6 font-semibold">Peut-on lancer sprezzature-ux-laws en CI ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui : sprezzature-ux-laws sort en code 1 quand <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ux-laws site/</code> trouve au moins une erreur, ou le moindre constat avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--strict</code>, et en code 2 sur une erreur d'usage. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--json</code> imprime un objet par constat, avec la loi, la gravité, le chemin, la ligne, le message et l'extrait, qu'une CI peut lire.</p>
+        <h3 class="mt-6 font-semibold">Peut-on se servir de sprezzature-ux-laws sans Claude Code ?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui : sprezzature-ux-laws est une bibliothèque Python (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">audit_html</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">audit_file</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">fix_file</code>), une ligne de commande, une API HTTP avec une image Docker qui lance <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ux-laws-mcp</code>, et un serveur MCP dont les outils sont <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">health</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">list_laws</code> et <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">audit_interface</code>. La skill qui dit à Claude Code ou OpenCode quand appliquer les lois s'installe avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code>, puis <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment installer sprezzature-ux-laws ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lancez pip install sprezzature-ux-laws sous Python 3.10 ou plus récent : une seule installation donne la bibliothèque, les deux commandes, l'API HTTP et le serveur MCP, sans option à choisir. sprezzature-ux-laws est gratuit et open source sous licence BSD 3-Clause."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles lois de l'UX sprezzature-ux-laws vérifie-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-ux-laws vérifie huit des trente lois de lawsofux.com, celles qu'une lecture du code HTML peut trancher : hick, choice-overload, miller, jakob, fitts, aesthetic-usability, selective-attention et tesler. Deux d'entre elles, hick et jakob, sont des erreurs et les six autres des avertissements ; --only et --ignore choisissent parmi elles par leur nom."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que change sprezzature-ux-laws --fix ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-ux-laws répare quatre lois avec --fix : il ajoute min-h-11 pour Fitts, un anneau de focus focus-visible:ring-2 pour l'effet esthétique-utilisabilité, découpe les longs codes en groupes de quatre séparés par des espaces insécables pour Miller, et réécrit un div ou un span cliquable en vrai button pour Jakob. Les quatre autres demandent une décision de conception, pas une retouche du texte. --fix --dry-run montre les modifications d'avance, et un second passage sur un fichier réparé n'en applique aucune."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment sprezzature-ux-laws compte-t-il les choix d'un menu responsive ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-ux-laws compte ce qu'un écran montre, pas les liens du fichier : il lit la visibilité de chaque contrôle dans ses classes d'affichage Tailwind et retient le pire du compte mobile et du compte bureau, si bien qu'une rangée de bureau et un menu hamburger ne s'additionnent pas. Un details, un dialog, un menu ou un tablist compte pour un seul choix, et plus de sept choix dans un nav sur un même écran font une erreur de Hick."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "sprezzature-ux-laws envoie-t-il mes pages dans le cloud ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non : sprezzature-ux-laws lit le HTML brut avec l'analyseur de la bibliothèque standard de Python, sans navigateur, sans réseau et sans modèle d'IA, et n'a donc besoin de rien d'autre que pip. C'est ce qui le garde déterministe et assez rapide pour un hook pre-commit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En quoi sprezzature-ux-laws diffère-t-il de Lighthouse ou d'une revue de design ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-ux-laws ne lit que le code source : il attrape les fautes mécaniques sans navigateur, mais ne peut ni afficher une page ni regarder quelqu'un s'en servir. Lighthouse et les données de terrain mesurent le temps de réponse, le seuil de Doherty qu'il laisse explicitement de côté, et seule une revue de design ou une séance avec de vrais utilisateurs dit si un écran a du sens ; il sert à ce que les fautes mécaniques n'y arrivent jamais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on lancer sprezzature-ux-laws en CI ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : sprezzature-ux-laws sort en code 1 quand sprezzature-ux-laws site/ trouve au moins une erreur, ou le moindre constat avec --strict, et en code 2 sur une erreur d'usage. --json imprime un objet par constat, avec la loi, la gravité, le chemin, la ligne, le message et l'extrait, qu'une CI peut lire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on se servir de sprezzature-ux-laws sans Claude Code ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : sprezzature-ux-laws est une bibliothèque Python (audit_html, audit_file, fix_file), une ligne de commande, une API HTTP avec une image Docker qui lance sprezzature-ux-laws-mcp, et un serveur MCP dont les outils sont health, list_laws et audit_interface. La skill qui dit à Claude Code ou OpenCode quand appliquer les lois s'installe avec pip install sprezzature, puis sprezzature-skills --install."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">

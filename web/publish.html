@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Publishing — Sprezzature</title>
-  <meta name="description" content="Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local narration.">
+  <meta name="description" content="Turn a folder of Markdown into a findable static site: meta tags, favicons, sitemap, llms.txt, feeds, FAQ markup, plain-language rewrites and narration.">
   <link rel="canonical" href="https://sprezzature.ai/publish.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/publish.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/publish.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Publishing — Sprezzature">
-  <meta property="og:description" content="Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / PWA-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local narration.">
+  <meta property="og:description" content="Turn a folder of Markdown into a findable static site: meta tags, favicons, sitemap, llms.txt, feeds, FAQ markup, plain-language rewrites and narration.">
   <meta property="og:url" content="https://sprezzature.ai/publish.html">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:image:alt" content="The Sprezzature project logo.">
@@ -28,6 +28,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/roboto/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/roboto/fonts.css">
   <link rel="stylesheet" href="fonts/roboto-serif/fonts.css">
@@ -172,6 +173,102 @@
         </div>
       </div>
     </section>
+    <!-- faq:start (web/tools/build_faqs.py writes this block from web/faq/) -->
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-neutral-200/70 dark:border-neutral-800">
+      <div class="mx-auto max-w-4xl px-5 py-12">
+        <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
+        <h3 class="mt-6 font-semibold">How do I install sprezzature-publish?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-publish</code> on Python 3.10 to 3.13: that one line installs all thirteen tools, the HTTP API and the MCP server, with no extras to choose. sprezzature-publish is free and open source under the BSD 3-Clause licence, with no account or API key.</p>
+        <h3 class="mt-6 font-semibold">What does sprezzature-publish need besides pip?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-publish needs Ollama running on your machine only for the tools that ask a local model: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-meta</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-plain</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-faq</code> (unless <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--no-llm</code>), <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-lint --ai</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-narrate --ai-hints</code>. Linting, rendering, icons, indexes, audits and the call-to-action check need no model. Narration needs its voice files once, fetched with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install-voice --engine kokoro</code>.</p>
+        <h3 class="mt-6 font-semibold">Does sprezzature-publish send my content to a cloud service?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-publish runs locally. Meta tags, plain-language rewrites and FAQ answers are drafted by a model served by Ollama on your own machine, and narration is synthesised by a local open-source text-to-speech engine. Auditing a live URL reads that page and never writes to it.</p>
+        <h3 class="mt-6 font-semibold">Does sprezzature-publish handle SEO, GEO, AEO and llms.txt?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-publish covers all four, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-findable</code> writes one report for search, generative and answer engines (SEO, GEO, AEO), money pages first, with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code> for the deterministic repairs. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-indexes</code> writes <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">robots.txt</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sitemap.xml</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">llms.txt</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">llms-full.txt</code>, an Atom or RSS feed and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">humans.txt</code>, and its <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--offer</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--cta</code> options put what the site is for at the top of <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">llms.txt</code>.</p>
+        <h3 class="mt-6 font-semibold">Can sprezzature-publish write an FAQ with FAQPage JSON-LD?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-publish drafts the FAQ a site is missing with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-faq</code>, from the site's own pages, ranking the questions by the calls to action declared in <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">ctas.yaml</code> and listing apart the ones the site cannot answer yet. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-faq site/ --audit --fix</code> rebuilds the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">FAQPage</code> JSON-LD from the visible FAQ, and the tool never claims that markup makes a page rank.</p>
+        <h3 class="mt-6 font-semibold">Can sprezzature-publish narrate a blog post?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-publish reads a Markdown post, or an HTML page with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--scope</code>, aloud with a local voice through <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-narrate</code>, and writes the timed track beside the WAV or MP3. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-readalong</code> then binds it to the page so the sentence being spoken is highlighted, and its <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--check</code> catches a page edited after the recording. The voices come from <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="audio.html">sprezzature-audio</a>, installed with it.</p>
+        <h3 class="mt-6 font-semibold">How is sprezzature-publish different from MkDocs, Hugo, Jekyll or Yoast?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-publish is sized for a README, a <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">docs/</code> folder and a blog: for a hundred versioned pages or a team, MkDocs Material, Hugo or Astro are the better choice, as its own README says. Unlike an SEO plugin such as Yoast, which works inside one CMS, it builds pages and can also audit and repair the head of a site it did not build. It adds an icon set from one logo, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">llms.txt</code>, a grounded FAQ and a narrated read-along.</p>
+        <h3 class="mt-6 font-semibold">Can I run sprezzature-publish in CI, without Claude Code?</h3>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-publish works without any agent, as a Python library, a command line, an HTTP API with a Docker image that runs <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-mcp</code>, and an MCP server. In CI, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-lint</code> exits 1 on any error with only click and the standard library behind it, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-audit</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-publish-findable</code> exit 1 on an error finding, with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> for a machine to read.</p>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I install sprezzature-publish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run pip install sprezzature-publish on Python 3.10 to 3.13: that one line installs all thirteen tools, the HTTP API and the MCP server, with no extras to choose. sprezzature-publish is free and open source under the BSD 3-Clause licence, with no account or API key."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does sprezzature-publish need besides pip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-publish needs Ollama running on your machine only for the tools that ask a local model: sprezzature-publish-meta, sprezzature-publish-plain, sprezzature-publish-faq (unless --no-llm), sprezzature-publish-lint --ai and sprezzature-publish-narrate --ai-hints. Linting, rendering, icons, indexes, audits and the call-to-action check need no model. Narration needs its voice files once, fetched with sprezzature-audio-install-voice --engine kokoro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sprezzature-publish send my content to a cloud service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: sprezzature-publish runs locally. Meta tags, plain-language rewrites and FAQ answers are drafted by a model served by Ollama on your own machine, and narration is synthesised by a local open-source text-to-speech engine. Auditing a live URL reads that page and never writes to it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sprezzature-publish handle SEO, GEO, AEO and llms.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-publish covers all four, and sprezzature-publish-findable writes one report for search, generative and answer engines (SEO, GEO, AEO), money pages first, with --fix for the deterministic repairs. sprezzature-publish-indexes writes robots.txt, sitemap.xml, llms.txt, llms-full.txt, an Atom or RSS feed and humans.txt, and its --offer and --cta options put what the site is for at the top of llms.txt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can sprezzature-publish write an FAQ with FAQPage JSON-LD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-publish drafts the FAQ a site is missing with sprezzature-publish-faq, from the site's own pages, ranking the questions by the calls to action declared in ctas.yaml and listing apart the ones the site cannot answer yet. sprezzature-publish-faq site/ --audit --fix rebuilds the FAQPage JSON-LD from the visible FAQ, and the tool never claims that markup makes a page rank."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can sprezzature-publish narrate a blog post?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-publish reads a Markdown post, or an HTML page with --scope, aloud with a local voice through sprezzature-publish-narrate, and writes the timed track beside the WAV or MP3. sprezzature-publish-readalong then binds it to the page so the sentence being spoken is highlighted, and its --check catches a page edited after the recording. The voices come from sprezzature-audio, installed with it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sprezzature-publish different from MkDocs, Hugo, Jekyll or Yoast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sprezzature-publish is sized for a README, a docs/ folder and a blog: for a hundred versioned pages or a team, MkDocs Material, Hugo or Astro are the better choice, as its own README says. Unlike an SEO plugin such as Yoast, which works inside one CMS, it builds pages and can also audit and repair the head of a site it did not build. It adds an icon set from one logo, llms.txt, a grounded FAQ and a narrated read-along."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run sprezzature-publish in CI, without Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sprezzature-publish works without any agent, as a Python library, a command line, an HTTP API with a Docker image that runs sprezzature-publish-mcp, and an MCP server. In CI, sprezzature-publish-lint exits 1 on any error with only click and the standard library behind it, and sprezzature-publish-audit and sprezzature-publish-findable exit 1 on an error finding, with --format json for a machine to read."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- faq:end -->
   </main>
   <footer class="border-t border-neutral-200/70 py-10 dark:border-neutral-800">
     <div class="mx-auto max-w-6xl px-5 text-sm text-neutral-500 dark:text-neutral-400">
