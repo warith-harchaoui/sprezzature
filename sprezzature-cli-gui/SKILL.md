@@ -178,11 +178,11 @@ For full rules, see `sprezzature-ui/SKILL.md` and `sprezzature-ui/references/`.
 
 ## Choosing a CLI parser (for new tools)
 
-**This skill works with any parser.** The inventory step reads
-`tool --help` and the README — not your source. argparse, Click, Typer,
-docopt, fire (Python), clap (Rust), commander (Node), cobra (Go): all
-of them produce a `--help` the skill consumes. The flow at step 1 does
-not care which one you picked.
+**This skill works with any parser.** The package walks an argparse,
+Click or Typer parser object directly; for everything else (docopt, fire,
+clap, commander, cobra) `--from-help` reads the tool's printed `--help`
+instead, at lower fidelity. The bespoke flow at step 1 reads the help
+output and the README either way.
 
 > **If you have an existing CLI, do not migrate parsers just to use this
 > skill.** The pitch is "you have a working CLI; we wrap it." A forced
@@ -203,8 +203,8 @@ can introspect the command tree at step 4. **Soft default**, in order:
    commits to type hints. Sits on top of Click; same model with
    nicer-looking help via Rich. Slightly heavier (pulls Click + Rich).
 3. **[argparse](https://docs.python.org/3/library/argparse.html)** —
-   fine when the team wants zero dependencies. The skill reads
-   `tool --help` text as the source of truth, so argparse works for
+   fine when the team wants zero dependencies. The package walks the
+   `argparse.ArgumentParser` object itself, so argparse works for
    every CLI → GUI flow without an upgrade.
 4. **Avoid [Fire](https://github.com/google/python-fire)** for CLIs
    you plan to wrap: the reflection model makes the schema implicit
