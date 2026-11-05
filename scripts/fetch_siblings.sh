@@ -76,6 +76,12 @@ PATHS=(
     '/requirements-dev.txt'
     '/SKILL.md'
     '/Dockerfile'
+    # Read beside the Dockerfile by
+    # `test_an_image_carries_no_history_and_no_notes`: a brick that copies
+    # `.` must ignore `.git` and `.private/`. Left out of this list, the file
+    # was missing from every sibling on the runner and the guard went red for
+    # all nine while every brick carried one. A few hundred bytes.
+    '/.dockerignore'
     '/docker-compose.yml'
     '/.github/'
     '/tests/'
