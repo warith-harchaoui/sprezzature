@@ -8,8 +8,46 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+A pass of every brick against its own code: what each document says, read
+against what the code does. Five audits, one per pair of bricks, and every
+finding fixed in the brick, its skill folder here, or both.
+
+### Fixed
+
+- **Ten guards slept on the runner.** Six film line-breaking checks skipped
+  for want of fontTools (and failed in any venv holding fontTools without
+  Brotli); four film guards skipped for want of sprezzature-video, declined
+  for its weight when sprezzature-audio was light. Audio now carries its
+  voices in the base install and video adds only itself, so both
+  `fonttools[woff]` and `sprezzature-video` are in `requirements-dev.txt`.
+- **`fetch_siblings.sh` fetches `.dockerignore`**, which the image guard
+  reads: the hub CI was red on all nine bricks that carry one.
+
+### Site
+
+- A FAQ under the home page and under each brick, written from YAML into the
+  page and its FAQPage JSON-LD; a web manifest; every meta description
+  rewritten to 115-155 characters; `llms.txt` ends on the site's next step.
+- 402 images declare their width and height, so the galleries no longer push
+  the page down as each lazy image arrives. Rendered widths measured
+  identical before and after on all twelve pages, at 1440 and 375 px.
+- The packages page says which Python each package needs, and counts ten
+  packages on PyPI, not nine. The maps page states the choropleth's 2 to 12
+  classes; the video page's trigger link no longer 404s.
+- `sprezzature-publish findable` on the site: 0 findings.
+
 ### Docs
 
+- The README status table no longer pins versions that rot at the next
+  release. The CHANGELOG's `[Unreleased]` section, shipped in 1.6.0, is
+  titled for what it is; the roadmap drops the i18n item ui already ships.
+- Skill folders brought in line with their bricks: colors (no hue rotation,
+  the corrected light turquoise), maps (`--out`, density), figures (category
+  counts, LIME and dependence defaults, audit rule details), ui (commands
+  that exist), cli-gui (the parser is walked; `--help` only under
+  `--from-help`), publish (Chatterbox is the router's pick; FAQ005), and
+  accessibility (`input-missing-label` exemptions).
+- `build_triggers.py`: maps also draws density and event positions.
 - **sprezzature-audio skill**: Kokoro has 54 voices in eight languages, not
   nine; Kokoro is no longer called the default, and the agent is told to ask
   `speaker-helper`'s router for the engine rather than run Kokoro unless told
