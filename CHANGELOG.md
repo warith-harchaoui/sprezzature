@@ -8,6 +8,10 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+## [1.8.1] — 2026-11-06: chaque document relu contre son code
+
+**The suite floors move to the releases of the evening.** accessibility 1.4.3, audio 1.10.3, cli-gui 1.5.2, colors 1.2.3, figures 2.9.2, maps 1.1.3, publish 1.5.0, ui 1.2.2, ux-laws 1.4.2, video 0.4.3.
+
 A pass of every brick against its own code: what each document says, read
 against what the code does. Five audits, one per pair of bricks, and every
 finding fixed in the brick, its skill folder here, or both.
@@ -25,6 +29,9 @@ finding fixed in the brick, its skill folder here, or both.
 
 ### Site
 
+- One label for the star link: « ⭐ on GitHub » / « ⭐ sur GitHub », where
+  the pages said « ⭐️ on GitHub », « Give a ⭐️ on GitHub » or « Mettez une
+  ⭐️ sur GitHub » depending on where you looked.
 - A FAQ under the home page and under each brick, written from YAML into the
   page and its FAQPage JSON-LD; a web manifest; every meta description
   rewritten to 115-155 characters; `llms.txt` ends on the site's next step.

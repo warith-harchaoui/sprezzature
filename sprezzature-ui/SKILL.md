@@ -24,7 +24,7 @@ compatibility: >-
   not required.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.8.0
+  version: 1.8.1
 ---
 
 # sprezzature-ui — vanilla JS + Tailwind UI generation

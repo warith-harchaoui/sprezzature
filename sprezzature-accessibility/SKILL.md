@@ -24,7 +24,7 @@ compatibility: >-
   local Ollama with qwen3-vl:8b (`sprezzature-accessibility-install-alt`).
 metadata:
   author: Warith HARCHAOUI
-  version: 1.8.0
+  version: 1.8.1
 ---
 
 > The tools below ship as the standalone package

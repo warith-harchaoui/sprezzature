@@ -572,15 +572,15 @@ each. The other auditors run as `repo: local` hooks over the installed command.
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/warith-harchaoui/sprezzature-publish
-    rev: v1.4.1          # pin a tag; bump with renovate / dependabot
+    rev: v1.5.0          # pin a tag; bump with renovate / dependabot
     hooks:
       - id: sprezzature-publish-lint        # the Markdown
   - repo: https://github.com/warith-harchaoui/sprezzature-ui
-    rev: v1.2.0
+    rev: v1.2.2
     hooks:
       - id: sprezzature-ui-i18n-audit       # strings outside locales/i18n.yaml
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v1.8.0
+    rev: v1.8.1
     hooks:
       - id: sprezzature-ui-validate-skill   # only if you ship skills yourself
       - id: sprezzature-triggers-sync
