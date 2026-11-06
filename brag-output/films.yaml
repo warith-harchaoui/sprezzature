@@ -98,3 +98,14 @@ claims:
       path: sprezzature-audio/scripts/audit_captions.py
       method: literal
       selector: "DEFAULT_MAX_LINES: int = 2"
+
+  - text: "13 tools, all of them in the package you install today."
+    value: 13
+    source:
+      # The film said "10 in the repository, 9 in the package" until
+      # 2026-11-06, months after publish grew audit, cta, faq, findable, plain
+      # and changelog. ``TOOLS`` is the dispatcher and the help text at once,
+      # so a tool cannot ship without a row here.
+      path: sprezzature-publish/sprezzature_publish/_tools.py
+      method: regex_count
+      selector: '^    "[a-z]+": \($'

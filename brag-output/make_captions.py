@@ -866,9 +866,9 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
             (
                 29.00,
                 3.0,
-                "10 tools carry a document from Markdown to a page people can find.",
+                "13 tools carry a document from Markdown to a page people can find.",
             ),
-            (35.00, 3.0, "10 in the repository. 9 in the package you install today."),
+            (35.00, 3.0, "All 13 ship in the package you install today."),
             (
                 44.20,
                 3.0,
@@ -934,7 +934,7 @@ FILMS: dict[str, dict[str, list[tuple[float, float, str]]]] = {
             (
                 29.00,
                 3.0,
-                "10 outils mènent le document au site. 9 sont publiés à ce jour.",
+                "13 outils mènent le document au site, et tous sont publiés.",
             ),
             (
                 36.00,

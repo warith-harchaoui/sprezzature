@@ -1393,9 +1393,10 @@ FILMS = {
                 dur=16.1,
                 end=44.0,
                 # Seven stages, and the eyebrow says seven of how many so the
-                # frame does not read as a complete inventory. The caption
-                # then says which ten: the repository's, not the wheel's.
-                eyebrow=L("7 of the 10 tools", "7 des 10 outils"),
+                # frame does not read as a complete inventory. The total is
+                # `TOOLS` in sprezzature_publish/_tools.py, declared in
+                # films.yaml so `verify` sees it move.
+                eyebrow=L("7 of the 13 tools", "7 des 13 outils"),
                 stages=[
                     ("lint", L("standard library only", "bibliothèque standard")),
                     ("html", L("the pages", "les pages")),
@@ -1407,10 +1408,9 @@ FILMS = {
                 ],
                 at=on_beat(29.5, 31.1, 32.7, 34.4, 36.0, 37.6, 39.3),
                 caption=L(
-                    "10 tools in the repository. 9 in the package you "
-                    "install today.",
-                    "10 outils dans le dépôt. 9 dans le paquet publié "
-                    "à ce jour.",
+                    "13 tools, all of them in the package you install "
+                    "today.",
+                    "13 outils, tous dans le paquet publié.",
                 ),
             ),
             dict(
