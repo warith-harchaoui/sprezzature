@@ -1392,11 +1392,12 @@ FILMS = {
                 start=27.9,
                 dur=16.1,
                 end=44.0,
-                # Seven stages, and the eyebrow says seven of how many so the
-                # frame does not read as a complete inventory. The total is
-                # `TOOLS` in sprezzature_publish/_tools.py, declared in
-                # films.yaml so `verify` sees it move.
-                eyebrow=L("7 of the 13 tools", "7 des 13 outils"),
+                # The eyebrow says what the suite is, not how many tools this
+                # frame leaves out: "7 of the 13" was a true count nobody
+                # cares about (Warith, 2026-11-06). The total stays in the
+                # caption, `TOOLS` in sprezzature_publish/_tools.py, declared
+                # in films.yaml so `verify` sees it move.
+                eyebrow=TAGLINE,
                 stages=[
                     ("lint", L("standard library only", "bibliothèque standard")),
                     ("html", L("the pages", "les pages")),
