@@ -50,6 +50,9 @@ Run from brag-output/:  python3 narrate_films.py
 from __future__ import annotations
 
 import sys
+from pathlib import Path as _Path
+
+sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
 
 #: start, nominal duration, text.
 #:
@@ -1634,10 +1637,6 @@ READING_TARGET_CPS = 16.0
 #: and `duration > max_seconds` is a strict comparison on a truncated number.
 ON_SCREEN_MAX_SECONDS = 6.999
 
-# Punctuation keeps its place on the left of a break; a connector word moves to
-# the right, so neither half of a split caption reads as a fragment.
-AFTER = (". ", ", ", " ; ", " : ", ": ", " — ")
-BEFORE = (" and ", " et ", " puis ", " then ", " so ", " alors ")
 
 
 def stamp(t: float) -> str:
@@ -1647,72 +1646,53 @@ def stamp(t: float) -> str:
 
 
 def split_line(text: str) -> tuple[str, str]:
-    """Break one line in two, at the best place it offers.
+    """Break one line in two, where the sense breaks, among the cuts that fit.
 
-    A break at punctuation reads better than a break between two arbitrary
-    words, so those candidates are tried first. They are not tried *blindly*,
-    and that is the repair of 2026-10-29: the nicest-looking cut is worthless
-    if it leaves a half nobody can fit on screen.
+    Every gap between two words is priced by `semantic_breaks.gap_cost`, the
+    rule the films and the site already break by: a sentence end or a comma
+    first, then the gap before a word that opens a phrase (``and``, ``pour``,
+    ``the``), then a complement, then two content words, and never the gap
+    after an article or a preposition. Among the cuts whose two halves both
+    fit :data:`LINE_LIMIT`, the cheapest wins, and balance only decides
+    between cuts of the same price.
 
-    The French call to action is the case that found it. "Passez sur
-    sprezzature.ai, et mettez une étoile GitHub si ça le mérite." has a comma
-    at 25, which is the only punctuation it offers, so the old rule took it
-    and handed back 26 and 44 characters. The right half is over budget, the
-    cue is a finding, and the break looked deliberate. Splitting the same line
-    between words gives 35 and 35, which is uglier to describe and correct on
-    screen, in all eleven French films.
+    History, because each rule here replaced one that looked fine:
 
-    So punctuation wins only when **both** halves fit. Otherwise the word
-    split below decides, which is the rule that was always there and was
-    reachable only when a line had no punctuation at all.
+    * Until 2026-10-29 the first comma won, fit or not, and the French call to
+      action came back as 26 and 44 characters, the right half over budget.
+    * From then until 2026-11-06 a cut without punctuation was chosen for
+      balance alone, which is how 46 of the 360 breaks in the shipped tracks
+      fell in the middle of a phrase: ``A blind reader cannot now hear the ⏎
+      screen reader``, ``Une page qui laisse tomber un drapeau en ⏎ silence``.
+
+    When no cut fits, the most balanced one is returned and
+    :func:`over_budget` reports the cue: a sentence that needs three lines is
+    a sentence to rewrite.
     """
-    mid = len(text) / 2
-    best = fitting = None
-    for seps, keep_left in ((AFTER, True), (BEFORE, False)):
-        for sep in seps:
-            i = text.find(sep)
-            while i != -1:
-                cut = i + len(sep.rstrip()) if keep_left else i
-                if 14 < cut < len(text) - 14:
-                    left, right = text[:cut].strip(), text[cut:].strip()
-                    d = abs(cut - mid)
-                    if best is None or d < best[0]:
-                        best = (d, left, right)
-                    if max(len(left), len(right)) <= LINE_LIMIT and (
-                        fitting is None or d < fitting[0]
-                    ):
-                        fitting = (d, left, right)
-                i = text.find(sep, i + 1)
-    if fitting:
-        return fitting[1], fitting[2]
-    # No punctuation cut leaves two readable halves. Fall through to the word
-    # split rather than return the least-bad one: a balanced break between
-    # words is what the budget actually asks for.
-    # The most balanced break between two words, rather than the first one
-    # past the midpoint.
-    #
-    # The old rule took the word that *crossed* the middle and kept it on the
-    # left, which is a half-word of overshoot every time and sometimes much
-    # more. "Sprezzature est un moteur d'IA pour le design. Figures dessine le
-    # bon graphique." crossed at "design." and came back as 46 and 33: the
-    # left half over budget, the right half with room to spare, and 80
-    # characters that fit comfortably in two lines of 42 reported as a
-    # finding. Breaking one word earlier gives 38 and 41.
-    #
-    # Balance is the right objective because the budget is per *line*: what
-    # costs a reader is the longest half, so the split that minimises it is
-    # the split that fits whenever fitting is possible at all.
+    from semantic_breaks import NEVER, gap_cost
+
     words = text.split()
-    if len(words) > 1:
+    if len(words) < 2:
+        return text, ""
 
-        def halves(k: int) -> tuple[str, str]:
-            return " ".join(words[:k]), " ".join(words[k:])
+    def halves(k: int) -> tuple[str, str]:
+        return " ".join(words[:k]), " ".join(words[k:])
 
-        k = min(range(1, len(words)), key=lambda k: max(len(h) for h in halves(k)))
-        return halves(k)
-    if best:
-        return best[1], best[2]
-    return text, ""
+    def price(k: int) -> int:
+        c = gap_cost(words[k - 1], words[k])
+        return 0 if c <= 1 else 1 if c == 2 else 2 if c <= 4 else 3 if c < NEVER else 4
+
+    cuts = range(1, len(words))
+    # A half under 12 characters reads as a stray word under a full line.
+    fit = [
+        k for k in cuts
+        if max(len(h) for h in halves(k)) <= LINE_LIMIT and min(len(h) for h in halves(k)) >= 12
+    ]
+    if fit:
+        k = min(fit, key=lambda k: (price(k), max(len(h) for h in halves(k))))
+    else:
+        k = min(cuts, key=lambda k: max(len(h) for h in halves(k)))
+    return halves(k)
 
 
 def wrap_cue(text: str) -> str:

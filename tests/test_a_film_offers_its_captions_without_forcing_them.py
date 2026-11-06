@@ -117,3 +117,29 @@ def test_no_film_player_switches_its_captions_on() -> None:
         f"player's subtitle menu, and stays one click away.\n  "
         + "\n  ".join(forced)
     )
+
+
+def test_a_track_is_served_as_a_track() -> None:
+    """Offered is only true if the browser accepts the file.
+
+    A ``<track>`` served as anything but ``text/vtt`` is dropped without a
+    word: the subtitle menu names the language and turning it on shows
+    nothing. ``web/.htaccess`` declared no type for ``.vtt`` until
+    2026-11-06, so the captions depended on the host's defaults.
+    """
+    htaccess = (WEB / ".htaccess").read_text(encoding="utf-8")
+    assert re.search(r"AddType\s+'?text/vtt[^\n]*\.vtt", htaccess), (
+        "web/.htaccess declares no text/vtt type for .vtt"
+    )
+
+
+def test_changing_canvas_keeps_the_viewers_caption_choice() -> None:
+    """A viewer who turned captions on keeps them across a canvas switch.
+
+    ``film-format.js`` swaps the source and calls ``load()``, which re-runs
+    track selection and switches every track back off.
+    """
+    js = (WEB / "js/film-format.js").read_text(encoding="utf-8")
+    assert "textTracks" in js and ".mode = modes[" in js, (
+        "film-format.js reloads the player without restoring the caption mode"
+    )
