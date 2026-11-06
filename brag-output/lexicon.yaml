@@ -216,18 +216,30 @@ entries:
   # The suite's own name, which is Italian and which every engine anglicises
   # or nasalises. It closes all twenty-two films; getting it wrong is the one
   # mispronunciation a viewer would certainly notice.
+  # The Italian word, plural of sprezzatura: [sprettsaˈtuːre]. Respellings
+  # chosen on 2026-11-06 by synthesising candidates twice each through the
+  # films' engine and transcribing them back with no vocabulary hint. The
+  # hyphenated forms read as separate words ("Spear Tatoo-e", "Spritsa
+  # 2-Ray"); these came back as "Spretsatoorey" and "Sprettsatour" on both
+  # takes, which is the Italian sound in each voice.
   - word: "Sprezzature"
     language: en
-    ipa: "sprɛtsaˈtuːɹeɪ"
-    respelling: "spret-sah-too-ray"
+    ipa: "sprɛttsaˈtuːre"
+    respelling: "Spretsatoorey"
   - word: "Sprezzature"
     language: fr
-    ipa: "spʁɛtsatuʁe"
-    respelling: "sprè-tsa-tou-ré"
+    ipa: "spʁɛttsatuʁe"
+    respelling: "Sprettsatouré"
 
   - word: "sprezzature.ai"
     language: "*"
     respelling: "Sprezzature dot A I"
+
+  # "d'IA" came back as "d'hier" and "DIA"; spelled with stops it came back as
+  # "d'IA" on both takes.
+  - word: "IA"
+    language: fr
+    respelling: "I.A."
 
   - word: "readalong"
     language: fr

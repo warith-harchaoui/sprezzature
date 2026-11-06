@@ -216,6 +216,52 @@ FILMS: list[dict[str, str | int]] = [
                   "le fichier de voix plutôt que devinés"),
 ]
 
+#: What each film shows, since the set was cut again from nothing on
+#: 2026-11-06: seventy-five seconds each, the design itself on screen rather
+#: than cards of text about it.
+SHOWS: dict[str, tuple[str, str]] = {
+    "sprezzature": ("six real outputs of the suite, the same rules used to make and to audit, "
+                    "and the Ralph Eyeball Loop on a shipped figure",
+                    "six sorties réelles de la suite, les mêmes règles pour fabriquer et pour "
+                    "auditer, et la boucle Ralph Eyeball sur une figure livrée"),
+    "ui": ("one sign-in screen in English, French and German under a layout that does not "
+           "move, then the same panel in light and dark with a visible focus",
+           "un écran de connexion en anglais, en français et en allemand sans que la mise en "
+           "page bouge, puis le même panneau en clair et en sombre, focus visible"),
+    "cli-gui": ("a command line and the form it becomes, field by field",
+                "une ligne de commande et le formulaire qu'elle devient, champ par champ"),
+    "publish": ("a Markdown file becoming a page that reads itself aloud, one highlighted "
+                "sentence at a time, then the package's own documentation doing it",
+                "un fichier Markdown qui devient une page lue à voix haute, phrase surlignée "
+                "après phrase, puis la documentation du paquet qui le fait elle-même"),
+    "accessibility": ("a portrait a screen reader can only call “image”, then the description "
+                      "a local model drafts from the image and the page around it",
+                      "un portrait qu'un lecteur d'écran ne sait nommer que « image », puis la "
+                      "description qu'un modèle local rédige d'après l'image et la page"),
+    "colors": ("a pastel booking card erased by sunlight, the colour fix that keeps its blue "
+               "and its grey, and one chart seen by four kinds of eyes",
+               "une carte de réservation pastel effacée par le soleil, la correction qui garde "
+               "son bleu et son gris, et un graphique vu par quatre regards"),
+    "audio": ("the same words captioned twice, as one line flashing by and as two lines with "
+              "time to read, and the two directions of the package",
+              "les mêmes mots sous-titrés deux fois, en une ligne qui file puis en deux lignes "
+              "qu'on a le temps de lire, et les deux sens du paquet"),
+    "ux-laws": ("Hick's Law in one menu, drawn twice, and what a person sees at one moment",
+                "la loi de Hick dans un menu, dessiné deux fois, et ce qu'une personne voit à "
+                "un instant donné"),
+    "figures": ("nine real figures from the gallery, and a flow drawn as a document",
+                "neuf figures réelles de la galerie, et un flux dessiné comme un document"),
+    "maps": ("four relief plates, who holds what in Ukraine, and four actors in Syria",
+             "quatre planches de relief, qui tient quoi en Ukraine, et quatre acteurs en Syrie"),
+    "video": ("the number this suite once got wrong on screen, caught and corrected against "
+              "the code",
+              "le nombre que cette suite a un jour affiché à tort, rattrapé et corrigé contre "
+              "le code"),
+}
+for _film in FILMS:
+    _film["secs"] = 75
+    _film["en_shows"], _film["fr_shows"] = SHOWS[_film["slug"]]
+
 COPY: dict[str, dict[str, Any]] = {
     "en": dict(
         lang="en", vdir="video", jsdir="js", other="fr/films.html",

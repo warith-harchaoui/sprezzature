@@ -131,27 +131,29 @@ def test_nothing_fades_up_from_nothing_on_the_first_frame() -> None:
     )
 
 
-def test_the_wordmark_is_on_screen_before_the_first_scene_ends() -> None:
-    """The rails are a clip of their own, and it opens with the film.
+def test_the_wordmark_is_on_screen_from_the_first_frame() -> None:
+    """The name is in the frame at zero, and there is no rail to carry it.
 
-    Held back to the end of scene one — which is what they used to be — the
-    wordmark arrives six seconds in, after the only sentence that was going
-    to make somebody stay.
+    Until 2026-11-06 a rail across the top carried the wordmark from frame
+    zero. Warith asked for no navigation trail at the top of the video, so
+    the opening scene carries the name itself: it starts at zero, and it is
+    the one scene that never fades up.
     """
     import build_films
 
-    late: list[str] = []
+    wrong: list[str] = []
     for film, lang in build_films.cuts():
         spec = build_films.FILMS[film]
-        if spec["duration"] < 30:
-            continue
+        first = spec["scenes"][0]
+        if first["type"] != "what" or first["start"] > FIRST_FRAME:
+            wrong.append(f"{film}: the first scene is {first['type']} at {first['start']}s")
         for fmt in build_films.FORMATS:
             html = build_films.compose(film, spec, fmt, lang)
-            m = re.search(r'<div id="rails" class="clip" data-start="([\d.]+)"', html)
-            assert m, f"{film}.{lang}.{fmt} has no rails at all"
-            if float(m.group(1)) > FIRST_FRAME:
-                late.append(f"{film}.{lang}.{fmt}: rails open at {m.group(1)}s")
-    assert not late, "\n  ".join(["the wordmark arrives late:", *late])
+            if 'id="rails"' in html or 'id="beats"' in html:
+                wrong.append(f"{film}.{lang}.{fmt}: a rail is back at the top of the frame")
+            if 'id="what-mark"' not in html:
+                wrong.append(f"{film}.{lang}.{fmt}: no wordmark in the opening scene")
+    assert not wrong, "\n  ".join(["", *wrong])
 
 
 def test_no_two_scenes_share_an_element_id() -> None:
