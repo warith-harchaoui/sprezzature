@@ -260,7 +260,7 @@ SHOWS: dict[str, tuple[str, str]] = {
 }
 for _film in FILMS:
     _film["secs"] = 75
-    _film["en_shows"], _film["fr_shows"] = SHOWS[_film["slug"]]
+    _film["en_shows"], _film["fr_shows"] = SHOWS[str(_film["slug"])]
 
 COPY: dict[str, dict[str, Any]] = {
     "en": dict(
