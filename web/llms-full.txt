@@ -15,7 +15,7 @@ sprezzature-accessibility
 Two halves of one job: audit what a page gets wrong about accessibility — twenty rules decidable from the HyperText Markup Language (HTML) source alone, no browser, no runtime Document Object Model (DOM) — and make the content it is missing, drafting alt text with a local vision model.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -105,7 +105,7 @@ Local artificial intelligence (AI) captions, speaker diarization and speaker ide
 Work in progress: the caption backend is still settling and accuracy baselines are being collected, so captions are drafts to review.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -240,7 +240,7 @@ sprezzature-cli-gui
 Wrap an existing command-line tool in a single-page vanilla-JavaScript (JS) + Tailwind GUI: read the arg parser, emit forms and file inputs, and build the exact command line.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -331,7 +331,7 @@ sprezzature-colors
 Color tooling, make and audit: Web Content Accessibility Guidelines (WCAG) contrast with fixes in the perceptual OKLCH color space (Lightness, Chroma, Hue of the OKLab model), colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter. Deterministic: no model, no network.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -436,7 +436,7 @@ Ask our tool:
 Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The five glyph maps sit on the maps page and the two animated Gapminder generators on the Hans ROSLING tribute ; with the 160 below, that is the whole 167-kind catalogue.
 
 FIGURES.md catalog
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 See it for
 
@@ -1489,7 +1489,7 @@ Explore
 the ten skills
 See
 the gallery
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 10 packages
 167 chart types
@@ -2109,7 +2109,7 @@ sprezzature-publish
 Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / progressive web app (PWA)-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local text-to-speech (TTS) narration.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -2272,7 +2272,7 @@ sprezzature-ui
 Vanilla JavaScript (JS) + Tailwind UI: components, pages, forms, dialogs, dashboards, for teams shipping internal tools without a designer.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -2372,7 +2372,7 @@ sprezzature-ux-laws
 Apply the canonical Laws of UX (Jon YABLONSKI) to vanilla-JavaScript (JS) + Tailwind: both when making new user interface (UI) and when auditing existing HyperText Markup Language (HTML). Reference covers 30 laws with trigger / action / Tailwind hook.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
@@ -2451,7 +2451,7 @@ sprezzature-video
 A README gets re-read. A number burned into a keyframe does not. This package holds a film’s assertions against the code they describe, in both directions, and answers whether the film can be rendered again at all from a clean clone.
 
 SKILL.md (the agent spec)
-Give a ⭐️ on GitHub
+⭐ Star on GitHub
 
 ## Makes
 
