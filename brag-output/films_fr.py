@@ -508,6 +508,12 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
     # rewrite to seven movements dropped the plate from the maps film. The
     # gap is still open in sprezzature-maps, which still has no French mode;
     # it is simply no longer a gap any film here walks into.
+    # Back on 2026-11-06, when the films were cut again and the maps film
+    # took the plates up once more; the suite film shows western-europe too.
+    "maps/situation-western-europe.png":
+        "labels baked in by build_situation_examples.py in sprezzature-maps, "
+        "which has no French mode",
+    "maps/situation-syria.png": "idem",
     "figures/cvd/00-original.png":
         "rendered from the English bar-grouped.svg by sprezzature-colors' "
         "simulate_cvd.py; a French set needs that script pointed at the "
@@ -516,10 +522,6 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
     "figures/cvd/02-deuteranopia.png": "idem",
     "figures/cvd/03-tritanopia.png": "idem",
     "figures/cvd/04-grayscale.png": "idem",
-    "shots/make-figure-list.png":
-        "the form shows an English command's own --help; no localisation "
-        "here makes a French make-figure",
-    "shots/make-figure-render.png": "idem",
 
     # --- 2026-10-29: the films gained a sixth beat, the finest example each
     # package can show, and six of the eleven had carried no picture at all
@@ -533,10 +535,6 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
         "sprezzature-maps, which has no French mode",
     "maps/situation-iberia.png": "idem",
     "maps/situation-switzerland.png": "idem",
-    "maps/choropleth-sequential.svg":
-        "the legend names its classification method in English, written by "
-        "sprezzature-maps; a French twin needs that label translated at the "
-        "source rather than here",
     "figures/kde2d-contour.png":
         "axis labels written by the generator in sprezzature-figures, which "
         "takes no language",
@@ -546,14 +544,6 @@ ENGLISH_IN_FRENCH_CUTS: dict[str, str] = {
         "finding; translating either would mean the picture no longer "
         "matches what the tool printed",
     "ux-laws/nav-seven.svg": "idem",
-    "shots/docker-run.png":
-        "the form is generated from docker's own --help, which is English; "
-        "a French one would mean a French docker",
-    "shots/ui-catalogue.png":
-        "the catalogue sprezzature-ui-i18n-make actually writes, and the "
-        "comments it writes are English; its *content* is already bilingual, "
-        "which is the point of the shot. A French twin needs the scaffolder "
-        "to emit its own header in French",
 }
 
 #: Which assets have a French twin is asked of the **ledger**, not of the

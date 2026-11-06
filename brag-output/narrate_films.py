@@ -96,6 +96,7 @@ from __future__ import annotations
 
 import argparse
 import pathlib
+import re
 import sys
 import tempfile
 
@@ -193,6 +194,110 @@ def voice_of(lang: str) -> tuple[str, str]:
 from build_films import DURATION_S  # noqa: E402
 
 
+#: The voice is heard back before it is kept. Measured on 2026-11-06 through
+#: the suite's own transcriber, the set before carried "Esprit Tatouré" for
+#: the name, "expresser.ai" for the address, "1, 1, 51, 1 contre 1" for a
+#: ratio, and one closing line spoken twice. Chatterbox samples, so a bad
+#: take is usually a bad *draw*: the same line spoken again comes out right.
+#: Each line is transcribed with no vocabulary hint (a hint would hear the
+#: word it was told to expect) and compared with the script; a take under
+#: ACCEPT is drawn again, up to MAX_TAKES, and the best one is kept.
+ACCEPT = 0.88
+MAX_TAKES = 4
+
+#: The name, however a transcriber spells what it heard: "Spretsatoorey",
+#: "Sprettsatour", "Sprzzature". Matched on the sound's skeleton.
+_BRAND = re.compile(r"\bs\s?p\s?r\w*?(?:t+s|z+|tz)\w*?t[ou]+r\w*", re.I)
+
+
+_EN = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
+_EN_T = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+_FR = "zéro un deux trois quatre cinq six sept huit neuf dix onze douze treize quatorze quinze seize dix-sept dix-huit dix-neuf".split()
+_FR_T = "_ _ vingt trente quarante cinquante soixante".split()
+
+
+def _en(n: int) -> str:
+    if n < 20:
+        return _EN[n]
+    if n < 100:
+        return _EN_T[n // 10] + ("-" + _EN[n % 10] if n % 10 else "")
+    rest = n % 100
+    return _EN[n // 100] + " hundred" + (" and " + _en(rest) if rest else "")
+
+
+def _fr(n: int) -> str:
+    if n < 20:
+        return _FR[n]
+    if n < 70:
+        t, u = divmod(n, 10)
+        return _FR_T[t] + ("-et-un" if u == 1 else ("-" + _FR[u] if u else ""))
+    if n < 80:
+        return "soixante" + ("-et-" if n == 71 else "-") + _FR[n - 60]
+    if n < 100:
+        return "quatre-vingt" + ("-" + _FR[n - 80] if n > 80 else "s")
+    h, rest = divmod(n, 100)
+    head = "cent" if h == 1 else _FR[h] + " cent" + ("s" if not rest else "")
+    return head + (" " + _fr(rest) if rest else "")
+
+
+def _spoken(text: str, lang: str) -> str:
+    """The line as the engine should read it: every count in words.
+
+    The script, the screen and the captions keep digits (the owner's rule of
+    2026-10-29: a count is read in one fixation as a digit). The engine never
+    sees one, because it reads them badly: "167" came back as "Tuscan", "22"
+    as "Zan 2". Small whole numbers only, which is all the films hold.
+    """
+    words = _en if lang == "en" else _fr
+    return re.sub(r"\b\d{1,3}\b", lambda m: words(int(m.group())), text)
+
+
+def _heard(clip: pathlib.Path, lang: str) -> str:
+    """What the suite's transcriber hears in one clip, unprompted."""
+    import subprocess
+
+    out = clip.with_suffix(".heard.txt")
+    subprocess.run(
+        ["sprezzature-audio", "captions", str(clip), "--format", "text", "--lang", lang,
+         "--out", str(out), "--no-cache"],
+        capture_output=True, check=False,
+    )
+    return out.read_text(encoding="utf-8").strip() if out.is_file() else ""
+
+
+def _words(text: str) -> list[str]:
+    import unicodedata
+
+    text = _BRAND.sub(" sprezzature ", text)
+    text = text.replace("\u2019", "'").lower()
+    text = re.sub(r"\bd'ia\b|\bdia\b", "d ia", text)
+    text = "".join(c if (c.isalnum() or c in " '") else " " for c in unicodedata.normalize("NFC", text))
+    return [w for w in re.split(r"[\s']+", text) if w]
+
+
+def _match(script: str, heard: str, seconds: float) -> float:
+    """How closely a take says its line: word overlap, zero for a runaway take.
+
+    A take far longer than its words is the other chatterbox failure: the line
+    said, then a second of babble or the line again. Fifteen characters a
+    second is a brisk read; under five means something was added.
+    """
+    import difflib
+
+    if seconds > 1.5 and len(script) / seconds < 5.0:
+        return 0.0
+    a, b = _words(script), _words(heard)
+    if not a or not b:
+        return 0.0
+    score = difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
+    # The name is the one word a viewer certainly notices, and one wrong word
+    # in eight still scores 0.88. So it is held separately: the Italian "tts"
+    # has to be heard ("Splesaturé" passed on overlap alone).
+    if "sprezzature" in a and "sprezzature" not in b:
+        score = min(score, 0.5)
+    return score
+
+
 def _narrate(segments: list[dict], lang: str, out_dir: pathlib.Path) -> dict:
     """One pass of the engine, with the lexicon applied."""
     import sprezzature_audio
@@ -278,13 +383,28 @@ def narrate_film(film: str, lang: str, *, quiet: bool = False) -> list[str]:
         # ``narration.wav`` by name, so a shared directory would leave every
         # line but the last on the floor.
         clips: list[pathlib.Path] = []
+        takes_log: list[dict] = []
         for n, text in enumerate(texts, 1):
-            report = _narrate(
-                [{"text": text, "pause_before_ms": 0, "pause_after_ms": 0}],
-                lang,
-                tmpdir / f"line-{n:02d}",
+            best = None
+            for take in range(1, MAX_TAKES + 1):
+                report = _narrate(
+                    [{"text": _spoken(text, lang), "pause_before_ms": 0, "pause_after_ms": 0}],
+                    lang,
+                    tmpdir / f"line-{n:02d}-take-{take}",
+                )
+                clip = pathlib.Path(report["audio"])
+                heard = _heard(clip, lang)
+                score = _match(_spoken(text, lang), _spoken(heard, lang), _wav_seconds(clip))
+                if not quiet:
+                    print(f"    {film}.{lang} line {n} take {take}: {score:.2f}  {heard!r}", flush=True)
+                if best is None or score > best[0]:
+                    best = (score, clip, heard, take)
+                if score >= ACCEPT:
+                    break
+            clips.append(best[1])
+            takes_log.append(
+                {"line": n, "text": text, "heard": best[2], "score": round(best[0], 3), "take": best[3]}
             )
-            clips.append(pathlib.Path(report["audio"]))
 
         spoken = [_wav_seconds(clip) for clip in clips]
 
@@ -316,6 +436,14 @@ def narrate_film(film: str, lang: str, *, quiet: bool = False) -> list[str]:
             encoding="utf-8",
         )
         _stamp(film, lang, len(texts))
+        import json as _json
+
+        (ASSETS / f"vo-{film}.{lang}.takes.json").write_text(
+            _json.dumps(takes_log, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+        )
+        weak = [t for t in takes_log if t["score"] < ACCEPT]
+        for t in weak:
+            print(f"    WEAK {film}.{lang} line {t['line']} ({t['score']:.2f}): {t['heard']!r}")
         if not quiet:
             print(
                 f"  {film}.{lang}: {len(texts)} lines, lead-in {lead_in:.2f}s, "

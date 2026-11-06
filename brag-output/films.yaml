@@ -17,10 +17,9 @@
 # claim must be checkable by somebody holding the clones, not by running the
 # suite.
 #
-# Not here, and why: the 64 kinds three columns fill (needs `recommend` to run;
-# `tests/test_the_film_counts_what_the_package_counts.py` re-measures it) and
-# the 81 assets (needs `restore_assets.py` to walk a tree git does not track;
-# the same test file's companion checks it).
+# Not here, and why: the 81 assets (needs `restore_assets.py` to walk a tree
+# git does not track). The "64 kinds three columns fill" left with the scene
+# that showed it, when the films were cut again on 2026-11-06.
 name: sprezzature-films
 
 claims:
@@ -109,3 +108,12 @@ claims:
       path: sprezzature-publish/sprezzature_publish/_tools.py
       method: regex_count
       selector: '^    "[a-z]+": \($'
+
+  # Added 2026-11-06 with the films cut again. The maps film puts "4 actors"
+  # over the Syria plate; the generator says how many it draws.
+  - text: "4 actors, one clear legend."
+    value: "schematic four-actor"
+    source:
+      path: sprezzature-maps/scripts/build_situation_examples.py
+      method: literal
+      selector: "schematic four-actor"
