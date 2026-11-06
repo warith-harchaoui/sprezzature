@@ -4,6 +4,15 @@
 
 @layer base {
   /*
+   * Line breaks where a reader would put them (scripts/semantic_breaks.py,
+   * run in the page by js/phrases.js). Balance evens the lines of a heading;
+   * pretty keeps a paragraph from ending on one word. Neither knows what the
+   * words mean, which is the script's half: it says where a line may break,
+   * these say how the breaks are shared out.
+   */
+  h1, h2, h3, h4, h5, h6, figcaption, summary, blockquote, dt, th { text-wrap: balance; }
+  p, li, dd, td { text-wrap: pretty; }
+  /*
    * brand-* RGB triplets for the 🏫/🏭 color-mode toggle (js/color-mode.js).
    * Academic is the default (no attribute, or [data-color-mode="academic"]):
    * Okabe & Ito (2002) Blue, the colour-vision-deficiency-safe scientific
