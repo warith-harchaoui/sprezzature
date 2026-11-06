@@ -673,15 +673,15 @@ commande installée.
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/warith-harchaoui/sprezzature-publish
-    rev: v1.4.1          # fixer une tag ; bumper via renovate / dependabot
+    rev: v1.5.0          # fixer une tag ; bumper via renovate / dependabot
     hooks:
       - id: sprezzature-publish-lint        # le Markdown
   - repo: https://github.com/warith-harchaoui/sprezzature-ui
-    rev: v1.2.0
+    rev: v1.2.2
     hooks:
       - id: sprezzature-ui-i18n-audit       # chaînes hors de locales/i18n.yaml
   - repo: https://github.com/warith-harchaoui/sprezzature
-    rev: v1.8.0
+    rev: v1.8.1
     hooks:
       - id: sprezzature-ui-validate-skill   # uniquement si vous livrez des skills
       - id: sprezzature-triggers-sync

@@ -17,7 +17,7 @@ description: >-
   `references/triggers.md`.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.8.0
+  version: 1.8.1
 ---
 
 # sprezzature-video
