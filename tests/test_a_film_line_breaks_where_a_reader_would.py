@@ -14,7 +14,7 @@ Why the fix is in the text and not in the stylesheet
 A no-break space is the only instruction that survives every wrapping
 algorithm. ``balance``, ``pretty`` and greedy all honour U+00A0; none of them
 can be told *which* break is semantically wrong. So
-``build_films.bind`` puts the space in, and the stylesheet keeps deciding how
+``scripts/semantic_breaks.py`` puts the space in, and the stylesheet keeps deciding how
 the remaining breaks are distributed. The two are not alternatives, and this
 file asserts both halves.
 
@@ -38,6 +38,7 @@ Project maintainers.
 
 from __future__ import annotations
 
+import re
 import sys
 from functools import lru_cache
 from pathlib import Path
@@ -46,6 +47,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "brag-output"))
+sys.path.insert(0, str(ROOT / "scripts"))
 
 FONT = ROOT / "web/fonts/roboto/Roboto-Variable.woff2"
 NBSP = " "
@@ -104,89 +106,77 @@ def test_the_font_and_the_films_are_both_here() -> None:
 def test_a_number_is_never_parted_from_its_word() -> None:
     """``30 laws``, ``20 accessibility``, ``4 workers``."""
     pytest.importorskip("fontTools")
-    import build_films
+    import semantic_breaks as sb
 
     loose = []
     for fmt, where, place, text in _prose():
-        bound = build_films.bind(" ".join(text.split()))
-        words = bound.split(" ")
+        words = sb.bind(text).split(" ")
         for i in range(len(words) - 1):
             tail = words[i].split(NBSP)[-1]
             head = words[i + 1].split(NBSP)[0]
-            if build_films._NUMBER.match(tail) and not build_films._NUMBER.match(head):
-                if not tail.endswith((".", "!", "?", ":", ";")):
+            if sb._NUMBER.match(tail) and sb._kind(head) == "content" and not sb._NUMBER.match(head):
+                if not tail.endswith((".", "!", "?", ":", ";", ",")):
                     loose.append(f"{fmt} {where} {place}: {tail!r} / {head!r}")
     assert not loose, "a number can still fall at a line end:\n  " + "\n  ".join(loose)
 
 
-def test_a_short_word_at_a_line_end_is_there_because_of_the_cap() -> None:
-    """The 63-case majority, and the honest form of the promise.
+def test_no_function_word_can_end_a_line() -> None:
+    """The 63-case majority, now kept without exception.
 
-    The first version of this test demanded that *no* short word can fall at a
-    line end. ``bind`` cannot deliver that, and should not: capping chains at
-    two words is what keeps a group from filling the column, so
-    ``que pas de surlignage`` becomes ``que·pas de·surlignage`` and ``pas`` is
-    left able to end a line.
-
-    What is actually promised, and what this asserts, is that every such case
-    is the *cap* rather than an oversight: a short word able to end a line must
-    itself be the tail of a bound pair. A short word with a breakable space on
-    both sides is a miss.
+    The first ``bind`` capped chains at two words, so ``que pas de
+    surlignage`` left ``pas`` free to end a line and a test had to excuse it
+    as "the cap". The cap is gone because its reason is gone: a bound group
+    no longer has to fit a line on its own, the phrase span around it wraps
+    first. So the promise is the plain one: an article, a preposition, a
+    conjunction never ends a line, unless it ends a sentence, or another
+    function word follows it: ``de·chaque·coordonnée.`` bound end to end filled
+    102 % of the portrait column, so that one gap stays as the last resort.
     """
-    pytest.importorskip("fontTools")
-    import build_films
+    import semantic_breaks as sb
 
     missed = []
     for fmt, where, place, text in _prose():
-        bound = build_films.bind(" ".join(text.split()))
-        groups = bound.split(" ")
+        groups = sb.bind(text).split(" ")
         for i in range(len(groups) - 1):          # the last group ends the text
             tail = groups[i].split(NBSP)[-1]
-            bare = tail.strip("«»\"'(),;:.!?").lower()
-            if bare not in build_films.NO_LINE_END or len(bare) > 4:
+            bare = sb._bare(tail)
+            if bare not in sb.OPENERS and bare not in sb.LINKS:
                 continue
-            if tail.endswith((".", "!", "?", ":", ";")):
+            if tail.endswith((".", "!", "?", ":", ";", ",")):
                 continue                           # a sentence may end there
-            if NBSP in groups[i]:
-                continue                           # the cap: it is a pair's tail
+            if sb._kind(groups[i + 1].split(NBSP)[0]) != "content":
+                continue                           # the last resort: ``de chaque``
             missed.append(f"{fmt} {where} {place}: {tail!r} in {groups[i]!r}")
-    assert not missed, (
-        "these short words can end a line and are not the tail of a bound "
-        "pair, so nothing was holding them:\n  " + "\n  ".join(missed)
-    )
+    assert not missed, "these function words can end a line:\n  " + "\n  ".join(missed)
 
 
 def test_binding_removes_most_of_the_measured_cases() -> None:
     """The number that justified the work, kept honest.
 
-    76 breaks were available before binding. If a later edit made ``bind`` a
-    no-op the tests above would still pass on their own terms, so this one
-    counts: the breakable short-word and number positions must be a small
-    fraction of what they were.
+    If a later edit made the module a no-op, the tests above would pass on an
+    empty walk; this one counts the breakable function-word and number
+    positions before and after.
     """
-    pytest.importorskip("fontTools")
-    import build_films
+    import semantic_breaks as sb
 
-    def loose(text: str, use_bind: bool) -> int:
-        words = (build_films.bind(text) if use_bind else text).split(" ")
+    def loose(text: str) -> int:
+        words = text.split(" ")
         n = 0
         for i in range(len(words) - 1):
             tail = words[i].split(NBSP)[-1]
-            bare = tail.strip("«»\"'(),;:.!?").lower()
-            if tail.endswith((".", "!", "?", ":", ";")):
+            if tail.endswith((".", "!", "?", ":", ";", ",")):
                 continue
-            if bare in build_films.NO_LINE_END and len(bare) <= 4:
+            if sb._NUMBER.match(tail):
                 n += 1
-            elif build_films._NUMBER.match(tail):
-                n += 1
+            elif sb._bare(tail) in sb.OPENERS | sb.LINKS:
+                # ``de chaque``: the last-resort gap, priced, not loose.
+                n += sb._kind(words[i + 1].split(NBSP)[0]) == "content"
         return n
 
-    before = sum(loose(" ".join(t.split()), False) for _, _, _, t in _prose())
-    after = sum(loose(" ".join(t.split()), True) for _, _, _, t in _prose())
+    before = sum(loose(" ".join(t.split())) for _, _, _, t in _prose())
+    after = sum(loose(sb.bind(t)) for _, _, _, t in _prose())
     assert before > 200, f"only {before} positions before binding; the walk is wrong"
-    assert after < before * 0.45, (
-        f"binding left {after} breakable positions out of {before}; it is barely doing anything"
-    )
+    assert after < before * 0.1, f"binding left {after} breakable positions out of {before}"
 
 
 def test_a_sentence_boundary_stays_breakable() -> None:
@@ -198,11 +188,10 @@ def test_a_sentence_boundary_stays_breakable() -> None:
     sentence-end rule so that ``1.4.2`` would not read as one — an excuse that
     was never needed, since a version number does not end in a dot.
     """
-    import build_films
+    import semantic_breaks as sb
 
-    assert build_films.bind("fixed in 2009. Full deficiency").count(NBSP) == 1
-    assert "2009." + NBSP not in build_films.bind("fixed in 2009. Full deficiency")
-    assert build_films.bind("WCAG 1.4.2 fails") == f"WCAG{NBSP}1.4.2{NBSP}fails"
+    assert "2009." + NBSP not in sb.bind("fixed in 2009. Full deficiency")
+    assert sb.bind("WCAG 1.4.2 fails") == f"WCAG{NBSP}1.4.2{NBSP}fails"
 
 
 def test_no_bound_group_crowds_out_its_own_line() -> None:
@@ -210,17 +199,20 @@ def test_no_bound_group_crowds_out_its_own_line() -> None:
 
     Chained short words did: ``que pas de surlignage`` filled 96 % of the
     portrait column as one unbreakable block. Capped at two words, the worst
-    case is 83 %.
+    case is 83 %. The cap is gone and the guard stays: a function-word chain
+    now keeps its last-resort gap, and ``de chaque coordonnée.`` (102 % bound
+    end to end) is the case that put it there.
     """
     pytest.importorskip("fontTools")
     import build_films
+    import semantic_breaks as sb
 
     fat = []
     for fmt, where, place, text in _prose():
         f = build_films.FORMATS[fmt]
         column = f["w"] - 2 * f["pad"]
         size = f[PLACES[place]]
-        for group in build_films.bind(" ".join(text.split())).split(" "):
+        for group in sb.bind(text).split(" "):
             if NBSP not in group:
                 continue  # one word is as narrow as the text allows
             share = _width(group.replace(NBSP, " "), size) / column
@@ -232,10 +224,33 @@ def test_no_bound_group_crowds_out_its_own_line() -> None:
     )
 
 
-def test_short_words_do_not_chain() -> None:
-    """Three in a row would merge into one block. Measured, then capped."""
-    import build_films
+def test_the_seams_are_where_the_meaning_is() -> None:
+    """The cases that started it, measured in the rendered films on 2026-11-06.
 
-    bound = build_films.bind("que pas de surlignage")
-    assert bound == f"que{NBSP}pas de{NBSP}surlignage", bound
-    assert NBSP + "de" + NBSP not in bound
+    Balance alone wrote ``Sprezzature est un moteur ⏎ d'IA pour le design``
+    and ``It points at the ⏎ wrong line``; and ``n'y ⏎ a pas``, once the
+    French verb ``a`` was read as the English article.
+    """
+    import semantic_breaks as sb
+
+    def seams(text: str) -> list[str]:
+        return [p.replace(NBSP, " ") for p in sb.phrases(text)]
+
+    assert seams("Sprezzature is an AI engine for Design") == [
+        "Sprezzature is", "an AI engine", "for Design"]
+    assert seams("Sprezzature est un moteur d'IA pour le design") == [
+        "Sprezzature est", "un moteur d'IA", "pour le design"]
+    assert seams("It points at the wrong line, with confidence.") == [
+        "It points", "at the wrong line,", "with confidence."]
+    assert "n'y" + NBSP + "a" in sb.bind("Il n'y a pas de troisième issue.")
+
+
+def test_the_films_carry_the_phrases_and_the_rule_that_holds_them() -> None:
+    """Two halves, each useless alone: spans without ``inline-block`` are
+    ordinary text, and the rule without spans styles nothing."""
+    page = ROOT / "brag-output/films/publish-fr-portrait/index.html"
+    if not page.is_file():
+        pytest.skip("films not built in this checkout")
+    html = page.read_text(encoding="utf-8")
+    assert '<span class="ph">' in html
+    assert re.search(r"\.ph\s*\{\s*display:\s*inline-block", html)

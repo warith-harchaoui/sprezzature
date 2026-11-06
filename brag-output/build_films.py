@@ -11,10 +11,10 @@ Run from brag-output/:  python3 build_films.py
 from __future__ import annotations
 
 import json
-import re
 import pathlib
 import copy
 import shutil
+import sys
 from typing import Any
 
 import films_fr
@@ -3300,135 +3300,11 @@ FILMS = {
 # ---------------------------------------------------------------------------
 # HTML emission
 # ---------------------------------------------------------------------------
-NBSP = "\u00a0"
-
-#: Words too short to end a line on. Both languages in one set, because the
-#: rule selects itself on the token: `de`, `la`, `du` only occur in the French
-#: cuts and `the`, `of`, `to` only in the English ones, so no caller has to
-#: thread a language through. A four-character ceiling keeps it to the words a
-#: reader's eye slides over; binding longer ones costs line-breaking room for
-#: no typographic gain.
-NO_LINE_END = frozenset({
-    "a", "an", "the", "of", "to", "in", "on", "at", "is", "it", "as", "or",
-    "and", "by", "for", "no", "if", "its", "be", "we",
-    "à", "y", "de", "du", "la", "le", "les", "un", "une", "et", "en", "ou",
-    "au", "aux", "ce", "se", "sa", "son", "ses", "ne", "si", "par", "sur",
-    "que", "qui", "pas", "des", "dans", "est", "ses", "nos",
-})
-
-#: A token that is a bare number, or a number with a unit stuck to it.
-_NUMBER = re.compile(r"^\d[\d.,]*(?:[A-Za-zµ%°]{1,3})?$")
-
-#: A name that takes a number after it: WCAG 1.4.2, ISO 3166, Python 3.10.
-_NAMED_SPEC = re.compile(r"^[A-Z][A-Za-z]{1,9}$")
-
-#: French punctuation that takes a space before it, and must not start a line.
-_FRENCH_TIGHT = ("»", ":", ";", "!", "?")
-
-
-def _ends_sentence(token: str) -> bool:
-    """Whether *token* closes a sentence, so the next word is a new one.
-
-    Written because the first version of this bound ``2009.`` to ``Full`` in
-    the colours film — two sentences, joined by a space that is *exactly*
-    where a line should be allowed to break.
-
-    The first attempt excused a number from the rule, so that ``1.4.2`` would
-    not read as a sentence end. That excuse let ``2009.`` through, and it was
-    never needed: a version number does not *end* in a dot, so a trailing dot
-    always closes a sentence.
-    """
-    return token.endswith((".", "!", "?", ":", ";", "…"))
-
-
-def bind(text: str) -> str:
-    """Forbid the line breaks a reader would call a mistake.
-
-    `text-wrap: balance` equalises line *lengths*; it knows nothing about what
-    the words mean, so it will put ``30`` at the end of one line and ``laws``
-    at the start of the next, or leave ``de`` hanging. A no-break space is the
-    only instruction that survives every wrapping algorithm — greedy, balance
-    or pretty — which is why the fix is in the text and not in the stylesheet.
-
-    Measured on 2026-11-01 across all eleven films, both languages and all
-    three canvases: **76** breaks that separated something a reader keeps
-    together — 63 short words left at a line end, 11 numbers parted from their
-    noun, 2 names parted from their number.
-
-    Three rules, each self-selecting on the token so no language has to be
-    passed in:
-
-    1. a number stays with the word after it (``30 laws``), unless the number
-       ends a sentence;
-    2. a name stays with the number after it (``WCAG 1.4.2``);
-    3. a word in :data:`NO_LINE_END` stays with the word after it, unless it
-       ends a sentence.
-
-    French tight punctuation is bound too — ``:`` ``;`` ``!`` ``?`` ``»`` take
-    a space before them in French and must never open a line — and that rule
-    fires only where such a space exists, which is to say only in the French
-    cuts.
-
-    Parameters
-    ----------
-    text : str
-        One line of on-screen prose.
-
-    Returns
-    -------
-    str
-        The same words, with U+00A0 where a break would read badly.
-
-    Examples
-    --------
-    >>> bind("30 laws of UX") == "30\u00a0laws of UX"
-    True
-    >>> bind("fixed in 2009. Full deficiency") == "fixed in 2009. Full deficiency"
-    True
-    >>> bind("WCAG 1.4.2 fails") == "WCAG\u00a01.4.2 fails"
-    True
-    >>> bind("la main") == "la\u00a0main"
-    True
-    >>> bind("vraiment : non") == "vraiment\u00a0: non"
-    True
-    """
-    words = text.split(" ")
-    out: list[str] = []
-    for index, word in enumerate(words):
-        out.append(word)
-        if index + 1 >= len(words):
-            continue
-        nxt = words[index + 1]
-        if not word or not nxt:
-            continue
-        bare = word.strip("«»\"'(),;:.!?")
-        join = False
-        if nxt in _FRENCH_TIGHT or nxt.startswith(_FRENCH_TIGHT):
-            join = True
-        elif word.endswith("«"):
-            join = True
-        elif _ends_sentence(word):
-            join = False
-        elif _NUMBER.match(word) and not _NUMBER.match(nxt):
-            join = True
-        elif _NAMED_SPEC.match(bare) and _NUMBER.match(nxt.strip(".,;:!?")):
-            join = True
-        elif bare.lower() in NO_LINE_END and len(bare) <= 4:
-            # Never chain. Three or four short words in a row — `que pas de
-            # surlignage` — would merge into one unbreakable block 96% of the
-            # portrait column wide, measured, which is worse than the break it
-            # was avoiding: the line loses every option it had. So a short word
-            # binds forward only when the space behind it is still breakable,
-            # which caps these groups at two words.
-            # `out[-1]` is the word just appended; the separator behind it is
-            # `out[-2]`. Reading the wrong one made this rule a no-op, and the
-            # measurement said so: the 96% group was still there.
-            join = len(out) < 2 or out[-2] != NBSP
-        if join:
-            out.append(NBSP)
-        else:
-            out.append(" ")
-    return "".join(out)
+# Line breaks: the rule and both of its instruments (phrase spans, no-break
+# spaces) live in scripts/semantic_breaks.py, shared with the site, so a film
+# and a page break the same sentence the same way.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "scripts"))
+from semantic_breaks import FIT_JS, to_html  # noqa: E402
 
 
 def esc(s: str) -> str:
@@ -3469,11 +3345,17 @@ def css(f: dict) -> str:
     .col {{ display: flex; flex-direction: column; align-items: center;
             justify-content: center; width: 100%; }}
 
-    /* Balanced, not bound. Twelve eyebrows wrap across the three canvases and
-       all twelve ended on a line of two words or fewer — `UNE RÈGLE` under a
-       full line, which reads as a mistake. No-break spaces are the wrong tool
-       here: this is monospace at .2em tracking, so a bound pair is wide and
-       the gain is small, while balancing costs nothing and cannot overflow. */
+    /* A phrase is atomic: lines break between phrases, and inside one only
+       when it is wider than the line (shrink-to-fit). See
+       scripts/semantic_breaks.py. Balance then evens out the seams it is
+       given instead of choosing breaks of its own. */
+    .ph {{ display: inline-block; }}
+    .ph-loose {{ display: inline; }}
+
+    /* Balanced. Twelve eyebrows wrap across the three canvases and all twelve
+       ended on a line of two words or fewer — `UNE RÈGLE` under a full line,
+       which reads as a mistake. Balance fixed the lengths; the phrase spans
+       fix where the lengths are cut (`moteur ⏎ d'IA` was a balanced line). */
     .eyebrow {{ font-family: "Roboto Mono", ui-monospace, monospace;
       font-size: {f["eyebrow"]}px; font-weight: 500; letter-spacing: .2em;
       color: var(--navy); text-transform: uppercase; text-align: center;
@@ -3737,7 +3619,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
     t = sc["type"]
     head = (
         (
-            f'<p class="eyebrow" id="s{i}-eyebrow">{esc(sc["eyebrow"])}</p>'
+            f'<p class="eyebrow" id="s{i}-eyebrow">{to_html(sc["eyebrow"])}</p>'
             f'<div class="rule" id="s{i}-rule" style="width:132px;margin:18px 0 '
             f'{int(f["body"] * 1.0)}px"></div>'
         )
@@ -3747,7 +3629,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
     cap = (
         (
             f'<p class="caption" id="s{i}-caption" '
-            f'style="margin-top:{int(f["body"] * 1.05)}px">{esc(bind(sc["caption"]))}</p>'
+            f'style="margin-top:{int(f["body"] * 1.05)}px">{to_html(sc["caption"])}</p>'
         )
         if sc.get("caption") and t not in ("loop", "cvd")
         else ""
@@ -3759,7 +3641,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
         # smallest package gets the fewest words, held longest.
         return (
             f'<div class="stage"><div class="col">'
-            f'<h1 class="held" id="s{i}-line">{esc(bind(sc["line"]))}</h1>'
+            f'<h1 class="held" id="s{i}-line">{to_html(sc["line"])}</h1>'
             f'<div class="rule" id="s{i}-rule" style="width:96px;'
             f'margin:{int(f["body"] * 1.4)}px auto 0"></div>'
             f"</div></div>"
@@ -3795,11 +3677,11 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             f'<div class="versus">'
             f'<div class="vs-half" id="s{i}-vl">'
             f'<p class="vs-key">{esc(left[0])}</p>'
-            f'<p class="vs-val">{esc(bind(left[1]))}</p></div>'
+            f'<p class="vs-val">{to_html(left[1])}</p></div>'
             f'<div class="vs-bar" id="s{i}-vbar"></div>'
             f'<div class="vs-half" id="s{i}-vr">'
             f'<p class="vs-key">{esc(right[0])}</p>'
-            f'<p class="vs-val">{esc(bind(right[1]))}</p></div>'
+            f'<p class="vs-val">{to_html(right[1])}</p></div>'
             f"</div>{cap}</div></div>"
         )
 
@@ -3826,7 +3708,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             f'<div class="vrow" id="s{i}-v{k}">'
             f'<span class="vclaim">{esc(claim)}</span>'
             f'<span class="vdots"></span>'
-            f'<span class="vvalue" id="s{i}-vv{k}">{esc(bind(value))}</span></div>'
+            f'<span class="vvalue" id="s{i}-vv{k}">{to_html(value)}</span></div>'
             for k, (claim, value) in enumerate(sc["claims"], 1)
         )
         return (
@@ -3838,7 +3720,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
     if t == "claim":
         return (
             f'<div class="stage"><div class="col">'
-            f'<h1 class="claim" id="s{i}-line">{esc(bind(sc["line"]))}</h1>'
+            f'<h1 class="claim" id="s{i}-line">{to_html(sc["line"])}</h1>'
             f'<div class="rule" id="s{i}-rule" '
             f'style="width:220px;margin-top:{int(f["hero"] * 0.42)}px"></div>'
             f"</div></div>"
@@ -3850,7 +3732,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             '<div class="steps">'
             + "".join(
                 f'<div class="step" id="s{i}-step{n}"><span class="step-n">{esc(k)}</span>'
-                f"<span>{esc(bind(v))}</span></div>"
+                f"<span>{to_html(v)}</span></div>"
                 for n, (k, v) in enumerate(sc["steps"], 1)
             )
             + "</div>"
@@ -3866,7 +3748,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             f"</div></div>"
             f'<div class="loop-text">{head}{steps}'
             f'<p class="caption" id="s{i}-caption" '
-            f'style="margin-top:{int(f["body"] * 1.2)}px">{esc(bind(sc["caption"]))}</p>'
+            f'style="margin-top:{int(f["body"] * 1.2)}px">{to_html(sc["caption"])}</p>'
             f"</div></div></div>"
         )
 
@@ -3898,7 +3780,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             f"</div></div>"
             f'<div class="loop-text">{head}{steps}'
             f'<p class="caption" id="s{i}-caption" '
-            f'style="margin-top:{int(f["body"] * 1.2)}px">{esc(bind(sc["caption"]))}</p>'
+            f'style="margin-top:{int(f["body"] * 1.2)}px">{to_html(sc["caption"])}</p>'
             f"</div></div></div>"
         )
 
@@ -3963,7 +3845,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
     if t == "panel":
         rows = "".join(
             f'<div class="prow" id="s{i}-r{k}"><span class="pk">{esc(a)}</span>'
-            f'<span class="pv">{esc(bind(b))}</span></div>'
+            f'<span class="pv">{to_html(b)}</span></div>'
             for k, (a, b) in enumerate(sc["rows"], 1)
         )
         return (
@@ -4005,10 +3887,10 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
         # -- nothing in this scene fades in.
         return (
             f'<div class="stage"><div class="col">'
-            f'<p id="what-tag">{esc(bind(sc["tagline"]))}</p>'
+            f'<p id="what-tag">{to_html(sc["tagline"])}</p>'
             f'<img id="what-logo" src="assets/{sc["logo"]}" alt="">'
             f'<p id="what-mark">{esc(sc["mark"])}</p>'
-            f'<p id="what-line">{esc(bind(sc["line"]))}</p>'
+            f'<p id="what-line">{to_html(sc["line"])}</p>'
             f'<p id="what-url">{esc(sc["url"])}</p></div></div>'
         )
 
@@ -4029,7 +3911,7 @@ def scene_html(sc: dict, f: dict, i: int) -> str:
             f'<img id="logo" src="assets/{sc["logo"]}" alt="">'
             f'<p id="mark">{esc(sc["mark"])}</p>'
             f"{acts}"
-            f'<p id="punch">{esc(bind(sc["punchline"]))}</p></div></div>'
+            f'<p id="punch">{to_html(sc["punchline"])}</p></div></div>'
         )
 
     raise ValueError(t)
@@ -4500,6 +4382,7 @@ def compose(film_key: str, spec: dict, fmt_key: str, lang: str = "en") -> str:
 {rails}
 {chr(10).join(audio)}
 </div>
+<script>{FIT_JS}</script>
 <script>
 (function () {{
   var tl = gsap.timeline({{ paused: true }});

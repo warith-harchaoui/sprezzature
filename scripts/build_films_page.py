@@ -551,6 +551,7 @@ def render(lang: str) -> str:
 {footer}
   <script src="{c['jsdir']}/theme.js" defer></script>
   <script src="{c['jsdir']}/nav.js" defer></script>
+  <script src="{c['jsdir']}/phrases.js" defer></script>
   <script src="{c['jsdir']}/color-mode.js" defer></script>
   <script src="{c['jsdir']}/film-format.js" defer></script>
 </body>
