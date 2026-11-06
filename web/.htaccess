@@ -13,6 +13,9 @@ AddDefaultCharset utf-8
     AddType 'application/rss+xml; charset=utf-8' .rss
     AddType 'application/xml; charset=utf-8' .xml
     AddType 'text/plain; charset=utf-8' .txt
+    # Caption tracks. A browser drops a <track> served as anything but
+    # text/vtt, silently: the menu shows the language and nothing appears.
+    AddType 'text/vtt; charset=utf-8' .vtt
 </IfModule>
 
 # Caching. Measured before writing this: not one asset on the deployed

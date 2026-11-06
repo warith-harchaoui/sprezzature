@@ -40,6 +40,10 @@
     // own duration.
     var at = player.currentTime;
     var playing = !player.paused && !player.ended;
+    // `load()` also re-runs track selection, which switches every caption
+    // track back off. A viewer who turned the captions on should keep them
+    // when they change canvas.
+    var modes = Array.prototype.map.call(player.textTracks, function (t) { return t.mode; });
 
     source.setAttribute("src", src);
     player.setAttribute("poster", stem + SUFFIX[format] + ".jpg");
@@ -50,6 +54,12 @@
     if (dl) dl.setAttribute("href", src);
 
     player.load();
+    player.addEventListener("loadedmetadata", function keep() {
+      player.removeEventListener("loadedmetadata", keep);
+      for (var i = 0; i < player.textTracks.length && i < modes.length; i++) {
+        player.textTracks[i].mode = modes[i];
+      }
+    });
     if (at > 0) {
       player.addEventListener("loadedmetadata", function once() {
         player.removeEventListener("loadedmetadata", once);
