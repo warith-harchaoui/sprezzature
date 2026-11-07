@@ -1,89 +1,63 @@
 WEBVTT
 
 0
-00:00:01.100 --> 00:00:04.140
-Sprezzature est
-un moteur d'IA pour le design.
+00:00:01.100 --> 00:00:06.298
+Sprezzature est un moteur d'IA
+pour le design, et ce film parle de son.
 
 1
-00:00:05.200 --> 00:00:09.800
-Audio lit la parole dans les deux sens :
-il transcrit, et il parle.
+00:00:08.000 --> 00:00:11.187
+Votre vidéo a des sous-titres justes,
+mot pour mot.
 
 2
-00:00:11.300 --> 00:00:14.340
-Vos sous-titres sont exacts.
+00:00:12.000 --> 00:00:14.775
+Mais une longue ligne
+qui file en un éclair,
+
+2.1
+00:00:14.775 --> 00:00:18.812
+personne ne la lit, et la justesse
+était tout ce qu'on mesurait.
 
 3
-00:00:14.600 --> 00:00:21.599
-90 caractères à l'écran,
-une demi-seconde. Personne ne lit ça.
+00:00:25.800 --> 00:00:29.021
+Ici, les sous-titres suivent
+les règles du métier :
+
+3.1
+00:00:29.021 --> 00:00:31.675
+2 lignes au plus, et le temps de les lire.
 
 4
-00:00:37.240 --> 00:00:42.400
-Retournez-le. Une page qui se lit
-à voix haute surligne la mauvaise ligne.
+00:00:33.600 --> 00:00:37.135
+L'outil sait aussi qui parle
+et traduit les sous-titres,
+
+4.1
+00:00:37.135 --> 00:00:39.787
+sans qu'aucun son ne quitte votre machine.
 
 5
-00:00:42.600 --> 00:00:47.160
-Une modalité, lue dans les deux sens,
-et rien ne quitte votre machine.
+00:00:45.400 --> 00:00:48.856
+Et dans l'autre sens,
+il lit un texte à voix haute.
 
 6
-00:00:47.360 --> 00:00:52.880
-Du son vers le texte. Ce qui a été dit,
-par qui, dans quelle langue.
+00:00:49.400 --> 00:00:53.775
+La voix arrive avec ses sous-titres
+minutés, exactement comme ce film.
 
 7
-00:00:53.080 --> 00:00:59.040
-Du texte vers le son : un WAV,
-et un WebVTT posé à côté.
+00:00:55.400 --> 00:00:59.330
+De la parole au texte,
+du texte à la parole : un seul outil.
 
 8
-00:00:59.240 --> 00:01:04.280
-La même piste minutée dans les deux cas,
-pour qu'une page suive la lecture.
+00:01:06.000 --> 00:01:11.400
+Si ça vous aide, une étoile sur GitHub,
+et toute la suite sur sprezzature.ai.
 
 9
-00:01:04.480 --> 00:01:08.560
-Ces seuils ne sont pas des nombres
-que quelqu'un a trouvés jolis.
-
-10
-00:01:08.760 --> 00:01:13.640
-Ils ont un éditeur, nommé dans le code :
-le guide de sous-titrage de Netflix.
-
-11
-00:01:13.840 --> 00:01:19.400
-17 caractères par seconde au plus.
-42 par ligne, 2 lignes.
-
-12
-00:01:19.600 --> 00:01:23.480
-Des conventions, pas des lois :
-chacune est donc un réglage.
-
-13
-00:01:23.680 --> 00:01:28.280
-Voici tout le paquet sur une page.
-Descendez une voie, puis l'autre.
-
-14
-00:01:28.480 --> 00:01:33.000
-Elles ne restent pas séparées :
-les deux arrivent au même contrôle.
-
-15
-00:01:33.400 --> 00:01:39.400
-Narration ou transcription :
-un seul fichier, un seul contrôle.
-
-16
-00:01:41.600 --> 00:01:47.600
-Passez sur sprezzature.ai, et mettez
-une étoile GitHub si ça le mérite.
-
-17
-00:01:48.000 --> 00:01:51.960
-Faites, auditez et regardez !
+00:01:11.600 --> 00:01:14.186
+Faites, auditez, et regardez.

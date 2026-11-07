@@ -1,89 +1,64 @@
 WEBVTT
 
 0
-00:00:01.100 --> 00:00:04.620
+00:00:01.100 --> 00:00:04.292
 Sprezzature est
-un moteur d'IA pour le design.
+un moteur d'IA pour le design,
+
+0.1
+00:00:04.292 --> 00:00:07.346
+et ce film parle
+de l'expérience d'une page.
 
 1
-00:00:04.820 --> 00:00:07.660
-Ux-laws, l'audit des lois d'UX.
+00:00:08.000 --> 00:00:12.750
+On vous dira qu'une page étouffe,
+jamais quelle loi du design elle enfreint.
 
 2
-00:00:07.860 --> 00:00:12.485
-On vous dira que la page est écrasante,
-qu'on n'y trouve jamais le bouton.
+00:00:20.400 --> 00:00:22.504
+Voici deux fois le même menu.
 
 3
-00:00:13.200 --> 00:00:18.520
-Personne ne dira jamais : loi de HICK.
-Personne n'en connaît le nom.
+00:00:23.400 --> 00:00:27.775
+Plus il y a de choix à la fois,
+plus on hésite : c'est la loi de Hick.
 
 4
-00:00:18.720 --> 00:00:23.439
-Vous récupérez le symptôme,
-et jamais la cause, publiée depuis 1952.
+00:00:33.400 --> 00:00:36.742
+La suite connaît 30 lois
+de l'expérience utilisateur,
+
+4.1
+00:00:36.742 --> 00:00:40.337
+et en vérifie 8 directement dans la page,
+en une seconde.
 
 5
-00:00:28.600 --> 00:00:34.120
-30 lois réunies par Jon YABLONSKI.
-8 tranchées depuis la source.
+00:00:45.400 --> 00:00:49.587
+Le secret : elle compte ce qu'une
+personne voit à un instant donné.
 
 6
-00:00:36.800 --> 00:00:42.760
-Aucun navigateur, aucun rendu :
-la page médiane en 5 millisecondes.
+00:00:50.000 --> 00:00:54.532
+Le menu du téléphone et celui
+de l'ordinateur ne s'additionnent jamais.
 
 7
-00:00:42.960 --> 00:00:46.400
-Assez rapide pour tenir
-dans un crochet de pré-commit.
+00:00:55.400 --> 00:00:58.110
+C'est un contrôle rapide,
+pas un designer :
+
+7.1
+00:00:58.110 --> 00:01:02.650
+la page répond-elle à la bonne question ?
+Ça, c'est vous qui le décidez.
 
 8
-00:00:46.600 --> 00:00:51.160
-Or la loi de HICK compte
-les choix offerts au même instant.
+00:01:06.000 --> 00:01:11.360
+Si ça vous aide, une étoile sur GitHub,
+et toute la suite sur sprezzature.ai.
 
 9
-00:00:52.600 --> 00:00:58.280
-Un en-tête adaptatif porte 2 menus
-qui ne s'affichent jamais ensemble.
-
-10
-00:00:58.480 --> 00:01:03.680
-Les additionner reproche au lecteur
-des choix qu'aucun écran ne montre.
-
-11
-00:01:03.880 --> 00:01:08.880
-L'auditeur situe donc chaque contrôle
-et retient le pire des deux comptes.
-
-12
-00:01:10.000 --> 00:01:14.400
-Un bloc qui se replie vaut un seul choix,
-quoi qu'il contienne.
-
-13
-00:01:17.800 --> 00:01:24.798
-40 liens dans un menu, ou 7.
-L'un renvoie zéro, l'autre renvoie un.
-
-14
-00:01:26.760 --> 00:01:31.400
-40 est un fait sur le balisage.
-Savoir si c'est trop n'en est pas un.
-
-15
-00:01:32.000 --> 00:01:36.320
-C'est un verrou rapide,
-pas un substitut à une revue de design.
-
-16
-00:01:41.400 --> 00:01:46.600
-Passez sur sprezzature.ai, et mettez
-une étoile GitHub si ça le mérite.
-
-17
-00:01:49.600 --> 00:01:53.199
-Faites, auditez et regardez !
+00:01:11.600 --> 00:01:13.942
+Faites, auditez, et regardez.

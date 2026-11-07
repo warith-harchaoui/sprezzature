@@ -62,7 +62,10 @@ def rewritten(track: Path) -> str:
     # many times the script had been run.
     texts = [" ".join(cue.text.split()) for cue in cues]
     times = [(cue.start, cue.end) for cue in cues]
-    return render_cues(timed_cues(texts, times))
+    # A line already cut into several cues is re-read piece by piece, each
+    # under its own identifier, so the pieces are not numbered as lines.
+    names = [cue.identifier or str(n) for n, cue in enumerate(cues)]
+    return render_cues(timed_cues(texts, times, names))
 
 
 def main() -> int:
