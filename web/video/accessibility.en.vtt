@@ -1,89 +1,60 @@
 WEBVTT
 
 0
-00:00:01.100 --> 00:00:07.660
+00:00:01.100 --> 00:00:04.460
 Sprezzature is an AI engine for Design.
-Accessibility reads your HTML.
 
 1
-00:00:07.860 --> 00:00:11.220
-20 rules, and not one
-of them opens a browser.
+00:00:04.660 --> 00:00:06.860
+This one is about accessibility.
 
 2
-00:00:11.420 --> 00:00:14.420
-A video starts playing
-by itself, with sound.
+00:00:08.000 --> 00:00:11.312
+A blind reader visits
+your page with a screen reader.
 
 3
-00:00:14.620 --> 00:00:19.307
-A blind reader cannot now hear the screen
-reader they would use to stop it.
+00:00:12.800 --> 00:00:16.600
+On this portrait,
+all she hears is one word: image.
 
 4
-00:00:20.000 --> 00:00:23.680
-And the page is valid.
-No validator says a word about it.
+00:00:20.400 --> 00:00:23.439
+Or a video starts on its own, with sound.
 
 5
-00:00:31.400 --> 00:00:35.120
-Here is the page. Line 5 is the trap:
-autoplay with sound.
+00:00:24.400 --> 00:00:28.525
+Now she cannot hear the screen reader
+that would help her stop it.
 
 6
-00:00:37.600 --> 00:00:41.037
-Each finding names the element,
-the line, and the rule.
+00:00:33.400 --> 00:00:36.760
+The suite reads your page
+and checks 20 rules.
 
 7
-00:00:42.400 --> 00:00:45.760
-3 of the 6 on this page sit
-on that one line.
+00:00:38.000 --> 00:00:41.120
+It can repair 6 of them by itself, safely.
 
 8
-00:00:47.000 --> 00:00:51.480
-Standard library for the lint.
-One dependency, for the command line.
+00:00:45.400 --> 00:00:49.525
+And the missing descriptions?
+A model on your machine writes them.
 
 9
-00:00:54.600 --> 00:00:58.040
-6 of the 20 repair themselves. Only 6.
+00:00:50.600 --> 00:00:54.000
+It looks at the image,
+and reads the page around it.
 
 10
-00:00:59.000 --> 00:01:02.840
-A repair is automatic only
-where exactly one repair is safe.
+00:01:00.400 --> 00:01:03.519
+It is a first draft. You stay the editor.
 
 11
-00:01:03.800 --> 00:01:06.800
-The other 14 are reported,
-and never guessed at.
+00:01:06.000 --> 00:01:11.200
+Star it on GitHub,
+and find the suite on sprezzature.ai.
 
 12
-00:01:08.400 --> 00:01:12.587
-The exception is the alt text,
-drafted from the image and the page.
-
-13
-00:01:17.800 --> 00:01:23.039
-Shown the pixels alone, the draft was
-a dark coat and a patterned shirt.
-
-14
-00:01:24.200 --> 00:01:29.120
-Given the page as well, it wrote Paris,
-the Institute, the decade.
-
-15
-00:01:31.000 --> 00:01:34.750
-None of that was in the photograph.
-And it is still a draft.
-
-16
-00:01:40.600 --> 00:01:45.800
-Go to sprezzature.ai,
-and drop a GitHub star if it deserves it.
-
-17
-00:01:48.600 --> 00:01:51.440
+00:01:11.600 --> 00:01:14.360
 Make it, audit it, take a look at it.

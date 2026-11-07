@@ -62,10 +62,9 @@ SAY_TAGLINE = L(
 )
 PUNCHLINE = L("Make it, audit it, take a look at it.", "Faites, auditez, et regardez !")
 SAY_STAR = L(
-    "Like it? Give it a star on GitHub.",
+    "Star it on GitHub, and find the suite on sprezzature.ai.",
     "Si ça vous aide, une étoile sur GitHub, et toute la suite sur sprezzature.ai.",
 )
-SAY_SITE = L("The whole suite is on sprezzature.ai.", "")
 SAY_PUNCH = L("Make it, audit it, take a look at it.", "Faites, auditez, et regardez.")
 GITHUB = "github.com/warith-harchaoui"
 
@@ -108,7 +107,9 @@ def opening(subject: dict) -> list[tuple[float, dict]]:
 
 
 def closing(start: float = 66.0) -> list[tuple[float, dict]]:
-    return [(start, SAY_STAR), (start + 2.9, SAY_SITE), (start + 6.0, SAY_PUNCH)]
+    # One line for both asks, as French already does: the address is spelled
+    # out letter by letter and a second line's pause no longer fits in 75 s.
+    return [(start, SAY_STAR), (start + 5.6, SAY_PUNCH)]
 
 
 # ===================================================================== colors

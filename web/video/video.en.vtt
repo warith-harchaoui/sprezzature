@@ -1,89 +1,57 @@
 WEBVTT
 
 0
-00:00:01.100 --> 00:00:07.100
+00:00:01.100 --> 00:00:04.460
 Sprezzature is an AI engine for Design.
-Video audits what a film says.
 
 1
-00:00:07.300 --> 00:00:11.362
-Every number a film shows,
-held against the code that decides it.
+00:00:04.660 --> 00:00:07.780
+This one is about videos, like this one.
 
 2
-00:00:11.540 --> 00:00:17.780
-This suite told viewers it had
-127 chart kinds. It had 167.
+00:00:08.000 --> 00:00:11.360
+A video says things,
+and burns them into pixels.
 
 3
-00:00:17.980 --> 00:00:22.340
-Prose in a README gets re-read.
-A number in a keyframe does not.
+00:00:12.600 --> 00:00:16.100
+Nobody reads them again,
+even when they stop being true.
 
 4
-00:00:22.540 --> 00:00:26.727
-Months of it, baked into every cut,
-with nothing anywhere watching.
+00:00:20.400 --> 00:00:24.150
+This suite once showed a number
+that was months out of date.
 
 5
-00:00:27.600 --> 00:00:31.912
-So the claims moved out of the film,
-into a file that sits beside it.
+00:00:26.600 --> 00:00:29.560
+The code had moved on. The film had not.
 
 6
-00:00:32.600 --> 00:00:36.920
-A claim is a pair. The sentence on screen.
-The file that settles it.
+00:00:31.800 --> 00:00:35.487
+Now every film is checked
+against the code before it ships.
 
 7
-00:00:37.600 --> 00:00:41.537
-Verify reads that file.
-It says whether the line is still true.
+00:00:40.400 --> 00:00:44.962
+The secret: every number on screen
+must point to the code that proves it.
 
 8
-00:00:42.600 --> 00:00:46.720
-If the file has moved, the check fails.
-It never quietly passes.
+00:00:46.000 --> 00:00:50.062
+A number with nothing behind it is flagged
+before anyone sees it.
 
 9
-00:00:50.600 --> 00:00:53.600
-The dangerous number is
-the one nobody declared.
+00:00:52.400 --> 00:00:55.087
+This very film went
+through the same check.
 
 10
-00:00:54.500 --> 00:00:58.940
-A declared one names a file.
-A number on screen names nothing.
+00:01:06.000 --> 00:01:11.200
+Star it on GitHub,
+and find the suite on sprezzature.ai.
 
 11
-00:00:59.900 --> 00:01:04.500
-So the scan reads the composition itself,
-for numbers no claim covers.
-
-12
-00:01:05.600 --> 00:01:10.199
-The source is this repository's history,
-where 127 survived for months.
-
-13
-00:01:16.500 --> 00:01:18.740
-Now point that scan at this film.
-
-14
-00:01:20.500 --> 00:01:24.420
-The declared ones come off the code.
-One number is left over.
-
-15
-00:01:33.500 --> 00:01:37.062
-The only number it cannot declare is
-the one it is about.
-
-16
-00:01:41.500 --> 00:01:46.580
-Go to sprezzature.ai,
-and drop a GitHub star if it deserves it.
-
-17
-00:01:47.000 --> 00:01:50.000
+00:01:11.600 --> 00:01:14.360
 Make it, audit it, take a look at it.
