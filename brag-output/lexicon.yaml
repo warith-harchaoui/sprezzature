@@ -231,9 +231,15 @@ entries:
     ipa: "spʁɛttsatuʁe"
     respelling: "Sprettsatouré"
 
+  # The address carries the name, and a respelling is applied once: written
+  # "Sprezzature dot A I", the name inside it was read as written and came
+  # back "Spreciate.ai" and "unspresidured of AI" in six tracks (2026-11-07).
   - word: "sprezzature.ai"
-    language: "*"
-    respelling: "Sprezzature dot A I"
+    language: en
+    respelling: "Spretsatoorey dot A I"
+  - word: "sprezzature.ai"
+    language: fr
+    respelling: "Sprettsatouré point A I"
 
   # "d'IA" came back as "d'hier" and "DIA"; spelled with stops it came back as
   # "d'IA" on both takes.

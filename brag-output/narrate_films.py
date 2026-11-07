@@ -95,8 +95,12 @@ Warith HARCHAOUI <warithmetics@deraison.ai>
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+
 import pathlib
 import re
+import shutil
 import sys
 import tempfile
 
@@ -204,6 +208,19 @@ from build_films import DURATION_S  # noqa: E402
 #: ACCEPT is drawn again, up to MAX_TAKES, and the best one is kept.
 ACCEPT = 0.88
 MAX_TAKES = 4
+
+#: Takes that passed the gate, one per (language, voice, spoken text). A film
+#: whose closing line changes is then one synthesis, not fourteen: at an RTF
+#: near eight that is the difference between minutes and an afternoon. Kept
+#: outside the repo because it only saves time; deleting it costs nothing but
+#: the time.
+TAKES_CACHE = pathlib.Path.home() / ".cache" / "sprezzature-films" / "takes"
+
+
+def _cached_take(text: str, lang: str) -> pathlib.Path:
+    engine, voice = voice_of(lang)
+    key = hashlib.sha256(f"{lang}\0{engine}\0{voice}\0{text}".encode()).hexdigest()[:24]
+    return TAKES_CACHE / f"{key}.wav"
 
 #: The name, however a transcriber spells what it heard: "Spretsatoorey",
 #: "Sprettsatour", "Sprzzature". Matched on the sound's skeleton.
@@ -386,7 +403,13 @@ def narrate_film(film: str, lang: str, *, quiet: bool = False) -> list[str]:
         takes_log: list[dict] = []
         for n, text in enumerate(texts, 1):
             best = None
-            for take in range(1, MAX_TAKES + 1):
+            cached = _cached_take(_spoken(text, lang), lang)
+            if cached.exists():
+                meta = json.loads(cached.with_suffix(".json").read_text())
+                best = (meta["score"], cached, meta["heard"], 0)
+                if not quiet:
+                    print(f"    {film}.{lang} line {n} cached: {best[0]:.2f}  {best[2]!r}", flush=True)
+            for take in range(1, MAX_TAKES + 1 if best is None else 1):
                 report = _narrate(
                     [{"text": _spoken(text, lang), "pause_before_ms": 0, "pause_after_ms": 0}],
                     lang,
@@ -401,6 +424,12 @@ def narrate_film(film: str, lang: str, *, quiet: bool = False) -> list[str]:
                     best = (score, clip, heard, take)
                 if score >= ACCEPT:
                     break
+            if best[0] >= ACCEPT and best[1] != cached:
+                TAKES_CACHE.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(best[1], cached)
+                cached.with_suffix(".json").write_text(
+                    json.dumps({"text": text, "heard": best[2], "score": round(best[0], 3)}, ensure_ascii=False)
+                )
             clips.append(best[1])
             takes_log.append(
                 {"line": n, "text": text, "heard": best[2], "score": round(best[0], 3), "take": best[3]}

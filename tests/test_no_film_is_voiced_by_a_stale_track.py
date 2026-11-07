@@ -47,14 +47,18 @@ VIDEO = ROOT / "web" / "video"
 ASSETS = ROOT / "brag-output" / "_assets"
 
 #: A cue: an index line, a timing line, then the text until a blank line.
-CUE = re.compile(r"^\d+\n[\d:.]+ --> [\d:.]+\n(.+?)(?=\n\n|\n*\Z)",
+#: A line too long for one cue is cut into pieces numbered after the dot
+#: ("3", "3.1"), so the index keeps the line it belongs to.
+CUE = re.compile(r"^(\d+)(?:\.\d+)?\n[\d:.]+ --> [\d:.]+\n(.+?)(?=\n\n|\n*\Z)",
                  re.M | re.S)
 
 
 def _spoken(vtt: Path) -> list[str]:
-    """What a caption track says, one entry per cue, newlines flattened."""
-    return [" ".join(m.group(1).split())
-            for m in CUE.finditer(vtt.read_text(encoding="utf-8"))]
+    """What a caption track says, one entry per spoken line, newlines flattened."""
+    lines: dict[str, list[str]] = {}
+    for m in CUE.finditer(vtt.read_text(encoding="utf-8")):
+        lines.setdefault(m.group(1), []).append(m.group(2))
+    return [" ".join(" ".join(pieces).split()) for pieces in lines.values()]
 
 
 def _cuts() -> list[tuple[str, str]]:

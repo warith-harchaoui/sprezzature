@@ -210,7 +210,34 @@ def over_budget(text: str) -> list[str]:
     return too_wide
 
 
-def timed_cues(texts, times):
+def split_to_cues(text: str) -> list[str]:
+    """One spoken line as the fewest cues that each fit two lines of budget.
+
+    Cut at the cheapest seam by `semantic_breaks.gap_cost` (a full stop, a
+    comma, the word that opens a phrase), the most balanced among equals,
+    and again inside a half that still does not fit.
+    """
+    from semantic_breaks import NEVER, gap_cost
+
+    if not over_budget(text):
+        return [text]
+    words = text.split()
+    if len(words) < 2:
+        return [text]
+
+    def price(k: int) -> int:
+        c = gap_cost(words[k - 1], words[k])
+        return 0 if c <= 1 else 1 if c == 2 else 2 if c <= 4 else 3 if c < NEVER else 4
+
+    def halves(k: int) -> tuple[str, str]:
+        return " ".join(words[:k]), " ".join(words[k:])
+
+    k = min(range(1, len(words)), key=lambda k: (price(k), abs(len(halves(k)[0]) - len(halves(k)[1]))))
+    left, right = halves(k)
+    return split_to_cues(left) + split_to_cues(right)
+
+
+def timed_cues(texts, times, names=None):
     """The film's cues: wrapped to the budget, and timed so they can be read.
 
     Replaces a `cues()` that nothing had called since 2026-10-26 — the dead
@@ -259,6 +286,39 @@ def timed_cues(texts, times):
     """
     from sprezzature_audio import Cue
 
+    # A spoken line too long for one cue becomes several, cut where the sense
+    # breaks and timed in proportion to their characters inside the line's
+    # speech. Written 2026-11-07 for the French cuts, which run their
+    # sentences longer than the English on purpose (a French voice that cut
+    # where the English cuts read as a translation) and so shipped lines of
+    # 64 characters in a 42 budget.
+    #
+    # The pieces share the line's whole window, not just its speech: inside a
+    # sentence there is no pause to borrow, so a first half timed on the speech
+    # alone went by at 18 characters a second. The window runs to the time the
+    # line needs at the reading target, never into the next line.
+    #
+    # `names` carries identifiers already given, which is how a track re-read
+    # piece by piece comes back byte for byte instead of renumbered.
+    pieces: list[tuple[str, tuple[float, float], str]] = []
+    for index, (text, (start, end)) in enumerate(zip(texts, times)):
+        name = names[index] if names else str(index)
+        parts = split_to_cues(" ".join(text.split()))
+        total = sum(len(p) for p in parts) or 1
+        if len(parts) > 1:
+            window = start + (total + len(parts) - 1) / READING_TARGET_CPS
+            if index + 1 < len(times):
+                window = min(window, times[index + 1][0])
+            end = max(end, window)
+        at = start
+        for k, part in enumerate(parts):
+            span = (end - start) * len(part) / total
+            pieces.append((part, (at, at + span), name if k == 0 else f"{name}.{k}"))
+            at += span
+    texts = [p[0] for p in pieces]
+    times = [p[1] for p in pieces]
+    names = [p[2] for p in pieces]
+
     out = []
     for index, (text, (start, end)) in enumerate(zip(texts, times)):
         wrapped = wrap_cue(" ".join(text.split()))
@@ -276,8 +336,9 @@ def timed_cues(texts, times):
                 end=max(stop, start + 0.001),
                 text=wrapped,
                 # The segment index, which is what lets the read-along
-                # highlight a block without matching on its text.
-                identifier=str(index),
+                # highlight a block without matching on its text; a line cut
+                # into several cues numbers its pieces after the dot.
+                identifier=names[index],
             )
         )
     return out
