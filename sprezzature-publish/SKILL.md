@@ -26,7 +26,7 @@ compatibility: >-
   also need a running local Ollama daemon.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.8.1
+  version: 1.8.2
 ---
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language

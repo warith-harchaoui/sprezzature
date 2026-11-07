@@ -8,6 +8,43 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+## [1.8.2] — 2026-11-07: onze films refaits, et des lignes coupées au sens
+
+**Two floors move.** video 0.4.4 (`calque` on a spec without the asked
+narration exits 2 instead of a traceback in 1) and publish 1.5.1
+(`findable` recognises a site served under a folder; the site's two last
+`findable` errors were this).
+
+### Site
+
+- **Lines break where the meaning breaks.** `scripts/semantic_breaks.py`
+  holds the rule once: a cost per space (sentence end, punctuation, a
+  function word opening a group), inline-block spans per group, non-breaking
+  spaces for what never splits. The films apply it at build time; the site
+  in the browser through `web/js/phrases.js`, generated from the same module
+  and loaded by the 39 pages. A test makes Python and node cut the same
+  sentences and demands the same groups.
+- **Captions you can turn on.** `.htaccess` now serves `.vtt` as
+  `text/vtt` (a browser silently drops a track served otherwise), and
+  switching between landscape, portrait and square keeps the viewer's
+  choice. Caption lines break with the same rule, within 42 characters.
+- The maskable 512 icon; publish 1.5.1 in the releases feed.
+
+### Films
+
+- **Eleven films remade from scratch**, 75 s each, one idea per scene, the
+  design shown on screen in crisp 4K HTML rather than described; no
+  navigation rail; French voice written on its own rather than translated.
+- **A voice heard before it is kept.** Every narrated sentence is
+  transcribed back without hints and compared with the script; under 0.88,
+  or when the name lacks its Italian « tts », the take is redone (four at
+  most). Validated takes are cached, so changing one line redoes that line.
+- A sentence too long for one caption becomes several cues cut at the
+  joints of meaning (`3`, `3.1`), and `rewrite_cues` keeps those ids, which
+  makes it idempotent. All 22 tracks pass `sprezzature-audio audit`.
+- `films.yaml` checks 12 claims, among them publish's 13 tools (the film
+  said ten in the repository and nine in the package).
+
 ## [1.8.1] — 2026-11-06: chaque document relu contre son code
 
 **The suite floors move to the releases of the evening.** accessibility 1.4.3, audio 1.10.3, cli-gui 1.5.2, colors 1.2.3, figures 2.9.2, maps 1.1.3, publish 1.5.0, ui 1.2.2, ux-laws 1.4.2, video 0.4.3.
