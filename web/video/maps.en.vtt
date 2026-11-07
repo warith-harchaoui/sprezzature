@@ -1,85 +1,63 @@
 WEBVTT
 
 0
-00:00:01.100 --> 00:00:06.859
+00:00:01.100 --> 00:00:04.460
 Sprezzature is an AI engine for Design.
-Maps draws on real ground.
 
 1
-00:00:07.400 --> 00:00:12.440
-You hold an export of conflict events.
-Every row says how well it is located.
+00:00:04.660 --> 00:00:06.500
+This one is about maps.
 
 2
-00:00:18.000 --> 00:00:21.937
-Drop the point layer.
-Every row becomes the same confident dot.
+00:00:08.000 --> 00:00:11.375
+A table of countries hides
+where things really happen.
 
 3
-00:00:23.000 --> 00:00:27.250
-The map asserts a street corner
-the source never gave, once per row.
+00:00:13.000 --> 00:00:16.720
+And most maps draw every place
+as the same little dot.
 
 4
-00:00:27.600 --> 00:00:32.040
-3 generators draw here,
-on real coastlines and measured relief.
+00:00:20.400 --> 00:00:24.587
+Here, maps start from the real ground:
+mountains, rivers and lakes.
 
 5
-00:00:37.000 --> 00:00:42.000
-A ramp stretched end to end is a story.
-Here the legend names its classes.
+00:00:25.800 --> 00:00:30.720
+Every line is drawn by our own code,
+on a projection chosen for the region.
 
 6
-00:00:42.400 --> 00:00:48.960
-The world sits on Equal Earth:
-ŠAVRIČ, PATTERSON and JENNY, 2018.
+00:00:33.400 --> 00:00:37.160
+Then the story goes on top:
+who holds what, and where.
 
 7
-00:00:49.160 --> 00:00:53.597
-Then the plate that draws no map.
-The land appears because events fell.
+00:00:38.600 --> 00:00:42.162
+The legend sits in the quiet corner,
+never on the action.
 
 8
-00:00:54.600 --> 00:00:59.600
-ACLED, the armed conflict location
-and event data project, grades 1 to 3.
+00:00:45.400 --> 00:00:49.150
+The secret: conflict data says
+how precise each location is.
 
 9
-00:00:59.800 --> 00:01:05.360
-The Uppsala conflict data program,
-UCDP, grades it 1 to 7.
+00:00:50.000 --> 00:00:54.280
+A precise place gets a solid dot.
+A rough one gets a hollow ring.
 
 10
-00:01:05.560 --> 00:01:10.280
-So a named place is a filled disc,
-and an approximate one a hollow ring.
+00:00:55.400 --> 00:00:59.879
+4 actors, one clear legend,
+and a country you recognise at a glance.
 
 11
-00:01:10.480 --> 00:01:14.760
-A province pinned to its capital gets
-a broken ring, never a dot.
+00:01:06.000 --> 00:01:11.200
+Star it on GitHub,
+and find the suite on sprezzature.ai.
 
 12
-00:01:14.960 --> 00:01:18.640
-That wording is ACLED's own,
-read out of its codebook.
-
-13
-00:01:22.400 --> 00:01:27.240
-Ukraine. 6 markers, 6 rings,
-because the source said approximate.
-
-14
-00:01:28.600 --> 00:01:32.475
-Nothing on this plate claims
-a position the source never gave.
-
-15
-00:01:40.400 --> 00:01:44.640
-Go to sprezzature.ai,
-and drop a GitHub star if it deserves it.
-
-16
-00:01:48.600 --> 00:01:51.199
+00:01:11.600 --> 00:01:14.360
 Make it, audit it, take a look at it.

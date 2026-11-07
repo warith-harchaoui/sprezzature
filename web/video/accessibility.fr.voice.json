@@ -1,6 +1,6 @@
 {
  "engine": "chatterbox",
  "voice": "",
- "speaker_helper": "0.13.0",
- "lines": 17
+ "speaker_helper": "0.15.2",
+ "lines": 9
 }

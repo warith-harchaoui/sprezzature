@@ -316,7 +316,10 @@ def timed_cues(texts, times, names=None):
             pieces.append((part, (at, at + span), name if k == 0 else f"{name}.{k}"))
             at += span
     texts = [p[0] for p in pieces]
-    times = [p[1] for p in pieces]
+    # On the millisecond grid the track is written on: a piece ending at
+    # 6.3105 was written 6.310, read back as 6.30999... and truncated to
+    # 6.309, so a second pass moved it.
+    times = [(round(p[1][0], 3), round(p[1][1], 3)) for p in pieces]
     names = [p[2] for p in pieces]
 
     out = []

@@ -288,6 +288,9 @@ def _words(text: str) -> list[str]:
     text = _BRAND.sub(" sprezzature ", text)
     text = text.replace("\u2019", "'").lower()
     text = re.sub(r"\bd'ia\b|\bdia\b", "d ia", text)
+    # An English possessive is heard without its apostrophe: "Hick's" comes
+    # back "Hicks", and split on the quote it scored as a missing word.
+    text = re.sub(r"(\w)'s\b", r"\1s", text)
     text = "".join(c if (c.isalnum() or c in " '") else " " for c in unicodedata.normalize("NFC", text))
     return [w for w in re.split(r"[\s']+", text) if w]
 
