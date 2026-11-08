@@ -1,46 +1,46 @@
 WEBVTT
 
 0
-00:00:01.100 --> 00:00:06.039
+00:00:01.100 --> 00:00:06.549
 Sprezzature est un moteur d'IA pour
 le design, et ce film parle de graphiques.
 
 1
-00:00:08.000 --> 00:00:11.030
+00:00:08.000 --> 00:00:11.031
 Un tableur ouvert,
 aucune idée du bon graphique,
 
 1.1
-00:00:11.030 --> 00:00:14.125
+00:00:11.031 --> 00:00:14.125
 et l'on refait
 l'histogramme de la dernière fois.
 
 2
-00:00:20.400 --> 00:00:24.240
-Ici, 167 types de graphiques
+00:00:20.400 --> 00:00:24.355
+Ici, 168 types de graphiques
 vous attendent :
 
 2.1
-00:00:24.240 --> 00:00:27.398
+00:00:24.355 --> 00:00:27.608
 flux, réseaux, distributions, cartes.
 
 3
-00:00:27.599 --> 00:00:30.662
+00:00:27.808 --> 00:00:31.143
 Ils sont rangés du plus lisible
 au moins lisible.
 
 4
-00:00:33.400 --> 00:00:37.962
+00:00:33.400 --> 00:00:38.050
 Chacun est dessiné à la main, trait
 par trait, en vrai fichier vectoriel.
 
 5
-00:00:38.800 --> 00:00:43.379
+00:00:38.800 --> 00:00:43.300
 Le texte reste du texte : on le
 sélectionne, on le cherche, on l'entend.
 
 6
-00:00:45.400 --> 00:00:49.336
+00:00:45.400 --> 00:00:49.380
 Le secret ? Chaque type déclare
 les données dont il a besoin.
 
@@ -55,10 +55,10 @@ Le résultat se lit comme une page,
 et non comme une capture d'écran.
 
 9
-00:01:06.000 --> 00:01:11.600
+00:01:06.000 --> 00:01:12.120
 Si ça vous aide, une étoile sur GitHub,
 et toute la suite sur sprezzature.ai.
 
 10
-00:01:11.800 --> 00:01:14.296
+00:01:12.320 --> 00:01:14.444
 Faites, auditez, et regardez.

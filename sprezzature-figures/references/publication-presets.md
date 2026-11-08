@@ -35,7 +35,7 @@ on print-readiness without amounting to a journal preset:
   (documented in `references/ralph-eyeball-loop.md`) rasterises a TikZ
   figure, a Mermaid diagram, or a hand-authored SVG, and takes `--dpi`
   (default 300) for the TikZ PDF-to-PNG step; it has no width or height
-  flag. The 167-kind catalogue takes `--scale N` on
+  flag. The 168-kind catalogue takes `--scale N` on
   `sprezzature-figures render`, which upsamples PNG, JPG or PDF output N
   times for a hi-DPI screen or print (ignored for SVG and HTML). Neither
   is a physical-size argument: nothing in this package sets a column

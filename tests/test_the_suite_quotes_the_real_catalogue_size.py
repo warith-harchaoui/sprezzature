@@ -162,10 +162,18 @@ def test_the_gallery_page_counts_what_it_shows(path: str) -> None:
 
 
 def test_both_gallery_pages_render_the_same_figures() -> None:
-    """A figure added to one language and not the other is a half-shipped figure."""
+    """A figure added to one language and not the other is a half-shipped figure.
+
+    A French figure drawn in French rather than translated after the fact is
+    named ``<kind>-fr`` (`tools/localize_figures.py` copies those across
+    untouched), so the suffix names the same figure.
+    """
     def kinds(path: str) -> set[str]:
         page = (REPO_ROOT / path).read_text(encoding="utf-8")
-        return {m.rsplit("/", 1)[-1] for m in re.findall(r'data-src="([^"]+)\.svg"', page)}
+        return {
+            m.rsplit("/", 1)[-1].removesuffix("-fr")
+            for m in re.findall(r'data-src="([^"]+)\.svg"', page)
+        }
 
     en, fr = kinds("web/figures.html"), kinds("web/fr/figures.html")
     assert en == fr, (
