@@ -14,18 +14,11 @@
 
 ## Decision tree
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"fontFamily":"Roboto, system-ui, sans-serif","lineColor":"#8E8E93"}}}%%
-flowchart TD
-    Q{"Must the user respond<br/>before continuing?"}
-    Q -->|No| INLINE["inline<br/>banner, hint, in-place edit"]
-    Q -->|Yes| A{"What kind of choice?"}
-    A -->|"< 3 options, one line of body"| ALERT[alert]
-    A -->|form or list of choices| SHEET[sheet]
-    A -->|contextual menu near an anchor| POPOVER[popover]
-    classDef step fill:#CCE4FF,stroke:#007AFF,color:#1D1D1F;
-    class INLINE,ALERT,SHEET,POPOVER step;
-```
+If the user need not respond before continuing, stay **inline** (banner, hint, in-place edit). If they must, the kind of choice decides:
+
+- fewer than 3 options and one line of body: **alert**;
+- a form or a list of choices: **sheet**;
+- a contextual menu near an anchor: **popover**.
 
 ## Concrete rules
 

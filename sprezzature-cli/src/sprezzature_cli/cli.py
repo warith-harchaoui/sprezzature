@@ -401,10 +401,10 @@ def publish_plain(ctx: click.Context) -> None:
 
 
 @publish.command(name="lint-md", context_settings=CONTEXT_SETTINGS, add_help_option=False,
-                 help="Lint Markdown — headings, alt text, links, LaTeX delimiters, Mermaid (rendered locally).")
+                 help="Lint Markdown — headings, alt text, links, LaTeX delimiters, any Mermaid block left to redraw.")
 @click.pass_context
 def publish_lint_md(ctx: click.Context) -> None:
-    """Lint Markdown — headings, alt text, links, LaTeX, Mermaid."""
+    """Lint Markdown — headings, alt text, links, LaTeX, leftover Mermaid."""
     sys.exit(_run_tool(
         "sprezzature-publish", "lint_markdown.py", tuple(ctx.args),
         console_script="sprezzature-publish-lint",
@@ -413,10 +413,10 @@ def publish_lint_md(ctx: click.Context) -> None:
 
 
 @publish.command(name="md-to-html", context_settings=CONTEXT_SETTINGS, add_help_option=False,
-                 help="Convert Markdown → HTML with local Mermaid PNG embed, KaTeX LaTeX, three-Roboto + Tailwind shell.")
+                 help="Convert Markdown → HTML with KaTeX LaTeX, three-Roboto + Tailwind shell.")
 @click.pass_context
 def publish_md_to_html(ctx: click.Context) -> None:
-    """Convert Markdown to HTML (Mermaid PNG, KaTeX, Tailwind shell)."""
+    """Convert Markdown to HTML (KaTeX, Tailwind shell)."""
     sys.exit(_run_tool(
         "sprezzature-publish", "md_to_html.py", tuple(ctx.args),
         console_script="sprezzature-publish-html",

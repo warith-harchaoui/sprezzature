@@ -5,21 +5,7 @@ transcript-based LLM pass) to the caption stream.
 
 ## Pipeline
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"fontFamily":"Roboto, system-ui, sans-serif","lineColor":"#8E8E93"}}}%%
-flowchart TD
-    A[audio / video] --> CAP["sprezzature-audio-captions<br/>WebVTT / SRT with the words"]
-    CAP --> DIA["sprezzature-audio-diarize<br/>Sortformer → RTTM + turn JSON"]
-    DIA --> TIT["sprezzature-audio-identify<br/>voice reference clips"]
-    DIA --> NAM["sprezzature-audio-name<br/>vocatives + self-intro + optional Ollama"]
-    TIT --> SPK["speakers.json<br/>speaker id → display name"]
-    NAM --> SPK
-    SPK --> MRG["sprezzature-audio-pipeline<br/>speaker-labelled VTT / SRT / TXT"]
-    classDef step fill:#CCE4FF,stroke:#007AFF,color:#1D1D1F;
-    classDef data fill:#D4F5D9,stroke:#28CD41,color:#1D1D1F;
-    class CAP,DIA,TIT,NAM,MRG step;
-    class A,SPK data;
-```
+![The pipeline, top to bottom. Audio or video goes to sprezzature-audio-captions, then sprezzature-audio-diarize. Its turns go to either sprezzature-audio-identify (voice reference clips) or sprezzature-audio-name (vocatives, self-introductions, optional Ollama). Both write speakers.json, which sprezzature-audio-pipeline merges into speaker-labelled VTT, SRT and TXT.](diarization-pipeline.svg)
 
 ## Models
 

@@ -66,7 +66,7 @@ On relit une phrase pour la corriger. Impossible de faire pareil avec un
 graphique : sa justesse est dans les pixels, pas dans le code. Alors
 `ralph_eyeball_loop` rend n'importe quel artefact
 visuel-issu-du-code en PNG avec un outil déterministe (une figure TikZ,
-un diagramme Mermaid, une page web entière, un SVG dessiné
+une page web entière, un SVG dessiné
 avec soin), puis quelqu'un le regarde vraiment. Par défaut c'est l'agent
 lui-même, celui qui a écrit le code ; entièrement hors ligne, un VLM local
 optionnel fait la critique. Il attrape ce qu'un contrôle de code ne verra

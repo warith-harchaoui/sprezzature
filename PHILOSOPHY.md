@@ -61,8 +61,8 @@ into the fullscreen element so it stays visible.)
 You can proofread a sentence by reading it back. You cannot do that with a
 chart: whether it is right lives in the pixels, not the source. So
 `ralph_eyeball_loop` renders any visual-from-code
-artifact to a PNG with a deterministic tool (a TikZ figure, a Mermaid
-diagram, a whole web page, a carefully drawn SVG), and then something
+artifact to a PNG with a deterministic tool (a TikZ figure, a whole
+web page, a carefully drawn SVG), and then something
 actually looks at it. By default that is the agent itself, the same one
 that wrote the code; fully offline, an optional local VLM does the
 critique. It catches what a code check never will: a label clipped at the
