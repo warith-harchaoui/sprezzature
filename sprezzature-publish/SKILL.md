@@ -95,7 +95,7 @@ exists**, which has no Markdown to go back to.
 |---|---|---|
 | **Make** — generate site artifacts | `sprezzature-publish-icons`, `-meta`, `-indexes`, `-plain`, `-html`, `-narrate`, `-readalong`, `-changelog` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along, and one Atom + RSS feed from sibling repositories' `CHANGELOG.md`. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
 | **Make + audit** — what the site is for | `sprezzature-publish-cta`, `-faq`, `-findable` | Declared CTAs (`ctas.yaml`), the FAQ built from the site's own pages and its `FAQPage` markup, and the joint SEO + GEO + AEO report ordered by money pages. Reads HTML, PHP, Markdown, JSON and YAML. |
-| **Audit** — before the render, gate the source | `sprezzature-publish-lint` | Markdown lint with project-aware rules (heading order, fenced-code language, trailing whitespace, empty image alt, a local link whose target is not on disk). `--fix` strips trailing whitespace and, with `--render-mermaid`, inserts the rendered PNG references; nothing else. |
+| **Audit** — before the render, gate the source | `sprezzature-publish-lint` | Markdown lint with project-aware rules (heading order, fenced-code language, trailing whitespace, empty image alt, a local link whose target is not on disk). A fenced Mermaid block gets `MMD001`: redraw it with `sprezzature-figures render flowchart` and embed the SVG. `--fix` strips trailing whitespace; nothing else. |
 | **Audit** — after the render, read what was emitted and repair it | `sprezzature-publish-audit` | `sprezzature-publish-audit <dir\|page\|url>`. Head meta, Open Graph, Twitter Card, JSON-LD, icon and manifest links, `robots.txt`, `sitemap.xml`, `llms.txt`, feed, icon set on disk. **No Markdown source required** — this is the tool for a site somebody else built. `--fix` writes back only what is *derived*: canonical from `--base-url`, `og:*` / `twitter:*` mirrored from the page's own title and description, the icon links from the `head.html` `favicons` wrote, `robots.txt` / `sitemap.xml` regenerated through `site_indexes`, and `og:image` / `<html lang>` only when `--og-image` / `--lang` are given and the page has none. The wording of a title, the choice of an `og:image` without `--og-image`, a JSON-LD body: reported with the command that drafts them, never written. A URL is reported, never repaired. |
 
 Pair the emitted HTML with `sprezzature-accessibility-lint` (a11y) and
@@ -116,7 +116,7 @@ When the user points to a Markdown-only project and asks for a website:
    - Sticky top bar with the project name on start, theme switcher on end.
    - Sidebar (lg:) with section tree on `docs/**` pages.
    - Bottom tab bar (mobile) when ≤ 5 top-level destinations.
-5. **Convert Markdown to HTML**. `sprezzature-publish-html <file-or-dir> --out site/` does it at build time (python-markdown, Mermaid rendered, KaTeX for math), and each page keeps its source's name, so `README.md` becomes `README.html`: rename the landing to `index.html`; any other build-step tool (Pandoc, `markdown-it`) is fine as long as the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
+5. **Convert Markdown to HTML**. `sprezzature-publish-html <file-or-dir> --out site/` does it at build time (python-markdown, KaTeX for math), and each page keeps its source's name, so `README.md` becomes `README.html`: rename the landing to `index.html`; any other build-step tool (Pandoc, `markdown-it`) is fine as long as the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
 6. **Wire meta tags per page** using `references/meta-tags.md` and (optional) `sprezzature-publish-meta path/to/page.html`.
 7. **Generate the favicon set** from the project's logo: `sprezzature-publish-icons logo.png --out public --name "Project name"`. Drop the produced `head.html` snippet into the layout template.
 8. **Emit indexes**: `sprezzature-publish-indexes --root . --base-url https://example.com [--feed-from posts]` — produces robots.txt + sitemap.xml + llms.txt + llms-full.txt + optional Atom feed.
@@ -210,7 +210,7 @@ modified in place.
 - `references/seo-essentials.md` — Google's three Search Essentials pillars + the AI Optimization Guide's foundations, applied concretely to the artifacts this skill emits. Use it when the user asks about SEO / AI search / "is this third-party advice true?".
 - `references/plain-language.md` — rewrite copy at a target reading level; preserves meaning.
 - `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post (or an existing HTML page) into a narrated WAV/MP3 via ChatterboxTTS (the router's answer today), OpenVoice v2 (both MIT for code AND weights) or Kokoro (Apache-2.0). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM enrichment via the same local Ollama daemon already used for alt-text, voice cloning (OpenVoice, Chatterbox) from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
-- `references/lint-markdown.md` — every `sprezzature-publish-lint` rule (`MD000`–`MD050`, `MDX001`–`MDX003`, `MMD001`), `--fix`, `--render-mermaid` and the read-only `--ai` pass.
+- `references/lint-markdown.md` — every `sprezzature-publish-lint` rule (`MD000`–`MD050`, `MDX001`–`MDX003`, `MMD001`), `--fix` and the read-only `--ai` pass.
 - `references/writing-standards.md` — the per-language writing charters and the prompt files that inject them.
 - `references/i18n.md` — multilingual frontend (URL strategy, `Intl.*`, plurals, RTL, persisted choice). Default language pair is configurable per project (EN/FR, EN/DE, EN/ES, EN/JA, …).
 
@@ -220,8 +220,8 @@ Every command below comes with the one `pip install sprezzature-publish`; there 
 
 | Command | Needs | Purpose |
 |---|---|---|
-| `sprezzature-publish-lint` | — (`--ai`: Ollama) | Lints Markdown before it renders; `--fix` for trailing whitespace, `--render-mermaid` for the diagram PNGs |
-| `sprezzature-publish-html` | — | Markdown → static HTML pages, Mermaid rendered; `--readalong <dir>` binds a narration |
+| `sprezzature-publish-lint` | — (`--ai`: Ollama) | Lints Markdown before it renders; `--fix` for trailing whitespace |
+| `sprezzature-publish-html` | — | Markdown → static HTML pages, KaTeX for math; `--readalong <dir>` binds a narration |
 | `sprezzature-publish-icons` | — | Full favicon / PWA icon set + manifest + head snippet from a single logo |
 | `sprezzature-publish-meta` | Ollama | Drafts title / description / OG / Twitter / JSON-LD from a goal or HTML page |
 | `sprezzature-publish-indexes` | — | robots.txt + sitemap.xml + llms.txt + llms-full.txt + an Atom feed (RSS 2.0 with `--rss`) + humans.txt (`--humans`) |

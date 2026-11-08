@@ -14,7 +14,7 @@ The name borrows from an older habit in software: "render, look, fix the
 code, repeat." The loop implemented here is that same cycle applied to
 anything that turns code into a picture, not only figures.
 
-## Scope: one loop, four surfaces
+## Scope: one loop, three surfaces
 
 `ralph_eyeball_loop.py` is repo-wide, not data-viz-specific. Data
 visualization is one surface it happens to cover, not the reason it
@@ -24,23 +24,25 @@ exists. The kind is auto-detected from the source file's suffix:
 |---|---|---|
 | Web page / GUI screen | `.html`, `.htm` | Headless Chrome, screenshotted directly by `ralph_eyeball_loop.py` |
 | TikZ figure | `.tex`, `.tikz` | `tectonic` (preferred) or `pdflatex` + `pdftoppm`, via `render_diagram.py` |
-| Mermaid diagram | `.mmd`, `.mermaid` | `mmdc` (mermaid-cli), via `render_diagram.py` |
 | Hand-authored SVG | `.svg` | `rsvg-convert` (preferred) or ImageMagick, via `render_diagram.py` |
 
 A declarative chart spec is not one of the surfaces this loop
-understands: `render_diagram.py`'s `KINDS` tuple is `("tikz", "mermaid",
-"svg")`, and nothing in this package produces or consumes a spec. Every
+understands: `render_diagram.py`'s `KINDS` tuple is `("tikz", "svg")`, and
+nothing in this package produces or consumes a spec. Every
 chart the 168-kind catalogue emits is already hand-authored SVG, so it
 goes through the `.svg` row above like any other hand-authored figure.
+That is also the route for boxes and arrows: draw them with
+`sprezzature-figures render flowchart --data arrows.csv --out flow.svg`, then
+loop on the SVG. No other diagram language is read: the tools refuse one with
+exit code 2 and a sentence naming that command.
 
-For the three diagram surfaces, `ralph_eyeball_loop.py` does not render
+For the two diagram surfaces, `ralph_eyeball_loop.py` does not render
 anything itself, it shells out to the sibling script `render_diagram.py`
 in the same directory, passing through `--background` and `--dark`. Only
 the HTML path is rendered in-process, via a direct headless-Chrome
-subprocess call. The two diagram-source renderers theme their output from
-the same canonical `sprezzature-colors` palette by default: TikZ gets an
-injected `\definecolor` preamble, Mermaid an injected `%%{init}%%` theme
-block. A hand-authored SVG's colors are already baked into its markup, so
+subprocess call. TikZ is themed from the canonical `sprezzature-colors`
+palette by default, through an injected `\definecolor` preamble. A
+hand-authored SVG's colors are already baked into its markup, so
 this renderer passes it through unthemed.
 
 ## The loop, in four steps
@@ -155,10 +157,9 @@ any-file version.
 
 `python -m sprezzature_figures_scripts.ralph_eyeball_loop --check-tools`
 prints a table of which per-surface renderer is installed. `--install-tools`
-auto-installs whatever is npm-installable (`@mermaid-js/mermaid-cli`) and
-prints manual install instructions for the rest (Chrome, `tectonic`,
-`librsvg`, Ollama plus the vision model pull), since those are not
-Python or Node packages.
+installs nothing itself: it prints the command for each missing tool (Chrome,
+`tectonic`, `librsvg`, Ollama plus the vision model pull), since none of them
+is a Python package.
 
 ## Usage
 

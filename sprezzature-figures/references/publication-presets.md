@@ -33,7 +33,7 @@ on print-readiness without amounting to a journal preset:
   it is missing.
 - **Resolution, but not physical size.** `render_diagram.py`
   (documented in `references/ralph-eyeball-loop.md`) rasterises a TikZ
-  figure, a Mermaid diagram, or a hand-authored SVG, and takes `--dpi`
+  figure or a hand-authored SVG, and takes `--dpi`
   (default 300) for the TikZ PDF-to-PNG step; it has no width or height
   flag. The 168-kind catalogue takes `--scale N` on
   `sprezzature-figures render`, which upsamples PNG, JPG or PDF output N

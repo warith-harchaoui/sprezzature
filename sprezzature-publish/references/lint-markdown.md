@@ -9,12 +9,11 @@ sites and by anyone consuming the sprezzature skills. Three jobs:
 2. Validate **LaTeX display blocks** for delimiter balance and multi-line
    hygiene. A missing `\\` inside an `align` environment silently
    collapses every formula on most renderers.
-3. Validate **Mermaid blocks** by rendering them to a local PNG so the
-   diagram still works when JS is disabled or when the renderer is on a
-   different version.
+3. Report every **Mermaid block** (`MMD001`). Nothing here draws one: redraw
+   the diagram with `sprezzature-figures render flowchart` and embed the SVG.
 
-All rendering is **fully local**. No network, no SaaS, no GitHub Actions
-hosted rendering. The pipeline is reproducible.
+The static rules never reach the network, and `--ai` talks to a local Ollama
+only.
 
 ## Quick start
 
@@ -22,14 +21,11 @@ hosted rendering. The pipeline is reproducible.
 pip install sprezzature-publish
 sprezzature-publish-lint docs/
 
-# Render every Mermaid block to a PNG sibling and insert a fallback <img>:
-sprezzature-publish-lint --render-mermaid --fix docs/
-
-# Add AI suggestions (Mermaid label improvements + LaTeX captions):
+# Add AI suggestions (LaTeX captions):
 sprezzature-publish-lint --ai --ai-lang en docs/intro.md
 ```
 
-Via the front door: `make-site lint docs/ --render-mermaid` (or
+Via the front door: `make-site lint docs/` (or
 `sprezzature-publish lint …`, the same command under its other name).
 
 ## Rules implemented
@@ -44,48 +40,26 @@ Via the front door: `make-site lint docs/ --render-mermaid` (or
 | `MDX001` | error | `$$ … $$` delimiters not balanced. |
 | `MDX002` | warning | Multi-line display math without `\\` or an `align/gather` environment. |
 | `MDX003` | error | Inside `\begin{align}` / `aligned` / `gather`, a non-trailing line is missing `\\`. |
-| `MMD001` | error | A Mermaid block failed to render locally. |
+| `MMD001` | warning | A fenced Mermaid block: redraw it with `sprezzature-figures`. |
 | `MD000` | warning | The file is not valid UTF-8, so it was skipped. |
 
-`MD001`, `MD050`, `MDX001`, `MDX003`, `MMD001` flip the exit code to `1`.
+`MD001`, `MD050`, `MDX001`, `MDX003` flip the exit code to `1`.
 The rest are informational.
 
-## Mermaid rendering (local)
+## Mermaid blocks (`MMD001`)
 
-Two backends, tried in order:
+`lint` and `html` draw no diagram and load no diagram library. `MMD001` is a
+warning, the exit code stays `0`, and `html` leaves the block on the page as
+code and says so in its result for that file. To get the diagram, write its
+arrows as rows and let `sprezzature-figures` lay them out:
 
-1. **Pure Python `mmdc`**. Its own QuickJS and resvg engine (no Node, no
-   npm, no Chromium), and a base dependency of `sprezzature-publish`, so
-   it is already installed. Look at the PNG: with `mmdc` 0.7.0 a diagram
-   can come out cropped and without its labels, with no error raised.
-2. **Node `@mermaid-js/mermaid-cli`** (`npm install -g
-   @mermaid-js/mermaid-cli`). Fallback if the pure-Python backend fails
-   or is not installed. Heavier; pulls Chromium via Puppeteer.
+```bash
+printf 'source,target\nDraft,Review\nReview,Publish\n' > flow.csv
+sprezzature-figures render flowchart --data flow.csv --out docs/flow.svg
+```
 
-If neither is available the script flags the block as `MMD001` and prints
-both install commands. **It never attempts a hosted render.**
-
-Output: one PNG per Mermaid block, named
-`<source-stem>.mermaid-<N>.png` where `N` counts every fenced block of the
-file, written alongside the source (or under `--out-dir`). When `--fix` is set the script inserts an
-`![Mermaid diagram (rendered for non-JS readers)](…)` line above each
-block so the static HTML still shows the diagram if the page later
-disables Mermaid.js.
-
-### Why local rendering matters
-
-- **Privacy.** Diagrams may contain internal architecture, customer
-  names, in-progress code. Rendering through a hosted service leaks
-  them.
-- **Reproducibility.** Hosted Mermaid versions update; the diagram you
-  rendered last year stops rendering or renders differently. A local
-  PNG saved beside the source is permanent.
-- **Offline.** CI in an air-gapped environment, a flight, a
-  cafe-without-wifi: none of these break the rendering pipeline.
-- **Accessibility.** The PNG sibling is the right surface for an
-  alt-text helper. See `sprezzature-accessibility-alt` (or the lint's
-  `--fix-alt`) in sprezzature-accessibility; the rendered PNG can be
-  passed to it directly.
+Then embed the SVG with a Markdown image and an alt text that says what the
+diagram shows, and delete the block.
 
 ## LaTeX checks
 
@@ -105,30 +79,25 @@ validates structure only:
 When `--ai` is set and a local Ollama daemon is reachable, the script
 also:
 
-- Drafts up to three **Mermaid label edits** (verb-first, parallel
-  structure, match the existing label language). Returned as JSON; never
-  auto-applied.
 - Drafts a **plain-language caption** for each LaTeX display block (one
   sentence, ≤ 30 words, screen-reader-friendly). The caption is printed
   for you to paste into a sibling `<figcaption>` or `aria-describedby`
   block.
 
 The AI step is **read-only**. Under `--fix` the static half rewrites
-trailing whitespace (`MD009`) and, with `--render-mermaid`, inserts the
-PNG sibling references; nothing else is repaired. The AI step prints
+trailing whitespace (`MD009`); nothing else is repaired. The AI step prints
 suggestions you apply by hand.
 
 ### Prompts
 
-The script ships two prompts. They are intentionally:
+The script ships one prompt. It is intentionally:
 
 1. One concrete role line at the top ("You are a senior technical-documentation reviewer").
 2. Numbered hard rules: the model gets specific constraints, not vague guidance.
-3. An explicit output contract: JSON array for the Mermaid task; one sentence (no quotes, no prefix) for the LaTeX caption. Both are parsed strictly; a model that drifts off-contract returns an empty result and the script reports nothing for that block.
-4. Zero-shot. No in-context examples; both tasks are common enough in the model's training distribution that examples cost tokens without lifting quality.
+3. An explicit output contract: one sentence, no quotes, no prefix.
+4. Zero-shot. No in-context examples; the task is common enough in the model's training distribution that examples cost tokens without lifting quality.
 
-See `scripts/prompts/mermaid_labels.yaml` and
-`scripts/prompts/latex_caption.yaml` for the verbatim prompts, loaded by
+See `scripts/prompts/latex_caption.yaml` for the verbatim prompt, loaded by
 `scripts/_prompts.py`.
 
 ## CI integration
@@ -139,9 +108,6 @@ See `scripts/prompts/mermaid_labels.yaml` and
     pip install sprezzature-publish
     sprezzature-publish-lint docs/
 ```
-
-Add `--render-mermaid --fix` if you want CI to commit the rendered PNGs;
-otherwise keep CI lint-only.
 
 ## Honest framing
 

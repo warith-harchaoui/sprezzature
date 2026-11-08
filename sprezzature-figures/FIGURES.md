@@ -28,7 +28,7 @@ path = make_figure("bar", data, out="output.png", title="My chart")
 
 ### With the Ralph Eyeball Loop
 
-The loop takes the *source* of a visual (`.svg`, `.html`, `.tex`, `.mmd`),
+The loop takes the *source* of a visual (`.svg`, `.html`, `.tex`),
 renders it to PNG itself, and writes the critique to
 `.private/ralph-loop/assessment-<hash>.md`.
 

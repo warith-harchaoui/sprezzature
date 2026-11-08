@@ -1,7 +1,7 @@
 # Writing Standards
 
 How the project enforces consistent prose quality on all auto-generated text: meta tags,
-plain-language rewrites, LaTeX captions, Mermaid label suggestions, and narration copy.
+plain-language rewrites, LaTeX captions, and narration copy.
 
 Use this file when adding a new LLM prompt, authoring a charter for a new language, or
 diagnosing why generated text violated a style rule.
@@ -71,7 +71,6 @@ automatically enforces the charter.
 | `meta_tags_json.yaml` | `meta_from_ollama.py` | Title, description, Open Graph, Schema.org type, keywords |
 | `plain_language_rewrite.yaml` | `plain_language.py` | Plain-language rewrites at a target grade level |
 | `latex_caption.yaml` | `lint_markdown.py` | One-sentence screen-reader captions for LaTeX blocks |
-| `mermaid_labels.yaml` | `lint_markdown.py` | Label improvement suggestions for Mermaid diagrams |
 | `faq_answer.yaml` | `faq.py` | FAQ answers drafted from the site's own passages (`--llm`) |
 
 The `narration_emotion.yaml` prompt is a TTS annotation classifier, not a prose generator;

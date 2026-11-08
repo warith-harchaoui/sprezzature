@@ -3,19 +3,18 @@ name: sprezzature-figures
 description: >-
   Figures, diagrams and the Ralph Eyeball Loop: 168 hand-authored, often
   interactive and animated SVG chart types whose markup is written directly,
-  plus explainability (SHAP / Shapash / LIME) and causal DAGs (DoWhy). check
-  finds overlapping labels in any SVG, with no model. The
-  loop reads any visual from code (figure, Mermaid, TikZ, a whole HTML page)
-  as an agent or --local (qwen3-vl:8b, offline). redraw() takes a picture of
-  somebody else's chart and redraws it here, never inventing the numbers.
-  Never ASCII art. Use it when you are holding numbers you want somebody to
-  SEE, or a chart that is hard to read. Trigger phrases: "make a figure",
-  "chart this", "plot this", "heatmap", "treemap", "sankey", "mermaid
-  diagram", "no ascii art", "ralph eyeball loop", "SHAP plot", "DAG",
-  "waterfall chart", "redraw this chart", "audit this figure". Output: SVG,
-  PNG, PDF, JPG or HTML. Not this one when: the numbers are attached to real
-  PLACES (sprezzature-maps). The exhaustive trigger catalogue is in
-  `references/triggers.md`.
+  flow diagrams (flowchart) included, plus explainability (SHAP / Shapash /
+  LIME) and causal DAGs (DoWhy). check finds overlapping labels in any SVG,
+  with no model. The loop reads any visual from code (figure, TikZ, a whole
+  HTML page) as an agent or --local (qwen3-vl:8b, offline). redraw() redraws a
+  picture of a chart here, never inventing the numbers. Never ASCII art. Use
+  it when you are holding numbers you want somebody to SEE, or a chart that is
+  hard to read. Trigger phrases: "make a figure", "chart this", "plot this",
+  "heatmap", "treemap", "sankey", "mermaid diagram", "no ascii art", "ralph
+  eyeball loop", "SHAP plot", "DAG", "waterfall chart", "redraw this chart",
+  "audit this figure". Output: SVG, PNG, PDF, JPG or HTML. Not this one when:
+  the numbers are attached to real PLACES (sprezzature-maps). The exhaustive
+  trigger catalogue is in `references/triggers.md`.
 license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10 to 3.13; one
@@ -23,7 +22,7 @@ compatibility: >-
   explainability and causal stacks, the Studio, the HTTP API and the MCP
   server. The static auditor needs only the standard library. The render_diagram.py
   renderer needs, per kind: tectonic/pdflatex + pdftoppm/magick (TikZ),
-  mmdc (Mermaid), rsvg-convert/magick (SVG), all optional, fail loud. No
+  rsvg-convert/magick (SVG), all optional, fail loud. No
   network needed once installed.
 metadata:
   author: Warith HARCHAOUI
@@ -91,8 +90,8 @@ data-science figures:
 | **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (no external layout engine) + writes the effect table to JSON. |
 | **Make** — an areas-of-control situation map, or a choropleth on a real basemap | `sprezzature-maps` (standalone package, see note below) | `make_situation_map.py` and `build_situation_examples.py` no longer ship inside `sprezzature-figures`; they were split out into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package alongside `make_choropleth.py`, which draws on a real basemap (Natural Earth): the world choropleth in Equal Earth, the situation plate in an auto-centred Lambert conformal conic. `pip install sprezzature-maps`, then `make-map situation-map --config my-region.yaml --out region.svg` or `make-map choropleth --out world.svg`. `sprezzature-figures` keeps only the schematic, binned map kinds (`binned-grid-map`, `dotdensity`, `hexbin-map`, `hexmap`, `spike-map`), which plot points or grid cells, not real coastlines. |
 | **Make** — somebody else's chart, from a picture of it | `sprezzature-figures redraw` | Takes a screenshot (PNG/JPEG/GIF/WebP/SVG) of an existing chart, has a vision model read what kind it is and what costs the reader effort, and draws it here. **Never invents numbers**: `data_origin` reports `your-data` (rows you passed), `read-from-image` (printed on the original and read back, approximate) or `demo` (nothing readable — the redesign on sample rows, captioned as such on the figure itself). Pass `--data` to get a figure worth publishing. |
-| **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, TikZ figure, Mermaid diagram, hand-authored SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
-| **Render** — diagram source → image (diagram surfaces only) | `render_diagram.py` | Rasterises a TikZ figure, a Mermaid diagram, or a raw SVG to PNG. Palette-themed from `sprezzature-colors`; background white / transparent / dark selectable. Called internally by `ralph_eyeball_loop.py`; use directly when you want the PNG without the assessment file. |
+| **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, TikZ figure, hand-authored SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
+| **Render** — diagram source → image (diagram surfaces only) | `render_diagram.py` | Rasterises a TikZ figure or a raw SVG to PNG. TikZ is palette-themed from `sprezzature-colors`; background white / transparent / dark selectable. Called internally by `ralph_eyeball_loop.py`; use directly when you want the PNG without the assessment file. |
 | **Audit** — is the figure you just rendered legible, with no model at all | `sprezzature-figures check` | Reads the rendered SVG and reports what is decidable from the markup: labels colliding, text running off the canvas, a generator's demo chrome ("Region", "Quarterly figures") left over real data, a light card in the middle of a dark-mode figure, a title the generator dropped, a missing accessible title or description. Exit 1 on any finding. **Reach for this after every render whose result goes to someone other than you** — it is the eyeball loop's questions answered without a vision model, which is the only version available when you have none. It judges facts, never taste: an empty report does not mean the chart type suits the question. |
 | **Audit** — gate before ship | `audit_figure.py` | Static parser flags data-viz anti-patterns in an SVG chart or a rendered `<figure>` block in HTML. Findings as `error` or `warning`; exit non-zero when an `error` is present, and on warnings too with `--strict`. |
 | **Install** — one-shot setup of the tiered stack | `install_figures.py` | Installs the pinned dataviz / explainability / causality tiers of `requirements-*.txt` as requested; the base install already carries those libraries, so this is for pinning, not for enabling. Idempotent. Detects the active env manager (uv / poetry / pixi / conda / pip) and defers to it. |
@@ -123,7 +122,8 @@ data-science figures:
 | "situation map" / "areas of control" / "who controls what" / "conflict map" / "control map" | `sprezzature-maps` | Not in this package: the situation map moved to [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) (`make-map situation-map --config region.yaml --out region.svg`). Route there. |
 | "is this figure readable" / "check my chart" / "did the title make it" / "I have no vision model" | `sprezzature-figures check` | `sprezzature-figures check fig.svg [--dark] [--expect-title "..."] [--forbid "placeholder"] [--kind <kind>] [--format json]`; from Python it is `check_render`, over HTTP `POST /check_render`, over MCP the `check_render` tool. Exit 1 on any finding, so it gates a commit. Pass `--expect-title` whenever you asked for a title: a generator that silently drops the parameter is the failure nothing else catches. |
 | "ralph eyeball loop" / "eyeball this" / "screenshot the page" / "render web page" / "look at the PNG" | `ralph_eyeball_loop.py` | `python -m sprezzature_figures_scripts.ralph_eyeball_loop <source> [--width 1440] [--height 900] [--bg white\|transparent\|dark]`: kind auto-detected from suffix (.html → Chrome headless; others → render_diagram.py). Assessment file at `.private/ralph-loop/assessment-<hash>.md`. |
-| "render this diagram" / "tikz to png" / "mermaid diagram" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / mermaid / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
+| "mermaid diagram" / "flow diagram" / "boxes and arrows" | `flowchart` kind | `sprezzature-figures render flowchart --data arrows.csv --out flow.svg`: one row per arrow (`source`, `target`, optional `label`, `source_group`, `target_group`, `back`, `dashed`). No other diagram language is read. |
+| "render this diagram" / "tikz to png" / "iterate on a figure" | `render_diagram.py` | `python -m sprezzature_figures_scripts.render_diagram <source> --out fig.png [--background white\|transparent\|dark]`: kind (tikz / svg) auto-detected. Use directly for a one-shot render; use `ralph_eyeball_loop.py` for the full loop with assessment. |
 | user asks for a named charting library ("do this in <library>") | `sprezzature-figures render` + `sprezzature-figures list` | There is no such backend here and no plan for one: all 168 kinds are SVG authored directly, and so are the explainability and causal plots. Say that plainly and draw the figure, rather than promising output from a library this package does not use. |
 | "audit this figure" / "is this chart misleading" | `audit_figure.py` | `python -m sprezzature_figures_scripts.audit_figure <path> [--json] [--strict] [--ignore r1,r2] [--only r1,r2]`: accepts an SVG chart, an HTML file with `<figure>` blocks, or a directory of them. |
 | "colorblind-safe palette on the figure" | `sprezzature-colors` | `audit_figure.py` does not judge colour-vision safety (it only refuses the rainbow ramps); run `sprezzature-colors-cvd` on the rendered PNG for a preview and `sprezzature-colors-contrast` on the colours. |
@@ -203,11 +203,10 @@ values.
   `--ignore` escape. Full rule catalogue with
   false-positive notes: `references/audit-figure.md`.
 - **Ralph Eyeball Loop.** The repo-wide visual-quality weapon: render any
-  visual-from-code artifact (web page, TikZ figure, Mermaid diagram,
-  hand-authored SVG) to PNG, critique it honestly, edit the source, loop.
+  visual-from-code artifact (web page, TikZ figure, hand-authored SVG) to PNG, critique it honestly, edit the source, loop.
   `ralph_eyeball_loop.py` is the primary tool (all surfaces);
   `render_diagram.py` is the diagram-only renderer it delegates to (TikZ /
-  Mermaid / SVG only).
+  SVG only).
   Protocol, assessment file format, per-surface critique dimensions, and why
   data viz is one application of the loop (not its scope):
   `references/ralph-eyeball-loop.md`.

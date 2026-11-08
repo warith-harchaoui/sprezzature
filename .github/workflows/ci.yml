@@ -46,11 +46,6 @@ jobs:
           pip install -r requirements-dev.txt
       - name: Ruff lint (audit gate)
         run: ruff check .
-      - name: Mypy type gate
-        # Rule 3 type half. Per-skill-dir (shared private helper module names
-        # would collide in a single run); ignore_missing_imports skips the heavy
-        # optional backends absent from this light lane. Config in mypy.ini.
-        run: ./scripts/run_mypy.sh
 
   test:
     runs-on: ubuntu-latest

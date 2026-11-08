@@ -20,9 +20,11 @@ license: BSD-3-Clause
 compatibility: >-
   Runtime: Claude.ai, Claude Code, OpenCode. Python 3.10+, one install:
   `pip install sprezzature-cli-gui` (Click, Typer, FastAPI and the MCP
-  server included). Output is one HTML page that runs in any modern browser;
-  it loads Tailwind's Play build from cdn.tailwindcss.com for styling, and
-  the form works unstyled offline. The worked demo in assets/ needs only the
+  server included). Output is one HTML page that runs in any modern browser
+  and loads nothing: the generator compiles the page's Tailwind into it with
+  the current release's standalone CLI (about 45 MB, downloaded once, so the
+  first generation needs a network; `--offline` uses the cache).
+  The worked demo in assets/ needs only the
   Python standard library.
 metadata:
   author: Warith HARCHAOUI

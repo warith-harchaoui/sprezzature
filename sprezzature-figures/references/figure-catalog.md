@@ -72,7 +72,6 @@ none of the above can quietly drift back.
 |---|---|---|
 | Any of the 168 `make-figure` catalogue kinds | Hand-built SVG (`_svg.py` helpers) | Yes, CSS-only hover tooltips, no script tag |
 | A TikZ figure, via `render_diagram.py` | `tectonic` / `pdflatex` + `pdftoppm` | No, static raster/vector |
-| A Mermaid diagram, via `render_diagram.py` | `mmdc` | No, static raster/vector |
 | A raw hand-authored SVG, via `render_diagram.py` | `rsvg-convert` / ImageMagick | No, static raster (the source SVG itself may be interactive; the rasterized companion is not) |
 | SHAP summary bar / waterfall (`explain_model.py`) | Hand-authored SVG, reusing `make_bar.py` / `make_waterfall.py` | Yes, CSS-only hover tooltips |
 | SHAP beeswarm / dependence scatter (`explain_model.py`) | Hand-authored SVG, bespoke | Yes, CSS-only hover tooltips |
