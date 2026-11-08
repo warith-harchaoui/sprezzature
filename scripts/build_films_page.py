@@ -166,11 +166,11 @@ FILMS: list[dict[str, str | int]] = [
     dict(slug="figures", secs=60,
          en_title="Figures", fr_title="Figures",
          en_kicker="sprezzature-figures", fr_kicker="sprezzature-figures",
-         en_body="167 kinds of chart across 52 categories, every one "
+         en_body="168 kinds of chart across 52 categories, every one "
                  "hand-authored. No charting library sits underneath any of it: "
                  "each generator writes the SVG markup itself, and the vector is "
                  "the deliverable rather than an export.",
-         fr_body="167 types de graphiques en 52 catégories, tous écrits à la "
+         fr_body="168 types de graphiques en 52 catégories, tous écrits à la "
                  "main. Aucune bibliothèque de tracé en dessous : chaque "
                  "générateur écrit le SVG lui-même, et le vectoriel est le "
                  "livrable, pas un export.",

@@ -8,6 +8,23 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+### Site
+
+- **The flowchart, 168th kind, in the gallery** (161 cards), in both
+  themes and both languages, with its kit. The French one is drawn in
+  French under `flowchart-fr`, which `localize_figures.py` copies across
+  untouched: run through the phrase map, global keys such as « Data » and
+  « Score » stayed English and the long title widened the whole canvas.
+  The kit builder and the bilingual gallery guard read `<kind>-fr` as
+  `<kind>`.
+- Every quoted catalogue count moves to 168, the packages page to 161 kits.
+
+### Films
+
+- The figures film says 168 kinds, on screen and in both voices, and the
+  video film's check scene corrects 127 to 168; the claim in `films.yaml`
+  follows.
+
 ## [1.8.2] — 2026-11-07: onze films refaits, et des lignes coupées au sens
 
 **Two floors move.** video 0.4.4 (`calque` on a spec without the asked

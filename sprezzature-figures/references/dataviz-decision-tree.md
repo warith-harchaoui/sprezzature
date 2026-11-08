@@ -6,7 +6,7 @@ families (comparison, composition, relationship, distribution), then pick
 the chart built for that family. Read that file first if you have not;
 this one does not repeat its reasoning. What this file adds is specific
 to `sprezzature-figures`: its catalogue is **closed**, `make-figure` only
-renders one of 167 registered kinds (`sprezzature-figures list` prints
+renders one of 168 registered kinds (`sprezzature-figures list` prints
 the current count and names), not an open combination of any x, y, and
 mark type. So the real question here is narrower than "what chart shape
 fits," it is "which of these 167 already-built kinds fits, and where does
@@ -104,7 +104,7 @@ column; your data either has columns that could fill those roles or it
 does not). The CLI also accepts `--intent
 comparison|trend|distribution|composition|relationship|flow|hierarchy|geography|model_evaluation`,
 which ranks first the kinds that serve that goal. The catalogue's own
-`intents` field is still empty for all 167 entries, so the match is made
+`intents` field is still empty for all 168 entries, so the match is made
 against each kind's `category` ("Comparison", "Time series", "Geospatial",
 …) by keyword, and once a goal is given it becomes the dominant term of the
 score; without one, the ranking is data-shape fit and readability alone

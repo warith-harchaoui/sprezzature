@@ -1494,7 +1494,9 @@ _EXISTING_LINK = re.compile(
 _FIGURE_BLOCK = re.compile(r"<figure\b.*?</figure>", re.DOTALL)
 
 #: The slug a card points at, on either language's page.
-_CARD_SLUG = re.compile(r'data-src="(?:\.\./)?img/figures/(?:fr/)?([a-z0-9_-]+)\.svg"')
+# A French figure drawn in French is named ``<slug>-fr`` (see
+# localize_figures.py); its card still belongs to the ``<slug>`` kit.
+_CARD_SLUG = re.compile(r'data-src="(?:\.\./)?img/figures/(?:fr/)?([a-z0-9_-]+?)(?:-fr)?\.svg"')
 
 
 def link_gallery(page: Path, sizes: dict[str, int], *, french: bool) -> int:

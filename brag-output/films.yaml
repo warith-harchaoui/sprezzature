@@ -23,8 +23,8 @@
 name: sprezzature-films
 
 claims:
-  - text: "167 chart kinds, every line of SVG written by hand."
-    value: 167
+  - text: "168 chart kinds, every line of SVG written by hand."
+    value: 168
     source:
       path: sprezzature-figures/sprezzature_figures/catalog/figures.json
       method: json_len

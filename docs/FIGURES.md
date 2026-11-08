@@ -1,6 +1,6 @@
 # Figures — `sprezzature-figures`
 
-Turn a table into a publication-quality figure: 167 chart types,
+Turn a table into a publication-quality figure: 168 chart types,
 model-explainability plots (SHAP / Shapash / TimeSHAP / LIME), causal-effect
 estimates (DoWhy / EconML) and TikZ / Mermaid diagrams. Every chart is written
 directly as Scalable Vector Graphics (SVG), with no charting library anywhere
@@ -23,7 +23,7 @@ detail; nothing is duplicated here.
 - **What it is & what activates it:** [`sprezzature-figures/SKILL.md`](../sprezzature-figures/SKILL.md)
   (the agent-facing spec: purpose, trigger phrases, the full tool surface).
 - **See it rendered:** the [figures gallery](https://sprezzature.ai/figures.html)
-  shows 160 of the 167 kinds on the house palette; the five glyph maps are on
+  shows 160 of the 168 kinds on the house palette; the five glyph maps are on
   the maps page and the two Gapminder figures on the Hans ROSLING page. The
   written catalogue (one entry per kind, and when to use it) lives in the
   package's own
