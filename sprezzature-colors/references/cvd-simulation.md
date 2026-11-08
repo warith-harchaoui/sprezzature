@@ -40,7 +40,7 @@ Output filenames:
 |---|---|
 | Default | `<stem>-protanopia.png`, `<stem>-deuteranopia.png`, `<stem>-tritanopia.png` siblings of the source, or in the directory given to `--out`. |
 | `--grayscale` | Adds `<stem>-grayscale.png`, or a "Grayscale" panel in the mosaic. |
-| `--grid` | One mosaic at `<stem>-cvd-grid.png` (override with a file path in `--out`): the original and each variant, two per row, so 2×2 for the three types and three rows with `--grayscale`. |
+| `--grid` | One mosaic at `<stem>-cvd-grid.png` (override with a file path in `--out`, whose directories are created): the original and each variant, two per row, so 2×2 for the three types and three rows with `--grayscale`. |
 
 Every file is written as PNG and named `.png`, whatever the source's extension: `hero.jpg` gives `hero-protanopia.png`.
 
@@ -67,7 +67,7 @@ This is not the only model. BRETTEL / VIÉNOT / MOLLON (1997) work in LMS space 
 ## Limitations
 
 - Only severity 1 (full dichromacy). Real CVD ranges from mild anomalous trichromacy to full dichromacy.
-- Achromatopsia (no cones at all) is not simulated; for that case, view the image desaturated.
+- Achromatopsia (no cones at all) has no matrix of its own; `--grayscale` is the render to look at for that case.
 - The simulation is per-pixel: it does not account for surround / context adaptation.
 - Animated content needs frame-by-frame simulation; this script handles still images only.
 

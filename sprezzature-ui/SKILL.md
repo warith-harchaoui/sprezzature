@@ -99,7 +99,7 @@ What the audit sees, and nothing more:
 - **`I18N001`** (`.js`, `.mjs`, `.cjs`, `.jsx`, `.ts`, `.tsx`, `.html`, `.htm`): a line declaring a table under a telltale name (`const i18n = {`, `translations`, `messages`, `locales`, `strings`, `dictionary`, `lang`, …), or an object literal with two or more locale keys (`{ en: …, fr: … }`).
 - **`I18N002`** (`.py`): a module-level or class-level constant whose name contains `PROMPT` or `INSTRUCTION`, assigned a string literal or an f-string. A prompt stored under another name is not seen.
 
-Exit 1 on any finding, `--json` for machine output. `--fix` writes the catalogue (`--catalog PATH` to change it), prints the call to paste, never rewrites the call site, and still exits 1. `sprezzature-ui-i18n-make` runs four steps by default (`--init`, `--compile`, `--emit-loader`, `--emit-python` run one each, `--dir` sets the project root), and the compile step refuses a prompt with no `validated:` locale. Report findings as evidence: "0 findings" means neither shape was found, not that the interface is ready.
+Exit 1 on any finding, exit 2 on a path that does not exist, `--json` for machine output. `--fix` writes the catalogue (`--catalog PATH` to change it), prints the call to paste, never rewrites the call site, and still exits 1. `sprezzature-ui-i18n-make` runs four steps by default (`--init`, `--compile`, `--emit-loader`, `--emit-python` run one each, `--dir` sets the project root), and the compile step refuses a prompt with no `validated:` locale. Report findings as evidence: "0 findings" means neither shape was found, not that the interface is ready.
 
 **A counting message maps a locale to CLDR plural categories**, not to a
 string, and the runtime picks one with `Intl.PluralRules` — so French gets its

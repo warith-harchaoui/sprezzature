@@ -66,7 +66,7 @@ order, announcement of live regions).
 | **Make**: draft the alt the audit says is missing | `sprezzature-accessibility-lint --fix-alt` | For every `<img>` with no `alt`, drafts one with the local vision model, from the image **and the text around it in that same page**, plus the proper nouns the page uses. Language: `--alt-lang`, else the page's `<html lang>`, else detection on the page text, else the environment locale. Remote or missing images are left alone and reported. Separate from `--fix` on purpose: that one is mechanical, offline and idempotent; this calls a model and writes prose a person should read. |
 | **Make**: draft alt for one image | `sprezzature-accessibility-alt` (alias `make-alt`) | Same engine, one image at a time, with `--kind` (the six W3C purposes), `--context`, `--lang`, `--longdesc`, `--in DOC`, `--vocab`, `--vocab-from`, `--auto-project`, `--resize`, `--no-cache`. Alt text on stdout, capped at 150 characters. |
 | **Make**: opt-in comfortable-reading CSS | `sprezzature-accessibility-text-spacing` | Emits a CSS block at the WCAG 1.4.12 Text Spacing minimums (line height 1.5, letter spacing 0.12em, word spacing 0.16em, paragraph spacing 2em) for the body-text tags the linter checks. `--attr`, `--value`, `--out` and one flag per value. |
-| **Audit**: gate before ship | `sprezzature-accessibility-lint` | Twenty static rules over HTML, listed below. Exit 1 on any finding, 0 on a clean run; `--format json` for CI; `--ignore` takes rule ids. |
+| **Audit**: gate before ship | `sprezzature-accessibility-lint` | Twenty static rules over HTML, listed below. Exit 1 on any finding, 0 on a clean run, 2 on a usage error such as a path that does not exist; `--format json` for CI; `--ignore` takes rule ids. |
 
 The fourteen rules without a fixer are *passed through* by `--fix`: they need
 a content decision nothing here can make for the user. `img-missing-alt` is
@@ -92,7 +92,7 @@ required (the ids used by ``--ignore`` and the JSON output in parentheses):
 6. ``<div onclick>`` / ``<span onclick>`` without ``role="button"`` and
    ``tabindex`` (``div-onclick``).
 7. ``<input>`` without a ``<label>`` (wrapping or ``for=``) and without
-   ``aria-label``; hidden, submit, button, reset and image inputs are exempt
+   ``aria-label`` or ``aria-labelledby``; hidden, submit, button, reset and image inputs are exempt
    (``input-missing-label``).
 8. ``<dialog>`` without a close mechanism (``dialog-missing-close``).
 9. ``<html>`` missing the ``lang`` attribute (``html-missing-lang``).
@@ -155,7 +155,7 @@ The MCP tools are the HTTP routes, named by their `operation_id`:
 | `lint_html` | `POST /v1/lint` | Lint a string of HTML; findings with line, rule, severity, plus error and warning counts. |
 | `list_rules` | `GET /v1/rules` | Every rule id and its severity. Check ids here before passing `ignore`: an unknown id is silently ignored. |
 | `list_kinds` | `GET /v1/kinds` | The six image purposes, each with what it is for. |
-| `draft_alt_text` | `POST /v1/alt` | Draft alt text (and a long description with `long: true`) for one image. 502 when the model is unreachable. |
+| `draft_alt_text` | `POST /v1/alt` | Draft alt text (and a long description with `long: true`) for one image; `src` is a path the server opens or a URL it fetches. 502 when the model is unreachable, 404 when the image cannot be read. |
 | `health` | `GET /health` | Liveness; use only to diagnose a connection. |
 
 `--fix`, `--fix-alt`, the text-spacing CSS and the model install are

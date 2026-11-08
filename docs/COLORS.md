@@ -8,7 +8,7 @@ One `pip install sprezzature-colors` brings the five surfaces: the library (`imp
 
 `sprezzature-colors` is about a **design system's colour tokens**, the small named
 set of brand and semantic colours a UI is built from, and turning them into an
-accessible, colour-vision-safe Tailwind theme. It reads and writes a palette
+accessible, colour-vision-safe Tailwind theme. It reads a palette
 CSV, checks contrast between token pairs, and emits `theme.extend.colors`. It is
 **not** a general image colour-grading or photo-editing tool: the
 colour-vision-deficiency simulation runs on a screenshot only to *preview* how

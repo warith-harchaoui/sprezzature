@@ -44,7 +44,7 @@ sprezzature-colors-contrast --format json
 sprezzature-colors-contrast --all-pairs
 ```
 
-Exit code is `0` when every checked pair passes, `1` when any pair fails, `2` when the palette yields no pair to check. The exit code is the same regardless of `--fix`; the script reports the failures even when it suggests alternatives.
+Exit code is `0` when every checked pair passes, `1` when any pair fails, `2` when nothing could be checked: no pair in the palette, or a palette it cannot read (missing file, not JSON, a colour that is not hex). The exit code is the same regardless of `--fix`; the script reports the failures even when it suggests alternatives.
 
 ## Palette format
 
@@ -109,14 +109,16 @@ Continuous integration (CI) is the practice of running checks automatically on e
 - name: Contrast audit
   run: |
     pip install sprezzature-colors
+    mkdir -p artifacts
     sprezzature-colors-contrast \
             --palette tokens/colors.json \
             --target 4.5 --format json > artifacts/contrast.json
 - uses: actions/upload-artifact@v4
+  if: always()  # the audit's non-zero exit is what fails the job; keep the report anyway
   with: { name: contrast-audit, path: artifacts/ }
 ```
 
-The audit's exit code is the gating signal: non-zero on any failing pair.
+The audit's exit code is the gating signal: `1` on a failing pair, `2` when nothing could be checked.
 
 ## Checklist
 

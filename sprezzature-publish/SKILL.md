@@ -52,7 +52,7 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 | "meta tags" / "SEO" / "OG card" / "Twitter card" / "JSON-LD" | Title + description + Open Graph + Twitter + Schema.org `@type`, JSON on stdout |
 | "SEO" / "AI search" / "AI Overview" / "discoverability" / "is this advice true?" | Google's three pillars + AI Optimization foundations applied to the artifacts this skill emits; see `references/seo-essentials.md` |
 | "GEO" / "Generative Engine Optimization" / "llms.txt" / "make my site readable by ChatGPT / Gemini / Perplexity" | `sprezzature-publish-indexes` already emits `llms.txt` (a Markdown index of the site) plus `llms-full.txt` (the full-text corpus, Markdown sources only) alongside `robots.txt` + `sitemap.xml`. GEO and SEO share crawlers; same `robots.txt` permits both. There is **no separate "AI" meta tag**: refuse to emit one and cite `references/seo-essentials.md`. |
-| "favicons" / "app icons" / "PWA icons" | `favicon.svg` + `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + `head.html` snippet |
+| "favicons" / "app icons" / "PWA icons" | `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + `head.html` snippet, plus `favicon.svg` from an SVG source (`--raster logo.png` is then required for the rest) |
 | "robots.txt" / "sitemap.xml" / "llms.txt" / "llms-full.txt" / "feed" / "Atom" / "RSS" / "humans.txt" | All from a single command; auto-detects a blog folder for the feed |
 | "plain language" / "simplify this copy" / "rewrite at grade N" | Same meaning, marketing voice stripped, output length ≤ 1.1× original |
 
@@ -116,7 +116,7 @@ When the user points to a Markdown-only project and asks for a website:
    - Sticky top bar with the project name on start, theme switcher on end.
    - Sidebar (lg:) with section tree on `docs/**` pages.
    - Bottom tab bar (mobile) when ≤ 5 top-level destinations.
-5. **Convert Markdown to HTML**. `sprezzature-publish-html <file-or-dir> --out site/` does it at build time (python-markdown, Mermaid rendered, KaTeX for math); any other build-step tool (Pandoc, `markdown-it`) is fine as long as the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
+5. **Convert Markdown to HTML**. `sprezzature-publish-html <file-or-dir> --out site/` does it at build time (python-markdown, Mermaid rendered, KaTeX for math), and each page keeps its source's name, so `README.md` becomes `README.html`: rename the landing to `index.html`; any other build-step tool (Pandoc, `markdown-it`) is fine as long as the output is plain HTML; do not import a Markdown runtime into the browser. Apply typography classes from `sprezzature-ui/references/stack-tailwind.md`. Code blocks get a server-side syntax highlighter (Pygments, `highlight.js` build step); never load a runtime highlighter.
 6. **Wire meta tags per page** using `references/meta-tags.md` and (optional) `sprezzature-publish-meta path/to/page.html`.
 7. **Generate the favicon set** from the project's logo: `sprezzature-publish-icons logo.png --out public --name "Project name"`. Drop the produced `head.html` snippet into the layout template.
 8. **Emit indexes**: `sprezzature-publish-indexes --root . --base-url https://example.com [--feed-from posts]` — produces robots.txt + sitemap.xml + llms.txt + llms-full.txt + optional Atom feed.

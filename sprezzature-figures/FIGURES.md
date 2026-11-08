@@ -108,6 +108,7 @@ are choropleths on a real basemap; they live in the companion
 | Event plot | make_eventplot.py | Raster of events: one tick per event, one row per thing it happened to |
 | Facet (small multiples) | make_facet.py | The same chart once per group, every panel on one shared scale |
 | Fishbone | make_fishbone.py | Ishikawa cause-and-effect diagram, causes ranked by weight |
+| Flowchart | make_flowchart.py | Labelled boxes and arrows in layers, for a pipeline or a method diagram; every word comes from the rows |
 | Forecast fan | make_forecast-fan.py | History solid, forecast dashed inside nested intervals that widen with the horizon |
 | Forest plot | make_forest.py | Effect sizes and confidence intervals from multiple studies |
 | Funnel | make_funnel.py | Conversion or attrition across sequential pipeline stages |

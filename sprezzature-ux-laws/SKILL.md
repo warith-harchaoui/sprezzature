@@ -43,7 +43,7 @@ Solo developers and small teams who:
   unchunked IBAN, a clickable `<div>` masquerading as a button).
 - Need the rules without buying the book. The skill restates each
   law's trigger and action and points at the primary sources
-  (Yablonski's lawsofux.com plus Nielsen Norman Group and the
+  (Jon YABLONSKI's lawsofux.com plus Nielsen Norman Group and the
   Wikipedia critique of Postel's Law).
 
 This skill is **not** a substitute for usability testing. The
@@ -92,7 +92,7 @@ sprezzature-ui starter components.
 | Choice Overload | warning | A `<div>`/`<section>` with `pricing`/`plans` + `grid`/`flex` in its class list and > 4 direct `<article>` / `<div>` children | A genuine five-tier B2B price table where each tier is concrete; mark with `--ignore choice-overload`. |
 | Miller's Law | warning | A visible run of ≥ 8 letters and digits containing at least one digit, outside `<script>` / `<style>` | Purely alphabetic words are excluded; tags and their attributes are stripped before scanning (on a tag split across lines, the `class`, `id`, `href`, `src` values); letters-then-digits names (`GMTED2010`, `LANDSAT8`) are skipped. |
 | Jakob's Law | error | `<div>` / `<span>` with `onclick=` / `role="button"` / `cursor-pointer` and no real interactive child | Wrappers that contain a real `<button>` / `<a>` are exempt. |
-| Fitts's Law | warning | Interactive element with no `min-h-11+` / `h-11+` / `size-11+` Tailwind class (or `full` / `screen` / `auto`) | An `<a>` without `flex` / `inline-flex` / `block` / `btn` / `button` / `bg-*` / `border-*` is treated as a text link and skipped. On a page with fewer than two distinct Tailwind utilities: one `info` for the document instead. |
+| Fitts's Law | warning | Interactive element with no `min-h-11+` / `h-11+` / `size-11+` Tailwind class (or `full` / `screen` / `auto`) | An `<a>` without `flex` / `inline-flex` / `block` / `btn` / `button` / `bg-*` / `border-*` is treated as a text link and skipped. On a page without Tailwind utilities of at least two kinds (spacing, colour, a prefix…): one `info` for the document instead, and `--fix` writes no Tailwind there. |
 | Aesthetic-Usability | warning | Interactive element without `focus-visible:ring-*` or `focus:ring-*` | Type=hidden inputs are exempted. Same Tailwind precondition and single `info` as Fitts. |
 | Selective Attention | warning | `<span>` coloured `text-red-*` / `text-green-*` / `text-amber-*` / `text-yellow-*` / `text-orange-*` whose visible text holds no status word, with no icon child | Spans that contain a status word ("Failed", "OK", …) or an `<svg>`/`<img>` child are exempted. |
 | Tesler's Law | warning | `HH:MM` time string with no timezone token (`UTC`, `+02:00`, `Europe/Paris`, `Z`, named TZ) within 40 chars | Times in a duration context (`duration`, `elapsed`, `remaining`, `data-ra-*`, a range input, `<progress>`, `<audio>`, `<video>`) are skipped; other durations ("Took 14:30") still fire. |
@@ -174,7 +174,7 @@ warnings pass and only fail on real errors (Hick, Jakob).
 
 ## References
 
-- `references/laws-of-ux.md` — canonical Yablonski set (30 laws),
+- `references/laws-of-ux.md` — canonical YABLONSKI set (30 laws),
   trigger → action → Tailwind hook. Reads as both a make-time
   playbook and an audit-time refusal list. Load it on demand; not
   preloaded.

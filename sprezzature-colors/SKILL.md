@@ -73,7 +73,7 @@ your brand. Loop a designer in for the final call.
 
 | Trigger | Tool | Run |
 |---|---|---|
-| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `sprezzature-colors-contrast`; MCP `check_contrast` for single pairs | `sprezzature-colors-contrast [--palette p.json] [--target 4.5\|7\|3] [--fix] [--format json]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. Exit 0 all pass, 1 a pair fails, 2 no key matched `label-` / `brand-` against `surface-`. |
+| "contrast audit" / "WCAG ratio" / "is my palette accessible" | `sprezzature-colors-contrast`; MCP `check_contrast` for single pairs | `sprezzature-colors-contrast [--palette p.json] [--target 4.5\|7\|3] [--fix] [--format json]`. Walks the (label, surface) pairs that co-occur in a rendered theme (`--all-pairs` for the full cross-product), suggests OKLCH-neighbour fix. Exit 0 all pass, 1 a pair fails, 2 nothing could be checked (no key matched `label-` / `brand-` against `surface-`, or the palette is unreadable). |
 | "color blind preview" / "CVD check" / "how does this look to a deuteranope" | `sprezzature-colors-cvd`; MCP `simulate_color_blindness` for colours | `sprezzature-colors-cvd <image> [--types prot,deut,trit] [--grid] [--grayscale] [--out PATH]`. Renders protanopia / deuteranopia / tritanopia, one `<stem>-<type>.png` each (always PNG, whatever the source's extension). |
 | "high-contrast palette" / "a palette for deuteranopes" / "monochrome version" | `sprezzature-colors-levels` | `sprezzature-colors-levels --level <level> [--csv palette.csv]`. Prints name, hex and contrast against white per colour. |
 | "what's the hex for Red" / "give me an emotion color" / "Apple palette" | library accessors; MCP `get_palette`, `search_concepts`, `get_color_psychology` | `import sprezzature_colors as sc`, then `sc.name_to_hex`, `sc.emotion_to_hex`, `sc.concept_search`, `sc.psychology_for`, `sc.apple_palette` |
@@ -174,13 +174,15 @@ emitter is just unused).
 ## Single source of truth — make ↔ audit loop
 
 `references/palette.csv` is the **one canonical place** brand hexes
-live in the sprezzature-* ecosystem when the curated default is in play.
-Both halves of the loop read it:
+live in the sprezzature-* ecosystem when the curated default is in play:
 
 - **Audit:** `sprezzature-colors-contrast` walks the (label × surface) pairs that
   co-occur in a rendered theme by default (`--all-pairs` for the full
-  cross-product) against the CSV's hexes and emits an OKLCH-neighbour
-  fix when contrast fails.
+  cross-product) and emits an OKLCH-neighbour fix when contrast fails.
+  Without `--palette` it reads `DEFAULT_PALETTE` in `audit_contrast.py`, not
+  the CSV: a hand copy of the CSV's brand hexes (a test holds the two
+  together) plus the `dark`, `label-` and `surface-` tokens the CSV has no
+  column for.
 - **Make:** `sprezzature-colors-palette-to-tailwind` emits the same hexes as a
   Tailwind `theme.extend.colors` block (or a complete
   `tailwind.config.js`). The block in
@@ -198,7 +200,7 @@ sprezzature-colors-palette-to-tailwind \
     --emit config --with-dark --out tailwind.config.js
 
 # Then audit the resulting palette.
-sprezzature-colors-contrast --palette palette.json --fix  # WCAG ratios
+sprezzature-colors-contrast --palette palette.json --fix  # WCAG ratios; palette.json holds your label-/brand-/surface- tokens
 sprezzature-colors-cvd screenshot.png --grid              # CVD pass
 sprezzature-accessibility-lint public/                    # static a11y gate
 ```
