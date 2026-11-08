@@ -35,7 +35,7 @@ sprezzature-publish-indexes --root . --base-url https://example.com --humans
 sprezzature-publish-indexes --root . --base-url https://example.com --out public
 ```
 
-The script walks the project root looking for `.html` files at the root and inside the conventional output directories (`public/`, `dist/`, `site/`, `_site/`, `build/`, `out/`) plus `.md` files at the root and under `docs/`. Each becomes a sitemap entry and an `llms.txt` bullet.
+The script walks the project root looking for `.html` and `.md` files at the root and under `docs/`, and `.html` files inside the conventional output directories (`public/`, `dist/`, `site/`, `_site/`, `build/`, `out/`). Each becomes a sitemap entry and an `llms.txt` bullet.
 
 ### Leading with the offer and the call to action
 

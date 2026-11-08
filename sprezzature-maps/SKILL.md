@@ -121,8 +121,8 @@ without a line there. That guard covers the top level only, so a nested key
 can still arrive undocumented — `areas_of_control.over_water` and
 `lakes.depth_rings` both did, in 0.10.0.
 
-The last three are the provenance block, and they are the ones to fill in
-first rather than last: `source` and `as_of` are what stop a plate from being
+`source`, `as_of` and `method` are the provenance block, and they are the ones
+to fill in first rather than last: `source` and `as_of` are what stop a plate from being
 read as current when it is not, and `method` is where the assessment behind
 the zones is named. See the contract above.
 
@@ -156,9 +156,9 @@ Two more keys arrived with it, both nested, both off by default:
 clipping it to land, for a claim that really is maritime; `lakes.depth_rings`
 (`4`) steps shelf rings inward from a lake's shore, `0` turns them off.
 
-Rivers taper by prominence when `rivers` asks them to; they are absent
-otherwise. The same is true of every other layer — ask for what the map is
-about, not for everything the generator can draw.
+On a plate, rivers are drawn at one weight by default; `rivers: {width: ranked}`
+tapers them by prominence. The thematic layers stay absent until asked for —
+ask for what the map is about, not for everything the generator can draw.
 
 ## What every map carries by default
 
@@ -224,7 +224,7 @@ belongs with the map.
 
 ## A mistyped config key is an error, not a missing feature
 
-The situation map is driven by two dozen optional keys. Get one wrong and the
+The situation map is driven by nearly forty optional keys. Get one wrong and the
 generator used to read past it in silence, so a slip on `areas_of_control`
 dropped a whole layer while the plate still looked finished. Since 0.6.0 an
 unknown key is refused and the error names the closest known one.

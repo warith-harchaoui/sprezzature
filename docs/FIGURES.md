@@ -23,7 +23,7 @@ detail; nothing is duplicated here.
 - **What it is & what activates it:** [`sprezzature-figures/SKILL.md`](../sprezzature-figures/SKILL.md)
   (the agent-facing spec: purpose, trigger phrases, the full tool surface).
 - **See it rendered:** the [figures gallery](https://sprezzature.ai/figures.html)
-  shows 160 of the 168 kinds on the house palette; the five glyph maps are on
+  shows 161 of the 168 kinds on the house palette; the five glyph maps are on
   the maps page and the two Gapminder figures on the Hans ROSLING page. The
   written catalogue (one entry per kind, and when to use it) lives in the
   package's own

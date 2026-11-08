@@ -34,7 +34,7 @@ sprezzature-accessibility-lint --ignore heading-skip,motion-no-reduce-guard publ
 sprezzature-accessibility-lint --fix --dry-run public/
 ```
 
-Exit code is `0` when no findings, `1` when any finding is present. Pipe-friendly for CI.
+Exit code is `0` when no findings, `1` when any finding is present, `2` on a usage error such as a path that does not exist. Pipe-friendly for CI.
 
 ## Rules
 
@@ -46,10 +46,10 @@ Each rule has a stable identifier so the `--ignore` flag and JSON output referen
 | `img-missing-alt` | `<img>` with no `alt` attribute at all (different from `alt=""`). | WCAG SC 1.1.1, W3C image decision tree. |
 | `img-redundant-aria` | `alt=""` *plus* `role="presentation"` or `aria-hidden="true"`. `alt=""` alone is enough. | W3C WAI tutorial on decorative images. |
 | `a-missing-href` | `<a>` without `href` (should be `<button>`). | WAI-ARIA Authoring Practices. |
-| `a-empty` | `<a>` with no text, no `aria-label`, no `title`, no inline image. | WCAG SC 2.4.4. |
-| `button-empty` | `<button>` with no text, no `aria-label`, no inline icon. | WCAG SC 4.1.2. |
+| `a-empty` | `<a>` with no text, no `aria-label`, no `aria-labelledby`, no `title`, no inline image. | WCAG SC 2.4.4. |
+| `button-empty` | `<button>` with no text, no `aria-label`, no `aria-labelledby`, no `title`, no inline icon. | WCAG SC 4.1.2. |
 | `div-onclick` | `<div>` / `<span>` with `onclick` but no `role="button"` and no `tabindex`. | WCAG SC 2.1.1. |
-| `input-missing-label` | `<input>` not wrapped in a `<label>`, not referenced by a `<label for=>`, and with no `aria-label`. Hidden, submit, button, reset and image inputs are exempt. | WCAG SC 3.3.2. |
+| `input-missing-label` | `<input>` not wrapped in a `<label>`, not referenced by a `<label for=>`, and with neither `aria-label` nor `aria-labelledby`. Hidden, submit, button, reset and image inputs are exempt. | WCAG SC 3.3.2. |
 | `dialog-missing-close` | `<dialog>` without an obvious close affordance (a button with `value="cancel"`, `autofocus`, or accessible name "Close" / "Cancel" / "Fermer" / "Annuler" / "Schließen"). | WAI-ARIA modal pattern. |
 | `tabindex-positive` | `tabindex` ≥ 1, which breaks DOM tab order. | WAI-ARIA Authoring Practices. |
 | `aria-hidden-interactive` | `aria-hidden="true"` on a `<button>` / `<a>` / `<input>` / `<select>` / `<textarea>`, which removes the control from AT but leaves it focusable. | WAI-ARIA spec. |

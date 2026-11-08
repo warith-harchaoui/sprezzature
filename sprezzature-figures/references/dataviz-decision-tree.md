@@ -9,7 +9,7 @@ to `sprezzature-figures`: its catalogue is **closed**, `make-figure` only
 renders one of 168 registered kinds (`sprezzature-figures list` prints
 the current count and names), not an open combination of any x, y, and
 mark type. So the real question here is narrower than "what chart shape
-fits," it is "which of these 167 already-built kinds fits, and where does
+fits," it is "which of these 168 already-built kinds fits, and where does
 the catalogue simply not have what you need yet."
 
 ## The catalogue's own category groupings

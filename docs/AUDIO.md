@@ -1,6 +1,6 @@
 # Speech both ways (local artificial intelligence, AI): `sprezzature-audio`
 
-Recorded speech into text, and text into speech, on your own machine. WebVTT / SubRip subtitle format (SRT) captions from a local whisper.cpp build; who spoke when (NeMo Sortformer); who is who (TitaNet against reference clips, or patterns in the transcript plus an optional local Ollama pass); speaker-labelled tracks; caption translation; a readability audit; word and diarization error rates. The other way, narration with its timed track: Kokoro by default, OpenVoice and Chatterbox, with the engine chosen by speaker-helper's router rather than by the caller. Fifteen tools, one `pip install sprezzature-audio`, never a SaaS.
+Recorded speech into text, and text into speech, on your own machine. WebVTT / SubRip subtitle format (SRT) captions from a local whisper.cpp build; who spoke when (NeMo Sortformer); who is who (TitaNet against reference clips, or patterns in the transcript plus an optional local Ollama pass); speaker-labelled tracks; caption translation; a readability audit; word and diarization error rates. The other way, narration with its timed track: Kokoro, OpenVoice and Chatterbox, with the engine chosen by speaker-helper's router rather than by the caller. Fifteen tools, one `pip install sprezzature-audio`, never a SaaS.
 
 > **Work in progress.** Per-language accuracy baselines are still being collected; treat captions as drafts to review, not turnkey output.
 

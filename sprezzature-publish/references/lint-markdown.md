@@ -54,9 +54,10 @@ The rest are informational.
 
 Two backends, tried in order:
 
-1. **Pure Python `mmdc`**. Embeds PhantomJS via `phasma` (no Node, no
-   npm, no Chromium). This is the recommended path, and a base
-   dependency of `sprezzature-publish`, so it is already installed.
+1. **Pure Python `mmdc`**. Its own QuickJS and resvg engine (no Node, no
+   npm, no Chromium), and a base dependency of `sprezzature-publish`, so
+   it is already installed. Look at the PNG: with `mmdc` 0.7.0 a diagram
+   can come out cropped and without its labels, with no error raised.
 2. **Node `@mermaid-js/mermaid-cli`** (`npm install -g
    @mermaid-js/mermaid-cli`). Fallback if the pure-Python backend fails
    or is not installed. Heavier; pulls Chromium via Puppeteer.
@@ -65,8 +66,8 @@ If neither is available the script flags the block as `MMD001` and prints
 both install commands. **It never attempts a hosted render.**
 
 Output: one PNG per Mermaid block, named
-`<source-stem>.mermaid-<N>.png`, written alongside the source (or under
-`--out-dir`). When `--fix` is set the script inserts an
+`<source-stem>.mermaid-<N>.png` where `N` counts every fenced block of the
+file, written alongside the source (or under `--out-dir`). When `--fix` is set the script inserts an
 `![Mermaid diagram (rendered for non-JS readers)](…)` line above each
 block so the static HTML still shows the diagram if the page later
 disables Mermaid.js.
