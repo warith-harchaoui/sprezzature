@@ -8,6 +8,10 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+## [1.8.3] — 2026-11-08: dix briques relues, plus de Mermaid
+
+**The suite floors move to the releases of the day.** accessibility 1.4.4, audio 1.10.4, cli-gui 1.6.0, colors 1.2.4, figures 2.10.0, maps 1.1.4, publish 1.6.0, ui 1.2.3, ux-laws 1.4.3, video 0.4.5.
+
 ### Removed
 
 - **Mermaid and mmdc are gone from the suite.** A diagram is a

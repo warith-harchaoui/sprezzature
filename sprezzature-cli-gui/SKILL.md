@@ -28,7 +28,7 @@ compatibility: >-
   Python standard library.
 metadata:
   author: Warith HARCHAOUI
-  version: 1.8.2
+  version: 1.8.3
 ---
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-cli-gui`](https://github.com/warith-harchaoui/sprezzature-cli-gui) (`pip install`), invoked as `sprezzature-cli-gui …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.

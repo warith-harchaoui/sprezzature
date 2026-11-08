@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sprezzature"
-version = "1.8.2"
+version = "1.8.3"
 description = "The sprezzature skills: what an agent reads to know when to reach for the tools, and how the house does things."
 readme = "README.md"
 # `<3.14` since 2026-11-01, when the extras were folded into the base. The
@@ -43,16 +43,16 @@ dependencies = [
     # The surfaces are not features and they are not optional any more: the
     # HTTP app and the MCP server are two of this package's five front doors,
     # and a door you have to install separately is a door people do not find.
-    "sprezzature-figures>=2.9.2",
-    "sprezzature-colors>=1.2.3",
-    "sprezzature-accessibility>=1.4.3",
-    "sprezzature-audio>=1.10.3",
-    "sprezzature-cli-gui>=1.5.2",
-    "sprezzature-ux-laws>=1.4.2",
-    "sprezzature-maps>=1.1.3",
-    "sprezzature-video>=0.4.4",
-    "sprezzature-publish>=1.5.1",
-    "sprezzature-ui>=1.2.2",
+    "sprezzature-figures>=2.10.0",
+    "sprezzature-colors>=1.2.4",
+    "sprezzature-accessibility>=1.4.4",
+    "sprezzature-audio>=1.10.4",
+    "sprezzature-cli-gui>=1.6.0",
+    "sprezzature-ux-laws>=1.4.3",
+    "sprezzature-maps>=1.1.4",
+    "sprezzature-video>=0.4.5",
+    "sprezzature-publish>=1.6.0",
+    "sprezzature-ui>=1.2.3",
 ]
 
 [project.optional-dependencies]
