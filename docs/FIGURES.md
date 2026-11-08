@@ -2,7 +2,7 @@
 
 Turn a table into a publication-quality figure: 168 chart types,
 model-explainability plots (SHAP / Shapash / TimeSHAP / LIME), causal-effect
-estimates (DoWhy / EconML) and TikZ / Mermaid diagrams. Every chart is written
+estimates (DoWhy / EconML) and flow or TikZ diagrams. Every chart is written
 directly as Scalable Vector Graphics (SVG), with no charting library anywhere
 in the package, and refined through the **Ralph Eyeball Loop** (render, look,
 refine the source). `check` finds what is decidable from the markup alone

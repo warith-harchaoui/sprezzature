@@ -8,6 +8,17 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+### Removed
+
+- **Mermaid and mmdc are gone from the suite.** A diagram is a
+  `sprezzature-figures` figure (`flowchart`, `timeline`, `tree`, ...). The phrase
+  "mermaid diagram" still routes there.
+
+### Changed
+
+- **The CI is light**: ruff, the fast tests and the install on Python 3.10. mypy,
+  slow renders and packaging run in the pre-push hook.
+
 ### Site
 
 - **The flowchart, 168th kind, in the gallery** (161 cards), in both
