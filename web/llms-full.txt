@@ -433,7 +433,7 @@ Ask our tool:
 
 "render this diagram"
 
-Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The five glyph maps sit on the maps page and the two animated Gapminder generators on the Hans ROSLING tribute ; with the 160 below, that is the whole 167-kind catalogue.
+Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The five glyph maps sit on the maps page and the two animated Gapminder generators on the Hans ROSLING tribute ; with the 160 below, that is the whole 168-kind catalogue.
 
 FIGURES.md catalog
 ⭐ on GitHub
@@ -798,6 +798,9 @@ Funnel : Stage-to-stage drop-off.
 
 Nodes, edges and movement: trees, graphs, chords, Sankeys.
 
+Flowchart : Labelled boxes and arrows, grouped, with loops that return.
+↓ Python + CSV + SVG kit (105 KB)
+
 Node-link network : Force-directed graph, hover to highlight.
 ↓ Python + CSV + SVG kit (64 KB)
 
@@ -992,7 +995,7 @@ sprezzature-figures writes SVG by default, self-contained with its fonts embedde
 
 ### What is the Ralph Eyeball Loop?
 
-The Ralph Eyeball Loop is how sprezzature-figures looks at a figure before calling it done: it renders an SVG, an HTML page, a TikZ or a Mermaid source to PNG, writes an assessment, and you edit the source and run it again. By default the agent running it reads the picture; with --local , the vision model qwen3-vl:8b served by Ollama writes the critique offline. It is the script scripts/ralph_eyeball_loop.py in the repository, explained on its own page .
+The Ralph Eyeball Loop is how sprezzature-figures looks at a figure before calling it done: it renders an SVG, an HTML page or a TikZ source to PNG, writes an assessment, and you edit the source and run it again. By default the agent running it reads the picture; with --local , the vision model qwen3-vl:8b served by Ollama writes the critique offline. It is the script scripts/ralph_eyeball_loop.py in the repository, explained on its own page .
 
 ### Does sprezzature-figures send my data to a cloud service?
 
@@ -1000,7 +1003,7 @@ No: sprezzature-figures renders, recommends and checks figures on your machine w
 
 ### What does sprezzature-figures need besides pip?
 
-sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. redraw , which rebuilds a chart from a screenshot without inventing its numbers, and the Studio chat need a model served by Ollama . The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, mermaid-cli, tectonic for TikZ, rsvg-convert), and --check-tools lists which ones you have.
+sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. redraw , which rebuilds a chart from a screenshot without inventing its numbers, and the Studio chat need a model served by Ollama . The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, tectonic for TikZ, rsvg-convert), and --check-tools lists which ones you have.
 
 ### Can I use sprezzature-figures without Claude Code, for example in CI?
 
@@ -1022,7 +1025,7 @@ One on the suite, and one for each of its ten packages. Nothing in them is a moc
 
 the whole suite
 
-## Sprezzature 60 s
+## Sprezzature 75 s
 
 Design is know-how, and most of it is already written down: thirty laws of UX, contrast ratios, a 2009 paper on colour vision, a projection from 2018. The suite is what happens when you point that know-how both ways — at making a thing, and at auditing it.
 
@@ -1031,11 +1034,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: eight sources named, four real outputs, the Ralph Eyeball Loop running on a shipped figure, and what ten packages add up to.
+What it shows: six real outputs of the suite, the same rules used to make and to audit, and the Ralph Eyeball Loop on a shipped figure.
 
 sprezzature-ui
 
-## UI 60 s
+## UI 75 s
 
 The smallest brick, on purpose. Its job is the aesthetic judgement written in prose — the three-Roboto rule, the design tokens, what an interface has to respect — plus the one part of that judgement a machine can carry out.
 
@@ -1044,11 +1047,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: the best cost sentence in the suite, in two halves, and what the package ships: nine components, nine snippets, six font files.
+What it shows: one sign-in screen in English, French and German under a layout that does not move, then the same panel in light and dark with a visible focus.
 
 sprezzature-cli-gui
 
-## CLI → GUI 60 s
+## CLI → GUI 75 s
 
 A tool nobody will type, wrapped in a page. It does not read the help text — it reads the parser object, through argparse, Click or Typer, and falls back to running --help only when there is no parser to reach.
 
@@ -1057,11 +1060,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: two captures of the page it generates for make-figure , taken from the command that is installed rather than from a mock-up.
+What it shows: a command line and the form it becomes, field by field.
 
 sprezzature-publish
 
-## Publish 60 s
+## Publish 75 s
 
 A document, becoming a site. Nine tools: a linter that runs on the standard library in milliseconds, favicons from one logo, the indexes a crawler and a language model both want, and readalong, which binds the narration to the page.
 
@@ -1070,11 +1073,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: all nine named, then the boundary the package keeps — the voices live in sprezzature-audio and are called as a subprocess.
+What it shows: a Markdown file becoming a page that reads itself aloud, one highlighted sentence at a time, then the package's own documentation doing it.
 
 sprezzature-accessibility
 
-## Accessibility 60 s
+## Accessibility 75 s
 
 An unmuted autoplay masks a screen reader, and the markup says so on its own. Twenty rules from WCAG, each naming the element, the line and the rule it broke; six of them repair themselves, where there is exactly one safe repair.
 
@@ -1083,11 +1086,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: three findings the source alone can prove, what --fix is allowed to touch, and the same rule pointed the other way, writing the CSS.
+What it shows: a portrait a screen reader can only call “image”, then the description a local model drafts from the image and the page around it.
 
 sprezzature-colors
 
-## Colors 60 s
+## Colors 75 s
 
 Light grey on white reads fine — to you, indoors. About one man in twelve sees red and green as the same bar, and no amount of care changes that, because the information is not in their eye.
 
@@ -1096,11 +1099,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: all four simulations in turn, produced by the project's own simulate_cvd.py from the Machado matrices: protanopia, deuteranopia, tritanopia, grayscale.
+What it shows: a pastel booking card erased by sunlight, the colour fix that keeps its blue and its grey, and one chart seen by four kinds of eyes.
 
 sprezzature-audio
 
-## Audio 60 s
+## Audio 75 s
 
 One modality, read in both directions. Captions turn sound into timed text; narration turns text into timed sound, landing as a WAV plus a WebVTT — exactly like a transcript does, which is what lets a page follow the reading sentence by sentence.
 
@@ -1109,11 +1112,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: the models named, the two files narration lands as, and what audit_captions measures about a track that is present but unreadable.
+What it shows: the same words captioned twice, as one line flashing by and as two lines with time to read, and the two directions of the package.
 
 sprezzature-ux-laws
 
-## Laws of UX 60 s
+## Laws of UX 75 s
 
 Nobody says “that violates Hick’s Law”. They say the page is overwhelming, or that they can never find the button. Thirty laws, curated by Jon YABLONSKI; eight of them a machine can decide from the markup alone.
 
@@ -1122,24 +1125,24 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: the eight the auditor checks, three findings it can state exactly, and the boundary it does not cross — whether the screen answers the right question stays a human call.
+What it shows: Hick's Law in one menu, drawn twice, and what a person sees at one moment.
 
 sprezzature-figures
 
-## Figures 60 s
+## Figures 75 s
 
-167 kinds of chart across 52 categories, every one hand-authored. No charting library sits underneath any of it: each generator writes the SVG markup itself, and the vector is the deliverable rather than an export.
+168 kinds of chart across 52 categories, every one hand-authored. No charting library sits underneath any of it: each generator writes the SVG markup itself, and the vector is the deliverable rather than an export.
 
 Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: ten real figures from the gallery, the categories nobody else ships, and the Ralph Eyeball Loop with fourteen seconds to show its work.
+What it shows: nine real figures from the gallery, and a flow drawn as a document.
 
 sprezzature-maps
 
-## Maps 60 s
+## Maps 75 s
 
 A column of countries is a map waiting to happen. Real coastlines, a real projection, eight kilometres of relief — and a choice about which distortion you are willing to accept, stated rather than defaulted to.
 
@@ -1148,11 +1151,11 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: two areas-of-control plates, with a ring where the source gave no exact position, and the density map, which draws no coastline at all and still reads as land.
+What it shows: four relief plates, who holds what in Ukraine, and four actors in Syria.
 
 sprezzature-video
 
-## Video 60 s
+## Video 75 s
 
 The brick that made the other ten films, and the one that checks them. A film is a claim with a soundtrack: every number on screen is verified against the code that produces it, including the numbers nobody declared.
 
@@ -1161,7 +1164,7 @@ Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 Your browser cannot play this video.
 Download the MP4 .
 
-What it shows: the two kinds of claim, the three provenance classes an asset can have, and why captions are measured off the voice file rather than guessed.
+What it shows: the number this suite once got wrong on screen, caught and corrected against the code.
 
 ## About these films
 
@@ -1582,7 +1585,7 @@ Skills serve Claude Code and OpenCode or completely locally and free.
 
 You can proofread a sentence by reading it back. You
 can't do that with a chart: whether it's right lives in the pixels, not the code. So the Ralph
-Eyeball Loop takes whatever you made (an SVG figure, a TikZ figure, a Mermaid diagram, a whole web
+Eyeball Loop takes whatever you made (an SVG figure, a TikZ figure, a whole web
 page) and renders it to an image with a deterministic tool, no model involved. Then something actually looks
 at it: by default the agent itself, the same one that wrote the code, or, fully offline, an optional local
 vision model. It catches what a code check never will: a label cut off at the edge, a legend that slid off
@@ -1958,7 +1961,7 @@ MCP
 Claude skill
 OpenCode skill
 
-sprezzature-figures 160 kits ● yes ● yes ● yes ● yes ● yes ● yes
+sprezzature-figures 161 kits ● yes ● yes ● yes ● yes ● yes ● yes
 
 sprezzature-maps 1 kit ● yes ● yes ● yes ● yes ● yes ● yes
 

@@ -1,8 +1,8 @@
 """
 No shipped file may depend on a path that exists on one machine.
 
-The defect this guards against is the quiet kind. Two Mermaid-generated SVGs
-in ``sprezzature-figures/assets/`` loaded their typeface from
+The defect this guards against is the quiet kind. Two generated SVGs, retired
+since, in ``sprezzature-figures/assets/`` loaded their typeface from
 
     file:///Users/warithharchaoui/front/web/fonts/roboto/Roboto-Variable.woff2
 
@@ -27,8 +27,6 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-
-import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -108,24 +106,27 @@ def test_no_shipped_file_points_at_a_path_on_one_machine() -> None:
     )
 
 
-@pytest.mark.parametrize(
-    "name", ["ralph-eyeball-loop.svg", "ralph-eyeball-loop-fr.svg"]
-)
-def test_the_mermaid_diagrams_carry_their_typeface(name: str) -> None:
+def test_every_shipped_svg_carries_the_typeface_it_declares() -> None:
     """
-    The regression, named.
+    The regression, generalised.
 
-    These two are the files that had the dead path, and they are generated
-    output — so the next regeneration can reintroduce it. The check is not
-    "no absolute path" (the test above owns that) but the positive form: the
-    face they declare must travel with them.
+    The files that had the dead path were generated output, and so is every
+    figure here: the next regeneration can reintroduce it anywhere. The check
+    is not "no absolute path" (the test above owns that) but the positive
+    form: a face an SVG declares must travel with it.
     """
-    path = ROOT / "sprezzature-figures" / "assets" / name
-    text = path.read_text(encoding="utf-8")
-    faces = re.findall(r"@font-face\{[^}]*\}", text)
-    assert faces, f"{name} declares no @font-face at all"
-    for face in faces:
-        assert "data:font/" in face, (
-            f"{name} declares a typeface it does not carry: "
-            f"{re.sub(r'base64,[A-Za-z0-9+/=]+', 'base64,…', face)[:160]}"
-        )
+    svgs = [path for path in SHIPPED if path.suffix.lower() == ".svg"]
+    assert len(svgs) > 100, f"only {len(svgs)} shipped SVGs found"
+
+    offenders: list[str] = []
+    for path in svgs:
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for face in re.findall(r"@font-face\s*\{[^}]*\}", text):
+            if "data:font/" not in face:
+                shown = re.sub(r"base64,[A-Za-z0-9+/=]+", "base64,…", face)
+                offenders.append(f"{path.relative_to(ROOT)}: {shown[:160]}")
+
+    assert not offenders, (
+        "SVGs declare a typeface they do not carry:\n  "
+        + "\n  ".join(offenders)
+    )

@@ -108,7 +108,7 @@ tooltips, and no view-time dependency. The rendered proof is in
 [`docs/FIGURES.md`](docs/FIGURES.md).
 
 **The Ralph Eyeball Loop**: render a source to an image, *look* at it, refine
-the source, repeat. The kind (TikZ / Mermaid / SVG) is auto-detected. A
+the source, repeat. The kind (TikZ / SVG) is auto-detected. A
 rendered figure ships in the repo, so this recipe needs no data of your own:
 
 ```bash
@@ -117,11 +117,11 @@ python3 -m sprezzature_figures_scripts.render_diagram \
 # → wrote /tmp/treemap.png   (now open it, critique, edit the generator, re-render)
 ```
 
-Never draw diagrams in ASCII; write colored Mermaid and render it the same way:
+Never draw diagrams in ASCII; write one row per arrow and let the catalogue draw it:
 
 ```bash
-printf 'flowchart LR\n  A[Browser] --> B[FastAPI] --> C[(DB)]\n' > /tmp/flow.mmd
-python3 -m sprezzature_figures_scripts.render_diagram /tmp/flow.mmd --background transparent --out /tmp/flow.png
+printf 'source,target\nBrowser,FastAPI\nFastAPI,DB\n' > /tmp/flow.csv
+sprezzature-figures render flowchart --data /tmp/flow.csv --out /tmp/flow.svg
 ```
 
 Audit a rendered figure for data-viz sins (rainbow palettes, 3-D pies,

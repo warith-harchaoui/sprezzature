@@ -87,7 +87,7 @@ no longer contains. A command is the part that stays put.
 - `sprezzature-publish-indexes` — robots, sitemap, llms.txt, feed, humans.
 - `sprezzature-publish-plain` — rewrites UI copy at a target reading grade.
 - `sprezzature-publish-lint` / `-html` — Markdown lint, and Markdown → HTML
-  with local Mermaid and KaTeX.
+  with KaTeX.
 - `sprezzature-publish-narrate` / `-readalong` — narration of a page (WAV, or
   MP3 with `--audio-format mp3`), and
   the WebVTT that highlights it as it plays.

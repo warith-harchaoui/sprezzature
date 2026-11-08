@@ -98,7 +98,7 @@ for places that cannot take vector art.
 
 **The Ralph Eyeball Loop** is the half no reference supplies: render → look →
 fix the source → again, with a local vision model doing the looking. It reads
-a figure, a Mermaid diagram, a TikZ drawing or a whole HTML page.
+a figure, a TikZ drawing or a whole HTML page.
 
 ---
 
