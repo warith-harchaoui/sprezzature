@@ -8,6 +8,10 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+## [1.8.4] — 2026-11-09: des cartes de situation composées comme dans un journal
+
+**Two bricks of the day reach the hub.** figures 2.11.0 (two house rules, `semantic_colors`), maps 1.2.0 (the editorial register for situation plates).
+
 ### Changed
 
 - **`sprezzature-figures`: two house rules for every new figure.** Wrapping
