@@ -106,6 +106,52 @@ would be silently unreadable to a meaningful share of readers. The text
 tag from `polarity_tag()` carries the meaning on its own; the color is
 there for readers who can use it, not the ones who cannot.
 
+## Colour = meaning: picking a hue from what a label says
+
+Polarity colours an axis by its direction. Every other categorical colour
+(a series, a card, a group frame, a label) follows a broader rule: a colour
+is read before its label, so it must say what the label says. Each palette
+hue carries a psychological dimension, after
+<https://deraison.ai/colors/academic> (the `academic_psychology`,
+`academic_concepts` and `academic_emotions` tables of the site):
+
+| Hue (Okabe-Ito) | Name in `_style.py` | Positive side | Negative side |
+|---|---|---|---|
+| `#D55E00` vermilion | `Red` | power, passion, energy, strength | danger, warning, anger, pain |
+| `#E69F00` orange | `Orange` | courage, confidence, warmth, innovation | frustration, immaturity |
+| `#F0E442` yellow | `Yellow` | optimism, happiness, creativity | caution, anxiety, fear |
+| `#009E73` bluish green | `Green` | health, hope, nature, growth, prosperity | stagnation, envy, sickness |
+| `#56B4E9` sky blue | `Teal` | communication, clarity, calm, healing | secrecy, unreliability |
+| `#0072B2` blue | `Blue` | trust, loyalty, dependability, logic, security | coldness, aloofness |
+| `#CC79A7` reddish purple | `Purple` | wisdom, luxury, imagination, sophistication | decadence, moodiness; Fear in the emotions table |
+| `#A52A2A` brown | `Brown` | seriousness, earthiness, support, authenticity | heaviness, sadness |
+| `#000000` black | `Black` | authority, elegance, substance | menace, oppression, mourning |
+| `#808080` grey | `Gray` | neutrality, balance, timelessness | lack of energy, blandness |
+
+So a card about risk is vermilion, one about trust is blue, one about growth
+is green, and "Other" is grey, whatever order the cards come in. Both sides
+of a hue count: vermilion is energy as much as danger, so a label about
+power can take it too; what must not happen is a danger drawn in the calm
+blue or a growth drawn in the warning vermilion.
+
+`semantic_colors(labels, theme=..., accessibility=...)` (public, from
+`sprezzature_figures`) applies the rule. `semantic_hue(label)` reads the
+label's words in order against `SEMANTIC_KEYWORDS` in `_style.py`, a short
+English and French table (danger, risque, erreur, alerte → `Red`;
+confiance, fiable, sûr, sécurité → `Blue`; santé, croissance, gain →
+`Green`; clarté, calme → `Teal`; peur, sagesse → `Purple`; autres, neutre →
+`Gray`; ...). A keyword of four letters or more also matches with up to three
+more letters (risques, erreurs); a shorter one only matches whole, so `sûr`
+never matches the preposition `sur`. Labels that name no meaning take the
+usual `cycle_hues` order, minus the hues already taken; two labels naming the
+same meaning get the hue once, and the second one a free cycle hue, because
+two categories drawn alike can no longer be told apart. Hues resolve through
+the theme's palette, so the neutrals come out as the house `Brown` `#A2845E`
+and `Gray` `#8E8E93`. The mapping is off by default
+(`cycle_hues(..., semantic=False)`): no figure's default colours change, and
+the result is a suggestion for the figure's own colour option
+(`series_colors=` on `line-multi`, for one).
+
 ## The emotion and concept accessors
 
 Beyond polarity, `_style.py` exposes two more ways to reach into the same
