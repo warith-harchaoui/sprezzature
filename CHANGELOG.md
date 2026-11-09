@@ -18,6 +18,11 @@ into `~/.claude/skills/`).
   (deraison.ai/colors/academic), with `semantic_colors` to do it in English and
   French. SKILL.md (house style 7 and 8) and `references/polarity-and-color.md`.
   Needs sprezzature-figures 2.11.0.
+- **`sprezzature-maps`: the editorial register for situation plates.**
+  `style: editorial` (status quo as paper, one accent, flat plate, key below,
+  titles that state the finding), `animate` (CSS, stopped by reduced motion,
+  the PNG keeps the finished map) and `north_arrow`, documented in SKILL.md.
+- **Floors**: `sprezzature-figures>=2.11.0`, `sprezzature-maps>=1.2.0`.
 
 ## [1.8.3] — 2026-11-08: dix briques relues, plus de Mermaid
 

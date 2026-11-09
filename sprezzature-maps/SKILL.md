@@ -107,13 +107,21 @@ reads:
 **`region`** is the only required one — `{bbox: [west, south, east, north]}`
 in degrees, and what the projection auto-centres on. The rest:
 
-`title`, `subtitle`, `caption`, `as_of` · `projection`, `basemap`, `frame`,
+`title`, `subtitle`, `caption`, `as_of` · `style`, `animate`, `north_arrow` ·
+`projection`, `basemap`, `frame`,
 `padding`, `canvas_width`, `print_width`, `simplify`, `interactivity` ·
 `areas_of_control`, `front`, `arrows`, `change`, `values`, `frontiers`,
 `internal_borders`, `admin2_borders` · `forces`, `events`, `infrastructure`,
 `labels`, `annotations`, `detail_area`, `rivers`, `lakes`, `cities`, `inset`,
 `small_multiples` · `legend_position`, `legend_title`, `legend_footer`,
 `marker_legend` · `source`, `attribution`, `method`, `provenance`.
+
+For a plate that runs beside an article, start from `style: editorial`:
+the status quo as paper (`areas_of_control.baseline`), one saturated colour
+for the ground that changed hands, the zone named on the zone
+(`labels.territories`), a title that states the finding, the key below the
+map. It opens with a short CSS sequence that `prefers-reduced-motion` stops
+and that a PNG never shows.
 
 `make_situation_map`'s module docstring carries the full reference under
 **Every configuration key**, and a test fails if a top-level key is added
