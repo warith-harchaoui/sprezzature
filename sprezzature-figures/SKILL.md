@@ -104,7 +104,7 @@ data-science figures:
 | `sprezzature-figures redraw` | The **design** of a chart in a picture: which of the catalogue's kinds shows the same thing, the text printed on it, and what makes it harder to read than it needs to be. Chooses only from the catalogue — a kind outside the candidate list is a hard error, not a result. | The **data**. A chart drawn without data labels does not contain its numbers, and this refuses to estimate them from mark size: without `--data` you get the redesign on sample rows, and the figure says so. Read `data_origin` before sharing the output. A local 7B vision model takes ~90 s and reads fewer issues than a larger one. |
 | `explain_model.py` | Model-agnostic SHAP for tree / linear / kernel models (via `shap.Explainer`), Shapash HTML report for a full business-facing writeup, TimeSHAP for recurrent / attention-based time-series models, LIME as fallback for opaque classifiers. Writes summary plot + top-N dependence plots + one waterfall for the row with the largest absolute prediction. | Does not train models. Does not evaluate them; use `probabl-ai/skills/evaluate-ml-pipeline` or `scikit-learn`'s report utilities. Does not do counterfactual reasoning; see `alibi` or `DiCE`. |
 | `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no external layout engine); a JSON effect table for CI. | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
-| `sprezzature-figures check` | The factual half of "does this read?": overlapping labels, text outside the canvas, leftover demo chrome, a light surface on a dark figure, an `expected_title` the generator ignored, a missing `<title>` / `<desc>`. Deterministic, no model, works offline. Measures text with the same calibrated table the generators lay out with, so a string a generator fitted is never reported as overflowing. | Anything that needs eyes or judgement: whether the chart type answers the question, whether the colours carry meaning, whether the story is the right one. Use the Ralph Eyeball Loop for those. It also cannot see a glyph the embedded font lacks, only the width it would take. |
+| `sprezzature-figures check` | The factual half of "does this read?": overlapping labels, sibling labels whose baselines nearly but not quite line up (`baseline_near_miss`), text outside the canvas, leftover demo chrome, a light surface on a dark figure, an `expected_title` the generator ignored, a missing `<title>` / `<desc>`. Deterministic, no model, works offline. Measures text with the same calibrated table the generators lay out with, so a string a generator fitted is never reported as overflowing. | Anything that needs eyes or judgement: whether the chart type answers the question, whether the colours carry meaning, whether the story is the right one. Use the Ralph Eyeball Loop for those. It also cannot see a glyph the embedded font lacks, only the width it would take. |
 | `audit_figure.py` | SVG charts and HTML `<figure>` blocks. Rules: perspective-transformed (3D) pie / donut; rainbow palette (viridis is fine; jet / hsv / rainbow are not); chartjunk (drop shadow, blur filter); corner radius over the 16 px cap; axis ticks left as raw magnitudes (`200000` rather than `200k`); ticks left as raw ISO dates; missing `role="img"` / alt-text stub on the surrounding `<figure>`. | Reads what the markup literally says, and nothing more: a chart can pass every rule and still encode the wrong thing. Does not verify whether the *right chart* was chosen (a design decision, not a mechanical one), and does not evaluate statistical soundness (baseline choice, confidence-interval computation). Loop a data-viz reviewer in for the final call. |
 | `make_situation_map.py` (now in `sprezzature-maps`) | A professional-desk layered plate from one YAML config for any region (real national outline from the vendored Natural Earth basemap, per-layer PNG/SVG exports). | Moved to the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package, run as `make-map situation-map --config … --out …` (`situation_map` is the same command). Does not ship inside `sprezzature-figures` any more; point users at `sprezzature-maps` for this capability. |
 
@@ -170,6 +170,39 @@ Every figure `sprezzature-figures render` emits inherits the sprezzature-* desig
    colour. Full mapping: `references/polarity-and-color.md`.
 6. **`role="img"` + `<figcaption>`** on every `<figure>`; `audit_figure.py`
    flags a figure that lacks them.
+7. **Wrapping never moves a first line.** Sibling text blocks (a row of
+   cards, the boxes of one flow layer, the leaves of one treemap strip,
+   legend entries, category labels) are laid out from ONE block height, the
+   max over the siblings, and ONE font size, the min over the siblings after
+   any shrink. Every first line sits on one baseline; a wrapped line only
+   adds lines below. Under bars, align the first baselines too. Never centre
+   each block on its own line count. `sprezzature-figures check` reports a
+   miss as `baseline_near_miss` (warning: same size and weight, side by side,
+   baselines 1.5 px to 0.9 em apart); confirm by eye with the
+   [Ralph Eyeball Loop](references/ralph-eyeball-loop.md).
+8. **Colour = meaning.** Before giving a series, card or label a colour,
+   read what it says and pick the hue whose psychological dimension matches
+   ([deraison.ai/colors/academic](https://deraison.ai/colors/academic)):
+
+   | Hue | Name | Positive | Negative |
+   |---|---|---|---|
+   | `#D55E00` | `Red` | power, energy | danger, warning, anger |
+   | `#E69F00` | `Orange` | courage, warmth, innovation | frustration |
+   | `#F0E442` | `Yellow` | optimism, creativity | caution, anxiety |
+   | `#009E73` | `Green` | health, hope, growth, nature | stagnation, sickness |
+   | `#56B4E9` | `Teal` | communication, clarity, calm | secrecy, unreliability |
+   | `#0072B2` | `Blue` | trust, dependability, logic, security | coldness |
+   | `#CC79A7` | `Purple` | wisdom, imagination, sophistication | fear |
+   | `#A52A2A` | `Brown` | seriousness, earthiness | heaviness |
+   | black | `Black` | authority | menace |
+   | grey | `Gray` | neutrality, balance | lack of energy |
+
+   `semantic_colors(labels, theme=...)` does it for you, in English and
+   French (risque / erreur → `Red`, confiance / fiable / sûr → `Blue`,
+   santé / croissance / gain → `Green`, ...), and falls back to the usual
+   cycle for labels that name no meaning. Pass its result to the figure's
+   own colour option; it never changes a default. Full rule:
+   `references/polarity-and-color.md`.
 
 ## Explainability, causality, and auditor rules: see references
 

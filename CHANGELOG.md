@@ -8,6 +8,17 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+### Changed
+
+- **`sprezzature-figures`: two house rules for every new figure.** Wrapping
+  never moves a first line: sibling text blocks share one block height and one
+  font size, and `check` reports a miss as `baseline_near_miss`, with the Ralph
+  Eyeball Loop as the confirmation by eye. Colour = meaning: pick the palette
+  hue whose psychological dimension matches the label
+  (deraison.ai/colors/academic), with `semantic_colors` to do it in English and
+  French. SKILL.md (house style 7 and 8) and `references/polarity-and-color.md`.
+  Needs sprezzature-figures 2.11.0.
+
 ## [1.8.3] — 2026-11-08: dix briques relues, plus de Mermaid
 
 **The suite floors move to the releases of the day.** accessibility 1.4.4, audio 1.10.4, cli-gui 1.6.0, colors 1.2.4, figures 2.10.0, maps 1.1.4, publish 1.6.0, ui 1.2.3, ux-laws 1.4.3, video 0.4.5.
