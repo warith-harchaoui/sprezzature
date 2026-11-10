@@ -73,15 +73,15 @@ CATALOGUE_FILES = (
     "web/films.html",
     "web/fr/films.html",
 )
+# The films pages state the catalogue as a floor ("+150"), which the sweep
+# leaves alone; they stay listed so an exact number written back is caught.
 
 #: Sentences on the gallery pages, each tagged with which count it states.
 #: ``{n}`` is where the number goes. Rewritten by name because these two files
 #: are the only ones that quote the gallery size *and* the catalogue size.
 GALLERY_SENTENCES = (
-    ("web/figures.html", "gallery", r"(\d{{2,4}}) hand-authored SVG chart types"),
     ("web/figures.html", "gallery", r"Search (\d{{2,4}}) figures by name"),
     ("web/figures.html", "catalogue", r"whole (\d{{2,4}})-kind catalogue"),
-    ("web/fr/figures.html", "gallery", r"(\d{{2,4}}) types de graphiques en SVG"),
     ("web/fr/figures.html", "gallery", r"(\d{{2,4}}) figures par nom"),
     ("web/fr/figures.html", "catalogue", r"catalogue de (\d{{2,4}}) types"),
 )
@@ -91,7 +91,11 @@ _WORDS = (
     r"catalogue|catalog|type|types|graphique|graphiques|générateur|générateurs|"
     r"hand-authored|registered"
 )
-CLAIM_RE = re.compile(rf"\b(\d{{2,4}})\b(?=[-\s]+(?:`[^`]*`\s+)?(?:{_WORDS})\b)", re.IGNORECASE)
+# ``(?<!\+)``: "+150 chart types" is a floor, the way the site states the
+# catalogue on purpose, and is left alone.
+CLAIM_RE = re.compile(
+    rf"(?<!\+)\b(\d{{2,4}})\b(?=[-\s]+(?:`[^`]*`\s+)?(?:{_WORDS})\b)", re.IGNORECASE
+)
 
 
 def catalogue_size() -> int:

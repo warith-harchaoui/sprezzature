@@ -22,7 +22,7 @@
 - [Colors — Sprezzature](https://sprezzature.ai/colors.html): Colour tooling for Tailwind: WCAG contrast checks with OKLCH fixes, colour-vision-deficiency simulation, a curated palette and a config emitter.
 - [Audio — captions — Sprezzature](https://sprezzature.ai/audio.html): Local-AI captions and narration: WebVTT / SRT from whisper.cpp, who spoke when with NeMo, speaker identification, and text-to-speech on your machine.
 - [Laws of UX — Sprezzature](https://sprezzature.ai/ux-laws.html): Apply the 30 canonical Laws of UX (Jon YABLONSKI) to vanilla-JS + Tailwind, both when building new UI and when auditing HTML that already exists.
-- [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: 161 hand-authored SVG chart types, all from fake data on a curated palette.
+- [Figures — Sprezzature](https://sprezzature.ai/figures.html): A rendered catalog of charts and statistical plots from sprezzature-figures: +150 hand-authored SVG chart types, all from fake data on a curated palette.
 - [Video claims — Sprezzature](https://sprezzature.ai/video.html): Check what a project video says against the project itself: claims on screen verified against the code, so a stale count never outlives its catalogue.
 
 ## Case studies
