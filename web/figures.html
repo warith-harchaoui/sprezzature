@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Figures — Sprezzature</title>
-  <meta name="description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 161 hand-authored SVG chart types, all from fake data on a curated palette.">
+  <meta name="description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: +150 hand-authored SVG chart types, all from fake data on a curated palette.">
   <link rel="canonical" href="https://sprezzature.ai/figures.html">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/figures.html">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/figures.html">
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Figures — Sprezzature">
-  <meta property="og:description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: 161 hand-authored SVG chart types, all from fake data on a curated palette.">
+  <meta property="og:description" content="A rendered catalog of charts and statistical plots from sprezzature-figures: +150 hand-authored SVG chart types, all from fake data on a curated palette.">
   <meta property="og:url" content="https://sprezzature.ai/figures.html">
   <meta property="og:image" content="https://sprezzature.ai/img/figures/bar-card.png">
   <meta property="og:image:alt" content="A bar chart titled “Revenue by Region”, quarterly figures: four bars — North 42, South 28, East 19, West 11.">
@@ -45,7 +45,7 @@
       {
         "@type": "WebPage",
         "name": "Figures — Sprezzature",
-        "description": "A rendered catalog of charts and statistical plots from sprezzature-figures: 161 hand-authored SVG chart types, all from fake data on a curated palette.",
+        "description": "A rendered catalog of charts and statistical plots from sprezzature-figures: +150 hand-authored SVG chart types, all from fake data on a curated palette.",
         "url": "https://sprezzature.ai/figures.html",
         "inLanguage": "en",
         "author": {"@type": "Person", "name": "Warith HARCHAOUI", "url": "https://www.linkedin.com/in/warith-harchaoui/"}
@@ -1392,7 +1392,7 @@
         <h3 class="mt-6 font-semibold">How do I install sprezzature-figures?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-figures</code> (Python 3.10 to 3.13): one command installs the generators, the command line, the HTTP API, the MCP server and Sprezzature Studio, with no extras to choose. It is free and open source under the BSD 3-Clause licence, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures render bar --out check.svg</code> checks the install.</p>
         <h3 class="mt-6 font-semibold">How many chart types does sprezzature-figures have?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-figures has 167 chart types in its catalogue, all marked stable, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures list</code> prints them. The gallery on this page shows 160 of them on purpose: the five glyph maps are on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="maps.html">maps page</a> and the two animated Gapminder figures on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="hans-rosling.html">Hans ROSLING page</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-figures has +150 chart types in its catalogue, all marked stable, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures list</code> prints them. The gallery on this page shows all but seven of them on purpose: the five glyph maps are on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="maps.html">maps page</a> and the two animated Gapminder figures on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="hans-rosling.html">Hans ROSLING page</a>.</p>
         <h3 class="mt-6 font-semibold">Which file formats can sprezzature-figures export?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-figures writes SVG by default, self-contained with its fonts embedded, and the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--out</code> extension also picks <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.png</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.jpg</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.pdf</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">.html</code>. PNG, JPEG and PDF are rasterised from that SVG inside Python, and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--scale 3</code> upsamples them for high-density screens.</p>
         <h3 class="mt-6 font-semibold">What is the Ralph Eyeball Loop?</h3>
@@ -1404,7 +1404,7 @@
         <h3 class="mt-6 font-semibold">Can I use sprezzature-figures without Claude Code, for example in CI?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-figures is also a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">make_figure</code>), a command line, an HTTP API with a Docker image, and the MCP server <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code> for any MCP client; the Claude Code skill is one of five ways in. In CI, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures check figure.svg</code> exits 1 on any finding (labels printed over each other, text off the canvas, a dropped title), and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> prints them for a program.</p>
         <h3 class="mt-6 font-semibold">How is sprezzature-figures different from matplotlib, Plotly or Vega-Lite?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you 167 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">LANDSCAPE.md</code> in the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-figures">repository</a> says.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you +150 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">LANDSCAPE.md</code> in the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-figures">repository</a> says.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -1426,7 +1426,7 @@
           "name": "How many chart types does sprezzature-figures have?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "sprezzature-figures has 167 chart types in its catalogue, all marked stable, and sprezzature-figures list prints them. The gallery on this page shows 160 of them on purpose: the five glyph maps are on the maps page and the two animated Gapminder figures on the Hans ROSLING page."
+            "text": "sprezzature-figures has +150 chart types in its catalogue, all marked stable, and sprezzature-figures list prints them. The gallery on this page shows all but seven of them on purpose: the five glyph maps are on the maps page and the two animated Gapminder figures on the Hans ROSLING page."
           }
         },
         {
@@ -1474,7 +1474,7 @@
           "name": "How is sprezzature-figures different from matplotlib, Plotly or Vega-Lite?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you 167 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as LANDSCAPE.md in the repository says."
+            "text": "matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you +150 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as LANDSCAPE.md in the repository says."
           }
         }
       ]

@@ -87,7 +87,23 @@ _WORDS = (
     r"catalogue|catalog|type|types|graphique|graphiques|générateur|générateurs|"
     r"hand-authored|registered"
 )
-CLAIM_RE = re.compile(rf"\b(\d{{2,4}})\b(?=[-\s]+(?:`[^`]*`\s+)?(?:{_WORDS})\b)", re.IGNORECASE)
+CLAIM_RE = re.compile(
+    rf"(?<!\+)\b(\d{{2,4}})\b(?=[-\s]+(?:`[^`]*`\s+)?(?:{_WORDS})\b)", re.IGNORECASE
+)
+
+#: A floor: "+150 chart types". The site states the catalogue that way, by
+#: Warith's choice, so it does not move every time a kind is added; a floor
+#: is still a claim, and it is true only while the catalogue reaches it.
+FLOOR_RE = re.compile(rf"\+(\d{{2,4}})\b(?=[-\s]+(?:{_WORDS})\b)", re.IGNORECASE)
+
+#: Every page of the site, where the catalogue is stated as a floor.
+SITE_PAGES = tuple(
+    sorted(
+        str(p.relative_to(REPO_ROOT))
+        for p in (REPO_ROOT / "web").rglob("*")
+        if p.suffix in {".html", ".txt", ".yaml"} and p.is_file()
+    )
+)
 
 
 def _catalogue_size() -> int:
@@ -154,7 +170,10 @@ def test_the_gallery_page_counts_what_it_shows(path: str) -> None:
     """
     shown = _gallery_size()
     page = (REPO_ROOT / path).read_text(encoding="utf-8")
-    quoted = {int(m) for m in re.findall(r"(?:Search|)\s*(\d{2,4})\s+(?:figures|types de graphiques)", page)}
+    quoted = {
+        int(m)
+        for m in re.findall(r"(?<!\+)\b(\d{2,4})\s+(?:figures|types de graphiques)", page)
+    }
     assert quoted, f"{path} no longer states how many figures it shows"
     assert quoted == {shown}, (
         f"{path} says it shows {sorted(quoted)} figures; it renders {shown}."
@@ -232,3 +251,33 @@ def test_the_gallery_page_also_states_the_catalogue_correctly() -> None:
         quoted = {int(m) for m in re.findall(pattern, page)}
         assert quoted, f"{path} no longer states the catalogue size"
         assert quoted == {size}, f"{path} says the catalogue is {sorted(quoted)}; it is {size}"
+
+
+# ── the site's floor ────────────────────────────────────────────────────
+
+
+def test_the_site_floor_is_one_the_catalogue_reaches() -> None:
+    """
+    "+150 chart types" on the site is true only while there are 150.
+
+    The floor was chosen so that adding a kind does not stale twenty pages;
+    removing kinds below it is the one change that would, and this is where
+    it shows.
+    """
+    size = _catalogue_size()
+    floors = [
+        (path, int(m.group(1)))
+        for path in SITE_PAGES
+        for m in FLOOR_RE.finditer((REPO_ROOT / path).read_text(encoding="utf-8"))
+    ]
+    assert floors, "the site no longer states the catalogue as a floor"
+    above = [(path, n) for path, n in floors if n > size]
+    assert not above, f"the site claims more kinds than the catalogue has ({size}): {above}"
+
+
+def test_the_site_states_the_catalogue_one_way() -> None:
+    """A page saying "+150" beside one saying "167" is the old spread again."""
+    for path in ("web/index.html", "web/fr/index.html", "web/packages.html",
+                 "web/fr/packages.html", "web/films.html", "web/fr/films.html"):
+        exact = [m.group(1) for m in CLAIM_RE.finditer((REPO_ROOT / path).read_text(encoding="utf-8"))]
+        assert not exact, f"{path} still quotes an exact catalogue size: {exact}"

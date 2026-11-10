@@ -987,7 +987,7 @@ Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs 
 
 ### How many chart types does sprezzature-figures have?
 
-sprezzature-figures has 167 chart types in its catalogue, all marked stable, and sprezzature-figures list prints them. The gallery on this page shows 160 of them on purpose: the five glyph maps are on the maps page and the two animated Gapminder figures on the Hans ROSLING page .
+sprezzature-figures has +150 chart types in its catalogue, all marked stable, and sprezzature-figures list prints them. The gallery on this page shows all but seven of them on purpose: the five glyph maps are on the maps page and the two animated Gapminder figures on the Hans ROSLING page .
 
 ### Which file formats can sprezzature-figures export?
 
@@ -1011,7 +1011,7 @@ Yes: sprezzature-figures is also a Python library ( make_figure ), a command lin
 
 ### How is sprezzature-figures different from matplotlib, Plotly or Vega-Lite?
 
-matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you 167 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as LANDSCAPE.md in the repository says.
+matplotlib, Plotly and Vega-Lite give you an API or a grammar to compose a chart; sprezzature-figures gives you +150 finished chart kinds by name, each writing its SVG directly with no charting library underneath, and a checker that reads the result. For a live dashboard, a very large table or matplotlib's twenty years of answered questions, those tools remain the better choice, as LANDSCAPE.md in the repository says.
 
 ---
 
@@ -1131,7 +1131,7 @@ sprezzature-figures
 
 ## Figures 75 s
 
-168 kinds of chart across 52 categories, every one hand-authored. No charting library sits underneath any of it: each generator writes the SVG markup itself, and the vector is the deliverable rather than an export.
++150 kinds of chart across 52 categories, every one hand-authored. No charting library sits underneath any of it: each generator writes the SVG markup itself, and the vector is the deliverable rather than an export.
 
 Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
@@ -1495,7 +1495,7 @@ the gallery
 ⭐ on GitHub
 
 10 packages
-167 chart types
++150 chart types
 14 map plates
 0 accounts needed
 
@@ -1989,7 +1989,7 @@ sprezzature-figures
 
 ### Figures
 
-167 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
++150 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
 
 pip install sprezzature-figures
 Repository →
