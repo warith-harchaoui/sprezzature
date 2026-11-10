@@ -8,6 +8,19 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+### Changed
+
+- **Site: "+150 chart types"** on every page in both languages, instead of
+  an exact count that was stale somewhere at every release; the guard reads
+  "+N" as a floor the catalogue has to reach.
+- **Site: the maps page carries three more plates** -- the Dnieper line,
+  Munich 1938 and Serbia 1913 -- and every plate is regenerated with
+  sprezzature-maps 1.3.0: the relief shows through the editorial fills, the
+  1:10m rivers on regional plates, and no more straight coast through La Paz
+  on the Andes plate. The home page says 17 map plates; the Ukraine and DRC
+  alt texts describe the paper-white ground the plates now draw.
+- **Floor**: `sprezzature-maps>=1.3.0`.
+
 ## [1.8.4] — 2026-11-09: des cartes de situation composées comme dans un journal
 
 **Two bricks of the day reach the hub.** figures 2.11.0 (two house rules, `semantic_colors`), maps 1.2.0 (the editorial register for situation plates).
