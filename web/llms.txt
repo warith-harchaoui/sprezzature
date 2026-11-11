@@ -29,7 +29,7 @@
 
 - [Case studies — Sprezzature](https://sprezzature.ai/case-studies.html): Three advanced Ralph Eyeball Loop examples: a tribute to Hans ROSLING's animation, publication-grade situation maps and a markets dashboard.
 - [Tribute to Hans ROSLING — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated tribute to Hans ROSLING's health-and-wealth bubble chart: every country, 1950 to 2025, in one self-contained SVG with no JavaScript library.
-- [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade maps: an Equal Earth choropleth on an OKLCH ramp, Lambert situation maps with real relief, and glyph maps over real French election data.
+- [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade maps in SVG (Scalable Vector Graphics): situation maps on a Lambert projection with real relief, change maps between two dated records, and glyph maps over real French election data.
 - [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG panels. This favourable draw ends at +123% net return.
 - [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG panels. This adverse draw ends at -26% net return.
 

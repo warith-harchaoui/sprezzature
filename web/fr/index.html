@@ -167,7 +167,7 @@
           <a href="https://github.com/warith-harchaoui/sprezzature"
             class="rounded-xl border border-neutral-300 px-5 py-2.5 font-medium hover:border-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 min-h-11">⭐ sur GitHub</a>
         </div>
-        <ul role="list" aria-label="La suite en quatre nombres" class="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4"><li><a href="packages.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">10</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">paquets</span></a></li><li><a href="figures.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">+150</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">types de graphiques</span></a></li><li><a href="maps.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">17</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">planches cartographiques</span></a></li><li><span class="block px-3 py-2"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">0</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">compte à créer</span></span></li></ul>
+        <ul role="list" aria-label="La suite en quatre nombres" class="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4"><li><a href="packages.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">10</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">paquets</span></a></li><li><a href="figures.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">+150</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">types de graphiques</span></a></li><li><a href="maps.html" class="flex min-h-11 flex-col justify-center rounded-xl px-3 py-2 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">21</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">planches cartographiques</span></a></li><li><span class="block px-3 py-2"><span class="block font-serif text-3xl font-bold tracking-tight sm:text-4xl">0</span><span class="mt-1 block text-sm text-neutral-600 dark:text-neutral-300">compte à créer</span></span></li></ul>
       </div>
     </section>
 
@@ -493,7 +493,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-audio', 'Sous-titres & diarisation', 'Sous-titres WebVTT / SubRip (SRT) depuis whisper.cpp local, avec en prime qui parle et quand. Fonctionne en local. En cours de développement.', 'audio.html'],
       ['sprezzature-ux-laws', "Lois de l'expérience utilisateur (UX)", 'Trente lois plus un auditeur des violations détectables: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
       ['sprezzature-figures', 'Figures', '+150 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
-      ['sprezzature-maps', 'Cartes', 'Choroplèthes et cartes de situation sur une vraie projection géographique ; les cartes schématiques restent dans figures. En cours. Des illustrations de la méthode, pas des appréciations opérationnelles.', 'maps.html'],
+      ['sprezzature-maps', 'Cartes', 'Cartes de situation des zones de contrôle et cartes de changement entre deux relevés datés, sur une vraie projection géographique ; les cartes schématiques restent dans figures. En cours. Des illustrations de la méthode, pas des appréciations opérationnelles.', 'maps.html'],
       ['sprezzature-video', "Affirmations d'un film", "Vérifie ce qu'un film affirme sur le code dont il parle : les affirmations déclarées vérifiées, les nombres non déclarés attrapés, et la question de savoir si le film peut être refabriqué depuis un clone.", 'video.html'],
     ];
 
@@ -510,7 +510,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       "sprezzature-audio": "parole en texte, texte en parole",
       "sprezzature-ux-laws": "audit des lois de l'UX",
       "sprezzature-figures": "+150 types de graphiques",
-      "sprezzature-maps": "choroplèthes + planches de situation",
+      "sprezzature-maps": "planches de situation et de changement",
       "sprezzature-video": "les revendications d'un film, vérifiées"
     };
     const ecosystemUl = document.querySelector('#ecosystem-list');
@@ -533,7 +533,6 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
     // Six images pour l'aperçu — le jeu complet vit sur figures.html.
     // Alt rédigé par sprezzature-accessibility (qwen3-vl:8b local), vérifié avec soin.
     const FIGURES = [
-      ['choropleth.svg', "Carte choroplèthe de l'indice d'exposition mondial : exposition plus forte en Europe et Amérique du Nord, en classes quintiles."],
       ['situation-ukraine.png', "Carte des zones de contrôle en Ukraine : contrôle du gouvernement en gris-bleu, zones occupées par la Russie en rose et une zone contestée hachurée en crème, avec les villes de points chauds en rouge. Schématique, positions approximatives de 2024."],
       ['map-flow.svg', "Carte de connexions illustrative : des arcs orthodromiques montrent un volume de flux croissant à travers le globe."],
       ['surface3d.png', "Surface en trois dimensions (3D) montrant un maximum au sommet, rendue en polygones bleus ombrés."],
