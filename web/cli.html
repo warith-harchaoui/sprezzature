@@ -166,7 +166,7 @@
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
         <h3 class="mt-6 font-semibold">How do I install sprezzature-cli-gui?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-cli-gui</code> (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--from-help</code> reader, the audit, the HTTP API and the MCP server, with no extras to choose. For the agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> for OpenCode.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-cli-gui</code> (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--from-help</code> reader, the audit, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. For the agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> for OpenCode.</p>
         <h3 class="mt-6 font-semibold">Which command-line parsers can sprezzature-cli-gui read?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-cli-gui imports and walks argparse, Click and Typer parsers directly, so every sub-command, flag and choice comes from the parser itself. A tool written in anything else, such as Go's cobra or Rust's clap, goes through <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--from-help</code>, which runs the tool's own <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--help</code> and reads the text, at lower fidelity.</p>
         <h3 class="mt-6 font-semibold">What does the GUI made by sprezzature-cli-gui contain?</h3>
@@ -180,7 +180,7 @@
         <h3 class="mt-6 font-semibold">Can I run sprezzature-cli-gui in CI?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-cli-gui-audit mytool.cli:build_parser gui.html</code> reads the parser and the page back together and exits 1 when the page has fallen behind the CLI, for instance a flag with no field, a field for an option the parser rejects, a dropped choice or the wrong program name. Add <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> for a machine-readable report.</p>
         <h3 class="mt-6 font-semibold">Is sprezzature-cli-gui free?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. sprezzature-cli-gui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-cli-gui">GitHub</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. sprezzature-cli-gui is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-cli-gui">GitHub</a>.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -194,7 +194,7 @@
           "name": "How do I install sprezzature-cli-gui?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run pip install sprezzature-cli-gui (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the --from-help reader, the audit, the HTTP API and the MCP server, with no extras to choose. For the agent skill, pip install sprezzature then sprezzature-skills --install, or sprezzature-skills --install --agent opencode for OpenCode."
+            "text": "Run pip install sprezzature-cli-gui (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the --from-help reader, the audit, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. For the agent skill, pip install sprezzature then sprezzature-skills --install, or sprezzature-skills --install --agent opencode for OpenCode."
           }
         },
         {
@@ -250,7 +250,7 @@
           "name": "Is sprezzature-cli-gui free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. sprezzature-cli-gui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub."
+            "text": "Yes. sprezzature-cli-gui is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub."
           }
         }
       ]

@@ -37,7 +37,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sprezzature — dix skills Claude / OpenCode">
   <meta name="twitter:description"
-    content="Skills pour une stack sprezzature : UI, CLI→GUI, publication, a11y, couleurs, sous-titres, Lois de l'UX et figures.">
+    content="Skills pour une stack sprezzature : interfaces (UI), outils en ligne de commande (CLI) → interfaces graphiques (GUI), publication, a11y, couleurs, sous-titres, lois de l'expérience utilisateur (UX) et figures.">
   <meta name="twitter:image" content="https://sprezzature.ai/img/logo.png">
 
   <link rel="icon" href="../favicon.ico" sizes="any">
@@ -220,8 +220,8 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
               demande ; le <em>skill</em> la produit, puis l'audite selon les règles.</p>
             <ul class="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-300" role="list">
               <li>« rends cette page accessible » &rarr; <strong>sprezzature-accessibility</strong> audite le HTML et liste quoi corriger.</li>
-              <li>« fais une figure de ce CSV » &rarr; <strong>sprezzature-figures</strong> la dessine, puis audite le graphique.</li>
-              <li>« transforme ce CLI en interface » &rarr; <strong>sprezzature-cli-gui</strong> échafaude une interface utilisable.</li>
+              <li>« fais une figure de ce CSV (comma-separated values, un tableau enregistré en texte brut, une ligne par rangée et les cellules séparées par des virgules : ce qu'exporte un tableur) » &rarr; <strong>sprezzature-figures</strong> la dessine, puis audite le graphique.</li>
+              <li>« transforme ce CLI (command-line interface, un programme qu'on pilote en tapant des commandes dans un terminal) en interface » &rarr; <strong>sprezzature-cli-gui</strong> échafaude une interface utilisable.</li>
             </ul>
             <p class="mt-4 text-sm"><a class="font-medium text-brand-linktext underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature/blob/main/LISEZMOI.md#premiers-pas">Toutes les options d'installation (sommes de contrôle, OpenCode + Ollama local, mises à jour) &rarr;</a></p>
           </div>
@@ -232,7 +232,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
     <!-- Écosystème -->
     <section id="ecosystem" class="mx-auto max-w-6xl px-5 py-12">
       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">L'écosystème d'outils</h2>
-      <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Les scripts de chaque <em>skill</em> sont aussi disponibles comme paquet autonome, qu’on atteint de <a href="packages.html" class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">cinq façons</a> : un zip autonome, une bibliothèque Python, une API HTTP, des outils MCP pour un agent, ou le skill lui-même. La même implémentation derrière toutes.</p>
+      <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Les scripts de chaque <em>skill</em> sont aussi disponibles comme paquet autonome, qu’on atteint de <a href="packages.html" class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">cinq façons</a> : un zip autonome, une bibliothèque Python, une API (Application Programming Interface, la porte où frappent les autres programmes : un script envoie ses chiffres et reçoit une réponse) servie en HTTP (HyperText Transfer Protocol, le protocole par lequel un navigateur demande une page à un serveur), des outils MCP (Model Context Protocol, le protocole par lequel les agents IA appellent des outils en français) pour un agent, ou le skill lui-même. La même implémentation derrière toutes.</p>
       <ul id="ecosystem-list" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm" role="list">
         <!-- dérivée de SKILLS plus bas, pour que les deux listes ne puissent pas diverger -->
       </ul>
@@ -303,7 +303,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           <h3 class="text-lg font-semibold">👁️ Regardez la figure avant de la livrer</h3>
           <p class="mt-2 text-neutral-600 dark:text-neutral-300">Un texte, on le relit. Une figure, non : ce qui cloche
             est dans les pixels, pas dans le code. La <strong>Ralph Eyeball Loop</strong> prend donc ce que vous avez
-            fait (une figure SVG, une figure TikZ, une page entière) et en fait une image avec
+            fait (une figure SVG (Scalable Vector Graphics, une image décrite en formes et en texte plutôt qu'en pixels : elle reste nette à tout zoom), une figure TikZ, une page entière) et en fait une image avec
             un outil déterministe, sans aucun modèle. Ensuite, quelqu'un la regarde pour de vrai : par défaut l'agent
             lui-même, celui qui a écrit le code ou bien, entièrement hors ligne, un modèle de vision local optionnel.
             Il
@@ -335,7 +335,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/PAYSAGE.md"
           class="mt-8 block overflow-hidden rounded-xl border border-neutral-200 bg-white transition hover:border-brand-blue dark:border-neutral-800 dark:bg-neutral-950 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
           <img src="../img/figures/landscape-positioning-fr.png" width="2768" height="2024"
-            alt="Carte de positionnement concurrentiel de sprezzature face à 30 alternatives : un nuage 2-D dont l’axe horizontal va de Stabilité à gauche à Simplicité à droite, et dont l’axe vertical va de Dynamisme en bas à Flexibilité en haut. sprezzature est la référence et occupe le coin supérieur droit, le point le plus à droite et le plus haut des 31 ; Looker est le point le plus éloigné de lui, en bas de la carte ; Pico CSS et HTMX sont les voisins les plus proches au-dessus du milieu, et D3.js est le point le plus à gauche."
+            alt="Carte de positionnement concurrentiel de sprezzature face à 30 alternatives : un nuage 2-D dont l’axe horizontal va de Stabilité à gauche à Simplicité à droite, et dont l’axe vertical va de Dynamisme en bas à Flexibilité en haut. sprezzature est la référence et occupe le coin supérieur droit, le point le plus à droite et le plus haut des 31 ; Looker est le point le plus éloigné de lui, en bas de la carte ; Pico CSS (une feuille de style CSS toute faite, qui habille une page sans classe à écrire) et HTMX (une petite bibliothèque qui recharge des morceaux de page sans JavaScript à écrire) sont les voisins les plus proches au-dessus du milieu, et D3.js est le point le plus à gauche."
             loading="lazy" class="w-full">
         </a>
         <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
@@ -365,7 +365,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           </p>
           <p>Palettes de couleurs depuis <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
               href="https://deraison.ai/colors/">deraison.ai/colors</a>, livrées ici dans le <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="colors.html">skill couleurs</a>.</p>
-          <p>Les trois familles Roboto sont fournies sous la licence SIL Open Font.</p>
+          <p>Les trois familles Roboto sont fournies sous la licence SIL (Summer Institute of Linguistics, l'organisme de linguistes qui l'a écrite pour que les fontes circulent librement) Open Font.</p>
           <p>
             Nous nous sommes aussi appuyés sur les
             <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
@@ -373,7 +373,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
               Guidelines</a>,
             <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://material.io/design">Google Material Design</a> et
             les
-            <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://lawsofux.com/">Laws of UX</a>.
+            <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://lawsofux.com/">Laws of UX (user experience, l'expérience utilisateur : ce que vit la personne qui se sert d'une interface, de l'aisance à la frustration)</a>.
           </p>
         </div>
       </div>
@@ -389,11 +389,11 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         <h3 class="mt-6 font-semibold">Faut-il Claude Code ou un agent IA pour s'en servir ?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Non : chaque paquet sprezzature fonctionne aussi seul, comme bibliothèque Python, ligne de commande, API HTTP avec image Docker et serveur MCP pour tout client MCP ; la skill pour agent n'est qu'une des cinq portes d'entrée. Chaque paquet a son propre <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install</code>, listé sur la <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="packages.html">page des paquets</a>.</p>
         <h3 class="mt-6 font-semibold">sprezzature est-il gratuit ?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui. Tous les paquets sont open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Oui. Tous les paquets sont open source sous licence BSD (Berkeley Software Distribution, une licence née à l'université de Berkeley : chacun peut réutiliser le code, même pour le vendre, en citant l'auteur), version 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>.</p>
         <h3 class="mt-6 font-semibold">Mes données quittent-elles ma machine ?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Pas à moins de les envoyer vous-même ailleurs : les outils de sprezzature tournent en local. Ceux qui emploient un modèle (texte alternatif, réécriture en langage clair, traduction, relecture visuelle locale) appellent un modèle servi par Ollama sur votre machine, la transcription tourne avec whisper.cpp en local et les voix sont synthétisées en local. Quand vous les employez comme skills, l'agent lui-même suit la politique de données de son fournisseur.</p>
         <h3 class="mt-6 font-semibold">Que veut dire « fabriquer et auditer » ?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON et un code de sortie qu'une CI peut faire échouer. La plupart des audits appliquent aussi avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code> les réparations dont ils sont sûrs.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON (JavaScript Object Notation, un format texte dans lequel les programmes rangent des données en champs nommés, comme « titre : Accueil ») et un code de sortie qu'une CI (continuous integration, l'intégration continue : un serveur relance les tests à chaque modification du code) peut faire échouer. La plupart des audits appliquent aussi avec <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code> les réparations dont ils sont sûrs.</p>
         <h3 class="mt-6 font-semibold">Avec quels agents IA fonctionne-t-il ?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Les skills de sprezzature sont écrites pour Claude Code et OpenCode, et chaque paquet lance aussi un serveur MCP (par exemple <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code>) : tout agent qui parle le Model Context Protocol peut appeler les mêmes outils.</p>
         <h3 class="mt-6 font-semibold">Comment signaler un problème ou contribuer ?</h3>
@@ -435,7 +435,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           "name": "sprezzature est-il gratuit ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui. Tous les paquets sont open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur GitHub."
+            "text": "Oui. Tous les paquets sont open source sous licence BSD (Berkeley Software Distribution, une licence née à l'université de Berkeley : chacun peut réutiliser le code, même pour le vendre, en citant l'auteur), version 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur GitHub."
           }
         },
         {
@@ -451,7 +451,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           "name": "Que veut dire « fabriquer et auditer » ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON et un code de sortie qu'une CI peut faire échouer. La plupart des audits appliquent aussi avec --fix les réparations dont ils sont sûrs."
+            "text": "Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON (JavaScript Object Notation, un format texte dans lequel les programmes rangent des données en champs nommés, comme « titre : Accueil ») et un code de sortie qu'une CI (continuous integration, l'intégration continue : un serveur relance les tests à chaque modification du code) peut faire échouer. La plupart des audits appliquent aussi avec --fix les réparations dont ils sont sûrs."
           }
         },
         {
@@ -485,14 +485,14 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
   <script>
     // Cartes de skills → pages de détail on-site (chacune met en valeur la skill).
     const SKILLS = [
-      ['sprezzature-ui', "Génération d'UI", 'Composants, pages, formulaires, tableaux de bord en JavaScript (JS) standard + Tailwind: trois Roboto, mode sombre, anneaux de focus par défaut.', 'ui.html'],
-      ['sprezzature-cli-gui', 'CLI → GUI', "Emballe un outil en ligne de commande dans une GUI d'une seule page ; lit argparse / Click / clap / cobra.", 'cli.html'],
+      ['sprezzature-ui', "Génération d'interface (UI)", 'Composants, pages, formulaires, tableaux de bord en JavaScript (JS) standard + Tailwind: trois Roboto, mode sombre, anneaux de focus par défaut.', 'ui.html'],
+      ['sprezzature-cli-gui', 'CLI → GUI', "Emballe un outil en ligne de commande dans une interface graphique (GUI) d'une seule page ; lit argparse / Click / clap / cobra.", 'cli.html'],
       ['sprezzature-publish', 'Publication', 'Balises meta, favicons, sitemap, llms.txt, flux, réécritures en langage clair, narration en synthèse vocale (TTS) locale.', 'publish.html'],
       ['sprezzature-accessibility', 'Accessibilité : auditer et produire', "Vingt règles d'accessibilité (a11y) décidables depuis la source, médias temporels compris — une barrière pré-commit rapide et compatible avec l'intégration continue (CI) — plus le texte alternatif conforme au World Wide Web Consortium (W3C) rédigé par un modèle de vision local, pour que l'audit puisse faire autre chose que dire ce qui ne va pas.", 'accessibility.html'],
       ['sprezzature-colors', 'Couleurs', 'Contraste selon les règles WCAG (accessibilité des contenus web), simulation des déficiences de la vision des couleurs (DVC), palette soignée, éclaircir / assombrir perceptuel, thème Tailwind.', 'colors.html'],
       ['sprezzature-audio', 'Sous-titres & diarisation', 'Sous-titres WebVTT / SubRip (SRT) depuis whisper.cpp local, avec en prime qui parle et quand. Fonctionne en local. En cours de développement.', 'audio.html'],
       ['sprezzature-ux-laws', "Lois de l'expérience utilisateur (UX)", 'Trente lois plus un auditeur des violations détectables: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
-      ['sprezzature-figures', 'Figures', '+150 types de graphiques en SVG écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
+      ['sprezzature-figures', 'Figures', '+150 types de graphiques en SVG (images vectorielles, nettes à tout zoom) écrit à la main et explicabilité (expérimentale) via la Ralph Eyeball Loop.', 'figures.html'],
       ['sprezzature-maps', 'Cartes', 'Cartes de situation des zones de contrôle et cartes de changement entre deux relevés datés, sur une vraie projection géographique ; les cartes schématiques restent dans figures. En cours. Des illustrations de la méthode, pas des appréciations opérationnelles.', 'maps.html'],
       ['sprezzature-video', "Affirmations d'un film", "Vérifie ce qu'un film affirme sur le code dont il parle : les affirmations déclarées vérifiées, les nombres non déclarés attrapés, et la question de savoir si le film peut être refabriqué depuis un clone.", 'video.html'],
     ];

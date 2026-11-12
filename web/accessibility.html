@@ -108,7 +108,7 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">sprezzature-accessibility</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Accessibility</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Two halves of one job: <strong>audit</strong> what a page gets wrong about accessibility — twenty rules decidable from the HyperText Markup Language (HTML) source alone, no browser, no runtime Document Object Model (DOM) — and <strong>make</strong> the content it is missing, drafting alt text with a local vision model.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Two halves of one job: <strong>audit</strong> what a page gets wrong about accessibility — twenty rules decidable from the HyperText Markup Language (HTML) source alone, no browser, no runtime Document Object Model (DOM, the live tree of elements a browser builds from the page) — and <strong>make</strong> the content it is missing, drafting alt text with a local vision model.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-accessibility/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (the agent spec)</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐ on GitHub</a>
@@ -119,9 +119,9 @@
         <div>
           <h2 class="text-lg font-bold">Makes</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>Alt text for an image, drafted by a local Ollama vision model along the World Wide Web Consortium (W3C) image-purpose decision tree — informative, decorative, functional, text, complex, group — in any language, cached on disk</li>
-          <li>JavaScript Object Notation (JSON) / stdout / exit codes for pre-commit and continuous integration (CI)</li>
-          <li>An opt-in "comfortable reading" CSS toggle at the WCAG 1.4.12 Text Spacing minimums, for pages that ship it as a reader-facing setting</li>
+          <li>Alt text for an image, drafted by a local Ollama vision model along the World Wide Web Consortium (W3C, the body that writes the rules of the web) image-purpose decision tree — informative, decorative, functional, text, complex, group — in any language, cached on disk</li>
+          <li>JavaScript Object Notation (JSON, a text format in which programs store data as named fields) / stdout / exit codes for pre-commit and continuous integration (CI, the server that re-runs a project&#39;s checks on every change and turns red when one fails)</li>
+          <li>An opt-in "comfortable reading" CSS (Cascading Style Sheets, the rules that give a web page its colours, fonts and spacing) toggle at the WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background) 1.4.12 Text Spacing minimums, for pages that ship it as a reader-facing setting</li>
           </ul>
         </div>
         <div>
@@ -166,7 +166,7 @@
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
         <h3 class="mt-6 font-semibold">How do I install sprezzature-accessibility?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-accessibility</code> (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> (or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>).</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-accessibility</code> (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. To use it as an agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> (or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>).</p>
         <h3 class="mt-6 font-semibold">What does sprezzature-accessibility check?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-accessibility applies twenty rules decidable from the HTML source alone: missing alt text, unlabelled inputs, empty links and buttons, clickable div elements with no keyboard access, dialogs with no close, a missing <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">lang</code>, skipped heading levels, status shown by colour alone, animation with no reduced-motion guard, tight letter-spacing, and missing captions, transcripts or controls on video and audio. Six of the rules also have a mechanical repair, applied with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code>.</p>
         <h3 class="mt-6 font-semibold">How is sprezzature-accessibility different from axe-core, Pa11y or Lighthouse?</h3>
@@ -180,7 +180,7 @@
         <h3 class="mt-6 font-semibold">Can I use sprezzature-accessibility without Claude Code?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-accessibility is a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_accessibility</code>), a command line (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility</code>, one command per tool), an HTTP API with a Docker image, and an MCP server, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-accessibility-mcp</code>, for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">/mcp</code>.</p>
         <h3 class="mt-6 font-semibold">Is sprezzature-accessibility free?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-accessibility is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-accessibility">GitHub</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-accessibility is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-accessibility">GitHub</a>.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -194,7 +194,7 @@
           "name": "How do I install sprezzature-accessibility?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run pip install sprezzature-accessibility (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode)."
+            "text": "Run pip install sprezzature-accessibility (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode)."
           }
         },
         {
@@ -250,7 +250,7 @@
           "name": "Is sprezzature-accessibility free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes: sprezzature-accessibility is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
+            "text": "Yes: sprezzature-accessibility is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
           }
         }
       ]

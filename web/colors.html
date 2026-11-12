@@ -109,7 +109,7 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">sprezzature-colors</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Colors</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Color tooling, make and audit: Web Content Accessibility Guidelines (WCAG) contrast with fixes in the perceptual OKLCH color space (Lightness, Chroma, Hue of the OKLab model), colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter. Deterministic: no model, no network.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Color tooling, make and audit: WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background) contrast, with fixes in OKLCH (OK Lightness, Chroma, Hue, a colour space where equal steps in the numbers look like equal steps to the eye), colour-vision-deficiency (CVD, colour blindness, as in the one man in twelve who confuses red and green) simulation, a curated palette, and a Tailwind config emitter. Deterministic: no model, no network.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-colors/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (the agent spec)</a>
         <a href="https://github.com/warith-harchaoui/sprezzature" class="rounded-lg border border-neutral-300 px-4 py-2 font-medium hover:border-brand-blue dark:border-neutral-600 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐ on GitHub</a>
@@ -120,7 +120,7 @@
         <div>
           <h2 class="text-lg font-bold">Makes</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>A curated palette comma-separated values (CSV) file with semantic projections</li>
+          <li>A curated palette comma-separated values (CSV, a table saved as plain text, one row per line — what a spreadsheet exports) file with semantic projections</li>
           <li>A Tailwind theme.extend.colors config from the canonical palette</li>
           <li>Perceptual lighten / darken on the OKLCH L axis</li>
           </ul>
@@ -167,13 +167,13 @@
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
         <h3 class="mt-6 font-semibold">How do I install sprezzature-colors?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-colors</code> (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> (or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>).</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-colors</code> (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. To use it as an agent skill, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code> (or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code>).</p>
         <h3 class="mt-6 font-semibold">What does sprezzature-colors do?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-colors has four tools: a WCAG contrast audit of a palette that suggests a passing colour for each failing pair, a simulation of how an image looks with protanopia, deuteranopia or tritanopia (plus a grayscale version), a remap of the palette to one of six accessibility levels, and an export of the palette as a Tailwind configuration. The front door is <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors</code>, and each tool is also its own command, such as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-contrast</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-cvd</code>.</p>
         <h3 class="mt-6 font-semibold">Does sprezzature-colors check the colours of my web page?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-colors audits the colour pairs of a palette (a JSON file whose keys start with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">label-</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">brand-</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">surface-</code>), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS. Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-colors audits the colour pairs of a palette (a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) file whose keys start with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">label-</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">brand-</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">surface-</code>), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS (Cascading Style Sheets, the rules that give a web page its colours, fonts and spacing). Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse.</p>
         <h3 class="mt-6 font-semibold">How is sprezzature-colors different from an online contrast checker?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-colors checks at once every pair of a palette that can appear together in a theme (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--all-pairs</code> for the full cross-product), at the ratio set with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--target</code>, where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI job.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-colors checks at once every pair of a palette that can appear together in a theme (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--all-pairs</code> for the full cross-product), at the ratio set with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--target</code>, where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI (continuous integration, the server that re-runs a project's checks on every change and turns red when one fails) job.</p>
         <h3 class="mt-6 font-semibold">Does sprezzature-colors send my files to a cloud service or use AI?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-colors is deterministic colour arithmetic that calls no AI model and never touches the network, so it needs no Ollama; and the simulation writes its images on your own disk, next to the source by default.</p>
         <h3 class="mt-6 font-semibold">Can I run sprezzature-colors in CI?</h3>
@@ -181,7 +181,7 @@
         <h3 class="mt-6 font-semibold">Can I use sprezzature-colors without Claude Code?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-colors is a Python library (<code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_colors as sc</code>), a command line, an HTTP API with a Docker image, and an MCP server, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-colors-mcp</code>, for any MCP client. The Docker image runs that server, so one port answers both the HTTP routes and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">/mcp</code>.</p>
         <h3 class="mt-6 font-semibold">Is sprezzature-colors free?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-colors is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-colors">GitHub</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-colors is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-colors">GitHub</a>.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -195,7 +195,7 @@
           "name": "How do I install sprezzature-colors?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run pip install sprezzature-colors (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode)."
+            "text": "Run pip install sprezzature-colors (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode)."
           }
         },
         {
@@ -211,7 +211,7 @@
           "name": "Does sprezzature-colors check the colours of my web page?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No: sprezzature-colors audits the colour pairs of a palette (a JSON file whose keys start with label-, brand- or surface-), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS. Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse."
+            "text": "No: sprezzature-colors audits the colour pairs of a palette (a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {\"name\": \"Ada\"}) file whose keys start with label-, brand- or surface-), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS (Cascading Style Sheets, the rules that give a web page its colours, fonts and spacing). Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse."
           }
         },
         {
@@ -219,7 +219,7 @@
           "name": "How is sprezzature-colors different from an online contrast checker?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "sprezzature-colors checks at once every pair of a palette that can appear together in a theme (--all-pairs for the full cross-product), at the ratio set with --target, where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI job."
+            "text": "sprezzature-colors checks at once every pair of a palette that can appear together in a theme (--all-pairs for the full cross-product), at the ratio set with --target, where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI (continuous integration, the server that re-runs a project's checks on every change and turns red when one fails) job."
           }
         },
         {
@@ -251,7 +251,7 @@
           "name": "Is sprezzature-colors free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes: sprezzature-colors is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
+            "text": "Yes: sprezzature-colors is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
           }
         }
       ]

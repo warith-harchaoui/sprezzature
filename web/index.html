@@ -9,7 +9,7 @@
 
   <title>Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind</title>
   <meta name="description"
-    content="sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI, figures, maps, colours, captions and publishing.">
+    content="sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI (user interface, the screens, buttons and forms a person works with), figures, maps, colours, captions and publishing.">
   <link rel="canonical" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="en" href="https://sprezzature.ai/">
   <link rel="alternate" hreflang="fr" href="https://sprezzature.ai/fr/">
@@ -32,7 +32,7 @@
   <meta property="og:site_name" content="Sprezzature">
   <meta property="og:title" content="Sprezzature — ten Claude / OpenCode skills">
   <meta property="og:description"
-    content="sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI, figures, maps, colours, captions and publishing.">
+    content="sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI (user interface, the screens, buttons and forms a person works with), figures, maps, colours, captions and publishing.">
   <meta property="og:url" content="https://sprezzature.ai/">
   <meta property="og:image" content="https://sprezzature.ai/img/logo.png">
   <meta property="og:locale" content="en_US">
@@ -144,7 +144,7 @@
         <menu class="m-0 hidden list-none items-center gap-2 p-0 sm:flex" aria-label="Project">
           <li class="flex"><a href="https://github.com/warith-harchaoui/sprezzature"
           class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐ on GitHub</a></li>
-          <li class="flex"><a href="feed.atom" title="RSS/Atom feed of release notes"
+          <li class="flex"><a href="feed.atom" title="RSS (Really Simple Syndication) or Atom feed: your news-reader app is told each time a release note appears"
           class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">RSS</a></li>
         </menu>
         <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Page settings">
@@ -165,7 +165,7 @@
         <li><a href="packages.html" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Packages</a></li>
         <li><a href="case-studies.html" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Case studies</a></li>
         <li><a href="https://github.com/warith-harchaoui/sprezzature" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">⭐ on GitHub</a></li>
-        <li><a href="feed.atom" title="RSS/Atom feed of release notes" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">RSS</a></li>
+        <li><a href="feed.atom" title="RSS (Really Simple Syndication) or Atom feed: your news-reader app is told each time a release note appears" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">RSS</a></li>
       </ul>
     </div>
   </header>
@@ -246,8 +246,8 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
               makes it, then audits it against the rules.</p>
             <ul class="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-300" role="list">
               <li>"make this page accessible" &rarr; <strong>sprezzature-accessibility</strong> lints the HTML and reports what to fix.</li>
-              <li>"make a figure of this CSV" &rarr; <strong>sprezzature-figures</strong> draws it, then audits the chart.</li>
-              <li>"wrap this CLI in a GUI" &rarr; <strong>sprezzature-cli-gui</strong> scaffolds a usable interface.</li>
+              <li>"make a figure of this CSV" (comma-separated values, a table saved as plain text, one row per line with the cells separated by commas — what a spreadsheet exports) &rarr; <strong>sprezzature-figures</strong> draws it, then audits the chart.</li>
+              <li>"wrap this CLI in a GUI" (a CLI, command-line interface, is a tool you drive by typing commands; a GUI, graphical user interface, is a form you click) &rarr; <strong>sprezzature-cli-gui</strong> scaffolds a usable interface.</li>
             </ul>
             <p class="mt-4 text-sm"><a class="font-medium text-brand-linktext underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature#getting-started">Full install options (checksums, OpenCode + local Ollama, upgrades) &rarr;</a></p>
           </div>
@@ -258,7 +258,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
     <!-- Ecosystem -->
     <section id="ecosystem" class="mx-auto max-w-6xl px-5 py-12">
       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">The tool ecosystem</h2>
-      <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Each skill's scripts also ship as a standalone package, reachable <a href="packages.html" class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">five ways</a>: a self-contained zip, a Python library, an HTTP API, MCP tools for an agent, or the skill itself. Same implementation behind all of them.</p>
+      <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">Each skill's scripts also ship as a standalone package, reachable <a href="packages.html" class="text-brand-linktext underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">five ways</a>: a self-contained zip, a Python library, an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), MCP (Model Context Protocol, the protocol through which AI agents call tools in English) tools for an agent, or the skill itself. Same implementation behind all of them.</p>
       <ul id="ecosystem-list" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm" role="list">
         <!-- derived from SKILLS below, so the two lists cannot disagree -->
       </ul>
@@ -310,7 +310,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         <article>
           <h3 class="font-semibold">Opinionated graphical choices</h3>
           <p class="mt-1 text-neutral-600 dark:text-neutral-300">Skills cover accessibility, colors, typography,
-            languages, search-engine optimization (SEO), and generative-engine optimization (GEO).</p>
+            languages, search-engine optimization (SEO, coming up when someone searches Google), and generative-engine optimization (GEO, being cited by an AI assistant such as ChatGPT).</p>
         </article>
         <article>
           <h3 class="font-semibold">Runtime-portable</h3>
@@ -327,7 +327,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           <h3 class="text-lg font-semibold">👁️ Look at the figure before you ship it</h3>
           <p class="mt-2 text-neutral-600 dark:text-neutral-300">You can proofread a sentence by reading it back. You
             can't do that with a chart: whether it's right lives in the pixels, not the code. So the <strong>Ralph
-              Eyeball Loop</strong> takes whatever you made (an SVG figure, a TikZ figure, a whole web
+              Eyeball Loop</strong> takes whatever you made (an SVG (Scalable Vector Graphics, a picture stored as drawing instructions rather than pixels, so it stays sharp at any zoom) figure, a TikZ figure, a whole web
             page) and renders it to an image with a deterministic tool, no model involved. Then something actually looks
             at it: by default the agent itself, the same one that wrote the code, or, fully offline, an optional local
             vision model. It catches what a code check never will: a label cut off at the edge, a legend that slid off
@@ -355,7 +355,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md"
           class="mt-8 block overflow-hidden rounded-xl border border-neutral-200 bg-white transition hover:border-brand-blue dark:border-neutral-800 dark:bg-neutral-950 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
           <img src="img/figures/landscape-positioning.png" width="2768" height="2024"
-            alt="Competitive-positioning map of sprezzature against 30 alternatives: a 2-D scatter whose horizontal axis runs Robustness on the left to Nimble on the right, and whose vertical axis runs Dynamic at the bottom to Adaptable at the top. sprezzature is the reference and sits at the far top-right corner, furthest right and highest of all 31 points; Looker is the point furthest from it, at the bottom of the map; Pico CSS and HTMX are the nearest neighbours above the middle, and D3.js is the leftmost point."
+            alt="Competitive-positioning map of sprezzature against 30 alternatives: a 2-D scatter whose horizontal axis runs Robustness on the left to Nimble on the right, and whose vertical axis runs Dynamic at the bottom to Adaptable at the top. sprezzature is the reference and sits at the far top-right corner, furthest right and highest of all 31 points; Looker is the point furthest from it, at the bottom of the map; Pico CSS (Cascading Style Sheets, the rules that give a page its colours, fonts and spacing) and HTMX (HTML extensions, a library that lets a link update part of a page without reloading it) are the nearest neighbours above the middle, and D3.js is the leftmost point."
             loading="lazy" class="w-full">
         </a>
         <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
@@ -385,14 +385,14 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           </p>
           <p>Color palettes from <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
               href="https://deraison.ai/colors/">deraison.ai/colors</a>, shipped here as the <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="colors.html">colors skill</a>.</p>
-          <p>The three Roboto families are bundled under the SIL Open Font License.</p>
+          <p>The three Roboto families are bundled under the SIL (originally the Summer Institute of Linguistics) Open Font License, which lets anyone use, embed and share the fonts for free.</p>
           <p>
             We also drew on the
             <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
               href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface
               Guidelines</a>,
             <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://material.io/design">Google Material Design</a> and
-            <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://lawsofux.com/">Laws of UX</a>.
+            <a class="text-brand-linktext hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://lawsofux.com/">Laws of UX</a> (user experience, how using a product feels: whether people find the button or give up).
           </p>
         </div>
       </div>
@@ -408,11 +408,11 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
         <h3 class="mt-6 font-semibold">Do I need Claude Code or an AI agent to use it?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: every sprezzature package also works on its own as a Python library, a command line, an HTTP API with a Docker image, and an MCP server for any MCP client; the agent skill is one of five ways in. Each package has its own <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install</code>, listed on the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="packages.html">packages page</a>.</p>
         <h3 class="mt-6 font-semibold">Is sprezzature free?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. Every package is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature">GitHub</a>.</p>
         <h3 class="mt-6 font-semibold">Does my data leave my machine?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Not unless you send it somewhere: sprezzature's tools run locally. The ones that use a model (alt text, plain-language rewrites, translation, the local eyeball check) call a model served by Ollama on your own machine, transcription runs whisper.cpp locally, and the voices are synthesised locally. When you use them as skills, the agent itself follows its own provider's data policy.</p>
         <h3 class="mt-6 font-semibold">What does “make and audit” mean?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) report and an exit code a CI (continuous integration, the server that re-runs a project's checks on every change and turns red when one fails) job can fail on. Most audits can also apply the repairs they are sure of with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--fix</code>.</p>
         <h3 class="mt-6 font-semibold">Which AI agents does it work with?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">The sprezzature skills are written for Claude Code and OpenCode, and every package also runs an MCP server (for example <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code>), so any agent that speaks the Model Context Protocol can call the same tools.</p>
         <h3 class="mt-6 font-semibold">How do I report a problem or contribute?</h3>
@@ -454,7 +454,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           "name": "Is sprezzature free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
+            "text": "Yes. Every package is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub."
           }
         },
         {
@@ -470,7 +470,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
           "name": "What does “make and audit” mean?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with --fix."
+            "text": "Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {\"name\": \"Ada\"}) report and an exit code a CI (continuous integration, the server that re-runs a project's checks on every change and turns red when one fails) job can fail on. Most audits can also apply the repairs they are sure of with --fix."
           }
         },
         {
@@ -507,11 +507,11 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/</code></pre>
       ['sprezzature-ui', 'UI generation', 'Vanilla JavaScript (JS) + Tailwind components, pages, forms, dashboards: three-Roboto, dark mode, focus rings by default.', 'ui.html'],
       ['sprezzature-cli-gui', 'CLI → web GUI', 'Wrap a command-line tool in a single-page GUI; reads argparse / Click / clap / cobra.', 'cli.html'],
       ['sprezzature-publish', 'Markdown → website', 'Meta tags, favicons, sitemap, llms.txt, feeds, plain-language rewrites, local text-to-speech (TTS) narration.', 'publish.html'],
-      ['sprezzature-accessibility', 'Accessibility: audit and make', 'Twenty source-decidable accessibility (a11y) rules, time-based media included — a fast, continuous-integration-friendly (CI) pre-commit gate — plus World Wide Web Consortium (W3C) alt text drafted by a local vision model, so the audit can do more than say what is wrong.', 'accessibility.html'],
-      ['sprezzature-colors', 'Color tooling', 'Web Content Accessibility Guidelines (WCAG) contrast, color-vision-deficiency (CVD) simulation, a curated palette, perceptual lighten / darken, Tailwind theme.', 'colors.html'],
-      ['sprezzature-audio', 'Captions & diarization', 'WebVTT / SubRip (SRT) captions from local whisper.cpp, plus who-spoke-when and who-is-who. Runs locally. Work in progress.', 'audio.html'],
+      ['sprezzature-accessibility', 'Accessibility: audit and make', 'Twenty source-decidable accessibility (a11y) rules, time-based media included — a fast, continuous-integration-friendly (CI, the server that re-runs checks on every change) pre-commit gate — plus World Wide Web Consortium (W3C, the body that writes the rules of the web) alt text drafted by a local vision model, so the audit can do more than say what is wrong.', 'accessibility.html'],
+      ['sprezzature-colors', 'Color tooling', 'Web Content Accessibility Guidelines (WCAG, the rulebook for how dark text must be against its background) contrast, color-vision-deficiency (CVD, colour blindness) simulation, a curated palette, perceptual lighten / darken, Tailwind theme.', 'colors.html'],
+      ['sprezzature-audio', 'Captions & diarization', 'WebVTT / SubRip (SRT, the plain-text subtitle file most players read) captions from local whisper.cpp, plus who-spoke-when and who-is-who. Runs locally. Work in progress.', 'audio.html'],
       ['sprezzature-ux-laws', 'Laws of user experience (UX)', 'Thirty laws plus an auditor for detectable violations: Hick, Fitts, Miller, Jakob, Tesler.', 'ux-laws.html'],
-      ['sprezzature-figures', 'Figures', '+150 hand-authored SVG chart types and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
+      ['sprezzature-figures', 'Figures', '+150 hand-authored SVG (Scalable Vector Graphics, sharp at any zoom) chart types and explainability (experimental) via the Ralph Eyeball Loop.', 'figures.html'],
       ['sprezzature-maps', 'Maps', 'Situation plates of areas of control and change maps between two dated records, on a real geographic projection; schematic place-shaped charts stay in figures. Work in progress. Illustrations of the method, not operational assessments.', 'maps.html'],
       ['sprezzature-video', 'Video claims', 'Checks what a film says against the code it describes: declared claims verified, undeclared numbers caught, and whether the film can be rendered again from a clone.', 'video.html'],
     ];

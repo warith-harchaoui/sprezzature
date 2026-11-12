@@ -127,7 +127,7 @@
           <h2 class="text-lg font-bold">Audits</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
           <li>Static auditor flags the mechanically-detectable subset: Hick, Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload (eight checks)</li>
-          <li>Severity + JavaScript Object Notation (JSON) output for pre-commit / continuous integration (CI)</li>
+          <li>Severity + JavaScript Object Notation (JSON, a text format in which programs store data as named fields) output for pre-commit / continuous integration (CI, the server that re-runs a project&#39;s checks on every change)</li>
           </ul>
         </div>
       </div>
@@ -161,7 +161,7 @@
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
         <h3 class="mt-6 font-semibold">How do I install sprezzature-ux-laws?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-ux-laws</code> on Python 3.10 or later: one install gives the library, both commands, the HTTP API and the MCP server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD 3-Clause licence.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-ux-laws</code> on Python 3.10 or later: one install gives the library, both commands, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.</p>
         <h3 class="mt-6 font-semibold">Which Laws of UX does sprezzature-ux-laws check?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ux-laws checks eight of the thirty laws on lawsofux.com, the ones a scan of the HTML source can decide: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">hick</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">choice-overload</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">miller</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">jakob</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">fitts</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">aesthetic-usability</code>, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">selective-attention</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">tesler</code>. Two of them, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">hick</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">jakob</code>, are errors and the other six are warnings; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--only</code> and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--ignore</code> pick among them by slug.</p>
         <h3 class="mt-6 font-semibold">What does sprezzature-ux-laws --fix change?</h3>
@@ -189,7 +189,7 @@
           "name": "How do I install sprezzature-ux-laws?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run pip install sprezzature-ux-laws on Python 3.10 or later: one install gives the library, both commands, the HTTP API and the MCP server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD 3-Clause licence."
+            "text": "Run pip install sprezzature-ux-laws on Python 3.10 or later: one install gives the library, both commands, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence."
           }
         },
         {

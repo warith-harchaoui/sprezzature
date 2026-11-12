@@ -108,12 +108,12 @@
       <p class="font-mono text-sm text-brand-linktext">paquets autonomes</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Paquets</h1>
       <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Chaque outil ici est une seule implémentation qu’on atteint de six façons. Laquelle vous convient dépend de ce que vous faites : envoyer un fichier unique à un collègue, importer une fonction, taper une commande, l’appeler depuis un autre langage, la confier à un agent, ou laisser Claude lire le skill. Aucune de ces situations ne devrait exiger un outil différent.</p>
-      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Chaque paquet est sous licence BSD-3-Clause, local d’abord, et versionné séparément. Les dix sont publiés sur PyPI : un simple <code class="rounded bg-neutral-100 px-1 py-0.5 font-mono text-xs dark:bg-neutral-800">pip install</code> suffit.</p>
+      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Chaque paquet est sous licence BSD (Berkeley Software Distribution, une licence née à l'université de Berkeley : chacun peut réutiliser le code, même pour le vendre, en citant l'auteur), version 3-Clause, local d’abord, et versionné séparément. Les dix sont publiés sur PyPI : un simple <code class="rounded bg-neutral-100 px-1 py-0.5 font-mono text-xs dark:bg-neutral-800">pip install</code> suffit.</p>
 
 
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Six portes d’entrée</h2>
-      <p class="mt-3 text-neutral-600 dark:text-neutral-300">La règle : ce sont des <em>surfaces</em>, jamais des réimplémentations. Une route, une description d’outil et une ligne de commande appellent la même fonction ; quand elles divergent, c’est un bug, pas une variante. Cinq de ces six sont le contrat que tient chaque paquet — librairie, ligne de commande, HTTP, outils d’agent, skill. Le kit zip est une façon de <em>livrer</em> l’une d’elles, pas une sixième implémentation.</p>
+      <p class="mt-3 text-neutral-600 dark:text-neutral-300">La règle : ce sont des <em>surfaces</em>, jamais des réimplémentations. Une route, une description d’outil et une ligne de commande appellent la même fonction ; quand elles divergent, c’est un bug, pas une variante. Cinq de ces six sont le contrat que tient chaque paquet — librairie, ligne de commande (CLI, command-line interface : un programme qu'on pilote en tapant des commandes dans un terminal), HTTP (HyperText Transfer Protocol, le protocole par lequel un navigateur demande une page à un serveur), outils d’agent en MCP (Model Context Protocol, le protocole par lequel les agents IA appellent des outils en français), skill. Le kit zip est une façon de <em>livrer</em> l’une d’elles, pas une sixième implémentation.</p>
 
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
 
@@ -126,7 +126,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">bibliothèque</p>
           <h3 class="mt-1 font-semibold">Des fonctions Python</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">On les importe et on les appelle. Typées, documentées, et sans la moindre dépendance à une bibliothèque graphique : le SVG est écrit directement, donc vous n’installez que ce que vous avez demandé.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">On les importe et on les appelle. Typées, documentées, et sans la moindre dépendance à une bibliothèque graphique : le SVG (Scalable Vector Graphics, une image décrite en formes et en texte plutôt qu'en pixels : elle reste nette à tout zoom) est écrit directement, donc vous n’installez que ce que vous avez demandé.</p>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
@@ -156,7 +156,7 @@
       </div>
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Où chaque surface existe vraiment</h2>
-      <p class="mt-3 text-neutral-600 dark:text-neutral-300">Cinq surfaces, c’est le contrat, et les dix paquets le tiennent. Chacun porte au-dessus de sa bibliothèque une API HTTP et une surface MCP : les mêmes fonctions, jamais une seconde copie. Le zip est la sixième porte et le contrat ne le doit pas — cinq paquets livrent une boîte à outils (accessibility, cli-gui, colors, maps, ux-laws), figures en livre une par figure à la place (160) et maps douze plaques en plus de la sienne ; audio, publish et ui n’en ont pas encore. Les skills n’ont pas besoin d’une seconde version pour OpenCode : les deux runtimes lisent le même <code>SKILL.md</code>.</p>
+      <p class="mt-3 text-neutral-600 dark:text-neutral-300">Cinq surfaces, c’est le contrat, et les dix paquets le tiennent. Chacun porte au-dessus de sa bibliothèque une API (Application Programming Interface, la porte où frappent les autres programmes : un script envoie ses chiffres et reçoit une réponse) en HTTP et une surface MCP : les mêmes fonctions, jamais une seconde copie. Le zip est la sixième porte et le contrat ne le doit pas — cinq paquets livrent une boîte à outils (accessibility, cli-gui, colors, maps, ux-laws), figures en livre une par figure à la place (160) et maps douze plaques en plus de la sienne ; audio, publish et ui n’en ont pas encore. Les skills n’ont pas besoin d’une seconde version pour OpenCode : les deux runtimes lisent le même <code>SKILL.md</code>.</p>
 
       <div class="mt-6 overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-800">
         <table class="w-full text-sm">
@@ -210,7 +210,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-colors</p>
           <h3 class="mt-1 font-semibold">Couleurs</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Audit de contraste WCAG avec corrections par voisinage OKLCH, simulation des déficiences de la vision des couleurs, une palette choisie et un export Tailwind.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Audit de contraste WCAG (Web Content Accessibility Guidelines, les règles internationales qui disent par exemple à quel point un texte doit contraster avec son fond) avec corrections par voisinage OKLCH (Oklab lightness, chroma, hue, une façon de noter les couleurs où deux teintes de même clarté paraissent vraiment aussi claires à l'œil), simulation des déficiences de la vision des couleurs, une palette choisie et un export Tailwind.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-colors</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-colors" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Dépôt →</a><div class="mt-2"><a href="../kits/fr/colors.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Télécharger le kit colors : tourne sur la bibliothèque standard seule, 23 Ko">↓ Kit exécutable (23 KB)</a></div>
         </div>
@@ -218,7 +218,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-accessibility</p>
           <h3 class="mt-1 font-semibold">Accessibilité</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Un linter d’accessibilité HTML statique : des règles WCAG/WAI décidables depuis la source, sans navigateur ni DOM. Une barrière pre-commit rapide.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Un linter d’accessibilité HTML statique : des règles WCAG/WAI décidables depuis la source, sans navigateur ni DOM (Document Object Model, la page telle que le navigateur l’a construite en mémoire, une fois ses scripts exécutés). Une barrière pre-commit rapide.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-accessibility</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Dépôt →</a><div class="mt-2"><a href="../kits/fr/accessibility.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Télécharger le kit accessibility : tourne sur la bibliothèque standard seule, 27 Ko">↓ Kit exécutable (27 KB)</a></div>
         </div>
@@ -233,7 +233,7 @@
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-ux-laws</p>
-          <h3 class="mt-1 font-semibold">Lois de l’UX</h3>
+          <h3 class="mt-1 font-semibold">Lois de l’expérience utilisateur (UX)</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Un auditeur statique des lois de l’UX pour le HTML : Hick, Miller, Fitts, Jakob, Tesler et d’autres, décidables depuis la source.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-ux-laws</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Dépôt →</a><div class="mt-2"><a href="../kits/fr/ux-laws.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Télécharger le kit ux-laws : tourne sur la bibliothèque standard seule, 27 Ko">↓ Kit exécutable (27 KB)</a></div>
@@ -242,7 +242,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-audio</p>
           <h3 class="mt-1 font-semibold">Audio</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Sous-titres locaux (whisper.cpp), diarisation et qui-est-qui, narration et traduction. Les moteurs ML sont des extras optionnels.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Sous-titres locaux (whisper.cpp), diarisation et qui-est-qui, narration et traduction. Les moteurs ML (machine learning, l’apprentissage automatique : des programmes qui apprennent à partir d’exemples) sont des extras optionnels.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-audio</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-audio" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Dépôt →</a>
         </div>
@@ -257,7 +257,7 @@
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-ui</p>
-          <h3 class="mt-1 font-semibold">UI</h3>
+          <h3 class="mt-1 font-semibold">Interface utilisateur (UI)</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">La moitié déterministe d’un skill d’interface : trouver les chaînes qui ont leur place dans un catalogue de traduction, et échafauder ce catalogue. Écrire l’interface est le travail du modèle.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-ui</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-ui" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Dépôt →</a>

@@ -82,7 +82,7 @@
         <a href="case-studies.html" class="hidden rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue sm:inline">Case studies</a>
         <menu class="m-0 hidden list-none items-center gap-2 p-0 sm:flex" aria-label="Project">
           <li class="flex"><a href="https://github.com/warith-harchaoui/sprezzature" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">⭐ on GitHub</a></li>
-          <li class="flex"><a href="feed.atom" title="RSS/Atom feed of release notes" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">RSS</a></li>
+          <li class="flex"><a href="feed.atom" title="RSS (Really Simple Syndication) or Atom feed: your news-reader app is told each time a release note appears" class="rounded px-1 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">RSS</a></li>
         </menu>
         <menu class="m-0 flex list-none items-center gap-3 p-0 sm:gap-4" aria-label="Page settings">
           <li class="flex"><a href="fr/packages.html" aria-label="Version française" title="Version française" class="rounded-full px-2 py-1 text-lg leading-none hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800">🇫🇷</a></li>
@@ -100,7 +100,7 @@
         <li><a href="packages.html" aria-current="page" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Packages</a></li>
         <li><a href="case-studies.html" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">Case studies</a></li>
         <li><a href="https://github.com/warith-harchaoui/sprezzature" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">⭐ on GitHub</a></li>
-        <li><a href="feed.atom" title="RSS/Atom feed of release notes" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">RSS</a></li>
+        <li><a href="feed.atom" title="RSS (Really Simple Syndication) or Atom feed: your news-reader app is told each time a release note appears" class="flex items-center rounded-lg px-2 py-2 hover:bg-neutral-100 hover:text-brand-linktext focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:hover:bg-neutral-800 min-h-11">RSS</a></li>
       </ul>
     </div>
   </header>
@@ -109,10 +109,10 @@
       <p class="font-mono text-sm text-brand-linktext">standalone packages</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Packages</h1>
       <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Every tool here is one implementation reached six different ways. Which one you want depends on what you are doing: sending a colleague a single file, importing a function, typing a command, calling it from another language, handing it to an agent, or letting Claude read the skill. None of those should require a different tool.</p>
-      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Each package is BSD-3-Clause, local-first, and independently versioned. All ten are published on PyPI, so a plain <code class="rounded bg-neutral-100 px-1 py-0.5 font-mono text-xs dark:bg-neutral-800">pip install</code> is enough.</p>
+      <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Each package carries the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, is local-first, and is independently versioned. All ten are published on PyPI, so a plain <code class="rounded bg-neutral-100 px-1 py-0.5 font-mono text-xs dark:bg-neutral-800">pip install</code> is enough.</p>
 
       <h2 class="mt-12 text-2xl font-bold tracking-tight">Six ways in</h2>
-      <p class="mt-3 text-neutral-600 dark:text-neutral-300">The rule is that these are <em>surfaces</em>, never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant. Five of these six are the contract every package holds — library, command line, HTTP, agent tools, skill. The zip kit is a way of <em>delivering</em> one, not a sixth implementation.</p>
+      <p class="mt-3 text-neutral-600 dark:text-neutral-300">The rule is that these are <em>surfaces</em>, never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant. Five of these six are the contract every package holds — library, command line or CLI (command-line interface, a tool you drive by typing commands in a terminal), an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), agent tools over MCP (Model Context Protocol, the protocol through which AI agents call tools in English), skill. The zip kit is a way of <em>delivering</em> one, not a sixth implementation.</p>
 
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
 
@@ -125,7 +125,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">library</p>
           <h3 class="mt-1 font-semibold">Python functions</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Import them and call them. Typed, documented, and free of any plotting or charting dependency: the SVG is written directly, so the only thing you install is the thing you asked for.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Import them and call them. Typed, documented, and free of any plotting or charting dependency: the SVG (Scalable Vector Graphics, a picture stored as drawing instructions rather than pixels, so it stays sharp at any zoom) is written directly, so the only thing you install is the thing you asked for.</p>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
@@ -194,7 +194,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-figures</p>
           <h3 class="mt-1 font-semibold">Figures</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">+150 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">+150 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs (directed acyclic graphs, arrows from cause to effect that never loop back).</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-figures</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-figures" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a>
         </div>
@@ -210,7 +210,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-colors</p>
           <h3 class="mt-1 font-semibold">Colors</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">WCAG contrast auditing with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and Tailwind export.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Contrast auditing against WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background), with fixes taken from the nearest colours in OKLCH (OK Lightness, Chroma, Hue, a colour space where equal steps in the numbers look like equal steps to the eye), colour-vision-deficiency simulation, a curated palette, and Tailwind export.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-colors</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-colors" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a><div class="mt-2"><a href="kits/colors.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Download the colors kit: runs on the standard library alone, 23 KB">↓ Runnable kit (23 KB)</a></div>
         </div>
@@ -218,14 +218,14 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-accessibility</p>
           <h3 class="mt-1 font-semibold">Accessibility</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">A static HTML accessibility linter: source-decidable WCAG/WAI rules, no browser, no runtime DOM. A fast pre-commit gate.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">A static HTML accessibility linter: source-decidable WCAG and WAI (Web Accessibility Initiative, the web-standards group that writes WCAG) rules, no browser, no runtime DOM (Document Object Model, the live tree of elements a browser builds from the page). A fast pre-commit gate.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-accessibility</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-accessibility" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a><div class="mt-2"><a href="kits/accessibility.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Download the accessibility kit: runs on the standard library alone, 27 KB">↓ Runnable kit (27 KB)</a></div>
         </div>
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-cli-gui</p>
-          <h3 class="mt-1 font-semibold">CLI → web GUI</h3>
+          <h3 class="mt-1 font-semibold">CLI → web graphical interface (GUI)</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Auto-generate a single-file HTML GUI from any Python CLI: it introspects argparse, Click, or Typer, with no build step.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-cli-gui</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-cli-gui" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a><div class="mt-2"><a href="kits/cli-gui.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Download the cli-gui kit: runs on the standard library alone, 36 KB">↓ Runnable kit (36 KB)</a></div>
@@ -233,7 +233,7 @@
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-ux-laws</p>
-          <h3 class="mt-1 font-semibold">Laws of UX</h3>
+          <h3 class="mt-1 font-semibold">Laws of UX (user experience)</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">A static Laws-of-UX auditor for HTML: Hick, Miller, Fitts, Jakob, Tesler and more, decidable from source.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-ux-laws</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-ux-laws" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a><div class="mt-2"><a href="kits/ux-laws.zip" download class="inline-flex items-center min-h-11 rounded-lg border border-neutral-200 px-3 text-xs text-neutral-600 hover:border-brand-blue hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue dark:border-neutral-700 dark:text-neutral-400" aria-label="Download the ux-laws kit: runs on the standard library alone, 26 KB">↓ Runnable kit (26 KB)</a></div>
@@ -242,7 +242,7 @@
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-audio</p>
           <h3 class="mt-1 font-semibold">Audio</h3>
-          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Local captions (whisper.cpp), speaker diarization and who-is-who, narration and translation. ML backends are optional extras.</p>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Local captions (whisper.cpp), speaker diarization and who-is-who, narration and translation. ML (machine learning, models trained on examples rather than written by hand) backends are optional extras.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-audio</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-audio" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a>
         </div>
@@ -257,7 +257,7 @@
 
         <div class="flex h-full flex-col rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
           <p class="font-mono text-xs text-brand-linktext">sprezzature-ui</p>
-          <h3 class="mt-1 font-semibold">UI</h3>
+          <h3 class="mt-1 font-semibold">User interface (UI)</h3>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">The deterministic half of a frontend skill: find the strings that belong in a translation catalogue, and scaffold the catalogue they belong in. Writing the interface is the model's work.</p>
           <pre class="mt-3 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-2 font-mono text-xs dark:border-neutral-800 dark:bg-neutral-900"><code>pip install sprezzature-ui</code></pre>
           <a href="https://github.com/warith-harchaoui/sprezzature-ui" class="mt-3 text-sm font-medium text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Repository →</a>
@@ -288,7 +288,7 @@
         <h3 class="mt-6 font-semibold">Can I call a sprezzature package from an agent that is not Claude Code?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: every sprezzature package ships an MCP server, such as <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-figures-mcp</code>, so any client that speaks the Model Context Protocol can call its tools. Each package also has a Python library, a command line and an HTTP API with a Docker image.</p>
         <h3 class="mt-6 font-semibold">Where is the source code of each sprezzature package?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Each sprezzature package has its own repository on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui">GitHub</a>, linked from its row in the table on this page, under the BSD 3-Clause licence.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Each sprezzature package has its own repository on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui">GitHub</a>, linked from its row in the table on this page, under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -334,7 +334,7 @@
           "name": "Where is the source code of each sprezzature package?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each sprezzature package has its own repository on GitHub, linked from its row in the table on this page, under the BSD 3-Clause licence."
+            "text": "Each sprezzature package has its own repository on GitHub, linked from its row in the table on this page, under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence."
           }
         }
       ]

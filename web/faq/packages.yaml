@@ -8,7 +8,7 @@ en:
 - q: Can I call a sprezzature package from an agent that is not Claude Code?
   a: 'Yes: every sprezzature package ships an MCP server, such as `sprezzature-figures-mcp`, so any client that speaks the Model Context Protocol can call its tools. Each package also has a Python library, a command line and an HTTP API with a Docker image.'
 - q: Where is the source code of each sprezzature package?
-  a: Each sprezzature package has its own repository on [GitHub](https://github.com/warith-harchaoui), linked from its row in the table on this page, under the BSD 3-Clause licence.
+  a: Each sprezzature package has its own repository on [GitHub](https://github.com/warith-harchaoui), linked from its row in the table on this page, under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.
 fr:
 - q: Faut-il installer les dix paquets sprezzature ?
   a: 'Non : chaque paquet sprezzature s''installe seul, par exemple `pip install sprezzature-colors`, sans option à choisir. `pip install sprezzature` est le raccourci qui installe les dix d''un coup, avec la commande `sprezzature-skills`.'
