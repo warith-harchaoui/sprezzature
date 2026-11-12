@@ -96,6 +96,11 @@ sprezzature-audio>=1.5.0
 # sprezzature-video and skipped on every runner without it. It adds almost
 # nothing to the line above, which it depends on.
 sprezzature-video>=0.4.2
+# The driver resolves a skill from the brick that ships it (since 2026-11-12
+# the hub keeps no copy), and tests/test_cli_driver.py proves it on
+# sprezzature-ui, the lightest brick. Without it on the runner, CI resolved no
+# skill at all and the guard that says so was dormant.
+sprezzature-ui>=1.3.0
 
 # The two film line-breaking guards measure advance widths in the site's own
 # WOFF2 faces. fontTools reads WOFF2 only with Brotli, hence the extra. Without
