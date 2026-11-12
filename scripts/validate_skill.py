@@ -117,7 +117,12 @@ def validate_skill(skill_dir: Path) -> list[str]:
     if not skill_dir.is_dir():
         return [f"{skill_dir}: skill folder does not exist or is not a directory"]
 
-    skill_name: str = skill_dir.name
+    # A skill shipped inside its brick sits at `sprezzature_maps/skill/`: the
+    # folder an agent reads it under is the package's name, hyphenated, which
+    # is what `sprezzature-maps-skill --install` names the copy.
+    skill_name: str = (
+        skill_dir.parent.name.replace("_", "-") if skill_dir.name == "skill" else skill_dir.name
+    )
     skill_md: Path = skill_dir / "SKILL.md"
 
     # ── Check 2: SKILL.md must exist and be non-empty ──────────────────

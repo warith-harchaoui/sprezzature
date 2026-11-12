@@ -40,7 +40,7 @@ from pathlib import Path
 
 import pytest
 
-from skills_manifest import SHIPPED_SKILLS
+from skills_manifest import SHIPPED_SKILLS, skill_dir
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = REPO_ROOT.parent
@@ -88,7 +88,7 @@ def _shipped_prose() -> list[Path]:
     for brick in SHIPPED_SKILLS:
         out.extend(
             f
-            for f in sorted((REPO_ROOT / brick).rglob("*.md"))
+            for f in sorted(skill_dir(brick).rglob("*.md"))
             if "__pycache__" not in f.parts
         )
     return out
@@ -96,12 +96,14 @@ def _shipped_prose() -> list[Path]:
 
 def test_there_is_prose_to_read() -> None:
     """A glob that stopped matching would make the cases below vacuous."""
+    if not any((SIBLINGS / brick).is_dir() for brick in SHIPPED_SKILLS):
+        pytest.skip("no brick is checked out beside this repository")
     found = _shipped_prose()
     assert len(found) >= 40, len(found)
 
 
 @pytest.mark.parametrize(
-    "doc", _shipped_prose(), ids=lambda p: p.relative_to(Path(__file__).resolve().parent.parent).as_posix()
+    "doc", _shipped_prose(), ids=lambda p: p.relative_to(SIBLINGS).as_posix()
 )
 def test_no_shipped_line_routes_around_a_registered_command(doc: Path) -> None:
     """``python -m`` where a command exists works, and that is the problem."""
@@ -124,7 +126,7 @@ def test_no_shipped_line_routes_around_a_registered_command(doc: Path) -> None:
 
 
 @pytest.mark.parametrize(
-    "doc", _shipped_prose(), ids=lambda p: p.relative_to(Path(__file__).resolve().parent.parent).as_posix()
+    "doc", _shipped_prose(), ids=lambda p: p.relative_to(SIBLINGS).as_posix()
 )
 def test_no_shipped_line_says_a_brick_registers_nothing(doc: Path) -> None:
     """The sentence outlives the invocations it was written to justify."""

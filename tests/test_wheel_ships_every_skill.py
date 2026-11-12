@@ -1,26 +1,22 @@
 """
-A skill that is named but not packaged is worse than a skill that is missing.
+The suite package names ten skills; each must resolve to a brick that ships it.
 
-``sprezzature`` publishes the skills, and setuptools learns which folders to
-carry from three hand-maintained blocks in ``pyproject.toml``: ``packages``,
-``package-dir`` and ``package-data``. ``SKILL_NAMES`` in the package, and
-``SKILLS.txt`` at the root, are two more lists of the same thing. Five places,
-all hand-edited, all silent when they disagree.
+Until 2026-11-12 ``sprezzature`` carried copies of the ten skills, and
+setuptools learnt which folders to package from three hand-kept blocks in
+``pyproject.toml``. The copies moved into the bricks -- ``pip install
+sprezzature-maps`` now carries the maps skill -- and this package gathers them
+through its dependencies. The guard keeps its spirit under the new contract:
+every name in ``SKILL_NAMES`` resolves, through ``skill_path``, to a folder
+with a ``SKILL.md``; and the wheel carries no copy of its own, which would be
+a second version of the truth.
 
-They did disagree the first time a tenth skill shipped: ``SKILL_NAMES`` grew,
-the three pyproject blocks did not, and the wheel advertised a skill whose
-folder it did not contain — so ``skill_path("sprezzature-maps")`` returned a
-path that does not exist. Every test passed, because a checkout has the folder
-sitting right there and nothing reads the packaging tables.
-
-The matching runtime check — that ``skill_path(name)`` really resolves once
-the wheel is installed — lives in ``scripts/check_wheels.py``. It cannot run
-from a checkout: ``sprezzature/skills/`` is a layout setuptools creates at
-build time from ``package-dir``, so in the source tree it does not exist.
+The installed-wheel half -- that ``skill_path(name)`` resolves once
+``pip install sprezzature`` has pulled the bricks from the index -- lives in
+``scripts/check_wheels.py``.
 
 Author
 ------
-Project maintainers.
+`Warith HARCHAOUI, Ph.D. <https://www.linkedin.com/in/warith-harchaoui/>`_
 """
 
 from __future__ import annotations
@@ -30,34 +26,34 @@ from pathlib import Path
 
 import pytest
 
-from skills_manifest import SHIPPED_SKILLS
+from skills_manifest import SHIPPED_SKILLS, SIBLINGS
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PYPROJECT = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
 
 
-def _module_name(skill: str) -> str:
-    """``sprezzature-maps`` → the dotted package setuptools carries it as."""
-    return f"sprezzature.skills.{skill.replace('-', '_')}"
+def test_the_wheel_packages_no_copy_of_a_skill() -> None:
+    """``pyproject.toml`` packages the ``sprezzature`` module and nothing under it."""
+    assert "sprezzature.skills" not in PYPROJECT, (
+        "pyproject.toml packages sprezzature.skills.* again: the skills ship "
+        "inside their bricks, and a copy here is a second version of the truth."
+    )
+    assert re.search(r'^packages = \["sprezzature"\]$', PYPROJECT, re.M)
 
 
 @pytest.mark.parametrize("skill", SHIPPED_SKILLS)
-def test_pyproject_packages_the_skill(skill: str) -> None:
-    """Each shipped skill appears in all three setuptools blocks."""
-    module = _module_name(skill)
-    missing = [
-        block
-        for block, pattern in (
-            ("[tool.setuptools] packages", rf'"{re.escape(module)}"[,\]]'),
-            ("[tool.setuptools.package-dir]", rf'"{re.escape(module)}" = "{re.escape(skill)}"'),
-            ("[tool.setuptools.package-data]", rf'"{re.escape(module)}" = \['),
-        )
-        if not re.search(pattern, PYPROJECT)
-    ]
-    assert not missing, (
-        f"{skill} is in SKILLS.txt but missing from {', '.join(missing)} in "
-        f"pyproject.toml. The wheel would name the skill and not carry its files."
-    )
+def test_the_package_resolves_each_skill_through_its_brick(skill: str) -> None:
+    """``skill_path`` lands on the brick's own ``skill/`` folder, with a ``SKILL.md``."""
+    from sprezzature import skill_path
+
+    if not (SIBLINGS / skill).is_dir():
+        pytest.skip(f"{skill} is not checked out beside this repository")
+    try:
+        folder = skill_path(skill)
+    except (ImportError, LookupError) as exc:
+        pytest.skip(f"{skill} is not importable here, or predates its skill: {exc}")
+    assert folder.name == "skill" and folder.parent.name == skill.replace("-", "_")
+    assert (folder / "SKILL.md").is_file(), f"{folder} has no SKILL.md"
 
 
 def test_skill_names_matches_the_manifest() -> None:

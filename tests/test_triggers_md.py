@@ -38,6 +38,7 @@ from build_triggers import (
     build_skill_reference,
 )
 from skills_manifest import SHIPPED_SKILLS
+from _skills import skill_file
 
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent
@@ -206,13 +207,13 @@ def test_each_skill_ships_its_own_trigger_catalogue(skill: str) -> None:
     it, so the exhaustive list has to travel inside it or it is unreachable
     exactly where it would be used.
     """
-    path = REPO_ROOT / skill / "references" / "triggers.md"
+    path = skill_file(skill, "references", "triggers.md")
     assert path.is_file(), (
         f"{skill} has no references/triggers.md. Run "
         f"`python scripts/build_triggers.py`."
     )
     assert path.read_text(encoding="utf-8") == build_skill_reference(skill), (
-        f"{skill}/references/triggers.md drifted from the generator. Re-run "
+        f"{skill}'s references/triggers.md drifted from the generator. Re-run "
         f"`python scripts/build_triggers.py` and commit both."
     )
 

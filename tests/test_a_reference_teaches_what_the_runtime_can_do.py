@@ -175,14 +175,17 @@ def test_the_emitted_runtime_can_obey_it(pair: dict[str, object]) -> None:
 def test_the_pair_names_files_that_exist(pair: dict[str, object]) -> None:
     """Both halves resolve, or the skips above hide a renamed file for ever.
 
-    Checked against this repository's own skill folders rather than the sibling
-    checkouts: the brick name is visible here whether or not the brick is
-    cloned, so a pair pointing at a brick that no longer exists fails even on a
-    machine with no siblings — where every other case in this file skips.
+    Checked against ``SKILLS.txt`` rather than the sibling checkouts: the brick
+    name is visible here whether or not the brick is cloned, so a pair pointing
+    at a brick that no longer exists fails even on a machine with no siblings —
+    where every other case in this file skips. (It read this repository's own
+    skill folders until 2026-11-12, when the skills moved into their bricks.)
     """
+    from skills_manifest import SHIPPED_SKILLS
+
     for role in ("reference", "runtime"):
         brick = str(pair[role]).split("/", 1)[0]
-        assert (REPO_ROOT / brick).is_dir(), (
+        assert brick in SHIPPED_SKILLS, (
             f"the {role} of {pair['what']!r} is in {brick}, which this "
             f"repository does not ship"
         )

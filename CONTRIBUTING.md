@@ -9,10 +9,14 @@ are welcome on the same terms.
 
 ## Before you start
 
-Pick the skill your change belongs to. This repository holds each skill's
-contract (`SKILL.md`, `references/`, `assets/`); the code a skill runs lives in
-the brick's own repository, `github.com/warith-harchaoui/sprezzature-<brick>`,
-and a change to a command, a rule or a flag belongs there.
+Pick the skill your change belongs to. Each skill's contract (`SKILL.md`,
+`references/`, `assets/`) ships inside its brick, at
+`sprezzature_<brick>/skill/` in `github.com/warith-harchaoui/sprezzature-<brick>`,
+beside the code it runs, so a change to a command, a rule, a flag or the skill
+itself belongs there. This repository holds the website, the suite-wide
+`TRIGGERS.md` and the trigger catalogue generator (`scripts/build_triggers.py`,
+which writes each skill's `references/triggers.md` into the brick checkout
+beside it).
 
 | Change touches… | Skill |
 |---|---|
@@ -127,7 +131,7 @@ which fails a push whose commits carry an AI-attribution trailer.
 Two equivalent paths; pick one per release and don't mix them.
 
 - **Tag-only** (recommended). Bump the version in the ten
-  `SKILL.md` frontmatters, `pyproject.toml`, `sprezzature/__init__.py` and
+  `SKILL.md` frontmatters (in the bricks, `sprezzature_<brick>/skill/SKILL.md`), `pyproject.toml`, `sprezzature/__init__.py` and
   `sprezzature-cli` (`tests/test_version_consistency.py` checks they agree),
   add a new `CHANGELOG.md` section, commit, then
   `git tag -a v<version> -m "release v<version>" && git push origin

@@ -37,7 +37,7 @@ fichier est léger.
 ## Une interactivité qui se compose au lieu de se dupliquer
 
 Le composant de référence
-`sprezzature-ui/assets/components/figure-fullscreen.html` décrit comment se
+`sprezzature-ui/sprezzature_ui/skill/assets/components/figure-fullscreen.html` décrit comment se
 comporte une figure interactive. Il part d'un fait mesuré plutôt que d'une
 supposition : la façon dont on intègre un SVG décide de ce qu'il peut faire.
 
@@ -100,7 +100,7 @@ car une conception qui résiste aux niveaux de gris résiste à toute
 déficience de la vision des couleurs. Des niveaux plus forts ou propres à
 une déficience peuvent venir par-dessus pour qui le souhaite, jamais comme
 condition d'entrée. Le raisonnement et les sources sont dans
-`sprezzature-colors/references/accessibility-levels.md`.
+`sprezzature-colors/sprezzature_colors/skill/references/accessibility-levels.md`.
 
 ## Local d'abord, un seul modèle, aucun logiciel-service
 

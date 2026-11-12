@@ -39,11 +39,12 @@ The BSD-3-Clause above applies to the source of this repository.
 Bundled third-party assets retain their own licenses:
 
 - **Roboto / Roboto Serif / Roboto Mono** (typefaces) — bundled in
-  `sprezzature-ui/assets/fonts/roboto/`, `sprezzature-ui/assets/fonts/roboto-serif/`,
-  and `sprezzature-ui/assets/fonts/roboto-mono/` under the **SIL Open Font
-  License (OFL)** (the "three-Roboto rule"). The full license and its
-  required copyright notice are in the `OFL.txt` shipped in each of the
-  three folders.
+  `web/fonts/roboto/`, `web/fonts/roboto-serif/` and `web/fonts/roboto-mono/`
+  for the website, under the **SIL Open Font License (OFL)** (the
+  "three-Roboto rule"). The full license and its required copyright notice
+  are in the `OFL.txt` shipped in each of the three folders. The copies the
+  `sprezzature-ui` skill ships moved into that brick's package with the skill
+  on 2026-11-12, their `OFL.txt` beside them.
 
 - **Common Voice audio clips** — extracted into
   `tests/fixtures/audio/cv/<lang>/` from Common Voice 26.0, obtained

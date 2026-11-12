@@ -63,10 +63,14 @@ from pathlib import Path
 # which stopped being possible when that folder emptied: the tools moved to
 # the standalone package and this gate did not, because it validates a skill
 # folder in *this* repository rather than anything in a user's project.
+#
+# Since 2026-11-12 the skill ships inside its brick, so the default is the
+# sibling checkout's `sprezzature_ui/skill/`.
 SKILL_ROOT: Path = (
     Path(sys.argv[1]).resolve()
     if len(sys.argv) > 1
-    else Path(__file__).resolve().parent.parent / "sprezzature-ui"
+    else Path(__file__).resolve().parent.parent.parent
+    / "sprezzature-ui" / "sprezzature_ui" / "skill"
 )
 
 #: Running failure count. Incremented by :func:`bad`; non-zero at end → exit 1.

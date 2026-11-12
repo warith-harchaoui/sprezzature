@@ -42,6 +42,7 @@ REPO_ROOT: Path = Path(__file__).resolve().parent.parent
 #: manifest at repo root so this test cannot drift from the release
 #: script / the validator.
 from skills_manifest import SHIPPED_SKILLS  # noqa: E402
+from _skills import skill_file  # noqa: E402
 
 
 #: Regex matching the canonical "Two modes" section header. Permits the
@@ -64,7 +65,7 @@ def _read(path: Path) -> str:
 @pytest.mark.parametrize("skill", SHIPPED_SKILLS)
 def test_skill_has_two_modes_section(skill: str) -> None:
     """Every shipped SKILL.md declares its make / audit posture."""
-    path: Path = REPO_ROOT / skill / "SKILL.md"
+    path: Path = skill_file(skill, "SKILL.md")
     body: str = _read(path)
     assert RE_TWO_MODES_HEADER.search(body), (
         f"{skill}/SKILL.md is missing the canonical "
@@ -75,7 +76,7 @@ def test_skill_has_two_modes_section(skill: str) -> None:
 @pytest.mark.parametrize("skill", SHIPPED_SKILLS)
 def test_two_modes_section_mentions_both_sides(skill: str) -> None:
     """The 'Two modes' section names both Make and Audit explicitly."""
-    path: Path = REPO_ROOT / skill / "SKILL.md"
+    path: Path = skill_file(skill, "SKILL.md")
     body: str = _read(path)
     m = RE_TWO_MODES_HEADER.search(body)
     assert m is not None
@@ -157,7 +158,7 @@ def test_readme_matrix_marks_roadmap_gaps_honestly() -> None:
 
 def _two_modes_rows(skill: str) -> list[str]:
     """The table rows of a skill's 'Two modes' section."""
-    body = _read(REPO_ROOT / skill / "SKILL.md")
+    body = _read(skill_file(skill, "SKILL.md"))
     match = RE_TWO_MODES_HEADER.search(body)
     assert match is not None
     section = body[match.end():].split("\n## ", 1)[0]

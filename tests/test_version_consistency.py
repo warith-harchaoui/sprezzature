@@ -3,7 +3,7 @@ test_version_consistency — the release version is single-valued across the rep
 
 The version is hand-maintained in three kinds of place:
 
-* the ``metadata.version`` field of every ``sprezzature-*/SKILL.md`` (9 skills),
+* the ``metadata.version`` field of every shipped ``SKILL.md``, read from its brick,
 * the ``SKILL_VERSION`` literal in each skill's ``scripts/_argparse.py`` and
   ``scripts/_click.py`` copies,
 * ``sprezzature-cli/pyproject.toml``'s ``project.version``,
@@ -53,10 +53,19 @@ def _collect() -> dict[str, str]:
     """Map every version source (relative path) to the version string it declares."""
     sources: dict[str, str] = {}
 
-    for skill_md in sorted(REPO_ROOT.glob("sprezzature-*/SKILL.md")):
+    # The skills ship inside their bricks since 2026-11-12; their
+    # ``metadata.version`` still names this suite's release, so they are read
+    # from the checkouts beside this one. A glob here would match nothing now
+    # and pass for ever, so the manifest drives it.
+    from skills_manifest import SHIPPED_SKILLS, SIBLINGS, skill_dir
+
+    for name in SHIPPED_SKILLS:
+        skill_md = skill_dir(name) / "SKILL.md"
+        if not skill_md.is_file():
+            continue  # brick not checked out here; CI fetches all ten
         m = _METADATA_VERSION_RE.search(skill_md.read_text(encoding="utf-8"))
-        assert m, f"{skill_md.relative_to(REPO_ROOT)} has no metadata.version"
-        sources[str(skill_md.relative_to(REPO_ROOT))] = m.group(1)
+        assert m, f"{skill_md.relative_to(SIBLINGS)} has no metadata.version"
+        sources[str(skill_md.relative_to(SIBLINGS))] = m.group(1)
 
     # Four globs over the shared helpers' ``SKILL_VERSION`` stood here. They
     # match nothing: no copy of ``_argparse.py`` or ``_click.py`` is left in

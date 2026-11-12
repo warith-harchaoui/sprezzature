@@ -16,6 +16,8 @@ import importlib.util
 import sys
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -30,9 +32,11 @@ def _sync():
 
 
 def test_it_finds_the_repo_skills() -> None:
-    """Every sprezzature-* folder with a SKILL.md, and nothing else."""
+    """Every shipped skill folder in the bricks beside this one, by its installed name."""
     module = _sync()
-    found = {p.name for p in module.repo_skills(ROOT)}
+    if not (ROOT.parent / "sprezzature-figures").is_dir():
+        pytest.skip("sprezzature-figures is not checked out beside this repository")
+    found = {module.skill_name(p) for p in module.repo_skills(ROOT)}
     assert "sprezzature-figures" in found
     assert all(n.startswith("sprezzature-") for n in found)
     assert len(found) >= 8

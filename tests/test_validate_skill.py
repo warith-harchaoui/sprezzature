@@ -103,7 +103,11 @@ def _make_skill(
 )
 def test_shipped_skill_passes(repo_root: Path, skill_name: str) -> None:
     """Every skill on ``main`` must validate green."""
-    errors = validate_skill(repo_root / skill_name)
+    from skills_manifest import skill_dir
+
+    if not (repo_root.parent / skill_name).is_dir():
+        pytest.skip(f"{skill_name} is not checked out beside this repository")
+    errors = validate_skill(skill_dir(skill_name, repo_root.parent))
     assert errors == [], f"{skill_name} unexpectedly failed: {errors}"
 
 
@@ -218,13 +222,16 @@ class TestCLIContract:
     """``python scripts/validate_skill.py …`` exit code matches result."""
 
     def test_exit_zero_on_all_pass(self, repo_root: Path) -> None:
-        from skills_manifest import SHIPPED_SKILLS
+        from skills_manifest import SHIPPED_SKILLS, skill_dir
 
+        folders = [skill_dir(s, repo_root.parent) for s in SHIPPED_SKILLS]
+        if not all(f.is_dir() for f in folders):
+            pytest.skip("not every brick is checked out beside this repository")
         proc = subprocess.run(
             [
                 sys.executable,
                 str(repo_root / "scripts" / "validate_skill.py"),
-                *[str(repo_root / s) for s in SHIPPED_SKILLS],
+                *[str(f) for f in folders],
             ],
             capture_output=True,
             text=True,

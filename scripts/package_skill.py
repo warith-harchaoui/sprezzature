@@ -78,7 +78,7 @@ from pathlib import Path
 from typing import Iterator, NamedTuple, Sequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from skills_manifest import SHIPPED_SKILLS  # noqa: E402
+from skills_manifest import SHIPPED_SKILLS, skill_dir  # noqa: E402
 
 
 #: The Claude skill-import form's ceiling, applied to the sum of the
@@ -253,7 +253,7 @@ def plan_payload(skill: str, repo_root: Path, code_root: Path | None) -> list[En
     skill : str
         Skill folder name, e.g. ``sprezzature-figures``.
     repo_root : Path
-        This monorepo's root — where the skill folder lives.
+        This repository's root; the skill folder is in the brick beside it.
     code_root : Path or None
         Standalone repo holding the skill's extracted generators, or
         None when the skill has none to graft.
@@ -270,11 +270,14 @@ def plan_payload(skill: str, repo_root: Path, code_root: Path | None) -> list[En
         If the skill folder, or a declared extracted-code path, is
         missing. A silent skip here is how a skill ships with no code.
     """
-    skill_dir: Path = repo_root / skill
-    if not skill_dir.is_dir():
-        raise FileNotFoundError(f"no such skill folder: {skill_dir}")
+    # The skill ships inside its brick since 2026-11-12, so the folder is the
+    # sibling checkout's `sprezzature_<brick>/skill/`; its archive still
+    # extracts under the hyphenated name an agent reads.
+    folder: Path = skill_dir(skill, repo_root.parent)
+    if not folder.is_dir():
+        raise FileNotFoundError(f"no such skill folder: {folder}")
 
-    entries: list[Entry] = list(_walk(skill_dir, Path(skill)))
+    entries: list[Entry] = list(_walk(folder, Path(skill)))
 
     for arc_relative, code_relative in EXTRACTED_CODE.get(skill, {}).items():
         if code_root is None:
@@ -479,7 +482,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     repo_root: Path = Path(__file__).resolve().parent.parent
     skills: tuple[str, ...] = tuple(args.skills) or SHIPPED_SKILLS
 
-    unknown: list[str] = [s for s in skills if not (repo_root / s).is_dir()]
+    unknown: list[str] = [s for s in skills if not skill_dir(s, repo_root.parent).is_dir()]
     if unknown:
         print(f"error: no such skill folder: {', '.join(unknown)}", file=sys.stderr)
         return 64

@@ -176,8 +176,10 @@ def brick(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     """A whole brick on disk, with the auditor pointed at it."""
     repo = _build_brick(tmp_path)
     monkeypatch.setattr(AUDIT, "REPO_ROOT", tmp_path / "monorepo")
-    (tmp_path / "monorepo" / "sprezzature-demo").mkdir(parents=True)
-    (tmp_path / "monorepo" / "sprezzature-demo" / "SKILL.md").write_text(
+    (tmp_path / "monorepo").mkdir(parents=True)
+    # The skill ships inside the brick's package, like the other surfaces.
+    (repo / "sprezzature_demo" / "skill").mkdir(parents=True)
+    (repo / "sprezzature_demo" / "skill" / "SKILL.md").write_text(
         "# demo\n", encoding="utf-8"
     )
     monkeypatch.setattr(AUDIT, "_in_the_hub", lambda: {"sprezzature-demo"})
@@ -199,6 +201,9 @@ def test_a_whole_brick_reports_no_gap(brick: Path) -> None:
         ("sprezzature_demo/mcp.py", "mcp"),
         ("docker-compose.yml", "compose"),
         (".git", "repo"),
+        # The skill travels with the package since 2026-11-12; a brick that
+        # drops it ships four surfaces, not five.
+        ("sprezzature_demo/skill/SKILL.md", "skill"),
     ],
 )
 def test_removing_one_surface_is_noticed(

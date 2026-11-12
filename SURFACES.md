@@ -15,7 +15,7 @@ The five, in the order a project usually grows them:
 | 2 | **Command line** | one click command, on `PATH` under two names | a human at a terminal |
 | 3 | **HTTP API** | FastAPI app, shipped in a container | a service, a colleague's stack |
 | 4 | **MCP** | the same routes republished as agent tools | an agent |
-| 5 | **Skill** | `SKILL.md` in this monorepo | Claude |
+| 5 | **Skill** | `SKILL.md` inside the package, installed by `sprezzature-<brick>-skill --install` | Claude, OpenCode |
 
 `python scripts/audit_surfaces.py` reports which brick holds which, right now,
 from what is on disk. This file is the contract; that script is the state.
@@ -120,15 +120,32 @@ image's `CMD`.
 
 ## 5. Skill
 
-`SKILL.md` in this monorepo, with its `references/triggers.md` catalogue and a
-`description` that says both when to fire and — since the TRIGGERS pass — when
-**not** to, naming the sibling brick that should answer instead.
+`SKILL.md` inside the brick's own package, with its `references/` and the
+`references/triggers.md` catalogue, and a `description` that says both when to
+fire and — since the TRIGGERS pass — when **not** to, naming the sibling brick
+that should answer instead. The format is Anthropic's, from *The Complete Guide
+to Building Skills for Claude*.
+
+Until 2026-11-12 the ten skills lived in this repository only, so `pip install
+sprezzature-maps` brought a library, a command line, an API and an MCP server,
+and nothing an agent could route on: the one surface written for an agent did
+not travel with the package. Each brick now ships its skill in its wheel.
+`sprezzature-<brick>-skill` (also `sprezzature-<brick> skill` where the command
+is a group) says whether the copy under `~/.claude/skills/` is in step, and
+`--install` puts it there (`--agent opencode` for `~/.opencode/skills/`).
+`sprezzature-skills --install`, from this repository's package, does the ten at
+once. This repository keeps no copy: it reads the skills from the brick
+checkouts beside it, through `skill_dir()` in `scripts/skills_manifest.py`, to
+validate them and to generate their trigger catalogues.
 
 The skill is not documentation for the other four surfaces. It is the surface
 where the vocabulary is the problem's ("make this chart readable") rather than
 the tool's (`--palette`, `--contrast-ratio`).
 
-**Carried by** `<brick>/SKILL.md` here, listed in `SKILLS.txt`.
+**Carried by** `sprezzature_<brick>/skill/SKILL.md` in the brick, declared as
+`package-data` so the wheel carries it, installed by `sprezzature_<brick>/_skill.py`
+(shared verbatim across the ten by `scripts/sync_helpers.py`), and listed in
+this repository's `SKILLS.txt`.
 
 ---
 
@@ -161,6 +178,8 @@ sprezzature-maps/
 │   ├── cli.py             # 2. command line, click → make-map AND sprezzature-maps
 │   ├── api.py             # 3. FastAPI app
 │   ├── mcp.py             # 4. fastapi-mcp over that app → sprezzature-maps-mcp
+│   ├── skill/             # 5. SKILL.md + references/, shipped in the wheel
+│   ├── _skill.py          # 5. sprezzature-maps-skill: report, or --install
 │   └── editor/            #    the model-backed Editor, sprezzature-maps
 ├── scripts/               #    packaged as sprezzature_maps_scripts
 ├── Dockerfile             # 3. runs sprezzature-maps-mcp: the API and /mcp on port 8000
@@ -170,7 +189,7 @@ sprezzature-maps/
 └── tests/
 ```
 
-with `SKILL.md` for the same brick living here, in the monorepo.
+The skill lives in the brick; this repository holds none.
 
 **After extracting a brick, run `python scripts/sync_helpers.py`.** The
 shared helpers (`_argparse.py`, `_click.py`, `_lang.py`, `_vocab.py`,

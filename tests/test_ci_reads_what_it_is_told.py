@@ -62,7 +62,8 @@ def _bricks() -> list[Path]:
     return sorted(
         p
         for p in SIBLINGS.glob("sprezzature-*")
-        if (p / "pyproject.toml").is_file() and (REPO_ROOT / p.name).is_dir()
+        if (p / "pyproject.toml").is_file()
+        and (p / p.name.replace("-", "_") / "skill" / "SKILL.md").is_file()
     )
 
 
