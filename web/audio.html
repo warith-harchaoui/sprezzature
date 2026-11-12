@@ -108,7 +108,7 @@
     <section class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-sm text-brand-linktext">sprezzature-audio</p>
       <h1 class="mt-1 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Audio: captions</h1>
-      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Local artificial intelligence (AI) captions, speaker diarization and speaker identification for video / audio. WebVTT / SubRip subtitle format (SRT) from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a transcript pass. The audio never leaves the machine.</p>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">Local artificial intelligence (AI) captions, speaker diarization and speaker identification for video / audio. WebVTT / SubRip subtitle format (SRT, the plain-text subtitle file most video players read) from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a transcript pass. The audio never leaves the machine.</p>
       <p class="mt-3 inline-block rounded-lg border border-brand-orange/40 bg-brand-orange/10 px-3 py-1.5 text-sm text-neutral-700 dark:text-neutral-200"><strong>Work in progress:</strong> the caption backend is still settling and accuracy baselines are being collected, so captions are drafts to review.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-sm">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-audio/SKILL.md" class="rounded-lg bg-brand-blue px-4 py-2 font-medium text-white hover:bg-brand-navy min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">SKILL.md (the agent spec)</a>
@@ -120,11 +120,11 @@
         <div>
           <h2 class="text-lg font-bold">Makes</h2>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-neutral-600 dark:text-neutral-300">
-          <li>World Wide Web Consortium (W3C) WebVTT / SRT / plain-text captions from a local whisper.cpp build</li>
+          <li>World Wide Web Consortium (W3C, the body that writes the rules of the web) WebVTT / SRT / plain-text captions from a local whisper.cpp build</li>
           <li>"Who spoke when" via NVIDIA NeMo Sortformer diarization</li>
           <li>"Who is who" via TitaNet embeddings or a transcript-mined pass</li>
-          <li>Speaker-labelled WebVTT caption format (VTT) with named voice cues; bilingual EN/FR default</li>
-          <li>The same modality read backwards: a narration from text, landing as a WAV <em>and</em> a WebVTT off one timeline, so a page can follow the reading sentence by sentence</li>
+          <li>Speaker-labelled WebVTT caption format (VTT, Web Video Text Tracks, the subtitle file a web page&#39;s video player reads) with named voice cues; bilingual default, English and French</li>
+          <li>The same modality read backwards: a narration from text, landing as a WAV (Waveform Audio File Format, uncompressed sound, the file a voice recorder saves) <em>and</em> a WebVTT off one timeline, so a page can follow the reading sentence by sentence</li>
           <li>Translated subtitles, through a local model</li>
           </ul>
         </div>
@@ -171,9 +171,9 @@
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
         <h3 class="mt-6 font-semibold">How do I install sprezzature-audio?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-audio</code> (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration and the HTTP and MCP surfaces all come with it, with no extra to choose. The install includes torch, but <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_audio</code> loads no model until a model-backed function is called.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-audio</code> (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration, an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page) and an MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server all come with it, with no extra to choose. The install includes torch, but <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">import sprezzature_audio</code> loads no model until a model-backed function is called.</p>
         <h3 class="mt-6 font-semibold">What does sprezzature-audio need besides pip?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install</code> (Whisper), <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install-diarize --no-install</code> (NeMo Sortformer and TitaNet) and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install-voice</code> (the voices). Translation and the optional name-guessing pass also need an Ollama server serving <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">qwen3-vl:8b</code>. The caption audit, the speaker merge and the WER and DER metrics need none of this.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install</code> (Whisper), <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install-diarize --no-install</code> (NeMo Sortformer and TitaNet) and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-install-voice</code> (the voices). Translation and the optional name-guessing pass also need an Ollama server serving <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">qwen3-vl:8b</code>. The caption audit, the speaker merge and the WER (word error rate, the share of words a transcript gets wrong) and DER (diarization error rate, the share of speaking time credited to the wrong speaker) metrics need none of this.</p>
         <h3 class="mt-6 font-semibold">Does sprezzature-audio send my audio to a cloud service?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">No: sprezzature-audio transcribes with whisper.cpp, finds and names speakers with NeMo models and synthesises voices on your own machine, with no API key. Translation and name guessing call the Ollama server named by <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--url</code>, on <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">localhost</code> by default, and the only downloads are the model weights.</p>
         <h3 class="mt-6 font-semibold">Which voices and languages does sprezzature-audio support?</h3>
@@ -183,9 +183,9 @@
         <h3 class="mt-6 font-semibold">How is sprezzature-audio different from the Whisper API, pyannote or ElevenLabs?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-audio runs locally and works both ways, speech to timed text and text to timed speech, each landing beside a WebVTT, and it then audits the caption track for reading speed, width, duration and overlap. Hosted services such as ElevenLabs or the OpenAI audio API bill per use and receive your audio; pyannote has no ceiling on the number of speakers, whereas the Sortformer checkpoint used here is built for up to four.</p>
         <h3 class="mt-6 font-semibold">Can I run sprezzature-audio in CI?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-audit talk.vtt</code> checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-audio-audit talk.vtt</code> checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) with <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">--format json</code> and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them.</p>
         <h3 class="mt-6 font-semibold">Is sprezzature-audio free?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-audio is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-audio">GitHub</a>. The models it runs are open weights downloaded to your machine, each under its own licence.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes: sprezzature-audio is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-audio">GitHub</a>. The models it runs are open weights downloaded to your machine, each under its own licence.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -199,7 +199,7 @@
           "name": "How do I install sprezzature-audio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run pip install sprezzature-audio (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration and the HTTP and MCP surfaces all come with it, with no extra to choose. The install includes torch, but import sprezzature_audio loads no model until a model-backed function is called."
+            "text": "Run pip install sprezzature-audio (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration, an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page) and an MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server all come with it, with no extra to choose. The install includes torch, but import sprezzature_audio loads no model until a model-backed function is called."
           }
         },
         {
@@ -207,7 +207,7 @@
           "name": "What does sprezzature-audio need besides pip?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with sprezzature-audio-install (Whisper), sprezzature-audio-install-diarize --no-install (NeMo Sortformer and TitaNet) and sprezzature-audio-install-voice (the voices). Translation and the optional name-guessing pass also need an Ollama server serving qwen3-vl:8b. The caption audit, the speaker merge and the WER and DER metrics need none of this."
+            "text": "sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with sprezzature-audio-install (Whisper), sprezzature-audio-install-diarize --no-install (NeMo Sortformer and TitaNet) and sprezzature-audio-install-voice (the voices). Translation and the optional name-guessing pass also need an Ollama server serving qwen3-vl:8b. The caption audit, the speaker merge and the WER (word error rate, the share of words a transcript gets wrong) and DER (diarization error rate, the share of speaking time credited to the wrong speaker) metrics need none of this."
           }
         },
         {
@@ -247,7 +247,7 @@
           "name": "Can I run sprezzature-audio in CI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes: sprezzature-audio-audit talk.vtt checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON with --format json and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them."
+            "text": "Yes: sprezzature-audio-audit talk.vtt checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {\"name\": \"Ada\"}) with --format json and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them."
           }
         },
         {
@@ -255,7 +255,7 @@
           "name": "Is sprezzature-audio free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes: sprezzature-audio is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub. The models it runs are open weights downloaded to your machine, each under its own licence."
+            "text": "Yes: sprezzature-audio is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub. The models it runs are open weights downloaded to your machine, each under its own licence."
           }
         }
       ]

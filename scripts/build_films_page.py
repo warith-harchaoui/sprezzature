@@ -27,12 +27,13 @@ FILMS: list[dict[str, str | int]] = [
          en_title="Sprezzature", fr_title="Sprezzature",
          en_kicker="the whole suite", fr_kicker="la suite entière",
          en_body="Design is know-how, and most of it is already written down: "
-                 "thirty laws of UX, contrast ratios, a 2009 paper on colour "
+                 "thirty laws of UX (user experience, how using a product feels: "
+                 "whether people find the button or give up), contrast ratios, a 2009 paper on colour "
                  "vision, a projection from 2018. The suite is what happens when "
                  "you point that know-how both ways — at making a thing, and at "
                  "auditing it.",
          fr_body="Le design est un savoir-faire, et l'essentiel est déjà écrit : "
-                 "trente lois d'UX, des rapports de contraste, un article de 2009 "
+                 "trente lois d'UX (user experience, l'expérience utilisateur : ce que vit la personne qui se sert d'une interface, de l'aisance à la frustration), des rapports de contraste, un article de 2009 "
                  "sur la vision des couleurs, une projection de 2018. La suite, "
                  "c'est ce savoir-faire retourné dans les deux sens : pour "
                  "fabriquer une chose, et pour l'auditer.",
@@ -41,7 +42,7 @@ FILMS: list[dict[str, str | int]] = [
          fr_shows="huit sources nommées, quatre sorties réelles, la boucle Ralph "
                   "sur une figure livrée, et ce que font dix paquets mis bout à bout"),
     dict(slug="ui", secs=60,
-         en_title="UI", fr_title="UI",
+         en_title="UI", fr_title="Interface utilisateur (UI)",
          en_kicker="sprezzature-ui", fr_kicker="sprezzature-ui",
          en_body="The smallest brick, on purpose. Its job is the aesthetic "
                  "judgement written in prose — the three-Roboto rule, the design "
@@ -57,7 +58,7 @@ FILMS: list[dict[str, str | int]] = [
                   "moitiés, et ce que le paquet livre : neuf composants, neuf "
                   "extraits, six fichiers de fonte"),
     dict(slug="cli-gui", secs=60,
-         en_title="CLI &rarr; GUI", fr_title="CLI &rarr; GUI",
+         en_title="CLI &rarr; GUI", fr_title="Ligne de commande (CLI) &rarr; interface graphique (GUI)",
          en_kicker="sprezzature-cli-gui", fr_kicker="sprezzature-cli-gui",
          en_body="A tool nobody will type, wrapped in a page. It does not read "
                  "the help text — it reads the parser object, through argparse, "
@@ -96,11 +97,13 @@ FILMS: list[dict[str, str | int]] = [
          en_title="Accessibility", fr_title="Accessibilité",
          en_kicker="sprezzature-accessibility", fr_kicker="sprezzature-accessibility",
          en_body="An unmuted autoplay masks a screen reader, and the markup says "
-                 "so on its own. Twenty rules from WCAG, each naming the element, "
+                 "so on its own. Twenty rules from WCAG (Web Content Accessibility "
+                 "Guidelines, the international rulebook that says, for example, how "
+                 "dark text must be against its background), each naming the element, "
                  "the line and the rule it broke; six of them repair themselves, "
                  "where there is exactly one safe repair.",
          fr_body="Une lecture automatique non muette couvre un lecteur d'écran, "
-                 "et le balisage le dit tout seul. Vingt règles issues des WCAG, "
+                 "et le balisage le dit tout seul. Vingt règles issues des WCAG (Web Content Accessibility Guidelines, les règles internationales qui disent par exemple à quel point un texte doit contraster avec son fond), "
                  "chacune nommant l'élément, la ligne et la règle enfreinte ; six "
                  "se réparent seules, là où il n'existe qu'une correction sûre.",
          en_shows="three findings the source alone can prove, what "
@@ -132,11 +135,12 @@ FILMS: list[dict[str, str | int]] = [
          en_kicker="sprezzature-audio", fr_kicker="sprezzature-audio",
          en_body="One modality, read in both directions. Captions turn sound into "
                  "timed text; narration turns text into timed sound, landing as a "
-                 "WAV plus a WebVTT — exactly like a transcript does, which is "
+                 "WAV (Waveform Audio File Format, uncompressed sound, the file a "
+                 "voice recorder saves) plus a WebVTT — exactly like a transcript does, which is "
                  "what lets a page follow the reading sentence by sentence.",
          fr_body="Une seule modalité, lue dans les deux sens. Les sous-titres "
                  "font du son un texte minuté ; la narration fait du texte un son "
-                 "minuté, livré en WAV plus un WebVTT — exactement comme une "
+                 "minuté, livré en WAV (Waveform Audio File Format, le fichier son brut, non compressé, qu'écrit un enregistreur) plus un WebVTT — exactement comme une "
                  "transcription, ce qui permet à une page de suivre la lecture "
                  "phrase après phrase.",
          en_shows="the models named, the two files narration lands as, and what "
@@ -272,8 +276,13 @@ COPY: dict[str, dict[str, Any]] = {
              "package, where every figure, map and form on screen is real output "
              "of the tools.",
         h1="Eleven short films",
-        lede="One on the suite, and one for each of its ten packages. Nothing in "
-             "them is a mock-up: the figures are the shipped SVG files, the maps "
+        lede="One on the suite, and one for each of its ten packages, from UI "
+             "(user interface, the screens, buttons and forms a person works with) "
+             "to turning a CLI (command-line interface, a tool driven by typing "
+             "commands in a terminal) into a GUI (graphical user interface, a form "
+             "with boxes to tick and a button to click). Nothing in "
+             "them is a mock-up: the figures are the shipped SVG (Scalable Vector "
+             "Graphics, pictures stored as drawing instructions, sharp at any zoom) files, the maps "
              "are drawn on a real projection, the form was generated from the "
              "command that is installed, and the colour vision simulations came "
              "out of <code class=\"font-mono text-sm\">sprezzature-colors</code>.",
@@ -288,7 +297,11 @@ COPY: dict[str, dict[str, Any]] = {
             "The voices come from the suite itself: "
             "<code class=\"font-mono text-sm\">sprezzature-audio</code> "
             "through Kokoro, with a pronunciation lexicon so that WebVTT, "
-            "RTTM, OKLCH and GMTED2010 are said the same way in every film "
+            "RTTM (Rich Transcription Time Marked, a text file listing who speaks "
+            "from which second to which), OKLCH (OK Lightness, Chroma, Hue, a colour "
+            "written as how light, how vivid and which hue) and GMTED2010 (Global "
+            "Multi-resolution Terrain Elevation Data 2010, the height of the ground "
+            "worldwide) are said the same way in every film "
             "and in both languages. The same call writes the subtitles, off "
             "the same timeline as the audio.",
             "Each film is cut three ways and all three are on this page: "
@@ -334,7 +347,7 @@ COPY: dict[str, dict[str, Any]] = {
              "réellement des outils.",
         h1="Onze courts métrages",
         lede="Un sur la suite, et un par paquet. Rien n'y est une maquette : les "
-             "figures sont les fichiers SVG livrés, les cartes sont tracées sur "
+             "figures sont les fichiers SVG (Scalable Vector Graphics, une image décrite en formes et en texte plutôt qu'en pixels : elle reste nette à tout zoom) livrés, les cartes sont tracées sur "
              "une vraie projection, le formulaire a été produit depuis la "
              "commande réellement installée, et les simulations de vision des "
              "couleurs sortent de <code class=\"font-mono text-sm\">"
@@ -350,8 +363,8 @@ COPY: dict[str, dict[str, Any]] = {
             "l'anglaise est à un clic.",
             "Les voix viennent de la suite elle-même : "
             "<code class=\"font-mono text-sm\">sprezzature-audio</code> via "
-            "Kokoro, avec un lexique de prononciation pour que WebVTT, RTTM, "
-            "OKLCH et GMTED2010 se disent pareil dans tous les films et dans "
+            "Kokoro, avec un lexique de prononciation pour que WebVTT, RTTM (Rich Transcription Time Marked, un fichier texte qui note qui parle de quelle seconde à quelle seconde), "
+            "OKLCH (Oklab lightness, chroma, hue, une façon de noter les couleurs où deux teintes de même clarté paraissent vraiment aussi claires à l'œil) et GMTED2010 (Global Multi-resolution Terrain Elevation Data 2010, le relief de toute la Terre en une grille d'altitudes publiée en 2010) se disent pareil dans tous les films et dans "
             "les deux langues. Le même appel écrit les sous-titres, sur la "
             "même timeline que l'audio.",
             "Chaque film est monté trois fois, et les trois sont sur cette "

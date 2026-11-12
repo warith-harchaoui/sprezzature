@@ -11,7 +11,7 @@
 
 ## Home
 
-- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI, figures, maps, colours, captions and publishing.
+- [Sprezzature — ten Claude / OpenCode skills for vanilla JS + Tailwind](https://sprezzature.ai/): sprezzature: ten open-source Python packages and Claude Code / OpenCode skills that make and audit UI (user interface, the screens, buttons and forms a person works with), figures, maps, colours, captions and publishing.
 
 ## Skills
 
@@ -28,10 +28,10 @@
 ## Case studies
 
 - [Case studies — Sprezzature](https://sprezzature.ai/case-studies.html): Three advanced Ralph Eyeball Loop examples: a tribute to Hans ROSLING's animation, publication-grade situation maps and a markets dashboard.
-- [Tribute to Hans ROSLING — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated tribute to Hans ROSLING's health-and-wealth bubble chart: every country, 1950 to 2025, in one self-contained SVG with no JavaScript library.
+- [Tribute to Hans ROSLING — Sprezzature](https://sprezzature.ai/hans-rosling.html): An animated tribute to Hans ROSLING's health-and-wealth bubble chart: every country, 1950 to 2025, in one self-contained SVG (Scalable Vector Graphics, pictures stored as drawing instructions rather than pixels, so they stay sharp at any zoom) with no JavaScript library.
 - [Maps — Sprezzature](https://sprezzature.ai/maps.html): Publication-grade maps in SVG (Scalable Vector Graphics): situation maps on a Lambert projection with real relief, change maps between two dated records, and glyph maps over real French election data.
-- [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG panels. This favourable draw ends at +123% net return.
-- [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG panels. This adverse draw ends at -26% net return.
+- [Financial markets — Favourable case — Sprezzature](https://sprezzature.ai/financial-markets.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG (Scalable Vector Graphics, pictures stored as drawing instructions rather than pixels, so they stay sharp at any zoom) panels. This favourable draw ends at +123% net return.
+- [Financial markets — Adverse case — Sprezzature](https://sprezzature.ai/financial-markets-adverse.html): A systematic portfolio with automatic size Kₜ in ten interactive, colour-blind-safe SVG (Scalable Vector Graphics, pictures stored as drawing instructions rather than pixels, so they stay sharp at any zoom) panels. This adverse draw ends at -26% net return.
 
 ## Reference
 

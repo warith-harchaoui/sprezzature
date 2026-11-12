@@ -6,11 +6,11 @@ en:
 - q: Do I need Claude Code or an AI agent to use it?
   a: 'No: every sprezzature package also works on its own as a Python library, a command line, an HTTP API with a Docker image, and an MCP server for any MCP client; the agent skill is one of five ways in. Each package has its own `pip install`, listed on the [packages page](packages.html).'
 - q: Is sprezzature free?
-  a: Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on [GitHub](https://github.com/warith-harchaoui/sprezzature).
+  a: Yes. Every package is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on [GitHub](https://github.com/warith-harchaoui/sprezzature).
 - q: Does my data leave my machine?
   a: 'Not unless you send it somewhere: sprezzature''s tools run locally. The ones that use a model (alt text, plain-language rewrites, translation, the local eyeball check) call a model served by Ollama on your own machine, transcription runs whisper.cpp locally, and the voices are synthesised locally. When you use them as skills, the agent itself follows its own provider''s data policy.'
 - q: What does “make and audit” mean?
-  a: Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with `--fix`.
+  a: 'Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) report and an exit code a CI (continuous integration, the server that re-runs a project''s checks on every change and turns red when one fails) job can fail on. Most audits can also apply the repairs they are sure of with `--fix`.'
 - q: Which AI agents does it work with?
   a: The sprezzature skills are written for Claude Code and OpenCode, and every package also runs an MCP server (for example `sprezzature-figures-mcp`), so any agent that speaks the Model Context Protocol can call the same tools.
 - q: How do I report a problem or contribute?
@@ -23,11 +23,11 @@ fr:
 - q: Faut-il Claude Code ou un agent IA pour s'en servir ?
   a: 'Non : chaque paquet sprezzature fonctionne aussi seul, comme bibliothèque Python, ligne de commande, API HTTP avec image Docker et serveur MCP pour tout client MCP ; la skill pour agent n''est qu''une des cinq portes d''entrée. Chaque paquet a son propre `pip install`, listé sur la [page des paquets](packages.html).'
 - q: sprezzature est-il gratuit ?
-  a: Oui. Tous les paquets sont open source sous licence BSD 3-Clause, sans compte, sans clé d'API ni offre payante, et le code est sur [GitHub](https://github.com/warith-harchaoui/sprezzature).
+  a: 'Oui. Tous les paquets sont open source sous licence BSD (Berkeley Software Distribution, une licence née à l''université de Berkeley : chacun peut réutiliser le code, même pour le vendre, en citant l''auteur), version 3-Clause, sans compte, sans clé d''API ni offre payante, et le code est sur [GitHub](https://github.com/warith-harchaoui/sprezzature).'
 - q: Mes données quittent-elles ma machine ?
   a: 'Pas à moins de les envoyer vous-même ailleurs : les outils de sprezzature tournent en local. Ceux qui emploient un modèle (texte alternatif, réécriture en langage clair, traduction, relecture visuelle locale) appellent un modèle servi par Ollama sur votre machine, la transcription tourne avec whisper.cpp en local et les voix sont synthétisées en local. Quand vous les employez comme skills, l''agent lui-même suit la politique de données de son fournisseur.'
 - q: Que veut dire « fabriquer et auditer » ?
-  a: Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l'audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON et un code de sortie qu'une CI peut faire échouer. La plupart des audits appliquent aussi avec `--fix` les réparations dont ils sont sûrs.
+  a: 'Chaque paquet sprezzature produit quelque chose (une page, un graphique, une carte, des sous-titres, une narration) et l''audite, ou audite ce que vous avez déjà, contre des règles écrites, avec un rapport JSON (JavaScript Object Notation, un format texte dans lequel les programmes rangent des données en champs nommés, comme « titre : Accueil ») et un code de sortie qu''une CI (continuous integration, l''intégration continue : un serveur relance les tests à chaque modification du code) peut faire échouer. La plupart des audits appliquent aussi avec `--fix` les réparations dont ils sont sûrs.'
 - q: Avec quels agents IA fonctionne-t-il ?
   a: 'Les skills de sprezzature sont écrites pour Claude Code et OpenCode, et chaque paquet lance aussi un serveur MCP (par exemple `sprezzature-figures-mcp`) : tout agent qui parle le Model Context Protocol peut appeler les mêmes outils.'
 - q: Comment signaler un problème ou contribuer ?

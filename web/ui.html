@@ -122,7 +122,7 @@
           <li>Semantic HyperText Markup Language (HTML) + Tailwind: forms, modals, nav, dashboards, data tables, settings, empty states, skeletons</li>
           <li>Dark-mode peers, focus rings, reduced-motion guards on by default</li>
           <li>The three-Roboto type rule (sans + serif + mono), honoring any font you name</li>
-          <li>i18n extracted to a single YAML configuration format shared by graphical user interface (GUI) and prompts &mdash; a model prompt is a translatable string, which almost nobody treats as one</li>
+          <li>i18n (internationalisation, shortened to its first and last letters around the 18 between: every visible string kept apart, ready to translate) extracted to a single YAML (YAML Ain&#39;t Markup Language, a plain-text settings file of indented lines like greeting: Hello) configuration shared by graphical user interface (GUI) and prompts &mdash; a model prompt is a translatable string, which almost nobody treats as one</li>
           </ul>
         </div>
         <div>
@@ -155,7 +155,7 @@
     <section class="border-t border-neutral-200/70 dark:border-neutral-800">
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 class="text-lg font-bold">Reference library</h2>
-        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">The knowledge the skill draws on: read them straight from the repo.</p>
+        <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">The knowledge the skill draws on, from UX (user experience, how using a screen feels: whether people find the button or give up) to charts in SVG (Scalable Vector Graphics, pictures stored as drawing instructions, sharp at any zoom): read them straight from the repo.</p>
         <div class="mt-4 flex flex-wrap gap-2">
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/stack-tailwind.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Tailwind stack</a>
         <a href="https://github.com/warith-harchaoui/sprezzature/blob/main/sprezzature-ui/references/stack-vanilla-js.md" class="rounded-full border border-neutral-200 px-3 py-1 text-sm hover:border-brand-blue hover:text-brand-linktext dark:border-neutral-700 min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">Vanilla JS</a>
@@ -179,13 +179,13 @@
       <div class="mx-auto max-w-4xl px-5 py-12">
         <h2 id="faq-title" class="text-lg font-bold">Frequently asked questions</h2>
         <h3 class="mt-6 font-semibold">How do I install sprezzature-ui?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-ui</code> (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui</code> command, the HTTP API and the MCP server, with no extras to choose. The interface-writing half is the skill: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> for OpenCode.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Run <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature-ui</code> (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui</code> command, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. The interface-writing half is the skill: <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">pip install sprezzature</code> then <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install</code>, or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-skills --install --agent opencode</code> for OpenCode.</p>
         <h3 class="mt-6 font-semibold">What kind of code does sprezzature-ui produce?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES modules, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES (ECMAScript, the standard behind JavaScript) modules, files that load one another by name, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface.</p>
         <h3 class="mt-6 font-semibold">Can I use sprezzature-ui without Claude Code?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">Partly: sprezzature-ui's i18n tools run on their own as a Python library, a command line, an HTTP API with a Docker image and an MCP server, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-mcp</code>. Writing the interface itself is the model's job, guided by the skill and the prose in its <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">references/</code> folder, so that half needs an agent such as Claude Code or OpenCode.</p>
         <h3 class="mt-6 font-semibold">What does the sprezzature-ui audit check, and can it run in CI?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui's audit, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-audit</code>, flags translation tables embedded in JavaScript or HTML (rule <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">I18N001</code>) and LLM prompts inlined in Python as constants named like <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">PROMPT</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">INSTRUCTION</code> (rule <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">I18N002</code>). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-ui">repository</a> declares; it does not judge whether a translation is good.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui's audit, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-audit</code>, flags translation tables embedded in JavaScript or HTML (rule <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">I18N001</code>) and LLM (large language model, the kind of AI behind ChatGPT) prompts inlined in Python as constants named like <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">PROMPT</code> or <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">INSTRUCTION</code> (rule <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">I18N002</code>). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-ui">repository</a> declares; it does not judge whether a translation is good.</p>
         <h3 class="mt-6 font-semibold">How does sprezzature-ui handle translations in YAML?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">sprezzature-ui keeps every translatable string, interface labels and model prompts alike, in one catalogue, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n.yaml</code>. <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-make</code> scaffolds it, compiles it to <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n.json</code> and writes two loaders, <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n.js</code> for the browser and <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">locales/i18n_prompts.py</code> for Python; <code class="rounded bg-neutral-100 px-1 text-sm dark:bg-neutral-800">sprezzature-ui-i18n-audit --fix</code> moves strings it finds into the catalogue and prints the call to paste, without rewriting your code.</p>
         <h3 class="mt-6 font-semibold">Does sprezzature-ui send my code to a cloud service?</h3>
@@ -193,7 +193,7 @@
         <h3 class="mt-6 font-semibold">How is sprezzature-ui different from shadcn/ui, v0 or Bootstrap?</h3>
         <p class="mt-2 text-neutral-600 dark:text-neutral-300">shadcn/ui hands you React components and Bootstrap ships a broad component library, while sprezzature-ui refuses any framework runtime and offers written rules plus a handful of components to copy. v0 builds an application from a prompt inside a hosted account; sprezzature-ui works with the agent you already run and checks the result with deterministic audits.</p>
         <h3 class="mt-6 font-semibold">Is sprezzature-ui free?</h3>
-        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. sprezzature-ui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-ui">GitHub</a>.</p>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Yes. sprezzature-ui is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on <a class="underline hover:text-brand-linktext focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue" href="https://github.com/warith-harchaoui/sprezzature-ui">GitHub</a>.</p>
       </div>
     </section>
     <script type="application/ld+json">
@@ -207,7 +207,7 @@
           "name": "How do I install sprezzature-ui?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run pip install sprezzature-ui (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the sprezzature-ui command, the HTTP API and the MCP server, with no extras to choose. The interface-writing half is the skill: pip install sprezzature then sprezzature-skills --install, or sprezzature-skills --install --agent opencode for OpenCode."
+            "text": "Run pip install sprezzature-ui (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the sprezzature-ui command, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. The interface-writing half is the skill: pip install sprezzature then sprezzature-skills --install, or sprezzature-skills --install --agent opencode for OpenCode."
           }
         },
         {
@@ -215,7 +215,7 @@
           "name": "What kind of code does sprezzature-ui produce?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES modules, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface."
+            "text": "sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES (ECMAScript, the standard behind JavaScript) modules, files that load one another by name, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface."
           }
         },
         {
@@ -231,7 +231,7 @@
           "name": "What does the sprezzature-ui audit check, and can it run in CI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "sprezzature-ui's audit, sprezzature-ui-i18n-audit, flags translation tables embedded in JavaScript or HTML (rule I18N001) and LLM prompts inlined in Python as constants named like PROMPT or INSTRUCTION (rule I18N002). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the repository declares; it does not judge whether a translation is good."
+            "text": "sprezzature-ui's audit, sprezzature-ui-i18n-audit, flags translation tables embedded in JavaScript or HTML (rule I18N001) and LLM (large language model, the kind of AI behind ChatGPT) prompts inlined in Python as constants named like PROMPT or INSTRUCTION (rule I18N002). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the repository declares; it does not judge whether a translation is good."
           }
         },
         {
@@ -263,7 +263,7 @@
           "name": "Is sprezzature-ui free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. sprezzature-ui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub."
+            "text": "Yes. sprezzature-ui is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub."
           }
         }
       ]

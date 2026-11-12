@@ -12,18 +12,18 @@ sprezzature-accessibility
 
 # Accessibility
 
-Two halves of one job: audit what a page gets wrong about accessibility — twenty rules decidable from the HyperText Markup Language (HTML) source alone, no browser, no runtime Document Object Model (DOM) — and make the content it is missing, drafting alt text with a local vision model.
+Two halves of one job: audit what a page gets wrong about accessibility — twenty rules decidable from the HyperText Markup Language (HTML) source alone, no browser, no runtime Document Object Model (DOM, the live tree of elements a browser builds from the page) — and make the content it is missing, drafting alt text with a local vision model.
 
 SKILL.md (the agent spec)
 ⭐ on GitHub
 
 ## Makes
 
-Alt text for an image, drafted by a local Ollama vision model along the World Wide Web Consortium (W3C) image-purpose decision tree — informative, decorative, functional, text, complex, group — in any language, cached on disk
+Alt text for an image, drafted by a local Ollama vision model along the World Wide Web Consortium (W3C, the body that writes the rules of the web) image-purpose decision tree — informative, decorative, functional, text, complex, group — in any language, cached on disk
 
-JavaScript Object Notation (JSON) / stdout / exit codes for pre-commit and continuous integration (CI)
+JavaScript Object Notation (JSON, a text format in which programs store data as named fields) / stdout / exit codes for pre-commit and continuous integration (CI, the server that re-runs a project's checks on every change and turns red when one fails)
 
-An opt-in "comfortable reading" CSS toggle at the WCAG 1.4.12 Text Spacing minimums, for pages that ship it as a reader-facing setting
+An opt-in "comfortable reading" CSS (Cascading Style Sheets, the rules that give a web page its colours, fonts and spacing) toggle at the WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background) 1.4.12 Text Spacing minimums, for pages that ship it as a reader-facing setting
 
 ## Audits
 
@@ -60,7 +60,7 @@ The twenty rules
 
 ### How do I install sprezzature-accessibility?
 
-Run pip install sprezzature-accessibility (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode ).
+Run pip install sprezzature-accessibility (Python 3.10 to 3.13): one line installs the linter, the alt-text drafter, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode ).
 
 ### What does sprezzature-accessibility check?
 
@@ -88,7 +88,7 @@ Yes: sprezzature-accessibility is a Python library ( import sprezzature_accessib
 
 ### Is sprezzature-accessibility free?
 
-Yes: sprezzature-accessibility is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
+Yes: sprezzature-accessibility is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
 
 ---
 
@@ -100,7 +100,7 @@ sprezzature-audio
 
 # Audio: captions
 
-Local artificial intelligence (AI) captions, speaker diarization and speaker identification for video / audio. WebVTT / SubRip subtitle format (SRT) from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a transcript pass. The audio never leaves the machine.
+Local artificial intelligence (AI) captions, speaker diarization and speaker identification for video / audio. WebVTT / SubRip subtitle format (SRT, the plain-text subtitle file most video players read) from a local whisper.cpp, who-spoke-when via NeMo, who-is-who via embeddings or a transcript pass. The audio never leaves the machine.
 
 Work in progress: the caption backend is still settling and accuracy baselines are being collected, so captions are drafts to review.
 
@@ -109,15 +109,15 @@ SKILL.md (the agent spec)
 
 ## Makes
 
-World Wide Web Consortium (W3C) WebVTT / SRT / plain-text captions from a local whisper.cpp build
+World Wide Web Consortium (W3C, the body that writes the rules of the web) WebVTT / SRT / plain-text captions from a local whisper.cpp build
 
 "Who spoke when" via NVIDIA NeMo Sortformer diarization
 
 "Who is who" via TitaNet embeddings or a transcript-mined pass
 
-Speaker-labelled WebVTT caption format (VTT) with named voice cues; bilingual EN/FR default
+Speaker-labelled WebVTT caption format (VTT, Web Video Text Tracks, the subtitle file a web page's video player reads) with named voice cues; bilingual default, English and French
 
-The same modality read backwards: a narration from text, landing as a WAV and a WebVTT off one timeline, so a page can follow the reading sentence by sentence
+The same modality read backwards: a narration from text, landing as a WAV (Waveform Audio File Format, uncompressed sound, the file a voice recorder saves) and a WebVTT off one timeline, so a page can follow the reading sentence by sentence
 
 Translated subtitles, through a local model
 
@@ -155,11 +155,11 @@ Diarization
 
 ### How do I install sprezzature-audio?
 
-Run pip install sprezzature-audio (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration and the HTTP and MCP surfaces all come with it, with no extra to choose. The install includes torch, but import sprezzature_audio loads no model until a model-backed function is called.
+Run pip install sprezzature-audio (Python 3.10 to 3.13): captions, diarization, speaker identification, translation, narration, an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page) and an MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server all come with it, with no extra to choose. The install includes torch, but import sprezzature_audio loads no model until a model-backed function is called.
 
 ### What does sprezzature-audio need besides pip?
 
-sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with sprezzature-audio-install (Whisper), sprezzature-audio-install-diarize --no-install (NeMo Sortformer and TitaNet) and sprezzature-audio-install-voice (the voices). Translation and the optional name-guessing pass also need an Ollama server serving qwen3-vl:8b . The caption audit, the speaker merge and the WER and DER metrics need none of this.
+sprezzature-audio needs ffmpeg and espeak-ng (for the Kokoro voice) on the system, plus model weights fetched on first use or ahead of time with sprezzature-audio-install (Whisper), sprezzature-audio-install-diarize --no-install (NeMo Sortformer and TitaNet) and sprezzature-audio-install-voice (the voices). Translation and the optional name-guessing pass also need an Ollama server serving qwen3-vl:8b . The caption audit, the speaker merge and the WER (word error rate, the share of words a transcript gets wrong) and DER (diarization error rate, the share of speaking time credited to the wrong speaker) metrics need none of this.
 
 ### Does sprezzature-audio send my audio to a cloud service?
 
@@ -179,11 +179,11 @@ sprezzature-audio runs locally and works both ways, speech to timed text and tex
 
 ### Can I run sprezzature-audio in CI?
 
-Yes: sprezzature-audio-audit talk.vtt checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON with --format json and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them.
+Yes: sprezzature-audio-audit talk.vtt checks a caption track against the Netflix Timed Text Style Guide defaults (17 characters a second, 42 a line, two lines), needs only the Python standard library, prints JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) with --format json and exits 1 on any finding. Transcription, diarization and narration also run headless, but they download large model weights, so a CI job usually audits tracks rather than producing them.
 
 ### Is sprezzature-audio free?
 
-Yes: sprezzature-audio is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub . The models it runs are open weights downloaded to your machine, each under its own licence.
+Yes: sprezzature-audio is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub . The models it runs are open weights downloaded to your machine, each under its own licence.
 
 ---
 
@@ -222,7 +222,7 @@ Dashboard
 ## Financial markets
 
 A systematic portfolio that resizes itself,
-told in ten interactive SVG panels. Hover for a trader's figures, colour-blind-safe throughout, with a
+told in ten interactive SVG (Scalable Vector Graphics, pictures stored as drawing instructions rather than pixels, so they stay sharp at any zoom) panels. Hover for a trader's figures, colour-blind-safe throughout, with a
 favourable and an adverse draw.
 
 Open the dashboard →
@@ -288,7 +288,7 @@ Hardening
 
 ### How do I install sprezzature-cli-gui?
 
-Run pip install sprezzature-cli-gui (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the --from-help reader, the audit, the HTTP API and the MCP server, with no extras to choose. For the agent skill, pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode for OpenCode.
+Run pip install sprezzature-cli-gui (Python 3.10 or newer): one install brings the argparse, Click and Typer readers, the --from-help reader, the audit, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. For the agent skill, pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode for OpenCode.
 
 ### Which command-line parsers can sprezzature-cli-gui read?
 
@@ -316,7 +316,7 @@ Yes: sprezzature-cli-gui-audit mytool.cli:build_parser gui.html reads the parser
 
 ### Is sprezzature-cli-gui free?
 
-Yes. sprezzature-cli-gui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub .
+Yes. sprezzature-cli-gui is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub .
 
 ---
 
@@ -328,14 +328,14 @@ sprezzature-colors
 
 # Colors
 
-Color tooling, make and audit: Web Content Accessibility Guidelines (WCAG) contrast with fixes in the perceptual OKLCH color space (Lightness, Chroma, Hue of the OKLab model), colour-vision-deficiency simulation, a curated palette, and a Tailwind config emitter. Deterministic: no model, no network.
+Color tooling, make and audit: WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background) contrast, with fixes in OKLCH (OK Lightness, Chroma, Hue, a colour space where equal steps in the numbers look like equal steps to the eye), colour-vision-deficiency (CVD, colour blindness, as in the one man in twelve who confuses red and green) simulation, a curated palette, and a Tailwind config emitter. Deterministic: no model, no network.
 
 SKILL.md (the agent spec)
 ⭐ on GitHub
 
 ## Makes
 
-A curated palette comma-separated values (CSV) file with semantic projections
+A curated palette comma-separated values (CSV, a table saved as plain text, one row per line — what a spreadsheet exports) file with semantic projections
 
 A Tailwind theme.extend.colors config from the canonical palette
 
@@ -373,7 +373,7 @@ The palette CSV
 
 ### How do I install sprezzature-colors?
 
-Run pip install sprezzature-colors (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the HTTP API and the MCP server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode ).
+Run pip install sprezzature-colors (Python 3.10 or later): one line installs the four tools, the command line, the image simulation, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. To use it as an agent skill, pip install sprezzature then sprezzature-skills --install (or sprezzature-skills --install --agent opencode ).
 
 ### What does sprezzature-colors do?
 
@@ -381,11 +381,11 @@ sprezzature-colors has four tools: a WCAG contrast audit of a palette that sugge
 
 ### Does sprezzature-colors check the colours of my web page?
 
-No: sprezzature-colors audits the colour pairs of a palette (a JSON file whose keys start with label- , brand- or surface- ), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS. Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse.
+No: sprezzature-colors audits the colour pairs of a palette (a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) file whose keys start with label- , brand- or surface- ), and simulates colour blindness on an image such as a screenshot; it does not read HTML or CSS (Cascading Style Sheets, the rules that give a web page its colours, fonts and spacing). Contrast on a rendered page against its real background is the job of a browser-based tool such as axe-core or Lighthouse.
 
 ### How is sprezzature-colors different from an online contrast checker?
 
-sprezzature-colors checks at once every pair of a palette that can appear together in a theme ( --all-pairs for the full cross-product), at the ratio set with --target , where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI job.
+sprezzature-colors checks at once every pair of a palette that can appear together in a theme ( --all-pairs for the full cross-product), at the ratio set with --target , where an online checker tests one foreground and background typed by hand. For each failure it suggests the nearest passing colour with the same hue and saturation, only lighter or darker, and it runs offline, from a script or a CI (continuous integration, the server that re-runs a project's checks on every change and turns red when one fails) job.
 
 ### Does sprezzature-colors send my files to a cloud service or use AI?
 
@@ -401,7 +401,7 @@ Yes: sprezzature-colors is a Python library ( import sprezzature_colors as sc ),
 
 ### Is sprezzature-colors free?
 
-Yes: sprezzature-colors is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
+Yes: sprezzature-colors is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
 
 ---
 
@@ -415,7 +415,7 @@ sprezzature-figures
 
 ## How to get a figure
 
-Ask our tool:
+Ask our tool in plain words, from a sankey to a SHAP (SHapley Additive exPlanations, a chart of how much each input pushed one prediction up or down) plot:
 
 "make a figure"
 
@@ -433,7 +433,7 @@ Ask our tool:
 
 "render this diagram"
 
-Every figure below carries a kit: a zip with the data as a CSV, the generator that reads it, and the interactive SVG it writes. Two Python files, no build step, and for most of them nothing to install at all. The five glyph maps sit on the maps page and the two animated Gapminder generators on the Hans ROSLING tribute ; with the 160 below, that is the whole 168-kind catalogue.
+Every figure below carries a kit: a zip with the data as a CSV (comma-separated values, a table saved as plain text, one row per line with the cells separated by commas — what a spreadsheet exports), the generator that reads it, and the interactive SVG (Scalable Vector Graphics, a picture stored as drawing instructions rather than pixels, so it stays sharp at any zoom) it writes. Two Python files, no build step, and for most of them nothing to install at all. The five glyph maps sit on the maps page and the two animated Gapminder generators on the Hans ROSLING tribute ; with the 160 below, that is the whole 168-kind catalogue.
 
 FIGURES.md catalog
 ⭐ on GitHub
@@ -500,7 +500,7 @@ Waterfall : A running total, step by step.
 
 ## Time series & trends
 
-How a value moves over an ordered axis: lines, areas and event timelines.
+How a value moves over an ordered axis: lines, areas and event timelines, down to the ACF (autocorrelation function, how closely a series matches itself shifted back in time) and OHLC (open, high, low, close: a trading day's four prices in one bar) charts.
 
 Sparklines : Twenty metrics, one screen.
 ↓ Python + CSV + SVG kit (59 KB)
@@ -580,10 +580,10 @@ SHAP waterfall : One prediction, taken apart.
 SHAP beeswarm : Every row's explanation, and when the colour lies.
 ↓ Python + CSV + SVG kit (90 KB)
 
-Partial dependence and ICE : The average effect, and the rows that disagree with it.
+Partial dependence and ICE (individual conditional expectation, one line per row showing how its prediction moves as one input changes): The average effect, and the rows that disagree with it.
 ↓ Python + CSV + SVG kit (78 KB)
 
-Causal DAG : The graph, and what it says to adjust for.
+Causal DAG (directed acyclic graph, arrows from cause to effect that never loop back): The graph, and what it says to adjust for.
 ↓ Python + CSV + SVG kit (59 KB)
 
 OHLC bars : The session as a bar, and what the axis closes up.
@@ -641,7 +641,7 @@ Histogram : A single distribution, binned.
 Box plot : Spread, quartiles and outliers per group.
 ↓ Python + CSV + SVG kit (54 KB)
 
-Violin plot : KDE density per group, mirrored.
+Violin plot : density per group, smoothed by KDE (kernel density estimate, a histogram smoothed into a curve), mirrored.
 ↓ Python + CSV + SVG kit (56 KB)
 
 Density (KDE) : A smoothed distribution curve.
@@ -662,7 +662,7 @@ Wilkinson dot plot : One dot per observation, binned and stacked.
 Letter-value (boxen) : Nested quantile boxes for large samples.
 ↓ Python + CSV + SVG kit (59 KB)
 
-ECDF : empirical cumulative distribution function (ECDF), stepped.
+ECDF (empirical cumulative distribution function): for each value, the share of the data at or below it, stepped.
 ↓ Python + CSV + SVG kit (54 KB)
 
 Error bars : A mean with its uncertainty interval.
@@ -674,7 +674,7 @@ Bell curve : Normal distribution with configurable mean and standard deviation.
 Q-Q plot : Is this sample normal?
 ↓ Python + CSV + SVG kit (56 KB)
 
-P-P plot : Empirical vs theoretical CDF probabilities.
+P-P plot : Empirical vs theoretical CDF (cumulative distribution function, the share of values at or below each point) probabilities.
 ↓ Python + CSV + SVG kit (66 KB)
 
 Beeswarm : One dot per observation, nudged apart so width reads as density.
@@ -696,7 +696,7 @@ Hexbin density : Many points binned into hexagons.
 Joint plot : Scatter with marginal histograms.
 ↓ Python + CSV + SVG kit (67 KB)
 
-Pair plot / SPLOM : A scatterplot matrix of several variables.
+Pair plot / SPLOM (scatterplot matrix): every pair of several variables, one small scatterplot each.
 ↓ Python + CSV + SVG kit (81 KB)
 
 Parallel coordinates : Many variables on shared axes.
@@ -767,7 +767,7 @@ Pie : A whole, read at a glance.
 Waffle chart : A proportion as a grid of squares.
 ↓ Python + CSV + SVG kit (56 KB)
 
-Pictorial unit chart : An ISOTYPE icon array where one icon encodes a fixed count.
+Pictorial unit chart : An ISOTYPE (International System of Typographic Picture Education, the 1930s Vienna pictogram language) icon array where one icon encodes a fixed count.
 ↓ Python + CSV + SVG kit (61 KB)
 
 Mosaic / marimekko : Column width and segment height each encode a share.
@@ -882,7 +882,7 @@ Polar plot : A line or scatter on an angular axis.
 
 ## Model evaluation & science
 
-Diagnostics and scientific plots: ROC, calibration, survival, forest, volcano.
+Diagnostics and scientific plots: ROC (receiver operating characteristic, how many true alarms a classifier catches for each false one it raises), calibration, survival, forest, volcano.
 
 Silhouette : Which cluster is not a cluster.
 ↓ Python + CSV + SVG kit (60 KB)
@@ -896,7 +896,7 @@ Loss curve : The epoch you should have stopped at.
 Learning curve : Would more data help? It says so.
 ↓ Python + CSV + SVG kit (58 KB)
 
-ROC curve : Classifier trade-off, with AUC.
+ROC curve : Classifier trade-off, with AUC (area under the curve, 1.0 for a perfect classifier, 0.5 for a coin toss).
 ↓ Python + CSV + SVG kit (60 KB)
 
 Precision-recall curve : Precision against recall, with the average precision.
@@ -928,7 +928,7 @@ Bland-Altman : Agreement: difference vs mean of two methods.
 
 ## Gauges, 3-D, sets & the rest
 
-KPI gauges, projected 3-D, set intersections, and one-of-a-kind figures.
+KPI (key performance indicator, the one number a team is judged on, like monthly sales) gauges, projected 3-D, set intersections, and one-of-a-kind figures.
 
 Venn / Euler : Overlapping sets, each region sized by its count.
 ↓ Python + CSV + SVG kit (56 KB)
@@ -983,7 +983,7 @@ No figure matches. Try another term.
 
 ### How do I install sprezzature-figures?
 
-Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs the generators, the command line, the HTTP API, the MCP server and Sprezzature Studio, with no extras to choose. It is free and open source under the BSD 3-Clause licence, and sprezzature-figures render bar --out check.svg checks the install.
+Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs the generators, the command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server and Sprezzature Studio, with no extras to choose. It is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, and sprezzature-figures render bar --out check.svg checks the install.
 
 ### How many chart types does sprezzature-figures have?
 
@@ -1021,13 +1021,13 @@ Source: https://sprezzature.ai/films.html
 
 # Eleven short films
 
-One on the suite, and one for each of its ten packages. Nothing in them is a mock-up: the figures are the shipped SVG files, the maps are drawn on a real projection, the form was generated from the command that is installed, and the colour vision simulations came out of sprezzature-colors .
+One on the suite, and one for each of its ten packages, from UI (user interface, the screens, buttons and forms a person works with) to turning a CLI (command-line interface, a tool driven by typing commands in a terminal) into a GUI (graphical user interface, a form with boxes to tick and a button to click). Nothing in them is a mock-up: the figures are the shipped SVG (Scalable Vector Graphics, pictures stored as drawing instructions, sharp at any zoom) files, the maps are drawn on a real projection, the form was generated from the command that is installed, and the colour vision simulations came out of sprezzature-colors .
 
 the whole suite
 
 ## Sprezzature 75 s
 
-Design is know-how, and most of it is already written down: thirty laws of UX, contrast ratios, a 2009 paper on colour vision, a projection from 2018. The suite is what happens when you point that know-how both ways — at making a thing, and at auditing it.
+Design is know-how, and most of it is already written down: thirty laws of UX (user experience, how using a product feels: whether people find the button or give up), contrast ratios, a 2009 paper on colour vision, a projection from 2018. The suite is what happens when you point that know-how both ways — at making a thing, and at auditing it.
 
 Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
@@ -1079,7 +1079,7 @@ sprezzature-accessibility
 
 ## Accessibility 75 s
 
-An unmuted autoplay masks a screen reader, and the markup says so on its own. Twenty rules from WCAG, each naming the element, the line and the rule it broke; six of them repair themselves, where there is exactly one safe repair.
+An unmuted autoplay masks a screen reader, and the markup says so on its own. Twenty rules from WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background), each naming the element, the line and the rule it broke; six of them repair themselves, where there is exactly one safe repair.
 
 Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
@@ -1105,7 +1105,7 @@ sprezzature-audio
 
 ## Audio 75 s
 
-One modality, read in both directions. Captions turn sound into timed text; narration turns text into timed sound, landing as a WAV plus a WebVTT — exactly like a transcript does, which is what lets a page follow the reading sentence by sentence.
+One modality, read in both directions. Captions turn sound into timed text; narration turns text into timed sound, landing as a WAV (Waveform Audio File Format, uncompressed sound, the file a voice recorder saves) plus a WebVTT — exactly like a transcript does, which is what lets a page follow the reading sentence by sentence.
 
 Landscape 3840×2160 Portrait 2160×3840 Square 2160×2160
 
@@ -1170,7 +1170,7 @@ What it shows: the number this suite once got wrong on screen, caught and correc
 
 Each film exists twice, and the two do not mix: an English film is English throughout — on screen, in the voice, in the subtitles — and a French film is French throughout. This page serves the English cut; the French one is a click away.
 
-The voices come from the suite itself: sprezzature-audio through Kokoro, with a pronunciation lexicon so that WebVTT, RTTM, OKLCH and GMTED2010 are said the same way in every film and in both languages. The same call writes the subtitles, off the same timeline as the audio.
+The voices come from the suite itself: sprezzature-audio through Kokoro, with a pronunciation lexicon so that WebVTT, RTTM (Rich Transcription Time Marked, a text file listing who speaks from which second to which), OKLCH (OK Lightness, Chroma, Hue, a colour written as how light, how vivid and which hue) and GMTED2010 (Global Multi-resolution Terrain Elevation Data 2010, the height of the ground worldwide) are said the same way in every film and in both languages. The same call writes the subtitles, off the same timeline as the audio.
 
 Each film is cut three ways and all three are on this page: wide for a screen, tall for a phone held upright, square for a feed. Pick one above the player. The three are frame-synced, so the same sentence lands on the same second whichever you watch; only the layout moves. All of them are 4K.
 
@@ -1406,7 +1406,7 @@ Vietnam
 1990
 Germany
 1991
-USSR
+Soviet Union
 2020
 Pandemic
 
@@ -1437,7 +1437,7 @@ Vietnam
 1990
 Germany
 1991
-USSR
+Soviet Union
 2020
 Pandemic
 
@@ -1468,7 +1468,7 @@ Vietnam
 1990
 Germany
 1991
-USSR
+Soviet Union
 2020
 Pandemic
 
@@ -1539,15 +1539,15 @@ makes it, then audits it against the rules.
 
 "make this page accessible" → sprezzature-accessibility lints the HTML and reports what to fix.
 
-"make a figure of this CSV" → sprezzature-figures draws it, then audits the chart.
+"make a figure of this CSV" (comma-separated values, a table saved as plain text, one row per line with the cells separated by commas — what a spreadsheet exports) → sprezzature-figures draws it, then audits the chart.
 
-"wrap this CLI in a GUI" → sprezzature-cli-gui scaffolds a usable interface.
+"wrap this CLI in a GUI" (a CLI, command-line interface, is a tool you drive by typing commands; a GUI, graphical user interface, is a form you click) → sprezzature-cli-gui scaffolds a usable interface.
 
 Full install options (checksums, OpenCode + local Ollama, upgrades) →
 
 ## The tool ecosystem
 
-Each skill's scripts also ship as a standalone package, reachable five ways : a self-contained zip, a Python library, an HTTP API, MCP tools for an agent, or the skill itself. Same implementation behind all of them.
+Each skill's scripts also ship as a standalone package, reachable five ways : a self-contained zip, a Python library, an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), MCP (Model Context Protocol, the protocol through which AI agents call tools in English) tools for an agent, or the skill itself. Same implementation behind all of them.
 
 ## The ten skills
 
@@ -1573,7 +1573,7 @@ machine.
 ### Opinionated graphical choices
 
 Skills cover accessibility, colors, typography,
-languages, search-engine optimization (SEO), and generative-engine optimization (GEO).
+languages, search-engine optimization (SEO, coming up when someone searches Google), and generative-engine optimization (GEO, being cited by an AI assistant such as ChatGPT).
 
 ### Runtime-portable
 
@@ -1585,7 +1585,7 @@ Skills serve Claude Code and OpenCode or completely locally and free.
 
 You can proofread a sentence by reading it back. You
 can't do that with a chart: whether it's right lives in the pixels, not the code. So the Ralph
-Eyeball Loop takes whatever you made (an SVG figure, a TikZ figure, a whole web
+Eyeball Loop takes whatever you made (an SVG (Scalable Vector Graphics, a picture stored as drawing instructions rather than pixels, so it stays sharp at any zoom) figure, a TikZ figure, a whole web
 page) and renders it to an image with a deterministic tool, no model involved. Then something actually looks
 at it: by default the agent itself, the same one that wrote the code, or, fully offline, an optional local
 vision model. It catches what a code check never will: a label cut off at the edge, a legend that slid off
@@ -1621,13 +1621,13 @@ for fruitful discussions.
 
 Color palettes from deraison.ai/colors , shipped here as the colors skill .
 
-The three Roboto families are bundled under the SIL Open Font License.
+The three Roboto families are bundled under the SIL (originally the Summer Institute of Linguistics) Open Font License, which lets anyone use, embed and share the fonts for free.
 
 We also drew on the
 Human Interface
 Guidelines ,
 Google Material Design and
-Laws of UX .
+Laws of UX (user experience, how using a product feels: whether people find the button or give up).
 
 ## Frequently asked questions
 
@@ -1645,7 +1645,7 @@ No: every sprezzature package also works on its own as a Python library, a comma
 
 ### Is sprezzature free?
 
-Yes. Every package is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
+Yes. Every package is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and the source is on GitHub .
 
 ### Does my data leave my machine?
 
@@ -1653,7 +1653,7 @@ Not unless you send it somewhere: sprezzature's tools run locally. The ones that
 
 ### What does “make and audit” mean?
 
-Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON report and an exit code a CI job can fail on. Most audits can also apply the repairs they are sure of with --fix .
+Each sprezzature package both produces something (a page, a chart, a map, a caption track, a narration) and audits it, or audits what you already have, against written rules, with a JSON (JavaScript Object Notation, a text format in which programs store data as named fields, like {"name": "Ada"}) report and an exit code a CI (continuous integration, the server that re-runs a project's checks on every change and turns red when one fails) job can fail on. Most audits can also apply the repairs they are sure of with --fix .
 
 ### Which AI agents does it work with?
 
@@ -1673,7 +1673,7 @@ sprezzature · case studies
 
 # Maps
 
-Publication-grade plates for any region on Earth: real elevation, real borders, and a configuration file you can argue with.
+Publication-grade plates for any region on Earth: real elevation, real borders, and a configuration file you can argue with, written in YAML (YAML Ain't Markup Language, a plain-text settings format of indented lines like region: Sahel). Conflict events come from ACLED (the Armed Conflict Location & Event Data project, which logs each reported battle, protest or attack with its date and place) and UCDP (the Uppsala Conflict Data Program, the Swedish university record of armed conflicts since 1946).
 
 Work in progress: the generators are versioned and every map below is rebuilt from them in one command, but the cartographic judgement is still being revised plate by plate — label placement, relief strength and the confidence scale have all changed this month. Read these as illustrations of the method, not as operational assessments.
 
@@ -1733,7 +1733,7 @@ Serbia, 1913 : the other direction of the same plate: a kingdom that nearly doub
 Sudan : the war’s east–west partition in five classes, with the fighting in Kordofan. One assessed and one reported axis of advance, drawn differently.
 ↓ YAML + Python + PNG kit (351 KB)
 
-Eastern DRC : who holds the Kivus. Goma and Bukavu face each other across Lake Kivu, which is why the lake has to be on the map at all.
+Eastern DRC (Democratic Republic of the Congo): who holds the Kivus. Goma and Bukavu face each other across Lake Kivu, which is why the lake has to be on the map at all.
 ↓ YAML + Python + PNG kit (417 KB)
 
 Syria : a four-way split, an illustrative snapshot from around 2018.
@@ -1748,7 +1748,7 @@ June 1967 : six days, four territories, as the difference between two dated reco
 1967 to 2005 : what was handed back and what was kept: Sinai in 1982, Gaza in 2005, the West Bank and the Golan still held.
 ↓ YAML + Python + PNG kit (364 KB)
 
-Today : the Oslo areas, the settlements, and Gaza behind a yellow line, from OCHA's March–April 2026 layers.
+Today : the Oslo areas, the settlements, and Gaza behind a yellow line, from the March–April 2026 layers of OCHA (the UN Office for the Coordination of Humanitarian Affairs, which maps checkpoints and access for aid workers).
 ↓ YAML + Python + PNG kit (651 KB)
 
 Libya : loyalist, rebel and the contested oil crescent, around spring 2011.
@@ -1791,24 +1791,24 @@ A hollow broken ring: one step further from “a place”. The date is spoken th
 
 Rows that cannot be placed honestly are not placed . A UCDP where_prec 6 row is refused a dot by default, and the count goes onto the plate’s own method line rather than disappearing — a silent drop being the other half of the same dishonesty.
 
-The step between the file and the mark is one call. acled_events("sudan-2024.csv", derive_region=True) returns a config fragment whose every key the generator already read, so cfg.update(...) is the whole integration and a hand-written config keeps everything it says. ucdp_events does the same for GED.
+The step between the file and the mark is one call. acled_events("sudan-2024.csv", derive_region=True) returns a config fragment whose every key the generator already read, so cfg.update(...) is the whole integration and a hand-written config keeps everything it says. ucdp_events does the same for the GED (Georeferenced Event Dataset, one row per deadly event with its date and coordinates).
 
-Column names, code ranges and the wording of each code are taken from the ACLED codebook and the UCDP GED codebook, read rather than recalled. What this package deliberately leaves to CShapes, PRIO-GRID, geoBoundaries and GeoPandas is listed in LANDSCAPE.md .
+Column names, code ranges and the wording of each code are taken from the ACLED codebook and the UCDP GED codebook, read rather than recalled. What this package deliberately leaves to CShapes, PRIO-GRID (the Peace Research Institute Oslo grid, which cuts the world into half-degree squares for conflict statistics), geoBoundaries and GeoPandas is listed in LANDSCAPE.md .
 
 ## How the situation maps are built
 
-Every map above is a hand-authored SVG document: no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.
+Every map above is a hand-authored SVG (Scalable Vector Graphics, a picture stored as drawing instructions rather than pixels, so it stays sharp at any zoom) document: no chart-grammar library, no headless browser, no external tiles fetched at render time. Everything geographic is a vendored, offline Natural Earth asset.
 
 Natural Earth, 50m and 10m
 Public-domain vector borders, vendored offline. Situation maps pick the tier automatically from how zoomed-in the requested region is.
 
 Real elevation, not a flat hillshade
-Situation maps compute their relief from real GMTED2010 elevation: a directional hillshade blended with texture shading (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel by pixel into each map's own Lambert Conformal Conic projection, through its exact analytic inverse.
+Situation maps compute their relief from real GMTED2010 (Global Multi-resolution Terrain Elevation Data 2010, the US Geological Survey's map of ground height worldwide) elevation: a directional hillshade blended with texture shading (Brown, 2010: a fractional-order Laplacian applied in the frequency domain), which draws out ridgelines and drainage networks at every scale at once, then retinted warm-highlight/cool-shadow instead of flat grey. Reprojected pixel by pixel into each map's own Lambert Conformal Conic projection, through its exact analytic inverse.
 
 Millimetres, not pixels
 Nature wants 90 mm for a single column, Science 57. Ask for one and the file lands at that size in a layout instead of at whatever a consumer infers — and the plate measures its own smallest label against that width and tells you what it will really be. Dropped into a 90 mm column, a label can set at 1.6 pt and render without complaint, because a vector file always does.
 
-PDF and EPS come out drawn, not photographed
+PDF and EPS (Encapsulated PostScript, the vector file print shops ask for) come out drawn, not photographed
 A raster inside a PDF wrapper satisfies the extension and nothing a journal wants, and nobody can tell until they zoom in. Vector export goes through rsvg-convert — an optional system package. Without it the page is still written at the right physical size, with a warning saying it is a raster and what to install.
 
 ## Real data: the last five French presidential runoffs
@@ -1855,7 +1855,7 @@ Binned grid map : Square-bin aggregation over geography, cells coloured by count
 
 ### How do I install sprezzature-maps?
 
-Run pip install sprezzature-maps (Python 3.10 to 3.13): one command installs the three generators, the make-map command line, the HTTP API, the MCP server and the maps Studio, and pulls in sprezzature-figures, whose font and rendering code it shares. It is free and open source under the BSD 3-Clause licence.
+Run pip install sprezzature-maps (Python 3.10 to 3.13): one command installs the three generators, the make-map command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server and the maps Studio, and pulls in sprezzature-figures, whose font and rendering code it shares. It is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.
 
 ### What kinds of maps can sprezzature-maps draw?
 
@@ -1863,7 +1863,7 @@ sprezzature-maps draws its plates as SVG (Scalable Vector Graphics, the vector i
 
 ### Where does sprezzature-maps get its map data?
 
-sprezzature-maps ships its geography inside the package: Natural Earth borders, coastlines, lakes and rivers, elevation from GMTED2010 (the Global Multi-resolution Terrain Elevation Data of 2010, from the US Geological Survey) for the relief, and administrative units for the United States, France, Germany, Italy and Switzerland. Your own numbers come as rows of CSV or TSV (comma- or tab-separated values) or JSON (JavaScript Object Notation), and acled_events and ucdp_events turn an export from ACLED (the Armed Conflict Location & Event Data project) or from UCDP (the Uppsala Conflict Data Program) into a situation-map layer.
+sprezzature-maps ships its geography inside the package: Natural Earth borders, coastlines, lakes and rivers, elevation from GMTED2010 (the Global Multi-resolution Terrain Elevation Data of 2010, from the US Geological Survey) for the relief, and administrative units for the United States, France, Germany, Italy and Switzerland. Your own numbers come as rows of CSV (comma-separated values, a table saved as plain text, one row per line, what a spreadsheet exports) or TSV (the same, with tabs) or JSON (JavaScript Object Notation), and acled_events and ucdp_events turn an export from ACLED (the Armed Conflict Location & Event Data project) or from UCDP (the Uppsala Conflict Data Program) into a situation-map layer.
 
 ### Does sprezzature-maps work offline?
 
@@ -1873,13 +1873,13 @@ Yes: sprezzature-maps needs no tile server, no API key and no account, because t
 
 sprezzature-maps needs nothing more to render SVG, PNG or JPEG. A vector PDF or EPS uses the system tool rsvg-convert (librsvg); without it, the package writes a raster page and says so. make-map improve needs a local vision model, reached through best-engine-ai-helper and Ollama .
 
-### Can I use sprezzature-maps without Claude Code, for example in CI?
+### Can I use sprezzature-maps without Claude Code, for example in CI (continuous integration, the server that re-runs a project's checks on every change)?
 
 Yes: sprezzature-maps is also a Python library, a command line ( make-map or sprezzature-maps ), an HTTP API with a Docker image, and the MCP server sprezzature-maps-mcp ; the Claude Code skill is one of five ways in. In CI, make-map audit reads finished plates against eleven rules (a named classification, printed breaks, a stated date, a title) and exits 1 on any finding, with --format json for a program.
 
-### How is sprezzature-maps different from Folium, kepler.gl or QGIS?
+### How is sprezzature-maps different from Folium, kepler.gl or QGIS (the free desktop mapping program, its name short for Quantum Geographic Information System)?
 
-Folium and kepler.gl make maps a reader pans and zooms over tiles or a GPU layer, and QGIS is a desktop GIS for analysing geography; sprezzature-maps draws one static, publication-ready plate as a self-contained SVG, and an audit that reads it back. If the geography still needs joining or buffering, or the map has to move, those tools are the better choice, as LANDSCAPE.md in the repository says.
+Folium and kepler.gl make maps a reader pans and zooms over tiles or a GPU (graphics processing unit, the chip that draws a screen) layer, and QGIS is a desktop GIS (geographic information system, software that stores, joins and measures places on a map) for analysing geography; sprezzature-maps draws one static, publication-ready plate as a self-contained SVG, and an audit that reads it back. If the geography still needs joining or buffering, or the map has to move, those tools are the better choice, as LANDSCAPE.md in the repository says.
 
 ---
 
@@ -1893,11 +1893,11 @@ standalone packages
 
 Every tool here is one implementation reached six different ways. Which one you want depends on what you are doing: sending a colleague a single file, importing a function, typing a command, calling it from another language, handing it to an agent, or letting Claude read the skill. None of those should require a different tool.
 
-Each package is BSD-3-Clause, local-first, and independently versioned. All ten are published on PyPI, so a plain pip install is enough.
+Each package carries the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, is local-first, and is independently versioned. All ten are published on PyPI, so a plain pip install is enough.
 
 ## Six ways in
 
-The rule is that these are surfaces , never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant. Five of these six are the contract every package holds — library, command line, HTTP, agent tools, skill. The zip kit is a way of delivering one, not a sixth implementation.
+The rule is that these are surfaces , never re-implementations. A route, a tool description and a command line all call the same function; when they disagree, one of them is a bug rather than a variant. Five of these six are the contract every package holds — library, command line or CLI (command-line interface, a tool you drive by typing commands in a terminal), an API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), agent tools over MCP (Model Context Protocol, the protocol through which AI agents call tools in English), skill. The zip kit is a way of delivering one, not a sixth implementation.
 
 zip
 
@@ -1909,7 +1909,7 @@ library
 
 ### Python functions
 
-Import them and call them. Typed, documented, and free of any plotting or charting dependency: the SVG is written directly, so the only thing you install is the thing you asked for.
+Import them and call them. Typed, documented, and free of any plotting or charting dependency: the SVG (Scalable Vector Graphics, a picture stored as drawing instructions rather than pixels, so it stays sharp at any zoom) is written directly, so the only thing you install is the thing you asked for.
 
 cli
 
@@ -1976,7 +1976,7 @@ sprezzature-figures
 
 ### Figures
 
-+150 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs.
++150 hand-authored SVG chart types, plus the Ralph Eyeball Loop, explainability, and causal DAGs (directed acyclic graphs, arrows from cause to effect that never loop back).
 
 pip install sprezzature-figures
 Repository →
@@ -1994,7 +1994,7 @@ sprezzature-colors
 
 ### Colors
 
-WCAG contrast auditing with OKLCH-neighbour fixes, colour-vision-deficiency simulation, a curated palette, and Tailwind export.
+Contrast auditing against WCAG (Web Content Accessibility Guidelines, the international rulebook that says, for example, how dark text must be against its background), with fixes taken from the nearest colours in OKLCH (OK Lightness, Chroma, Hue, a colour space where equal steps in the numbers look like equal steps to the eye), colour-vision-deficiency simulation, a curated palette, and Tailwind export.
 
 pip install sprezzature-colors
 Repository → ↓ Runnable kit (23 KB)
@@ -2003,14 +2003,14 @@ sprezzature-accessibility
 
 ### Accessibility
 
-A static HTML accessibility linter: source-decidable WCAG/WAI rules, no browser, no runtime DOM. A fast pre-commit gate.
+A static HTML accessibility linter: source-decidable WCAG and WAI (Web Accessibility Initiative, the web-standards group that writes WCAG) rules, no browser, no runtime DOM (Document Object Model, the live tree of elements a browser builds from the page). A fast pre-commit gate.
 
 pip install sprezzature-accessibility
 Repository → ↓ Runnable kit (27 KB)
 
 sprezzature-cli-gui
 
-### CLI → web GUI
+### CLI → web graphical interface (GUI)
 
 Auto-generate a single-file HTML GUI from any Python CLI: it introspects argparse, Click, or Typer, with no build step.
 
@@ -2019,7 +2019,7 @@ Repository → ↓ Runnable kit (36 KB)
 
 sprezzature-ux-laws
 
-### Laws of UX
+### Laws of UX (user experience)
 
 A static Laws-of-UX auditor for HTML: Hick, Miller, Fitts, Jakob, Tesler and more, decidable from source.
 
@@ -2030,7 +2030,7 @@ sprezzature-audio
 
 ### Audio
 
-Local captions (whisper.cpp), speaker diarization and who-is-who, narration and translation. ML backends are optional extras.
+Local captions (whisper.cpp), speaker diarization and who-is-who, narration and translation. ML (machine learning, models trained on examples rather than written by hand) backends are optional extras.
 
 pip install sprezzature-audio
 Repository →
@@ -2046,7 +2046,7 @@ Repository →
 
 sprezzature-ui
 
-### UI
+### User interface (UI)
 
 The deterministic half of a frontend skill: find the strings that belong in a translation catalogue, and scaffold the catalogue they belong in. Writing the interface is the model's work.
 
@@ -2084,7 +2084,7 @@ Yes: every sprezzature package ships an MCP server, such as sprezzature-figures-
 
 ### Where is the source code of each sprezzature package?
 
-Each sprezzature package has its own repository on GitHub , linked from its row in the table on this page, under the BSD 3-Clause licence.
+Each sprezzature package has its own repository on GitHub , linked from its row in the table on this page, under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.
 
 ---
 
@@ -2096,20 +2096,20 @@ sprezzature-publish
 
 # Publishing
 
-Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / progressive web app (PWA)-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local text-to-speech (TTS) narration.
+Turn a folder of Markdown into a static site: per-page meta tags, a full favicon / progressive web app (PWA, a website a phone can install like an app)-icon set from one logo, robots + sitemap + llms.txt + feeds, plain-language rewrites, and local text-to-speech (TTS) narration.
 
 SKILL.md (the agent spec)
 ⭐ on GitHub
 
 ## Makes
 
-Per-page Open Graph + Twitter Card + Schema.org JSON for Linking Data (JSON-LD)
+Per-page Open Graph + Twitter Card + Schema.org JSON (JavaScript Object Notation, data written as named fields, like {"name": "Ada"}) for Linking Data (JSON-LD, the hidden block that tells a search engine who wrote the page and what it is about)
 
 A full favicon / app-icon / PWA-icon set from one logo, plus a webmanifest
 
-robots.txt, sitemap.xml, llms.txt, Atom / Really Simple Syndication (RSS), humans.txt
+robots.txt, sitemap.xml, llms.txt, Atom / Really Simple Syndication (RSS, a feed that tells a news-reader app each time a page appears), humans.txt
 
-Plain-language rewrites and audio (MP3) narration via local open-source (OSS) TTS
+Plain-language rewrites and audio (MP3) narration via local open-source (OSS, code anyone may read and reuse) TTS
 
 A read-along bound to that narration, highlighting the sentence being spoken — and it applies to an existing HTML page with no Markdown behind it
 
@@ -2141,7 +2141,7 @@ lint markdown
 
 ## Reference library
 
-The knowledge the skill draws on: read them straight from the repo.
+The knowledge the skill draws on, starting with SEO (search engine optimisation, what makes a page come up when someone searches Google): read them straight from the repo.
 
 SEO essentials
 Meta tags
@@ -2155,7 +2155,7 @@ Lint Markdown
 
 ### How do I install sprezzature-publish?
 
-Run pip install sprezzature-publish on Python 3.10 to 3.13: that one line installs all thirteen tools, the HTTP API and the MCP server, with no extras to choose. sprezzature-publish is free and open source under the BSD 3-Clause licence, with no account or API key.
+Run pip install sprezzature-publish on Python 3.10 to 3.13: that one line installs all thirteen tools, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. sprezzature-publish is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account or API key.
 
 ### What does sprezzature-publish need besides pip?
 
@@ -2165,7 +2165,7 @@ sprezzature-publish needs Ollama running on your machine only for the tools that
 
 No: sprezzature-publish runs locally. Meta tags, plain-language rewrites and FAQ answers are drafted by a model served by Ollama on your own machine, and narration is synthesised by a local open-source text-to-speech engine. Auditing a live URL reads that page and never writes to it.
 
-### Does sprezzature-publish handle SEO, GEO, AEO and llms.txt?
+### Does sprezzature-publish handle SEO (search engine optimisation, being found on Google), GEO (generative engine optimisation, being cited by ChatGPT), AEO (answer engine optimisation, being the quoted answer) and llms.txt?
 
 Yes: sprezzature-publish covers all four, and sprezzature-publish-findable writes one report for search, generative and answer engines (SEO, GEO, AEO), money pages first, with --fix for the deterministic repairs. sprezzature-publish-indexes writes robots.txt , sitemap.xml , llms.txt , llms-full.txt , an Atom or RSS feed and humans.txt , and its --offer and --cta options put what the site is for at the top of llms.txt .
 
@@ -2175,11 +2175,11 @@ Yes: sprezzature-publish drafts the FAQ a site is missing with sprezzature-publi
 
 ### Can sprezzature-publish narrate a blog post?
 
-Yes: sprezzature-publish reads a Markdown post, or an HTML page with --scope , aloud with a local voice through sprezzature-publish-narrate , and writes the timed track beside the WAV or MP3. sprezzature-publish-readalong then binds it to the page so the sentence being spoken is highlighted, and its --check catches a page edited after the recording. The voices come from sprezzature-audio , installed with it.
+Yes: sprezzature-publish reads a Markdown post, or an HTML page with --scope , aloud with a local voice through sprezzature-publish-narrate , and writes the timed track beside the WAV (Waveform Audio File Format, uncompressed sound, the file a recorder saves) or MP3. sprezzature-publish-readalong then binds it to the page so the sentence being spoken is highlighted, and its --check catches a page edited after the recording. The voices come from sprezzature-audio , installed with it.
 
 ### How is sprezzature-publish different from MkDocs, Hugo, Jekyll or Yoast?
 
-sprezzature-publish is sized for a README, a docs/ folder and a blog: for a hundred versioned pages or a team, MkDocs Material, Hugo or Astro are the better choice, as its own README says. Unlike an SEO plugin such as Yoast, which works inside one CMS, it builds pages and can also audit and repair the head of a site it did not build. It adds an icon set from one logo, llms.txt , a grounded FAQ and a narrated read-along.
+sprezzature-publish is sized for a README, a docs/ folder and a blog: for a hundred versioned pages or a team, MkDocs Material, Hugo or Astro are the better choice, as its own README says. Unlike an SEO plugin such as Yoast, which works inside one CMS (content management system, the back office such as WordPress where a site is edited), it builds pages and can also audit and repair the head of a site it did not build. It adds an icon set from one logo, llms.txt , a grounded FAQ and a narrated read-along.
 
 ### Can I run sprezzature-publish in CI, without Claude Code?
 
@@ -2272,7 +2272,7 @@ Dark-mode peers, focus rings, reduced-motion guards on by default
 
 The three-Roboto type rule (sans + serif + mono), honoring any font you name
 
-i18n extracted to a single YAML configuration format shared by graphical user interface (GUI) and prompts — a model prompt is a translatable string, which almost nobody treats as one
+i18n (internationalisation, shortened to its first and last letters around the 18 between: every visible string kept apart, ready to translate) extracted to a single YAML (YAML Ain't Markup Language, a plain-text settings file of indented lines like greeting: Hello) configuration shared by graphical user interface (GUI) and prompts — a model prompt is a translatable string, which almost nobody treats as one
 
 ## Audits
 
@@ -2298,7 +2298,7 @@ i18n to YAML
 
 ## Reference library
 
-The knowledge the skill draws on: read them straight from the repo.
+The knowledge the skill draws on, from UX (user experience, how using a screen feels: whether people find the button or give up) to charts in SVG (Scalable Vector Graphics, pictures stored as drawing instructions, sharp at any zoom): read them straight from the repo.
 
 Tailwind stack
 Vanilla JS
@@ -2319,11 +2319,11 @@ Examples
 
 ### How do I install sprezzature-ui?
 
-Run pip install sprezzature-ui (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the sprezzature-ui command, the HTTP API and the MCP server, with no extras to choose. The interface-writing half is the skill: pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode for OpenCode.
+Run pip install sprezzature-ui (Python 3.10 or newer): one install brings the i18n audit, the catalogue tools, the sprezzature-ui command, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. The interface-writing half is the skill: pip install sprezzature then sprezzature-skills --install , or sprezzature-skills --install --agent opencode for OpenCode.
 
 ### What kind of code does sprezzature-ui produce?
 
-sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES modules, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface.
+sprezzature-ui guides an agent to write semantic HTML, Tailwind utility classes and plain ES (ECMAScript, the standard behind JavaScript) modules, files that load one another by name, with no React, Vue or other framework runtime. Dark-mode variants, visible focus rings and reduced-motion guards are on by default, and the type follows the three-Roboto rule: Roboto, Roboto Serif and Roboto Mono, self-hosted, unless you name another typeface.
 
 ### Can I use sprezzature-ui without Claude Code?
 
@@ -2331,7 +2331,7 @@ Partly: sprezzature-ui's i18n tools run on their own as a Python library, a comm
 
 ### What does the sprezzature-ui audit check, and can it run in CI?
 
-sprezzature-ui's audit, sprezzature-ui-i18n-audit , flags translation tables embedded in JavaScript or HTML (rule I18N001 ) and LLM prompts inlined in Python as constants named like PROMPT or INSTRUCTION (rule I18N002 ). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the repository declares; it does not judge whether a translation is good.
+sprezzature-ui's audit, sprezzature-ui-i18n-audit , flags translation tables embedded in JavaScript or HTML (rule I18N001 ) and LLM (large language model, the kind of AI behind ChatGPT) prompts inlined in Python as constants named like PROMPT or INSTRUCTION (rule I18N002 ). It exits 1 on any finding, so it can fail a CI job or run as the pre-commit hook the repository declares; it does not judge whether a translation is good.
 
 ### How does sprezzature-ui handle translations in YAML?
 
@@ -2347,7 +2347,7 @@ shadcn/ui hands you React components and Bootstrap ships a broad component libra
 
 ### Is sprezzature-ui free?
 
-Yes. sprezzature-ui is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub .
+Yes. sprezzature-ui is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub .
 
 ---
 
@@ -2374,7 +2374,7 @@ Each law paired with a concrete Tailwind hook
 
 Static auditor flags the mechanically-detectable subset: Hick, Miller, Fitts, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload (eight checks)
 
-Severity + JavaScript Object Notation (JSON) output for pre-commit / continuous integration (CI)
+Severity + JavaScript Object Notation (JSON, a text format in which programs store data as named fields) output for pre-commit / continuous integration (CI, the server that re-runs a project's checks on every change)
 
 ## Say one of these
 
@@ -2398,7 +2398,7 @@ The 30 laws
 
 ### How do I install sprezzature-ux-laws?
 
-Run pip install sprezzature-ux-laws on Python 3.10 or later: one install gives the library, both commands, the HTTP API and the MCP server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD 3-Clause licence.
+Run pip install sprezzature-ux-laws on Python 3.10 or later: one install gives the library, both commands, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server, with no extras to choose. sprezzature-ux-laws is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.
 
 ### Which Laws of UX does sprezzature-ux-laws check?
 
@@ -2486,15 +2486,15 @@ Every trigger phrase
 
 ### How do I install sprezzature-video?
 
-Run pip install sprezzature-video (Python 3.10 to 3.13): the command line, the HTTP API and the MCP server install with it, with no extra to choose. The command is sprezzature-video , also spelled make-film .
+Run pip install sprezzature-video (Python 3.10 to 3.13): the command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server install with it, with no extra to choose. The command is sprezzature-video , also spelled make-film .
 
 ### What does sprezzature-video need besides pip?
 
-sprezzature-video needs only ffmpeg on PATH : poster and the loudness functions call it, and captions measures each narration audio file through ffprobe, which ships with ffmpeg. It runs no model, needs no GPU and calls no network service; verify , scan , prose , pitch and calque read text files and nothing else.
+sprezzature-video needs only ffmpeg on PATH : poster and the loudness functions call it, and captions measures each narration audio file through ffprobe, which ships with ffmpeg. It runs no model, needs no GPU (graphics processing unit, the chip that draws a screen) and calls no network service; verify , scan , prose , pitch and calque read text files and nothing else.
 
 ### What is a claim in sprezzature-video?
 
-In sprezzature-video, a claim is a fact a film states on screen, declared in the film's YAML spec as a pair: the text with its value, and the file in the project that decides it, read by one of five methods ( json_len , json_key_len , regex_count , line_count , literal ). A missing source file fails the claim instead of skipping it, so a count that moves in the code fails the check instead of quietly ageing the film.
+In sprezzature-video, a claim is a fact a film states on screen, declared in the film's YAML (YAML Ain't Markup Language, a plain-text settings format of indented name: value lines) spec as a pair: the text with its value, and the file in the project that decides it, read by one of five methods ( json_len , json_key_len , regex_count , line_count , literal ). A missing source file fails the claim instead of skipping it, so a count that moves in the code fails the check instead of quietly ageing the film.
 
 ### What do verify, scan, assets and captions check in sprezzature-video?
 
@@ -2514,4 +2514,4 @@ Yes: every sprezzature-video command exits 0 when the film is still honest, 1 wh
 
 ### Is sprezzature-video free?
 
-Yes: sprezzature-video is open source under the BSD 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub . It is still alpha, and it renders nothing itself: the films are made with Hyperframes, outside the package.
+Yes: sprezzature-video is open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, with no account, API key or paid tier, and its source is on GitHub . It is still alpha, and it renders nothing itself: the films are made with Hyperframes, outside the package.
