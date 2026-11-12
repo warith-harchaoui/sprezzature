@@ -8,8 +8,29 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+## [1.9.0] — 2026-11-12: chaque brique porte son skill
+
+**The skill travels with `pip install`.** Until now the ten skills lived in
+this hub only: `pip install sprezzature-maps` gave a library, a command line,
+an HTTP API (Application Programming Interface, the door one program uses to
+call another over the network) and an MCP (Model Context Protocol, the
+protocol through which AI agents call tools in English) server, and nothing an
+agent could route on. Each brick now ships its `SKILL.md`, references and
+trigger catalogue inside its package, with `sprezzature-<brick>-skill
+--install` to put it where Claude Code or OpenCode reads it. This hub keeps no
+copy: `sprezzature-skills --install` gathers the ten from the installed
+bricks.
+
+Every brick's Markdown documentation was re-read against its code before this
+release. The two Studios, maps and figures, were reworked by driving them in a
+browser. sprezzature-cli-gui 1.7.0 also carries the fix for Typer 0.29, which
+1.6.0 on PyPI does not survive.
+
 ### Changed
 
+- **Floors**: figures>=2.12.0, colors>=1.3.0, accessibility>=1.5.0,
+  audio>=1.11.0, cli-gui>=1.7.0, ux-laws>=1.5.0, maps>=1.4.0, video>=0.5.0,
+  publish>=1.7.0, ui>=1.3.0.
 - **Site: "+150 chart types"** on every page in both languages, instead of
   an exact count that was stale somewhere at every release; the guard reads
   "+N" as a floor the catalogue has to reach.
@@ -19,7 +40,6 @@ into `~/.claude/skills/`).
   1:10m rivers on regional plates, and no more straight coast through La Paz
   on the Andes plate. The home page says 17 map plates; the Ukraine and DRC
   alt texts describe the paper-white ground the plates now draw.
-- **Floor**: `sprezzature-maps>=1.3.0`.
 
 ## [1.8.4] — 2026-11-09: des cartes de situation composées comme dans un journal
 

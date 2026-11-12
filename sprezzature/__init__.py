@@ -25,7 +25,7 @@ from __future__ import annotations
 import importlib
 from pathlib import Path
 
-__version__ = "1.8.4"
+__version__ = "1.9.0"
 
 #: Folder names of the shipped skills, in the order SKILLS.txt lists them.
 SKILL_NAMES: tuple[str, ...] = (
