@@ -49,6 +49,30 @@ def test_find_skill_resolves_in_repo(monkeypatch: pytest.MonkeyPatch) -> None:
     assert (found / "SKILL.md").is_file()
 
 
+def test_find_skill_reads_the_skill_an_installed_brick_ships(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """With nothing copied under any skills folder, the installed brick answers.
+
+    Since 2026-11-12 the hub holds no skill copy: each brick ships its own
+    inside its package. A runner with the bricks installed and no
+    ``~/.claude/skills`` resolved none of them, which CI caught and a machine
+    holding installed copies did not.
+    """
+    pytest.importorskip("sprezzature_ui")
+    monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(Path, "home", lambda: tmp_path)
+    found = driver._find_skill("sprezzature-ui")
+    if found is None:
+        import sprezzature_ui
+
+        if not hasattr(sprezzature_ui, "skill_path"):
+            pytest.skip("this sprezzature-ui predates the skill shipping inside it")
+    assert found is not None and found.name == "skill"
+    assert (found / "SKILL.md").is_file()
+
+
 def test_find_skill_missing_returns_none(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     """A bogus skill name resolves to None (no exception)."""
     monkeypatch.setenv("SPREZZATURE_SKILLS_PATH", str(tmp_path))
