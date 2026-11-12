@@ -68,14 +68,14 @@ Both directions matter. `verify` protects the claims somebody remembered to
 declare; `scan` catches the one typed into a keyframe at midnight. Running only
 the first is how "127" survived.
 
-A film spec is YAML: `claims`, `assets`, `narration`, `scenes` and `pitch`. The
+A film spec is YAML (YAML Ain't Markup Language, a plain-text format for settings, one name: value per line): `claims`, `assets`, `narration`, `scenes` and `pitch`. The
 things that go stale live in a file a reviewer can diff rather than inside a
 generator nobody opens.
 
 ## The surfaces
 
 Library, the command line (`sprezzature-video` or `make-film`, Click only), a
-FastAPI HTTP API, and MCP tools mounted on that same app at `/mcp`. One
+FastAPI HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as verify this film), and MCP (Model Context Protocol, the protocol through which AI agents call tools in English) tools mounted on that same app at `/mcp`. One
 implementation underneath, so the terminal answer and the HTTP answer cannot
 disagree.
 

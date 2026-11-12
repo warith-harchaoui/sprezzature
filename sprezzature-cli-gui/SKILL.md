@@ -33,13 +33,13 @@ metadata:
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-cli-gui`](https://github.com/warith-harchaoui/sprezzature-cli-gui) (`pip install`), invoked as `sprezzature-cli-gui …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
-# sprezzature-cli-gui — CLI → web GUI
+# sprezzature-cli-gui — CLI (command-line interface, a program you run by typing a command in a terminal) → web GUI (graphical user interface, windows, buttons and forms you click instead of typing commands)
 
 ## Audience and positioning
 
-Solo developers and small teams who have a working CLI (Python / Node / Go / Rust) and need a usable web UI for it. Common cases:
+Solo developers and small teams who have a working CLI (Python / Node / Go / Rust) and need a usable web UI (user interface, the screens, buttons and forms a person uses) for it. Common cases:
 
-- ML researcher with a `train.py` / `eval.py` that teammates run with the wrong flags.
+- ML (machine learning, software that learns from examples instead of hand-written rules) researcher with a `train.py` / `eval.py` that teammates run with the wrong flags.
 - Data scientist with a Click pipeline that stakeholders should be able to launch.
 - DevOps engineer with internal `argparse` tools that should not require shell access.
 - Indie hacker shipping a CLI tool whose first user-facing surface is a web page.
@@ -48,15 +48,15 @@ Solo developers and small teams who have a working CLI (Python / Node / Go / Rus
 
 The auto-form generators handle the common case well and get awkward at the last 20%. They produce a UI that looks like the tool's UI, not yours. The trade-offs:
 
-- **Gradio / Streamlit / Taipy / Shiny.** Server-side runtimes that auto-generate widgets from your function signature. Fast for ML demos. The cost: every Gradio app looks like a Gradio app; every Streamlit app looks like a Streamlit app. The CSS surface to override is large and brittle across versions. You also ship the runtime: a minimum of ~50 MB of Python deps and a long-lived server process.
+- **Gradio / Streamlit / Taipy / Shiny.** Server-side runtimes that auto-generate widgets from your function signature. Fast for ML demos. The cost: every Gradio app looks like a Gradio app; every Streamlit app looks like a Streamlit app. The CSS (Cascading Style Sheets, the language that sets a web page's colours, fonts and layout) surface to override is large and brittle across versions. You also ship the runtime: a minimum of ~50 MB of Python deps and a long-lived server process.
 - **Tauri / Wails / Electron.** Native desktop wrappers. Real desktop integration, real binary you can hand to a non-technical user. They wrap a web view; `sprezzature-cli-gui` is what you'd put **inside** the web view. Pick Tauri when the deliverable must be a desktop app; pick `sprezzature-cli-gui` when the deliverable is a single HTML page that runs anywhere.
-- **Gooey / dearpygui.** Native widgets, no web. Pick these when you specifically want OS-native chrome.
+- **Gooey / dearpygui.** Native widgets, no web. Pick these when you specifically want operating-system native chrome (macOS, Windows or Linux windows).
 
 What `sprezzature-cli-gui` does instead:
 
-1. Emits plain HTML + Tailwind + vanilla JS, the same files you'd write by hand. No runtime, no lock-in. You can edit it without learning a framework.
+1. Emits plain HTML + Tailwind + vanilla JavaScript, the programming language web browsers run, the same files you'd write by hand. No runtime, no lock-in. You can edit it without learning a framework.
 2. Carries the sprezzature-ui semantic tokens (color, dark-mode peers, focus rings) in the page it writes. They are fixed in `renderer.py`; the levers the command gives you are `--title` and `--prog`, and after that the page is yours to edit.
-3. Builds the command line and stops there. Running it is the host's job (HTTP + SSE, Tauri `invoke()`, or a shell prompt where the line is pasted); the worked demo shows one such wiring.
+3. Builds the command line and stops there. Running it is the host's job (HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) + SSE (server-sent events, a connection over which the server keeps pushing new lines, as a live log does), Tauri `invoke()`, or a shell prompt where the line is pasted); the worked demo shows one such wiring.
 4. Ships a worked example you can copy in `assets/examples/cli-gui-demo/`.
 
 Honest limitation: this skill **scaffolds** the GUI. You still need to wire execution to your CLI through the host of your choice. We provide a Python SSE proxy reference implementation in the demo; for production you'll harden it (auth, rate-limit, sandbox).
@@ -69,8 +69,8 @@ gates on the emitted HTML.
 
 | Mode | Tool | Purpose |
 |---|---|---|
-| **Make** — CLI → HTML (three adapters) | `sprezzature-cli-gui` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (bool → checkbox, choice → dropdown, int / float → number input, file and str → text input; a counter such as `-v` is a number input that repeats the flag; an on/off pair such as `--color/--no-color` starts at its default and writes the other spelling when changed, and a `store_false` flag is passed only when it is ticked), required marker, default values pre-filled, and a "Build command" button per form that constructs the CLI line locally from that form's fields. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python CLIs: clap / cobra / commander). |
-| **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
+| **Make** — CLI → HTML (three adapters) | `sprezzature-cli-gui` | Introspects a Python CLI and emits a single-page vanilla-JS + Tailwind GUI: one `<details>` per sub-command, form fields mapped per action type (bool → checkbox, choice → dropdown, int / float → number input, file and str → text input; a counter such as `-v` is a number input that repeats the flag; an on/off pair such as `--color/--no-color` starts at its default and writes the other spelling when changed, and a `store_false` flag is passed only when it is ticked), required marker, default values pre-filled, and a "Build command" button per form that constructs the CLI line locally from that form's fields. **Three adapters**: argparse (stdlib, default), Click (`module:factory` returning a `click.Command` — or a `typer.Typer`, converted with typer's own `get_command` and walked as Click, since that is what it becomes), and `--from-help` (subprocess + regex on the help text, works on non-Python command-line tools (CLIs, programs run by typing a command): clap / cobra / commander). |
+| **Make** — worked scaffold | `assets/examples/cli-gui-demo/` | End-to-end runnable demo (HTML + ES (the JavaScript standard, here its way of splitting code into files) module + Python SSE proxy) showing the host-wiring step the emitter leaves to the user. |
 | **Audit** — gate the emitted HTML _(borrowed, not shipped here)_ | Pair with `sprezzature-accessibility-lint` and `sprezzature-ux-laws-audit` on the emitted output. | The emitter's HTML inherits sprezzature-ui stack rules; both auditors apply unmodified. Measured on 2026-11-08 on four generated pages (argparse, Click, Typer, `--from-help`) with `sprezzature-accessibility` 1.4.3 and `sprezzature-ux-laws` 1.4.2: 0 findings from each. No test in the package asserts either gate. |
 | **Audit** — does the page still cover the CLI | `sprezzature-cli-gui-audit <spec> <page.html>` | This brick's own promise, checked by five rules: `flag-not-in-page` (an option with no field), `field-has-no-flag` (a field building an option the parser rejects), `choice-dropped`, `prog-missing` and `prog-mismatch` (the command line is not seeded with the installed name). A page that lost a flag renders and behaves perfectly — the option is simply unreachable — so the disagreement has to be looked for. `--format text|json`, `--prog`. Exit 1 on any finding, so it gates a build. |
 
@@ -81,7 +81,7 @@ gates on the emitted HTML.
 | Library | `from sprezzature_cli_gui import walk, render_html, audit, Finding` | `walk(obj, prog=None)` reads an argparse parser, a Click command or a Typer app in the caller's process. |
 | CLI | `sprezzature-cli-gui`, `sprezzature-cli-gui-audit` | Click commands; shell completion through `_SPREZZATURE_CLI_GUI_COMPLETE`. |
 | HTTP | `uvicorn sprezzature_cli_gui.api:app`, or `docker compose up` in the package repository (the image runs `sprezzature-cli-gui-mcp`, so one container answers the routes and `/mcp` on port 8000) | `GET /health`, `GET /v1/example`, `POST /v1/render` (tree in, HTML out), `POST /v1/audit` (`schema` + `page` in, findings out). |
-| MCP | `sprezzature-cli-gui-mcp [--host H] [--port P]` | Endpoint `/mcp`. Tools = `operation_id`: `health`, `get_example_schema`, `render_gui`, `audit_gui`. |
+| MCP (Model Context Protocol, the protocol through which AI agents call tools in English) | `sprezzature-cli-gui-mcp [--host H] [--port P]` | Endpoint `/mcp`. Tools = `operation_id`: `health`, `get_example_schema`, `render_gui`, `audit_gui`. |
 | Skill | this file | Routing; the catalogue is in `references/triggers.md`. |
 
 The HTTP and MCP surfaces take a schema tree, never a `module:factory` spec: importing a module named by a remote caller would be remote code execution. To render over MCP, walk the parser locally (`sprezzature-cli-gui SPEC --json`) or call `get_example_schema` and copy its shape.
@@ -159,10 +159,10 @@ When the user points to an existing CLI project and asks for a GUI:
    - number → stepper or slider.
    - repeated flag → tag list.
 5. **Wire execution.** Choose ONE depending on the project:
-   - **Local-only**, packaged as Tauri / Electron / web view: invoke via the host's `invoke()` / IPC.
+   - **Local-only**, packaged as Tauri / Electron / web view: invoke via the host's `invoke()` / IPC (inter-process communication, how two running programs pass messages to each other).
    - **HTTP-served**: emit a tiny `fetch` wrapper assuming the CLI is wrapped by `python -m http.server`, `express`, `fastapi`, or the demo's stdlib SSE proxy.
-   - **Browser-only mock**: stub execution with `console.log` and clearly mark TODOs.
-6. **Stream output** to a monospace `<pre>` panel; convert ANSI escapes to HTML if needed.
+   - **Browser-only mock**: stub execution with `console.log` and clearly mark each stub as not yet wired.
+6. **Stream output** to a monospace `<pre>` panel; convert ANSI (American National Standards Institute, whose escape codes turn terminal text red, green or bold) terminal colour escapes to HTML if needed.
 7. **Emit a single `index.html` + `app.js` + Tailwind** that runs out of the box. Ship the three Roboto families (Roboto / Roboto Serif / Roboto Mono) in `./fonts/roboto*/`.
 8. **Document** in the project's README how to launch the GUI alongside the CLI.
 
@@ -172,7 +172,7 @@ Output follows the sprezzature-ui stack rules. If sprezzature-ui is not installe
 
 - **Vanilla JS** (ES modules), no framework.
 - **Tailwind utility classes**, semantic tokens, dark-mode peer on every styled element.
-- **Three-Roboto rule**: Roboto (sans / UI), Roboto Serif (editorial / longform), Roboto Mono (`<code>` / `<pre>` / log panels / terminal). Self-hosted, no Google Fonts CDN. The CLI → GUI flagship leans on **Roboto Mono** for the streaming log panel and **Roboto** everywhere else.
+- **Three-Roboto rule**: Roboto (sans / UI), Roboto Serif (editorial / longform), Roboto Mono (`<code>` / `<pre>` / log panels / terminal). Self-hosted, no Google Fonts CDN (content-delivery network, servers around the world that hand each reader a copy of a file from nearby). The CLI → GUI flagship leans on **Roboto Mono** for the streaming log panel and **Roboto** everywhere else.
 - Semantic HTML, visible focus rings, 44 × 44 hit area, `prefers-reduced-motion` honored.
 - Both color schemes.
 
@@ -197,7 +197,7 @@ of `--help` (the primary source at step 1) and how easily the skill
 can introspect the command tree at step 4. **Soft default**, in order:
 
 1. **[Click](https://click.palletsprojects.com/)** — the safe default.
-   Decorator-based, BSD-3, stable since 2014. Generates a clean
+   Decorator-based, BSD-3 (the three-clause Berkeley Software Distribution licence: use it freely, keep the copyright notice), stable since 2014. Generates a clean
    `--help`, supports nested sub-commands cleanly, ships
    `click.testing.CliRunner` for tests, and exposes a stable
    `click.Command` object the skill can walk programmatically.
@@ -223,7 +223,7 @@ all generate the introspectable `--help` the inventory step expects.
 - The user wants a **desktop app binary**, not a web page. → Use Tauri (this skill can supply Tauri's web view content).
 - The user wants **ML model auto-demos** with sliders and audio playback wired automatically. → Use Gradio.
 - The user wants **a data app with charts as the primary surface** and is fine with the runtime's look. → Use Streamlit.
-- The CLI is **purely interactive** (REPL, prompt-heavy): a TUI like Textual / Bubble Tea is the better fit.
+- The CLI is **purely interactive** (REPL (read-eval-print loop, a prompt that answers each line as you type it, like python with no file), prompt-heavy): a TUI (text user interface, menus and panels drawn with characters inside the terminal) like Textual / Bubble Tea is the better fit.
 
 ## Worked example
 
@@ -244,7 +244,7 @@ python server.py
 
 ## References
 
-- `references/hardening.md` — Production-readiness checklist for the host (auth, rate-limit, subprocess sandbox, CORS, TLS posture). Keep the demo demo; this is what you apply when the surface stops being loopback-only.
+- `references/hardening.md` — Production-readiness checklist for the host (auth, rate-limit, subprocess sandbox, CORS (Cross-Origin Resource Sharing, the browser rule that decides which other websites may call this server), TLS (Transport Layer Security, the encryption behind the padlock in the address bar) posture). Keep the demo demo; this is what you apply when the surface stops being loopback-only.
 
 ## Companion skills
 
@@ -252,8 +252,8 @@ python server.py
 |---|---|
 | Full UI design tokens (color, typography, components, dark mode) | `sprezzature-ui` |
 | a11y lint on the emitted HTML | `sprezzature-accessibility` |
-| WCAG contrast audit + CVD simulation on the emitted HTML | `sprezzature-colors` |
-| W3C alt text for the wrapping page's images (local Ollama vision) | `sprezzature-accessibility` |
+| WCAG (Web Content Accessibility Guidelines, the international rules a web page must follow to be usable by people with disabilities) contrast audit + CVD (colour-vision deficiency, the medical name for colour blindness: red and green that look alike, for instance) simulation on the emitted HTML | `sprezzature-colors` |
+| W3C (World Wide Web Consortium, the body that writes the web's standards) alt text for the wrapping page's images (local Ollama vision) | `sprezzature-accessibility` |
 | Captions for any embedded `<video>` / `<audio>` (local whisper.cpp) | `sprezzature-audio` |
 | Favicon / meta / docs site for the wrapping page | `sprezzature-publish` |
 | Screenshot the emitted GUI, look at it, and refine the markup (the Ralph Eyeball Loop) | `sprezzature-figures` (`sprezzature-figures/references/ralph-eyeball-loop.md`) |

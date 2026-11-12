@@ -31,7 +31,7 @@ metadata:
 
 # sprezzature-publish — Markdown → website, meta, icons, indexes, plain language
 
-> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through the click front door, under two names that are one callable, `make-site <tool>` and `sprezzature-publish <tool>`. Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP or MCP: `sprezzature-publish-mcp --port 8000` serves seven routes plus `GET /health` and, on the same port, `/mcp` with the same eight as tools (`lint_markdown`, `audit_site`, `render_markdown`, `rewrite_plainly`, `find_calls_to_action`, `build_faq`, `report_findability`, `health`); the Docker image runs that command. Icons, indexes, meta, narration, read-along and the changelog feed stay commands. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
+> The deterministic tools below now ship as the standalone package [`sprezzature-publish`](https://github.com/warith-harchaoui/sprezzature-publish) (`pip install sprezzature-publish`), invoked as `sprezzature-publish-lint`, `-html`, `-icons`, `-indexes` and the rest — or through the click front door, under two names that are one callable, `make-site <tool>` and `sprezzature-publish <tool>`. Importable as `from sprezzature_publish import lint_file`, and reachable over HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) or MCP (Model Context Protocol, the protocol through which AI agents call tools in English): `sprezzature-publish-mcp --port 8000` serves seven routes plus `GET /health` and, on the same port, `/mcp` with the same eight as tools (`lint_markdown`, `audit_site`, `render_markdown`, `rewrite_plainly`, `find_calls_to_action`, `build_faq`, `report_findability`, `health`); the Docker image runs that command. Icons, indexes, meta, narration, read-along and the changelog feed stay commands. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
 ## Audience and positioning
 
@@ -46,6 +46,8 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 
 ## What it does
 
+The acronyms of the trade used below: SEO (search-engine optimization, making a site come up high in Google's results), GEO (generative-engine optimization, making a site the source an AI chatbot quotes when it answers), AEO (answer-engine optimization, making a page the one answer a search engine or voice assistant reads out), OG (Open Graph, the tags that decide the preview card shown when a link is shared), JSON (JavaScript Object Notation, a text format in which programs store data as named fields, such as {"name": "Paris"}), JSON-LD (JSON for Linking Data, JSON hidden in a page that tells search engines what the page is about), PWA (progressive web app, a website a phone can install on its home screen like an app), SVG (Scalable Vector Graphics, an image made of shapes rather than pixels, so it stays sharp at any zoom), RSS (Really Simple Syndication, a feed that lets readers follow a site's new posts in a reader app), TTS (text to speech, a synthetic voice reading text aloud).
+
 | Trigger phrase | Output |
 |---|---|
 | "turn these markdown files into a website" | Static HTML per `.md` + sticky header + dark-mode peer (a sidebar for `docs/` is built by hand, workflow step 4) + favicons + meta tags + robots / sitemap / llms.txt / llms-full.txt / Atom feed |
@@ -56,7 +58,7 @@ This skill is **not** the right pick for a docs site with hundreds of versioned 
 | "robots.txt" / "sitemap.xml" / "llms.txt" / "llms-full.txt" / "feed" / "Atom" / "RSS" / "humans.txt" | All from a single command; auto-detects a blog folder for the feed |
 | "plain language" / "simplify this copy" / "rewrite at grade N" | Same meaning, marketing voice stripped, output length ≤ 1.1× original |
 
-## CTA first: ask before you run (SEO, GEO, AEO)
+## CTA (call to action, the one thing a page asks its reader to do: book a call, buy, install) first: ask before you run (SEO, GEO, AEO)
 
 When the request is about a site's readers doing something — "my site
 doesn't sell", "nobody books a call", "SEO", "GEO", "AEO", "write me a FAQ",
@@ -82,7 +84,7 @@ not a command:
    `llms.txt` leads with the offer and the CTA's own URL.
 
 Never claim `FAQPage` markup ranks: Google stopped showing FAQ rich results
-on 2026-05-07. The FAQ is built for its visible text. How many CTAs compete
+on 2026-05-07. The FAQ is built for its visible text. How many calls to action (CTAs, buttons such as book a call or buy) compete
 on one screen is sprezzature-ux-laws (Hick), not this skill.
 
 ## Two modes: make and audit
@@ -94,7 +96,7 @@ exists**, which has no Markdown to go back to.
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make** — generate site artifacts | `sprezzature-publish-icons`, `-meta`, `-indexes`, `-plain`, `-html`, `-narrate`, `-readalong`, `-changelog` | Favicons + PWA, meta tags, robots / sitemap / llms.txt / Atom, plain-language rewrite, Markdown → HTML, optional narration and read-along, and one Atom + RSS feed from sibling repositories' `CHANGELOG.md`. The **voices themselves** ship with `sprezzature-audio`: captions turn sound into timed text, narration turns text into timed sound, and one package owns that modality in both directions. This one owns the document and the page. |
-| **Make + audit** — what the site is for | `sprezzature-publish-cta`, `-faq`, `-findable` | Declared CTAs (`ctas.yaml`), the FAQ built from the site's own pages and its `FAQPage` markup, and the joint SEO + GEO + AEO report ordered by money pages. Reads HTML, PHP, Markdown, JSON and YAML. |
+| **Make + audit** — what the site is for | `sprezzature-publish-cta`, `-faq`, `-findable` | Declared CTAs (`ctas.yaml`), the FAQ built from the site's own pages and its `FAQPage` markup, and the joint SEO + GEO + AEO report ordered by money pages. Reads HTML, PHP (PHP: Hypertext Preprocessor, a language servers use to build each page when it is requested, as WordPress does), Markdown, JSON and YAML (YAML Ain't Markup Language, a plain-text format for settings, one name: value per line). |
 | **Audit** — before the render, gate the source | `sprezzature-publish-lint` | Markdown lint with project-aware rules (heading order, fenced-code language, trailing whitespace, empty image alt, a local link whose target is not on disk). A fenced Mermaid block gets `MMD001`: redraw it with `sprezzature-figures render flowchart` and embed the SVG. `--fix` strips trailing whitespace; nothing else. |
 | **Audit** — after the render, read what was emitted and repair it | `sprezzature-publish-audit` | `sprezzature-publish-audit <dir\|page\|url>`. Head meta, Open Graph, Twitter Card, JSON-LD, icon and manifest links, `robots.txt`, `sitemap.xml`, `llms.txt`, feed, icon set on disk. **No Markdown source required** — this is the tool for a site somebody else built. `--fix` writes back only what is *derived*: canonical from `--base-url`, `og:*` / `twitter:*` mirrored from the page's own title and description, the icon links from the `head.html` `favicons` wrote, `robots.txt` / `sitemap.xml` regenerated through `site_indexes`, and `og:image` / `<html lang>` only when `--og-image` / `--lang` are given and the page has none. The wording of a title, the choice of an `og:image` without `--og-image`, a JSON-LD body: reported with the command that drafts them, never written. A URL is reported, never repaired. |
 
@@ -109,7 +111,7 @@ When the user points to a Markdown-only project and asks for a website:
 1. **Inventory the Markdown.** Walk the tree. Group files by purpose: landing (`README.md`), documentation (`docs/**/*.md`), blog posts (`posts/**`, `blog/**`), references, changelogs. Note frontmatter conventions if present.
 2. **Pick a site shape**:
    - One README → single landing page with anchored sections from the headings.
-   - README + a `docs/` tree → two-pane docs site (sidebar TOC + content).
+   - README + a `docs/` tree → two-pane docs site (sidebar TOC (table of contents, the list of links to every page) + content).
    - Blog directory → home with post list + per-post pages + tag pages.
 3. **Build a route map**. Each Markdown file becomes one HTML page; preserve the directory shape under the output root. Landing at `/index.html`.
 4. **Generate navigation**:
@@ -122,11 +124,11 @@ When the user points to a Markdown-only project and asks for a website:
 8. **Emit indexes**: `sprezzature-publish-indexes --root . --base-url https://example.com [--feed-from posts]` — produces robots.txt + sitemap.xml + llms.txt + llms-full.txt + optional Atom feed.
 9. **Emit pages + assets**. One `index.html` per page, one shared `app.js` (theme switcher, search if needed), one `styles.css` (Tailwind directives + the three Roboto families per the three-Roboto rule). Include the favicon set under `public/`. Add a small `README.md` to the output root explaining the build.
 
-Output is static HTML + CSS + a small `app.js`. For a small project (≤ 30 pages, prototype-grade) the Tailwind Play CDN keeps the deliverable build-free and it drops into GitHub Pages / Netlify / S3 / Nginx as-is. For anything you treat as production, run the Tailwind CLI / Vite build step from `sprezzature-ui/references/stack-tailwind.md` over the emitted HTML before deploying; the class names are stable, so the same files survive the swap.
+Output is static HTML + CSS (Cascading Style Sheets, the language that sets a web page's colours, fonts and layout) + a small `app.js`. For a small project (≤ 30 pages, prototype-grade) the Tailwind Play CDN (content-delivery network, servers around the world that hand each reader a copy of a file from nearby) keeps the deliverable build-free and it drops into GitHub Pages / Netlify / S3 / Nginx as-is. For anything you treat as production, run the Tailwind CLI (command-line interface, a program you run by typing a command in a terminal) / Vite build step from `sprezzature-ui/references/stack-tailwind.md` over the emitted HTML before deploying; the class names are stable, so the same files survive the swap.
 
 ## Stack rules (inherited)
 
-Output follows the sprezzature-ui stack rules: vanilla JS, Tailwind, and the three-Roboto rule (Roboto for sans / UI, Roboto Serif for editorial longform, Roboto Mono for code and log panels). If sprezzature-ui is not installed, see `sprezzature-ui/SKILL.md` for the full ruleset.
+Output follows the sprezzature-ui stack rules: vanilla JS (JavaScript, the programming language web browsers run), Tailwind, and the three-Roboto rule (Roboto for sans / UI (user interface, the screens, buttons and forms a person uses), Roboto Serif for editorial longform, Roboto Mono for code and log panels). If sprezzature-ui is not installed, see `sprezzature-ui/SKILL.md` for the full ruleset.
 
 ## Tool composition (take initiative)
 
@@ -157,14 +159,14 @@ sprezzature-publish-indexes             # re-run with --audio-manifest to inject
                                         # <enclosure> rows → RSS feed = podcast feed
 ```
 
-The narration pipeline is **not WCAG-required** (screen readers cover
+The narration pipeline is **not required by WCAG (Web Content Accessibility Guidelines, the international rules a web page must follow to be usable by people with disabilities)** (screen readers cover
 text accessibility); it's an editorial choice for multitasking
 audience / podcast positioning / cognitive-accessibility alternative
 formats. Triggered by "narrate this post", "audio version of the
 blog", "podcast feed from posts", "TTS this article". See
 `references/audio-narration.md` for the placement rules (player
 top-of-article), engine matrix (ChatterboxTTS and OpenVoice v2 for cloning,
-both MIT for code AND weights; Kokoro, Apache-2.0, the light one; left unset,
+both under the MIT (Massachusetts Institute of Technology, whose short licence lets anyone reuse the work, even commercially) licence for code AND weights; Kokoro, Apache-2.0, the light one; left unset,
 speaker-helper's router picks the engine, Chatterbox today in English and
 French), voice cloning ethics, and Schema.org /
 OpenGraph metadata.
@@ -198,21 +200,21 @@ modified in place.
 ## When NOT to use this skill
 
 - Versioned docs (semantic versioning, side-by-side per-release docs) → Hugo / MkDocs Material / Docusaurus.
-- 100+ Markdown pages → an SSG with incremental rebuilds is faster.
+- 100+ Markdown pages → an SSG (static site generator, a tool that turns a folder of text files into a website) with incremental rebuilds is faster.
 - Heavy templating (custom shortcodes, partials, theme inheritance) → use a real SSG; this skill emits flat HTML.
 
 ## References
 
-- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG HTML, RFC 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the rules that have **no** spec behind them (three `SITE` rules, seven of the CTA-dependent ones) and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
+- `references/audit-site.md` — **every `sprezzature-publish-audit` rule and the specification behind it**: WHATWG (Web Hypertext Application Technology Working Group, the browser makers' group that maintains the HTML standard) HTML, RFC (Request for Comments, the numbered documents that define internet standards) 6596 (canonical), RFC 9309 (robots.txt), sitemaps.org 0.9, ogp.me, X Cards, JSON-LD 1.1, W3C (World Wide Web Consortium, the body that writes the web's standards) Web App Manifest, Apple's web-app configuration guide, RFC 4287 / RSS 2.0, llmstxt.org. Also names the rules that have **no** spec behind them (three `SITE` rules, seven of the CTA-dependent ones) and why, and shows what `--fix` is allowed to write. Cite it when a finding is disputed.
 - `references/faq-aeo.md` — one FAQ per money page, never the same question twice, the markup on the page it describes; the anatomy of an answer an engine can quote (`FAQ005`); the questions a services firm is asked.
 - `references/meta-tags.md` — `<meta>` tags per W3C / WHATWG + Open Graph + Twitter Cards + Schema.org JSON-LD.
 - `references/site-indexes.md` — robots.txt, sitemap.xml, llms.txt, llms-full.txt, Atom / RSS, humans.txt.
 - `references/seo-essentials.md` — Google's three Search Essentials pillars + the AI Optimization Guide's foundations, applied concretely to the artifacts this skill emits. Use it when the user asks about SEO / AI search / "is this third-party advice true?".
 - `references/plain-language.md` — rewrite copy at a target reading level; preserves meaning.
-- `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post (or an existing HTML page) into a narrated WAV/MP3 via ChatterboxTTS (the router's answer today), OpenVoice v2 (both MIT for code AND weights) or Kokoro (Apache-2.0). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM enrichment via the same local Ollama daemon already used for alt-text, voice cloning (OpenVoice, Chatterbox) from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
+- `references/audio-narration.md` — *(optional editorial enhancement, not WCAG-required)* turn a Markdown post (or an existing HTML page) into a narrated WAV (Waveform Audio File Format, the standard uncompressed audio file) / MP3 via ChatterboxTTS (the router's answer today), OpenVoice v2 (both MIT for code AND weights) or Kokoro (Apache-2.0). Structural narration hints from headings / lists / blockquotes / emoji, optional LLM (large language model, the kind of AI behind chatbots such as ChatGPT or Claude) enrichment via the same local Ollama daemon already used for alt-text, voice cloning (OpenVoice, Chatterbox) from a 6-30 s designer-supplied sample, RSS enclosure injection turns the blog feed into a podcast feed.
 - `references/lint-markdown.md` — every `sprezzature-publish-lint` rule (`MD000`–`MD050`, `MDX001`–`MDX003`, `MMD001`), `--fix` and the read-only `--ai` pass.
 - `references/writing-standards.md` — the per-language writing charters and the prompt files that inject them.
-- `references/i18n.md` — multilingual frontend (URL strategy, `Intl.*`, plurals, RTL, persisted choice). Default language pair is configurable per project (EN/FR, EN/DE, EN/ES, EN/JA, …).
+- `references/i18n.md` — multilingual frontend (URL strategy, `Intl.*`, plurals, RTL (right-to-left, scripts such as Arabic or Hebrew), persisted choice). Default language pair is configurable per project (EN/FR, EN/DE, EN/ES, EN/JA, …).
 
 ## Commands
 
@@ -231,13 +233,13 @@ Every command below comes with the one `pip install sprezzature-publish`; there 
 | `sprezzature-publish-findable` | — | One SEO + GEO + AEO report, money pages first, `--fix` for the deterministic repairs. |
 | `sprezzature-publish-plain` | Ollama | Rewrites copy at a target grade (`--target-grade`, default 8); strips marketing voice |
 | `sprezzature-publish-changelog` | — | Every sibling repository's `CHANGELOG.md` → one dated Atom and RSS feed, a release per entry |
-| `sprezzature-publish-narrate` *(optional)* | the engine's model files, once: `sprezzature-audio-install-voice --engine chatterbox` (the router's answer today) | Narrates a Markdown post or an HTML page via local OSS TTS, writing the timed track beside the audio. Engine left to speaker-helper's router unless `--engine` is given. Editorial enhancement, not WCAG-required. |
+| `sprezzature-publish-narrate` *(optional)* | the engine's model files, once: `sprezzature-audio-install-voice --engine chatterbox` (the router's answer today) | Narrates a Markdown post or an HTML page via local OSS (open-source software, code anyone may read, run and change) TTS, writing the timed track beside the audio. Engine left to speaker-helper's router unless `--engine` is given. Editorial enhancement, not WCAG-required. |
 | `sprezzature-publish-readalong` *(optional)* | — | Adds the read-along to an **existing** HTML page, which has no Markdown to rebuild from. `--scope` picks the element to read; the input is never modified in place. |
 | `sprezzature-publish-mcp` | — | The seven HTTP routes + `/health` and the `/mcp` endpoint (eight tools) on one port |
 | _(the voices, from sprezzature-audio, a base dependency)_ | — | `sprezzature-audio-narrate-kokoro` / `-openvoice` / `-chatterbox`, invoked as subprocesses by the narration. They live in `sprezzature-audio` with the rest of the sound modality. |
 | _(the read-along wiring, in the package)_ | — | Wires a narrated page to its audio: a span per sentence, the `<audio>` + `<track>` player, reading time beside measured listening time. Used by `sprezzature-publish-html --readalong` and `sprezzature-publish-readalong`; refuses rather than mis-align. |
 | _(voice chooser)_ | — | `sprezzature-audio-voice` lists engine voices and generates per-voice demo clips, so the designer chooses by listening. |
-| _(voice installer)_ | — | `sprezzature-audio-install-voice --engine kokoro\|openvoice\|chatterbox\|all` fetches the model files (Kokoro's ONNX model, OpenVoice v2 checkpoints) and sets up the ChatterboxTTS voice library. |
+| _(voice installer)_ | — | `sprezzature-audio-install-voice --engine kokoro\|openvoice\|chatterbox\|all` fetches the model files (Kokoro's ONNX (Open Neural Network Exchange, a file format that lets a trained model run without the tool that trained it) model, OpenVoice v2 checkpoints) and sets up the ChatterboxTTS voice library. |
 | _(internal helpers, in the package)_ | — | Language detection + Ollama client + narration segment extractor shared by other scripts |
 
 `make-site <tool>` and `sprezzature-publish <tool>` reach the same thirteen tools (`make-site tools` lists them).
@@ -248,7 +250,7 @@ Every command below comes with the one `pip install sprezzature-publish`; there 
 |---|---|
 | Full UI design tokens, components, dark mode, dataviz | `sprezzature-ui` |
 | a11y lint (static HTML) | `sprezzature-accessibility` |
-| WCAG contrast audit, CVD simulation, curated palette | `sprezzature-colors` |
+| WCAG contrast audit, CVD (colour-vision deficiency, the medical name for colour blindness: red and green that look alike, for instance) simulation, curated palette | `sprezzature-colors` |
 | W3C alt text via local Ollama vision | `sprezzature-accessibility` |
-| WebVTT / SRT captions via local whisper.cpp | `sprezzature-audio` |
-| Wrap a CLI in a GUI | `sprezzature-cli-gui` |
+| WebVTT / SRT (SubRip, the most common subtitle file: numbered captions, each with a start and end time) captions via local whisper.cpp | `sprezzature-audio` |
+| Wrap a CLI in a GUI (graphical user interface, windows, buttons and forms you click instead of typing commands) | `sprezzature-cli-gui` |
