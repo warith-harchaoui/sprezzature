@@ -55,11 +55,11 @@ As of 2026-07-29, sprezzature is organised in two layers with distinct release c
 | `sprezzature-ui` | i18n catalogue make and audit (`locales/i18n.yaml`) beside the UI generation playbook |
 | `sprezzature-video` | Checks what a film says against the code, and whether it can be rendered again |
 
-`pip install sprezzature` installs all ten, and the skills with them.
+`pip install sprezzature` installs all ten, and the skills with them: each brick ships its own skill inside its package, so `pip install sprezzature-maps` alone carries the maps skill too, and `sprezzature-maps-skill --install` puts it where an agent reads it.
 
 All repos live under [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
-**Layer 2: the agentic layer (this repo).** `SKILL.md` files, `references/`, and `web/` stay in the `sprezzature` monorepo. They define the contracts between the Claude / OpenCode agent and the tool packages. They ship on PyPI as the `sprezzature` package, whose `sprezzature-skills` command copies them where an agent reads them.
+**Layer 2: the agentic layer.** Each `SKILL.md` and its `references/` define the contract between the Claude / OpenCode agent and one tool package, and ship inside that package (`sprezzature_<brick>/skill/`), so they travel with `pip install`. This repo holds the website (`web/`), the suite-wide `TRIGGERS.md`, and the `sprezzature` package, whose `sprezzature-skills` command installs the ten skills at once; it validates the skills and generates their trigger catalogues from the brick checkouts beside it, and keeps no copy of its own.
 
 > **What prompt activates what?** See [`TRIGGERS.md`](https://github.com/warith-harchaoui/sprezzature/blob/main/TRIGGERS.md),
 > generated from every `SKILL.md` description, lists every guaranteed
@@ -74,7 +74,7 @@ The shortest path installs the ten tool packages and the ten skills in one go:
 
 ```bash
 pip install sprezzature
-sprezzature-skills             # reports which installed skills differ from the shipped ones
+sprezzature-skills             # reports which installed skills differ from the ones the bricks ship
 sprezzature-skills --install   # copies them into ~/.claude/skills (--agent opencode for ~/.opencode/skills)
 ```
 
@@ -227,12 +227,12 @@ recipes per skill (with expected output), see [`EXAMPLES.md`](https://github.com
 
 - Output uses vanilla JavaScript (JS) (ES (the JavaScript standard, here its way of splitting code into files) modules, native `<dialog>`, custom elements when justified). No React, Vue, Svelte, Next.js, Nuxt, Angular, Solid.
 - Output uses Tailwind utility classes with semantic tokens (`bg-brand-blue`, `text-label-primary`). No raw hex literals in markup.
-- Output enforces the **three-Roboto rule**: exactly three downloaded webfonts, all from the Roboto super-family: **Roboto** (sans / UI / body), **Roboto Serif** (editorial / longform / prose-heavy landings), **Roboto Mono** (`<code>`, `<pre>`, terminal panels, log output). No other downloaded family is allowed (no Inter, no Montserrat, no IBM Plex, no JetBrains Mono). The three siblings share metrics and x-height by design; prose-heavy and code-heavy surfaces stay typographically coherent. All three are self-hosted (no Google Fonts content-delivery network (CDN, servers around the world that hand each reader a copy of a file from nearby) in production); Web Open Font Format 2 (WOFF2, the compressed font file browsers download) + SIL (SIL International, the non-profit that publishes it) Open Font License (OFL, which lets anyone use and ship the font for free) live under `sprezzature-ui/assets/fonts/roboto/`, `…/roboto-serif/`, `…/roboto-mono/`.
+- Output enforces the **three-Roboto rule**: exactly three downloaded webfonts, all from the Roboto super-family: **Roboto** (sans / UI / body), **Roboto Serif** (editorial / longform / prose-heavy landings), **Roboto Mono** (`<code>`, `<pre>`, terminal panels, log output). No other downloaded family is allowed (no Inter, no Montserrat, no IBM Plex, no JetBrains Mono). The three siblings share metrics and x-height by design; prose-heavy and code-heavy surfaces stay typographically coherent. All three are self-hosted (no Google Fonts content-delivery network (CDN, servers around the world that hand each reader a copy of a file from nearby) in production); Web Open Font Format 2 (WOFF2, the compressed font file browsers download) + SIL (SIL International, the non-profit that publishes it) Open Font License (OFL, which lets anyone use and ship the font for free) live under `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto/`, `…/roboto-serif/`, `…/roboto-mono/`.
 - Output sets a `dark:` peer on every styled element, uses `<button>`/`<a>`/`<label>`/`<dialog>`/`<form>` first, exposes a visible focus ring, honors `prefers-reduced-motion` and meets a 44×44 px hit area.
-- Output exposes a **🌞 Light / 🌚 Dark / 🌗 Auto toggle** (canonical placement: top-right of sticky header → footer far-right → fixed bottom-right anchor when there is no header). **Auto is the default** so a fresh visitor inherits their operating-system (OS, such as macOS, Windows or Android) choice and is never surprised by a hard-coded scheme. Component: `sprezzature-ui/assets/components/theme-toggle.html`. Wiring: `sprezzature-ui/references/stack-vanilla-js.md` § "Theme switching".
-- Color choices map to the palettes in `sprezzature-ui/references/color-psychology.md` (source: <https://deraison.ai/colors/>).
-- Skill output is **prototype-grade single-file HTML** by default, suitable for demos, mockups, internal tools and small landing pages. The starter page uses the Tailwind Play CDN, which Tailwind itself warns is for prototyping only. For production sites at scale, run **Tailwind CLI** or **Vite + Tailwind** over the emitted HTML before shipping; the class names are stable, so the same files survive the swap. See `sprezzature-ui/references/stack-tailwind.md`.
-- Bilingual-ready copy (EN/FR by default). The output language of the AI-backed scripts is **auto-detected from the input/context text** via `langdetect`: no configured default language; pass `--lang` to force one. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui-i18n-make` and `sprezzature-publish/references/i18n.md`).
+- Output exposes a **🌞 Light / 🌚 Dark / 🌗 Auto toggle** (canonical placement: top-right of sticky header → footer far-right → fixed bottom-right anchor when there is no header). **Auto is the default** so a fresh visitor inherits their operating-system (OS, such as macOS, Windows or Android) choice and is never surprised by a hard-coded scheme. Component: `sprezzature-ui/sprezzature_ui/skill/assets/components/theme-toggle.html`. Wiring: `sprezzature-ui/sprezzature_ui/skill/references/stack-vanilla-js.md` § "Theme switching".
+- Color choices map to the palettes in `sprezzature-ui/sprezzature_ui/skill/references/color-psychology.md` (source: <https://deraison.ai/colors/>).
+- Skill output is **prototype-grade single-file HTML** by default, suitable for demos, mockups, internal tools and small landing pages. The starter page uses the Tailwind Play CDN, which Tailwind itself warns is for prototyping only. For production sites at scale, run **Tailwind CLI** or **Vite + Tailwind** over the emitted HTML before shipping; the class names are stable, so the same files survive the swap. See `sprezzature-ui/sprezzature_ui/skill/references/stack-tailwind.md`.
+- Bilingual-ready copy (EN/FR by default). The output language of the AI-backed scripts is **auto-detected from the input/context text** via `langdetect`: no configured default language; pass `--lang` to force one. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui-i18n-make` and `sprezzature-publish/sprezzature_publish/skill/references/i18n.md`).
 - **i18n lives in YAML (the YAML configuration format), never in JS.** Translatable strings, GUI labels **and** LLM prompts, belong in a single per-project catalog, **`locales/i18n.yaml`** (message id → per-locale text), loaded at runtime; never a translation dict baked into JavaScript, never a prompt inlined in Python. GUI strings and prompts share `locales/i18n.yaml` because they share one concern: *language*. Prompts already ship this way (`prompts/*.yaml`, loaded via `_prompts.load_prompt`); the same rule governs generated graphical interfaces (GUIs, windows and forms you click), on both the **make** (scaffold + read `locales/i18n.yaml`) and **audit** (flag any GUI string or prompt living outside it: hardcoded in JS or inlined in Python) sides.
 
 ## Status
@@ -269,7 +269,7 @@ What you give the agent and what comes back. Each row is a self-contained flow; 
 | An image file (`*.png`, `*.jpg`, …) | "Alt text for this image" | `sprezzature-accessibility` | W3C-compliant alt text for the right purpose category (informative / decorative / functional / text / complex / group), in the page's language, tagged `data-alt-source="ai"`. |
 | An audio or video file (`.mp4`, `.wav`, `.mp3`, …), **WiP** | "Captions / transcript" | `sprezzature-audio` *(work in progress)* | WebVTT / SRT / plain-text captions from local whisper.cpp, with project-vocab biasing. `<video>` + `<track kind="captions">` snippet. Script + tests ship today; per-language WER baselines and the vocab-biasing reference clip are still being collected; see [Status](#status). |
 | A logo (`logo.png` / `.svg`) | "Favicon set" / "PWA icons" | `sprezzature-publish` | `favicon.svg` + `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + a `head.html` snippet. |
-| A goal description or an HTML page | "Meta tags" / "SEO" / "OG card" / "GEO" / "llms.txt" / "AI Overview" | `sprezzature-publish` | **For search-engine optimization (SEO):** title + description + Open Graph (OG) + Twitter Card + Schema.org JSON for Linking Data (JSON-LD, JSON hidden in a page that tells search engines what it is about) (JSON on stdout): see [Google's three Search Essentials pillars](https://developers.google.com/search/docs/essentials) applied in `sprezzature-publish/references/seo-essentials.md`. **For generative-engine optimization (GEO)** (Generative Engine Optimization, AI Overview / Gemini / ChatGPT answer surfaces): `llms.txt` is emitted by `sprezzature-publish-indexes` alongside `robots.txt` + `sitemap.xml` + Atom/really-simple-syndication (RSS, a feed that lets readers follow a site's new posts in a reader app), so the site ships an LLM-readable Markdown summary the moment any "turn this into a website" run completes. Same crawlers, same `robots.txt` permissions; no separate "AI" meta tag exists; anything claiming one is wrong. |
+| A goal description or an HTML page | "Meta tags" / "SEO" / "OG card" / "GEO" / "llms.txt" / "AI Overview" | `sprezzature-publish` | **For search-engine optimization (SEO):** title + description + Open Graph (OG) + Twitter Card + Schema.org JSON for Linking Data (JSON-LD, JSON hidden in a page that tells search engines what it is about) (JSON on stdout): see [Google's three Search Essentials pillars](https://developers.google.com/search/docs/essentials) applied in `sprezzature-publish/sprezzature_publish/skill/references/seo-essentials.md`. **For generative-engine optimization (GEO)** (Generative Engine Optimization, AI Overview / Gemini / ChatGPT answer surfaces): `llms.txt` is emitted by `sprezzature-publish-indexes` alongside `robots.txt` + `sitemap.xml` + Atom/really-simple-syndication (RSS, a feed that lets readers follow a site's new posts in a reader app), so the site ships an LLM-readable Markdown summary the moment any "turn this into a website" run completes. Same crawlers, same `robots.txt` permissions; no separate "AI" meta tag exists; anything claiming one is wrong. |
 | An existing site (HTML, PHP (PHP: Hypertext Preprocessor, a language servers use to build each page when it is requested, as WordPress does), Markdown, JSON, YAML) | "My site doesn't sell" / "Write me a FAQ" / "AEO" | `sprezzature-publish` | First a question: which call to action is the site for (detection offers what it already links to). Then the FAQ the site is missing, every answer drawn from its own pages and the unanswerable questions listed apart; and one SEO + GEO + AEO report, money pages first. |
 | Draft UI copy | "Plain language" / "Rewrite at grade 8" | `sprezzature-publish` | Same meaning, marketing voice stripped, output length ≤ 1.1× original. |
 | A palette JSON | "Contrast audit" / "Is my palette accessible?" | `sprezzature-colors` | Every `(label, surface)` pair walked, failures listed with the nearest OKLCH-neighbour fix. Exit 1 on any failure. |
@@ -606,14 +606,14 @@ A `repo: local` hook runs the command from your own environment, so
 
 The `sprezzature-cli-gui` skill takes an existing CLI and produces a single-page vanilla-JS + Tailwind GUI for it. It reads the argument parser, categorizes each command (one-shot / form / streaming / list), maps flags to form controls, and wires execution to the project's host (Tauri, Electron, FastAPI, Express, or a stdlib HyperText Transfer Protocol (HTTP) + server-sent events (SSE, a connection over which the server keeps pushing new lines, as a live log does) proxy).
 
-A runnable worked example ships in `sprezzature-cli-gui/assets/examples/cli-gui-demo/`. Launch:
+A runnable worked example ships with the skill, inside the `sprezzature-cli-gui` package, at `sprezzature_cli_gui/skill/assets/examples/cli-gui-demo/`. From a clone of that repository:
 
 ```bash
-cd sprezzature-cli-gui/assets/examples/cli-gui-demo
+cd sprezzature_cli_gui/skill/assets/examples/cli-gui-demo
 python server.py  # stdlib only, opens http://localhost:8787
 ```
 
-For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see `sprezzature-cli-gui/SKILL.md` → "Why this skill, not Gradio / Streamlit / Tauri / Taipy" and [LANDSCAPE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md) § 7.
+For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see the skill's `SKILL.md` (`sprezzature_cli_gui/skill/SKILL.md` in the `sprezzature-cli-gui` repository) → "Why this skill, not Gradio / Streamlit / Tauri / Taipy" and [LANDSCAPE.md](https://github.com/warith-harchaoui/sprezzature/blob/main/LANDSCAPE.md) § 7.
 
 ## Author
 
@@ -637,7 +637,7 @@ for fruitful discussions.
 
 Color palettes from <https://deraison.ai/colors/>.
 
-The three Roboto families are bundled in `sprezzature-ui/assets/fonts/roboto/`, `sprezzature-ui/assets/fonts/roboto-serif/`, and `sprezzature-ui/assets/fonts/roboto-mono/`, each under the SIL Open Font License; see the bundled `OFL.txt` in each folder.
+The three Roboto families are bundled in `web/fonts/roboto/`, `web/fonts/roboto-serif/` and `web/fonts/roboto-mono/` for the website, and with the `sprezzature-ui` skill in that brick's package, each under the SIL Open Font License; see the bundled `OFL.txt` in each folder.
 
 We also drew on the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), [Google Material Design](https://material.io/design) and [Laws of UX](https://lawsofux.com/)
 
@@ -651,7 +651,7 @@ documentation, (3) do not use the copyright holder's name to endorse
 derived products without permission. See `LICENSE.md` for the canonical
 text. The bundled Roboto / Roboto Serif / Roboto Mono fonts remain
 under the SIL Open Font License (see the `OFL.txt` bundled in each
-`sprezzature-ui/assets/fonts/roboto*/` folder); the Berkeley Software Distribution license (BSD-3-Clause)
+`web/fonts/roboto*/` folder); the Berkeley Software Distribution license (BSD-3-Clause)
 above applies to the source, not to the fonts.
 
 **License vs. attribution.** Author credits in the docs are voluntary

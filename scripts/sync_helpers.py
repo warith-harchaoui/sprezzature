@@ -112,6 +112,15 @@ CANONICAL: dict[str, str] = {
     # `sprezzature-accessibility` is canonical: written there, and there is
     # where the real defect was found.
     "tests/_pywindow.py": "sprezzature-accessibility/tests/_pywindow.py",
+    # The skill surface. Until 2026-11-12 the ten skills lived in this hub
+    # only, so `pip install sprezzature-maps` carried every surface but the one
+    # written for an agent. Each brick now ships its skill inside the package,
+    # and these two files -- the install command and the guard that the wheel
+    # carries it -- name no brick, so they are shared verbatim.
+    # sprezzature-audio is canonical, like the other skill helpers.
+    "_skill.py": "sprezzature-audio/sprezzature_audio/_skill.py",
+    "tests/test_the_skill_ships_with_the_package.py":
+        "sprezzature-audio/tests/test_the_skill_ships_with_the_package.py",
 }
 
 #: Shared helpers duplicated across skills, in reporting order.

@@ -17,9 +17,9 @@ your tokens land for those readers, not to process arbitrary imagery.
 This is the human landing page. It points to the places that hold the
 detail; nothing is duplicated here.
 
-- **What it is & what activates it:** [`sprezzature-colors/SKILL.md`](../sprezzature-colors/SKILL.md)
+- **What it is & what activates it:** [`sprezzature-colors/sprezzature_colors/skill/SKILL.md`](https://github.com/warith-harchaoui/sprezzature-colors/blob/main/sprezzature_colors/skill/SKILL.md))
   (the agent-facing spec: purpose, trigger phrases, full flag surface).
 - **Run it:** [`EXAMPLES.md`](../EXAMPLES.md) has a copy-paste recipe for
   `sprezzature-colors`.
-- **Go deeper:** [`sprezzature-colors/references/`](../sprezzature-colors/references/): the palette comma-separated values (CSV) file, the contrast audit, color-vision deficiency (CVD) simulation, accessibility levels, and the trigger catalogue.
+- **Go deeper:** [`sprezzature-colors/sprezzature_colors/skill/references/`](https://github.com/warith-harchaoui/sprezzature-colors/tree/main/sprezzature_colors/skill/references/)): the palette comma-separated values (CSV) file, the contrast audit, color-vision deficiency (CVD) simulation, accessibility levels, and the trigger catalogue.
 - **Every command, route and MCP tool:** the package's [`README.md`](https://github.com/warith-harchaoui/sprezzature-colors/blob/main/README.md) and [`TRIGGERS.md`](https://github.com/warith-harchaoui/sprezzature-colors/blob/main/TRIGGERS.md).

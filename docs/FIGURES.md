@@ -20,7 +20,7 @@ eight tools) and the agent skill.
 This is the human landing page. It points to the places that hold the
 detail; nothing is duplicated here.
 
-- **What it is & what activates it:** [`sprezzature-figures/SKILL.md`](../sprezzature-figures/SKILL.md)
+- **What it is & what activates it:** [`sprezzature-figures/sprezzature_figures/skill/SKILL.md`](https://github.com/warith-harchaoui/sprezzature-figures/blob/main/sprezzature_figures/skill/SKILL.md))
   (the agent-facing spec: purpose, trigger phrases, the full tool surface).
 - **See it rendered:** the [figures gallery](https://sprezzature.ai/figures.html)
   shows 161 of the 168 kinds on the house palette; the five glyph maps are on
@@ -30,6 +30,6 @@ detail; nothing is duplicated here.
   [`FIGURES.md`](https://github.com/warith-harchaoui/sprezzature-figures/blob/main/FIGURES.md).
 - **Run it:** [`EXAMPLES.md`](../EXAMPLES.md) has a copy-paste recipe for
   `sprezzature-figures`.
-- **Go deeper:** [`sprezzature-figures/references/`](../sprezzature-figures/references/):
+- **Go deeper:** [`sprezzature-figures/sprezzature_figures/skill/references/`](https://github.com/warith-harchaoui/sprezzature-figures/tree/main/sprezzature_figures/skill/references/)):
   the Ralph Eyeball Loop, the audit rules, explainability, causality, polarity
   and colour, and the trigger catalogue.

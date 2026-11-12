@@ -143,7 +143,8 @@ def targets() -> list[Path]:
         for name in ("README.md", "LISEZMOI.md", "PHILOSOPHY.md", "PHILOSOPHIE.md"):
             if (repo / name).is_file():
                 docs.append(repo / name)
-    docs += sorted(REPO_ROOT.glob("sprezzature-*/SKILL.md"))
+    # The skills ship inside their bricks since 2026-11-12.
+    docs += sorted(SIBLINGS.glob("sprezzature-*/sprezzature_*/skill/SKILL.md"))
     return pages + docs
 
 

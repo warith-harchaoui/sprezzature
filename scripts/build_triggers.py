@@ -54,7 +54,7 @@ from pathlib import Path
 
 import yaml
 
-from skills_manifest import SHIPPED_SKILLS
+from skills_manifest import SHIPPED_SKILLS, skill_dir
 
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent
@@ -171,7 +171,7 @@ def _description(skill: str) -> str:
     KeyError
         If the frontmatter lacks a description field.
     """
-    path: Path = REPO_ROOT / skill / "SKILL.md"
+    path: Path = skill_dir(skill) / "SKILL.md"
     text: str = path.read_text(encoding="utf-8")
     m = re.match(r"---\n(.*?)\n---", text, re.DOTALL)
     if not m:
@@ -650,7 +650,7 @@ def main(argv: list[str] | None = None) -> int:
     # an agent that has chosen can read the exhaustive list without the repo.
     targets: dict[Path, str] = {OUTPUT: build()}
     for skill in SHIPPED_SKILLS:
-        targets[REPO_ROOT / skill / "references" / "triggers.md"] = (
+        targets[skill_dir(skill) / "references" / "triggers.md"] = (
             build_skill_reference(skill)
         )
 
@@ -662,7 +662,7 @@ def main(argv: list[str] | None = None) -> int:
         if drifted:
             for path in drifted:
                 print(
-                    f"{path.relative_to(REPO_ROOT)} is out of sync with the "
+                    f"{path.relative_to(REPO_ROOT.parent)} is out of sync with the "
                     f"SKILL.md descriptions.",
                     file=sys.stderr,
                 )

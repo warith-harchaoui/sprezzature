@@ -79,5 +79,35 @@ def _load() -> tuple[str, ...]:
 #: imports of this module become a single tuple lookup downstream.
 SHIPPED_SKILLS: tuple[str, ...] = _load()
 
+#: The directory holding this checkout and the ten brick checkouts beside it.
+SIBLINGS: Path = _MANIFEST_PATH.parent.parent
 
-__all__ = ("SHIPPED_SKILLS",)
+
+def skill_dir(name: str, siblings: Path = SIBLINGS) -> Path:
+    """
+    The folder of one shipped skill, inside its brick's package.
+
+    Since 2026-11-12 a skill lives in its brick, at
+    ``sprezzature-maps/sprezzature_maps/skill/``, so that ``pip install
+    sprezzature-maps`` carries it; this repository holds no copy. Every
+    script and test here that reads a ``SKILL.md`` or its ``references/``
+    asks this function, so the location is written once.
+
+    Parameters
+    ----------
+    name : str
+        Skill folder name, e.g. ``"sprezzature-maps"``.
+    siblings : pathlib.Path, optional
+        Directory holding the brick checkouts; the parent of this one by
+        default.
+
+    Returns
+    -------
+    pathlib.Path
+        ``<siblings>/<name>/<package>/skill``. It may not exist: a machine
+        holding this checkout alone has no brick beside it.
+    """
+    return siblings / name / name.replace("-", "_") / "skill"
+
+
+__all__ = ("SHIPPED_SKILLS", "SIBLINGS", "skill_dir")

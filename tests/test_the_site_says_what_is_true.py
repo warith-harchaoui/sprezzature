@@ -244,10 +244,12 @@ def test_the_sitemap_does_not_offer_a_noindexed_page() -> None:
 
 def test_every_package_the_site_names_is_one_the_suite_ships() -> None:
     """A package page for something that does not exist is worse than none."""
-    shipped = {
-        p.name for p in REPO_ROOT.glob("sprezzature-*") if (p / "SKILL.md").is_file()
-    }
-    assert shipped, "no skill folders found — has the layout changed?"
+    # The manifest, not a folder glob: the skills live in their bricks since
+    # 2026-11-12, and SKILLS.txt is the list every other consumer reads.
+    from skills_manifest import SHIPPED_SKILLS
+
+    shipped = set(SHIPPED_SKILLS)
+    assert shipped, "SKILLS.txt lists no skill — has the layout changed?"
 
     named: set[str] = set()
     for page in _PAGES:

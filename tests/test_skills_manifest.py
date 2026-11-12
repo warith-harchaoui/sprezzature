@@ -27,7 +27,7 @@ from pathlib import Path
 
 import pytest
 
-from skills_manifest import SHIPPED_SKILLS
+from skills_manifest import SHIPPED_SKILLS, SIBLINGS, skill_dir
 
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent
@@ -48,33 +48,49 @@ def test_manifest_is_non_empty() -> None:
 
 @pytest.mark.parametrize("skill", SHIPPED_SKILLS)
 def test_each_manifest_entry_has_a_folder(skill: str) -> None:
-    """Every name in the manifest must have a folder + a ``SKILL.md``."""
-    folder: Path = REPO_ROOT / skill
-    assert folder.is_dir(), f"{skill}: folder named in SKILLS.txt is missing"
+    """Every name in the manifest ships a folder + a ``SKILL.md`` in its brick."""
+    folder: Path = skill_dir(skill)
+    if not (SIBLINGS / skill).is_dir():
+        pytest.skip(f"{skill} is not checked out beside this repository")
+    assert folder.is_dir(), f"{skill}: no skill folder at {folder}"
     assert (folder / "SKILL.md").is_file(), (
-        f"{skill}: folder exists but has no SKILL.md"
+        f"{skill}: {folder} exists but has no SKILL.md"
+    )
+
+
+def test_this_repository_holds_no_copy_of_a_skill() -> None:
+    """
+    No ``SKILL.md`` sits in this repository any more.
+
+    Until 2026-11-12 the ten skills lived here and nowhere else, so
+    ``pip install sprezzature-maps`` carried no skill. They moved into their
+    bricks; a copy coming back here would be a second version of the truth,
+    and the one the bricks' wheels do not carry.
+    """
+    copies = sorted(str(p.relative_to(REPO_ROOT)) for p in REPO_ROOT.glob("sprezzature-*/SKILL.md"))
+    assert not copies, (
+        f"skill copies found in the hub: {copies}. The skill lives in its brick, "
+        f"at sprezzature-<brick>/sprezzature_<brick>/skill/."
     )
 
 
 def test_no_orphan_skill_folders_on_disk() -> None:
     """
-    Every ``sprezzature-*`` folder on disk must be declared in the manifest.
+    Every brick checkout beside this one that ships a skill is declared.
 
-    Catches the failure mode where someone adds a folder but forgets
-    to declare it in ``SKILLS.txt``, leaving it out of the release
-    bundle / the validator.
+    Catches the failure mode where someone adds a brick but forgets to
+    declare it in ``SKILLS.txt``, leaving its skill out of the validator and
+    of ``sprezzature-skills --install``.
     """
     on_disk: set[str] = {
         p.name
-        for p in REPO_ROOT.iterdir()
-        if p.is_dir() and p.name.startswith("sprezzature-")
-        and (p / "SKILL.md").is_file()
+        for p in SIBLINGS.glob("sprezzature-*")
+        if p.is_dir() and (skill_dir(p.name) / "SKILL.md").is_file()
     }
     declared: set[str] = set(SHIPPED_SKILLS)
     orphans: set[str] = on_disk - declared
     assert not orphans, (
-        f"sprezzature-* folder(s) on disk but absent from SKILLS.txt: {sorted(orphans)}. "
-        f"Either add the folder to SKILLS.txt or remove its SKILL.md."
+        f"brick(s) shipping a skill but absent from SKILLS.txt: {sorted(orphans)}."
     )
 
 

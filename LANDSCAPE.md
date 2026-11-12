@@ -209,7 +209,7 @@ What kind of work are you doing? Find the row and the honest recommendation.
 |---|---|---|
 | Vanilla JS + Tailwind user-interface (UI) output, no framework | `sprezzature-ui` | If the team has already picked React/Vue/Svelte. `sprezzature` refuses to emit framework code; you'd be fighting it. |
 | React + design system stack | none | [shadcn/ui](https://ui.shadcn.com), [Mantine](https://mantine.dev), [Material UI (MUI)](https://mui.com). shadcn is closest in philosophy (copy-paste, no runtime lock-in). |
-| Material-3 native look | none | [Material Web Components](https://material-web.dev) for first-party Material; `sprezzature-ui/references/material-design.md` only maps Material roles into the skill's tokens. |
+| Material-3 native look | none | [Material Web Components](https://material-web.dev) for first-party Material; `sprezzature-ui/sprezzature_ui/skill/references/material-design.md` only maps Material roles into the skill's tokens. |
 | Wrap a Python / Node / Go CLI in a web GUI | `sprezzature-cli-gui` | If you want auto-form-from-signature with no UI control: [Gradio](https://gradio.app) (machine-learning (ML) demos), [Streamlit](https://streamlit.io) (data apps), [Taipy](https://taipy.io). `sprezzature-cli-gui` scaffolds plain HTML you edit; those tools give you a runtime UI you cannot easily restyle. |
 | Wrap a CLI as a native desktop app binary | `sprezzature-cli-gui` (UI) + Tauri (shell) | [Tauri](https://tauri.app) is the desktop shell; `sprezzature-cli-gui` emits what goes inside the web view. If you only need the desktop, Tauri's defaults are fine. |
 | Build a docs site from a small README + `docs/` | `sprezzature-publish` | For 100+ versioned pages or for a docs site with side-by-side per-release views: [MkDocs Material](https://squidfunk.github.io/mkdocs-material/), [Hugo](https://gohugo.io), [Astro](https://astro.build), [Docusaurus](https://docusaurus.io). `sprezzature-publish` is for small projects (< 30 pages). |
@@ -298,15 +298,15 @@ webfonts, all from the Roboto super-family. The trio shares metrics,
 x-height, and visual rhythm by design, which keeps prose-heavy and
 code-heavy surfaces typographically coherent and trims the payload to
 ~290 KB total (latin subset, all three combined, variable-axis Web Open Font Format 2 (WOFF2)).
-**The rule is a default, not enforcement**: per `sprezzature-ui/SKILL.md`
+**The rule is a default, not enforcement**: per `sprezzature-ui/sprezzature_ui/skill/SKILL.md`
 hard rule 3 (since v0.6.4), the skill respects existing typefaces
 when auditing existing UI and honors any typeface the user names.
 
 | Font | Weights | Latin Ext. / Cyrillic | License | Variable | Cost | Skill alignment | Notes |
 |---|---|---|---|:---:|---|:---:|---|
-| **Roboto** (used, sans)     | 100–900 + italics | both | SIL Open Font License (OFL) | ✓ | free | ✓ | Self-hosted in `sprezzature-ui/assets/fonts/roboto/`. Default UI + body. |
-| **Roboto Serif** (used, serif) | 100–900 + italics | both | OFL | ✓ | free | ✓ | Self-hosted in `sprezzature-ui/assets/fonts/roboto-serif/`. Editorial / longform. |
-| **Roboto Mono** (used, mono)   | 100–700 + italics | both | OFL | ✓ | free | ✓ | Self-hosted in `sprezzature-ui/assets/fonts/roboto-mono/`. `<code>` / `<pre>` / log panels. |
+| **Roboto** (used, sans)     | 100–900 + italics | both | SIL Open Font License (OFL) | ✓ | free | ✓ | Self-hosted in `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto/`. Default UI + body. |
+| **Roboto Serif** (used, serif) | 100–900 + italics | both | OFL | ✓ | free | ✓ | Self-hosted in `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto-serif/`. Editorial / longform. |
+| **Roboto Mono** (used, mono)   | 100–700 + italics | both | OFL | ✓ | free | ✓ | Self-hosted in `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto-mono/`. `<code>` / `<pre>` / log panels. |
 | [Inter](https://rsms.me/inter/) | 100–900 + italics | both | OFL | ✓ | free | ~ | Industry default for SaaS UI. Not the skill default, but honored if the user names it. |
 | [Montserrat](https://fonts.google.com/specimen/Montserrat) | 100–900 + italics | both | OFL | ✓ | free | ~ | Former default, replaced by Roboto in v0.6.0. Still honored if a project names it. |
 | [IBM Plex Sans](https://www.ibm.com/plex/) | 100–700 | both | OFL | ~ | free | ~ | Neutral corporate. Not the default; the skill carries it through if a project ships it. |
@@ -508,7 +508,7 @@ Pair `sprezzature-accessibility-lint` (static, in CI) with axe-core (runtime, in
 
 | Source | What it covers | Skill alignment | Notes |
 |---|---|:---:|---|
-| **[Google Search Essentials](https://developers.google.com/search/docs/essentials)** (the three pillars) | Technical requirements + spam policies + key best practices | ✓ | The canonical source for what Google reads. Adapted in `sprezzature-publish/references/seo-essentials.md` to the artifacts the skill emits. |
+| **[Google Search Essentials](https://developers.google.com/search/docs/essentials)** (the three pillars) | Technical requirements + spam policies + key best practices | ✓ | The canonical source for what Google reads. Adapted in `sprezzature-publish/sprezzature_publish/skill/references/seo-essentials.md` to the artifacts the skill emits. |
 | **[Google AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)** | What changes (and what doesn't) for AI Overview / generative search | ✓ | Same foundations as Search Essentials. No new meta tag for AI; same `robots.txt`. |
 | **[Google "Third-party SEO"](https://developers.google.com/search/docs/fundamentals/third-party-seo)** | How to recognize legitimate vs. questionable advice and tools | ✓ | Surfaces "no Google-approved badges, no ranking guarantees", useful when a user pastes blog-post advice. |
 | **[llmstxt.org](https://llmstxt.org/)** | Community convention for an LLM-readable site summary at `/llms.txt` | ✓ | Already emitted by `sprezzature-publish-indexes`; this is the GEO artifact most agents look for. |

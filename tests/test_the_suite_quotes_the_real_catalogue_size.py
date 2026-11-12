@@ -62,12 +62,14 @@ CATALOGUE_CLAIM_FILES = (
     "PHILOSOPHY.md",
     "PHILOSOPHIE.md",
     "docs/FIGURES.md",
-    "sprezzature-figures/SKILL.md",
+    # The skill ships inside its brick since 2026-11-12; its prose is still
+    # this suite's claim, read from the checkout beside this one.
+    "../sprezzature-figures/sprezzature_figures/skill/SKILL.md",
     "sprezzature-figures/FIGURES.md",
-    "sprezzature-figures/references/publication-presets.md",
-    "sprezzature-figures/references/ralph-eyeball-loop.md",
-    "sprezzature-figures/references/dataviz-decision-tree.md",
-    "sprezzature-figures/references/figure-catalog.md",
+    "../sprezzature-figures/sprezzature_figures/skill/references/publication-presets.md",
+    "../sprezzature-figures/sprezzature_figures/skill/references/ralph-eyeball-loop.md",
+    "../sprezzature-figures/sprezzature_figures/skill/references/dataviz-decision-tree.md",
+    "../sprezzature-figures/sprezzature_figures/skill/references/figure-catalog.md",
     "scripts/build_films_page.py",
     # Generated from build_films_page.py above, and committed. Both are
     # listed: the generator so a regeneration is right, the pages so a
@@ -123,6 +125,8 @@ def _gallery_size() -> int:
 def _claims(path: str) -> list[tuple[int, int, str]]:
     """Every quoted count in a file, as ``(line number, number, the line)``."""
     found = []
+    if path.startswith("../") and not (REPO_ROOT / path).is_file():
+        return found  # a brick not checked out here: nothing of this suite's to read
     for lineno, line in enumerate((REPO_ROOT / path).read_text(encoding="utf-8").splitlines(), 1):
         if "127.0.0.1" in line:  # an address, not a catalogue
             continue

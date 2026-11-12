@@ -50,7 +50,7 @@ except ModuleNotFoundError:  # pragma: no cover - Python 3.10 only
 
 #: Every checkout that publishes a package, and its import name. This
 #: repository is in the list: it publishes ``sprezzature``, the distribution
-#: that carries the skills, and leaving it out meant the one package whose
+#: that gathers the skills, and leaving it out meant the one package whose
 #: wheel nobody had ever installed from a clean venv was the flagship.
 PACKAGES: dict[str, str] = {
     "sprezzature": "sprezzature",
@@ -72,7 +72,7 @@ PACKAGES: dict[str, str] = {
 }
 
 #: Imported with the [api,mcp] extras: the two surfaces that broke silently.
-#: A package that declares neither (``sprezzature`` is skills and a copier,
+#: A package that declares neither (``sprezzature`` gathers skills and copies them,
 #: not a server) is checked on its top-level import and its commands alone.
 SURFACES = ("api", "mcp")
 
@@ -108,10 +108,18 @@ def surfaces_of(repo: Path) -> tuple[str, ...]:
 
 def _missing_skills(py: Path) -> list[str]:
     """Skill folders `sprezzature` advertises but did not ship, if any."""
+    # Since 2026-11-12 each skill ships inside its brick and `skill_path`
+    # resolves it through the installed brick, so this asks the bricks that
+    # pip resolved, not a copy in this wheel. A brick too old to ship one
+    # raises, and counts as absent.
     probe = (
-        "import sprezzature as s;"
-        "print(' '.join(n for n in s.SKILL_NAMES "
-        "if not (s.skill_path(n) / 'SKILL.md').is_file()))"
+        "import sprezzature as s\n"
+        "def ok(n):\n"
+        "    try:\n"
+        "        return (s.skill_path(n) / 'SKILL.md').is_file()\n"
+        "    except Exception:\n"
+        "        return False\n"
+        "print(' '.join(n for n in s.SKILL_NAMES if not ok(n)))"
     )
     r = subprocess.run([str(py), "-c", probe], cwd="/", capture_output=True,
                        text=True, timeout=60)
@@ -154,12 +162,11 @@ def check(repo_name: str, package: str, keep: bool) -> list[str]:
             last = r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "?"
             problems.append(f"{repo_name}: import {package} — {last[:120]}")
         elif repo_name == "sprezzature":
-            # This package's whole payload is folders, not modules: importing
-            # it proves nothing about whether the skills came with it. The
-            # three hand-kept tables in pyproject.toml decide that, and when
-            # SKILL_NAMES grows and they do not, the wheel names a skill whose
-            # files are absent — invisible from a checkout, where the folder
-            # sits in the source tree.
+            # Importing this package proves nothing about whether the skills
+            # arrive with it: they come from the bricks it depends on, and a
+            # floor that admits a brick released before its skill moved in
+            # names a skill no installed package carries — invisible from a
+            # checkout, where the brick sits beside this one.
             problems += _missing_skills(py)
 
         for surface in surfaces:

@@ -66,11 +66,11 @@ Depuis le 2026-07-29, sprezzature s'organise en deux couches aux cycles de relea
 | `sprezzature-ui` | Fabrication et audit du catalogue i18n (`locales/i18n.yaml`) à côté du guide de génération d'interface |
 | `sprezzature-video` | Vérifie ce qu'un film dit contre le code, et s'il peut être rendu à nouveau |
 
-`pip install sprezzature` installe les dix, et les *skills* avec eux.
+`pip install sprezzature` installe les dix, et les *skills* avec eux : chaque brique livre son *skill* dans son propre paquet, si bien que `pip install sprezzature-maps` seul apporte aussi le *skill* des cartes, et que `sprezzature-maps-skill --install` le pose là où un agent le lit.
 
 Tous les repos sont sur [github.com/warith-harchaoui/](https://github.com/warith-harchaoui/).
 
-**Couche 2 : la couche agentique (ce repo).** Les fichiers `SKILL.md`, `references/` et `web/` restent dans le monorepo `sprezzature`. Ils définissent les contrats entre l'agent Claude / OpenCode et les packages outils. Ils sont publiés sur PyPI dans le paquet `sprezzature`, dont la commande `sprezzature-skills` les copie là où un agent les lit.
+**Couche 2 : la couche agentique.** Chaque `SKILL.md` et ses `references/` définissent le contrat entre l'agent Claude / OpenCode et un paquet outil, et sont livrés dans ce paquet (`sprezzature_<brique>/skill/`) : ils voyagent avec `pip install`. Ce repo garde le site (`web/`), le `TRIGGERS.md` de toute la suite et le paquet `sprezzature`, dont la commande `sprezzature-skills` installe les dix *skills* d'un coup ; il valide les *skills* et génère leurs catalogues de déclencheurs depuis les dépôts des briques posés à côté de lui, sans en garder de copie.
 
 > **Quelle phrase déclenche quel *skill* ?** Voir
 > [`TRIGGERS.md`](TRIGGERS.md), généré depuis chaque `SKILL.md`,
@@ -87,7 +87,7 @@ Le chemin le plus court installe d'un coup les dix paquets outils et les dix *sk
 
 ```bash
 pip install sprezzature
-sprezzature-skills             # dit quels skills installés diffèrent de ceux livrés
+sprezzature-skills             # dit quels skills installés diffèrent de ceux que livrent les briques
 sprezzature-skills --install   # les copie dans ~/.claude/skills (--agent opencode pour ~/.opencode/skills)
 ```
 
@@ -265,7 +265,7 @@ carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur
   JetBrains Mono). Les trois familles partagent par construction les
   mêmes métriques et la même hauteur d'x, si bien que les surfaces mêlant prose
   et code restent cohérentes typographiquement. Toutes sont
-  auto-hébergées (pas de CDN (Content Delivery Network, des serveurs répartis dans le monde qui livrent chaque fichier depuis un serveur proche du lecteur) Google Fonts en production) ; les fichiers de police Web Open Font Format version 2 (WOFF2, le fichier de police compressé que télécharge le navigateur) et leur licence libre OFL (SIL Open Font License, qui permet à chacun d'utiliser et de distribuer la police gratuitement) vivent sous `sprezzature-ui/assets/fonts/roboto/`, `…/roboto-serif/`
+  auto-hébergées (pas de CDN (Content Delivery Network, des serveurs répartis dans le monde qui livrent chaque fichier depuis un serveur proche du lecteur) Google Fonts en production) ; les fichiers de police Web Open Font Format version 2 (WOFF2, le fichier de police compressé que télécharge le navigateur) et leur licence libre OFL (SIL Open Font License, qui permet à chacun d'utiliser et de distribuer la police gratuitement) vivent sous `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto/`, `…/roboto-serif/`
   et `…/roboto-mono/`.
 - Le code pose une variante `dark:` sur chaque élément stylé,
   privilégie `<button>` / `<a>` / `<label>` / `<dialog>` / `<form>`,
@@ -277,10 +277,10 @@ carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur
   pas de header). **Auto est le défaut**, pour qu'un visiteur frais
   hérite du choix de son système d'exploitation (OS, comme macOS, Windows ou Android) et ne soit jamais surpris par un thème
   forcé. Composant :
-  `sprezzature-ui/assets/components/theme-toggle.html`. Câblage :
-  `sprezzature-ui/references/stack-vanilla-js.md` § « Theme switching ».
+  `sprezzature-ui/sprezzature_ui/skill/assets/components/theme-toggle.html`. Câblage :
+  `sprezzature-ui/sprezzature_ui/skill/references/stack-vanilla-js.md` § « Theme switching ».
 - Les choix de couleur renvoient aux palettes de
-  `sprezzature-ui/references/color-psychology.md` (source :
+  `sprezzature-ui/sprezzature_ui/skill/references/color-psychology.md` (source :
   <https://deraison.ai/colors/>).
 - La sortie du *skill* est **du HTML mono-fichier de niveau prototype**
   par défaut, adaptée aux démos, maquettes, outils internes et
@@ -289,14 +289,14 @@ carte 2-D de la place de `sprezzature`. Pour des sites réels déjà livrés sur
   de production à l'échelle, faites passer **Tailwind CLI** ou
   **Vite + Tailwind** sur le HTML émis avant déploiement ; les noms de
   classes sont stables, donc les mêmes fichiers survivent à la
-  bascule. Voir `sprezzature-ui/references/stack-tailwind.md`.
+  bascule. Voir `sprezzature-ui/sprezzature_ui/skill/references/stack-tailwind.md`.
 - Texte bilingue (EN/FR par défaut). La langue de sortie des scripts
   IA est **détectée automatiquement depuis le texte d'entrée / de
   contexte** via `langdetect` ; pas de langue par défaut configurée ;
   passez `--lang` pour en forcer une. Pour les chaînes d'interface et
   les prompts traduisibles, utilisez un seul catalogue
   `locales/i18n.yaml` (voir `sprezzature-ui-i18n-make` et
-  `sprezzature-publish/references/i18n.md`).
+  `sprezzature-publish/sprezzature_publish/skill/references/i18n.md`).
 - **L'i18n vit dans du format de configuration YAML, jamais dans du JS.** Les chaînes
   traduisibles (libellés d'interface **et** prompts LLM) vivent dans
   un seul catalogue par projet, **`locales/i18n.yaml`** (id de message →
@@ -350,7 +350,7 @@ reste.
 | Une image (`*.png`, `*.jpg`, …) | « Texte alternatif pour cette image » | `sprezzature-accessibility` | Texte alternatif conforme W3C dans la bonne catégorie (informatif / décoratif / fonctionnel / texte / complexe / groupe), rédigé dans la langue de la page, marqué `data-alt-source="ai"`. |
 | Un fichier audio ou vidéo (`.mp4`, `.wav`, `.mp3`, …), **en travaux** | « Sous-titres / transcription » | `sprezzature-audio` *(en travaux)* | Sous-titres WebVTT / SRT / texte brut depuis whisper.cpp local, avec biais de vocabulaire issu du projet. Extrait `<video>` + `<track kind="captions">` à coller. Le script et les tests sont là aujourd'hui ; les baselines WER par langue et le clip de référence pour le biais de vocabulaire sont encore à collecter ; voir [État d'avancement](#état-davancement). |
 | Un logo (`logo.png` / `.svg`) | « Jeu de favicons » / « Icônes PWA » | `sprezzature-publish` | `favicon.svg` + `.ico` + lot de PNG + `apple-touch-icon.png` + icône PWA masquable + `site.webmanifest` + extrait `head.html`. |
-| Une description d'objectif ou une page HTML | « Meta tags » / « SEO » / « OG card » / « GEO » / « llms.txt » / « AI Overview » | `sprezzature-publish` | **Pour le référencement naturel (SEO) :** titre + description + balises Open Graph (OG) + Twitter Card + Schema.org en JSON pour données liées (JSON-LD, du JSON caché dans la page qui dit aux moteurs de recherche de quoi elle parle) (JSON sur la sortie standard) ; voir [les trois piliers de Google Search Essentials](https://developers.google.com/search/docs/essentials) appliqués dans `sprezzature-publish/references/seo-essentials.md`. **Pour l'optimisation pour moteurs génératifs (GEO : surfaces de réponses AI Overview / Gemini / ChatGPT)** : `llms.txt` est émis par `sprezzature-publish-indexes` aux côtés de `robots.txt` + `sitemap.xml` + flux Atom / RSS (Really Simple Syndication, un flux qui permet de suivre les nouveaux articles d'un site dans une application de lecture), donc le site embarque un résumé Markdown lisible par les LLM dès qu'une commande « transforme ce dossier en site » se termine. Mêmes robots, mêmes permissions dans `robots.txt` ; aucune balise meta « AI » n'existe ; toute affirmation contraire est fausse. |
+| Une description d'objectif ou une page HTML | « Meta tags » / « SEO » / « OG card » / « GEO » / « llms.txt » / « AI Overview » | `sprezzature-publish` | **Pour le référencement naturel (SEO) :** titre + description + balises Open Graph (OG) + Twitter Card + Schema.org en JSON pour données liées (JSON-LD, du JSON caché dans la page qui dit aux moteurs de recherche de quoi elle parle) (JSON sur la sortie standard) ; voir [les trois piliers de Google Search Essentials](https://developers.google.com/search/docs/essentials) appliqués dans `sprezzature-publish/sprezzature_publish/skill/references/seo-essentials.md`. **Pour l'optimisation pour moteurs génératifs (GEO : surfaces de réponses AI Overview / Gemini / ChatGPT)** : `llms.txt` est émis par `sprezzature-publish-indexes` aux côtés de `robots.txt` + `sitemap.xml` + flux Atom / RSS (Really Simple Syndication, un flux qui permet de suivre les nouveaux articles d'un site dans une application de lecture), donc le site embarque un résumé Markdown lisible par les LLM dès qu'une commande « transforme ce dossier en site » se termine. Mêmes robots, mêmes permissions dans `robots.txt` ; aucune balise meta « AI » n'existe ; toute affirmation contraire est fausse. |
 | Un site existant (HTML, PHP (Hypertext Preprocessor, un langage avec lequel le serveur fabrique chaque page au moment où on la demande, comme le fait WordPress), Markdown, JSON, YAML) | « Mon site ne vend pas » / « Écris-moi une FAQ » / « AEO » | `sprezzature-publish` | D'abord une question : quel appel à l'action le site sert-il (la détection propose ce qu'il propose déjà). Puis la FAQ qui manque, chaque réponse tirée de ses propres pages et les questions sans réponse listées à part ; et un seul rapport SEO + GEO + AEO, pages argent d'abord. |
 | Du texte d'IHM brut | « Langage clair » / « Réécris au niveau 6e » | `sprezzature-publish` | Même sens, voix marketing retirée, longueur de sortie ≤ 1,1× l'original. |
 | Une palette JSON | « Audit de contraste » / « Ma palette est-elle accessible ? » | `sprezzature-colors` | Chaque paire `(label, surface)` parcourue, échecs listés avec la correction OKLCH voisine la plus proche. Sortie 1 sur échec. |
@@ -711,16 +711,17 @@ unique / formulaire / streaming / liste), associe chaque flag à un
 contrôle de formulaire, puis câble l'exécution sur l'hôte du projet
 (Tauri, Electron, FastAPI, Express ou un proxy HTTP (protocole de transfert web) + événements envoyés par le serveur (SSE, une connexion par laquelle le serveur pousse de nouvelles lignes, comme un journal en direct) en stdlib).
 
-Un exemple exécutable est livré dans
-`sprezzature-cli-gui/assets/examples/cli-gui-demo/`. Pour le lancer :
+Un exemple exécutable est livré avec le skill, dans le paquet
+`sprezzature-cli-gui`, sous `sprezzature_cli_gui/skill/assets/examples/cli-gui-demo/`.
+Depuis un clone de ce dépôt :
 
 ```bash
-cd sprezzature-cli-gui/assets/examples/cli-gui-demo
+cd sprezzature_cli_gui/skill/assets/examples/cli-gui-demo
 python server.py  # stdlib uniquement, ouvre http://localhost:8787
 ```
 
 Pour une comparaison honnête face à Gradio / Streamlit / Tauri / Taipy,
-voir `sprezzature-cli-gui/SKILL.md` → « Why this *skill*, not Gradio / Streamlit
+voir le `SKILL.md` du skill (`sprezzature_cli_gui/skill/SKILL.md` dans le dépôt `sprezzature-cli-gui`) → « Why this *skill*, not Gradio / Streamlit
 / Tauri / Taipy » et [LANDSCAPE.md](LANDSCAPE.md) § 7.
 
 ## Auteur
@@ -749,10 +750,10 @@ pour nos discussions fructueuses.
 
 Palettes de couleurs issues de <https://deraison.ai/colors/>.
 
-Les trois familles Roboto sont livrées dans
-`sprezzature-ui/assets/fonts/roboto/`, `sprezzature-ui/assets/fonts/roboto-serif/`
-et `sprezzature-ui/assets/fonts/roboto-mono/`, chacune sous SIL Open Font
-License ; voir le fichier `OFL.txt` joint dans chaque dossier.
+Les trois familles Roboto sont livrées dans `web/fonts/roboto/`,
+`web/fonts/roboto-serif/` et `web/fonts/roboto-mono/` pour le site, et avec le
+skill `sprezzature-ui` dans le paquet de cette brique, chacune sous SIL Open
+Font License ; voir le fichier `OFL.txt` joint dans chaque dossier.
 
 Les *skills* puisent également des connaissances dans les
 [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/),
@@ -770,7 +771,7 @@ le nom du détenteur du copyright pour endosser des produits dérivés
 sans autorisation. Voir `LICENSE.md` pour le texte canonique. Les
 trois familles Roboto (Roboto, Roboto Serif, Roboto Mono) restent sous
 SIL Open Font License (voir le `OFL.txt` joint dans chaque dossier
-`sprezzature-ui/assets/fonts/roboto*/`) ; la licence BSD-3-Clause ci-dessus
+`web/fonts/roboto*/`) ; la licence BSD-3-Clause ci-dessus
 s'applique au code source, pas aux polices.
 
 **Licence vs. attribution.** Les crédits d'auteur dans la documentation

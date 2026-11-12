@@ -7,9 +7,9 @@ One install, `pip install sprezzature-cli-gui`, brings the five surfaces: the li
 This is the human landing page. It points to the places that hold the
 detail; nothing is duplicated here.
 
-- **What it is & what activates it:** [`sprezzature-cli-gui/SKILL.md`](../sprezzature-cli-gui/SKILL.md)
+- **What it is & what activates it:** [`sprezzature-cli-gui/sprezzature_cli_gui/skill/SKILL.md`](https://github.com/warith-harchaoui/sprezzature-cli-gui/blob/main/sprezzature_cli_gui/skill/SKILL.md))
   (the agent-facing spec: purpose, trigger phrases, flags, surfaces).
 - **Run it:** [`EXAMPLES.md`](../EXAMPLES.md) has a copy-paste recipe for
   `sprezzature-cli-gui`; the package's own
   [README](https://github.com/warith-harchaoui/sprezzature-cli-gui#readme) documents every command, route and tool.
-- **Go deeper:** [`sprezzature-cli-gui/references/`](../sprezzature-cli-gui/references/): the trigger catalogue and the hardening checklist for a host that runs the built command.
+- **Go deeper:** [`sprezzature-cli-gui/sprezzature_cli_gui/skill/references/`](https://github.com/warith-harchaoui/sprezzature-cli-gui/tree/main/sprezzature_cli_gui/skill/references/)): the trigger catalogue and the hardening checklist for a host that runs the built command.

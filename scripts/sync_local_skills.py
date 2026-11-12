@@ -59,19 +59,31 @@ IGNORE = shutil.ignore_patterns(
 
 def repo_skills(root: Path) -> List[Path]:
     """
-    Every ``sprezzature-*`` folder here that carries a SKILL.md.
+    Every shipped skill folder, in the brick checkouts beside `root`.
+
+    Since 2026-11-12 the skills ship inside their bricks, at
+    ``sprezzature-<brick>/sprezzature_<brick>/skill/``; this repository holds
+    no copy. A brick not checked out beside this one is left out.
 
     Parameters
     ----------
     root : pathlib.Path
-        The monorepo root.
+        This repository's root.
 
     Returns
     -------
     list of pathlib.Path
-        Skill folders, sorted by name.
+        Skill folders, sorted by skill name.
     """
-    return sorted(p for p in root.glob("sprezzature-*") if (p / "SKILL.md").is_file())
+    from skills_manifest import SHIPPED_SKILLS, skill_dir
+
+    found = [skill_dir(name, root.parent) for name in SHIPPED_SKILLS]
+    return sorted((p for p in found if (p / "SKILL.md").is_file()), key=skill_name)
+
+
+def skill_name(source: Path) -> str:
+    """The folder name an agent reads `source` under: its package's, hyphenated."""
+    return source.parent.name.replace("_", "-") if source.name == "skill" else source.name
 
 
 def compare(source: Path, installed: Path) -> Tuple[str, int]:
@@ -151,7 +163,7 @@ def main(argv: "List[str] | None" = None) -> int:
     """Command-line entry point."""
     parser = argparse.ArgumentParser(
         prog="sync_local_skills.py",
-        description="Refresh the installed skills from this repository.",
+        description="Refresh the installed skills from the brick checkouts beside this repository.",
     )
     parser.add_argument(
         "--apply", action="store_true",
@@ -167,7 +179,7 @@ def main(argv: "List[str] | None" = None) -> int:
     skills = repo_skills(root)
     if args.only:
         wanted = {f"sprezzature-{n.removeprefix('sprezzature-')}" for n in args.only}
-        skills = [s for s in skills if s.name in wanted]
+        skills = [s for s in skills if skill_name(s) in wanted]
         if not skills:
             parser.error(f"no skill matched {args.only}")
 
@@ -178,19 +190,20 @@ def main(argv: "List[str] | None" = None) -> int:
             continue
         print(f"\n── {runtime}  ({base})")
         for source in skills:
-            installed = base / source.name
+            name = skill_name(source)
+            installed = base / name
             verdict, lines = compare(source, installed)
             note = f"{verdict}" + (f", {lines} SKILL.md lines differ" if lines else "")
             if verdict == "up to date":
-                print(f"  {source.name:28} {note}")
+                print(f"  {name:28} {note}")
                 continue
             stale += 1
             if args.apply:
                 kept = refresh(source, installed)
                 where = f"previous copy at {kept.name}" if kept != installed else "fresh install"
-                print(f"  {source.name:28} refreshed ({note}; {where})")
+                print(f"  {name:28} refreshed ({note}; {where})")
             else:
-                print(f"  {source.name:28} {note}")
+                print(f"  {name:28} {note}")
 
     if stale and not args.apply:
         print(f"\n{stale} installed skill(s) differ from this repository.")

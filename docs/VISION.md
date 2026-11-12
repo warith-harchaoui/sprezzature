@@ -9,8 +9,8 @@ Two ways in: `sprezzature-accessibility-alt <image>` for one image, and `sprezza
 This is the human landing page. It points to the three places that hold the
 detail; nothing is duplicated here.
 
-- **What it is & what activates it:** [`sprezzature-accessibility/SKILL.md`](../sprezzature-accessibility/SKILL.md)
+- **What it is & what activates it:** [`sprezzature-accessibility/sprezzature_accessibility/skill/SKILL.md`](https://github.com/warith-harchaoui/sprezzature-accessibility/blob/main/sprezzature_accessibility/skill/SKILL.md))
   (the agent-facing spec: purpose, trigger phrases, full flag surface).
 - **Run it:** [`EXAMPLES.md`](../EXAMPLES.md) has a copy-paste recipe for
   `sprezzature-accessibility`.
-- **Go deeper:** [`sprezzature-accessibility/references/`](../sprezzature-accessibility/references/): the decision tree and caching.
+- **Go deeper:** [`sprezzature-accessibility/sprezzature_accessibility/skill/references/`](https://github.com/warith-harchaoui/sprezzature-accessibility/tree/main/sprezzature_accessibility/skill/references/)): the decision tree and caching.

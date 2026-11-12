@@ -216,7 +216,7 @@ Quel genre de travail faites-vous ? Trouvez la ligne et la recommandation honn�
 |---|---|---|
 | Sortie UI vanilla JS + Tailwind, sans framework | `sprezzature-ui` | Si l'équipe a déjà choisi React/Vue/Svelte. `sprezzature` refuse d'émettre du code de framework ; vous lutteriez contre lui. |
 | Base technique React + design system | aucun | [shadcn/ui](https://ui.shadcn.com), [Mantine](https://mantine.dev), [Material UI (MUI)](https://mui.com). shadcn est le plus proche en philosophie (copier-coller, sans verrou d'exécution). |
-| Look natif Material 3 | aucun | [Material Web Components](https://material-web.dev) pour du Material officiel ; `sprezzature-ui/references/material-design.md` ne fait que projeter les rôles Material dans les variables de design du *skill*. |
+| Look natif Material 3 | aucun | [Material Web Components](https://material-web.dev) pour du Material officiel ; `sprezzature-ui/sprezzature_ui/skill/references/material-design.md` ne fait que projeter les rôles Material dans les variables de design du *skill*. |
 | Envelopper un CLI Python / Node / Go dans une GUI web | `sprezzature-cli-gui` | Si vous voulez un formulaire auto-généré depuis la signature sans contrôle de l'UI : [Gradio](https://gradio.app) (démos d'apprentissage automatique / ML), [Streamlit](https://streamlit.io) (apps de données), [Taipy](https://taipy.io). `sprezzature-cli-gui` échafaude du HTML brut que vous éditez ; ces outils donnent une UI à l'exécution difficile à restyler. |
 | Envelopper un CLI en binaire d'application desktop native | `sprezzature-cli-gui` (UI) + Tauri (coquille) | [Tauri](https://tauri.app) est la coquille desktop ; `sprezzature-cli-gui` émet ce qui va dans la vue web. Si vous n'avez besoin que du desktop, les choix par défaut de Tauri suffisent. |
 | Construire un site de doc depuis un petit README + `docs/` | `sprezzature-publish` | Pour 100+ pages versionnées ou un site de doc avec vues par version côte à côte : [MkDocs Material](https://squidfunk.github.io/mkdocs-material/), [Hugo](https://gohugo.io), [Astro](https://astro.build), [Docusaurus](https://docusaurus.io). `sprezzature-publish` est pour les petits projets (< 30 pages). |
@@ -306,15 +306,15 @@ métriques, hauteur d'x et rythme visuel par conception, ce qui garde
 cohérentes les surfaces riches en prose et riches en code et réduit la
 charge à ~290 KB au total (sous-ensemble latin, les trois combinées,
 format de police web Web Open Font Format version 2 (WOFF2) à axe variable). **La règle est une valeur par défaut, pas une
-contrainte** : selon la règle stricte 3 de `sprezzature-ui/SKILL.md` (depuis v0.6.4), le *skill*
+contrainte** : selon la règle stricte 3 de `sprezzature-ui/sprezzature_ui/skill/SKILL.md` (depuis v0.6.4), le *skill*
 respecte les polices existantes lors de l'audit d'une UI existante et
 honore toute police nommée par l'utilisateur.
 
 | Police | Graisses | Latin étendu / cyrillique | Licence | Variable | Coût | Compatible sprezzature | Notes |
 |---|---|---|---|:---:|---|:---:|---|
-| **Roboto** (utilisée, sans)     | 100–900 + italiques | les deux | SIL Open Font License (OFL) | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto/`. UI + corps par défaut. |
-| **Roboto Serif** (utilisée, serif) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto-serif/`. Éditorial / textes longs. |
-| **Roboto Mono** (utilisée, mono)   | 100–700 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/assets/fonts/roboto-mono/`. `<code>` / `<pre>` / panneaux de logs. |
+| **Roboto** (utilisée, sans)     | 100–900 + italiques | les deux | SIL Open Font License (OFL) | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto/`. UI + corps par défaut. |
+| **Roboto Serif** (utilisée, serif) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto-serif/`. Éditorial / textes longs. |
+| **Roboto Mono** (utilisée, mono)   | 100–700 + italiques | les deux | OFL | ✓ | gratuit | ✓ | Auto-hébergée dans `sprezzature-ui/sprezzature_ui/skill/assets/fonts/roboto-mono/`. `<code>` / `<pre>` / panneaux de logs. |
 | [Inter](https://rsms.me/inter/) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ~ | Choix par défaut de l'industrie pour l'UI SaaS. Pas celui du *skill*, mais honorée si l'utilisateur la nomme. |
 | [Montserrat](https://fonts.google.com/specimen/Montserrat) | 100–900 + italiques | les deux | OFL | ✓ | gratuit | ~ | Ancien choix par défaut, remplacé par Roboto en v0.6.0. Toujours honoré si un projet la nomme. |
 | [IBM Plex Sans](https://www.ibm.com/plex/) | 100–700 | les deux | OFL | ~ | gratuit | ~ | Corporate neutre. Pas le choix par défaut ; le *skill* la porte si un projet la livre. |
@@ -519,7 +519,7 @@ Associez `sprezzature-accessibility-lint` (statique, en CI) à axe-core (à l'ex
 
 | Source | Ce qu'elle couvre | Compatible sprezzature | Notes |
 |---|---|:---:|---|
-| **[Google Search Essentials](https://developers.google.com/search/docs/essentials)** (les trois piliers) | Exigences techniques + politiques anti-spam + bonnes pratiques clés | ✓ | La source canonique de ce que Google lit. Adaptée dans `sprezzature-publish/references/seo-essentials.md` aux artefacts que le *skill* émet. |
+| **[Google Search Essentials](https://developers.google.com/search/docs/essentials)** (les trois piliers) | Exigences techniques + politiques anti-spam + bonnes pratiques clés | ✓ | La source canonique de ce que Google lit. Adaptée dans `sprezzature-publish/sprezzature_publish/skill/references/seo-essentials.md` aux artefacts que le *skill* émet. |
 | **[Google AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)** | Ce qui change (et ce qui ne change pas) pour AI Overview / recherche générative | ✓ | Mêmes fondations que Search Essentials. Pas de nouvelle meta pour l'IA ; même `robots.txt`. |
 | **[Google « Third-party SEO »](https://developers.google.com/search/docs/fundamentals/third-party-seo)** | Comment reconnaître un conseil et un outil légitimes vs douteux | ✓ | Met en avant « pas de badge approuvé par Google, pas de garantie de classement », utile quand un utilisateur colle un conseil de blog. |
 | **[llmstxt.org](https://llmstxt.org/)** | Convention communautaire pour un résumé de site lisible par LLM à `/llms.txt` | ✓ | Déjà émis par `sprezzature-publish-indexes` ; c'est l'artefact GEO que la plupart des agents cherchent. |

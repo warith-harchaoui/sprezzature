@@ -73,13 +73,18 @@ if [[ ${#SKILLS[@]} -eq 0 ]]; then
     exit 1
 fi
 
+# Each skill ships inside its brick since 2026-11-12, at
+# ../sprezzature-<brick>/sprezzature_<brick>/skill/, so the brick checkouts
+# must sit beside this one; scripts/package_skill.py reads them from there.
+SIBLINGS="$(dirname "$REPO_ROOT")"
 for skill in "${SKILLS[@]}"; do
-    if [[ ! -d "$skill" ]]; then
-        echo "error: missing skill folder '$skill' at $REPO_ROOT" >&2
+    folder="$SIBLINGS/$skill/${skill//-/_}/skill"
+    if [[ ! -d "$folder" ]]; then
+        echo "error: missing skill folder for '$skill' at $folder" >&2
         exit 1
     fi
-    if [[ ! -f "$skill/SKILL.md" ]]; then
-        echo "error: '$skill' is missing SKILL.md" >&2
+    if [[ ! -f "$folder/SKILL.md" ]]; then
+        echo "error: '$skill' is missing SKILL.md at $folder" >&2
         exit 1
     fi
 done

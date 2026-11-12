@@ -57,7 +57,7 @@ REPO_ROOT: Path = Path(__file__).resolve().parents[1]
 #: The shipped skills, sourced from ``SKILLS.txt`` at repo root — one
 #: source of truth across release.sh and the test fixtures. Adding a
 #: new skill is a one-line edit *there*, not here.
-from skills_manifest import SHIPPED_SKILLS as SKILLS  # noqa: E402
+from skills_manifest import SHIPPED_SKILLS as SKILLS, skill_dir  # noqa: E402
 
 
 # ── Stage runners ──────────────────────────────────────────────────────────
@@ -74,7 +74,7 @@ def stage_yaml() -> int:
     print("[1/2] YAML frontmatter validation", flush=True)
     failed: int = 0
     for name in SKILLS:
-        errors = validate_skill(REPO_ROOT / name)
+        errors = validate_skill(skill_dir(name))
         if errors:
             failed += 1
             for err in errors:

@@ -33,7 +33,7 @@ is small.
 
 ## Interactivity that composes instead of duplicating
 
-The reference component `sprezzature-ui/assets/components/figure-fullscreen.html`
+The reference component `sprezzature-ui/sprezzature_ui/skill/assets/components/figure-fullscreen.html`
 lays out how an interactive figure behaves. It starts from a measured fact
 rather than a guess: how you embed an SVG decides what it can do.
 
@@ -91,7 +91,7 @@ The default is built for the hardest case, a viewer who sees no color at
 all, because a design that survives grayscale survives every color-vision
 deficiency. Stronger and deficiency-specific levels can sit on top for
 people who want them, never as the price of entry. The reasoning and the
-sources are in `sprezzature-colors/references/accessibility-levels.md`.
+sources are in `sprezzature-colors/sprezzature_colors/skill/references/accessibility-levels.md`.
 
 ## Runs on your machine, one model, no software-as-a-service
 

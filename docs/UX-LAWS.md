@@ -7,8 +7,8 @@ One `pip install sprezzature-ux-laws` brings the library, the commands `sprezzat
 This is the human landing page. It points to the three places that hold the
 detail; nothing is duplicated here.
 
-- **What it is & what activates it:** [`sprezzature-ux-laws/SKILL.md`](../sprezzature-ux-laws/SKILL.md)
+- **What it is & what activates it:** [`sprezzature-ux-laws/sprezzature_ux_laws/skill/SKILL.md`](https://github.com/warith-harchaoui/sprezzature-ux-laws/blob/main/sprezzature_ux_laws/skill/SKILL.md))
   (the agent-facing spec: purpose, trigger phrases, full flag surface).
 - **Run it:** [`EXAMPLES.md`](../EXAMPLES.md) has a copy-paste recipe for
   `sprezzature-ux-laws`.
-- **Go deeper:** [`sprezzature-ux-laws/references/`](../sprezzature-ux-laws/references/): the 30-law playbook and auditor rules.
+- **Go deeper:** [`sprezzature-ux-laws/sprezzature_ux_laws/skill/references/`](https://github.com/warith-harchaoui/sprezzature-ux-laws/tree/main/sprezzature_ux_laws/skill/references/)): the 30-law playbook and auditor rules.

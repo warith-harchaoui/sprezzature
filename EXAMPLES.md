@@ -201,7 +201,7 @@ sprezzature-cli-gui --from-help "python3 -m json.tool" --out gui.html
 
 The emitted HTML passes both the `sprezzature-ux-laws` and `sprezzature-accessibility`
 audits with zero findings (the emitter is its own customer). A runnable worked
-example ships in `sprezzature-cli-gui/assets/examples/cli-gui-demo/`.
+example ships in `sprezzature-cli-gui/sprezzature_cli_gui/skill/assets/examples/cli-gui-demo/`.
 
 ## sprezzature-accessibility `[ai]`: alt text via a local vision model
 
@@ -267,7 +267,7 @@ every other skill's output follows. Its make-side assets ship ready to copy:
 
 ```bash
 # Starter page and law-keyed component snippets
-ls sprezzature-ui/assets/starter-page.html sprezzature-ui/assets/snippets/
+ls sprezzature-ui/sprezzature_ui/skill/assets/starter-page.html sprezzature-ui/sprezzature_ui/skill/assets/snippets/
 ```
 
 Validate that a skill folder is spec-compliant (used in CI via

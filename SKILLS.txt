@@ -1,4 +1,6 @@
 # Canonical list of shipped sprezzature-* skills, one folder name per line.
+# Each skill ships inside its brick, at sprezzature-<brick>/sprezzature_<brick>/skill/
+# (since 2026-11-12); scripts/skills_manifest.py's skill_dir() finds it.
 #
 # Single source of truth read by:
 #   - scripts/release.sh

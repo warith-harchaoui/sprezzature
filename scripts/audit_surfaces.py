@@ -72,7 +72,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _argparse import make_parser  # noqa: E402
-from skills_manifest import SHIPPED_SKILLS  # noqa: E402
+from skills_manifest import SHIPPED_SKILLS, skill_dir  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -471,7 +471,9 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         surface.
     """
     repo = REPO_ROOT.parent / brick
-    skill = (REPO_ROOT / brick / "SKILL.md").is_file()
+    # The skill ships inside its brick since 2026-11-12, so it is decidable
+    # only where the brick is checked out, like the other four surfaces.
+    skill = (skill_dir(brick, REPO_ROOT.parent) / "SKILL.md").is_file()
     # A folder with the right files in it is not yet a brick. Seven of these
     # are git repositories with a GitHub remote; the eighth looked complete
     # from a file listing and had no `.git` at all -- a draft extraction, not
@@ -500,12 +502,12 @@ def audit(brick: str, check_pypi: bool = False) -> dict[str, Any]:
         return {
             "brick": brick,
             "repo": None,
-            "surfaces": {s: None for s in SURFACES} | {"skill": skill},
+            "surfaces": {s: None for s in SURFACES} | {"skill": None},
             "containers": {c: None for c in CONTAINERS},
             "publication": publication,
             "standalone": None,
             "undecidable": True,
-            "missing": (["skill"] if not skill else []) + publication_gaps,
+            "missing": publication_gaps,
             "notes": ["no sibling checkout — surfaces undecidable here"],
         }
 

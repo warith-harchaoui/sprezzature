@@ -66,33 +66,9 @@ Repository = "https://github.com/warith-harchaoui/sprezzature"
 sprezzature-skills = "sprezzature.cli:main"
 
 [tool.setuptools]
-packages = ["sprezzature", "sprezzature.skills.sprezzature_ui", "sprezzature.skills.sprezzature_cli_gui", "sprezzature.skills.sprezzature_publish", "sprezzature.skills.sprezzature_accessibility", "sprezzature.skills.sprezzature_colors", "sprezzature.skills.sprezzature_audio", "sprezzature.skills.sprezzature_ux_laws", "sprezzature.skills.sprezzature_figures", "sprezzature.skills.sprezzature_maps", "sprezzature.skills.sprezzature_video"]
-
-[tool.setuptools.package-dir]
-"sprezzature.skills.sprezzature_ui" = "sprezzature-ui"
-"sprezzature.skills.sprezzature_cli_gui" = "sprezzature-cli-gui"
-"sprezzature.skills.sprezzature_publish" = "sprezzature-publish"
-"sprezzature.skills.sprezzature_accessibility" = "sprezzature-accessibility"
-"sprezzature.skills.sprezzature_colors" = "sprezzature-colors"
-"sprezzature.skills.sprezzature_audio" = "sprezzature-audio"
-"sprezzature.skills.sprezzature_ux_laws" = "sprezzature-ux-laws"
-"sprezzature.skills.sprezzature_figures" = "sprezzature-figures"
-"sprezzature.skills.sprezzature_maps" = "sprezzature-maps"
-"sprezzature.skills.sprezzature_video" = "sprezzature-video"
-
-[tool.setuptools.package-data]
-"sprezzature.skills.sprezzature_ui" = ["**/*"]
-"sprezzature.skills.sprezzature_cli_gui" = ["**/*"]
-"sprezzature.skills.sprezzature_publish" = ["**/*"]
-"sprezzature.skills.sprezzature_accessibility" = ["**/*"]
-"sprezzature.skills.sprezzature_colors" = ["**/*"]
-"sprezzature.skills.sprezzature_audio" = ["**/*"]
-"sprezzature.skills.sprezzature_ux_laws" = ["**/*"]
-"sprezzature.skills.sprezzature_figures" = ["**/*"]
-"sprezzature.skills.sprezzature_maps" = ["**/*"]
-"sprezzature.skills.sprezzature_video" = ["**/*"]
+# The skills are not here: since 2026-11-12 each brick ships its own inside
+# its package, and this package gathers them through its dependencies.
+packages = ["sprezzature"]
 
 [tool.setuptools.exclude-package-data]
-# The rendered gallery is 74 MB of PNG and SVG that belongs on the website,
-# not in a skill an agent reads.
-"*" = ["assets/**", "**/__pycache__/**", "**/*.pyc"]
+"*" = ["**/__pycache__/**", "**/*.pyc"]

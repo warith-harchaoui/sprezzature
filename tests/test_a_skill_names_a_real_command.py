@@ -36,6 +36,9 @@ from pathlib import Path
 
 import pytest
 
+from _skills import skill_file
+from skills_manifest import SHIPPED_SKILLS, skill_dir
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = REPO_ROOT.parent
 
@@ -62,9 +65,13 @@ _SCRIPTS_SECTION_RE = re.compile(
 _SCRIPT_ENTRY_RE = re.compile(r'^\s*([A-Za-z0-9._-]+)\s*=', re.M)
 
 
-def _skills() -> list[Path]:
-    """Every shipped ``SKILL.md`` in this repository."""
-    return sorted(REPO_ROOT.glob("sprezzature-*/SKILL.md"))
+def _skills() -> list[str]:
+    """Every shipped skill, by brick name.
+
+    The ``SKILL.md`` itself lives in the brick since 2026-11-12, at
+    ``sprezzature_<brick>/skill/``; :func:`_skills.skill_file` finds it.
+    """
+    return list(SHIPPED_SKILLS)
 
 
 def _declared_commands(package_dir: Path) -> set[str] | None:
@@ -92,18 +99,20 @@ def _claimed_commands(skill: Path) -> set[str]:
 
 def test_there_are_skills_to_check() -> None:
     """A glob that stops matching would make every test below vacuous."""
-    assert len(_skills()) >= 8, [s.parent.name for s in _skills()]
+    present = [s for s in _skills() if skill_dir(s).joinpath("SKILL.md").is_file()]
+    if not any((SIBLINGS / s).is_dir() for s in _skills()):
+        pytest.skip("no brick is checked out beside this repository")
+    assert len(present) >= 8, present
 
 
-@pytest.mark.parametrize("skill", _skills(), ids=lambda p: p.parent.name)
-def test_every_command_a_skill_names_is_a_console_script(skill: Path) -> None:
+@pytest.mark.parametrize("package", _skills())
+def test_every_command_a_skill_names_is_a_console_script(package: str) -> None:
     """The contract's commands exist in the package that ships them."""
-    package = skill.parent.name
     declared = _declared_commands(SIBLINGS / package)
     if declared is None:
         pytest.skip(f"{package} is not checked out beside this repository")
 
-    claimed = _claimed_commands(skill)
+    claimed = _claimed_commands(skill_file(package, "SKILL.md"))
     assert claimed, f"{package}/SKILL.md has no 'invoked as' sentence to check"
 
     missing = sorted(c for c in claimed if c not in declared)
@@ -114,9 +123,9 @@ def test_every_command_a_skill_names_is_a_console_script(skill: Path) -> None:
     )
 
 
-@pytest.mark.parametrize("skill", _skills(), ids=lambda p: p.parent.name)
+@pytest.mark.parametrize("package", _skills())
 def test_the_all_extra_floors_the_version_that_has_those_commands(
-    skill: Path,
+    package: str,
 ) -> None:
     """Naming a command is not enough if `all` can resolve to an older release.
 
@@ -124,7 +133,6 @@ def test_the_all_extra_floors_the_version_that_has_those_commands(
     release with no ``sprezzature-colors`` command in it. The floor has to be
     at least the version the sibling currently declares those commands at.
     """
-    package = skill.parent.name
     sibling = SIBLINGS / package / "pyproject.toml"
     if not sibling.is_file():
         pytest.skip(f"{package} is not checked out beside this repository")

@@ -1,6 +1,6 @@
 """
 Tests for the sprezzature-ui snippet catalog at
-``sprezzature-ui/assets/snippets/``.
+``sprezzature-ui/sprezzature_ui/skill/assets/snippets/``, in the ui brick.
 
 The catalog is the make-side counterpart to the sprezzature-ux-laws
 ``--fix`` mode: the auditor repairs what the agent emits; the
@@ -32,9 +32,16 @@ from pathlib import Path
 
 import pytest
 
+from skills_manifest import skill_dir
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent
-SNIPPETS_DIR: Path = REPO_ROOT / "sprezzature-ui" / "assets" / "snippets"
+#: The catalog ships inside the ui brick's skill since 2026-11-12, so it is
+#: read from the checkout beside this one, and the module skips without it.
+SNIPPETS_DIR: Path = skill_dir("sprezzature-ui") / "assets" / "snippets"
+pytestmark = pytest.mark.skipif(
+    not (REPO_ROOT.parent / "sprezzature-ui").is_dir(),
+    reason="sprezzature-ui is not checked out beside this repository",
+)
 INDEX: Path = SNIPPETS_DIR / "INDEX.md"
 #: The two auditors, in the sibling checkouts where their code lives since the
 #: split. These pointed inside this repository, at paths emptied by that split,

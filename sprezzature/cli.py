@@ -3,9 +3,10 @@ sprezzature-skills — put the suite's skills where an agent will read them.
 
 An agent reads the skill folder installed under ``~/.claude/skills/`` or
 ``~/.opencode/skills/``, never the one inside a repository or a site-packages
-directory. This command bridges that gap: it reports what is installed, what
-differs, and — only when asked — copies this package's version into place,
-moving whatever was there aside first.
+directory. This command bridges that gap for the ten at once: it reports what
+is installed, what differs, and — only when asked — copies the version each
+brick ships into place, moving whatever was there aside first. Each brick's
+own ``sprezzature-<brick>-skill`` does the same for that brick alone.
 
 Reporting is the default. Writing under ``$HOME`` changes what every future
 agent session reads, which is not something to do as a side effect of
@@ -18,7 +19,7 @@ Usage
     sprezzature-skills                      # what is installed, and what differs
     sprezzature-skills --install            # copy them into ~/.claude/skills
     sprezzature-skills --install --agent opencode
-    sprezzature-skills --path               # where pip put them
+    sprezzature-skills --path               # where each brick's package keeps it
 
 Author
 ------
@@ -33,7 +34,7 @@ from pathlib import Path
 
 import click
 
-from . import SKILL_NAMES, __version__, skill_path, skills_path
+from . import SKILL_NAMES, __version__, skill_path
 
 #: Where each agent looks for skills, relative to the user's home directory.
 AGENT_DIRS: dict[str, str] = {
@@ -106,12 +107,12 @@ def install(source: Path, target: Path) -> Path | None:
     "which changes what every future agent session reads.",
 )
 @click.option("--install", "do_install", is_flag=True,
-              help="Copy the shipped skills into the agent's directory.")
+              help="Copy the skills the bricks ship into the agent's directory.")
 @click.option("--agent", default="claude", show_default=True,
               type=click.Choice(sorted(AGENT_DIRS)),
               help="Which agent's skills directory to use.")
 @click.option("--path", "show_path", is_flag=True,
-              help="Print where pip installed the skills, and stop.")
+              help="Print where each brick's package keeps its skill, and stop.")
 @click.version_option(__version__, "-V", "--version", prog_name="sprezzature-skills")
 def _cli(do_install: bool, agent: str, show_path: bool) -> int:
     """Report, or refresh, the installed skills."""
@@ -132,19 +133,21 @@ def main(argv: list[str] | None = None) -> int:
 
 def _run(do_install: bool, agent: str, show_path: bool) -> int:
     """The body of the command, with its options already parsed."""
-    shipped = skills_path()
-    if show_path:
-        print(shipped)
-        return 0
-
     target_dir = Path.home() / AGENT_DIRS[agent]
-    print(f"shipped: {shipped}")
-    print(f"{agent}:  {target_dir}\n")
+    if not show_path:
+        print(f"{agent}:  {target_dir}\n")
 
     stale = 0
     for name in SKILL_NAMES:
-        source = skill_path(name)
-        if not source.is_dir():
+        try:
+            source = skill_path(name)
+        except (ImportError, LookupError) as exc:
+            print(f"  {name:28} {exc}")
+            continue
+        if show_path:
+            print(f"  {name:28} {source}")
+            continue
+        if not (source / "SKILL.md").is_file():
             print(f"  {name:28} not shipped in this build")
             continue
         diffs = differences(source, target_dir / name)
@@ -159,6 +162,8 @@ def _run(do_install: bool, agent: str, show_path: bool) -> int:
             where = f", previous copy at {moved}" if moved else ""
             print(f"  {'':28} → installed{where}")
 
+    if show_path:
+        return 0
     if not stale:
         print("\nEvery skill is in step.")
     elif not do_install:
