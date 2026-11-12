@@ -35,8 +35,8 @@ metadata:
 |---|---|
 | Library | `import sprezzature_colors as sc` |
 | Command line | `sprezzature-colors <tool>` (click front door: `contrast`, `cvd`, `levels`, `palette-to-tailwind`, `tools`), or `sprezzature-colors-contrast`, `-cvd`, `-levels`, `-palette-to-tailwind` |
-| HTTP API | `uvicorn sprezzature_colors.api:app`, or `docker compose up` in the package repository |
-| MCP server | `sprezzature-colors-mcp` (default `127.0.0.1:8000`, endpoint `/mcp`) |
+| HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as render this chart) | `uvicorn sprezzature_colors.api:app`, or `docker compose up` in the package repository |
+| MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server | `sprezzature-colors-mcp` (default `127.0.0.1:8000`, endpoint `/mcp`) |
 | Skill | this file |
 
 The MCP tools are the routes' `operation_id`s: `health`, `get_palette`, `check_contrast`, `simulate_color_blindness`, `adjust_lightness`, `get_color_psychology`, `search_concepts`. Each accepts a hex code or a palette name wherever it takes a colour. Levels, the Tailwind export and image simulation are command-line only, because they read or write files.
@@ -49,14 +49,14 @@ Solo developers and small teams who:
 
 - Need a **pre-commit gate** that fails fast on contrast regressions.
 - Want a curated starter palette rather than picking colors at random.
-- Want CVD (color-blindness) review without a browser extension or SaaS.
+- Want CVD (colour-vision deficiency, the medical name for colour blindness: red and green that look alike, for instance) review without a browser extension or SaaS.
 - Need perceptual color shifts (lighten / darken) for
-  generating tints and shades, not the naïve RGB offsets that wash
+  generating tints and shades, not the naïve RGB (red, green, blue: the three channels a screen mixes) offsets that wash
   saturated hues into pastels.
 
 This skill is **not** a substitute for designer judgment. The
 auto-fix from `sprezzature-colors-contrast --fix` is a *starting point*: it walks
-the OKLCH lightness axis to find the nearest accessible neighbour, but
+the OKLCH (a way of numbering colours by lightness, chroma and hue, built so that equal steps look equally different to the eye) lightness axis to find the nearest accessible neighbour, but
 it can't tell you whether the resulting tonal hierarchy still matches
 your brand. Loop a designer in for the final call.
 
@@ -64,10 +64,10 @@ your brand. Loop a designer in for the final call.
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `sprezzature-colors-contrast` | WCAG ratio violations on (label × surface) pairs; suggests nearest OKLCH-neighbour fix | does not verify brand identity or tonal hierarchy. The fix is a hint, not a final decision. |
+| `sprezzature-colors-contrast` | WCAG (Web Content Accessibility Guidelines, the international rules a web page must follow to be usable by people with disabilities) ratio violations on (label × surface) pairs; suggests nearest OKLCH-neighbour fix | does not verify brand identity or tonal hierarchy. The fix is a hint, not a final decision. |
 | `sprezzature-colors-cvd` | how a surface looks to a protanope / deuteranope / tritanope (MACHADO et al. 2009 matrices, full severity), plus an optional grayscale render. Catches red/green pairing before ship. | does not test motion sensitivity, low-vision blur, or contrast sensitivity beyond color. |
 | `sprezzature-colors-levels` | the palette remapped to `universal`, `high-contrast` (7:1), `monochrome`, `deuteranopia`, `protanopia` or `tritanopia`, keeping every colour name | a level is an option for a known need, not a replacement for an accessible default. |
-| `_colors.py` | shared primitives: sRGB ↔ linear, hex parsing, alpha compositing, WCAG luminance / contrast, OKLab / OKLCH (Björn OTTOSSON), CVD matrices, perceptual `lighten` / `darken`, palette and psychology accessors | not a full-blown color library — no CMYK, no Lab D50, no gamut mapping beyond the OKLCH L axis search. |
+| `_colors.py` | shared primitives: sRGB ↔ linear, hex parsing, alpha compositing, WCAG luminance / contrast, OKLab / OKLCH (Björn OTTOSSON), CVD matrices, perceptual `lighten` / `darken`, palette and psychology accessors | not a full-blown color library — no CMYK (cyan, magenta, yellow, black: the four inks of a printing press), no Lab D50, no gamut mapping beyond the OKLCH L axis search. |
 
 ## Decision tree
 
@@ -133,14 +133,14 @@ brand.meets_wcag("#FFFFFF", level="AA", size="large")   # True
 ## Two modes: make and audit
 
 This skill covers both sides of color: one make-side
-emitter, two audit-side gates, all backed by the same CSV.
+emitter, two audit-side gates, all backed by the same CSV (comma-separated values, a table saved as plain text, one row per line with the cells separated by commas: what a spreadsheet exports) file.
 
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make** — emit Tailwind config from the curated palette | `sprezzature-colors-palette-to-tailwind` | Render `references/palette.csv` as a `theme.extend.colors` block (default) or a complete `tailwind.config.js`. |
 | **Audit** — gate before ship | `sprezzature-colors-contrast`, `sprezzature-colors-cvd` | WCAG ratio audit with **suggest-only** OKLCH-neighbour fix; CVD simulation (protanopia / deuteranopia / tritanopia). |
 
-**Note on `--fix` semantics.** Other sprezzature-* auditors (`sprezzature-ux-laws-audit --fix`, `sprezzature-accessibility-lint --fix`, `sprezzature-publish-lint --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA, chunking digits. `sprezzature-colors-contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
+**Note on `--fix` semantics.** Other sprezzature-* auditors (`sprezzature-ux-laws-audit --fix`, `sprezzature-accessibility-lint --fix`, `sprezzature-publish-lint --fix`) apply mechanical edits in place: adding `min-h-11`, stripping redundant ARIA (Accessible Rich Internet Applications, HTML attributes that tell a screen reader what an element is, such as role="dialog") attributes, chunking digits. `sprezzature-colors-contrast --fix` is intentionally **suggest-only** because changing a brand hex is a design decision, not a mechanical repair. The script proposes the nearest accessible OKLCH neighbour for each failing pair; a human reviews and applies. This asymmetry is by design; do not "harmonise" it without a designer in the loop.
 
 The two halves agree on the source of truth; see the next section.
 
@@ -192,7 +192,7 @@ live in the sprezzature-* ecosystem when the curated default is in play:
   axis instead), and it predates the CSV's correction of the Turquoise
   `light` tint. When the two disagree, the CSV wins.
 
-For a UI deliverable end-to-end:
+For a UI (user interface, the screens, buttons and forms a person uses) deliverable end-to-end:
 
 ```bash
 # Generate the Tailwind config from the canonical palette.
@@ -239,7 +239,7 @@ sub-command of the `sprezzature-colors` front door.
 | `audit_contrast.py` → `sprezzature-colors-contrast` | click (base install) | WCAG contrast audit + OKLCH-neighbour fix suggester. Hint to designer, not final decision. |
 | `simulate_cvd.py` → `sprezzature-colors-cvd` | click + Pillow (base install) | Protanopia / deuteranopia / tritanopia rendering (MACHADO matrices), optional grayscale. |
 | `accessibility_levels.py` → `sprezzature-colors-levels` | click (base install) | The palette at one of six accessibility levels, same names. |
-| `_colors.py` | stdlib only | Shared color primitives: sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI router. |
+| `_colors.py` | stdlib only | Shared color primitives: sRGB ↔ linear, hex ↔ RGB, OKLab / OKLCH, WCAG, CVD matrices, perceptual lighten / darken, palette accessors, `Color` class. Internal helper; not invoked directly via the CLI (command-line interface, a program you run by typing a command in a terminal) router. |
 | `palette_to_tailwind.py` → `sprezzature-colors-palette-to-tailwind` | click (base install) | Render `references/palette.csv` as a Tailwind v3+ `theme.extend.colors` block (`--emit theme`, default) or a complete `tailwind.config.js` (`--emit config`). Optional `--with-dark` for OKLCH-derived dark-mode variants; `--include-neutrals` opts in to Brown / Black / Gray / White. The make-side counterpart to `sprezzature-colors-contrast`: closes the CSV → emitted-config loop so brand tokens cannot drift. |
 
 ## Companion skills
@@ -248,7 +248,7 @@ sub-command of the `sprezzature-colors` front door.
 |---|---|
 | Static HTML a11y lint | `sprezzature-accessibility` |
 | AI alt text via local Ollama vision | `sprezzature-accessibility` |
-| Local WebVTT / SRT captions via whisper.cpp | `sprezzature-audio` |
+| Local WebVTT / SRT (SubRip, the most common subtitle file: numbered captions, each with a start and end time) captions via whisper.cpp | `sprezzature-audio` |
 | Vanilla-JS + Tailwind UI generation | `sprezzature-ui` |
-| Wrap a CLI in a GUI | `sprezzature-cli-gui` |
+| Wrap a CLI in a GUI (graphical user interface, windows, buttons and forms you click instead of typing commands) | `sprezzature-cli-gui` |
 | Markdown → website + meta + favicons + indexes | `sprezzature-publish` |

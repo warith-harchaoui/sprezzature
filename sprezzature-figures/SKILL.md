@@ -36,9 +36,9 @@ metadata:
 | Surface | Entry point |
 |---|---|
 | Library | `from sprezzature_figures import make_figure, check_render, redraw, list_kinds, get_figure_definition` |
-| CLI (Click) | `sprezzature-figures` (also installed as `make-figure`, the same group): `list`, `render`, `describe`, `recommend`, `redraw`, `check` |
-| HTTP API (FastAPI), Docker, Compose | `uvicorn sprezzature_figures.api:app`; `docker compose up` runs `sprezzature-figures-mcp`, which serves the API and `/mcp` on the same port (8000) |
-| MCP | `sprezzature-figures-mcp` (endpoint `/mcp`), eight tools named by `operation_id`: `health`, `list_kinds`, `get_kind`, `list_kind_options`, `recommend_figures`, `render_figure`, `redraw_figure`, `check_render` |
+| CLI (command-line interface, a program you run by typing a command in a terminal; here built with Click) | `sprezzature-figures` (also installed as `make-figure`, the same group): `list`, `render`, `describe`, `recommend`, `redraw`, `check` |
+| HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as render this chart; here served by FastAPI), Docker, Compose | `uvicorn sprezzature_figures.api:app`; `docker compose up` runs `sprezzature-figures-mcp`, which serves the API and `/mcp` on the same port (8000) |
+| MCP (Model Context Protocol, the protocol through which AI agents call tools in English) | `sprezzature-figures-mcp` (endpoint `/mcp`), eight tools named by `operation_id`: `health`, `list_kinds`, `get_kind`, `list_kind_options`, `recommend_figures`, `render_figure`, `redraw_figure`, `check_render` |
 | Skill | this file |
 
 Two numbers, both deliberate: the catalogue holds 168 kinds (`sprezzature-figures list`); the web gallery on sprezzature.ai shows 161 of them, because the five glyph maps sit on the maps page and the two Gapminder figures on the Hans ROSLING page.
@@ -50,13 +50,13 @@ Two numbers, both deliberate: the catalogue holds 168 kinds (`sprezzature-figure
 Solo developers, data scientists, and small teams who:
 
 - Ship **figures** (charts in a docs site, feature-importance plots in
-  a model report, DAGs in a causal analysis) and want them to look
+  a model report, causal graphs (DAG, directed acyclic graph, a diagram of arrows from causes to effects that never loops back) in a causal analysis) and want them to look
   consistent with the rest of the `sprezzature-*` stack (Roboto, curated
   palette, dark-mode peer, `role="img"`, alt text stub).
 - Want **model explainability** without picking a library the hard way.
-  SHAP for tree models, **Shapash** for a full HTML report a business
-  stakeholder can read, **TimeSHAP** when the model is a recurrent /
-  transformer time-series predictor, LIME when the model is a black-box
+  SHAP (SHapley Additive exPlanations, a method that shows how much each input pushed a prediction up or down) for tree models, **Shapash** for a full HTML report a business
+  stakeholder can read, **TimeSHAP** when the model is a recurrent (LSTM, long short-term memory, a neural network that reads a sequence step by step) /
+  transformer time-series predictor, LIME (Local Interpretable Model-agnostic Explanations, a method that explains one prediction by fitting a simple model around it) when the model is a black-box
   classifier.
 - Want **causal-effect estimation** using an opinionated pipeline
   (DoWhy → EconML → refuters), not a hand-rolled Rubin causal model,
@@ -64,7 +64,7 @@ Solo developers, data scientists, and small teams who:
 - Want a **pre-commit gate** that fails fast on the small set of
   data-viz mistakes that survive review and are decidable from the
   markup: 3D pies, rainbow palettes, drop-shadow chartjunk, ticks left
-  as raw magnitudes or raw ISO dates, a `<figure>` with neither
+  as raw magnitudes or raw ISO (International Organization for Standardization, the body behind shared formats such as 2026-11-11 for a date) 8601 dates, a `<figure>` with neither
   `role="img"` nor a caption (`audit_figure.py`); and labels colliding,
   text off the canvas, a dropped title (`sprezzature-figures check`).
   Neither reads polarity, axis truncation or colour-vision safety; those
@@ -87,7 +87,7 @@ data-science figures:
 |---|---|---|
 | **Make** — plot a dataset in the house style | `sprezzature-figures render` (same as `make-figure render`) | Renders one of the catalogue's chart kinds (`sprezzature-figures list` prints all of them, e.g. `treemap`, `funnel`, `waterfall`) from your own data (`--data file.csv`, columns bound with `--map role=column`) or its built-in demo data, in the same palette and typography as `sprezzature-ui`. `sprezzature-figures recommend --data file.csv` ranks which chart kinds your data can fill before you pick one. |
 | **Make** — explain a fitted model | `explain_model.py` | Dispatches to SHAP / Shapash / TimeSHAP / LIME by model type (tree / linear / sequence / black-box). Writes summary + dependence + waterfall plots; drops a Shapash HTML report when `--report shapash`. |
-| **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (no external layout engine) + writes the effect table to JSON. |
+| **Make** — estimate a causal effect + draw the DAG | `causal_estimate.py` | End-to-end DoWhy loop: model → identify → estimate (EconML backend when treatment is continuous) → refute. Renders the DAG as a hand-authored, layered SVG (Scalable Vector Graphics, an image made of shapes rather than pixels, so it stays sharp at any zoom; no external layout engine) + writes the effect table to JSON (JavaScript Object Notation, a text format in which programs store data as named fields, such as {"name": "Paris"}). |
 | **Make** — an areas-of-control situation map, or a choropleth on a real basemap | `sprezzature-maps` (standalone package, see note below) | `make_situation_map.py` and `build_situation_examples.py` no longer ship inside `sprezzature-figures`; they were split out into the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package alongside `make_choropleth.py`, which draws on a real basemap (Natural Earth): the world choropleth in Equal Earth, the situation plate in an auto-centred Lambert conformal conic. `pip install sprezzature-maps`, then `make-map situation-map --config my-region.yaml --out region.svg` or `make-map choropleth --out world.svg`. `sprezzature-figures` keeps only the schematic, binned map kinds (`binned-grid-map`, `dotdensity`, `hexbin-map`, `hexmap`, `spike-map`), which plot points or grid cells, not real coastlines. |
 | **Make** — somebody else's chart, from a picture of it | `sprezzature-figures redraw` | Takes a screenshot (PNG/JPEG/GIF/WebP/SVG) of an existing chart, has a vision model read what kind it is and what costs the reader effort, and draws it here. **Never invents numbers**: `data_origin` reports `your-data` (rows you passed), `read-from-image` (printed on the original and read back, approximate) or `demo` (nothing readable — the redesign on sample rows, captioned as such on the figure itself). Pass `--data` to get a figure worth publishing. |
 | **Loop** — [Ralph Eyeball Loop](references/ralph-eyeball-loop.md) on any visual source | `ralph_eyeball_loop.py` | Universal visual-quality technique: renders **any** visual-from-code artifact (HTML web page, TikZ figure, hand-authored SVG) to a PNG, then writes / extends `.private/ralph-loop/assessment-<hash>.md` for honest critique. For HTML: headless Chrome. For diagrams: delegates to `render_diagram.py`. Applies to the whole `sprezzature-*` repo; data viz is one application, not the scope. |
@@ -100,13 +100,13 @@ data-science figures:
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `sprezzature-figures render` | Chart kinds from a fixed, growing catalogue (`sprezzature-figures list [--status stable]`), each in the `sprezzature-ui` house style (rounded corners, no top/right spine, no rainbows, palette from `sprezzature-colors/references/palette.csv`); binds your own CSV / TSV / JSON / JSONL columns to the kind's roles via `--map role=column`, or falls back to built-in demo data. | Does not invent the right chart; the catalogue is closed-set (`sprezzature-figures list` shows what exists today), not an open x/y/kind combinator. For chart-type selection see `sprezzature-ui/references/dataviz-chart-selection.md`. Does not do map projections beyond what a given catalogue kind supports; for choropleths see `sprezzature-ui/references/dataviz-maps.md`. |
+| `sprezzature-figures render` | Chart kinds from a fixed, growing catalogue (`sprezzature-figures list [--status stable]`), each in the `sprezzature-ui` house style (rounded corners, no top/right spine, no rainbows, palette from `sprezzature-colors/references/palette.csv`); binds your own CSV (comma-separated values, a table saved as plain text, one row per line with the cells separated by commas: what a spreadsheet exports) / TSV (tab-separated values, the same table with tabs between the cells) / JSON / JSONL (JSON Lines, one JSON record per line of a text file) columns to the kind's roles via `--map role=column`, or falls back to built-in demo data. | Does not invent the right chart; the catalogue is closed-set (`sprezzature-figures list` shows what exists today), not an open x/y/kind combinator. For chart-type selection see `sprezzature-ui/references/dataviz-chart-selection.md`. Does not do map projections beyond what a given catalogue kind supports; for choropleths see `sprezzature-ui/references/dataviz-maps.md`. |
 | `sprezzature-figures redraw` | The **design** of a chart in a picture: which of the catalogue's kinds shows the same thing, the text printed on it, and what makes it harder to read than it needs to be. Chooses only from the catalogue — a kind outside the candidate list is a hard error, not a result. | The **data**. A chart drawn without data labels does not contain its numbers, and this refuses to estimate them from mark size: without `--data` you get the redesign on sample rows, and the figure says so. Read `data_origin` before sharing the output. A local 7B vision model takes ~90 s and reads fewer issues than a larger one. |
 | `explain_model.py` | Model-agnostic SHAP for tree / linear / kernel models (via `shap.Explainer`), Shapash HTML report for a full business-facing writeup, TimeSHAP for recurrent / attention-based time-series models, LIME as fallback for opaque classifiers. Writes summary plot + top-N dependence plots + one waterfall for the row with the largest absolute prediction. | Does not train models. Does not evaluate them; use `probabl-ai/skills/evaluate-ml-pipeline` or `scikit-learn`'s report utilities. Does not do counterfactual reasoning; see `alibi` or `DiCE`. |
-| `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no external layout engine); a JSON effect table for CI. | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
+| `causal_estimate.py` | DoWhy's four-step loop end-to-end (model → identify → estimate → refute); EconML `DML`, `DR-learner`, and `CausalForest` estimators when treatment is continuous; a hand-authored, layered SVG DAG (no external layout engine); a JSON effect table for CI (continuous integration, the automatic checks a server runs on every change pushed to a repository). | Does not discover the DAG; you supply it as a gml / networkx / DoWhy string. For discovery, use `causal-learn` or `causallearn`. Does not do interrupted-time-series or synthetic controls; for those see `CausalImpact` or `SparseSC` (out of scope). |
 | `sprezzature-figures check` | The factual half of "does this read?": overlapping labels, sibling labels whose baselines nearly but not quite line up (`baseline_near_miss`), text outside the canvas, leftover demo chrome, a light surface on a dark figure, an `expected_title` the generator ignored, a missing `<title>` / `<desc>`. Deterministic, no model, works offline. Measures text with the same calibrated table the generators lay out with, so a string a generator fitted is never reported as overflowing. | Anything that needs eyes or judgement: whether the chart type answers the question, whether the colours carry meaning, whether the story is the right one. Use the Ralph Eyeball Loop for those. It also cannot see a glyph the embedded font lacks, only the width it would take. |
 | `audit_figure.py` | SVG charts and HTML `<figure>` blocks. Rules: perspective-transformed (3D) pie / donut; rainbow palette (viridis is fine; jet / hsv / rainbow are not); chartjunk (drop shadow, blur filter); corner radius over the 16 px cap; axis ticks left as raw magnitudes (`200000` rather than `200k`); ticks left as raw ISO dates; missing `role="img"` / alt-text stub on the surrounding `<figure>`. | Reads what the markup literally says, and nothing more: a chart can pass every rule and still encode the wrong thing. Does not verify whether the *right chart* was chosen (a design decision, not a mechanical one), and does not evaluate statistical soundness (baseline choice, confidence-interval computation). Loop a data-viz reviewer in for the final call. |
-| `make_situation_map.py` (now in `sprezzature-maps`) | A professional-desk layered plate from one YAML config for any region (real national outline from the vendored Natural Earth basemap, per-layer PNG/SVG exports). | Moved to the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package, run as `make-map situation-map --config … --out …` (`situation_map` is the same command). Does not ship inside `sprezzature-figures` any more; point users at `sprezzature-maps` for this capability. |
+| `make_situation_map.py` (now in `sprezzature-maps`) | A professional-desk layered plate from one YAML (YAML Ain't Markup Language, a plain-text format for settings, one name: value per line) config for any region (real national outline from the vendored Natural Earth basemap, per-layer PNG/SVG exports). | Moved to the standalone [`sprezzature-maps`](https://github.com/warith-harchaoui/sprezzature-maps) package, run as `make-map situation-map --config … --out …` (`situation_map` is the same command). Does not ship inside `sprezzature-figures` any more; point users at `sprezzature-maps` for this capability. |
 
 ## Decision tree
 
@@ -244,7 +244,7 @@ values.
   data viz is one application of the loop (not its scope):
   `references/ralph-eyeball-loop.md`.
 - **Figure catalogue.** All 168 `make-figure` kinds render as hand-authored,
-  CSS-interactive SVG (`_svg.py` helpers). SHAP / Shapash's underlying
+  SVG made interactive with CSS (Cascading Style Sheets, the language that sets a web page's colours, fonts and layout) (`_svg.py` helpers). SHAP / Shapash's underlying
   contributions, TimeSHAP, and the causal DAG / forest plot all render as
   hand-authored SVG too; no charting library is involved anywhere in this
   package, and a test sweeps the whole tree to keep it that way. LIME and
@@ -267,7 +267,7 @@ three-Roboto rule in `sprezzature-ui/SKILL.md`:
 - **Audit mode:** respect the existing colors; do not refactor to the
   CSV unless the user asks. Judge colour-vision safety against the
   user's palette, not against ours, with `sprezzature-colors-cvd`;
-  `audit_figure.py` has no CVD rule.
+  `audit_figure.py` has no CVD (colour-vision deficiency, the medical name for colour blindness: red and green that look alike, for instance) rule.
 
 ## Tool composition
 
@@ -314,7 +314,7 @@ sprezzature-accessibility-lint public/report.html
   refresh); `sprezzature-figures` emits static specs / files. Use
   Grafana, Superset, or Streamlit.
 - You need **notebook-first** exploration; the make scripts are
-  pipe-ready CLIs, not Jupyter widgets. Use `jupyter-notebook`
+  pipe-ready command-line tools (CLIs, programs run by typing a command), not Jupyter widgets. Use `jupyter-notebook`
   (Anthropic) or `working-in-notebooks` (legout) skills.
 - You need **counterfactual explanations**; see `alibi`, `DiCE`, or
   the WhatIf tool. SHAP / Shapash / LIME answer *"why did the model
@@ -324,7 +324,7 @@ sprezzature-accessibility-lint public/report.html
   `causal-learn` or `causal-discovery-toolbox`. This skill assumes
   the DAG is supplied.
 - You need **interrupted-time-series** or **synthetic-control**
-  analyses; see `CausalImpact` (Bayesian ITS) or `SparseSC`
+  analyses; see `CausalImpact` (Bayesian ITS (interrupted time series, comparing a trend before and after an event such as a new law)) or `SparseSC`
   (synthetic controls). Out of scope here.
 - Your team already uses Style Dictionary / Theo / Tokens Studio and
   a designed dashboard framework; those are more powerful, and this
@@ -348,7 +348,7 @@ sprezzature-accessibility-lint public/report.html
 - `references/audit-figure.md` — Full rule catalogue for
   `audit_figure.py` with false-positive notes.
 - `references/publication-presets.md` — Why there are no journal
-  presets yet (Nature, Science, PLOS, IEEE), and what exists beside
+  presets yet (Nature, Science, PLOS (Public Library of Science, an open-access journal publisher), IEEE (Institute of Electrical and Electronics Engineers, the engineering society whose journals have their own figure rules)), and what exists beside
   them: `--scale`, `render_diagram.py --dpi`, and the maps' `print_width`.
 - `references/ralph-eyeball-loop.md` — The loop's protocol, surfaces
   and assessment file.
@@ -381,11 +381,11 @@ sprezzature_figures_scripts.<module>`.
 
 | You also need… | Install |
 |---|---|
-| Vanilla-JS + Tailwind UI generation (house style, tokens, components) | `sprezzature-ui` |
-| Wrap the CLIs in a GUI (argparse or Click → web form) | `sprezzature-cli-gui` |
+| Vanilla-JS + Tailwind UI (user interface, the screens, buttons and forms a person uses) generation (house style, tokens, components) | `sprezzature-ui` |
+| Wrap the CLIs in a GUI (graphical user interface: here a web form built from argparse or Click) | `sprezzature-cli-gui` |
 | Markdown → website + meta + favicons + indexes | `sprezzature-publish` |
 | Static HTML a11y lint on the page hosting the figure | `sprezzature-accessibility` |
-| WCAG contrast audit + CVD simulation on the rendered PNG | `sprezzature-colors` |
-| W3C alt text for the rendered figure (local Ollama vision) | `sprezzature-accessibility` |
-| Local WebVTT / SRT captions for an accompanying video | `sprezzature-audio` |
+| WCAG (Web Content Accessibility Guidelines, the international rules a web page must follow to be usable by people with disabilities) contrast audit + CVD simulation on the rendered PNG | `sprezzature-colors` |
+| W3C (World Wide Web Consortium, the body that writes the web's standards) alt text for the rendered figure (local Ollama vision) | `sprezzature-accessibility` |
+| Local WebVTT / SRT (SubRip, the most common subtitle file: numbered captions, each with a start and end time) captions for an accompanying video | `sprezzature-audio` |
 | Laws-of-UX audit on the surrounding page | `sprezzature-ux-laws` |

@@ -34,7 +34,7 @@ metadata:
 **Data attached to *places* is the trigger.** Not the word "map". "Which
 countries are worst affected", "break this down by région", "where is this
 happening", "show me the spread across Europe" — a column of country names,
-ISO codes, states or départements is a map waiting to be drawn, and the only
+ISO (International Organization for Standardization, the body behind shared codes such as the two-letter country codes) codes, states or départements is a map waiting to be drawn, and the only
 open question is which kind.
 
 ## The one routing decision that matters
@@ -64,7 +64,7 @@ this skill. If the map is a seating chart that happens to look like a country,
 
 | Generator | Catches | Misses |
 |---|---|---|
-| `choropleth` | one fill colour per territory on a perceptual OKLCH ramp, Equal Earth projection, hillshade relief, automatic diverging scale when the values span both signs, neutral grey for territories with no data | it maps a value per *territory*, so it inherits the choropleth's own bias: a large sparsely-populated region shouts louder than a small dense one. If the story is about people rather than land, say so, and consider a cartogram or a per-capita normalisation before drawing. |
+| `choropleth` | one fill colour per territory on a perceptual OKLCH (a way of numbering colours by lightness, chroma and hue, built so that equal steps look equally different to the eye) ramp, Equal Earth projection, hillshade relief, automatic diverging scale when the values span both signs, neutral grey for territories with no data | it maps a value per *territory*, so it inherits the choropleth's own bias: a large sparsely-populated region shouts louder than a small dense one. If the story is about people rather than land, say so, and consider a cartogram or a per-capita normalisation before drawing. |
 | `situation_map` | a layered plate for any region: auto-centred Lambert conformal conic projection, real national outlines, bathymetry halo near the coast, zones filled by category, flashpoint markers, a scale bar in kilometres **and** miles | it has **no view on whether a claim of control is true**. It draws exactly what the config says. |
 | `density` | an accumulation map: point events binned to a luminous field. No coastline, no border, no graticule are drawn — the land appears because events fell on it and the sea stays dark because none did, so a reader recognises the shape without being shown it. Vector, binned, one path per level. | it shows *where*, never *how many per capita*: a dense city looks dense because people are there. And the form is persuasive enough to be believed, so the caption carrying the events' provenance is not decoration — the bundled demo says on the plate that its data is synthetic. |
 
@@ -83,11 +83,11 @@ evidence.
 |---|---|---|
 | "map this by country" / "colour the regions by score" / "which country is highest" / « une carte par département » | `choropleth` | `make-map choropleth --data rows.json --out world.svg [--title "…"]`. Rows are `{"id": "<ISO-3166-1 numeric>", "value": <number>}` — `"840"` for the United States, `"124"` for Canada. Send nothing at all and you get the demo map, which is the fastest way to show someone the shape of the input before they commit real data to it. |
 | the values are skewed — income, density, counts, anything with a long tail | `choropleth` with `classes` | `make-map choropleth --classes 5 --method quantile`, or `{"classes": 5, "method": "jenks"}` on the route. Without it the ramp stretches min-to-max and most territories collapse into its bottom. See the section above for which method answers which question; the legend names whichever you pick. |
-| "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation-map --config region.yaml --out region.svg` (`situation_map`, with the underscore, is the same command). The region, the zones, the categories and the flashpoints all live in the YAML, so the CLI is usually the better surface here; the bundled Europe demo config runs with no arguments. |
+| "areas of control" / "front line" / "who controls what" / « carte de situation » | `situation_map` | `make-map situation-map --config region.yaml --out region.svg` (`situation_map`, with the underscore, is the same command). The region, the zones, the categories and the flashpoints all live in the YAML (YAML Ain't Markup Language, a plain-text format for settings, one name: value per line), so the CLI (command-line interface, a program you run by typing a command in a terminal) is usually the better surface here; the bundled Europe demo config runs with no arguments. |
 | "where did these incidents fall" / a list of `[lon, lat]` events | `density` | `make-map density --points events.json --out where.svg [--bins 160]`. No coastline is drawn; say where the events came from in the caption (`caption` on the route or in the library). |
 | a country or a bounding box, and no region config yet | `situation_new` | `make-map situation-new --country Sudan --out sudan.yaml` (or `situation_new`; omit `--out` for stdout) (or `--bbox west,south,east,north`). The starter renders as it stands, furnished, with `confidence` on every commented zone. |
-| an ACLED or UCDP GED export | `acled_events` / `ucdp_events`, then `situation_map` | `cfg.update(acled_events("export.csv", derive_region=True))` in Python. The loaders keep each row's precision code on its mark; UCDP rows known only to the country are not drawn, and are counted on the plate. |
-| "can we publish this map" / a finished plate | `audit` | `make-map audit plate.svg` (or a folder, `--format json`). Exit 1 on any finding, 0 when clean, 2 when the target holds no SVG. See the audit section below. |
+| an ACLED (Armed Conflict Location & Event Data, a public database where each row is one dated, located clash or protest) or UCDP (Uppsala Conflict Data Program, a Swedish university's database of wars) GED (Georeferenced Event Dataset, its list of violent events, each pinned to a place and a date) export | `acled_events` / `ucdp_events`, then `situation_map` | `cfg.update(acled_events("export.csv", derive_region=True))` in Python. The loaders keep each row's precision code on its mark; UCDP rows known only to the country are not drawn, and are counted on the plate. |
+| "can we publish this map" / a finished plate | `audit` | `make-map audit plate.svg` (or a folder, `--format json`). Exit 1 on any finding, 0 when clean, 2 when the target holds no SVG (Scalable Vector Graphics, an image made of shapes rather than pixels, so it stays sharp at any zoom). See the audit section below. |
 | "is this readable" / "make it clearer" | `improve` | `make-map improve --kind choropleth --data rows.csv --out map.png` (`--out` is required and must be a `.png`). Needs a local vision model; never changes the classification, the class count or the frame on its own. |
 | "what kinds of map can you draw" | `list_kinds` | Three: `choropleth`, `density`, `situation_map`. Anything else map-shaped is in `sprezzature-figures`. |
 
@@ -120,7 +120,7 @@ For a plate that runs beside an article, start from `style: editorial`:
 the status quo as paper (`areas_of_control.baseline`), one saturated colour
 for the ground that changed hands, the zone named on the zone
 (`labels.territories`), a title that states the finding, the key below the
-map. It opens with a short CSS sequence that `prefers-reduced-motion` stops
+map. It opens with a short CSS (Cascading Style Sheets, the language that sets a web page's colours, fonts and layout) animation sequence that `prefers-reduced-motion` stops
 and that a PNG never shows.
 
 `make_situation_map`'s module docstring carries the full reference under
@@ -194,7 +194,7 @@ one they are being told.
 By default this generator does not class at all: it stretches the ramp
 linearly from the smallest value to the largest. That is fine for values
 spread evenly, and it is the weakest possible choice for the right-skewed data
-most indicators are — income, density, counts, GDP per head. On GDP per head
+most indicators are — income, density, counts, GDP (gross domestic product, the value of everything a country produces in a year) per head. On GDP per head
 for twenty countries it puts nine of them in the bottom quarter of the ramp,
 and leaves India, at ten times Burundi's figure, a shade the eye cannot tell
 from Burundi's.
@@ -316,8 +316,8 @@ One `pip install sprezzature-maps` installs all of them; there are no extras.
 |---|---|
 | Library | `from sprezzature_maps import make_choropleth, make_density, make_situation_map`, plus `acled_events`, `ucdp_events`, `classification_methods`, `article_sidecar`, `plate_provenance`, `replay_report` |
 | CLI | `make-map` (or `sprezzature-maps`), a Click group: `list`, `choropleth`, `situation-map`, `situation-new` (each also answers to its underscore spelling), `density`, `audit`, `improve` |
-| HTTP API | `GET /health`, `GET /v1/kinds`, `POST /v1/choropleth`, `POST /v1/situation-map`, `POST /v1/density` (`uvicorn sprezzature_maps.api:app`, or `docker compose up` in the package repository, whose image runs `sprezzature-maps-mcp`: the API and `/mcp` on port 8000) |
-| MCP | `sprezzature-maps-mcp`, endpoint `/mcp`. Five tools named by the routes' `operation_id`: `health`, `list_kinds`, `render_choropleth`, `render_situation_map`, `render_density`. The audit, the starter and `improve` have no MCP tool: they work on files on the caller's disk |
+| HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as render this chart) | `GET /health`, `GET /v1/kinds`, `POST /v1/choropleth`, `POST /v1/situation-map`, `POST /v1/density` (`uvicorn sprezzature_maps.api:app`, or `docker compose up` in the package repository, whose image runs `sprezzature-maps-mcp`: the API and `/mcp` on port 8000) |
+| MCP (Model Context Protocol, the protocol through which AI agents call tools in English) | `sprezzature-maps-mcp`, endpoint `/mcp`. Five tools named by the routes' `operation_id`: `health`, `list_kinds`, `render_choropleth`, `render_situation_map`, `render_density`. The audit, the starter and `improve` have no MCP tool: they work on files on the caller's disk |
 | Skill | this file |
 
 A person can also open the editor, `sprezzature-maps`
@@ -330,7 +330,7 @@ you get the demo map.
 
 Fifteen situation plates ship as Python configs in the package repository's
 examples builder (`build_situation_examples.py`): six thematic (Ukraine, the lower
-Dnieper with numbered article marks, Syria, Libya, Sudan, eastern DRC) and
+Dnieper with numbered article marks, Syria, Libya, Sudan, eastern Democratic Republic of the Congo (DRC)) and
 nine reference plates with no thematic layer (Switzerland, Iberia, western
 Europe, the Himalaya, the Caribbean, the Andes, the Sahel, the Strait of
 Hormuz, the South China Sea). Read one before writing a config from scratch.

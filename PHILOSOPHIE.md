@@ -8,9 +8,14 @@ ici n'est un vœu pieux. Pour le *quoi* (les *skills*, l'installation), voyez
 Version anglaise miroir : [`PHILOSOPHY.md`](PHILOSOPHY.md).
 
 Les sigles sont explicités à leur première apparition : *scalable vector
-graphics* (SVG, graphiques vectoriels adaptatifs), *portable network
-graphics* (PNG), déficience de la vision des couleurs (DVC), feuilles de
-style en cascade (CSS), modèle langue-vision (VLM).
+graphics* (SVG, une image faite de formes plutôt que de pixels, qui reste
+nette à tous les zooms), *portable network graphics* (PNG), déficience de
+la vision des couleurs (DVC, le nom médical du daltonisme, quand un rouge et
+un vert se confondent par exemple), feuilles de style en cascade (CSS,
+Cascading Style Sheets, le langage qui fixe les couleurs, les polices et la
+mise en page d'une page web), modèle langue-vision (VLM, vision-language
+model, un modèle d'IA qui lit une image comme un texte et sait dire ce qu'il
+voit).
 
 ---
 

@@ -38,11 +38,11 @@ metadata:
 
 Solo developers and small teams who:
 
-- Need **WebVTT / SRT captions** on every `<video>` and `<audio>` they
+- Need **WebVTT / SRT (SubRip, the most common subtitle file: numbered captions, each with a start and end time) captions** on every `<video>` and `<audio>` they
   ship, drafted at commit time rather than via a hosted service.
 - Want **AI that runs locally**: no SaaS bill, no audio exfiltration, no
   per-minute pricing. Apple-silicon Macs get Metal acceleration via
-  ``whisper.cpp`` automatically.
+  `whisper.cpp` automatically.
 - Want **vocabulary biasing** so the model knows the project's
   technical terms, product names and people's names before it
   hallucinates a near-miss spelling.
@@ -61,18 +61,18 @@ skill is for static media that gets committed to a repo.
 
 The tools and tests ship today; what is still being collected:
 
-- Per-language **WER baselines** for EN / FR / ES (the extractor that
+- Per-language **WER (word error rate, the share of words a transcript gets wrong) baselines** for English, French and Spanish (the extractor that
   builds them is wired; the baselines themselves are pending). Without
   baselines, you can't know whether a given run's quality is in the
   expected band.
-- A user-supplied **``vocab-biasing-clip.wav``** that exercises the
+- A user-supplied **`vocab-biasing-clip.wav`** that exercises the
   prompt-biasing path end-to-end. The current tests check the
   prompt-string construction; an audio fixture would let us regress
   on the actual transcription behaviour.
 
-A future revision will integrate **``pdbms``** (per the maintainer) to
+A future revision will integrate **`pdbms`** (per the maintainer) to
 improve the whisper.cpp integration. Track shape via
-``tests/fixtures/audio/README.md`` in this repository.
+`tests/fixtures/audio/README.md` in this repository.
 
 ## Two modes: make and audit
 
@@ -82,16 +82,16 @@ front door `sprezzature-audio` (alias `make-audio`).
 | Mode | Tool | Purpose |
 |---|---|---|
 | **Make**: draft captions / transcripts | `sprezzature-audio-captions` (`captions`) | WebVTT / SRT / plain-text captions via local whisper.cpp, with project-vocab biasing. |
-| **Make**: speaker diarization ("who spoke when") | `sprezzature-audio-diarize` (`diarize`) | NeMo Sortformer end-to-end diarizer → RTTM + `.diarization.json`. Up to 4 concurrent speakers with the default checkpoint. |
-| **Make**: speaker identification via **reference clips** | `sprezzature-audio-identify` (`identify`) | NeMo TitaNet speaker embeddings + cosine matching against a directory of known WAVs (filename stem = display name). |
+| **Make**: speaker diarization ("who spoke when") | `sprezzature-audio-diarize` (`diarize`) | NeMo Sortformer end-to-end diarizer → RTTM (Rich Transcription Time Marked, a text file with one line per speaking turn: who, from when, for how long) + `.diarization.json`. Up to 4 concurrent speakers with the default checkpoint. |
+| **Make**: speaker identification via **reference clips** | `sprezzature-audio-identify` (`identify`) | NeMo TitaNet speaker embeddings + cosine matching against a directory of known WAV (Waveform Audio File Format, the standard uncompressed audio file) recordings (filename stem = display name). |
 | **Make**: speaker identification via the **transcript itself** | `sprezzature-audio-name` (`name`) | Rule pass over self-introductions ("I'm Alice") and vocatives ("Hey Mary, ..."). Optional `--ollama` refinement through a local Ollama daemon. |
-| **Make**: merge captions + diarization | `sprezzature-audio-pipeline` (`pipeline`) | Speaker-labelled VTT (`<v Name>` cues), SRT (`Name: text` prefix), or plain text. Takes two files already on disk, no media. |
+| **Make**: merge captions + diarization | `sprezzature-audio-pipeline` (`pipeline`) | Speaker-labelled VTT (WebVTT, Web Video Text Tracks: `<v Name>` cues), SRT (`Name: text` prefix), or plain text. Takes two files already on disk, no media. |
 | **Make**: translate captions → second track | `sprezzature-audio-translate` (`translate`) | Translates an existing `.vtt`/`.srt` into the **surrounding-text language** via the local model (`qwen3-vl:8b`) and prints a two-`<track>` snippet. Captions in, captions out, no audio. |
-| **Make**: text into speech | `sprezzature-audio-narrate-kokoro` (`narrate`), `sprezzature-audio-narrate-openvoice`, `sprezzature-audio-narrate-chatterbox` | `--segments <json> --out-dir <dir>` → `narration.wav` (or `--audio-format mp3`) + `narration.vtt`, and a one-line JSON report on stdout. Kokoro: 54 voices across eight languages, ONNX. OpenVoice clones from a short `--voice-sample`; Chatterbox takes emotion hints. Leave `--voice` empty and the text's language picks the voice. |
+| **Make**: text into speech | `sprezzature-audio-narrate-kokoro` (`narrate`), `sprezzature-audio-narrate-openvoice`, `sprezzature-audio-narrate-chatterbox` | `--segments <json> --out-dir <dir>` → `narration.wav` (or `--audio-format mp3`) + `narration.vtt`, and a one-line JSON (JavaScript Object Notation, a text format in which programs store data as named fields, such as {"name": "Paris"}) report on stdout. Kokoro: 54 voices across eight languages, ONNX (Open Neural Network Exchange, a file format that lets a trained model run without the tool that trained it). OpenVoice clones from a short `--voice-sample`; Chatterbox takes emotion hints. Leave `--voice` empty and the text's language picks the voice. |
 | **Make**: hear the voices first | `sprezzature-audio-voice` (`voice`) | Lists each engine's built-in voices; `--sample` writes one demo clip per voice; `--measure` ranks them by pitch movement. |
-| **Make**: prepare the machine | `sprezzature-audio-install`, `-install-diarize`, `-install-voice` | GGML Whisper weights; a NeMo check + Sortformer and TitaNet checkpoints; a narration engine's weights plus an espeak-ng check. |
+| **Make**: prepare the machine | `sprezzature-audio-install`, `-install-diarize`, `-install-voice` | GGML (the model file format whisper.cpp reads, one file per model) Whisper weights; a NeMo check + Sortformer and TitaNet checkpoints; a narration engine's weights plus an espeak-ng check. |
 | **Audit**: can the captions be read at the speed they go by | `sprezzature-audio-audit` (`audit`) | Eight static rules: reversed, overlapping or empty cues, reading speed, minimum and maximum duration, line width, line count. Defaults follow the Netflix Timed Text Style Guide (17 cps, 5/6 s, 7 s, 42 characters) and the two-line convention BBC and Netflix share; each is a flag. Exit 1 on any finding. No model, no network. |
-| **Audit**: how wrong is it against a reference | `sprezzature-audio-benchmark` (`benchmark`) | WER with its substitution / deletion / insertion split, DER on 10 ms frames with the standard 250 ms collar, and real-time factor of a timed command. |
+| **Audit**: how wrong is it against a reference | `sprezzature-audio-benchmark` (`benchmark`) | WER with its substitution / deletion / insertion split, DER (diarization error rate, the share of speaking time credited to the wrong person) on 10 ms frames with the standard 250 ms collar, and real-time factor of a timed command. |
 | **Audit**: gate the presence of `<track>` _(borrowed, not shipped here)_ | _(see `sprezzature-accessibility-lint`)_ | Static lint catches `<video>` / `<audio>` without a `<track kind="captions">` child. |
 
 Pair with `sprezzature-accessibility` to close the loop: this skill drafts
@@ -107,14 +107,14 @@ wrapper it names; `narrate` is Kokoro's front-door name, not a default.
 
 | Tool | Catches | Misses |
 |---|---|---|
-| `captions` | WebVTT / SRT / plain-text captions from a local whisper.cpp build; vocab biasing via ``--prompt`` / ``--vocab`` / ``--vocab-from`` / ``--auto-project``; language auto-detection with ``--lang`` override; result cache on the audio hash | not real-time; model-quality drafts: proper nouns, similar-sounding words and quiet passages need a review pass. |
-| `install` | Pre-downloads a GGML model (``--model``, default ``large-v3-turbo``) so the captioner runs offline. Idempotent. | does not install ``ffmpeg``; does not auto-update an installed model; does not pin GPU / Metal acceleration. |
-| `diarize` | Speaker diarization via NeMo **Sortformer**: RTTM + a JSON turn list, cached on the extracted-audio hash. Default checkpoint `nvidia/diar_sortformer_4spk-v1` (up to 4 speakers); `--model` swaps it. CUDA / MPS auto-selected. | not real-time; struggles with heavy overlap; see WhisperX + pyannote for word-level attribution. |
+| `captions` | WebVTT / SRT / plain-text captions from a local whisper.cpp build; vocab biasing via `--prompt` / `--vocab` / `--vocab-from` / `--auto-project`; language auto-detection with `--lang` override; result cache on the audio hash | not real-time; model-quality drafts: proper nouns, similar-sounding words and quiet passages need a review pass. |
+| `install` | Pre-downloads a GGML model (`--model`, default `large-v3-turbo`) so the captioner runs offline. Idempotent. | does not install `ffmpeg`; does not auto-update an installed model; does not pin GPU (graphics processing unit, the graphics chip that runs AI models many times faster than the main processor) / Metal acceleration. |
+| `diarize` | Speaker diarization via NeMo **Sortformer**: RTTM + a JSON turn list, cached on the extracted-audio hash. Default checkpoint `nvidia/diar_sortformer_4spk-v1` (up to 4 speakers); `--model` swaps it. CUDA (NVIDIA's platform for running computations on its graphics cards) / MPS (Metal Performance Shaders, the same thing on a Mac's Apple chip) auto-selected. | not real-time; struggles with heavy overlap; see WhisperX + pyannote for word-level attribution. |
 | `identify` | Speaker identification against reference clips with **TitaNet-Large** embeddings + cosine matching (`--threshold`, default 0.55). Writes `<stem>.speakers.json`. | needs one clean reference WAV per known speaker; cross-lingual matching needs a higher threshold; not built for open-set identification with dozens of candidates. |
 | `name` | Names from the transcript itself: self-introductions ("I'm Alice", "je m'appelle Bob") and vocatives ("Hey Mary, ...", "Thanks, Sam"). `--ollama` adds a local-model pass. | conversations without introductions or direct address give no evidence; the ids stay anonymous. |
 | `pipeline` | Attributes every caption cue to the diarization turn with the largest overlap. | boundaries around overlap remain approximate; one speaker per cue by construction. |
 | `translate` | Second-track translation via local Ollama (`qwen3-vl:8b`); batches cues for cross-cue context and re-attaches translations to the original timestamps 1:1; writes `<stem>.<lang>.vtt` and prints a two-`<track>` snippet. | an 8B model's **draft**: verify before shipping; needs a reachable Ollama daemon. |
-| `install-diarize` | Checks that NeMo imports (`nemo_toolkit[asr]` is a base dependency; it is pip-installed only when missing, and `--no-install` skips even that) and pre-downloads Sortformer + TitaNet (`--only` for one). Idempotent. | does not install torch for a specific CUDA / ROCm build; does not install `ffmpeg`. |
+| `install-diarize` | Checks that NeMo imports (`nemo_toolkit[asr]` is a base dependency; it is pip-installed only when missing, and `--no-install` skips even that) and pre-downloads Sortformer + TitaNet (`--only` for one). Idempotent. | does not install torch for a specific CUDA / ROCm (AMD's GPU computing platform) build; does not install `ffmpeg`. |
 | `narrate*` | Narration with a timed track through `speaker-helper`; `--lexicon` fixes how acronyms are said; `--check` exits 0 when the engine can synthesise here. | it reads a JSON list of blocks, not a Markdown or HTML page: turning a page into blocks is `sprezzature-publish`'s job. |
 
 ## Decision tree
@@ -136,8 +136,8 @@ wrapper it names; `narrate` is Kokoro's front-door name, not a default.
 
 ## Output contract
 
-`captions` writes a sibling ``<stem>.vtt`` (the default), ``<stem>.srt``
-or ``<stem>.txt`` next to the source media and prints the path it wrote.
+`captions` writes a sibling `<stem>.vtt` (the default), `<stem>.srt`
+or `<stem>.txt` next to the source media and prints the path it wrote.
 The `<track>` element is the caller's to emit:
 
 ```html
@@ -154,12 +154,12 @@ voice, language, detected language) and nothing after it.
 
 The captioner accepts a prompt-bias string ahead of decoding:
 
-- ``--prompt "<text>"``: text passed verbatim to whisper.cpp as the
+- `--prompt "<text>"`: text passed verbatim to whisper.cpp as the
   initial prompt.
-- Vocabulary terms, first non-empty source wins: ``--vocab <file>`` (a
-  glossary, one term per line, ``#`` starts a comment), then
-  ``--vocab-from <file-or-dir>`` (mined for proper nouns and identifiers),
-  then ``--auto-project`` (walk upward from the media file to the project
+- Vocabulary terms, first non-empty source wins: `--vocab <file>` (a
+  glossary, one term per line, `#` starts a comment), then
+  `--vocab-from <file-or-dir>` (mined for proper nouns and identifiers),
+  then `--auto-project` (walk upward from the media file to the project
   root and collect from the whole tree), then a sibling source detected
   automatically.
 
@@ -169,19 +169,19 @@ for that, switch model.
 
 ## Models
 
-The captioner defaults to ``large-v3-turbo``. Override it with:
+The captioner defaults to `large-v3-turbo`. Override it with:
 
-1. ``SPREZZATURE_WHISPER_MODEL=<path-or-alias>``, which wins over everything.
-2. ``--model <alias>`` (e.g. ``small``, ``large-v3``).
-3. The pre-downloaded ``ggml-<alias>.bin`` under
-   ``$SPREZZATURE_CACHE_DIR/whisper/`` (default
-   ``~/.cache/sprezzature-skill/whisper/``), written by
-   ``sprezzature-audio-install --model <alias>``.
+1. `SPREZZATURE_WHISPER_MODEL=<path-or-alias>`, which wins over everything.
+2. `--model <alias>` (e.g. `small`, `large-v3`).
+3. The pre-downloaded `ggml-<alias>.bin` under
+   `$SPREZZATURE_CACHE_DIR/whisper/` (default
+   `~/.cache/sprezzature-skill/whisper/`), written by
+   `sprezzature-audio-install --model <alias>`.
 
-Diarization: ``nvidia/diar_sortformer_4spk-v1``. Identification:
-``nvidia/speakerverification_en_titanet_large``. Translation and the
-naming pass: ``qwen3-vl:8b`` through best-engine-ai-helper, on the Ollama
-server named by ``--url`` (default ``OLLAMA_URL``). Narration: Kokoro,
+Diarization: `nvidia/diar_sortformer_4spk-v1`. Identification:
+`nvidia/speakerverification_en_titanet_large`. Translation and the
+naming pass: `qwen3-vl:8b` through best-engine-ai-helper, on the Ollama
+server named by `--url` (default `OLLAMA_URL`). Narration: Kokoro,
 OpenVoice, Chatterbox, through speaker-helper, whose router picks the engine.
 
 ## Surfaces
@@ -189,26 +189,26 @@ OpenVoice, Chatterbox, through speaker-helper, whose router picks the engine.
 | Surface | How |
 |---|---|
 | Library | `import sprezzature_audio as audio`: `parse`, `write_vtt`, `write_srt`, `audit_cues`, `attribute_speakers`, `word_error_rate`, `diarization_error_rate`, `describe_device` load no model; `transcribe`, `diarize`, `match_speakers`, `translate_cues`, `narrate` resolve on first use. |
-| CLI | The fifteen console scripts above, and the front door `sprezzature-audio` / `make-audio` (click). |
-| HTTP API | `uvicorn sprezzature_audio.api:app`: `GET /health`, `GET /v1/device`, `POST /v1/captions/convert`, `POST /v1/captions/merge`, `POST /v1/metrics/wer`, `POST /v1/metrics/der`. The Docker image and `docker compose up` run `sprezzature-audio-mcp`, which serves this app and `/mcp` on port 8000. No transcription, diarization or narration route: those are minutes-long jobs. |
-| MCP | `sprezzature-audio-mcp` mounts `/mcp` on the same app (default `127.0.0.1:8000`, or `--host` / `--port`). Tools = `operation_id`s: `health`, `get_device`, `convert_captions`, `merge_speakers`, `measure_wer`, `measure_der`. Audio in → CLI; text in → MCP tool. |
+| CLI (command-line interface, a program you run by typing a command in a terminal) | The fifteen console scripts above, and the front door `sprezzature-audio` / `make-audio` (click). |
+| HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as render this chart) | `uvicorn sprezzature_audio.api:app`: `GET /health`, `GET /v1/device`, `POST /v1/captions/convert`, `POST /v1/captions/merge`, `POST /v1/metrics/wer`, `POST /v1/metrics/der`. The Docker image and `docker compose up` run `sprezzature-audio-mcp`, which serves this app and `/mcp` on port 8000. No transcription, diarization or narration route: those are minutes-long jobs. |
+| MCP (Model Context Protocol, the protocol through which AI agents call tools in English) | `sprezzature-audio-mcp` mounts `/mcp` on the same app (default `127.0.0.1:8000`, or `--host` / `--port`). Tools = `operation_id`s: `health`, `get_device`, `convert_captions`, `merge_speakers`, `measure_wer`, `measure_der`. Audio in → CLI; text in → MCP tool. |
 | Skill | This file. |
 
 ## Tool composition
 
-When emitting ``<video>`` or ``<audio>`` in a deliverable:
+When emitting `<video>` or `<audio>` in a deliverable:
 
 ```bash
 sprezzature-audio-captions --auto-project <media>
 ```
 
-Always emit ``<track kind="captions" srclang="…" default>`` on the
+Always emit `<track kind="captions" srclang="…" default>` on the
 element. For a **second, translated track**, run
-``sprezzature-audio-translate`` on the produced ``.vtt``: it writes
-``<stem>.<lang>.vtt`` in the surrounding-text language and prints the
-two-track snippet. Then run ``sprezzature-audio-audit`` on both tracks.
-Add ``<track kind="descriptions">`` for audio descriptions,
-``<track kind="chapters">`` for navigation when chapters exist.
+`sprezzature-audio-translate` on the produced `.vtt`: it writes
+`<stem>.<lang>.vtt` in the surrounding-text language and prints the
+two-track snippet. Then run `sprezzature-audio-audit` on both tracks.
+Add `<track kind="descriptions">` for audio descriptions,
+`<track kind="chapters">` for navigation when chapters exist.
 
 ## When NOT to use this skill
 
@@ -219,20 +219,20 @@ Add ``<track kind="descriptions">`` for audio descriptions,
   cost** → hosted services (Deepgram, AssemblyAI) are noticeably
   better on noisy or accented audio.
 - You need a **human-grade** translation → `translate` drafts a second
-  subtitle track with the local ``qwen3-vl:8b`` model: fine as a starting
+  subtitle track with the local `qwen3-vl:8b` model: fine as a starting
   point, not a substitute for a professional subtitler on published work.
 - You need to cut, resample or clean the signal → `audio-helper`.
 
 ## References
 
-- ``references/captions-ai.md``: local vocal-helper (whisper.cpp)
+- `references/captions-ai.md`: local vocal-helper (whisper.cpp)
   captions / transcripts for video and audio, with vocabulary biasing.
-- ``references/diarization.md``: Sortformer / TitaNet /
+- `references/diarization.md`: Sortformer / TitaNet /
   transcript-based naming pipeline; reference-clip layout; merger
   rule; output formats (WebVTT `<v Name>` cues, SRT prefix, plain
   text). Prior art the transcript-naming rule pass is modelled on
   (Bäuml et al. 2013, Nagrani et al. 2017).
-- The brick's own ``TRIGGERS.md``: every tool, the request it answers,
+- The brick's own `TRIGGERS.md`: every tool, the request it answers,
   and what to call on every surface.
 
 ## Scripts
@@ -244,35 +244,35 @@ toolchain.
 
 | Script | Console script | Front door | Purpose |
 |---|---|---|---|
-| ``captions_from_whisper.py`` *(WiP)* | ``sprezzature-audio-captions`` | ``captions`` | WebVTT / SRT / plain-text captions via local whisper.cpp. |
-| ``diarize_from_nemo.py`` | ``sprezzature-audio-diarize`` | ``diarize`` | Speaker diarization via NeMo Sortformer; RTTM + turn JSON. |
-| ``identify_from_titanet.py`` | ``sprezzature-audio-identify`` | ``identify`` | Speaker identification via TitaNet against reference clips. |
-| ``caption_diarize.py`` | ``sprezzature-audio-pipeline`` | ``pipeline`` | Captions + diarization (+ speakers.json) → speaker-labelled track. |
-| ``name_from_transcript.py`` | ``sprezzature-audio-name`` | ``name`` | Speaker names from the transcript; optional `--ollama` pass. |
-| ``translate_captions.py`` | ``sprezzature-audio-translate`` | ``translate`` | Translated second track + two-`<track>` snippet. |
-| ``audit_captions.py`` | ``sprezzature-audio-audit`` | ``audit`` | Caption readability audit, eight rules. |
-| ``benchmark_stt.py`` | ``sprezzature-audio-benchmark`` | ``benchmark`` | WER, DER, RTF. |
-| ``narrate_kokoro.py`` | ``sprezzature-audio-narrate-kokoro`` | ``narrate`` | Narration with Kokoro. |
-| ``narrate_openvoice.py`` | ``sprezzature-audio-narrate-openvoice`` | ``narrate-openvoice`` | Narration with OpenVoice (voice cloning). |
-| ``narrate_chatterbox.py`` | ``sprezzature-audio-narrate-chatterbox`` | ``narrate-chatterbox`` | Narration with Chatterbox. |
-| ``pick_voice.py`` | ``sprezzature-audio-voice`` | ``voice`` | List, sample and measure voices. |
-| ``install_captions.py`` | ``sprezzature-audio-install`` | ``install`` | Pre-download a GGML Whisper model. |
-| ``install_diarize.py`` | ``sprezzature-audio-install-diarize`` | ``install-diarize`` | Install NeMo and pre-download Sortformer + TitaNet. |
-| ``install_narrate.py`` | ``sprezzature-audio-install-voice`` | ``install-voice`` | Pre-download a narration engine's weights; check espeak-ng. |
+| `captions_from_whisper.py` *(WiP)* | `sprezzature-audio-captions` | `captions` | WebVTT / SRT / plain-text captions via local whisper.cpp. |
+| `diarize_from_nemo.py` | `sprezzature-audio-diarize` | `diarize` | Speaker diarization via NeMo Sortformer; RTTM + turn JSON. |
+| `identify_from_titanet.py` | `sprezzature-audio-identify` | `identify` | Speaker identification via TitaNet against reference clips. |
+| `caption_diarize.py` | `sprezzature-audio-pipeline` | `pipeline` | Captions + diarization (+ speakers.json) → speaker-labelled track. |
+| `name_from_transcript.py` | `sprezzature-audio-name` | `name` | Speaker names from the transcript; optional `--ollama` pass. |
+| `translate_captions.py` | `sprezzature-audio-translate` | `translate` | Translated second track + two-`<track>` snippet. |
+| `audit_captions.py` | `sprezzature-audio-audit` | `audit` | Caption readability audit, eight rules. |
+| `benchmark_stt.py` | `sprezzature-audio-benchmark` | `benchmark` | WER, DER, RTF (real-time factor, processing time divided by audio length: 0.5 means an hour of audio in thirty minutes). |
+| `narrate_kokoro.py` | `sprezzature-audio-narrate-kokoro` | `narrate` | Narration with Kokoro. |
+| `narrate_openvoice.py` | `sprezzature-audio-narrate-openvoice` | `narrate-openvoice` | Narration with OpenVoice (voice cloning). |
+| `narrate_chatterbox.py` | `sprezzature-audio-narrate-chatterbox` | `narrate-chatterbox` | Narration with Chatterbox. |
+| `pick_voice.py` | `sprezzature-audio-voice` | `voice` | List, sample and measure voices. |
+| `install_captions.py` | `sprezzature-audio-install` | `install` | Pre-download a GGML Whisper model. |
+| `install_diarize.py` | `sprezzature-audio-install-diarize` | `install-diarize` | Install NeMo and pre-download Sortformer + TitaNet. |
+| `install_narrate.py` | `sprezzature-audio-install-voice` | `install-voice` | Pre-download a narration engine's weights; check espeak-ng. |
 
-Environment: ``SPREZZATURE_WHISPER_MODEL``, ``SPREZZATURE_CACHE_DIR``,
-``SPREZZATURE_NO_CACHE``, ``OLLAMA_URL``, ``SPREZZATURE_LLM_TIMEOUT`` (read
+Environment: `SPREZZATURE_WHISPER_MODEL`, `SPREZZATURE_CACHE_DIR`,
+`SPREZZATURE_NO_CACHE`, `OLLAMA_URL`, `SPREZZATURE_LLM_TIMEOUT` (read
 by best-engine-ai-helper; the backend, server and model are passed
-explicitly, so its other ``SPREZZATURE_LLM_*`` variables do not apply), ``SPREZZATURE_AUDIO_HOST`` /
-``SPREZZATURE_AUDIO_PORT`` (the MCP server).
+explicitly, so its other `SPREZZATURE_LLM_*` variables do not apply), `SPREZZATURE_AUDIO_HOST` /
+`SPREZZATURE_AUDIO_PORT` (the MCP server).
 
 ## Companion skills
 
 | You also need… | Install |
 |---|---|
-| Static HTML a11y lint | ``sprezzature-accessibility`` |
-| W3C alt text via local Ollama vision | ``sprezzature-accessibility`` |
-| WCAG contrast audit, CVD simulation, curated palette | ``sprezzature-colors`` |
-| Vanilla-JS + Tailwind UI generation | ``sprezzature-ui`` |
-| Wrap a CLI in a GUI | ``sprezzature-cli-gui`` |
-| Markdown → website + meta + favicons + indexes + narration | ``sprezzature-publish`` |
+| Static HTML a11y lint | `sprezzature-accessibility` |
+| W3C (World Wide Web Consortium, the body that writes the web's standards) alt text via local Ollama vision | `sprezzature-accessibility` |
+| WCAG (Web Content Accessibility Guidelines, the international rules a web page must follow to be usable by people with disabilities) contrast audit, CVD (colour-vision deficiency, the medical name for colour blindness: red and green that look alike, for instance) simulation, curated palette | `sprezzature-colors` |
+| Vanilla-JS + Tailwind UI (user interface, the screens, buttons and forms a person uses) generation | `sprezzature-ui` |
+| Wrap a CLI in a GUI (graphical user interface, windows, buttons and forms you click instead of typing commands) | `sprezzature-cli-gui` |
+| Markdown → website + meta + favicons + indexes + narration | `sprezzature-publish` |

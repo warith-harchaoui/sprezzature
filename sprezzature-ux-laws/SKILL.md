@@ -29,21 +29,21 @@ metadata:
 
 > The deterministic tools below now ship as the standalone package [`sprezzature-ux-laws`](https://github.com/warith-harchaoui/sprezzature-ux-laws) (`pip install`), invoked as `sprezzature-ux-laws …`. The `scripts/` folder has moved out of this monorepo; the SKILL.md here stays as the agentic contract.
 
-# sprezzature-ux-laws — make and audit by the Laws of UX
+# sprezzature-ux-laws — make and audit by the Laws of UX (user experience, how using a product feels: quick and clear, or slow and confusing)
 
 ## Audience and positioning
 
 Solo developers and small teams who:
 
-- Want a **shared vocabulary** for UI decisions ("we're trading Hick
+- Want a **shared vocabulary** for UI (user interface, the screens, buttons and forms a person uses) decisions ("we're trading Hick
   for Doherty here") without re-deriving cognitive science from
   scratch each time.
 - Want a **pre-commit auditor** that fails fast when emitted HTML
   violates a mechanically-detectable law (an 11-link `<nav>`, an
-  unchunked IBAN, a clickable `<div>` masquerading as a button).
+  unchunked IBAN (International Bank Account Number, the long account number printed on a bank statement), a clickable `<div>` masquerading as a button).
 - Need the rules without buying the book. The skill restates each
   law's trigger and action and points at the primary sources
-  (Jon YABLONSKI's lawsofux.com plus Nielsen Norman Group and the
+  (Jon YABLONSKI's lawsofux.com plus Nielsen Norman Group (NN/g, the usability research firm) and the
   Wikipedia critique of Postel's Law).
 
 This skill is **not** a substitute for usability testing. The
@@ -61,8 +61,8 @@ of UX specifically:
 | Mode | Tool | When to load |
 |---|---|---|
 | **Make** — pick the right law for a screen | `references/laws-of-ux.md` | At generation time. The reference is structured for in-conversation lookup: trigger → action → Tailwind hook. Load it once per design surface; pick ONE law to apply, not five. |
-| **Make** — auto-fix mechanically-fixable violations | `sprezzature-ux-laws --fix` | Closes the audit↔make loop for four laws: Fitts adds `min-h-11`; Aesthetic-Usability adds `focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue`; Miller splits a long digit-bearing run of visible text into groups of four with non-breaking spaces (names such as `GMTED2010`, and the same run inside a tag or attribute, are never touched); Jakob rewrites the clickable `<div>` / `<span>` itself (never its wrapper) to `<button>` when it opens and closes on one line and holds no real control. Up to five passes; idempotent. A fixer only extends an existing `class` attribute. A file is written only when a fixer changed it, and keeps its line endings (a CRLF file stays CRLF). Diff the result before committing. |
-| **Audit** — fail the build on detectable violations | `sprezzature-ux-laws` / MCP `audit_interface` | Pre-commit, pre-merge, CI. Static parser, no browser, no network. Findings come as `error`, `warning` or `info`. Exit 1 when an `error` is found (any finding with `--strict`); exit 2 on an unknown law slug or a missing path. |
+| **Make** — auto-fix mechanically-fixable violations | `sprezzature-ux-laws --fix` | Closes the audit↔make loop for four laws: Fitts adds `min-h-11`; Aesthetic-Usability adds `focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue`; Miller splits a long digit-bearing run of visible text into groups of four with non-breaking spaces (names such as `GMTED2010`, and the same run inside a tag or attribute, are never touched); Jakob rewrites the clickable `<div>` / `<span>` itself (never its wrapper) to `<button>` when it opens and closes on one line and holds no real control. Up to five passes; idempotent. A fixer only extends an existing `class` attribute. A file is written only when a fixer changed it, and keeps its line endings (a CRLF (carriage return + line feed, the Windows way of ending a line) file stays CRLF). Diff the result before committing. |
+| **Audit** — fail the build on detectable violations | `sprezzature-ux-laws` / MCP (Model Context Protocol, the protocol through which AI agents call tools in English) `audit_interface` | Pre-commit, pre-merge, CI (continuous integration, the automatic checks a server runs on every change pushed to a repository). Static parser, no browser, no network. Findings come as `error`, `warning` or `info`; `--json` writes them as JSON (JavaScript Object Notation, a text format in which programs store data as named fields). Exit 1 when an `error` is found (any finding with `--strict`); exit 2 on an unknown law slug or a missing path. |
 
 ## Decision tree
 
@@ -89,13 +89,13 @@ sprezzature-ui starter components.
 | Law | Severity | What the static parser flags | False positives to expect |
 |---|---|---|---|
 | Hick's Law | error | `<nav>` exposing > 7 top-level `<a>` / `<button>` choices on one screen, counted per breakpoint (phone or desktop, from the Tailwind display classes), with `<details>`, `<dialog>`, `<menu>` and `role` radiogroup / tablist / menubar / listbox / combobox each counting once | Rich app shells with a documented "More" menu and a deliberate top-level surface area. |
-| Choice Overload | warning | A `<div>`/`<section>` with `pricing`/`plans` + `grid`/`flex` in its class list and > 4 direct `<article>` / `<div>` children | A genuine five-tier B2B price table where each tier is concrete; mark with `--ignore choice-overload`. |
+| Choice Overload | warning | A `<div>`/`<section>` with `pricing`/`plans` + `grid`/`flex` in its class list and > 4 direct `<article>` / `<div>` children | A genuine five-tier B2B (business-to-business, sold to companies rather than to individuals) price table where each tier is concrete; mark with `--ignore choice-overload`. |
 | Miller's Law | warning | A visible run of ≥ 8 letters and digits containing at least one digit, outside `<script>` / `<style>` | Purely alphabetic words are excluded; tags and their attributes are stripped before scanning (on a tag split across lines, the `class`, `id`, `href`, `src` values); letters-then-digits names (`GMTED2010`, `LANDSAT8`) are skipped. |
 | Jakob's Law | error | `<div>` / `<span>` with `onclick=` / `role="button"` / `cursor-pointer` and no real interactive child | Wrappers that contain a real `<button>` / `<a>` are exempt. |
 | Fitts's Law | warning | Interactive element with no `min-h-11+` / `h-11+` / `size-11+` Tailwind class (or `full` / `screen` / `auto`) | An `<a>` without `flex` / `inline-flex` / `block` / `btn` / `button` / `bg-*` / `border-*` is treated as a text link and skipped. On a page without Tailwind utilities of at least two kinds (spacing, colour, a prefix…): one `info` for the document instead, and `--fix` writes no Tailwind there. |
 | Aesthetic-Usability | warning | Interactive element without `focus-visible:ring-*` or `focus:ring-*` | Type=hidden inputs are exempted. Same Tailwind precondition and single `info` as Fitts. |
 | Selective Attention | warning | `<span>` coloured `text-red-*` / `text-green-*` / `text-amber-*` / `text-yellow-*` / `text-orange-*` whose visible text holds no status word, with no icon child | Spans that contain a status word ("Failed", "OK", …) or an `<svg>`/`<img>` child are exempted. |
-| Tesler's Law | warning | `HH:MM` time string with no timezone token (`UTC`, `+02:00`, `Europe/Paris`, `Z`, named TZ) within 40 chars | Times in a duration context (`duration`, `elapsed`, `remaining`, `data-ra-*`, a range input, `<progress>`, `<audio>`, `<video>`) are skipped; other durations ("Took 14:30") still fire. |
+| Tesler's Law | warning | `HH:MM` time string with no timezone token (`UTC`, `+02:00`, `Europe/Paris`, `Z`, a named time zone) within 40 chars | Times in a duration context (`duration`, `elapsed`, `remaining`, `data-ra-*`, a range input, `<progress>`, `<audio>`, `<video>`) are skipped; other durations ("Took 14:30") still fire. |
 | Doherty Threshold | — | Out of scope for static analysis. Use Lighthouse + a real device. | — |
 
 ## Visual laws need the Ralph Eyeball Loop
@@ -124,7 +124,7 @@ laws, the Ralph Eyeball Loop for the visual ones.
 
 ## Examples
 
-### Make — apply Hick + Fitts to a primary CTA
+### Make — apply Hick + Fitts to a primary CTA (call to action, the one thing a page asks its reader to do: book a call, buy, install)
 
 User: "Design a hero CTA for a settings page that respects Hick + Fitts."
 
@@ -188,8 +188,8 @@ all of them:
 | Surface | Name | Notes |
 |---|---|---|
 | Library | `import sprezzature_ux_laws` | `audit_html`, `audit_file`, `fix_file`, `LAWS`, `LAW_REGISTRY`, `Finding` |
-| CLI | `sprezzature-ux-laws` (click), `sprezzature-ux-laws-audit` (per-tool script) | Same handler and flags: `--json`, `--strict`, `--only`, `--ignore`, `--fix`, `--dry-run` |
-| HTTP API | `uvicorn sprezzature_ux_laws.api:app` | `GET /health`, `GET /v1/laws`, `POST /v1/audit` (400 on an unknown law); Docker and compose in the repository |
+| CLI (command-line interface, a program you run by typing a command in a terminal) | `sprezzature-ux-laws` (click), `sprezzature-ux-laws-audit` (per-tool script) | Same handler and flags: `--json`, `--strict`, `--only`, `--ignore`, `--fix`, `--dry-run` |
+| HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as audit this page) | `uvicorn sprezzature_ux_laws.api:app` | `GET /health`, `GET /v1/laws`, `POST /v1/audit` (400 on an unknown law); Docker and compose in the repository |
 | MCP | `sprezzature-ux-laws-mcp` (endpoint `/mcp`) | Tools = `operation_id`s: `health`, `list_laws`, `audit_interface`. No tool writes files: `--fix` is CLI and library only |
 | Skill | this file | Routing rules in the package's `TRIGGERS.md` |
 
@@ -199,16 +199,16 @@ all of them:
 |---|---|
 | Vanilla-JS + Tailwind UI generation (house style, tokens, components) | `sprezzature-ui` |
 | Static HTML a11y lint on the audited page | `sprezzature-accessibility` |
-| WCAG contrast audit + CVD simulation | `sprezzature-colors` |
-| Wrap a CLI in a GUI (argparse, Click or Typer → web form) | `sprezzature-cli-gui` |
+| WCAG (Web Content Accessibility Guidelines, the international rules a web page must follow to be usable by people with disabilities) contrast audit + CVD (colour-vision deficiency, the medical name for colour blindness: red and green that look alike, for instance) simulation | `sprezzature-colors` |
+| Wrap a CLI in a GUI (graphical user interface, windows, buttons and forms you click instead of typing commands: here a web form built from argparse, Click or Typer) | `sprezzature-cli-gui` |
 | Markdown → website + meta + favicons + indexes | `sprezzature-publish` |
 | Data-viz / explainability / causality figures | `sprezzature-figures` |
-| W3C alt text via local Ollama vision | `sprezzature-accessibility` |
-| Local WebVTT / SRT captions via whisper.cpp | `sprezzature-audio` |
+| W3C (World Wide Web Consortium, the body that writes the web's standards) alt text via local Ollama vision | `sprezzature-accessibility` |
+| Local WebVTT / SRT (SubRip, the most common subtitle file: numbered captions, each with a start and end time) captions via whisper.cpp | `sprezzature-audio` |
 
 ## Attribution
 
 Concept names and the curated set are © Jon YABLONSKI under
-CC-BY-NC-SA 4.0 (lawsofux.com). Restatements in
+the Creative Commons Attribution-NonCommercial-ShareAlike licence (CC-BY-NC-SA 4.0: share and adapt with credit, never for sale, under the same terms; lawsofux.com). Restatements in
 `references/laws-of-ux.md` are fair commentary; cite the source when
 surfacing a law to a user.

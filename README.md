@@ -3,7 +3,7 @@
 [🇫🇷](https://github.com/warith-harchaoui/sprezzature/blob/main/LISEZMOI.md) · [🇬🇧](https://github.com/warith-harchaoui/sprezzature/blob/main/README.md)
 
 <p align="center"><a href="https://sprezzature.ai/">
-  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature: ten Claude / OpenCode skills for vanilla JS + Tailwind frontends"></a>
+  <img src="https://sprezzature.ai/img/logo.png" alt="Sprezzature: ten Claude / OpenCode skills for vanilla JavaScript (JS, the programming language web browsers run) + Tailwind frontends"></a>
 </p>
 
 [🌍 Documentation](https://sprezzature.ai/)
@@ -12,7 +12,7 @@
 
 ## What this is
 
-`sprezzature` is a set of **Claude / OpenCode skills** with a curated design system for a front-end stack. It covers colors, accessibility (alt text included), the user interface (UI), user experience (UX), audio both ways, figures and maps, publishing, the videos that describe a project, and the path from the command-line interface (CLI) to the graphical user interface (GUI).
+`sprezzature` is a set of **Claude / OpenCode skills** with a curated design system for a front-end stack. It covers colors, accessibility (alt text included), the user interface (UI, the screens, buttons and forms a person uses), user experience (UX, how using a product feels: quick and clear, or slow and confusing), audio both ways, figures and maps, publishing, the videos that describe a project, and the path from the command-line interface (CLI, a program you run by typing a command in a terminal) to the graphical user interface (GUI, windows, buttons and forms you click instead of typing commands).
 
 The skills:
 
@@ -20,12 +20,12 @@ The skills:
 |---|---|---|
 | **sprezzature-ui** | Always: it owns the stack rules and tokens. | "build a UI", "create a component", "design a page", "make a form / modal / button / nav", "dashboard", "audit this UI". |
 | **sprezzature-cli-gui** | You wrap CLI tools in web user interfaces (UIs). | "wrap this CLI in a GUI", "build a UI for my Python script", "argparse to web UI". |
-| **sprezzature-publish** | You ship docs sites, landing pages, meta-tags, favicons, or a site whose readers should book, buy or install. | "turn these markdown files into a website", "meta tags", "SEO", "GEO", "AEO", "write a FAQ", "favicons", "robots.txt", "sitemap", "llms.txt", "Atom feed", "plain language", "rewrite at grade 8". |
-| **sprezzature-accessibility** | You need static HyperText Markup Language (HTML) accessibility (a11y) lint, or World Wide Web Consortium (W3C)-compliant alt text drafted from images locally (no SaaS). | "a11y lint", "check this HTML for accessibility", "WCAG compliance", "missing alt", "write alt text", "describe this image", "unlabelled input". |
-| **sprezzature-colors** | You audit contrast, simulate color blindness, or want a curated palette with perceptual lighten / darken. | "WCAG check", "contrast audit", "is my palette accessible", "colorblind preview", "deuteranope", "CVD", "OKLCH", "lighten this color". |
-| **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT) captions for `<video>` / `<audio>` locally, or narrate text with a local voice (no SaaS). | "captions", "transcribe video", "WebVTT", "SRT", "subtitles", "who spoke when", "text to speech", "narrate", "read this aloud". |
+| **sprezzature-publish** | You ship docs sites, landing pages, meta-tags, favicons, or a site whose readers should book, buy or install: search-engine optimization (SEO, coming up high in Google's results), generative-engine optimization (GEO, being the source an AI chatbot quotes when it answers), answer-engine optimization (AEO, being the one answer a search engine or voice assistant reads out), Open Graph (OG, the tags that decide the preview card shown when a link is shared) link-preview cards. | "turn these markdown files into a website", "meta tags", "SEO", "GEO", "AEO", "write a FAQ", "favicons", "robots.txt", "sitemap", "llms.txt", "Atom feed", "plain language", "rewrite at grade 8". |
+| **sprezzature-accessibility** | You need static HyperText Markup Language (HTML) accessibility (a11y) lint, or World Wide Web Consortium (W3C, the body that writes the web's standards)-compliant alt text drafted from images locally (no software-as-a-service (SaaS, software run on someone else's servers) upload), checked against the Web Content Accessibility Guidelines (WCAG, the international rules a web page must follow to be usable by people with disabilities). | "a11y lint", "check this HTML for accessibility", "WCAG compliance", "missing alt", "write alt text", "describe this image", "unlabelled input". |
+| **sprezzature-colors** | You audit contrast, simulate color-vision deficiency (CVD, the medical name for color blindness: red and green that look alike, for instance), or want a curated palette with perceptual lighten / darken in OKLCH (a way of numbering colours by lightness, chroma and hue, built so that equal steps look equally different to the eye). | "WCAG check", "contrast audit", "is my palette accessible", "colorblind preview", "deuteranope", "CVD", "OKLCH", "lighten this color". |
+| **sprezzature-audio** | You draft WebVTT / SubRip subtitle format (SRT, the most common subtitle file: numbered captions, each with a start and end time) captions for `<video>` / `<audio>` locally, or narrate text with a local voice (no SaaS). | "captions", "transcribe video", "WebVTT", "SRT", "subtitles", "who spoke when", "text to speech", "narrate", "read this aloud". |
 | **sprezzature-ux-laws** | You want a shared vocabulary for UI decisions AND a pre-commit auditor that fails on detectable Laws-of-UX violations (Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload). | "Laws of UX", "Hick / Fitts / Miller / Jakob / Tesler / Peak-End / Postel / Paradox of the Active User", "audit my nav / form / pricing page", "is this onboarding fighting the active user". |
-| **sprezzature-figures** | You emit data-science figures (168 hand-authored Scalable Vector Graphics (SVG) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME)) included), causal-effect estimates (DoWhy / EconML), or flow diagrams and TikZ figures, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "DoWhy", "DAG", "audit this figure". |
+| **sprezzature-figures** | You emit data-science figures (168 hand-authored Scalable Vector Graphics (SVG, images made of shapes rather than pixels, so they stay sharp at any zoom) chart types, the model-explainability plots (SHapley Additive exPlanations (SHAP, how much each input pushed a prediction up or down) / Shapash / TimeSHAP / Local Interpretable Model-agnostic Explanations (LIME, one prediction explained by a simple model fitted around it)) included), causal-effect estimates (DoWhy / EconML, on a directed acyclic graph (DAG, a diagram of arrows from causes to effects that never loops back)), or flow diagrams and TikZ figures, refined through the **Ralph Eyeball Loop** (render → look → refine the source), with a pre-commit auditor for data-viz sins and colour-vision accessibility levels on every figure. | "make a figure", "hand-authored SVG", "render this diagram", "mermaid diagram", "ralph eyeball loop", "no ascii art", "SHAP plot", "DoWhy", "DAG", "audit this figure". |
 | **sprezzature-maps** | You have numbers attached to places and the shape of the land matters: a choropleth on a real basemap, or an areas-of-control situation plate for any region. Schematic place-shaped charts (hex map, dot density, spike map, binned grid) stay in **sprezzature-figures**. | "map this by country", "colour the regions by score", "which country is worst affected", "where is this happening", "world map", "choropleth", "areas of control", "front line", "situation map", « une carte par département ». |
 | **sprezzature-video** | A video states facts about a project (counts, commands, versions) and the project keeps changing under it. | "the demo video is out of date", "verify the claims in this video", "is this number still right", "can we rebuild this video", "poster frame". |
 
@@ -40,7 +40,7 @@ ones you need.
 
 As of 2026-07-29, sprezzature is organised in two layers with distinct release cycles.
 
-**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and each one arrives whole: the library, the command line (Click), the FastAPI server and the MCP tool surface are all in the base install. Each brick's Docker image runs its `<brick>-mcp` server, which serves the HTTP API and `/mcp` on the same port. There are no feature extras anywhere in the suite since 2026-11-01 — six of the bricks had a base of one dependency, so `pip install <brick>` installed almost nothing and knowing the right extra was a prerequisite for the package being useful:
+**Layer 1: pip-installable tool packages.** Each skill's Python scripts live in a standalone repo, published on PyPI. Install only the tools you need (`pip install <package>`), and each one arrives whole: the library, the command line (Click), the FastAPI server and the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) tool surface are all in the base install. Each brick's Docker image runs its `<brick>-mcp` server, which serves the HTTP (HyperText Transfer Protocol, the language a browser and a server speak each time a page loads) API (application programming interface, the requests one program can send another, such as render this chart) and `/mcp` on the same port. There are no feature extras anywhere in the suite since 2026-11-01 — six of the bricks had a base of one dependency, so `pip install <brick>` installed almost nothing and knowing the right extra was a prerequisite for the package being useful:
 
 | Package | What it does |
 |---|---|
@@ -96,7 +96,7 @@ cp -r sprezzature-ui sprezzature-figures ~/.claude/skills/
 Then, in a session, just ask:
 
 - *"make this page accessible"* → **sprezzature-accessibility** lints the HTML and reports what to fix.
-- *"make a figure of this CSV"* → **sprezzature-figures** draws it, then audits the chart.
+- *"make a figure of this CSV (comma-separated values, a table saved as plain text, one row per line with the cells separated by commas: what a spreadsheet exports) file"* → **sprezzature-figures** draws it, then audits the chart.
 - *"wrap this CLI in a GUI"* → **sprezzature-cli-gui** scaffolds a usable interface.
 
 The full options (checksum verification, per-skill tarballs, the OpenCode + local-Ollama
@@ -140,14 +140,14 @@ these traits set it apart:
   `sprezzature-ui-i18n-audit`, `sprezzature-publish-lint` and `-audit`,
   `sprezzature-cli-gui-audit`, `make-map audit`, `make-film verify`. No official Anthropic skill ships a static lint gate as its
   purpose; here it's half the design.
-- **Continuous integration (CI) / pre-commit gates, not vibes.** The auditors emit JavaScript Object Notation (JSON) + exit codes, so
+- **Continuous integration (CI, the automatic checks a server runs on every change pushed to a repository) / pre-commit gates, not vibes.** The auditors emit JavaScript Object Notation (JSON, a text format in which programs store data as named fields) + exit codes, so
   a pre-commit hook or a CI step blocks the commit whoever (or whatever) wrote
   the code; see [Pre-commit hooks](#pre-commit-hooks).
 - **AI that runs on your machine, zero SaaS egress.** Alt text runs on a local Ollama vision
   model; captions / diarization on a local whisper.cpp build and NeMo; narration on Kokoro. Nothing leaves the
   machine; the official skills are cloud-Claude-first.
 - **Deterministic generators.** palette → Tailwind config, CLI → GUI, favicon /
-  progressive-web-app (PWA) icon sets, sitemaps / feeds, and `locales/i18n.yaml`: reproducible
+  progressive-web-app (PWA, a website a phone can install on its home screen like an app) icon sets, sitemaps / feeds, and `locales/i18n.yaml`: reproducible
   artifacts a model would not derive byte-for-byte.
 - **Hardened like a product, not a demo.** A real pytest suite in every
   repository, an AI-eval layer (DeepEval) in the bricks that call a model, CI on
@@ -157,7 +157,7 @@ these traits set it apart:
 - **Runtime-portable.** One skill folder serves both **Claude Code** and
   **OpenCode**; the AI paths target local models so a smaller OpenCode model
   follows a script instead of inventing one.
-- **Unified i18n.** GUI strings *and* large-language-model (LLM) prompts live in a single
+- **Unified i18n.** GUI strings *and* large-language-model (LLM, the kind of AI behind chatbots such as ChatGPT or Claude) prompts live in a single
   `locales/i18n.yaml`, enforced on both the make and audit sides.
 
 ## Two modes: make and audit
@@ -168,15 +168,15 @@ when to load each skill and what is still on the roadmap.
 
 | Skill | Make (generate) | Audit (gate) |
 |---|---|---|
-| **sprezzature-ui** | `references/` + `assets/components/`, generation playbook for HTML / Tailwind / dataviz; `sprezzature-ui-i18n-make` (scaffolds and compiles `locales/i18n.yaml`) | `sprezzature-ui-i18n-audit` (I18N001, I18N002), `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
+| **sprezzature-ui** | `references/` + `assets/components/`, generation playbook for HTML / Tailwind / dataviz; `sprezzature-ui-i18n-make` (scaffolds and compiles `locales/i18n.yaml`) | `sprezzature-ui-i18n-audit` (`I18N001`, `I18N002`), `references/checklist.md`, `anti-patterns.md`, `ergonomics-criteria.md` |
 | **sprezzature-cli-gui** | `sprezzature-cli-gui` (argparse, Click or Typer parser → one self-contained HTML form; `--from-help` reads a help text instead) + `assets/examples/cli-gui-demo/` (worked scaffold) | `sprezzature-cli-gui-audit` (five rules: does an earlier page still cover the CLI?); pair with `sprezzature-accessibility` + `sprezzature-ux-laws` on the emitted HTML |
-| **sprezzature-publish** | `sprezzature-publish-html`, `-icons`, `-indexes` (`--offer`, `--cta`), `-meta`, `-plain`, `-changelog`, `-narrate`, `-readalong`; `-cta` (asks which call to action the site is for, writes `ctas.yaml`), `-faq` (builds the FAQ a site lacks from its own pages) | `sprezzature-publish-lint` (the Markdown), `-audit` (an emitted site or a live URL), `-cta` and `-faq --audit` (pages against the declared CTAs, `FAQPage` against the visible FAQ), `-findable` (one SEO + GEO + AEO report, money pages first) |
+| **sprezzature-publish** | `sprezzature-publish-html`, `-icons`, `-indexes` (`--offer`, `--cta`), `-meta`, `-plain`, `-changelog`, `-narrate`, `-readalong`; `-cta` (asks which call to action the site is for, writes `ctas.yaml`), `-faq` (builds the FAQ a site lacks from its own pages) | `sprezzature-publish-lint` (the Markdown), `-audit` (an emitted site or a live URL), `-cta` and `-faq --audit` (pages against the declared calls to action (CTAs, the one thing a page asks its reader to do: book a call, buy, install), `FAQPage` against the visible FAQ), `-findable` (one SEO + GEO + AEO report, money pages first) |
 | **sprezzature-accessibility** | `--fix-alt` and `sprezzature-accessibility-alt` (W3C alt text drafted by a local vision model, in the page's language) | `sprezzature-accessibility-lint` (20 rules from the source, six with a safe `--fix`), `sprezzature-accessibility-text-spacing` |
 | **sprezzature-colors** | `sprezzature-colors-palette-to-tailwind` (palette → tailwind.config.js), `sprezzature-colors-levels` (project the palette to `universal` / `high-contrast` / `monochrome` / a colour-vision-deficiency variant) | `sprezzature-colors-contrast` (every co-occurring pair against WCAG, nearest OKLCH fix; exit 2 when nothing matched a role), `sprezzature-colors-cvd` (simulation, mosaic, `--grayscale`) |
 | **sprezzature-audio** | captions (local whisper.cpp), diarization, speaker naming, translation; narration through Kokoro, OpenVoice or Chatterbox, the engine chosen by speaker-helper's router | `sprezzature-audio-audit` (caption tracks), `-benchmark` (word error rate) |
 | **sprezzature-ux-laws** | `references/laws-of-ux.md` (30-law Markdown playbook) | `sprezzature-ux-laws` (eight laws checked from the source: Hick, Fitts, Miller, Jakob, Tesler, Aesthetic-Usability, Selective Attention, Choice Overload; `--fix` repairs four) |
 | **sprezzature-figures** | `sprezzature-figures render <kind>` (data → hand-authored SVG, 168 chart types), `explain_model.py` (SHAP / Shapash / TimeSHAP / LIME), `causal_estimate.py` (DoWhy + EconML + directed acyclic graph (DAG)), `render_diagram.py` (TikZ / SVG → PNG), `ralph_eyeball_loop.py` (render → look → refine, agent mode or `--local`). Every generator takes an `--accessibility` level | `sprezzature-figures check`, `audit_figure.py` (pie-3d, rainbow-palette, chartjunk, radius-over-cap, unformatted-tick, iso-date-tick, role-img-missing, alt-missing) |
-| **sprezzature-maps** | `make-map choropleth` (rows keyed by territory → shaded real basemap, Equal Earth; diverging scale when values change sign), `make-map density` (points → accumulation map), `make-map situation_map` (one YAML config → areas-of-control plate; fifteen worked plates) | `make-map audit` (eleven static rules on a finished plate), `make-map improve` |
+| **sprezzature-maps** | `make-map choropleth` (rows keyed by territory → shaded real basemap, Equal Earth; diverging scale when values change sign), `make-map density` (points → accumulation map), `make-map situation_map` (one YAML (YAML Ain't Markup Language, a plain-text format for settings, one name: value per line) config → areas-of-control plate; fifteen worked plates) | `make-map audit` (eleven static rules on a finished plate), `make-map improve` |
 | **sprezzature-video** | `make-film captions` (narration script + **measured** audio → WebVTT, not a transcript), `make-film poster` (the idle frame, baked as frame 0 where a feed regenerates its own thumbnail) | `make-film verify` (every declared claim against the code that decides it — exit 1 means the film is lying), `make-film scan` (every number on screen that no claim accounts for), `make-film assets` (tracked / derived / nowhere-else; a divergence is reported, never silently repaired) |
 
 The matrix is honest about gaps. Empty cells mark genuine roadmap
@@ -197,11 +197,11 @@ keep on its own.
    that drops onto an internal box with no build chain. The a11y gates
    (`sprezzature-accessibility`) run in CI without a browser, so even one-off recon
    tooling stays legible to teammates with assistive tech.
-3. **Data scientists wrapping CLIs.** Point `sprezzature-cli-gui` at your
+3. **Data scientists wrapping command-line tools (CLIs, programs run by typing a command).** Point `sprezzature-cli-gui` at your
    `--help` (argparse, Click, Typer, clap, commander, cobra all
    introspect cleanly) and get a working GUI mock-up. No Gradio
    runtime, no React lock-in.
-4. **Bilingual docs sites (EN/FR by default; pair is configurable).**
+4. **Bilingual docs sites (English and French by default; pair is configurable).**
    `sprezzature-publish` keeps typography and tone in lock-step across two
    languages, drafts meta tags + favicons + sitemap in one pass. Change
    the pair (EN/DE, EN/JA, EN/ES, …) by editing one config token; see
@@ -225,15 +225,15 @@ recipes per skill (with expected output), see [`EXAMPLES.md`](https://github.com
 
 ## What the skills enforce
 
-- Output uses vanilla JavaScript (JS) (ES modules, native `<dialog>`, custom elements when justified). No React, Vue, Svelte, Next.js, Nuxt, Angular, Solid.
+- Output uses vanilla JavaScript (JS) (ES (the JavaScript standard, here its way of splitting code into files) modules, native `<dialog>`, custom elements when justified). No React, Vue, Svelte, Next.js, Nuxt, Angular, Solid.
 - Output uses Tailwind utility classes with semantic tokens (`bg-brand-blue`, `text-label-primary`). No raw hex literals in markup.
-- Output enforces the **three-Roboto rule**: exactly three downloaded webfonts, all from the Roboto super-family: **Roboto** (sans / UI / body), **Roboto Serif** (editorial / longform / prose-heavy landings), **Roboto Mono** (`<code>`, `<pre>`, terminal panels, log output). No other downloaded family is allowed (no Inter, no Montserrat, no IBM Plex, no JetBrains Mono). The three siblings share metrics and x-height by design; prose-heavy and code-heavy surfaces stay typographically coherent. All three are self-hosted (no Google Fonts content-delivery network (CDN) in production); Web Open Font Format 2 (WOFF2) + SIL Open Font License (OFL) live under `sprezzature-ui/assets/fonts/roboto/`, `…/roboto-serif/`, `…/roboto-mono/`.
+- Output enforces the **three-Roboto rule**: exactly three downloaded webfonts, all from the Roboto super-family: **Roboto** (sans / UI / body), **Roboto Serif** (editorial / longform / prose-heavy landings), **Roboto Mono** (`<code>`, `<pre>`, terminal panels, log output). No other downloaded family is allowed (no Inter, no Montserrat, no IBM Plex, no JetBrains Mono). The three siblings share metrics and x-height by design; prose-heavy and code-heavy surfaces stay typographically coherent. All three are self-hosted (no Google Fonts content-delivery network (CDN, servers around the world that hand each reader a copy of a file from nearby) in production); Web Open Font Format 2 (WOFF2, the compressed font file browsers download) + SIL (SIL International, the non-profit that publishes it) Open Font License (OFL, which lets anyone use and ship the font for free) live under `sprezzature-ui/assets/fonts/roboto/`, `…/roboto-serif/`, `…/roboto-mono/`.
 - Output sets a `dark:` peer on every styled element, uses `<button>`/`<a>`/`<label>`/`<dialog>`/`<form>` first, exposes a visible focus ring, honors `prefers-reduced-motion` and meets a 44×44 px hit area.
-- Output exposes a **🌞 Light / 🌚 Dark / 🌗 Auto toggle** (canonical placement: top-right of sticky header → footer far-right → fixed bottom-right anchor when there is no header). **Auto is the default** so a fresh visitor inherits their operating-system (OS) choice and is never surprised by a hard-coded scheme. Component: `sprezzature-ui/assets/components/theme-toggle.html`. Wiring: `sprezzature-ui/references/stack-vanilla-js.md` § "Theme switching".
+- Output exposes a **🌞 Light / 🌚 Dark / 🌗 Auto toggle** (canonical placement: top-right of sticky header → footer far-right → fixed bottom-right anchor when there is no header). **Auto is the default** so a fresh visitor inherits their operating-system (OS, such as macOS, Windows or Android) choice and is never surprised by a hard-coded scheme. Component: `sprezzature-ui/assets/components/theme-toggle.html`. Wiring: `sprezzature-ui/references/stack-vanilla-js.md` § "Theme switching".
 - Color choices map to the palettes in `sprezzature-ui/references/color-psychology.md` (source: <https://deraison.ai/colors/>).
 - Skill output is **prototype-grade single-file HTML** by default, suitable for demos, mockups, internal tools and small landing pages. The starter page uses the Tailwind Play CDN, which Tailwind itself warns is for prototyping only. For production sites at scale, run **Tailwind CLI** or **Vite + Tailwind** over the emitted HTML before shipping; the class names are stable, so the same files survive the swap. See `sprezzature-ui/references/stack-tailwind.md`.
 - Bilingual-ready copy (EN/FR by default). The output language of the AI-backed scripts is **auto-detected from the input/context text** via `langdetect`: no configured default language; pass `--lang` to force one. For translatable UI strings and prompts, use one `locales/i18n.yaml` catalog (see `sprezzature-ui-i18n-make` and `sprezzature-publish/references/i18n.md`).
-- **i18n lives in YAML (the YAML configuration format), never in JS.** Translatable strings, GUI labels **and** LLM prompts, belong in a single per-project catalog, **`locales/i18n.yaml`** (message id → per-locale text), loaded at runtime; never a translation dict baked into JavaScript, never a prompt inlined in Python. GUI strings and prompts share `locales/i18n.yaml` because they share one concern: *language*. Prompts already ship this way (`prompts/*.yaml`, loaded via `_prompts.load_prompt`); the same rule governs generated GUIs, on both the **make** (scaffold + read `locales/i18n.yaml`) and **audit** (flag any GUI string or prompt living outside it: hardcoded in JS or inlined in Python) sides.
+- **i18n lives in YAML (the YAML configuration format), never in JS.** Translatable strings, GUI labels **and** LLM prompts, belong in a single per-project catalog, **`locales/i18n.yaml`** (message id → per-locale text), loaded at runtime; never a translation dict baked into JavaScript, never a prompt inlined in Python. GUI strings and prompts share `locales/i18n.yaml` because they share one concern: *language*. Prompts already ship this way (`prompts/*.yaml`, loaded via `_prompts.load_prompt`); the same rule governs generated graphical interfaces (GUIs, windows and forms you click), on both the **make** (scaffold + read `locales/i18n.yaml`) and **audit** (flag any GUI string or prompt living outside it: hardcoded in JS or inlined in Python) sides.
 
 ## Status
 
@@ -241,14 +241,14 @@ A snapshot of where each surface stands. The ten skill folders are stable; the o
 
 | Area | Status | Notes |
 |---|---|---|
-| `sprezzature-ui` (stack rules, tokens, components, dataviz, checklist, i18n) | Stable | Stack rules documented; `scripts/validate_content.py` gates framework imports; the package ships `sprezzature-ui-i18n-audit` (I18N001, I18N002) and `-i18n-make`. |
+| `sprezzature-ui` (stack rules, tokens, components, dataviz, checklist, i18n) | Stable | Stack rules documented; `scripts/validate_content.py` gates framework imports; the package ships `sprezzature-ui-i18n-audit` (`I18N001`, `I18N002`) and `-i18n-make`. |
 | `sprezzature-cli` (unified `sprezzature` driver, shell completion) | Stable | Click-based; routes to the ten bricks' own commands, and forwards `--help` to them. |
 | `sprezzature-cli-gui` (CLI → GUI flagship) | Stable (skill + runnable demo) | `assets/examples/cli-gui-demo/` runs end-to-end. Production hardening (auth, rate-limit, sandbox) deliberately left to the host. |
 | `sprezzature-publish` (Markdown site, meta tags, favicons, indexes, plain language, narration, SEO + GEO + AEO) | Stable | Thirteen tools: the site artifacts, the Markdown lint and site audit, narration and read-along, and since 1.4.0 `cta`, `faq` and `findable`, which order search, generative and answer engine work by the site's declared call to action. |
 | `sprezzature-accessibility`: lint | Stable | 20-rule static a11y lint from the source, six rules with a safe `--fix`. |
 | `sprezzature-colors`: contrast audit, color-vision-deficiency (CVD) simulation, curated palette, perceptual lighten / darken | Stable | OKLCH (the perceptual OKLCH color space)-neighbour contrast fixer, Machado CVD matrices, unified palette CSV (Apple base + emotion / concept / psychology projections), stdlib-only `_colors` module, `Color` class. Split out of `sprezzature-accessibility` for clearer scope. |
 | `sprezzature-accessibility`: W3C alt text via local Ollama vision | Stable | Model `qwen3-vl:8b` via Ollama (the one authorized LLM). Per-purpose decision tree, surrounding-text + vocabulary biasing, on-disk cache; `--fix-alt` writes it into the page. Was `sprezzature-vision` until it merged into `sprezzature-accessibility`. Wikipedia-fixture alt-text eval. |
-| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** | `sprezzature-audio-captions` is functional; what's missing is per-language word-error-rate (WER) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md#roadmap). |
+| `sprezzature-audio`: **WebVTT / SRT captions via local whisper.cpp** | **WiP / TODO** | `sprezzature-audio-captions` is functional; what's missing is per-language word-error-rate (WER, the share of words a transcript gets wrong) baselines (`en` / `fr` / `es` extractor wired but baselines not yet published), the user-supplied `vocab-biasing-clip.wav`, and a planned `pdbms`-based revision of the whisper.cpp integration. See [Roadmap](https://github.com/warith-harchaoui/sprezzature/blob/main/CHANGELOG.md#roadmap). |
 | `sprezzature-figures`, `-maps`, `-ux-laws` | Stable | figures draws 168 chart types; maps classes its choropleths and names the method; ux-laws audits a page against the Laws of UX. |
 | `sprezzature-video` (claims, scan, asset ledger, captions, poster) | Stable, pre-1.0 | The surface may still move between minor versions. |
 | `LISEZMOI.md` (French README) | Stable | At structural parity with this README, same section ordering, content kept in lock-step on every release. |
@@ -262,15 +262,15 @@ What you give the agent and what comes back. Each row is a self-contained flow; 
 | You provide | Phrase | Skill | Output |
 |---|---|---|---|
 | A working CLI (a Python `argparse` / Click / Typer parser, or any tool's `--help` text) | "Wrap this CLI in a GUI" + the project path | `sprezzature-cli-gui` | One self-contained `index.html`, Tailwind config and script inline, sub-commands mapped to forms / file inputs / choice lists. The form builds the exact command line; you wire it to your host (Tauri / Electron / FastAPI / Express / browser stub). An audit command checks the page still covers the parser. |
-| A folder of Markdown files (README, `docs/**`, blog posts) | "Turn these markdown files into a website" | `sprezzature-publish` | Static site: one HTML page per `.md`, sticky top bar, sidebar TOC for `docs/`, dark-mode peer, favicons, `<meta>` tags, `robots.txt` + `sitemap.xml` + `llms.txt` + Atom feed. |
+| A folder of Markdown files (README, `docs/**`, blog posts) | "Turn these markdown files into a website" | `sprezzature-publish` | Static site: one HTML page per `.md`, sticky top bar, sidebar table of contents (TOC, the list of links to every page) for `docs/`, dark-mode peer, favicons, `<meta>` tags, `robots.txt` + `sitemap.xml` + `llms.txt` + Atom feed. |
 | A free-form ask ("primary button", "confirm dialog", "settings page") | "Build a `<component>`" | `sprezzature-ui` | Semantic HTML + Tailwind + minimal vanilla JS, focus ring, `dark:` peer, 44×44 hit area, `Escape` close on dialogs, reduced-motion guard. |
 | A data shape (CSV, JSON, a few rows) | "Chart this" / "Dashboard for X" | `sprezzature-ui` | Inline SVG + `<figure>` wrapper. House style, palette from `color-psychology.md`, polarity-tagged axes, `role="img"`. |
 | An existing HTML page or screenshot | "Audit this" / "WCAG check" / "Make it look less AI" | `sprezzature-ui` (anti-patterns, ergonomics) + `sprezzature-accessibility` (lint) + `sprezzature-colors` (contrast, CVD) | Findings against the 8 ergonomic criteria + anti-patterns catalogue; concrete diffs; pre-ship checklist run; `sprezzature-accessibility-lint` + `sprezzature-colors-contrast` + `sprezzature-colors-cvd` output. |
 | An image file (`*.png`, `*.jpg`, …) | "Alt text for this image" | `sprezzature-accessibility` | W3C-compliant alt text for the right purpose category (informative / decorative / functional / text / complex / group), in the page's language, tagged `data-alt-source="ai"`. |
 | An audio or video file (`.mp4`, `.wav`, `.mp3`, …), **WiP** | "Captions / transcript" | `sprezzature-audio` *(work in progress)* | WebVTT / SRT / plain-text captions from local whisper.cpp, with project-vocab biasing. `<video>` + `<track kind="captions">` snippet. Script + tests ship today; per-language WER baselines and the vocab-biasing reference clip are still being collected; see [Status](#status). |
 | A logo (`logo.png` / `.svg`) | "Favicon set" / "PWA icons" | `sprezzature-publish` | `favicon.svg` + `.ico` + PNG set + `apple-touch-icon.png` + maskable PWA icon + `site.webmanifest` + a `head.html` snippet. |
-| A goal description or an HTML page | "Meta tags" / "SEO" / "OG card" / "GEO" / "llms.txt" / "AI Overview" | `sprezzature-publish` | **For search-engine optimization (SEO):** title + description + Open Graph (OG) + Twitter Card + Schema.org JSON for Linking Data (JSON-LD) (JSON on stdout): see [Google's three Search Essentials pillars](https://developers.google.com/search/docs/essentials) applied in `sprezzature-publish/references/seo-essentials.md`. **For generative-engine optimization (GEO)** (Generative Engine Optimization, AI Overview / Gemini / ChatGPT answer surfaces): `llms.txt` is emitted by `sprezzature-publish-indexes` alongside `robots.txt` + `sitemap.xml` + Atom/really-simple-syndication (RSS), so the site ships an LLM-readable Markdown summary the moment any "turn this into a website" run completes. Same crawlers, same `robots.txt` permissions; no separate "AI" meta tag exists; anything claiming one is wrong. |
-| An existing site (HTML, PHP, Markdown, JSON, YAML) | "My site doesn't sell" / "Write me a FAQ" / "AEO" | `sprezzature-publish` | First a question: which call to action is the site for (detection offers what it already links to). Then the FAQ the site is missing, every answer drawn from its own pages and the unanswerable questions listed apart; and one SEO + GEO + AEO report, money pages first. |
+| A goal description or an HTML page | "Meta tags" / "SEO" / "OG card" / "GEO" / "llms.txt" / "AI Overview" | `sprezzature-publish` | **For search-engine optimization (SEO):** title + description + Open Graph (OG) + Twitter Card + Schema.org JSON for Linking Data (JSON-LD, JSON hidden in a page that tells search engines what it is about) (JSON on stdout): see [Google's three Search Essentials pillars](https://developers.google.com/search/docs/essentials) applied in `sprezzature-publish/references/seo-essentials.md`. **For generative-engine optimization (GEO)** (Generative Engine Optimization, AI Overview / Gemini / ChatGPT answer surfaces): `llms.txt` is emitted by `sprezzature-publish-indexes` alongside `robots.txt` + `sitemap.xml` + Atom/really-simple-syndication (RSS, a feed that lets readers follow a site's new posts in a reader app), so the site ships an LLM-readable Markdown summary the moment any "turn this into a website" run completes. Same crawlers, same `robots.txt` permissions; no separate "AI" meta tag exists; anything claiming one is wrong. |
+| An existing site (HTML, PHP (PHP: Hypertext Preprocessor, a language servers use to build each page when it is requested, as WordPress does), Markdown, JSON, YAML) | "My site doesn't sell" / "Write me a FAQ" / "AEO" | `sprezzature-publish` | First a question: which call to action is the site for (detection offers what it already links to). Then the FAQ the site is missing, every answer drawn from its own pages and the unanswerable questions listed apart; and one SEO + GEO + AEO report, money pages first. |
 | Draft UI copy | "Plain language" / "Rewrite at grade 8" | `sprezzature-publish` | Same meaning, marketing voice stripped, output length ≤ 1.1× original. |
 | A palette JSON | "Contrast audit" / "Is my palette accessible?" | `sprezzature-colors` | Every `(label, surface)` pair walked, failures listed with the nearest OKLCH-neighbour fix. Exit 1 on any failure. |
 | A finished page / screenshot | "Pre-ship check" | `sprezzature-ui` + `sprezzature-accessibility` + `sprezzature-colors` | The `checklist.md` gate executed; lint + contrast + CVD passes; copy / motion / performance verified. |
@@ -416,7 +416,7 @@ behaviour as Claude Code with two real differences:
   without watching a meter.
 
 The trade-off is model quality. A 7-13 B local model is below
-Claude / GPT-4 (the generative pre-trained transformer) on hard reasoning; the sprezzature-* skills compensate
+Claude / GPT-4 (Generative Pre-trained Transformer 4, OpenAI's model behind ChatGPT) on hard reasoning; the sprezzature-* skills compensate
 because they front-load the *opinion* (stack rules, audit checks,
 trigger phrases); the model mostly has to follow a script, not
 invent it. For UI work, alt text, captions, contrast audits,
@@ -496,7 +496,7 @@ scripts. There is nothing else to pick.
 The single model is **Qwen3-VL 8B**, Q4_K_M quantization, pulled with
 `ollama pull qwen3-vl:8b` (~6.1 GB). It was chosen against four criteria for a
 bilingual, image-heavy, Mac-local toolkit: **vision**, **French**,
-**OCR / charts**, and **Apple-Silicon fit**. It is the only ≈8B model that is
+**optical character recognition (OCR, reading the text inside an image) / charts**, and **Apple-Silicon fit**. It is the only ≈8B model that is
 top-tier on vision, OCR/charts, and Mac-fit at once while being strong on
 French (DocVQA 96.1%, OCRBench ~896, ScreenSpot 94.4%, OCR across 32 languages).
 The full rationale, the scored comparison against Gemma 3, Pixtral, InternVL,
@@ -524,7 +524,7 @@ which reads the daemon address itself:
 The pattern is deliberately boring: `qwen3-vl:8b` on the same daemon
 for both the agent and the scripts. `qwen3-vl:8b` is multimodal, so the
 vision script and the text scripts share it: no per-concern model
-juggling, no MLX.
+juggling, no MLX (Apple's machine-learning framework for Mac chips).
 
 ```bash
 # One daemon, one model, for everything.
@@ -543,9 +543,9 @@ refactors, code review of unfamiliar libraries).
 ### Trust model
 
 Short version: the repo ships text and Python scripts you can read
-top-to-bottom in under an hour. **Tagged releases carry Secure Hash Algorithm (SHA) SHA-256
+top-to-bottom in under an hour. **Tagged releases carry SHA-256 (Secure Hash Algorithm, a 64-character fingerprint of a file that changes if a single byte changes)
 checksums** (integrity-against-corruption); they are **not
-GPG-signed** or Sigstore-attested today. If you need authenticity
+signed with GPG (GNU Privacy Guard, the standard open-source tool that signs a file so anyone can check who made it)** or Sigstore-attested today. If you need authenticity
 beyond a transport-integrity check, build from a tagged commit you've
 reviewed yourself; `scripts/release.sh` is in-tree and reproducible,
 and the `release.yml` workflow does nothing the script can't do
@@ -604,7 +604,7 @@ A `repo: local` hook runs the command from your own environment, so
 
 ## CLI → GUI flagship
 
-The `sprezzature-cli-gui` skill takes an existing CLI and produces a single-page vanilla-JS + Tailwind GUI for it. It reads the argument parser, categorizes each command (one-shot / form / streaming / list), maps flags to form controls, and wires execution to the project's host (Tauri, Electron, FastAPI, Express, or a stdlib HyperText Transfer Protocol (HTTP)+server-sent events (SSE) proxy).
+The `sprezzature-cli-gui` skill takes an existing CLI and produces a single-page vanilla-JS + Tailwind GUI for it. It reads the argument parser, categorizes each command (one-shot / form / streaming / list), maps flags to form controls, and wires execution to the project's host (Tauri, Electron, FastAPI, Express, or a stdlib HyperText Transfer Protocol (HTTP) + server-sent events (SSE, a connection over which the server keeps pushing new lines, as a live log does) proxy).
 
 A runnable worked example ships in `sprezzature-cli-gui/assets/examples/cli-gui-demo/`. Launch:
 
@@ -619,7 +619,7 @@ For an honest comparison against Gradio / Streamlit / Tauri / Taipy, see `sprezz
 
 [Warith HARCHAOUI, Ph.D.](https://www.linkedin.com/in/warith-harchaoui/)
 
-Ten Claude / OpenCode **skills** for a single frontend stack: vanilla JavaScript, Tailwind CSS, and the three-Roboto typography rule (Roboto / Roboto Serif / Roboto Mono). Built to the [Anthropic skill specification](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
+Ten Claude / OpenCode **skills** for a single frontend stack: vanilla JavaScript, Tailwind CSS (Cascading Style Sheets, the language that sets a web page's colours, fonts and layout), and the three-Roboto typography rule (Roboto / Roboto Serif / Roboto Mono). Built to the [Anthropic skill specification](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
 
 Special thanks to:
 
@@ -643,7 +643,7 @@ We also drew on the [Apple Human Interface Guidelines](https://developer.apple.c
 
 ## License
 
-**Berkeley Software Distribution (BSD)-3-Clause**, the same license used by **scikit-learn**.
+**Berkeley Software Distribution (BSD, a family of permissive open-source licences)-3-Clause**, the same license used by **scikit-learn**.
 Permissive: use, modify, redistribute, sell, ship in commercial
 products. The three conditions are (1) keep the copyright notice in
 source redistributions, (2) reproduce it in binary distributions'
@@ -651,7 +651,7 @@ documentation, (3) do not use the copyright holder's name to endorse
 derived products without permission. See `LICENSE.md` for the canonical
 text. The bundled Roboto / Roboto Serif / Roboto Mono fonts remain
 under the SIL Open Font License (see the `OFL.txt` bundled in each
-`sprezzature-ui/assets/fonts/roboto*/` folder); the BSD-3-Clause license
+`sprezzature-ui/assets/fonts/roboto*/` folder); the Berkeley Software Distribution license (BSD-3-Clause)
 above applies to the source, not to the fonts.
 
 **License vs. attribution.** Author credits in the docs are voluntary

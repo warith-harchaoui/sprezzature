@@ -7,9 +7,13 @@ here is aspiration. If you want the *what* (the skills, the install), read
 
 French mirror: [`PHILOSOPHIE.md`](PHILOSOPHIE.md).
 
-Acronyms are spelled out on first use: scalable vector graphics (SVG),
-portable network graphics (PNG), color-vision deficiency (CVD),
-cascading style sheets (CSS), vision-language model (VLM).
+Acronyms are spelled out on first use: scalable vector graphics (SVG, an
+image made of shapes rather than pixels, so it stays sharp at any zoom),
+portable network graphics (PNG), color-vision deficiency (CVD, the medical
+name for color blindness: red and green that look alike, for instance),
+cascading style sheets (CSS, the language that sets a web page's colors,
+fonts and layout), vision-language model (VLM, an AI model that reads an
+image as well as text and can say what it sees).
 
 ---
 
@@ -68,7 +72,7 @@ that wrote the code; fully offline, an optional local VLM does the
 critique. It catches what a code check never will: a label clipped at the
 edge, a legend slid off the canvas, two nodes overlapping, colors that
 vanish for a colorblind reader. Fix the source, render again, look again.
-Data visualization is just one use; the same loop reviews UI screens and
+Data visualization is just one use; the same loop reviews user-interface (UI, the screens, buttons and forms a person uses) screens and
 diagrams too.
 
 ## Accessible and color-vision-deficiency-safe by construction
