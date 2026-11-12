@@ -88,6 +88,17 @@ def _find_skill(skill_name: str) -> Optional[Path]:
         candidate = base / skill_name
         if (candidate / "SKILL.md").is_file() or (candidate / SCRIPTS_SUBDIR).is_dir():
             return candidate
+    # Since 2026-11-12 each brick ships its skill inside its package, at
+    # ``sprezzature_ui/skill/``: an installed brick is a skill found, even
+    # before ``sprezzature-ui-skill --install`` has copied it anywhere.
+    try:
+        spec = importlib.util.find_spec(skill_name.replace("-", "_"))
+    except (ImportError, ValueError):
+        spec = None
+    for location in (spec.submodule_search_locations or []) if spec else []:
+        shipped = Path(location) / "skill"
+        if (shipped / "SKILL.md").is_file():
+            return shipped
     return None
 
 
