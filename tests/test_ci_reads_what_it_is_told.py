@@ -68,13 +68,27 @@ def _bricks() -> list[Path]:
 
 
 def _checkouts() -> list[Path]:
-    """Every ``sprezzature-*`` clone beside this repository.
+    """Every clone beside this repository of a brick the suite ships.
 
     Deliberately looser than :func:`_bricks` — it asks only "is there a clone
     here" — so the two can be compared without either one knowing how many
     siblings this particular machine happens to have.
+
+    The bricks are the ones ``SKILLS.txt`` names, not every folder whose name
+    starts with ``sprezzature-``: the list is the suite's own statement of
+    what it contains, and a prefix is only a naming habit. Matching on the
+    prefix flagged any unrelated folder that happened to share it.
     """
-    return sorted(p for p in SIBLINGS.glob("sprezzature-*") if (p / ".git").exists())
+    shipped = set(_shipped_skills())
+    return sorted(
+        p for p in SIBLINGS.glob("sprezzature-*") if (p / ".git").exists() and p.name in shipped
+    )
+
+
+def _shipped_skills() -> tuple[str, ...]:
+    """The brick names ``SKILLS.txt`` lists, comments and blank lines dropped."""
+    lines = (REPO_ROOT / "SKILLS.txt").read_text(encoding="utf-8").splitlines()
+    return tuple(s.strip() for s in lines if s.strip() and not s.strip().startswith("#"))
 
 
 def _workflow_text(repo: Path) -> str:
