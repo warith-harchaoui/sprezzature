@@ -17,18 +17,18 @@
 <text x="50.0" y="130.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">8</text>
 <clipPath id="hex-clip"><rect x="60.0" y="118.0" width="655.0" height="270.0"/></clipPath>
 <g clip-path="url(#hex-clip)">
-<path id="hex-0" class="hex hit" tabindex="0" d="M 228.3,292.2 L 218.3,309.4 L 198.5,309.4 L 188.6,292.2 L 198.5,275.0 L 218.3,275.0 Z" fill="#2C91FF" stroke="#2C91FF" stroke-width="0.75"><title>28 points in this cell</title></path>
+<path id="hex-0" class="hex hit" tabindex="0" d="M 228.3,292.2 L 218.3,309.4 L 198.5,309.4 L 188.6,292.2 L 198.5,275.0 L 218.3,275.0 Z" fill="#2C96FF" stroke="#2C96FF" stroke-width="0.75"><title>28 points in this cell</title></path>
 <path id="hex-1" class="hex hit" tabindex="0" d="M 406.9,257.8 L 397.0,275.0 L 377.1,275.0 L 367.2,257.8 L 377.1,240.7 L 397.0,240.7 Z" fill="#A5CCFF" stroke="#A5CCFF" stroke-width="0.75"><title>10 points in this cell</title></path>
 <path id="hex-2" class="hex hit" tabindex="0" d="M 406.9,292.2 L 397.0,309.4 L 377.1,309.4 L 367.2,292.2 L 377.1,275.0 L 397.0,275.0 Z" fill="#58A7FF" stroke="#58A7FF" stroke-width="0.75"><title>21 points in this cell</title></path>
-<path id="hex-3" class="hex hit" tabindex="0" d="M 317.6,309.4 L 307.7,326.6 L 287.8,326.6 L 277.9,309.4 L 287.8,292.2 L 307.7,292.2 Z" fill="#0466D5" stroke="#0466D5" stroke-width="0.75"><title>40 points in this cell</title></path>
+<path id="hex-3" class="hex hit" tabindex="0" d="M 317.6,309.4 L 307.7,326.6 L 287.8,326.6 L 277.9,309.4 L 287.8,292.2 L 307.7,292.2 Z" fill="#046ED5" stroke="#046ED5" stroke-width="0.75"><title>40 points in this cell</title></path>
 <path id="hex-4" class="hex hit" tabindex="0" d="M 198.5,309.4 L 188.6,326.6 L 168.7,326.6 L 158.8,309.4 L 168.7,292.2 L 188.6,292.2 Z" fill="#66AEFF" stroke="#66AEFF" stroke-width="0.75"><title>19 points in this cell</title></path>
 <path id="hex-5" class="hex hit" tabindex="0" d="M 377.1,275.0 L 367.2,292.2 L 347.3,292.2 L 337.4,275.0 L 347.3,257.8 L 367.2,257.8 Z" fill="#51A4FF" stroke="#51A4FF" stroke-width="0.75"><title>22 points in this cell</title></path>
-<path id="hex-6" class="hex hit" tabindex="0" d="M 287.8,326.6 L 277.9,343.8 L 258.0,343.8 L 248.1,326.6 L 258.0,309.4 L 277.9,309.4 Z" fill="#3797FF" stroke="#3797FF" stroke-width="0.75"><title>26 points in this cell</title></path>
-<path id="hex-7" class="hex hit" tabindex="0" d="M 317.6,275.0 L 307.7,292.2 L 287.8,292.2 L 277.9,275.0 L 287.8,257.8 L 307.7,257.8 Z" fill="#007AFF" stroke="#007AFF" stroke-width="0.75"><title>36 points in this cell</title></path>
+<path id="hex-6" class="hex hit" tabindex="0" d="M 287.8,326.6 L 277.9,343.8 L 258.0,343.8 L 248.1,326.6 L 258.0,309.4 L 277.9,309.4 Z" fill="#3799FF" stroke="#3799FF" stroke-width="0.75"><title>26 points in this cell</title></path>
+<path id="hex-7" class="hex hit" tabindex="0" d="M 317.6,275.0 L 307.7,292.2 L 287.8,292.2 L 277.9,275.0 L 287.8,257.8 L 307.7,257.8 Z" fill="#0088FF" stroke="#0088FF" stroke-width="0.75"><title>36 points in this cell</title></path>
 <path id="hex-8" class="hex hit" tabindex="0" d="M 109.2,292.2 L 99.2,309.4 L 79.4,309.4 L 69.5,292.2 L 79.4,275.0 L 99.2,275.0 Z" fill="#C7DFFF" stroke="#C7DFFF" stroke-width="0.75"><title>5 points in this cell</title></path>
 <path id="hex-9" class="hex hit" tabindex="0" d="M 168.7,326.6 L 158.8,343.8 L 138.9,343.8 L 129.0,326.6 L 138.9,309.4 L 158.8,309.4 Z" fill="#C0DCFF" stroke="#C0DCFF" stroke-width="0.75"><title>6 points in this cell</title></path>
 <path id="hex-10" class="hex hit" tabindex="0" d="M 198.5,275.0 L 188.6,292.2 L 168.7,292.2 L 158.8,275.0 L 168.7,257.8 L 188.6,257.8 Z" fill="#66AEFF" stroke="#66AEFF" stroke-width="0.75"><title>19 points in this cell</title></path>
-<path id="hex-11" class="hex hit" tabindex="0" d="M 347.3,292.2 L 337.4,309.4 L 317.6,309.4 L 307.7,292.2 L 317.6,275.0 L 337.4,275.0 Z" fill="#0B80FF" stroke="#0B80FF" stroke-width="0.75"><title>34 points in this cell</title></path>
+<path id="hex-11" class="hex hit" tabindex="0" d="M 347.3,292.2 L 337.4,309.4 L 317.6,309.4 L 307.7,292.2 L 317.6,275.0 L 337.4,275.0 Z" fill="#0B8BFF" stroke="#0B8BFF" stroke-width="0.75"><title>34 points in this cell</title></path>
 <path id="hex-12" class="hex hit" tabindex="0" d="M 228.3,326.6 L 218.3,343.8 L 198.5,343.8 L 188.6,326.6 L 198.5,309.4 L 218.3,309.4 Z" fill="#74B4FF" stroke="#74B4FF" stroke-width="0.75"><title>17 points in this cell</title></path>
 <path id="hex-13" class="hex hit" tabindex="0" d="M 258.0,275.0 L 248.1,292.2 L 228.3,292.2 L 218.3,275.0 L 228.3,257.8 L 248.1,257.8 Z" fill="#439DFF" stroke="#439DFF" stroke-width="0.75"><title>24 points in this cell</title></path>
 <path id="hex-14" class="hex hit" tabindex="0" d="M 287.8,257.8 L 277.9,275.0 L 258.0,275.0 L 248.1,257.8 L 258.0,240.7 L 277.9,240.7 Z" fill="#90C1FF" stroke="#90C1FF" stroke-width="0.75"><title>13 points in this cell</title></path>
@@ -37,7 +37,7 @@
 <path id="hex-17" class="hex hit" tabindex="0" d="M 228.3,257.8 L 218.3,275.0 L 198.5,275.0 L 188.6,257.8 L 198.5,240.7 L 218.3,240.7 Z" fill="#A5CCFF" stroke="#A5CCFF" stroke-width="0.75"><title>10 points in this cell</title></path>
 <path id="hex-18" class="hex hit" tabindex="0" d="M 258.0,309.4 L 248.1,326.6 L 228.3,326.6 L 218.3,309.4 L 228.3,292.2 L 248.1,292.2 Z" fill="#0A4DA0" stroke="#0A4DA0" stroke-width="0.75"><title>45 points in this cell</title></path>
 <path id="hex-19" class="hex hit" tabindex="0" d="M 138.9,309.4 L 129.0,326.6 L 109.2,326.6 L 99.2,309.4 L 109.2,292.2 L 129.0,292.2 Z" fill="#C7DFFF" stroke="#C7DFFF" stroke-width="0.75"><title>5 points in this cell</title></path>
-<path id="hex-20" class="hex hit" tabindex="0" d="M 287.8,292.2 L 277.9,309.4 L 258.0,309.4 L 248.1,292.2 L 258.0,275.0 L 277.9,275.0 Z" fill="#0175F4" stroke="#0175F4" stroke-width="0.75"><title>37 points in this cell</title></path>
+<path id="hex-20" class="hex hit" tabindex="0" d="M 287.8,292.2 L 277.9,309.4 L 258.0,309.4 L 248.1,292.2 L 258.0,275.0 L 277.9,275.0 Z" fill="#0181F4" stroke="#0181F4" stroke-width="0.75"><title>37 points in this cell</title></path>
 <path id="hex-21" class="hex hit" tabindex="0" d="M 138.9,343.8 L 129.0,361.0 L 109.2,361.0 L 99.2,343.8 L 109.2,326.6 L 129.0,326.6 Z" fill="#CEE3FF" stroke="#CEE3FF" stroke-width="0.75"><title>4 points in this cell</title></path>
 <path id="hex-22" class="hex hit" tabindex="0" d="M 258.0,206.3 L 248.1,223.5 L 228.3,223.5 L 218.3,206.3 L 228.3,189.1 L 248.1,189.1 Z" fill="#DCEBFF" stroke="#DCEBFF" stroke-width="0.75"><title>2 points in this cell</title></path>
 <path id="hex-23" class="hex hit" tabindex="0" d="M 228.3,361.0 L 218.3,378.2 L 198.5,378.2 L 188.6,361.0 L 198.5,343.8 L 218.3,343.8 Z" fill="#D5E7FF" stroke="#D5E7FF" stroke-width="0.75"><title>3 points in this cell</title></path>
@@ -51,7 +51,7 @@
 <path id="hex-31" class="hex hit" tabindex="0" d="M 496.2,275.0 L 486.3,292.2 L 466.4,292.2 L 456.5,275.0 L 466.4,257.8 L 486.3,257.8 Z" fill="#A5CCFF" stroke="#A5CCFF" stroke-width="0.75"><title>10 points in this cell</title></path>
 <path id="hex-32" class="hex hit" tabindex="0" d="M 377.1,240.7 L 367.2,257.8 L 347.3,257.8 L 337.4,240.7 L 347.3,223.5 L 367.2,223.5 Z" fill="#C0DCFF" stroke="#C0DCFF" stroke-width="0.75"><title>6 points in this cell</title></path>
 <path id="hex-33" class="hex hit" tabindex="0" d="M 168.7,292.2 L 158.8,309.4 L 138.9,309.4 L 129.0,292.2 L 138.9,275.0 L 158.8,275.0 Z" fill="#9EC8FF" stroke="#9EC8FF" stroke-width="0.75"><title>11 points in this cell</title></path>
-<path id="hex-34" class="hex hit" tabindex="0" d="M 377.1,309.4 L 367.2,326.6 L 347.3,326.6 L 337.4,309.4 L 347.3,292.2 L 367.2,292.2 Z" fill="#3294FF" stroke="#3294FF" stroke-width="0.75"><title>27 points in this cell</title></path>
+<path id="hex-34" class="hex hit" tabindex="0" d="M 377.1,309.4 L 367.2,326.6 L 347.3,326.6 L 337.4,309.4 L 347.3,292.2 L 367.2,292.2 Z" fill="#3297FF" stroke="#3297FF" stroke-width="0.75"><title>27 points in this cell</title></path>
 <path id="hex-35" class="hex hit" tabindex="0" d="M 109.2,326.6 L 99.2,343.8 L 79.4,343.8 L 69.5,326.6 L 79.4,309.4 L 99.2,309.4 Z" fill="#DCEBFF" stroke="#DCEBFF" stroke-width="0.75"><title>2 points in this cell</title></path>
 <path id="hex-36" class="hex hit" tabindex="0" d="M 555.8,275.0 L 545.8,292.2 L 526.0,292.2 L 516.1,275.0 L 526.0,257.8 L 545.8,257.8 Z" fill="#89BEFF" stroke="#89BEFF" stroke-width="0.75"><title>14 points in this cell</title></path>
 <path id="hex-37" class="hex hit" tabindex="0" d="M 168.7,257.8 L 158.8,275.0 L 138.9,275.0 L 129.0,257.8 L 138.9,240.7 L 158.8,240.7 Z" fill="#C7DFFF" stroke="#C7DFFF" stroke-width="0.75"><title>5 points in this cell</title></path>
@@ -85,13 +85,13 @@
 <path id="hex-65" class="hex hit" tabindex="0" d="M 526.0,257.8 L 516.1,275.0 L 496.2,275.0 L 486.3,257.8 L 496.2,240.7 L 516.1,240.7 Z" fill="#5FAAFF" stroke="#5FAAFF" stroke-width="0.75"><title>20 points in this cell</title></path>
 <path id="hex-66" class="hex hit" tabindex="0" d="M 138.9,206.3 L 129.0,223.5 L 109.2,223.5 L 99.2,206.3 L 109.2,189.1 L 129.0,189.1 Z" fill="#E3EFFF" stroke="#E3EFFF" stroke-width="0.75"><title>1 point in this cell</title></path>
 <path id="hex-67" class="hex hit" tabindex="0" d="M 168.7,361.0 L 158.8,378.2 L 138.9,378.2 L 129.0,361.0 L 138.9,343.8 L 158.8,343.8 Z" fill="#E3EFFF" stroke="#E3EFFF" stroke-width="0.75"><title>1 point in this cell</title></path>
-<path id="hex-68" class="hex hit" tabindex="0" d="M 555.8,240.7 L 545.8,257.8 L 526.0,257.8 L 516.1,240.7 L 526.0,223.5 L 545.8,223.5 Z" fill="#0B80FF" stroke="#0B80FF" stroke-width="0.75"><title>34 points in this cell</title></path>
+<path id="hex-68" class="hex hit" tabindex="0" d="M 555.8,240.7 L 545.8,257.8 L 526.0,257.8 L 516.1,240.7 L 526.0,223.5 L 545.8,223.5 Z" fill="#0B8BFF" stroke="#0B8BFF" stroke-width="0.75"><title>34 points in this cell</title></path>
 <path id="hex-69" class="hex hit" tabindex="0" d="M 466.4,189.1 L 456.5,206.3 L 436.7,206.3 L 426.7,189.1 L 436.7,171.9 L 456.5,171.9 Z" fill="#D5E7FF" stroke="#D5E7FF" stroke-width="0.75"><title>3 points in this cell</title></path>
 <path id="hex-70" class="hex hit" tabindex="0" d="M 615.3,240.7 L 605.4,257.8 L 585.5,257.8 L 575.6,240.7 L 585.5,223.5 L 605.4,223.5 Z" fill="#5FAAFF" stroke="#5FAAFF" stroke-width="0.75"><title>20 points in this cell</title></path>
 <path id="hex-71" class="hex hit" tabindex="0" d="M 526.0,189.1 L 516.1,206.3 L 496.2,206.3 L 486.3,189.1 L 496.2,171.9 L 516.1,171.9 Z" fill="#C7DFFF" stroke="#C7DFFF" stroke-width="0.75"><title>5 points in this cell</title></path>
 <path id="hex-72" class="hex hit" tabindex="0" d="M 704.6,292.2 L 694.7,309.4 L 674.8,309.4 L 664.9,292.2 L 674.8,275.0 L 694.7,275.0 Z" fill="#E3EFFF" stroke="#E3EFFF" stroke-width="0.75"><title>1 point in this cell</title></path>
 <path id="hex-73" class="hex hit" tabindex="0" d="M 674.8,240.7 L 664.9,257.8 L 645.1,257.8 L 635.2,240.7 L 645.1,223.5 L 664.9,223.5 Z" fill="#D5E7FF" stroke="#D5E7FF" stroke-width="0.75"><title>3 points in this cell</title></path>
-<path id="hex-74" class="hex hit" tabindex="0" d="M 585.5,257.8 L 575.6,275.0 L 555.8,275.0 L 545.8,257.8 L 555.8,240.7 L 575.6,240.7 Z" fill="#3797FF" stroke="#3797FF" stroke-width="0.75"><title>26 points in this cell</title></path>
+<path id="hex-74" class="hex hit" tabindex="0" d="M 585.5,257.8 L 575.6,275.0 L 555.8,275.0 L 545.8,257.8 L 555.8,240.7 L 575.6,240.7 Z" fill="#3799FF" stroke="#3799FF" stroke-width="0.75"><title>26 points in this cell</title></path>
 <path id="hex-75" class="hex hit" tabindex="0" d="M 555.8,309.4 L 545.8,326.6 L 526.0,326.6 L 516.1,309.4 L 526.0,292.2 L 545.8,292.2 Z" fill="#D5E7FF" stroke="#D5E7FF" stroke-width="0.75"><title>3 points in this cell</title></path>
 <path id="hex-76" class="hex hit" tabindex="0" d="M 615.3,275.0 L 605.4,292.2 L 585.5,292.2 L 575.6,275.0 L 585.5,257.8 L 605.4,257.8 Z" fill="#ACD0FF" stroke="#ACD0FF" stroke-width="0.75"><title>9 points in this cell</title></path>
 <path id="hex-77" class="hex hit" tabindex="0" d="M 496.2,206.3 L 486.3,223.5 L 466.4,223.5 L 456.5,206.3 L 466.4,189.1 L 486.3,189.1 Z" fill="#4AA1FF" stroke="#4AA1FF" stroke-width="0.75"><title>23 points in this cell</title></path>
@@ -99,7 +99,7 @@
 <path id="hex-79" class="hex hit" tabindex="0" d="M 466.4,223.5 L 456.5,240.7 L 436.7,240.7 L 426.7,223.5 L 436.7,206.3 L 456.5,206.3 Z" fill="#A5CCFF" stroke="#A5CCFF" stroke-width="0.75"><title>10 points in this cell</title></path>
 <path id="hex-80" class="hex hit" tabindex="0" d="M 436.7,171.9 L 426.7,189.1 L 406.9,189.1 L 397.0,171.9 L 406.9,154.7 L 426.7,154.7 Z" fill="#DCEBFF" stroke="#DCEBFF" stroke-width="0.75"><title>2 points in this cell</title></path>
 <path id="hex-81" class="hex hit" tabindex="0" d="M 674.8,206.3 L 664.9,223.5 L 645.1,223.5 L 635.2,206.3 L 645.1,189.1 L 664.9,189.1 Z" fill="#CEE3FF" stroke="#CEE3FF" stroke-width="0.75"><title>4 points in this cell</title></path>
-<path id="hex-82" class="hex hit" tabindex="0" d="M 526.0,223.5 L 516.1,240.7 L 496.2,240.7 L 486.3,223.5 L 496.2,206.3 L 516.1,206.3 Z" fill="#3797FF" stroke="#3797FF" stroke-width="0.75"><title>26 points in this cell</title></path>
+<path id="hex-82" class="hex hit" tabindex="0" d="M 526.0,223.5 L 516.1,240.7 L 496.2,240.7 L 486.3,223.5 L 496.2,206.3 L 516.1,206.3 Z" fill="#3799FF" stroke="#3799FF" stroke-width="0.75"><title>26 points in this cell</title></path>
 <path id="hex-83" class="hex hit" tabindex="0" d="M 585.5,189.1 L 575.6,206.3 L 555.8,206.3 L 545.8,189.1 L 555.8,171.9 L 575.6,171.9 Z" fill="#97C5FF" stroke="#97C5FF" stroke-width="0.75"><title>12 points in this cell</title></path>
 <path id="hex-84" class="hex hit" tabindex="0" d="M 615.3,206.3 L 605.4,223.5 L 585.5,223.5 L 575.6,206.3 L 585.5,189.1 L 605.4,189.1 Z" fill="#6DB1FF" stroke="#6DB1FF" stroke-width="0.75"><title>18 points in this cell</title></path>
 <path id="hex-85" class="hex hit" tabindex="0" d="M 496.2,171.9 L 486.3,189.1 L 466.4,189.1 L 456.5,171.9 L 466.4,154.7 L 486.3,154.7 Z" fill="#ACD0FF" stroke="#ACD0FF" stroke-width="0.75"><title>9 points in this cell</title></path>
@@ -261,9 +261,9 @@
 <rect x="94.0" y="443.0" width="14" height="12" fill="#BDDAFF"/>
 <rect x="110.0" y="443.0" width="14" height="12" fill="#91C2FF"/>
 <rect x="126.0" y="443.0" width="14" height="12" fill="#64ADFF"/>
-<rect x="142.0" y="443.0" width="14" height="12" fill="#3998FF"/>
-<rect x="158.0" y="443.0" width="14" height="12" fill="#1585FF"/>
-<rect x="174.0" y="443.0" width="14" height="12" fill="#036DE4"/>
+<rect x="142.0" y="443.0" width="14" height="12" fill="#3999FF"/>
+<rect x="158.0" y="443.0" width="14" height="12" fill="#158FFF"/>
+<rect x="174.0" y="443.0" width="14" height="12" fill="#0377E4"/>
 <rect x="190.0" y="443.0" width="14" height="12" fill="#0A4DA0"/>
 <text x="212.0" y="454.0" font-size="11" fill="#6E6E73">45 (Count)</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>

@@ -6,11 +6,11 @@
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Monthly Revenue by Product Line</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Monthly figures, thousands of EUR</text>
 <text x="40.0" y="100.0" font-size="13" font-weight="700" fill="#1D1D1F">Series</text>
-<line x1="40.0" y1="117.0" x2="56.0" y2="117.0" stroke="#007AFF" stroke-width="2.5"/>
+<line x1="40.0" y1="117.0" x2="56.0" y2="117.0" stroke="#0088FF" stroke-width="2.5"/>
 <text x="62.0" y="122.0" font-size="12" fill="#1D1D1F">Hardware</text>
-<line x1="139.6" y1="117.0" x2="155.6" y2="117.0" stroke="#FF9500" stroke-width="2.5"/>
+<line x1="139.6" y1="117.0" x2="155.6" y2="117.0" stroke="#FF8D28" stroke-width="2.5"/>
 <text x="161.6" y="122.0" font-size="12" fill="#1D1D1F">Software</text>
-<line x1="239.2" y1="117.0" x2="255.2" y2="117.0" stroke="#AF52DE" stroke-width="2.5"/>
+<line x1="239.2" y1="117.0" x2="255.2" y2="117.0" stroke="#CB30E0" stroke-width="2.5"/>
 <text x="261.2" y="122.0" font-size="12" fill="#1D1D1F">Services</text>
 <line x1="60.0" y1="449.0" x2="815.0" y2="449.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="50.0" y="453.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0</text>
@@ -24,19 +24,19 @@
 <text x="50.0" y="154.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">40</text>
 <text x="18" y="299.5" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 299.5)">Value</text>
 <g class="series-group s0">
-<path d="M 60.0,359.3 L 128.6,344.4 L 197.3,351.8 L 265.9,321.9 L 334.5,307.0 L 403.2,284.5 L 471.8,292.0 L 540.5,269.6 L 609.1,277.1 L 677.7,254.7 L 746.4,239.7 L 815.0,217.3" fill="none" stroke="#007AFF" stroke-width="2.5"/>
-<circle id="pt-0-0" class="pt hit" tabindex="0" cx="60.0" cy="359.3" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Jan: 12</title></circle>
-<circle id="pt-0-1" class="pt hit" tabindex="0" cx="128.6" cy="344.4" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Feb: 14</title></circle>
-<circle id="pt-0-2" class="pt hit" tabindex="0" cx="197.3" cy="351.8" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Mar: 13</title></circle>
-<circle id="pt-0-3" class="pt hit" tabindex="0" cx="265.9" cy="321.9" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Apr: 17</title></circle>
-<circle id="pt-0-4" class="pt hit" tabindex="0" cx="334.5" cy="307.0" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, May: 19</title></circle>
-<circle id="pt-0-5" class="pt hit" tabindex="0" cx="403.2" cy="284.5" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Jun: 22</title></circle>
-<circle id="pt-0-6" class="pt hit" tabindex="0" cx="471.8" cy="292.0" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Jul: 21</title></circle>
-<circle id="pt-0-7" class="pt hit" tabindex="0" cx="540.5" cy="269.6" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Aug: 24</title></circle>
-<circle id="pt-0-8" class="pt hit" tabindex="0" cx="609.1" cy="277.1" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Sep: 23</title></circle>
-<circle id="pt-0-9" class="pt hit" tabindex="0" cx="677.7" cy="254.7" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Oct: 26</title></circle>
-<circle id="pt-0-10" class="pt hit" tabindex="0" cx="746.4" cy="239.7" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Nov: 28</title></circle>
-<circle id="pt-0-11" class="pt hit" tabindex="0" cx="815.0" cy="217.3" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Dec: 31</title></circle>
+<path d="M 60.0,359.3 L 128.6,344.4 L 197.3,351.8 L 265.9,321.9 L 334.5,307.0 L 403.2,284.5 L 471.8,292.0 L 540.5,269.6 L 609.1,277.1 L 677.7,254.7 L 746.4,239.7 L 815.0,217.3" fill="none" stroke="#0088FF" stroke-width="2.5"/>
+<circle id="pt-0-0" class="pt hit" tabindex="0" cx="60.0" cy="359.3" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Jan: 12</title></circle>
+<circle id="pt-0-1" class="pt hit" tabindex="0" cx="128.6" cy="344.4" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Feb: 14</title></circle>
+<circle id="pt-0-2" class="pt hit" tabindex="0" cx="197.3" cy="351.8" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Mar: 13</title></circle>
+<circle id="pt-0-3" class="pt hit" tabindex="0" cx="265.9" cy="321.9" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Apr: 17</title></circle>
+<circle id="pt-0-4" class="pt hit" tabindex="0" cx="334.5" cy="307.0" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, May: 19</title></circle>
+<circle id="pt-0-5" class="pt hit" tabindex="0" cx="403.2" cy="284.5" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Jun: 22</title></circle>
+<circle id="pt-0-6" class="pt hit" tabindex="0" cx="471.8" cy="292.0" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Jul: 21</title></circle>
+<circle id="pt-0-7" class="pt hit" tabindex="0" cx="540.5" cy="269.6" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Aug: 24</title></circle>
+<circle id="pt-0-8" class="pt hit" tabindex="0" cx="609.1" cy="277.1" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Sep: 23</title></circle>
+<circle id="pt-0-9" class="pt hit" tabindex="0" cx="677.7" cy="254.7" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Oct: 26</title></circle>
+<circle id="pt-0-10" class="pt hit" tabindex="0" cx="746.4" cy="239.7" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Nov: 28</title></circle>
+<circle id="pt-0-11" class="pt hit" tabindex="0" cx="815.0" cy="217.3" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"><title>Hardware, Dec: 31</title></circle>
 <g id="tip-0-0" class="tip"><rect x="23" y="325.3" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="32" y="346.8" font-size="12.5" font-weight="700" fill="#1D1D1F">Hardware</text><text x="32" y="362.8" font-size="12.5" font-weight="400" fill="#6E6E73">Jan: 12</text></g>
 <g id="tip-0-1" class="tip"><rect x="91.6" y="310.4" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="100.6" y="331.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Hardware</text><text x="100.6" y="347.9" font-size="12.5" font-weight="400" fill="#6E6E73">Feb: 14</text></g>
 <g id="tip-0-2" class="tip"><rect x="160.3" y="317.8" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="169.3" y="339.3" font-size="12.5" font-weight="700" fill="#1D1D1F">Hardware</text><text x="169.3" y="355.3" font-size="12.5" font-weight="400" fill="#6E6E73">Mar: 13</text></g>
@@ -51,19 +51,19 @@
 <g id="tip-0-11" class="tip"><rect x="767" y="183.3" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="776" y="204.8" font-size="12.5" font-weight="700" fill="#1D1D1F">Hardware</text><text x="776" y="220.8" font-size="12.5" font-weight="400" fill="#6E6E73">Dec: 31</text></g>
 </g>
 <g class="series-group s1">
-<path d="M 60.0,389.2 L 128.6,381.7 L 197.3,374.2 L 265.9,366.8 L 334.5,351.8 L 403.2,344.4 L 471.8,329.4 L 540.5,321.9 L 609.1,307.0 L 677.7,292.0 L 746.4,277.1 L 815.0,262.1" fill="none" stroke="#FF9500" stroke-width="2.5"/>
-<circle id="pt-1-0" class="pt hit" tabindex="0" cx="60.0" cy="389.2" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Jan: 8</title></circle>
-<circle id="pt-1-1" class="pt hit" tabindex="0" cx="128.6" cy="381.7" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Feb: 9</title></circle>
-<circle id="pt-1-2" class="pt hit" tabindex="0" cx="197.3" cy="374.2" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Mar: 10</title></circle>
-<circle id="pt-1-3" class="pt hit" tabindex="0" cx="265.9" cy="366.8" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Apr: 11</title></circle>
-<circle id="pt-1-4" class="pt hit" tabindex="0" cx="334.5" cy="351.8" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, May: 13</title></circle>
-<circle id="pt-1-5" class="pt hit" tabindex="0" cx="403.2" cy="344.4" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Jun: 14</title></circle>
-<circle id="pt-1-6" class="pt hit" tabindex="0" cx="471.8" cy="329.4" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Jul: 16</title></circle>
-<circle id="pt-1-7" class="pt hit" tabindex="0" cx="540.5" cy="321.9" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Aug: 17</title></circle>
-<circle id="pt-1-8" class="pt hit" tabindex="0" cx="609.1" cy="307.0" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Sep: 19</title></circle>
-<circle id="pt-1-9" class="pt hit" tabindex="0" cx="677.7" cy="292.0" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Oct: 21</title></circle>
-<circle id="pt-1-10" class="pt hit" tabindex="0" cx="746.4" cy="277.1" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Nov: 23</title></circle>
-<circle id="pt-1-11" class="pt hit" tabindex="0" cx="815.0" cy="262.1" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Dec: 25</title></circle>
+<path d="M 60.0,389.2 L 128.6,381.7 L 197.3,374.2 L 265.9,366.8 L 334.5,351.8 L 403.2,344.4 L 471.8,329.4 L 540.5,321.9 L 609.1,307.0 L 677.7,292.0 L 746.4,277.1 L 815.0,262.1" fill="none" stroke="#FF8D28" stroke-width="2.5"/>
+<circle id="pt-1-0" class="pt hit" tabindex="0" cx="60.0" cy="389.2" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Jan: 8</title></circle>
+<circle id="pt-1-1" class="pt hit" tabindex="0" cx="128.6" cy="381.7" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Feb: 9</title></circle>
+<circle id="pt-1-2" class="pt hit" tabindex="0" cx="197.3" cy="374.2" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Mar: 10</title></circle>
+<circle id="pt-1-3" class="pt hit" tabindex="0" cx="265.9" cy="366.8" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Apr: 11</title></circle>
+<circle id="pt-1-4" class="pt hit" tabindex="0" cx="334.5" cy="351.8" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, May: 13</title></circle>
+<circle id="pt-1-5" class="pt hit" tabindex="0" cx="403.2" cy="344.4" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Jun: 14</title></circle>
+<circle id="pt-1-6" class="pt hit" tabindex="0" cx="471.8" cy="329.4" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Jul: 16</title></circle>
+<circle id="pt-1-7" class="pt hit" tabindex="0" cx="540.5" cy="321.9" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Aug: 17</title></circle>
+<circle id="pt-1-8" class="pt hit" tabindex="0" cx="609.1" cy="307.0" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Sep: 19</title></circle>
+<circle id="pt-1-9" class="pt hit" tabindex="0" cx="677.7" cy="292.0" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Oct: 21</title></circle>
+<circle id="pt-1-10" class="pt hit" tabindex="0" cx="746.4" cy="277.1" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Nov: 23</title></circle>
+<circle id="pt-1-11" class="pt hit" tabindex="0" cx="815.0" cy="262.1" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"><title>Software, Dec: 25</title></circle>
 <g id="tip-1-0" class="tip"><rect x="23" y="355.2" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="32" y="376.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Software</text><text x="32" y="392.7" font-size="12.5" font-weight="400" fill="#6E6E73">Jan: 8</text></g>
 <g id="tip-1-1" class="tip"><rect x="91.6" y="347.7" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="100.6" y="369.2" font-size="12.5" font-weight="700" fill="#1D1D1F">Software</text><text x="100.6" y="385.2" font-size="12.5" font-weight="400" fill="#6E6E73">Feb: 9</text></g>
 <g id="tip-1-2" class="tip"><rect x="160.3" y="340.2" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="169.3" y="361.8" font-size="12.5" font-weight="700" fill="#1D1D1F">Software</text><text x="169.3" y="377.8" font-size="12.5" font-weight="400" fill="#6E6E73">Mar: 10</text></g>
@@ -78,19 +78,19 @@
 <g id="tip-1-11" class="tip"><rect x="767" y="228.1" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="776" y="249.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Software</text><text x="776" y="265.6" font-size="12.5" font-weight="400" fill="#6E6E73">Dec: 25</text></g>
 </g>
 <g class="series-group s2">
-<path d="M 60.0,411.6 L 128.6,411.6 L 197.3,404.1 L 265.9,404.1 L 334.5,396.7 L 403.2,389.2 L 471.8,389.2 L 540.5,381.7 L 609.1,374.2 L 677.7,366.8 L 746.4,359.3 L 815.0,351.8" fill="none" stroke="#AF52DE" stroke-width="2.5"/>
-<circle id="pt-2-0" class="pt hit" tabindex="0" cx="60.0" cy="411.6" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Jan: 5</title></circle>
-<circle id="pt-2-1" class="pt hit" tabindex="0" cx="128.6" cy="411.6" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Feb: 5</title></circle>
-<circle id="pt-2-2" class="pt hit" tabindex="0" cx="197.3" cy="404.1" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Mar: 6</title></circle>
-<circle id="pt-2-3" class="pt hit" tabindex="0" cx="265.9" cy="404.1" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Apr: 6</title></circle>
-<circle id="pt-2-4" class="pt hit" tabindex="0" cx="334.5" cy="396.7" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, May: 7</title></circle>
-<circle id="pt-2-5" class="pt hit" tabindex="0" cx="403.2" cy="389.2" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Jun: 8</title></circle>
-<circle id="pt-2-6" class="pt hit" tabindex="0" cx="471.8" cy="389.2" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Jul: 8</title></circle>
-<circle id="pt-2-7" class="pt hit" tabindex="0" cx="540.5" cy="381.7" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Aug: 9</title></circle>
-<circle id="pt-2-8" class="pt hit" tabindex="0" cx="609.1" cy="374.2" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Sep: 10</title></circle>
-<circle id="pt-2-9" class="pt hit" tabindex="0" cx="677.7" cy="366.8" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Oct: 11</title></circle>
-<circle id="pt-2-10" class="pt hit" tabindex="0" cx="746.4" cy="359.3" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Nov: 12</title></circle>
-<circle id="pt-2-11" class="pt hit" tabindex="0" cx="815.0" cy="351.8" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Dec: 13</title></circle>
+<path d="M 60.0,411.6 L 128.6,411.6 L 197.3,404.1 L 265.9,404.1 L 334.5,396.7 L 403.2,389.2 L 471.8,389.2 L 540.5,381.7 L 609.1,374.2 L 677.7,366.8 L 746.4,359.3 L 815.0,351.8" fill="none" stroke="#CB30E0" stroke-width="2.5"/>
+<circle id="pt-2-0" class="pt hit" tabindex="0" cx="60.0" cy="411.6" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Jan: 5</title></circle>
+<circle id="pt-2-1" class="pt hit" tabindex="0" cx="128.6" cy="411.6" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Feb: 5</title></circle>
+<circle id="pt-2-2" class="pt hit" tabindex="0" cx="197.3" cy="404.1" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Mar: 6</title></circle>
+<circle id="pt-2-3" class="pt hit" tabindex="0" cx="265.9" cy="404.1" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Apr: 6</title></circle>
+<circle id="pt-2-4" class="pt hit" tabindex="0" cx="334.5" cy="396.7" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, May: 7</title></circle>
+<circle id="pt-2-5" class="pt hit" tabindex="0" cx="403.2" cy="389.2" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Jun: 8</title></circle>
+<circle id="pt-2-6" class="pt hit" tabindex="0" cx="471.8" cy="389.2" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Jul: 8</title></circle>
+<circle id="pt-2-7" class="pt hit" tabindex="0" cx="540.5" cy="381.7" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Aug: 9</title></circle>
+<circle id="pt-2-8" class="pt hit" tabindex="0" cx="609.1" cy="374.2" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Sep: 10</title></circle>
+<circle id="pt-2-9" class="pt hit" tabindex="0" cx="677.7" cy="366.8" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Oct: 11</title></circle>
+<circle id="pt-2-10" class="pt hit" tabindex="0" cx="746.4" cy="359.3" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Nov: 12</title></circle>
+<circle id="pt-2-11" class="pt hit" tabindex="0" cx="815.0" cy="351.8" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"><title>Services, Dec: 13</title></circle>
 <g id="tip-2-0" class="tip"><rect x="23" y="377.6" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="32" y="399.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Services</text><text x="32" y="415.1" font-size="12.5" font-weight="400" fill="#6E6E73">Jan: 5</text></g>
 <g id="tip-2-1" class="tip"><rect x="91.6" y="377.6" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="100.6" y="399.1" font-size="12.5" font-weight="700" fill="#1D1D1F">Services</text><text x="100.6" y="415.1" font-size="12.5" font-weight="400" fill="#6E6E73">Feb: 5</text></g>
 <g id="tip-2-2" class="tip"><rect x="160.3" y="370.1" width="74" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="169.3" y="391.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Services</text><text x="169.3" y="407.6" font-size="12.5" font-weight="400" fill="#6E6E73">Mar: 6</text></g>

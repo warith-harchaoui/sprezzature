@@ -21,42 +21,42 @@
 <line x1="574.7" y1="374.0" x2="676.0" y2="374.0" stroke="#6E6E73" stroke-width="1.4" marker-end="url(#dag-arrow)" opacity="0.75"/>
 <line x1="435.3" y1="374.0" x2="815.3" y2="374.0" stroke="#6E6E73" stroke-width="1.4" marker-end="url(#dag-arrow)" opacity="0.75"/>
 <line x1="714.0" y1="374.0" x2="815.3" y2="374.0" stroke="#6E6E73" stroke-width="1.4" marker-end="url(#dag-arrow)" opacity="0.75"/>
-<circle cx="141.7" cy="468.7" r="15.0" fill="#FF9500"/>
+<circle cx="141.7" cy="468.7" r="15.0" fill="#FF8D28"/>
 <circle cx="141.7" cy="468.7" r="20.0" fill="none" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="141.7" y="499.7" font-size="11" fill="#1D1D1F" text-anchor="middle">social class</text>
 <rect id="node-0" class="node hit" tabindex="0" role="img" aria-label="social class: confounder, in the adjustment set" x="120.7" y="447.7" width="42.0" height="42.0" fill="transparent"><title>social class: confounder</title></rect>
-<circle cx="420.3" cy="374.0" r="15.0" fill="#007AFF"/>
+<circle cx="420.3" cy="374.0" r="15.0" fill="#0088FF"/>
 <text x="420.3" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">statin prescribed</text>
 <rect id="node-1" class="node hit" tabindex="0" role="img" aria-label="statin prescribed: treatment" x="399.3" y="353.0" width="42.0" height="42.0" fill="transparent"><title>statin prescribed: treatment</title></rect>
-<circle cx="699.0" cy="374.0" r="15.0" fill="#28CD41"/>
+<circle cx="699.0" cy="374.0" r="15.0" fill="#34C759"/>
 <text x="699.0" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">heart attack</text>
 <rect id="node-2" class="node hit" tabindex="0" role="img" aria-label="heart attack: outcome" x="678.0" y="353.0" width="42.0" height="42.0" fill="transparent"><title>heart attack: outcome</title></rect>
-<circle cx="141.7" cy="279.3" r="15.0" fill="#FF9500"/>
+<circle cx="141.7" cy="279.3" r="15.0" fill="#FF8D28"/>
 <circle cx="141.7" cy="279.3" r="20.0" fill="none" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="141.7" y="310.3" font-size="11" fill="#1D1D1F" text-anchor="middle">family history</text>
 <rect id="node-3" class="node hit" tabindex="0" role="img" aria-label="family history: confounder, in the adjustment set" x="120.7" y="258.3" width="42.0" height="42.0" fill="transparent"><title>family history: confounder</title></rect>
-<circle cx="141.7" cy="374.0" r="15.0" fill="#FFFFFF" stroke="#FF9500" stroke-width="2.4" stroke-dasharray="4 3"/>
+<circle cx="141.7" cy="374.0" r="15.0" fill="#FFFFFF" stroke="#FF8D28" stroke-width="2.4" stroke-dasharray="4 3"/>
 <text x="141.7" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">genetic risk</text>
 <rect id="node-4" class="node hit" tabindex="0" role="img" aria-label="genetic risk: confounder, unobserved" x="120.7" y="353.0" width="42.0" height="42.0" fill="transparent"><title>genetic risk: confounder</title></rect>
-<circle cx="281.0" cy="374.0" r="15.0" fill="#FF9500"/>
+<circle cx="281.0" cy="374.0" r="15.0" fill="#FF8D28"/>
 <circle cx="281.0" cy="374.0" r="20.0" fill="none" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="281.0" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">cholesterol</text>
 <rect id="node-5" class="node hit" tabindex="0" role="img" aria-label="cholesterol: confounder, in the adjustment set" x="260.0" y="353.0" width="42.0" height="42.0" fill="transparent"><title>cholesterol: confounder</title></rect>
-<circle cx="559.7" cy="374.0" r="15.0" fill="#AF52DE"/>
+<circle cx="559.7" cy="374.0" r="15.0" fill="#CB30E0"/>
 <text x="559.7" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">ldl level</text>
 <rect id="node-6" class="node hit" tabindex="0" role="img" aria-label="ldl level: mediator · do not adjust" x="538.7" y="353.0" width="42.0" height="42.0" fill="transparent"><title>ldl level: mediator · do not adjust</title></rect>
-<circle cx="838.3" cy="374.0" r="15.0" fill="#FF3B30"/>
+<circle cx="838.3" cy="374.0" r="15.0" fill="#FF383C"/>
 <text x="838.3" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">hospital record</text>
 <rect id="node-7" class="node hit" tabindex="0" role="img" aria-label="hospital record: collider · do not adjust" x="817.3" y="353.0" width="42.0" height="42.0" fill="transparent"><title>hospital record: collider · do not adjust</title></rect>
-<circle cx="46.0" cy="578.0" r="6" fill="#007AFF"/>
+<circle cx="46.0" cy="578.0" r="6" fill="#0088FF"/>
 <text x="58.0" y="582.0" font-size="11" fill="#6E6E73">treatment</text>
-<circle cx="126.4" cy="578.0" r="6" fill="#28CD41"/>
+<circle cx="126.4" cy="578.0" r="6" fill="#34C759"/>
 <text x="138.4" y="582.0" font-size="11" fill="#6E6E73">outcome</text>
-<circle cx="195.6" cy="578.0" r="6" fill="#FF9500"/>
+<circle cx="195.6" cy="578.0" r="6" fill="#FF8D28"/>
 <text x="207.6" y="582.0" font-size="11" fill="#6E6E73">confounder</text>
-<circle cx="281.6" cy="578.0" r="6" fill="#AF52DE"/>
+<circle cx="281.6" cy="578.0" r="6" fill="#CB30E0"/>
 <text x="293.6" y="582.0" font-size="11" fill="#6E6E73">mediator · do not adjust</text>
-<circle cx="446.0" cy="578.0" r="6" fill="#FF3B30"/>
+<circle cx="446.0" cy="578.0" r="6" fill="#FF383C"/>
 <text x="458.0" y="582.0" font-size="11" fill="#6E6E73">collider · do not adjust</text>
 <circle cx="610.4" cy="578.0" r="6" fill="#FFFFFF" stroke="#6E6E73" stroke-width="2" stroke-dasharray="3 2"/>
 <text x="622.4" y="582.0" font-size="11" fill="#6E6E73">unobserved</text>

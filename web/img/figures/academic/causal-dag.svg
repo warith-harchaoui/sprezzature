@@ -45,7 +45,7 @@
 <circle cx="559.7" cy="374.0" r="15.0" fill="#CC79A7"/>
 <text x="559.7" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">ldl level</text>
 <rect id="node-6" class="node hit" tabindex="0" role="img" aria-label="ldl level: mediator · do not adjust" x="538.7" y="353.0" width="42.0" height="42.0" fill="transparent"><title>ldl level: mediator · do not adjust</title></rect>
-<circle cx="838.3" cy="374.0" r="15.0" fill="#D55E00"/>
+<circle cx="838.3" cy="374.0" r="15.0" fill="#E73121"/>
 <text x="838.3" y="405.0" font-size="11" fill="#1D1D1F" text-anchor="middle">hospital record</text>
 <rect id="node-7" class="node hit" tabindex="0" role="img" aria-label="hospital record: collider · do not adjust" x="817.3" y="353.0" width="42.0" height="42.0" fill="transparent"><title>hospital record: collider · do not adjust</title></rect>
 <circle cx="46.0" cy="578.0" r="6" fill="#0072B2"/>
@@ -56,7 +56,7 @@
 <text x="207.6" y="582.0" font-size="11" fill="#6E6E73">confounder</text>
 <circle cx="281.6" cy="578.0" r="6" fill="#CC79A7"/>
 <text x="293.6" y="582.0" font-size="11" fill="#6E6E73">mediator · do not adjust</text>
-<circle cx="446.0" cy="578.0" r="6" fill="#D55E00"/>
+<circle cx="446.0" cy="578.0" r="6" fill="#E73121"/>
 <text x="458.0" y="582.0" font-size="11" fill="#6E6E73">collider · do not adjust</text>
 <circle cx="610.4" cy="578.0" r="6" fill="#FFFFFF" stroke="#6E6E73" stroke-width="2" stroke-dasharray="3 2"/>
 <text x="622.4" y="582.0" font-size="11" fill="#6E6E73">unobserved</text>

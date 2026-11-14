@@ -192,10 +192,13 @@ BAR_W = 5
 #: Role colours, the same ten figures over. Blue and orange are the
 #: colour-vision-safe pair: no deficiency collapses them into each other. The
 #: outcome box takes no hue at all, because its role is already carried by
-#: being the last thing on the page and by what it says.
-INPUT_HUE = "#8E8E93"
-LANE_HUES = ("#007AFF", "#FF9500")
-LANE_TINTS = ("#CCE4FF", "#FFEACC")
+#: being the last thing on the page and by what it says. Hues and grey come
+#: from the corporate palette of https://deraison.ai/colors through
+#: ``_style.load_palette``; the tints are that palette's ``LightHex``.
+_PALETTE = _style.load_palette()
+INPUT_HUE = _PALETTE["Gray"]
+LANE_HUES = (_PALETTE["Blue"], _PALETTE["Orange"])
+LANE_TINTS = ("#CCE7FF", "#FFE8D4")
 RULE = "#C7C7CC"
 
 INK = _style.INK

@@ -13,7 +13,7 @@
 <text x="242.0" y="104.0" font-size="12" fill="#1D1D1F">Eng</text>
 <rect x="285.0" y="92.0" width="14" height="14" rx="3" fill="#56B4E9"/>
 <text x="305.0" y="104.0" font-size="12" fill="#1D1D1F">QA</text>
-<rect x="341.0" y="92.0" width="14" height="14" rx="3" fill="#D55E00"/>
+<rect x="341.0" y="92.0" width="14" height="14" rx="3" fill="#E73121"/>
 <text x="361.0" y="104.0" font-size="12" fill="#1D1D1F">Ops</text>
 <line x1="130.0" y1="150.0" x2="130.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="130.0" y="380.0" font-size="11" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0</text>
@@ -40,7 +40,7 @@
 <text x="118.0" y="276.5" font-size="12" fill="#1D1D1F" text-anchor="end">Build UI</text>
 <rect id="bar-4" class="task hit" tabindex="0" x="555.5" y="297.9" width="124.1" height="19.2" rx="3.5" fill="#56B4E9"><title>QA (QA): day 24-31, 7 days</title></rect>
 <text x="118.0" y="311.5" font-size="12" fill="#1D1D1F" text-anchor="end">QA</text>
-<rect id="bar-5" class="task hit" tabindex="0" x="661.8" y="332.9" width="53.2" height="19.2" rx="3.5" fill="#D55E00"><title>Launch (Ops): day 30-33, 3 days</title></rect>
+<rect id="bar-5" class="task hit" tabindex="0" x="661.8" y="332.9" width="53.2" height="19.2" rx="3.5" fill="#E73121"><title>Launch (Ops): day 30-33, 3 days</title></rect>
 <text x="118.0" y="346.5" font-size="12" fill="#1D1D1F" text-anchor="end">Launch</text>
 <line x1="130.0" y1="360.0" x2="715.0" y2="360.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <g id="tip-0" class="tip"><rect x="109.3" y="145.9" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="118.3" y="167.4" font-size="12.5" font-weight="700" fill="#1D1D1F">Discovery</text><text x="118.3" y="183.4" font-size="12.5" font-weight="400" fill="#6E6E73">Research</text><text x="118.3" y="199.4" font-size="12.5" font-weight="400" fill="#6E6E73">day 0-5 (5 days)</text></g>

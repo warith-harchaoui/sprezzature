@@ -5,7 +5,7 @@
 <rect width="745" height="360" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="22" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Response Times Overlap Across Three Cohorts</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Each dot is one observation; horizontal position is the measured value</text>
-<circle cx="46.0" cy="100.0" r="6" fill="#A2845E"/>
+<circle cx="46.0" cy="100.0" r="6" fill="#AC7F5E"/>
 <text x="60.0" y="104.0" font-size="12" fill="#1D1D1F">Group A</text>
 <circle cx="137.0" cy="100.0" r="6" fill="#0072B2"/>
 <text x="151.0" y="104.0" font-size="12" fill="#1D1D1F">Group B</text>
@@ -25,35 +25,35 @@
 <line x1="662.6" y1="150.0" x2="662.6" y2="300.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="662.6" y="354.0" font-size="11" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">70</text>
 <text x="387.5" y="376.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Value</text>
-<circle id="dot-hit-0" class="dot hit" tabindex="0" cx="95.1" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 17.7</title></circle>
-<circle id="dot-hit-1" class="dot hit" tabindex="0" cx="98.3" cy="234.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 18.0</title></circle>
-<circle id="dot-hit-2" class="dot hit" tabindex="0" cx="100.5" cy="215.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 18.2</title></circle>
-<circle id="dot-hit-3" class="dot hit" tabindex="0" cx="152.6" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 23.0</title></circle>
-<circle id="dot-hit-4" class="dot hit" tabindex="0" cx="154.8" cy="244.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 23.2</title></circle>
+<circle id="dot-hit-0" class="dot hit" tabindex="0" cx="95.1" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 17.7</title></circle>
+<circle id="dot-hit-1" class="dot hit" tabindex="0" cx="98.3" cy="234.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 18.0</title></circle>
+<circle id="dot-hit-2" class="dot hit" tabindex="0" cx="100.5" cy="215.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 18.2</title></circle>
+<circle id="dot-hit-3" class="dot hit" tabindex="0" cx="152.6" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 23.0</title></circle>
+<circle id="dot-hit-4" class="dot hit" tabindex="0" cx="154.8" cy="244.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 23.2</title></circle>
 <circle id="dot-hit-5" class="dot hit" tabindex="0" cx="159.1" cy="234.5" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 23.6</title></circle>
-<circle id="dot-hit-6" class="dot hit" tabindex="0" cx="172.1" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 24.8</title></circle>
-<circle id="dot-hit-7" class="dot hit" tabindex="0" cx="185.1" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 26.0</title></circle>
-<circle id="dot-hit-8" class="dot hit" tabindex="0" cx="196.0" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.0</title></circle>
-<circle id="dot-hit-9" class="dot hit" tabindex="0" cx="199.3" cy="234.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.3</title></circle>
-<circle id="dot-hit-10" class="dot hit" tabindex="0" cx="201.4" cy="215.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.5</title></circle>
-<circle id="dot-hit-11" class="dot hit" tabindex="0" cx="202.5" cy="244.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.6</title></circle>
-<circle id="dot-hit-12" class="dot hit" tabindex="0" cx="214.4" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 28.7</title></circle>
-<circle id="dot-hit-13" class="dot hit" tabindex="0" cx="230.7" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 30.2</title></circle>
+<circle id="dot-hit-6" class="dot hit" tabindex="0" cx="172.1" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 24.8</title></circle>
+<circle id="dot-hit-7" class="dot hit" tabindex="0" cx="185.1" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 26.0</title></circle>
+<circle id="dot-hit-8" class="dot hit" tabindex="0" cx="196.0" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.0</title></circle>
+<circle id="dot-hit-9" class="dot hit" tabindex="0" cx="199.3" cy="234.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.3</title></circle>
+<circle id="dot-hit-10" class="dot hit" tabindex="0" cx="201.4" cy="215.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.5</title></circle>
+<circle id="dot-hit-11" class="dot hit" tabindex="0" cx="202.5" cy="244.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 27.6</title></circle>
+<circle id="dot-hit-12" class="dot hit" tabindex="0" cx="214.4" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 28.7</title></circle>
+<circle id="dot-hit-13" class="dot hit" tabindex="0" cx="230.7" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 30.2</title></circle>
 <circle id="dot-hit-14" class="dot hit" tabindex="0" cx="232.9" cy="244.0" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 30.4</title></circle>
 <circle id="dot-hit-15" class="dot hit" tabindex="0" cx="234.0" cy="215.5" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 30.5</title></circle>
-<circle id="dot-hit-16" class="dot hit" tabindex="0" cx="235.1" cy="196.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 30.6</title></circle>
-<circle id="dot-hit-17" class="dot hit" tabindex="0" cx="239.4" cy="234.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 31.0</title></circle>
-<circle id="dot-hit-18" class="dot hit" tabindex="0" cx="245.9" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 31.6</title></circle>
-<circle id="dot-hit-19" class="dot hit" tabindex="0" cx="248.1" cy="244.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 31.8</title></circle>
-<circle id="dot-hit-20" class="dot hit" tabindex="0" cx="252.4" cy="234.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.2</title></circle>
-<circle id="dot-hit-21" class="dot hit" tabindex="0" cx="253.5" cy="215.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.3</title></circle>
-<circle id="dot-hit-22" class="dot hit" tabindex="0" cx="253.5" cy="253.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.3</title></circle>
-<circle id="dot-hit-23" class="dot hit" tabindex="0" cx="254.6" cy="196.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.4</title></circle>
+<circle id="dot-hit-16" class="dot hit" tabindex="0" cx="235.1" cy="196.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 30.6</title></circle>
+<circle id="dot-hit-17" class="dot hit" tabindex="0" cx="239.4" cy="234.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 31.0</title></circle>
+<circle id="dot-hit-18" class="dot hit" tabindex="0" cx="245.9" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 31.6</title></circle>
+<circle id="dot-hit-19" class="dot hit" tabindex="0" cx="248.1" cy="244.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 31.8</title></circle>
+<circle id="dot-hit-20" class="dot hit" tabindex="0" cx="252.4" cy="234.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.2</title></circle>
+<circle id="dot-hit-21" class="dot hit" tabindex="0" cx="253.5" cy="215.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.3</title></circle>
+<circle id="dot-hit-22" class="dot hit" tabindex="0" cx="253.5" cy="253.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.3</title></circle>
+<circle id="dot-hit-23" class="dot hit" tabindex="0" cx="254.6" cy="196.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 32.4</title></circle>
 <circle id="dot-hit-24" class="dot hit" tabindex="0" cx="254.6" cy="272.5" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 32.4</title></circle>
 <circle id="dot-hit-25" class="dot hit" tabindex="0" cx="258.9" cy="225.0" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 32.8</title></circle>
-<circle id="dot-hit-26" class="dot hit" tabindex="0" cx="278.5" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 34.6</title></circle>
-<circle id="dot-hit-27" class="dot hit" tabindex="0" cx="290.4" cy="225.0" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 35.7</title></circle>
-<circle id="dot-hit-28" class="dot hit" tabindex="0" cx="295.8" cy="234.5" r="5" fill="#A2845E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 36.2</title></circle>
+<circle id="dot-hit-26" class="dot hit" tabindex="0" cx="278.5" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 34.6</title></circle>
+<circle id="dot-hit-27" class="dot hit" tabindex="0" cx="290.4" cy="225.0" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 35.7</title></circle>
+<circle id="dot-hit-28" class="dot hit" tabindex="0" cx="295.8" cy="234.5" r="5" fill="#AC7F5E" stroke="#FFFFFF" stroke-width="1"><title>Group A: 36.2</title></circle>
 <circle id="dot-hit-29" class="dot hit" tabindex="0" cx="298.0" cy="215.5" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 36.4</title></circle>
 <circle id="dot-hit-30" class="dot hit" tabindex="0" cx="317.5" cy="225.0" r="5" fill="#009E73" stroke="#FFFFFF" stroke-width="1"><title>Group C: 38.2</title></circle>
 <circle id="dot-hit-31" class="dot hit" tabindex="0" cx="336.0" cy="225.0" r="5" fill="#0072B2" stroke="#FFFFFF" stroke-width="1"><title>Group B: 39.9</title></circle>

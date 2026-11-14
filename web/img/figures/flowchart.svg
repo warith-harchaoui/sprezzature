@@ -10,9 +10,9 @@
 <rect width="760" height="271" fill="#FFFFFF"/>
 <text x="24.0" y="52.0" font-size="22" font-weight="700" fill="#1D1D1F">One loop, one exit: a model ships only once it passes held-out scoring</text>
 <text x="24.0" y="72.0" font-size="14" fill="#6E6E73">Each box is a step, each arrow hands its output on; the arrow underneath returns</text>
-<rect x="12.0" y="97.8" width="221.3" height="93.2" rx="12" fill="#007AFF" fill-opacity="0.07" stroke="#007AFF" stroke-opacity="0.55" stroke-width="1.2"/>
+<rect x="12.0" y="97.8" width="221.3" height="93.2" rx="12" fill="#0088FF" fill-opacity="0.07" stroke="#0088FF" stroke-opacity="0.55" stroke-width="1.2"/>
 <text x="22.0" y="112.8" font-size="10.6" font-weight="600" fill="#6E6E73">Data</text>
-<rect x="336.4" y="90.0" width="238.4" height="108.9" rx="12" fill="#FF9500" fill-opacity="0.07" stroke="#FF9500" stroke-opacity="0.55" stroke-width="1.2"/>
+<rect x="336.4" y="90.0" width="238.4" height="108.9" rx="12" fill="#FF8D28" fill-opacity="0.07" stroke="#FF8D28" stroke-opacity="0.55" stroke-width="1.2"/>
 <text x="346.4" y="105.0" font-size="10.6" font-weight="600" fill="#6E6E73">Modelling</text>
 <path d="M80.7,154.4 C119.2,154.4 119.2,154.4 157.7,154.4" fill="none" stroke="#6E6E73" stroke-width="1.6"><title>Raw data to Clean and align</title></path>
 <polygon points="164.7,154.4 156.7,149.9 156.7,158.9" fill="#6E6E73"/>

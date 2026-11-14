@@ -10,37 +10,37 @@
 <line x1="390.0" y1="118.0" x2="390.0" y2="460.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="390.0" y="102.0" font-size="13" font-weight="700" fill="#1D1D1F" text-anchor="middle">2024</text>
 <g id="hit-0" class="slope-line hit" tabindex="0" role="img" aria-label="Alpha: 42 to 55 (+13)">
-<path d="M 90.0,309.9 L 390.0,201.2" fill="none" stroke="#007AFF" stroke-width="2.2"/>
-<circle cx="90.0" cy="309.9" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
-<circle cx="390.0" cy="201.2" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M 90.0,309.9 L 390.0,201.2" fill="none" stroke="#0088FF" stroke-width="2.2"/>
+<circle cx="90.0" cy="309.9" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="390.0" cy="201.2" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <text x="78.0" y="313.9" font-size="12" fill="#1D1D1F" text-anchor="end">Alpha (42)</text>
 <text x="402.0" y="205.2" font-size="12" fill="#1D1D1F" text-anchor="start">Alpha (55)</text>
 <g id="hit-1" class="slope-line hit" tabindex="0" role="img" aria-label="Beta: 60 to 48 (-12)">
-<path d="M 90.0,159.5 L 390.0,259.7" fill="none" stroke="#FF9500" stroke-width="2.2"/>
-<circle cx="90.0" cy="159.5" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/>
-<circle cx="390.0" cy="259.7" r="4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M 90.0,159.5 L 390.0,259.7" fill="none" stroke="#FF8D28" stroke-width="2.2"/>
+<circle cx="90.0" cy="159.5" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="390.0" cy="259.7" r="4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <text x="78.0" y="163.5" font-size="12" fill="#1D1D1F" text-anchor="end">Beta (60)</text>
 <text x="402.0" y="263.7" font-size="12" fill="#1D1D1F" text-anchor="start">Beta (48)</text>
 <g id="hit-2" class="slope-line hit" tabindex="0" role="img" aria-label="Gamma: 35 to 61 (+26)">
-<path d="M 90.0,368.4 L 390.0,151.1" fill="none" stroke="#28CD41" stroke-width="2.2"/>
-<circle cx="90.0" cy="368.4" r="4" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5"/>
-<circle cx="390.0" cy="151.1" r="4" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M 90.0,368.4 L 390.0,151.1" fill="none" stroke="#34C759" stroke-width="2.2"/>
+<circle cx="90.0" cy="368.4" r="4" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="390.0" cy="151.1" r="4" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <text x="78.0" y="372.4" font-size="12" fill="#1D1D1F" text-anchor="end">Gamma (35)</text>
 <text x="402.0" y="155.1" font-size="12" fill="#1D1D1F" text-anchor="start">Gamma (61)</text>
 <g id="hit-3" class="slope-line hit" tabindex="0" role="img" aria-label="Delta: 51 to 52 (+1)">
-<path d="M 90.0,234.7 L 390.0,226.3" fill="none" stroke="#AF52DE" stroke-width="2.2"/>
-<circle cx="90.0" cy="234.7" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"/>
-<circle cx="390.0" cy="226.3" r="4" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M 90.0,234.7 L 390.0,226.3" fill="none" stroke="#CB30E0" stroke-width="2.2"/>
+<circle cx="90.0" cy="234.7" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="390.0" cy="226.3" r="4" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <text x="78.0" y="238.7" font-size="12" fill="#1D1D1F" text-anchor="end">Delta (51)</text>
 <text x="402.0" y="230.3" font-size="12" fill="#1D1D1F" text-anchor="start">Delta (52)</text>
 <g id="hit-4" class="slope-line hit" tabindex="0" role="img" aria-label="Epsilon: 28 to 40 (+12)">
-<path d="M 90.0,426.9 L 390.0,326.6" fill="none" stroke="#FF3B30" stroke-width="2.2"/>
-<circle cx="90.0" cy="426.9" r="4" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.5"/>
-<circle cx="390.0" cy="326.6" r="4" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M 90.0,426.9 L 390.0,326.6" fill="none" stroke="#FF383C" stroke-width="2.2"/>
+<circle cx="90.0" cy="426.9" r="4" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="390.0" cy="326.6" r="4" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <text x="78.0" y="430.9" font-size="12" fill="#1D1D1F" text-anchor="end">Epsilon (28)</text>
 <text x="402.0" y="330.6" font-size="12" fill="#1D1D1F" text-anchor="start">Epsilon (40)</text>

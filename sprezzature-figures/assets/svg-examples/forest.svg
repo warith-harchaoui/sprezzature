@@ -29,7 +29,7 @@
 <line class="whisker" x1="335.1" y1="133.0" x2="404.2" y2="133.0"/>
 <line class="cap" x1="335.1" y1="129.0" x2="335.1" y2="137.0"/>
 <line class="cap" x1="404.2" y1="129.0" x2="404.2" y2="137.0"/>
-<rect class="box box-sig" x="361.9" y="125.4" width="15.2" height="15.2" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="361.9" y="125.4" width="15.2" height="15.2" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="137.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.42 (1.08–1.87)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null">
@@ -39,7 +39,7 @@
 <line class="whisker" x1="314.9" y1="167.0" x2="503.9" y2="167.0"/>
 <line class="cap" x1="314.9" y1="163.0" x2="314.9" y2="171.0"/>
 <line class="cap" x1="503.9" y1="163.0" x2="503.9" y2="171.0"/>
-<rect class="box box-cross" x="403.4" y="161.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="403.4" y="161.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="171.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.95 (0.92–4.13)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant">
@@ -49,7 +49,7 @@
 <line class="whisker" x1="332.7" y1="201.0" x2="386.1" y2="201.0"/>
 <line class="cap" x1="332.7" y1="197.0" x2="332.7" y2="205.0"/>
 <line class="cap" x1="386.1" y1="197.0" x2="386.1" y2="205.0"/>
-<rect class="box box-sig" x="347.6" y="189.2" width="23.6" height="23.6" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="347.6" y="189.2" width="23.6" height="23.6" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="205.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.31 (1.06–1.62)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null">
@@ -59,7 +59,7 @@
 <line class="whisker" x1="213.1" y1="235.0" x2="405.5" y2="235.0"/>
 <line class="cap" x1="213.1" y1="231.0" x2="213.1" y2="239.0"/>
 <line class="cap" x1="405.5" y1="231.0" x2="405.5" y2="239.0"/>
-<rect class="box box-cross" x="303.3" y="229.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="303.3" y="229.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="239.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">0.88 (0.41–1.89)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant">
@@ -69,7 +69,7 @@
 <line class="whisker" x1="357.4" y1="269.0" x2="408.1" y2="269.0"/>
 <line class="cap" x1="357.4" y1="265.0" x2="357.4" y2="273.0"/>
 <line class="cap" x1="408.1" y1="265.0" x2="408.1" y2="273.0"/>
-<rect class="box box-sig" x="368.0" y="254.0" width="30.0" height="30.0" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="368.0" y="254.0" width="30.0" height="30.0" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="273.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.58 (1.29–1.93)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null">
@@ -79,7 +79,7 @@
 <line class="whisker" x1="282.2" y1="303.0" x2="397.3" y2="303.0"/>
 <line class="cap" x1="282.2" y1="299.0" x2="282.2" y2="307.0"/>
 <line class="cap" x1="397.3" y1="299.0" x2="397.3" y2="307.0"/>
-<rect class="box box-cross" x="333.6" y="297.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="333.6" y="297.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="307.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.12 (0.71–1.77)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant">
@@ -89,7 +89,7 @@
 <line class="whisker" x1="341.9" y1="337.0" x2="448.5" y2="337.0"/>
 <line class="cap" x1="341.9" y1="333.0" x2="341.9" y2="341.0"/>
 <line class="cap" x1="448.5" y1="333.0" x2="448.5" y2="341.0"/>
-<rect class="box box-sig" x="389.1" y="331.0" width="12.0" height="12.0" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="389.1" y="331.0" width="12.0" height="12.0" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="341.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.74 (1.14–2.66)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null">
@@ -99,14 +99,14 @@
 <line class="whisker" x1="294.1" y1="371.0" x2="420.6" y2="371.0"/>
 <line class="cap" x1="294.1" y1="367.0" x2="294.1" y2="375.0"/>
 <line class="cap" x1="420.6" y1="367.0" x2="420.6" y2="375.0"/>
-<rect class="box box-cross" x="351.4" y="365.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="351.4" y="365.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="375.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.29 (0.78–2.13)</text>
 </g>
 <g class="row" tabindex="0" role="img" aria-label="Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%">
 <title>Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%</title>
 <rect class="rowbg" x="18.0" y="402.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="423.0" font-size="13" font-weight="700" fill="#1D1D1F">Pooled (random effects)</text>
-<polygon class="diamond" points="354.5,419.0 371.3,410.0 387.6,419.0 371.3,428.0" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon class="diamond" points="354.5,419.0 371.3,410.0 387.6,419.0 371.3,428.0" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="423.0" font-size="12" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.44 (1.26–1.64)</text>
 </g>
 <line x1="210.0" y1="430.0" x2="528.0" y2="430.0" stroke="#1D1D1F" stroke-width="1"/>

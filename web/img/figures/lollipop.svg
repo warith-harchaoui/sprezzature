@@ -19,19 +19,19 @@
 <text x="580.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">100</text>
 <text x="345.0" y="402.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Score</text>
 <line x1="110.0" y1="142.2" x2="537.7" y2="142.2" stroke="#C7C7CC" stroke-width="2"/>
-<circle id="pop-0" class="pop hit" tabindex="0" cx="537.7" cy="142.2" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="delta: 91 (32.6% of total)"/>
+<circle id="pop-0" class="pop hit" tabindex="0" cx="537.7" cy="142.2" r="7" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="delta: 91 (32.6% of total)"/>
 <text x="98.0" y="146.2" font-size="13" fill="#1D1D1F" text-anchor="end">delta</text>
 <line x1="110.0" y1="190.6" x2="401.4" y2="190.6" stroke="#C7C7CC" stroke-width="2"/>
-<circle id="pop-1" class="pop hit" tabindex="0" cx="401.4" cy="190.6" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="epsilon: 62 (22.2% of total)"/>
+<circle id="pop-1" class="pop hit" tabindex="0" cx="401.4" cy="190.6" r="7" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="epsilon: 62 (22.2% of total)"/>
 <text x="98.0" y="194.6" font-size="13" fill="#1D1D1F" text-anchor="end">epsilon</text>
 <line x1="110.0" y1="239.0" x2="368.5" y2="239.0" stroke="#C7C7CC" stroke-width="2"/>
-<circle id="pop-2" class="pop hit" tabindex="0" cx="368.5" cy="239.0" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="beta: 55 (19.7% of total)"/>
+<circle id="pop-2" class="pop hit" tabindex="0" cx="368.5" cy="239.0" r="7" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="beta: 55 (19.7% of total)"/>
 <text x="98.0" y="243.0" font-size="13" fill="#1D1D1F" text-anchor="end">beta</text>
 <line x1="110.0" y1="287.4" x2="312.1" y2="287.4" stroke="#C7C7CC" stroke-width="2"/>
-<circle id="pop-3" class="pop hit" tabindex="0" cx="312.1" cy="287.4" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="gamma: 43 (15.4% of total)"/>
+<circle id="pop-3" class="pop hit" tabindex="0" cx="312.1" cy="287.4" r="7" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="gamma: 43 (15.4% of total)"/>
 <text x="98.0" y="291.4" font-size="13" fill="#1D1D1F" text-anchor="end">gamma</text>
 <line x1="110.0" y1="335.8" x2="241.6" y2="335.8" stroke="#C7C7CC" stroke-width="2"/>
-<circle id="pop-4" class="pop hit" tabindex="0" cx="241.6" cy="335.8" r="7" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="alpha: 28 (10.0% of total)"/>
+<circle id="pop-4" class="pop hit" tabindex="0" cx="241.6" cy="335.8" r="7" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="alpha: 28 (10.0% of total)"/>
 <text x="98.0" y="339.8" font-size="13" fill="#1D1D1F" text-anchor="end">alpha</text>
 <g id="pop-tip-0" class="tip"><rect x="479.7" y="128.2" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="488.7" y="149.7" font-size="12.5" font-weight="700" fill="#1D1D1F">delta</text><text x="488.7" y="165.7" font-size="12.5" font-weight="400" fill="#6E6E73">91 pts</text><text x="488.7" y="181.7" font-size="12.5" font-weight="400" fill="#6E6E73">32.6% of total</text></g>
 <g id="pop-tip-1" class="tip"><rect x="343.4" y="176.6" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="352.4" y="198.1" font-size="12.5" font-weight="700" fill="#1D1D1F">epsilon</text><text x="352.4" y="214.1" font-size="12.5" font-weight="400" fill="#6E6E73">62 pts</text><text x="352.4" y="230.1" font-size="12.5" font-weight="400" fill="#6E6E73">22.2% of total</text></g>

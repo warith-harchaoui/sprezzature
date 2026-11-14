@@ -51,112 +51,112 @@
 <line x1="121.0" y1="226.0" x2="128.0" y2="226.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="112.0" y="233.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100%</text>
 <text x="52.0" y="624.0" font-size="22" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 624.0)">Observed churn rate</text>
-<line class="cal-stem-under" x1="163.3" y1="907.0" x2="163.3" y2="986.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="247.2" y1="787.7" x2="247.2" y2="902.8" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="326.3" y1="745.9" x2="326.3" y2="823.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="405.1" y1="711.2" x2="405.1" y2="744.9" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="483.3" y1="659.7" x2="483.3" y2="666.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="566.9" y1="588.7" x2="566.9" y2="583.1" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="646.4" y1="616.4" x2="646.4" y2="503.6" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="724.9" y1="560.6" x2="724.9" y2="425.1" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="804.6" y1="467.0" x2="804.6" y2="345.4" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="881.1" y1="368.4" x2="881.1" y2="268.9" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<path class="cal-curve" d="M 163.3 907.0 L 247.2 787.7 L 326.3 745.9 L 405.1 711.2 L 483.3 659.7 L 566.9 588.7 L 646.4 616.4 L 724.9 560.6 L 804.6 467.0 L 881.1 368.4" fill="none" stroke="#AF52DE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
+<line class="cal-stem-under" x1="163.3" y1="907.0" x2="163.3" y2="986.7" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="247.2" y1="787.7" x2="247.2" y2="902.8" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="326.3" y1="745.9" x2="326.3" y2="823.7" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="405.1" y1="711.2" x2="405.1" y2="744.9" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="483.3" y1="659.7" x2="483.3" y2="666.7" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="566.9" y1="588.7" x2="566.9" y2="583.1" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="646.4" y1="616.4" x2="646.4" y2="503.6" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="724.9" y1="560.6" x2="724.9" y2="425.1" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="804.6" y1="467.0" x2="804.6" y2="345.4" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="881.1" y1="368.4" x2="881.1" y2="268.9" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<path class="cal-curve" d="M 163.3 907.0 L 247.2 787.7 L 326.3 745.9 L 405.1 711.2 L 483.3 659.7 L 566.9 588.7 L 646.4 616.4 L 724.9 560.6 L 804.6 467.0 L 881.1 368.4" fill="none" stroke="#CB30E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 4%, observed 14% (gap +10%, under-states); 1017 predictions">
 <title>Predicted 4%, observed 14% (gap +10%, under-states); 1017 predictions</title>
 <circle class="halo" cx="163.3" cy="907.0" r="34.0" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="163.3" cy="907.0" r="26.0" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="163.3" cy="907.0" r="26.0" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 15%, observed 29% (gap +14%, under-states); 564 predictions">
 <title>Predicted 15%, observed 29% (gap +14%, under-states); 564 predictions</title>
 <circle class="halo" cx="247.2" cy="787.7" r="29.7" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="247.2" cy="787.7" r="21.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="247.2" cy="787.7" r="21.7" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 25%, observed 35% (gap +10%, under-states); 447 predictions">
 <title>Predicted 25%, observed 35% (gap +10%, under-states); 447 predictions</title>
 <circle class="halo" cx="326.3" cy="745.9" r="28.3" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="326.3" cy="745.9" r="20.3" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="326.3" cy="745.9" r="20.3" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 35%, observed 39% (gap +4%, under-states); 356 predictions">
 <title>Predicted 35%, observed 39% (gap +4%, under-states); 356 predictions</title>
 <circle class="halo" cx="405.1" cy="711.2" r="27.1" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="405.1" cy="711.2" r="19.1" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="405.1" cy="711.2" r="19.1" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 45%, observed 46% (gap +1%, under-states); 334 predictions">
 <title>Predicted 45%, observed 46% (gap +1%, under-states); 334 predictions</title>
 <circle class="halo" cx="483.3" cy="659.7" r="26.7" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="483.3" cy="659.7" r="18.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="483.3" cy="659.7" r="18.7" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 55%, observed 54% (gap -1%, over-states); 305 predictions">
 <title>Predicted 55%, observed 54% (gap -1%, over-states); 305 predictions</title>
 <circle class="halo" cx="566.9" cy="588.7" r="26.3" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="566.9" cy="588.7" r="18.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="566.9" cy="588.7" r="18.3" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 65%, observed 51% (gap -14%, over-states); 263 predictions">
 <title>Predicted 65%, observed 51% (gap -14%, over-states); 263 predictions</title>
 <circle class="halo" cx="646.4" cy="616.4" r="25.6" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="646.4" cy="616.4" r="17.6" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="646.4" cy="616.4" r="17.6" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 75%, observed 58% (gap -17%, over-states); 245 predictions">
 <title>Predicted 75%, observed 58% (gap -17%, over-states); 245 predictions</title>
 <circle class="halo" cx="724.9" cy="560.6" r="25.3" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="724.9" cy="560.6" r="17.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="724.9" cy="560.6" r="17.3" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 85%, observed 70% (gap -15%, over-states); 251 predictions">
 <title>Predicted 85%, observed 70% (gap -15%, over-states); 251 predictions</title>
 <circle class="halo" cx="804.6" cy="467.0" r="25.4" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="804.6" cy="467.0" r="17.4" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="804.6" cy="467.0" r="17.4" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g class="pt" tabindex="0" role="img" aria-label="Predicted 95%, observed 82% (gap -12%, over-states); 218 predictions">
 <title>Predicted 95%, observed 82% (gap -12%, over-states); 218 predictions</title>
 <circle class="halo" cx="881.1" cy="368.4" r="24.9" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="881.1" cy="368.4" r="16.9" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="881.1" cy="368.4" r="16.9" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
-<text class="cal-mark-over" x="764.8" y="624.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">Overconfident:</text>
-<text class="cal-mark-over" x="764.8" y="648.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">says more churn</text>
-<text class="cal-mark-over" x="764.8" y="672.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">than happens</text>
-<text class="cal-mark-under" x="263.3" y="608.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">Underconfident:</text>
-<text class="cal-mark-under" x="263.3" y="632.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">says less churn</text>
-<text class="cal-mark-under" x="263.3" y="656.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">than happens</text>
+<text class="cal-mark-over" x="764.8" y="624.0" font-size="20" font-weight="600" fill="#FF383C" text-anchor="middle">Overconfident:</text>
+<text class="cal-mark-over" x="764.8" y="648.0" font-size="20" font-weight="600" fill="#FF383C" text-anchor="middle">says more churn</text>
+<text class="cal-mark-over" x="764.8" y="672.0" font-size="20" font-weight="600" fill="#FF383C" text-anchor="middle">than happens</text>
+<text class="cal-mark-under" x="263.3" y="608.1" font-size="20" font-weight="600" fill="#0088FF" text-anchor="middle">Underconfident:</text>
+<text class="cal-mark-under" x="263.3" y="632.1" font-size="20" font-weight="600" fill="#0088FF" text-anchor="middle">says less churn</text>
+<text class="cal-mark-under" x="263.3" y="656.1" font-size="20" font-weight="600" fill="#0088FF" text-anchor="middle">than happens</text>
 <g class="bar" tabindex="0" role="img" aria-label="1017 predictions near 4%">
 <title>1017 predictions near 4%</title>
-<rect class="cal-hist" x="130.6" y="1154.0" width="65.3" height="176.0" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="130.6" y="1154.0" width="65.3" height="176.0" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="564 predictions near 15%">
 <title>564 predictions near 15%</title>
-<rect class="cal-hist" x="214.5" y="1232.4" width="65.3" height="97.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="214.5" y="1232.4" width="65.3" height="97.6" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="447 predictions near 25%">
 <title>447 predictions near 25%</title>
-<rect class="cal-hist" x="293.6" y="1252.6" width="65.3" height="77.4" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="293.6" y="1252.6" width="65.3" height="77.4" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="356 predictions near 35%">
 <title>356 predictions near 35%</title>
-<rect class="cal-hist" x="372.5" y="1268.4" width="65.3" height="61.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="372.5" y="1268.4" width="65.3" height="61.6" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="334 predictions near 45%">
 <title>334 predictions near 45%</title>
-<rect class="cal-hist" x="450.6" y="1272.2" width="65.3" height="57.8" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="450.6" y="1272.2" width="65.3" height="57.8" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="305 predictions near 55%">
 <title>305 predictions near 55%</title>
-<rect class="cal-hist" x="534.3" y="1277.2" width="65.3" height="52.8" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="534.3" y="1277.2" width="65.3" height="52.8" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="263 predictions near 65%">
 <title>263 predictions near 65%</title>
-<rect class="cal-hist" x="613.8" y="1284.5" width="65.3" height="45.5" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="613.8" y="1284.5" width="65.3" height="45.5" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="245 predictions near 75%">
 <title>245 predictions near 75%</title>
-<rect class="cal-hist" x="692.3" y="1287.6" width="65.3" height="42.4" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="692.3" y="1287.6" width="65.3" height="42.4" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="251 predictions near 85%">
 <title>251 predictions near 85%</title>
-<rect class="cal-hist" x="772.0" y="1286.6" width="65.3" height="43.4" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="772.0" y="1286.6" width="65.3" height="43.4" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g class="bar" tabindex="0" role="img" aria-label="218 predictions near 95%">
 <title>218 predictions near 95%</title>
-<rect class="cal-hist" x="848.5" y="1292.3" width="65.3" height="37.7" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="848.5" y="1292.3" width="65.3" height="37.7" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <line x1="128.0" y1="1330.0" x2="924.0" y2="1330.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="128.0" y1="1154.0" x2="128.0" y2="1330.0" stroke="#1D1D1F" stroke-width="1.6"/>

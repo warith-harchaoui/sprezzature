@@ -27,42 +27,42 @@
 <text x="659.0" y="522.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">10</text>
 <text x="774.0" y="522.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">100</text>
 <text x="429.0" y="556.0" font-size="12" fill="#6E6E73" text-anchor="middle">Regularisation strength α</text>
-<line x1="84.0" y1="251.1" x2="774.0" y2="251.1" stroke="#007AFF" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
-<text x="774.0" y="245.1" font-size="10" fill="#007AFF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">one standard error below the peak</text>
-<polygon points="84.0,181.5 199.0,202.6 314.0,220.7 429.0,242.3 544.0,261.1 659.0,284.9 774.0,299.6 774.0,311.9 659.0,290.7 544.0,272.2 429.0,253.0 314.0,226.4 199.0,213.2 84.0,194.0" fill="#FF9500" opacity="0.16"/>
-<polyline points="84.0,186.5 199.0,207.1 314.0,223.6 429.0,249.1 544.0,266.9 659.0,287.9 774.0,306.2" fill="none" stroke="#FF9500" stroke-width="2.4" stroke-linejoin="round"/>
-<circle cx="84.0" cy="186.5" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<line x1="84.0" y1="251.1" x2="774.0" y2="251.1" stroke="#0088FF" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+<text x="774.0" y="245.1" font-size="10" fill="#0088FF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">one standard error below the peak</text>
+<polygon points="84.0,181.5 199.0,202.6 314.0,220.7 429.0,242.3 544.0,261.1 659.0,284.9 774.0,299.6 774.0,311.9 659.0,290.7 544.0,272.2 429.0,253.0 314.0,226.4 199.0,213.2 84.0,194.0" fill="#FF8D28" opacity="0.16"/>
+<polyline points="84.0,186.5 199.0,207.1 314.0,223.6 429.0,249.1 544.0,266.9 659.0,287.9 774.0,306.2" fill="none" stroke="#FF8D28" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="84.0" cy="186.5" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-0" class="vp hit" tabindex="0" role="img" aria-label="Training at 1e-4: 0.98, folds 0.98 to 0.99" x="74.0" y="171.5" width="20" height="32.6" fill="transparent"><title>Training · 1e-4: 0.98</title></rect>
-<circle cx="199.0" cy="207.1" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="199.0" cy="207.1" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-1" class="vp hit" tabindex="0" role="img" aria-label="Training at 1e-3: 0.97, folds 0.96 to 0.97" x="189.0" y="192.6" width="20" height="30.7" fill="transparent"><title>Training · 1e-3: 0.97</title></rect>
-<circle cx="314.0" cy="223.6" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="314.0" cy="223.6" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-2" class="vp hit" tabindex="0" role="img" aria-label="Training at 1e-2: 0.95, folds 0.95 to 0.96" x="304.0" y="210.7" width="20" height="25.7" fill="transparent"><title>Training · 1e-2: 0.95</title></rect>
-<circle cx="429.0" cy="249.1" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="429.0" cy="249.1" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-3" class="vp hit" tabindex="0" role="img" aria-label="Training at 0.10: 0.94, folds 0.93 to 0.94" x="419.0" y="232.3" width="20" height="30.7" fill="transparent"><title>Training · 0.10: 0.94</title></rect>
-<circle cx="544.0" cy="266.9" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="544.0" cy="266.9" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-4" class="vp hit" tabindex="0" role="img" aria-label="Training at 1: 0.92, folds 0.92 to 0.93" x="534.0" y="251.1" width="20" height="31.1" fill="transparent"><title>Training · 1: 0.92</title></rect>
-<circle cx="659.0" cy="287.9" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="659.0" cy="287.9" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-5" class="vp hit" tabindex="0" role="img" aria-label="Training at 10: 0.91, folds 0.90 to 0.91" x="649.0" y="274.9" width="20" height="25.8" fill="transparent"><title>Training · 10: 0.91</title></rect>
-<circle cx="774.0" cy="306.2" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="774.0" cy="306.2" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-6" class="vp hit" tabindex="0" role="img" aria-label="Training at 100: 0.89, folds 0.89 to 0.90" x="764.0" y="289.6" width="20" height="32.3" fill="transparent"><title>Training · 100: 0.89</title></rect>
-<text x="786.0" y="310.2" font-size="12" font-weight="700" fill="#FF9500">Training</text>
-<polygon points="84.0,442.7 199.0,329.0 314.0,267.5 429.0,242.6 544.0,244.5 659.0,251.8 774.0,252.3 774.0,270.4 659.0,263.8 544.0,264.9 429.0,260.3 314.0,288.1 199.0,350.2 84.0,462.4" fill="#007AFF" opacity="0.16"/>
-<polyline points="84.0,452.5 199.0,338.5 314.0,280.5 429.0,247.9 544.0,250.7 659.0,257.3 774.0,262.7" fill="none" stroke="#007AFF" stroke-width="2.4" stroke-linejoin="round"/>
-<circle cx="84.0" cy="452.5" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<text x="786.0" y="310.2" font-size="12" font-weight="700" fill="#FF8D28">Training</text>
+<polygon points="84.0,442.7 199.0,329.0 314.0,267.5 429.0,242.6 544.0,244.5 659.0,251.8 774.0,252.3 774.0,270.4 659.0,263.8 544.0,264.9 429.0,260.3 314.0,288.1 199.0,350.2 84.0,462.4" fill="#0088FF" opacity="0.16"/>
+<polyline points="84.0,452.5 199.0,338.5 314.0,280.5 429.0,247.9 544.0,250.7 659.0,257.3 774.0,262.7" fill="none" stroke="#0088FF" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="84.0" cy="452.5" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-7" class="vp hit" tabindex="0" role="img" aria-label="Validation at 1e-4: 0.79, folds 0.78 to 0.79" x="74.0" y="432.7" width="20" height="39.7" fill="transparent"><title>Validation · 1e-4: 0.79</title></rect>
-<circle cx="199.0" cy="338.5" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="199.0" cy="338.5" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-8" class="vp hit" tabindex="0" role="img" aria-label="Validation at 1e-3: 0.87, folds 0.86 to 0.88" x="189.0" y="319.0" width="20" height="41.2" fill="transparent"><title>Validation · 1e-3: 0.87</title></rect>
-<circle cx="314.0" cy="280.5" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="314.0" cy="280.5" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-9" class="vp hit" tabindex="0" role="img" aria-label="Validation at 1e-2: 0.91, folds 0.91 to 0.92" x="304.0" y="257.5" width="20" height="40.7" fill="transparent"><title>Validation · 1e-2: 0.91</title></rect>
-<circle cx="429.0" cy="247.9" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="429.0" cy="247.9" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-10" class="vp hit" tabindex="0" role="img" aria-label="Validation at 0.10: 0.94, folds 0.93 to 0.94" x="419.0" y="232.6" width="20" height="37.7" fill="transparent"><title>Validation · 0.10: 0.94</title></rect>
-<circle cx="544.0" cy="250.7" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="544.0" cy="250.7" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-11" class="vp hit" tabindex="0" role="img" aria-label="Validation at 1: 0.93, folds 0.92 to 0.94" x="534.0" y="234.5" width="20" height="40.4" fill="transparent"><title>Validation · 1: 0.93</title></rect>
-<circle cx="659.0" cy="257.3" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="659.0" cy="257.3" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-12" class="vp hit" tabindex="0" role="img" aria-label="Validation at 10: 0.93, folds 0.92 to 0.93" x="649.0" y="241.8" width="20" height="32.0" fill="transparent"><title>Validation · 10: 0.93</title></rect>
-<circle cx="774.0" cy="262.7" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="774.0" cy="262.7" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="vp-13" class="vp hit" tabindex="0" role="img" aria-label="Validation at 100: 0.93, folds 0.92 to 0.93" x="764.0" y="242.3" width="20" height="38.1" fill="transparent"><title>Validation · 100: 0.93</title></rect>
-<text x="786.0" y="266.7" font-size="12" font-weight="700" fill="#007AFF">Validation</text>
+<text x="786.0" y="266.7" font-size="12" font-weight="700" fill="#0088FF">Validation</text>
 <line x1="429.0" y1="162.0" x2="429.0" y2="500.0" stroke="#1D1D1F" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.45"/>
 <rect x="434.0" y="168.0" width="67.4" height="18" fill="#FFFFFF" opacity="0.9" rx="3"/>
 <text x="439.0" y="181.0" font-size="11" font-weight="700" fill="#1D1D1F" font-family="Roboto Mono, ui-monospace, monospace">peak 0.10</text>

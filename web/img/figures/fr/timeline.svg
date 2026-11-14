@@ -42,25 +42,25 @@
 <line x1="100" y1="548" x2="1740" y2="548" stroke="#1D1D1F" stroke-width="3" stroke-linecap="round"/>
 <circle cx="100.0" cy="548" r="4" fill="#1D1D1F"/>
 <circle cx="1740.0" cy="548" r="4" fill="#1D1D1F"/>
-<line class="era-stroke era-flybys---orbiters" x1="145.6" y1="548" x2="145.6" y2="494.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-flybys---orbiters" x1="282.2" y1="548" x2="282.2" y2="666.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-first-landers" x1="396.1" y1="548" x2="396.1" y2="334.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-first-landers" x1="874.4" y1="548" x2="874.4" y2="666.0" stroke="#007AFF" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-rover-age" x1="1033.9" y1="548" x2="1033.9" y2="494.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-rover-age" x1="1125.0" y1="548" x2="1125.0" y2="666.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-rover-age" x1="1216.1" y1="548" x2="1216.1" y2="334.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-rover-age" x1="1352.8" y1="548" x2="1352.8" y2="494.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-rover-age" x1="1421.1" y1="548" x2="1421.1" y2="666.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-rover-age" x1="1421.1" y1="548" x2="1421.1" y2="826.0" stroke="#28CD41" stroke-width="2.2" stroke-linecap="round"/>
-<line class="era-stroke era-sample-return" x1="1580.6" y1="548" x2="1580.6" y2="334.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
-<line class="era-stroke era-sample-return" x1="1648.9" y1="548" x2="1648.9" y2="494.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
-<line class="era-stroke era-sample-return" x1="1694.4" y1="548" x2="1694.4" y2="986.0" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+<line class="era-stroke era-flybys---orbiters" x1="145.6" y1="548" x2="145.6" y2="494.0" stroke="#0088FF" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-flybys---orbiters" x1="282.2" y1="548" x2="282.2" y2="666.0" stroke="#0088FF" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-first-landers" x1="396.1" y1="548" x2="396.1" y2="334.0" stroke="#0088FF" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-first-landers" x1="874.4" y1="548" x2="874.4" y2="666.0" stroke="#0088FF" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-rover-age" x1="1033.9" y1="548" x2="1033.9" y2="494.0" stroke="#34C759" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-rover-age" x1="1125.0" y1="548" x2="1125.0" y2="666.0" stroke="#34C759" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-rover-age" x1="1216.1" y1="548" x2="1216.1" y2="334.0" stroke="#34C759" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-rover-age" x1="1352.8" y1="548" x2="1352.8" y2="494.0" stroke="#34C759" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-rover-age" x1="1421.1" y1="548" x2="1421.1" y2="666.0" stroke="#34C759" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-rover-age" x1="1421.1" y1="548" x2="1421.1" y2="826.0" stroke="#34C759" stroke-width="2.2" stroke-linecap="round"/>
+<line class="era-stroke era-sample-return" x1="1580.6" y1="548" x2="1580.6" y2="334.0" stroke="#FF8D28" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+<line class="era-stroke era-sample-return" x1="1648.9" y1="548" x2="1648.9" y2="494.0" stroke="#FF8D28" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+<line class="era-stroke era-sample-return" x1="1694.4" y1="548" x2="1694.4" y2="986.0" stroke="#FF8D28" stroke-width="2.2" stroke-dasharray="2 5" stroke-linecap="round"/>
 <g id="hit-0" class="mstone hit" tabindex="0" role="img" aria-label="1965 — Mariner 4 : premières photos rapprochées de Mars lors d&#x27;un survol : 21 images granuleuses.">
 <circle cx="145.6" cy="548" r="12" fill="#8CC3FF"/>
-<circle class="dot era-fill era-flybys---orbiters" cx="145.6" cy="548" r="7.5" fill="#007AFF"/>
+<circle class="dot era-fill era-flybys---orbiters" cx="145.6" cy="548" r="7.5" fill="#0088FF"/>
 <rect class="card" x="100.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-flybys---orbiters" x="100.0" y="354.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
-<text class="era-fill era-flybys---orbiters" x="123.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1965</text>
+<rect class="era-fill era-flybys---orbiters" x="100.0" y="354.0" width="6" height="140.0" rx="3" fill="#0088FF"/>
+<text class="era-fill era-flybys---orbiters" x="123.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#0088FF">1965</text>
 <text x="123.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Mariner 4</text>
 <text x="123.0" y="440.0" font-size="14" fill="#6E6E73">Premières photos rapprochées de</text>
 <text x="123.0" y="460.0" font-size="14" fill="#6E6E73">Mars lors d’un survol : 21 images</text>
@@ -68,10 +68,10 @@
 </g>
 <g id="hit-1" class="mstone hit" tabindex="0" role="img" aria-label="1971 — Mariner 9 : premier engin à orbiter une autre planète ; a cartographié 85 % de Mars.">
 <circle cx="282.2" cy="548" r="12" fill="#8CC3FF"/>
-<circle class="dot era-fill era-flybys---orbiters" cx="282.2" cy="548" r="7.5" fill="#007AFF"/>
+<circle class="dot era-fill era-flybys---orbiters" cx="282.2" cy="548" r="7.5" fill="#0088FF"/>
 <rect class="card" x="175.2" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-flybys---orbiters" x="175.2" y="666.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
-<text class="era-fill era-flybys---orbiters" x="198.2" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1971</text>
+<rect class="era-fill era-flybys---orbiters" x="175.2" y="666.0" width="6" height="140.0" rx="3" fill="#0088FF"/>
+<text class="era-fill era-flybys---orbiters" x="198.2" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#0088FF">1971</text>
 <text x="198.2" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Mariner 9</text>
 <text x="198.2" y="752.0" font-size="14" fill="#6E6E73">Premier engin à orbiter</text>
 <text x="198.2" y="772.0" font-size="14" fill="#6E6E73">une autre planète ; a cartographié</text>
@@ -79,10 +79,10 @@
 </g>
 <g id="hit-2" class="mstone hit" tabindex="0" role="img" aria-label="1976 — Viking 1 : premier atterrissage pleinement réussi ; a mené les premiers essais de biologie du sol.">
 <circle cx="396.1" cy="548" r="12" fill="#8CC3FF"/>
-<circle class="dot era-fill era-first-landers" cx="396.1" cy="548" r="7.5" fill="#007AFF"/>
+<circle class="dot era-fill era-first-landers" cx="396.1" cy="548" r="7.5" fill="#0088FF"/>
 <rect class="card" x="289.1" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-first-landers" x="289.1" y="194.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
-<text class="era-fill era-first-landers" x="312.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1976</text>
+<rect class="era-fill era-first-landers" x="289.1" y="194.0" width="6" height="140.0" rx="3" fill="#0088FF"/>
+<text class="era-fill era-first-landers" x="312.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#0088FF">1976</text>
 <text x="312.1" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Viking 1</text>
 <text x="312.1" y="280.0" font-size="14" fill="#6E6E73">Premier atterrissage pleinement</text>
 <text x="312.1" y="300.0" font-size="14" fill="#6E6E73">réussi ; a mené les premiers</text>
@@ -90,10 +90,10 @@
 </g>
 <g id="hit-3" class="mstone hit" tabindex="0" role="img" aria-label="1997 — Pathfinder : un atterrissage par coussins gonflables a livré Sojourner, le premier rover martien.">
 <circle cx="874.4" cy="548" r="12" fill="#8CC3FF"/>
-<circle class="dot era-fill era-first-landers" cx="874.4" cy="548" r="7.5" fill="#007AFF"/>
+<circle class="dot era-fill era-first-landers" cx="874.4" cy="548" r="7.5" fill="#0088FF"/>
 <rect class="card" x="767.4" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-first-landers" x="767.4" y="666.0" width="6" height="140.0" rx="3" fill="#007AFF"/>
-<text class="era-fill era-first-landers" x="790.4" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#007AFF">1997</text>
+<rect class="era-fill era-first-landers" x="767.4" y="666.0" width="6" height="140.0" rx="3" fill="#0088FF"/>
+<text class="era-fill era-first-landers" x="790.4" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#0088FF">1997</text>
 <text x="790.4" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Pathfinder</text>
 <text x="790.4" y="752.0" font-size="14" fill="#6E6E73">Atterrissage sous airbags ; a livré</text>
 <text x="790.4" y="772.0" font-size="14" fill="#6E6E73">Sojourner, le premier rover</text>
@@ -101,10 +101,10 @@
 </g>
 <g id="hit-4" class="mstone hit" tabindex="0" role="img" aria-label="2004 — Spirit &amp; Opportunity : des rovers jumeaux ont trouvé la preuve tangible que l&#x27;eau liquide a jadis coulé.">
 <circle cx="1033.9" cy="548" r="12" fill="#9EE8AA"/>
-<circle class="dot era-fill era-rover-age" cx="1033.9" cy="548" r="7.5" fill="#28CD41"/>
+<circle class="dot era-fill era-rover-age" cx="1033.9" cy="548" r="7.5" fill="#34C759"/>
 <rect class="card" x="926.9" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-rover-age" x="926.9" y="354.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
-<text class="era-fill era-rover-age" x="949.9" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2004</text>
+<rect class="era-fill era-rover-age" x="926.9" y="354.0" width="6" height="140.0" rx="3" fill="#34C759"/>
+<text class="era-fill era-rover-age" x="949.9" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#34C759">2004</text>
 <text x="949.9" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Spirit &amp; Opportunity</text>
 <text x="949.9" y="440.0" font-size="14" fill="#6E6E73">Deux rovers jumeaux ont prouvé</text>
 <text x="949.9" y="460.0" font-size="14" fill="#6E6E73">que l’eau liquide a jadis</text>
@@ -112,10 +112,10 @@
 </g>
 <g id="hit-5" class="mstone hit" tabindex="0" role="img" aria-label="2008 — Phoenix : a touché et confirmé de la glace d&#x27;eau juste sous le sol polaire.">
 <circle cx="1125.0" cy="548" r="12" fill="#9EE8AA"/>
-<circle class="dot era-fill era-rover-age" cx="1125.0" cy="548" r="7.5" fill="#28CD41"/>
+<circle class="dot era-fill era-rover-age" cx="1125.0" cy="548" r="7.5" fill="#34C759"/>
 <rect class="card" x="1018.0" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-rover-age" x="1018.0" y="666.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
-<text class="era-fill era-rover-age" x="1041.0" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2008</text>
+<rect class="era-fill era-rover-age" x="1018.0" y="666.0" width="6" height="140.0" rx="3" fill="#34C759"/>
+<text class="era-fill era-rover-age" x="1041.0" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#34C759">2008</text>
 <text x="1041.0" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Phoenix</text>
 <text x="1041.0" y="752.0" font-size="14" fill="#6E6E73">A touché et confirmé la glace</text>
 <text x="1041.0" y="772.0" font-size="14" fill="#6E6E73">d’eau juste sous le sol</text>
@@ -123,10 +123,10 @@
 </g>
 <g id="hit-6" class="mstone hit" tabindex="0" role="img" aria-label="2012 — Curiosity : un atterrisseur à grue aérienne a posé un labo nucléaire de la taille d&#x27;une voiture dans le cratère Gale.">
 <circle cx="1216.1" cy="548" r="12" fill="#9EE8AA"/>
-<circle class="dot era-fill era-rover-age" cx="1216.1" cy="548" r="7.5" fill="#28CD41"/>
+<circle class="dot era-fill era-rover-age" cx="1216.1" cy="548" r="7.5" fill="#34C759"/>
 <rect class="card" x="1109.1" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-rover-age" x="1109.1" y="194.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
-<text class="era-fill era-rover-age" x="1132.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2012</text>
+<rect class="era-fill era-rover-age" x="1109.1" y="194.0" width="6" height="140.0" rx="3" fill="#34C759"/>
+<text class="era-fill era-rover-age" x="1132.1" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#34C759">2012</text>
 <text x="1132.1" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Curiosity</text>
 <text x="1132.1" y="280.0" font-size="14" fill="#6E6E73">Un atterrisseur à grue aérienne a posé un</text>
 <text x="1132.1" y="300.0" font-size="14" fill="#6E6E73">labo nucléaire de la taille d'une voiture dans</text>
@@ -134,10 +134,10 @@
 </g>
 <g id="hit-7" class="mstone hit" tabindex="0" role="img" aria-label="2018 — InSight : premier sismomètre sur Mars ; a enregistré des centaines de séismes martiens.">
 <circle cx="1352.8" cy="548" r="12" fill="#9EE8AA"/>
-<circle class="dot era-fill era-rover-age" cx="1352.8" cy="548" r="7.5" fill="#28CD41"/>
+<circle class="dot era-fill era-rover-age" cx="1352.8" cy="548" r="7.5" fill="#34C759"/>
 <rect class="card" x="1245.8" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-rover-age" x="1245.8" y="354.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
-<text class="era-fill era-rover-age" x="1268.8" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2018</text>
+<rect class="era-fill era-rover-age" x="1245.8" y="354.0" width="6" height="140.0" rx="3" fill="#34C759"/>
+<text class="era-fill era-rover-age" x="1268.8" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#34C759">2018</text>
 <text x="1268.8" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">InSight</text>
 <text x="1268.8" y="440.0" font-size="14" fill="#6E6E73">Premier sismomètre sur Mars ;</text>
 <text x="1268.8" y="460.0" font-size="14" fill="#6E6E73">a enregistré des centaines de</text>
@@ -145,10 +145,10 @@
 </g>
 <g id="hit-8" class="mstone hit" tabindex="0" role="img" aria-label="2021 — Perseverance : a commencé à mettre en réserve des carottes de roche ; Ingenuity a réalisé le premier vol aérien sur Mars.">
 <circle cx="1421.1" cy="548" r="12" fill="#9EE8AA"/>
-<circle class="dot era-fill era-rover-age" cx="1421.1" cy="548" r="7.5" fill="#28CD41"/>
+<circle class="dot era-fill era-rover-age" cx="1421.1" cy="548" r="7.5" fill="#34C759"/>
 <rect class="card" x="1314.1" y="666.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-rover-age" x="1314.1" y="666.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
-<text class="era-fill era-rover-age" x="1337.1" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2021</text>
+<rect class="era-fill era-rover-age" x="1314.1" y="666.0" width="6" height="140.0" rx="3" fill="#34C759"/>
+<text class="era-fill era-rover-age" x="1337.1" y="701.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#34C759">2021</text>
 <text x="1337.1" y="728.0" font-size="18" font-weight="700" fill="#1D1D1F">Perseverance</text>
 <text x="1337.1" y="752.0" font-size="14" fill="#6E6E73">A commencé à mettre des carottes de côté ;</text>
 <text x="1337.1" y="772.0" font-size="14" fill="#6E6E73">Ingenuity a réalisé le premier</text>
@@ -156,10 +156,10 @@
 </g>
 <g id="hit-9" class="mstone hit" tabindex="0" role="img" aria-label="2021 — Tianwen-1 : le rover chinois Zhurong a atterri, une première dès sa tentative inaugurale sur Mars.">
 <circle cx="1421.1" cy="548" r="12" fill="#9EE8AA"/>
-<circle class="dot era-fill era-rover-age" cx="1421.1" cy="548" r="7.5" fill="#28CD41"/>
+<circle class="dot era-fill era-rover-age" cx="1421.1" cy="548" r="7.5" fill="#34C759"/>
 <rect class="card" x="1314.1" y="826.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-rover-age" x="1314.1" y="826.0" width="6" height="140.0" rx="3" fill="#28CD41"/>
-<text class="era-fill era-rover-age" x="1337.1" y="861.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#28CD41">2021</text>
+<rect class="era-fill era-rover-age" x="1314.1" y="826.0" width="6" height="140.0" rx="3" fill="#34C759"/>
+<text class="era-fill era-rover-age" x="1337.1" y="861.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#34C759">2021</text>
 <text x="1337.1" y="888.0" font-size="18" font-weight="700" fill="#1D1D1F">Tianwen-1</text>
 <text x="1337.1" y="912.0" font-size="14" fill="#6E6E73">le rover chinois Zhurong</text>
 <text x="1337.1" y="932.0" font-size="14" fill="#6E6E73">a atterri, une première dès sa</text>
@@ -167,10 +167,10 @@
 </g>
 <g id="hit-10" class="mstone hit" tabindex="0" role="img" aria-label="2028 (prévu) — Récupération d&#x27;échantillons : atterrisseur prévu pour rassembler les tubes mis en réserve par Perseverance en vue du lancement.">
 <circle cx="1580.6" cy="548" r="12" fill="#FFCF8C"/>
-<circle class="dot era-stroke era-sample-return" cx="1580.6" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
+<circle class="dot era-stroke era-sample-return" cx="1580.6" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF8D28" stroke-width="3"/>
 <rect class="card" x="1473.6" y="194.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-sample-return" x="1473.6" y="194.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text class="era-fill era-sample-return" x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> † planned</tspan></text>
+<rect class="era-fill era-sample-return" x="1473.6" y="194.0" width="6" height="140.0" rx="3" fill="#FF8D28"/>
+<text class="era-fill era-sample-return" x="1496.6" y="229.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF8D28">2028<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> † planned</tspan></text>
 <text x="1496.6" y="256.0" font-size="18" font-weight="700" fill="#1D1D1F">Sample Retrieval</text>
 <text x="1496.6" y="280.0" font-size="14" fill="#6E6E73">Atterrisseur prévu pour rassembler</text>
 <text x="1496.6" y="300.0" font-size="14" fill="#6E6E73">les tubes en réserve de Perseverance</text>
@@ -178,10 +178,10 @@
 </g>
 <g id="hit-11" class="mstone hit" tabindex="0" role="img" aria-label="2031 (prévu) — Orbiteur de retour vers la Terre : relais prévu pour convoyer les échantillons scellés vers la Terre.">
 <circle cx="1648.9" cy="548" r="12" fill="#FFCF8C"/>
-<circle class="dot era-stroke era-sample-return" cx="1648.9" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
+<circle class="dot era-stroke era-sample-return" cx="1648.9" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF8D28" stroke-width="3"/>
 <rect class="card" x="1526.0" y="354.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-sample-return" x="1526.0" y="354.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text class="era-fill era-sample-return" x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> † planned</tspan></text>
+<rect class="era-fill era-sample-return" x="1526.0" y="354.0" width="6" height="140.0" rx="3" fill="#FF8D28"/>
+<text class="era-fill era-sample-return" x="1549.0" y="389.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF8D28">2031<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> † planned</tspan></text>
 <text x="1549.0" y="416.0" font-size="18" font-weight="700" fill="#1D1D1F">Earth Return Orbiter</text>
 <text x="1549.0" y="440.0" font-size="14" fill="#6E6E73">Relais prévu pour convoyer les</text>
 <text x="1549.0" y="460.0" font-size="14" fill="#6E6E73">échantillons scellés vers</text>
@@ -189,22 +189,22 @@
 </g>
 <g id="hit-12" class="mstone hit" tabindex="0" role="img" aria-label="2033 (prévu) — Échantillons sur Terre : cible pour que les premières roches martiennes atteignent un labo sur Terre.">
 <circle cx="1694.4" cy="548" r="12" fill="#FFCF8C"/>
-<circle class="dot era-stroke era-sample-return" cx="1694.4" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF9500" stroke-width="3"/>
+<circle class="dot era-stroke era-sample-return" cx="1694.4" cy="548" r="7.5" fill="#FFFFFF" stroke="#FF8D28" stroke-width="3"/>
 <rect class="card" x="1526.0" y="986.0" width="214" height="140.0" rx="13" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="1.4"/>
-<rect class="era-fill era-sample-return" x="1526.0" y="986.0" width="6" height="140.0" rx="3" fill="#FF9500"/>
-<text class="era-fill era-sample-return" x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF9500">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> † planned</tspan></text>
+<rect class="era-fill era-sample-return" x="1526.0" y="986.0" width="6" height="140.0" rx="3" fill="#FF8D28"/>
+<text class="era-fill era-sample-return" x="1549.0" y="1021.0" font-size="21" font-weight="700" font-family="Roboto Mono, monospace" fill="#FF8D28">2033<tspan font-size="13" font-family="Roboto, sans-serif" fill="#6E6E73"> † planned</tspan></text>
 <text x="1549.0" y="1048.0" font-size="18" font-weight="700" fill="#1D1D1F">Échantillons sur Terre</text>
 <text x="1549.0" y="1072.0" font-size="14" fill="#6E6E73">Cible du premier retour de roches</text>
 <text x="1549.0" y="1092.0" font-size="14" fill="#6E6E73">martiennes vers un labo</text>
 <text x="1549.0" y="1112.0" font-size="14" fill="#6E6E73">la Terre.</text>
 </g>
-<rect class="era-fill era-flybys---orbiters" x="164.5" y="555.0" width="189.8" height="24" rx="12" fill="#007AFF"/>
+<rect class="era-fill era-flybys---orbiters" x="164.5" y="555.0" width="189.8" height="24" rx="12" fill="#0088FF"/>
 <text x="259.4" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">FLYBYS &amp; ORBITERS</text>
-<rect class="era-fill era-first-landers" x="582.0" y="555.0" width="152.2" height="24" rx="12" fill="#007AFF"/>
+<rect class="era-fill era-first-landers" x="582.0" y="555.0" width="152.2" height="24" rx="12" fill="#0088FF"/>
 <text x="658.1" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">PREMIERS ATTERRISSEURS</text>
-<rect class="era-fill era-rover-age" x="1158.8" y="555.0" width="114.6" height="24" rx="12" fill="#28CD41"/>
+<rect class="era-fill era-rover-age" x="1158.8" y="555.0" width="114.6" height="24" rx="12" fill="#34C759"/>
 <text x="1216.1" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">ÈRE DES ROVERS</text>
-<rect class="era-fill era-sample-return" x="1538.6" y="555.0" width="152.2" height="24" rx="12" fill="#FF9500"/>
+<rect class="era-fill era-sample-return" x="1538.6" y="555.0" width="152.2" height="24" rx="12" fill="#FF8D28"/>
 <text x="1614.7" y="572.0" font-size="13.5" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">RETOUR D’ÉCHANTILLONS</text>
 <g class="sweep"><circle cx="145.6" cy="548" r="6" fill="#1D1D1F" opacity="0.9"><animate attributeName="cx" from="145.6" to="1694.4" dur="7s" begin="1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.06;0.94;1" dur="7s" begin="1s" fill="freeze"/></circle></g>
 <circle cx="108" cy="1141" r="7" fill="#1D1D1F"/>

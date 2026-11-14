@@ -4,7 +4,7 @@
   <title id="ib-title">Cups poured from the office machine last week</title>
   <desc id="ib-desc">Interactive bar chart. Hover or focus a bar to highlight it and read its value; the others dim. Espresso leads with 84, then Latte 63, Cappuccino 41, Americano 29, and almost nobody drinks Decaf at 4.</desc>
   <style>
-    .bar { fill: #007AFF; transition: opacity .15s ease; cursor: pointer; }
+    .bar { fill: #0088FF; transition: opacity .15s ease; cursor: pointer; }
     /* Hovering or focusing any bar dims the rest, so the eye lands on one. */
     svg:hover .bar, svg:focus-within .bar { opacity: .35; }
     .bar:hover, .bar:focus { opacity: 1; }
@@ -14,7 +14,7 @@
     @media (prefers-reduced-motion: reduce) { .bar { transition: none; } }
     @media (prefers-color-scheme: dark) {
       svg { background: #0B0B0C; }
-      .bar { fill: #0A84FF; }
+      .bar { fill: #0091FF; }
       .bar:focus { outline-color: #6FB7FF; }
       .lbl { fill: #F2F2F7; }
       [fill="#1D1D1F"] { fill: #F2F2F7; }

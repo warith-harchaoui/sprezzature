@@ -21,113 +21,113 @@
 <text x="32.0" y="438.5" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">5</text>
 <line x1="150.0" y1="483.5" x2="796.0" y2="483.5" stroke="#E5E5EA" stroke-width="1"/>
 <text x="32.0" y="487.5" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">6</text>
-<path d="M150.0,238.5 C196.1,238.5 196.1,287.5 242.3,287.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,287.5 C288.4,287.5 288.4,336.5 334.6,336.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,336.5 C380.7,336.5 380.7,336.5 426.9,336.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,336.5 C473.0,336.5 473.0,336.5 519.1,336.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,336.5 C565.3,336.5 565.3,336.5 611.4,336.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<path d="M611.4,336.5 C657.6,336.5 657.6,336.5 703.7,336.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,336.5 C749.9,336.5 749.9,336.5 796.0,336.5" fill="none" stroke="#007AFF" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="238.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="242.3" cy="287.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="334.6" cy="336.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="426.9" cy="336.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="519.1" cy="336.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="611.4" cy="336.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="703.7" cy="336.5" r="4" fill="#007AFF" opacity="1.0"/>
-<circle cx="796.0" cy="336.5" r="4" fill="#007AFF" opacity="1.0"/>
-<text x="138.0" y="242.5" font-size="12" fill="#007AFF" text-anchor="end" opacity="1.0">Northwind</text>
-<text x="808.0" y="340.5" font-size="12" fill="#007AFF" opacity="1.0">17.12</text>
+<path d="M150.0,238.5 C196.1,238.5 196.1,287.5 242.3,287.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,287.5 C288.4,287.5 288.4,336.5 334.6,336.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,336.5 C380.7,336.5 380.7,336.5 426.9,336.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,336.5 C473.0,336.5 473.0,336.5 519.1,336.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,336.5 C565.3,336.5 565.3,336.5 611.4,336.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<path d="M611.4,336.5 C657.6,336.5 657.6,336.5 703.7,336.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,336.5 C749.9,336.5 749.9,336.5 796.0,336.5" fill="none" stroke="#0088FF" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="238.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="242.3" cy="287.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="334.6" cy="336.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="426.9" cy="336.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="519.1" cy="336.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="611.4" cy="336.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="703.7" cy="336.5" r="4" fill="#0088FF" opacity="1.0"/>
+<circle cx="796.0" cy="336.5" r="4" fill="#0088FF" opacity="1.0"/>
+<text x="138.0" y="242.5" font-size="12" fill="#0088FF" text-anchor="end" opacity="1.0">Northwind</text>
+<text x="808.0" y="340.5" font-size="12" fill="#0088FF" opacity="1.0">17.12</text>
 <rect id="lane-0" class="lane hit" tabindex="0" role="img" aria-label="Northwind: rank 1 at 2024 Q1, 3 at 2025 Q4, down 2" x="150.0" y="312.0" width="646.0" height="49.0" fill="transparent"><title>Northwind</title></rect>
-<path d="M150.0,287.5 C196.1,287.5 196.1,238.5 242.3,238.5" fill="none" stroke="#FF9500" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,238.5 C288.4,238.5 288.4,238.5 334.6,238.5" fill="none" stroke="#FF9500" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,238.5 C380.7,238.5 380.7,238.5 426.9,238.5" fill="none" stroke="#FF9500" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,238.5 C473.0,238.5 473.0,238.5 519.1,238.5" fill="none" stroke="#FF9500" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,238.5 C565.3,238.5 565.3,287.5 611.4,287.5" fill="none" stroke="#FF9500" stroke-width="1.4" opacity="1.0"/>
-<path d="M611.4,287.5 C657.6,287.5 657.6,287.5 703.7,287.5" fill="none" stroke="#FF9500" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,287.5 C749.9,287.5 749.9,287.5 796.0,287.5" fill="none" stroke="#FF9500" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="287.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="242.3" cy="238.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="334.6" cy="238.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="426.9" cy="238.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="519.1" cy="238.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="611.4" cy="287.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="703.7" cy="287.5" r="4" fill="#FF9500" opacity="1.0"/>
-<circle cx="796.0" cy="287.5" r="4" fill="#FF9500" opacity="1.0"/>
-<text x="138.0" y="291.5" font-size="12" fill="#FF9500" text-anchor="end" opacity="1.0">Beacon</text>
-<text x="808.0" y="291.5" font-size="12" fill="#FF9500" opacity="1.0">30.97</text>
+<path d="M150.0,287.5 C196.1,287.5 196.1,238.5 242.3,238.5" fill="none" stroke="#FF8D28" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,238.5 C288.4,238.5 288.4,238.5 334.6,238.5" fill="none" stroke="#FF8D28" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,238.5 C380.7,238.5 380.7,238.5 426.9,238.5" fill="none" stroke="#FF8D28" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,238.5 C473.0,238.5 473.0,238.5 519.1,238.5" fill="none" stroke="#FF8D28" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,238.5 C565.3,238.5 565.3,287.5 611.4,287.5" fill="none" stroke="#FF8D28" stroke-width="1.4" opacity="1.0"/>
+<path d="M611.4,287.5 C657.6,287.5 657.6,287.5 703.7,287.5" fill="none" stroke="#FF8D28" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,287.5 C749.9,287.5 749.9,287.5 796.0,287.5" fill="none" stroke="#FF8D28" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="287.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="242.3" cy="238.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="334.6" cy="238.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="426.9" cy="238.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="519.1" cy="238.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="611.4" cy="287.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="703.7" cy="287.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<circle cx="796.0" cy="287.5" r="4" fill="#FF8D28" opacity="1.0"/>
+<text x="138.0" y="291.5" font-size="12" fill="#FF8D28" text-anchor="end" opacity="1.0">Beacon</text>
+<text x="808.0" y="291.5" font-size="12" fill="#FF8D28" opacity="1.0">30.97</text>
 <rect id="lane-1" class="lane hit" tabindex="0" role="img" aria-label="Beacon: rank 2 at 2024 Q1, 2 at 2025 Q4, unchanged 0" x="150.0" y="263.0" width="646.0" height="49.0" fill="transparent"><title>Beacon</title></rect>
-<path d="M150.0,336.5 C196.1,336.5 196.1,336.5 242.3,336.5" fill="none" stroke="#28CD41" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,336.5 C288.4,336.5 288.4,287.5 334.6,287.5" fill="none" stroke="#28CD41" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,287.5 C380.7,287.5 380.7,287.5 426.9,287.5" fill="none" stroke="#28CD41" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,287.5 C473.0,287.5 473.0,287.5 519.1,287.5" fill="none" stroke="#28CD41" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,287.5 C565.3,287.5 565.3,238.5 611.4,238.5" fill="none" stroke="#28CD41" stroke-width="1.4" opacity="1.0"/>
-<path d="M611.4,238.5 C657.6,238.5 657.6,238.5 703.7,238.5" fill="none" stroke="#28CD41" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,238.5 C749.9,238.5 749.9,238.5 796.0,238.5" fill="none" stroke="#28CD41" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="336.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="242.3" cy="336.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="334.6" cy="287.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="426.9" cy="287.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="519.1" cy="287.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="611.4" cy="238.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="703.7" cy="238.5" r="4" fill="#28CD41" opacity="1.0"/>
-<circle cx="796.0" cy="238.5" r="4" fill="#28CD41" opacity="1.0"/>
-<text x="138.0" y="340.5" font-size="12" fill="#28CD41" text-anchor="end" opacity="1.0">Tessellate</text>
-<text x="808.0" y="242.5" font-size="12" fill="#28CD41" opacity="1.0">34.69</text>
+<path d="M150.0,336.5 C196.1,336.5 196.1,336.5 242.3,336.5" fill="none" stroke="#34C759" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,336.5 C288.4,336.5 288.4,287.5 334.6,287.5" fill="none" stroke="#34C759" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,287.5 C380.7,287.5 380.7,287.5 426.9,287.5" fill="none" stroke="#34C759" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,287.5 C473.0,287.5 473.0,287.5 519.1,287.5" fill="none" stroke="#34C759" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,287.5 C565.3,287.5 565.3,238.5 611.4,238.5" fill="none" stroke="#34C759" stroke-width="1.4" opacity="1.0"/>
+<path d="M611.4,238.5 C657.6,238.5 657.6,238.5 703.7,238.5" fill="none" stroke="#34C759" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,238.5 C749.9,238.5 749.9,238.5 796.0,238.5" fill="none" stroke="#34C759" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="336.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="242.3" cy="336.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="334.6" cy="287.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="426.9" cy="287.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="519.1" cy="287.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="611.4" cy="238.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="703.7" cy="238.5" r="4" fill="#34C759" opacity="1.0"/>
+<circle cx="796.0" cy="238.5" r="4" fill="#34C759" opacity="1.0"/>
+<text x="138.0" y="340.5" font-size="12" fill="#34C759" text-anchor="end" opacity="1.0">Tessellate</text>
+<text x="808.0" y="242.5" font-size="12" fill="#34C759" opacity="1.0">34.69</text>
 <rect id="lane-2" class="lane hit" tabindex="0" role="img" aria-label="Tessellate: rank 3 at 2024 Q1, 1 at 2025 Q4, up 2" x="150.0" y="214.0" width="646.0" height="49.0" fill="transparent"><title>Tessellate</title></rect>
-<path d="M150.0,385.5 C196.1,385.5 196.1,385.5 242.3,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,385.5 C288.4,385.5 288.4,385.5 334.6,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,385.5 C380.7,385.5 380.7,385.5 426.9,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,385.5 C473.0,385.5 473.0,385.5 519.1,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,385.5 C565.3,385.5 565.3,385.5 611.4,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<path d="M611.4,385.5 C657.6,385.5 657.6,385.5 703.7,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,385.5 C749.9,385.5 749.9,385.5 796.0,385.5" fill="none" stroke="#AF52DE" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="242.3" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="334.6" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="426.9" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="519.1" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="611.4" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="703.7" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<circle cx="796.0" cy="385.5" r="4" fill="#AF52DE" opacity="1.0"/>
-<text x="138.0" y="389.5" font-size="12" fill="#AF52DE" text-anchor="end" opacity="1.0">Halcyon</text>
-<text x="808.0" y="389.5" font-size="12" fill="#AF52DE" opacity="1.0">14.43</text>
+<path d="M150.0,385.5 C196.1,385.5 196.1,385.5 242.3,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,385.5 C288.4,385.5 288.4,385.5 334.6,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,385.5 C380.7,385.5 380.7,385.5 426.9,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,385.5 C473.0,385.5 473.0,385.5 519.1,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,385.5 C565.3,385.5 565.3,385.5 611.4,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<path d="M611.4,385.5 C657.6,385.5 657.6,385.5 703.7,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,385.5 C749.9,385.5 749.9,385.5 796.0,385.5" fill="none" stroke="#CB30E0" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="242.3" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="334.6" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="426.9" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="519.1" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="611.4" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="703.7" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<circle cx="796.0" cy="385.5" r="4" fill="#CB30E0" opacity="1.0"/>
+<text x="138.0" y="389.5" font-size="12" fill="#CB30E0" text-anchor="end" opacity="1.0">Halcyon</text>
+<text x="808.0" y="389.5" font-size="12" fill="#CB30E0" opacity="1.0">14.43</text>
 <rect id="lane-3" class="lane hit" tabindex="0" role="img" aria-label="Halcyon: rank 4 at 2024 Q1, 4 at 2025 Q4, unchanged 0" x="150.0" y="361.0" width="646.0" height="49.0" fill="transparent"><title>Halcyon</title></rect>
-<path d="M150.0,434.5 C196.1,434.5 196.1,434.5 242.3,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,434.5 C288.4,434.5 288.4,434.5 334.6,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,434.5 C380.7,434.5 380.7,434.5 426.9,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,434.5 C473.0,434.5 473.0,434.5 519.1,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,434.5 C565.3,434.5 565.3,434.5 611.4,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<path d="M611.4,434.5 C657.6,434.5 657.6,434.5 703.7,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,434.5 C749.9,434.5 749.9,434.5 796.0,434.5" fill="none" stroke="#FF3B30" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="242.3" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="334.6" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="426.9" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="519.1" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="611.4" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="703.7" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<circle cx="796.0" cy="434.5" r="4" fill="#FF3B30" opacity="1.0"/>
-<text x="138.0" y="438.5" font-size="12" fill="#FF3B30" text-anchor="end" opacity="1.0">Quillon</text>
-<text x="808.0" y="438.5" font-size="12" fill="#FF3B30" opacity="1.0">1.48</text>
+<path d="M150.0,434.5 C196.1,434.5 196.1,434.5 242.3,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,434.5 C288.4,434.5 288.4,434.5 334.6,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,434.5 C380.7,434.5 380.7,434.5 426.9,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,434.5 C473.0,434.5 473.0,434.5 519.1,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,434.5 C565.3,434.5 565.3,434.5 611.4,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<path d="M611.4,434.5 C657.6,434.5 657.6,434.5 703.7,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,434.5 C749.9,434.5 749.9,434.5 796.0,434.5" fill="none" stroke="#FF383C" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="242.3" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="334.6" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="426.9" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="519.1" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="611.4" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="703.7" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<circle cx="796.0" cy="434.5" r="4" fill="#FF383C" opacity="1.0"/>
+<text x="138.0" y="438.5" font-size="12" fill="#FF383C" text-anchor="end" opacity="1.0">Quillon</text>
+<text x="808.0" y="438.5" font-size="12" fill="#FF383C" opacity="1.0">1.48</text>
 <rect id="lane-4" class="lane hit" tabindex="0" role="img" aria-label="Quillon: rank 5 at 2024 Q1, 5 at 2025 Q4, unchanged 0" x="150.0" y="410.0" width="646.0" height="49.0" fill="transparent"><title>Quillon</title></rect>
-<path d="M150.0,483.5 C196.1,483.5 196.1,483.5 242.3,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,483.5 C288.4,483.5 288.4,483.5 334.6,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,483.5 C380.7,483.5 380.7,483.5 426.9,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,483.5 C473.0,483.5 473.0,483.5 519.1,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,483.5 C565.3,483.5 565.3,483.5 611.4,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<path d="M611.4,483.5 C657.6,483.5 657.6,483.5 703.7,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,483.5 C749.9,483.5 749.9,483.5 796.0,483.5" fill="none" stroke="#30B0C7" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="242.3" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="334.6" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="426.9" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="519.1" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="611.4" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="703.7" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<circle cx="796.0" cy="483.5" r="4" fill="#30B0C7" opacity="1.0"/>
-<text x="138.0" y="487.5" font-size="12" fill="#30B0C7" text-anchor="end" opacity="1.0">Marram</text>
-<text x="808.0" y="487.5" font-size="12" fill="#30B0C7" opacity="1.0">0.89</text>
+<path d="M150.0,483.5 C196.1,483.5 196.1,483.5 242.3,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,483.5 C288.4,483.5 288.4,483.5 334.6,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,483.5 C380.7,483.5 380.7,483.5 426.9,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,483.5 C473.0,483.5 473.0,483.5 519.1,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,483.5 C565.3,483.5 565.3,483.5 611.4,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<path d="M611.4,483.5 C657.6,483.5 657.6,483.5 703.7,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,483.5 C749.9,483.5 749.9,483.5 796.0,483.5" fill="none" stroke="#00C3D0" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="242.3" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="334.6" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="426.9" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="519.1" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="611.4" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="703.7" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<circle cx="796.0" cy="483.5" r="4" fill="#00C3D0" opacity="1.0"/>
+<text x="138.0" y="487.5" font-size="12" fill="#00C3D0" text-anchor="end" opacity="1.0">Marram</text>
+<text x="808.0" y="487.5" font-size="12" fill="#00C3D0" opacity="1.0">0.89</text>
 <rect id="lane-5" class="lane hit" tabindex="0" role="img" aria-label="Marram: rank 6 at 2024 Q1, 6 at 2025 Q4, unchanged 0" x="150.0" y="459.0" width="646.0" height="49.0" fill="transparent"><title>Marram</title></rect>
 <text x="150.0" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2024 Q1</text>
 <text x="242.3" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">2024 Q2</text>

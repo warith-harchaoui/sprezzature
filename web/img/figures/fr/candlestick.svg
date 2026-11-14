@@ -18,103 +18,103 @@
 <text x="18" y="269.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 269.0)">Prix</text>
 <g id="hit-0" class="candle hit" tabindex="0">
 <title>Jour 1 : ouverture 100,00, plus haut 101,75, plus bas 98,88, clôture 100,25</title>
-<line x1="76.4" y1="253.1" x2="76.4" y2="282.8" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="68.2" y="268.6" width="16.4" height="2.6" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="76.4" y1="253.1" x2="76.4" y2="282.8" stroke="#34C759" stroke-width="1.5"/>
+<rect x="68.2" y="268.6" width="16.4" height="2.6" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-1" class="candle hit" tabindex="0">
 <title>Jour 2 : ouverture 100,25, plus haut 103,14, plus bas 99,93, clôture 102,83</title>
-<line x1="109.1" y1="238.7" x2="109.1" y2="271.9" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="100.9" y="241.9" width="16.4" height="26.7" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="109.1" y1="238.7" x2="109.1" y2="271.9" stroke="#34C759" stroke-width="1.5"/>
+<rect x="100.9" y="241.9" width="16.4" height="26.7" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-2" class="candle hit" tabindex="0">
 <title>Jour 3 : ouverture 102,83, plus haut 107,95, plus bas 102,77, clôture 107,77</title>
-<line x1="141.9" y1="188.9" x2="141.9" y2="242.5" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="133.7" y="190.8" width="16.4" height="51.1" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="141.9" y1="188.9" x2="141.9" y2="242.5" stroke="#34C759" stroke-width="1.5"/>
+<rect x="133.7" y="190.8" width="16.4" height="51.1" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-3" class="candle hit" tabindex="0">
 <title>Jour 4 : ouverture 107,77, plus haut 111,01, plus bas 107,73, clôture 109,66</title>
-<line x1="174.6" y1="157.2" x2="174.6" y2="191.2" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="166.4" y="171.2" width="16.4" height="19.6" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="174.6" y1="157.2" x2="174.6" y2="191.2" stroke="#34C759" stroke-width="1.5"/>
+<rect x="166.4" y="171.2" width="16.4" height="19.6" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-4" class="candle hit" tabindex="0">
 <title>Jour 5 : ouverture 109,66, plus haut 112,36, plus bas 109,22, clôture 111,19</title>
-<line x1="207.4" y1="143.3" x2="207.4" y2="175.8" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="199.2" y="155.4" width="16.4" height="15.8" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="207.4" y1="143.3" x2="207.4" y2="175.8" stroke="#34C759" stroke-width="1.5"/>
+<rect x="199.2" y="155.4" width="16.4" height="15.8" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-5" class="candle hit" tabindex="0">
 <title>Jour 6 : ouverture 111,19, plus haut 112,79, plus bas 108,24, clôture 110,05</title>
-<line x1="240.1" y1="138.8" x2="240.1" y2="185.9" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="231.9" y="155.4" width="16.4" height="11.8" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="240.1" y1="138.8" x2="240.1" y2="185.9" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="231.9" y="155.4" width="16.4" height="11.8" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-6" class="candle hit" tabindex="0">
 <title>Jour 7 : ouverture 110,05, plus haut 110,34, plus bas 105,62, clôture 105,82</title>
-<line x1="272.9" y1="164.2" x2="272.9" y2="213.0" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="264.7" y="167.2" width="16.4" height="43.8" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="272.9" y1="164.2" x2="272.9" y2="213.0" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="264.7" y="167.2" width="16.4" height="43.8" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-7" class="candle hit" tabindex="0">
 <title>Jour 8 : ouverture 105,82, plus haut 105,91, plus bas 103,39, clôture 104,99</title>
-<line x1="305.6" y1="210.0" x2="305.6" y2="236.1" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="297.4" y="211.0" width="16.4" height="8.6" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="305.6" y1="210.0" x2="305.6" y2="236.1" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="297.4" y="211.0" width="16.4" height="8.6" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-8" class="candle hit" tabindex="0">
 <title>Jour 9 : ouverture 104,99, plus haut 105,27, plus bas 103,88, clôture 104,78</title>
-<line x1="338.4" y1="216.6" x2="338.4" y2="231.0" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="330.2" y="219.5" width="16.4" height="2.2" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="338.4" y1="216.6" x2="338.4" y2="231.0" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="330.2" y="219.5" width="16.4" height="2.2" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-9" class="candle hit" tabindex="0">
 <title>Jour 10 : ouverture 104,78, plus haut 105,26, plus bas 100,16, clôture 102,58</title>
-<line x1="371.1" y1="216.7" x2="371.1" y2="269.5" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="362.9" y="221.7" width="16.4" height="22.8" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="371.1" y1="216.7" x2="371.1" y2="269.5" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="362.9" y="221.7" width="16.4" height="22.8" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-10" class="candle hit" tabindex="0">
 <title>Jour 11 : ouverture 102,58, plus haut 105,22, plus bas 99,57, clôture 101,27</title>
-<line x1="403.9" y1="217.2" x2="403.9" y2="275.6" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="395.7" y="244.5" width="16.4" height="13.6" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="403.9" y1="217.2" x2="403.9" y2="275.6" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="395.7" y="244.5" width="16.4" height="13.6" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-11" class="candle hit" tabindex="0">
 <title>Jour 12 : ouverture 101,27, plus haut 106,78, plus bas 100,31, clôture 104,14</title>
-<line x1="436.6" y1="201.0" x2="436.6" y2="268.0" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="428.4" y="228.3" width="16.4" height="29.7" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="436.6" y1="201.0" x2="436.6" y2="268.0" stroke="#34C759" stroke-width="1.5"/>
+<rect x="428.4" y="228.3" width="16.4" height="29.7" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-12" class="candle hit" tabindex="0">
 <title>Jour 13 : ouverture 104,14, plus haut 105,36, plus bas 103,59, clôture 104,99</title>
-<line x1="469.4" y1="215.7" x2="469.4" y2="234.0" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="461.2" y="219.5" width="16.4" height="8.8" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="469.4" y1="215.7" x2="469.4" y2="234.0" stroke="#34C759" stroke-width="1.5"/>
+<rect x="461.2" y="219.5" width="16.4" height="8.8" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-13" class="candle hit" tabindex="0">
 <title>Jour 14 : ouverture 104,99, plus haut 107,62, plus bas 104,71, clôture 106,36</title>
-<line x1="502.1" y1="192.3" x2="502.1" y2="222.4" stroke="#28CD41" stroke-width="1.5"/>
-<rect x="493.9" y="205.4" width="16.4" height="14.2" fill="#FFFFFF" stroke="#28CD41" stroke-width="1.5"/>
+<line x1="502.1" y1="192.3" x2="502.1" y2="222.4" stroke="#34C759" stroke-width="1.5"/>
+<rect x="493.9" y="205.4" width="16.4" height="14.2" fill="#FFFFFF" stroke="#34C759" stroke-width="1.5"/>
 </g>
 <g id="hit-14" class="candle hit" tabindex="0">
 <title>Jour 15 : ouverture 106,36, plus haut 107,09, plus bas 103,64, clôture 104,82</title>
-<line x1="534.9" y1="197.8" x2="534.9" y2="233.5" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="526.7" y="205.4" width="16.4" height="15.9" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="534.9" y1="197.8" x2="534.9" y2="233.5" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="526.7" y="205.4" width="16.4" height="15.9" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-15" class="candle hit" tabindex="0">
 <title>Jour 16 : ouverture 104,82, plus haut 105,76, plus bas 103,42, clôture 104,70</title>
-<line x1="567.6" y1="211.6" x2="567.6" y2="235.8" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="559.4" y="221.3" width="16.4" height="1.5" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="567.6" y1="211.6" x2="567.6" y2="235.8" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="559.4" y="221.3" width="16.4" height="1.5" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-16" class="candle hit" tabindex="0">
 <title>Jour 17 : ouverture 104,70, plus haut 106,02, plus bas 98,70, clôture 99,84</title>
-<line x1="600.4" y1="208.9" x2="600.4" y2="284.6" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="592.2" y="222.5" width="16.4" height="50.3" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="600.4" y1="208.9" x2="600.4" y2="284.6" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="592.2" y="222.5" width="16.4" height="50.3" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-17" class="candle hit" tabindex="0">
 <title>Jour 18 : ouverture 99,84, plus haut 102,13, plus bas 91,51, clôture 94,40</title>
-<line x1="633.1" y1="249.1" x2="633.1" y2="359.0" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="624.9" y="272.8" width="16.4" height="56.3" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="633.1" y1="249.1" x2="633.1" y2="359.0" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="624.9" y="272.8" width="16.4" height="56.3" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-18" class="candle hit" tabindex="0">
 <title>Jour 19 : ouverture 94,40, plus haut 95,03, plus bas 91,68, clôture 93,67</title>
-<line x1="665.9" y1="322.6" x2="665.9" y2="357.3" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="657.7" y="329.1" width="16.4" height="7.6" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="665.9" y1="322.6" x2="665.9" y2="357.3" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="657.7" y="329.1" width="16.4" height="7.6" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="hit-19" class="candle hit" tabindex="0">
 <title>Jour 20 : ouverture 93,67, plus haut 94,95, plus bas 87,63, clôture 88,50</title>
-<line x1="698.6" y1="323.4" x2="698.6" y2="399.2" stroke="#FF3B30" stroke-width="1.5"/>
-<rect x="690.4" y="336.7" width="16.4" height="53.5" fill="#FF3B30" stroke="#FF3B30" stroke-width="1.5"/>
+<line x1="698.6" y1="323.4" x2="698.6" y2="399.2" stroke="#FF383C" stroke-width="1.5"/>
+<rect x="690.4" y="336.7" width="16.4" height="53.5" fill="#FF383C" stroke="#FF383C" stroke-width="1.5"/>
 </g>
 <g id="tip-0" class="tip"><rect x="4" y="241.1" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="13" y="262.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Jour 1</text><text x="13" y="278.6" font-size="12.5" font-weight="400" fill="#6E6E73">ouverture 100,00 — clôture 100,25</text><text x="13" y="294.6" font-size="12.5" font-weight="400" fill="#6E6E73">plus haut 101,75 — plus bas 98,88</text></g>
 <g id="tip-1" class="tip"><rect x="9.1" y="226.7" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="18.1" y="248.2" font-size="12.5" font-weight="700" fill="#1D1D1F">Jour 2</text><text x="18.1" y="264.2" font-size="12.5" font-weight="400" fill="#6E6E73">ouverture 100,25 — clôture 102,83</text><text x="18.1" y="280.2" font-size="12.5" font-weight="400" fill="#6E6E73">plus haut 103,14 — plus bas 99,93</text></g>

@@ -5,11 +5,11 @@
 <rect width="620" height="480" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="22" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Renewals Now Lead the Revenue Mix</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Revenue share by type, each quarter</text>
-<rect x="40.0" y="88.0" width="14" height="14" rx="3" fill="#007AFF"/>
+<rect x="40.0" y="88.0" width="14" height="14" rx="3" fill="#0088FF"/>
 <text x="60.0" y="100.0" font-size="12" fill="#1D1D1F">New</text>
-<rect x="103.0" y="88.0" width="14" height="14" rx="3" fill="#28CD41"/>
+<rect x="103.0" y="88.0" width="14" height="14" rx="3" fill="#34C759"/>
 <text x="123.0" y="100.0" font-size="12" fill="#1D1D1F">Renewal</text>
-<rect x="194.0" y="88.0" width="14" height="14" rx="3" fill="#FF9500"/>
+<rect x="194.0" y="88.0" width="14" height="14" rx="3" fill="#FF8D28"/>
 <text x="214.0" y="100.0" font-size="12" fill="#1D1D1F">Expansion</text>
 <line x1="60.0" y1="420.0" x2="590.0" y2="420.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="50.0" y="424.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">0%</text>
@@ -22,18 +22,18 @@
 <line x1="60.0" y1="150.0" x2="590.0" y2="150.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="50.0" y="154.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">100%</text>
 <text x="18" y="285.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 285.0)">Share of revenue</text>
-<rect id="hit-0" class="seg hit" tabindex="0" x="86.5" y="271.5" width="79.5" height="148.5" fill="#007AFF" role="img" aria-label="New, Q1: 55% of revenue"/>
-<rect id="hit-1" class="seg hit" tabindex="0" x="86.5" y="190.5" width="79.5" height="81.0" fill="#28CD41" role="img" aria-label="Renewal, Q1: 30% of revenue"/>
-<rect id="hit-2" class="seg hit" tabindex="0" x="86.5" y="150.0" width="79.5" height="40.5" fill="#FF9500" role="img" aria-label="Expansion, Q1: 15% of revenue"/>
-<rect id="hit-3" class="seg hit" tabindex="0" x="219.0" y="290.4" width="79.5" height="129.6" fill="#007AFF" role="img" aria-label="New, Q2: 48% of revenue"/>
-<rect id="hit-4" class="seg hit" tabindex="0" x="219.0" y="193.2" width="79.5" height="97.2" fill="#28CD41" role="img" aria-label="Renewal, Q2: 36% of revenue"/>
-<rect id="hit-5" class="seg hit" tabindex="0" x="219.0" y="150.0" width="79.5" height="43.2" fill="#FF9500" role="img" aria-label="Expansion, Q2: 16% of revenue"/>
-<rect id="hit-6" class="seg hit" tabindex="0" x="351.5" y="312.0" width="79.5" height="108.0" fill="#007AFF" role="img" aria-label="New, Q3: 40% of revenue"/>
-<rect id="hit-7" class="seg hit" tabindex="0" x="351.5" y="198.6" width="79.5" height="113.4" fill="#28CD41" role="img" aria-label="Renewal, Q3: 42% of revenue"/>
-<rect id="hit-8" class="seg hit" tabindex="0" x="351.5" y="150.0" width="79.5" height="48.6" fill="#FF9500" role="img" aria-label="Expansion, Q3: 18% of revenue"/>
-<rect id="hit-9" class="seg hit" tabindex="0" x="484.0" y="330.9" width="79.5" height="89.1" fill="#007AFF" role="img" aria-label="New, Q4: 33% of revenue"/>
-<rect id="hit-10" class="seg hit" tabindex="0" x="484.0" y="204.0" width="79.5" height="126.9" fill="#28CD41" role="img" aria-label="Renewal, Q4: 47% of revenue"/>
-<rect id="hit-11" class="seg hit" tabindex="0" x="484.0" y="150.0" width="79.5" height="54.0" fill="#FF9500" role="img" aria-label="Expansion, Q4: 20% of revenue"/>
+<rect id="hit-0" class="seg hit" tabindex="0" x="86.5" y="271.5" width="79.5" height="148.5" fill="#0088FF" role="img" aria-label="New, Q1: 55% of revenue"/>
+<rect id="hit-1" class="seg hit" tabindex="0" x="86.5" y="190.5" width="79.5" height="81.0" fill="#34C759" role="img" aria-label="Renewal, Q1: 30% of revenue"/>
+<rect id="hit-2" class="seg hit" tabindex="0" x="86.5" y="150.0" width="79.5" height="40.5" fill="#FF8D28" role="img" aria-label="Expansion, Q1: 15% of revenue"/>
+<rect id="hit-3" class="seg hit" tabindex="0" x="219.0" y="290.4" width="79.5" height="129.6" fill="#0088FF" role="img" aria-label="New, Q2: 48% of revenue"/>
+<rect id="hit-4" class="seg hit" tabindex="0" x="219.0" y="193.2" width="79.5" height="97.2" fill="#34C759" role="img" aria-label="Renewal, Q2: 36% of revenue"/>
+<rect id="hit-5" class="seg hit" tabindex="0" x="219.0" y="150.0" width="79.5" height="43.2" fill="#FF8D28" role="img" aria-label="Expansion, Q2: 16% of revenue"/>
+<rect id="hit-6" class="seg hit" tabindex="0" x="351.5" y="312.0" width="79.5" height="108.0" fill="#0088FF" role="img" aria-label="New, Q3: 40% of revenue"/>
+<rect id="hit-7" class="seg hit" tabindex="0" x="351.5" y="198.6" width="79.5" height="113.4" fill="#34C759" role="img" aria-label="Renewal, Q3: 42% of revenue"/>
+<rect id="hit-8" class="seg hit" tabindex="0" x="351.5" y="150.0" width="79.5" height="48.6" fill="#FF8D28" role="img" aria-label="Expansion, Q3: 18% of revenue"/>
+<rect id="hit-9" class="seg hit" tabindex="0" x="484.0" y="330.9" width="79.5" height="89.1" fill="#0088FF" role="img" aria-label="New, Q4: 33% of revenue"/>
+<rect id="hit-10" class="seg hit" tabindex="0" x="484.0" y="204.0" width="79.5" height="126.9" fill="#34C759" role="img" aria-label="Renewal, Q4: 47% of revenue"/>
+<rect id="hit-11" class="seg hit" tabindex="0" x="484.0" y="150.0" width="79.5" height="54.0" fill="#FF8D28" role="img" aria-label="Expansion, Q4: 20% of revenue"/>
 <line x1="60.0" y1="420.0" x2="590.0" y2="420.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <text x="126.2" y="440.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Q1</text>
 <text x="258.8" y="440.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Q2</text>

@@ -15,7 +15,7 @@
 <text x="90.0" y="281.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">wt</text>
 <text x="90.0" y="344.6" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">accel</text>
 <text x="90.0" y="408.2" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">disp</text>
-<rect id="hit-0" class="cell hit" tabindex="0" x="100.0" y="118.0" width="63.6" height="63.6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1"><title>mpg x mpg: r = 1.00</title></rect>
+<rect id="hit-0" class="cell hit" tabindex="0" x="100.0" y="118.0" width="63.6" height="63.6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1"><title>mpg x mpg: r = 1.00</title></rect>
 <text x="131.8" y="153.8" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">1.00</text>
 <rect id="hit-1" class="cell hit" tabindex="0" x="163.6" y="118.0" width="63.6" height="63.6" fill="#FF665E" stroke="#FFFFFF" stroke-width="1"><title>mpg x hp: r = -0.78</title></rect>
 <text x="195.4" y="153.8" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">-0.78</text>
@@ -27,7 +27,7 @@
 <text x="386.2" y="153.8" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">-0.85</text>
 <rect id="hit-5" class="cell hit" tabindex="0" x="100.0" y="181.6" width="63.6" height="63.6" fill="#FF665E" stroke="#FFFFFF" stroke-width="1"><title>hp x mpg: r = -0.78</title></rect>
 <text x="131.8" y="217.4" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">-0.78</text>
-<rect id="hit-6" class="cell hit" tabindex="0" x="163.6" y="181.6" width="63.6" height="63.6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1"><title>hp x hp: r = 1.00</title></rect>
+<rect id="hit-6" class="cell hit" tabindex="0" x="163.6" y="181.6" width="63.6" height="63.6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1"><title>hp x hp: r = 1.00</title></rect>
 <text x="195.4" y="217.4" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">1.00</text>
 <rect id="hit-7" class="cell hit" tabindex="0" x="227.2" y="181.6" width="63.6" height="63.6" fill="#57A7FF" stroke="#FFFFFF" stroke-width="1"><title>hp x wt: r = 0.66</title></rect>
 <text x="259.0" y="217.4" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">0.66</text>
@@ -39,7 +39,7 @@
 <text x="131.8" y="281.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">-0.87</text>
 <rect id="hit-11" class="cell hit" tabindex="0" x="163.6" y="245.2" width="63.6" height="63.6" fill="#57A7FF" stroke="#FFFFFF" stroke-width="1"><title>wt x hp: r = 0.66</title></rect>
 <text x="195.4" y="281.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">0.66</text>
-<rect id="hit-12" class="cell hit" tabindex="0" x="227.2" y="245.2" width="63.6" height="63.6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1"><title>wt x wt: r = 1.00</title></rect>
+<rect id="hit-12" class="cell hit" tabindex="0" x="227.2" y="245.2" width="63.6" height="63.6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1"><title>wt x wt: r = 1.00</title></rect>
 <text x="259.0" y="281.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">1.00</text>
 <rect id="hit-13" class="cell hit" tabindex="0" x="290.8" y="245.2" width="63.6" height="63.6" fill="#FFADA8" stroke="#FFFFFF" stroke-width="1"><title>wt x accel: r = -0.42</title></rect>
 <text x="322.6" y="281.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#1D1D1F" text-anchor="middle">-0.42</text>
@@ -51,7 +51,7 @@
 <text x="195.4" y="344.6" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">-0.69</text>
 <rect id="hit-17" class="cell hit" tabindex="0" x="227.2" y="308.8" width="63.6" height="63.6" fill="#FFADA8" stroke="#FFFFFF" stroke-width="1"><title>accel x wt: r = -0.42</title></rect>
 <text x="259.0" y="344.6" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#1D1D1F" text-anchor="middle">-0.42</text>
-<rect id="hit-18" class="cell hit" tabindex="0" x="290.8" y="308.8" width="63.6" height="63.6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1"><title>accel x accel: r = 1.00</title></rect>
+<rect id="hit-18" class="cell hit" tabindex="0" x="290.8" y="308.8" width="63.6" height="63.6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1"><title>accel x accel: r = 1.00</title></rect>
 <text x="322.6" y="344.6" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">1.00</text>
 <rect id="hit-19" class="cell hit" tabindex="0" x="354.4" y="308.8" width="63.6" height="63.6" fill="#FF938D" stroke="#FFFFFF" stroke-width="1"><title>accel x disp: r = -0.55</title></rect>
 <text x="386.2" y="344.6" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#1D1D1F" text-anchor="middle">-0.55</text>
@@ -63,7 +63,7 @@
 <text x="259.0" y="408.2" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">0.89</text>
 <rect id="hit-23" class="cell hit" tabindex="0" x="290.8" y="372.4" width="63.6" height="63.6" fill="#FF938D" stroke="#FFFFFF" stroke-width="1"><title>disp x accel: r = -0.55</title></rect>
 <text x="322.6" y="408.2" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#1D1D1F" text-anchor="middle">-0.55</text>
-<rect id="hit-24" class="cell hit" tabindex="0" x="354.4" y="372.4" width="63.6" height="63.6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1"><title>disp x disp: r = 1.00</title></rect>
+<rect id="hit-24" class="cell hit" tabindex="0" x="354.4" y="372.4" width="63.6" height="63.6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1"><title>disp x disp: r = 1.00</title></rect>
 <text x="386.2" y="408.2" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#FFFFFF" text-anchor="middle">1.00</text>
 <g id="tip-0" class="tip"><rect x="28.3" y="185.6" width="207" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="37.3" y="207.1" font-size="12.5" font-weight="700" fill="#1D1D1F">mpg x mpg</text><text x="37.3" y="223.1" font-size="12.5" font-weight="400" fill="#6E6E73">r = 1.00</text><text x="37.3" y="239.1" font-size="12.5" font-weight="400" fill="#6E6E73">strong positive correlation</text></g>
 <g id="tip-1" class="tip"><rect x="91.9" y="185.6" width="207" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="100.9" y="207.1" font-size="12.5" font-weight="700" fill="#1D1D1F">mpg x hp</text><text x="100.9" y="223.1" font-size="12.5" font-weight="400" fill="#6E6E73">r = -0.78</text><text x="100.9" y="239.1" font-size="12.5" font-weight="400" fill="#6E6E73">strong negative correlation</text></g>
@@ -91,7 +91,7 @@
 <g id="tip-23" class="tip"><rect x="212.1" y="393.5" width="221" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="221.1" y="415" font-size="12.5" font-weight="700" fill="#1D1D1F">disp x accel</text><text x="221.1" y="431" font-size="12.5" font-weight="400" fill="#6E6E73">r = -0.55</text><text x="221.1" y="447" font-size="12.5" font-weight="400" fill="#6E6E73">moderate negative correlation</text></g>
 <g id="tip-24" class="tip"><rect x="249" y="393.5" width="207" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="258" y="415" font-size="12.5" font-weight="700" fill="#1D1D1F">disp x disp</text><text x="258" y="431" font-size="12.5" font-weight="400" fill="#6E6E73">r = 1.00</text><text x="258" y="447" font-size="12.5" font-weight="400" fill="#6E6E73">strong positive correlation</text></g>
 <text x="100.0" y="452.0" font-size="10" fill="#6E6E73">-1</text>
-<rect x="122.0" y="442.0" width="12" height="11" fill="#FF3B30" stroke="#E5E5EA" stroke-width="0.5"/>
+<rect x="122.0" y="442.0" width="12" height="11" fill="#FF383C" stroke="#E5E5EA" stroke-width="0.5"/>
 <rect x="136.0" y="442.0" width="12" height="11" fill="#FF6C64" stroke="#E5E5EA" stroke-width="0.5"/>
 <rect x="150.0" y="442.0" width="12" height="11" fill="#FF9D98" stroke="#E5E5EA" stroke-width="0.5"/>
 <rect x="164.0" y="442.0" width="12" height="11" fill="#FFCECB" stroke="#E5E5EA" stroke-width="0.5"/>
@@ -99,7 +99,7 @@
 <rect x="192.0" y="442.0" width="12" height="11" fill="#BFDEFF" stroke="#E5E5EA" stroke-width="0.5"/>
 <rect x="206.0" y="442.0" width="12" height="11" fill="#80BCFF" stroke="#E5E5EA" stroke-width="0.5"/>
 <rect x="220.0" y="442.0" width="12" height="11" fill="#409BFF" stroke="#E5E5EA" stroke-width="0.5"/>
-<rect x="234.0" y="442.0" width="12" height="11" fill="#007AFF" stroke="#E5E5EA" stroke-width="0.5"/>
+<rect x="234.0" y="442.0" width="12" height="11" fill="#0088FF" stroke="#E5E5EA" stroke-width="0.5"/>
 <text x="254.0" y="452.0" font-size="10" fill="#6E6E73">+1</text>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

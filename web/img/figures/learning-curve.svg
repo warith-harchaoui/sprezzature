@@ -34,44 +34,44 @@
 <text x="676.9" y="526.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">16000</text>
 <text x="776.0" y="526.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">32000</text>
 <text x="429.0" y="558.0" font-size="12" fill="#6E6E73" text-anchor="middle">Training examples</text>
-<polygon points="82.0,201.9 181.1,207.2 280.3,211.4 379.4,216.6 478.6,222.6 577.7,225.9 676.9,231.8 776.0,236.0 776.0,238.1 676.9,234.8 577.7,228.1 478.6,223.7 379.4,218.6 280.3,214.0 181.1,210.5 82.0,206.1" fill="#FF9500" opacity="0.16"/>
-<polyline points="82.0,203.9 181.1,208.3 280.3,212.7 379.4,217.2 478.6,223.0 577.7,227.4 676.9,233.4 776.0,236.8" fill="none" stroke="#FF9500" stroke-width="2.4" stroke-linejoin="round"/>
-<circle cx="82.0" cy="203.9" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<polygon points="82.0,201.9 181.1,207.2 280.3,211.4 379.4,216.6 478.6,222.6 577.7,225.9 676.9,231.8 776.0,236.0 776.0,238.1 676.9,234.8 577.7,228.1 478.6,223.7 379.4,218.6 280.3,214.0 181.1,210.5 82.0,206.1" fill="#FF8D28" opacity="0.16"/>
+<polyline points="82.0,203.9 181.1,208.3 280.3,212.7 379.4,217.2 478.6,223.0 577.7,227.4 676.9,233.4 776.0,236.8" fill="none" stroke="#FF8D28" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="82.0" cy="203.9" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Training at 250 examples: 0.99, folds 0.99 to 1.00" x="72.0" y="191.9" width="20" height="24.2" fill="transparent"><title>Training · 250: 0.99</title></rect>
-<circle cx="181.1" cy="208.3" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="181.1" cy="208.3" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Training at 500 examples: 0.99, folds 0.99 to 0.99" x="171.1" y="197.2" width="20" height="23.3" fill="transparent"><title>Training · 500: 0.99</title></rect>
-<circle cx="280.3" cy="212.7" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="280.3" cy="212.7" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Training at 1000 examples: 0.98, folds 0.98 to 0.99" x="270.3" y="201.4" width="20" height="22.6" fill="transparent"><title>Training · 1000: 0.98</title></rect>
-<circle cx="379.4" cy="217.2" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="379.4" cy="217.2" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Training at 2000 examples: 0.98, folds 0.98 to 0.98" x="369.4" y="206.6" width="20" height="21.9" fill="transparent"><title>Training · 2000: 0.98</title></rect>
-<circle cx="478.6" cy="223.0" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="478.6" cy="223.0" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Training at 4000 examples: 0.97, folds 0.97 to 0.97" x="468.6" y="212.6" width="20" height="21.1" fill="transparent"><title>Training · 4000: 0.97</title></rect>
-<circle cx="577.7" cy="227.4" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="577.7" cy="227.4" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Training at 8000 examples: 0.97, folds 0.97 to 0.97" x="567.7" y="215.9" width="20" height="22.2" fill="transparent"><title>Training · 8000: 0.97</title></rect>
-<circle cx="676.9" cy="233.4" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="676.9" cy="233.4" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Training at 16000 examples: 0.96, folds 0.96 to 0.96" x="666.9" y="221.8" width="20" height="23.0" fill="transparent"><title>Training · 16000: 0.96</title></rect>
-<circle cx="776.0" cy="236.8" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="776.0" cy="236.8" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Training at 32000 examples: 0.96, folds 0.96 to 0.96" x="766.0" y="226.0" width="20" height="22.1" fill="transparent"><title>Training · 32000: 0.96</title></rect>
-<text x="788.0" y="240.8" font-size="12" font-weight="700" fill="#FF9500">Training</text>
-<polygon points="82.0,415.1 181.1,389.2 280.3,367.0 379.4,344.7 478.6,320.9 577.7,304.7 676.9,286.4 776.0,259.5 776.0,268.2 676.9,293.2 577.7,316.9 478.6,340.5 379.4,365.3 280.3,386.6 181.1,407.9 82.0,433.6" fill="#007AFF" opacity="0.16"/>
-<polyline points="82.0,422.3 181.1,397.3 280.3,377.6 379.4,356.9 478.6,330.6 577.7,308.7 676.9,288.8 776.0,263.6" fill="none" stroke="#007AFF" stroke-width="2.4" stroke-linejoin="round"/>
-<circle cx="82.0" cy="422.3" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<text x="788.0" y="240.8" font-size="12" font-weight="700" fill="#FF8D28">Training</text>
+<polygon points="82.0,415.1 181.1,389.2 280.3,367.0 379.4,344.7 478.6,320.9 577.7,304.7 676.9,286.4 776.0,259.5 776.0,268.2 676.9,293.2 577.7,316.9 478.6,340.5 379.4,365.3 280.3,386.6 181.1,407.9 82.0,433.6" fill="#0088FF" opacity="0.16"/>
+<polyline points="82.0,422.3 181.1,397.3 280.3,377.6 379.4,356.9 478.6,330.6 577.7,308.7 676.9,288.8 776.0,263.6" fill="none" stroke="#0088FF" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="82.0" cy="422.3" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Validation at 250 examples: 0.74, folds 0.73 to 0.75" x="72.0" y="405.1" width="20" height="38.5" fill="transparent"><title>Validation · 250: 0.74</title></rect>
-<circle cx="181.1" cy="397.3" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="181.1" cy="397.3" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-9" class="pt hit" tabindex="0" role="img" aria-label="Validation at 500 examples: 0.77, folds 0.76 to 0.78" x="171.1" y="379.2" width="20" height="38.7" fill="transparent"><title>Validation · 500: 0.77</title></rect>
-<circle cx="280.3" cy="377.6" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="280.3" cy="377.6" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-10" class="pt hit" tabindex="0" role="img" aria-label="Validation at 1000 examples: 0.80, folds 0.79 to 0.81" x="270.3" y="357.0" width="20" height="39.6" fill="transparent"><title>Validation · 1000: 0.80</title></rect>
-<circle cx="379.4" cy="356.9" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="379.4" cy="356.9" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-11" class="pt hit" tabindex="0" role="img" aria-label="Validation at 2000 examples: 0.82, folds 0.81 to 0.83" x="369.4" y="334.7" width="20" height="40.6" fill="transparent"><title>Validation · 2000: 0.82</title></rect>
-<circle cx="478.6" cy="330.6" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="478.6" cy="330.6" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-12" class="pt hit" tabindex="0" role="img" aria-label="Validation at 4000 examples: 0.85, folds 0.84 to 0.86" x="468.6" y="310.9" width="20" height="39.7" fill="transparent"><title>Validation · 4000: 0.85</title></rect>
-<circle cx="577.7" cy="308.7" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="577.7" cy="308.7" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-13" class="pt hit" tabindex="0" role="img" aria-label="Validation at 8000 examples: 0.87, folds 0.87 to 0.88" x="567.7" y="294.7" width="20" height="32.2" fill="transparent"><title>Validation · 8000: 0.87</title></rect>
-<circle cx="676.9" cy="288.8" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="676.9" cy="288.8" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-14" class="pt hit" tabindex="0" role="img" aria-label="Validation at 16000 examples: 0.90, folds 0.89 to 0.90" x="666.9" y="276.4" width="20" height="26.8" fill="transparent"><title>Validation · 16000: 0.90</title></rect>
-<circle cx="776.0" cy="263.6" r="3.4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="776.0" cy="263.6" r="3.4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="pt-15" class="pt hit" tabindex="0" role="img" aria-label="Validation at 32000 examples: 0.93, folds 0.92 to 0.93" x="766.0" y="249.5" width="20" height="28.7" fill="transparent"><title>Validation · 32000: 0.93</title></rect>
-<text x="788.0" y="267.6" font-size="12" font-weight="700" fill="#007AFF">Validation</text>
+<text x="788.0" y="267.6" font-size="12" font-weight="700" fill="#0088FF">Validation</text>
 <path d="M 750.0,236.8 L 743.0,236.8 L 743.0,263.6 L 750.0,263.6" fill="none" stroke="#6E6E73" stroke-width="1"/>
 <rect x="678.0" y="242.2" width="64.0" height="15" fill="#FFFFFF" opacity="0.88" rx="2"/>
 <text x="738.0" y="254.2" font-size="11" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">gap 0.03</text>

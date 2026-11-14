@@ -10,7 +10,7 @@
 <rect class="paper" width="1280" height="1000" fill="#FFFFFF"/>
 <text x="120" y="92" font-size="42" font-weight="700" fill="#1D1D1F">Growth went one way, carbon the other</text>
 <text x="120" y="140" font-size="24" fill="#6E6E73">United Kingdom, 1990–2022: output per person up ~66% while carbon per person fell ~53% </text>
-<circle cx="131.0" cy="182.0" r="11.0" fill="#D55E00"/>
+<circle cx="131.0" cy="182.0" r="11.0" fill="#E73121"/>
 <text x="154.0" y="189.0" font-size="22" fill="#1D1D1F">Start 1990</text>
 <circle cx="341.0" cy="182.0" r="11.0" fill="#0072B2"/>
 <text x="364.0" y="189.0" font-size="22" fill="#1D1D1F">Now 2022</text>
@@ -55,7 +55,7 @@
 <g id="hit-0" class="wp hit" tabindex="0" role="img" aria-label="1990: 28.0k US dollars per person, 10.0 tonnes CO2 per person">
 <title>1990: 28.0k US dollars per person, 10.0 tonnes CO2 per person</title>
 <circle class="halo" cx="212.5" cy="355.6" r="22" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle cx="212.5" cy="355.6" r="13.0" fill="#D55E00" stroke="#FFFFFF" stroke-width="2.5"/>
+<circle cx="212.5" cy="355.6" r="13.0" fill="#E73121" stroke="#FFFFFF" stroke-width="2.5"/>
 </g>
 <g id="hit-1" class="wp hit" tabindex="0" role="img" aria-label="1995: 30.2k US dollars per person, 10.4 tonnes CO2 per person">
 <title>1995: 30.2k US dollars per person, 10.4 tonnes CO2 per person</title>
@@ -100,7 +100,7 @@
 <g id="tip-5" class="tip"><rect x="785.8" y="634" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="794.8" y="655.5" font-size="12.5" font-weight="700" fill="#1D1D1F">2015</text><text x="794.8" y="671.5" font-size="12.5" font-weight="400" fill="#6E6E73">42.1k $ per person</text><text x="794.8" y="687.5" font-size="12.5" font-weight="400" fill="#6E6E73">6.5 t CO2 per person</text></g>
 <g id="tip-6" class="tip"><rect x="933.8" y="727.9" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="942.8" y="749.4" font-size="12.5" font-weight="700" fill="#1D1D1F">2019</text><text x="942.8" y="765.4" font-size="12.5" font-weight="400" fill="#6E6E73">45.3k $ per person</text><text x="942.8" y="781.4" font-size="12.5" font-weight="400" fill="#6E6E73">5.4 t CO2 per person</text></g>
 <g id="tip-7" class="tip"><rect x="994" y="783.2" width="158" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1003" y="804.7" font-size="12.5" font-weight="700" fill="#1D1D1F">2022</text><text x="1003" y="820.7" font-size="12.5" font-weight="400" fill="#6E6E73">46.6k $ per person</text><text x="1003" y="836.7" font-size="12.5" font-weight="400" fill="#6E6E73">4.7 t CO2 per person</text></g>
-<rect x="128.0" y="338.6" width="74.0" height="34.0" rx="17" fill="#D55E00"/>
+<rect x="128.0" y="338.6" width="74.0" height="34.0" rx="17" fill="#E73121"/>
 <text x="165.0" y="362.6" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">1990</text>
 <text x="517.8" y="286.9" font-size="21" font-weight="600" fill="#1D1D1F" text-anchor="middle">2000</text>
 <text x="743.4" y="499.2" font-size="21" font-weight="600" fill="#1D1D1F" text-anchor="start">2010</text>

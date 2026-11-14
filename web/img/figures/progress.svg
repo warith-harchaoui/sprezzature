@@ -9,23 +9,23 @@
 <text x="40" y="141.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">2 of 6 goals are rates, not accumulations, and carry no pace rule</text>
 <text x="40" y="166.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">2 of the 4 goals on a schedule are behind pace; the furthest is Docs pages rewritten, 34 points short.</text>
 <rect x="232.0" y="216.3" width="558.0" height="21.6" fill="#E5E5EA" opacity="0.5" rx="3"/>
-<rect x="232.0" y="216.3" width="189.1" height="21.6" fill="#FF9500" rx="3"/>
+<rect x="232.0" y="216.3" width="189.1" height="21.6" fill="#FF8D28" rx="3"/>
 <line x1="688.5" y1="213.3" x2="688.5" y2="241.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="574.4" y1="211.3" x2="574.4" y2="243.0" stroke="#1D1D1F" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65"/>
 <text x="218.0" y="232.6" font-size="12" fill="#1D1D1F" text-anchor="end">Docs pages rewritten</text>
 <text x="802.0" y="232.6" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">58 / 140</text>
-<text x="218.0" y="251.0" font-size="10" fill="#FF9500" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">41% · 34 points behind</text>
+<text x="218.0" y="251.0" font-size="10" fill="#FF8D28" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">41% · 34 points behind</text>
 <rect id="goal-0" class="goal hit" tabindex="0" role="img" aria-label="Docs pages rewritten: 58 of 140, 41%, 34 points behind" x="232.0" y="206.0" width="558.0" height="47.0" fill="transparent"><title>Docs pages rewritten: 41%</title></rect>
 <rect x="232.0" y="263.3" width="558.0" height="21.6" fill="#E5E5EA" opacity="0.5" rx="3"/>
-<rect x="232.0" y="263.3" width="313.5" height="21.6" fill="#FF9500" rx="3"/>
+<rect x="232.0" y="263.3" width="313.5" height="21.6" fill="#FF8D28" rx="3"/>
 <line x1="688.5" y1="260.3" x2="688.5" y2="288.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="574.4" y1="258.3" x2="574.4" y2="290.0" stroke="#1D1D1F" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65"/>
 <text x="218.0" y="279.6" font-size="12" fill="#1D1D1F" text-anchor="end">New paying teams</text>
 <text x="802.0" y="279.6" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">412 / 600</text>
-<text x="218.0" y="298.0" font-size="10" fill="#FF9500" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">69% · 6.3 points behind</text>
+<text x="218.0" y="298.0" font-size="10" fill="#FF8D28" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">69% · 6.3 points behind</text>
 <rect id="goal-1" class="goal hit" tabindex="0" role="img" aria-label="New paying teams: 412 of 600, 69%, 6.3 points behind" x="232.0" y="253.0" width="558.0" height="47.0" fill="transparent"><title>New paying teams: 69%</title></rect>
 <rect x="232.0" y="310.3" width="558.0" height="21.6" fill="#E5E5EA" opacity="0.5" rx="3"/>
-<rect x="232.0" y="310.3" width="376.9" height="21.6" fill="#007AFF" rx="3"/>
+<rect x="232.0" y="310.3" width="376.9" height="21.6" fill="#0088FF" rx="3"/>
 <line x1="688.5" y1="307.3" x2="688.5" y2="335.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="574.4" y1="305.3" x2="574.4" y2="337.0" stroke="#1D1D1F" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65"/>
 <text x="218.0" y="326.6" font-size="12" fill="#1D1D1F" text-anchor="end">Support tickets closed</text>
@@ -33,7 +33,7 @@
 <text x="218.0" y="345.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">83% · 7.6 points ahead</text>
 <rect id="goal-2" class="goal hit" tabindex="0" role="img" aria-label="Support tickets closed: 7430 of 9000, 83%, 7.6 points ahead" x="232.0" y="300.0" width="558.0" height="47.0" fill="transparent"><title>Support tickets closed: 83%</title></rect>
 <rect x="232.0" y="357.3" width="558.0" height="21.6" fill="#E5E5EA" opacity="0.5" rx="3"/>
-<rect x="232.0" y="357.3" width="558.0" height="21.6" fill="#28CD41" rx="3"/>
+<rect x="232.0" y="357.3" width="558.0" height="21.6" fill="#34C759" rx="3"/>
 <line x1="688.5" y1="354.3" x2="688.5" y2="382.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="574.4" y1="352.3" x2="574.4" y2="384.0" stroke="#1D1D1F" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65"/>
 <text x="218.0" y="373.6" font-size="12" fill="#1D1D1F" text-anchor="end">Partner integrations</text>
@@ -41,14 +41,14 @@
 <text x="218.0" y="392.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">122% · 47 points ahead</text>
 <rect id="goal-3" class="goal hit" tabindex="0" role="img" aria-label="Partner integrations: 11.0 of 9.0, 122%, 47 points ahead" x="232.0" y="347.0" width="558.0" height="47.0" fill="transparent"><title>Partner integrations: 122%</title></rect>
 <rect x="232.0" y="404.3" width="558.0" height="21.6" fill="#E5E5EA" opacity="0.5" rx="3"/>
-<rect x="232.0" y="404.3" width="456.7" height="21.6" fill="#28CD41" rx="3"/>
+<rect x="232.0" y="404.3" width="456.7" height="21.6" fill="#34C759" rx="3"/>
 <line x1="688.5" y1="401.3" x2="688.5" y2="429.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="218.0" y="420.6" font-size="12" fill="#1D1D1F" text-anchor="end">Uptime</text>
 <text x="802.0" y="420.6" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">0.9994 / 0.9990</text>
 <text x="218.0" y="439.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">100% · not on a schedule</text>
 <rect id="goal-4" class="goal hit" tabindex="0" role="img" aria-label="Uptime: 0.9994 of 0.9990, 100%, not on a schedule" x="232.0" y="394.0" width="558.0" height="47.0" fill="transparent"><title>Uptime: 100%</title></rect>
 <rect x="232.0" y="451.3" width="558.0" height="21.6" fill="#E5E5EA" opacity="0.5" rx="3"/>
-<rect x="232.0" y="451.3" width="390.3" height="21.6" fill="#007AFF" rx="3"/>
+<rect x="232.0" y="451.3" width="390.3" height="21.6" fill="#0088FF" rx="3"/>
 <line x1="688.5" y1="448.3" x2="688.5" y2="476.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="218.0" y="467.6" font-size="12" fill="#1D1D1F" text-anchor="end">Churn below 2%</text>
 <text x="802.0" y="467.6" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">0.0171 / 0.0200</text>

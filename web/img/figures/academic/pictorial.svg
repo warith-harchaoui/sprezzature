@@ -208,9 +208,9 @@ svg:hover .icons, svg:focus-within .icons { opacity: .30; }
 <defs>
 <clipPath id="reveal-los-angeles"><rect class="reveal" x="276.0" y="686.0" height="80.0" width="55.6"><animate attributeName="width" from="40.0" to="55.6" dur="0.7s" begin="0.40s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 0.61 0.36 1"/></rect></clipPath>
 </defs>
-<g clip-path="url(#clip-los-angeles)"><circle class="pic-los-angeles" cx="320.0" cy="703.8" r="10.4" fill="#D55E00"/><path class="pic-los-angeles" d="M 310.4 713.1 Q 303.2 717.2 303.2 721.3 L 310.4 731.4 L 309.6 760.0 L 314.4 760.0 L 318.8 736.9 L 321.2 736.9 L 325.6 760.0 L 330.4 760.0 L 329.6 731.4 L 336.8 721.3 Q 336.8 717.2 329.6 713.1 Z" fill="#D55E00"/></g>
+<g clip-path="url(#clip-los-angeles)"><circle class="pic-los-angeles" cx="320.0" cy="703.8" r="10.4" fill="#E73121"/><path class="pic-los-angeles" d="M 310.4 713.1 Q 303.2 717.2 303.2 721.3 L 310.4 731.4 L 309.6 760.0 L 314.4 760.0 L 318.8 736.9 L 321.2 736.9 L 325.6 760.0 L 330.4 760.0 L 329.6 731.4 L 336.8 721.3 Q 336.8 717.2 329.6 713.1 Z" fill="#E73121"/></g>
 </g>
-<text class="pic-val" x="1000" y="726.0" font-size="26" font-weight="700" fill="#D55E00" dominant-baseline="middle">4</text>
+<text class="pic-val" x="1000" y="726.0" font-size="26" font-weight="700" fill="#E73121" dominant-baseline="middle">4</text>
 <text x="1000" y="750.0" font-size="13" font-weight="600" fill="#6E6E73" dominant-baseline="middle">per 100</text>
 </g>
 <g id="row-tip-0" class="tip"><rect x="300" y="206" width="165" height="62.5" rx="9" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1.2"/><text x="309" y="227.5" font-size="12.5" font-weight="700" fill="#1D1D1F">Copenhagen</text><text x="309" y="243.5" font-size="12.5" font-weight="400" fill="#6E6E73">62 per 100 commuters</text><text x="309" y="259.5" font-size="12.5" font-weight="400" fill="#6E6E73">100.0% of the top row</text></g>

@@ -17,7 +17,7 @@
 <line x1="40.0" y1="220.0" x2="920.0" y2="220.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <text x="53.0" y="242.1" font-size="12" fill="#1D1D1F">Île-de-France</text>
 <text x="439.3" y="242.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">1284</text>
-<rect x="465.3" y="231.1" width="205.7" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="465.3" y="231.1" width="205.7" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="242.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">4118900</text>
 <text x="813.6" y="242.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0142</text>
 <text x="907.0" y="242.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">41</text>
@@ -25,7 +25,7 @@
 <line x1="40.0" y1="252.0" x2="920.0" y2="252.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="268.1" font-size="12" fill="#1D1D1F">Auvergne-Rhône-Alpes</text>
 <text x="439.3" y="268.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">612</text>
-<rect x="575.9" y="257.1" width="95.1" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="575.9" y="257.1" width="95.1" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="268.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">1903400</text>
 <text x="813.6" y="268.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0188</text>
 <text x="907.0" y="268.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">37</text>
@@ -33,7 +33,7 @@
 <line x1="40.0" y1="278.0" x2="920.0" y2="278.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="294.1" font-size="12" fill="#1D1D1F">Nouvelle-Aquitaine</text>
 <text x="439.3" y="294.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">398</text>
-<rect x="613.9" y="283.1" width="57.1" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="613.9" y="283.1" width="57.1" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="294.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">1142700</text>
 <text x="813.6" y="294.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0231</text>
 <text x="907.0" y="294.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">29</text>
@@ -41,7 +41,7 @@
 <line x1="40.0" y1="304.0" x2="920.0" y2="304.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="320.1" font-size="12" fill="#1D1D1F">Occitanie</text>
 <text x="439.3" y="320.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">377</text>
-<rect x="616.2" y="309.1" width="54.8" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="616.2" y="309.1" width="54.8" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="320.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">1097050</text>
 <text x="813.6" y="320.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0205</text>
 <text x="907.0" y="320.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">33</text>
@@ -49,7 +49,7 @@
 <line x1="40.0" y1="330.0" x2="920.0" y2="330.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="346.1" font-size="12" fill="#1D1D1F">Hauts-de-France</text>
 <text x="439.3" y="346.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">281</text>
-<rect x="633.9" y="335.1" width="37.1" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="633.9" y="335.1" width="37.1" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="346.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">742380</text>
 <text x="813.6" y="346.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0297</text>
 <text x="907.0" y="346.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">22</text>
@@ -57,7 +57,7 @@
 <line x1="40.0" y1="356.0" x2="920.0" y2="356.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="372.1" font-size="12" fill="#1D1D1F">Grand Est</text>
 <text x="439.3" y="372.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">254</text>
-<rect x="634.0" y="361.1" width="37.0" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="634.0" y="361.1" width="37.0" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="372.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">740500</text>
 <text x="813.6" y="372.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0151</text>
 <text x="907.0" y="372.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">38</text>
@@ -65,7 +65,7 @@
 <line x1="40.0" y1="382.0" x2="920.0" y2="382.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="398.1" font-size="12" fill="#1D1D1F">Bretagne</text>
 <text x="439.3" y="398.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">196</text>
-<rect x="643.3" y="387.1" width="27.7" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="643.3" y="387.1" width="27.7" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="398.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">553900</text>
 <text x="813.6" y="398.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0176</text>
 <text x="907.0" y="398.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">44</text>
@@ -73,7 +73,7 @@
 <line x1="40.0" y1="408.0" x2="920.0" y2="408.0" stroke="#E5E5EA" stroke-width="0.6"/>
 <text x="53.0" y="424.1" font-size="12" fill="#1D1D1F">Normandie</text>
 <text x="439.3" y="424.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">148</text>
-<rect x="650.9" y="413.1" width="20.1" height="14" fill="#007AFF" opacity="0.18" rx="2"/>
+<rect x="650.9" y="413.1" width="20.1" height="14" fill="#0088FF" opacity="0.18" rx="2"/>
 <text x="671.0" y="424.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">402600</text>
 <text x="813.6" y="424.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.0312</text>
 <text x="907.0" y="424.1" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">19</text>

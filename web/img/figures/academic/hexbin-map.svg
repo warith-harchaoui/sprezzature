@@ -616,7 +616,7 @@
 <text x="1323.7" y="629.8" font-size="16.5" font-weight="700" fill="#1D1D1F" text-anchor="start" stroke="#FFFFFF" stroke-width="3.2" stroke-linejoin="round" paint-order="stroke" opacity="0.98">Andes</text>
 <text x="473.4" y="437.9" font-size="16.5" font-weight="700" fill="#1D1D1F" text-anchor="middle" stroke="#FFFFFF" stroke-width="3.2" stroke-linejoin="round" paint-order="stroke" opacity="0.98">Himalaya</text>
 </g>
-<text x="40.0" y="920.0" font-size="52" font-weight="700" fill="#D55E00">Ring of Fire</text>
+<text x="40.0" y="920.0" font-size="52" font-weight="700" fill="#E73121">Ring of Fire</text>
 <text x="40.0" y="946.0" font-size="17" fill="#6E6E73">216 hexagons hold quakes · the busiest holds 218, all on the Pacific rim</text>
 <text x="510.0" y="886.0" font-size="16.5" font-weight="700" fill="#1D1D1F">Earthquakes per hexagon</text>
 <rect class="legend-swatch" x="510.0" y="898.0" width="40.0" height="26.0" fill="#440154"/>

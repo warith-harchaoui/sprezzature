@@ -1109,10 +1109,10 @@ def kit_page(
 <title>{html.escape(heading)}</title>
 <style>
   :root {{
-    --ink:#1D1D1F; --secondary:#6E6E73; --line:#E5E5EA; --paper:#FFFFFF; --accent:#007AFF;
+    --ink:#1D1D1F; --secondary:#6E6E73; --line:#E5E5EA; --paper:#FFFFFF; --accent:#0088FF;
   }}
   @media (prefers-color-scheme: dark) {{
-    :root {{ --ink:#F2F2F7; --secondary:#9A9AA0; --line:#2C2C2E; --paper:#0B0B0C; --accent:#0A84FF; }}
+    :root {{ --ink:#F2F2F7; --secondary:#9A9AA0; --line:#2C2C2E; --paper:#0B0B0C; --accent:#0091FF; }}
   }}
   * {{ box-sizing: border-box; }}
   body {{

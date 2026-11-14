@@ -5,7 +5,7 @@
 .pt{stroke:#FFFFFF;stroke-width:0.8}
 .eg{stroke-linecap:round}
 .hit{cursor:pointer;fill:transparent}
-.hit:focus{outline:3px solid #007AFF;outline-offset:2px}
+.hit:focus{outline:3px solid #0088FF;outline-offset:2px}
 @media (prefers-color-scheme: dark){
   [fill="#FFFFFF"]{fill:#0B0B0C;}
   [fill="#1D1D1F"]{fill:#F2F2F7;}
@@ -229,7 +229,7 @@
 <circle cx="940.0" cy="210.0" r="2.6" fill="#1D1D1F" fill-opacity="0.45"/>
 <text x="556.0" y="345.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">σ 0,00</text>
 <text x="940.0" y="345.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end">σ 1,00</text>
-<circle cx="556.0" cy="328.0" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="2"><animate attributeName="cx" values="556;556;599;599;641;641;684;684;727;727;769;769;812;812;855;855;897;897;940;940;897;897;855;855;812;812;769;769;727;727;684;684;641;641;599;599;556;556" dur="14s" repeatCount="indefinite"/><animate attributeName="cy" values="328;328;307;307;288;288;269;269;252;252;238;238;226;226;217;217;212;212;210;210;212;212;217;217;226;226;238;238;252;252;269;269;288;288;307;307;328;328" dur="14s" repeatCount="indefinite"/></circle>
+<circle cx="556.0" cy="328.0" r="6" fill="#0088FF" stroke="#FFFFFF" stroke-width="2"><animate attributeName="cx" values="556;556;599;599;641;641;684;684;727;727;769;769;812;812;855;855;897;897;940;940;897;897;855;855;812;812;769;769;727;727;684;684;641;641;599;599;556;556" dur="14s" repeatCount="indefinite"/><animate attributeName="cy" values="328;328;307;307;288;288;269;269;252;252;238;238;226;226;217;217;212;212;210;210;212;212;217;217;226;226;238;238;252;252;269;269;288;288;307;307;328;328" dur="14s" repeatCount="indefinite"/></circle>
 <text x="556.0" y="388.0" font-size="13" font-weight="600" fill="#1D1D1F">Voisins restés voisins</text>
 <line x1="556.0" y1="520.0" x2="940.0" y2="520.0" stroke="#E5E5EA" stroke-width="1.5"/>
 <polyline fill="none" stroke="#1D1D1F" stroke-opacity="0.45" stroke-width="2" points="556.0,402.0 598.7,449.5 641.3,475.6 684.0,493.9 726.7,501.6 769.3,509.3 812.0,507.7 854.7,507.7 897.3,510.8 940.0,510.8"/>
@@ -245,7 +245,7 @@
 <circle cx="940.0" cy="510.8" r="2.6" fill="#1D1D1F" fill-opacity="0.45"/>
 <text x="556.0" y="537.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">100 %</text>
 <text x="940.0" y="537.0" font-size="11" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end">8 %</text>
-<circle cx="556.0" cy="402.0" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="2"><animate attributeName="cx" values="556;556;599;599;641;641;684;684;727;727;769;769;812;812;855;855;897;897;940;940;897;897;855;855;812;812;769;769;727;727;684;684;641;641;599;599;556;556" dur="14s" repeatCount="indefinite"/><animate attributeName="cy" values="402;402;450;450;476;476;494;494;502;502;509;509;508;508;508;508;511;511;511;511;511;511;508;508;508;508;509;509;502;502;494;494;476;476;450;450;402;402" dur="14s" repeatCount="indefinite"/></circle>
+<circle cx="556.0" cy="402.0" r="6" fill="#0088FF" stroke="#FFFFFF" stroke-width="2"><animate attributeName="cx" values="556;556;599;599;641;641;684;684;727;727;769;769;812;812;855;855;897;897;940;940;897;897;855;855;812;812;769;769;727;727;684;684;641;641;599;599;556;556" dur="14s" repeatCount="indefinite"/><animate attributeName="cy" values="402;402;450;450;476;476;494;494;502;502;509;509;508;508;508;508;511;511;511;511;511;511;508;508;508;508;509;509;502;502;494;494;476;476;450;450;402;402" dur="14s" repeatCount="indefinite"/></circle>
 <text x="40.0" y="626.0" font-size="13" font-weight="600" fill="#1D1D1F">Chaque étape, en fixe</text>
 <rect x="40.0" y="640.0" width="82.8" height="82.8" fill="none" stroke="#E5E5EA" stroke-width="1" rx="5"/>
 <circle cx="82.1" cy="690.4" r="1.5" fill="#440154"/>
@@ -1027,7 +1027,7 @@
 <circle cx="913.5" cy="675.3" r="1.5" fill="#EDE527"/>
 <circle cx="910.6" cy="680.8" r="1.5" fill="#FDE725"/>
 <text x="898.6" y="738.8" font-size="10.5" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">1,00</text>
-<rect x="38.0" y="638.0" width="86.8" height="86.8" fill="none" stroke="#007AFF" stroke-width="2.5" rx="7"><animate attributeName="x" values="38;38;129;129;220;220;310;310;401;401;492;492;583;583;674;674;764;764;855;855;764;764;674;674;583;583;492;492;401;401;310;310;220;220;129;129;38;38" dur="14s" repeatCount="indefinite"/></rect>
+<rect x="38.0" y="638.0" width="86.8" height="86.8" fill="none" stroke="#0088FF" stroke-width="2.5" rx="7"><animate attributeName="x" values="38;38;129;129;220;220;310;310;401;401;492;492;583;583;674;674;764;764;855;855;764;764;674;674;583;583;492;492;401;401;310;310;220;220;129;129;38;38" dur="14s" repeatCount="indefinite"/></rect>
 <text x="40.0" y="758.8" font-size="11.5" fill="#6E6E73">σ, l’écart-type du bruit ajouté à chaque étape</text>
 <script><![CDATA[(function(){var s=document.documentElement;try{if(matchMedia("(prefers-reduced-motion: reduce)").matches){s.pauseAnimations();s.setCurrentTime(0);}}catch(e){}})();]]></script>
 <script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var fe=null;try{fe=window.frameElement}catch(err){}if(fe&&fe.hasAttribute('data-lb-obj'))return;if(fe&&window.parent!==window){svg.addEventListener('click',function(){window.parent.postMessage({szFig:1,type:'open-fullscreen'},'*');});return;}var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!req)return;var t=function(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);};svg.style.cursor='pointer';svg.setAttribute('tabindex','0');svg.addEventListener('click',t);svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>

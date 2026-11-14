@@ -667,12 +667,12 @@ input[type=text],input[type=number],select,textarea{
 @media (prefers-color-scheme:dark){
   input[type=text],input[type=number],select,textarea{background:#1c1c1e;
     border-color:rgba(235,235,245,.3)}}
-input[type=checkbox]{width:20px;height:20px;margin-top:.25rem;accent-color:#007AFF}
+input[type=checkbox]{width:20px;height:20px;margin-top:.25rem;accent-color:#0088FF}
 input:focus-visible,select:focus-visible,button:focus-visible{
-  outline:2px solid #007AFF;outline-offset:2px}
+  outline:2px solid #0088FF;outline-offset:2px}
 button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
   min-height:44px;padding:.5rem 1.25rem;font:inherit;font-size:15px;font-weight:500;
-  color:#fff;background:#007AFF;border:0;border-radius:9999px;cursor:pointer}
+  color:#fff;background:#0088FF;border:0;border-radius:9999px;cursor:pointer}
 button:hover{opacity:.9}
 p,div{margin-top:0}
 .font-mono,code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
@@ -681,8 +681,8 @@ pre,.overflow-x-auto{overflow-x:auto}
 @media (prefers-color-scheme:dark){
   [class*="text-label-secondary"]{color:rgba(235,235,245,.6)}}
 [class*="bg-surface-secondary"]{background:rgba(120,120,128,.12);border-radius:14px;padding:1rem}
-[class*="text-brand-red"]{color:#FF3B30}
-[class*="text-brand-blue"]{color:#007AFF}
+[class*="text-brand-red"]{color:#FF383C}
+[class*="text-brand-blue"]{color:#0088FF}
 .mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}
 .mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.ml-2{margin-left:.5rem}
 """

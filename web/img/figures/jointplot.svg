@@ -3,12 +3,12 @@
 <desc id="jp-desc">Joint plot of a sleep study: a central scatter of mean reaction time (vertical, milliseconds, lower is better) against hours slept the night before (horizontal) for 120 volunteers, with a fitted trend line sloping downward — more sleep, faster responses. A green histogram along the top rail shows hours slept are roughly symmetric; a purple histogram along the right rail shows reaction time has a long slow upper tail. Illustrative data.</desc>
 <style>.pt{cursor:pointer}.pt .halo{opacity:0}.pt:hover .halo,.pt:focus .halo{opacity:1}.pt:focus{outline:none}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}#topbar-0:hover~#topbartip-0,#topbar-0:focus~#topbartip-0{opacity:1}#topbar-1:hover~#topbartip-1,#topbar-1:focus~#topbartip-1{opacity:1}#topbar-2:hover~#topbartip-2,#topbar-2:focus~#topbartip-2{opacity:1}#topbar-3:hover~#topbartip-3,#topbar-3:focus~#topbartip-3{opacity:1}#topbar-4:hover~#topbartip-4,#topbar-4:focus~#topbartip-4{opacity:1}#topbar-5:hover~#topbartip-5,#topbar-5:focus~#topbartip-5{opacity:1}#topbar-6:hover~#topbartip-6,#topbar-6:focus~#topbartip-6{opacity:1}#topbar-7:hover~#topbartip-7,#topbar-7:focus~#topbartip-7{opacity:1}#topbar-8:hover~#topbartip-8,#topbar-8:focus~#topbartip-8{opacity:1}#topbar-9:hover~#topbartip-9,#topbar-9:focus~#topbartip-9{opacity:1}#topbar-10:hover~#topbartip-10,#topbar-10:focus~#topbartip-10{opacity:1}#topbar-11:hover~#topbartip-11,#topbar-11:focus~#topbartip-11{opacity:1}#topbar-12:hover~#topbartip-12,#topbar-12:focus~#topbartip-12{opacity:1}#topbar-13:hover~#topbartip-13,#topbar-13:focus~#topbartip-13{opacity:1}#rightbar-0:hover~#rightbartip-0,#rightbar-0:focus~#rightbartip-0{opacity:1}#rightbar-1:hover~#rightbartip-1,#rightbar-1:focus~#rightbartip-1{opacity:1}#rightbar-2:hover~#rightbartip-2,#rightbar-2:focus~#rightbartip-2{opacity:1}#rightbar-3:hover~#rightbartip-3,#rightbar-3:focus~#rightbartip-3{opacity:1}#rightbar-4:hover~#rightbartip-4,#rightbar-4:focus~#rightbartip-4{opacity:1}#rightbar-5:hover~#rightbartip-5,#rightbar-5:focus~#rightbartip-5{opacity:1}#rightbar-6:hover~#rightbartip-6,#rightbar-6:focus~#rightbartip-6{opacity:1}#rightbar-7:hover~#rightbartip-7,#rightbar-7:focus~#rightbartip-7{opacity:1}#rightbar-8:hover~#rightbartip-8,#rightbar-8:focus~#rightbartip-8{opacity:1}#rightbar-9:hover~#rightbartip-9,#rightbar-9:focus~#rightbartip-9{opacity:1}#rightbar-10:hover~#rightbartip-10,#rightbar-10:focus~#rightbartip-10{opacity:1}#rightbar-11:hover~#rightbartip-11,#rightbar-11:focus~#rightbartip-11{opacity:1}#rightbar-12:hover~#rightbartip-12,#rightbar-12:focus~#rightbartip-12{opacity:1}#rightbar-13:hover~#rightbartip-13,#rightbar-13:focus~#rightbartip-13{opacity:1}#point-0:hover~#pointtip-0,#point-0:focus~#pointtip-0{opacity:1}#point-1:hover~#pointtip-1,#point-1:focus~#pointtip-1{opacity:1}#point-2:hover~#pointtip-2,#point-2:focus~#pointtip-2{opacity:1}#point-3:hover~#pointtip-3,#point-3:focus~#pointtip-3{opacity:1}#point-4:hover~#pointtip-4,#point-4:focus~#pointtip-4{opacity:1}#point-5:hover~#pointtip-5,#point-5:focus~#pointtip-5{opacity:1}#point-6:hover~#pointtip-6,#point-6:focus~#pointtip-6{opacity:1}#point-7:hover~#pointtip-7,#point-7:focus~#pointtip-7{opacity:1}#point-8:hover~#pointtip-8,#point-8:focus~#pointtip-8{opacity:1}#point-9:hover~#pointtip-9,#point-9:focus~#pointtip-9{opacity:1}#point-10:hover~#pointtip-10,#point-10:focus~#pointtip-10{opacity:1}#point-11:hover~#pointtip-11,#point-11:focus~#pointtip-11{opacity:1}#point-12:hover~#pointtip-12,#point-12:focus~#pointtip-12{opacity:1}#point-13:hover~#pointtip-13,#point-13:focus~#pointtip-13{opacity:1}#point-14:hover~#pointtip-14,#point-14:focus~#pointtip-14{opacity:1}#point-15:hover~#pointtip-15,#point-15:focus~#pointtip-15{opacity:1}#point-16:hover~#pointtip-16,#point-16:focus~#pointtip-16{opacity:1}#point-17:hover~#pointtip-17,#point-17:focus~#pointtip-17{opacity:1}#point-18:hover~#pointtip-18,#point-18:focus~#pointtip-18{opacity:1}#point-19:hover~#pointtip-19,#point-19:focus~#pointtip-19{opacity:1}#point-20:hover~#pointtip-20,#point-20:focus~#pointtip-20{opacity:1}#point-21:hover~#pointtip-21,#point-21:focus~#pointtip-21{opacity:1}#point-22:hover~#pointtip-22,#point-22:focus~#pointtip-22{opacity:1}#point-23:hover~#pointtip-23,#point-23:focus~#pointtip-23{opacity:1}#point-24:hover~#pointtip-24,#point-24:focus~#pointtip-24{opacity:1}#point-25:hover~#pointtip-25,#point-25:focus~#pointtip-25{opacity:1}#point-26:hover~#pointtip-26,#point-26:focus~#pointtip-26{opacity:1}#point-27:hover~#pointtip-27,#point-27:focus~#pointtip-27{opacity:1}#point-28:hover~#pointtip-28,#point-28:focus~#pointtip-28{opacity:1}#point-29:hover~#pointtip-29,#point-29:focus~#pointtip-29{opacity:1}#point-30:hover~#pointtip-30,#point-30:focus~#pointtip-30{opacity:1}#point-31:hover~#pointtip-31,#point-31:focus~#pointtip-31{opacity:1}#point-32:hover~#pointtip-32,#point-32:focus~#pointtip-32{opacity:1}#point-33:hover~#pointtip-33,#point-33:focus~#pointtip-33{opacity:1}#point-34:hover~#pointtip-34,#point-34:focus~#pointtip-34{opacity:1}#point-35:hover~#pointtip-35,#point-35:focus~#pointtip-35{opacity:1}#point-36:hover~#pointtip-36,#point-36:focus~#pointtip-36{opacity:1}#point-37:hover~#pointtip-37,#point-37:focus~#pointtip-37{opacity:1}#point-38:hover~#pointtip-38,#point-38:focus~#pointtip-38{opacity:1}#point-39:hover~#pointtip-39,#point-39:focus~#pointtip-39{opacity:1}#point-40:hover~#pointtip-40,#point-40:focus~#pointtip-40{opacity:1}#point-41:hover~#pointtip-41,#point-41:focus~#pointtip-41{opacity:1}#point-42:hover~#pointtip-42,#point-42:focus~#pointtip-42{opacity:1}#point-43:hover~#pointtip-43,#point-43:focus~#pointtip-43{opacity:1}#point-44:hover~#pointtip-44,#point-44:focus~#pointtip-44{opacity:1}#point-45:hover~#pointtip-45,#point-45:focus~#pointtip-45{opacity:1}#point-46:hover~#pointtip-46,#point-46:focus~#pointtip-46{opacity:1}#point-47:hover~#pointtip-47,#point-47:focus~#pointtip-47{opacity:1}#point-48:hover~#pointtip-48,#point-48:focus~#pointtip-48{opacity:1}#point-49:hover~#pointtip-49,#point-49:focus~#pointtip-49{opacity:1}#point-50:hover~#pointtip-50,#point-50:focus~#pointtip-50{opacity:1}#point-51:hover~#pointtip-51,#point-51:focus~#pointtip-51{opacity:1}#point-52:hover~#pointtip-52,#point-52:focus~#pointtip-52{opacity:1}#point-53:hover~#pointtip-53,#point-53:focus~#pointtip-53{opacity:1}#point-54:hover~#pointtip-54,#point-54:focus~#pointtip-54{opacity:1}#point-55:hover~#pointtip-55,#point-55:focus~#pointtip-55{opacity:1}#point-56:hover~#pointtip-56,#point-56:focus~#pointtip-56{opacity:1}#point-57:hover~#pointtip-57,#point-57:focus~#pointtip-57{opacity:1}#point-58:hover~#pointtip-58,#point-58:focus~#pointtip-58{opacity:1}#point-59:hover~#pointtip-59,#point-59:focus~#pointtip-59{opacity:1}#point-60:hover~#pointtip-60,#point-60:focus~#pointtip-60{opacity:1}#point-61:hover~#pointtip-61,#point-61:focus~#pointtip-61{opacity:1}#point-62:hover~#pointtip-62,#point-62:focus~#pointtip-62{opacity:1}#point-63:hover~#pointtip-63,#point-63:focus~#pointtip-63{opacity:1}#point-64:hover~#pointtip-64,#point-64:focus~#pointtip-64{opacity:1}#point-65:hover~#pointtip-65,#point-65:focus~#pointtip-65{opacity:1}#point-66:hover~#pointtip-66,#point-66:focus~#pointtip-66{opacity:1}#point-67:hover~#pointtip-67,#point-67:focus~#pointtip-67{opacity:1}#point-68:hover~#pointtip-68,#point-68:focus~#pointtip-68{opacity:1}#point-69:hover~#pointtip-69,#point-69:focus~#pointtip-69{opacity:1}#point-70:hover~#pointtip-70,#point-70:focus~#pointtip-70{opacity:1}#point-71:hover~#pointtip-71,#point-71:focus~#pointtip-71{opacity:1}#point-72:hover~#pointtip-72,#point-72:focus~#pointtip-72{opacity:1}#point-73:hover~#pointtip-73,#point-73:focus~#pointtip-73{opacity:1}#point-74:hover~#pointtip-74,#point-74:focus~#pointtip-74{opacity:1}#point-75:hover~#pointtip-75,#point-75:focus~#pointtip-75{opacity:1}#point-76:hover~#pointtip-76,#point-76:focus~#pointtip-76{opacity:1}#point-77:hover~#pointtip-77,#point-77:focus~#pointtip-77{opacity:1}#point-78:hover~#pointtip-78,#point-78:focus~#pointtip-78{opacity:1}#point-79:hover~#pointtip-79,#point-79:focus~#pointtip-79{opacity:1}#point-80:hover~#pointtip-80,#point-80:focus~#pointtip-80{opacity:1}#point-81:hover~#pointtip-81,#point-81:focus~#pointtip-81{opacity:1}#point-82:hover~#pointtip-82,#point-82:focus~#pointtip-82{opacity:1}#point-83:hover~#pointtip-83,#point-83:focus~#pointtip-83{opacity:1}#point-84:hover~#pointtip-84,#point-84:focus~#pointtip-84{opacity:1}#point-85:hover~#pointtip-85,#point-85:focus~#pointtip-85{opacity:1}#point-86:hover~#pointtip-86,#point-86:focus~#pointtip-86{opacity:1}#point-87:hover~#pointtip-87,#point-87:focus~#pointtip-87{opacity:1}#point-88:hover~#pointtip-88,#point-88:focus~#pointtip-88{opacity:1}#point-89:hover~#pointtip-89,#point-89:focus~#pointtip-89{opacity:1}#point-90:hover~#pointtip-90,#point-90:focus~#pointtip-90{opacity:1}#point-91:hover~#pointtip-91,#point-91:focus~#pointtip-91{opacity:1}#point-92:hover~#pointtip-92,#point-92:focus~#pointtip-92{opacity:1}#point-93:hover~#pointtip-93,#point-93:focus~#pointtip-93{opacity:1}#point-94:hover~#pointtip-94,#point-94:focus~#pointtip-94{opacity:1}#point-95:hover~#pointtip-95,#point-95:focus~#pointtip-95{opacity:1}#point-96:hover~#pointtip-96,#point-96:focus~#pointtip-96{opacity:1}#point-97:hover~#pointtip-97,#point-97:focus~#pointtip-97{opacity:1}#point-98:hover~#pointtip-98,#point-98:focus~#pointtip-98{opacity:1}#point-99:hover~#pointtip-99,#point-99:focus~#pointtip-99{opacity:1}#point-100:hover~#pointtip-100,#point-100:focus~#pointtip-100{opacity:1}#point-101:hover~#pointtip-101,#point-101:focus~#pointtip-101{opacity:1}#point-102:hover~#pointtip-102,#point-102:focus~#pointtip-102{opacity:1}#point-103:hover~#pointtip-103,#point-103:focus~#pointtip-103{opacity:1}#point-104:hover~#pointtip-104,#point-104:focus~#pointtip-104{opacity:1}#point-105:hover~#pointtip-105,#point-105:focus~#pointtip-105{opacity:1}#point-106:hover~#pointtip-106,#point-106:focus~#pointtip-106{opacity:1}#point-107:hover~#pointtip-107,#point-107:focus~#pointtip-107{opacity:1}#point-108:hover~#pointtip-108,#point-108:focus~#pointtip-108{opacity:1}#point-109:hover~#pointtip-109,#point-109:focus~#pointtip-109{opacity:1}#point-110:hover~#pointtip-110,#point-110:focus~#pointtip-110{opacity:1}#point-111:hover~#pointtip-111,#point-111:focus~#pointtip-111{opacity:1}#point-112:hover~#pointtip-112,#point-112:focus~#pointtip-112{opacity:1}#point-113:hover~#pointtip-113,#point-113:focus~#pointtip-113{opacity:1}#point-114:hover~#pointtip-114,#point-114:focus~#pointtip-114{opacity:1}#point-115:hover~#pointtip-115,#point-115:focus~#pointtip-115{opacity:1}#point-116:hover~#pointtip-116,#point-116:focus~#pointtip-116{opacity:1}#point-117:hover~#pointtip-117,#point-117:focus~#pointtip-117{opacity:1}#point-118:hover~#pointtip-118,#point-118:focus~#pointtip-118{opacity:1}#point-119:hover~#pointtip-119,#point-119:focus~#pointtip-119{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}
 @media (prefers-contrast: more){
-  .jp-topbar{fill:#006700;}
-  .jp-rightbar{fill:#831FAF;}
-  .jp-dot{fill:#004CCE;}
+  .jp-topbar{fill:#006800;}
+  .jp-rightbar{fill:#9500AA;}
+  .jp-dot{fill:#004EC1;}
 }
 @media (prefers-contrast: more){
-  .jp-trend{stroke:#993600;}
+  .jp-trend{stroke:#9F3400;}
 }
 @media (forced-colors: active){
   .jp-topbar{fill:url(#jp-fcp-0);forced-color-adjust:none;}
@@ -27,35 +27,35 @@
 <rect width="940" height="940" fill="#FFFFFF"/>
 <text x="118" y="70" font-size="34" font-weight="700" fill="#1D1D1F">A good night's sleep sharpens reaction time</text>
 <text x="118" y="108" font-size="19" fill="#6E6E73">Reaction-time test vs. hours slept, 120 volunteers — marginals show each distribution</text>
-<rect id="topbar-0" class="jp-topbar hit" tabindex="0" x="119.0" y="256.0" width="43.6" height="36.0" rx="3" fill="#28CD41"><title>4.0-4.4 h slept: 6 volunteers</title></rect>
-<rect id="topbar-1" class="jp-topbar hit" tabindex="0" x="164.6" y="268.0" width="43.6" height="24.0" rx="3" fill="#28CD41"><title>4.4-4.8 h slept: 4 volunteers</title></rect>
-<rect id="topbar-2" class="jp-topbar hit" tabindex="0" x="210.1" y="244.0" width="43.6" height="48.0" rx="3" fill="#28CD41"><title>4.8-5.2 h slept: 8 volunteers</title></rect>
-<rect id="topbar-3" class="jp-topbar hit" tabindex="0" x="255.7" y="226.0" width="43.6" height="66.0" rx="3" fill="#28CD41"><title>5.2-5.6 h slept: 11 volunteers</title></rect>
-<rect id="topbar-4" class="jp-topbar hit" tabindex="0" x="301.3" y="238.0" width="43.6" height="54.0" rx="3" fill="#28CD41"><title>5.6-6.0 h slept: 9 volunteers</title></rect>
-<rect id="topbar-5" class="jp-topbar hit" tabindex="0" x="346.9" y="178.0" width="43.6" height="114.0" rx="3" fill="#28CD41"><title>6.0-6.4 h slept: 19 volunteers</title></rect>
-<rect id="topbar-6" class="jp-topbar hit" tabindex="0" x="392.4" y="178.0" width="43.6" height="114.0" rx="3" fill="#28CD41"><title>6.4-6.8 h slept: 19 volunteers</title></rect>
-<rect id="topbar-7" class="jp-topbar hit" tabindex="0" x="438.0" y="202.0" width="43.6" height="90.0" rx="3" fill="#28CD41"><title>6.8-7.1 h slept: 15 volunteers</title></rect>
-<rect id="topbar-8" class="jp-topbar hit" tabindex="0" x="483.6" y="238.0" width="43.6" height="54.0" rx="3" fill="#28CD41"><title>7.1-7.5 h slept: 9 volunteers</title></rect>
-<rect id="topbar-9" class="jp-topbar hit" tabindex="0" x="529.1" y="244.0" width="43.6" height="48.0" rx="3" fill="#28CD41"><title>7.5-7.9 h slept: 8 volunteers</title></rect>
-<rect id="topbar-10" class="jp-topbar hit" tabindex="0" x="574.7" y="262.0" width="43.6" height="30.0" rx="3" fill="#28CD41"><title>7.9-8.3 h slept: 5 volunteers</title></rect>
-<rect id="topbar-11" class="jp-topbar hit" tabindex="0" x="620.3" y="262.0" width="43.6" height="30.0" rx="3" fill="#28CD41"><title>8.3-8.7 h slept: 5 volunteers</title></rect>
-<rect id="topbar-12" class="jp-topbar hit" tabindex="0" x="665.9" y="292.0" width="43.6" height="0.0" rx="3" fill="#28CD41"><title>8.7-9.1 h slept: 0 volunteers</title></rect>
-<rect id="topbar-13" class="jp-topbar hit" tabindex="0" x="711.4" y="280.0" width="43.6" height="12.0" rx="3" fill="#28CD41"><title>9.1-9.5 h slept: 2 volunteers</title></rect>
+<rect id="topbar-0" class="jp-topbar hit" tabindex="0" x="119.0" y="256.0" width="43.6" height="36.0" rx="3" fill="#34C759"><title>4.0-4.4 h slept: 6 volunteers</title></rect>
+<rect id="topbar-1" class="jp-topbar hit" tabindex="0" x="164.6" y="268.0" width="43.6" height="24.0" rx="3" fill="#34C759"><title>4.4-4.8 h slept: 4 volunteers</title></rect>
+<rect id="topbar-2" class="jp-topbar hit" tabindex="0" x="210.1" y="244.0" width="43.6" height="48.0" rx="3" fill="#34C759"><title>4.8-5.2 h slept: 8 volunteers</title></rect>
+<rect id="topbar-3" class="jp-topbar hit" tabindex="0" x="255.7" y="226.0" width="43.6" height="66.0" rx="3" fill="#34C759"><title>5.2-5.6 h slept: 11 volunteers</title></rect>
+<rect id="topbar-4" class="jp-topbar hit" tabindex="0" x="301.3" y="238.0" width="43.6" height="54.0" rx="3" fill="#34C759"><title>5.6-6.0 h slept: 9 volunteers</title></rect>
+<rect id="topbar-5" class="jp-topbar hit" tabindex="0" x="346.9" y="178.0" width="43.6" height="114.0" rx="3" fill="#34C759"><title>6.0-6.4 h slept: 19 volunteers</title></rect>
+<rect id="topbar-6" class="jp-topbar hit" tabindex="0" x="392.4" y="178.0" width="43.6" height="114.0" rx="3" fill="#34C759"><title>6.4-6.8 h slept: 19 volunteers</title></rect>
+<rect id="topbar-7" class="jp-topbar hit" tabindex="0" x="438.0" y="202.0" width="43.6" height="90.0" rx="3" fill="#34C759"><title>6.8-7.1 h slept: 15 volunteers</title></rect>
+<rect id="topbar-8" class="jp-topbar hit" tabindex="0" x="483.6" y="238.0" width="43.6" height="54.0" rx="3" fill="#34C759"><title>7.1-7.5 h slept: 9 volunteers</title></rect>
+<rect id="topbar-9" class="jp-topbar hit" tabindex="0" x="529.1" y="244.0" width="43.6" height="48.0" rx="3" fill="#34C759"><title>7.5-7.9 h slept: 8 volunteers</title></rect>
+<rect id="topbar-10" class="jp-topbar hit" tabindex="0" x="574.7" y="262.0" width="43.6" height="30.0" rx="3" fill="#34C759"><title>7.9-8.3 h slept: 5 volunteers</title></rect>
+<rect id="topbar-11" class="jp-topbar hit" tabindex="0" x="620.3" y="262.0" width="43.6" height="30.0" rx="3" fill="#34C759"><title>8.3-8.7 h slept: 5 volunteers</title></rect>
+<rect id="topbar-12" class="jp-topbar hit" tabindex="0" x="665.9" y="292.0" width="43.6" height="0.0" rx="3" fill="#34C759"><title>8.7-9.1 h slept: 0 volunteers</title></rect>
+<rect id="topbar-13" class="jp-topbar hit" tabindex="0" x="711.4" y="280.0" width="43.6" height="12.0" rx="3" fill="#34C759"><title>9.1-9.5 h slept: 2 volunteers</title></rect>
 <text x="118.0" y="152.0" font-size="16" fill="#6E6E73">Distribution of hours slept</text>
-<rect id="rightbar-0" class="jp-rightbar hit" tabindex="0" x="768.0" y="806.4" width="0.0" height="36.6" rx="3" fill="#AF52DE"><title>170-188 ms reaction time: 0 volunteers</title></rect>
-<rect id="rightbar-1" class="jp-rightbar hit" tabindex="0" x="768.0" y="767.9" width="6.0" height="36.6" rx="3" fill="#AF52DE"><title>188-206 ms reaction time: 1 volunteers</title></rect>
-<rect id="rightbar-2" class="jp-rightbar hit" tabindex="0" x="768.0" y="729.3" width="18.0" height="36.6" rx="3" fill="#AF52DE"><title>206-224 ms reaction time: 3 volunteers</title></rect>
-<rect id="rightbar-3" class="jp-rightbar hit" tabindex="0" x="768.0" y="690.7" width="66.0" height="36.6" rx="3" fill="#AF52DE"><title>224-241 ms reaction time: 11 volunteers</title></rect>
-<rect id="rightbar-4" class="jp-rightbar hit" tabindex="0" x="768.0" y="652.1" width="120.0" height="36.6" rx="3" fill="#AF52DE"><title>241-259 ms reaction time: 20 volunteers</title></rect>
-<rect id="rightbar-5" class="jp-rightbar hit" tabindex="0" x="768.0" y="613.6" width="90.0" height="36.6" rx="3" fill="#AF52DE"><title>259-277 ms reaction time: 15 volunteers</title></rect>
-<rect id="rightbar-6" class="jp-rightbar hit" tabindex="0" x="768.0" y="575.0" width="120.0" height="36.6" rx="3" fill="#AF52DE"><title>277-295 ms reaction time: 20 volunteers</title></rect>
-<rect id="rightbar-7" class="jp-rightbar hit" tabindex="0" x="768.0" y="536.4" width="102.0" height="36.6" rx="3" fill="#AF52DE"><title>295-313 ms reaction time: 17 volunteers</title></rect>
-<rect id="rightbar-8" class="jp-rightbar hit" tabindex="0" x="768.0" y="497.9" width="108.0" height="36.6" rx="3" fill="#AF52DE"><title>313-331 ms reaction time: 18 volunteers</title></rect>
-<rect id="rightbar-9" class="jp-rightbar hit" tabindex="0" x="768.0" y="459.3" width="48.0" height="36.6" rx="3" fill="#AF52DE"><title>331-349 ms reaction time: 8 volunteers</title></rect>
-<rect id="rightbar-10" class="jp-rightbar hit" tabindex="0" x="768.0" y="420.7" width="12.0" height="36.6" rx="3" fill="#AF52DE"><title>349-366 ms reaction time: 2 volunteers</title></rect>
-<rect id="rightbar-11" class="jp-rightbar hit" tabindex="0" x="768.0" y="382.1" width="18.0" height="36.6" rx="3" fill="#AF52DE"><title>366-384 ms reaction time: 3 volunteers</title></rect>
-<rect id="rightbar-12" class="jp-rightbar hit" tabindex="0" x="768.0" y="343.6" width="12.0" height="36.6" rx="3" fill="#AF52DE"><title>384-402 ms reaction time: 2 volunteers</title></rect>
-<rect id="rightbar-13" class="jp-rightbar hit" tabindex="0" x="768.0" y="305.0" width="0.0" height="36.6" rx="3" fill="#AF52DE"><title>402-420 ms reaction time: 0 volunteers</title></rect>
+<rect id="rightbar-0" class="jp-rightbar hit" tabindex="0" x="768.0" y="806.4" width="0.0" height="36.6" rx="3" fill="#CB30E0"><title>170-188 ms reaction time: 0 volunteers</title></rect>
+<rect id="rightbar-1" class="jp-rightbar hit" tabindex="0" x="768.0" y="767.9" width="6.0" height="36.6" rx="3" fill="#CB30E0"><title>188-206 ms reaction time: 1 volunteers</title></rect>
+<rect id="rightbar-2" class="jp-rightbar hit" tabindex="0" x="768.0" y="729.3" width="18.0" height="36.6" rx="3" fill="#CB30E0"><title>206-224 ms reaction time: 3 volunteers</title></rect>
+<rect id="rightbar-3" class="jp-rightbar hit" tabindex="0" x="768.0" y="690.7" width="66.0" height="36.6" rx="3" fill="#CB30E0"><title>224-241 ms reaction time: 11 volunteers</title></rect>
+<rect id="rightbar-4" class="jp-rightbar hit" tabindex="0" x="768.0" y="652.1" width="120.0" height="36.6" rx="3" fill="#CB30E0"><title>241-259 ms reaction time: 20 volunteers</title></rect>
+<rect id="rightbar-5" class="jp-rightbar hit" tabindex="0" x="768.0" y="613.6" width="90.0" height="36.6" rx="3" fill="#CB30E0"><title>259-277 ms reaction time: 15 volunteers</title></rect>
+<rect id="rightbar-6" class="jp-rightbar hit" tabindex="0" x="768.0" y="575.0" width="120.0" height="36.6" rx="3" fill="#CB30E0"><title>277-295 ms reaction time: 20 volunteers</title></rect>
+<rect id="rightbar-7" class="jp-rightbar hit" tabindex="0" x="768.0" y="536.4" width="102.0" height="36.6" rx="3" fill="#CB30E0"><title>295-313 ms reaction time: 17 volunteers</title></rect>
+<rect id="rightbar-8" class="jp-rightbar hit" tabindex="0" x="768.0" y="497.9" width="108.0" height="36.6" rx="3" fill="#CB30E0"><title>313-331 ms reaction time: 18 volunteers</title></rect>
+<rect id="rightbar-9" class="jp-rightbar hit" tabindex="0" x="768.0" y="459.3" width="48.0" height="36.6" rx="3" fill="#CB30E0"><title>331-349 ms reaction time: 8 volunteers</title></rect>
+<rect id="rightbar-10" class="jp-rightbar hit" tabindex="0" x="768.0" y="420.7" width="12.0" height="36.6" rx="3" fill="#CB30E0"><title>349-366 ms reaction time: 2 volunteers</title></rect>
+<rect id="rightbar-11" class="jp-rightbar hit" tabindex="0" x="768.0" y="382.1" width="18.0" height="36.6" rx="3" fill="#CB30E0"><title>366-384 ms reaction time: 3 volunteers</title></rect>
+<rect id="rightbar-12" class="jp-rightbar hit" tabindex="0" x="768.0" y="343.6" width="12.0" height="36.6" rx="3" fill="#CB30E0"><title>384-402 ms reaction time: 2 volunteers</title></rect>
+<rect id="rightbar-13" class="jp-rightbar hit" tabindex="0" x="768.0" y="305.0" width="0.0" height="36.6" rx="3" fill="#CB30E0"><title>402-420 ms reaction time: 0 volunteers</title></rect>
 <text x="902.0" y="574.0" font-size="16" fill="#6E6E73" text-anchor="middle" transform="rotate(90 902.0 574.0)">Distribution of reaction time</text>
 <line x1="118.0" y1="304.0" x2="118.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="234.0" y1="304.0" x2="234.0" y2="844.0" stroke="#EEEEEE" stroke-width="1.4"/>
@@ -103,606 +103,606 @@
 <g id="point-0" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 287 ms reaction time">
 <title>6.6 h slept, 287 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="591.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="591.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="591.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-1" class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 258 ms reaction time">
 <title>7.0 h slept, 258 ms reaction time</title>
 <circle class="halo" cx="466.0" cy="653.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="466.0" cy="653.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="466.0" cy="653.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-2" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
 <title>6.2 h slept, 293 ms reaction time</title>
 <circle class="halo" cx="373.2" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-3" class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 268 ms reaction time">
 <title>5.4 h slept, 268 ms reaction time</title>
 <circle class="halo" cx="280.4" cy="632.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="280.4" cy="632.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="280.4" cy="632.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-4" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 274 ms reaction time">
 <title>6.0 h slept, 274 ms reaction time</title>
 <circle class="halo" cx="350.0" cy="619.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="619.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="350.0" cy="619.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-5" class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 334 ms reaction time">
 <title>5.2 h slept, 334 ms reaction time</title>
 <circle class="halo" cx="257.2" cy="489.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="257.2" cy="489.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="257.2" cy="489.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-6" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 227 ms reaction time">
 <title>6.7 h slept, 227 ms reaction time</title>
 <circle class="halo" cx="431.2" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="431.2" cy="720.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-7" class="pt hit" tabindex="0" role="img" aria-label="8.5 h slept, 255 ms reaction time">
 <title>8.5 h slept, 255 ms reaction time</title>
 <circle class="halo" cx="640.0" cy="660.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="640.0" cy="660.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="640.0" cy="660.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-8" class="pt hit" tabindex="0" role="img" aria-label="5.9 h slept, 259 ms reaction time">
 <title>5.9 h slept, 259 ms reaction time</title>
 <circle class="halo" cx="338.4" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="338.4" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="338.4" cy="651.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-9" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 329 ms reaction time">
 <title>5.7 h slept, 329 ms reaction time</title>
 <circle class="halo" cx="315.2" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="315.2" cy="500.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-10" class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
 <title>7.3 h slept, 244 ms reaction time</title>
 <circle class="halo" cx="500.8" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-11" class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 291 ms reaction time">
 <title>7.1 h slept, 291 ms reaction time</title>
 <circle class="halo" cx="477.6" cy="582.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="477.6" cy="582.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="477.6" cy="582.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-12" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 284 ms reaction time">
 <title>6.7 h slept, 284 ms reaction time</title>
 <circle class="halo" cx="431.2" cy="597.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="597.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="431.2" cy="597.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-13" class="pt hit" tabindex="0" role="img" aria-label="5.3 h slept, 282 ms reaction time">
 <title>5.3 h slept, 282 ms reaction time</title>
 <circle class="halo" cx="268.8" cy="602.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="268.8" cy="602.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="268.8" cy="602.1" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-14" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 319 ms reaction time">
 <title>6.6 h slept, 319 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="522.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="522.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="522.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-15" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 295 ms reaction time">
 <title>7.6 h slept, 295 ms reaction time</title>
 <circle class="halo" cx="535.6" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="535.6" cy="574.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-16" class="pt hit" tabindex="0" role="img" aria-label="4.7 h slept, 336 ms reaction time">
 <title>4.7 h slept, 336 ms reaction time</title>
 <circle class="halo" cx="199.2" cy="485.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="199.2" cy="485.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="199.2" cy="485.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-17" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 296 ms reaction time">
 <title>6.0 h slept, 296 ms reaction time</title>
 <circle class="halo" cx="350.0" cy="571.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="571.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="350.0" cy="571.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-18" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 354 ms reaction time">
 <title>4.0 h slept, 354 ms reaction time</title>
 <circle class="halo" cx="118.0" cy="446.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="446.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="118.0" cy="446.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-19" class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 310 ms reaction time">
 <title>4.8 h slept, 310 ms reaction time</title>
 <circle class="halo" cx="210.8" cy="541.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="210.8" cy="541.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="210.8" cy="541.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-20" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 386 ms reaction time">
 <title>4.0 h slept, 386 ms reaction time</title>
 <circle class="halo" cx="118.0" cy="377.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="377.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="118.0" cy="377.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-21" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 280 ms reaction time">
 <title>6.3 h slept, 280 ms reaction time</title>
 <circle class="halo" cx="384.8" cy="606.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="606.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="384.8" cy="606.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-22" class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 334 ms reaction time">
 <title>4.8 h slept, 334 ms reaction time</title>
 <circle class="halo" cx="210.8" cy="489.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="210.8" cy="489.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="210.8" cy="489.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-23" class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 254 ms reaction time">
 <title>7.0 h slept, 254 ms reaction time</title>
 <circle class="halo" cx="466.0" cy="662.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="466.0" cy="662.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="466.0" cy="662.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-24" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 263 ms reaction time">
 <title>6.8 h slept, 263 ms reaction time</title>
 <circle class="halo" cx="442.8" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="442.8" cy="643.1" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-25" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 259 ms reaction time">
 <title>6.3 h slept, 259 ms reaction time</title>
 <circle class="halo" cx="384.8" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="384.8" cy="651.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-26" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 391 ms reaction time">
 <title>4.0 h slept, 391 ms reaction time</title>
 <circle class="halo" cx="118.0" cy="366.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="366.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="118.0" cy="366.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-27" class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 302 ms reaction time">
 <title>5.8 h slept, 302 ms reaction time</title>
 <circle class="halo" cx="326.8" cy="558.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="326.8" cy="558.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="326.8" cy="558.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-28" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 312 ms reaction time">
 <title>6.5 h slept, 312 ms reaction time</title>
 <circle class="halo" cx="408.0" cy="537.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="537.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="408.0" cy="537.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-29" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 281 ms reaction time">
 <title>6.8 h slept, 281 ms reaction time</title>
 <circle class="halo" cx="442.8" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="442.8" cy="604.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-30" class="pt hit" tabindex="0" role="img" aria-label="4.5 h slept, 327 ms reaction time">
 <title>4.5 h slept, 327 ms reaction time</title>
 <circle class="halo" cx="176.0" cy="504.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="176.0" cy="504.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="176.0" cy="504.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-31" class="pt hit" tabindex="0" role="img" aria-label="5.9 h slept, 295 ms reaction time">
 <title>5.9 h slept, 295 ms reaction time</title>
 <circle class="halo" cx="338.4" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="338.4" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="338.4" cy="574.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-32" class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 309 ms reaction time">
 <title>5.2 h slept, 309 ms reaction time</title>
 <circle class="halo" cx="257.2" cy="543.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="257.2" cy="543.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="257.2" cy="543.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-33" class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 317 ms reaction time">
 <title>5.5 h slept, 317 ms reaction time</title>
 <circle class="halo" cx="292.0" cy="526.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="292.0" cy="526.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="292.0" cy="526.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-34" class="pt hit" tabindex="0" role="img" aria-label="8.1 h slept, 234 ms reaction time">
 <title>8.1 h slept, 234 ms reaction time</title>
 <circle class="halo" cx="593.6" cy="705.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="593.6" cy="705.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="593.6" cy="705.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-35" class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 309 ms reaction time">
 <title>5.5 h slept, 309 ms reaction time</title>
 <circle class="halo" cx="292.0" cy="543.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="292.0" cy="543.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="292.0" cy="543.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-36" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 251 ms reaction time">
 <title>6.6 h slept, 251 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="669.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="669.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="669.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-37" class="pt hit" tabindex="0" role="img" aria-label="7.8 h slept, 230 ms reaction time">
 <title>7.8 h slept, 230 ms reaction time</title>
 <circle class="halo" cx="558.8" cy="714.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="558.8" cy="714.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="558.8" cy="714.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-38" class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 351 ms reaction time">
 <title>5.8 h slept, 351 ms reaction time</title>
 <circle class="halo" cx="326.8" cy="453.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="326.8" cy="453.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="326.8" cy="453.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-39" class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 272 ms reaction time">
 <title>6.4 h slept, 272 ms reaction time</title>
 <circle class="halo" cx="396.4" cy="623.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="396.4" cy="623.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="396.4" cy="623.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-40" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 253 ms reaction time">
 <title>6.8 h slept, 253 ms reaction time</title>
 <circle class="halo" cx="442.8" cy="664.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="664.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="442.8" cy="664.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-41" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 291 ms reaction time">
 <title>6.7 h slept, 291 ms reaction time</title>
 <circle class="halo" cx="431.2" cy="582.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="582.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="431.2" cy="582.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-42" class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 370 ms reaction time">
 <title>4.9 h slept, 370 ms reaction time</title>
 <circle class="halo" cx="222.4" cy="412.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="222.4" cy="412.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="222.4" cy="412.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-43" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 244 ms reaction time">
 <title>6.7 h slept, 244 ms reaction time</title>
 <circle class="halo" cx="431.2" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="431.2" cy="684.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-44" class="pt hit" tabindex="0" role="img" aria-label="8.5 h slept, 227 ms reaction time">
 <title>8.5 h slept, 227 ms reaction time</title>
 <circle class="halo" cx="640.0" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="640.0" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="640.0" cy="720.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-45" class="pt hit" tabindex="0" role="img" aria-label="4.4 h slept, 329 ms reaction time">
 <title>4.4 h slept, 329 ms reaction time</title>
 <circle class="halo" cx="164.4" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="164.4" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="164.4" cy="500.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-46" class="pt hit" tabindex="0" role="img" aria-label="7.8 h slept, 206 ms reaction time">
 <title>7.8 h slept, 206 ms reaction time</title>
 <circle class="halo" cx="558.8" cy="766.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="558.8" cy="766.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="558.8" cy="766.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-47" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 300 ms reaction time">
 <title>6.8 h slept, 300 ms reaction time</title>
 <circle class="halo" cx="442.8" cy="563.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="563.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="442.8" cy="563.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-48" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 310 ms reaction time">
 <title>5.7 h slept, 310 ms reaction time</title>
 <circle class="halo" cx="315.2" cy="541.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="541.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="315.2" cy="541.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-49" class="pt hit" tabindex="0" role="img" aria-label="9.4 h slept, 209 ms reaction time">
 <title>9.4 h slept, 209 ms reaction time</title>
 <circle class="halo" cx="744.4" cy="759.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="744.4" cy="759.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="744.4" cy="759.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-50" class="pt hit" tabindex="0" role="img" aria-label="7.7 h slept, 236 ms reaction time">
 <title>7.7 h slept, 236 ms reaction time</title>
 <circle class="halo" cx="547.2" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="547.2" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="547.2" cy="701.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-51" class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 344 ms reaction time">
 <title>4.9 h slept, 344 ms reaction time</title>
 <circle class="halo" cx="222.4" cy="468.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="222.4" cy="468.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="222.4" cy="468.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-52" class="pt hit" tabindex="0" role="img" aria-label="6.7 h slept, 268 ms reaction time">
 <title>6.7 h slept, 268 ms reaction time</title>
 <circle class="halo" cx="431.2" cy="632.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="431.2" cy="632.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="431.2" cy="632.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-53" class="pt hit" tabindex="0" role="img" aria-label="7.4 h slept, 259 ms reaction time">
 <title>7.4 h slept, 259 ms reaction time</title>
 <circle class="halo" cx="512.4" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="512.4" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="512.4" cy="651.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-54" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 264 ms reaction time">
 <title>6.3 h slept, 264 ms reaction time</title>
 <circle class="halo" cx="384.8" cy="641.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="641.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="384.8" cy="641.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-55" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 227 ms reaction time">
 <title>7.6 h slept, 227 ms reaction time</title>
 <circle class="halo" cx="535.6" cy="720.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="720.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="535.6" cy="720.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-56" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 323 ms reaction time">
 <title>6.5 h slept, 323 ms reaction time</title>
 <circle class="halo" cx="408.0" cy="513.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="513.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="408.0" cy="513.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-57" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 246 ms reaction time">
 <title>7.5 h slept, 246 ms reaction time</title>
 <circle class="halo" cx="524.0" cy="679.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="679.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="524.0" cy="679.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-58" class="pt hit" tabindex="0" role="img" aria-label="8.6 h slept, 236 ms reaction time">
 <title>8.6 h slept, 236 ms reaction time</title>
 <circle class="halo" cx="651.6" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="651.6" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="651.6" cy="701.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-59" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 311 ms reaction time">
 <title>5.7 h slept, 311 ms reaction time</title>
 <circle class="halo" cx="315.2" cy="539.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="539.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="315.2" cy="539.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-60" class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 266 ms reaction time">
 <title>6.9 h slept, 266 ms reaction time</title>
 <circle class="halo" cx="454.4" cy="636.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="454.4" cy="636.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="454.4" cy="636.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-61" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 290 ms reaction time">
 <title>6.0 h slept, 290 ms reaction time</title>
 <circle class="halo" cx="350.0" cy="584.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="584.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="350.0" cy="584.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-62" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 297 ms reaction time">
 <title>6.8 h slept, 297 ms reaction time</title>
 <circle class="halo" cx="442.8" cy="569.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="569.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="442.8" cy="569.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-63" class="pt hit" tabindex="0" role="img" aria-label="4.9 h slept, 324 ms reaction time">
 <title>4.9 h slept, 324 ms reaction time</title>
 <circle class="halo" cx="222.4" cy="511.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="222.4" cy="511.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="222.4" cy="511.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-64" class="pt hit" tabindex="0" role="img" aria-label="5.8 h slept, 304 ms reaction time">
 <title>5.8 h slept, 304 ms reaction time</title>
 <circle class="halo" cx="326.8" cy="554.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="326.8" cy="554.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="326.8" cy="554.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-65" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 293 ms reaction time">
 <title>6.3 h slept, 293 ms reaction time</title>
 <circle class="halo" cx="384.8" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="384.8" cy="578.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-66" class="pt hit" tabindex="0" role="img" aria-label="7.9 h slept, 281 ms reaction time">
 <title>7.9 h slept, 281 ms reaction time</title>
 <circle class="halo" cx="570.4" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="570.4" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="570.4" cy="604.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-67" class="pt hit" tabindex="0" role="img" aria-label="8.2 h slept, 258 ms reaction time">
 <title>8.2 h slept, 258 ms reaction time</title>
 <circle class="halo" cx="605.2" cy="653.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="605.2" cy="653.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="605.2" cy="653.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-68" class="pt hit" tabindex="0" role="img" aria-label="4.7 h slept, 347 ms reaction time">
 <title>4.7 h slept, 347 ms reaction time</title>
 <circle class="halo" cx="199.2" cy="461.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="199.2" cy="461.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="199.2" cy="461.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-69" class="pt hit" tabindex="0" role="img" aria-label="5.5 h slept, 302 ms reaction time">
 <title>5.5 h slept, 302 ms reaction time</title>
 <circle class="halo" cx="292.0" cy="558.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="292.0" cy="558.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="292.0" cy="558.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-70" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 224 ms reaction time">
 <title>7.5 h slept, 224 ms reaction time</title>
 <circle class="halo" cx="524.0" cy="727.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="727.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="524.0" cy="727.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-71" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 383 ms reaction time">
 <title>4.0 h slept, 383 ms reaction time</title>
 <circle class="halo" cx="118.0" cy="383.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="383.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="118.0" cy="383.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-72" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 328 ms reaction time">
 <title>6.0 h slept, 328 ms reaction time</title>
 <circle class="halo" cx="350.0" cy="502.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="502.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="350.0" cy="502.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-73" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 285 ms reaction time">
 <title>6.5 h slept, 285 ms reaction time</title>
 <circle class="halo" cx="408.0" cy="595.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="595.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="408.0" cy="595.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-74" class="pt hit" tabindex="0" role="img" aria-label="8.4 h slept, 250 ms reaction time">
 <title>8.4 h slept, 250 ms reaction time</title>
 <circle class="halo" cx="628.4" cy="671.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="628.4" cy="671.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="628.4" cy="671.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-75" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 278 ms reaction time">
 <title>7.6 h slept, 278 ms reaction time</title>
 <circle class="halo" cx="535.6" cy="610.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="610.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="535.6" cy="610.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-76" class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 320 ms reaction time">
 <title>6.1 h slept, 320 ms reaction time</title>
 <circle class="halo" cx="361.6" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="361.6" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="361.6" cy="520.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-77" class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 324 ms reaction time">
 <title>6.1 h slept, 324 ms reaction time</title>
 <circle class="halo" cx="361.6" cy="511.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="361.6" cy="511.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="361.6" cy="511.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-78" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 283 ms reaction time">
 <title>6.2 h slept, 283 ms reaction time</title>
 <circle class="halo" cx="373.2" cy="599.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="599.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="373.2" cy="599.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-79" class="pt hit" tabindex="0" role="img" aria-label="8.7 h slept, 265 ms reaction time">
 <title>8.7 h slept, 265 ms reaction time</title>
 <circle class="halo" cx="663.2" cy="638.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="663.2" cy="638.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="663.2" cy="638.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-80" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 270 ms reaction time">
 <title>6.0 h slept, 270 ms reaction time</title>
 <circle class="halo" cx="350.0" cy="628.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="628.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="350.0" cy="628.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-81" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 320 ms reaction time">
 <title>6.2 h slept, 320 ms reaction time</title>
 <circle class="halo" cx="373.2" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="373.2" cy="520.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-82" class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 284 ms reaction time">
 <title>7.1 h slept, 284 ms reaction time</title>
 <circle class="halo" cx="477.6" cy="597.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="477.6" cy="597.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="477.6" cy="597.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-83" class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 313 ms reaction time">
 <title>6.4 h slept, 313 ms reaction time</title>
 <circle class="halo" cx="396.4" cy="535.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="396.4" cy="535.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="396.4" cy="535.1" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-84" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 342 ms reaction time">
 <title>6.3 h slept, 342 ms reaction time</title>
 <circle class="halo" cx="384.8" cy="472.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="472.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="384.8" cy="472.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-85" class="pt hit" tabindex="0" role="img" aria-label="5.0 h slept, 367 ms reaction time">
 <title>5.0 h slept, 367 ms reaction time</title>
 <circle class="halo" cx="234.0" cy="418.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="234.0" cy="418.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="234.0" cy="418.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-86" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 256 ms reaction time">
 <title>6.6 h slept, 256 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="658.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="658.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="658.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-87" class="pt hit" tabindex="0" role="img" aria-label="6.0 h slept, 259 ms reaction time">
 <title>6.0 h slept, 259 ms reaction time</title>
 <circle class="halo" cx="350.0" cy="651.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="350.0" cy="651.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="350.0" cy="651.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-88" class="pt hit" tabindex="0" role="img" aria-label="8.2 h slept, 261 ms reaction time">
 <title>8.2 h slept, 261 ms reaction time</title>
 <circle class="halo" cx="605.2" cy="647.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="605.2" cy="647.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="605.2" cy="647.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-89" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 233 ms reaction time">
 <title>7.5 h slept, 233 ms reaction time</title>
 <circle class="halo" cx="524.0" cy="707.9" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="707.9" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="524.0" cy="707.9" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-90" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 286 ms reaction time">
 <title>6.6 h slept, 286 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="593.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="593.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="593.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-91" class="pt hit" tabindex="0" role="img" aria-label="7.5 h slept, 281 ms reaction time">
 <title>7.5 h slept, 281 ms reaction time</title>
 <circle class="halo" cx="524.0" cy="604.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="524.0" cy="604.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="524.0" cy="604.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-92" class="pt hit" tabindex="0" role="img" aria-label="6.1 h slept, 256 ms reaction time">
 <title>6.1 h slept, 256 ms reaction time</title>
 <circle class="halo" cx="361.6" cy="658.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="361.6" cy="658.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="361.6" cy="658.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-93" class="pt hit" tabindex="0" role="img" aria-label="8.1 h slept, 189 ms reaction time">
 <title>8.1 h slept, 189 ms reaction time</title>
 <circle class="halo" cx="593.6" cy="803.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="593.6" cy="803.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="593.6" cy="803.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-94" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 292 ms reaction time">
 <title>6.6 h slept, 292 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="580.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="580.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="580.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-95" class="pt hit" tabindex="0" role="img" aria-label="7.4 h slept, 263 ms reaction time">
 <title>7.4 h slept, 263 ms reaction time</title>
 <circle class="halo" cx="512.4" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="512.4" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="512.4" cy="643.1" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-96" class="pt hit" tabindex="0" role="img" aria-label="4.8 h slept, 329 ms reaction time">
 <title>4.8 h slept, 329 ms reaction time</title>
 <circle class="halo" cx="210.8" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="210.8" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="210.8" cy="500.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-97" class="pt hit" tabindex="0" role="img" aria-label="7.1 h slept, 273 ms reaction time">
 <title>7.1 h slept, 273 ms reaction time</title>
 <circle class="halo" cx="477.6" cy="621.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="477.6" cy="621.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="477.6" cy="621.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-98" class="pt hit" tabindex="0" role="img" aria-label="4.2 h slept, 329 ms reaction time">
 <title>4.2 h slept, 329 ms reaction time</title>
 <circle class="halo" cx="141.2" cy="500.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="141.2" cy="500.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="141.2" cy="500.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-99" class="pt hit" tabindex="0" role="img" aria-label="4.0 h slept, 319 ms reaction time">
 <title>4.0 h slept, 319 ms reaction time</title>
 <circle class="halo" cx="118.0" cy="522.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="118.0" cy="522.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="118.0" cy="522.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-100" class="pt hit" tabindex="0" role="img" aria-label="6.2 h slept, 293 ms reaction time">
 <title>6.2 h slept, 293 ms reaction time</title>
 <circle class="halo" cx="373.2" cy="578.3" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="373.2" cy="578.3" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-101" class="pt hit" tabindex="0" role="img" aria-label="5.3 h slept, 295 ms reaction time">
 <title>5.3 h slept, 295 ms reaction time</title>
 <circle class="halo" cx="268.8" cy="574.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="268.8" cy="574.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="268.8" cy="574.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-102" class="pt hit" tabindex="0" role="img" aria-label="6.8 h slept, 236 ms reaction time">
 <title>6.8 h slept, 236 ms reaction time</title>
 <circle class="halo" cx="442.8" cy="701.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="442.8" cy="701.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="442.8" cy="701.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-103" class="pt hit" tabindex="0" role="img" aria-label="9.5 h slept, 217 ms reaction time">
 <title>9.5 h slept, 217 ms reaction time</title>
 <circle class="halo" cx="756.0" cy="742.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="756.0" cy="742.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="756.0" cy="742.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-104" class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 316 ms reaction time">
 <title>5.4 h slept, 316 ms reaction time</title>
 <circle class="halo" cx="280.4" cy="528.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="280.4" cy="528.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="280.4" cy="528.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-105" class="pt hit" tabindex="0" role="img" aria-label="5.7 h slept, 320 ms reaction time">
 <title>5.7 h slept, 320 ms reaction time</title>
 <circle class="halo" cx="315.2" cy="520.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="315.2" cy="520.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="315.2" cy="520.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-106" class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 251 ms reaction time">
 <title>6.9 h slept, 251 ms reaction time</title>
 <circle class="halo" cx="454.4" cy="669.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="454.4" cy="669.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="454.4" cy="669.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-107" class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 249 ms reaction time">
 <title>7.3 h slept, 249 ms reaction time</title>
 <circle class="halo" cx="500.8" cy="673.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="500.8" cy="673.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="500.8" cy="673.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-108" class="pt hit" tabindex="0" role="img" aria-label="6.4 h slept, 266 ms reaction time">
 <title>6.4 h slept, 266 ms reaction time</title>
 <circle class="halo" cx="396.4" cy="636.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="396.4" cy="636.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="396.4" cy="636.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-109" class="pt hit" tabindex="0" role="img" aria-label="6.3 h slept, 270 ms reaction time">
 <title>6.3 h slept, 270 ms reaction time</title>
 <circle class="halo" cx="384.8" cy="628.0" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="384.8" cy="628.0" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="384.8" cy="628.0" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-110" class="pt hit" tabindex="0" role="img" aria-label="7.6 h slept, 263 ms reaction time">
 <title>7.6 h slept, 263 ms reaction time</title>
 <circle class="halo" cx="535.6" cy="643.1" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="535.6" cy="643.1" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="535.6" cy="643.1" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-111" class="pt hit" tabindex="0" role="img" aria-label="7.3 h slept, 244 ms reaction time">
 <title>7.3 h slept, 244 ms reaction time</title>
 <circle class="halo" cx="500.8" cy="684.2" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="500.8" cy="684.2" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-112" class="pt hit" tabindex="0" role="img" aria-label="5.2 h slept, 335 ms reaction time">
 <title>5.2 h slept, 335 ms reaction time</title>
 <circle class="halo" cx="257.2" cy="487.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="257.2" cy="487.6" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="257.2" cy="487.6" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-113" class="pt hit" tabindex="0" role="img" aria-label="6.5 h slept, 297 ms reaction time">
 <title>6.5 h slept, 297 ms reaction time</title>
 <circle class="halo" cx="408.0" cy="569.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="408.0" cy="569.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="408.0" cy="569.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-114" class="pt hit" tabindex="0" role="img" aria-label="6.6 h slept, 336 ms reaction time">
 <title>6.6 h slept, 336 ms reaction time</title>
 <circle class="halo" cx="419.6" cy="485.4" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="419.6" cy="485.4" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="419.6" cy="485.4" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-115" class="pt hit" tabindex="0" role="img" aria-label="5.1 h slept, 290 ms reaction time">
 <title>5.1 h slept, 290 ms reaction time</title>
 <circle class="halo" cx="245.6" cy="584.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="245.6" cy="584.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="245.6" cy="584.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-116" class="pt hit" tabindex="0" role="img" aria-label="7.0 h slept, 298 ms reaction time">
 <title>7.0 h slept, 298 ms reaction time</title>
 <circle class="halo" cx="466.0" cy="567.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="466.0" cy="567.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="466.0" cy="567.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-117" class="pt hit" tabindex="0" role="img" aria-label="5.4 h slept, 317 ms reaction time">
 <title>5.4 h slept, 317 ms reaction time</title>
 <circle class="halo" cx="280.4" cy="526.5" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="280.4" cy="526.5" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="280.4" cy="526.5" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-118" class="pt hit" tabindex="0" role="img" aria-label="8.0 h slept, 247 ms reaction time">
 <title>8.0 h slept, 247 ms reaction time</title>
 <circle class="halo" cx="582.0" cy="677.7" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="582.0" cy="677.7" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="582.0" cy="677.7" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <g id="point-119" class="pt hit" tabindex="0" role="img" aria-label="6.9 h slept, 240 ms reaction time">
 <title>6.9 h slept, 240 ms reaction time</title>
 <circle class="halo" cx="454.4" cy="692.8" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="jp-dot" cx="454.4" cy="692.8" r="7.0" fill="#007AFF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
+<circle class="jp-dot" cx="454.4" cy="692.8" r="7.0" fill="#0088FF" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.1"/>
 </g>
 <line x1="118.0" y1="450.9" x2="756.0" y2="773.1" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
-<line class="jp-trend" x1="118.0" y1="450.9" x2="756.0" y2="773.1" stroke="#FF9500" stroke-width="4" stroke-linecap="round"/>
-<text x="692.2" y="725.8" font-size="17" font-weight="700" fill="#FF9500" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" text-anchor="middle" transform="rotate(26.8 692.2 725.8)">fitted trend</text>
+<line class="jp-trend" x1="118.0" y1="450.9" x2="756.0" y2="773.1" stroke="#FF8D28" stroke-width="4" stroke-linecap="round"/>
+<text x="692.2" y="725.8" font-size="17" font-weight="700" fill="#FF8D28" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" text-anchor="middle" transform="rotate(26.8 692.2 725.8)">fitted trend</text>
 <g id="topbartip-0" class="tip"><rect x="78.3" y="210" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="87.3" y="231.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.0-4.4 h slept</text><text x="87.3" y="247.5" font-size="12.5" font-weight="400" fill="#6E6E73">6 volunteers</text></g>
 <g id="topbartip-1" class="tip"><rect x="123.9" y="222" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="132.9" y="243.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.4-4.8 h slept</text><text x="132.9" y="259.5" font-size="12.5" font-weight="400" fill="#6E6E73">4 volunteers</text></g>
 <g id="topbartip-2" class="tip"><rect x="169.4" y="198" width="123" height="46.5" rx="9" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1.2"/><text x="178.4" y="219.5" font-size="12.5" font-weight="700" fill="#1D1D1F">4.8-5.2 h slept</text><text x="178.4" y="235.5" font-size="12.5" font-weight="400" fill="#6E6E73">8 volunteers</text></g>

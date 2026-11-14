@@ -18,7 +18,7 @@
 <text x="128" y="134" font-size="23" fill="#6E6E73">Bland-Altman plot. Each dot is one patient: its difference (wrist − arm) against the two methods’ mean.</text>
 <text x="128" y="166" font-size="23" fill="#6E6E73">Solid line = mean bias (-7.3 mmHg). Dashed lines = 95% limits of agreement (-15.3 to +0.7 mmHg).</text>
 <text x="128" y="198" font-size="23" fill="#6E6E73">Bias below zero, cloud tilting down to the right: the wrist reads low, worse at higher pressure · illustrative data</text>
-<rect x="128.0" y="444.8" width="942.0" height="256.0" fill="#007AFF" fill-opacity="0.07"/>
+<rect x="128.0" y="444.8" width="942.0" height="256.0" fill="#0088FF" fill-opacity="0.07"/>
 <line x1="206.5" y1="232.0" x2="206.5" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="402.8" y1="232.0" x2="402.8" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
 <line x1="599.0" y1="232.0" x2="599.0" y2="808.0" stroke="#EEEEEE" stroke-width="1.4"/>
@@ -508,15 +508,15 @@
 <circle class="halo" cx="351.7" cy="513.6" r="16" fill="#1D1D1F" fill-opacity="0.08"/>
 <circle cx="351.7" cy="513.6" r="7.5" fill="#808080" fill-opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
 </g>
-<line class="ba-trend" x1="128.0" y1="526.7" x2="1070.0" y2="627.9" stroke="#AF52DE" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round" stroke-opacity="0.9"/>
-<line class="ba-loa" x1="128.0" y1="444.8" x2="1070.0" y2="444.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
-<rect class="ba-loa-chip" x="1080.0" y="427.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>
-<text class="ba-loa-txt" x="1092.0" y="450.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">+1.96 SD  +0.7</text>
-<line class="ba-bias" x1="128.0" y1="572.8" x2="1070.0" y2="572.8" stroke="#007AFF" stroke-width="3.6"/>
-<rect class="ba-bias-chip" x="1080.0" y="555.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#007AFF" stroke-width="1.4"/>
-<text class="ba-bias-txt" x="1092.0" y="578.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#007AFF">Bias  -7.3</text>
-<line class="ba-loa" x1="128.0" y1="700.8" x2="1070.0" y2="700.8" stroke="#FF3B30" stroke-width="2.6" stroke-dasharray="7 5"/>
-<rect class="ba-loa-chip" x="1080.0" y="683.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF3B30" stroke-width="1.4"/>
-<text class="ba-loa-txt" x="1092.0" y="706.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF3B30">−1.96 SD  -15.3</text>
+<line class="ba-trend" x1="128.0" y1="526.7" x2="1070.0" y2="627.9" stroke="#CB30E0" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round" stroke-opacity="0.9"/>
+<line class="ba-loa" x1="128.0" y1="444.8" x2="1070.0" y2="444.8" stroke="#FF383C" stroke-width="2.6" stroke-dasharray="7 5"/>
+<rect class="ba-loa-chip" x="1080.0" y="427.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF383C" stroke-width="1.4"/>
+<text class="ba-loa-txt" x="1092.0" y="450.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF383C">+1.96 SD  +0.7</text>
+<line class="ba-bias" x1="128.0" y1="572.8" x2="1070.0" y2="572.8" stroke="#0088FF" stroke-width="3.6"/>
+<rect class="ba-bias-chip" x="1080.0" y="555.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#0088FF" stroke-width="1.4"/>
+<text class="ba-bias-txt" x="1092.0" y="578.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#0088FF">Bias  -7.3</text>
+<line class="ba-loa" x1="128.0" y1="700.8" x2="1070.0" y2="700.8" stroke="#FF383C" stroke-width="2.6" stroke-dasharray="7 5"/>
+<rect class="ba-loa-chip" x="1080.0" y="683.8" width="188.0" height="34" rx="8" fill="#FFFFFF" stroke="#FF383C" stroke-width="1.4"/>
+<text class="ba-loa-txt" x="1092.0" y="706.8" font-size="19" font-family="Roboto Mono, monospace" font-weight="700" fill="#FF383C">−1.96 SD  -15.3</text>
 <g data-fs-internal="" role="button" tabindex="0" aria-label="Toggle fullscreen" transform="translate(1006,240)" style="display:none;cursor:pointer"><rect x="0" y="0" width="34" height="34" rx="8" fill="#F2F3F5"/><path d="M6 13 V6 h7 M28 13 V6 h-7 M6 21 v7 h7 M28 21 v7 h-7" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/></g><script><![CDATA[(function(){var me=document.currentScript,svg=me.ownerSVGElement||me.parentNode;if(svg.closest&&svg.closest('[data-fs-target]'))return;var btn=svg.querySelector('[data-fs-internal]');var req=svg.requestFullscreen||svg.webkitRequestFullscreen;if(!btn||!req)return;btn.style.display='';function t(){var f=document.fullscreenElement||document.webkitFullscreenElement;if(f===svg)(document.exitFullscreen||document.webkitExitFullscreen).call(document);else req.call(svg);}btn.addEventListener('click',t);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});})();]]></script>
 </svg>

@@ -117,7 +117,7 @@
 <rect id="cell-hit-83" class="cell hit" x="241.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF6257" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>46 incidents</title></rect>
 <rect id="cell-hit-84" class="cell hit" x="276.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF5E53" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>48 incidents</title></rect>
 <rect id="cell-hit-85" class="cell hit" x="312.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF4238" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>62 incidents</title></rect>
-<rect id="cell-hit-86" class="cell hit" x="347.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>66 incidents</title></rect>
+<rect id="cell-hit-86" class="cell hit" x="347.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>66 incidents</title></rect>
 <rect id="cell-hit-87" class="cell hit" x="382.7" y="380.7" width="33.9" height="33.9" rx="2" fill="#FF7368" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>38 incidents</title></rect>
 <rect id="cell-hit-88" class="cell hit" x="418.0" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFA399" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>18 incidents</title></rect>
 <rect id="cell-hit-89" class="cell hit" x="453.4" y="380.7" width="33.9" height="33.9" rx="2" fill="#FFC1B8" stroke="#FFFFFF" stroke-width="1.4" tabindex="0" role="listitem"><title>8 incidents</title></rect>
@@ -571,7 +571,7 @@
 </g>
 <g transform="translate(992.0,268.0)">
 <text x="0" y="-24" font-size="20" font-weight="700" fill="#1D1D1F">Incidents per cell</text>
-<rect class="legend-swatch" x="0" y="0.0" width="36.0" height="34.0" fill="#FF3B30"/>
+<rect class="legend-swatch" x="0" y="0.0" width="36.0" height="34.0" fill="#FF383C"/>
 <rect class="legend-swatch" x="0" y="34.0" width="36.0" height="34.0" fill="#FF4D42"/>
 <rect class="legend-swatch" x="0" y="68.0" width="36.0" height="34.0" fill="#FF6055"/>
 <rect class="legend-swatch" x="0" y="102.0" width="36.0" height="34.0" fill="#FF7369"/>
@@ -583,7 +583,7 @@
 <text x="50.0" y="272.0" font-size="18" fill="#6E6E73" font-family="Roboto Mono, monospace" dominant-baseline="ideographic">1</text>
 <rect class="legend-swatch" x="0" y="302.0" width="36.0" height="34.0" fill="#ECEEF1"/>
 <text x="50.0" y="324.4" font-size="17" fill="#6E6E73">no incidents</text>
-<text x="0" y="420.0" font-size="54" font-weight="700" fill="#FF3B30">38%</text>
+<text x="0" y="420.0" font-size="54" font-weight="700" fill="#FF383C">38%</text>
 <text x="0" y="454.0" font-size="17.5" fill="#6E6E73">of incidents fall</text>
 <text x="0" y="476.0" font-size="17.5" fill="#6E6E73">in the busiest 10% of cells</text>
 </g>

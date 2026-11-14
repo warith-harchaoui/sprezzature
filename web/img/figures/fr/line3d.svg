@@ -1218,8 +1218,8 @@
 <path d="M454.3,455.9 L458.4,447.9 L450.4,447.8 Z" fill="#1D1D1F" opacity="0.5"/>
 <path d="M540.9,389.6 L532.1,391.1 L536.9,397.6 Z" fill="#1D1D1F" opacity="0.5"/>
 <path d="M465.0,371.7 L471.5,365.5 L464.0,362.8 Z" fill="#1D1D1F" opacity="0.5"/>
-<circle cx="416.9" cy="370.8" r="5.5" fill="#FF9500"/>
-<text x="426.9" y="374.8" font-size="12" font-weight="700" fill="#FF9500">départ</text>
+<circle cx="416.9" cy="370.8" r="5.5" fill="#FF8D28"/>
+<text x="426.9" y="374.8" font-size="12" font-weight="700" fill="#FF8D28">départ</text>
 <rect id="node-0" class="node hit" tabindex="0" role="img" aria-label="départ : x -4,69, y -4,11, z 23,55" x="404.9" y="358.8" width="24" height="24" fill="transparent"><title>départ</title></rect>
 <g id="nodetip-0" class="tip"><rect x="348.4" y="370.8" width="137" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="357.4" y="392.3" font-size="12.5" font-weight="700" fill="#1D1D1F">départ</text><text x="357.4" y="408.3" font-size="12.5" font-weight="400" fill="#6E6E73">x -4,69</text><text x="357.4" y="424.3" font-size="12.5" font-weight="400" fill="#6E6E73">y -4,11 · z 23,55</text></g>
 <circle cx="466.2" cy="413.7" r="5.5" fill="#1D1D1F"/>

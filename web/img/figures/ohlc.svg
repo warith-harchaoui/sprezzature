@@ -21,190 +21,190 @@
 <text x="76.0" y="270.4" font-size="11" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">150</text>
 <line x1="86.0" y1="206.0" x2="904.0" y2="206.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="76.0" y="210.0" font-size="11" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">155</text>
-<line x1="94.9" y1="306.1" x2="94.9" y2="265.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="89.9" y1="290.6" x2="94.9" y2="290.6" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="94.9" y1="290.3" x2="99.9" y2="290.3" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="94.9" y1="306.1" x2="94.9" y2="265.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="89.9" y1="290.6" x2="94.9" y2="290.6" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="94.9" y1="290.3" x2="99.9" y2="290.3" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-0" class="bar hit" tabindex="0" role="img" aria-label="2026-03-02: opened 148.00, high 150.11, low 146.71, closed 148.02, up" x="86.0" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-02: 148.02</title></rect>
-<line x1="112.7" y1="312.8" x2="112.7" y2="279.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="107.7" y1="290.3" x2="112.7" y2="290.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="112.7" y1="300.1" x2="117.7" y2="300.1" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="112.7" y1="312.8" x2="112.7" y2="279.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="107.7" y1="290.3" x2="112.7" y2="290.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="112.7" y1="300.1" x2="117.7" y2="300.1" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-1" class="bar hit" tabindex="0" role="img" aria-label="2026-03-03: opened 148.02, high 148.96, low 146.16, closed 147.21, down" x="103.8" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-03: 147.21</title></rect>
-<line x1="130.5" y1="312.5" x2="130.5" y2="283.8" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="125.5" y1="300.1" x2="130.5" y2="300.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="130.5" y1="299.1" x2="135.5" y2="299.1" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="130.5" y1="312.5" x2="130.5" y2="283.8" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="125.5" y1="300.1" x2="130.5" y2="300.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="130.5" y1="299.1" x2="135.5" y2="299.1" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-2" class="bar hit" tabindex="0" role="img" aria-label="2026-03-04: opened 147.21, high 148.56, low 146.18, closed 147.29, up" x="121.6" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-04: 147.29</title></rect>
-<line x1="148.2" y1="318.9" x2="148.2" y2="262.4" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="143.2" y1="299.1" x2="148.2" y2="299.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="148.2" y1="278.4" x2="153.2" y2="278.4" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="148.2" y1="318.9" x2="148.2" y2="262.4" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="143.2" y1="299.1" x2="148.2" y2="299.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="148.2" y1="278.4" x2="153.2" y2="278.4" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-3" class="bar hit" tabindex="0" role="img" aria-label="2026-03-05: opened 147.29, high 150.33, low 145.65, closed 149.01, up" x="139.3" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-05: 149.01</title></rect>
-<line x1="166.0" y1="295.9" x2="166.0" y2="250.2" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="161.0" y1="278.4" x2="166.0" y2="278.4" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="166.0" y1="257.8" x2="171.0" y2="257.8" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="166.0" y1="295.9" x2="166.0" y2="250.2" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="161.0" y1="278.4" x2="166.0" y2="278.4" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="166.0" y1="257.8" x2="171.0" y2="257.8" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-4" class="bar hit" tabindex="0" role="img" aria-label="2026-03-06: opened 149.01, high 151.34, low 147.56, closed 150.71, up" x="157.1" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-06: 150.71</title></rect>
-<line x1="183.8" y1="311.9" x2="183.8" y2="237.6" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="178.8" y1="257.8" x2="183.8" y2="257.8" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="183.8" y1="285.8" x2="188.8" y2="285.8" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="183.8" y1="311.9" x2="183.8" y2="237.6" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="178.8" y1="257.8" x2="183.8" y2="257.8" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="183.8" y1="285.8" x2="188.8" y2="285.8" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-5" class="bar hit" tabindex="0" role="img" aria-label="2026-03-09: opened 150.71, high 152.38, low 146.23, closed 148.39, down" x="174.9" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-09: 148.39</title></rect>
-<line x1="201.6" y1="299.6" x2="201.6" y2="232.2" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="196.6" y1="285.8" x2="201.6" y2="285.8" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="201.6" y1="244.9" x2="206.6" y2="244.9" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="201.6" y1="299.6" x2="201.6" y2="232.2" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="196.6" y1="285.8" x2="201.6" y2="285.8" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="201.6" y1="244.9" x2="206.6" y2="244.9" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-6" class="bar hit" tabindex="0" role="img" aria-label="2026-03-10: opened 148.39, high 152.83, low 147.25, closed 151.78, up" x="192.7" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-10: 151.78</title></rect>
-<line x1="219.4" y1="280.9" x2="219.4" y2="223.5" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="214.4" y1="244.9" x2="219.4" y2="244.9" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="219.4" y1="264.2" x2="224.4" y2="264.2" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="219.4" y1="280.9" x2="219.4" y2="223.5" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="214.4" y1="244.9" x2="219.4" y2="244.9" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="219.4" y1="264.2" x2="224.4" y2="264.2" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-7" class="bar hit" tabindex="0" role="img" aria-label="2026-03-11: opened 151.78, high 153.55, low 148.80, closed 150.18, down" x="210.5" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-11: 150.18</title></rect>
-<line x1="237.2" y1="298.3" x2="237.2" y2="248.8" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="232.2" y1="264.2" x2="237.2" y2="264.2" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="237.2" y1="278.0" x2="242.2" y2="278.0" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="237.2" y1="298.3" x2="237.2" y2="248.8" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="232.2" y1="264.2" x2="237.2" y2="264.2" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="237.2" y1="278.0" x2="242.2" y2="278.0" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-8" class="bar hit" tabindex="0" role="img" aria-label="2026-03-12: opened 150.18, high 151.46, low 147.36, closed 149.04, down" x="228.3" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-12: 149.04</title></rect>
-<line x1="254.9" y1="292.9" x2="254.9" y2="220.7" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="249.9" y1="278.0" x2="254.9" y2="278.0" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="254.9" y1="247.3" x2="259.9" y2="247.3" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="254.9" y1="292.9" x2="254.9" y2="220.7" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="249.9" y1="278.0" x2="254.9" y2="278.0" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="254.9" y1="247.3" x2="259.9" y2="247.3" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-9" class="bar hit" tabindex="0" role="img" aria-label="2026-03-13: opened 149.04, high 153.78, low 147.81, closed 151.58, up" x="246.0" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-13: 151.58</title></rect>
-<line x1="272.7" y1="291.9" x2="272.7" y2="235.8" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="267.7" y1="247.3" x2="272.7" y2="247.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="272.7" y1="281.0" x2="277.7" y2="281.0" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="272.7" y1="291.9" x2="272.7" y2="235.8" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="267.7" y1="247.3" x2="272.7" y2="247.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="272.7" y1="281.0" x2="277.7" y2="281.0" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-10" class="bar hit" tabindex="0" role="img" aria-label="2026-03-16: opened 151.58, high 152.53, low 147.89, closed 148.79, down" x="263.8" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-16: 148.79</title></rect>
-<line x1="290.5" y1="318.2" x2="290.5" y2="270.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="285.5" y1="281.0" x2="290.5" y2="281.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="290.5" y1="301.2" x2="295.5" y2="301.2" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="290.5" y1="318.2" x2="290.5" y2="270.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="285.5" y1="281.0" x2="290.5" y2="281.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="290.5" y1="301.2" x2="295.5" y2="301.2" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-11" class="bar hit" tabindex="0" role="img" aria-label="2026-03-17: opened 148.79, high 149.64, low 145.71, closed 147.12, down" x="281.6" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-17: 147.12</title></rect>
-<line x1="308.3" y1="316.4" x2="308.3" y2="278.5" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="303.3" y1="301.2" x2="308.3" y2="301.2" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="308.3" y1="299.5" x2="313.3" y2="299.5" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="308.3" y1="316.4" x2="308.3" y2="278.5" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="303.3" y1="301.2" x2="308.3" y2="301.2" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="308.3" y1="299.5" x2="313.3" y2="299.5" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-12" class="bar hit" tabindex="0" role="img" aria-label="2026-03-18: opened 147.12, high 149.00, low 145.86, closed 147.26, up" x="299.4" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-18: 147.26</title></rect>
-<line x1="326.1" y1="316.2" x2="326.1" y2="278.8" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="321.1" y1="299.5" x2="326.1" y2="299.5" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="326.1" y1="290.0" x2="331.1" y2="290.0" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="326.1" y1="316.2" x2="326.1" y2="278.8" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="321.1" y1="299.5" x2="326.1" y2="299.5" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="326.1" y1="290.0" x2="331.1" y2="290.0" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-13" class="bar hit" tabindex="0" role="img" aria-label="2026-03-19: opened 147.26, high 148.97, low 145.88, closed 148.05, up" x="317.2" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-19: 148.05</title></rect>
-<line x1="343.8" y1="308.3" x2="343.8" y2="266.5" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="338.8" y1="290.0" x2="343.8" y2="290.0" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="343.8" y1="280.3" x2="348.8" y2="280.3" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="343.8" y1="308.3" x2="343.8" y2="266.5" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="338.8" y1="290.0" x2="343.8" y2="290.0" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="343.8" y1="280.3" x2="348.8" y2="280.3" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-14" class="bar hit" tabindex="0" role="img" aria-label="2026-03-20: opened 148.05, high 149.99, low 146.53, closed 148.85, up" x="335.0" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-20: 148.85</title></rect>
-<line x1="361.6" y1="353.1" x2="361.6" y2="267.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="356.6" y1="280.3" x2="361.6" y2="280.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="361.6" y1="324.4" x2="366.6" y2="324.4" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="361.6" y1="353.1" x2="361.6" y2="267.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="356.6" y1="280.3" x2="361.6" y2="280.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="361.6" y1="324.4" x2="366.6" y2="324.4" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-15" class="bar hit" tabindex="0" role="img" aria-label="2026-03-23: opened 148.85, high 149.95, low 142.82, closed 145.20, down" x="352.7" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-23: 145.20</title></rect>
-<line x1="379.4" y1="344.4" x2="379.4" y2="295.0" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="374.4" y1="324.4" x2="379.4" y2="324.4" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="379.4" y1="310.0" x2="384.4" y2="310.0" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="379.4" y1="344.4" x2="379.4" y2="295.0" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="374.4" y1="324.4" x2="379.4" y2="324.4" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="379.4" y1="310.0" x2="384.4" y2="310.0" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-16" class="bar hit" tabindex="0" role="img" aria-label="2026-03-24: opened 145.20, high 147.63, low 143.54, closed 146.39, up" x="370.5" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-24: 146.39</title></rect>
-<line x1="397.2" y1="351.6" x2="397.2" y2="288.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="392.2" y1="310.0" x2="397.2" y2="310.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="397.2" y1="335.6" x2="402.2" y2="335.6" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="397.2" y1="351.6" x2="397.2" y2="288.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="392.2" y1="310.0" x2="397.2" y2="310.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="397.2" y1="335.6" x2="402.2" y2="335.6" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-17" class="bar hit" tabindex="0" role="img" aria-label="2026-03-25: opened 146.39, high 148.19, low 142.95, closed 144.27, down" x="388.3" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-25: 144.27</title></rect>
-<line x1="415.0" y1="348.2" x2="415.0" y2="284.8" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="410.0" y1="335.6" x2="415.0" y2="335.6" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="415.0" y1="302.3" x2="420.0" y2="302.3" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="415.0" y1="348.2" x2="415.0" y2="284.8" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="410.0" y1="335.6" x2="415.0" y2="335.6" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="415.0" y1="302.3" x2="420.0" y2="302.3" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-18" class="bar hit" tabindex="0" role="img" aria-label="2026-03-26: opened 144.27, high 148.48, low 143.23, closed 147.03, up" x="406.1" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-26: 147.03</title></rect>
-<line x1="432.8" y1="347.7" x2="432.8" y2="274.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="427.8" y1="302.3" x2="432.8" y2="302.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="432.8" y1="317.7" x2="437.8" y2="317.7" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="432.8" y1="347.7" x2="432.8" y2="274.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="427.8" y1="302.3" x2="432.8" y2="302.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="432.8" y1="317.7" x2="437.8" y2="317.7" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-19" class="bar hit" tabindex="0" role="img" aria-label="2026-03-27: opened 147.03, high 149.31, low 143.27, closed 145.75, down" x="423.9" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-27: 145.75</title></rect>
-<line x1="450.5" y1="360.7" x2="450.5" y2="301.9" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="445.5" y1="317.7" x2="450.5" y2="317.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="450.5" y1="344.8" x2="455.5" y2="344.8" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="450.5" y1="360.7" x2="450.5" y2="301.9" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="445.5" y1="317.7" x2="450.5" y2="317.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="450.5" y1="344.8" x2="455.5" y2="344.8" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-20" class="bar hit" tabindex="0" role="img" aria-label="2026-03-30: opened 145.75, high 147.06, low 142.19, closed 143.51, down" x="441.7" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-30: 143.51</title></rect>
-<line x1="468.3" y1="385.0" x2="468.3" y2="324.6" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="463.3" y1="344.8" x2="468.3" y2="344.8" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="468.3" y1="363.0" x2="473.3" y2="363.0" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="468.3" y1="385.0" x2="468.3" y2="324.6" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="463.3" y1="344.8" x2="468.3" y2="344.8" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="468.3" y1="363.0" x2="473.3" y2="363.0" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-21" class="bar hit" tabindex="0" role="img" aria-label="2026-03-31: opened 143.51, high 145.18, low 140.18, closed 142.00, down" x="459.4" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-03-31: 142.00</title></rect>
-<line x1="486.1" y1="380.1" x2="486.1" y2="350.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="481.1" y1="363.0" x2="486.1" y2="363.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="486.1" y1="371.3" x2="491.1" y2="371.3" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="486.1" y1="380.1" x2="486.1" y2="350.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="481.1" y1="363.0" x2="486.1" y2="363.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="486.1" y1="371.3" x2="491.1" y2="371.3" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-22" class="bar hit" tabindex="0" role="img" aria-label="2026-04-01: opened 142.00, high 143.08, low 140.59, closed 141.32, down" x="477.2" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-01: 141.32</title></rect>
-<line x1="503.9" y1="392.2" x2="503.9" y2="352.5" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="498.9" y1="371.3" x2="503.9" y2="371.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="503.9" y1="379.3" x2="508.9" y2="379.3" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="503.9" y1="392.2" x2="503.9" y2="352.5" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="498.9" y1="371.3" x2="503.9" y2="371.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="503.9" y1="379.3" x2="508.9" y2="379.3" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-23" class="bar hit" tabindex="0" role="img" aria-label="2026-04-02: opened 141.32, high 142.87, low 139.59, closed 140.65, down" x="495.0" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-02: 140.65</title></rect>
-<line x1="521.7" y1="417.2" x2="521.7" y2="369.8" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="516.7" y1="379.3" x2="521.7" y2="379.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="521.7" y1="404.1" x2="526.7" y2="404.1" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="521.7" y1="417.2" x2="521.7" y2="369.8" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="516.7" y1="379.3" x2="521.7" y2="379.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="521.7" y1="404.1" x2="526.7" y2="404.1" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-24" class="bar hit" tabindex="0" role="img" aria-label="2026-04-03: opened 140.65, high 141.44, low 137.52, closed 138.60, down" x="512.8" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-03: 138.60</title></rect>
-<line x1="539.5" y1="411.1" x2="539.5" y2="358.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="534.5" y1="404.1" x2="539.5" y2="404.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="539.5" y1="394.2" x2="544.5" y2="394.2" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="539.5" y1="411.1" x2="539.5" y2="358.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="534.5" y1="404.1" x2="539.5" y2="404.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="539.5" y1="394.2" x2="544.5" y2="394.2" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-25" class="bar hit" tabindex="0" role="img" aria-label="2026-04-06: opened 138.60, high 142.41, low 138.02, closed 139.42, up" x="530.6" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-06: 139.42</title></rect>
-<line x1="557.2" y1="405.1" x2="557.2" y2="364.7" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="552.2" y1="394.2" x2="557.2" y2="394.2" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="557.2" y1="377.9" x2="562.2" y2="377.9" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="557.2" y1="405.1" x2="557.2" y2="364.7" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="552.2" y1="394.2" x2="557.2" y2="394.2" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="557.2" y1="377.9" x2="562.2" y2="377.9" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-26" class="bar hit" tabindex="0" role="img" aria-label="2026-04-07: opened 139.42, high 141.86, low 138.52, closed 140.77, up" x="548.3" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-07: 140.77</title></rect>
-<line x1="575.0" y1="403.3" x2="575.0" y2="356.9" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="570.0" y1="377.9" x2="575.0" y2="377.9" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="575.0" y1="381.0" x2="580.0" y2="381.0" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="575.0" y1="403.3" x2="575.0" y2="356.9" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="570.0" y1="377.9" x2="575.0" y2="377.9" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="575.0" y1="381.0" x2="580.0" y2="381.0" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-27" class="bar hit" tabindex="0" role="img" aria-label="2026-04-08: opened 140.77, high 142.51, low 138.67, closed 140.51, down" x="566.1" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-08: 140.51</title></rect>
-<line x1="592.8" y1="401.6" x2="592.8" y2="347.3" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="587.8" y1="381.0" x2="592.8" y2="381.0" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="592.8" y1="358.2" x2="597.8" y2="358.2" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="592.8" y1="401.6" x2="592.8" y2="347.3" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="587.8" y1="381.0" x2="592.8" y2="381.0" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="592.8" y1="358.2" x2="597.8" y2="358.2" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-28" class="bar hit" tabindex="0" role="img" aria-label="2026-04-09: opened 140.51, high 143.30, low 138.81, closed 142.40, up" x="583.9" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-09: 142.40</title></rect>
-<line x1="610.6" y1="447.8" x2="610.6" y2="261.2" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="605.6" y1="358.2" x2="610.6" y2="358.2" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="610.6" y1="361.2" x2="615.6" y2="361.2" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="610.6" y1="447.8" x2="610.6" y2="261.2" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="605.6" y1="358.2" x2="610.6" y2="358.2" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="610.6" y1="361.2" x2="615.6" y2="361.2" stroke="#FF8D28" stroke-width="1.8"/>
 <rect x="601.7" y="206.0" width="17.8" height="302.0" fill="#1D1D1F" opacity="0.05"/>
 <rect id="bar-29" class="bar hit" tabindex="0" role="img" aria-label="2026-04-10: opened 142.40, high 150.43, low 134.98, closed 142.15, down" x="601.7" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-10: 142.15</title></rect>
-<line x1="628.4" y1="383.5" x2="628.4" y2="348.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="623.4" y1="361.2" x2="628.4" y2="361.2" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="628.4" y1="360.7" x2="633.4" y2="360.7" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="628.4" y1="383.5" x2="628.4" y2="348.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="623.4" y1="361.2" x2="628.4" y2="361.2" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="628.4" y1="360.7" x2="633.4" y2="360.7" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-30" class="bar hit" tabindex="0" role="img" aria-label="2026-04-13: opened 142.15, high 143.24, low 140.31, closed 142.19, up" x="619.5" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-13: 142.19</title></rect>
-<line x1="646.2" y1="401.7" x2="646.2" y2="346.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="641.2" y1="360.7" x2="646.2" y2="360.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="646.2" y1="378.6" x2="651.2" y2="378.6" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="646.2" y1="401.7" x2="646.2" y2="346.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="641.2" y1="360.7" x2="646.2" y2="360.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="646.2" y1="378.6" x2="651.2" y2="378.6" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-31" class="bar hit" tabindex="0" role="img" aria-label="2026-04-14: opened 142.19, high 143.41, low 138.80, closed 140.71, down" x="637.3" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-14: 140.71</title></rect>
-<line x1="663.9" y1="387.9" x2="663.9" y2="357.7" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="658.9" y1="378.6" x2="663.9" y2="378.6" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="663.9" y1="378.0" x2="668.9" y2="378.0" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="663.9" y1="387.9" x2="663.9" y2="357.7" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="658.9" y1="378.6" x2="663.9" y2="378.6" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="663.9" y1="378.0" x2="668.9" y2="378.0" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-32" class="bar hit" tabindex="0" role="img" aria-label="2026-04-15: opened 140.71, high 142.44, low 139.94, closed 140.76, up" x="655.0" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-15: 140.76</title></rect>
-<line x1="681.7" y1="387.4" x2="681.7" y2="348.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="676.7" y1="378.0" x2="681.7" y2="378.0" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="681.7" y1="357.0" x2="686.7" y2="357.0" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="681.7" y1="387.4" x2="681.7" y2="348.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="676.7" y1="378.0" x2="681.7" y2="378.0" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="681.7" y1="357.0" x2="686.7" y2="357.0" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-33" class="bar hit" tabindex="0" role="img" aria-label="2026-04-16: opened 140.76, high 143.24, low 139.98, closed 142.50, up" x="672.8" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-16: 142.50</title></rect>
-<line x1="699.5" y1="376.4" x2="699.5" y2="341.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="694.5" y1="357.0" x2="699.5" y2="357.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="699.5" y1="362.7" x2="704.5" y2="362.7" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="699.5" y1="376.4" x2="699.5" y2="341.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="694.5" y1="357.0" x2="699.5" y2="357.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="699.5" y1="362.7" x2="704.5" y2="362.7" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-34" class="bar hit" tabindex="0" role="img" aria-label="2026-04-17: opened 142.50, high 143.77, low 140.89, closed 142.03, down" x="690.6" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-17: 142.03</title></rect>
-<line x1="717.3" y1="385.0" x2="717.3" y2="344.8" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="712.3" y1="362.7" x2="717.3" y2="362.7" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="717.3" y1="361.7" x2="722.3" y2="361.7" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="717.3" y1="385.0" x2="717.3" y2="344.8" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="712.3" y1="362.7" x2="717.3" y2="362.7" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="717.3" y1="361.7" x2="722.3" y2="361.7" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-35" class="bar hit" tabindex="0" role="img" aria-label="2026-04-20: opened 142.03, high 143.51, low 140.18, closed 142.11, up" x="708.4" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-20: 142.11</title></rect>
-<line x1="735.1" y1="391.5" x2="735.1" y2="350.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="730.1" y1="361.7" x2="735.1" y2="361.7" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="735.1" y1="379.0" x2="740.1" y2="379.0" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="735.1" y1="391.5" x2="735.1" y2="350.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="730.1" y1="361.7" x2="735.1" y2="361.7" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="735.1" y1="379.0" x2="740.1" y2="379.0" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-36" class="bar hit" tabindex="0" role="img" aria-label="2026-04-21: opened 142.11, high 143.02, low 139.64, closed 140.68, down" x="726.2" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-21: 140.68</title></rect>
-<line x1="752.8" y1="403.5" x2="752.8" y2="345.5" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="747.8" y1="379.0" x2="752.8" y2="379.0" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="752.8" y1="371.9" x2="757.8" y2="371.9" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="752.8" y1="403.5" x2="752.8" y2="345.5" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="747.8" y1="379.0" x2="752.8" y2="379.0" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="752.8" y1="371.9" x2="757.8" y2="371.9" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-37" class="bar hit" tabindex="0" role="img" aria-label="2026-04-22: opened 140.68, high 143.45, low 138.65, closed 141.27, up" x="744.0" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-22: 141.27</title></rect>
-<line x1="770.6" y1="385.6" x2="770.6" y2="349.4" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="765.6" y1="371.9" x2="770.6" y2="371.9" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="770.6" y1="365.8" x2="775.6" y2="365.8" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="770.6" y1="385.6" x2="770.6" y2="349.4" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="765.6" y1="371.9" x2="770.6" y2="371.9" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="770.6" y1="365.8" x2="775.6" y2="365.8" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-38" class="bar hit" tabindex="0" role="img" aria-label="2026-04-23: opened 141.27, high 143.13, low 140.13, closed 141.77, up" x="761.7" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-23: 141.77</title></rect>
-<line x1="788.4" y1="381.2" x2="788.4" y2="335.9" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="783.4" y1="365.8" x2="788.4" y2="365.8" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="788.4" y1="361.1" x2="793.4" y2="361.1" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="788.4" y1="381.2" x2="788.4" y2="335.9" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="783.4" y1="365.8" x2="788.4" y2="365.8" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="788.4" y1="361.1" x2="793.4" y2="361.1" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-39" class="bar hit" tabindex="0" role="img" aria-label="2026-04-24: opened 141.77, high 144.25, low 140.50, closed 142.16, up" x="779.5" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-24: 142.16</title></rect>
-<line x1="806.2" y1="382.6" x2="806.2" y2="341.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="801.2" y1="361.1" x2="806.2" y2="361.1" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="806.2" y1="352.2" x2="811.2" y2="352.2" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="806.2" y1="382.6" x2="806.2" y2="341.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="801.2" y1="361.1" x2="806.2" y2="361.1" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="806.2" y1="352.2" x2="811.2" y2="352.2" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-40" class="bar hit" tabindex="0" role="img" aria-label="2026-04-27: opened 142.16, high 143.82, low 140.38, closed 142.90, up" x="797.3" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-27: 142.90</title></rect>
-<line x1="824.0" y1="367.5" x2="824.0" y2="302.9" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="819.0" y1="352.2" x2="824.0" y2="352.2" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="824.0" y1="319.9" x2="829.0" y2="319.9" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="824.0" y1="367.5" x2="824.0" y2="302.9" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="819.0" y1="352.2" x2="824.0" y2="352.2" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="824.0" y1="319.9" x2="829.0" y2="319.9" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-41" class="bar hit" tabindex="0" role="img" aria-label="2026-04-28: opened 142.90, high 146.98, low 141.63, closed 145.57, up" x="815.1" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-28: 145.57</title></rect>
-<line x1="841.8" y1="331.1" x2="841.8" y2="307.5" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="836.8" y1="319.9" x2="841.8" y2="319.9" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="841.8" y1="316.0" x2="846.8" y2="316.0" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="841.8" y1="331.1" x2="841.8" y2="307.5" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="836.8" y1="319.9" x2="841.8" y2="319.9" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="841.8" y1="316.0" x2="846.8" y2="316.0" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-42" class="bar hit" tabindex="0" role="img" aria-label="2026-04-29: opened 145.57, high 146.60, low 144.64, closed 145.89, up" x="832.9" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-29: 145.89</title></rect>
-<line x1="859.5" y1="339.5" x2="859.5" y2="300.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="854.5" y1="316.0" x2="859.5" y2="316.0" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="859.5" y1="323.5" x2="864.5" y2="323.5" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="859.5" y1="339.5" x2="859.5" y2="300.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="854.5" y1="316.0" x2="859.5" y2="316.0" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="859.5" y1="323.5" x2="864.5" y2="323.5" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-43" class="bar hit" tabindex="0" role="img" aria-label="2026-04-30: opened 145.89, high 147.19, low 143.95, closed 145.27, down" x="850.7" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-04-30: 145.27</title></rect>
-<line x1="877.3" y1="346.2" x2="877.3" y2="297.9" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="872.3" y1="323.5" x2="877.3" y2="323.5" stroke="#007AFF" stroke-width="1.8"/>
-<line x1="877.3" y1="316.3" x2="882.3" y2="316.3" stroke="#007AFF" stroke-width="1.8"/>
+<line x1="877.3" y1="346.2" x2="877.3" y2="297.9" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="872.3" y1="323.5" x2="877.3" y2="323.5" stroke="#0088FF" stroke-width="1.8"/>
+<line x1="877.3" y1="316.3" x2="882.3" y2="316.3" stroke="#0088FF" stroke-width="1.8"/>
 <rect id="bar-44" class="bar hit" tabindex="0" role="img" aria-label="2026-05-01: opened 145.27, high 147.39, low 143.39, closed 145.87, up" x="868.4" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-05-01: 145.87</title></rect>
-<line x1="895.1" y1="375.7" x2="895.1" y2="297.6" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="890.1" y1="316.3" x2="895.1" y2="316.3" stroke="#FF9500" stroke-width="1.8"/>
-<line x1="895.1" y1="360.6" x2="900.1" y2="360.6" stroke="#FF9500" stroke-width="1.8"/>
+<line x1="895.1" y1="375.7" x2="895.1" y2="297.6" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="890.1" y1="316.3" x2="895.1" y2="316.3" stroke="#FF8D28" stroke-width="1.8"/>
+<line x1="895.1" y1="360.6" x2="900.1" y2="360.6" stroke="#FF8D28" stroke-width="1.8"/>
 <rect id="bar-45" class="bar hit" tabindex="0" role="img" aria-label="2026-05-04: opened 145.87, high 147.42, low 140.95, closed 142.20, down" x="886.2" y="206.0" width="17.8" height="302.0" fill="transparent"><title>2026-05-04: 142.20</title></rect>
 <text x="94.9" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mar 2</text>
 <text x="183.8" y="528.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">Mar 9</text>

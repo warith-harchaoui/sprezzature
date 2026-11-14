@@ -34,7 +34,7 @@
 <text x="202.0" y="466.2" font-size="11" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">n 54 · mean 0.48</text>
 <rect id="cl-2" class="cl hit" tabindex="0" role="img" aria-label="Night shift: 54 samples, mean silhouette 0.48, 0 below zero" x="214.0" y="421.3" width="630.0" height="63.8" fill="transparent"><title>Night shift: 0.48 over 54 samples</title></rect>
 <polygon points="473.4,499.11 720.1,499.11 688.2,500.30 681.5,501.48 666.0,502.66 605.5,503.84 599.3,505.02 595.9,506.20 590.5,507.38 581.3,508.56 577.8,509.74 572.6,510.93 569.4,512.11 567.3,513.29 564.4,514.47 557.8,515.65 543.0,516.83 541.6,518.01 535.6,519.19 533.7,520.38 528.7,521.56 523.3,522.74 520.8,523.92 515.5,525.10 511.4,526.28 507.4,527.46 492.9,528.64 491.8,529.83 474.3,531.01 473.4,532.19" fill="#009E73"/>
-<polygon points="473.4,532.19 464.2,532.19 430.4,533.37 404.0,534.55 397.4,535.73 387.9,536.91 374.3,538.09 296.8,539.28 229.6,540.46 217.1,541.64 214.6,542.82 473.4,544.00" fill="#D55E00"/>
+<polygon points="473.4,532.19 464.2,532.19 430.4,533.37 404.0,534.55 397.4,535.73 387.9,536.91 374.3,538.09 296.8,539.28 229.6,540.46 217.1,541.64 214.6,542.82 473.4,544.00" fill="#E73121"/>
 <text x="202.0" y="519.6" font-size="12" font-weight="700" fill="#1D1D1F" text-anchor="end">Unassigned</text>
 <text x="202.0" y="534.6" font-size="11" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">n 38 · mean 0.09</text>
 <text x="202.0" y="549.6" font-size="11" fill="#6E6E73" text-anchor="end" font-family="LM Mono, Latin Modern Mono, ui-monospace, monospace">10 below zero</text>

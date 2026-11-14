@@ -6,9 +6,9 @@
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Ventes par région et par trimestre</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">Unités vendues par région, par trimestre</text>
 <text x="40.0" y="100.0" font-size="13" font-weight="700" fill="#1D1D1F">Région</text>
-<rect x="40.0" y="110.0" width="14" height="14" rx="3" fill="#007AFF"/>
+<rect x="40.0" y="110.0" width="14" height="14" rx="3" fill="#0088FF"/>
 <text x="60.0" y="122.0" font-size="12" fill="#1D1D1F">Nord</text>
-<rect x="117.0" y="110.0" width="14" height="14" rx="3" fill="#A52A2A"/>
+<rect x="117.0" y="110.0" width="14" height="14" rx="3" fill="#AC7F5E"/>
 <text x="137.0" y="122.0" font-size="12" fill="#1D1D1F">Sud</text>
 <rect x="194.0" y="110.0" width="14" height="14" rx="3" fill="#FFCC00"/>
 <text x="214.0" y="122.0" font-size="12" fill="#1D1D1F">Est</text>
@@ -23,17 +23,17 @@
 <line x1="64.0" y1="150.0" x2="713.0" y2="150.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="54.0" y="154.0" font-size="12" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">80</text>
 <text x="18.0" y="292.5" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18.0 292.5)">Unités</text>
-<path id="bar-hit-0" class="bar hit" tabindex="0" d="M85.8,285.4 H115 A4,4 0 0 1 119,289.4 V435 H81.8 V289.4 A4,4 0 0 1 85.8,285.4 Z" fill="#007AFF"><title>Nord, T1 : 42</title></path>
-<path id="bar-hit-1" class="bar hit" tabindex="0" d="M128,239.1 H157.2 A4,4 0 0 1 161.2,243.1 V435 H124 V243.1 A4,4 0 0 1 128,239.1 Z" fill="#A52A2A"><title>Sud, T1 : 55</title></path>
+<path id="bar-hit-0" class="bar hit" tabindex="0" d="M85.8,285.4 H115 A4,4 0 0 1 119,289.4 V435 H81.8 V289.4 A4,4 0 0 1 85.8,285.4 Z" fill="#0088FF"><title>Nord, T1 : 42</title></path>
+<path id="bar-hit-1" class="bar hit" tabindex="0" d="M128,239.1 H157.2 A4,4 0 0 1 161.2,243.1 V435 H124 V243.1 A4,4 0 0 1 128,239.1 Z" fill="#AC7F5E"><title>Sud, T1 : 55</title></path>
 <path id="bar-hit-2" class="bar hit" tabindex="0" d="M170.2,328.1 H199.3 A4,4 0 0 1 203.3,332.1 V435 H166.2 V332.1 A4,4 0 0 1 170.2,328.1 Z" fill="#FFCC00"><title>Est, T1 : 30</title></path>
-<path id="bar-hit-3" class="bar hit" tabindex="0" d="M248.1,203.4 H277.2 A4,4 0 0 1 281.2,207.4 V435 H244.1 V207.4 A4,4 0 0 1 248.1,203.4 Z" fill="#007AFF"><title>Nord, T2 : 65</title></path>
-<path id="bar-hit-4" class="bar hit" tabindex="0" d="M290.3,264 H319.4 A4,4 0 0 1 323.4,268 V435 H286.3 V268 A4,4 0 0 1 290.3,264 Z" fill="#A52A2A"><title>Sud, T2 : 48</title></path>
+<path id="bar-hit-3" class="bar hit" tabindex="0" d="M248.1,203.4 H277.2 A4,4 0 0 1 281.2,207.4 V435 H244.1 V207.4 A4,4 0 0 1 248.1,203.4 Z" fill="#0088FF"><title>Nord, T2 : 65</title></path>
+<path id="bar-hit-4" class="bar hit" tabindex="0" d="M290.3,264 H319.4 A4,4 0 0 1 323.4,268 V435 H286.3 V268 A4,4 0 0 1 290.3,264 Z" fill="#AC7F5E"><title>Sud, T2 : 48</title></path>
 <path id="bar-hit-5" class="bar hit" tabindex="0" d="M332.5,299.6 H361.6 A4,4 0 0 1 365.6,303.6 V435 H328.5 V303.6 A4,4 0 0 1 332.5,299.6 Z" fill="#FFCC00"><title>Est, T2 : 38</title></path>
-<path id="bar-hit-6" class="bar hit" tabindex="0" d="M410.3,182.1 H439.5 A4,4 0 0 1 443.5,186.1 V435 H406.3 V186.1 A4,4 0 0 1 410.3,182.1 Z" fill="#007AFF"><title>Nord, T3 : 71</title></path>
-<path id="bar-hit-7" class="bar hit" tabindex="0" d="M452.5,249.8 H481.7 A4,4 0 0 1 485.7,253.8 V435 H448.5 V253.8 A4,4 0 0 1 452.5,249.8 Z" fill="#A52A2A"><title>Sud, T3 : 52</title></path>
+<path id="bar-hit-6" class="bar hit" tabindex="0" d="M410.3,182.1 H439.5 A4,4 0 0 1 443.5,186.1 V435 H406.3 V186.1 A4,4 0 0 1 410.3,182.1 Z" fill="#0088FF"><title>Nord, T3 : 71</title></path>
+<path id="bar-hit-7" class="bar hit" tabindex="0" d="M452.5,249.8 H481.7 A4,4 0 0 1 485.7,253.8 V435 H448.5 V253.8 A4,4 0 0 1 452.5,249.8 Z" fill="#AC7F5E"><title>Sud, T3 : 52</title></path>
 <path id="bar-hit-8" class="bar hit" tabindex="0" d="M494.7,278.2 H523.8 A4,4 0 0 1 527.8,282.2 V435 H490.7 V282.2 A4,4 0 0 1 494.7,278.2 Z" fill="#FFCC00"><title>Est, T3 : 44</title></path>
-<path id="bar-hit-9" class="bar hit" tabindex="0" d="M572.6,228.4 H601.7 A4,4 0 0 1 605.7,232.4 V435 H568.6 V232.4 A4,4 0 0 1 572.6,228.4 Z" fill="#007AFF"><title>Nord, T4 : 58</title></path>
-<path id="bar-hit-10" class="bar hit" tabindex="0" d="M614.8,292.5 H643.9 A4,4 0 0 1 647.9,296.5 V435 H610.8 V296.5 A4,4 0 0 1 614.8,292.5 Z" fill="#A52A2A"><title>Sud, T4 : 40</title></path>
+<path id="bar-hit-9" class="bar hit" tabindex="0" d="M572.6,228.4 H601.7 A4,4 0 0 1 605.7,232.4 V435 H568.6 V232.4 A4,4 0 0 1 572.6,228.4 Z" fill="#0088FF"><title>Nord, T4 : 58</title></path>
+<path id="bar-hit-10" class="bar hit" tabindex="0" d="M614.8,292.5 H643.9 A4,4 0 0 1 647.9,296.5 V435 H610.8 V296.5 A4,4 0 0 1 614.8,292.5 Z" fill="#AC7F5E"><title>Sud, T4 : 40</title></path>
 <path id="bar-hit-11" class="bar hit" tabindex="0" d="M657,317.4 H686.1 A4,4 0 0 1 690.1,321.4 V435 H653 V321.4 A4,4 0 0 1 657,317.4 Z" fill="#FFCC00"><title>Est, T4 : 33</title></path>
 <g id="bar-tip-0" class="tip"><rect x="38.9" y="279.4" width="123" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="47.9" y="300.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Nord, T1</text><text x="47.9" y="316.9" font-size="12.5" font-weight="400" fill="#6E6E73">42</text><text x="47.9" y="332.9" font-size="12.5" font-weight="400" fill="#6E6E73">33 % du total du T1</text></g>
 <g id="bar-tip-1" class="tip"><rect x="81.1" y="233.1" width="123" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="90.1" y="254.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Sud, T1</text><text x="90.1" y="270.6" font-size="12.5" font-weight="400" fill="#6E6E73">55</text><text x="90.1" y="286.6" font-size="12.5" font-weight="400" fill="#6E6E73">43 % du total du T1</text></g>

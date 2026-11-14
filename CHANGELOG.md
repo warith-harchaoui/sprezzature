@@ -8,6 +8,22 @@ into `~/.claude/skills/`).
 
 ## [Unreleased]
 
+### Changed
+
+- **Colours follow [deraison.ai/colors](https://deraison.ai/colors/)**, the
+  source of truth for every colour in the suite (three palettes, corporate,
+  academic and print, same eleven names). The gallery, its French and
+  academic versions, the financial-markets case study and the site
+  stylesheet carry the new values: corporate blue `#0088FF` (buttons
+  `#0073E9`, the nearest shade that passes WCAG AA with white text), orange
+  `#FF8D28`, red `#FF383C`, purple `#CB30E0`, turquoise `#00C3D0`; academic
+  red `#E73121`. Figures that were the generator's exact output were
+  rendered again; the others, adjusted by hand or older, had their palette
+  codes replaced one for one, so nothing else moved. PNGs rasterised again
+  with resvg, as the generators do. `make_brick_diagram.py` reads the
+  palette instead of copying it, and the ten "how it works" diagrams are
+  redrawn. The positioning maps keep their colours: `standpoint` draws them.
+
 ## [1.9.0] — 2026-11-12: chaque brique porte son skill
 
 **The skill travels with `pip install`.** Until now the ten skills lived in

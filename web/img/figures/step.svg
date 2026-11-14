@@ -20,17 +20,17 @@
 <line x1="60.0" y1="118.0" x2="715.0" y2="118.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="50.0" y="122.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="end">12</text>
 <text x="18" y="239.0" font-size="13" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 18 239.0)">Value</text>
-<path d="M 60.0,319.7 L 132.8,319.7 L 132.8,319.7 L 205.6,319.7 L 205.6,259.2 L 278.3,259.2 L 278.3,259.2 L 351.1,259.2 L 351.1,279.3 L 423.9,279.3 L 423.9,218.8 L 496.7,218.8 L 496.7,218.8 L 569.4,218.8 L 569.4,239.0 L 642.2,239.0 L 642.2,178.5 L 715.0,178.5 L 715.0,178.5" fill="none" stroke="#007AFF" stroke-width="2.5"/>
-<circle id="hit-0" class="pt hit" tabindex="0" cx="60.0" cy="319.7" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=0: 2"/>
-<circle id="hit-1" class="pt hit" tabindex="0" cx="132.8" cy="319.7" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=1: 2"/>
-<circle id="hit-2" class="pt hit" tabindex="0" cx="205.6" cy="259.2" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=2: 5"/>
-<circle id="hit-3" class="pt hit" tabindex="0" cx="278.3" cy="259.2" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=3: 5"/>
-<circle id="hit-4" class="pt hit" tabindex="0" cx="351.1" cy="279.3" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=4: 4"/>
-<circle id="hit-5" class="pt hit" tabindex="0" cx="423.9" cy="218.8" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=5: 7"/>
-<circle id="hit-6" class="pt hit" tabindex="0" cx="496.7" cy="218.8" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=6: 7"/>
-<circle id="hit-7" class="pt hit" tabindex="0" cx="569.4" cy="239.0" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=7: 6"/>
-<circle id="hit-8" class="pt hit" tabindex="0" cx="642.2" cy="178.5" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=8: 9"/>
-<circle id="hit-9" class="pt hit" tabindex="0" cx="715.0" cy="178.5" r="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=9: 9"/>
+<path d="M 60.0,319.7 L 132.8,319.7 L 132.8,319.7 L 205.6,319.7 L 205.6,259.2 L 278.3,259.2 L 278.3,259.2 L 351.1,259.2 L 351.1,279.3 L 423.9,279.3 L 423.9,218.8 L 496.7,218.8 L 496.7,218.8 L 569.4,218.8 L 569.4,239.0 L 642.2,239.0 L 642.2,178.5 L 715.0,178.5 L 715.0,178.5" fill="none" stroke="#0088FF" stroke-width="2.5"/>
+<circle id="hit-0" class="pt hit" tabindex="0" cx="60.0" cy="319.7" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=0: 2"/>
+<circle id="hit-1" class="pt hit" tabindex="0" cx="132.8" cy="319.7" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=1: 2"/>
+<circle id="hit-2" class="pt hit" tabindex="0" cx="205.6" cy="259.2" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=2: 5"/>
+<circle id="hit-3" class="pt hit" tabindex="0" cx="278.3" cy="259.2" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=3: 5"/>
+<circle id="hit-4" class="pt hit" tabindex="0" cx="351.1" cy="279.3" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=4: 4"/>
+<circle id="hit-5" class="pt hit" tabindex="0" cx="423.9" cy="218.8" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=5: 7"/>
+<circle id="hit-6" class="pt hit" tabindex="0" cx="496.7" cy="218.8" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=6: 7"/>
+<circle id="hit-7" class="pt hit" tabindex="0" cx="569.4" cy="239.0" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=7: 6"/>
+<circle id="hit-8" class="pt hit" tabindex="0" cx="642.2" cy="178.5" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=8: 9"/>
+<circle id="hit-9" class="pt hit" tabindex="0" cx="715.0" cy="178.5" r="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" role="img" aria-label="t=9: 9"/>
 <line x1="60.0" y1="360.0" x2="715.0" y2="360.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <text x="60.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0</text>
 <text x="132.8" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">1</text>

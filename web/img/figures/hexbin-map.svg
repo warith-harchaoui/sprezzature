@@ -386,11 +386,11 @@
 <path id="hex-208" class="hex hit" d="M804.2,713.7 L816.8,721.0 L816.8,735.5 L804.2,742.8 L791.6,735.5 L791.6,721.0Z" fill="#FF4E26" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>151 quakes</title></path>
 <path id="hex-209" class="hex hit" d="M737.1,271.9 L749.7,279.2 L749.7,293.8 L737.1,301.1 L724.5,293.8 L724.5,279.2Z" fill="#FF432C" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>166 quakes</title></path>
 <path id="hex-210" class="hex hit" d="M656.5,364.9 L669.2,372.2 L669.2,386.8 L656.5,394.1 L643.9,386.8 L643.9,372.2Z" fill="#FF3C2F" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>176 quakes</title></path>
-<path id="hex-211" class="hex hit" d="M777.4,248.7 L790.0,256.0 L790.0,270.5 L777.4,277.8 L764.7,270.5 L764.7,256.0Z" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>178 quakes</title></path>
-<path id="hex-212" class="hex hit" d="M643.1,388.2 L655.7,395.5 L655.7,410.0 L643.1,417.3 L630.5,410.0 L630.5,395.5Z" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>178 quakes</title></path>
-<path id="hex-213" class="hex hit" d="M670.0,527.7 L682.6,535.0 L682.6,549.5 L670.0,556.8 L657.4,549.5 L657.4,535.0Z" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>188 quakes</title></path>
-<path id="hex-214" class="hex hit" d="M723.7,295.2 L736.3,302.5 L736.3,317.0 L723.7,324.3 L711.0,317.0 L711.0,302.5Z" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>196 quakes</title></path>
-<path id="hex-215" class="hex hit" d="M710.2,318.4 L722.9,325.7 L722.9,340.3 L710.2,347.6 L697.6,340.3 L697.6,325.7Z" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>218 quakes</title></path>
+<path id="hex-211" class="hex hit" d="M777.4,248.7 L790.0,256.0 L790.0,270.5 L777.4,277.8 L764.7,270.5 L764.7,256.0Z" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>178 quakes</title></path>
+<path id="hex-212" class="hex hit" d="M643.1,388.2 L655.7,395.5 L655.7,410.0 L643.1,417.3 L630.5,410.0 L630.5,395.5Z" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>178 quakes</title></path>
+<path id="hex-213" class="hex hit" d="M670.0,527.7 L682.6,535.0 L682.6,549.5 L670.0,556.8 L657.4,549.5 L657.4,535.0Z" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>188 quakes</title></path>
+<path id="hex-214" class="hex hit" d="M723.7,295.2 L736.3,302.5 L736.3,317.0 L723.7,324.3 L711.0,317.0 L711.0,302.5Z" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>196 quakes</title></path>
+<path id="hex-215" class="hex hit" d="M710.2,318.4 L722.9,325.7 L722.9,340.3 L710.2,347.6 L697.6,340.3 L697.6,325.7Z" fill="#FF383C" stroke="#FFFFFF" stroke-width="1.0" tabindex="0" role="listitem"><title>218 quakes</title></path>
 <g id="hextip-0" class="tip"><rect x="169" y="219.4" width="116" height="46.5" rx="9" fill="#FFFFFF" stroke="#DCE3EB" stroke-width="1.2"/><text x="178" y="240.9" font-size="12.5" font-weight="700" fill="#1D1D1F">1 quake</text><text x="178" y="256.9" font-size="12.5" font-weight="400" fill="#6E6E73">1% of ramp max</text></g>
 <g id="hextip-1" class="tip"><rect x="961" y="242.7" width="116" height="46.5" rx="9" fill="#FFFFFF" stroke="#DCE3EB" stroke-width="1.2"/><text x="970" y="264.2" font-size="12.5" font-weight="700" fill="#1D1D1F">1 quake</text><text x="970" y="280.2" font-size="12.5" font-weight="400" fill="#6E6E73">1% of ramp max</text></g>
 <g id="hextip-2" class="tip"><rect x="1256.3" y="242.7" width="116" height="46.5" rx="9" fill="#FFFFFF" stroke="#DCE3EB" stroke-width="1.2"/><text x="1265.3" y="264.2" font-size="12.5" font-weight="700" fill="#1D1D1F">1 quake</text><text x="1265.3" y="280.2" font-size="12.5" font-weight="400" fill="#6E6E73">1% of ramp max</text></g>
@@ -616,7 +616,7 @@
 <text x="1323.7" y="629.8" font-size="16.5" font-weight="700" fill="#1D1D1F" text-anchor="start" stroke="#FFFFFF" stroke-width="3.2" stroke-linejoin="round" paint-order="stroke" opacity="0.98">Andes</text>
 <text x="473.4" y="437.9" font-size="16.5" font-weight="700" fill="#1D1D1F" text-anchor="middle" stroke="#FFFFFF" stroke-width="3.2" stroke-linejoin="round" paint-order="stroke" opacity="0.98">Himalaya</text>
 </g>
-<text x="40.0" y="920.0" font-size="52" font-weight="700" fill="#FF3B30">Ring of Fire</text>
+<text x="40.0" y="920.0" font-size="52" font-weight="700" fill="#FF383C">Ring of Fire</text>
 <text x="40.0" y="946.0" font-size="17" fill="#6E6E73">216 hexagons hold quakes · the busiest holds 218, all on the Pacific rim</text>
 <text x="510.0" y="886.0" font-size="16.5" font-weight="700" fill="#1D1D1F">Earthquakes per hexagon</text>
 <rect class="legend-swatch" x="510.0" y="898.0" width="40.0" height="26.0" fill="#FFF4D6"/>
@@ -627,7 +627,7 @@
 <rect class="legend-swatch" x="710.0" y="898.0" width="40.0" height="26.0" fill="#FF6C16"/>
 <rect class="legend-swatch" x="750.0" y="898.0" width="40.0" height="26.0" fill="#FF5B1F"/>
 <rect class="legend-swatch" x="790.0" y="898.0" width="40.0" height="26.0" fill="#FF4B28"/>
-<rect class="legend-swatch" x="830.0" y="898.0" width="40.0" height="26.0" fill="#FF3B30"/>
+<rect class="legend-swatch" x="830.0" y="898.0" width="40.0" height="26.0" fill="#FF383C"/>
 <text x="510.0" y="944.0" font-size="15" fill="#6E6E73" font-family="Roboto Mono, monospace">1</text>
 <text x="870.0" y="944.0" font-size="15" fill="#1D1D1F" font-family="Roboto Mono, monospace" text-anchor="end">178+ quakes</text>
 <text x="38.0" y="990" font-size="14" fill="#6E6E73">One hexagon ≈ 250,000 km² · colour = earthquake count per hexagon · Equal Earth (equal-area) projection</text>

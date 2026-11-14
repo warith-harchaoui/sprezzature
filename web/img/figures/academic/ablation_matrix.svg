@@ -7,7 +7,7 @@ svg:hover .row,svg:focus-within .row{opacity:.28}
 .row:hover,.row:focus,.row:focus-within{opacity:1!important}
 .row:focus{outline:none}
 .hit{cursor:pointer;fill:transparent}
-.hit:focus{outline:3px solid #007AFF;outline-offset:-2px}
+.hit:focus{outline:3px solid #0088FF;outline-offset:-2px}
 @media (prefers-reduced-motion: reduce){.row{transition:none}}
 @media (prefers-contrast: more){
   .c-structure{fill:#005A98;}

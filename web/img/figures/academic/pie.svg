@@ -13,7 +13,7 @@
 <path id="slice-3" class="slice hit" tabindex="0" role="img" aria-label="Nuclear: 9.1 percent" d="M 410.00,300.00 L 216.81,333.09 A 196.00 196.00 0 0 1 229.63,223.29 Z" fill="#009E73" stroke="#FFFFFF" stroke-width="2"><title>Nuclear: 9.1% of the whole</title></path>
 <path id="slice-4" class="slice hit" tabindex="0" role="img" aria-label="Wind: 7.8 percent" d="M 410.00,300.00 L 229.63,223.29 A 196.00 196.00 0 0 1 286.97,147.42 Z" fill="#F0E442" stroke="#FFFFFF" stroke-width="2"><title>Wind: 7.8% of the whole</title></path>
 <path id="slice-5" class="slice hit" tabindex="0" role="img" aria-label="Solar: 5.5 percent" d="M 410.00,300.00 L 286.97,147.42 A 196.00 196.00 0 0 1 345.93,114.77 Z" fill="#56B4E9" stroke="#FFFFFF" stroke-width="2"><title>Solar: 5.5% of the whole</title></path>
-<path id="slice-6" class="slice hit" tabindex="0" role="img" aria-label="Other: 5.3 percent" d="M 410.00,300.00 L 345.93,114.77 A 196.00 196.00 0 0 1 410.00,104.00 Z" fill="#D55E00" stroke="#FFFFFF" stroke-width="2"><title>Other: 5.3% of the whole</title></path>
+<path id="slice-6" class="slice hit" tabindex="0" role="img" aria-label="Other: 5.3 percent" d="M 410.00,300.00 L 345.93,114.77 A 196.00 196.00 0 0 1 410.00,104.00 Z" fill="#E73121" stroke="#FFFFFF" stroke-width="2"><title>Other: 5.3% of the whole</title></path>
 <text x="519.1" y="239.5" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Coal</text>
 <text x="519.1" y="257.5" font-size="13" fill="#FFFFFF" text-anchor="middle" opacity="0.92">35.5%</text>
 <text x="434.6" y="412.0" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Natural gas</text>

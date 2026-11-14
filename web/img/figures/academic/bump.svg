@@ -93,23 +93,23 @@
 <text x="138.0" y="389.5" font-size="12" fill="#CC79A7" text-anchor="end" opacity="1.0">Halcyon</text>
 <text x="808.0" y="389.5" font-size="12" fill="#CC79A7" opacity="1.0">14.43</text>
 <rect id="lane-3" class="lane hit" tabindex="0" role="img" aria-label="Halcyon: rank 4 at 2024 Q1, 4 at 2025 Q4, unchanged 0" x="150.0" y="361.0" width="646.0" height="49.0" fill="transparent"><title>Halcyon</title></rect>
-<path d="M150.0,434.5 C196.1,434.5 196.1,434.5 242.3,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<path d="M242.3,434.5 C288.4,434.5 288.4,434.5 334.6,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<path d="M334.6,434.5 C380.7,434.5 380.7,434.5 426.9,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<path d="M426.9,434.5 C473.0,434.5 473.0,434.5 519.1,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<path d="M519.1,434.5 C565.3,434.5 565.3,434.5 611.4,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<path d="M611.4,434.5 C657.6,434.5 657.6,434.5 703.7,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<path d="M703.7,434.5 C749.9,434.5 749.9,434.5 796.0,434.5" fill="none" stroke="#D55E00" stroke-width="3.0" opacity="1.0"/>
-<circle cx="150.0" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="242.3" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="334.6" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="426.9" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="519.1" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="611.4" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="703.7" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<circle cx="796.0" cy="434.5" r="4" fill="#D55E00" opacity="1.0"/>
-<text x="138.0" y="438.5" font-size="12" fill="#D55E00" text-anchor="end" opacity="1.0">Quillon</text>
-<text x="808.0" y="438.5" font-size="12" fill="#D55E00" opacity="1.0">1.48</text>
+<path d="M150.0,434.5 C196.1,434.5 196.1,434.5 242.3,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<path d="M242.3,434.5 C288.4,434.5 288.4,434.5 334.6,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<path d="M334.6,434.5 C380.7,434.5 380.7,434.5 426.9,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<path d="M426.9,434.5 C473.0,434.5 473.0,434.5 519.1,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<path d="M519.1,434.5 C565.3,434.5 565.3,434.5 611.4,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<path d="M611.4,434.5 C657.6,434.5 657.6,434.5 703.7,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<path d="M703.7,434.5 C749.9,434.5 749.9,434.5 796.0,434.5" fill="none" stroke="#E73121" stroke-width="3.0" opacity="1.0"/>
+<circle cx="150.0" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="242.3" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="334.6" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="426.9" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="519.1" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="611.4" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="703.7" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<circle cx="796.0" cy="434.5" r="4" fill="#E73121" opacity="1.0"/>
+<text x="138.0" y="438.5" font-size="12" fill="#E73121" text-anchor="end" opacity="1.0">Quillon</text>
+<text x="808.0" y="438.5" font-size="12" fill="#E73121" opacity="1.0">1.48</text>
 <rect id="lane-4" class="lane hit" tabindex="0" role="img" aria-label="Quillon: rank 5 at 2024 Q1, 5 at 2025 Q4, unchanged 0" x="150.0" y="410.0" width="646.0" height="49.0" fill="transparent"><title>Quillon</title></rect>
 <path d="M150.0,483.5 C196.1,483.5 196.1,483.5 242.3,483.5" fill="none" stroke="#56B4E9" stroke-width="3.0" opacity="1.0"/>
 <path d="M242.3,483.5 C288.4,483.5 288.4,483.5 334.6,483.5" fill="none" stroke="#56B4E9" stroke-width="3.0" opacity="1.0"/>

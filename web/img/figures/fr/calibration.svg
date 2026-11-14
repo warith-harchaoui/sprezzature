@@ -50,66 +50,66 @@
 <line x1="121.0" y1="226.0" x2="128.0" y2="226.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="112.0" y="233.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100 %</text>
 <text x="52.0" y="624.0" font-size="22" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 52.0 624.0)">Taux d'attrition observé</text>
-<line class="cal-stem-under" x1="163.3" y1="907.0" x2="163.3" y2="986.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="247.2" y1="787.7" x2="247.2" y2="902.8" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="326.3" y1="745.9" x2="326.3" y2="823.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="405.1" y1="711.2" x2="405.1" y2="744.9" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-under" x1="483.3" y1="659.7" x2="483.3" y2="666.7" stroke="#007AFF" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="566.9" y1="588.7" x2="566.9" y2="583.1" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="646.4" y1="616.4" x2="646.4" y2="503.6" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="724.9" y1="560.6" x2="724.9" y2="425.1" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="804.6" y1="467.0" x2="804.6" y2="345.4" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<line class="cal-stem-over" x1="881.1" y1="368.4" x2="881.1" y2="268.9" stroke="#FF3B30" stroke-width="2.4" stroke-opacity="0.55"/>
-<path class="cal-curve" d="M 163.3 907.0 L 247.2 787.7 L 326.3 745.9 L 405.1 711.2 L 483.3 659.7 L 566.9 588.7 L 646.4 616.4 L 724.9 560.6 L 804.6 467.0 L 881.1 368.4" fill="none" stroke="#AF52DE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
+<line class="cal-stem-under" x1="163.3" y1="907.0" x2="163.3" y2="986.7" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="247.2" y1="787.7" x2="247.2" y2="902.8" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="326.3" y1="745.9" x2="326.3" y2="823.7" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="405.1" y1="711.2" x2="405.1" y2="744.9" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-under" x1="483.3" y1="659.7" x2="483.3" y2="666.7" stroke="#0088FF" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="566.9" y1="588.7" x2="566.9" y2="583.1" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="646.4" y1="616.4" x2="646.4" y2="503.6" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="724.9" y1="560.6" x2="724.9" y2="425.1" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="804.6" y1="467.0" x2="804.6" y2="345.4" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<line class="cal-stem-over" x1="881.1" y1="368.4" x2="881.1" y2="268.9" stroke="#FF383C" stroke-width="2.4" stroke-opacity="0.55"/>
+<path class="cal-curve" d="M 163.3 907.0 L 247.2 787.7 L 326.3 745.9 L 405.1 711.2 L 483.3 659.7 L 566.9 588.7 L 646.4 616.4 L 724.9 560.6 L 804.6 467.0 L 881.1 368.4" fill="none" stroke="#CB30E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
 <g id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Prédit 4 %, observé 14 % (écart +10 %, sous-estime) ; 1017 prédictions">
 <title>Prédit 4 %, observé 14 % (écart +10 %, sous-estime) ; 1017 prédictions</title>
 <circle class="halo" cx="163.3" cy="907.0" r="34.0" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="163.3" cy="907.0" r="26.0" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="163.3" cy="907.0" r="26.0" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Prédit 15 %, observé 29 % (écart +14 %, sous-estime) ; 564 prédictions">
 <title>Prédit 15 %, observé 29 % (écart +14 %, sous-estime) ; 564 prédictions</title>
 <circle class="halo" cx="247.2" cy="787.7" r="29.7" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="247.2" cy="787.7" r="21.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="247.2" cy="787.7" r="21.7" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Prédit 25 %, observé 35 % (écart +10 %, sous-estime) ; 447 prédictions">
 <title>Prédit 25 %, observé 35 % (écart +10 %, sous-estime) ; 447 prédictions</title>
 <circle class="halo" cx="326.3" cy="745.9" r="28.3" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="326.3" cy="745.9" r="20.3" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="326.3" cy="745.9" r="20.3" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Prédit 35 %, observé 39 % (écart +4 %, sous-estime) ; 356 prédictions">
 <title>Prédit 35 %, observé 39 % (écart +4 %, sous-estime) ; 356 prédictions</title>
 <circle class="halo" cx="405.1" cy="711.2" r="27.1" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="405.1" cy="711.2" r="19.1" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="405.1" cy="711.2" r="19.1" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Prédit 45 %, observé 46 % (écart +1 %, sous-estime) ; 334 prédictions">
 <title>Prédit 45 %, observé 46 % (écart +1 %, sous-estime) ; 334 prédictions</title>
 <circle class="halo" cx="483.3" cy="659.7" r="26.7" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-under" cx="483.3" cy="659.7" r="18.7" fill="#007AFF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-under" cx="483.3" cy="659.7" r="18.7" fill="#0088FF" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Prédit 55 %, observé 54 % (écart -1 %, surestime) ; 305 prédictions">
 <title>Prédit 55 %, observé 54 % (écart -1 %, surestime) ; 305 prédictions</title>
 <circle class="halo" cx="566.9" cy="588.7" r="26.3" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="566.9" cy="588.7" r="18.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="566.9" cy="588.7" r="18.3" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Prédit 65 %, observé 51 % (écart -14 %, surestime) ; 263 prédictions">
 <title>Prédit 65 %, observé 51 % (écart -14 %, surestime) ; 263 prédictions</title>
 <circle class="halo" cx="646.4" cy="616.4" r="25.6" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="646.4" cy="616.4" r="17.6" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="646.4" cy="616.4" r="17.6" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Prédit 75 %, observé 58 % (écart -17 %, surestime) ; 245 prédictions">
 <title>Prédit 75 %, observé 58 % (écart -17 %, surestime) ; 245 prédictions</title>
 <circle class="halo" cx="724.9" cy="560.6" r="25.3" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="724.9" cy="560.6" r="17.3" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="724.9" cy="560.6" r="17.3" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Prédit 85 %, observé 70 % (écart -15 %, surestime) ; 251 prédictions">
 <title>Prédit 85 %, observé 70 % (écart -15 %, surestime) ; 251 prédictions</title>
 <circle class="halo" cx="804.6" cy="467.0" r="25.4" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="804.6" cy="467.0" r="17.4" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="804.6" cy="467.0" r="17.4" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-9" class="pt hit" tabindex="0" role="img" aria-label="Prédit 95 %, observé 82 % (écart -12 %, surestime) ; 218 prédictions">
 <title>Prédit 95 %, observé 82 % (écart -12 %, surestime) ; 218 prédictions</title>
 <circle class="halo" cx="881.1" cy="368.4" r="24.9" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="cal-mark-over" cx="881.1" cy="368.4" r="16.9" fill="#FF3B30" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle class="cal-mark-over" cx="881.1" cy="368.4" r="16.9" fill="#FF383C" fill-opacity="0.95" stroke="#FFFFFF" stroke-width="1.4"/>
 </g>
 <g id="pt-tip-0" class="tip"><rect x="56.3" y="867" width="214" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="65.3" y="888.5" font-size="12.5" font-weight="700" fill="#1D1D1F">prédit 4 % contre observé 14 %</text><text x="65.3" y="904.5" font-size="12.5" font-weight="400" fill="#6E6E73">écart +10 % (sous-estime)</text><text x="65.3" y="920.5" font-size="12.5" font-weight="400" fill="#6E6E73">1017 prédictions</text></g>
 <g id="pt-tip-1" class="tip"><rect x="136.7" y="752.1" width="221" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="145.7" y="773.6" font-size="12.5" font-weight="700" fill="#1D1D1F">prédit 15 % contre observé 29 %</text><text x="145.7" y="789.6" font-size="12.5" font-weight="400" fill="#6E6E73">écart +14 % (sous-estime)</text><text x="145.7" y="805.6" font-size="12.5" font-weight="400" fill="#6E6E73">564 prédictions</text></g>
@@ -122,51 +122,51 @@
 <g id="pt-tip-8" class="tip"><rect x="694.1" y="435.6" width="221" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="703.1" y="457.1" font-size="12.5" font-weight="700" fill="#1D1D1F">prédit 85 % contre observé 70 %</text><text x="703.1" y="473.1" font-size="12.5" font-weight="400" fill="#6E6E73">écart -15 % (surestime)</text><text x="703.1" y="489.1" font-size="12.5" font-weight="400" fill="#6E6E73">251 prédictions</text></g>
 <g id="pt-tip-9" class="tip"><rect x="755" y="337.5" width="221" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="764" y="359" font-size="12.5" font-weight="700" fill="#1D1D1F">prédit 95 % contre observé 82 %</text><text x="764" y="375" font-size="12.5" font-weight="400" fill="#6E6E73">écart -12 % (surestime)</text><text x="764" y="391" font-size="12.5" font-weight="400" fill="#6E6E73">218 prédictions</text></g>
 <text x="398.6" y="739.4" font-size="20" fill="#6E6E73" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="middle" transform="rotate(-45 398.6 739.4)">Calibration parfaite</text>
-<text class="cal-mark-over" x="764.8" y="624.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">Trop confiant :</text>
-<text class="cal-mark-over" x="764.8" y="648.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">annonce plus d'attrition</text>
-<text class="cal-mark-over" x="764.8" y="672.0" font-size="20" font-weight="600" fill="#FF3B30" text-anchor="middle">qu'il n'en survient</text>
-<text class="cal-mark-under" x="263.3" y="608.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">Pas assez confiant :</text>
-<text class="cal-mark-under" x="263.3" y="632.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">annonce moins d'attrition</text>
-<text class="cal-mark-under" x="263.3" y="656.1" font-size="20" font-weight="600" fill="#007AFF" text-anchor="middle">qu'il n'en survient</text>
+<text class="cal-mark-over" x="764.8" y="624.0" font-size="20" font-weight="600" fill="#FF383C" text-anchor="middle">Trop confiant :</text>
+<text class="cal-mark-over" x="764.8" y="648.0" font-size="20" font-weight="600" fill="#FF383C" text-anchor="middle">annonce plus d'attrition</text>
+<text class="cal-mark-over" x="764.8" y="672.0" font-size="20" font-weight="600" fill="#FF383C" text-anchor="middle">qu'il n'en survient</text>
+<text class="cal-mark-under" x="263.3" y="608.1" font-size="20" font-weight="600" fill="#0088FF" text-anchor="middle">Pas assez confiant :</text>
+<text class="cal-mark-under" x="263.3" y="632.1" font-size="20" font-weight="600" fill="#0088FF" text-anchor="middle">annonce moins d'attrition</text>
+<text class="cal-mark-under" x="263.3" y="656.1" font-size="20" font-weight="600" fill="#0088FF" text-anchor="middle">qu'il n'en survient</text>
 <g id="bar-0" class="bar hit" tabindex="0" role="img" aria-label="1017 prédictions autour de 4 %">
 <title>1017 prédictions autour de 4 %</title>
-<rect class="cal-hist" x="130.6" y="1180.8" width="65.3" height="149.2" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="130.6" y="1180.8" width="65.3" height="149.2" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-1" class="bar hit" tabindex="0" role="img" aria-label="564 prédictions autour de 15 %">
 <title>564 prédictions autour de 15 %</title>
-<rect class="cal-hist" x="214.5" y="1247.3" width="65.3" height="82.7" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="214.5" y="1247.3" width="65.3" height="82.7" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-2" class="bar hit" tabindex="0" role="img" aria-label="447 prédictions autour de 25 %">
 <title>447 prédictions autour de 25 %</title>
-<rect class="cal-hist" x="293.6" y="1264.4" width="65.3" height="65.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="293.6" y="1264.4" width="65.3" height="65.6" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-3" class="bar hit" tabindex="0" role="img" aria-label="356 prédictions autour de 35 %">
 <title>356 prédictions autour de 35 %</title>
-<rect class="cal-hist" x="372.5" y="1277.8" width="65.3" height="52.2" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="372.5" y="1277.8" width="65.3" height="52.2" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-4" class="bar hit" tabindex="0" role="img" aria-label="334 prédictions autour de 45 %">
 <title>334 prédictions autour de 45 %</title>
-<rect class="cal-hist" x="450.6" y="1281.0" width="65.3" height="49.0" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="450.6" y="1281.0" width="65.3" height="49.0" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-5" class="bar hit" tabindex="0" role="img" aria-label="305 prédictions autour de 55 %">
 <title>305 prédictions autour de 55 %</title>
-<rect class="cal-hist" x="534.3" y="1285.3" width="65.3" height="44.7" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="534.3" y="1285.3" width="65.3" height="44.7" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-6" class="bar hit" tabindex="0" role="img" aria-label="263 prédictions autour de 65 %">
 <title>263 prédictions autour de 65 %</title>
-<rect class="cal-hist" x="613.8" y="1291.4" width="65.3" height="38.6" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="613.8" y="1291.4" width="65.3" height="38.6" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-7" class="bar hit" tabindex="0" role="img" aria-label="245 prédictions autour de 75 %">
 <title>245 prédictions autour de 75 %</title>
-<rect class="cal-hist" x="692.3" y="1294.1" width="65.3" height="35.9" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="692.3" y="1294.1" width="65.3" height="35.9" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-8" class="bar hit" tabindex="0" role="img" aria-label="251 prédictions autour de 85 %">
 <title>251 prédictions autour de 85 %</title>
-<rect class="cal-hist" x="772.0" y="1293.2" width="65.3" height="36.8" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="772.0" y="1293.2" width="65.3" height="36.8" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-9" class="bar hit" tabindex="0" role="img" aria-label="218 prédictions autour de 95 %">
 <title>218 prédictions autour de 95 %</title>
-<rect class="cal-hist" x="848.5" y="1298.0" width="65.3" height="32.0" rx="3" fill="#5AC8FA" fill-opacity="0.85"/>
+<rect class="cal-hist" x="848.5" y="1298.0" width="65.3" height="32.0" rx="3" fill="#00C3D0" fill-opacity="0.85"/>
 </g>
 <g id="bar-tip-0" class="tip"><rect x="94.8" y="1170.8" width="137" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="103.8" y="1192.3" font-size="12.5" font-weight="700" fill="#1D1D1F">près de 4 % prédits</text><text x="103.8" y="1208.3" font-size="12.5" font-weight="400" fill="#6E6E73">1017 prédictions</text></g>
 <g id="bar-tip-1" class="tip"><rect x="175.2" y="1237.3" width="144" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="184.2" y="1258.8" font-size="12.5" font-weight="700" fill="#1D1D1F">près de 15 % prédits</text><text x="184.2" y="1274.8" font-size="12.5" font-weight="400" fill="#6E6E73">564 prédictions</text></g>

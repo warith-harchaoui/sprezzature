@@ -66,7 +66,7 @@
 <g id="tip-anchor-6" class="tip"><rect x="187" y="314.2" width="270" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="196" y="335.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Longueur du sillon</text><text x="196" y="351.7" font-size="12.5" font-weight="400" fill="#6E6E73">Ancre : attire vers elle les grains riches</text></g>
   </g>
   <g class="points" role="list">
-    <g class="rv-rosa" role="listitem" aria-label="Grains Rosa" fill="#FF9500">
+    <g class="rv-rosa" role="listitem" aria-label="Grains Rosa" fill="#FF8D28">
       <circle id="pt-0-0" class="pt hit" tabindex="0" cx="627.2" cy="505.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78" role="img" aria-label="Grain Rosa — attiré vers le périmètre"/>
       <circle id="pt-0-1" class="pt hit" tabindex="0" cx="638.5" cy="510.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78" role="img" aria-label="Grain Rosa — attiré vers le périmètre"/>
       <circle id="pt-0-2" class="pt hit" tabindex="0" cx="625.0" cy="494.5" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78" role="img" aria-label="Grain Rosa — attiré vers l’aire"/>
@@ -188,7 +188,7 @@
 <g id="tip-pt-0-58" class="tip"><rect x="558.6" y="500.5" width="116" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="567.6" y="522" font-size="12.5" font-weight="700" fill="#1D1D1F">Rosa</text><text x="567.6" y="538" font-size="12.5" font-weight="400" fill="#6E6E73">Dominante : aire</text><text x="567.6" y="554" font-size="12.5" font-weight="400" fill="#6E6E73">Aire : 21,82</text></g>
 <g id="tip-pt-0-59" class="tip"><rect x="535.5" y="497.3" width="179" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="544.5" y="518.8" font-size="12.5" font-weight="700" fill="#1D1D1F">Rosa</text><text x="544.5" y="534.8" font-size="12.5" font-weight="400" fill="#6E6E73">Dominante : longueur du grain</text><text x="544.5" y="550.8" font-size="12.5" font-weight="400" fill="#6E6E73">Longueur du grain : 6,96</text></g>
     </g>
-    <g class="rv-kama" role="listitem" aria-label="Grains Kama" fill="#007AFF">
+    <g class="rv-kama" role="listitem" aria-label="Grains Kama" fill="#0088FF">
       <circle id="pt-1-0" class="pt hit" tabindex="0" cx="580.8" cy="593.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78" role="img" aria-label="Grain Kama — attiré vers la compacité"/>
       <circle id="pt-1-1" class="pt hit" tabindex="0" cx="572.7" cy="599.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78" role="img" aria-label="Grain Kama — attiré vers la compacité"/>
       <circle id="pt-1-2" class="pt hit" tabindex="0" cx="581.7" cy="602.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78" role="img" aria-label="Grain Kama — attiré vers la compacité"/>
@@ -434,15 +434,15 @@
     </g>
   </g>
   <g class="clslabels" aria-hidden="true">
-    <text x="687.3" y="489.5" font-size="24" font-weight="700" fill="#FF9500" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Rosa</text>
-    <text x="556.5" y="668.5" font-size="24" font-weight="700" fill="#007AFF" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Kama</text>
+    <text x="687.3" y="489.5" font-size="24" font-weight="700" fill="#FF8D28" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Rosa</text>
+    <text x="556.5" y="668.5" font-size="24" font-weight="700" fill="#0088FF" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Kama</text>
     <text x="342.4" y="520.9" font-size="24" font-weight="700" fill="#34C759" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Canadian</text>
   </g>
   </g>
   <g class="legend" transform="translate(60.0,898)" aria-hidden="true">
-    <circle class="rv-rosa" cx="8.0" cy="-6" r="8" fill="#FF9500"/>
+    <circle class="rv-rosa" cx="8.0" cy="-6" r="8" fill="#FF8D28"/>
     <text x="26.0" y="0" font-size="18" fill="#6E6E73">Rosa</text>
-    <circle class="rv-kama" cx="114.0" cy="-6" r="8" fill="#007AFF"/>
+    <circle class="rv-kama" cx="114.0" cy="-6" r="8" fill="#0088FF"/>
     <text x="132.0" y="0" font-size="18" fill="#6E6E73">Kama</text>
     <circle class="rv-canadian" cx="220.0" cy="-6" r="8" fill="#34C759"/>
     <text x="238.0" y="0" font-size="18" fill="#6E6E73">Canadian</text>

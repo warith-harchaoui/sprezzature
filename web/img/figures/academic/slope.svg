@@ -38,9 +38,9 @@
 <text x="78.0" y="238.7" font-size="12" fill="#1D1D1F" text-anchor="end">Delta (51)</text>
 <text x="402.0" y="230.3" font-size="12" fill="#1D1D1F" text-anchor="start">Delta (52)</text>
 <g id="hit-4" class="slope-line hit" tabindex="0" role="img" aria-label="Epsilon: 28 to 40 (+12)">
-<path d="M 90.0,426.9 L 390.0,326.6" fill="none" stroke="#D55E00" stroke-width="2.2"/>
-<circle cx="90.0" cy="426.9" r="4" fill="#D55E00" stroke="#FFFFFF" stroke-width="1.5"/>
-<circle cx="390.0" cy="326.6" r="4" fill="#D55E00" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M 90.0,426.9 L 390.0,326.6" fill="none" stroke="#E73121" stroke-width="2.2"/>
+<circle cx="90.0" cy="426.9" r="4" fill="#E73121" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="390.0" cy="326.6" r="4" fill="#E73121" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <text x="78.0" y="430.9" font-size="12" fill="#1D1D1F" text-anchor="end">Epsilon (28)</text>
 <text x="402.0" y="330.6" font-size="12" fill="#1D1D1F" text-anchor="start">Epsilon (40)</text>

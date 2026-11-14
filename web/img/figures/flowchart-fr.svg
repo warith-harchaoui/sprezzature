@@ -10,9 +10,9 @@
 <rect width="760" height="276" fill="#FFFFFF"/>
 <text x="24.0" y="52.0" font-size="22" font-weight="700" fill="#1D1D1F">Une boucle, une sortie : le modèle part s'il réussit l'évaluation</text>
 <text x="24.0" y="72.0" font-size="14" fill="#6E6E73">Chaque boîte est une étape, chaque flèche transmet son résultat ; celle du dessous revient</text>
-<rect x="12.0" y="103.1" width="237.6" height="88.2" rx="12" fill="#007AFF" fill-opacity="0.07" stroke="#007AFF" stroke-opacity="0.55" stroke-width="1.2"/>
+<rect x="12.0" y="103.1" width="237.6" height="88.2" rx="12" fill="#0088FF" fill-opacity="0.07" stroke="#0088FF" stroke-opacity="0.55" stroke-width="1.2"/>
 <text x="22.0" y="118.1" font-size="8.9" font-weight="600" fill="#6E6E73">Données</text>
-<rect x="346.5" y="90.0" width="241.1" height="114.5" rx="12" fill="#FF9500" fill-opacity="0.07" stroke="#FF9500" stroke-opacity="0.55" stroke-width="1.2"/>
+<rect x="346.5" y="90.0" width="241.1" height="114.5" rx="12" fill="#FF8D28" fill-opacity="0.07" stroke="#FF8D28" stroke-opacity="0.55" stroke-width="1.2"/>
 <text x="356.5" y="105.0" font-size="8.9" font-weight="600" fill="#6E6E73">Modélisation</text>
 <path d="M89.3,157.2 C127.8,157.2 127.8,157.2 166.3,157.2" fill="none" stroke="#6E6E73" stroke-width="1.6"><title>Données brutes to Nettoyer et aligner</title></path>
 <polygon points="173.3,157.2 165.3,152.8 165.3,161.8" fill="#6E6E73"/>

@@ -26,16 +26,16 @@
 <line x1="150.0" y1="327.7" x2="1184.0" y2="327.7" stroke="#6E6E73" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/>
 <text x="1178.0" y="317.7" font-size="20" fill="#6E6E73" text-anchor="end">Ligne de Pareto à 80 %</text>
 <g id="bar-0" class="bar hit" tabindex="0" role="img" aria-label="Connexion &amp; mots de passe : 412 (34,2 % du total, cumulé 34,2 %)">
-<rect class="pa-vital" x="171.8" y="535.2" width="71.2" height="154.8" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect class="pa-vital" x="171.8" y="535.2" width="71.2" height="154.8" rx="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="bar-1" class="bar hit" tabindex="0" role="img" aria-label="Erreurs de facturation : 296 (24,6 % du total, cumulé 58,8 %)">
-<rect class="pa-vital" x="286.7" y="578.8" width="71.2" height="111.2" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect class="pa-vital" x="286.7" y="578.8" width="71.2" height="111.2" rx="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="bar-2" class="bar hit" tabindex="0" role="img" aria-label="Échecs de synchro entre appareils : 187 (15,5 % du total, cumulé 74,3 %)">
-<rect class="pa-vital" x="401.6" y="619.7" width="71.2" height="70.3" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect class="pa-vital" x="401.6" y="619.7" width="71.2" height="70.3" rx="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="bar-3" class="bar hit" tabindex="0" role="img" aria-label="Pages lentes / expirées : 96 (8,0 % du total, cumulé 82,2 %)">
-<rect class="pa-vital" x="516.5" y="653.9" width="71.2" height="36.1" rx="4" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect class="pa-vital" x="516.5" y="653.9" width="71.2" height="36.1" rx="4" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="bar-4" class="bar hit" tabindex="0" role="img" aria-label="Export PDF cassé : 74 (6,1 % du total, cumulé 88,4 %)">
 <rect x="631.4" y="662.2" width="71.2" height="27.8" rx="4" fill="#C7CAD1" stroke="#FFFFFF" stroke-width="1.5"/>
@@ -62,43 +62,43 @@
 <g id="bar-tip-7" class="tip"><rect x="890.7" y="665.1" width="242" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="899.7" y="686.6" font-size="12.5" font-weight="700" fill="#1D1D1F">Demandes de fonctionnalités</text><text x="899.7" y="702.6" font-size="12.5" font-weight="400" fill="#6E6E73">29 billets</text><text x="899.7" y="718.6" font-size="12.5" font-weight="400" fill="#6E6E73">2,4 % du total · cumul 98,2 %</text></g>
 <g id="bar-tip-8" class="tip"><rect x="1002.1" y="667.7" width="249" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="1011.1" y="689.2" font-size="12.5" font-weight="700" fill="#1D1D1F">Tout le reste</text><text x="1011.1" y="705.2" font-size="12.5" font-weight="400" fill="#6E6E73">22 billets</text><text x="1011.1" y="721.2" font-size="12.5" font-weight="400" fill="#6E6E73">1,8 % du total · cumul 100,0 %</text></g>
 <path d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-<path class="pa-line" d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FF9500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="225.4" y="521.2" font-size="21" font-weight="600" fill="#FF9500">% cumulé</text>
+<path class="pa-line" d="M 207.4 535.2 L 322.3 423.9 L 437.2 353.7 L 552.1 317.6 L 667.0 289.8 L 781.9 270.6 L 896.8 256.3 L 1011.7 245.5 L 1126.6 237.2" fill="none" stroke="#FF8D28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="225.4" y="521.2" font-size="21" font-weight="600" fill="#FF8D28">% cumulé</text>
 <g id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Connexion &amp; mots de passe : cumul 34,2 % du total">
 <circle class="halo" cx="207.4" cy="535.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="207.4" cy="535.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="207.4" cy="535.2" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Erreurs de facturation : cumul 58,8 % du total">
 <circle class="halo" cx="322.3" cy="423.9" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="322.3" cy="423.9" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="322.3" cy="423.9" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Échecs de synchro entre appareils : cumul 74,3 % du total">
 <circle class="halo" cx="437.2" cy="353.7" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="437.2" cy="353.7" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="437.2" cy="353.7" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Pages lentes / expirées : cumul 82,2 % du total">
 <circle class="halo" cx="552.1" cy="317.6" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="552.1" cy="317.6" r="10.0" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="552.1" cy="317.6" r="10.0" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Export PDF cassé : cumul 88,4 % du total">
 <circle class="halo" cx="667.0" cy="289.8" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="667.0" cy="289.8" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="667.0" cy="289.8" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Notifications non reçues : cumul 92,6 % du total">
 <circle class="halo" cx="781.9" cy="270.6" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="781.9" cy="270.6" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="781.9" cy="270.6" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Plantages de l&#x27;appli mobile : cumul 95,8 % du total">
 <circle class="halo" cx="896.8" cy="256.3" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="896.8" cy="256.3" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="896.8" cy="256.3" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Demandes de fonctionnalités : cumul 98,2 % du total">
 <circle class="halo" cx="1011.7" cy="245.5" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="1011.7" cy="245.5" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="1011.7" cy="245.5" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Tout le reste : cumul 100,0 % du total">
 <circle class="halo" cx="1126.6" cy="237.2" r="18" fill="#1D1D1F" fill-opacity="0.08"/>
-<circle class="pa-line" cx="1126.6" cy="237.2" r="6.5" fill="#FF9500" stroke="#FFFFFF" stroke-width="2"/>
+<circle class="pa-line" cx="1126.6" cy="237.2" r="6.5" fill="#FF8D28" stroke="#FFFFFF" stroke-width="2"/>
 </g>
 <g id="pt-tip-0" class="tip"><rect x="110.9" y="509.2" width="193" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="119.9" y="530.7" font-size="12.5" font-weight="700" fill="#1D1D1F">Connexion &amp; mots de passe</text><text x="119.9" y="546.7" font-size="12.5" font-weight="400" fill="#6E6E73">cumul 34,2 % du total</text></g>
 <g id="pt-tip-1" class="tip"><rect x="225.8" y="397.9" width="193" height="46.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="234.8" y="419.4" font-size="12.5" font-weight="700" fill="#1D1D1F">Erreurs de facturation</text><text x="234.8" y="435.4" font-size="12.5" font-weight="400" fill="#6E6E73">cumul 58,8 % du total</text></g>
@@ -113,34 +113,34 @@
 <text x="530.1" y="273.6" font-size="22" font-weight="700" fill="#1D1D1F" text-anchor="end">4 catégories → 82 % du total</text>
 <text x="530.1" y="299.6" font-size="20" fill="#6E6E73" text-anchor="end">991 sur 1 205</text>
 <line x1="150.0" y1="210.0" x2="150.0" y2="690.0" stroke="#1D1D1F" stroke-width="1.6"/>
-<line x1="1184.0" y1="210.0" x2="1184.0" y2="690.0" stroke="#FF9500" stroke-width="1.6"/>
+<line x1="1184.0" y1="210.0" x2="1184.0" y2="690.0" stroke="#FF8D28" stroke-width="1.6"/>
 <line x1="150.0" y1="690.0" x2="1184.0" y2="690.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <line x1="143.0" y1="690.0" x2="150.0" y2="690.0" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="136.0" y="696.0" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">0 %</text>
-<line x1="1184.0" y1="690.0" x2="1191.0" y2="690.0" stroke="#FF9500" stroke-width="1.6"/>
-<text x="1198.0" y="696.0" font-size="19" font-family="Roboto Mono, monospace" fill="#FF9500" text-anchor="start">0 %</text>
+<line x1="1184.0" y1="690.0" x2="1191.0" y2="690.0" stroke="#FF8D28" stroke-width="1.6"/>
+<text x="1198.0" y="696.0" font-size="19" font-family="Roboto Mono, monospace" fill="#FF8D28" text-anchor="start">0 %</text>
 <line x1="143.0" y1="599.4" x2="150.0" y2="599.4" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="136.0" y="605.4" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">20 %</text>
-<line x1="1184.0" y1="599.4" x2="1191.0" y2="599.4" stroke="#FF9500" stroke-width="1.6"/>
-<text x="1198.0" y="605.4" font-size="19" font-family="Roboto Mono, monospace" fill="#FF9500" text-anchor="start">20 %</text>
+<line x1="1184.0" y1="599.4" x2="1191.0" y2="599.4" stroke="#FF8D28" stroke-width="1.6"/>
+<text x="1198.0" y="605.4" font-size="19" font-family="Roboto Mono, monospace" fill="#FF8D28" text-anchor="start">20 %</text>
 <line x1="143.0" y1="508.9" x2="150.0" y2="508.9" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="136.0" y="514.9" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">40 %</text>
-<line x1="1184.0" y1="508.9" x2="1191.0" y2="508.9" stroke="#FF9500" stroke-width="1.6"/>
-<text x="1198.0" y="514.9" font-size="19" font-family="Roboto Mono, monospace" fill="#FF9500" text-anchor="start">40 %</text>
+<line x1="1184.0" y1="508.9" x2="1191.0" y2="508.9" stroke="#FF8D28" stroke-width="1.6"/>
+<text x="1198.0" y="514.9" font-size="19" font-family="Roboto Mono, monospace" fill="#FF8D28" text-anchor="start">40 %</text>
 <line x1="143.0" y1="418.3" x2="150.0" y2="418.3" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="136.0" y="424.3" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">60 %</text>
-<line x1="1184.0" y1="418.3" x2="1191.0" y2="418.3" stroke="#FF9500" stroke-width="1.6"/>
-<text x="1198.0" y="424.3" font-size="19" font-family="Roboto Mono, monospace" fill="#FF9500" text-anchor="start">60 %</text>
+<line x1="1184.0" y1="418.3" x2="1191.0" y2="418.3" stroke="#FF8D28" stroke-width="1.6"/>
+<text x="1198.0" y="424.3" font-size="19" font-family="Roboto Mono, monospace" fill="#FF8D28" text-anchor="start">60 %</text>
 <line x1="143.0" y1="327.7" x2="150.0" y2="327.7" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="136.0" y="333.7" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">80 %</text>
-<line x1="1184.0" y1="327.7" x2="1191.0" y2="327.7" stroke="#FF9500" stroke-width="1.6"/>
-<text x="1198.0" y="333.7" font-size="19" font-family="Roboto Mono, monospace" fill="#FF9500" text-anchor="start">80 %</text>
+<line x1="1184.0" y1="327.7" x2="1191.0" y2="327.7" stroke="#FF8D28" stroke-width="1.6"/>
+<text x="1198.0" y="333.7" font-size="19" font-family="Roboto Mono, monospace" fill="#FF8D28" text-anchor="start">80 %</text>
 <line x1="143.0" y1="237.2" x2="150.0" y2="237.2" stroke="#1D1D1F" stroke-width="1.6"/>
 <text x="136.0" y="243.2" font-size="19" font-family="Roboto Mono, monospace" fill="#1D1D1F" text-anchor="end">100 %</text>
-<line x1="1184.0" y1="237.2" x2="1191.0" y2="237.2" stroke="#FF9500" stroke-width="1.6"/>
-<text x="1198.0" y="243.2" font-size="19" font-family="Roboto Mono, monospace" fill="#FF9500" text-anchor="start">100 %</text>
+<line x1="1184.0" y1="237.2" x2="1191.0" y2="237.2" stroke="#FF8D28" stroke-width="1.6"/>
+<text x="1198.0" y="243.2" font-size="19" font-family="Roboto Mono, monospace" fill="#FF8D28" text-anchor="start">100 %</text>
 <text x="62.0" y="450.0" font-size="21" fill="#1D1D1F" text-anchor="middle" transform="rotate(-90 62.0 450.0)">Part du total (barres)</text>
-<text x="1246.0" y="450.0" font-size="21" fill="#FF9500" text-anchor="middle" transform="rotate(90 1246.0 450.0)">Part cumulée (ligne)</text>
+<text x="1246.0" y="450.0" font-size="21" fill="#FF8D28" text-anchor="middle" transform="rotate(90 1246.0 450.0)">Part cumulée (ligne)</text>
 <text x="207.4" y="712.0" font-size="19" fill="#1D1D1F" text-anchor="end" transform="rotate(-32 207.4 712.0)">Connexion &amp; mots de passe</text>
 <text x="322.3" y="712.0" font-size="19" fill="#1D1D1F" text-anchor="end" transform="rotate(-32 322.3 712.0)">Erreurs de facturation</text>
 <text x="437.2" y="712.0" font-size="19" fill="#1D1D1F" text-anchor="end" transform="rotate(-32 437.2 712.0)">Échecs de synchro entre appareils</text>

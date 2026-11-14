@@ -11,11 +11,11 @@
 <rect width="1100" height="640" fill="#FFFFFF"/>
 <text x="88" y="56" font-size="28" font-weight="600" fill="#1D1D1F" letter-spacing="-0.3">Pont du résultat d'exploitation · Ex. 2024</text>
 <text x="88" y="88" font-size="16" fill="#6E6E73">Millions d'EUR, Ex. 2023 → Ex. 2024</text>
-<rect x="88" y="102" width="12" height="12" rx="2" fill="#28CD41"/>
+<rect x="88" y="102" width="12" height="12" rx="2" fill="#34C759"/>
 <text x="105" y="112" font-size="13" fill="#6E6E73">Hausse</text>
-<rect x="168" y="102" width="12" height="12" rx="2" fill="#FF3B30"/>
+<rect x="168" y="102" width="12" height="12" rx="2" fill="#FF383C"/>
 <text x="185" y="112" font-size="13" fill="#6E6E73">Baisse</text>
-<rect x="248" y="102" width="12" height="12" rx="2" fill="#007AFF"/>
+<rect x="248" y="102" width="12" height="12" rx="2" fill="#0088FF"/>
 <text x="265" y="112" font-size="13" fill="#6E6E73">Total</text>
 <line x1="88" y1="505.4" x2="1056" y2="505.4" stroke="#E5E5EA" stroke-width="1"/>
 <text x="80" y="510.4" font-size="12" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0</text>
@@ -28,44 +28,44 @@
 <line x1="88" y1="192.7" x2="1056" y2="192.7" stroke="#E5E5EA" stroke-width="1"/>
 <text x="80" y="197.7" font-size="12" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">80</text>
 <line x1="88" y1="505.4" x2="1056" y2="505.4" stroke="#1D1D1F" stroke-width="1.5" opacity="0.35"/>
-<rect id="bar-0" class="hit" tabindex="0" x="98.6" y="317.0" width="75.5" height="188.4" rx="3" fill="#007AFF" opacity="0.9" role="img" aria-label="Résultat d&#x27;exploitation 2023 : 48,2 M"/>
+<rect id="bar-0" class="hit" tabindex="0" x="98.6" y="317.0" width="75.5" height="188.4" rx="3" fill="#0088FF" opacity="0.9" role="img" aria-label="Résultat d&#x27;exploitation 2023 : 48,2 M"/>
 <text x="136.4" y="311.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">48,2</text>
 <text x="136.4" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ex. 2023</text>
 <text x="136.4" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Résultat</text>
 <text x="136.4" y="600.0" font-size="11" fill="#1D1D1F" text-anchor="middle">d'exploitation</text>
-<rect id="bar-1" class="hit" tabindex="0" x="195.4" y="241.1" width="75.5" height="75.8" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Revenu d&#x27;abonnement : +19,4 M"/>
+<rect id="bar-1" class="hit" tabindex="0" x="195.4" y="241.1" width="75.5" height="75.8" rx="3" fill="#34C759" opacity="0.9" role="img" aria-label="Revenu d&#x27;abonnement : +19,4 M"/>
 <text x="233.2" y="235.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+19,4</text>
 <text x="233.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Revenus</text>
 <text x="233.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">revenu</text>
-<rect id="bar-2" class="hit" tabindex="0" x="292.2" y="225.1" width="75.5" height="16.0" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Services professionnels : +4,1 M"/>
+<rect id="bar-2" class="hit" tabindex="0" x="292.2" y="225.1" width="75.5" height="16.0" rx="3" fill="#34C759" opacity="0.9" role="img" aria-label="Services professionnels : +4,1 M"/>
 <text x="330.0" y="219.1" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+4,1</text>
 <text x="330.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Services</text>
 <text x="330.0" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">professionnels</text>
-<rect id="bar-3" class="hit" tabindex="0" x="389.0" y="194.6" width="75.5" height="30.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Montée en gamme / expansion : +7,8 M"/>
+<rect id="bar-3" class="hit" tabindex="0" x="389.0" y="194.6" width="75.5" height="30.5" rx="3" fill="#34C759" opacity="0.9" role="img" aria-label="Montée en gamme / expansion : +7,8 M"/>
 <text x="426.8" y="188.6" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+7,8</text>
 <text x="426.8" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ventes add. /</text>
 <text x="426.8" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">expansion</text>
-<rect id="bar-4" class="hit" tabindex="0" x="485.8" y="194.6" width="75.5" height="20.7" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="Impact de l&#x27;attrition : -5,3 M"/>
+<rect id="bar-4" class="hit" tabindex="0" x="485.8" y="194.6" width="75.5" height="20.7" rx="3" fill="#FF383C" opacity="0.9" role="img" aria-label="Impact de l&#x27;attrition : -5,3 M"/>
 <text x="523.6" y="229.3" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-5,3</text>
 <text x="523.6" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Attrition</text>
 <text x="523.6" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">impact</text>
-<rect id="bar-5" class="hit" tabindex="0" x="582.6" y="215.3" width="75.5" height="45.3" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="Investissement R&amp;D : -11,6 M"/>
+<rect id="bar-5" class="hit" tabindex="0" x="582.6" y="215.3" width="75.5" height="45.3" rx="3" fill="#FF383C" opacity="0.9" role="img" aria-label="Investissement R&amp;D : -11,6 M"/>
 <text x="620.4" y="274.7" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-11,6</text>
 <text x="620.4" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">R&amp;D</text>
 <text x="620.4" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">investissement</text>
-<rect id="bar-6" class="hit" tabindex="0" x="679.4" y="260.7" width="75.5" height="24.2" rx="3" fill="#FF3B30" opacity="0.9" role="img" aria-label="Effectif commercial et marketing : -6,2 M"/>
+<rect id="bar-6" class="hit" tabindex="0" x="679.4" y="260.7" width="75.5" height="24.2" rx="3" fill="#FF383C" opacity="0.9" role="img" aria-label="Effectif commercial et marketing : -6,2 M"/>
 <text x="717.2" y="298.9" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">-6,2</text>
 <text x="717.2" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ventes et mkt</text>
 <text x="717.2" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">effectifs</text>
-<rect id="bar-7" class="hit" tabindex="0" x="776.2" y="270.5" width="75.5" height="14.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Efficacité de l&#x27;infrastructure : +3,7 M"/>
+<rect id="bar-7" class="hit" tabindex="0" x="776.2" y="270.5" width="75.5" height="14.5" rx="3" fill="#34C759" opacity="0.9" role="img" aria-label="Efficacité de l&#x27;infrastructure : +3,7 M"/>
 <text x="814.0" y="264.5" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+3,7</text>
 <text x="814.0" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Infrastructure</text>
 <text x="814.0" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">efficacité</text>
-<rect id="bar-8" class="hit" tabindex="0" x="873.0" y="265.0" width="75.5" height="5.5" rx="3" fill="#28CD41" opacity="0.9" role="img" aria-label="Réduction des frais généraux : +1,4 M"/>
+<rect id="bar-8" class="hit" tabindex="0" x="873.0" y="265.0" width="75.5" height="5.5" rx="3" fill="#34C759" opacity="0.9" role="img" aria-label="Réduction des frais généraux : +1,4 M"/>
 <text x="910.8" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">+1,4</text>
 <text x="910.8" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Frais génér.</text>
 <text x="910.8" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">réduction</text>
-<rect id="bar-9" class="hit" tabindex="0" x="969.8" y="265.0" width="75.5" height="240.4" rx="3" fill="#007AFF" opacity="0.9" role="img" aria-label="Résultat d’exploitation 2024 : 61,5 M"/>
+<rect id="bar-9" class="hit" tabindex="0" x="969.8" y="265.0" width="75.5" height="240.4" rx="3" fill="#0088FF" opacity="0.9" role="img" aria-label="Résultat d’exploitation 2024 : 61,5 M"/>
 <text x="1007.6" y="259.0" font-size="11" fill="#1D1D1F" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace" font-weight="500">61,5</text>
 <text x="1007.6" y="572.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Ex. 2024</text>
 <text x="1007.6" y="586.0" font-size="11" fill="#1D1D1F" text-anchor="middle">Résultat</text>

@@ -7,7 +7,7 @@ svg:hover .row,svg:focus-within .row{opacity:.28}
 .row:hover,.row:focus,.row:focus-within{opacity:1!important}
 .row:focus{outline:none}
 .hit{cursor:pointer;fill:transparent}
-.hit:focus{outline:3px solid #007AFF;outline-offset:-2px}
+.hit:focus{outline:3px solid #0088FF;outline-offset:-2px}
 @media (prefers-reduced-motion: reduce){.row{transition:none}}
 @media (prefers-contrast: more){
   .c-structure{fill:#004CCE;}
@@ -33,11 +33,11 @@ svg:hover .row,svg:focus-within .row{opacity:.28}
 <rect width="1120" height="668" fill="#FFFFFF"/>
 <text x="40" y="52" font-size="26" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Seule la recette complète passe devant sur toutes les mesures à la fois</text>
 <text x="40" y="80" font-size="15" fill="#6E6E73">Chaque ligne est une variante du modèle ; les points pleins sont les composants qu’elle garde. Les barres sont l’intervalle de confiance à 95 % sur 5 plis.</text>
-<text x="61.0" y="172.0" font-size="13" font-weight="600" fill="#007AFF" text-anchor="start" transform="rotate(-42 61.0 172.0)">Structure</text>
-<text x="87.0" y="172.0" font-size="13" font-weight="600" fill="#FF9500" text-anchor="start" transform="rotate(-42 87.0 172.0)">Séquence</text>
-<text x="113.0" y="172.0" font-size="13" font-weight="600" fill="#AF52DE" text-anchor="start" transform="rotate(-42 113.0 172.0)">Biochimie</text>
-<text x="139.0" y="172.0" font-size="13" font-weight="600" fill="#28CD41" text-anchor="start" transform="rotate(-42 139.0 172.0)">MMA</text>
-<text x="165.0" y="172.0" font-size="13" font-weight="600" fill="#007AFF" text-anchor="start" transform="rotate(-42 165.0 172.0)">Transfert</text>
+<text x="61.0" y="172.0" font-size="13" font-weight="600" fill="#0088FF" text-anchor="start" transform="rotate(-42 61.0 172.0)">Structure</text>
+<text x="87.0" y="172.0" font-size="13" font-weight="600" fill="#FF8D28" text-anchor="start" transform="rotate(-42 87.0 172.0)">Séquence</text>
+<text x="113.0" y="172.0" font-size="13" font-weight="600" fill="#CB30E0" text-anchor="start" transform="rotate(-42 113.0 172.0)">Biochimie</text>
+<text x="139.0" y="172.0" font-size="13" font-weight="600" fill="#34C759" text-anchor="start" transform="rotate(-42 139.0 172.0)">MMA</text>
+<text x="165.0" y="172.0" font-size="13" font-weight="600" fill="#0088FF" text-anchor="start" transform="rotate(-42 165.0 172.0)">Transfert</text>
 <text x="48.0" y="622.0" font-size="12" fill="#6E6E73">Composants gardés</text>
 <text x="212.0" y="168.0" font-size="15" font-weight="600" fill="#1D1D1F">AUROC</text>
 <line x1="220.0" y1="184.0" x2="220.0" y2="592.0" stroke="#E5E5EA" stroke-width="1"/>
@@ -69,222 +69,222 @@ svg:hover .row,svg:focus-within .row{opacity:.28}
 <text x="790.7" y="638.0" font-size="10.5" fill="#6E6E73">l’axe commence à 0,40</text>
 <g class="row">
 <rect x="40.0" y="184.0" width="1048.0" height="34.0" fill="#F5F5F7"/>
-<circle class="c-structure" cx="61.0" cy="201.0" r="6" fill="#007AFF"/>
+<circle class="c-structure" cx="61.0" cy="201.0" r="6" fill="#0088FF"/>
 <circle cx="87.0" cy="201.0" r="6" fill="#D6D6DB"/>
 <circle cx="113.0" cy="201.0" r="6" fill="#D6D6DB"/>
 <circle cx="139.0" cy="201.0" r="6" fill="#D6D6DB"/>
 <circle cx="165.0" cy="201.0" r="6" fill="#D6D6DB"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="234.2" y1="201.0" x2="252.1" y2="201.0"/><line x1="234.2" y1="193.0" x2="234.2" y2="209.0"/><line x1="252.1" y1="193.0" x2="252.1" y2="209.0"/></g>
-<circle class="mk" cx="243.2" cy="201.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="234.2" y1="201.0" x2="252.1" y2="201.0"/><line x1="234.2" y1="193.0" x2="234.2" y2="209.0"/><line x1="252.1" y1="193.0" x2="252.1" y2="209.0"/></g>
+<circle class="mk" cx="243.2" cy="201.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="205.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,771</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="523.6" y1="201.0" x2="539.3" y2="201.0"/><line x1="523.6" y1="193.0" x2="523.6" y2="209.0"/><line x1="539.3" y1="193.0" x2="539.3" y2="209.0"/></g>
-<circle class="mk" cx="531.4" cy="201.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="523.6" y1="201.0" x2="539.3" y2="201.0"/><line x1="523.6" y1="193.0" x2="523.6" y2="209.0"/><line x1="539.3" y1="193.0" x2="539.3" y2="209.0"/></g>
+<circle class="mk" cx="531.4" cy="201.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="205.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,437</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="820.7" y1="201.0" x2="847.0" y2="201.0"/><line x1="820.7" y1="193.0" x2="820.7" y2="209.0"/><line x1="847.0" y1="193.0" x2="847.0" y2="209.0"/></g>
-<circle class="mk" cx="833.9" cy="201.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="820.7" y1="201.0" x2="847.0" y2="201.0"/><line x1="820.7" y1="193.0" x2="820.7" y2="209.0"/><line x1="847.0" y1="193.0" x2="847.0" y2="209.0"/></g>
+<circle class="mk" cx="833.9" cy="201.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="205.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,431</text>
 <rect class="hit" x="40.0" y="184.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure : AUROC 0,771 plus ou moins 0,008, AUPRC 0,437 plus ou moins 0,016, VPP norm. moy. 0,431 plus ou moins 0,010"><title>Structure : AUROC 0,771 plus ou moins 0,008, AUPRC 0,437 plus ou moins 0,016, VPP norm. moy. 0,431 plus ou moins 0,010</title></rect>
 </g>
 <g class="row">
 <circle cx="61.0" cy="235.0" r="6" fill="#D6D6DB"/>
-<circle class="c-sequence" cx="87.0" cy="235.0" r="6" fill="#FF9500"/>
+<circle class="c-sequence" cx="87.0" cy="235.0" r="6" fill="#FF8D28"/>
 <circle cx="113.0" cy="235.0" r="6" fill="#D6D6DB"/>
 <circle cx="139.0" cy="235.0" r="6" fill="#D6D6DB"/>
 <circle cx="165.0" cy="235.0" r="6" fill="#D6D6DB"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="312.7" y1="235.0" x2="330.6" y2="235.0"/><line x1="312.7" y1="227.0" x2="312.7" y2="243.0"/><line x1="330.6" y1="227.0" x2="330.6" y2="243.0"/></g>
-<circle class="mk" cx="321.6" cy="235.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="312.7" y1="235.0" x2="330.6" y2="235.0"/><line x1="312.7" y1="227.0" x2="312.7" y2="243.0"/><line x1="330.6" y1="227.0" x2="330.6" y2="243.0"/></g>
+<circle class="mk" cx="321.6" cy="235.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="239.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,842</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="578.8" y1="235.0" x2="594.6" y2="235.0"/><line x1="578.8" y1="227.0" x2="578.8" y2="243.0"/><line x1="594.6" y1="227.0" x2="594.6" y2="243.0"/></g>
-<circle class="mk" cx="586.7" cy="235.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="578.8" y1="235.0" x2="594.6" y2="235.0"/><line x1="578.8" y1="227.0" x2="578.8" y2="243.0"/><line x1="594.6" y1="227.0" x2="594.6" y2="243.0"/></g>
+<circle class="mk" cx="586.7" cy="235.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="239.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,551</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="815.7" y1="235.0" x2="842.0" y2="235.0"/><line x1="815.7" y1="227.0" x2="815.7" y2="243.0"/><line x1="842.0" y1="227.0" x2="842.0" y2="243.0"/></g>
-<circle class="mk" cx="828.8" cy="235.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="815.7" y1="235.0" x2="842.0" y2="235.0"/><line x1="815.7" y1="227.0" x2="815.7" y2="243.0"/><line x1="842.0" y1="227.0" x2="842.0" y2="243.0"/></g>
+<circle class="mk" cx="828.8" cy="235.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="239.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,427</text>
 <rect class="hit" x="40.0" y="218.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Séquence : AUROC 0,842 plus ou moins 0,008, AUPRC 0,551 plus ou moins 0,016, VPP norm. moy. 0,427 plus ou moins 0,010"><title>Séquence : AUROC 0,842 plus ou moins 0,008, AUPRC 0,551 plus ou moins 0,016, VPP norm. moy. 0,427 plus ou moins 0,010</title></rect>
 </g>
 <g class="row">
 <rect x="40.0" y="252.0" width="1048.0" height="34.0" fill="#F5F5F7"/>
 <line x1="61.0" y1="269.0" x2="87.0" y2="269.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="269.0" r="6" fill="#007AFF"/>
-<circle class="c-sequence" cx="87.0" cy="269.0" r="6" fill="#FF9500"/>
+<circle class="c-structure" cx="61.0" cy="269.0" r="6" fill="#0088FF"/>
+<circle class="c-sequence" cx="87.0" cy="269.0" r="6" fill="#FF8D28"/>
 <circle cx="113.0" cy="269.0" r="6" fill="#D6D6DB"/>
 <circle cx="139.0" cy="269.0" r="6" fill="#D6D6DB"/>
 <circle cx="165.0" cy="269.0" r="6" fill="#D6D6DB"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="310.0" y1="269.0" x2="326.6" y2="269.0"/><line x1="310.0" y1="261.0" x2="310.0" y2="277.0"/><line x1="326.6" y1="261.0" x2="326.6" y2="277.0"/></g>
-<circle class="mk" cx="318.3" cy="269.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="310.0" y1="269.0" x2="326.6" y2="269.0"/><line x1="310.0" y1="261.0" x2="310.0" y2="277.0"/><line x1="326.6" y1="261.0" x2="326.6" y2="277.0"/></g>
+<circle class="mk" cx="318.3" cy="269.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="273.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,839</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="577.0" y1="269.0" x2="591.5" y2="269.0"/><line x1="577.0" y1="261.0" x2="577.0" y2="277.0"/><line x1="591.5" y1="261.0" x2="591.5" y2="277.0"/></g>
-<circle class="mk" cx="584.3" cy="269.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="577.0" y1="269.0" x2="591.5" y2="269.0"/><line x1="577.0" y1="261.0" x2="577.0" y2="277.0"/><line x1="591.5" y1="261.0" x2="591.5" y2="277.0"/></g>
+<circle class="mk" cx="584.3" cy="269.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="273.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,546</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="838.2" y1="269.0" x2="862.5" y2="269.0"/><line x1="838.2" y1="261.0" x2="838.2" y2="277.0"/><line x1="862.5" y1="261.0" x2="862.5" y2="277.0"/></g>
-<circle class="mk" cx="850.3" cy="269.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="838.2" y1="269.0" x2="862.5" y2="269.0"/><line x1="838.2" y1="261.0" x2="838.2" y2="277.0"/><line x1="862.5" y1="261.0" x2="862.5" y2="277.0"/></g>
+<circle class="mk" cx="850.3" cy="269.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="273.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,444</text>
 <rect class="hit" x="40.0" y="252.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Séquence : AUROC 0,839 plus ou moins 0,007, AUPRC 0,546 plus ou moins 0,015, VPP norm. moy. 0,444 plus ou moins 0,010"><title>Structure + Séquence : AUROC 0,839 plus ou moins 0,007, AUPRC 0,546 plus ou moins 0,015, VPP norm. moy. 0,444 plus ou moins 0,010</title></rect>
 </g>
 <g class="row">
 <line x1="87.0" y1="303.0" x2="113.0" y2="303.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
 <circle cx="61.0" cy="303.0" r="6" fill="#D6D6DB"/>
-<circle class="c-sequence" cx="87.0" cy="303.0" r="6" fill="#FF9500"/>
-<circle class="c-biochem" cx="113.0" cy="303.0" r="6" fill="#AF52DE"/>
+<circle class="c-sequence" cx="87.0" cy="303.0" r="6" fill="#FF8D28"/>
+<circle class="c-biochem" cx="113.0" cy="303.0" r="6" fill="#CB30E0"/>
 <circle cx="139.0" cy="303.0" r="6" fill="#D6D6DB"/>
 <circle cx="165.0" cy="303.0" r="6" fill="#D6D6DB"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="312.2" y1="303.0" x2="328.8" y2="303.0"/><line x1="312.2" y1="295.0" x2="312.2" y2="311.0"/><line x1="328.8" y1="295.0" x2="328.8" y2="311.0"/></g>
-<circle class="mk" cx="320.5" cy="303.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="312.2" y1="303.0" x2="328.8" y2="303.0"/><line x1="312.2" y1="295.0" x2="312.2" y2="311.0"/><line x1="328.8" y1="295.0" x2="328.8" y2="311.0"/></g>
+<circle class="mk" cx="320.5" cy="303.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="307.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,841</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="578.0" y1="303.0" x2="592.5" y2="303.0"/><line x1="578.0" y1="295.0" x2="578.0" y2="311.0"/><line x1="592.5" y1="295.0" x2="592.5" y2="311.0"/></g>
-<circle class="mk" cx="585.2" cy="303.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="578.0" y1="303.0" x2="592.5" y2="303.0"/><line x1="578.0" y1="295.0" x2="578.0" y2="311.0"/><line x1="592.5" y1="295.0" x2="592.5" y2="311.0"/></g>
+<circle class="mk" cx="585.2" cy="303.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="307.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,548</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="828.1" y1="303.0" x2="852.4" y2="303.0"/><line x1="828.1" y1="295.0" x2="828.1" y2="311.0"/><line x1="852.4" y1="295.0" x2="852.4" y2="311.0"/></g>
-<circle class="mk" cx="840.2" cy="303.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="828.1" y1="303.0" x2="852.4" y2="303.0"/><line x1="828.1" y1="295.0" x2="828.1" y2="311.0"/><line x1="852.4" y1="295.0" x2="852.4" y2="311.0"/></g>
+<circle class="mk" cx="840.2" cy="303.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="307.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,436</text>
 <rect class="hit" x="40.0" y="286.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Séquence + Biochimie : AUROC 0,841 plus ou moins 0,007, AUPRC 0,548 plus ou moins 0,015, VPP norm. moy. 0,436 plus ou moins 0,010"><title>Séquence + Biochimie : AUROC 0,841 plus ou moins 0,007, AUPRC 0,548 plus ou moins 0,015, VPP norm. moy. 0,436 plus ou moins 0,010</title></rect>
 </g>
 <g class="row">
 <rect x="40.0" y="320.0" width="1048.0" height="34.0" fill="#F5F5F7"/>
 <line x1="61.0" y1="337.0" x2="113.0" y2="337.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="337.0" r="6" fill="#007AFF"/>
-<circle class="c-sequence" cx="87.0" cy="337.0" r="6" fill="#FF9500"/>
-<circle class="c-biochem" cx="113.0" cy="337.0" r="6" fill="#AF52DE"/>
+<circle class="c-structure" cx="61.0" cy="337.0" r="6" fill="#0088FF"/>
+<circle class="c-sequence" cx="87.0" cy="337.0" r="6" fill="#FF8D28"/>
+<circle class="c-biochem" cx="113.0" cy="337.0" r="6" fill="#CB30E0"/>
 <circle cx="139.0" cy="337.0" r="6" fill="#D6D6DB"/>
 <circle cx="165.0" cy="337.0" r="6" fill="#D6D6DB"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="316.2" y1="337.0" x2="331.5" y2="337.0"/><line x1="316.2" y1="329.0" x2="316.2" y2="345.0"/><line x1="331.5" y1="329.0" x2="331.5" y2="345.0"/></g>
-<circle class="mk" cx="323.8" cy="337.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="316.2" y1="337.0" x2="331.5" y2="337.0"/><line x1="316.2" y1="329.0" x2="316.2" y2="345.0"/><line x1="331.5" y1="329.0" x2="331.5" y2="345.0"/></g>
+<circle class="mk" cx="323.8" cy="337.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="341.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,844</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="578.1" y1="337.0" x2="591.4" y2="337.0"/><line x1="578.1" y1="329.0" x2="578.1" y2="345.0"/><line x1="591.4" y1="329.0" x2="591.4" y2="345.0"/></g>
-<circle class="mk" cx="584.8" cy="337.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="578.1" y1="337.0" x2="591.4" y2="337.0"/><line x1="578.1" y1="329.0" x2="578.1" y2="345.0"/><line x1="591.4" y1="329.0" x2="591.4" y2="345.0"/></g>
+<circle class="mk" cx="584.8" cy="337.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="341.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,547</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="835.4" y1="337.0" x2="857.7" y2="337.0"/><line x1="835.4" y1="329.0" x2="835.4" y2="345.0"/><line x1="857.7" y1="329.0" x2="857.7" y2="345.0"/></g>
-<circle class="mk" cx="846.5" cy="337.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="835.4" y1="337.0" x2="857.7" y2="337.0"/><line x1="835.4" y1="329.0" x2="835.4" y2="345.0"/><line x1="857.7" y1="329.0" x2="857.7" y2="345.0"/></g>
+<circle class="mk" cx="846.5" cy="337.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="341.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,441</text>
 <rect class="hit" x="40.0" y="320.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Séquence + Biochimie : AUROC 0,844 plus ou moins 0,007, AUPRC 0,547 plus ou moins 0,014, VPP norm. moy. 0,441 plus ou moins 0,009"><title>Structure + Séquence + Biochimie : AUROC 0,844 plus ou moins 0,007, AUPRC 0,547 plus ou moins 0,014, VPP norm. moy. 0,441 plus ou moins 0,009</title></rect>
 </g>
 <g class="row">
 <line x1="61.0" y1="371.0" x2="139.0" y2="371.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="371.0" r="6" fill="#007AFF"/>
-<circle class="c-sequence" cx="87.0" cy="371.0" r="6" fill="#FF9500"/>
-<circle class="c-biochem" cx="113.0" cy="371.0" r="6" fill="#AF52DE"/>
-<circle class="c-mma" cx="139.0" cy="371.0" r="6" fill="#28CD41"/>
+<circle class="c-structure" cx="61.0" cy="371.0" r="6" fill="#0088FF"/>
+<circle class="c-sequence" cx="87.0" cy="371.0" r="6" fill="#FF8D28"/>
+<circle class="c-biochem" cx="113.0" cy="371.0" r="6" fill="#CB30E0"/>
+<circle class="c-mma" cx="139.0" cy="371.0" r="6" fill="#34C759"/>
 <circle cx="165.0" cy="371.0" r="6" fill="#D6D6DB"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="335.8" y1="371.0" x2="349.5" y2="371.0"/><line x1="335.8" y1="363.0" x2="335.8" y2="379.0"/><line x1="349.5" y1="363.0" x2="349.5" y2="379.0"/></g>
-<circle class="mk" cx="342.6" cy="371.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="335.8" y1="371.0" x2="349.5" y2="371.0"/><line x1="335.8" y1="363.0" x2="335.8" y2="379.0"/><line x1="349.5" y1="363.0" x2="349.5" y2="379.0"/></g>
+<circle class="mk" cx="342.6" cy="371.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="375.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,861</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="610.7" y1="371.0" x2="622.8" y2="371.0"/><line x1="610.7" y1="363.0" x2="610.7" y2="379.0"/><line x1="622.8" y1="363.0" x2="622.8" y2="379.0"/></g>
-<circle class="mk" cx="616.8" cy="371.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="610.7" y1="371.0" x2="622.8" y2="371.0"/><line x1="610.7" y1="363.0" x2="610.7" y2="379.0"/><line x1="622.8" y1="363.0" x2="622.8" y2="379.0"/></g>
+<circle class="mk" cx="616.8" cy="371.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="375.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,613</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="864.2" y1="371.0" x2="884.5" y2="371.0"/><line x1="864.2" y1="363.0" x2="864.2" y2="379.0"/><line x1="884.5" y1="363.0" x2="884.5" y2="379.0"/></g>
-<circle class="mk" cx="874.4" cy="371.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="864.2" y1="371.0" x2="884.5" y2="371.0"/><line x1="864.2" y1="363.0" x2="864.2" y2="379.0"/><line x1="884.5" y1="363.0" x2="884.5" y2="379.0"/></g>
+<circle class="mk" cx="874.4" cy="371.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="375.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,463</text>
 <rect class="hit" x="40.0" y="354.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Séquence + Biochimie + MMA : AUROC 0,861 plus ou moins 0,006, AUPRC 0,613 plus ou moins 0,013, VPP norm. moy. 0,463 plus ou moins 0,008"><title>Structure + Séquence + Biochimie + MMA : AUROC 0,861 plus ou moins 0,006, AUPRC 0,613 plus ou moins 0,013, VPP norm. moy. 0,463 plus ou moins 0,008</title></rect>
 </g>
 <g class="row">
 <rect x="40.0" y="388.0" width="1048.0" height="34.0" fill="#F5F5F7"/>
 <line x1="61.0" y1="405.0" x2="165.0" y2="405.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="405.0" r="6" fill="#007AFF"/>
+<circle class="c-structure" cx="61.0" cy="405.0" r="6" fill="#0088FF"/>
 <circle cx="87.0" cy="405.0" r="6" fill="#D6D6DB"/>
 <circle cx="113.0" cy="405.0" r="6" fill="#D6D6DB"/>
 <circle cx="139.0" cy="405.0" r="6" fill="#D6D6DB"/>
-<circle class="c-transfer" cx="165.0" cy="405.0" r="6" fill="#007AFF"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="271.3" y1="405.0" x2="287.9" y2="405.0"/><line x1="271.3" y1="397.0" x2="271.3" y2="413.0"/><line x1="287.9" y1="397.0" x2="287.9" y2="413.0"/></g>
-<circle class="mk" cx="279.6" cy="405.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle class="c-transfer" cx="165.0" cy="405.0" r="6" fill="#0088FF"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="271.3" y1="405.0" x2="287.9" y2="405.0"/><line x1="271.3" y1="397.0" x2="271.3" y2="413.0"/><line x1="287.9" y1="397.0" x2="287.9" y2="413.0"/></g>
+<circle class="mk" cx="279.6" cy="405.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="409.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,804</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="553.2" y1="405.0" x2="567.8" y2="405.0"/><line x1="553.2" y1="397.0" x2="553.2" y2="413.0"/><line x1="567.8" y1="397.0" x2="567.8" y2="413.0"/></g>
-<circle class="mk" cx="560.5" cy="405.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="553.2" y1="405.0" x2="567.8" y2="405.0"/><line x1="553.2" y1="397.0" x2="553.2" y2="413.0"/><line x1="567.8" y1="397.0" x2="567.8" y2="413.0"/></g>
+<circle class="mk" cx="560.5" cy="405.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="409.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,497</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="812.9" y1="405.0" x2="837.2" y2="405.0"/><line x1="812.9" y1="397.0" x2="812.9" y2="413.0"/><line x1="837.2" y1="397.0" x2="837.2" y2="413.0"/></g>
-<circle class="mk" cx="825.0" cy="405.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="812.9" y1="405.0" x2="837.2" y2="405.0"/><line x1="812.9" y1="397.0" x2="812.9" y2="413.0"/><line x1="837.2" y1="397.0" x2="837.2" y2="413.0"/></g>
+<circle class="mk" cx="825.0" cy="405.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="409.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,424</text>
 <rect class="hit" x="40.0" y="388.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Transfert : AUROC 0,804 plus ou moins 0,007, AUPRC 0,497 plus ou moins 0,015, VPP norm. moy. 0,424 plus ou moins 0,010"><title>Structure + Transfert : AUROC 0,804 plus ou moins 0,007, AUPRC 0,497 plus ou moins 0,015, VPP norm. moy. 0,424 plus ou moins 0,010</title></rect>
 </g>
 <g class="row">
 <line x1="87.0" y1="439.0" x2="165.0" y2="439.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
 <circle cx="61.0" cy="439.0" r="6" fill="#D6D6DB"/>
-<circle class="c-sequence" cx="87.0" cy="439.0" r="6" fill="#FF9500"/>
+<circle class="c-sequence" cx="87.0" cy="439.0" r="6" fill="#FF8D28"/>
 <circle cx="113.0" cy="439.0" r="6" fill="#D6D6DB"/>
 <circle cx="139.0" cy="439.0" r="6" fill="#D6D6DB"/>
-<circle class="c-transfer" cx="165.0" cy="439.0" r="6" fill="#007AFF"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="317.8" y1="439.0" x2="334.3" y2="439.0"/><line x1="317.8" y1="431.0" x2="317.8" y2="447.0"/><line x1="334.3" y1="431.0" x2="334.3" y2="447.0"/></g>
-<circle class="mk" cx="326.0" cy="439.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle class="c-transfer" cx="165.0" cy="439.0" r="6" fill="#0088FF"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="317.8" y1="439.0" x2="334.3" y2="439.0"/><line x1="317.8" y1="431.0" x2="317.8" y2="447.0"/><line x1="334.3" y1="431.0" x2="334.3" y2="447.0"/></g>
+<circle class="mk" cx="326.0" cy="439.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="443.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,846</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="587.2" y1="439.0" x2="601.7" y2="439.0"/><line x1="587.2" y1="431.0" x2="587.2" y2="447.0"/><line x1="601.7" y1="431.0" x2="601.7" y2="447.0"/></g>
-<circle class="mk" cx="594.5" cy="439.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="587.2" y1="439.0" x2="601.7" y2="439.0"/><line x1="587.2" y1="431.0" x2="587.2" y2="447.0"/><line x1="601.7" y1="431.0" x2="601.7" y2="447.0"/></g>
+<circle class="mk" cx="594.5" cy="439.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="443.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,567</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="847.0" y1="439.0" x2="871.3" y2="439.0"/><line x1="847.0" y1="431.0" x2="847.0" y2="447.0"/><line x1="871.3" y1="431.0" x2="871.3" y2="447.0"/></g>
-<circle class="mk" cx="859.2" cy="439.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="847.0" y1="439.0" x2="871.3" y2="439.0"/><line x1="847.0" y1="431.0" x2="847.0" y2="447.0"/><line x1="871.3" y1="431.0" x2="871.3" y2="447.0"/></g>
+<circle class="mk" cx="859.2" cy="439.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="443.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,451</text>
 <rect class="hit" x="40.0" y="422.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Séquence + Transfert : AUROC 0,846 plus ou moins 0,007, AUPRC 0,567 plus ou moins 0,015, VPP norm. moy. 0,451 plus ou moins 0,010"><title>Séquence + Transfert : AUROC 0,846 plus ou moins 0,007, AUPRC 0,567 plus ou moins 0,015, VPP norm. moy. 0,451 plus ou moins 0,010</title></rect>
 </g>
 <g class="row">
 <rect x="40.0" y="456.0" width="1048.0" height="34.0" fill="#F5F5F7"/>
 <line x1="61.0" y1="473.0" x2="165.0" y2="473.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="473.0" r="6" fill="#007AFF"/>
-<circle class="c-sequence" cx="87.0" cy="473.0" r="6" fill="#FF9500"/>
+<circle class="c-structure" cx="61.0" cy="473.0" r="6" fill="#0088FF"/>
+<circle class="c-sequence" cx="87.0" cy="473.0" r="6" fill="#FF8D28"/>
 <circle cx="113.0" cy="473.0" r="6" fill="#D6D6DB"/>
 <circle cx="139.0" cy="473.0" r="6" fill="#D6D6DB"/>
-<circle class="c-transfer" cx="165.0" cy="473.0" r="6" fill="#007AFF"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="317.3" y1="473.0" x2="332.6" y2="473.0"/><line x1="317.3" y1="465.0" x2="317.3" y2="481.0"/><line x1="332.6" y1="465.0" x2="332.6" y2="481.0"/></g>
-<circle class="mk" cx="324.9" cy="473.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle class="c-transfer" cx="165.0" cy="473.0" r="6" fill="#0088FF"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="317.3" y1="473.0" x2="332.6" y2="473.0"/><line x1="317.3" y1="465.0" x2="317.3" y2="481.0"/><line x1="332.6" y1="465.0" x2="332.6" y2="481.0"/></g>
+<circle class="mk" cx="324.9" cy="473.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="477.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,845</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="587.3" y1="473.0" x2="600.6" y2="473.0"/><line x1="587.3" y1="465.0" x2="587.3" y2="481.0"/><line x1="600.6" y1="465.0" x2="600.6" y2="481.0"/></g>
-<circle class="mk" cx="594.0" cy="473.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="587.3" y1="473.0" x2="600.6" y2="473.0"/><line x1="587.3" y1="465.0" x2="587.3" y2="481.0"/><line x1="600.6" y1="465.0" x2="600.6" y2="481.0"/></g>
+<circle class="mk" cx="594.0" cy="473.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="477.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,566</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="844.3" y1="473.0" x2="866.5" y2="473.0"/><line x1="844.3" y1="465.0" x2="844.3" y2="481.0"/><line x1="866.5" y1="465.0" x2="866.5" y2="481.0"/></g>
-<circle class="mk" cx="855.4" cy="473.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="844.3" y1="473.0" x2="866.5" y2="473.0"/><line x1="844.3" y1="465.0" x2="844.3" y2="481.0"/><line x1="866.5" y1="465.0" x2="866.5" y2="481.0"/></g>
+<circle class="mk" cx="855.4" cy="473.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="477.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,448</text>
 <rect class="hit" x="40.0" y="456.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Séquence + Transfert : AUROC 0,845 plus ou moins 0,007, AUPRC 0,566 plus ou moins 0,014, VPP norm. moy. 0,448 plus ou moins 0,009"><title>Structure + Séquence + Transfert : AUROC 0,845 plus ou moins 0,007, AUPRC 0,566 plus ou moins 0,014, VPP norm. moy. 0,448 plus ou moins 0,009</title></rect>
 </g>
 <g class="row">
 <line x1="87.0" y1="507.0" x2="165.0" y2="507.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
 <circle cx="61.0" cy="507.0" r="6" fill="#D6D6DB"/>
-<circle class="c-sequence" cx="87.0" cy="507.0" r="6" fill="#FF9500"/>
-<circle class="c-biochem" cx="113.0" cy="507.0" r="6" fill="#AF52DE"/>
+<circle class="c-sequence" cx="87.0" cy="507.0" r="6" fill="#FF8D28"/>
+<circle class="c-biochem" cx="113.0" cy="507.0" r="6" fill="#CB30E0"/>
 <circle cx="139.0" cy="507.0" r="6" fill="#D6D6DB"/>
-<circle class="c-transfer" cx="165.0" cy="507.0" r="6" fill="#007AFF"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="317.3" y1="507.0" x2="332.6" y2="507.0"/><line x1="317.3" y1="499.0" x2="317.3" y2="515.0"/><line x1="332.6" y1="499.0" x2="332.6" y2="515.0"/></g>
-<circle class="mk" cx="324.9" cy="507.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle class="c-transfer" cx="165.0" cy="507.0" r="6" fill="#0088FF"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="317.3" y1="507.0" x2="332.6" y2="507.0"/><line x1="317.3" y1="499.0" x2="317.3" y2="515.0"/><line x1="332.6" y1="499.0" x2="332.6" y2="515.0"/></g>
+<circle class="mk" cx="324.9" cy="507.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="511.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,845</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="583.9" y1="507.0" x2="597.2" y2="507.0"/><line x1="583.9" y1="499.0" x2="583.9" y2="515.0"/><line x1="597.2" y1="499.0" x2="597.2" y2="515.0"/></g>
-<circle class="mk" cx="590.6" cy="507.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="583.9" y1="507.0" x2="597.2" y2="507.0"/><line x1="583.9" y1="499.0" x2="583.9" y2="515.0"/><line x1="597.2" y1="499.0" x2="597.2" y2="515.0"/></g>
+<circle class="mk" cx="590.6" cy="507.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="511.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,559</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="841.7" y1="507.0" x2="864.0" y2="507.0"/><line x1="841.7" y1="499.0" x2="841.7" y2="515.0"/><line x1="864.0" y1="499.0" x2="864.0" y2="515.0"/></g>
-<circle class="mk" cx="852.9" cy="507.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="841.7" y1="507.0" x2="864.0" y2="507.0"/><line x1="841.7" y1="499.0" x2="841.7" y2="515.0"/><line x1="864.0" y1="499.0" x2="864.0" y2="515.0"/></g>
+<circle class="mk" cx="852.9" cy="507.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="511.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,446</text>
 <rect class="hit" x="40.0" y="490.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Séquence + Biochimie + Transfert : AUROC 0,845 plus ou moins 0,007, AUPRC 0,559 plus ou moins 0,014, VPP norm. moy. 0,446 plus ou moins 0,009"><title>Séquence + Biochimie + Transfert : AUROC 0,845 plus ou moins 0,007, AUPRC 0,559 plus ou moins 0,014, VPP norm. moy. 0,446 plus ou moins 0,009</title></rect>
 </g>
 <g class="row">
 <rect x="40.0" y="524.0" width="1048.0" height="34.0" fill="#F5F5F7"/>
 <line x1="61.0" y1="541.0" x2="165.0" y2="541.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="541.0" r="6" fill="#007AFF"/>
-<circle class="c-sequence" cx="87.0" cy="541.0" r="6" fill="#FF9500"/>
-<circle class="c-biochem" cx="113.0" cy="541.0" r="6" fill="#AF52DE"/>
+<circle class="c-structure" cx="61.0" cy="541.0" r="6" fill="#0088FF"/>
+<circle class="c-sequence" cx="87.0" cy="541.0" r="6" fill="#FF8D28"/>
+<circle class="c-biochem" cx="113.0" cy="541.0" r="6" fill="#CB30E0"/>
 <circle cx="139.0" cy="541.0" r="6" fill="#D6D6DB"/>
-<circle class="c-transfer" cx="165.0" cy="541.0" r="6" fill="#007AFF"/>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="315.9" y1="541.0" x2="329.6" y2="541.0"/><line x1="315.9" y1="533.0" x2="315.9" y2="549.0"/><line x1="329.6" y1="533.0" x2="329.6" y2="549.0"/></g>
-<circle class="mk" cx="322.7" cy="541.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle class="c-transfer" cx="165.0" cy="541.0" r="6" fill="#0088FF"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="315.9" y1="541.0" x2="329.6" y2="541.0"/><line x1="315.9" y1="533.0" x2="315.9" y2="549.0"/><line x1="329.6" y1="533.0" x2="329.6" y2="549.0"/></g>
+<circle class="mk" cx="322.7" cy="541.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="449.3" y="545.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,843</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="581.6" y1="541.0" x2="593.7" y2="541.0"/><line x1="581.6" y1="533.0" x2="581.6" y2="549.0"/><line x1="593.7" y1="533.0" x2="593.7" y2="549.0"/></g>
-<circle class="mk" cx="587.7" cy="541.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="581.6" y1="541.0" x2="593.7" y2="541.0"/><line x1="581.6" y1="533.0" x2="581.6" y2="549.0"/><line x1="593.7" y1="533.0" x2="593.7" y2="549.0"/></g>
+<circle class="mk" cx="587.7" cy="541.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="738.7" y="545.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,553</text>
-<g class="ci" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round"><line x1="844.0" y1="541.0" x2="864.2" y2="541.0"/><line x1="844.0" y1="533.0" x2="844.0" y2="549.0"/><line x1="864.2" y1="533.0" x2="864.2" y2="549.0"/></g>
-<circle class="mk" cx="854.1" cy="541.0" r="5.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="ci" stroke="#0088FF" stroke-width="1.6" stroke-linecap="round"><line x1="844.0" y1="541.0" x2="864.2" y2="541.0"/><line x1="844.0" y1="533.0" x2="844.0" y2="549.0"/><line x1="864.2" y1="533.0" x2="864.2" y2="549.0"/></g>
+<circle class="mk" cx="854.1" cy="541.0" r="5.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 <text x="1028.0" y="545.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="400" fill="#1D1D1F">0,447</text>
 <rect class="hit" x="40.0" y="524.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Séquence + Biochimie + Transfert : AUROC 0,843 plus ou moins 0,006, AUPRC 0,553 plus ou moins 0,013, VPP norm. moy. 0,447 plus ou moins 0,008"><title>Structure + Séquence + Biochimie + Transfert : AUROC 0,843 plus ou moins 0,006, AUPRC 0,553 plus ou moins 0,013, VPP norm. moy. 0,447 plus ou moins 0,008</title></rect>
 </g>
 <g class="row">
 <line x1="61.0" y1="575.0" x2="165.0" y2="575.0" stroke="#1D1D1F" stroke-opacity="0.30" stroke-width="2.5" stroke-linecap="round"/>
-<circle class="c-structure" cx="61.0" cy="575.0" r="6" fill="#007AFF"/>
-<circle class="c-sequence" cx="87.0" cy="575.0" r="6" fill="#FF9500"/>
-<circle class="c-biochem" cx="113.0" cy="575.0" r="6" fill="#AF52DE"/>
-<circle class="c-mma" cx="139.0" cy="575.0" r="6" fill="#28CD41"/>
-<circle class="c-transfer" cx="165.0" cy="575.0" r="6" fill="#007AFF"/>
-<g class="ci" stroke="#AF52DE" stroke-width="1.6" stroke-linecap="round"><line x1="360.7" y1="575.0" x2="373.1" y2="575.0"/><line x1="360.7" y1="565.5" x2="360.7" y2="584.5"/><line x1="373.1" y1="565.5" x2="373.1" y2="584.5"/></g>
-<circle class="mk-best" cx="366.9" cy="575.0" r="7.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"/>
-<text x="449.3" y="579.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="700" fill="#AF52DE">0,883</text>
-<g class="ci" stroke="#AF52DE" stroke-width="1.6" stroke-linecap="round"><line x1="651.6" y1="575.0" x2="662.4" y2="575.0"/><line x1="651.6" y1="565.5" x2="651.6" y2="584.5"/><line x1="662.4" y1="565.5" x2="662.4" y2="584.5"/></g>
-<circle class="mk-best" cx="657.0" cy="575.0" r="7.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"/>
-<text x="738.7" y="579.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="700" fill="#AF52DE">0,696</text>
-<g class="ci" stroke="#AF52DE" stroke-width="1.6" stroke-linecap="round"><line x1="933.6" y1="575.0" x2="951.8" y2="575.0"/><line x1="933.6" y1="565.5" x2="933.6" y2="584.5"/><line x1="951.8" y1="565.5" x2="951.8" y2="584.5"/></g>
-<circle class="mk-best" cx="942.7" cy="575.0" r="7.0" fill="#AF52DE" stroke="#FFFFFF" stroke-width="1.5"/>
-<text x="1028.0" y="579.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="700" fill="#AF52DE">0,517</text>
+<circle class="c-structure" cx="61.0" cy="575.0" r="6" fill="#0088FF"/>
+<circle class="c-sequence" cx="87.0" cy="575.0" r="6" fill="#FF8D28"/>
+<circle class="c-biochem" cx="113.0" cy="575.0" r="6" fill="#CB30E0"/>
+<circle class="c-mma" cx="139.0" cy="575.0" r="6" fill="#34C759"/>
+<circle class="c-transfer" cx="165.0" cy="575.0" r="6" fill="#0088FF"/>
+<g class="ci" stroke="#CB30E0" stroke-width="1.6" stroke-linecap="round"><line x1="360.7" y1="575.0" x2="373.1" y2="575.0"/><line x1="360.7" y1="565.5" x2="360.7" y2="584.5"/><line x1="373.1" y1="565.5" x2="373.1" y2="584.5"/></g>
+<circle class="mk-best" cx="366.9" cy="575.0" r="7.0" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"/>
+<text x="449.3" y="579.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="700" fill="#CB30E0">0,883</text>
+<g class="ci" stroke="#CB30E0" stroke-width="1.6" stroke-linecap="round"><line x1="651.6" y1="575.0" x2="662.4" y2="575.0"/><line x1="651.6" y1="565.5" x2="651.6" y2="584.5"/><line x1="662.4" y1="565.5" x2="662.4" y2="584.5"/></g>
+<circle class="mk-best" cx="657.0" cy="575.0" r="7.0" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"/>
+<text x="738.7" y="579.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="700" fill="#CB30E0">0,696</text>
+<g class="ci" stroke="#CB30E0" stroke-width="1.6" stroke-linecap="round"><line x1="933.6" y1="575.0" x2="951.8" y2="575.0"/><line x1="933.6" y1="565.5" x2="933.6" y2="584.5"/><line x1="951.8" y1="565.5" x2="951.8" y2="584.5"/></g>
+<circle class="mk-best" cx="942.7" cy="575.0" r="7.0" fill="#CB30E0" stroke="#FFFFFF" stroke-width="1.5"/>
+<text x="1028.0" y="579.0" font-size="12.5" font-family="Roboto Mono, ui-monospace, monospace" text-anchor="end" font-weight="700" fill="#CB30E0">0,517</text>
 <rect class="hit" x="40.0" y="558.0" width="1048.0" height="34.0" tabindex="0" role="img" aria-label="Structure + Séquence + Biochimie + MMA + Transfert : AUROC 0,883 plus ou moins 0,006, AUPRC 0,696 plus ou moins 0,011, VPP norm. moy. 0,517 plus ou moins 0,007"><title>Structure + Séquence + Biochimie + MMA + Transfert : AUROC 0,883 plus ou moins 0,006, AUPRC 0,696 plus ou moins 0,011, VPP norm. moy. 0,517 plus ou moins 0,007</title></rect>
 </g>
 <line x1="475.3" y1="150.0" x2="475.3" y2="598.0" stroke="#E5E5EA" stroke-width="1"/>

@@ -25,57 +25,57 @@
 <text x="884.0" y="546.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">0,10</text>
 <line x1="319.0" y1="200.0" x2="319.0" y2="528.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="545.0" y="572.0" font-size="12" fill="#6E6E73" text-anchor="middle">Chute de l'AUC après mélange</text>
-<rect x="319.0" y="214.6" width="470.6" height="18.6" fill="#007AFF"/>
+<rect x="319.0" y="214.6" width="470.6" height="18.6" fill="#0088FF"/>
 <line x1="767.9" y1="223.9" x2="811.2" y2="223.9" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="767.9" y1="218.9" x2="767.9" y2="228.9" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="811.2" y1="218.9" x2="811.2" y2="228.9" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="227.9" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">type_contrat</text>
 <rect id="bar-0" class="bar hit" tabindex="0" role="img" aria-label="type_contrat : chute moyenne de 0,0833 sur 10 mélanges, intervalle 0,0795 à 0,0871" x="206.0" y="206.0" width="678.0" height="35.8" fill="transparent"><title>type_contrat : 0,0833</title></rect>
-<rect x="319.0" y="250.4" width="238.4" height="18.6" fill="#007AFF"/>
+<rect x="319.0" y="250.4" width="238.4" height="18.6" fill="#0088FF"/>
 <line x1="538.8" y1="259.7" x2="576.0" y2="259.7" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="538.8" y1="254.7" x2="538.8" y2="264.7" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="576.0" y1="254.7" x2="576.0" y2="264.7" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="263.7" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">anciennete_mois</text>
 <rect id="bar-1" class="bar hit" tabindex="0" role="img" aria-label="anciennete_mois : chute moyenne de 0,0422 sur 10 mélanges, intervalle 0,0389 à 0,0455" x="206.0" y="241.8" width="678.0" height="35.8" fill="transparent"><title>anciennete_mois : 0,0422</title></rect>
-<rect x="319.0" y="286.1" width="233.5" height="18.6" fill="#007AFF"/>
+<rect x="319.0" y="286.1" width="233.5" height="18.6" fill="#0088FF"/>
 <line x1="540.6" y1="295.4" x2="564.4" y2="295.4" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="540.6" y1="290.4" x2="540.6" y2="300.4" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="564.4" y1="290.4" x2="564.4" y2="300.4" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="299.4" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">facture_mensuelle</text>
 <rect id="bar-2" class="bar hit" tabindex="0" role="img" aria-label="facture_mensuelle : chute moyenne de 0,0413 sur 10 mélanges, intervalle 0,0392 à 0,0434" x="206.0" y="277.6" width="678.0" height="35.8" fill="transparent"><title>facture_mensuelle : 0,0413</title></rect>
-<rect x="319.0" y="321.9" width="153.5" height="18.6" fill="#007AFF"/>
+<rect x="319.0" y="321.9" width="153.5" height="18.6" fill="#0088FF"/>
 <line x1="463.3" y1="331.2" x2="481.7" y2="331.2" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="463.3" y1="326.2" x2="463.3" y2="336.2" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="481.7" y1="326.2" x2="481.7" y2="336.2" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="335.2" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">tickets_support</text>
 <rect id="bar-3" class="bar hit" tabindex="0" role="img" aria-label="tickets_support : chute moyenne de 0,0272 sur 10 mélanges, intervalle 0,0255 à 0,0288" x="206.0" y="313.3" width="678.0" height="35.8" fill="transparent"><title>tickets_support : 0,0272</title></rect>
-<rect x="319.0" y="357.7" width="71.2" height="18.6" fill="#007AFF"/>
+<rect x="319.0" y="357.7" width="71.2" height="18.6" fill="#0088FF"/>
 <line x1="378.3" y1="367.0" x2="402.1" y2="367.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="378.3" y1="362.0" x2="378.3" y2="372.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="402.1" y1="362.0" x2="402.1" y2="372.0" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="371.0" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">moyen_paiement</text>
 <rect id="bar-4" class="bar hit" tabindex="0" role="img" aria-label="moyen_paiement : chute moyenne de 0,0126 sur 10 mélanges, intervalle 0,0105 à 0,0147" x="206.0" y="349.1" width="678.0" height="35.8" fill="transparent"><title>moyen_paiement : 0,0126</title></rect>
-<rect x="319.0" y="393.5" width="41.5" height="18.6" fill="#007AFF"/>
+<rect x="319.0" y="393.5" width="41.5" height="18.6" fill="#0088FF"/>
 <line x1="350.5" y1="402.8" x2="370.4" y2="402.8" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="350.5" y1="397.8" x2="350.5" y2="407.8" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="370.4" y1="397.8" x2="370.4" y2="407.8" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="406.8" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">a_la_fibre</text>
 <rect id="bar-5" class="bar hit" tabindex="0" role="img" aria-label="a_la_fibre : chute moyenne de 0,0073 sur 10 mélanges, intervalle 0,0056 à 0,0091" x="206.0" y="384.9" width="678.0" height="35.8" fill="transparent"><title>a_la_fibre : 0,0073</title></rect>
 <rect x="206.0" y="420.7" width="678.0" height="35.8" fill="#1D1D1F" opacity="0.045"/>
-<rect x="319.0" y="429.3" width="3.2" height="18.6" fill="none" stroke="#007AFF" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="319.0" y="429.3" width="3.2" height="18.6" fill="none" stroke="#0088FF" stroke-width="1.6" stroke-dasharray="4 3"/>
 <line x1="310.4" y1="438.6" x2="334.1" y2="438.6" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="310.4" y1="433.6" x2="310.4" y2="443.6" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="334.1" y1="433.6" x2="334.1" y2="443.6" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="442.6" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">canal_inscription</text>
 <rect id="bar-6" class="bar hit" tabindex="0" role="img" aria-label="canal_inscription : chute moyenne de 0,0006 sur 10 mélanges, intervalle -0,0015 à 0,0027, traversant zéro" x="206.0" y="420.7" width="678.0" height="35.8" fill="transparent"><title>canal_inscription : 0,0006</title></rect>
 <rect x="206.0" y="456.4" width="678.0" height="35.8" fill="#1D1D1F" opacity="0.045"/>
-<rect x="319.0" y="465.0" width="1.5" height="18.6" fill="none" stroke="#007AFF" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="319.0" y="465.0" width="1.5" height="18.6" fill="none" stroke="#0088FF" stroke-width="1.6" stroke-dasharray="4 3"/>
 <line x1="310.4" y1="474.3" x2="330.6" y2="474.3" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="310.4" y1="469.3" x2="310.4" y2="479.3" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="330.6" y1="469.3" x2="330.6" y2="479.3" stroke="#1D1D1F" stroke-width="1.4"/>
 <text x="194.0" y="478.3" font-size="12" fill="#1D1D1F" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">facture_dematerialisee</text>
 <rect id="bar-7" class="bar hit" tabindex="0" role="img" aria-label="facture_dematerialisee : chute moyenne de 0,0003 sur 10 mélanges, intervalle -0,0015 à 0,0021, traversant zéro" x="206.0" y="456.4" width="678.0" height="35.8" fill="transparent"><title>facture_dematerialisee : 0,0003</title></rect>
-<rect x="290.0" y="500.8" width="29.0" height="18.6" fill="#FF9500"/>
+<rect x="290.0" y="500.8" width="29.0" height="18.6" fill="#FF8D28"/>
 <line x1="282.0" y1="510.1" x2="297.9" y2="510.1" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="282.0" y1="505.1" x2="282.0" y2="515.1" stroke="#1D1D1F" stroke-width="1.4"/>
 <line x1="297.9" y1="505.1" x2="297.9" y2="515.1" stroke="#1D1D1F" stroke-width="1.4"/>

@@ -5,15 +5,15 @@
 <rect width="745" height="420" fill="#FFFFFF"/>
 <text x="40" y="46" font-size="24" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Project Schedule</text>
 <text x="40" y="70" font-size="14" fill="#6E6E73">One bar per task, spanning its start and end day</text>
-<rect x="40.0" y="92.0" width="14" height="14" rx="3" fill="#007AFF"/>
+<rect x="40.0" y="92.0" width="14" height="14" rx="3" fill="#0088FF"/>
 <text x="60.0" y="104.0" font-size="12" fill="#1D1D1F">Research</text>
-<rect x="138.0" y="92.0" width="14" height="14" rx="3" fill="#AF52DE"/>
+<rect x="138.0" y="92.0" width="14" height="14" rx="3" fill="#CB30E0"/>
 <text x="158.0" y="104.0" font-size="12" fill="#1D1D1F">Design</text>
-<rect x="222.0" y="92.0" width="14" height="14" rx="3" fill="#FF9500"/>
+<rect x="222.0" y="92.0" width="14" height="14" rx="3" fill="#FF8D28"/>
 <text x="242.0" y="104.0" font-size="12" fill="#1D1D1F">Eng</text>
-<rect x="285.0" y="92.0" width="14" height="14" rx="3" fill="#5AC8FA"/>
+<rect x="285.0" y="92.0" width="14" height="14" rx="3" fill="#00C3D0"/>
 <text x="305.0" y="104.0" font-size="12" fill="#1D1D1F">QA</text>
-<rect x="341.0" y="92.0" width="14" height="14" rx="3" fill="#FF3B30"/>
+<rect x="341.0" y="92.0" width="14" height="14" rx="3" fill="#FF383C"/>
 <text x="361.0" y="104.0" font-size="12" fill="#1D1D1F">Ops</text>
 <line x1="130.0" y1="150.0" x2="130.0" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="130.0" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">0</text>
@@ -30,17 +30,17 @@
 <line x1="661.8" y1="150.0" x2="661.8" y2="360.0" stroke="#E5E5EA" stroke-width="1"/>
 <text x="661.8" y="380.0" font-size="11" font-family="Roboto Mono, ui-monospace, monospace" fill="#6E6E73" text-anchor="middle">30</text>
 <text x="422.5" y="402.0" font-size="13" fill="#1D1D1F" text-anchor="middle">Day</text>
-<rect id="bar-0" class="task hit" tabindex="0" x="130.0" y="157.9" width="88.6" height="19.2" rx="3.5" fill="#007AFF"><title>Discovery (Research): day 0-5, 5 days</title></rect>
+<rect id="bar-0" class="task hit" tabindex="0" x="130.0" y="157.9" width="88.6" height="19.2" rx="3.5" fill="#0088FF"><title>Discovery (Research): day 0-5, 5 days</title></rect>
 <text x="118.0" y="171.5" font-size="12" fill="#1D1D1F" text-anchor="end">Discovery</text>
-<rect id="bar-1" class="task hit" tabindex="0" x="200.9" y="192.9" width="124.1" height="19.2" rx="3.5" fill="#AF52DE"><title>Design (Design): day 4-11, 7 days</title></rect>
+<rect id="bar-1" class="task hit" tabindex="0" x="200.9" y="192.9" width="124.1" height="19.2" rx="3.5" fill="#CB30E0"><title>Design (Design): day 4-11, 7 days</title></rect>
 <text x="118.0" y="206.5" font-size="12" fill="#1D1D1F" text-anchor="end">Design</text>
-<rect id="bar-2" class="task hit" tabindex="0" x="307.3" y="227.9" width="212.7" height="19.2" rx="3.5" fill="#FF9500"><title>Build API (Eng): day 10-22, 12 days</title></rect>
+<rect id="bar-2" class="task hit" tabindex="0" x="307.3" y="227.9" width="212.7" height="19.2" rx="3.5" fill="#FF8D28"><title>Build API (Eng): day 10-22, 12 days</title></rect>
 <text x="118.0" y="241.5" font-size="12" fill="#1D1D1F" text-anchor="end">Build API</text>
-<rect id="bar-3" class="task hit" tabindex="0" x="378.2" y="262.9" width="212.7" height="19.2" rx="3.5" fill="#FF9500"><title>Build UI (Eng): day 14-26, 12 days</title></rect>
+<rect id="bar-3" class="task hit" tabindex="0" x="378.2" y="262.9" width="212.7" height="19.2" rx="3.5" fill="#FF8D28"><title>Build UI (Eng): day 14-26, 12 days</title></rect>
 <text x="118.0" y="276.5" font-size="12" fill="#1D1D1F" text-anchor="end">Build UI</text>
-<rect id="bar-4" class="task hit" tabindex="0" x="555.5" y="297.9" width="124.1" height="19.2" rx="3.5" fill="#5AC8FA"><title>QA (QA): day 24-31, 7 days</title></rect>
+<rect id="bar-4" class="task hit" tabindex="0" x="555.5" y="297.9" width="124.1" height="19.2" rx="3.5" fill="#00C3D0"><title>QA (QA): day 24-31, 7 days</title></rect>
 <text x="118.0" y="311.5" font-size="12" fill="#1D1D1F" text-anchor="end">QA</text>
-<rect id="bar-5" class="task hit" tabindex="0" x="661.8" y="332.9" width="53.2" height="19.2" rx="3.5" fill="#FF3B30"><title>Launch (Ops): day 30-33, 3 days</title></rect>
+<rect id="bar-5" class="task hit" tabindex="0" x="661.8" y="332.9" width="53.2" height="19.2" rx="3.5" fill="#FF383C"><title>Launch (Ops): day 30-33, 3 days</title></rect>
 <text x="118.0" y="346.5" font-size="12" fill="#1D1D1F" text-anchor="end">Launch</text>
 <line x1="130.0" y1="360.0" x2="715.0" y2="360.0" stroke="#1D1D1F" stroke-width="1.2"/>
 <g id="tip-0" class="tip"><rect x="109.3" y="145.9" width="130" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="118.3" y="167.4" font-size="12.5" font-weight="700" fill="#1D1D1F">Discovery</text><text x="118.3" y="183.4" font-size="12.5" font-weight="400" fill="#6E6E73">Research</text><text x="118.3" y="199.4" font-size="12.5" font-weight="400" fill="#6E6E73">day 0-5 (5 days)</text></g>

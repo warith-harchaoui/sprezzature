@@ -6,60 +6,60 @@
 <text x="78.0" y="46" font-size="22" font-weight="700" fill="#1D1D1F" letter-spacing="-0.3">Revenue up 80% over the year, trial conversion down a third</text>
 <text x="78.0" y="72" font-size="14" fill="#6E6E73">Monthly revenue and trial conversion. Two scales, so where the line meets the bars means nothing.</text>
 <text x="78.0" y="98" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">Both axes start at zero. Pearson r over these 12 periods: -0.99.</text>
-<text x="78.0" y="134.0" font-size="12" font-weight="700" fill="#007AFF">Revenue (k$)</text>
-<text x="814.0" y="134.0" font-size="12" font-weight="700" fill="#FF9500" text-anchor="end">Trial conversion (%)</text>
+<text x="78.0" y="134.0" font-size="12" font-weight="700" fill="#0088FF">Revenue (k$)</text>
+<text x="814.0" y="134.0" font-size="12" font-weight="700" fill="#FF8D28" text-anchor="end">Trial conversion (%)</text>
 <line x1="78.0" y1="486.0" x2="814.0" y2="486.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="68.0" y="490.0" font-size="11" fill="#007AFF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0</text>
-<text x="824.0" y="490.0" font-size="11" fill="#FF9500" font-family="Roboto Mono, ui-monospace, monospace">0</text>
+<text x="68.0" y="490.0" font-size="11" fill="#0088FF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0</text>
+<text x="824.0" y="490.0" font-size="11" fill="#FF8D28" font-family="Roboto Mono, ui-monospace, monospace">0</text>
 <line x1="78.0" y1="402.0" x2="814.0" y2="402.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="68.0" y="406.0" font-size="11" fill="#007AFF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">200</text>
-<text x="824.0" y="406.0" font-size="11" fill="#FF9500" font-family="Roboto Mono, ui-monospace, monospace">1.5</text>
+<text x="68.0" y="406.0" font-size="11" fill="#0088FF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">200</text>
+<text x="824.0" y="406.0" font-size="11" fill="#FF8D28" font-family="Roboto Mono, ui-monospace, monospace">1.5</text>
 <line x1="78.0" y1="318.0" x2="814.0" y2="318.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="68.0" y="322.0" font-size="11" fill="#007AFF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">400</text>
-<text x="824.0" y="322.0" font-size="11" fill="#FF9500" font-family="Roboto Mono, ui-monospace, monospace">3</text>
+<text x="68.0" y="322.0" font-size="11" fill="#0088FF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">400</text>
+<text x="824.0" y="322.0" font-size="11" fill="#FF8D28" font-family="Roboto Mono, ui-monospace, monospace">3</text>
 <line x1="78.0" y1="234.0" x2="814.0" y2="234.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="68.0" y="238.0" font-size="11" fill="#007AFF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">600</text>
-<text x="824.0" y="238.0" font-size="11" fill="#FF9500" font-family="Roboto Mono, ui-monospace, monospace">4.5</text>
+<text x="68.0" y="238.0" font-size="11" fill="#0088FF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">600</text>
+<text x="824.0" y="238.0" font-size="11" fill="#FF8D28" font-family="Roboto Mono, ui-monospace, monospace">4.5</text>
 <line x1="78.0" y1="150.0" x2="814.0" y2="150.0" stroke="#E5E5EA" stroke-width="1"/>
-<text x="68.0" y="154.0" font-size="11" fill="#007AFF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">800</text>
-<text x="824.0" y="154.0" font-size="11" fill="#FF9500" font-family="Roboto Mono, ui-monospace, monospace">6</text>
-<path d="M93.9,313 H123.5 A3,3 0 0 1 126.5,316 V486 H90.9 V316 A3,3 0 0 1 93.9,313 Z" fill="#007AFF" opacity="0.88"/>
+<text x="68.0" y="154.0" font-size="11" fill="#0088FF" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">800</text>
+<text x="824.0" y="154.0" font-size="11" fill="#FF8D28" font-family="Roboto Mono, ui-monospace, monospace">6</text>
+<path d="M93.9,313 H123.5 A3,3 0 0 1 126.5,316 V486 H90.9 V316 A3,3 0 0 1 93.9,313 Z" fill="#0088FF" opacity="0.88"/>
 <text x="108.7" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Jan</text>
-<path d="M155.2,302 H184.8 A3,3 0 0 1 187.8,305 V486 H152.2 V305 A3,3 0 0 1 155.2,302 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M155.2,302 H184.8 A3,3 0 0 1 187.8,305 V486 H152.2 V305 A3,3 0 0 1 155.2,302 Z" fill="#0088FF" opacity="0.88"/>
 <text x="170.0" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Feb</text>
-<path d="M216.5,288.2 H246.1 A3,3 0 0 1 249.1,291.2 V486 H213.5 V291.2 A3,3 0 0 1 216.5,288.2 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M216.5,288.2 H246.1 A3,3 0 0 1 249.1,291.2 V486 H213.5 V291.2 A3,3 0 0 1 216.5,288.2 Z" fill="#0088FF" opacity="0.88"/>
 <text x="231.3" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Mar</text>
-<path d="M277.9,294.9 H307.5 A3,3 0 0 1 310.5,297.9 V486 H274.9 V297.9 A3,3 0 0 1 277.9,294.9 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M277.9,294.9 H307.5 A3,3 0 0 1 310.5,297.9 V486 H274.9 V297.9 A3,3 0 0 1 277.9,294.9 Z" fill="#0088FF" opacity="0.88"/>
 <text x="292.7" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Apr</text>
-<path d="M339.2,274.7 H368.8 A3,3 0 0 1 371.8,277.7 V486 H336.2 V277.7 A3,3 0 0 1 339.2,274.7 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M339.2,274.7 H368.8 A3,3 0 0 1 371.8,277.7 V486 H336.2 V277.7 A3,3 0 0 1 339.2,274.7 Z" fill="#0088FF" opacity="0.88"/>
 <text x="354.0" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">May</text>
-<path d="M400.5,255.8 H430.1 A3,3 0 0 1 433.1,258.8 V486 H397.5 V258.8 A3,3 0 0 1 400.5,255.8 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M400.5,255.8 H430.1 A3,3 0 0 1 433.1,258.8 V486 H397.5 V258.8 A3,3 0 0 1 400.5,255.8 Z" fill="#0088FF" opacity="0.88"/>
 <text x="415.3" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Jun</text>
-<path d="M461.9,245.8 H491.5 A3,3 0 0 1 494.5,248.8 V486 H458.9 V248.8 A3,3 0 0 1 461.9,245.8 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M461.9,245.8 H491.5 A3,3 0 0 1 494.5,248.8 V486 H458.9 V248.8 A3,3 0 0 1 461.9,245.8 Z" fill="#0088FF" opacity="0.88"/>
 <text x="476.7" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Jul</text>
-<path d="M523.2,251.2 H552.8 A3,3 0 0 1 555.8,254.2 V486 H520.2 V254.2 A3,3 0 0 1 523.2,251.2 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M523.2,251.2 H552.8 A3,3 0 0 1 555.8,254.2 V486 H520.2 V254.2 A3,3 0 0 1 523.2,251.2 Z" fill="#0088FF" opacity="0.88"/>
 <text x="538.0" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Aug</text>
-<path d="M584.5,229.4 H614.1 A3,3 0 0 1 617.1,232.4 V486 H581.5 V232.4 A3,3 0 0 1 584.5,229.4 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M584.5,229.4 H614.1 A3,3 0 0 1 617.1,232.4 V486 H581.5 V232.4 A3,3 0 0 1 584.5,229.4 Z" fill="#0088FF" opacity="0.88"/>
 <text x="599.3" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Sep</text>
-<path d="M645.9,213.8 H675.5 A3,3 0 0 1 678.5,216.8 V486 H642.9 V216.8 A3,3 0 0 1 645.9,213.8 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M645.9,213.8 H675.5 A3,3 0 0 1 678.5,216.8 V486 H642.9 V216.8 A3,3 0 0 1 645.9,213.8 Z" fill="#0088FF" opacity="0.88"/>
 <text x="660.7" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Oct</text>
-<path d="M707.2,194.9 H736.8 A3,3 0 0 1 739.8,197.9 V486 H704.2 V197.9 A3,3 0 0 1 707.2,194.9 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M707.2,194.9 H736.8 A3,3 0 0 1 739.8,197.9 V486 H704.2 V197.9 A3,3 0 0 1 707.2,194.9 Z" fill="#0088FF" opacity="0.88"/>
 <text x="722.0" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Nov</text>
-<path d="M768.5,174.8 H798.1 A3,3 0 0 1 801.1,177.8 V486 H765.5 V177.8 A3,3 0 0 1 768.5,174.8 Z" fill="#007AFF" opacity="0.88"/>
+<path d="M768.5,174.8 H798.1 A3,3 0 0 1 801.1,177.8 V486 H765.5 V177.8 A3,3 0 0 1 768.5,174.8 Z" fill="#0088FF" opacity="0.88"/>
 <text x="783.3" y="506.0" font-size="11" fill="#6E6E73" text-anchor="middle">Dec</text>
-<polyline points="108.7,228.4 170.0,234.0 231.3,239.6 292.7,239.6 354.0,256.4 415.3,262.0 476.7,273.2 538.0,267.6 599.3,284.4 660.7,290.0 722.0,301.2 783.3,306.8" fill="none" stroke="#FF9500" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="108.7" cy="228.4" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="170.0" cy="234.0" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="231.3" cy="239.6" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="292.7" cy="239.6" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="354.0" cy="256.4" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="415.3" cy="262.0" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="476.7" cy="273.2" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="538.0" cy="267.6" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="599.3" cy="284.4" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="660.7" cy="290.0" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="722.0" cy="301.2" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
-<circle cx="783.3" cy="306.8" r="3.4" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.4"/>
+<polyline points="108.7,228.4 170.0,234.0 231.3,239.6 292.7,239.6 354.0,256.4 415.3,262.0 476.7,273.2 538.0,267.6 599.3,284.4 660.7,290.0 722.0,301.2 783.3,306.8" fill="none" stroke="#FF8D28" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="108.7" cy="228.4" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="170.0" cy="234.0" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="231.3" cy="239.6" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="292.7" cy="239.6" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="354.0" cy="256.4" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="415.3" cy="262.0" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="476.7" cy="273.2" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="538.0" cy="267.6" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="599.3" cy="284.4" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="660.7" cy="290.0" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="722.0" cy="301.2" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
+<circle cx="783.3" cy="306.8" r="3.4" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.4"/>
 <rect id="slot-0" class="slot hit" tabindex="0" role="img" aria-label="Jan: Revenue (k$) 412, Trial conversion (%) 4.6" x="78.0" y="150.0" width="61.3" height="336.0" fill="transparent"><title>Jan: 412 · 4.6</title></rect>
 <rect id="slot-1" class="slot hit" tabindex="0" role="img" aria-label="Feb: Revenue (k$) 438, Trial conversion (%) 4.5" x="139.3" y="150.0" width="61.3" height="336.0" fill="transparent"><title>Feb: 438 · 4.5</title></rect>
 <rect id="slot-2" class="slot hit" tabindex="0" role="img" aria-label="Mar: Revenue (k$) 471, Trial conversion (%) 4.4" x="200.7" y="150.0" width="61.3" height="336.0" fill="transparent"><title>Mar: 471 · 4.4</title></rect>

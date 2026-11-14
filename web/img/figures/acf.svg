@@ -9,234 +9,234 @@
 <text x="32.0" y="118.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">5 of 36 lags cross the band: 1, 2, 12, 24, 36. The crossings at 12, 24, 36 are multiples of 12:</text>
 <text x="32.0" y="135.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">that is a season, not a trend.</text>
 <text x="92.0" y="166.0" font-size="13" font-weight="700" fill="#1D1D1F">Autocorrelation</text>
-<rect x="92.0" y="247.8" width="768.0" height="42.5" fill="#007AFF" opacity="0.12"/>
+<rect x="92.0" y="247.8" width="768.0" height="42.5" fill="#0088FF" opacity="0.12"/>
 <line x1="92.0" y1="269.0" x2="860.0" y2="269.0" stroke="#1D1D1F" stroke-width="1"/>
 <text x="82.0" y="364.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">-0.70</text>
 <text x="82.0" y="318.5" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">-0.35</text>
 <text x="82.0" y="227.5" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.35</text>
 <text x="82.0" y="182.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.70</text>
-<line x1="92.0" y1="269.0" x2="92.0" y2="231.2" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="92.0" cy="231.2" r="3" fill="#FF9500"/>
+<line x1="92.0" y1="269.0" x2="92.0" y2="231.2" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="92.0" cy="231.2" r="3" fill="#FF8D28"/>
 <rect id="lag-0" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 1: 0.29, outside the band" x="86.0" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 1: 0.29</title></rect>
-<line x1="113.9" y1="269.0" x2="113.9" y2="241.5" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="113.9" cy="241.5" r="3" fill="#FF9500"/>
+<line x1="113.9" y1="269.0" x2="113.9" y2="241.5" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="113.9" cy="241.5" r="3" fill="#FF8D28"/>
 <rect id="lag-1" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 2: 0.21, outside the band" x="107.9" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 2: 0.21</title></rect>
-<line x1="135.9" y1="269.0" x2="135.9" y2="256.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="135.9" cy="256.4" r="3" fill="#007AFF"/>
+<line x1="135.9" y1="269.0" x2="135.9" y2="256.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="135.9" cy="256.4" r="3" fill="#0088FF"/>
 <rect id="lag-2" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 3: 0.10, inside the band" x="129.9" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 3: 0.10</title></rect>
-<line x1="157.8" y1="269.0" x2="157.8" y2="261.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="157.8" cy="261.7" r="3" fill="#007AFF"/>
+<line x1="157.8" y1="269.0" x2="157.8" y2="261.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="157.8" cy="261.7" r="3" fill="#0088FF"/>
 <rect id="lag-3" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 4: 0.06, inside the band" x="151.8" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 4: 0.06</title></rect>
-<line x1="179.8" y1="269.0" x2="179.8" y2="269.2" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="179.8" cy="269.2" r="3" fill="#007AFF"/>
+<line x1="179.8" y1="269.0" x2="179.8" y2="269.2" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="179.8" cy="269.2" r="3" fill="#0088FF"/>
 <rect id="lag-4" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 5: -0.00131945, inside the band" x="173.8" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 5: -0.00131945</title></rect>
-<line x1="201.7" y1="269.0" x2="201.7" y2="278.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="201.7" cy="278.3" r="3" fill="#007AFF"/>
+<line x1="201.7" y1="269.0" x2="201.7" y2="278.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="201.7" cy="278.3" r="3" fill="#0088FF"/>
 <rect id="lag-5" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 6: -0.07, inside the band" x="195.7" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 6: -0.07</title></rect>
-<line x1="223.7" y1="269.0" x2="223.7" y2="284.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="223.7" cy="284.8" r="3" fill="#007AFF"/>
+<line x1="223.7" y1="269.0" x2="223.7" y2="284.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="223.7" cy="284.8" r="3" fill="#0088FF"/>
 <rect id="lag-6" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 7: -0.12, inside the band" x="217.7" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 7: -0.12</title></rect>
-<line x1="245.6" y1="269.0" x2="245.6" y2="286.2" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="245.6" cy="286.2" r="3" fill="#007AFF"/>
+<line x1="245.6" y1="269.0" x2="245.6" y2="286.2" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="245.6" cy="286.2" r="3" fill="#0088FF"/>
 <rect id="lag-7" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 8: -0.13, inside the band" x="239.6" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 8: -0.13</title></rect>
-<line x1="267.5" y1="269.0" x2="267.5" y2="285.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="267.5" cy="285.4" r="3" fill="#007AFF"/>
+<line x1="267.5" y1="269.0" x2="267.5" y2="285.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="267.5" cy="285.4" r="3" fill="#0088FF"/>
 <rect id="lag-8" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 9: -0.13, inside the band" x="261.5" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 9: -0.13</title></rect>
-<line x1="289.5" y1="269.0" x2="289.5" y2="273.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="289.5" cy="273.8" r="3" fill="#007AFF"/>
+<line x1="289.5" y1="269.0" x2="289.5" y2="273.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="289.5" cy="273.8" r="3" fill="#0088FF"/>
 <rect id="lag-9" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 10: -0.04, inside the band" x="283.5" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 10: -0.04</title></rect>
-<line x1="311.4" y1="269.0" x2="311.4" y2="274.5" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="311.4" cy="274.5" r="3" fill="#007AFF"/>
+<line x1="311.4" y1="269.0" x2="311.4" y2="274.5" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="311.4" cy="274.5" r="3" fill="#0088FF"/>
 <rect id="lag-10" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 11: -0.04, inside the band" x="305.4" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 11: -0.04</title></rect>
-<line x1="333.4" y1="269.0" x2="333.4" y2="200.9" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="333.4" cy="200.9" r="3" fill="#FF9500"/>
+<line x1="333.4" y1="269.0" x2="333.4" y2="200.9" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="333.4" cy="200.9" r="3" fill="#FF8D28"/>
 <rect id="lag-11" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 12: 0.52, outside the band" x="327.4" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 12: 0.52</title></rect>
-<line x1="355.3" y1="269.0" x2="355.3" y2="268.5" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="355.3" cy="268.5" r="3" fill="#007AFF"/>
+<line x1="355.3" y1="269.0" x2="355.3" y2="268.5" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="355.3" cy="268.5" r="3" fill="#0088FF"/>
 <rect id="lag-12" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 13: 0.00389022, inside the band" x="349.3" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 13: 0.00389022</title></rect>
-<line x1="377.3" y1="269.0" x2="377.3" y2="262.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="377.3" cy="262.7" r="3" fill="#007AFF"/>
+<line x1="377.3" y1="269.0" x2="377.3" y2="262.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="377.3" cy="262.7" r="3" fill="#0088FF"/>
 <rect id="lag-13" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 14: 0.05, inside the band" x="371.3" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 14: 0.05</title></rect>
-<line x1="399.2" y1="269.0" x2="399.2" y2="272.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="399.2" cy="272.1" r="3" fill="#007AFF"/>
+<line x1="399.2" y1="269.0" x2="399.2" y2="272.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="399.2" cy="272.1" r="3" fill="#0088FF"/>
 <rect id="lag-14" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 15: -0.02, inside the band" x="393.2" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 15: -0.02</title></rect>
-<line x1="421.1" y1="269.0" x2="421.1" y2="270.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="421.1" cy="270.1" r="3" fill="#007AFF"/>
+<line x1="421.1" y1="269.0" x2="421.1" y2="270.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="421.1" cy="270.1" r="3" fill="#0088FF"/>
 <rect id="lag-15" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 16: -0.00815416, inside the band" x="415.1" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 16: -0.00815416</title></rect>
-<line x1="443.1" y1="269.0" x2="443.1" y2="269.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="443.1" cy="269.3" r="3" fill="#007AFF"/>
+<line x1="443.1" y1="269.0" x2="443.1" y2="269.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="443.1" cy="269.3" r="3" fill="#0088FF"/>
 <rect id="lag-16" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 17: -0.00243112, inside the band" x="437.1" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 17: -0.00243112</title></rect>
-<line x1="465.0" y1="269.0" x2="465.0" y2="269.9" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="465.0" cy="269.9" r="3" fill="#007AFF"/>
+<line x1="465.0" y1="269.0" x2="465.0" y2="269.9" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="465.0" cy="269.9" r="3" fill="#0088FF"/>
 <rect id="lag-17" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 18: -0.00725698, inside the band" x="459.0" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 18: -0.00725698</title></rect>
-<line x1="487.0" y1="269.0" x2="487.0" y2="271.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="487.0" cy="271.4" r="3" fill="#007AFF"/>
+<line x1="487.0" y1="269.0" x2="487.0" y2="271.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="487.0" cy="271.4" r="3" fill="#0088FF"/>
 <rect id="lag-18" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 19: -0.02, inside the band" x="481.0" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 19: -0.02</title></rect>
-<line x1="508.9" y1="269.0" x2="508.9" y2="271.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="508.9" cy="271.8" r="3" fill="#007AFF"/>
+<line x1="508.9" y1="269.0" x2="508.9" y2="271.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="508.9" cy="271.8" r="3" fill="#0088FF"/>
 <rect id="lag-19" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 20: -0.02, inside the band" x="502.9" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 20: -0.02</title></rect>
-<line x1="530.9" y1="269.0" x2="530.9" y2="271.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="530.9" cy="271.8" r="3" fill="#007AFF"/>
+<line x1="530.9" y1="269.0" x2="530.9" y2="271.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="530.9" cy="271.8" r="3" fill="#0088FF"/>
 <rect id="lag-20" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 21: -0.02, inside the band" x="524.9" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 21: -0.02</title></rect>
-<line x1="552.8" y1="269.0" x2="552.8" y2="269.6" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="552.8" cy="269.6" r="3" fill="#007AFF"/>
+<line x1="552.8" y1="269.0" x2="552.8" y2="269.6" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="552.8" cy="269.6" r="3" fill="#0088FF"/>
 <rect id="lag-21" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 22: -0.00499213, inside the band" x="546.8" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 22: -0.00499213</title></rect>
-<line x1="574.7" y1="269.0" x2="574.7" y2="276.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="574.7" cy="276.4" r="3" fill="#007AFF"/>
+<line x1="574.7" y1="269.0" x2="574.7" y2="276.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="574.7" cy="276.4" r="3" fill="#0088FF"/>
 <rect id="lag-22" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 23: -0.06, inside the band" x="568.7" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 23: -0.06</title></rect>
-<line x1="596.7" y1="269.0" x2="596.7" y2="213.7" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="596.7" cy="213.7" r="3" fill="#FF9500"/>
+<line x1="596.7" y1="269.0" x2="596.7" y2="213.7" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="596.7" cy="213.7" r="3" fill="#FF8D28"/>
 <rect id="lag-23" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 24: 0.43, outside the band" x="590.7" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 24: 0.43</title></rect>
-<line x1="618.6" y1="269.0" x2="618.6" y2="277.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="618.6" cy="277.1" r="3" fill="#007AFF"/>
+<line x1="618.6" y1="269.0" x2="618.6" y2="277.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="618.6" cy="277.1" r="3" fill="#0088FF"/>
 <rect id="lag-24" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 25: -0.06, inside the band" x="612.6" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 25: -0.06</title></rect>
-<line x1="640.6" y1="269.0" x2="640.6" y2="274.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="640.6" cy="274.1" r="3" fill="#007AFF"/>
+<line x1="640.6" y1="269.0" x2="640.6" y2="274.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="640.6" cy="274.1" r="3" fill="#0088FF"/>
 <rect id="lag-25" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 26: -0.04, inside the band" x="634.6" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 26: -0.04</title></rect>
-<line x1="662.5" y1="269.0" x2="662.5" y2="282.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="662.5" cy="282.1" r="3" fill="#007AFF"/>
+<line x1="662.5" y1="269.0" x2="662.5" y2="282.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="662.5" cy="282.1" r="3" fill="#0088FF"/>
 <rect id="lag-26" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 27: -0.10, inside the band" x="656.5" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 27: -0.10</title></rect>
-<line x1="684.5" y1="269.0" x2="684.5" y2="278.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="684.5" cy="278.7" r="3" fill="#007AFF"/>
+<line x1="684.5" y1="269.0" x2="684.5" y2="278.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="684.5" cy="278.7" r="3" fill="#0088FF"/>
 <rect id="lag-27" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 28: -0.07, inside the band" x="678.5" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 28: -0.07</title></rect>
-<line x1="706.4" y1="269.0" x2="706.4" y2="274.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="706.4" cy="274.8" r="3" fill="#007AFF"/>
+<line x1="706.4" y1="269.0" x2="706.4" y2="274.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="706.4" cy="274.8" r="3" fill="#0088FF"/>
 <rect id="lag-28" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 29: -0.04, inside the band" x="700.4" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 29: -0.04</title></rect>
-<line x1="728.3" y1="269.0" x2="728.3" y2="271.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="728.3" cy="271.3" r="3" fill="#007AFF"/>
+<line x1="728.3" y1="269.0" x2="728.3" y2="271.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="728.3" cy="271.3" r="3" fill="#0088FF"/>
 <rect id="lag-29" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 30: -0.02, inside the band" x="722.3" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 30: -0.02</title></rect>
-<line x1="750.3" y1="269.0" x2="750.3" y2="272.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="750.3" cy="272.1" r="3" fill="#007AFF"/>
+<line x1="750.3" y1="269.0" x2="750.3" y2="272.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="750.3" cy="272.1" r="3" fill="#0088FF"/>
 <rect id="lag-30" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 31: -0.02, inside the band" x="744.3" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 31: -0.02</title></rect>
-<line x1="772.2" y1="269.0" x2="772.2" y2="271.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="772.2" cy="271.3" r="3" fill="#007AFF"/>
+<line x1="772.2" y1="269.0" x2="772.2" y2="271.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="772.2" cy="271.3" r="3" fill="#0088FF"/>
 <rect id="lag-31" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 32: -0.02, inside the band" x="766.2" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 32: -0.02</title></rect>
-<line x1="794.2" y1="269.0" x2="794.2" y2="271.9" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="794.2" cy="271.9" r="3" fill="#007AFF"/>
+<line x1="794.2" y1="269.0" x2="794.2" y2="271.9" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="794.2" cy="271.9" r="3" fill="#0088FF"/>
 <rect id="lag-32" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 33: -0.02, inside the band" x="788.2" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 33: -0.02</title></rect>
-<line x1="816.1" y1="269.0" x2="816.1" y2="270.9" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="816.1" cy="270.9" r="3" fill="#007AFF"/>
+<line x1="816.1" y1="269.0" x2="816.1" y2="270.9" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="816.1" cy="270.9" r="3" fill="#0088FF"/>
 <rect id="lag-33" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 34: -0.01, inside the band" x="810.1" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 34: -0.01</title></rect>
-<line x1="838.1" y1="269.0" x2="838.1" y2="274.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="838.1" cy="274.7" r="3" fill="#007AFF"/>
+<line x1="838.1" y1="269.0" x2="838.1" y2="274.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="838.1" cy="274.7" r="3" fill="#0088FF"/>
 <rect id="lag-34" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 35: -0.04, inside the band" x="832.1" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 35: -0.04</title></rect>
-<line x1="860.0" y1="269.0" x2="860.0" y2="223.4" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="860.0" cy="223.4" r="3" fill="#FF9500"/>
+<line x1="860.0" y1="269.0" x2="860.0" y2="223.4" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="860.0" cy="223.4" r="3" fill="#FF8D28"/>
 <rect id="lag-35" class="lag hit" tabindex="0" role="img" aria-label="Autocorrelation at lag 36: 0.35, outside the band" x="854.0" y="178.0" width="12" height="182.0" fill="transparent"><title>lag 36: 0.35</title></rect>
 <text x="92.0" y="404.0" font-size="13" font-weight="700" fill="#1D1D1F">Partial autocorrelation</text>
-<rect x="92.0" y="485.8" width="768.0" height="42.5" fill="#007AFF" opacity="0.12"/>
+<rect x="92.0" y="485.8" width="768.0" height="42.5" fill="#0088FF" opacity="0.12"/>
 <line x1="92.0" y1="507.0" x2="860.0" y2="507.0" stroke="#1D1D1F" stroke-width="1"/>
 <text x="82.0" y="602.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">-0.70</text>
 <text x="82.0" y="556.5" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">-0.35</text>
 <text x="82.0" y="465.5" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.35</text>
 <text x="82.0" y="420.0" font-size="10" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">0.70</text>
-<line x1="92.0" y1="507.0" x2="92.0" y2="469.2" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="92.0" cy="469.2" r="3" fill="#FF9500"/>
+<line x1="92.0" y1="507.0" x2="92.0" y2="469.2" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="92.0" cy="469.2" r="3" fill="#FF8D28"/>
 <rect id="lag-36" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 1: 0.29, outside the band" x="86.0" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 1: 0.29</title></rect>
-<line x1="113.9" y1="507.0" x2="113.9" y2="488.9" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="113.9" cy="488.9" r="3" fill="#007AFF"/>
+<line x1="113.9" y1="507.0" x2="113.9" y2="488.9" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="113.9" cy="488.9" r="3" fill="#0088FF"/>
 <rect id="lag-37" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 2: 0.14, inside the band" x="107.9" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 2: 0.14</title></rect>
-<line x1="135.9" y1="507.0" x2="135.9" y2="506.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="135.9" cy="506.4" r="3" fill="#007AFF"/>
+<line x1="135.9" y1="507.0" x2="135.9" y2="506.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="135.9" cy="506.4" r="3" fill="#0088FF"/>
 <rect id="lag-38" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 3: 0.00436594, inside the band" x="129.9" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 3: 0.00436594</title></rect>
-<line x1="157.8" y1="507.0" x2="157.8" y2="506.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="157.8" cy="506.8" r="3" fill="#007AFF"/>
+<line x1="157.8" y1="507.0" x2="157.8" y2="506.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="157.8" cy="506.8" r="3" fill="#0088FF"/>
 <rect id="lag-39" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 4: 0.0019191, inside the band" x="151.8" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 4: 0.0019191</title></rect>
-<line x1="179.8" y1="507.0" x2="179.8" y2="511.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="179.8" cy="511.4" r="3" fill="#007AFF"/>
+<line x1="179.8" y1="507.0" x2="179.8" y2="511.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="179.8" cy="511.4" r="3" fill="#0088FF"/>
 <rect id="lag-40" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 5: -0.03, inside the band" x="173.8" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 5: -0.03</title></rect>
-<line x1="201.7" y1="507.0" x2="201.7" y2="517.4" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="201.7" cy="517.4" r="3" fill="#007AFF"/>
+<line x1="201.7" y1="507.0" x2="201.7" y2="517.4" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="201.7" cy="517.4" r="3" fill="#0088FF"/>
 <rect id="lag-41" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 6: -0.08, inside the band" x="195.7" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 6: -0.08</title></rect>
-<line x1="223.7" y1="507.0" x2="223.7" y2="518.6" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="223.7" cy="518.6" r="3" fill="#007AFF"/>
+<line x1="223.7" y1="507.0" x2="223.7" y2="518.6" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="223.7" cy="518.6" r="3" fill="#0088FF"/>
 <rect id="lag-42" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 7: -0.09, inside the band" x="217.7" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 7: -0.09</title></rect>
-<line x1="245.6" y1="507.0" x2="245.6" y2="515.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="245.6" cy="515.3" r="3" fill="#007AFF"/>
+<line x1="245.6" y1="507.0" x2="245.6" y2="515.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="245.6" cy="515.3" r="3" fill="#0088FF"/>
 <rect id="lag-43" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 8: -0.06, inside the band" x="239.6" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 8: -0.06</title></rect>
-<line x1="267.5" y1="507.0" x2="267.5" y2="512.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="267.5" cy="512.7" r="3" fill="#007AFF"/>
+<line x1="267.5" y1="507.0" x2="267.5" y2="512.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="267.5" cy="512.7" r="3" fill="#0088FF"/>
 <rect id="lag-44" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 9: -0.04, inside the band" x="261.5" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 9: -0.04</title></rect>
-<line x1="289.5" y1="507.0" x2="289.5" y2="500.2" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="289.5" cy="500.2" r="3" fill="#007AFF"/>
+<line x1="289.5" y1="507.0" x2="289.5" y2="500.2" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="289.5" cy="500.2" r="3" fill="#0088FF"/>
 <rect id="lag-45" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 10: 0.05, inside the band" x="283.5" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 10: 0.05</title></rect>
-<line x1="311.4" y1="507.0" x2="311.4" y2="507.9" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="311.4" cy="507.9" r="3" fill="#007AFF"/>
+<line x1="311.4" y1="507.0" x2="311.4" y2="507.9" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="311.4" cy="507.9" r="3" fill="#0088FF"/>
 <rect id="lag-46" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 11: -0.00667264, inside the band" x="305.4" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 11: -0.00667264</title></rect>
-<line x1="333.4" y1="507.0" x2="333.4" y2="427.0" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="333.4" cy="427.0" r="3" fill="#FF9500"/>
+<line x1="333.4" y1="507.0" x2="333.4" y2="427.0" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="333.4" cy="427.0" r="3" fill="#FF8D28"/>
 <rect id="lag-47" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 12: 0.62, outside the band" x="327.4" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 12: 0.62</title></rect>
-<line x1="355.3" y1="507.0" x2="355.3" y2="566.6" stroke="#FF9500" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="355.3" cy="566.6" r="3" fill="#FF9500"/>
+<line x1="355.3" y1="507.0" x2="355.3" y2="566.6" stroke="#FF8D28" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="355.3" cy="566.6" r="3" fill="#FF8D28"/>
 <rect id="lag-48" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 13: -0.46, outside the band" x="349.3" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 13: -0.46</title></rect>
-<line x1="377.3" y1="507.0" x2="377.3" y2="505.6" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="377.3" cy="505.6" r="3" fill="#007AFF"/>
+<line x1="377.3" y1="507.0" x2="377.3" y2="505.6" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="377.3" cy="505.6" r="3" fill="#0088FF"/>
 <rect id="lag-49" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 14: 0.01, inside the band" x="371.3" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 14: 0.01</title></rect>
-<line x1="399.2" y1="507.0" x2="399.2" y2="525.5" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="399.2" cy="525.5" r="3" fill="#007AFF"/>
+<line x1="399.2" y1="507.0" x2="399.2" y2="525.5" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="399.2" cy="525.5" r="3" fill="#0088FF"/>
 <rect id="lag-50" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 15: -0.14, inside the band" x="393.2" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 15: -0.14</title></rect>
-<line x1="421.1" y1="507.0" x2="421.1" y2="508.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="421.1" cy="508.1" r="3" fill="#007AFF"/>
+<line x1="421.1" y1="507.0" x2="421.1" y2="508.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="421.1" cy="508.1" r="3" fill="#0088FF"/>
 <rect id="lag-51" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 16: -0.00868227, inside the band" x="415.1" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 16: -0.00868227</title></rect>
-<line x1="443.1" y1="507.0" x2="443.1" y2="502.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="443.1" cy="502.7" r="3" fill="#007AFF"/>
+<line x1="443.1" y1="507.0" x2="443.1" y2="502.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="443.1" cy="502.7" r="3" fill="#0088FF"/>
 <rect id="lag-52" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 17: 0.03, inside the band" x="437.1" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 17: 0.03</title></rect>
-<line x1="465.0" y1="507.0" x2="465.0" y2="490.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="465.0" cy="490.1" r="3" fill="#007AFF"/>
+<line x1="465.0" y1="507.0" x2="465.0" y2="490.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="465.0" cy="490.1" r="3" fill="#0088FF"/>
 <rect id="lag-53" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 18: 0.13, inside the band" x="459.0" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 18: 0.13</title></rect>
-<line x1="487.0" y1="507.0" x2="487.0" y2="492.8" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="487.0" cy="492.8" r="3" fill="#007AFF"/>
+<line x1="487.0" y1="507.0" x2="487.0" y2="492.8" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="487.0" cy="492.8" r="3" fill="#0088FF"/>
 <rect id="lag-54" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 19: 0.11, inside the band" x="481.0" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 19: 0.11</title></rect>
-<line x1="508.9" y1="507.0" x2="508.9" y2="500.6" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="508.9" cy="500.6" r="3" fill="#007AFF"/>
+<line x1="508.9" y1="507.0" x2="508.9" y2="500.6" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="508.9" cy="500.6" r="3" fill="#0088FF"/>
 <rect id="lag-55" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 20: 0.05, inside the band" x="502.9" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 20: 0.05</title></rect>
-<line x1="530.9" y1="507.0" x2="530.9" y2="505.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="530.9" cy="505.3" r="3" fill="#007AFF"/>
+<line x1="530.9" y1="507.0" x2="530.9" y2="505.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="530.9" cy="505.3" r="3" fill="#0088FF"/>
 <rect id="lag-56" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 21: 0.01, inside the band" x="524.9" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 21: 0.01</title></rect>
-<line x1="552.8" y1="507.0" x2="552.8" y2="527.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="552.8" cy="527.3" r="3" fill="#007AFF"/>
+<line x1="552.8" y1="507.0" x2="552.8" y2="527.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="552.8" cy="527.3" r="3" fill="#0088FF"/>
 <rect id="lag-57" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 22: -0.16, inside the band" x="546.8" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 22: -0.16</title></rect>
-<line x1="574.7" y1="507.0" x2="574.7" y2="504.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="574.7" cy="504.7" r="3" fill="#007AFF"/>
+<line x1="574.7" y1="507.0" x2="574.7" y2="504.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="574.7" cy="504.7" r="3" fill="#0088FF"/>
 <rect id="lag-58" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 23: 0.02, inside the band" x="568.7" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 23: 0.02</title></rect>
-<line x1="596.7" y1="507.0" x2="596.7" y2="496.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="596.7" cy="496.7" r="3" fill="#007AFF"/>
+<line x1="596.7" y1="507.0" x2="596.7" y2="496.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="596.7" cy="496.7" r="3" fill="#0088FF"/>
 <rect id="lag-59" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 24: 0.08, inside the band" x="590.7" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 24: 0.08</title></rect>
-<line x1="618.6" y1="507.0" x2="618.6" y2="523.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="618.6" cy="523.3" r="3" fill="#007AFF"/>
+<line x1="618.6" y1="507.0" x2="618.6" y2="523.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="618.6" cy="523.3" r="3" fill="#0088FF"/>
 <rect id="lag-60" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 25: -0.13, inside the band" x="612.6" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 25: -0.13</title></rect>
-<line x1="640.6" y1="507.0" x2="640.6" y2="514.5" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="640.6" cy="514.5" r="3" fill="#007AFF"/>
+<line x1="640.6" y1="507.0" x2="640.6" y2="514.5" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="640.6" cy="514.5" r="3" fill="#0088FF"/>
 <rect id="lag-61" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 26: -0.06, inside the band" x="634.6" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 26: -0.06</title></rect>
-<line x1="662.5" y1="507.0" x2="662.5" y2="500.1" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="662.5" cy="500.1" r="3" fill="#007AFF"/>
+<line x1="662.5" y1="507.0" x2="662.5" y2="500.1" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="662.5" cy="500.1" r="3" fill="#0088FF"/>
 <rect id="lag-62" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 27: 0.05, inside the band" x="656.5" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 27: 0.05</title></rect>
-<line x1="684.5" y1="507.0" x2="684.5" y2="508.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="684.5" cy="508.7" r="3" fill="#007AFF"/>
+<line x1="684.5" y1="507.0" x2="684.5" y2="508.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="684.5" cy="508.7" r="3" fill="#0088FF"/>
 <rect id="lag-63" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 28: -0.01, inside the band" x="678.5" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 28: -0.01</title></rect>
-<line x1="706.4" y1="507.0" x2="706.4" y2="502.0" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="706.4" cy="502.0" r="3" fill="#007AFF"/>
+<line x1="706.4" y1="507.0" x2="706.4" y2="502.0" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="706.4" cy="502.0" r="3" fill="#0088FF"/>
 <rect id="lag-64" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 29: 0.04, inside the band" x="700.4" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 29: 0.04</title></rect>
-<line x1="728.3" y1="507.0" x2="728.3" y2="500.5" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="728.3" cy="500.5" r="3" fill="#007AFF"/>
+<line x1="728.3" y1="507.0" x2="728.3" y2="500.5" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="728.3" cy="500.5" r="3" fill="#0088FF"/>
 <rect id="lag-65" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 30: 0.05, inside the band" x="722.3" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 30: 0.05</title></rect>
-<line x1="750.3" y1="507.0" x2="750.3" y2="509.7" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="750.3" cy="509.7" r="3" fill="#007AFF"/>
+<line x1="750.3" y1="507.0" x2="750.3" y2="509.7" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="750.3" cy="509.7" r="3" fill="#0088FF"/>
 <rect id="lag-66" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 31: -0.02, inside the band" x="744.3" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 31: -0.02</title></rect>
-<line x1="772.2" y1="507.0" x2="772.2" y2="508.0" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="772.2" cy="508.0" r="3" fill="#007AFF"/>
+<line x1="772.2" y1="507.0" x2="772.2" y2="508.0" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="772.2" cy="508.0" r="3" fill="#0088FF"/>
 <rect id="lag-67" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 32: -0.00791475, inside the band" x="766.2" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 32: -0.00791475</title></rect>
-<line x1="794.2" y1="507.0" x2="794.2" y2="518.0" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="794.2" cy="518.0" r="3" fill="#007AFF"/>
+<line x1="794.2" y1="507.0" x2="794.2" y2="518.0" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="794.2" cy="518.0" r="3" fill="#0088FF"/>
 <rect id="lag-68" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 33: -0.08, inside the band" x="788.2" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 33: -0.08</title></rect>
-<line x1="816.1" y1="507.0" x2="816.1" y2="510.5" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="816.1" cy="510.5" r="3" fill="#007AFF"/>
+<line x1="816.1" y1="507.0" x2="816.1" y2="510.5" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="816.1" cy="510.5" r="3" fill="#0088FF"/>
 <rect id="lag-69" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 34: -0.03, inside the band" x="810.1" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 34: -0.03</title></rect>
-<line x1="838.1" y1="507.0" x2="838.1" y2="498.3" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="838.1" cy="498.3" r="3" fill="#007AFF"/>
+<line x1="838.1" y1="507.0" x2="838.1" y2="498.3" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="838.1" cy="498.3" r="3" fill="#0088FF"/>
 <rect id="lag-70" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 35: 0.07, inside the band" x="832.1" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 35: 0.07</title></rect>
-<line x1="860.0" y1="507.0" x2="860.0" y2="510.0" stroke="#007AFF" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="860.0" cy="510.0" r="3" fill="#007AFF"/>
+<line x1="860.0" y1="507.0" x2="860.0" y2="510.0" stroke="#0088FF" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="860.0" cy="510.0" r="3" fill="#0088FF"/>
 <rect id="lag-71" class="lag hit" tabindex="0" role="img" aria-label="Partial autocorrelation at lag 36: -0.02, inside the band" x="854.0" y="416.0" width="12" height="182.0" fill="transparent"><title>lag 36: -0.02</title></rect>
 <text x="92.0" y="618.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">1</text>
 <text x="157.8" y="618.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">4</text>

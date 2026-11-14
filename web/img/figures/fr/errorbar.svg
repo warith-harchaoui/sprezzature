@@ -23,28 +23,28 @@
 <line x1="129.8" y1="332.1" x2="129.8" y2="280.1" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="115.8" y1="332.1" x2="143.8" y2="332.1" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="115.8" y1="280.1" x2="143.8" y2="280.1" stroke="#1D1D1F" stroke-width="1.5"/>
-<circle cx="129.8" cy="306.1" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="129.8" cy="306.1" r="6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="errbar-1" class="errbar hit" tabindex="0">
 <title>B : moyenne 55 (IC 95 % 47-63)</title>
 <line x1="261.2" y1="275.8" x2="261.2" y2="206.5" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="247.2" y1="275.8" x2="275.2" y2="275.8" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="247.2" y1="206.5" x2="275.2" y2="206.5" stroke="#1D1D1F" stroke-width="1.5"/>
-<circle cx="261.2" cy="241.2" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="261.2" cy="241.2" r="6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="errbar-2" class="errbar hit" tabindex="0">
 <title>C : moyenne 48 (IC 95 % 43-53)</title>
 <line x1="392.8" y1="293.1" x2="392.8" y2="249.8" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="378.8" y1="293.1" x2="406.8" y2="293.1" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="378.8" y1="249.8" x2="406.8" y2="249.8" stroke="#1D1D1F" stroke-width="1.5"/>
-<circle cx="392.8" cy="271.5" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="392.8" cy="271.5" r="6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="errbar-3" class="errbar hit" tabindex="0">
 <title>D : moyenne 67 (IC 95 % 57-77)</title>
 <line x1="524.2" y1="232.5" x2="524.2" y2="145.9" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="510.2" y1="232.5" x2="538.2" y2="232.5" stroke="#1D1D1F" stroke-width="1.5"/>
 <line x1="510.2" y1="145.9" x2="538.2" y2="145.9" stroke="#1D1D1F" stroke-width="1.5"/>
-<circle cx="524.2" cy="189.2" r="6" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="524.2" cy="189.2" r="6" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5"/>
 </g>
 <g id="errbartip-0" class="tip"><rect x="78.8" y="266.1" width="102" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="87.8" y="287.6" font-size="12.5" font-weight="700" fill="#1D1D1F">A</text><text x="87.8" y="303.6" font-size="12.5" font-weight="400" fill="#6E6E73">moyenne 40</text><text x="87.8" y="319.6" font-size="12.5" font-weight="400" fill="#6E6E73">IC 95 % 34-46</text></g>
 <g id="errbartip-1" class="tip"><rect x="210.2" y="192.5" width="102" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="219.2" y="214" font-size="12.5" font-weight="700" fill="#1D1D1F">B</text><text x="219.2" y="230" font-size="12.5" font-weight="400" fill="#6E6E73">moyenne 55</text><text x="219.2" y="246" font-size="12.5" font-weight="400" fill="#6E6E73">IC 95 % 47-63</text></g>

@@ -9,8 +9,8 @@
 <text x="32.0" y="141.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">limites de contrôle, pas limites de spécification</text>
 <text x="32.0" y="162.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">3 règles sur 4 se sont déclenchées sur 16 unités : un point hors des limites dès 45 ; une suite du</text>
 <text x="32.0" y="179.0" font-size="12" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">même côté du centre dès 43 ; deux points sur trois au-delà de deux sigma dès 49.</text>
-<rect x="100.0" y="315.6" width="636.0" height="67.5" fill="#007AFF" opacity="0.1"/>
-<rect x="100.0" y="281.8" width="636.0" height="135.0" fill="#007AFF" opacity="0.06"/>
+<rect x="100.0" y="315.6" width="636.0" height="67.5" fill="#0088FF" opacity="0.1"/>
+<rect x="100.0" y="281.8" width="636.0" height="135.0" fill="#0088FF" opacity="0.06"/>
 <text x="90.0" y="492.0" font-size="11" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">497</text>
 <text x="90.0" y="451.1" font-size="11" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">498</text>
 <text x="90.0" y="410.3" font-size="11" fill="#6E6E73" text-anchor="end" font-family="Roboto Mono, ui-monospace, monospace">499</text>
@@ -25,130 +25,130 @@
 <text x="742.0" y="252.1" font-size="10" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">limite de contrôle haute 502,87</text>
 <line x1="100.0" y1="450.5" x2="736.0" y2="450.5" stroke="#1D1D1F" stroke-width="1" stroke-dasharray="6 4" opacity="0.7"/>
 <text x="742.0" y="454.5" font-size="10" fill="#6E6E73" font-family="Roboto Mono, ui-monospace, monospace">limite de contrôle basse 497,92</text>
-<line x1="100.0" y1="488.0" x2="736.0" y2="488.0" stroke="#AF52DE" stroke-width="1.6" stroke-dasharray="2 4"/>
-<text x="742.0" y="492.0" font-size="10" fill="#AF52DE" font-family="Roboto Mono, ui-monospace, monospace">spécification basse 497,00</text>
-<line x1="100.0" y1="202.0" x2="736.0" y2="202.0" stroke="#AF52DE" stroke-width="1.6" stroke-dasharray="2 4"/>
-<text x="742.0" y="206.0" font-size="10" fill="#AF52DE" font-family="Roboto Mono, ui-monospace, monospace">spécification haute 504,00</text>
-<path d="M100.0,335.2 L110.8,425.9 L121.6,355.2 L132.3,340.5 L143.1,384.2 L153.9,363.0 L164.7,321.3 L175.5,336.8 L186.2,391.6 L197.0,320.1 L207.8,334.4 L218.6,380.1 L229.4,365.4 L240.1,375.6 L250.9,357.3 L261.7,381.0 L272.5,347.5 L283.3,397.7 L294.0,319.7 L304.8,381.0 L315.6,382.2 L326.4,363.4 L337.2,311.9 L347.9,345.4 L358.7,385.0 L369.5,374.4 L380.3,371.6 L391.1,321.3 L401.8,405.1 L412.6,363.8 L423.4,424.7 L434.2,385.4 L444.9,302.9 L455.7,354.0 L466.5,416.1 L477.3,430.0 L488.1,361.3 L498.8,358.1 L509.6,372.0 L520.4,345.0 L531.2,389.9 L542.0,374.8 L552.7,293.1 L563.5,315.6 L574.3,246.5 L585.1,345.4 L595.9,331.5 L606.6,341.3 L617.4,277.6 L628.2,274.3 L639.0,300.5 L649.8,300.5 L660.5,335.6 L671.3,327.4 L682.1,329.9 L692.9,315.2 L703.7,352.4 L714.4,274.3 L725.2,281.3 L736.0,364.6" fill="none" stroke="#007AFF" stroke-width="1.6" stroke-linejoin="round" opacity="0.8"/>
-<circle cx="100.0" cy="335.2" r="2.6" fill="#007AFF"/>
+<line x1="100.0" y1="488.0" x2="736.0" y2="488.0" stroke="#CB30E0" stroke-width="1.6" stroke-dasharray="2 4"/>
+<text x="742.0" y="492.0" font-size="10" fill="#CB30E0" font-family="Roboto Mono, ui-monospace, monospace">spécification basse 497,00</text>
+<line x1="100.0" y1="202.0" x2="736.0" y2="202.0" stroke="#CB30E0" stroke-width="1.6" stroke-dasharray="2 4"/>
+<text x="742.0" y="206.0" font-size="10" fill="#CB30E0" font-family="Roboto Mono, ui-monospace, monospace">spécification haute 504,00</text>
+<path d="M100.0,335.2 L110.8,425.9 L121.6,355.2 L132.3,340.5 L143.1,384.2 L153.9,363.0 L164.7,321.3 L175.5,336.8 L186.2,391.6 L197.0,320.1 L207.8,334.4 L218.6,380.1 L229.4,365.4 L240.1,375.6 L250.9,357.3 L261.7,381.0 L272.5,347.5 L283.3,397.7 L294.0,319.7 L304.8,381.0 L315.6,382.2 L326.4,363.4 L337.2,311.9 L347.9,345.4 L358.7,385.0 L369.5,374.4 L380.3,371.6 L391.1,321.3 L401.8,405.1 L412.6,363.8 L423.4,424.7 L434.2,385.4 L444.9,302.9 L455.7,354.0 L466.5,416.1 L477.3,430.0 L488.1,361.3 L498.8,358.1 L509.6,372.0 L520.4,345.0 L531.2,389.9 L542.0,374.8 L552.7,293.1 L563.5,315.6 L574.3,246.5 L585.1,345.4 L595.9,331.5 L606.6,341.3 L617.4,277.6 L628.2,274.3 L639.0,300.5 L649.8,300.5 L660.5,335.6 L671.3,327.4 L682.1,329.9 L692.9,315.2 L703.7,352.4 L714.4,274.3 L725.2,281.3 L736.0,364.6" fill="none" stroke="#0088FF" stroke-width="1.6" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="100.0" cy="335.2" r="2.6" fill="#0088FF"/>
 <rect id="pt-0" class="pt hit" tabindex="0" role="img" aria-label="Lot 1 : 500,74" x="95.0" y="202.0" width="10" height="286.0" fill="transparent"><title>1 : 500,74</title></rect>
-<circle cx="110.8" cy="425.9" r="2.6" fill="#007AFF"/>
+<circle cx="110.8" cy="425.9" r="2.6" fill="#0088FF"/>
 <rect id="pt-1" class="pt hit" tabindex="0" role="img" aria-label="Lot 2 : 498,52" x="105.8" y="202.0" width="10" height="286.0" fill="transparent"><title>2 : 498,52</title></rect>
-<circle cx="121.6" cy="355.2" r="2.6" fill="#007AFF"/>
+<circle cx="121.6" cy="355.2" r="2.6" fill="#0088FF"/>
 <rect id="pt-2" class="pt hit" tabindex="0" role="img" aria-label="Lot 3 : 500,25" x="116.6" y="202.0" width="10" height="286.0" fill="transparent"><title>3 : 500,25</title></rect>
-<circle cx="132.3" cy="340.5" r="2.6" fill="#007AFF"/>
+<circle cx="132.3" cy="340.5" r="2.6" fill="#0088FF"/>
 <rect id="pt-3" class="pt hit" tabindex="0" role="img" aria-label="Lot 4 : 500,61" x="127.3" y="202.0" width="10" height="286.0" fill="transparent"><title>4 : 500,61</title></rect>
-<circle cx="143.1" cy="384.2" r="2.6" fill="#007AFF"/>
+<circle cx="143.1" cy="384.2" r="2.6" fill="#0088FF"/>
 <rect id="pt-4" class="pt hit" tabindex="0" role="img" aria-label="Lot 5 : 499,54" x="138.1" y="202.0" width="10" height="286.0" fill="transparent"><title>5 : 499,54</title></rect>
-<circle cx="153.9" cy="363.0" r="2.6" fill="#007AFF"/>
+<circle cx="153.9" cy="363.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-5" class="pt hit" tabindex="0" role="img" aria-label="Lot 6 : 500,06" x="148.9" y="202.0" width="10" height="286.0" fill="transparent"><title>6 : 500,06</title></rect>
-<circle cx="164.7" cy="321.3" r="2.6" fill="#007AFF"/>
+<circle cx="164.7" cy="321.3" r="2.6" fill="#0088FF"/>
 <rect id="pt-6" class="pt hit" tabindex="0" role="img" aria-label="Lot 7 : 501,08" x="159.7" y="202.0" width="10" height="286.0" fill="transparent"><title>7 : 501,08</title></rect>
-<circle cx="175.5" cy="336.8" r="2.6" fill="#007AFF"/>
+<circle cx="175.5" cy="336.8" r="2.6" fill="#0088FF"/>
 <rect id="pt-7" class="pt hit" tabindex="0" role="img" aria-label="Lot 8 : 500,70" x="170.5" y="202.0" width="10" height="286.0" fill="transparent"><title>8 : 500,70</title></rect>
-<circle cx="186.2" cy="391.6" r="2.6" fill="#007AFF"/>
+<circle cx="186.2" cy="391.6" r="2.6" fill="#0088FF"/>
 <rect id="pt-8" class="pt hit" tabindex="0" role="img" aria-label="Lot 9 : 499,36" x="181.2" y="202.0" width="10" height="286.0" fill="transparent"><title>9 : 499,36</title></rect>
-<circle cx="197.0" cy="320.1" r="2.6" fill="#007AFF"/>
+<circle cx="197.0" cy="320.1" r="2.6" fill="#0088FF"/>
 <rect id="pt-9" class="pt hit" tabindex="0" role="img" aria-label="Lot 10 : 501,11" x="192.0" y="202.0" width="10" height="286.0" fill="transparent"><title>10 : 501,11</title></rect>
-<circle cx="207.8" cy="334.4" r="2.6" fill="#007AFF"/>
+<circle cx="207.8" cy="334.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-10" class="pt hit" tabindex="0" role="img" aria-label="Lot 11 : 500,76" x="202.8" y="202.0" width="10" height="286.0" fill="transparent"><title>11 : 500,76</title></rect>
-<circle cx="218.6" cy="380.1" r="2.6" fill="#007AFF"/>
+<circle cx="218.6" cy="380.1" r="2.6" fill="#0088FF"/>
 <rect id="pt-11" class="pt hit" tabindex="0" role="img" aria-label="Lot 12 : 499,64" x="213.6" y="202.0" width="10" height="286.0" fill="transparent"><title>12 : 499,64</title></rect>
-<circle cx="229.4" cy="365.4" r="2.6" fill="#007AFF"/>
+<circle cx="229.4" cy="365.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-12" class="pt hit" tabindex="0" role="img" aria-label="Lot 13 : 500,00" x="224.4" y="202.0" width="10" height="286.0" fill="transparent"><title>13 : 500,00</title></rect>
-<circle cx="240.1" cy="375.6" r="2.6" fill="#007AFF"/>
+<circle cx="240.1" cy="375.6" r="2.6" fill="#0088FF"/>
 <rect id="pt-13" class="pt hit" tabindex="0" role="img" aria-label="Lot 14 : 499,75" x="235.1" y="202.0" width="10" height="286.0" fill="transparent"><title>14 : 499,75</title></rect>
-<circle cx="250.9" cy="357.3" r="2.6" fill="#007AFF"/>
+<circle cx="250.9" cy="357.3" r="2.6" fill="#0088FF"/>
 <rect id="pt-14" class="pt hit" tabindex="0" role="img" aria-label="Lot 15 : 500,20" x="245.9" y="202.0" width="10" height="286.0" fill="transparent"><title>15 : 500,20</title></rect>
-<circle cx="261.7" cy="381.0" r="2.6" fill="#007AFF"/>
+<circle cx="261.7" cy="381.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-15" class="pt hit" tabindex="0" role="img" aria-label="Lot 16 : 499,62" x="256.7" y="202.0" width="10" height="286.0" fill="transparent"><title>16 : 499,62</title></rect>
-<circle cx="272.5" cy="347.5" r="2.6" fill="#007AFF"/>
+<circle cx="272.5" cy="347.5" r="2.6" fill="#0088FF"/>
 <rect id="pt-16" class="pt hit" tabindex="0" role="img" aria-label="Lot 17 : 500,44" x="267.5" y="202.0" width="10" height="286.0" fill="transparent"><title>17 : 500,44</title></rect>
-<circle cx="283.3" cy="397.7" r="2.6" fill="#007AFF"/>
+<circle cx="283.3" cy="397.7" r="2.6" fill="#0088FF"/>
 <rect id="pt-17" class="pt hit" tabindex="0" role="img" aria-label="Lot 18 : 499,21" x="278.3" y="202.0" width="10" height="286.0" fill="transparent"><title>18 : 499,21</title></rect>
-<circle cx="294.0" cy="319.7" r="2.6" fill="#007AFF"/>
+<circle cx="294.0" cy="319.7" r="2.6" fill="#0088FF"/>
 <rect id="pt-18" class="pt hit" tabindex="0" role="img" aria-label="Lot 19 : 501,12" x="289.0" y="202.0" width="10" height="286.0" fill="transparent"><title>19 : 501,12</title></rect>
-<circle cx="304.8" cy="381.0" r="2.6" fill="#007AFF"/>
+<circle cx="304.8" cy="381.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-19" class="pt hit" tabindex="0" role="img" aria-label="Lot 20 : 499,62" x="299.8" y="202.0" width="10" height="286.0" fill="transparent"><title>20 : 499,62</title></rect>
-<circle cx="315.6" cy="382.2" r="2.6" fill="#007AFF"/>
+<circle cx="315.6" cy="382.2" r="2.6" fill="#0088FF"/>
 <rect id="pt-20" class="pt hit" tabindex="0" role="img" aria-label="Lot 21 : 499,59" x="310.6" y="202.0" width="10" height="286.0" fill="transparent"><title>21 : 499,59</title></rect>
-<circle cx="326.4" cy="363.4" r="2.6" fill="#007AFF"/>
+<circle cx="326.4" cy="363.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-21" class="pt hit" tabindex="0" role="img" aria-label="Lot 22 : 500,05" x="321.4" y="202.0" width="10" height="286.0" fill="transparent"><title>22 : 500,05</title></rect>
-<circle cx="337.2" cy="311.9" r="2.6" fill="#007AFF"/>
+<circle cx="337.2" cy="311.9" r="2.6" fill="#0088FF"/>
 <rect id="pt-22" class="pt hit" tabindex="0" role="img" aria-label="Lot 23 : 501,31" x="332.2" y="202.0" width="10" height="286.0" fill="transparent"><title>23 : 501,31</title></rect>
-<circle cx="347.9" cy="345.4" r="2.6" fill="#007AFF"/>
+<circle cx="347.9" cy="345.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-23" class="pt hit" tabindex="0" role="img" aria-label="Lot 24 : 500,49" x="342.9" y="202.0" width="10" height="286.0" fill="transparent"><title>24 : 500,49</title></rect>
-<circle cx="358.7" cy="385.0" r="2.6" fill="#007AFF"/>
+<circle cx="358.7" cy="385.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-24" class="pt hit" tabindex="0" role="img" aria-label="Lot 25 : 499,52" x="353.7" y="202.0" width="10" height="286.0" fill="transparent"><title>25 : 499,52</title></rect>
-<circle cx="369.5" cy="374.4" r="2.6" fill="#007AFF"/>
+<circle cx="369.5" cy="374.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-25" class="pt hit" tabindex="0" role="img" aria-label="Lot 26 : 499,78" x="364.5" y="202.0" width="10" height="286.0" fill="transparent"><title>26 : 499,78</title></rect>
-<circle cx="380.3" cy="371.6" r="2.6" fill="#007AFF"/>
+<circle cx="380.3" cy="371.6" r="2.6" fill="#0088FF"/>
 <rect id="pt-26" class="pt hit" tabindex="0" role="img" aria-label="Lot 27 : 499,85" x="375.3" y="202.0" width="10" height="286.0" fill="transparent"><title>27 : 499,85</title></rect>
-<circle cx="391.1" cy="321.3" r="2.6" fill="#007AFF"/>
+<circle cx="391.1" cy="321.3" r="2.6" fill="#0088FF"/>
 <rect id="pt-27" class="pt hit" tabindex="0" role="img" aria-label="Lot 28 : 501,08" x="386.1" y="202.0" width="10" height="286.0" fill="transparent"><title>28 : 501,08</title></rect>
-<circle cx="401.8" cy="405.1" r="2.6" fill="#007AFF"/>
+<circle cx="401.8" cy="405.1" r="2.6" fill="#0088FF"/>
 <rect id="pt-28" class="pt hit" tabindex="0" role="img" aria-label="Lot 29 : 499,03" x="396.8" y="202.0" width="10" height="286.0" fill="transparent"><title>29 : 499,03</title></rect>
-<circle cx="412.6" cy="363.8" r="2.6" fill="#007AFF"/>
+<circle cx="412.6" cy="363.8" r="2.6" fill="#0088FF"/>
 <rect id="pt-29" class="pt hit" tabindex="0" role="img" aria-label="Lot 30 : 500,04" x="407.6" y="202.0" width="10" height="286.0" fill="transparent"><title>30 : 500,04</title></rect>
-<circle cx="423.4" cy="424.7" r="2.6" fill="#007AFF"/>
+<circle cx="423.4" cy="424.7" r="2.6" fill="#0088FF"/>
 <rect id="pt-30" class="pt hit" tabindex="0" role="img" aria-label="Lot 31 : 498,55" x="418.4" y="202.0" width="10" height="286.0" fill="transparent"><title>31 : 498,55</title></rect>
-<circle cx="434.2" cy="385.4" r="2.6" fill="#007AFF"/>
+<circle cx="434.2" cy="385.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-31" class="pt hit" tabindex="0" role="img" aria-label="Lot 32 : 499,51" x="429.2" y="202.0" width="10" height="286.0" fill="transparent"><title>32 : 499,51</title></rect>
-<circle cx="444.9" cy="302.9" r="2.6" fill="#007AFF"/>
+<circle cx="444.9" cy="302.9" r="2.6" fill="#0088FF"/>
 <rect id="pt-32" class="pt hit" tabindex="0" role="img" aria-label="Lot 33 : 501,53" x="439.9" y="202.0" width="10" height="286.0" fill="transparent"><title>33 : 501,53</title></rect>
-<circle cx="455.7" cy="354.0" r="2.6" fill="#007AFF"/>
+<circle cx="455.7" cy="354.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-33" class="pt hit" tabindex="0" role="img" aria-label="Lot 34 : 500,28" x="450.7" y="202.0" width="10" height="286.0" fill="transparent"><title>34 : 500,28</title></rect>
-<circle cx="466.5" cy="416.1" r="2.6" fill="#007AFF"/>
+<circle cx="466.5" cy="416.1" r="2.6" fill="#0088FF"/>
 <rect id="pt-34" class="pt hit" tabindex="0" role="img" aria-label="Lot 35 : 498,76" x="461.5" y="202.0" width="10" height="286.0" fill="transparent"><title>35 : 498,76</title></rect>
-<circle cx="477.3" cy="430.0" r="2.6" fill="#007AFF"/>
+<circle cx="477.3" cy="430.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-35" class="pt hit" tabindex="0" role="img" aria-label="Lot 36 : 498,42" x="472.3" y="202.0" width="10" height="286.0" fill="transparent"><title>36 : 498,42</title></rect>
-<circle cx="488.1" cy="361.3" r="2.6" fill="#007AFF"/>
+<circle cx="488.1" cy="361.3" r="2.6" fill="#0088FF"/>
 <rect id="pt-36" class="pt hit" tabindex="0" role="img" aria-label="Lot 37 : 500,10" x="483.1" y="202.0" width="10" height="286.0" fill="transparent"><title>37 : 500,10</title></rect>
-<circle cx="498.8" cy="358.1" r="2.6" fill="#007AFF"/>
+<circle cx="498.8" cy="358.1" r="2.6" fill="#0088FF"/>
 <rect id="pt-37" class="pt hit" tabindex="0" role="img" aria-label="Lot 38 : 500,18" x="493.8" y="202.0" width="10" height="286.0" fill="transparent"><title>38 : 500,18</title></rect>
-<circle cx="509.6" cy="372.0" r="2.6" fill="#007AFF"/>
+<circle cx="509.6" cy="372.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-38" class="pt hit" tabindex="0" role="img" aria-label="Lot 39 : 499,84" x="504.6" y="202.0" width="10" height="286.0" fill="transparent"><title>39 : 499,84</title></rect>
-<circle cx="520.4" cy="345.0" r="2.6" fill="#007AFF"/>
+<circle cx="520.4" cy="345.0" r="2.6" fill="#0088FF"/>
 <rect id="pt-39" class="pt hit" tabindex="0" role="img" aria-label="Lot 40 : 500,50" x="515.4" y="202.0" width="10" height="286.0" fill="transparent"><title>40 : 500,50</title></rect>
-<circle cx="531.2" cy="389.9" r="2.6" fill="#007AFF"/>
+<circle cx="531.2" cy="389.9" r="2.6" fill="#0088FF"/>
 <rect id="pt-40" class="pt hit" tabindex="0" role="img" aria-label="Lot 41 : 499,40" x="526.2" y="202.0" width="10" height="286.0" fill="transparent"><title>41 : 499,40</title></rect>
-<circle cx="542.0" cy="374.8" r="2.6" fill="#007AFF"/>
+<circle cx="542.0" cy="374.8" r="2.6" fill="#0088FF"/>
 <rect id="pt-41" class="pt hit" tabindex="0" role="img" aria-label="Lot 42 : 499,77" x="537.0" y="202.0" width="10" height="286.0" fill="transparent"><title>42 : 499,77</title></rect>
-<circle cx="552.7" cy="293.1" r="4.0" fill="#FF9500"/>
+<circle cx="552.7" cy="293.1" r="4.0" fill="#FF8D28"/>
 <rect id="pt-42" class="pt hit" tabindex="0" role="img" aria-label="Lot 43 : 501,77, une suite du même côté du centre" x="547.7" y="202.0" width="10" height="286.0" fill="transparent"><title>43 : 501,77</title></rect>
-<circle cx="563.5" cy="315.6" r="4.0" fill="#FF9500"/>
+<circle cx="563.5" cy="315.6" r="4.0" fill="#FF8D28"/>
 <rect id="pt-43" class="pt hit" tabindex="0" role="img" aria-label="Lot 44 : 501,22, une suite du même côté du centre" x="558.5" y="202.0" width="10" height="286.0" fill="transparent"><title>44 : 501,22</title></rect>
-<circle cx="574.3" cy="246.5" r="4.0" fill="#FF9500"/>
+<circle cx="574.3" cy="246.5" r="4.0" fill="#FF8D28"/>
 <rect id="pt-44" class="pt hit" tabindex="0" role="img" aria-label="Lot 45 : 502,91, un point hors des limites, une suite du même côté du centre" x="569.3" y="202.0" width="10" height="286.0" fill="transparent"><title>45 : 502,91</title></rect>
-<circle cx="585.1" cy="345.4" r="4.0" fill="#FF9500"/>
+<circle cx="585.1" cy="345.4" r="4.0" fill="#FF8D28"/>
 <rect id="pt-45" class="pt hit" tabindex="0" role="img" aria-label="Lot 46 : 500,49, une suite du même côté du centre" x="580.1" y="202.0" width="10" height="286.0" fill="transparent"><title>46 : 500,49</title></rect>
-<circle cx="595.9" cy="331.5" r="4.0" fill="#FF9500"/>
+<circle cx="595.9" cy="331.5" r="4.0" fill="#FF8D28"/>
 <rect id="pt-46" class="pt hit" tabindex="0" role="img" aria-label="Lot 47 : 500,83, une suite du même côté du centre" x="590.9" y="202.0" width="10" height="286.0" fill="transparent"><title>47 : 500,83</title></rect>
-<circle cx="606.6" cy="341.3" r="4.0" fill="#FF9500"/>
+<circle cx="606.6" cy="341.3" r="4.0" fill="#FF8D28"/>
 <rect id="pt-47" class="pt hit" tabindex="0" role="img" aria-label="Lot 48 : 500,59, une suite du même côté du centre" x="601.6" y="202.0" width="10" height="286.0" fill="transparent"><title>48 : 500,59</title></rect>
-<circle cx="617.4" cy="277.6" r="4.0" fill="#FF9500"/>
+<circle cx="617.4" cy="277.6" r="4.0" fill="#FF8D28"/>
 <rect id="pt-48" class="pt hit" tabindex="0" role="img" aria-label="Lot 49 : 502,15, une suite du même côté du centre, deux points sur trois au-delà de deux sigma" x="612.4" y="202.0" width="10" height="286.0" fill="transparent"><title>49 : 502,15</title></rect>
-<circle cx="628.2" cy="274.3" r="4.0" fill="#FF9500"/>
+<circle cx="628.2" cy="274.3" r="4.0" fill="#FF8D28"/>
 <rect id="pt-49" class="pt hit" tabindex="0" role="img" aria-label="Lot 50 : 502,23, une suite du même côté du centre, deux points sur trois au-delà de deux sigma" x="623.2" y="202.0" width="10" height="286.0" fill="transparent"><title>50 : 502,23</title></rect>
-<circle cx="639.0" cy="300.5" r="4.0" fill="#FF9500"/>
+<circle cx="639.0" cy="300.5" r="4.0" fill="#FF8D28"/>
 <rect id="pt-50" class="pt hit" tabindex="0" role="img" aria-label="Lot 51 : 501,59, une suite du même côté du centre" x="634.0" y="202.0" width="10" height="286.0" fill="transparent"><title>51 : 501,59</title></rect>
-<circle cx="649.8" cy="300.5" r="4.0" fill="#FF9500"/>
+<circle cx="649.8" cy="300.5" r="4.0" fill="#FF8D28"/>
 <rect id="pt-51" class="pt hit" tabindex="0" role="img" aria-label="Lot 52 : 501,59, une suite du même côté du centre" x="644.8" y="202.0" width="10" height="286.0" fill="transparent"><title>52 : 501,59</title></rect>
-<circle cx="660.5" cy="335.6" r="4.0" fill="#FF9500"/>
+<circle cx="660.5" cy="335.6" r="4.0" fill="#FF8D28"/>
 <rect id="pt-52" class="pt hit" tabindex="0" role="img" aria-label="Lot 53 : 500,73, une suite du même côté du centre" x="655.5" y="202.0" width="10" height="286.0" fill="transparent"><title>53 : 500,73</title></rect>
-<circle cx="671.3" cy="327.4" r="4.0" fill="#FF9500"/>
+<circle cx="671.3" cy="327.4" r="4.0" fill="#FF8D28"/>
 <rect id="pt-53" class="pt hit" tabindex="0" role="img" aria-label="Lot 54 : 500,93, une suite du même côté du centre" x="666.3" y="202.0" width="10" height="286.0" fill="transparent"><title>54 : 500,93</title></rect>
-<circle cx="682.1" cy="329.9" r="4.0" fill="#FF9500"/>
+<circle cx="682.1" cy="329.9" r="4.0" fill="#FF8D28"/>
 <rect id="pt-54" class="pt hit" tabindex="0" role="img" aria-label="Lot 55 : 500,87, une suite du même côté du centre" x="677.1" y="202.0" width="10" height="286.0" fill="transparent"><title>55 : 500,87</title></rect>
-<circle cx="692.9" cy="315.2" r="4.0" fill="#FF9500"/>
+<circle cx="692.9" cy="315.2" r="4.0" fill="#FF8D28"/>
 <rect id="pt-55" class="pt hit" tabindex="0" role="img" aria-label="Lot 56 : 501,23, une suite du même côté du centre" x="687.9" y="202.0" width="10" height="286.0" fill="transparent"><title>56 : 501,23</title></rect>
-<circle cx="703.7" cy="352.4" r="2.6" fill="#007AFF"/>
+<circle cx="703.7" cy="352.4" r="2.6" fill="#0088FF"/>
 <rect id="pt-56" class="pt hit" tabindex="0" role="img" aria-label="Lot 57 : 500,32" x="698.7" y="202.0" width="10" height="286.0" fill="transparent"><title>57 : 500,32</title></rect>
-<circle cx="714.4" cy="274.3" r="4.0" fill="#FF9500"/>
+<circle cx="714.4" cy="274.3" r="4.0" fill="#FF8D28"/>
 <rect id="pt-57" class="pt hit" tabindex="0" role="img" aria-label="Lot 58 : 502,23, deux points sur trois au-delà de deux sigma" x="709.4" y="202.0" width="10" height="286.0" fill="transparent"><title>58 : 502,23</title></rect>
-<circle cx="725.2" cy="281.3" r="4.0" fill="#FF9500"/>
+<circle cx="725.2" cy="281.3" r="4.0" fill="#FF8D28"/>
 <rect id="pt-58" class="pt hit" tabindex="0" role="img" aria-label="Lot 59 : 502,06, deux points sur trois au-delà de deux sigma" x="720.2" y="202.0" width="10" height="286.0" fill="transparent"><title>59 : 502,06</title></rect>
-<circle cx="736.0" cy="364.6" r="2.6" fill="#007AFF"/>
+<circle cx="736.0" cy="364.6" r="2.6" fill="#0088FF"/>
 <rect id="pt-59" class="pt hit" tabindex="0" role="img" aria-label="Lot 60 : 500,02" x="731.0" y="202.0" width="10" height="286.0" fill="transparent"><title>60 : 500,02</title></rect>
 <text x="100.0" y="508.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">1</text>
 <text x="153.9" y="508.0" font-size="11" fill="#6E6E73" text-anchor="middle" font-family="Roboto Mono, ui-monospace, monospace">6</text>

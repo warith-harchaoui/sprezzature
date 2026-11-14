@@ -83,7 +83,7 @@
 <path class="hex" d="M271.85,393.45 L297.44,408.23 L297.44,437.77 L271.85,452.55 L246.26,437.77 L246.26,408.23Z" fill="#A1CBFC" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>23 trips</title></path>
 <path class="hex" d="M323.81,393.45 L349.40,408.23 L349.40,437.77 L323.81,452.55 L298.22,437.77 L298.22,408.23Z" fill="#429BFE" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>73 trips</title></path>
 <path class="hex" d="M375.77,393.45 L401.36,408.23 L401.36,437.77 L375.77,452.55 L350.18,437.77 L350.18,408.23Z" fill="#0A7FFF" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>109 trips</title></path>
-<path class="hex" d="M427.73,393.45 L453.32,408.23 L453.32,437.77 L427.73,452.55 L402.14,437.77 L402.14,408.23Z" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>116 trips</title></path>
+<path class="hex" d="M427.73,393.45 L453.32,408.23 L453.32,437.77 L427.73,452.55 L402.14,437.77 L402.14,408.23Z" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>116 trips</title></path>
 <path class="hex" d="M479.69,393.45 L505.28,408.23 L505.28,437.77 L479.69,452.55 L454.10,437.77 L454.10,408.23Z" fill="#3293FE" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>83 trips</title></path>
 <path class="hex" d="M531.65,393.45 L557.24,408.23 L557.24,437.77 L531.65,452.55 L506.06,437.77 L506.06,408.23Z" fill="#67AEFD" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>52 trips</title></path>
 <path class="hex" d="M583.62,393.45 L609.21,408.23 L609.21,437.77 L583.62,452.55 L558.02,437.77 L558.02,408.23Z" fill="#A1CBFC" stroke="#FFFFFF" stroke-width="1.6" tabindex="0" role="listitem"><title>23 trips</title></path>
@@ -188,7 +188,7 @@
 </g>
 <g transform="translate(992.0,268.0)">
 <text x="0" y="-24" font-size="20" font-weight="700" fill="#1D1D1F">Trips per hex</text>
-<rect class="legend-swatch" x="0" y="0.0" width="36.0" height="34.0" fill="#007AFF"/>
+<rect class="legend-swatch" x="0" y="0.0" width="36.0" height="34.0" fill="#0088FF"/>
 <rect class="legend-swatch" x="0" y="34.0" width="36.0" height="34.0" fill="#1986FE"/>
 <rect class="legend-swatch" x="0" y="68.0" width="36.0" height="34.0" fill="#3293FE"/>
 <rect class="legend-swatch" x="0" y="102.0" width="36.0" height="34.0" fill="#4EA1FD"/>
@@ -200,7 +200,7 @@
 <text x="50.0" y="272.0" font-size="18" fill="#6E6E73" font-family="Roboto Mono, monospace" dominant-baseline="ideographic">1</text>
 <rect class="legend-swatch" x="0" y="302.0" width="36.0" height="34.0" fill="#E9ECF1"/>
 <text x="50.0" y="324.4" font-size="17" fill="#6E6E73">no trips</text>
-<text x="0" y="420.0" font-size="54" font-weight="700" fill="#007AFF">39%</text>
+<text x="0" y="420.0" font-size="54" font-weight="700" fill="#0088FF">39%</text>
 <text x="0" y="454.0" font-size="17.5" fill="#6E6E73">of trips start in the</text>
 <text x="0" y="476.0" font-size="17.5" fill="#6E6E73">busiest 10% of hexes</text>
 </g>

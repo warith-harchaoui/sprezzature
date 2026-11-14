@@ -56,7 +56,7 @@
     <circle class="anchor" cx="322.0" cy="334.2" r="7" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="2.5"><title>Anchor: Groove length. Kernels rich in this measurement are pulled toward it.</title></circle>
   </g>
   <g class="points" role="list">
-    <g class="rv-rosa" role="listitem" aria-label="Rosa kernels" fill="#FF9500">
+    <g class="rv-rosa" role="listitem" aria-label="Rosa kernels" fill="#FF8D28">
       <circle class="pt" cx="627.4" cy="504.8" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
       <circle class="pt" cx="638.6" cy="509.9" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
       <circle class="pt" cx="625.1" cy="494.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
@@ -118,7 +118,7 @@
       <circle class="pt" cx="616.8" cy="516.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
       <circle class="pt" cx="625.2" cy="513.0" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Rosa kernel</title></circle>
     </g>
-    <g class="rv-kama" role="listitem" aria-label="Kama kernels" fill="#007AFF">
+    <g class="rv-kama" role="listitem" aria-label="Kama kernels" fill="#0088FF">
       <circle class="pt" cx="581.1" cy="593.2" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
       <circle class="pt" cx="572.7" cy="599.3" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
       <circle class="pt" cx="581.9" cy="602.6" r="6.5" stroke="#FFFFFF" stroke-width="1.4" fill-opacity="0.78"><title>Kama kernel</title></circle>
@@ -244,15 +244,15 @@
     </g>
   </g>
   <g class="clslabels" aria-hidden="true">
-    <text x="687.3" y="489.0" font-size="24" font-weight="700" fill="#FF9500" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Rosa</text>
-    <text x="556.8" y="668.1" font-size="24" font-weight="700" fill="#007AFF" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Kama</text>
+    <text x="687.3" y="489.0" font-size="24" font-weight="700" fill="#FF8D28" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Rosa</text>
+    <text x="556.8" y="668.1" font-size="24" font-weight="700" fill="#0088FF" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Kama</text>
     <text x="342.3" y="520.1" font-size="24" font-weight="700" fill="#34C759" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="5">Canadian</text>
   </g>
   </g>
   <g class="legend" transform="translate(60.0,898)" aria-hidden="true">
-    <circle class="rv-rosa" cx="8.0" cy="-6" r="8" fill="#FF9500"/>
+    <circle class="rv-rosa" cx="8.0" cy="-6" r="8" fill="#FF8D28"/>
     <text x="26.0" y="0" font-size="18" fill="#6E6E73">Rosa</text>
-    <circle class="rv-kama" cx="114.0" cy="-6" r="8" fill="#007AFF"/>
+    <circle class="rv-kama" cx="114.0" cy="-6" r="8" fill="#0088FF"/>
     <text x="132.0" y="0" font-size="18" fill="#6E6E73">Kama</text>
     <circle class="rv-canadian" cx="220.0" cy="-6" r="8" fill="#34C759"/>
     <text x="238.0" y="0" font-size="18" fill="#6E6E73">Canadian</text>

@@ -70,19 +70,19 @@ from _svg import (  # noqa: E402
 THEME = "corporate"
 
 _CORPORATE = {
-    "BLUE": "#007AFF",        # la stratégie (« nous ») — Confiance, Fiabilité, Logique, Sécurité
-    # Gain : on DÉVIE volontairement du vert-jeton pur (#28CD41) vers un vert-jade.
+    "BLUE": "#0088FF",        # la stratégie (« nous ») — Confiance, Fiabilité, Logique, Sécurité
+    # Gain : on DÉVIE volontairement du vert-jeton pur (#34C759) vers un vert-jade.
     # Motif accessibilité (vérifié avec simulate_cvd) : le rouge↔vert pur s'effondre
     # sous deutéranopie/protanopie (les deux virent au tan). Le jade garde le concept
     # « croissance » (famille verte) mais sa composante bleue le rend séparable du
     # rouge sous daltonisme. Le signe (+/−) et la position doublent toujours la teinte.
     "GREEN": "#0FA98A",       # gain, hausse — vert-jade, séparable du rouge sous CVD
     "GREEN_INK": "#0A7D66",   # jade assombri (traits/points) — contraste ≥ 3:1 sur blanc
-    "RED": "#FF3B30",         # pertes, drawdown — Danger, Avertissement (convention P&L)
+    "RED": "#FF383C",         # pertes, drawdown — Danger, Avertissement (convention P&L)
     "RED_INK": "#C42B22",     # rouge assombri pour texte
-    "AMBER": "#FF9500",       # frais, coûts — Attention, Warmth (sans dramatiser)
+    "AMBER": "#FF8D28",       # frais, coûts — Attention, Warmth (sans dramatiser)
     "AMBER_INK": "#B26200",   # ambre assombri pour texte / traits fins
-    "PURPLE": "#AF52DE",      # Kₜ, contrôle automatique « intelligent » — Sagesse, Sophistication
+    "PURPLE": "#CB30E0",      # Kₜ, contrôle automatique « intelligent » — Sagesse, Sophistication
     "TEAL_INK": "#2A93AD",    # turquoise assombri — rotation (Clarté/Calme), contraste ≥ 3:1
     "YELLOW_INK": "#B8860B",  # jaune assombri, lisible (variante)
     "BENCH": "#808080",       # achat-conservation (référence) — Gris « Neutral / Équilibre »
@@ -100,7 +100,7 @@ _ACADEMIC = {
     "BLUE": "#0072B2",        # Okabe-Ito Blue -- identique au brand-blue academic du site
     "GREEN": "#009E73",       # Okabe-Ito bluish green -- safe sans détour "jade"
     "GREEN_INK": "#006D4F",
-    "RED": "#D55E00",         # Okabe-Ito vermillion
+    "RED": "#E73121",         # Okabe-Ito vermillion
     "RED_INK": "#774015",
     "AMBER": "#E69F00",       # Okabe-Ito orange
     "AMBER_INK": "#996A00",
@@ -155,7 +155,7 @@ def set_theme(theme: str) -> None:
 
 # Rampe SÉQUENTIELLE pour des séries ORDONNÉES (sprezzature-ui : varier la luminance).
 KRAMP = ["#6FBFD0", "#3691AB", "#1C6178"]     # K fixe : K=1 clair → K=5 foncé
-YEAR_RAMP = ["#66B0FF", "#007AFF", "#004999"]  # années : 2024 clair → 2026 foncé
+YEAR_RAMP = ["#66B0FF", "#0088FF", "#004999"]  # années : 2024 clair → 2026 foncé
 
 # Structure — ardoise froide, jamais du noir pur.
 INK = "#28313A"         # texte principal (ardoise foncée)

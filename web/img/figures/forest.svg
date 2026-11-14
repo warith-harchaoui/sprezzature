@@ -2,9 +2,9 @@
 <title id="fp-title">Forest plot: home blood-pressure telemonitoring raises the odds of reaching target</title>
 <desc id="fp-desc">Meta-analysis forest plot of 8 randomised trials. Each row shows a trial’s odds ratio for reaching the blood-pressure target as a box (area ∝ study weight) with a 95% confidence-interval whisker, on a logarithmic axis with a null rule at 1.0. The pooled random-effects diamond is centred at 1.44 (95% CI 1.26 to 1.64), clearly to the right of the null, so the programme increases the odds of reaching target overall.</desc>
 <style>.row{cursor:pointer}.row .whisker,.row .cap{stroke:#6E6E73;stroke-width:1.6}.row:hover .whisker,.row:focus .whisker,.row:hover .cap,.row:focus .cap{stroke:#6E6E73;stroke-width:2.4}.row:hover .box,.row:focus .box,.row:hover .diamond,.row:focus .diamond,.row:hover .dot,.row:focus .dot{stroke:#FFFFFF;stroke-width:2.4}.row:focus{outline:none}.row:hover .rowbg,.row:focus .rowbg{fill:#F5F5F7}.tip{opacity:0;pointer-events:none;transition:opacity .12s ease}#row-0:hover~#rowtip-0,#row-0:focus~#rowtip-0{opacity:1}#row-1:hover~#rowtip-1,#row-1:focus~#rowtip-1{opacity:1}#row-2:hover~#rowtip-2,#row-2:focus~#rowtip-2{opacity:1}#row-3:hover~#rowtip-3,#row-3:focus~#rowtip-3{opacity:1}#row-4:hover~#rowtip-4,#row-4:focus~#rowtip-4{opacity:1}#row-5:hover~#rowtip-5,#row-5:focus~#rowtip-5{opacity:1}#row-6:hover~#rowtip-6,#row-6:focus~#rowtip-6{opacity:1}#row-7:hover~#rowtip-7,#row-7:focus~#rowtip-7{opacity:1}#row-8:hover~#rowtip-8,#row-8:focus~#rowtip-8{opacity:1}@media (prefers-reduced-motion:reduce){.tip{transition:none}}@media (prefers-contrast: more){
-  .box-sig{fill:#006700;}
-  .box-cross{fill:#004CCE;}
-  .diamond{fill:#993600;}
+  .box-sig{fill:#006800;}
+  .box-cross{fill:#004EC1;}
+  .diamond{fill:#9F3400;}
 }
 @media (forced-colors: active){
   .box-sig{fill:CanvasText;}
@@ -29,7 +29,7 @@
 <line class="whisker" x1="335.1" y1="133.0" x2="404.2" y2="133.0"/>
 <line class="cap" x1="335.1" y1="129.0" x2="335.1" y2="137.0"/>
 <line class="cap" x1="404.2" y1="129.0" x2="404.2" y2="137.0"/>
-<rect class="box box-sig" x="361.9" y="125.4" width="15.2" height="15.2" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="361.9" y="125.4" width="15.2" height="15.2" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="137.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.42 (1.08–1.87)</text>
 </g>
 <g id="row-1" class="row hit" tabindex="0" role="img" aria-label="Bhatt 2017: OR 1.95 (95% CI 0.92–4.13), weight 1% — crosses the null">
@@ -39,7 +39,7 @@
 <line class="whisker" x1="314.9" y1="167.0" x2="503.9" y2="167.0"/>
 <line class="cap" x1="314.9" y1="163.0" x2="314.9" y2="171.0"/>
 <line class="cap" x1="503.9" y1="163.0" x2="503.9" y2="171.0"/>
-<rect class="box box-cross" x="403.4" y="161.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="403.4" y="161.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="171.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.95 (0.92–4.13)</text>
 </g>
 <g id="row-2" class="row hit" tabindex="0" role="img" aria-label="Costa 2018: OR 1.31 (95% CI 1.06–1.62), weight 30% — significant">
@@ -49,7 +49,7 @@
 <line class="whisker" x1="332.7" y1="201.0" x2="386.1" y2="201.0"/>
 <line class="cap" x1="332.7" y1="197.0" x2="332.7" y2="205.0"/>
 <line class="cap" x1="386.1" y1="197.0" x2="386.1" y2="205.0"/>
-<rect class="box box-sig" x="347.6" y="189.2" width="23.6" height="23.6" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="347.6" y="189.2" width="23.6" height="23.6" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="205.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.31 (1.06–1.62)</text>
 </g>
 <g id="row-3" class="row hit" tabindex="0" role="img" aria-label="Devi 2019: OR 0.88 (95% CI 0.41–1.89), weight 0% — crosses the null">
@@ -59,7 +59,7 @@
 <line class="whisker" x1="213.1" y1="235.0" x2="405.5" y2="235.0"/>
 <line class="cap" x1="213.1" y1="231.0" x2="213.1" y2="239.0"/>
 <line class="cap" x1="405.5" y1="231.0" x2="405.5" y2="239.0"/>
-<rect class="box box-cross" x="303.3" y="229.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="303.3" y="229.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="239.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">0.88 (0.41–1.89)</text>
 </g>
 <g id="row-4" class="row hit" tabindex="0" role="img" aria-label="Eriksson 2020: OR 1.58 (95% CI 1.29–1.93), weight 49% — significant">
@@ -69,7 +69,7 @@
 <line class="whisker" x1="357.4" y1="269.0" x2="408.1" y2="269.0"/>
 <line class="cap" x1="357.4" y1="265.0" x2="357.4" y2="273.0"/>
 <line class="cap" x1="408.1" y1="265.0" x2="408.1" y2="273.0"/>
-<rect class="box box-sig" x="368.0" y="254.0" width="30.0" height="30.0" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="368.0" y="254.0" width="30.0" height="30.0" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="273.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.58 (1.29–1.93)</text>
 </g>
 <g id="row-5" class="row hit" tabindex="0" role="img" aria-label="Fournier 2021: OR 1.12 (95% CI 0.71–1.77), weight 2% — crosses the null">
@@ -79,7 +79,7 @@
 <line class="whisker" x1="282.2" y1="303.0" x2="397.3" y2="303.0"/>
 <line class="cap" x1="282.2" y1="299.0" x2="282.2" y2="307.0"/>
 <line class="cap" x1="397.3" y1="299.0" x2="397.3" y2="307.0"/>
-<rect class="box box-cross" x="333.6" y="297.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="333.6" y="297.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="307.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.12 (0.71–1.77)</text>
 </g>
 <g id="row-6" class="row hit" tabindex="0" role="img" aria-label="Grant 2022: OR 1.74 (95% CI 1.14–2.66), weight 4% — significant">
@@ -89,7 +89,7 @@
 <line class="whisker" x1="341.9" y1="337.0" x2="448.5" y2="337.0"/>
 <line class="cap" x1="341.9" y1="333.0" x2="341.9" y2="341.0"/>
 <line class="cap" x1="448.5" y1="333.0" x2="448.5" y2="341.0"/>
-<rect class="box box-sig" x="389.1" y="331.0" width="12.0" height="12.0" rx="2.5" fill="#28CD41" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-sig" x="389.1" y="331.0" width="12.0" height="12.0" rx="2.5" fill="#34C759" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="341.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.74 (1.14–2.66)</text>
 </g>
 <g id="row-7" class="row hit" tabindex="0" role="img" aria-label="Haddad 2023: OR 1.29 (95% CI 0.78–2.13), weight 2% — crosses the null">
@@ -99,14 +99,14 @@
 <line class="whisker" x1="294.1" y1="371.0" x2="420.6" y2="371.0"/>
 <line class="cap" x1="294.1" y1="367.0" x2="294.1" y2="375.0"/>
 <line class="cap" x1="420.6" y1="367.0" x2="420.6" y2="375.0"/>
-<rect class="box box-cross" x="351.4" y="365.0" width="12.0" height="12.0" rx="2.5" fill="#007AFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<rect class="box box-cross" x="351.4" y="365.0" width="12.0" height="12.0" rx="2.5" fill="#0088FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="375.0" font-size="12" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.29 (0.78–2.13)</text>
 </g>
 <g id="row-8" class="row hit" tabindex="0" role="img" aria-label="Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%">
 <title>Pooled random-effects OR 1.44 (95% CI 1.26–1.64), I² = 34%</title>
 <rect class="rowbg" x="18.0" y="402.0" width="684.0" height="34.0" rx="7" fill="none"/>
 <text x="24" y="423.0" font-size="13" font-weight="700" fill="#1D1D1F">Pooled (random effects)</text>
-<polygon class="diamond" points="354.5,419.0 371.3,410.0 387.6,419.0 371.3,428.0" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon class="diamond" points="354.5,419.0 371.3,410.0 387.6,419.0 371.3,428.0" fill="#FF8D28" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
 <text x="546" y="423.0" font-size="12" font-weight="700" font-family="Roboto Mono, monospace" fill="#1D1D1F">1.44 (1.26–1.64)</text>
 </g>
 <g id="rowtip-0" class="tip"><rect x="269.5" y="113.4" width="200" height="62.5" rx="9" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1.2"/><text x="278.5" y="134.9" font-size="12.5" font-weight="700" fill="#1D1D1F">Ashford 2016</text><text x="278.5" y="150.9" font-size="12.5" font-weight="400" fill="#6E6E73">OR 1.42 (95% CI 1.08-1.87)</text><text x="278.5" y="166.9" font-size="12.5" font-weight="400" fill="#6E6E73">weight 12% - significant</text></g>
