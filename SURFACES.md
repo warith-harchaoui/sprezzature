@@ -180,7 +180,8 @@ sprezzature-maps/
 │   ├── mcp.py             # 4. fastapi-mcp over that app → sprezzature-maps-mcp
 │   ├── skill/             # 5. SKILL.md + references/, shipped in the wheel
 │   ├── _skill.py          # 5. sprezzature-maps-skill: report, or --install
-│   └── editor/            #    the model-backed Editor, sprezzature-maps
+│   ├── assistant/, ralph/ #    the model-facing layer behind make-map improve
+│   └── gis.py             #    layers to a GIS and back: export, import, layers:
 ├── scripts/               #    packaged as sprezzature_maps_scripts
 ├── Dockerfile             # 3. runs sprezzature-maps-mcp: the API and /mcp on port 8000
 ├── docker-compose.yml     # 3. port, volume, environment, command — declared

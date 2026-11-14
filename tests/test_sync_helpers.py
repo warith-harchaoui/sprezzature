@@ -156,8 +156,8 @@ def test_two_files_of_one_name_in_a_repo_are_ambiguous(tmp_path: Path) -> None:
     unrelated file makes that file look like a copy.
     """
     module = _audit()
-    _nested(tmp_path, "sprezzature-a", "editor/assistant/_x.py", "canonical\n")
-    _nested(tmp_path, "sprezzature-a", "editor/ralph/_x.py", "unrelated\n")
+    _nested(tmp_path, "sprezzature-a", "engine/assistant/_x.py", "canonical\n")
+    _nested(tmp_path, "sprezzature-a", "engine/ralph/_x.py", "unrelated\n")
     clashes = module.ambiguous_copies("_x.py", tmp_path)
     assert list(clashes) == ["sprezzature-a"]
     assert len(clashes["sprezzature-a"]) == 2
@@ -166,7 +166,7 @@ def test_two_files_of_one_name_in_a_repo_are_ambiguous(tmp_path: Path) -> None:
 def test_one_copy_per_repo_is_not_ambiguous(tmp_path: Path) -> None:
     """The ordinary case: many copies, one per checkout, at differing depths."""
     module = _audit()
-    _nested(tmp_path, "sprezzature-a", "editor/assistant/_x.py", "same\n")
+    _nested(tmp_path, "sprezzature-a", "engine/assistant/_x.py", "same\n")
     _nested(tmp_path, "sprezzature-b", "scripts/_x.py", "same\n")
     assert module.ambiguous_copies("_x.py", tmp_path) == {}
 
@@ -180,11 +180,11 @@ def test_apply_refuses_to_write_over_a_namesake(tmp_path: Path, monkeypatch) -> 
     survives review.
     """
     module = _audit()
-    _nested(tmp_path, "sprezzature-a", "editor/assistant/_x.py", "canonical\n")
-    namesake = _nested(tmp_path, "sprezzature-a", "editor/ralph/_x.py", "unrelated\n")
+    _nested(tmp_path, "sprezzature-a", "engine/assistant/_x.py", "canonical\n")
+    namesake = _nested(tmp_path, "sprezzature-a", "engine/ralph/_x.py", "unrelated\n")
     away = _nested(tmp_path, "sprezzature-b", "scripts/_x.py", "stale\n")
 
-    monkeypatch.setattr(module, "CANONICAL", {"_x.py": "sprezzature-a/editor/assistant/_x.py"})
+    monkeypatch.setattr(module, "CANONICAL", {"_x.py": "sprezzature-a/engine/assistant/_x.py"})
     monkeypatch.setattr(module, "SHARED_HELPERS", ("_x.py",))
     code = module.main(["--apply", "--home", str(tmp_path)])
 
@@ -203,12 +203,12 @@ def test_a_path_suffix_key_names_one_file(tmp_path: Path) -> None:
     without renaming them.
     """
     module = _audit()
-    wanted = _nested(tmp_path, "sprezzature-a", "editor/assistant/repair.py", "shared\n")
-    _nested(tmp_path, "sprezzature-a", "editor/ralph/repair.py", "unrelated\n")
-    _nested(tmp_path, "sprezzature-b", "editor/assistant/repair.py", "shared\n")
+    wanted = _nested(tmp_path, "sprezzature-a", "engine/assistant/repair.py", "shared\n")
+    _nested(tmp_path, "sprezzature-a", "engine/ralph/repair.py", "unrelated\n")
+    _nested(tmp_path, "sprezzature-b", "engine/assistant/repair.py", "shared\n")
 
-    assert module.ambiguous_copies("editor/assistant/repair.py", tmp_path) == {}
-    found = module.find_copies("editor/assistant/repair.py", tmp_path)
+    assert module.ambiguous_copies("engine/assistant/repair.py", tmp_path) == {}
+    found = module.find_copies("engine/assistant/repair.py", tmp_path)
     assert wanted in found
     assert not any(p.parent.name == "ralph" for p in found), "the suffix caught a namesake"
     assert len(found) == 2

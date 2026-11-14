@@ -38,8 +38,7 @@ copy: `sprezzature-skills --install` gathers the ten from the installed
 bricks.
 
 Every brick's Markdown documentation was re-read against its code before this
-release. The two editors, maps and figures, were reworked by driving them in a
-browser. sprezzature-cli-gui 1.7.0 also carries the fix for Typer 0.29, which
+release. sprezzature-cli-gui 1.7.0 also carries the fix for Typer 0.29, which
 1.6.0 on PyPI does not survive.
 
 ### Changed
@@ -230,7 +229,7 @@ publish 1.4.1, ui 1.2.1, ux-laws 1.4.1, video 0.4.2. What they carry:
   `figures render` without `--out` overwrote the committed example; audio's
   `translate` checked one Ollama and called another; ux-laws `--fix` rewrote
   untouched files and turned CRLF into LF; maps' `no-data-hidden` fired on a
-  sentence; the maps wheel left out its Editor; and standpoint's `-gui` and
+  sentence; the maps wheel left out a subpackage; and standpoint's `-gui` and
   `-mcp` started a server on `--help`. A second reading of the hub against the
   bricks found two more, fixed the same day: accessibility's alt drafter and
   maps' `make-map` without `--out` (the drafter now calls the `OLLAMA_URL` it

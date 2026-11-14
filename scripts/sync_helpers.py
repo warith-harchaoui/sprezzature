@@ -69,33 +69,33 @@ CANONICAL: dict[str, str] = {
     # six"), so the prose that explains the retry lives beside the test that
     # earned it.
     "_wallet.py": "sprezzature-audio/scripts/_wallet.py",
-    # the editor's model layer. Three files, 322 lines, with no knowledge of
+    # The model layer. Three files, 322 lines, with no knowledge of
     # charts or of maps in them: a Protocol every caller depends on instead of a
     # backend, the one wrapper over `best_engine_ai_helper.llm.chat()`, its
     # single schema-repair attempt, and the scriptable fake that lets the whole
     # suite test the model-facing paths with no model installed.
     #
-    # Registered the day sprezzature-maps grew an editor of its own and needed
-    # exactly these three. They are keyed by path suffix, not by name, because
-    # `repair.py` names two different files in sprezzature-figures —
-    # `editor/assistant/` and `editor/ralph/` — and propagating by name would
-    # have written one over the other.
+    # Registered the day sprezzature-maps grew a model-facing layer of its own
+    # and needed exactly these three. They are keyed by path suffix, not by
+    # name, because `repair.py` names two different files in sprezzature-maps —
+    # `assistant/` and `ralph/` — and propagating by name would have written
+    # one over the other.
     #
     # Why duplicated rather than lifted into best-engine-ai-helper, which is
     # where logic this generic belongs: `client.py` imports that package
     # *lazily*, inside the call, so this layer — and every test of it — works
     # with the package absent. Lifting it upstream would trade that property
-    # for a hard import, and would put the editor's schema handling behind a
+    # for a hard import, and would put the schema handling behind a
     # release of a repository outside this suite.
     #
     # sprezzature-figures is canonical: it is where the layer was written, and
     # where the real-model tests (`tests/assistant/test_live_llm.py`) live.
-    "editor/assistant/client.py":
-        "sprezzature-figures/sprezzature_figures/editor/assistant/client.py",
-    "editor/assistant/repair.py":
-        "sprezzature-figures/sprezzature_figures/editor/assistant/repair.py",
-    "editor/assistant/fake_client.py":
-        "sprezzature-figures/sprezzature_figures/editor/assistant/fake_client.py",
+    "assistant/client.py":
+        "sprezzature-figures/sprezzature_figures/assistant/client.py",
+    "assistant/repair.py":
+        "sprezzature-figures/sprezzature_figures/assistant/repair.py",
+    "assistant/fake_client.py":
+        "sprezzature-figures/sprezzature_figures/assistant/fake_client.py",
     # The inherited-ceiling reader. A package may not promise a Python its
     # dependencies cannot deliver, and `requires-python` is the promise a
     # reader acts on. The check lived in two bricks out of eleven until
@@ -134,11 +134,11 @@ def find_copies(helper: str, home: Path) -> list[Path]:
     Every copy of `helper`, across the monorepo and its sibling repositories.
 
     A key is either a bare file name — ``"_argparse.py"``, which matches at any
-    depth — or a path suffix, ``"editor/assistant/client.py"``, which matches
+    depth — or a path suffix, ``"assistant/client.py"``, which matches
     only where those directories nest in that order. The suffix form exists for
     helpers whose own name is not unique: ``repair.py`` names two different
-    files in ``sprezzature-figures``, under ``editor/assistant/`` and
-    ``editor/ralph/``, while each path suffix names exactly one. Prefer it for
+    files in ``sprezzature-maps``, under ``assistant/`` and ``ralph/``, while
+    each path suffix names exactly one. Prefer it for
     anything inside a package, and keep the bare form for the skill helpers,
     whose underscore names are unique by convention.
 
@@ -146,7 +146,7 @@ def find_copies(helper: str, home: Path) -> list[Path]:
     ----------
     helper : str
         File name or path suffix, e.g. ``"_argparse.py"`` or
-        ``"editor/assistant/client.py"``.
+        ``"assistant/client.py"``.
     home : pathlib.Path
         Directory holding the ``sprezzature*`` checkouts.
 
@@ -185,8 +185,8 @@ def ambiguous_copies(helper: str, home: Path) -> dict[str, list[Path]]:
 
     Measured against the registered helpers on 2026-11-01: all six have at most
     one copy per repository, while ``repair.py`` — a name that came within an
-    inch of being registered, for the editor's shared model layer — has two in
-    ``sprezzature-figures``, under ``editor/assistant/`` and ``editor/ralph/``,
+    inch of being registered, for the shared model layer — has two in
+    ``sprezzature-maps``, under ``assistant/`` and ``ralph/``,
     and they are different files. Registering it would have written one over
     the other, in silence, and the propagation is exactly the step nobody reads
     a diff of.

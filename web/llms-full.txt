@@ -983,7 +983,7 @@ No figure matches. Try another term.
 
 ### How do I install sprezzature-figures?
 
-Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs the generators, the command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server and the editor, with no extras to choose. It is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, and sprezzature-figures render bar --out check.svg checks the install.
+Run pip install sprezzature-figures (Python 3.10 to 3.13): one command installs the generators, the command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server and the skill, with no extras to choose. It is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence, and sprezzature-figures render bar --out check.svg checks the install.
 
 ### How many chart types does sprezzature-figures have?
 
@@ -999,11 +999,11 @@ The Ralph Eyeball Loop is how sprezzature-figures looks at a figure before calli
 
 ### Does sprezzature-figures send my data to a cloud service?
 
-No: sprezzature-figures renders, recommends and checks figures on your machine with no model and no account. The three steps that use a model ( redraw , the editor chat and the eyeball loop's --local mode) call one served by Ollama locally by default, through best-engine-ai-helper. Used as a skill, the agent itself follows its own provider's data policy.
+No: sprezzature-figures renders, recommends and checks figures on your machine with no model and no account. The two steps that use a model ( redraw and the eyeball loop's --local mode) call one served by Ollama locally by default, through best-engine-ai-helper. Used as a skill, the agent itself follows its own provider's data policy.
 
 ### What does sprezzature-figures need besides pip?
 
-sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. redraw , which rebuilds a chart from a screenshot without inventing its numbers, and the editor chat need a model served by Ollama . The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, tectonic for TikZ, rsvg-convert), and --check-tools lists which ones you have.
+sprezzature-figures needs nothing more to render and check figures: the rasteriser and the fonts come with the package. redraw , which rebuilds a chart from a screenshot without inventing its numbers, needs a model served by Ollama . The Ralph Eyeball Loop also uses system renderers (Chrome for HTML, tectonic for TikZ, rsvg-convert), and --check-tools lists which ones you have.
 
 ### Can I use sprezzature-figures without Claude Code, for example in CI?
 
@@ -1855,7 +1855,7 @@ Binned grid map : Square-bin aggregation over geography, cells coloured by count
 
 ### How do I install sprezzature-maps?
 
-Run pip install sprezzature-maps (Python 3.10 to 3.13): one command installs the three generators, the make-map command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server and the editor, and pulls in sprezzature-figures, whose font and rendering code it shares. It is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.
+Run pip install sprezzature-maps (Python 3.10 to 3.13): one command installs the three generators, the make-map command line, the API (Application Programming Interface, web addresses another program sends a request to and gets an answer from) served over HTTP (HyperText Transfer Protocol, the way a browser asks a server for a page), the MCP (Model Context Protocol, the protocol through which AI agents call tools in English) server and the skill, and pulls in sprezzature-figures, whose font and rendering code it shares. It is free and open source under the BSD (Berkeley Software Distribution, a University of California licence that lets anyone use, change or sell the code as long as the copyright notice stays) 3-Clause licence.
 
 ### What kinds of maps can sprezzature-maps draw?
 
@@ -1867,7 +1867,7 @@ sprezzature-maps ships its geography inside the package: Natural Earth borders, 
 
 ### Does sprezzature-maps work offline?
 
-Yes: sprezzature-maps needs no tile server, no API key and no account, because the base maps and the elevation are bundled, and the finished SVG carries its own fonts. The only steps that use a model are make-map improve and the editor's repair loop, which call a vision model served by Ollama on your machine by default.
+Yes: sprezzature-maps needs no tile server, no API key and no account, because the base maps and the elevation are bundled, and the finished SVG carries its own fonts. The only step that uses a model is make-map improve , which calls a vision model served by Ollama on your machine by default.
 
 ### What does sprezzature-maps need besides pip?
 

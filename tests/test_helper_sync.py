@@ -116,7 +116,7 @@ def test_no_registered_helper_shares_its_name() -> None:
     This is a live check against the bricks beside this one, because the risk
     arrives with a *future* registration — ``repair.py``, which exists twice in
     ``sprezzature-figures`` with different contents, came within an inch of
-    being registered for the editor's shared model layer.
+    being registered for the shared model layer.
     """
     if not _checkouts():
         pytest.skip("no brick is checked out beside this repository")
